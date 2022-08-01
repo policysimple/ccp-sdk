@@ -8,29 +8,59 @@ public interface UpdateSecretRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  int getOrganizationId();
+
+  /**
+   * <code>string project_id = 2 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * <code>string project_id = 2 [json_name = "projectId"];</code>
    * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString
       getProjectIdBytes();
 
   /**
-   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
+
+  /**
+   * <code>string application_id = 4 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 4 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
+
+  /**
+   * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
   /**
-   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
    * @return The secret.
    */
   io.cuemby.vault.v1alpha1.Secret getSecret();
   /**
-   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
    */
   io.cuemby.vault.v1alpha1.SecretOrBuilder getSecretOrBuilder();
 }

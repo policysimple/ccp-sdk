@@ -8,30 +8,36 @@ public interface DeleteSecretRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+   * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  int getOrganizationId();
+
+  /**
+   * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   int getProjectId();
 
   /**
-   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * <code>string application_id = 3 [json_name = "applicationId"];</code>
    * @return The applicationId.
    */
   java.lang.String getApplicationId();
   /**
-   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * <code>string application_id = 3 [json_name = "applicationId"];</code>
    * @return The bytes for applicationId.
    */
   com.google.protobuf.ByteString
       getApplicationIdBytes();
 
   /**
-   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * <code>string namespace = 4 [json_name = "namespace"];</code>
    * @return The namespace.
    */
   java.lang.String getNamespace();
   /**
-   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * <code>string namespace = 4 [json_name = "namespace"];</code>
    * @return The bytes for namespace.
    */
   com.google.protobuf.ByteString

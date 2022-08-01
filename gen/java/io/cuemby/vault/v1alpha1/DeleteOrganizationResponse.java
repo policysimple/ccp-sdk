@@ -4,27 +4,27 @@
 package io.cuemby.vault.v1alpha1;
 
 /**
- * Protobuf type {@code vault.v1alpha1.ListSecretRequest}
+ * Protobuf type {@code vault.v1alpha1.DeleteOrganizationResponse}
  */
-public final class ListSecretRequest extends
+public final class DeleteOrganizationResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:vault.v1alpha1.ListSecretRequest)
-    ListSecretRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:vault.v1alpha1.DeleteOrganizationResponse)
+    DeleteOrganizationResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListSecretRequest.newBuilder() to construct.
-  private ListSecretRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteOrganizationResponse.newBuilder() to construct.
+  private DeleteOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListSecretRequest() {
-    projectId_ = "";
-    namespace_ = "";
+  private DeleteOrganizationResponse() {
+    msg_ = "";
+    error_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListSecretRequest();
+    return new DeleteOrganizationResponse();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListSecretRequest(
+  private DeleteOrganizationResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,13 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
+            msg_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            namespace_ = s;
+            error_ = s;
             break;
           }
           default: {
@@ -83,87 +83,87 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_ListSecretRequest_descriptor;
+    return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_DeleteOrganizationResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_ListSecretRequest_fieldAccessorTable
+    return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_DeleteOrganizationResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.cuemby.vault.v1alpha1.ListSecretRequest.class, io.cuemby.vault.v1alpha1.ListSecretRequest.Builder.class);
+            io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.class, io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.Builder.class);
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+  public static final int MSG_FIELD_NUMBER = 1;
+  private volatile java.lang.Object msg_;
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
-   * @return The projectId.
+   * <code>string msg = 1 [json_name = "msg"];</code>
+   * @return The msg.
    */
   @java.lang.Override
-  public java.lang.String getProjectId() {
-    java.lang.Object ref = projectId_;
+  public java.lang.String getMsg() {
+    java.lang.Object ref = msg_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      projectId_ = s;
+      msg_ = s;
       return s;
     }
   }
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
-   * @return The bytes for projectId.
+   * <code>string msg = 1 [json_name = "msg"];</code>
+   * @return The bytes for msg.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getProjectIdBytes() {
-    java.lang.Object ref = projectId_;
+      getMsgBytes() {
+    java.lang.Object ref = msg_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      projectId_ = b;
+      msg_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int NAMESPACE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object namespace_;
+  public static final int ERROR_FIELD_NUMBER = 2;
+  private volatile java.lang.Object error_;
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
-   * @return The namespace.
+   * <code>string error = 2 [json_name = "error"];</code>
+   * @return The error.
    */
   @java.lang.Override
-  public java.lang.String getNamespace() {
-    java.lang.Object ref = namespace_;
+  public java.lang.String getError() {
+    java.lang.Object ref = error_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      namespace_ = s;
+      error_ = s;
       return s;
     }
   }
   /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
-   * @return The bytes for namespace.
+   * <code>string error = 2 [json_name = "error"];</code>
+   * @return The bytes for error.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNamespaceBytes() {
-    java.lang.Object ref = namespace_;
+      getErrorBytes() {
+    java.lang.Object ref = error_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      namespace_ = b;
+      error_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -184,11 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+    if (!getMsgBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
     }
-    if (!getNamespaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, namespace_);
+    if (!getErrorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
     }
     unknownFields.writeTo(output);
   }
@@ -199,11 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+    if (!getMsgBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
     }
-    if (!getNamespaceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, namespace_);
+    if (!getErrorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,15 +215,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.cuemby.vault.v1alpha1.ListSecretRequest)) {
+    if (!(obj instanceof io.cuemby.vault.v1alpha1.DeleteOrganizationResponse)) {
       return super.equals(obj);
     }
-    io.cuemby.vault.v1alpha1.ListSecretRequest other = (io.cuemby.vault.v1alpha1.ListSecretRequest) obj;
+    io.cuemby.vault.v1alpha1.DeleteOrganizationResponse other = (io.cuemby.vault.v1alpha1.DeleteOrganizationResponse) obj;
 
-    if (!getProjectId()
-        .equals(other.getProjectId())) return false;
-    if (!getNamespace()
-        .equals(other.getNamespace())) return false;
+    if (!getMsg()
+        .equals(other.getMsg())) return false;
+    if (!getError()
+        .equals(other.getError())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,78 +235,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProjectId().hashCode();
-    hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-    hash = (53 * hash) + getNamespace().hashCode();
+    hash = (37 * hash) + MSG_FIELD_NUMBER;
+    hash = (53 * hash) + getMsg().hashCode();
+    hash = (37 * hash) + ERROR_FIELD_NUMBER;
+    hash = (53 * hash) + getError().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(byte[] data)
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(java.io.InputStream input)
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseDelimitedFrom(java.io.InputStream input)
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseDelimitedFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest parseFrom(
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.cuemby.vault.v1alpha1.ListSecretRequest prototype) {
+  public static Builder newBuilder(io.cuemby.vault.v1alpha1.DeleteOrganizationResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code vault.v1alpha1.ListSecretRequest}
+   * Protobuf type {@code vault.v1alpha1.DeleteOrganizationResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:vault.v1alpha1.ListSecretRequest)
-      io.cuemby.vault.v1alpha1.ListSecretRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:vault.v1alpha1.DeleteOrganizationResponse)
+      io.cuemby.vault.v1alpha1.DeleteOrganizationResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_ListSecretRequest_descriptor;
+      return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_DeleteOrganizationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_ListSecretRequest_fieldAccessorTable
+      return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_DeleteOrganizationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.cuemby.vault.v1alpha1.ListSecretRequest.class, io.cuemby.vault.v1alpha1.ListSecretRequest.Builder.class);
+              io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.class, io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.Builder.class);
     }
 
-    // Construct using io.cuemby.vault.v1alpha1.ListSecretRequest.newBuilder()
+    // Construct using io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -372,9 +372,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      projectId_ = "";
+      msg_ = "";
 
-      namespace_ = "";
+      error_ = "";
 
       return this;
     }
@@ -382,17 +382,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_ListSecretRequest_descriptor;
+      return io.cuemby.vault.v1alpha1.VaultAPIProto.internal_static_vault_v1alpha1_DeleteOrganizationResponse_descriptor;
     }
 
     @java.lang.Override
-    public io.cuemby.vault.v1alpha1.ListSecretRequest getDefaultInstanceForType() {
-      return io.cuemby.vault.v1alpha1.ListSecretRequest.getDefaultInstance();
+    public io.cuemby.vault.v1alpha1.DeleteOrganizationResponse getDefaultInstanceForType() {
+      return io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.cuemby.vault.v1alpha1.ListSecretRequest build() {
-      io.cuemby.vault.v1alpha1.ListSecretRequest result = buildPartial();
+    public io.cuemby.vault.v1alpha1.DeleteOrganizationResponse build() {
+      io.cuemby.vault.v1alpha1.DeleteOrganizationResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,10 +400,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.cuemby.vault.v1alpha1.ListSecretRequest buildPartial() {
-      io.cuemby.vault.v1alpha1.ListSecretRequest result = new io.cuemby.vault.v1alpha1.ListSecretRequest(this);
-      result.projectId_ = projectId_;
-      result.namespace_ = namespace_;
+    public io.cuemby.vault.v1alpha1.DeleteOrganizationResponse buildPartial() {
+      io.cuemby.vault.v1alpha1.DeleteOrganizationResponse result = new io.cuemby.vault.v1alpha1.DeleteOrganizationResponse(this);
+      result.msg_ = msg_;
+      result.error_ = error_;
       onBuilt();
       return result;
     }
@@ -442,22 +442,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.cuemby.vault.v1alpha1.ListSecretRequest) {
-        return mergeFrom((io.cuemby.vault.v1alpha1.ListSecretRequest)other);
+      if (other instanceof io.cuemby.vault.v1alpha1.DeleteOrganizationResponse) {
+        return mergeFrom((io.cuemby.vault.v1alpha1.DeleteOrganizationResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.cuemby.vault.v1alpha1.ListSecretRequest other) {
-      if (other == io.cuemby.vault.v1alpha1.ListSecretRequest.getDefaultInstance()) return this;
-      if (!other.getProjectId().isEmpty()) {
-        projectId_ = other.projectId_;
+    public Builder mergeFrom(io.cuemby.vault.v1alpha1.DeleteOrganizationResponse other) {
+      if (other == io.cuemby.vault.v1alpha1.DeleteOrganizationResponse.getDefaultInstance()) return this;
+      if (!other.getMsg().isEmpty()) {
+        msg_ = other.msg_;
         onChanged();
       }
-      if (!other.getNamespace().isEmpty()) {
-        namespace_ = other.namespace_;
+      if (!other.getError().isEmpty()) {
+        error_ = other.error_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -475,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.cuemby.vault.v1alpha1.ListSecretRequest parsedMessage = null;
+      io.cuemby.vault.v1alpha1.DeleteOrganizationResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.cuemby.vault.v1alpha1.ListSecretRequest) e.getUnfinishedMessage();
+        parsedMessage = (io.cuemby.vault.v1alpha1.DeleteOrganizationResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -489,154 +489,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object projectId_ = "";
+    private java.lang.Object msg_ = "";
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
-     * @return The projectId.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
      */
-    public java.lang.String getProjectId() {
-      java.lang.Object ref = projectId_;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        projectId_ = s;
+        msg_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
-     * @return The bytes for projectId.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
      */
     public com.google.protobuf.ByteString
-        getProjectIdBytes() {
-      java.lang.Object ref = projectId_;
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        projectId_ = b;
+        msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
-     * @param value The projectId to set.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @param value The msg to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectId(
+    public Builder setMsg(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      projectId_ = value;
+      msg_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * <code>string msg = 1 [json_name = "msg"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearProjectId() {
+    public Builder clearMsg() {
       
-      projectId_ = getDefaultInstance().getProjectId();
+      msg_ = getDefaultInstance().getMsg();
       onChanged();
       return this;
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
-     * @param value The bytes for projectId to set.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @param value The bytes for msg to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectIdBytes(
+    public Builder setMsgBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      projectId_ = value;
+      msg_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object namespace_ = "";
+    private java.lang.Object error_ = "";
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @return The namespace.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
      */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
+        error_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @return The bytes for namespace.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
      */
     public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
+        getErrorBytes() {
+      java.lang.Object ref = error_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        namespace_ = b;
+        error_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @param value The namespace to set.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @param value The error to set.
      * @return This builder for chaining.
      */
-    public Builder setNamespace(
+    public Builder setError(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      namespace_ = value;
+      error_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
+     * <code>string error = 2 [json_name = "error"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearNamespace() {
+    public Builder clearError() {
       
-      namespace_ = getDefaultInstance().getNamespace();
+      error_ = getDefaultInstance().getError();
       onChanged();
       return this;
     }
     /**
-     * <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @param value The bytes for namespace to set.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @param value The bytes for error to set.
      * @return This builder for chaining.
      */
-    public Builder setNamespaceBytes(
+    public Builder setErrorBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      namespace_ = value;
+      error_ = value;
       onChanged();
       return this;
     }
@@ -653,41 +653,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:vault.v1alpha1.ListSecretRequest)
+    // @@protoc_insertion_point(builder_scope:vault.v1alpha1.DeleteOrganizationResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:vault.v1alpha1.ListSecretRequest)
-  private static final io.cuemby.vault.v1alpha1.ListSecretRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.DeleteOrganizationResponse)
+  private static final io.cuemby.vault.v1alpha1.DeleteOrganizationResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.cuemby.vault.v1alpha1.ListSecretRequest();
+    DEFAULT_INSTANCE = new io.cuemby.vault.v1alpha1.DeleteOrganizationResponse();
   }
 
-  public static io.cuemby.vault.v1alpha1.ListSecretRequest getDefaultInstance() {
+  public static io.cuemby.vault.v1alpha1.DeleteOrganizationResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListSecretRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListSecretRequest>() {
+  private static final com.google.protobuf.Parser<DeleteOrganizationResponse>
+      PARSER = new com.google.protobuf.AbstractParser<DeleteOrganizationResponse>() {
     @java.lang.Override
-    public ListSecretRequest parsePartialFrom(
+    public DeleteOrganizationResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListSecretRequest(input, extensionRegistry);
+      return new DeleteOrganizationResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListSecretRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteOrganizationResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListSecretRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteOrganizationResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.cuemby.vault.v1alpha1.ListSecretRequest getDefaultInstanceForType() {
+  public io.cuemby.vault.v1alpha1.DeleteOrganizationResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

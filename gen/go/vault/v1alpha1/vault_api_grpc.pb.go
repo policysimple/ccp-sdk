@@ -22,7 +22,7 @@ type VaultAPIServiceClient interface {
 	UpdateSecret(ctx context.Context, in *UpdateSecretRequest, opts ...grpc.CallOption) (*UpdateSecretResponse, error)
 	DeleteSecret(ctx context.Context, in *DeleteSecretRequest, opts ...grpc.CallOption) (*DeleteSecretResponse, error)
 	GetSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error)
-	ListSecret(ctx context.Context, in *ListSecretRequest, opts ...grpc.CallOption) (*ListSecretResponse, error)
+	DeleteOrganization(ctx context.Context, in *DeleteOrganizationRequest, opts ...grpc.CallOption) (*DeleteOrganizationResponse, error)
 }
 
 type vaultAPIServiceClient struct {
@@ -69,9 +69,9 @@ func (c *vaultAPIServiceClient) GetSecret(ctx context.Context, in *GetSecretRequ
 	return out, nil
 }
 
-func (c *vaultAPIServiceClient) ListSecret(ctx context.Context, in *ListSecretRequest, opts ...grpc.CallOption) (*ListSecretResponse, error) {
-	out := new(ListSecretResponse)
-	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/ListSecret", in, out, opts...)
+func (c *vaultAPIServiceClient) DeleteOrganization(ctx context.Context, in *DeleteOrganizationRequest, opts ...grpc.CallOption) (*DeleteOrganizationResponse, error) {
+	out := new(DeleteOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/DeleteOrganization", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -86,7 +86,7 @@ type VaultAPIServiceServer interface {
 	UpdateSecret(context.Context, *UpdateSecretRequest) (*UpdateSecretResponse, error)
 	DeleteSecret(context.Context, *DeleteSecretRequest) (*DeleteSecretResponse, error)
 	GetSecret(context.Context, *GetSecretRequest) (*GetSecretResponse, error)
-	ListSecret(context.Context, *ListSecretRequest) (*ListSecretResponse, error)
+	DeleteOrganization(context.Context, *DeleteOrganizationRequest) (*DeleteOrganizationResponse, error)
 }
 
 // UnimplementedVaultAPIServiceServer should be embedded to have forward compatible implementations.
@@ -105,8 +105,8 @@ func (UnimplementedVaultAPIServiceServer) DeleteSecret(context.Context, *DeleteS
 func (UnimplementedVaultAPIServiceServer) GetSecret(context.Context, *GetSecretRequest) (*GetSecretResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSecret not implemented")
 }
-func (UnimplementedVaultAPIServiceServer) ListSecret(context.Context, *ListSecretRequest) (*ListSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListSecret not implemented")
+func (UnimplementedVaultAPIServiceServer) DeleteOrganization(context.Context, *DeleteOrganizationRequest) (*DeleteOrganizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrganization not implemented")
 }
 
 // UnsafeVaultAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -192,20 +192,20 @@ func _VaultAPIService_GetSecret_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _VaultAPIService_ListSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListSecretRequest)
+func _VaultAPIService_DeleteOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteOrganizationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(VaultAPIServiceServer).ListSecret(ctx, in)
+		return srv.(VaultAPIServiceServer).DeleteOrganization(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/vault.v1alpha1.VaultAPIService/ListSecret",
+		FullMethod: "/vault.v1alpha1.VaultAPIService/DeleteOrganization",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(VaultAPIServiceServer).ListSecret(ctx, req.(*ListSecretRequest))
+		return srv.(VaultAPIServiceServer).DeleteOrganization(ctx, req.(*DeleteOrganizationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -234,8 +234,8 @@ var VaultAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _VaultAPIService_GetSecret_Handler,
 		},
 		{
-			MethodName: "ListSecret",
-			Handler:    _VaultAPIService_ListSecret_Handler,
+			MethodName: "DeleteOrganization",
+			Handler:    _VaultAPIService_DeleteOrganization_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

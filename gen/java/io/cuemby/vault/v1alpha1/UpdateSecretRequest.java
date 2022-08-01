@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private UpdateSecretRequest() {
     projectId_ = "";
+    namespace_ = "";
+    applicationId_ = "";
   }
 
   @java.lang.Override
@@ -49,13 +51,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
+          case 8: {
+
+            organizationId_ = input.readUInt32();
+            break;
+          }
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             projectId_ = s;
             break;
           }
-          case 18: {
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            namespace_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            applicationId_ = s;
+            break;
+          }
+          case 42: {
             io.cuemby.vault.v1alpha1.Secret.Builder subBuilder = null;
             if (secret_ != null) {
               subBuilder = secret_.toBuilder();
@@ -100,10 +119,21 @@ private static final long serialVersionUID = 0L;
             io.cuemby.vault.v1alpha1.UpdateSecretRequest.class, io.cuemby.vault.v1alpha1.UpdateSecretRequest.Builder.class);
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 1;
+  public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+  private int organizationId_;
+  /**
+   * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  @java.lang.Override
+  public int getOrganizationId() {
+    return organizationId_;
+  }
+
+  public static final int PROJECT_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object projectId_;
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * <code>string project_id = 2 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   @java.lang.Override
@@ -120,7 +150,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * <code>string project_id = 2 [json_name = "projectId"];</code>
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -138,10 +168,86 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SECRET_FIELD_NUMBER = 2;
+  public static final int NAMESPACE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object namespace_;
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  @java.lang.Override
+  public java.lang.String getNamespace() {
+    java.lang.Object ref = namespace_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      namespace_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string namespace = 3 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNamespaceBytes() {
+    java.lang.Object ref = namespace_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      namespace_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPLICATION_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object applicationId_;
+  /**
+   * <code>string application_id = 4 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  @java.lang.Override
+  public java.lang.String getApplicationId() {
+    java.lang.Object ref = applicationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applicationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string application_id = 4 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApplicationIdBytes() {
+    java.lang.Object ref = applicationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      applicationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECRET_FIELD_NUMBER = 5;
   private io.cuemby.vault.v1alpha1.Secret secret_;
   /**
-   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
    * @return Whether the secret field is set.
    */
   @java.lang.Override
@@ -149,7 +255,7 @@ private static final long serialVersionUID = 0L;
     return secret_ != null;
   }
   /**
-   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
    * @return The secret.
    */
   @java.lang.Override
@@ -157,7 +263,7 @@ private static final long serialVersionUID = 0L;
     return secret_ == null ? io.cuemby.vault.v1alpha1.Secret.getDefaultInstance() : secret_;
   }
   /**
-   * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+   * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
    */
   @java.lang.Override
   public io.cuemby.vault.v1alpha1.SecretOrBuilder getSecretOrBuilder() {
@@ -178,11 +284,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (organizationId_ != 0) {
+      output.writeUInt32(1, organizationId_);
+    }
     if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
+    }
+    if (!getNamespaceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, namespace_);
+    }
+    if (!getApplicationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, applicationId_);
     }
     if (secret_ != null) {
-      output.writeMessage(2, getSecret());
+      output.writeMessage(5, getSecret());
     }
     unknownFields.writeTo(output);
   }
@@ -193,12 +308,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (organizationId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(1, organizationId_);
+    }
     if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+    }
+    if (!getNamespaceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, namespace_);
+    }
+    if (!getApplicationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, applicationId_);
     }
     if (secret_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSecret());
+        .computeMessageSize(5, getSecret());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,8 +340,14 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.vault.v1alpha1.UpdateSecretRequest other = (io.cuemby.vault.v1alpha1.UpdateSecretRequest) obj;
 
+    if (getOrganizationId()
+        != other.getOrganizationId()) return false;
     if (!getProjectId()
         .equals(other.getProjectId())) return false;
+    if (!getNamespace()
+        .equals(other.getNamespace())) return false;
+    if (!getApplicationId()
+        .equals(other.getApplicationId())) return false;
     if (hasSecret() != other.hasSecret()) return false;
     if (hasSecret()) {
       if (!getSecret()
@@ -233,8 +364,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+    hash = (53 * hash) + getNamespace().hashCode();
+    hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getApplicationId().hashCode();
     if (hasSecret()) {
       hash = (37 * hash) + SECRET_FIELD_NUMBER;
       hash = (53 * hash) + getSecret().hashCode();
@@ -372,7 +509,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      organizationId_ = 0;
+
       projectId_ = "";
+
+      namespace_ = "";
+
+      applicationId_ = "";
 
       if (secretBuilder_ == null) {
         secret_ = null;
@@ -406,7 +549,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.vault.v1alpha1.UpdateSecretRequest buildPartial() {
       io.cuemby.vault.v1alpha1.UpdateSecretRequest result = new io.cuemby.vault.v1alpha1.UpdateSecretRequest(this);
+      result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
+      result.namespace_ = namespace_;
+      result.applicationId_ = applicationId_;
       if (secretBuilder_ == null) {
         result.secret_ = secret_;
       } else {
@@ -460,8 +606,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.vault.v1alpha1.UpdateSecretRequest other) {
       if (other == io.cuemby.vault.v1alpha1.UpdateSecretRequest.getDefaultInstance()) return this;
+      if (other.getOrganizationId() != 0) {
+        setOrganizationId(other.getOrganizationId());
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        onChanged();
+      }
+      if (!other.getNamespace().isEmpty()) {
+        namespace_ = other.namespace_;
+        onChanged();
+      }
+      if (!other.getApplicationId().isEmpty()) {
+        applicationId_ = other.applicationId_;
         onChanged();
       }
       if (other.hasSecret()) {
@@ -496,9 +653,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int organizationId_ ;
+    /**
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public int getOrganizationId() {
+      return organizationId_;
+    }
+    /**
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param value The organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationId(int value) {
+      
+      organizationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationId() {
+      
+      organizationId_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object projectId_ = "";
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     public java.lang.String getProjectId() {
@@ -514,7 +702,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString
@@ -531,7 +719,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -546,7 +734,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
@@ -556,7 +744,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -572,18 +760,170 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object namespace_ = "";
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return The namespace.
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return The bytes for namespace.
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @param value The namespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNamespace(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      namespace_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNamespace() {
+      
+      namespace_ = getDefaultInstance().getNamespace();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string namespace = 3 [json_name = "namespace"];</code>
+     * @param value The bytes for namespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNamespaceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      namespace_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object applicationId_ = "";
+    /**
+     * <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @return The applicationId.
+     */
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @return The bytes for applicationId.
+     */
+    public com.google.protobuf.ByteString
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @param value The applicationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      applicationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApplicationId() {
+      
+      applicationId_ = getDefaultInstance().getApplicationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string application_id = 4 [json_name = "applicationId"];</code>
+     * @param value The bytes for applicationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      applicationId_ = value;
+      onChanged();
+      return this;
+    }
+
     private io.cuemby.vault.v1alpha1.Secret secret_;
     private com.google.protobuf.SingleFieldBuilderV3<
         io.cuemby.vault.v1alpha1.Secret, io.cuemby.vault.v1alpha1.Secret.Builder, io.cuemby.vault.v1alpha1.SecretOrBuilder> secretBuilder_;
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      * @return Whether the secret field is set.
      */
     public boolean hasSecret() {
       return secretBuilder_ != null || secret_ != null;
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      * @return The secret.
      */
     public io.cuemby.vault.v1alpha1.Secret getSecret() {
@@ -594,7 +934,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     public Builder setSecret(io.cuemby.vault.v1alpha1.Secret value) {
       if (secretBuilder_ == null) {
@@ -610,7 +950,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     public Builder setSecret(
         io.cuemby.vault.v1alpha1.Secret.Builder builderForValue) {
@@ -624,7 +964,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     public Builder mergeSecret(io.cuemby.vault.v1alpha1.Secret value) {
       if (secretBuilder_ == null) {
@@ -642,7 +982,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     public Builder clearSecret() {
       if (secretBuilder_ == null) {
@@ -656,7 +996,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     public io.cuemby.vault.v1alpha1.Secret.Builder getSecretBuilder() {
       
@@ -664,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       return getSecretFieldBuilder().getBuilder();
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     public io.cuemby.vault.v1alpha1.SecretOrBuilder getSecretOrBuilder() {
       if (secretBuilder_ != null) {
@@ -675,7 +1015,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.vault.v1alpha1.Secret secret = 2 [json_name = "secret"];</code>
+     * <code>.vault.v1alpha1.Secret secret = 5 [json_name = "secret"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         io.cuemby.vault.v1alpha1.Secret, io.cuemby.vault.v1alpha1.Secret.Builder, io.cuemby.vault.v1alpha1.SecretOrBuilder> 

@@ -77,6 +77,7 @@ constexpr Secret::Secret(
   , metadata_(nullptr)
   , data_(nullptr)
   , warnings_(nullptr)
+  , organization_id_(0u)
   , project_id_(0u){}
 struct SecretDefaultTypeInternal {
   constexpr SecretDefaultTypeInternal()
@@ -131,6 +132,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_2epro
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, organization_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, project_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, application_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, namespace__),
@@ -165,21 +167,22 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF
   ".v1alpha1.SecretData.DataEntryR\004data\0327\n\t"
   "DataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
   "(\tR\005value:\0028\001\",\n\016SecretWarnings\022\032\n\010warni"
-  "ngs\030\001 \003(\tR\010warnings\"\216\002\n\006Secret\022\035\n\nprojec"
-  "t_id\030\001 \001(\rR\tprojectId\022%\n\016application_id\030"
-  "\002 \001(\tR\rapplicationId\022\034\n\tnamespace\030\003 \001(\tR"
-  "\tnamespace\0224\n\010metadata\030\004 \001(\0132\030.vault.v1a"
-  "lpha1.MetadataR\010metadata\022.\n\004data\030\005 \001(\0132\032"
-  ".vault.v1alpha1.SecretDataR\004data\022:\n\010warn"
-  "ings\030\006 \001(\0132\036.vault.v1alpha1.SecretWarnin"
-  "gsR\010warningsB\203\001\n\030io.cuemby.vault.v1alpha"
-  "1B\nVaultProtoP\001Z1github.com/cuemby/ccp-v"
-  "ault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault"
-  ".V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
+  "ngs\030\001 \003(\tR\010warnings\"\267\002\n\006Secret\022\'\n\017organi"
+  "zation_id\030\001 \001(\rR\016organizationId\022\035\n\nproje"
+  "ct_id\030\002 \001(\rR\tprojectId\022%\n\016application_id"
+  "\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001(\t"
+  "R\tnamespace\0224\n\010metadata\030\005 \001(\0132\030.vault.v1"
+  "alpha1.MetadataR\010metadata\022.\n\004data\030\006 \001(\0132"
+  "\032.vault.v1alpha1.SecretDataR\004data\022:\n\010war"
+  "nings\030\007 \001(\0132\036.vault.v1alpha1.SecretWarni"
+  "ngsR\010warningsB\203\001\n\030io.cuemby.vault.v1alph"
+  "a1B\nVaultProtoP\001Z1github.com/cuemby/ccp-"
+  "vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vaul"
+  "t.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_2eproto = {
-  false, false, 834, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
+  false, false, 875, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
   &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto,
@@ -1080,7 +1083,9 @@ Secret::Secret(const Secret& from)
   } else {
     warnings_ = nullptr;
   }
-  project_id_ = from.project_id_;
+  ::memcpy(&organization_id_, &from.organization_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
+    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.Secret)
 }
 
@@ -1139,7 +1144,9 @@ void Secret::Clear() {
     delete warnings_;
   }
   warnings_ = nullptr;
-  project_id_ = 0u;
+  ::memset(&organization_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&project_id_) -
+      reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1149,48 +1156,55 @@ const char* Secret::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 project_id = 1 [json_name = "projectId"];
+      // uint32 organization_id = 1 [json_name = "organizationId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 project_id = 2 [json_name = "projectId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string application_id = 2 [json_name = "applicationId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string application_id = 3 [json_name = "applicationId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_application_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Secret.application_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string namespace = 3 [json_name = "namespace"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // string namespace = 4 [json_name = "namespace"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_namespace_();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.Secret.namespace"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vault.v1alpha1.SecretData data = 5 [json_name = "data"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_warnings(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1224,54 +1238,60 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 project_id = 1 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
+  // uint32 organization_id = 1 [json_name = "organizationId"];
+  if (this->_internal_organization_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
   }
 
-  // string application_id = 2 [json_name = "applicationId"];
+  // uint32 project_id = 2 [json_name = "projectId"];
+  if (this->_internal_project_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  }
+
+  // string application_id = 3 [json_name = "applicationId"];
   if (!this->_internal_application_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vault.v1alpha1.Secret.application_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_application_id(), target);
+        3, this->_internal_application_id(), target);
   }
 
-  // string namespace = 3 [json_name = "namespace"];
+  // string namespace = 4 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vault.v1alpha1.Secret.namespace");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_namespace_(), target);
+        4, this->_internal_namespace_(), target);
   }
 
-  // .vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];
+  // .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
   if (this->_internal_has_metadata()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::metadata(this), target, stream);
+        5, _Internal::metadata(this), target, stream);
   }
 
-  // .vault.v1alpha1.SecretData data = 5 [json_name = "data"];
+  // .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
   if (this->_internal_has_data()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::data(this), target, stream);
+        6, _Internal::data(this), target, stream);
   }
 
-  // .vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];
+  // .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
   if (this->_internal_has_warnings()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::warnings(this), target, stream);
+        7, _Internal::warnings(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1290,42 +1310,49 @@ size_t Secret::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string application_id = 2 [json_name = "applicationId"];
+  // string application_id = 3 [json_name = "applicationId"];
   if (!this->_internal_application_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_application_id());
   }
 
-  // string namespace = 3 [json_name = "namespace"];
+  // string namespace = 4 [json_name = "namespace"];
   if (!this->_internal_namespace_().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_namespace_());
   }
 
-  // .vault.v1alpha1.Metadata metadata = 4 [json_name = "metadata"];
+  // .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
   if (this->_internal_has_metadata()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *metadata_);
   }
 
-  // .vault.v1alpha1.SecretData data = 5 [json_name = "data"];
+  // .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
   if (this->_internal_has_data()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *data_);
   }
 
-  // .vault.v1alpha1.SecretWarnings warnings = 6 [json_name = "warnings"];
+  // .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
   if (this->_internal_has_warnings()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *warnings_);
   }
 
-  // uint32 project_id = 1 [json_name = "projectId"];
+  // uint32 organization_id = 1 [json_name = "organizationId"];
+  if (this->_internal_organization_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_organization_id());
+  }
+
+  // uint32 project_id = 2 [json_name = "projectId"];
   if (this->_internal_project_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -1374,6 +1401,9 @@ void Secret::MergeFrom(const Secret& from) {
   }
   if (from._internal_has_warnings()) {
     _internal_mutable_warnings()->::vault::v1alpha1::SecretWarnings::MergeFrom(from._internal_warnings());
+  }
+  if (from._internal_organization_id() != 0) {
+    _internal_set_organization_id(from._internal_organization_id());
   }
   if (from._internal_project_id() != 0) {
     _internal_set_project_id(from._internal_project_id());

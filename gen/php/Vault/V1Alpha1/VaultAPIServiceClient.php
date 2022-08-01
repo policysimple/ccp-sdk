@@ -69,15 +69,15 @@ class VaultAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Vault\V1Alpha1\ListSecretRequest $argument input argument
+     * @param \Vault\V1Alpha1\DeleteOrganizationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function ListSecret(\Vault\V1Alpha1\ListSecretRequest $argument,
+    public function DeleteOrganization(\Vault\V1Alpha1\DeleteOrganizationRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/ListSecret',
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/DeleteOrganization',
         $argument,
-        ['\Vault\V1Alpha1\ListSecretResponse', 'decode'],
+        ['\Vault\V1Alpha1\DeleteOrganizationResponse', 'decode'],
         $metadata, $options);
     }
 

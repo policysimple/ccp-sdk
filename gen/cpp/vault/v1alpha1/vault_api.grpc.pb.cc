@@ -23,7 +23,7 @@ static const char* VaultAPIService_method_names[] = {
   "/vault.v1alpha1.VaultAPIService/UpdateSecret",
   "/vault.v1alpha1.VaultAPIService/DeleteSecret",
   "/vault.v1alpha1.VaultAPIService/GetSecret",
-  "/vault.v1alpha1.VaultAPIService/ListSecret",
+  "/vault.v1alpha1.VaultAPIService/DeleteOrganization",
 };
 
 std::unique_ptr< VaultAPIService::Stub> VaultAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -37,7 +37,7 @@ VaultAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_UpdateSecret_(VaultAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteSecret_(VaultAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetSecret_(VaultAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListSecret_(VaultAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteOrganization_(VaultAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status VaultAPIService::Stub::CreateSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::CreateSecretRequest& request, ::vault::v1alpha1::CreateSecretResponse* response) {
@@ -104,20 +104,20 @@ void VaultAPIService::Stub::experimental_async::GetSecret(::grpc::ClientContext*
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetSecretResponse>::Create(channel_.get(), cq, rpcmethod_GetSecret_, context, request, false);
 }
 
-::grpc::Status VaultAPIService::Stub::ListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::vault::v1alpha1::ListSecretResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListSecret_, context, request, response);
+::grpc::Status VaultAPIService::Stub::DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::vault::v1alpha1::DeleteOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteOrganization_, context, request, response);
 }
 
-void VaultAPIService::Stub::experimental_async::ListSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListSecret_, context, request, response, std::move(f));
+void VaultAPIService::Stub::experimental_async::DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>* VaultAPIService::Stub::AsyncListSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::ListSecretResponse>::Create(channel_.get(), cq, rpcmethod_ListSecret_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>* VaultAPIService::Stub::AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::DeleteOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOrganization_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::ListSecretResponse>* VaultAPIService::Stub::PrepareAsyncListSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::ListSecretRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::ListSecretResponse>::Create(channel_.get(), cq, rpcmethod_ListSecret_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>* VaultAPIService::Stub::PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::DeleteOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOrganization_, context, request, false);
 }
 
 VaultAPIService::Service::Service() {
@@ -144,8 +144,8 @@ VaultAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VaultAPIService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::ListSecretRequest, ::vault::v1alpha1::ListSecretResponse>(
-          std::mem_fn(&VaultAPIService::Service::ListSecret), this)));
+      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::DeleteOrganizationRequest, ::vault::v1alpha1::DeleteOrganizationResponse>(
+          std::mem_fn(&VaultAPIService::Service::DeleteOrganization), this)));
 }
 
 VaultAPIService::Service::~Service() {
@@ -179,7 +179,7 @@ VaultAPIService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status VaultAPIService::Service::ListSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::ListSecretRequest* request, ::vault::v1alpha1::ListSecretResponse* response) {
+::grpc::Status VaultAPIService::Service::DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

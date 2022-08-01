@@ -704,9 +704,10 @@ proto.vault.v1alpha1.Secret.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vault.v1alpha1.Secret.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    applicationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     metadata: (f = msg.getMetadata()) && proto.vault.v1alpha1.Metadata.toObject(includeInstance, f),
     data: (f = msg.getData()) && proto.vault.v1alpha1.SecretData.toObject(includeInstance, f),
     warnings: (f = msg.getWarnings()) && proto.vault.v1alpha1.SecretWarnings.toObject(includeInstance, f)
@@ -748,27 +749,31 @@ proto.vault.v1alpha1.Secret.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setProjectId(value);
+      msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setApplicationId(value);
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.setApplicationId(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 5:
       var value = new proto.vault.v1alpha1.Metadata;
       reader.readMessage(value,proto.vault.v1alpha1.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.vault.v1alpha1.SecretData;
       reader.readMessage(value,proto.vault.v1alpha1.SecretData.deserializeBinaryFromReader);
       msg.setData(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.vault.v1alpha1.SecretWarnings;
       reader.readMessage(value,proto.vault.v1alpha1.SecretWarnings.deserializeBinaryFromReader);
       msg.setWarnings(value);
@@ -802,31 +807,38 @@ proto.vault.v1alpha1.Secret.prototype.serializeBinary = function() {
  */
 proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProjectId();
+  f = message.getOrganizationId();
   if (f !== 0) {
     writer.writeUint32(
       1,
       f
     );
   }
-  f = message.getApplicationId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
       2,
       f
     );
   }
-  f = message.getNamespace();
+  f = message.getApplicationId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getMetadata();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.vault.v1alpha1.Metadata.serializeBinaryToWriter
     );
@@ -834,7 +846,7 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
   f = message.getData();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.vault.v1alpha1.SecretData.serializeBinaryToWriter
     );
@@ -842,7 +854,7 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
   f = message.getWarnings();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.vault.v1alpha1.SecretWarnings.serializeBinaryToWriter
     );
@@ -851,10 +863,10 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional uint32 project_id = 1;
+ * optional uint32 organization_id = 1;
  * @return {number}
  */
-proto.vault.v1alpha1.Secret.prototype.getProjectId = function() {
+proto.vault.v1alpha1.Secret.prototype.getOrganizationId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -863,34 +875,34 @@ proto.vault.v1alpha1.Secret.prototype.getProjectId = function() {
  * @param {number} value
  * @return {!proto.vault.v1alpha1.Secret} returns this
  */
-proto.vault.v1alpha1.Secret.prototype.setProjectId = function(value) {
+proto.vault.v1alpha1.Secret.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional string application_id = 2;
+ * optional uint32 project_id = 2;
+ * @return {number}
+ */
+proto.vault.v1alpha1.Secret.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.vault.v1alpha1.Secret} returns this
+ */
+proto.vault.v1alpha1.Secret.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string application_id = 3;
  * @return {string}
  */
 proto.vault.v1alpha1.Secret.prototype.getApplicationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vault.v1alpha1.Secret} returns this
- */
-proto.vault.v1alpha1.Secret.prototype.setApplicationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string namespace = 3;
- * @return {string}
- */
-proto.vault.v1alpha1.Secret.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -899,18 +911,36 @@ proto.vault.v1alpha1.Secret.prototype.getNamespace = function() {
  * @param {string} value
  * @return {!proto.vault.v1alpha1.Secret} returns this
  */
-proto.vault.v1alpha1.Secret.prototype.setNamespace = function(value) {
+proto.vault.v1alpha1.Secret.prototype.setApplicationId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional Metadata metadata = 4;
+ * optional string namespace = 4;
+ * @return {string}
+ */
+proto.vault.v1alpha1.Secret.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.Secret} returns this
+ */
+proto.vault.v1alpha1.Secret.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional Metadata metadata = 5;
  * @return {?proto.vault.v1alpha1.Metadata}
  */
 proto.vault.v1alpha1.Secret.prototype.getMetadata = function() {
   return /** @type{?proto.vault.v1alpha1.Metadata} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.Metadata, 4));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.Metadata, 5));
 };
 
 
@@ -919,7 +949,7 @@ proto.vault.v1alpha1.Secret.prototype.getMetadata = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -937,17 +967,17 @@ proto.vault.v1alpha1.Secret.prototype.clearMetadata = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasMetadata = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional SecretData data = 5;
+ * optional SecretData data = 6;
  * @return {?proto.vault.v1alpha1.SecretData}
  */
 proto.vault.v1alpha1.Secret.prototype.getData = function() {
   return /** @type{?proto.vault.v1alpha1.SecretData} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretData, 5));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretData, 6));
 };
 
 
@@ -956,7 +986,7 @@ proto.vault.v1alpha1.Secret.prototype.getData = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setData = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -974,17 +1004,17 @@ proto.vault.v1alpha1.Secret.prototype.clearData = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasData = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional SecretWarnings warnings = 6;
+ * optional SecretWarnings warnings = 7;
  * @return {?proto.vault.v1alpha1.SecretWarnings}
  */
 proto.vault.v1alpha1.Secret.prototype.getWarnings = function() {
   return /** @type{?proto.vault.v1alpha1.SecretWarnings} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretWarnings, 6));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretWarnings, 7));
 };
 
 
@@ -993,7 +1023,7 @@ proto.vault.v1alpha1.Secret.prototype.getWarnings = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setWarnings = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1011,7 +1041,7 @@ proto.vault.v1alpha1.Secret.prototype.clearWarnings = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasWarnings = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
