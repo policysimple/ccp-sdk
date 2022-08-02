@@ -75,7 +75,9 @@ proto.pipelines.environment.v1alpha1.Environment.toObject = function(includeInst
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     statusType: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    internalName: jspb.Message.getFieldWithDefault(msg, 7, "")
+    internalName: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -139,6 +141,14 @@ proto.pipelines.environment.v1alpha1.Environment.deserializeBinaryFromReader = f
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setInternalName(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatedAt(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUpdatedAt(value);
       break;
     default:
       reader.skipField();
@@ -215,6 +225,20 @@ proto.pipelines.environment.v1alpha1.Environment.serializeBinaryToWriter = funct
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -344,6 +368,42 @@ proto.pipelines.environment.v1alpha1.Environment.prototype.getInternalName = fun
  */
 proto.pipelines.environment.v1alpha1.Environment.prototype.setInternalName = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string created_at = 9;
+ * @return {string}
+ */
+proto.pipelines.environment.v1alpha1.Environment.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.environment.v1alpha1.Environment} returns this
+ */
+proto.pipelines.environment.v1alpha1.Environment.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string updated_at = 10;
+ * @return {string}
+ */
+proto.pipelines.environment.v1alpha1.Environment.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.environment.v1alpha1.Environment} returns this
+ */
+proto.pipelines.environment.v1alpha1.Environment.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

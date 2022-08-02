@@ -58,3 +58,28 @@ func GetOneApplicationById(applicationId string) (response *applicationpkgv1.Get
 	bylogs.LogInfo("response GetOneApplicationById: ", response)
 	return response, nil
 }
+
+func ListApplicationByOrganization(organizationId uint32) (response *applicationpkgv1.ListApplicationsByOrganizationResponse, err error) {
+	bylogs.LogInfo("client list application")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListApplicationsByOrganization(ctx, &applicationpkgv1.ListApplicationsByOrganizationRequest{
+		OrganizationId: organizationId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("client list application", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			err.Error(),
+		)
+	} else {
+		bylogs.LogInfo("client list application", response)
+	}
+	return response, nil
+}

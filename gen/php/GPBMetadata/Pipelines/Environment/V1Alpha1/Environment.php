@@ -16,8 +16,8 @@ class Environment
         }
         $pool->internalAddGeneratedFile(
             '
-þ
-0pipelines/environment/v1alpha1/environment.protopipelines.environment.v1alpha1"×
+¼
+0pipelines/environment/v1alpha1/environment.protopipelines.environment.v1alpha1"•
 Environment
 id (	Rid\'
 organization_id (RorganizationId
@@ -27,7 +27,12 @@ project_id (R	projectId
 active (Ractive
 status_type (	R
 statusType#
-internal_name (	RinternalNameBÇ
+internal_name (	RinternalName
+
+created_at	 (	R	createdAt
+
+updated_at
+ (	R	updatedAtBÇ
 (io.cuemby.pipelines.environment.v1alpha1BEnvironmentProtoPZ?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1¢PPXªPipelines.Environment.V1Alpha1ÊPipelines\\Environment\\V1Alpha1bproto3'
         , true);
 

@@ -55,7 +55,7 @@ message ListProjectsRegistryResponse {
 }
 
 message DeleteProjectRegistryRequest {
-    uint32 project_registry_id = 1;
+    string project_registry_id = 1;
 }
 
 message DeleteProjectRegistryResponse {

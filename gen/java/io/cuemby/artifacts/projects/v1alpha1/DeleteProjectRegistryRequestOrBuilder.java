@@ -8,8 +8,14 @@ public interface DeleteProjectRegistryRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 project_registry_id = 1 [json_name = "projectRegistryId"];</code>
+   * <code>string project_registry_id = 1 [json_name = "projectRegistryId"];</code>
    * @return The projectRegistryId.
    */
-  int getProjectRegistryId();
+  java.lang.String getProjectRegistryId();
+  /**
+   * <code>string project_registry_id = 1 [json_name = "projectRegistryId"];</code>
+   * @return The bytes for projectRegistryId.
+   */
+  com.google.protobuf.ByteString
+      getProjectRegistryIdBytes();
 }

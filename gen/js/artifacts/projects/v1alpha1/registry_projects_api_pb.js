@@ -1419,7 +1419,7 @@ proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.prototype.toObjec
  */
 proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectRegistryId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    projectRegistryId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1457,7 +1457,7 @@ proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.deserializeBinary
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectRegistryId(value);
       break;
     default:
@@ -1490,8 +1490,8 @@ proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.prototype.seriali
 proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getProjectRegistryId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1500,20 +1500,20 @@ proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.serializeBinaryTo
 
 
 /**
- * optional uint32 project_registry_id = 1;
- * @return {number}
+ * optional string project_registry_id = 1;
+ * @return {string}
  */
 proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.prototype.getProjectRegistryId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest} returns this
  */
 proto.artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.prototype.setProjectRegistryId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

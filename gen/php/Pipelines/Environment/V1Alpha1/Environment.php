@@ -43,6 +43,14 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string internal_name = 7 [json_name = "internalName"];</code>
      */
     protected $internal_name = '';
+    /**
+     * Generated from protobuf field <code>string created_at = 9 [json_name = "createdAt"];</code>
+     */
+    protected $created_at = '';
+    /**
+     * Generated from protobuf field <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     */
+    protected $updated_at = '';
 
     /**
      * Constructor.
@@ -57,6 +65,8 @@ class Environment extends \Google\Protobuf\Internal\Message
      *     @type bool $active
      *     @type string $status_type
      *     @type string $internal_name
+     *     @type string $created_at
+     *     @type string $updated_at
      * }
      */
     public function __construct($data = NULL) {
@@ -214,6 +224,50 @@ class Environment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->internal_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 9 [json_name = "createdAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_at = $var;
 
         return $this;
     }

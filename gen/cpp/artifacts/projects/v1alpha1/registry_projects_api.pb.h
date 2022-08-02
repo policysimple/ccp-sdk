@@ -1231,13 +1231,18 @@ class DeleteProjectRegistryRequest final :
   enum : int {
     kProjectRegistryIdFieldNumber = 1,
   };
-  // uint32 project_registry_id = 1 [json_name = "projectRegistryId"];
+  // string project_registry_id = 1 [json_name = "projectRegistryId"];
   void clear_project_registry_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_registry_id() const;
-  void set_project_registry_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const std::string& project_registry_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_registry_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_registry_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_registry_id();
+  void set_allocated_project_registry_id(std::string* project_registry_id);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_registry_id() const;
-  void _internal_set_project_registry_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const std::string& _internal_project_registry_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_registry_id(const std::string& value);
+  std::string* _internal_mutable_project_registry_id();
   public:
 
   // @@protoc_insertion_point(class_scope:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest)
@@ -1247,7 +1252,7 @@ class DeleteProjectRegistryRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_registry_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_registry_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fprojects_2fv1alpha1_2fregistry_5fprojects_5fapi_2eproto;
 };
@@ -2161,24 +2166,50 @@ inline void ListProjectsRegistryResponse::set_allocated_status(std::string* stat
 
 // DeleteProjectRegistryRequest
 
-// uint32 project_registry_id = 1 [json_name = "projectRegistryId"];
+// string project_registry_id = 1 [json_name = "projectRegistryId"];
 inline void DeleteProjectRegistryRequest::clear_project_registry_id() {
-  project_registry_id_ = 0u;
+  project_registry_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteProjectRegistryRequest::_internal_project_registry_id() const {
-  return project_registry_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteProjectRegistryRequest::project_registry_id() const {
+inline const std::string& DeleteProjectRegistryRequest::project_registry_id() const {
   // @@protoc_insertion_point(field_get:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id)
   return _internal_project_registry_id();
 }
-inline void DeleteProjectRegistryRequest::_internal_set_project_registry_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  project_registry_id_ = value;
-}
-inline void DeleteProjectRegistryRequest::set_project_registry_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_project_registry_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteProjectRegistryRequest::set_project_registry_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_registry_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id)
+}
+inline std::string* DeleteProjectRegistryRequest::mutable_project_registry_id() {
+  std::string* _s = _internal_mutable_project_registry_id();
+  // @@protoc_insertion_point(field_mutable:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id)
+  return _s;
+}
+inline const std::string& DeleteProjectRegistryRequest::_internal_project_registry_id() const {
+  return project_registry_id_.Get();
+}
+inline void DeleteProjectRegistryRequest::_internal_set_project_registry_id(const std::string& value) {
+  
+  project_registry_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteProjectRegistryRequest::_internal_mutable_project_registry_id() {
+  
+  return project_registry_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteProjectRegistryRequest::release_project_registry_id() {
+  // @@protoc_insertion_point(field_release:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id)
+  return project_registry_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteProjectRegistryRequest::set_allocated_project_registry_id(std::string* project_registry_id) {
+  if (project_registry_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_registry_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_registry_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id)
 }
 
 // -------------------------------------------------------------------

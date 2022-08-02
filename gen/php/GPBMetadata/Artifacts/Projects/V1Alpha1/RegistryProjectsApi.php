@@ -44,7 +44,7 @@ withDetail"ê
 project_registry (2-.artifacts.projects.v1alpha1.ProjectsRegistryRprojectRegistry
 status (	Rstatus"N
 DeleteProjectRegistryRequest.
-project_registry_id (RprojectRegistryId"7
+project_registry_id (	RprojectRegistryId"7
 DeleteProjectRegistryResponse
 status (	Rstatus2›
 RegistryProjectsAPIServiceé

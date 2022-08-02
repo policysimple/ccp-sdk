@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteProjectRegistryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 project_registry_id = 1 [json_name = "projectRegistryId"];</code>
+     * Generated from protobuf field <code>string project_registry_id = 1 [json_name = "projectRegistryId"];</code>
      */
-    protected $project_registry_id = 0;
+    protected $project_registry_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteProjectRegistryRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $project_registry_id
+     *     @type string $project_registry_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DeleteProjectRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_registry_id = 1 [json_name = "projectRegistryId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string project_registry_id = 1 [json_name = "projectRegistryId"];</code>
+     * @return string
      */
     public function getProjectRegistryId()
     {
@@ -42,13 +42,13 @@ class DeleteProjectRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_registry_id = 1 [json_name = "projectRegistryId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string project_registry_id = 1 [json_name = "projectRegistryId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setProjectRegistryId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->project_registry_id = $var;
 
         return $this;

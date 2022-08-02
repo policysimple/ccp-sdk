@@ -36,8 +36,8 @@ func init() {
 	})
 }
 
-func CreateEnvironment(organizationId uint32, projectId uint32, name string, userId string) (response *environmentpkgv1.CreateEnvironmentResponse, err error) {
-	bylogs.LogInfo("Client: Create environment")
+func CreateEnvironment(in *environmentpkgv1.CreateEnvironmentRequest) (response *environmentpkgv1.CreateEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: create environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -45,27 +45,20 @@ func CreateEnvironment(organizationId uint32, projectId uint32, name string, use
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.CreateEnvironment(ctx, &environmentpkgv1.CreateEnvironmentRequest{
-		Environment: &environmentpkgv1.Environment{
-			OrganizationId: organizationId,
-			ProjectId:      projectId,
-			Name:           name,
-		},
-		UserId: userId,
-	})
+	response, err = client.CreateEnvironment(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: Error create environment", err)
+		bylogs.LogErr("client: error create environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create environment", err),
+			fmt.Sprintf("%s: %v", "error create environment", err),
 		)
 	}
 	return response, nil
 }
 
-func ListEnvironment(projectId uint32) (response *environmentpkgv1.ListEnvironmentResponse, err error) {
-	bylogs.LogInfo("Client: List environment")
+func ListEnvironment(in *environmentpkgv1.ListEnvironmentRequest) (response *environmentpkgv1.ListEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: list environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -73,22 +66,20 @@ func ListEnvironment(projectId uint32) (response *environmentpkgv1.ListEnvironme
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.ListEnvironment(ctx, &environmentpkgv1.ListEnvironmentRequest{
-		ProjectId: projectId,
-	})
+	response, err = client.ListEnvironment(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: Error list environment", err)
+		bylogs.LogErr("client: error list environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list environment", err),
+			fmt.Sprintf("%s: %v", "error list environment", err),
 		)
 	}
 	return response, nil
 }
 
-func DeleteEnvironment(environmentId string, userId string) (response *environmentpkgv1.DeleteEnvironmentResponse, err error) {
-	bylogs.LogInfo("Client: Delete environment")
+func DeleteEnvironment(in *environmentpkgv1.DeleteEnvironmentRequest) (response *environmentpkgv1.DeleteEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: delete environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -96,23 +87,20 @@ func DeleteEnvironment(environmentId string, userId string) (response *environme
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.DeleteEnvironment(ctx, &environmentpkgv1.DeleteEnvironmentRequest{
-		EnvironmentId: environmentId,
-		UserId:        userId,
-	})
+	response, err = client.DeleteEnvironment(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: Error delete environment", err)
+		bylogs.LogErr("client: error delete environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete environment", err),
+			fmt.Sprintf("%s: %v", "error delete environment", err),
 		)
 	}
 	return response, nil
 }
 
-func GetOneEnvironment(environmentId string) (response *environmentpkgv1.GetOneEnvironmentResponse, err error) {
-	bylogs.LogInfo("Client: Get One environment")
+func GetOneEnvironment(in *environmentpkgv1.GetOneEnvironmentRequest) (response *environmentpkgv1.GetOneEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: get one environment")
 	d, err := time.ParseDuration(environmentServiceTimeout)
 	if err != nil {
 		return
@@ -120,15 +108,13 @@ func GetOneEnvironment(environmentId string) (response *environmentpkgv1.GetOneE
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.GetOneEnvironment(ctx, &environmentpkgv1.GetOneEnvironmentRequest{
-		EnvironmentId: environmentId,
-	})
+	response, err = client.GetOneEnvironment(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: Error get one environment", err)
+		bylogs.LogErr("client: error get one environment", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get one environment", err),
+			fmt.Sprintf("%s: %v", "error get one environment", err),
 		)
 	}
 	return response, nil
