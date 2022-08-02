@@ -213,10 +213,8 @@ message ListProjectsRequest {
 
 message ListProjectsResponse {
     payment.v1alpha1.Customer customer = 1;
-  
-    string status = 3;
+    string status = 2;
 }
-
 message GetProjectRequest {
     string organization_id = 1;
     string project_id = 2;
