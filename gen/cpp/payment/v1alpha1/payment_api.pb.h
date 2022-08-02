@@ -6047,10 +6047,10 @@ class ListProjectsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 3,
+    kStatusFieldNumber = 2,
     kCustomerFieldNumber = 1,
   };
-  // string status = 3 [json_name = "status"];
+  // string status = 2 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10805,7 +10805,7 @@ inline void ListProjectsResponse::set_allocated_customer(::payment::v1alpha1::Cu
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListProjectsResponse.customer)
 }
 
-// string status = 3 [json_name = "status"];
+// string status = 2 [json_name = "status"];
 inline void ListProjectsResponse::clear_status() {
   status_.ClearToEmpty();
 }

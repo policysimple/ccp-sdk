@@ -18,7 +18,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $customer = null;
     /**
-     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -70,7 +70,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -79,7 +79,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
