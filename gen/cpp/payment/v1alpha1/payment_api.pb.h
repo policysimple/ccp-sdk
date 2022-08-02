@@ -6372,7 +6372,7 @@ class GetProjectResponse final :
 
   enum : int {
     kStatusFieldNumber = 2,
-    kProjectFieldNumber = 1,
+    kCustomerFieldNumber = 1,
   };
   // string status = 2 [json_name = "status"];
   void clear_status();
@@ -6388,23 +6388,23 @@ class GetProjectResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // .payment.v1alpha1.Project project = 1 [json_name = "project"];
-  bool has_project() const;
+  // .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+  bool has_customer() const;
   private:
-  bool _internal_has_project() const;
+  bool _internal_has_customer() const;
   public:
-  void clear_project();
-  const ::payment::v1alpha1::Project& project() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Project* release_project();
-  ::payment::v1alpha1::Project* mutable_project();
-  void set_allocated_project(::payment::v1alpha1::Project* project);
+  void clear_customer();
+  const ::payment::v1alpha1::Customer& customer() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Customer* release_customer();
+  ::payment::v1alpha1::Customer* mutable_customer();
+  void set_allocated_customer(::payment::v1alpha1::Customer* customer);
   private:
-  const ::payment::v1alpha1::Project& _internal_project() const;
-  ::payment::v1alpha1::Project* _internal_mutable_project();
+  const ::payment::v1alpha1::Customer& _internal_customer() const;
+  ::payment::v1alpha1::Customer* _internal_mutable_customer();
   public:
-  void unsafe_arena_set_allocated_project(
-      ::payment::v1alpha1::Project* project);
-  ::payment::v1alpha1::Project* unsafe_arena_release_project();
+  void unsafe_arena_set_allocated_customer(
+      ::payment::v1alpha1::Customer* customer);
+  ::payment::v1alpha1::Customer* unsafe_arena_release_customer();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetProjectResponse)
  private:
@@ -6414,7 +6414,7 @@ class GetProjectResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::payment::v1alpha1::Project* project_;
+  ::payment::v1alpha1::Customer* customer_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -10951,39 +10951,39 @@ inline void GetProjectRequest::set_allocated_project_id(std::string* project_id)
 
 // GetProjectResponse
 
-// .payment.v1alpha1.Project project = 1 [json_name = "project"];
-inline bool GetProjectResponse::_internal_has_project() const {
-  return this != internal_default_instance() && project_ != nullptr;
+// .payment.v1alpha1.Customer customer = 1 [json_name = "customer"];
+inline bool GetProjectResponse::_internal_has_customer() const {
+  return this != internal_default_instance() && customer_ != nullptr;
 }
-inline bool GetProjectResponse::has_project() const {
-  return _internal_has_project();
+inline bool GetProjectResponse::has_customer() const {
+  return _internal_has_customer();
 }
-inline const ::payment::v1alpha1::Project& GetProjectResponse::_internal_project() const {
-  const ::payment::v1alpha1::Project* p = project_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Project&>(
-      ::payment::v1alpha1::_Project_default_instance_);
+inline const ::payment::v1alpha1::Customer& GetProjectResponse::_internal_customer() const {
+  const ::payment::v1alpha1::Customer* p = customer_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Customer&>(
+      ::payment::v1alpha1::_Customer_default_instance_);
 }
-inline const ::payment::v1alpha1::Project& GetProjectResponse::project() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetProjectResponse.project)
-  return _internal_project();
+inline const ::payment::v1alpha1::Customer& GetProjectResponse::customer() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.GetProjectResponse.customer)
+  return _internal_customer();
 }
-inline void GetProjectResponse::unsafe_arena_set_allocated_project(
-    ::payment::v1alpha1::Project* project) {
+inline void GetProjectResponse::unsafe_arena_set_allocated_customer(
+    ::payment::v1alpha1::Customer* customer) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
   }
-  project_ = project;
-  if (project) {
+  customer_ = customer;
+  if (customer) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.GetProjectResponse.project)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.GetProjectResponse.customer)
 }
-inline ::payment::v1alpha1::Project* GetProjectResponse::release_project() {
+inline ::payment::v1alpha1::Customer* GetProjectResponse::release_customer() {
   
-  ::payment::v1alpha1::Project* temp = project_;
-  project_ = nullptr;
+  ::payment::v1alpha1::Customer* temp = customer_;
+  customer_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -10995,46 +10995,46 @@ inline ::payment::v1alpha1::Project* GetProjectResponse::release_project() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::payment::v1alpha1::Project* GetProjectResponse::unsafe_arena_release_project() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetProjectResponse.project)
+inline ::payment::v1alpha1::Customer* GetProjectResponse::unsafe_arena_release_customer() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.GetProjectResponse.customer)
   
-  ::payment::v1alpha1::Project* temp = project_;
-  project_ = nullptr;
+  ::payment::v1alpha1::Customer* temp = customer_;
+  customer_ = nullptr;
   return temp;
 }
-inline ::payment::v1alpha1::Project* GetProjectResponse::_internal_mutable_project() {
+inline ::payment::v1alpha1::Customer* GetProjectResponse::_internal_mutable_customer() {
   
-  if (project_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::Project>(GetArenaForAllocation());
-    project_ = p;
+  if (customer_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Customer>(GetArenaForAllocation());
+    customer_ = p;
   }
-  return project_;
+  return customer_;
 }
-inline ::payment::v1alpha1::Project* GetProjectResponse::mutable_project() {
-  ::payment::v1alpha1::Project* _msg = _internal_mutable_project();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetProjectResponse.project)
+inline ::payment::v1alpha1::Customer* GetProjectResponse::mutable_customer() {
+  ::payment::v1alpha1::Customer* _msg = _internal_mutable_customer();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.GetProjectResponse.customer)
   return _msg;
 }
-inline void GetProjectResponse::set_allocated_project(::payment::v1alpha1::Project* project) {
+inline void GetProjectResponse::set_allocated_customer(::payment::v1alpha1::Customer* customer) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer_);
   }
-  if (project) {
+  if (customer) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(customer));
     if (message_arena != submessage_arena) {
-      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, project, submessage_arena);
+      customer = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, customer, submessage_arena);
     }
     
   } else {
     
   }
-  project_ = project;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetProjectResponse.project)
+  customer_ = customer;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.GetProjectResponse.customer)
 }
 
 // string status = 2 [json_name = "status"];

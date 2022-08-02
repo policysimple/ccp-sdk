@@ -206,6 +206,7 @@ message ListPaymentResponse {
     string status = 2;
 }
 
+
 message ListProjectsRequest {
     uint32 organization_id = 1;
 }
@@ -222,7 +223,7 @@ message GetProjectRequest {
 }
 
 message GetProjectResponse {
-    payment.v1alpha1.Project project = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
