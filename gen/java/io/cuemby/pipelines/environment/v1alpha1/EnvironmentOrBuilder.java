@@ -72,4 +72,28 @@ public interface EnvironmentOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInternalNameBytes();
+
+  /**
+   * <code>string created_at = 9 [json_name = "createdAt"];</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 9 [json_name = "createdAt"];</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
+
+  /**
+   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+   * @return The updatedAt.
+   */
+  java.lang.String getUpdatedAt();
+  /**
+   * <code>string updated_at = 10 [json_name = "updatedAt"];</code>
+   * @return The bytes for updatedAt.
+   */
+  com.google.protobuf.ByteString
+      getUpdatedAtBytes();
 }

@@ -103,7 +103,7 @@ struct ListProjectsRegistryResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListProjectsRegistryResponseDefaultTypeInternal _ListProjectsRegistryResponse_default_instance_;
 constexpr DeleteProjectRegistryRequest::DeleteProjectRegistryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : project_registry_id_(0u){}
+  : project_registry_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteProjectRegistryRequestDefaultTypeInternal {
   constexpr DeleteProjectRegistryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -243,7 +243,7 @@ const char descriptor_table_protodef_artifacts_2fprojects_2fv1alpha1_2fregistry_
   "ts.v1alpha1.ProjectsRegistryR\017projectReg"
   "istry\022\026\n\006status\030\002 \001(\tR\006status\"N\n\034DeleteP"
   "rojectRegistryRequest\022.\n\023project_registr"
-  "y_id\030\001 \001(\rR\021projectRegistryId\"7\n\035DeleteP"
+  "y_id\030\001 \001(\tR\021projectRegistryId\"7\n\035DeleteP"
   "rojectRegistryResponse\022\026\n\006status\030\002 \001(\tR\006"
   "status2\335\004\n\032RegistryProjectsAPIService\022\216\001"
   "\n\025CreateProjectRegistry\0229.artifacts.proj"
@@ -1840,12 +1840,16 @@ DeleteProjectRegistryRequest::DeleteProjectRegistryRequest(::PROTOBUF_NAMESPACE_
 DeleteProjectRegistryRequest::DeleteProjectRegistryRequest(const DeleteProjectRegistryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  project_registry_id_ = from.project_registry_id_;
+  project_registry_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_registry_id().empty()) {
+    project_registry_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_registry_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:artifacts.projects.v1alpha1.DeleteProjectRegistryRequest)
 }
 
 inline void DeleteProjectRegistryRequest::SharedCtor() {
-project_registry_id_ = 0u;
+project_registry_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteProjectRegistryRequest::~DeleteProjectRegistryRequest() {
@@ -1857,6 +1861,7 @@ DeleteProjectRegistryRequest::~DeleteProjectRegistryRequest() {
 
 inline void DeleteProjectRegistryRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  project_registry_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteProjectRegistryRequest::ArenaDtor(void* object) {
@@ -1875,7 +1880,7 @@ void DeleteProjectRegistryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  project_registry_id_ = 0u;
+  project_registry_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1885,10 +1890,12 @@ const char* DeleteProjectRegistryRequest::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 project_registry_id = 1 [json_name = "projectRegistryId"];
+      // string project_registry_id = 1 [json_name = "projectRegistryId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          project_registry_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_project_registry_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1921,10 +1928,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 project_registry_id = 1 [json_name = "projectRegistryId"];
-  if (this->_internal_project_registry_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_registry_id(), target);
+  // string project_registry_id = 1 [json_name = "projectRegistryId"];
+  if (!this->_internal_project_registry_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_registry_id().data(), static_cast<int>(this->_internal_project_registry_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.projects.v1alpha1.DeleteProjectRegistryRequest.project_registry_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_project_registry_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1943,10 +1954,10 @@ size_t DeleteProjectRegistryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 project_registry_id = 1 [json_name = "projectRegistryId"];
-  if (this->_internal_project_registry_id() != 0) {
+  // string project_registry_id = 1 [json_name = "projectRegistryId"];
+  if (!this->_internal_project_registry_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_project_registry_id());
   }
 
@@ -1978,7 +1989,7 @@ void DeleteProjectRegistryRequest::MergeFrom(const DeleteProjectRegistryRequest&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_project_registry_id() != 0) {
+  if (!from._internal_project_registry_id().empty()) {
     _internal_set_project_registry_id(from._internal_project_registry_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1998,7 +2009,11 @@ bool DeleteProjectRegistryRequest::IsInitialized() const {
 void DeleteProjectRegistryRequest::InternalSwap(DeleteProjectRegistryRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(project_registry_id_, other->project_registry_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_registry_id_, GetArenaForAllocation(),
+      &other->project_registry_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteProjectRegistryRequest::GetMetadata() const {

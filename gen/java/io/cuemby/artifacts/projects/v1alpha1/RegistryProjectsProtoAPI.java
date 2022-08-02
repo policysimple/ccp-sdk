@@ -91,7 +91,7 @@ public final class RegistryProjectsProtoAPI {
       "ts.v1alpha1.ProjectsRegistryR\017projectReg" +
       "istry\022\026\n\006status\030\002 \001(\tR\006status\"N\n\034DeleteP" +
       "rojectRegistryRequest\022.\n\023project_registr" +
-      "y_id\030\001 \001(\rR\021projectRegistryId\"7\n\035DeleteP" +
+      "y_id\030\001 \001(\tR\021projectRegistryId\"7\n\035DeleteP" +
       "rojectRegistryResponse\022\026\n\006status\030\002 \001(\tR\006" +
       "status2\335\004\n\032RegistryProjectsAPIService\022\216\001" +
       "\n\025CreateProjectRegistry\0229.artifacts.proj" +

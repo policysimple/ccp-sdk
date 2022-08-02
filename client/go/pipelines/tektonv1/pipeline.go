@@ -36,44 +36,8 @@ func init() {
 	})
 }
 
-type ParamsStruct struct {
-	Name        string
-	ValueType   string
-	ValueString string
-	ValueArray  []string
-}
-
-type TaskParamsStruct struct {
-	ParamName       string
-	ParamValueType  string
-	ParamValue      string
-	ParamValueArray []string
-}
-
-type WorkspaceStruct struct {
-	Name string
-	Main string
-	Type string
-}
-
-type TaskStruct struct {
-	Id             string
-	TaskName       string
-	TaskRefName    string
-	TaskKind       string
-	TaskRunAfter   []string
-	TaskWorkspaces []WorkspaceStruct
-	TaskParams     []TaskParamsStruct
-	Description    string
-}
-
-func CreateTektonPipeline(
-	organizationId uint32, projectId uint32, name string, namespace string, instanceType string,
-	integration, environmentVariables, commands, secrets map[string]string,
-	workspacesMain []WorkspaceStruct, params []ParamsStruct, tasks []TaskStruct, userId string,
-	labels map[string]string, trafficType int32,
-) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
-	bylogs.LogInfo("Client: Create tekton pipeline")
+func CreateTektonPipeline(in *tektonPipelinepkgv1.CreateTektonPipelineRequest) (response *tektonPipelinepkgv1.CreateTektonPipelineResponse, err error) {
+	bylogs.LogInfo("client: create tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -81,112 +45,20 @@ func CreateTektonPipeline(
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	var arrayTasks []*tektonPipelinepkgv1.Task
-	var arrayParams []*tektonPipelinepkgv1.Params
-	var arrayWorkspacesMain []*tektonPipelinepkgv1.Workspaces
-
-	if len(tasks) == 0 {
-		bylogs.LogErr("Client: No tasks found")
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: ", "Tasks is required"),
-		)
-	}
-
-	for _, item := range workspacesMain {
-		arrayWorkspacesMain = append(arrayWorkspacesMain, &tektonPipelinepkgv1.Workspaces{
-			Name: item.Name,
-			Main: item.Main,
-			Type: item.Type,
-		})
-	}
-
-	for _, item := range params {
-
-		if item.ValueType == "string" {
-			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
-				Name:        item.Name,
-				ValueType:   item.ValueType,
-				ValueString: item.ValueString,
-			})
-		}
-
-		if item.ValueType == "array" {
-			arrayParams = append(arrayParams, &tektonPipelinepkgv1.Params{
-				Name:       item.Name,
-				ValueType:  item.ValueType,
-				ValueArray: item.ValueArray,
-			})
-		}
-	}
-
-	for _, item := range tasks {
-		var arrayTaskParameters []*tektonPipelinepkgv1.TaskParams
-		var arrayWorkspaces []*tektonPipelinepkgv1.Workspaces
-		for _, itemDetail := range item.TaskParams {
-			arrayTaskParameters = append(arrayTaskParameters, &tektonPipelinepkgv1.TaskParams{
-				ParamName:       itemDetail.ParamName,
-				ParamValueType:  itemDetail.ParamValueType,
-				ParamValue:      itemDetail.ParamValue,
-				ParamValueArray: itemDetail.ParamValueArray,
-			})
-		}
-
-		for _, itemDetail := range item.TaskWorkspaces {
-			arrayWorkspaces = append(arrayWorkspaces, &tektonPipelinepkgv1.Workspaces{
-				Name: itemDetail.Name,
-				Main: itemDetail.Main,
-				Type: itemDetail.Type,
-			})
-		}
-
-		arrayTasks = append(arrayTasks, &tektonPipelinepkgv1.Task{
-			TaskName:     item.TaskName,
-			TaskRefName:  item.TaskRefName,
-			TaskKind:     item.TaskKind,
-			TaskRunAfter: item.TaskRunAfter,
-			Workspaces:   arrayWorkspaces,
-			TaskParams:   arrayTaskParameters,
-			Description:  item.Description,
-		})
-	}
-
-	dataPipeline := &tektonPipelinepkgv1.CreateTektonPipelineRequest{
-		TektonPipeline: &tektonPipelinepkgv1.Pipeline{
-			OrganizationId:       organizationId,
-			ProjectId:            projectId,
-			TypeMetaKind:         "Pipeline",
-			TypeMetaApiVersion:   "tekton.dev/v1beta1",
-			InstanceType:         instanceType,
-			ObjectMetaName:       name,
-			ObjectMetaNamespace:  namespace,
-			WorkspacesMain:       arrayWorkspacesMain,
-			Params:               arrayParams,
-			Tasks:                arrayTasks,
-			Integration:          integration,
-			EnvironmentVariables: environmentVariables,
-			Commands:             commands,
-			Secrets:              secrets,
-			Labels:               labels,
-			TrafficType:          trafficType,
-		},
-		UserId: userId,
-	}
-
-	response, err = client.CreateTektonPipeline(ctx, dataPipeline)
+	response, err = client.CreateTektonPipeline(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: Create tekton pipeline failed", err)
+		bylogs.LogErr("client: create tekton pipeline failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create tekton pipeline", err),
+			fmt.Sprintf("%s: %v", "error create tekton pipeline", err),
 		)
 	}
 	return response, nil
 }
 
-func ListTektonPipeline(projectId uint32) (response *tektonPipelinepkgv1.ListTektonPipelineResponse, err error) {
-	bylogs.LogInfo("Client: List tekton pipeline")
+func ListTektonPipeline(in *tektonPipelinepkgv1.ListTektonPipelineRequest) (response *tektonPipelinepkgv1.ListTektonPipelineResponse, err error) {
+	bylogs.LogInfo("client: list tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -194,22 +66,20 @@ func ListTektonPipeline(projectId uint32) (response *tektonPipelinepkgv1.ListTek
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.ListTektonPipeline(ctx, &tektonPipelinepkgv1.ListTektonPipelineRequest{
-		ProjectId: projectId,
-	})
+	response, err = client.ListTektonPipeline(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: List tekton pipeline failed", err)
+		bylogs.LogErr("client: list tekton pipeline failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list tekton pipeline", err),
+			fmt.Sprintf("%s: %v", "error list tekton pipeline", err),
 		)
 	}
 	return response, nil
 }
 
-func DeleteTektonPipeline(tektonPipelineId string, userId string) (response *tektonPipelinepkgv1.DeleteTektonPipelineResponse, err error) {
-	bylogs.LogInfo("Client: Delete tekton pipeline")
+func DeleteTektonPipeline(in *tektonPipelinepkgv1.DeleteTektonPipelineRequest) (response *tektonPipelinepkgv1.DeleteTektonPipelineResponse, err error) {
+	bylogs.LogInfo("client: delete tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -217,23 +87,20 @@ func DeleteTektonPipeline(tektonPipelineId string, userId string) (response *tek
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.DeleteTektonPipeline(ctx, &tektonPipelinepkgv1.DeleteTektonPipelineRequest{
-		TektonPipelineId: tektonPipelineId,
-		UserId:           userId,
-	})
+	response, err = client.DeleteTektonPipeline(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: Delete tekton pipeline failed", err)
+		bylogs.LogErr("client: delete tekton pipeline failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete tekton pipeline", err),
+			fmt.Sprintf("%s: %v", "error delete tekton pipeline", err),
 		)
 	}
 	return response, nil
 }
 
-func ListTektonTask() (response *tektonPipelinepkgv1.ListTektonTaskResponse, err error) {
-	bylogs.LogInfo("Client: List tekton task")
+func ListTektonTask(in *tektonPipelinepkgv1.ListTektonTaskRequest) (response *tektonPipelinepkgv1.ListTektonTaskResponse, err error) {
+	bylogs.LogInfo("client: list tekton task")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
 		return
@@ -241,13 +108,13 @@ func ListTektonTask() (response *tektonPipelinepkgv1.ListTektonTaskResponse, err
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.ListTektonTask(ctx, &tektonPipelinepkgv1.ListTektonTaskRequest{})
+	response, err = client.ListTektonTask(ctx, in)
 
 	if err != nil {
-		bylogs.LogErr("Client: List tekton task failed", err)
+		bylogs.LogErr("client: list tekton task failed", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list tekton task", err),
+			fmt.Sprintf("%s: %v", "error list tekton task", err),
 		)
 	}
 	return response, nil

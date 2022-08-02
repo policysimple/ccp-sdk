@@ -21,15 +21,12 @@ private static final long serialVersionUID = 0L;
   }
   private Pipeline() {
     id_ = "";
-    typeMetaKind_ = "";
-    typeMetaApiVersion_ = "";
     objectMetaName_ = "";
     objectMetaNamespace_ = "";
     params_ = java.util.Collections.emptyList();
     tasks_ = java.util.Collections.emptyList();
     statusType_ = "";
     instanceType_ = "";
-    workspacesMain_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -82,28 +79,16 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            typeMetaKind_ = s;
+            objectMetaName_ = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            typeMetaApiVersion_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            objectMetaName_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             objectMetaNamespace_ = s;
             break;
           }
-          case 66: {
+          case 50: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>();
               mutable_bitField0_ |= 0x00000001;
@@ -112,7 +97,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Params.parser(), extensionRegistry));
             break;
           }
-          case 74: {
+          case 58: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               tasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
               mutable_bitField0_ |= 0x00000002;
@@ -121,13 +106,13 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
             break;
           }
-          case 82: {
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
             statusType_ = s;
             break;
           }
-          case 90: {
+          case 74: {
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               integration_ = com.google.protobuf.MapField.newMapField(
                   IntegrationDefaultEntryHolder.defaultEntry);
@@ -140,7 +125,7 @@ private static final long serialVersionUID = 0L;
                 integration__.getKey(), integration__.getValue());
             break;
           }
-          case 98: {
+          case 82: {
             if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               environmentVariables_ = com.google.protobuf.MapField.newMapField(
                   EnvironmentVariablesDefaultEntryHolder.defaultEntry);
@@ -153,7 +138,7 @@ private static final long serialVersionUID = 0L;
                 environmentVariables__.getKey(), environmentVariables__.getValue());
             break;
           }
-          case 106: {
+          case 90: {
             if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               commands_ = com.google.protobuf.MapField.newMapField(
                   CommandsDefaultEntryHolder.defaultEntry);
@@ -166,7 +151,7 @@ private static final long serialVersionUID = 0L;
                 commands__.getKey(), commands__.getValue());
             break;
           }
-          case 114: {
+          case 98: {
             if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               secrets_ = com.google.protobuf.MapField.newMapField(
                   SecretsDefaultEntryHolder.defaultEntry);
@@ -179,42 +164,38 @@ private static final long serialVersionUID = 0L;
                 secrets__.getKey(), secrets__.getValue());
             break;
           }
-          case 122: {
+          case 106: {
             if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
+              extraArgs_ = com.google.protobuf.MapField.newMapField(
+                  ExtraArgsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000040;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
+            extraArgs__ = input.readMessage(
+                ExtraArgsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            extraArgs_.getMutableMap().put(
+                extraArgs__.getKey(), extraArgs__.getValue());
             break;
           }
-          case 128: {
-
-            active_ = input.readBool();
-            break;
-          }
-          case 138: {
+          case 114: {
             java.lang.String s = input.readStringRequireUtf8();
 
             instanceType_ = s;
             break;
           }
-          case 146: {
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-              workspacesMain_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Workspaces>();
-              mutable_bitField0_ |= 0x00000080;
-            }
-            workspacesMain_.add(
-                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Workspaces.parser(), extensionRegistry));
-            break;
-          }
-          case 152: {
+          case 120: {
 
             trafficType_ = input.readInt32();
+            break;
+          }
+          case 128: {
+
+            isDefault_ = input.readBool();
+            break;
+          }
+          case 136: {
+
+            active_ = input.readBool();
             break;
           }
           default: {
@@ -238,9 +219,6 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tasks_ = java.util.Collections.unmodifiableList(tasks_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        workspacesMain_ = java.util.Collections.unmodifiableList(workspacesMain_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -255,16 +233,16 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 11:
+      case 9:
         return internalGetIntegration();
-      case 12:
+      case 10:
         return internalGetEnvironmentVariables();
-      case 13:
+      case 11:
         return internalGetCommands();
-      case 14:
+      case 12:
         return internalGetSecrets();
-      case 15:
-        return internalGetLabels();
+      case 13:
+        return internalGetExtraArgs();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -338,86 +316,10 @@ private static final long serialVersionUID = 0L;
     return projectId_;
   }
 
-  public static final int TYPE_META_KIND_FIELD_NUMBER = 4;
-  private volatile java.lang.Object typeMetaKind_;
-  /**
-   * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-   * @return The typeMetaKind.
-   */
-  @java.lang.Override
-  public java.lang.String getTypeMetaKind() {
-    java.lang.Object ref = typeMetaKind_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      typeMetaKind_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-   * @return The bytes for typeMetaKind.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeMetaKindBytes() {
-    java.lang.Object ref = typeMetaKind_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      typeMetaKind_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_META_API_VERSION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object typeMetaApiVersion_;
-  /**
-   * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-   * @return The typeMetaApiVersion.
-   */
-  @java.lang.Override
-  public java.lang.String getTypeMetaApiVersion() {
-    java.lang.Object ref = typeMetaApiVersion_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      typeMetaApiVersion_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-   * @return The bytes for typeMetaApiVersion.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeMetaApiVersionBytes() {
-    java.lang.Object ref = typeMetaApiVersion_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      typeMetaApiVersion_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int OBJECT_META_NAME_FIELD_NUMBER = 6;
+  public static final int OBJECT_META_NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object objectMetaName_;
   /**
-   * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+   * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
    * @return The objectMetaName.
    */
   @java.lang.Override
@@ -434,7 +336,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+   * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
    * @return The bytes for objectMetaName.
    */
   @java.lang.Override
@@ -452,10 +354,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OBJECT_META_NAMESPACE_FIELD_NUMBER = 7;
+  public static final int OBJECT_META_NAMESPACE_FIELD_NUMBER = 5;
   private volatile java.lang.Object objectMetaNamespace_;
   /**
-   * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+   * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
    * @return The objectMetaNamespace.
    */
   @java.lang.Override
@@ -472,7 +374,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+   * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
    * @return The bytes for objectMetaNamespace.
    */
   @java.lang.Override
@@ -490,17 +392,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PARAMS_FIELD_NUMBER = 8;
+  public static final int PARAMS_FIELD_NUMBER = 6;
   private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
    */
   @java.lang.Override
   public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
     return params_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
@@ -508,21 +410,21 @@ private static final long serialVersionUID = 0L;
     return params_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
    */
   @java.lang.Override
   public int getParamsCount() {
     return params_.size();
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
     return params_.get(index);
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
@@ -530,17 +432,17 @@ private static final long serialVersionUID = 0L;
     return params_.get(index);
   }
 
-  public static final int TASKS_FIELD_NUMBER = 9;
+  public static final int TASKS_FIELD_NUMBER = 7;
   private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> tasks_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
    */
   @java.lang.Override
   public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
     return tasks_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
@@ -548,21 +450,21 @@ private static final long serialVersionUID = 0L;
     return tasks_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
    */
   @java.lang.Override
   public int getTasksCount() {
     return tasks_.size();
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
     return tasks_.get(index);
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
@@ -570,10 +472,10 @@ private static final long serialVersionUID = 0L;
     return tasks_.get(index);
   }
 
-  public static final int STATUS_TYPE_FIELD_NUMBER = 10;
+  public static final int STATUS_TYPE_FIELD_NUMBER = 8;
   private volatile java.lang.Object statusType_;
   /**
-   * <code>string status_type = 10 [json_name = "statusType"];</code>
+   * <code>string status_type = 8 [json_name = "statusType"];</code>
    * @return The statusType.
    */
   @java.lang.Override
@@ -590,7 +492,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status_type = 10 [json_name = "statusType"];</code>
+   * <code>string status_type = 8 [json_name = "statusType"];</code>
    * @return The bytes for statusType.
    */
   @java.lang.Override
@@ -608,7 +510,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INTEGRATION_FIELD_NUMBER = 11;
+  public static final int INTEGRATION_FIELD_NUMBER = 9;
   private static final class IntegrationDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -635,7 +537,7 @@ private static final long serialVersionUID = 0L;
     return internalGetIntegration().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
 
   @java.lang.Override
@@ -653,7 +555,7 @@ private static final long serialVersionUID = 0L;
     return getIntegrationMap();
   }
   /**
-   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
   @java.lang.Override
 
@@ -661,7 +563,7 @@ private static final long serialVersionUID = 0L;
     return internalGetIntegration().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
   @java.lang.Override
 
@@ -674,7 +576,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+   * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
    */
   @java.lang.Override
 
@@ -689,7 +591,7 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int ENVIRONMENT_VARIABLES_FIELD_NUMBER = 12;
+  public static final int ENVIRONMENT_VARIABLES_FIELD_NUMBER = 10;
   private static final class EnvironmentVariablesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -716,7 +618,7 @@ private static final long serialVersionUID = 0L;
     return internalGetEnvironmentVariables().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
 
   @java.lang.Override
@@ -734,7 +636,7 @@ private static final long serialVersionUID = 0L;
     return getEnvironmentVariablesMap();
   }
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
@@ -742,7 +644,7 @@ private static final long serialVersionUID = 0L;
     return internalGetEnvironmentVariables().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
@@ -755,7 +657,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+   * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
    */
   @java.lang.Override
 
@@ -770,7 +672,7 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int COMMANDS_FIELD_NUMBER = 13;
+  public static final int COMMANDS_FIELD_NUMBER = 11;
   private static final class CommandsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -797,7 +699,7 @@ private static final long serialVersionUID = 0L;
     return internalGetCommands().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
 
   @java.lang.Override
@@ -815,7 +717,7 @@ private static final long serialVersionUID = 0L;
     return getCommandsMap();
   }
   /**
-   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
   @java.lang.Override
 
@@ -823,7 +725,7 @@ private static final long serialVersionUID = 0L;
     return internalGetCommands().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
   @java.lang.Override
 
@@ -836,7 +738,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+   * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
    */
   @java.lang.Override
 
@@ -851,7 +753,7 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int SECRETS_FIELD_NUMBER = 14;
+  public static final int SECRETS_FIELD_NUMBER = 12;
   private static final class SecretsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -878,7 +780,7 @@ private static final long serialVersionUID = 0L;
     return internalGetSecrets().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
 
   @java.lang.Override
@@ -896,7 +798,7 @@ private static final long serialVersionUID = 0L;
     return getSecretsMap();
   }
   /**
-   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
   @java.lang.Override
 
@@ -904,7 +806,7 @@ private static final long serialVersionUID = 0L;
     return internalGetSecrets().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
   @java.lang.Override
 
@@ -917,7 +819,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+   * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
    */
   @java.lang.Override
 
@@ -932,102 +834,91 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int LABELS_FIELD_NUMBER = 15;
-  private static final class LabelsDefaultEntryHolder {
+  public static final int EXTRA_ARGS_FIELD_NUMBER = 13;
+  private static final class ExtraArgsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_Pipeline_LabelsEntry_descriptor, 
+                io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_Pipeline_ExtraArgsEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
+      java.lang.String, java.lang.String> extraArgs_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
-    if (labels_ == null) {
+  internalGetExtraArgs() {
+    if (extraArgs_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+          ExtraArgsDefaultEntryHolder.defaultEntry);
     }
-    return labels_;
+    return extraArgs_;
   }
 
-  public int getLabelsCount() {
-    return internalGetLabels().getMap().size();
+  public int getExtraArgsCount() {
+    return internalGetExtraArgs().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
    */
 
   @java.lang.Override
-  public boolean containsLabels(
+  public boolean containsExtraArgs(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetLabels().getMap().containsKey(key);
+    return internalGetExtraArgs().getMap().containsKey(key);
   }
   /**
-   * Use {@link #getLabelsMap()} instead.
+   * Use {@link #getExtraArgsMap()} instead.
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-    return getLabelsMap();
+  public java.util.Map<java.lang.String, java.lang.String> getExtraArgs() {
+    return getExtraArgsMap();
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
    */
   @java.lang.Override
 
-  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-    return internalGetLabels().getMap();
+  public java.util.Map<java.lang.String, java.lang.String> getExtraArgsMap() {
+    return internalGetExtraArgs().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
    */
   @java.lang.Override
 
-  public java.lang.String getLabelsOrDefault(
+  public java.lang.String getExtraArgsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
     if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+        internalGetExtraArgs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
    */
   @java.lang.Override
 
-  public java.lang.String getLabelsOrThrow(
+  public java.lang.String getExtraArgsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+        internalGetExtraArgs().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
   }
 
-  public static final int ACTIVE_FIELD_NUMBER = 16;
-  private boolean active_;
-  /**
-   * <code>bool active = 16 [json_name = "active"];</code>
-   * @return The active.
-   */
-  @java.lang.Override
-  public boolean getActive() {
-    return active_;
-  }
-
-  public static final int INSTANCE_TYPE_FIELD_NUMBER = 17;
+  public static final int INSTANCE_TYPE_FIELD_NUMBER = 14;
   private volatile java.lang.Object instanceType_;
   /**
-   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * <code>string instance_type = 14 [json_name = "instanceType"];</code>
    * @return The instanceType.
    */
   @java.lang.Override
@@ -1044,7 +935,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+   * <code>string instance_type = 14 [json_name = "instanceType"];</code>
    * @return The bytes for instanceType.
    */
   @java.lang.Override
@@ -1062,55 +953,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int WORKSPACES_MAIN_FIELD_NUMBER = 18;
-  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> workspacesMain_;
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> getWorkspacesMainList() {
-    return workspacesMain_;
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
-      getWorkspacesMainOrBuilderList() {
-    return workspacesMain_;
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-   */
-  @java.lang.Override
-  public int getWorkspacesMainCount() {
-    return workspacesMain_.size();
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspacesMain(int index) {
-    return workspacesMain_.get(index);
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspacesMainOrBuilder(
-      int index) {
-    return workspacesMain_.get(index);
-  }
-
-  public static final int TRAFFIC_TYPE_FIELD_NUMBER = 19;
+  public static final int TRAFFIC_TYPE_FIELD_NUMBER = 15;
   private int trafficType_;
   /**
-   * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+   * <code>int32 traffic_type = 15 [json_name = "trafficType"];</code>
    * @return The trafficType.
    */
   @java.lang.Override
   public int getTrafficType() {
     return trafficType_;
+  }
+
+  public static final int IS_DEFAULT_FIELD_NUMBER = 16;
+  private boolean isDefault_;
+  /**
+   * <code>bool is_default = 16 [json_name = "isDefault"];</code>
+   * @return The isDefault.
+   */
+  @java.lang.Override
+  public boolean getIsDefault() {
+    return isDefault_;
+  }
+
+  public static final int ACTIVE_FIELD_NUMBER = 17;
+  private boolean active_;
+  /**
+   * <pre>
+   * string type_meta_kind = 4;
+   * string type_meta_api_version = 5;
+   * map&lt;string, string&gt; labels = 15;
+   * repeated Workspaces workspaces_main = 18;
+   * </pre>
+   *
+   * <code>bool active = 17 [json_name = "active"];</code>
+   * @return The active.
+   */
+  @java.lang.Override
+  public boolean getActive() {
+    return active_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1136,68 +1016,62 @@ private static final long serialVersionUID = 0L;
     if (projectId_ != 0) {
       output.writeUInt32(3, projectId_);
     }
-    if (!getTypeMetaKindBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, typeMetaKind_);
-    }
-    if (!getTypeMetaApiVersionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, typeMetaApiVersion_);
-    }
     if (!getObjectMetaNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, objectMetaName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, objectMetaName_);
     }
     if (!getObjectMetaNamespaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, objectMetaNamespace_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, objectMetaNamespace_);
     }
     for (int i = 0; i < params_.size(); i++) {
-      output.writeMessage(8, params_.get(i));
+      output.writeMessage(6, params_.get(i));
     }
     for (int i = 0; i < tasks_.size(); i++) {
-      output.writeMessage(9, tasks_.get(i));
+      output.writeMessage(7, tasks_.get(i));
     }
     if (!getStatusTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, statusType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, statusType_);
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetIntegration(),
         IntegrationDefaultEntryHolder.defaultEntry,
-        11);
+        9);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetEnvironmentVariables(),
         EnvironmentVariablesDefaultEntryHolder.defaultEntry,
-        12);
+        10);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetCommands(),
         CommandsDefaultEntryHolder.defaultEntry,
-        13);
+        11);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetSecrets(),
         SecretsDefaultEntryHolder.defaultEntry,
-        14);
+        12);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        15);
-    if (active_ != false) {
-      output.writeBool(16, active_);
-    }
+        internalGetExtraArgs(),
+        ExtraArgsDefaultEntryHolder.defaultEntry,
+        13);
     if (!getInstanceTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, instanceType_);
-    }
-    for (int i = 0; i < workspacesMain_.size(); i++) {
-      output.writeMessage(18, workspacesMain_.get(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, instanceType_);
     }
     if (trafficType_ != 0) {
-      output.writeInt32(19, trafficType_);
+      output.writeInt32(15, trafficType_);
+    }
+    if (isDefault_ != false) {
+      output.writeBool(16, isDefault_);
+    }
+    if (active_ != false) {
+      output.writeBool(17, active_);
     }
     unknownFields.writeTo(output);
   }
@@ -1219,28 +1093,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, projectId_);
     }
-    if (!getTypeMetaKindBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, typeMetaKind_);
-    }
-    if (!getTypeMetaApiVersionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, typeMetaApiVersion_);
-    }
     if (!getObjectMetaNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, objectMetaName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, objectMetaName_);
     }
     if (!getObjectMetaNamespaceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, objectMetaNamespace_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, objectMetaNamespace_);
     }
     for (int i = 0; i < params_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, params_.get(i));
+        .computeMessageSize(6, params_.get(i));
     }
     for (int i = 0; i < tasks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, tasks_.get(i));
+        .computeMessageSize(7, tasks_.get(i));
     }
     if (!getStatusTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, statusType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, statusType_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetIntegration().getMap().entrySet()) {
@@ -1250,7 +1118,7 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, integration__);
+          .computeMessageSize(9, integration__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetEnvironmentVariables().getMap().entrySet()) {
@@ -1260,7 +1128,7 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, environmentVariables__);
+          .computeMessageSize(10, environmentVariables__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetCommands().getMap().entrySet()) {
@@ -1270,7 +1138,7 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, commands__);
+          .computeMessageSize(11, commands__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetSecrets().getMap().entrySet()) {
@@ -1280,32 +1148,32 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, secrets__);
+          .computeMessageSize(12, secrets__);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
+         : internalGetExtraArgs().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
+      extraArgs__ = ExtraArgsDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, labels__);
-    }
-    if (active_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(16, active_);
+          .computeMessageSize(13, extraArgs__);
     }
     if (!getInstanceTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, instanceType_);
-    }
-    for (int i = 0; i < workspacesMain_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, workspacesMain_.get(i));
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, instanceType_);
     }
     if (trafficType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(19, trafficType_);
+        .computeInt32Size(15, trafficType_);
+    }
+    if (isDefault_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(16, isDefault_);
+    }
+    if (active_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(17, active_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1328,10 +1196,6 @@ private static final long serialVersionUID = 0L;
         != other.getOrganizationId()) return false;
     if (getProjectId()
         != other.getProjectId()) return false;
-    if (!getTypeMetaKind()
-        .equals(other.getTypeMetaKind())) return false;
-    if (!getTypeMetaApiVersion()
-        .equals(other.getTypeMetaApiVersion())) return false;
     if (!getObjectMetaName()
         .equals(other.getObjectMetaName())) return false;
     if (!getObjectMetaNamespace()
@@ -1350,16 +1214,16 @@ private static final long serialVersionUID = 0L;
         other.internalGetCommands())) return false;
     if (!internalGetSecrets().equals(
         other.internalGetSecrets())) return false;
-    if (!internalGetLabels().equals(
-        other.internalGetLabels())) return false;
-    if (getActive()
-        != other.getActive()) return false;
+    if (!internalGetExtraArgs().equals(
+        other.internalGetExtraArgs())) return false;
     if (!getInstanceType()
         .equals(other.getInstanceType())) return false;
-    if (!getWorkspacesMainList()
-        .equals(other.getWorkspacesMainList())) return false;
     if (getTrafficType()
         != other.getTrafficType()) return false;
+    if (getIsDefault()
+        != other.getIsDefault()) return false;
+    if (getActive()
+        != other.getActive()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1377,10 +1241,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId();
-    hash = (37 * hash) + TYPE_META_KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getTypeMetaKind().hashCode();
-    hash = (37 * hash) + TYPE_META_API_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getTypeMetaApiVersion().hashCode();
     hash = (37 * hash) + OBJECT_META_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getObjectMetaName().hashCode();
     hash = (37 * hash) + OBJECT_META_NAMESPACE_FIELD_NUMBER;
@@ -1411,21 +1271,20 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SECRETS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSecrets().hashCode();
     }
-    if (!internalGetLabels().getMap().isEmpty()) {
-      hash = (37 * hash) + LABELS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetLabels().hashCode();
+    if (!internalGetExtraArgs().getMap().isEmpty()) {
+      hash = (37 * hash) + EXTRA_ARGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetExtraArgs().hashCode();
     }
+    hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getInstanceType().hashCode();
+    hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTrafficType();
+    hash = (37 * hash) + IS_DEFAULT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsDefault());
     hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getActive());
-    hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstanceType().hashCode();
-    if (getWorkspacesMainCount() > 0) {
-      hash = (37 * hash) + WORKSPACES_MAIN_FIELD_NUMBER;
-      hash = (53 * hash) + getWorkspacesMainList().hashCode();
-    }
-    hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getTrafficType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1541,16 +1400,16 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 11:
+        case 9:
           return internalGetIntegration();
-        case 12:
+        case 10:
           return internalGetEnvironmentVariables();
-        case 13:
+        case 11:
           return internalGetCommands();
-        case 14:
+        case 12:
           return internalGetSecrets();
-        case 15:
-          return internalGetLabels();
+        case 13:
+          return internalGetExtraArgs();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1560,16 +1419,16 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 11:
+        case 9:
           return internalGetMutableIntegration();
-        case 12:
+        case 10:
           return internalGetMutableEnvironmentVariables();
-        case 13:
+        case 11:
           return internalGetMutableCommands();
-        case 14:
+        case 12:
           return internalGetMutableSecrets();
-        case 15:
-          return internalGetMutableLabels();
+        case 13:
+          return internalGetMutableExtraArgs();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1598,7 +1457,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getParamsFieldBuilder();
         getTasksFieldBuilder();
-        getWorkspacesMainFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1609,10 +1467,6 @@ private static final long serialVersionUID = 0L;
       organizationId_ = 0;
 
       projectId_ = 0;
-
-      typeMetaKind_ = "";
-
-      typeMetaApiVersion_ = "";
 
       objectMetaName_ = "";
 
@@ -1636,18 +1490,14 @@ private static final long serialVersionUID = 0L;
       internalGetMutableEnvironmentVariables().clear();
       internalGetMutableCommands().clear();
       internalGetMutableSecrets().clear();
-      internalGetMutableLabels().clear();
-      active_ = false;
-
+      internalGetMutableExtraArgs().clear();
       instanceType_ = "";
 
-      if (workspacesMainBuilder_ == null) {
-        workspacesMain_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      } else {
-        workspacesMainBuilder_.clear();
-      }
       trafficType_ = 0;
+
+      isDefault_ = false;
+
+      active_ = false;
 
       return this;
     }
@@ -1679,8 +1529,6 @@ private static final long serialVersionUID = 0L;
       result.id_ = id_;
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
-      result.typeMetaKind_ = typeMetaKind_;
-      result.typeMetaApiVersion_ = typeMetaApiVersion_;
       result.objectMetaName_ = objectMetaName_;
       result.objectMetaNamespace_ = objectMetaNamespace_;
       if (paramsBuilder_ == null) {
@@ -1710,20 +1558,12 @@ private static final long serialVersionUID = 0L;
       result.commands_.makeImmutable();
       result.secrets_ = internalGetSecrets();
       result.secrets_.makeImmutable();
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.active_ = active_;
+      result.extraArgs_ = internalGetExtraArgs();
+      result.extraArgs_.makeImmutable();
       result.instanceType_ = instanceType_;
-      if (workspacesMainBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
-          workspacesMain_ = java.util.Collections.unmodifiableList(workspacesMain_);
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.workspacesMain_ = workspacesMain_;
-      } else {
-        result.workspacesMain_ = workspacesMainBuilder_.build();
-      }
       result.trafficType_ = trafficType_;
+      result.isDefault_ = isDefault_;
+      result.active_ = active_;
       onBuilt();
       return result;
     }
@@ -1781,14 +1621,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getProjectId() != 0) {
         setProjectId(other.getProjectId());
-      }
-      if (!other.getTypeMetaKind().isEmpty()) {
-        typeMetaKind_ = other.typeMetaKind_;
-        onChanged();
-      }
-      if (!other.getTypeMetaApiVersion().isEmpty()) {
-        typeMetaApiVersion_ = other.typeMetaApiVersion_;
-        onChanged();
       }
       if (!other.getObjectMetaName().isEmpty()) {
         objectMetaName_ = other.objectMetaName_;
@@ -1862,43 +1694,20 @@ private static final long serialVersionUID = 0L;
           other.internalGetCommands());
       internalGetMutableSecrets().mergeFrom(
           other.internalGetSecrets());
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
-      if (other.getActive() != false) {
-        setActive(other.getActive());
-      }
+      internalGetMutableExtraArgs().mergeFrom(
+          other.internalGetExtraArgs());
       if (!other.getInstanceType().isEmpty()) {
         instanceType_ = other.instanceType_;
         onChanged();
       }
-      if (workspacesMainBuilder_ == null) {
-        if (!other.workspacesMain_.isEmpty()) {
-          if (workspacesMain_.isEmpty()) {
-            workspacesMain_ = other.workspacesMain_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-          } else {
-            ensureWorkspacesMainIsMutable();
-            workspacesMain_.addAll(other.workspacesMain_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.workspacesMain_.isEmpty()) {
-          if (workspacesMainBuilder_.isEmpty()) {
-            workspacesMainBuilder_.dispose();
-            workspacesMainBuilder_ = null;
-            workspacesMain_ = other.workspacesMain_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-            workspacesMainBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getWorkspacesMainFieldBuilder() : null;
-          } else {
-            workspacesMainBuilder_.addAllMessages(other.workspacesMain_);
-          }
-        }
-      }
       if (other.getTrafficType() != 0) {
         setTrafficType(other.getTrafficType());
+      }
+      if (other.getIsDefault() != false) {
+        setIsDefault(other.getIsDefault());
+      }
+      if (other.getActive() != false) {
+        setActive(other.getActive());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2068,161 +1877,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object typeMetaKind_ = "";
-    /**
-     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-     * @return The typeMetaKind.
-     */
-    public java.lang.String getTypeMetaKind() {
-      java.lang.Object ref = typeMetaKind_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        typeMetaKind_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-     * @return The bytes for typeMetaKind.
-     */
-    public com.google.protobuf.ByteString
-        getTypeMetaKindBytes() {
-      java.lang.Object ref = typeMetaKind_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        typeMetaKind_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-     * @param value The typeMetaKind to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeMetaKind(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      typeMetaKind_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTypeMetaKind() {
-      
-      typeMetaKind_ = getDefaultInstance().getTypeMetaKind();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string type_meta_kind = 4 [json_name = "typeMetaKind"];</code>
-     * @param value The bytes for typeMetaKind to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeMetaKindBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      typeMetaKind_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object typeMetaApiVersion_ = "";
-    /**
-     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-     * @return The typeMetaApiVersion.
-     */
-    public java.lang.String getTypeMetaApiVersion() {
-      java.lang.Object ref = typeMetaApiVersion_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        typeMetaApiVersion_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-     * @return The bytes for typeMetaApiVersion.
-     */
-    public com.google.protobuf.ByteString
-        getTypeMetaApiVersionBytes() {
-      java.lang.Object ref = typeMetaApiVersion_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        typeMetaApiVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-     * @param value The typeMetaApiVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeMetaApiVersion(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      typeMetaApiVersion_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTypeMetaApiVersion() {
-      
-      typeMetaApiVersion_ = getDefaultInstance().getTypeMetaApiVersion();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string type_meta_api_version = 5 [json_name = "typeMetaApiVersion"];</code>
-     * @param value The bytes for typeMetaApiVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeMetaApiVersionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      typeMetaApiVersion_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object objectMetaName_ = "";
     /**
-     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
      * @return The objectMetaName.
      */
     public java.lang.String getObjectMetaName() {
@@ -2238,7 +1895,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
      * @return The bytes for objectMetaName.
      */
     public com.google.protobuf.ByteString
@@ -2255,7 +1912,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
      * @param value The objectMetaName to set.
      * @return This builder for chaining.
      */
@@ -2270,7 +1927,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
      * @return This builder for chaining.
      */
     public Builder clearObjectMetaName() {
@@ -2280,7 +1937,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string object_meta_name = 6 [json_name = "objectMetaName"];</code>
+     * <code>string object_meta_name = 4 [json_name = "objectMetaName"];</code>
      * @param value The bytes for objectMetaName to set.
      * @return This builder for chaining.
      */
@@ -2298,7 +1955,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object objectMetaNamespace_ = "";
     /**
-     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
      * @return The objectMetaNamespace.
      */
     public java.lang.String getObjectMetaNamespace() {
@@ -2314,7 +1971,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
      * @return The bytes for objectMetaNamespace.
      */
     public com.google.protobuf.ByteString
@@ -2331,7 +1988,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
      * @param value The objectMetaNamespace to set.
      * @return This builder for chaining.
      */
@@ -2346,7 +2003,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
      * @return This builder for chaining.
      */
     public Builder clearObjectMetaNamespace() {
@@ -2356,7 +2013,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string object_meta_namespace = 7 [json_name = "objectMetaNamespace"];</code>
+     * <code>string object_meta_namespace = 5 [json_name = "objectMetaNamespace"];</code>
      * @param value The bytes for objectMetaNamespace to set.
      * @return This builder for chaining.
      */
@@ -2385,7 +2042,7 @@ private static final long serialVersionUID = 0L;
         io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> paramsBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
       if (paramsBuilder_ == null) {
@@ -2395,7 +2052,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public int getParamsCount() {
       if (paramsBuilder_ == null) {
@@ -2405,7 +2062,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
       if (paramsBuilder_ == null) {
@@ -2415,7 +2072,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder setParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
@@ -2432,7 +2089,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder setParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
@@ -2446,7 +2103,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder addParams(io.cuemby.pipelines.tekton.v1alpha1.Params value) {
       if (paramsBuilder_ == null) {
@@ -2462,7 +2119,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder addParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
@@ -2479,7 +2136,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder addParams(
         io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
@@ -2493,7 +2150,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder addParams(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
@@ -2507,7 +2164,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder addAllParams(
         java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Params> values) {
@@ -2522,7 +2179,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder clearParams() {
       if (paramsBuilder_ == null) {
@@ -2535,7 +2192,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public Builder removeParams(int index) {
       if (paramsBuilder_ == null) {
@@ -2548,14 +2205,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder getParamsBuilder(
         int index) {
       return getParamsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
         int index) {
@@ -2565,7 +2222,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
          getParamsOrBuilderList() {
@@ -2576,14 +2233,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder() {
       return getParamsFieldBuilder().addBuilder(
           io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder(
         int index) {
@@ -2591,7 +2248,7 @@ private static final long serialVersionUID = 0L;
           index, io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 8 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 6 [json_name = "params"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params.Builder> 
          getParamsBuilderList() {
@@ -2625,7 +2282,7 @@ private static final long serialVersionUID = 0L;
         io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> tasksBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
       if (tasksBuilder_ == null) {
@@ -2635,7 +2292,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public int getTasksCount() {
       if (tasksBuilder_ == null) {
@@ -2645,7 +2302,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
       if (tasksBuilder_ == null) {
@@ -2655,7 +2312,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder setTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
@@ -2672,7 +2329,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder setTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
@@ -2686,7 +2343,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder addTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
       if (tasksBuilder_ == null) {
@@ -2702,7 +2359,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder addTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
@@ -2719,7 +2376,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder addTasks(
         io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
@@ -2733,7 +2390,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder addTasks(
         int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
@@ -2747,7 +2404,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder addAllTasks(
         java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Task> values) {
@@ -2762,7 +2419,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder clearTasks() {
       if (tasksBuilder_ == null) {
@@ -2775,7 +2432,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public Builder removeTasks(int index) {
       if (tasksBuilder_ == null) {
@@ -2788,14 +2445,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getTasksBuilder(
         int index) {
       return getTasksFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
         int index) {
@@ -2805,7 +2462,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
          getTasksOrBuilderList() {
@@ -2816,14 +2473,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addTasksBuilder() {
       return getTasksFieldBuilder().addBuilder(
           io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addTasksBuilder(
         int index) {
@@ -2831,7 +2488,7 @@ private static final long serialVersionUID = 0L;
           index, io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 9 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 7 [json_name = "tasks"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task.Builder> 
          getTasksBuilderList() {
@@ -2854,7 +2511,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object statusType_ = "";
     /**
-     * <code>string status_type = 10 [json_name = "statusType"];</code>
+     * <code>string status_type = 8 [json_name = "statusType"];</code>
      * @return The statusType.
      */
     public java.lang.String getStatusType() {
@@ -2870,7 +2527,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status_type = 10 [json_name = "statusType"];</code>
+     * <code>string status_type = 8 [json_name = "statusType"];</code>
      * @return The bytes for statusType.
      */
     public com.google.protobuf.ByteString
@@ -2887,7 +2544,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status_type = 10 [json_name = "statusType"];</code>
+     * <code>string status_type = 8 [json_name = "statusType"];</code>
      * @param value The statusType to set.
      * @return This builder for chaining.
      */
@@ -2902,7 +2559,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status_type = 10 [json_name = "statusType"];</code>
+     * <code>string status_type = 8 [json_name = "statusType"];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatusType() {
@@ -2912,7 +2569,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status_type = 10 [json_name = "statusType"];</code>
+     * <code>string status_type = 8 [json_name = "statusType"];</code>
      * @param value The bytes for statusType to set.
      * @return This builder for chaining.
      */
@@ -2955,7 +2612,7 @@ private static final long serialVersionUID = 0L;
       return internalGetIntegration().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
 
     @java.lang.Override
@@ -2973,7 +2630,7 @@ private static final long serialVersionUID = 0L;
       return getIntegrationMap();
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
     @java.lang.Override
 
@@ -2981,7 +2638,7 @@ private static final long serialVersionUID = 0L;
       return internalGetIntegration().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
     @java.lang.Override
 
@@ -2994,7 +2651,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
     @java.lang.Override
 
@@ -3015,7 +2672,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
 
     public Builder removeIntegration(
@@ -3034,7 +2691,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableIntegration().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
     public Builder putIntegration(
         java.lang.String key,
@@ -3046,7 +2703,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; integration = 11 [json_name = "integration"];</code>
+     * <code>map&lt;string, string&gt; integration = 9 [json_name = "integration"];</code>
      */
 
     public Builder putAllIntegration(
@@ -3083,7 +2740,7 @@ private static final long serialVersionUID = 0L;
       return internalGetEnvironmentVariables().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
 
     @java.lang.Override
@@ -3101,7 +2758,7 @@ private static final long serialVersionUID = 0L;
       return getEnvironmentVariablesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
@@ -3109,7 +2766,7 @@ private static final long serialVersionUID = 0L;
       return internalGetEnvironmentVariables().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
@@ -3122,7 +2779,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
     @java.lang.Override
 
@@ -3143,7 +2800,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
 
     public Builder removeEnvironmentVariables(
@@ -3162,7 +2819,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
     public Builder putEnvironmentVariables(
         java.lang.String key,
@@ -3174,7 +2831,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; environment_variables = 12 [json_name = "environmentVariables"];</code>
+     * <code>map&lt;string, string&gt; environment_variables = 10 [json_name = "environmentVariables"];</code>
      */
 
     public Builder putAllEnvironmentVariables(
@@ -3211,7 +2868,7 @@ private static final long serialVersionUID = 0L;
       return internalGetCommands().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
 
     @java.lang.Override
@@ -3229,7 +2886,7 @@ private static final long serialVersionUID = 0L;
       return getCommandsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
     @java.lang.Override
 
@@ -3237,7 +2894,7 @@ private static final long serialVersionUID = 0L;
       return internalGetCommands().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
     @java.lang.Override
 
@@ -3250,7 +2907,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
     @java.lang.Override
 
@@ -3271,7 +2928,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
 
     public Builder removeCommands(
@@ -3290,7 +2947,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableCommands().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
     public Builder putCommands(
         java.lang.String key,
@@ -3302,7 +2959,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; commands = 13 [json_name = "commands"];</code>
+     * <code>map&lt;string, string&gt; commands = 11 [json_name = "commands"];</code>
      */
 
     public Builder putAllCommands(
@@ -3339,7 +2996,7 @@ private static final long serialVersionUID = 0L;
       return internalGetSecrets().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
 
     @java.lang.Override
@@ -3357,7 +3014,7 @@ private static final long serialVersionUID = 0L;
       return getSecretsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
     @java.lang.Override
 
@@ -3365,7 +3022,7 @@ private static final long serialVersionUID = 0L;
       return internalGetSecrets().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
     @java.lang.Override
 
@@ -3378,7 +3035,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
     @java.lang.Override
 
@@ -3399,7 +3056,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
 
     public Builder removeSecrets(
@@ -3418,7 +3075,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableSecrets().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
     public Builder putSecrets(
         java.lang.String key,
@@ -3430,7 +3087,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; secrets = 14 [json_name = "secrets"];</code>
+     * <code>map&lt;string, string&gt; secrets = 12 [json_name = "secrets"];</code>
      */
 
     public Builder putAllSecrets(
@@ -3441,99 +3098,99 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
+        java.lang.String, java.lang.String> extraArgs_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
-      if (labels_ == null) {
+    internalGetExtraArgs() {
+      if (extraArgs_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+            ExtraArgsDefaultEntryHolder.defaultEntry);
       }
-      return labels_;
+      return extraArgs_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
+    internalGetMutableExtraArgs() {
       onChanged();;
-      if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+      if (extraArgs_ == null) {
+        extraArgs_ = com.google.protobuf.MapField.newMapField(
+            ExtraArgsDefaultEntryHolder.defaultEntry);
       }
-      if (!labels_.isMutable()) {
-        labels_ = labels_.copy();
+      if (!extraArgs_.isMutable()) {
+        extraArgs_ = extraArgs_.copy();
       }
-      return labels_;
+      return extraArgs_;
     }
 
-    public int getLabelsCount() {
-      return internalGetLabels().getMap().size();
+    public int getExtraArgsCount() {
+      return internalGetExtraArgs().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
 
     @java.lang.Override
-    public boolean containsLabels(
+    public boolean containsExtraArgs(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetLabels().getMap().containsKey(key);
+      return internalGetExtraArgs().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getLabelsMap()} instead.
+     * Use {@link #getExtraArgsMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
-      return getLabelsMap();
+    public java.util.Map<java.lang.String, java.lang.String> getExtraArgs() {
+      return getExtraArgsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
-      return internalGetLabels().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getExtraArgsMap() {
+      return internalGetExtraArgs().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
     @java.lang.Override
 
-    public java.lang.String getLabelsOrDefault(
+    public java.lang.String getExtraArgsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+          internalGetExtraArgs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
     @java.lang.Override
 
-    public java.lang.String getLabelsOrThrow(
+    public java.lang.String getExtraArgsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+          internalGetExtraArgs().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
+    public Builder clearExtraArgs() {
+      internalGetMutableExtraArgs().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
 
-    public Builder removeLabels(
+    public Builder removeExtraArgs(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
+      internalGetMutableExtraArgs().getMutableMap()
           .remove(key);
       return this;
     }
@@ -3542,66 +3199,35 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
-      return internalGetMutableLabels().getMutableMap();
+    getMutableExtraArgs() {
+      return internalGetMutableExtraArgs().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
-    public Builder putLabels(
+    public Builder putExtraArgs(
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
+      internalGetMutableExtraArgs().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 15 [json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; extra_args = 13 [json_name = "extraArgs"];</code>
      */
 
-    public Builder putAllLabels(
+    public Builder putAllExtraArgs(
         java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
+      internalGetMutableExtraArgs().getMutableMap()
           .putAll(values);
-      return this;
-    }
-
-    private boolean active_ ;
-    /**
-     * <code>bool active = 16 [json_name = "active"];</code>
-     * @return The active.
-     */
-    @java.lang.Override
-    public boolean getActive() {
-      return active_;
-    }
-    /**
-     * <code>bool active = 16 [json_name = "active"];</code>
-     * @param value The active to set.
-     * @return This builder for chaining.
-     */
-    public Builder setActive(boolean value) {
-      
-      active_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool active = 16 [json_name = "active"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearActive() {
-      
-      active_ = false;
-      onChanged();
       return this;
     }
 
     private java.lang.Object instanceType_ = "";
     /**
-     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * <code>string instance_type = 14 [json_name = "instanceType"];</code>
      * @return The instanceType.
      */
     public java.lang.String getInstanceType() {
@@ -3617,7 +3243,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * <code>string instance_type = 14 [json_name = "instanceType"];</code>
      * @return The bytes for instanceType.
      */
     public com.google.protobuf.ByteString
@@ -3634,7 +3260,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * <code>string instance_type = 14 [json_name = "instanceType"];</code>
      * @param value The instanceType to set.
      * @return This builder for chaining.
      */
@@ -3649,7 +3275,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * <code>string instance_type = 14 [json_name = "instanceType"];</code>
      * @return This builder for chaining.
      */
     public Builder clearInstanceType() {
@@ -3659,7 +3285,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string instance_type = 17 [json_name = "instanceType"];</code>
+     * <code>string instance_type = 14 [json_name = "instanceType"];</code>
      * @param value The bytes for instanceType to set.
      * @return This builder for chaining.
      */
@@ -3675,249 +3301,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> workspacesMain_ =
-      java.util.Collections.emptyList();
-    private void ensureWorkspacesMainIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
-        workspacesMain_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Workspaces>(workspacesMain_);
-        bitField0_ |= 0x00000080;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> workspacesMainBuilder_;
-
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> getWorkspacesMainList() {
-      if (workspacesMainBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(workspacesMain_);
-      } else {
-        return workspacesMainBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public int getWorkspacesMainCount() {
-      if (workspacesMainBuilder_ == null) {
-        return workspacesMain_.size();
-      } else {
-        return workspacesMainBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspacesMain(int index) {
-      if (workspacesMainBuilder_ == null) {
-        return workspacesMain_.get(index);
-      } else {
-        return workspacesMainBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder setWorkspacesMain(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
-      if (workspacesMainBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.set(index, value);
-        onChanged();
-      } else {
-        workspacesMainBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder setWorkspacesMain(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder builderForValue) {
-      if (workspacesMainBuilder_ == null) {
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        workspacesMainBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder addWorkspacesMain(io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
-      if (workspacesMainBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.add(value);
-        onChanged();
-      } else {
-        workspacesMainBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder addWorkspacesMain(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
-      if (workspacesMainBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.add(index, value);
-        onChanged();
-      } else {
-        workspacesMainBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder addWorkspacesMain(
-        io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder builderForValue) {
-      if (workspacesMainBuilder_ == null) {
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.add(builderForValue.build());
-        onChanged();
-      } else {
-        workspacesMainBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder addWorkspacesMain(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder builderForValue) {
-      if (workspacesMainBuilder_ == null) {
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        workspacesMainBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder addAllWorkspacesMain(
-        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Workspaces> values) {
-      if (workspacesMainBuilder_ == null) {
-        ensureWorkspacesMainIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, workspacesMain_);
-        onChanged();
-      } else {
-        workspacesMainBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder clearWorkspacesMain() {
-      if (workspacesMainBuilder_ == null) {
-        workspacesMain_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-      } else {
-        workspacesMainBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public Builder removeWorkspacesMain(int index) {
-      if (workspacesMainBuilder_ == null) {
-        ensureWorkspacesMainIsMutable();
-        workspacesMain_.remove(index);
-        onChanged();
-      } else {
-        workspacesMainBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder getWorkspacesMainBuilder(
-        int index) {
-      return getWorkspacesMainFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspacesMainOrBuilder(
-        int index) {
-      if (workspacesMainBuilder_ == null) {
-        return workspacesMain_.get(index);  } else {
-        return workspacesMainBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
-         getWorkspacesMainOrBuilderList() {
-      if (workspacesMainBuilder_ != null) {
-        return workspacesMainBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(workspacesMain_);
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder addWorkspacesMainBuilder() {
-      return getWorkspacesMainFieldBuilder().addBuilder(
-          io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder addWorkspacesMainBuilder(
-        int index) {
-      return getWorkspacesMainFieldBuilder().addBuilder(
-          index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspaces_main = 18 [json_name = "workspacesMain"];</code>
-     */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder> 
-         getWorkspacesMainBuilderList() {
-      return getWorkspacesMainFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
-        getWorkspacesMainFieldBuilder() {
-      if (workspacesMainBuilder_ == null) {
-        workspacesMainBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder>(
-                workspacesMain_,
-                ((bitField0_ & 0x00000080) != 0),
-                getParentForChildren(),
-                isClean());
-        workspacesMain_ = null;
-      }
-      return workspacesMainBuilder_;
-    }
-
     private int trafficType_ ;
     /**
-     * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * <code>int32 traffic_type = 15 [json_name = "trafficType"];</code>
      * @return The trafficType.
      */
     @java.lang.Override
@@ -3925,7 +3311,7 @@ private static final long serialVersionUID = 0L;
       return trafficType_;
     }
     /**
-     * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * <code>int32 traffic_type = 15 [json_name = "trafficType"];</code>
      * @param value The trafficType to set.
      * @return This builder for chaining.
      */
@@ -3936,12 +3322,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 traffic_type = 19 [json_name = "trafficType"];</code>
+     * <code>int32 traffic_type = 15 [json_name = "trafficType"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTrafficType() {
       
       trafficType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isDefault_ ;
+    /**
+     * <code>bool is_default = 16 [json_name = "isDefault"];</code>
+     * @return The isDefault.
+     */
+    @java.lang.Override
+    public boolean getIsDefault() {
+      return isDefault_;
+    }
+    /**
+     * <code>bool is_default = 16 [json_name = "isDefault"];</code>
+     * @param value The isDefault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsDefault(boolean value) {
+      
+      isDefault_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_default = 16 [json_name = "isDefault"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsDefault() {
+      
+      isDefault_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean active_ ;
+    /**
+     * <pre>
+     * string type_meta_kind = 4;
+     * string type_meta_api_version = 5;
+     * map&lt;string, string&gt; labels = 15;
+     * repeated Workspaces workspaces_main = 18;
+     * </pre>
+     *
+     * <code>bool active = 17 [json_name = "active"];</code>
+     * @return The active.
+     */
+    @java.lang.Override
+    public boolean getActive() {
+      return active_;
+    }
+    /**
+     * <pre>
+     * string type_meta_kind = 4;
+     * string type_meta_api_version = 5;
+     * map&lt;string, string&gt; labels = 15;
+     * repeated Workspaces workspaces_main = 18;
+     * </pre>
+     *
+     * <code>bool active = 17 [json_name = "active"];</code>
+     * @param value The active to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActive(boolean value) {
+      
+      active_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * string type_meta_kind = 4;
+     * string type_meta_api_version = 5;
+     * map&lt;string, string&gt; labels = 15;
+     * repeated Workspaces workspaces_main = 18;
+     * </pre>
+     *
+     * <code>bool active = 17 [json_name = "active"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActive() {
+      
+      active_ = false;
       onChanged();
       return this;
     }
