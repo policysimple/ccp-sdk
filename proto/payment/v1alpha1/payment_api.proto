@@ -223,7 +223,7 @@ message GetProjectRequest {
 }
 
 message GetProjectResponse {
-    payment.v1alpha1.Project project = 1;
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
