@@ -137,6 +137,17 @@ struct Pipeline_ExtraArgsEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Pipeline_ExtraArgsEntry_DoNotUseDefaultTypeInternal _Pipeline_ExtraArgsEntry_DoNotUse_default_instance_;
+constexpr Pipeline_AutoScalingEntry_DoNotUse::Pipeline_AutoScalingEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct Pipeline_AutoScalingEntry_DoNotUseDefaultTypeInternal {
+  constexpr Pipeline_AutoScalingEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Pipeline_AutoScalingEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Pipeline_AutoScalingEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Pipeline_AutoScalingEntry_DoNotUseDefaultTypeInternal _Pipeline_AutoScalingEntry_DoNotUse_default_instance_;
 constexpr Pipeline::Pipeline(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : params_()
@@ -146,6 +157,7 @@ constexpr Pipeline::Pipeline(
   , commands_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , secrets_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , extra_args_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , auto_scaling_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , instance_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -170,7 +182,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PipelineDefaultTypeInternal _Pi
 }  // namespace v1alpha1
 }  // namespace tekton
 }  // namespace pipelines
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[10];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[11];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = nullptr;
 
@@ -259,6 +271,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse, value_),
   0,
   1,
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -281,6 +302,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, commands_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, secrets_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, extra_args_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, auto_scaling_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, is_default_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, active_),
 };
@@ -294,7 +316,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 57, 64, sizeof(::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse)},
   { 66, 73, sizeof(::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse)},
   { 75, 82, sizeof(::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse)},
-  { 84, -1, sizeof(::pipelines::tekton::v1alpha1::Pipeline)},
+  { 84, 91, sizeof(::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse)},
+  { 93, -1, sizeof(::pipelines::tekton::v1alpha1::Pipeline)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -307,6 +330,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_Pipeline_CommandsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_Pipeline_SecretsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_Pipeline_ExtraArgsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_Pipeline_AutoScalingEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_Pipeline_default_instance_),
 };
 
@@ -330,7 +354,7 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   ".WorkspacesR\nworkspaces\022F\n\013task_params\030\007"
   " \003(\0132%.pipelines.tekton.v1alpha1.TaskPar"
   "amsR\ntaskParams\022 \n\013description\030\010 \001(\tR\013de"
-  "scription\"\353\t\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\022"
+  "scription\"\204\013\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\022"
   "\n\004name\030\002 \001(\tR\004name\022#\n\rinstance_type\030\003 \001("
   "\tR\014instanceType\022!\n\014traffic_type\030\004 \001(\005R\013t"
   "rafficType\022\'\n\017organization_id\030\005 \001(\rR\016org"
@@ -352,26 +376,30 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "elines.tekton.v1alpha1.Pipeline.SecretsE"
   "ntryR\007secrets\022Q\n\nextra_args\030\021 \003(\01322.pipe"
   "lines.tekton.v1alpha1.Pipeline.ExtraArgs"
-  "EntryR\textraArgs\022\035\n\nis_default\030\022 \001(\010R\tis"
-  "Default\022\026\n\006active\030\023 \001(\010R\006active\032>\n\020Integ"
-  "rationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002"
-  " \001(\tR\005value:\0028\001\032G\n\031EnvironmentVariablesE"
-  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
-  "alue:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003"
-  "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Secrets"
-  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
-  "value:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\t"
-  "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\256\001\n#io.c"
-  "uemby.pipelines.tekton.v1alpha1B\013TektonP"
-  "rotoP\001Z:github.com/cuemby/ccp-sdk/gen/go"
-  "/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipel"
-  "ines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\"
-  "V1Alpha1b\006proto3"
+  "EntryR\textraArgs\022W\n\014auto_scaling\030\022 \003(\01324"
+  ".pipelines.tekton.v1alpha1.Pipeline.Auto"
+  "ScalingEntryR\013autoScaling\022\035\n\nis_default\030"
+  "\023 \001(\010R\tisDefault\022\026\n\006active\030\024 \001(\010R\006active"
+  "\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentV"
+  "ariablesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
+  "\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:"
+  "\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
+  "e\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003"
+  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001"
+  "\032>\n\020AutoScalingEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001B\256\001\n#io.cuemby.p"
+  "ipelines.tekton.v1alpha1B\013TektonProtoP\001Z"
+  ":github.com/cuemby/ccp-sdk/gen/go/pipeli"
+  "nes/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Te"
+  "kton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha"
+  "1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 2216, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
-  &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 10,
+  false, false, 2369, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 11,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
 };
@@ -1852,6 +1880,20 @@ void Pipeline_ExtraArgsEntry_DoNotUse::MergeFrom(const Pipeline_ExtraArgsEntry_D
 
 // ===================================================================
 
+Pipeline_AutoScalingEntry_DoNotUse::Pipeline_AutoScalingEntry_DoNotUse() {}
+Pipeline_AutoScalingEntry_DoNotUse::Pipeline_AutoScalingEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Pipeline_AutoScalingEntry_DoNotUse::MergeFrom(const Pipeline_AutoScalingEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Pipeline_AutoScalingEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_getter, &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once,
+      file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[9]);
+}
+
+// ===================================================================
+
 class Pipeline::_Internal {
  public:
 };
@@ -1865,7 +1907,8 @@ Pipeline::Pipeline(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   environment_variables_(arena),
   commands_(arena),
   secrets_(arena),
-  extra_args_(arena) {
+  extra_args_(arena),
+  auto_scaling_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -1882,6 +1925,7 @@ Pipeline::Pipeline(const Pipeline& from)
   commands_.MergeFrom(from.commands_);
   secrets_.MergeFrom(from.secrets_);
   extra_args_.MergeFrom(from.extra_args_);
+  auto_scaling_.MergeFrom(from.auto_scaling_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
@@ -1963,6 +2007,7 @@ void Pipeline::ArenaDtor(void* object) {
   _this->commands_. ~MapField();
   _this->secrets_. ~MapField();
   _this->extra_args_. ~MapField();
+  _this->auto_scaling_. ~MapField();
 }
 inline void Pipeline::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -1986,6 +2031,7 @@ void Pipeline::Clear() {
   commands_.Clear();
   secrets_.Clear();
   extra_args_.Clear();
+  auto_scaling_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   instance_type_.ClearToEmpty();
@@ -2173,16 +2219,28 @@ const char* Pipeline::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
         } else goto handle_unusual;
         continue;
-      // bool is_default = 18 [json_name = "isDefault"];
+      // map<string, string> auto_scaling = 18 [json_name = "autoScaling"];
       case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 144)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(&auto_scaling_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<146>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bool is_default = 19 [json_name = "isDefault"];
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 152)) {
           is_default_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool active = 19 [json_name = "active"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 152)) {
+      // bool active = 20 [json_name = "active"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 160)) {
           active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2550,16 +2608,62 @@ failure:
     }
   }
 
-  // bool is_default = 18 [json_name = "isDefault"];
-  if (this->_internal_is_default() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(18, this->_internal_is_default(), target);
+  // map<string, string> auto_scaling = 18 [json_name = "autoScaling"];
+  if (!this->_internal_auto_scaling().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "pipelines.tekton.v1alpha1.Pipeline.AutoScalingEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "pipelines.tekton.v1alpha1.Pipeline.AutoScalingEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_auto_scaling().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_auto_scaling().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_auto_scaling().begin();
+          it != this->_internal_auto_scaling().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Pipeline_AutoScalingEntry_DoNotUse::Funcs::InternalSerialize(18, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_auto_scaling().begin();
+          it != this->_internal_auto_scaling().end(); ++it) {
+        target = Pipeline_AutoScalingEntry_DoNotUse::Funcs::InternalSerialize(18, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
   }
 
-  // bool active = 19 [json_name = "active"];
+  // bool is_default = 19 [json_name = "isDefault"];
+  if (this->_internal_is_default() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(19, this->_internal_is_default(), target);
+  }
+
+  // bool active = 20 [json_name = "active"];
   if (this->_internal_active() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(19, this->_internal_active(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(20, this->_internal_active(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2637,6 +2741,15 @@ size_t Pipeline::ByteSizeLong() const {
     total_size += Pipeline_ExtraArgsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
+  // map<string, string> auto_scaling = 18 [json_name = "autoScaling"];
+  total_size += 2 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_auto_scaling_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_auto_scaling().begin();
+      it != this->_internal_auto_scaling().end(); ++it) {
+    total_size += Pipeline_AutoScalingEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
   // string id = 1 [json_name = "id"];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
@@ -2707,12 +2820,12 @@ size_t Pipeline::ByteSizeLong() const {
         this->_internal_project_id());
   }
 
-  // bool is_default = 18 [json_name = "isDefault"];
+  // bool is_default = 19 [json_name = "isDefault"];
   if (this->_internal_is_default() != 0) {
     total_size += 2 + 1;
   }
 
-  // bool active = 19 [json_name = "active"];
+  // bool active = 20 [json_name = "active"];
   if (this->_internal_active() != 0) {
     total_size += 2 + 1;
   }
@@ -2752,6 +2865,7 @@ void Pipeline::MergeFrom(const Pipeline& from) {
   commands_.MergeFrom(from.commands_);
   secrets_.MergeFrom(from.secrets_);
   extra_args_.MergeFrom(from.extra_args_);
+  auto_scaling_.MergeFrom(from.auto_scaling_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -2812,6 +2926,7 @@ void Pipeline::InternalSwap(Pipeline* other) {
   commands_.InternalSwap(&other->commands_);
   secrets_.InternalSwap(&other->secrets_);
   extra_args_.InternalSwap(&other->extra_args_);
+  auto_scaling_.InternalSwap(&other->auto_scaling_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -2858,7 +2973,7 @@ void Pipeline::InternalSwap(Pipeline* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Pipeline::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_getter, &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once,
-      file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[9]);
+      file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[10]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2892,6 +3007,9 @@ template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::Pipeline_SecretsEntr
 }
 template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse* Arena::CreateMaybeMessage< ::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse* Arena::CreateMaybeMessage< ::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::Pipeline* Arena::CreateMaybeMessage< ::pipelines::tekton::v1alpha1::Pipeline >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::tekton::v1alpha1::Pipeline >(arena);

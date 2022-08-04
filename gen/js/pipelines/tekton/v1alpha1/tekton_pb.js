@@ -1277,8 +1277,9 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
     secretsMap: (f = msg.getSecretsMap()) ? f.toObject(includeInstance, undefined) : [],
     extraArgsMap: (f = msg.getExtraArgsMap()) ? f.toObject(includeInstance, undefined) : [],
-    isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    active: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
+    autoScalingMap: (f = msg.getAutoScalingMap()) ? f.toObject(includeInstance, undefined) : [],
+    isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    active: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -1396,10 +1397,16 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
          });
       break;
     case 18:
+      var value = msg.getAutoScalingMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDefault(value);
       break;
-    case 19:
+    case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setActive(value);
       break;
@@ -1538,17 +1545,21 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
   if (f && f.getLength() > 0) {
     f.serializeBinary(17, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
+  f = message.getAutoScalingMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(18, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
   f = message.getIsDefault();
   if (f) {
     writer.writeBool(
-      18,
+      19,
       f
     );
   }
   f = message.getActive();
   if (f) {
     writer.writeBool(
-      19,
+      20,
       f
     );
   }
@@ -1922,28 +1933,32 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearExtraArgsMap = function(
 
 
 /**
- * optional bool is_default = 18;
+ * map<string, string> auto_scaling = 18;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getAutoScalingMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 18, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearAutoScalingMap = function() {
+  this.getAutoScalingMap().clear();
+  return this;};
+
+
+/**
+ * optional bool is_default = 19;
  * @return {boolean}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsDefault = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
- */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsDefault = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 18, value);
-};
-
-
-/**
- * optional bool active = 19;
- * @return {boolean}
- */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getActive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
@@ -1952,8 +1967,26 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getActive = function() {
  * @param {boolean} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setActive = function(value) {
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsDefault = function(value) {
   return jspb.Message.setProto3BooleanField(this, 19, value);
+};
+
+
+/**
+ * optional bool active = 20;
+ * @return {boolean}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 

@@ -84,11 +84,15 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     private $extra_args;
     /**
-     * Generated from protobuf field <code>bool is_default = 18 [json_name = "isDefault"];</code>
+     * Generated from protobuf field <code>map<string, string> auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+    private $auto_scaling;
+    /**
+     * Generated from protobuf field <code>bool is_default = 19 [json_name = "isDefault"];</code>
      */
     protected $is_default = false;
     /**
-     * Generated from protobuf field <code>bool active = 19 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 20 [json_name = "active"];</code>
      */
     protected $active = false;
 
@@ -115,6 +119,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $commands
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
      *     @type array|\Google\Protobuf\Internal\MapField $extra_args
+     *     @type array|\Google\Protobuf\Internal\MapField $auto_scaling
      *     @type bool $is_default
      *     @type bool $active
      * }
@@ -499,7 +504,29 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_default = 18 [json_name = "isDefault"];</code>
+     * Generated from protobuf field <code>map<string, string> auto_scaling = 18 [json_name = "autoScaling"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getAutoScaling()
+    {
+        return $this->auto_scaling;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> auto_scaling = 18 [json_name = "autoScaling"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setAutoScaling($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->auto_scaling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_default = 19 [json_name = "isDefault"];</code>
      * @return bool
      */
     public function getIsDefault()
@@ -508,7 +535,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_default = 18 [json_name = "isDefault"];</code>
+     * Generated from protobuf field <code>bool is_default = 19 [json_name = "isDefault"];</code>
      * @param bool $var
      * @return $this
      */
@@ -521,7 +548,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 19 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 20 [json_name = "active"];</code>
      * @return bool
      */
     public function getActive()
@@ -530,7 +557,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 19 [json_name = "active"];</code>
+     * Generated from protobuf field <code>bool active = 20 [json_name = "active"];</code>
      * @param bool $var
      * @return $this
      */

@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteTektonPipelineRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
      */
-    protected $tekton_pipeline_id = '';
+    protected $tekton_pipeline = null;
     /**
      * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
      */
@@ -28,7 +28,7 @@ class DeleteTektonPipelineRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $tekton_pipeline_id
+     *     @type \Pipelines\Tekton\V1Alpha1\Pipeline $tekton_pipeline
      *     @type string $user_id
      * }
      */
@@ -38,23 +38,33 @@ class DeleteTektonPipelineRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @return string
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\Pipeline|null
      */
-    public function getTektonPipelineId()
+    public function getTektonPipeline()
     {
-        return $this->tekton_pipeline_id;
+        return $this->tekton_pipeline;
+    }
+
+    public function hasTektonPipeline()
+    {
+        return isset($this->tekton_pipeline);
+    }
+
+    public function clearTektonPipeline()
+    {
+        unset($this->tekton_pipeline);
     }
 
     /**
-     * Generated from protobuf field <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Pipeline $var
      * @return $this
      */
-    public function setTektonPipelineId($var)
+    public function setTektonPipeline($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->tekton_pipeline_id = $var;
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\Pipeline::class);
+        $this->tekton_pipeline = $var;
 
         return $this;
     }

@@ -64,6 +64,11 @@ public final class TektonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_Pipeline_ExtraArgsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_AutoScalingEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_AutoScalingEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -92,7 +97,7 @@ public final class TektonProto {
       ".WorkspacesR\nworkspaces\022F\n\013task_params\030\007" +
       " \003(\0132%.pipelines.tekton.v1alpha1.TaskPar" +
       "amsR\ntaskParams\022 \n\013description\030\010 \001(\tR\013de" +
-      "scription\"\353\t\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\022" +
+      "scription\"\204\013\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\022" +
       "\n\004name\030\002 \001(\tR\004name\022#\n\rinstance_type\030\003 \001(" +
       "\tR\014instanceType\022!\n\014traffic_type\030\004 \001(\005R\013t" +
       "rafficType\022\'\n\017organization_id\030\005 \001(\rR\016org" +
@@ -114,21 +119,25 @@ public final class TektonProto {
       "elines.tekton.v1alpha1.Pipeline.SecretsE" +
       "ntryR\007secrets\022Q\n\nextra_args\030\021 \003(\01322.pipe" +
       "lines.tekton.v1alpha1.Pipeline.ExtraArgs" +
-      "EntryR\textraArgs\022\035\n\nis_default\030\022 \001(\010R\tis" +
-      "Default\022\026\n\006active\030\023 \001(\010R\006active\032>\n\020Integ" +
-      "rationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002" +
-      " \001(\tR\005value:\0028\001\032G\n\031EnvironmentVariablesE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v" +
-      "alue:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014Secrets" +
-      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005" +
-      "value:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\256\001\n#io.c" +
-      "uemby.pipelines.tekton.v1alpha1B\013TektonP" +
-      "rotoP\001Z:github.com/cuemby/ccp-sdk/gen/go" +
-      "/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipel" +
-      "ines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\" +
-      "V1Alpha1b\006proto3"
+      "EntryR\textraArgs\022W\n\014auto_scaling\030\022 \003(\01324" +
+      ".pipelines.tekton.v1alpha1.Pipeline.Auto" +
+      "ScalingEntryR\013autoScaling\022\035\n\nis_default\030" +
+      "\023 \001(\010R\tisDefault\022\026\n\006active\030\024 \001(\010R\006active" +
+      "\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
+      "\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031EnvironmentV" +
+      "ariablesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
+      "\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEntry\022\020\n\003ke" +
+      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:" +
+      "\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu" +
+      "e\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "\032>\n\020AutoScalingEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
+      "\n\005value\030\002 \001(\tR\005value:\0028\001B\256\001\n#io.cuemby.p" +
+      "ipelines.tekton.v1alpha1B\013TektonProtoP\001Z" +
+      ":github.com/cuemby/ccp-sdk/gen/go/pipeli" +
+      "nes/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Te" +
+      "kton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -163,7 +172,7 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_Pipeline_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor,
-        new java.lang.String[] { "Id", "Name", "InstanceType", "TrafficType", "OrganizationId", "ProjectId", "NamespaceId", "ApplicationId", "RuntimeId", "Params", "Tasks", "StatusType", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "IsDefault", "Active", });
+        new java.lang.String[] { "Id", "Name", "InstanceType", "TrafficType", "OrganizationId", "ProjectId", "NamespaceId", "ApplicationId", "RuntimeId", "Params", "Tasks", "StatusType", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "AutoScaling", "IsDefault", "Active", });
     internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_descriptor =
       internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_tekton_v1alpha1_Pipeline_IntegrationEntry_fieldAccessorTable = new
@@ -193,6 +202,12 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_Pipeline_ExtraArgsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_Pipeline_ExtraArgsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_AutoScalingEntry_descriptor =
+      internal_static_pipelines_tekton_v1alpha1_Pipeline_descriptor.getNestedTypes().get(5);
+    internal_static_pipelines_tekton_v1alpha1_Pipeline_AutoScalingEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_Pipeline_AutoScalingEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 
