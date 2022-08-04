@@ -409,6 +409,7 @@ class GetLogsRequest final :
     kLabelsFieldNumber = 1,
     kContainersFieldNumber = 2,
     kNextPageIdFieldNumber = 5,
+    kNamespaceFieldNumber = 6,
     kRangeFieldNumber = 3,
     kSizeFieldNumber = 4,
   };
@@ -467,6 +468,20 @@ class GetLogsRequest final :
   std::string* _internal_mutable_next_page_id();
   public:
 
+  // string namespace = 6 [json_name = "namespace"];
+  void clear_namespace_();
+  const std::string& namespace_() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_namespace_(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_namespace_();
+  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
+  void set_allocated_namespace_(std::string* namespace_);
+  private:
+  const std::string& _internal_namespace_() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
+  std::string* _internal_mutable_namespace_();
+  public:
+
   // .performance.logs.v1alpha1.Range range = 3 [json_name = "range"];
   bool has_range() const;
   private:
@@ -508,6 +523,7 @@ class GetLogsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> labels_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> containers_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_page_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   ::performance::logs::v1alpha1::Range* range_;
   ::PROTOBUF_NAMESPACE_ID::int32 size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1090,6 +1106,52 @@ inline void GetLogsRequest::set_allocated_next_page_id(std::string* next_page_id
   next_page_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), next_page_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.GetLogsRequest.next_page_id)
+}
+
+// string namespace = 6 [json_name = "namespace"];
+inline void GetLogsRequest::clear_namespace_() {
+  namespace__.ClearToEmpty();
+}
+inline const std::string& GetLogsRequest::namespace_() const {
+  // @@protoc_insertion_point(field_get:performance.logs.v1alpha1.GetLogsRequest.namespace)
+  return _internal_namespace_();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetLogsRequest::set_namespace_(ArgT0&& arg0, ArgT... args) {
+ 
+ namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:performance.logs.v1alpha1.GetLogsRequest.namespace)
+}
+inline std::string* GetLogsRequest::mutable_namespace_() {
+  std::string* _s = _internal_mutable_namespace_();
+  // @@protoc_insertion_point(field_mutable:performance.logs.v1alpha1.GetLogsRequest.namespace)
+  return _s;
+}
+inline const std::string& GetLogsRequest::_internal_namespace_() const {
+  return namespace__.Get();
+}
+inline void GetLogsRequest::_internal_set_namespace_(const std::string& value) {
+  
+  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetLogsRequest::_internal_mutable_namespace_() {
+  
+  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetLogsRequest::release_namespace_() {
+  // @@protoc_insertion_point(field_release:performance.logs.v1alpha1.GetLogsRequest.namespace)
+  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetLogsRequest::set_allocated_namespace_(std::string* namespace_) {
+  if (namespace_ != nullptr) {
+    
+  } else {
+    
+  }
+  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:performance.logs.v1alpha1.GetLogsRequest.namespace)
 }
 
 // -------------------------------------------------------------------

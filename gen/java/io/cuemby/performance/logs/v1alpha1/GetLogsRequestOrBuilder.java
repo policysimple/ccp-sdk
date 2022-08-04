@@ -98,4 +98,16 @@ public interface GetLogsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNextPageIdBytes();
+
+  /**
+   * <code>string namespace = 6 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 6 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
 }
