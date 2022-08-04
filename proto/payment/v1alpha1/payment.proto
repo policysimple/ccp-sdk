@@ -77,6 +77,19 @@ message Biling {
   string year = 8;
 }
 
+message SubscriptionItems {
+  string id =1;
+  string suscription_item_id =2;
+  string price_id = 3;  
+  string  product_id = 4;
+ 
+}
+
+message SubscriptionItemsList {
+  repeated SubscriptionItems items = 1;
+} 
+
+
 message InvoiceList {
   repeated Invoice items = 1;
 } 

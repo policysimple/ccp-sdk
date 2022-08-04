@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.DeleteCustomerResponse</code>
+ * Generated from protobuf message <code>payment.v1alpha1.UpdateProjectResponse</code>
  */
-class DeleteCustomerResponse extends \Google\Protobuf\Internal\Message
+class UpdateProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      */
     protected $status = '';
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     */
-    protected $customer = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class DeleteCustomerResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $status
-     *     @type \Payment\V1alpha1\Customer $customer
      * }
      */
     public function __construct($data = NULL) {
@@ -55,38 +50,6 @@ class DeleteCustomerResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 2 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
-     * @return $this
-     */
-    public function setCustomer($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
 
         return $this;
     }
