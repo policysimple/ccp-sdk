@@ -7,25 +7,38 @@ option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 import "payment/v1alpha1/payment.proto";
 //import "payment.proto";
 
-service PaymentAPIService{
+service PaymentAPIService{ 
+    //Create a new service 
+    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
     rpc CreateSuscription(CreateSuscriptionRequest) returns (CreateSuscriptionResponse) {}; 
+    rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc CreateCard(CreateCardRequest) returns (CreateCardResponse) {};
-    rpc CancelSuscription(CancelSuscriptionRequest) returns (CancelSuscriptionResponse) {}; 
+    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {};
+    rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
+
+    //Get the service
     rpc GetOrganization(GetOrganizationRequest) returns (GetOrganizationResponse) {}; 
     rpc GetSuscription(GetSuscriptionRequest) returns (GetSuscriptionResponse) {}; 
-    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {}
-    rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {};
     rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse) {};
     rpc GetBilingMonth(GetBilingMonthRequest) returns (GetBilingMonthResponse) {};
     rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse) {};
-    rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
-    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {};
+
+    //List the service
     rpc ListProjects(ListProjectsRequest) returns (ListProjectsResponse) {}; 
+    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};  
+    rpc ListSubscriptionItems(ListSubscriptionItemsRequest) returns (ListSubscriptionItemsResponse) {};  
+   
+    //Update service
+    rpc UpdateSuscription(UpdateSuscriptionRequest) returns (UpdateSuscriptionResponse) {};
+  
+    //Delete service
     rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse) {};
     rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {};
-    rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};    
-    rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
+    rpc CancelSuscription(CancelSuscriptionRequest) returns (CancelSuscriptionResponse) {}; 
+    rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
+
+    //Filter service
     rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
 }
 
@@ -51,7 +64,8 @@ message DeleteCustomerRequest {
 }
 
 message DeleteCustomerResponse {
-    string status = 1;  repeated Card cards = 6;
+    string status = 1;  
+    payment.v1alpha1.Customer customer = 2;
 }
 
 message GetSuscriptionRequest {
@@ -107,9 +121,18 @@ message CreateSuscriptionRequest {
     string customer_id = 2;
     payment.v1alpha1.Suscription suscription = 3;
 }
-
 message CreateSuscriptionResponse {
     payment.v1alpha1.Suscription suscription = 1;
+    string status = 2;
+}
+
+message UpdateSuscriptionRequest {
+    string suscription_id = 1;
+    uint32 organization_id = 2;  
+}
+
+message UpdateSuscriptionResponse {
+    payment.v1alpha1.Customer customer = 1;
     string status = 2;
 }
 
@@ -169,7 +192,6 @@ message CreatePaymentRequest {
     string customer_id = 2;
     payment.v1alpha1.Payment payment = 3;
 }
-
 message CreatePaymentResponse {
     string card_id =1;
     string status = 2;
@@ -206,6 +228,16 @@ message ListPaymentResponse {
     string status = 2;
 }
 
+message ListSubscriptionItemsRequest {
+    uint32 organization_id = 1;
+    string suscription_id = 2;
+}
+
+message ListSubscriptionItemsResponse {
+    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.SubscriptionItemsList suscription_items_list = 2;
+    string status = 3;
+}
 
 message ListProjectsRequest {
     uint32 organization_id = 1;

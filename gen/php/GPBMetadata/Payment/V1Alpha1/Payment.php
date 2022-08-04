@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-×
+»
 payment/v1alpha1/payment.protopayment.v1alpha1"¨
 Customer
 id (	Rid
@@ -86,7 +86,15 @@ totalusage
 cpu (Rcpu
 ram (Rram
 month (	Rmonth
-year (	Ryear">
+year (	Ryear"
+SubscriptionItems
+id (	Rid.
+suscription_item_id (	RsuscriptionItemId
+price_id (	RpriceId
+
+product_id (	R	productId"R
+SubscriptionItemsList9
+items (2#.payment.v1alpha1.SubscriptionItemsRitems">
 InvoiceList/
 items (2.payment.v1alpha1.InvoiceRitems"@
 CustomerList0

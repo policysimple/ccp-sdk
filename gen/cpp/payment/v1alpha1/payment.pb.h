@@ -46,7 +46,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -91,6 +91,12 @@ extern ProjectDefaultTypeInternal _Project_default_instance_;
 class ProjectList;
 struct ProjectListDefaultTypeInternal;
 extern ProjectListDefaultTypeInternal _ProjectList_default_instance_;
+class SubscriptionItems;
+struct SubscriptionItemsDefaultTypeInternal;
+extern SubscriptionItemsDefaultTypeInternal _SubscriptionItems_default_instance_;
+class SubscriptionItemsList;
+struct SubscriptionItemsListDefaultTypeInternal;
+extern SubscriptionItemsListDefaultTypeInternal _SubscriptionItemsList_default_instance_;
 class Suscription;
 struct SuscriptionDefaultTypeInternal;
 extern SuscriptionDefaultTypeInternal _Suscription_default_instance_;
@@ -112,6 +118,8 @@ template<> ::payment::v1alpha1::Payment* Arena::CreateMaybeMessage<::payment::v1
 template<> ::payment::v1alpha1::PaymentList* Arena::CreateMaybeMessage<::payment::v1alpha1::PaymentList>(Arena*);
 template<> ::payment::v1alpha1::Project* Arena::CreateMaybeMessage<::payment::v1alpha1::Project>(Arena*);
 template<> ::payment::v1alpha1::ProjectList* Arena::CreateMaybeMessage<::payment::v1alpha1::ProjectList>(Arena*);
+template<> ::payment::v1alpha1::SubscriptionItems* Arena::CreateMaybeMessage<::payment::v1alpha1::SubscriptionItems>(Arena*);
+template<> ::payment::v1alpha1::SubscriptionItemsList* Arena::CreateMaybeMessage<::payment::v1alpha1::SubscriptionItemsList>(Arena*);
 template<> ::payment::v1alpha1::Suscription* Arena::CreateMaybeMessage<::payment::v1alpha1::Suscription>(Arena*);
 template<> ::payment::v1alpha1::SuscriptionList* Arena::CreateMaybeMessage<::payment::v1alpha1::SuscriptionList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -1821,6 +1829,346 @@ class Biling final :
 };
 // -------------------------------------------------------------------
 
+class SubscriptionItems final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.SubscriptionItems) */ {
+ public:
+  inline SubscriptionItems() : SubscriptionItems(nullptr) {}
+  ~SubscriptionItems() override;
+  explicit constexpr SubscriptionItems(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SubscriptionItems(const SubscriptionItems& from);
+  SubscriptionItems(SubscriptionItems&& from) noexcept
+    : SubscriptionItems() {
+    *this = ::std::move(from);
+  }
+
+  inline SubscriptionItems& operator=(const SubscriptionItems& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubscriptionItems& operator=(SubscriptionItems&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SubscriptionItems& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SubscriptionItems* internal_default_instance() {
+    return reinterpret_cast<const SubscriptionItems*>(
+               &_SubscriptionItems_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(SubscriptionItems& a, SubscriptionItems& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubscriptionItems* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubscriptionItems* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SubscriptionItems* New() const final {
+    return new SubscriptionItems();
+  }
+
+  SubscriptionItems* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SubscriptionItems>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SubscriptionItems& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SubscriptionItems& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubscriptionItems* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.SubscriptionItems";
+  }
+  protected:
+  explicit SubscriptionItems(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kSuscriptionItemIdFieldNumber = 2,
+    kPriceIdFieldNumber = 3,
+    kProductIdFieldNumber = 4,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string suscription_item_id = 2 [json_name = "suscriptionItemId"];
+  void clear_suscription_item_id();
+  const std::string& suscription_item_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_suscription_item_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_suscription_item_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_suscription_item_id();
+  void set_allocated_suscription_item_id(std::string* suscription_item_id);
+  private:
+  const std::string& _internal_suscription_item_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_suscription_item_id(const std::string& value);
+  std::string* _internal_mutable_suscription_item_id();
+  public:
+
+  // string price_id = 3 [json_name = "priceId"];
+  void clear_price_id();
+  const std::string& price_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_price_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_id();
+  void set_allocated_price_id(std::string* price_id);
+  private:
+  const std::string& _internal_price_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_id(const std::string& value);
+  std::string* _internal_mutable_price_id();
+  public:
+
+  // string product_id = 4 [json_name = "productId"];
+  void clear_product_id();
+  const std::string& product_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_product_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_product_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_product_id();
+  void set_allocated_product_id(std::string* product_id);
+  private:
+  const std::string& _internal_product_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_product_id(const std::string& value);
+  std::string* _internal_mutable_product_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.SubscriptionItems)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suscription_item_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr product_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SubscriptionItemsList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.SubscriptionItemsList) */ {
+ public:
+  inline SubscriptionItemsList() : SubscriptionItemsList(nullptr) {}
+  ~SubscriptionItemsList() override;
+  explicit constexpr SubscriptionItemsList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SubscriptionItemsList(const SubscriptionItemsList& from);
+  SubscriptionItemsList(SubscriptionItemsList&& from) noexcept
+    : SubscriptionItemsList() {
+    *this = ::std::move(from);
+  }
+
+  inline SubscriptionItemsList& operator=(const SubscriptionItemsList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubscriptionItemsList& operator=(SubscriptionItemsList&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SubscriptionItemsList& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SubscriptionItemsList* internal_default_instance() {
+    return reinterpret_cast<const SubscriptionItemsList*>(
+               &_SubscriptionItemsList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(SubscriptionItemsList& a, SubscriptionItemsList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubscriptionItemsList* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubscriptionItemsList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SubscriptionItemsList* New() const final {
+    return new SubscriptionItemsList();
+  }
+
+  SubscriptionItemsList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SubscriptionItemsList>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SubscriptionItemsList& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SubscriptionItemsList& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubscriptionItemsList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.SubscriptionItemsList";
+  }
+  protected:
+  explicit SubscriptionItemsList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kItemsFieldNumber = 1,
+  };
+  // repeated .payment.v1alpha1.SubscriptionItems items = 1 [json_name = "items"];
+  int items_size() const;
+  private:
+  int _internal_items_size() const;
+  public:
+  void clear_items();
+  ::payment::v1alpha1::SubscriptionItems* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::SubscriptionItems >*
+      mutable_items();
+  private:
+  const ::payment::v1alpha1::SubscriptionItems& _internal_items(int index) const;
+  ::payment::v1alpha1::SubscriptionItems* _internal_add_items();
+  public:
+  const ::payment::v1alpha1::SubscriptionItems& items(int index) const;
+  ::payment::v1alpha1::SubscriptionItems* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::SubscriptionItems >&
+      items() const;
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.SubscriptionItemsList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::SubscriptionItems > items_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InvoiceList final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.InvoiceList) */ {
  public:
@@ -1865,7 +2213,7 @@ class InvoiceList final :
                &_InvoiceList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(InvoiceList& a, InvoiceList& b) {
     a.Swap(&b);
@@ -2013,7 +2361,7 @@ class CustomerList final :
                &_CustomerList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(CustomerList& a, CustomerList& b) {
     a.Swap(&b);
@@ -2161,7 +2509,7 @@ class BilingList final :
                &_BilingList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(BilingList& a, BilingList& b) {
     a.Swap(&b);
@@ -2309,7 +2657,7 @@ class SuscriptionList final :
                &_SuscriptionList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(SuscriptionList& a, SuscriptionList& b) {
     a.Swap(&b);
@@ -2457,7 +2805,7 @@ class CardList final :
                &_CardList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(CardList& a, CardList& b) {
     a.Swap(&b);
@@ -2605,7 +2953,7 @@ class PaymentList final :
                &_PaymentList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(PaymentList& a, PaymentList& b) {
     a.Swap(&b);
@@ -2753,7 +3101,7 @@ class ProjectList final :
                &_ProjectList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(ProjectList& a, ProjectList& b) {
     a.Swap(&b);
@@ -5270,6 +5618,238 @@ inline void Biling::set_allocated_year(std::string* year) {
 
 // -------------------------------------------------------------------
 
+// SubscriptionItems
+
+// string id = 1 [json_name = "id"];
+inline void SubscriptionItems::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& SubscriptionItems::id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.SubscriptionItems.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscriptionItems::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.SubscriptionItems.id)
+}
+inline std::string* SubscriptionItems::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.SubscriptionItems.id)
+  return _s;
+}
+inline const std::string& SubscriptionItems::_internal_id() const {
+  return id_.Get();
+}
+inline void SubscriptionItems::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::release_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.SubscriptionItems.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SubscriptionItems::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.SubscriptionItems.id)
+}
+
+// string suscription_item_id = 2 [json_name = "suscriptionItemId"];
+inline void SubscriptionItems::clear_suscription_item_id() {
+  suscription_item_id_.ClearToEmpty();
+}
+inline const std::string& SubscriptionItems::suscription_item_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.SubscriptionItems.suscription_item_id)
+  return _internal_suscription_item_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscriptionItems::set_suscription_item_id(ArgT0&& arg0, ArgT... args) {
+ 
+ suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.SubscriptionItems.suscription_item_id)
+}
+inline std::string* SubscriptionItems::mutable_suscription_item_id() {
+  std::string* _s = _internal_mutable_suscription_item_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.SubscriptionItems.suscription_item_id)
+  return _s;
+}
+inline const std::string& SubscriptionItems::_internal_suscription_item_id() const {
+  return suscription_item_id_.Get();
+}
+inline void SubscriptionItems::_internal_set_suscription_item_id(const std::string& value) {
+  
+  suscription_item_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::_internal_mutable_suscription_item_id() {
+  
+  return suscription_item_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::release_suscription_item_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.SubscriptionItems.suscription_item_id)
+  return suscription_item_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SubscriptionItems::set_allocated_suscription_item_id(std::string* suscription_item_id) {
+  if (suscription_item_id != nullptr) {
+    
+  } else {
+    
+  }
+  suscription_item_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suscription_item_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.SubscriptionItems.suscription_item_id)
+}
+
+// string price_id = 3 [json_name = "priceId"];
+inline void SubscriptionItems::clear_price_id() {
+  price_id_.ClearToEmpty();
+}
+inline const std::string& SubscriptionItems::price_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.SubscriptionItems.price_id)
+  return _internal_price_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscriptionItems::set_price_id(ArgT0&& arg0, ArgT... args) {
+ 
+ price_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.SubscriptionItems.price_id)
+}
+inline std::string* SubscriptionItems::mutable_price_id() {
+  std::string* _s = _internal_mutable_price_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.SubscriptionItems.price_id)
+  return _s;
+}
+inline const std::string& SubscriptionItems::_internal_price_id() const {
+  return price_id_.Get();
+}
+inline void SubscriptionItems::_internal_set_price_id(const std::string& value) {
+  
+  price_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::_internal_mutable_price_id() {
+  
+  return price_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::release_price_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.SubscriptionItems.price_id)
+  return price_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SubscriptionItems::set_allocated_price_id(std::string* price_id) {
+  if (price_id != nullptr) {
+    
+  } else {
+    
+  }
+  price_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.SubscriptionItems.price_id)
+}
+
+// string product_id = 4 [json_name = "productId"];
+inline void SubscriptionItems::clear_product_id() {
+  product_id_.ClearToEmpty();
+}
+inline const std::string& SubscriptionItems::product_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.SubscriptionItems.product_id)
+  return _internal_product_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SubscriptionItems::set_product_id(ArgT0&& arg0, ArgT... args) {
+ 
+ product_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.SubscriptionItems.product_id)
+}
+inline std::string* SubscriptionItems::mutable_product_id() {
+  std::string* _s = _internal_mutable_product_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.SubscriptionItems.product_id)
+  return _s;
+}
+inline const std::string& SubscriptionItems::_internal_product_id() const {
+  return product_id_.Get();
+}
+inline void SubscriptionItems::_internal_set_product_id(const std::string& value) {
+  
+  product_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::_internal_mutable_product_id() {
+  
+  return product_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SubscriptionItems::release_product_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.SubscriptionItems.product_id)
+  return product_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SubscriptionItems::set_allocated_product_id(std::string* product_id) {
+  if (product_id != nullptr) {
+    
+  } else {
+    
+  }
+  product_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), product_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.SubscriptionItems.product_id)
+}
+
+// -------------------------------------------------------------------
+
+// SubscriptionItemsList
+
+// repeated .payment.v1alpha1.SubscriptionItems items = 1 [json_name = "items"];
+inline int SubscriptionItemsList::_internal_items_size() const {
+  return items_.size();
+}
+inline int SubscriptionItemsList::items_size() const {
+  return _internal_items_size();
+}
+inline void SubscriptionItemsList::clear_items() {
+  items_.Clear();
+}
+inline ::payment::v1alpha1::SubscriptionItems* SubscriptionItemsList::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.SubscriptionItemsList.items)
+  return items_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::SubscriptionItems >*
+SubscriptionItemsList::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:payment.v1alpha1.SubscriptionItemsList.items)
+  return &items_;
+}
+inline const ::payment::v1alpha1::SubscriptionItems& SubscriptionItemsList::_internal_items(int index) const {
+  return items_.Get(index);
+}
+inline const ::payment::v1alpha1::SubscriptionItems& SubscriptionItemsList::items(int index) const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.SubscriptionItemsList.items)
+  return _internal_items(index);
+}
+inline ::payment::v1alpha1::SubscriptionItems* SubscriptionItemsList::_internal_add_items() {
+  return items_.Add();
+}
+inline ::payment::v1alpha1::SubscriptionItems* SubscriptionItemsList::add_items() {
+  ::payment::v1alpha1::SubscriptionItems* _add = _internal_add_items();
+  // @@protoc_insertion_point(field_add:payment.v1alpha1.SubscriptionItemsList.items)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::SubscriptionItems >&
+SubscriptionItemsList::items() const {
+  // @@protoc_insertion_point(field_list:payment.v1alpha1.SubscriptionItemsList.items)
+  return items_;
+}
+
+// -------------------------------------------------------------------
+
 // InvoiceList
 
 // repeated .payment.v1alpha1.Invoice items = 1 [json_name = "items"];
@@ -5579,6 +6159,10 @@ ProjectList::items() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
