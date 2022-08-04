@@ -202,12 +202,25 @@ private static final long serialVersionUID = 0L;
                 extraArgs__.getKey(), extraArgs__.getValue());
             break;
           }
-          case 144: {
+          case 146: {
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              autoScaling_ = com.google.protobuf.MapField.newMapField(
+                  AutoScalingDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000080;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            autoScaling__ = input.readMessage(
+                AutoScalingDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            autoScaling_.getMutableMap().put(
+                autoScaling__.getKey(), autoScaling__.getValue());
+            break;
+          }
+          case 152: {
 
             isDefault_ = input.readBool();
             break;
           }
-          case 152: {
+          case 160: {
 
             active_ = input.readBool();
             break;
@@ -257,6 +270,8 @@ private static final long serialVersionUID = 0L;
         return internalGetSecrets();
       case 17:
         return internalGetExtraArgs();
+      case 18:
+        return internalGetAutoScaling();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -1054,10 +1069,91 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int IS_DEFAULT_FIELD_NUMBER = 18;
+  public static final int AUTO_SCALING_FIELD_NUMBER = 18;
+  private static final class AutoScalingDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_Pipeline_AutoScalingEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> autoScaling_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetAutoScaling() {
+    if (autoScaling_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AutoScalingDefaultEntryHolder.defaultEntry);
+    }
+    return autoScaling_;
+  }
+
+  public int getAutoScalingCount() {
+    return internalGetAutoScaling().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsAutoScaling(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetAutoScaling().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getAutoScalingMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAutoScaling() {
+    return getAutoScalingMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getAutoScalingMap() {
+    return internalGetAutoScaling().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getAutoScalingOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetAutoScaling().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getAutoScalingOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetAutoScaling().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int IS_DEFAULT_FIELD_NUMBER = 19;
   private boolean isDefault_;
   /**
-   * <code>bool is_default = 18 [json_name = "isDefault"];</code>
+   * <code>bool is_default = 19 [json_name = "isDefault"];</code>
    * @return The isDefault.
    */
   @java.lang.Override
@@ -1065,10 +1161,10 @@ private static final long serialVersionUID = 0L;
     return isDefault_;
   }
 
-  public static final int ACTIVE_FIELD_NUMBER = 19;
+  public static final int ACTIVE_FIELD_NUMBER = 20;
   private boolean active_;
   /**
-   * <code>bool active = 19 [json_name = "active"];</code>
+   * <code>bool active = 20 [json_name = "active"];</code>
    * @return The active.
    */
   @java.lang.Override
@@ -1156,11 +1252,17 @@ private static final long serialVersionUID = 0L;
         internalGetExtraArgs(),
         ExtraArgsDefaultEntryHolder.defaultEntry,
         17);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetAutoScaling(),
+        AutoScalingDefaultEntryHolder.defaultEntry,
+        18);
     if (isDefault_ != false) {
-      output.writeBool(18, isDefault_);
+      output.writeBool(19, isDefault_);
     }
     if (active_ != false) {
-      output.writeBool(19, active_);
+      output.writeBool(20, active_);
     }
     unknownFields.writeTo(output);
   }
@@ -1262,13 +1364,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, extraArgs__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetAutoScaling().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      autoScaling__ = AutoScalingDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, autoScaling__);
+    }
     if (isDefault_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(18, isDefault_);
+        .computeBoolSize(19, isDefault_);
     }
     if (active_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(19, active_);
+        .computeBoolSize(20, active_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1319,6 +1431,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetSecrets())) return false;
     if (!internalGetExtraArgs().equals(
         other.internalGetExtraArgs())) return false;
+    if (!internalGetAutoScaling().equals(
+        other.internalGetAutoScaling())) return false;
     if (getIsDefault()
         != other.getIsDefault()) return false;
     if (getActive()
@@ -1381,6 +1495,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetExtraArgs().getMap().isEmpty()) {
       hash = (37 * hash) + EXTRA_ARGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetExtraArgs().hashCode();
+    }
+    if (!internalGetAutoScaling().getMap().isEmpty()) {
+      hash = (37 * hash) + AUTO_SCALING_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAutoScaling().hashCode();
     }
     hash = (37 * hash) + IS_DEFAULT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -1513,6 +1631,8 @@ private static final long serialVersionUID = 0L;
           return internalGetSecrets();
         case 17:
           return internalGetExtraArgs();
+        case 18:
+          return internalGetAutoScaling();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1532,6 +1652,8 @@ private static final long serialVersionUID = 0L;
           return internalGetMutableSecrets();
         case 17:
           return internalGetMutableExtraArgs();
+        case 18:
+          return internalGetMutableAutoScaling();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1602,6 +1724,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableCommands().clear();
       internalGetMutableSecrets().clear();
       internalGetMutableExtraArgs().clear();
+      internalGetMutableAutoScaling().clear();
       isDefault_ = false;
 
       active_ = false;
@@ -1671,6 +1794,8 @@ private static final long serialVersionUID = 0L;
       result.secrets_.makeImmutable();
       result.extraArgs_ = internalGetExtraArgs();
       result.extraArgs_.makeImmutable();
+      result.autoScaling_ = internalGetAutoScaling();
+      result.autoScaling_.makeImmutable();
       result.isDefault_ = isDefault_;
       result.active_ = active_;
       onBuilt();
@@ -1820,6 +1945,8 @@ private static final long serialVersionUID = 0L;
           other.internalGetSecrets());
       internalGetMutableExtraArgs().mergeFrom(
           other.internalGetExtraArgs());
+      internalGetMutableAutoScaling().mergeFrom(
+          other.internalGetAutoScaling());
       if (other.getIsDefault() != false) {
         setIsDefault(other.getIsDefault());
       }
@@ -3601,9 +3728,137 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> autoScaling_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetAutoScaling() {
+      if (autoScaling_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AutoScalingDefaultEntryHolder.defaultEntry);
+      }
+      return autoScaling_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableAutoScaling() {
+      onChanged();;
+      if (autoScaling_ == null) {
+        autoScaling_ = com.google.protobuf.MapField.newMapField(
+            AutoScalingDefaultEntryHolder.defaultEntry);
+      }
+      if (!autoScaling_.isMutable()) {
+        autoScaling_ = autoScaling_.copy();
+      }
+      return autoScaling_;
+    }
+
+    public int getAutoScalingCount() {
+      return internalGetAutoScaling().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsAutoScaling(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetAutoScaling().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getAutoScalingMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAutoScaling() {
+      return getAutoScalingMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getAutoScalingMap() {
+      return internalGetAutoScaling().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getAutoScalingOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAutoScaling().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getAutoScalingOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAutoScaling().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAutoScaling() {
+      internalGetMutableAutoScaling().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+
+    public Builder removeAutoScaling(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableAutoScaling().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableAutoScaling() {
+      return internalGetMutableAutoScaling().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+    public Builder putAutoScaling(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableAutoScaling().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+     */
+
+    public Builder putAllAutoScaling(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAutoScaling().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
     private boolean isDefault_ ;
     /**
-     * <code>bool is_default = 18 [json_name = "isDefault"];</code>
+     * <code>bool is_default = 19 [json_name = "isDefault"];</code>
      * @return The isDefault.
      */
     @java.lang.Override
@@ -3611,7 +3866,7 @@ private static final long serialVersionUID = 0L;
       return isDefault_;
     }
     /**
-     * <code>bool is_default = 18 [json_name = "isDefault"];</code>
+     * <code>bool is_default = 19 [json_name = "isDefault"];</code>
      * @param value The isDefault to set.
      * @return This builder for chaining.
      */
@@ -3622,7 +3877,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_default = 18 [json_name = "isDefault"];</code>
+     * <code>bool is_default = 19 [json_name = "isDefault"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsDefault() {
@@ -3634,7 +3889,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean active_ ;
     /**
-     * <code>bool active = 19 [json_name = "active"];</code>
+     * <code>bool active = 20 [json_name = "active"];</code>
      * @return The active.
      */
     @java.lang.Override
@@ -3642,7 +3897,7 @@ private static final long serialVersionUID = 0L;
       return active_;
     }
     /**
-     * <code>bool active = 19 [json_name = "active"];</code>
+     * <code>bool active = 20 [json_name = "active"];</code>
      * @param value The active to set.
      * @return This builder for chaining.
      */
@@ -3653,7 +3908,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool active = 19 [json_name = "active"];</code>
+     * <code>bool active = 20 [json_name = "active"];</code>
      * @return This builder for chaining.
      */
     public Builder clearActive() {

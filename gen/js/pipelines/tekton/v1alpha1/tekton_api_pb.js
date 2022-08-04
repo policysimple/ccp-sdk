@@ -1232,7 +1232,7 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.toObject =
  */
 proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tektonPipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    tektonPipeline: (f = msg.getTektonPipeline()) && pipelines_tekton_v1alpha1_tekton_pb.Pipeline.toObject(includeInstance, f),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1271,8 +1271,9 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTektonPipelineId(value);
+      var value = new pipelines_tekton_v1alpha1_tekton_pb.Pipeline;
+      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.Pipeline.deserializeBinaryFromReader);
+      msg.setTektonPipeline(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1307,11 +1308,12 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.serializeB
  */
 proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTektonPipelineId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getTektonPipeline();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      pipelines_tekton_v1alpha1_tekton_pb.Pipeline.serializeBinaryToWriter
     );
   }
   f = message.getUserId();
@@ -1325,20 +1327,39 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.serializeBinaryToWri
 
 
 /**
- * optional string tekton_pipeline_id = 1;
- * @return {string}
+ * optional Pipeline tekton_pipeline = 1;
+ * @return {?proto.pipelines.tekton.v1alpha1.Pipeline}
  */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getTektonPipelineId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getTektonPipeline = function() {
+  return /** @type{?proto.pipelines.tekton.v1alpha1.Pipeline} */ (
+    jspb.Message.getWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.Pipeline, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.pipelines.tekton.v1alpha1.Pipeline|undefined} value
+ * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
+*/
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setTektonPipeline = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
  */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setTektonPipelineId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.clearTektonPipeline = function() {
+  return this.setTektonPipeline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.hasTektonPipeline = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

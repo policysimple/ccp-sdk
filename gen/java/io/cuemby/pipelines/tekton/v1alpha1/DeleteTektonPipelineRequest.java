@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteTektonPipelineRequest() {
-    tektonPipelineId_ = "";
     userId_ = "";
   }
 
@@ -51,9 +50,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            io.cuemby.pipelines.tekton.v1alpha1.Pipeline.Builder subBuilder = null;
+            if (tektonPipeline_ != null) {
+              subBuilder = tektonPipeline_.toBuilder();
+            }
+            tektonPipeline_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Pipeline.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(tektonPipeline_);
+              tektonPipeline_ = subBuilder.buildPartial();
+            }
 
-            tektonPipelineId_ = s;
             break;
           }
           case 18: {
@@ -94,42 +100,30 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.class, io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.Builder.class);
   }
 
-  public static final int TEKTON_PIPELINE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tektonPipelineId_;
+  public static final int TEKTON_PIPELINE_FIELD_NUMBER = 1;
+  private io.cuemby.pipelines.tekton.v1alpha1.Pipeline tektonPipeline_;
   /**
-   * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-   * @return The tektonPipelineId.
+   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+   * @return Whether the tektonPipeline field is set.
    */
   @java.lang.Override
-  public java.lang.String getTektonPipelineId() {
-    java.lang.Object ref = tektonPipelineId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      tektonPipelineId_ = s;
-      return s;
-    }
+  public boolean hasTektonPipeline() {
+    return tektonPipeline_ != null;
   }
   /**
-   * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-   * @return The bytes for tektonPipelineId.
+   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+   * @return The tektonPipeline.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTektonPipelineIdBytes() {
-    java.lang.Object ref = tektonPipelineId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      tektonPipelineId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public io.cuemby.pipelines.tekton.v1alpha1.Pipeline getTektonPipeline() {
+    return tektonPipeline_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Pipeline.getDefaultInstance() : tektonPipeline_;
+  }
+  /**
+   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder getTektonPipelineOrBuilder() {
+    return getTektonPipeline();
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
@@ -184,8 +178,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTektonPipelineIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tektonPipelineId_);
+    if (tektonPipeline_ != null) {
+      output.writeMessage(1, getTektonPipeline());
     }
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
@@ -199,8 +193,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTektonPipelineIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tektonPipelineId_);
+    if (tektonPipeline_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getTektonPipeline());
     }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
@@ -220,8 +215,11 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest other = (io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest) obj;
 
-    if (!getTektonPipelineId()
-        .equals(other.getTektonPipelineId())) return false;
+    if (hasTektonPipeline() != other.hasTektonPipeline()) return false;
+    if (hasTektonPipeline()) {
+      if (!getTektonPipeline()
+          .equals(other.getTektonPipeline())) return false;
+    }
     if (!getUserId()
         .equals(other.getUserId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -235,8 +233,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TEKTON_PIPELINE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTektonPipelineId().hashCode();
+    if (hasTektonPipeline()) {
+      hash = (37 * hash) + TEKTON_PIPELINE_FIELD_NUMBER;
+      hash = (53 * hash) + getTektonPipeline().hashCode();
+    }
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -372,8 +372,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      tektonPipelineId_ = "";
-
+      if (tektonPipelineBuilder_ == null) {
+        tektonPipeline_ = null;
+      } else {
+        tektonPipeline_ = null;
+        tektonPipelineBuilder_ = null;
+      }
       userId_ = "";
 
       return this;
@@ -402,7 +406,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest result = new io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest(this);
-      result.tektonPipelineId_ = tektonPipelineId_;
+      if (tektonPipelineBuilder_ == null) {
+        result.tektonPipeline_ = tektonPipeline_;
+      } else {
+        result.tektonPipeline_ = tektonPipelineBuilder_.build();
+      }
       result.userId_ = userId_;
       onBuilt();
       return result;
@@ -452,9 +460,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest other) {
       if (other == io.cuemby.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.getDefaultInstance()) return this;
-      if (!other.getTektonPipelineId().isEmpty()) {
-        tektonPipelineId_ = other.tektonPipelineId_;
-        onChanged();
+      if (other.hasTektonPipeline()) {
+        mergeTektonPipeline(other.getTektonPipeline());
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
@@ -489,80 +496,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object tektonPipelineId_ = "";
+    private io.cuemby.pipelines.tekton.v1alpha1.Pipeline tektonPipeline_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Pipeline, io.cuemby.pipelines.tekton.v1alpha1.Pipeline.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder> tektonPipelineBuilder_;
     /**
-     * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @return The tektonPipelineId.
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     * @return Whether the tektonPipeline field is set.
      */
-    public java.lang.String getTektonPipelineId() {
-      java.lang.Object ref = tektonPipelineId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tektonPipelineId_ = s;
-        return s;
+    public boolean hasTektonPipeline() {
+      return tektonPipelineBuilder_ != null || tektonPipeline_ != null;
+    }
+    /**
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     * @return The tektonPipeline.
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Pipeline getTektonPipeline() {
+      if (tektonPipelineBuilder_ == null) {
+        return tektonPipeline_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Pipeline.getDefaultInstance() : tektonPipeline_;
       } else {
-        return (java.lang.String) ref;
+        return tektonPipelineBuilder_.getMessage();
       }
     }
     /**
-     * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @return The bytes for tektonPipelineId.
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
      */
-    public com.google.protobuf.ByteString
-        getTektonPipelineIdBytes() {
-      java.lang.Object ref = tektonPipelineId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tektonPipelineId_ = b;
-        return b;
+    public Builder setTektonPipeline(io.cuemby.pipelines.tekton.v1alpha1.Pipeline value) {
+      if (tektonPipelineBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tektonPipeline_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        tektonPipelineBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     */
+    public Builder setTektonPipeline(
+        io.cuemby.pipelines.tekton.v1alpha1.Pipeline.Builder builderForValue) {
+      if (tektonPipelineBuilder_ == null) {
+        tektonPipeline_ = builderForValue.build();
+        onChanged();
+      } else {
+        tektonPipelineBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     */
+    public Builder mergeTektonPipeline(io.cuemby.pipelines.tekton.v1alpha1.Pipeline value) {
+      if (tektonPipelineBuilder_ == null) {
+        if (tektonPipeline_ != null) {
+          tektonPipeline_ =
+            io.cuemby.pipelines.tekton.v1alpha1.Pipeline.newBuilder(tektonPipeline_).mergeFrom(value).buildPartial();
+        } else {
+          tektonPipeline_ = value;
+        }
+        onChanged();
+      } else {
+        tektonPipelineBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     */
+    public Builder clearTektonPipeline() {
+      if (tektonPipelineBuilder_ == null) {
+        tektonPipeline_ = null;
+        onChanged();
+      } else {
+        tektonPipeline_ = null;
+        tektonPipelineBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Pipeline.Builder getTektonPipelineBuilder() {
+      
+      onChanged();
+      return getTektonPipelineFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder getTektonPipelineOrBuilder() {
+      if (tektonPipelineBuilder_ != null) {
+        return tektonPipelineBuilder_.getMessageOrBuilder();
+      } else {
+        return tektonPipeline_ == null ?
+            io.cuemby.pipelines.tekton.v1alpha1.Pipeline.getDefaultInstance() : tektonPipeline_;
       }
     }
     /**
-     * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @param value The tektonPipelineId to set.
-     * @return This builder for chaining.
+     * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
      */
-    public Builder setTektonPipelineId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      tektonPipelineId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTektonPipelineId() {
-      
-      tektonPipelineId_ = getDefaultInstance().getTektonPipelineId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-     * @param value The bytes for tektonPipelineId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTektonPipelineIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      tektonPipelineId_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Pipeline, io.cuemby.pipelines.tekton.v1alpha1.Pipeline.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder> 
+        getTektonPipelineFieldBuilder() {
+      if (tektonPipelineBuilder_ == null) {
+        tektonPipelineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.tekton.v1alpha1.Pipeline, io.cuemby.pipelines.tekton.v1alpha1.Pipeline.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder>(
+                getTektonPipeline(),
+                getParentForChildren(),
+                isClean());
+        tektonPipeline_ = null;
+      }
+      return tektonPipelineBuilder_;
     }
 
     private java.lang.Object userId_ = "";

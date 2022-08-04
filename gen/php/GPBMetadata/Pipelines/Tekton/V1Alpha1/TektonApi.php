@@ -17,7 +17,7 @@ class TektonApi
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\Tekton::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ã
+„
 *pipelines/tekton/v1alpha1/tekton_api.protopipelines.tekton.v1alpha1"„
 CreateTektonPipelineRequestL
 tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline
@@ -34,9 +34,9 @@ class TektonApi
 
 project_id (R	projectId"j
 ListTektonPipelineResponseL
-tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline"d
-DeleteTektonPipelineRequest,
-tekton_pipeline_id (	RtektonPipelineId
+tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline"„
+DeleteTektonPipelineRequestL
+tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline
 user_id (	RuserId"6
 DeleteTektonPipelineResponse
 status (	Rstatus"
