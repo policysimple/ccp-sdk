@@ -49,7 +49,7 @@ struct TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,9 @@ extern ParamsDefaultTypeInternal _Params_default_instance_;
 class Pipeline;
 struct PipelineDefaultTypeInternal;
 extern PipelineDefaultTypeInternal _Pipeline_default_instance_;
+class Pipeline_AutoScalingEntry_DoNotUse;
+struct Pipeline_AutoScalingEntry_DoNotUseDefaultTypeInternal;
+extern Pipeline_AutoScalingEntry_DoNotUseDefaultTypeInternal _Pipeline_AutoScalingEntry_DoNotUse_default_instance_;
 class Pipeline_CommandsEntry_DoNotUse;
 struct Pipeline_CommandsEntry_DoNotUseDefaultTypeInternal;
 extern Pipeline_CommandsEntry_DoNotUseDefaultTypeInternal _Pipeline_CommandsEntry_DoNotUse_default_instance_;
@@ -95,6 +98,7 @@ extern WorkspacesDefaultTypeInternal _Workspaces_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::pipelines::tekton::v1alpha1::Params* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Params>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Pipeline* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_AutoScalingEntry_DoNotUse>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_CommandsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Pipeline_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_EnvironmentVariablesEntry_DoNotUse>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse>(Arena*);
@@ -1099,6 +1103,33 @@ public:
 
 // -------------------------------------------------------------------
 
+class Pipeline_AutoScalingEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_AutoScalingEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Pipeline_AutoScalingEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Pipeline_AutoScalingEntry_DoNotUse();
+  explicit constexpr Pipeline_AutoScalingEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Pipeline_AutoScalingEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Pipeline_AutoScalingEntry_DoNotUse& other);
+  static const Pipeline_AutoScalingEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Pipeline_AutoScalingEntry_DoNotUse*>(&_Pipeline_AutoScalingEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.AutoScalingEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.tekton.v1alpha1.Pipeline.AutoScalingEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class Pipeline final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.Pipeline) */ {
  public:
@@ -1143,7 +1174,7 @@ class Pipeline final :
                &_Pipeline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(Pipeline& a, Pipeline& b) {
     a.Swap(&b);
@@ -1222,6 +1253,7 @@ class Pipeline final :
     kCommandsFieldNumber = 15,
     kSecretsFieldNumber = 16,
     kExtraArgsFieldNumber = 17,
+    kAutoScalingFieldNumber = 18,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kInstanceTypeFieldNumber = 3,
@@ -1232,8 +1264,8 @@ class Pipeline final :
     kTrafficTypeFieldNumber = 4,
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
-    kIsDefaultFieldNumber = 18,
-    kActiveFieldNumber = 19,
+    kIsDefaultFieldNumber = 19,
+    kActiveFieldNumber = 20,
   };
   // repeated .pipelines.tekton.v1alpha1.Params params = 10 [json_name = "params"];
   int params_size() const;
@@ -1355,6 +1387,23 @@ class Pipeline final :
       extra_args() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_extra_args();
+
+  // map<string, string> auto_scaling = 18 [json_name = "autoScaling"];
+  int auto_scaling_size() const;
+  private:
+  int _internal_auto_scaling_size() const;
+  public:
+  void clear_auto_scaling();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_auto_scaling() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_auto_scaling();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      auto_scaling() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_auto_scaling();
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1481,7 +1530,7 @@ class Pipeline final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // bool is_default = 18 [json_name = "isDefault"];
+  // bool is_default = 19 [json_name = "isDefault"];
   void clear_is_default();
   bool is_default() const;
   void set_is_default(bool value);
@@ -1490,7 +1539,7 @@ class Pipeline final :
   void _internal_set_is_default(bool value);
   public:
 
-  // bool active = 19 [json_name = "active"];
+  // bool active = 20 [json_name = "active"];
   void clear_active();
   bool active() const;
   void set_active(bool value);
@@ -1533,6 +1582,11 @@ class Pipeline final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Pipeline_AutoScalingEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> auto_scaling_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
@@ -2532,6 +2586,8 @@ inline void Task::set_allocated_description(std::string* description) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // Pipeline
 
 // string id = 1 [json_name = "id"];
@@ -3141,7 +3197,36 @@ Pipeline::mutable_extra_args() {
   return _internal_mutable_extra_args();
 }
 
-// bool is_default = 18 [json_name = "isDefault"];
+// map<string, string> auto_scaling = 18 [json_name = "autoScaling"];
+inline int Pipeline::_internal_auto_scaling_size() const {
+  return auto_scaling_.size();
+}
+inline int Pipeline::auto_scaling_size() const {
+  return _internal_auto_scaling_size();
+}
+inline void Pipeline::clear_auto_scaling() {
+  auto_scaling_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::_internal_auto_scaling() const {
+  return auto_scaling_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Pipeline::auto_scaling() const {
+  // @@protoc_insertion_point(field_map:pipelines.tekton.v1alpha1.Pipeline.auto_scaling)
+  return _internal_auto_scaling();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::_internal_mutable_auto_scaling() {
+  return auto_scaling_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Pipeline::mutable_auto_scaling() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.tekton.v1alpha1.Pipeline.auto_scaling)
+  return _internal_mutable_auto_scaling();
+}
+
+// bool is_default = 19 [json_name = "isDefault"];
 inline void Pipeline::clear_is_default() {
   is_default_ = false;
 }
@@ -3161,7 +3246,7 @@ inline void Pipeline::set_is_default(bool value) {
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.is_default)
 }
 
-// bool active = 19 [json_name = "active"];
+// bool active = 20 [json_name = "active"];
 inline void Pipeline::clear_active() {
   active_ = false;
 }
@@ -3184,6 +3269,8 @@ inline void Pipeline::set_active(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-¨
+Á
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -49,7 +49,7 @@ workspaces (2%.pipelines.tekton.v1alpha1.WorkspacesR
 workspacesF
 task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description (	Rdescription"ë	
+description (	Rdescription"„
 Pipeline
 id (	Rid
 name (	Rname#
@@ -72,10 +72,11 @@ statusTypeV
 commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
 secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecretsQ
 
-extra_args (22.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR	extraArgs
+extra_args (22.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR	extraArgsW
+auto_scaling (24.pipelines.tekton.v1alpha1.Pipeline.AutoScalingEntryRautoScaling
 
-is_default (R	isDefault
-active (Ractive>
+is_default (R	isDefault
+active (Ractive>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G
@@ -89,6 +90,9 @@ is_default (R	isDefault
 key (	Rkey
 value (	Rvalue:8<
 ExtraArgsEntry
+key (	Rkey
+value (	Rvalue:8>
+AutoScalingEntry
 key (	Rkey
 value (	Rvalue:8B®
 #io.cuemby.pipelines.tekton.v1alpha1BTektonProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPXªPipelines.Tekton.V1Alpha1ÊPipelines\\Tekton\\V1Alpha1bproto3'

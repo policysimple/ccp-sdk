@@ -328,13 +328,47 @@ public interface PipelineOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>bool is_default = 18 [json_name = "isDefault"];</code>
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+  int getAutoScalingCount();
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+  boolean containsAutoScaling(
+      java.lang.String key);
+  /**
+   * Use {@link #getAutoScalingMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getAutoScaling();
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getAutoScalingMap();
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+
+  java.lang.String getAutoScalingOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; auto_scaling = 18 [json_name = "autoScaling"];</code>
+   */
+
+  java.lang.String getAutoScalingOrThrow(
+      java.lang.String key);
+
+  /**
+   * <code>bool is_default = 19 [json_name = "isDefault"];</code>
    * @return The isDefault.
    */
   boolean getIsDefault();
 
   /**
-   * <code>bool active = 19 [json_name = "active"];</code>
+   * <code>bool active = 20 [json_name = "active"];</code>
    * @return The active.
    */
   boolean getActive();

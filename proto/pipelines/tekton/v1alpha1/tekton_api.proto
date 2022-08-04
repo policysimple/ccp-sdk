@@ -50,7 +50,7 @@ message ListTektonPipelineResponse {
 }
 
 message DeleteTektonPipelineRequest {
-    string tekton_pipeline_id = 1;
+    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
     string user_id = 2;
 }
 

@@ -60,6 +60,7 @@ message Pipeline {
     map<string, string> commands = 15;
     map<string, string> secrets = 16;
     map<string, string> extra_args = 17;
-    bool is_default = 18;
-    bool active = 19;
+    map<string, string> auto_scaling = 18;
+    bool is_default = 19;
+    bool active = 20;
 }

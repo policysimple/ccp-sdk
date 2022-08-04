@@ -8,16 +8,19 @@ public interface DeleteTektonPipelineRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-   * @return The tektonPipelineId.
+   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+   * @return Whether the tektonPipeline field is set.
    */
-  java.lang.String getTektonPipelineId();
+  boolean hasTektonPipeline();
   /**
-   * <code>string tekton_pipeline_id = 1 [json_name = "tektonPipelineId"];</code>
-   * @return The bytes for tektonPipelineId.
+   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+   * @return The tektonPipeline.
    */
-  com.google.protobuf.ByteString
-      getTektonPipelineIdBytes();
+  io.cuemby.pipelines.tekton.v1alpha1.Pipeline getTektonPipeline();
+  /**
+   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder getTektonPipelineOrBuilder();
 
   /**
    * <code>string user_id = 2 [json_name = "userId"];</code>
