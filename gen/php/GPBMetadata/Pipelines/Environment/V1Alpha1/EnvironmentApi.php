@@ -17,7 +17,7 @@ class EnvironmentApi
         \GPBMetadata\Pipelines\Environment\V1Alpha1\Environment::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ò
+ê
 4pipelines/environment/v1alpha1/environment_api.protopipelines.environment.v1alpha1"Ç
 CreateEnvironmentRequestM
 environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment
@@ -29,6 +29,12 @@ class EnvironmentApi
 environment_id (	RenvironmentId"Ç
 GetOneEnvironmentResponseM
 environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment
+status (	Rstatus"Ç
+UpdateEnvironmentRequestM
+environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment
+user_id (	RuserId"Ç
+UpdateEnvironmentResponseM
+environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment
 status (	Rstatus"7
 ListEnvironmentRequest
 
@@ -39,12 +45,19 @@ project_id (R	projectId"h
 environment_id (	RenvironmentId
 user_id (	RuserId"3
 DeleteEnvironmentResponse
-status (	Rstatus2Ω
+status (	Rstatus"l
+GetByNameEnvironmentRequestM
+environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment"Ö
+GetByNameEnvironmentResponseM
+environment (2+.pipelines.environment.v1alpha1.EnvironmentRenvironment
+status (	Rstatus2‹
 EnvironmentAPIServiceà
 CreateEnvironment8.pipelines.environment.v1alpha1.CreateEnvironmentRequest9.pipelines.environment.v1alpha1.CreateEnvironmentResponseà
-GetOneEnvironment8.pipelines.environment.v1alpha1.GetOneEnvironmentRequest9.pipelines.environment.v1alpha1.GetOneEnvironmentResponseÇ
+GetOneEnvironment8.pipelines.environment.v1alpha1.GetOneEnvironmentRequest9.pipelines.environment.v1alpha1.GetOneEnvironmentResponseà
+UpdateEnvironment8.pipelines.environment.v1alpha1.UpdateEnvironmentRequest9.pipelines.environment.v1alpha1.UpdateEnvironmentResponseÇ
 ListEnvironment6.pipelines.environment.v1alpha1.ListEnvironmentRequest7.pipelines.environment.v1alpha1.ListEnvironmentResponseà
-DeleteEnvironment8.pipelines.environment.v1alpha1.DeleteEnvironmentRequest9.pipelines.environment.v1alpha1.DeleteEnvironmentResponseB 
+DeleteEnvironment8.pipelines.environment.v1alpha1.DeleteEnvironmentRequest9.pipelines.environment.v1alpha1.DeleteEnvironmentResponseë
+GetByNameEnvironment;.pipelines.environment.v1alpha1.GetByNameEnvironmentRequest<.pipelines.environment.v1alpha1.GetByNameEnvironmentResponseB 
 (io.cuemby.pipelines.environment.v1alpha1BEnvironmentAPIProtoPZ?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1¢PPX™Pipelines.Environment.V1Alpha1 Pipelines\\Environment\\V1Alpha1bproto3'
         , true);
 
