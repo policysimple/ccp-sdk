@@ -1225,7 +1225,7 @@ proto.pipelines.tekton.v1alpha1.Task.prototype.setDescription = function(value) 
  * @private {!Array<number>}
  * @const
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.repeatedFields_ = [6,7];
+proto.pipelines.tekton.v1alpha1.Pipeline.repeatedFields_ = [10,11];
 
 
 
@@ -1259,24 +1259,26 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.toObject = function(opt_inclu
 proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    objectMetaName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    objectMetaNamespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    instanceType: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    trafficType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    namespaceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    runtimeId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     paramsList: jspb.Message.toObjectList(msg.getParamsList(),
     proto.pipelines.tekton.v1alpha1.Params.toObject, includeInstance),
     tasksList: jspb.Message.toObjectList(msg.getTasksList(),
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
-    statusType: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    statusType: jspb.Message.getFieldWithDefault(msg, 12, ""),
     integrationMap: (f = msg.getIntegrationMap()) ? f.toObject(includeInstance, undefined) : [],
     environmentVariablesMap: (f = msg.getEnvironmentVariablesMap()) ? f.toObject(includeInstance, undefined) : [],
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
     secretsMap: (f = msg.getSecretsMap()) ? f.toObject(includeInstance, undefined) : [],
     extraArgsMap: (f = msg.getExtraArgsMap()) ? f.toObject(includeInstance, undefined) : [],
-    instanceType: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    trafficType: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    active: jspb.Message.getBooleanFieldWithDefault(msg, 17, false)
+    isDefault: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    active: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
   };
 
   if (includeInstance) {
@@ -1318,78 +1320,86 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
       msg.setId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstanceType(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTrafficType(value);
+      break;
+    case 5:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
-    case 3:
+    case 6:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setProjectId(value);
       break;
-    case 4:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setObjectMetaName(value);
+      msg.setNamespaceId(value);
       break;
-    case 5:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setObjectMetaNamespace(value);
+      msg.setApplicationId(value);
       break;
-    case 6:
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRuntimeId(value);
+      break;
+    case 10:
       var value = new proto.pipelines.tekton.v1alpha1.Params;
       reader.readMessage(value,proto.pipelines.tekton.v1alpha1.Params.deserializeBinaryFromReader);
       msg.addParams(value);
       break;
-    case 7:
+    case 11:
       var value = new proto.pipelines.tekton.v1alpha1.Task;
       reader.readMessage(value,proto.pipelines.tekton.v1alpha1.Task.deserializeBinaryFromReader);
       msg.addTasks(value);
       break;
-    case 8:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatusType(value);
       break;
-    case 9:
+    case 13:
       var value = msg.getIntegrationMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 10:
+    case 14:
       var value = msg.getEnvironmentVariablesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 11:
+    case 15:
       var value = msg.getCommandsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 12:
+    case 16:
       var value = msg.getSecretsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 13:
+    case 17:
       var value = msg.getExtraArgsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setInstanceType(value);
-      break;
-    case 15:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTrafficType(value);
-      break;
-    case 16:
+    case 18:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDefault(value);
       break;
-    case 17:
+    case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setActive(value);
       break;
@@ -1429,38 +1439,66 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getInstanceType();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getTrafficType();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
   f = message.getOrganizationId();
   if (f !== 0) {
     writer.writeUint32(
-      2,
+      5,
       f
     );
   }
   f = message.getProjectId();
   if (f !== 0) {
     writer.writeUint32(
-      3,
+      6,
       f
     );
   }
-  f = message.getObjectMetaName();
+  f = message.getNamespaceId();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      7,
       f
     );
   }
-  f = message.getObjectMetaNamespace();
+  f = message.getApplicationId();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      8,
+      f
+    );
+  }
+  f = message.getRuntimeId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
   f = message.getParamsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      10,
       f,
       proto.pipelines.tekton.v1alpha1.Params.serializeBinaryToWriter
     );
@@ -1468,7 +1506,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
   f = message.getTasksList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      11,
       f,
       proto.pipelines.tekton.v1alpha1.Task.serializeBinaryToWriter
     );
@@ -1476,55 +1514,41 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
   f = message.getStatusType();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      12,
       f
     );
   }
   f = message.getIntegrationMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getEnvironmentVariablesMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getCommandsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getSecretsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getExtraArgsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getInstanceType();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = message.getTrafficType();
-  if (f !== 0) {
-    writer.writeInt32(
-      15,
-      f
-    );
+    f.serializeBinary(17, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getIsDefault();
   if (f) {
     writer.writeBool(
-      16,
+      18,
       f
     );
   }
   f = message.getActive();
   if (f) {
     writer.writeBool(
-      17,
+      19,
       f
     );
   }
@@ -1550,11 +1574,65 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setId = function(value) {
 
 
 /**
- * optional uint32 organization_id = 2;
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string instance_type = 3;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getInstanceType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setInstanceType = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int32 traffic_type = 4;
+ * @return {number}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getTrafficType = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setTrafficType = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 organization_id = 5;
  * @return {number}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -1563,16 +1641,16 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getOrganizationId = function(
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional uint32 project_id = 3;
+ * optional uint32 project_id = 6;
  * @return {number}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -1581,16 +1659,16 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getProjectId = function() {
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional string object_meta_name = 4;
+ * optional string namespace_id = 7;
  * @return {string}
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getObjectMetaName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getNamespaceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -1598,17 +1676,17 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getObjectMetaName = function(
  * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setObjectMetaName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setNamespaceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string object_meta_namespace = 5;
+ * optional string application_id = 8;
  * @return {string}
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getObjectMetaNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -1616,18 +1694,36 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getObjectMetaNamespace = func
  * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setObjectMetaNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setApplicationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * repeated Params params = 6;
+ * optional string runtime_id = 9;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getRuntimeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setRuntimeId = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * repeated Params params = 10;
  * @return {!Array<!proto.pipelines.tekton.v1alpha1.Params>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getParamsList = function() {
   return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.Params>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.Params, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.Params, 10));
 };
 
 
@@ -1636,7 +1732,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getParamsList = function() {
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
 */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setParamsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -1646,7 +1742,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setParamsList = function(valu
  * @return {!proto.pipelines.tekton.v1alpha1.Params}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.addParams = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.pipelines.tekton.v1alpha1.Params, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.pipelines.tekton.v1alpha1.Params, opt_index);
 };
 
 
@@ -1660,12 +1756,12 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearParamsList = function() 
 
 
 /**
- * repeated Task tasks = 7;
+ * repeated Task tasks = 11;
  * @return {!Array<!proto.pipelines.tekton.v1alpha1.Task>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getTasksList = function() {
   return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.Task>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.Task, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.Task, 11));
 };
 
 
@@ -1674,7 +1770,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getTasksList = function() {
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
 */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setTasksList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -1684,7 +1780,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setTasksList = function(value
  * @return {!proto.pipelines.tekton.v1alpha1.Task}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.addTasks = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.pipelines.tekton.v1alpha1.Task, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.pipelines.tekton.v1alpha1.Task, opt_index);
 };
 
 
@@ -1698,11 +1794,11 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearTasksList = function() {
 
 
 /**
- * optional string status_type = 8;
+ * optional string status_type = 12;
  * @return {string}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getStatusType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -1711,19 +1807,19 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getStatusType = function() {
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setStatusType = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * map<string, string> integration = 9;
+ * map<string, string> integration = 13;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIntegrationMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       null));
 };
 
@@ -1738,14 +1834,14 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearIntegrationMap = functio
 
 
 /**
- * map<string, string> environment_variables = 10;
+ * map<string, string> environment_variables = 14;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getEnvironmentVariablesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
       null));
 };
 
@@ -1760,14 +1856,14 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearEnvironmentVariablesMap 
 
 
 /**
- * map<string, string> commands = 11;
+ * map<string, string> commands = 15;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getCommandsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
       null));
 };
 
@@ -1782,14 +1878,14 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearCommandsMap = function()
 
 
 /**
- * map<string, string> secrets = 12;
+ * map<string, string> secrets = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getSecretsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
 };
 
@@ -1804,14 +1900,14 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearSecretsMap = function() 
 
 
 /**
- * map<string, string> extra_args = 13;
+ * map<string, string> extra_args = 17;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getExtraArgsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 17, opt_noLazyCreate,
       null));
 };
 
@@ -1826,47 +1922,11 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearExtraArgsMap = function(
 
 
 /**
- * optional string instance_type = 14;
- * @return {string}
- */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getInstanceType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
- */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setInstanceType = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * optional int32 traffic_type = 15;
- * @return {number}
- */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getTrafficType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
- */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setTrafficType = function(value) {
-  return jspb.Message.setProto3IntField(this, 15, value);
-};
-
-
-/**
- * optional bool is_default = 16;
+ * optional bool is_default = 18;
  * @return {boolean}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsDefault = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
 
@@ -1875,16 +1935,16 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsDefault = function() {
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsDefault = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 16, value);
+  return jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 
 /**
- * optional bool active = 17;
+ * optional bool active = 19;
  * @return {boolean}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
 
@@ -1893,7 +1953,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getActive = function() {
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 17, value);
+  return jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 

@@ -43,6 +43,19 @@ class EnvironmentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Pipelines\Environment\V1Alpha1\UpdateEnvironmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateEnvironment(\Pipelines\Environment\V1Alpha1\UpdateEnvironmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/UpdateEnvironment',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\UpdateEnvironmentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Pipelines\Environment\V1Alpha1\ListEnvironmentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -65,6 +78,19 @@ class EnvironmentAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/DeleteEnvironment',
         $argument,
         ['\Pipelines\Environment\V1Alpha1\DeleteEnvironmentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pipelines\Environment\V1Alpha1\GetByNameEnvironmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetByNameEnvironment(\Pipelines\Environment\V1Alpha1\GetByNameEnvironmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/GetByNameEnvironment',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\GetByNameEnvironmentResponse', 'decode'],
         $metadata, $options);
     }
 

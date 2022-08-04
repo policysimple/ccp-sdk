@@ -70,6 +70,32 @@ struct GetOneEnvironmentResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetOneEnvironmentResponseDefaultTypeInternal _GetOneEnvironmentResponse_default_instance_;
+constexpr UpdateEnvironmentRequest::UpdateEnvironmentRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_(nullptr){}
+struct UpdateEnvironmentRequestDefaultTypeInternal {
+  constexpr UpdateEnvironmentRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateEnvironmentRequestDefaultTypeInternal() {}
+  union {
+    UpdateEnvironmentRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateEnvironmentRequestDefaultTypeInternal _UpdateEnvironmentRequest_default_instance_;
+constexpr UpdateEnvironmentResponse::UpdateEnvironmentResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_(nullptr){}
+struct UpdateEnvironmentResponseDefaultTypeInternal {
+  constexpr UpdateEnvironmentResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateEnvironmentResponseDefaultTypeInternal() {}
+  union {
+    UpdateEnvironmentResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateEnvironmentResponseDefaultTypeInternal _UpdateEnvironmentResponse_default_instance_;
 constexpr ListEnvironmentRequest::ListEnvironmentRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : project_id_(0u){}
@@ -119,10 +145,35 @@ struct DeleteEnvironmentResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteEnvironmentResponseDefaultTypeInternal _DeleteEnvironmentResponse_default_instance_;
+constexpr GetByNameEnvironmentRequest::GetByNameEnvironmentRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : environment_(nullptr){}
+struct GetByNameEnvironmentRequestDefaultTypeInternal {
+  constexpr GetByNameEnvironmentRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetByNameEnvironmentRequestDefaultTypeInternal() {}
+  union {
+    GetByNameEnvironmentRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetByNameEnvironmentRequestDefaultTypeInternal _GetByNameEnvironmentRequest_default_instance_;
+constexpr GetByNameEnvironmentResponse::GetByNameEnvironmentResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_(nullptr){}
+struct GetByNameEnvironmentResponseDefaultTypeInternal {
+  constexpr GetByNameEnvironmentResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetByNameEnvironmentResponseDefaultTypeInternal() {}
+  union {
+    GetByNameEnvironmentResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetByNameEnvironmentResponseDefaultTypeInternal _GetByNameEnvironmentResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace environment
 }  // namespace pipelines
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[12];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto = nullptr;
 
@@ -155,6 +206,20 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fenvironment_2fv1al
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetOneEnvironmentResponse, environment_),
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetOneEnvironmentResponse, status_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::UpdateEnvironmentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::UpdateEnvironmentRequest, environment_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::UpdateEnvironmentRequest, user_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::UpdateEnvironmentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::UpdateEnvironmentResponse, environment_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::UpdateEnvironmentResponse, status_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::ListEnvironmentRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -179,16 +244,33 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fenvironment_2fv1al
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::DeleteEnvironmentResponse, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest, environment_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse, environment_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse, status_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::environment::v1alpha1::CreateEnvironmentRequest)},
   { 7, -1, sizeof(::pipelines::environment::v1alpha1::CreateEnvironmentResponse)},
   { 14, -1, sizeof(::pipelines::environment::v1alpha1::GetOneEnvironmentRequest)},
   { 20, -1, sizeof(::pipelines::environment::v1alpha1::GetOneEnvironmentResponse)},
-  { 27, -1, sizeof(::pipelines::environment::v1alpha1::ListEnvironmentRequest)},
-  { 33, -1, sizeof(::pipelines::environment::v1alpha1::ListEnvironmentResponse)},
-  { 39, -1, sizeof(::pipelines::environment::v1alpha1::DeleteEnvironmentRequest)},
-  { 46, -1, sizeof(::pipelines::environment::v1alpha1::DeleteEnvironmentResponse)},
+  { 27, -1, sizeof(::pipelines::environment::v1alpha1::UpdateEnvironmentRequest)},
+  { 34, -1, sizeof(::pipelines::environment::v1alpha1::UpdateEnvironmentResponse)},
+  { 41, -1, sizeof(::pipelines::environment::v1alpha1::ListEnvironmentRequest)},
+  { 47, -1, sizeof(::pipelines::environment::v1alpha1::ListEnvironmentResponse)},
+  { 53, -1, sizeof(::pipelines::environment::v1alpha1::DeleteEnvironmentRequest)},
+  { 60, -1, sizeof(::pipelines::environment::v1alpha1::DeleteEnvironmentResponse)},
+  { 66, -1, sizeof(::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest)},
+  { 72, -1, sizeof(::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -196,10 +278,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_CreateEnvironmentResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_GetOneEnvironmentRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_GetOneEnvironmentResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_UpdateEnvironmentRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_UpdateEnvironmentResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_ListEnvironmentRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_ListEnvironmentResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_DeleteEnvironmentRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_DeleteEnvironmentResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_GetByNameEnvironmentRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::environment::v1alpha1::_GetByNameEnvironmentResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -218,42 +304,62 @@ const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenviro
   "EnvironmentResponse\022M\n\013environment\030\001 \001(\013"
   "2+.pipelines.environment.v1alpha1.Enviro"
   "nmentR\013environment\022\026\n\006status\030\002 \001(\tR\006stat"
-  "us\"7\n\026ListEnvironmentRequest\022\035\n\nproject_"
-  "id\030\001 \001(\rR\tprojectId\"h\n\027ListEnvironmentRe"
-  "sponse\022M\n\013environment\030\001 \003(\0132+.pipelines."
-  "environment.v1alpha1.EnvironmentR\013enviro"
-  "nment\"Z\n\030DeleteEnvironmentRequest\022%\n\016env"
-  "ironment_id\030\001 \001(\tR\renvironmentId\022\027\n\007user"
-  "_id\030\002 \001(\tR\006userId\"3\n\031DeleteEnvironmentRe"
-  "sponse\022\026\n\006status\030\001 \001(\tR\006status2\275\004\n\025Envir"
-  "onmentAPIService\022\210\001\n\021CreateEnvironment\0228"
-  ".pipelines.environment.v1alpha1.CreateEn"
-  "vironmentRequest\0329.pipelines.environment"
-  ".v1alpha1.CreateEnvironmentResponse\022\210\001\n\021"
-  "GetOneEnvironment\0228.pipelines.environmen"
-  "t.v1alpha1.GetOneEnvironmentRequest\0329.pi"
-  "pelines.environment.v1alpha1.GetOneEnvir"
-  "onmentResponse\022\202\001\n\017ListEnvironment\0226.pip"
-  "elines.environment.v1alpha1.ListEnvironm"
-  "entRequest\0327.pipelines.environment.v1alp"
-  "ha1.ListEnvironmentResponse\022\210\001\n\021DeleteEn"
+  "us\"\202\001\n\030UpdateEnvironmentRequest\022M\n\013envir"
+  "onment\030\001 \001(\0132+.pipelines.environment.v1a"
+  "lpha1.EnvironmentR\013environment\022\027\n\007user_i"
+  "d\030\002 \001(\tR\006userId\"\202\001\n\031UpdateEnvironmentRes"
+  "ponse\022M\n\013environment\030\001 \001(\0132+.pipelines.e"
+  "nvironment.v1alpha1.EnvironmentR\013environ"
+  "ment\022\026\n\006status\030\002 \001(\tR\006status\"7\n\026ListEnvi"
+  "ronmentRequest\022\035\n\nproject_id\030\001 \001(\rR\tproj"
+  "ectId\"h\n\027ListEnvironmentResponse\022M\n\013envi"
+  "ronment\030\001 \003(\0132+.pipelines.environment.v1"
+  "alpha1.EnvironmentR\013environment\"Z\n\030Delet"
+  "eEnvironmentRequest\022%\n\016environment_id\030\001 "
+  "\001(\tR\renvironmentId\022\027\n\007user_id\030\002 \001(\tR\006use"
+  "rId\"3\n\031DeleteEnvironmentResponse\022\026\n\006stat"
+  "us\030\001 \001(\tR\006status\"l\n\033GetByNameEnvironment"
+  "Request\022M\n\013environment\030\001 \001(\0132+.pipelines"
+  ".environment.v1alpha1.EnvironmentR\013envir"
+  "onment\"\205\001\n\034GetByNameEnvironmentResponse\022"
+  "M\n\013environment\030\001 \001(\0132+.pipelines.environ"
+  "ment.v1alpha1.EnvironmentR\013environment\022\026"
+  "\n\006status\030\002 \001(\tR\006status2\334\006\n\025EnvironmentAP"
+  "IService\022\210\001\n\021CreateEnvironment\0228.pipelin"
+  "es.environment.v1alpha1.CreateEnvironmen"
+  "tRequest\0329.pipelines.environment.v1alpha"
+  "1.CreateEnvironmentResponse\022\210\001\n\021GetOneEn"
   "vironment\0228.pipelines.environment.v1alph"
-  "a1.DeleteEnvironmentRequest\0329.pipelines."
-  "environment.v1alpha1.DeleteEnvironmentRe"
-  "sponseB\312\001\n(io.cuemby.pipelines.environme"
-  "nt.v1alpha1B\023EnvironmentAPIProtoP\001Z\?gith"
-  "ub.com/cuemby/ccp-sdk/gen/go/pipelines/e"
-  "nvironment/v1alpha1\242\002\003PPX\252\002\036Pipelines.En"
-  "vironment.V1Alpha1\312\002\036Pipelines\\Environme"
-  "nt\\V1Alpha1b\006proto3"
+  "a1.GetOneEnvironmentRequest\0329.pipelines."
+  "environment.v1alpha1.GetOneEnvironmentRe"
+  "sponse\022\210\001\n\021UpdateEnvironment\0228.pipelines"
+  ".environment.v1alpha1.UpdateEnvironmentR"
+  "equest\0329.pipelines.environment.v1alpha1."
+  "UpdateEnvironmentResponse\022\202\001\n\017ListEnviro"
+  "nment\0226.pipelines.environment.v1alpha1.L"
+  "istEnvironmentRequest\0327.pipelines.enviro"
+  "nment.v1alpha1.ListEnvironmentResponse\022\210"
+  "\001\n\021DeleteEnvironment\0228.pipelines.environ"
+  "ment.v1alpha1.DeleteEnvironmentRequest\0329"
+  ".pipelines.environment.v1alpha1.DeleteEn"
+  "vironmentResponse\022\221\001\n\024GetByNameEnvironme"
+  "nt\022;.pipelines.environment.v1alpha1.GetB"
+  "yNameEnvironmentRequest\032<.pipelines.envi"
+  "ronment.v1alpha1.GetByNameEnvironmentRes"
+  "ponseB\312\001\n(io.cuemby.pipelines.environmen"
+  "t.v1alpha1B\023EnvironmentAPIProtoP\001Z\?githu"
+  "b.com/cuemby/ccp-sdk/gen/go/pipelines/en"
+  "vironment/v1alpha1\242\002\003PPX\252\002\036Pipelines.Env"
+  "ironment.V1Alpha1\312\002\036Pipelines\\Environmen"
+  "t\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto = {
-  false, false, 1699, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, "pipelines/environment/v1alpha1/environment_api.proto", 
-  &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once, descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_deps, 1, 8,
+  false, false, 2498, descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, "pipelines/environment/v1alpha1/environment_api.proto", 
+  &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once, descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_deps, 1, 12,
   schemas, file_default_instances, TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto, file_level_service_descriptors_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto,
 };
@@ -1213,6 +1319,502 @@ void GetOneEnvironmentResponse::InternalSwap(GetOneEnvironmentResponse* other) {
 
 // ===================================================================
 
+class UpdateEnvironmentRequest::_Internal {
+ public:
+  static const ::pipelines::environment::v1alpha1::Environment& environment(const UpdateEnvironmentRequest* msg);
+};
+
+const ::pipelines::environment::v1alpha1::Environment&
+UpdateEnvironmentRequest::_Internal::environment(const UpdateEnvironmentRequest* msg) {
+  return *msg->environment_;
+}
+void UpdateEnvironmentRequest::clear_environment() {
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+}
+UpdateEnvironmentRequest::UpdateEnvironmentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+}
+UpdateEnvironmentRequest::UpdateEnvironmentRequest(const UpdateEnvironmentRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_environment()) {
+    environment_ = new ::pipelines::environment::v1alpha1::Environment(*from.environment_);
+  } else {
+    environment_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+}
+
+inline void UpdateEnvironmentRequest::SharedCtor() {
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_ = nullptr;
+}
+
+UpdateEnvironmentRequest::~UpdateEnvironmentRequest() {
+  // @@protoc_insertion_point(destructor:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void UpdateEnvironmentRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete environment_;
+}
+
+void UpdateEnvironmentRequest::ArenaDtor(void* object) {
+  UpdateEnvironmentRequest* _this = reinterpret_cast< UpdateEnvironmentRequest* >(object);
+  (void)_this;
+}
+void UpdateEnvironmentRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UpdateEnvironmentRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UpdateEnvironmentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  user_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UpdateEnvironmentRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_environment(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 2 [json_name = "userId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.UpdateEnvironmentRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateEnvironmentRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::environment(this), target, stream);
+  }
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.environment.v1alpha1.UpdateEnvironmentRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  return target;
+}
+
+size_t UpdateEnvironmentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *environment_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateEnvironmentRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UpdateEnvironmentRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateEnvironmentRequest::GetClassData() const { return &_class_data_; }
+
+void UpdateEnvironmentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<UpdateEnvironmentRequest *>(to)->MergeFrom(
+      static_cast<const UpdateEnvironmentRequest &>(from));
+}
+
+
+void UpdateEnvironmentRequest::MergeFrom(const UpdateEnvironmentRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (from._internal_has_environment()) {
+    _internal_mutable_environment()->::pipelines::environment::v1alpha1::Environment::MergeFrom(from._internal_environment());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UpdateEnvironmentRequest::CopyFrom(const UpdateEnvironmentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UpdateEnvironmentRequest::IsInitialized() const {
+  return true;
+}
+
+void UpdateEnvironmentRequest::InternalSwap(UpdateEnvironmentRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
+  );
+  swap(environment_, other->environment_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateEnvironmentRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[4]);
+}
+
+// ===================================================================
+
+class UpdateEnvironmentResponse::_Internal {
+ public:
+  static const ::pipelines::environment::v1alpha1::Environment& environment(const UpdateEnvironmentResponse* msg);
+};
+
+const ::pipelines::environment::v1alpha1::Environment&
+UpdateEnvironmentResponse::_Internal::environment(const UpdateEnvironmentResponse* msg) {
+  return *msg->environment_;
+}
+void UpdateEnvironmentResponse::clear_environment() {
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+}
+UpdateEnvironmentResponse::UpdateEnvironmentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+}
+UpdateEnvironmentResponse::UpdateEnvironmentResponse(const UpdateEnvironmentResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_environment()) {
+    environment_ = new ::pipelines::environment::v1alpha1::Environment(*from.environment_);
+  } else {
+    environment_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+}
+
+inline void UpdateEnvironmentResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_ = nullptr;
+}
+
+UpdateEnvironmentResponse::~UpdateEnvironmentResponse() {
+  // @@protoc_insertion_point(destructor:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void UpdateEnvironmentResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete environment_;
+}
+
+void UpdateEnvironmentResponse::ArenaDtor(void* object) {
+  UpdateEnvironmentResponse* _this = reinterpret_cast< UpdateEnvironmentResponse* >(object);
+  (void)_this;
+}
+void UpdateEnvironmentResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UpdateEnvironmentResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UpdateEnvironmentResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UpdateEnvironmentResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_environment(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.UpdateEnvironmentResponse.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateEnvironmentResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::environment(this), target, stream);
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.environment.v1alpha1.UpdateEnvironmentResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  return target;
+}
+
+size_t UpdateEnvironmentResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *environment_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateEnvironmentResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UpdateEnvironmentResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateEnvironmentResponse::GetClassData() const { return &_class_data_; }
+
+void UpdateEnvironmentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<UpdateEnvironmentResponse *>(to)->MergeFrom(
+      static_cast<const UpdateEnvironmentResponse &>(from));
+}
+
+
+void UpdateEnvironmentResponse::MergeFrom(const UpdateEnvironmentResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from._internal_has_environment()) {
+    _internal_mutable_environment()->::pipelines::environment::v1alpha1::Environment::MergeFrom(from._internal_environment());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UpdateEnvironmentResponse::CopyFrom(const UpdateEnvironmentResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UpdateEnvironmentResponse::IsInitialized() const {
+  return true;
+}
+
+void UpdateEnvironmentResponse::InternalSwap(UpdateEnvironmentResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  swap(environment_, other->environment_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateEnvironmentResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[5]);
+}
+
+// ===================================================================
+
 class ListEnvironmentRequest::_Internal {
  public:
 };
@@ -1393,7 +1995,7 @@ void ListEnvironmentRequest::InternalSwap(ListEnvironmentRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListEnvironmentRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
-      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[4]);
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[6]);
 }
 
 // ===================================================================
@@ -1586,7 +2188,7 @@ void ListEnvironmentResponse::InternalSwap(ListEnvironmentResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListEnvironmentResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
-      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[5]);
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[7]);
 }
 
 // ===================================================================
@@ -1828,7 +2430,7 @@ void DeleteEnvironmentRequest::InternalSwap(DeleteEnvironmentRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteEnvironmentRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
-      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[6]);
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[8]);
 }
 
 // ===================================================================
@@ -2028,7 +2630,461 @@ void DeleteEnvironmentResponse::InternalSwap(DeleteEnvironmentResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteEnvironmentResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
-      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[7]);
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[9]);
+}
+
+// ===================================================================
+
+class GetByNameEnvironmentRequest::_Internal {
+ public:
+  static const ::pipelines::environment::v1alpha1::Environment& environment(const GetByNameEnvironmentRequest* msg);
+};
+
+const ::pipelines::environment::v1alpha1::Environment&
+GetByNameEnvironmentRequest::_Internal::environment(const GetByNameEnvironmentRequest* msg) {
+  return *msg->environment_;
+}
+void GetByNameEnvironmentRequest::clear_environment() {
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+}
+GetByNameEnvironmentRequest::GetByNameEnvironmentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+}
+GetByNameEnvironmentRequest::GetByNameEnvironmentRequest(const GetByNameEnvironmentRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_environment()) {
+    environment_ = new ::pipelines::environment::v1alpha1::Environment(*from.environment_);
+  } else {
+    environment_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+}
+
+inline void GetByNameEnvironmentRequest::SharedCtor() {
+environment_ = nullptr;
+}
+
+GetByNameEnvironmentRequest::~GetByNameEnvironmentRequest() {
+  // @@protoc_insertion_point(destructor:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetByNameEnvironmentRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete environment_;
+}
+
+void GetByNameEnvironmentRequest::ArenaDtor(void* object) {
+  GetByNameEnvironmentRequest* _this = reinterpret_cast< GetByNameEnvironmentRequest* >(object);
+  (void)_this;
+}
+void GetByNameEnvironmentRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetByNameEnvironmentRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetByNameEnvironmentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetByNameEnvironmentRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_environment(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetByNameEnvironmentRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::environment(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  return target;
+}
+
+size_t GetByNameEnvironmentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *environment_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetByNameEnvironmentRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetByNameEnvironmentRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetByNameEnvironmentRequest::GetClassData() const { return &_class_data_; }
+
+void GetByNameEnvironmentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetByNameEnvironmentRequest *>(to)->MergeFrom(
+      static_cast<const GetByNameEnvironmentRequest &>(from));
+}
+
+
+void GetByNameEnvironmentRequest::MergeFrom(const GetByNameEnvironmentRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_environment()) {
+    _internal_mutable_environment()->::pipelines::environment::v1alpha1::Environment::MergeFrom(from._internal_environment());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetByNameEnvironmentRequest::CopyFrom(const GetByNameEnvironmentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetByNameEnvironmentRequest::IsInitialized() const {
+  return true;
+}
+
+void GetByNameEnvironmentRequest::InternalSwap(GetByNameEnvironmentRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(environment_, other->environment_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetByNameEnvironmentRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[10]);
+}
+
+// ===================================================================
+
+class GetByNameEnvironmentResponse::_Internal {
+ public:
+  static const ::pipelines::environment::v1alpha1::Environment& environment(const GetByNameEnvironmentResponse* msg);
+};
+
+const ::pipelines::environment::v1alpha1::Environment&
+GetByNameEnvironmentResponse::_Internal::environment(const GetByNameEnvironmentResponse* msg) {
+  return *msg->environment_;
+}
+void GetByNameEnvironmentResponse::clear_environment() {
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+}
+GetByNameEnvironmentResponse::GetByNameEnvironmentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+}
+GetByNameEnvironmentResponse::GetByNameEnvironmentResponse(const GetByNameEnvironmentResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_environment()) {
+    environment_ = new ::pipelines::environment::v1alpha1::Environment(*from.environment_);
+  } else {
+    environment_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+}
+
+inline void GetByNameEnvironmentResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_ = nullptr;
+}
+
+GetByNameEnvironmentResponse::~GetByNameEnvironmentResponse() {
+  // @@protoc_insertion_point(destructor:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetByNameEnvironmentResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete environment_;
+}
+
+void GetByNameEnvironmentResponse::ArenaDtor(void* object) {
+  GetByNameEnvironmentResponse* _this = reinterpret_cast< GetByNameEnvironmentResponse* >(object);
+  (void)_this;
+}
+void GetByNameEnvironmentResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetByNameEnvironmentResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetByNameEnvironmentResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && environment_ != nullptr) {
+    delete environment_;
+  }
+  environment_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetByNameEnvironmentResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_environment(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.GetByNameEnvironmentResponse.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetByNameEnvironmentResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::environment(this), target, stream);
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.environment.v1alpha1.GetByNameEnvironmentResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  return target;
+}
+
+size_t GetByNameEnvironmentResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  if (this->_internal_has_environment()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *environment_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetByNameEnvironmentResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetByNameEnvironmentResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetByNameEnvironmentResponse::GetClassData() const { return &_class_data_; }
+
+void GetByNameEnvironmentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetByNameEnvironmentResponse *>(to)->MergeFrom(
+      static_cast<const GetByNameEnvironmentResponse &>(from));
+}
+
+
+void GetByNameEnvironmentResponse::MergeFrom(const GetByNameEnvironmentResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from._internal_has_environment()) {
+    _internal_mutable_environment()->::pipelines::environment::v1alpha1::Environment::MergeFrom(from._internal_environment());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetByNameEnvironmentResponse::CopyFrom(const GetByNameEnvironmentResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetByNameEnvironmentResponse::IsInitialized() const {
+  return true;
+}
+
+void GetByNameEnvironmentResponse::InternalSwap(GetByNameEnvironmentResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  swap(environment_, other->environment_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetByNameEnvironmentResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_getter, &descriptor_table_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto[11]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2048,6 +3104,12 @@ template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::GetOneEnvironme
 template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::UpdateEnvironmentRequest* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::UpdateEnvironmentRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::UpdateEnvironmentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::UpdateEnvironmentResponse* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::UpdateEnvironmentResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::UpdateEnvironmentResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::ListEnvironmentRequest* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::ListEnvironmentRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::ListEnvironmentRequest >(arena);
 }
@@ -2059,6 +3121,12 @@ template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::DeleteEnvironme
 }
 template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse* Arena::CreateMaybeMessage< ::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

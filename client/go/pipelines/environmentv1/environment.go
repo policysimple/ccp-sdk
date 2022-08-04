@@ -119,3 +119,45 @@ func GetOneEnvironment(in *environmentpkgv1.GetOneEnvironmentRequest) (response 
 	}
 	return response, nil
 }
+
+func UpdateEnvironment(in *environmentpkgv1.UpdateEnvironmentRequest) (response *environmentpkgv1.UpdateEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: update environment")
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdateEnvironment(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: error update environment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "error update environment", err),
+		)
+	}
+	return response, nil
+}
+
+func GetByNameEnvironment(in *environmentpkgv1.GetByNameEnvironmentRequest) (response *environmentpkgv1.GetByNameEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: get by name environment")
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetByNameEnvironment(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: error get by name environment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "error get by name environment", err),
+		)
+	}
+	return response, nil
+}

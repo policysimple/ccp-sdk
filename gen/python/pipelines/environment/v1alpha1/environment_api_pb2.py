@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(io.cuemby.pipelines.environment.v1alpha1B\023EnvironmentAPIProtoP\001Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alpha1\312\002\036Pipelines\\Environment\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4pipelines/environment/v1alpha1/environment_api.proto\x12\x1epipelines.environment.v1alpha1\x1a\x30pipelines/environment/v1alpha1/environment.proto\"\x82\x01\n\x18\x43reateEnvironmentRequest\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x82\x01\n\x19\x43reateEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x18GetOneEnvironmentRequest\x12%\n\x0e\x65nvironment_id\x18\x01 \x01(\tR\renvironmentId\"\x82\x01\n\x19GetOneEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"7\n\x16ListEnvironmentRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"h\n\x17ListEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x03(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\"Z\n\x18\x44\x65leteEnvironmentRequest\x12%\n\x0e\x65nvironment_id\x18\x01 \x01(\tR\renvironmentId\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"3\n\x19\x44\x65leteEnvironmentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status2\xbd\x04\n\x15\x45nvironmentAPIService\x12\x88\x01\n\x11\x43reateEnvironment\x12\x38.pipelines.environment.v1alpha1.CreateEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.CreateEnvironmentResponse\x12\x88\x01\n\x11GetOneEnvironment\x12\x38.pipelines.environment.v1alpha1.GetOneEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.GetOneEnvironmentResponse\x12\x82\x01\n\x0fListEnvironment\x12\x36.pipelines.environment.v1alpha1.ListEnvironmentRequest\x1a\x37.pipelines.environment.v1alpha1.ListEnvironmentResponse\x12\x88\x01\n\x11\x44\x65leteEnvironment\x12\x38.pipelines.environment.v1alpha1.DeleteEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.DeleteEnvironmentResponseB\xca\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x13\x45nvironmentAPIProtoP\x01Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n4pipelines/environment/v1alpha1/environment_api.proto\x12\x1epipelines.environment.v1alpha1\x1a\x30pipelines/environment/v1alpha1/environment.proto\"\x82\x01\n\x18\x43reateEnvironmentRequest\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x82\x01\n\x19\x43reateEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"A\n\x18GetOneEnvironmentRequest\x12%\n\x0e\x65nvironment_id\x18\x01 \x01(\tR\renvironmentId\"\x82\x01\n\x19GetOneEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x82\x01\n\x18UpdateEnvironmentRequest\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x82\x01\n\x19UpdateEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"7\n\x16ListEnvironmentRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"h\n\x17ListEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x03(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\"Z\n\x18\x44\x65leteEnvironmentRequest\x12%\n\x0e\x65nvironment_id\x18\x01 \x01(\tR\renvironmentId\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"3\n\x19\x44\x65leteEnvironmentResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"l\n\x1bGetByNameEnvironmentRequest\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\"\x85\x01\n\x1cGetByNameEnvironmentResponse\x12M\n\x0b\x65nvironment\x18\x01 \x01(\x0b\x32+.pipelines.environment.v1alpha1.EnvironmentR\x0b\x65nvironment\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xdc\x06\n\x15\x45nvironmentAPIService\x12\x88\x01\n\x11\x43reateEnvironment\x12\x38.pipelines.environment.v1alpha1.CreateEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.CreateEnvironmentResponse\x12\x88\x01\n\x11GetOneEnvironment\x12\x38.pipelines.environment.v1alpha1.GetOneEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.GetOneEnvironmentResponse\x12\x88\x01\n\x11UpdateEnvironment\x12\x38.pipelines.environment.v1alpha1.UpdateEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.UpdateEnvironmentResponse\x12\x82\x01\n\x0fListEnvironment\x12\x36.pipelines.environment.v1alpha1.ListEnvironmentRequest\x1a\x37.pipelines.environment.v1alpha1.ListEnvironmentResponse\x12\x88\x01\n\x11\x44\x65leteEnvironment\x12\x38.pipelines.environment.v1alpha1.DeleteEnvironmentRequest\x1a\x39.pipelines.environment.v1alpha1.DeleteEnvironmentResponse\x12\x91\x01\n\x14GetByNameEnvironment\x12;.pipelines.environment.v1alpha1.GetByNameEnvironmentRequest\x1a<.pipelines.environment.v1alpha1.GetByNameEnvironmentResponseB\xca\x01\n(io.cuemby.pipelines.environment.v1alpha1B\x13\x45nvironmentAPIProtoP\x01Z?github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1ePipelines.Environment.V1Alpha1\xca\x02\x1ePipelines\\Environment\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2.DESCRIPTOR,])
 
@@ -176,6 +176,84 @@ _GETONEENVIRONMENTRESPONSE = _descriptor.Descriptor(
 )
 
 
+_UPDATEENVIRONMENTREQUEST = _descriptor.Descriptor(
+  name='UpdateEnvironmentRequest',
+  full_name='pipelines.environment.v1alpha1.UpdateEnvironmentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='environment', full_name='pipelines.environment.v1alpha1.UpdateEnvironmentRequest.environment', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='pipelines.environment.v1alpha1.UpdateEnvironmentRequest.user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=605,
+  serialized_end=735,
+)
+
+
+_UPDATEENVIRONMENTRESPONSE = _descriptor.Descriptor(
+  name='UpdateEnvironmentResponse',
+  full_name='pipelines.environment.v1alpha1.UpdateEnvironmentResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='environment', full_name='pipelines.environment.v1alpha1.UpdateEnvironmentResponse.environment', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='pipelines.environment.v1alpha1.UpdateEnvironmentResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=738,
+  serialized_end=868,
+)
+
+
 _LISTENVIRONMENTREQUEST = _descriptor.Descriptor(
   name='ListEnvironmentRequest',
   full_name='pipelines.environment.v1alpha1.ListEnvironmentRequest',
@@ -203,8 +281,8 @@ _LISTENVIRONMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=604,
-  serialized_end=659,
+  serialized_start=870,
+  serialized_end=925,
 )
 
 
@@ -235,8 +313,8 @@ _LISTENVIRONMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=661,
-  serialized_end=765,
+  serialized_start=927,
+  serialized_end=1031,
 )
 
 
@@ -274,8 +352,8 @@ _DELETEENVIRONMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=857,
+  serialized_start=1033,
+  serialized_end=1123,
 )
 
 
@@ -306,22 +384,101 @@ _DELETEENVIRONMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=859,
-  serialized_end=910,
+  serialized_start=1125,
+  serialized_end=1176,
+)
+
+
+_GETBYNAMEENVIRONMENTREQUEST = _descriptor.Descriptor(
+  name='GetByNameEnvironmentRequest',
+  full_name='pipelines.environment.v1alpha1.GetByNameEnvironmentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='environment', full_name='pipelines.environment.v1alpha1.GetByNameEnvironmentRequest.environment', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1178,
+  serialized_end=1286,
+)
+
+
+_GETBYNAMEENVIRONMENTRESPONSE = _descriptor.Descriptor(
+  name='GetByNameEnvironmentResponse',
+  full_name='pipelines.environment.v1alpha1.GetByNameEnvironmentResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='environment', full_name='pipelines.environment.v1alpha1.GetByNameEnvironmentResponse.environment', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='environment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='pipelines.environment.v1alpha1.GetByNameEnvironmentResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1289,
+  serialized_end=1422,
 )
 
 _CREATEENVIRONMENTREQUEST.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
 _CREATEENVIRONMENTRESPONSE.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
 _GETONEENVIRONMENTRESPONSE.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
+_UPDATEENVIRONMENTREQUEST.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
+_UPDATEENVIRONMENTRESPONSE.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
 _LISTENVIRONMENTRESPONSE.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
+_GETBYNAMEENVIRONMENTREQUEST.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
+_GETBYNAMEENVIRONMENTRESPONSE.fields_by_name['environment'].message_type = pipelines_dot_environment_dot_v1alpha1_dot_environment__pb2._ENVIRONMENT
 DESCRIPTOR.message_types_by_name['CreateEnvironmentRequest'] = _CREATEENVIRONMENTREQUEST
 DESCRIPTOR.message_types_by_name['CreateEnvironmentResponse'] = _CREATEENVIRONMENTRESPONSE
 DESCRIPTOR.message_types_by_name['GetOneEnvironmentRequest'] = _GETONEENVIRONMENTREQUEST
 DESCRIPTOR.message_types_by_name['GetOneEnvironmentResponse'] = _GETONEENVIRONMENTRESPONSE
+DESCRIPTOR.message_types_by_name['UpdateEnvironmentRequest'] = _UPDATEENVIRONMENTREQUEST
+DESCRIPTOR.message_types_by_name['UpdateEnvironmentResponse'] = _UPDATEENVIRONMENTRESPONSE
 DESCRIPTOR.message_types_by_name['ListEnvironmentRequest'] = _LISTENVIRONMENTREQUEST
 DESCRIPTOR.message_types_by_name['ListEnvironmentResponse'] = _LISTENVIRONMENTRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteEnvironmentRequest'] = _DELETEENVIRONMENTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteEnvironmentResponse'] = _DELETEENVIRONMENTRESPONSE
+DESCRIPTOR.message_types_by_name['GetByNameEnvironmentRequest'] = _GETBYNAMEENVIRONMENTREQUEST
+DESCRIPTOR.message_types_by_name['GetByNameEnvironmentResponse'] = _GETBYNAMEENVIRONMENTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateEnvironmentRequest = _reflection.GeneratedProtocolMessageType('CreateEnvironmentRequest', (_message.Message,), {
@@ -352,6 +509,20 @@ GetOneEnvironmentResponse = _reflection.GeneratedProtocolMessageType('GetOneEnvi
   })
 _sym_db.RegisterMessage(GetOneEnvironmentResponse)
 
+UpdateEnvironmentRequest = _reflection.GeneratedProtocolMessageType('UpdateEnvironmentRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEENVIRONMENTREQUEST,
+  '__module__' : 'pipelines.environment.v1alpha1.environment_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.UpdateEnvironmentRequest)
+  })
+_sym_db.RegisterMessage(UpdateEnvironmentRequest)
+
+UpdateEnvironmentResponse = _reflection.GeneratedProtocolMessageType('UpdateEnvironmentResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEENVIRONMENTRESPONSE,
+  '__module__' : 'pipelines.environment.v1alpha1.environment_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.UpdateEnvironmentResponse)
+  })
+_sym_db.RegisterMessage(UpdateEnvironmentResponse)
+
 ListEnvironmentRequest = _reflection.GeneratedProtocolMessageType('ListEnvironmentRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTENVIRONMENTREQUEST,
   '__module__' : 'pipelines.environment.v1alpha1.environment_api_pb2'
@@ -380,6 +551,20 @@ DeleteEnvironmentResponse = _reflection.GeneratedProtocolMessageType('DeleteEnvi
   })
 _sym_db.RegisterMessage(DeleteEnvironmentResponse)
 
+GetByNameEnvironmentRequest = _reflection.GeneratedProtocolMessageType('GetByNameEnvironmentRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETBYNAMEENVIRONMENTREQUEST,
+  '__module__' : 'pipelines.environment.v1alpha1.environment_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.GetByNameEnvironmentRequest)
+  })
+_sym_db.RegisterMessage(GetByNameEnvironmentRequest)
+
+GetByNameEnvironmentResponse = _reflection.GeneratedProtocolMessageType('GetByNameEnvironmentResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETBYNAMEENVIRONMENTRESPONSE,
+  '__module__' : 'pipelines.environment.v1alpha1.environment_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse)
+  })
+_sym_db.RegisterMessage(GetByNameEnvironmentResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -390,8 +575,8 @@ _ENVIRONMENTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=913,
-  serialized_end=1486,
+  serialized_start=1425,
+  serialized_end=2285,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateEnvironment',
@@ -414,9 +599,19 @@ _ENVIRONMENTAPISERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='UpdateEnvironment',
+    full_name='pipelines.environment.v1alpha1.EnvironmentAPIService.UpdateEnvironment',
+    index=2,
+    containing_service=None,
+    input_type=_UPDATEENVIRONMENTREQUEST,
+    output_type=_UPDATEENVIRONMENTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ListEnvironment',
     full_name='pipelines.environment.v1alpha1.EnvironmentAPIService.ListEnvironment',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_LISTENVIRONMENTREQUEST,
     output_type=_LISTENVIRONMENTRESPONSE,
@@ -426,10 +621,20 @@ _ENVIRONMENTAPISERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteEnvironment',
     full_name='pipelines.environment.v1alpha1.EnvironmentAPIService.DeleteEnvironment',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_DELETEENVIRONMENTREQUEST,
     output_type=_DELETEENVIRONMENTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetByNameEnvironment',
+    full_name='pipelines.environment.v1alpha1.EnvironmentAPIService.GetByNameEnvironment',
+    index=5,
+    containing_service=None,
+    input_type=_GETBYNAMEENVIRONMENTREQUEST,
+    output_type=_GETBYNAMEENVIRONMENTRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

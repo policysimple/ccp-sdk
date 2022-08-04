@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-‰
+¨
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -49,30 +49,33 @@ workspaces (2%.pipelines.tekton.v1alpha1.WorkspacesR
 workspacesF
 task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description (	Rdescription"Ì	
+description (	Rdescription"ë	
 Pipeline
-id (	Rid\'
-organization_id (RorganizationId
+id (	Rid
+name (	Rname#
+instance_type (	RinstanceType!
+traffic_type (RtrafficType\'
+organization_id (RorganizationId
 
-project_id (R	projectId(
-object_meta_name (	RobjectMetaName2
-object_meta_namespace (	RobjectMetaNamespace9
-params (2!.pipelines.tekton.v1alpha1.ParamsRparams5
-tasks (2.pipelines.tekton.v1alpha1.TaskRtasks
-status_type (	R
+project_id (R	projectId!
+namespace_id (	RnamespaceId%
+application_id (	RapplicationId
+
+runtime_id	 (	R	runtimeId9
+params
+ (2!.pipelines.tekton.v1alpha1.ParamsRparams5
+tasks (2.pipelines.tekton.v1alpha1.TaskRtasks
+status_type (	R
 statusTypeV
-integration	 (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
-environment_variables
- (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
-commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
-secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecretsQ
+integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
+environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
+commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
+secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecretsQ
 
-extra_args (22.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR	extraArgs#
-instance_type (	RinstanceType!
-traffic_type (RtrafficType
+extra_args (22.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR	extraArgs
 
-is_default (R	isDefault
-active (Ractive>
+is_default (R	isDefault
+active (Ractive>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G
