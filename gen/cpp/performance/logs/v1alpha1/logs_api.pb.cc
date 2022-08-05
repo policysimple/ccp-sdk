@@ -49,6 +49,7 @@ constexpr GetLogsRequest::GetLogsRequest(
   : labels_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , containers_()
   , next_page_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , range_(nullptr)
   , size_(0){}
 struct GetLogsRequestDefaultTypeInternal {
@@ -108,6 +109,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2flogs_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::GetLogsRequest, range_),
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::GetLogsRequest, size_),
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::GetLogsRequest, next_page_id_),
+  PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::GetLogsRequest, namespace__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::performance::logs::v1alpha1::GetLogsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -120,7 +122,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::performance::logs::v1alpha1::Range)},
   { 8, 15, sizeof(::performance::logs::v1alpha1::GetLogsRequest_LabelsEntry_DoNotUse)},
   { 17, -1, sizeof(::performance::logs::v1alpha1::GetLogsRequest)},
-  { 27, -1, sizeof(::performance::logs::v1alpha1::GetLogsResponse)},
+  { 28, -1, sizeof(::performance::logs::v1alpha1::GetLogsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -135,32 +137,33 @@ const char descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fapi_
   "to\022\031performance.logs.v1alpha1\032$performan"
   "ce/logs/v1alpha1/logs.proto\"Y\n\005Range\022\033\n\t"
   "date_from\030\001 \001(\tR\010dateFrom\022\027\n\007date_to\030\002 \001"
-  "(\tR\006dateTo\022\032\n\010timezone\030\003 \001(\tR\010timezone\"\250"
+  "(\tR\006dateTo\022\032\n\010timezone\030\003 \001(\tR\010timezone\"\306"
   "\002\n\016GetLogsRequest\022M\n\006labels\030\001 \003(\01325.perf"
   "ormance.logs.v1alpha1.GetLogsRequest.Lab"
   "elsEntryR\006labels\022\036\n\ncontainers\030\002 \003(\tR\nco"
   "ntainers\0226\n\005range\030\003 \001(\0132 .performance.lo"
   "gs.v1alpha1.RangeR\005range\022\022\n\004size\030\004 \001(\005R\004"
-  "size\022 \n\014next_page_id\030\005 \001(\tR\nnextPageId\0329"
-  "\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
-  "\030\002 \001(\tR\005value:\0028\001\"k\n\017GetLogsResponse\0226\n\004"
-  "logs\030\001 \003(\0132\".performance.logs.v1alpha1.L"
-  "ogItemR\004logs\022 \n\014next_page_id\030\002 \001(\tR\nnext"
-  "PageId2t\n\016LogsAPIService\022b\n\007GetLogs\022).pe"
-  "rformance.logs.v1alpha1.GetLogsRequest\032*"
-  ".performance.logs.v1alpha1.GetLogsRespon"
-  "se\"\000B\241\001\n#io.cuemby.performance.logs.v1al"
-  "pha1B\014LogsApiProtoP\001Z,github.com/perform"
-  "ance-grpc-sdk/logsv1alpha1\242\002\003PFX\252\002\031Perfo"
-  "rmance.Logs.V1Alpha1\312\002\031Performance\\Logs\\"
-  "V1Alpha1b\006proto3"
+  "size\022 \n\014next_page_id\030\005 \001(\tR\nnextPageId\022\034"
+  "\n\tnamespace\030\006 \001(\tR\tnamespace\0329\n\013LabelsEn"
+  "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va"
+  "lue:\0028\001\"k\n\017GetLogsResponse\0226\n\004logs\030\001 \003(\013"
+  "2\".performance.logs.v1alpha1.LogItemR\004lo"
+  "gs\022 \n\014next_page_id\030\002 \001(\tR\nnextPageId2t\n\016"
+  "LogsAPIService\022b\n\007GetLogs\022).performance."
+  "logs.v1alpha1.GetLogsRequest\032*.performan"
+  "ce.logs.v1alpha1.GetLogsResponse\"\000B\241\001\n#i"
+  "o.cuemby.performance.logs.v1alpha1B\014Logs"
+  "ApiProtoP\001Z,github.com/performance-grpc-"
+  "sdk/logsv1alpha1\242\002\003PFX\252\002\031Performance.Log"
+  "s.V1Alpha1\312\002\031Performance\\Logs\\V1Alpha1b\006"
+  "proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto_deps[1] = {
   &::descriptor_table_performance_2flogs_2fv1alpha1_2flogs_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto = {
-  false, false, 896, descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto, "performance/logs/v1alpha1/logs_api.proto", 
+  false, false, 926, descriptor_table_protodef_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto, "performance/logs/v1alpha1/logs_api.proto", 
   &descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto_once, descriptor_table_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto::offsets,
   file_level_metadata_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto, file_level_enum_descriptors_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto, file_level_service_descriptors_performance_2flogs_2fv1alpha1_2flogs_5fapi_2eproto,
@@ -505,6 +508,11 @@ GetLogsRequest::GetLogsRequest(const GetLogsRequest& from)
     next_page_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_id(), 
       GetArenaForAllocation());
   }
+  namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_namespace_().empty()) {
+    namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_range()) {
     range_ = new ::performance::logs::v1alpha1::Range(*from.range_);
   } else {
@@ -516,6 +524,7 @@ GetLogsRequest::GetLogsRequest(const GetLogsRequest& from)
 
 inline void GetLogsRequest::SharedCtor() {
 next_page_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&range_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&size_) -
@@ -532,6 +541,7 @@ GetLogsRequest::~GetLogsRequest() {
 inline void GetLogsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   next_page_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete range_;
 }
 
@@ -558,6 +568,7 @@ void GetLogsRequest::Clear() {
   labels_.Clear();
   containers_.Clear();
   next_page_id_.ClearToEmpty();
+  namespace__.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && range_ != nullptr) {
     delete range_;
   }
@@ -618,6 +629,15 @@ const char* GetLogsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           auto str = _internal_mutable_next_page_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.logs.v1alpha1.GetLogsRequest.next_page_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string namespace = 6 [json_name = "namespace"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_namespace_();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.logs.v1alpha1.GetLogsRequest.namespace"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -730,6 +750,16 @@ failure:
         5, this->_internal_next_page_id(), target);
   }
 
+  // string namespace = 6 [json_name = "namespace"];
+  if (!this->_internal_namespace_().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.logs.v1alpha1.GetLogsRequest.namespace");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_namespace_(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -768,6 +798,13 @@ size_t GetLogsRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_next_page_id());
+  }
+
+  // string namespace = 6 [json_name = "namespace"];
+  if (!this->_internal_namespace_().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_namespace_());
   }
 
   // .performance.logs.v1alpha1.Range range = 3 [json_name = "range"];
@@ -817,6 +854,9 @@ void GetLogsRequest::MergeFrom(const GetLogsRequest& from) {
   if (!from._internal_next_page_id().empty()) {
     _internal_set_next_page_id(from._internal_next_page_id());
   }
+  if (!from._internal_namespace_().empty()) {
+    _internal_set_namespace_(from._internal_namespace_());
+  }
   if (from._internal_has_range()) {
     _internal_mutable_range()->::performance::logs::v1alpha1::Range::MergeFrom(from._internal_range());
   }
@@ -846,6 +886,11 @@ void GetLogsRequest::InternalSwap(GetLogsRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &next_page_id_, GetArenaForAllocation(),
       &other->next_page_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &namespace__, GetArenaForAllocation(),
+      &other->namespace__, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetLogsRequest, size_)

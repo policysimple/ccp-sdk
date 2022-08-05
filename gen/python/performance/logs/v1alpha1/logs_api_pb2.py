@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.performance.logs.v1alpha1B\014LogsApiProtoP\001Z,github.com/performance-grpc-sdk/logsv1alpha1\242\002\003PFX\252\002\031Performance.Logs.V1Alpha1\312\002\031Performance\\Logs\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(performance/logs/v1alpha1/logs_api.proto\x12\x19performance.logs.v1alpha1\x1a$performance/logs/v1alpha1/logs.proto\"Y\n\x05Range\x12\x1b\n\tdate_from\x18\x01 \x01(\tR\x08\x64\x61teFrom\x12\x17\n\x07\x64\x61te_to\x18\x02 \x01(\tR\x06\x64\x61teTo\x12\x1a\n\x08timezone\x18\x03 \x01(\tR\x08timezone\"\xa8\x02\n\x0eGetLogsRequest\x12M\n\x06labels\x18\x01 \x03(\x0b\x32\x35.performance.logs.v1alpha1.GetLogsRequest.LabelsEntryR\x06labels\x12\x1e\n\ncontainers\x18\x02 \x03(\tR\ncontainers\x12\x36\n\x05range\x18\x03 \x01(\x0b\x32 .performance.logs.v1alpha1.RangeR\x05range\x12\x12\n\x04size\x18\x04 \x01(\x05R\x04size\x12 \n\x0cnext_page_id\x18\x05 \x01(\tR\nnextPageId\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"k\n\x0fGetLogsResponse\x12\x36\n\x04logs\x18\x01 \x03(\x0b\x32\".performance.logs.v1alpha1.LogItemR\x04logs\x12 \n\x0cnext_page_id\x18\x02 \x01(\tR\nnextPageId2t\n\x0eLogsAPIService\x12\x62\n\x07GetLogs\x12).performance.logs.v1alpha1.GetLogsRequest\x1a*.performance.logs.v1alpha1.GetLogsResponse\"\x00\x42\xa1\x01\n#io.cuemby.performance.logs.v1alpha1B\x0cLogsApiProtoP\x01Z,github.com/performance-grpc-sdk/logsv1alpha1\xa2\x02\x03PFX\xaa\x02\x19Performance.Logs.V1Alpha1\xca\x02\x19Performance\\Logs\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(performance/logs/v1alpha1/logs_api.proto\x12\x19performance.logs.v1alpha1\x1a$performance/logs/v1alpha1/logs.proto\"Y\n\x05Range\x12\x1b\n\tdate_from\x18\x01 \x01(\tR\x08\x64\x61teFrom\x12\x17\n\x07\x64\x61te_to\x18\x02 \x01(\tR\x06\x64\x61teTo\x12\x1a\n\x08timezone\x18\x03 \x01(\tR\x08timezone\"\xc6\x02\n\x0eGetLogsRequest\x12M\n\x06labels\x18\x01 \x03(\x0b\x32\x35.performance.logs.v1alpha1.GetLogsRequest.LabelsEntryR\x06labels\x12\x1e\n\ncontainers\x18\x02 \x03(\tR\ncontainers\x12\x36\n\x05range\x18\x03 \x01(\x0b\x32 .performance.logs.v1alpha1.RangeR\x05range\x12\x12\n\x04size\x18\x04 \x01(\x05R\x04size\x12 \n\x0cnext_page_id\x18\x05 \x01(\tR\nnextPageId\x12\x1c\n\tnamespace\x18\x06 \x01(\tR\tnamespace\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"k\n\x0fGetLogsResponse\x12\x36\n\x04logs\x18\x01 \x03(\x0b\x32\".performance.logs.v1alpha1.LogItemR\x04logs\x12 \n\x0cnext_page_id\x18\x02 \x01(\tR\nnextPageId2t\n\x0eLogsAPIService\x12\x62\n\x07GetLogs\x12).performance.logs.v1alpha1.GetLogsRequest\x1a*.performance.logs.v1alpha1.GetLogsResponse\"\x00\x42\xa1\x01\n#io.cuemby.performance.logs.v1alpha1B\x0cLogsApiProtoP\x01Z,github.com/performance-grpc-sdk/logsv1alpha1\xa2\x02\x03PFX\xaa\x02\x19Performance.Logs.V1Alpha1\xca\x02\x19Performance\\Logs\\V1Alpha1b\x06proto3'
   ,
   dependencies=[performance_dot_logs_dot_v1alpha1_dot_logs__pb2.DESCRIPTOR,])
 
@@ -107,8 +107,8 @@ _GETLOGSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=440,
-  serialized_end=497,
+  serialized_start=470,
+  serialized_end=527,
 )
 
 _GETLOGSREQUEST = _descriptor.Descriptor(
@@ -154,6 +154,13 @@ _GETLOGSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='nextPageId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='performance.logs.v1alpha1.GetLogsRequest.namespace', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='namespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -167,7 +174,7 @@ _GETLOGSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=201,
-  serialized_end=497,
+  serialized_end=527,
 )
 
 
@@ -205,8 +212,8 @@ _GETLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=499,
-  serialized_end=606,
+  serialized_start=529,
+  serialized_end=636,
 )
 
 _GETLOGSREQUEST_LABELSENTRY.containing_type = _GETLOGSREQUEST
@@ -258,8 +265,8 @@ _LOGSAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=608,
-  serialized_end=724,
+  serialized_start=638,
+  serialized_end=754,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetLogs',

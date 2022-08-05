@@ -31,8 +31,7 @@ message GetLogsRequest {
     Range range =3;
     int32 size = 4;
     string next_page_id = 5;
-
-    
+    string namespace = 6;
 }
 
 message GetLogsResponse {

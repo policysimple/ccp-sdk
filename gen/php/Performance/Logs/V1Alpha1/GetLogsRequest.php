@@ -33,6 +33,10 @@ class GetLogsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string next_page_id = 5 [json_name = "nextPageId"];</code>
      */
     protected $next_page_id = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 6 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class GetLogsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Performance\Logs\V1Alpha1\Range $range
      *     @type int $size
      *     @type string $next_page_id
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -168,6 +173,28 @@ class GetLogsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->next_page_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 6 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 6 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }

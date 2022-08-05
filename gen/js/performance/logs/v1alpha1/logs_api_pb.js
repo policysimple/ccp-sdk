@@ -316,7 +316,8 @@ proto.performance.logs.v1alpha1.GetLogsRequest.toObject = function(includeInstan
     containersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     range: (f = msg.getRange()) && proto.performance.logs.v1alpha1.Range.toObject(includeInstance, f),
     size: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    nextPageId: jspb.Message.getFieldWithDefault(msg, 5, "")
+    nextPageId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -375,6 +376,10 @@ proto.performance.logs.v1alpha1.GetLogsRequest.deserializeBinaryFromReader = fun
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setNextPageId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -435,6 +440,13 @@ proto.performance.logs.v1alpha1.GetLogsRequest.serializeBinaryToWriter = functio
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -570,6 +582,24 @@ proto.performance.logs.v1alpha1.GetLogsRequest.prototype.getNextPageId = functio
  */
 proto.performance.logs.v1alpha1.GetLogsRequest.prototype.setNextPageId = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string namespace = 6;
+ * @return {string}
+ */
+proto.performance.logs.v1alpha1.GetLogsRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.logs.v1alpha1.GetLogsRequest} returns this
+ */
+proto.performance.logs.v1alpha1.GetLogsRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

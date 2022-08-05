@@ -47,25 +47,26 @@ public final class LogsApiProto {
       "to\022\031performance.logs.v1alpha1\032$performan" +
       "ce/logs/v1alpha1/logs.proto\"Y\n\005Range\022\033\n\t" +
       "date_from\030\001 \001(\tR\010dateFrom\022\027\n\007date_to\030\002 \001" +
-      "(\tR\006dateTo\022\032\n\010timezone\030\003 \001(\tR\010timezone\"\250" +
+      "(\tR\006dateTo\022\032\n\010timezone\030\003 \001(\tR\010timezone\"\306" +
       "\002\n\016GetLogsRequest\022M\n\006labels\030\001 \003(\01325.perf" +
       "ormance.logs.v1alpha1.GetLogsRequest.Lab" +
       "elsEntryR\006labels\022\036\n\ncontainers\030\002 \003(\tR\nco" +
       "ntainers\0226\n\005range\030\003 \001(\0132 .performance.lo" +
       "gs.v1alpha1.RangeR\005range\022\022\n\004size\030\004 \001(\005R\004" +
-      "size\022 \n\014next_page_id\030\005 \001(\tR\nnextPageId\0329" +
-      "\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value" +
-      "\030\002 \001(\tR\005value:\0028\001\"k\n\017GetLogsResponse\0226\n\004" +
-      "logs\030\001 \003(\0132\".performance.logs.v1alpha1.L" +
-      "ogItemR\004logs\022 \n\014next_page_id\030\002 \001(\tR\nnext" +
-      "PageId2t\n\016LogsAPIService\022b\n\007GetLogs\022).pe" +
-      "rformance.logs.v1alpha1.GetLogsRequest\032*" +
-      ".performance.logs.v1alpha1.GetLogsRespon" +
-      "se\"\000B\241\001\n#io.cuemby.performance.logs.v1al" +
-      "pha1B\014LogsApiProtoP\001Z,github.com/perform" +
-      "ance-grpc-sdk/logsv1alpha1\242\002\003PFX\252\002\031Perfo" +
-      "rmance.Logs.V1Alpha1\312\002\031Performance\\Logs\\" +
-      "V1Alpha1b\006proto3"
+      "size\022 \n\014next_page_id\030\005 \001(\tR\nnextPageId\022\034" +
+      "\n\tnamespace\030\006 \001(\tR\tnamespace\0329\n\013LabelsEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
+      "lue:\0028\001\"k\n\017GetLogsResponse\0226\n\004logs\030\001 \003(\013" +
+      "2\".performance.logs.v1alpha1.LogItemR\004lo" +
+      "gs\022 \n\014next_page_id\030\002 \001(\tR\nnextPageId2t\n\016" +
+      "LogsAPIService\022b\n\007GetLogs\022).performance." +
+      "logs.v1alpha1.GetLogsRequest\032*.performan" +
+      "ce.logs.v1alpha1.GetLogsResponse\"\000B\241\001\n#i" +
+      "o.cuemby.performance.logs.v1alpha1B\014Logs" +
+      "ApiProtoP\001Z,github.com/performance-grpc-" +
+      "sdk/logsv1alpha1\242\002\003PFX\252\002\031Performance.Log" +
+      "s.V1Alpha1\312\002\031Performance\\Logs\\V1Alpha1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -83,7 +84,7 @@ public final class LogsApiProto {
     internal_static_performance_logs_v1alpha1_GetLogsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_logs_v1alpha1_GetLogsRequest_descriptor,
-        new java.lang.String[] { "Labels", "Containers", "Range", "Size", "NextPageId", });
+        new java.lang.String[] { "Labels", "Containers", "Range", "Size", "NextPageId", "Namespace", });
     internal_static_performance_logs_v1alpha1_GetLogsRequest_LabelsEntry_descriptor =
       internal_static_performance_logs_v1alpha1_GetLogsRequest_descriptor.getNestedTypes().get(0);
     internal_static_performance_logs_v1alpha1_GetLogsRequest_LabelsEntry_fieldAccessorTable = new
