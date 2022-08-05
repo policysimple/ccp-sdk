@@ -192,7 +192,20 @@ private static final long serialVersionUID = 0L;
                 extraArgs__.getKey(), extraArgs__.getValue());
             break;
           }
-          case 144: {
+          case 146: {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              autoscaling_ = com.google.protobuf.MapField.newMapField(
+                  AutoscalingDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000020;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            autoscaling__ = input.readMessage(
+                AutoscalingDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            autoscaling_.getMutableMap().put(
+                autoscaling__.getKey(), autoscaling__.getValue());
+            break;
+          }
+          case 152: {
             int rawValue = input.readEnum();
 
             trafficType_ = rawValue;
@@ -237,6 +250,8 @@ private static final long serialVersionUID = 0L;
         return internalGetSecrets();
       case 17:
         return internalGetExtraArgs();
+      case 18:
+        return internalGetAutoscaling();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -1019,17 +1034,98 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int TRAFFIC_TYPE_FIELD_NUMBER = 18;
+  public static final int AUTOSCALING_FIELD_NUMBER = 18;
+  private static final class AutoscalingDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.internal_static_pipelines_runtime_v1alpha1_Runtime_AutoscalingEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> autoscaling_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetAutoscaling() {
+    if (autoscaling_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AutoscalingDefaultEntryHolder.defaultEntry);
+    }
+    return autoscaling_;
+  }
+
+  public int getAutoscalingCount() {
+    return internalGetAutoscaling().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsAutoscaling(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetAutoscaling().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getAutoscalingMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAutoscaling() {
+    return getAutoscalingMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getAutoscalingMap() {
+    return internalGetAutoscaling().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getAutoscalingOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetAutoscaling().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getAutoscalingOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetAutoscaling().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int TRAFFIC_TYPE_FIELD_NUMBER = 19;
   private int trafficType_;
   /**
-   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
    * @return The enum numeric value on the wire for trafficType.
    */
   @java.lang.Override public int getTrafficTypeValue() {
     return trafficType_;
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
    * @return The trafficType.
    */
   @java.lang.Override public io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType() {
@@ -1115,8 +1211,14 @@ private static final long serialVersionUID = 0L;
         internalGetExtraArgs(),
         ExtraArgsDefaultEntryHolder.defaultEntry,
         17);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetAutoscaling(),
+        AutoscalingDefaultEntryHolder.defaultEntry,
+        18);
     if (trafficType_ != io.cuemby.pipelines.runtime.v1alpha1.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(18, trafficType_);
+      output.writeEnum(19, trafficType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1212,9 +1314,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, extraArgs__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetAutoscaling().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      autoscaling__ = AutoscalingDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, autoscaling__);
+    }
     if (trafficType_ != io.cuemby.pipelines.runtime.v1alpha1.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(18, trafficType_);
+        .computeEnumSize(19, trafficType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1263,6 +1375,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetSecrets())) return false;
     if (!internalGetExtraArgs().equals(
         other.internalGetExtraArgs())) return false;
+    if (!internalGetAutoscaling().equals(
+        other.internalGetAutoscaling())) return false;
     if (trafficType_ != other.trafficType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1316,6 +1430,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetExtraArgs().getMap().isEmpty()) {
       hash = (37 * hash) + EXTRA_ARGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetExtraArgs().hashCode();
+    }
+    if (!internalGetAutoscaling().getMap().isEmpty()) {
+      hash = (37 * hash) + AUTOSCALING_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAutoscaling().hashCode();
     }
     hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + trafficType_;
@@ -1444,6 +1562,8 @@ private static final long serialVersionUID = 0L;
           return internalGetSecrets();
         case 17:
           return internalGetExtraArgs();
+        case 18:
+          return internalGetAutoscaling();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1463,6 +1583,8 @@ private static final long serialVersionUID = 0L;
           return internalGetMutableSecrets();
         case 17:
           return internalGetMutableExtraArgs();
+        case 18:
+          return internalGetMutableAutoscaling();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1521,6 +1643,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableCommands().clear();
       internalGetMutableSecrets().clear();
       internalGetMutableExtraArgs().clear();
+      internalGetMutableAutoscaling().clear();
       trafficType_ = 0;
 
       return this;
@@ -1571,6 +1694,8 @@ private static final long serialVersionUID = 0L;
       result.secrets_.makeImmutable();
       result.extraArgs_ = internalGetExtraArgs();
       result.extraArgs_.makeImmutable();
+      result.autoscaling_ = internalGetAutoscaling();
+      result.autoscaling_.makeImmutable();
       result.trafficType_ = trafficType_;
       onBuilt();
       return result;
@@ -1672,6 +1797,8 @@ private static final long serialVersionUID = 0L;
           other.internalGetSecrets());
       internalGetMutableExtraArgs().mergeFrom(
           other.internalGetExtraArgs());
+      internalGetMutableAutoscaling().mergeFrom(
+          other.internalGetAutoscaling());
       if (other.trafficType_ != 0) {
         setTrafficTypeValue(other.getTrafficTypeValue());
       }
@@ -3091,16 +3218,144 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> autoscaling_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetAutoscaling() {
+      if (autoscaling_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AutoscalingDefaultEntryHolder.defaultEntry);
+      }
+      return autoscaling_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableAutoscaling() {
+      onChanged();;
+      if (autoscaling_ == null) {
+        autoscaling_ = com.google.protobuf.MapField.newMapField(
+            AutoscalingDefaultEntryHolder.defaultEntry);
+      }
+      if (!autoscaling_.isMutable()) {
+        autoscaling_ = autoscaling_.copy();
+      }
+      return autoscaling_;
+    }
+
+    public int getAutoscalingCount() {
+      return internalGetAutoscaling().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsAutoscaling(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetAutoscaling().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getAutoscalingMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAutoscaling() {
+      return getAutoscalingMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getAutoscalingMap() {
+      return internalGetAutoscaling().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getAutoscalingOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAutoscaling().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getAutoscalingOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAutoscaling().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAutoscaling() {
+      internalGetMutableAutoscaling().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+
+    public Builder removeAutoscaling(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableAutoscaling().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableAutoscaling() {
+      return internalGetMutableAutoscaling().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+    public Builder putAutoscaling(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableAutoscaling().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+
+    public Builder putAllAutoscaling(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAutoscaling().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
     private int trafficType_ = 0;
     /**
-     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @return The enum numeric value on the wire for trafficType.
      */
     @java.lang.Override public int getTrafficTypeValue() {
       return trafficType_;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @param value The enum numeric value on the wire for trafficType to set.
      * @return This builder for chaining.
      */
@@ -3111,7 +3366,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @return The trafficType.
      */
     @java.lang.Override
@@ -3121,7 +3376,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? io.cuemby.pipelines.runtime.v1alpha1.TrafficType.UNRECOGNIZED : result;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @param value The trafficType to set.
      * @return This builder for chaining.
      */
@@ -3135,7 +3390,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTrafficType() {
