@@ -49,7 +49,7 @@ message Pipeline {
     int32 traffic_type = 4;
     uint32 organization_id = 5;
     uint32 project_id = 6;
-    string namespace_id = 7;
+    string environment_id = 7;
     string application_id = 8;
     string runtime_id = 9;
     repeated Params params = 10;

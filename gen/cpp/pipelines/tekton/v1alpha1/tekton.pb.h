@@ -1257,7 +1257,7 @@ class Pipeline final :
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kInstanceTypeFieldNumber = 3,
-    kNamespaceIdFieldNumber = 7,
+    kEnvironmentIdFieldNumber = 7,
     kApplicationIdFieldNumber = 8,
     kRuntimeIdFieldNumber = 9,
     kStatusTypeFieldNumber = 12,
@@ -1447,18 +1447,18 @@ class Pipeline final :
   std::string* _internal_mutable_instance_type();
   public:
 
-  // string namespace_id = 7 [json_name = "namespaceId"];
-  void clear_namespace_id();
-  const std::string& namespace_id() const;
+  // string environment_id = 7 [json_name = "environmentId"];
+  void clear_environment_id();
+  const std::string& environment_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_namespace_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_namespace_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_id();
-  void set_allocated_namespace_id(std::string* namespace_id);
+  void set_environment_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_id();
+  void set_allocated_environment_id(std::string* environment_id);
   private:
-  const std::string& _internal_namespace_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_id(const std::string& value);
-  std::string* _internal_mutable_namespace_id();
+  const std::string& _internal_environment_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_id(const std::string& value);
+  std::string* _internal_mutable_environment_id();
   public:
 
   // string application_id = 8 [json_name = "applicationId"];
@@ -1590,7 +1590,7 @@ class Pipeline final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_type_;
@@ -2788,50 +2788,50 @@ inline void Pipeline::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.project_id)
 }
 
-// string namespace_id = 7 [json_name = "namespaceId"];
-inline void Pipeline::clear_namespace_id() {
-  namespace_id_.ClearToEmpty();
+// string environment_id = 7 [json_name = "environmentId"];
+inline void Pipeline::clear_environment_id() {
+  environment_id_.ClearToEmpty();
 }
-inline const std::string& Pipeline::namespace_id() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.namespace_id)
-  return _internal_namespace_id();
+inline const std::string& Pipeline::environment_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.environment_id)
+  return _internal_environment_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Pipeline::set_namespace_id(ArgT0&& arg0, ArgT... args) {
+void Pipeline::set_environment_id(ArgT0&& arg0, ArgT... args) {
  
- namespace_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.namespace_id)
+ environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.environment_id)
 }
-inline std::string* Pipeline::mutable_namespace_id() {
-  std::string* _s = _internal_mutable_namespace_id();
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.namespace_id)
+inline std::string* Pipeline::mutable_environment_id() {
+  std::string* _s = _internal_mutable_environment_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.environment_id)
   return _s;
 }
-inline const std::string& Pipeline::_internal_namespace_id() const {
-  return namespace_id_.Get();
+inline const std::string& Pipeline::_internal_environment_id() const {
+  return environment_id_.Get();
 }
-inline void Pipeline::_internal_set_namespace_id(const std::string& value) {
+inline void Pipeline::_internal_set_environment_id(const std::string& value) {
   
-  namespace_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Pipeline::_internal_mutable_namespace_id() {
+inline std::string* Pipeline::_internal_mutable_environment_id() {
   
-  return namespace_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return environment_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Pipeline::release_namespace_id() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Pipeline.namespace_id)
-  return namespace_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Pipeline::release_environment_id() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Pipeline.environment_id)
+  return environment_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Pipeline::set_allocated_namespace_id(std::string* namespace_id) {
-  if (namespace_id != nullptr) {
+inline void Pipeline::set_allocated_environment_id(std::string* environment_id) {
+  if (environment_id != nullptr) {
     
   } else {
     
   }
-  namespace_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_id,
+  environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.namespace_id)
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.environment_id)
 }
 
 // string application_id = 8 [json_name = "applicationId"];

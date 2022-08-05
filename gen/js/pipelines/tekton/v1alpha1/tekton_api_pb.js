@@ -1232,8 +1232,9 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.toObject =
  */
 proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tektonPipeline: (f = msg.getTektonPipeline()) && pipelines_tekton_v1alpha1_tekton_pb.Pipeline.toObject(includeInstance, f),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    runtimeName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    environmentId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1271,13 +1272,16 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new pipelines_tekton_v1alpha1_tekton_pb.Pipeline;
-      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.Pipeline.deserializeBinaryFromReader);
-      msg.setTektonPipeline(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRuntimeName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      msg.setApplicationId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEnvironmentId(value);
       break;
     default:
       reader.skipField();
@@ -1308,18 +1312,24 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.serializeB
  */
 proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTektonPipeline();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getRuntimeName();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      pipelines_tekton_v1alpha1_tekton_pb.Pipeline.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getUserId();
+  f = message.getApplicationId();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getEnvironmentId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -1327,47 +1337,28 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.serializeBinaryToWri
 
 
 /**
- * optional Pipeline tekton_pipeline = 1;
- * @return {?proto.pipelines.tekton.v1alpha1.Pipeline}
- */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getTektonPipeline = function() {
-  return /** @type{?proto.pipelines.tekton.v1alpha1.Pipeline} */ (
-    jspb.Message.getWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.Pipeline, 1));
-};
-
-
-/**
- * @param {?proto.pipelines.tekton.v1alpha1.Pipeline|undefined} value
- * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
-*/
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setTektonPipeline = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
- */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.clearTektonPipeline = function() {
-  return this.setTektonPipeline(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.hasTektonPipeline = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string user_id = 2;
+ * optional string runtime_name = 1;
  * @return {string}
  */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getUserId = function() {
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getRuntimeName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setRuntimeName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string application_id = 2;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getApplicationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1376,8 +1367,26 @@ proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getUserId 
  * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
  */
-proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setUserId = function(value) {
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setApplicationId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string environment_id = 3;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.getEnvironmentId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.prototype.setEnvironmentId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

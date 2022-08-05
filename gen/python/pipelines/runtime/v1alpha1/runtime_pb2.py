@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"\xcc\t\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12#\n\rinstance_type\x18\x04 \x01(\tR\x0cinstanceType\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x06 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x07 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x08 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\t \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\n \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\x0b \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0c \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x12 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"\xae\t\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12#\n\rinstance_type\x18\x04 \x01(\tR\x0cinstanceType\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x06 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x07 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x08 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\t \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\n \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\x0b \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0c \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x12 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
 )
 
 _TRAFFICTYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _TRAFFICTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1377,
-  serialized_end=1474,
+  serialized_start=1347,
+  serialized_end=1444,
 )
 _sym_db.RegisterEnumDescriptor(_TRAFFICTYPE)
 
@@ -94,8 +94,8 @@ _RUNTIME_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=983,
-  serialized_end=1045,
+  serialized_start=953,
+  serialized_end=1015,
 )
 
 _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
@@ -132,8 +132,8 @@ _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1047,
-  serialized_end=1118,
+  serialized_start=1017,
+  serialized_end=1088,
 )
 
 _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
@@ -170,8 +170,8 @@ _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1120,
-  serialized_end=1179,
+  serialized_start=1090,
+  serialized_end=1149,
 )
 
 _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
@@ -208,8 +208,8 @@ _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1181,
-  serialized_end=1239,
+  serialized_start=1151,
+  serialized_end=1209,
 )
 
 _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
@@ -246,8 +246,8 @@ _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1241,
-  serialized_end=1301,
+  serialized_start=1211,
+  serialized_end=1271,
 )
 
 _RUNTIME = _descriptor.Descriptor(
@@ -273,112 +273,105 @@ _RUNTIME = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='pipelines.runtime.v1alpha1.Runtime.namespace', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='namespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='instance_type', full_name='pipelines.runtime.v1alpha1.Runtime.instance_type', index=3,
+      name='instance_type', full_name='pipelines.runtime.v1alpha1.Runtime.instance_type', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='instanceType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='pipelines.runtime.v1alpha1.Runtime.organization_id', index=4,
+      name='organization_id', full_name='pipelines.runtime.v1alpha1.Runtime.organization_id', index=3,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='project_id', full_name='pipelines.runtime.v1alpha1.Runtime.project_id', index=5,
+      name='project_id', full_name='pipelines.runtime.v1alpha1.Runtime.project_id', index=4,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='application_id', full_name='pipelines.runtime.v1alpha1.Runtime.application_id', index=6,
+      name='application_id', full_name='pipelines.runtime.v1alpha1.Runtime.application_id', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='applicationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='workspace_id', full_name='pipelines.runtime.v1alpha1.Runtime.workspace_id', index=7,
+      name='workspace_id', full_name='pipelines.runtime.v1alpha1.Runtime.workspace_id', index=6,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='workspaceId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='environment_id', full_name='pipelines.runtime.v1alpha1.Runtime.environment_id', index=8,
+      name='environment_id', full_name='pipelines.runtime.v1alpha1.Runtime.environment_id', index=7,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='environmentId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scaler', full_name='pipelines.runtime.v1alpha1.Runtime.scaler', index=9,
+      name='scaler', full_name='pipelines.runtime.v1alpha1.Runtime.scaler', index=8,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='scaler', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pod_status', full_name='pipelines.runtime.v1alpha1.Runtime.pod_status', index=10,
+      name='pod_status', full_name='pipelines.runtime.v1alpha1.Runtime.pod_status', index=9,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='podStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pod_status_msg', full_name='pipelines.runtime.v1alpha1.Runtime.pod_status_msg', index=11,
+      name='pod_status_msg', full_name='pipelines.runtime.v1alpha1.Runtime.pod_status_msg', index=10,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='podStatusMsg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='integration', full_name='pipelines.runtime.v1alpha1.Runtime.integration', index=12,
+      name='integration', full_name='pipelines.runtime.v1alpha1.Runtime.integration', index=11,
       number=13, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='integration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='environment_variables', full_name='pipelines.runtime.v1alpha1.Runtime.environment_variables', index=13,
+      name='environment_variables', full_name='pipelines.runtime.v1alpha1.Runtime.environment_variables', index=12,
       number=14, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='environmentVariables', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='commands', full_name='pipelines.runtime.v1alpha1.Runtime.commands', index=14,
+      name='commands', full_name='pipelines.runtime.v1alpha1.Runtime.commands', index=13,
       number=15, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commands', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secrets', full_name='pipelines.runtime.v1alpha1.Runtime.secrets', index=15,
+      name='secrets', full_name='pipelines.runtime.v1alpha1.Runtime.secrets', index=14,
       number=16, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='secrets', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra_args', full_name='pipelines.runtime.v1alpha1.Runtime.extra_args', index=16,
+      name='extra_args', full_name='pipelines.runtime.v1alpha1.Runtime.extra_args', index=15,
       number=17, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='extraArgs', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='traffic_type', full_name='pipelines.runtime.v1alpha1.Runtime.traffic_type', index=17,
+      name='traffic_type', full_name='pipelines.runtime.v1alpha1.Runtime.traffic_type', index=16,
       number=18, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -397,7 +390,7 @@ _RUNTIME = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=73,
-  serialized_end=1301,
+  serialized_end=1271,
 )
 
 
@@ -428,8 +421,8 @@ _RUNTIMELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1303,
-  serialized_end=1375,
+  serialized_start=1273,
+  serialized_end=1345,
 )
 
 _RUNTIME_INTEGRATIONENTRY.containing_type = _RUNTIME

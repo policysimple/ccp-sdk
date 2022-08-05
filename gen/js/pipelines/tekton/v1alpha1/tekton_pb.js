@@ -1264,7 +1264,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     trafficType: jspb.Message.getFieldWithDefault(msg, 4, 0),
     organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    namespaceId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    environmentId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     runtimeId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     paramsList: jspb.Message.toObjectList(msg.getParamsList(),
@@ -1342,7 +1342,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespaceId(value);
+      msg.setEnvironmentId(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -1481,7 +1481,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getNamespaceId();
+  f = message.getEnvironmentId();
   if (f.length > 0) {
     writer.writeString(
       7,
@@ -1675,10 +1675,10 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setProjectId = function(value
 
 
 /**
- * optional string namespace_id = 7;
+ * optional string environment_id = 7;
  * @return {string}
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getNamespaceId = function() {
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getEnvironmentId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -1687,7 +1687,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getNamespaceId = function() {
  * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setNamespaceId = function(value) {
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setEnvironmentId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 

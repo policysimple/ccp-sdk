@@ -50,8 +50,9 @@ message ListTektonPipelineResponse {
 }
 
 message DeleteTektonPipelineRequest {
-    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
-    string user_id = 2;
+    string runtime_name = 1;
+    string application_id = 2;
+    string environment_id = 3;
 }
 
 message DeleteTektonPipelineResponse {

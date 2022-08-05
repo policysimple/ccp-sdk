@@ -96,8 +96,9 @@ struct ListTektonPipelineResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListTektonPipelineResponseDefaultTypeInternal _ListTektonPipelineResponse_default_instance_;
 constexpr DeleteTektonPipelineRequest::DeleteTektonPipelineRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , tekton_pipeline_(nullptr){}
+  : runtime_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteTektonPipelineRequestDefaultTypeInternal {
   constexpr DeleteTektonPipelineRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -195,8 +196,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest, tekton_pipeline_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest, runtime_name_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest, application_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest, environment_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::DeleteTektonPipelineResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -224,9 +226,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 27, -1, sizeof(::pipelines::tekton::v1alpha1::ListTektonPipelineRequest)},
   { 33, -1, sizeof(::pipelines::tekton::v1alpha1::ListTektonPipelineResponse)},
   { 39, -1, sizeof(::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest)},
-  { 46, -1, sizeof(::pipelines::tekton::v1alpha1::DeleteTektonPipelineResponse)},
-  { 52, -1, sizeof(::pipelines::tekton::v1alpha1::ListTektonTaskRequest)},
-  { 57, -1, sizeof(::pipelines::tekton::v1alpha1::ListTektonTaskResponse)},
+  { 47, -1, sizeof(::pipelines::tekton::v1alpha1::DeleteTektonPipelineResponse)},
+  { 53, -1, sizeof(::pipelines::tekton::v1alpha1::ListTektonTaskRequest)},
+  { 58, -1, sizeof(::pipelines::tekton::v1alpha1::ListTektonTaskResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -262,44 +264,44 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_5fap
   "(\rR\tprojectId\"j\n\032ListTektonPipelineRespo"
   "nse\022L\n\017tekton_pipeline\030\001 \003(\0132#.pipelines"
   ".tekton.v1alpha1.PipelineR\016tektonPipelin"
-  "e\"\204\001\n\033DeleteTektonPipelineRequest\022L\n\017tek"
-  "ton_pipeline\030\001 \001(\0132#.pipelines.tekton.v1"
-  "alpha1.PipelineR\016tektonPipeline\022\027\n\007user_"
-  "id\030\002 \001(\tR\006userId\"6\n\034DeleteTektonPipeline"
-  "Response\022\026\n\006status\030\001 \001(\tR\006status\"\027\n\025List"
-  "TektonTaskRequest\"g\n\026ListTektonTaskRespo"
-  "nse\0225\n\005tasks\030\001 \003(\0132\037.pipelines.tekton.v1"
-  "alpha1.TaskR\005tasks\022\026\n\006status\030\002 \001(\tR\006stat"
-  "us2\263\005\n\030TektonPipelineAPIService\022\207\001\n\024Crea"
-  "teTektonPipeline\0226.pipelines.tekton.v1al"
-  "pha1.CreateTektonPipelineRequest\0327.pipel"
-  "ines.tekton.v1alpha1.CreateTektonPipelin"
-  "eResponse\022\207\001\n\024GetOneTektonPipeline\0226.pip"
-  "elines.tekton.v1alpha1.GetOneTektonPipel"
-  "ineRequest\0327.pipelines.tekton.v1alpha1.G"
-  "etOneTektonPipelineResponse\022\201\001\n\022ListTekt"
-  "onPipeline\0224.pipelines.tekton.v1alpha1.L"
-  "istTektonPipelineRequest\0325.pipelines.tek"
-  "ton.v1alpha1.ListTektonPipelineResponse\022"
-  "\207\001\n\024DeleteTektonPipeline\0226.pipelines.tek"
-  "ton.v1alpha1.DeleteTektonPipelineRequest"
-  "\0327.pipelines.tekton.v1alpha1.DeleteTekto"
-  "nPipelineResponse\022u\n\016ListTektonTask\0220.pi"
-  "pelines.tekton.v1alpha1.ListTektonTaskRe"
-  "quest\0321.pipelines.tekton.v1alpha1.ListTe"
-  "ktonTaskResponseB\261\001\n#io.cuemby.pipelines"
-  ".tekton.v1alpha1B\016TektonAPIProtoP\001Z:gith"
-  "ub.com/cuemby/ccp-sdk/gen/go/pipelines/t"
-  "ekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton."
-  "V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006pr"
-  "oto3"
+  "e\"\216\001\n\033DeleteTektonPipelineRequest\022!\n\014run"
+  "time_name\030\001 \001(\tR\013runtimeName\022%\n\016applicat"
+  "ion_id\030\002 \001(\tR\rapplicationId\022%\n\016environme"
+  "nt_id\030\003 \001(\tR\renvironmentId\"6\n\034DeleteTekt"
+  "onPipelineResponse\022\026\n\006status\030\001 \001(\tR\006stat"
+  "us\"\027\n\025ListTektonTaskRequest\"g\n\026ListTekto"
+  "nTaskResponse\0225\n\005tasks\030\001 \003(\0132\037.pipelines"
+  ".tekton.v1alpha1.TaskR\005tasks\022\026\n\006status\030\002"
+  " \001(\tR\006status2\263\005\n\030TektonPipelineAPIServic"
+  "e\022\207\001\n\024CreateTektonPipeline\0226.pipelines.t"
+  "ekton.v1alpha1.CreateTektonPipelineReque"
+  "st\0327.pipelines.tekton.v1alpha1.CreateTek"
+  "tonPipelineResponse\022\207\001\n\024GetOneTektonPipe"
+  "line\0226.pipelines.tekton.v1alpha1.GetOneT"
+  "ektonPipelineRequest\0327.pipelines.tekton."
+  "v1alpha1.GetOneTektonPipelineResponse\022\201\001"
+  "\n\022ListTektonPipeline\0224.pipelines.tekton."
+  "v1alpha1.ListTektonPipelineRequest\0325.pip"
+  "elines.tekton.v1alpha1.ListTektonPipelin"
+  "eResponse\022\207\001\n\024DeleteTektonPipeline\0226.pip"
+  "elines.tekton.v1alpha1.DeleteTektonPipel"
+  "ineRequest\0327.pipelines.tekton.v1alpha1.D"
+  "eleteTektonPipelineResponse\022u\n\016ListTekto"
+  "nTask\0220.pipelines.tekton.v1alpha1.ListTe"
+  "ktonTaskRequest\0321.pipelines.tekton.v1alp"
+  "ha1.ListTektonTaskResponseB\261\001\n#io.cuemby"
+  ".pipelines.tekton.v1alpha1B\016TektonAPIPro"
+  "toP\001Z:github.com/cuemby/ccp-sdk/gen/go/p"
+  "ipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelin"
+  "es.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1"
+  "Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto = {
-  false, false, 1964, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, "pipelines/tekton/v1alpha1/tekton_api.proto", 
+  false, false, 1974, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, "pipelines/tekton/v1alpha1/tekton_api.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_once, descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_deps, 1, 10,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto,
@@ -1640,19 +1642,8 @@ void ListTektonPipelineResponse::InternalSwap(ListTektonPipelineResponse* other)
 
 class DeleteTektonPipelineRequest::_Internal {
  public:
-  static const ::pipelines::tekton::v1alpha1::Pipeline& tekton_pipeline(const DeleteTektonPipelineRequest* msg);
 };
 
-const ::pipelines::tekton::v1alpha1::Pipeline&
-DeleteTektonPipelineRequest::_Internal::tekton_pipeline(const DeleteTektonPipelineRequest* msg) {
-  return *msg->tekton_pipeline_;
-}
-void DeleteTektonPipelineRequest::clear_tekton_pipeline() {
-  if (GetArenaForAllocation() == nullptr && tekton_pipeline_ != nullptr) {
-    delete tekton_pipeline_;
-  }
-  tekton_pipeline_ = nullptr;
-}
 DeleteTektonPipelineRequest::DeleteTektonPipelineRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1665,22 +1656,28 @@ DeleteTektonPipelineRequest::DeleteTektonPipelineRequest(::PROTOBUF_NAMESPACE_ID
 DeleteTektonPipelineRequest::DeleteTektonPipelineRequest(const DeleteTektonPipelineRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_user_id().empty()) {
-    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+  runtime_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_runtime_name().empty()) {
+    runtime_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_name(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_tekton_pipeline()) {
-    tekton_pipeline_ = new ::pipelines::tekton::v1alpha1::Pipeline(*from.tekton_pipeline_);
-  } else {
-    tekton_pipeline_ = nullptr;
+  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_id().empty()) {
+    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
+      GetArenaForAllocation());
+  }
+  environment_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_environment_id().empty()) {
+    environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_id(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest)
 }
 
 inline void DeleteTektonPipelineRequest::SharedCtor() {
-user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-tekton_pipeline_ = nullptr;
+runtime_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteTektonPipelineRequest::~DeleteTektonPipelineRequest() {
@@ -1692,8 +1689,9 @@ DeleteTektonPipelineRequest::~DeleteTektonPipelineRequest() {
 
 inline void DeleteTektonPipelineRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete tekton_pipeline_;
+  runtime_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  environment_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteTektonPipelineRequest::ArenaDtor(void* object) {
@@ -1712,11 +1710,9 @@ void DeleteTektonPipelineRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  user_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && tekton_pipeline_ != nullptr) {
-    delete tekton_pipeline_;
-  }
-  tekton_pipeline_ = nullptr;
+  runtime_name_.ClearToEmpty();
+  application_id_.ClearToEmpty();
+  environment_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1726,19 +1722,30 @@ const char* DeleteTektonPipelineRequest::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];
+      // string runtime_name = 1 [json_name = "runtimeName"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_tekton_pipeline(), ptr);
+          auto str = _internal_mutable_runtime_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.runtime_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string user_id = 2 [json_name = "userId"];
+      // string application_id = 2 [json_name = "applicationId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_user_id();
+          auto str = _internal_mutable_application_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.user_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.application_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string environment_id = 3 [json_name = "environmentId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_environment_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.environment_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1771,22 +1778,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];
-  if (this->_internal_has_tekton_pipeline()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::tekton_pipeline(this), target, stream);
+  // string runtime_name = 1 [json_name = "runtimeName"];
+  if (!this->_internal_runtime_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_runtime_name().data(), static_cast<int>(this->_internal_runtime_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.runtime_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_runtime_name(), target);
   }
 
-  // string user_id = 2 [json_name = "userId"];
-  if (!this->_internal_user_id().empty()) {
+  // string application_id = 2 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.user_id");
+      "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.application_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_user_id(), target);
+        2, this->_internal_application_id(), target);
+  }
+
+  // string environment_id = 3 [json_name = "environmentId"];
+  if (!this->_internal_environment_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_environment_id().data(), static_cast<int>(this->_internal_environment_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest.environment_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_environment_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1805,18 +1824,25 @@ size_t DeleteTektonPipelineRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string user_id = 2 [json_name = "userId"];
-  if (!this->_internal_user_id().empty()) {
+  // string runtime_name = 1 [json_name = "runtimeName"];
+  if (!this->_internal_runtime_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_user_id());
+        this->_internal_runtime_name());
   }
 
-  // .pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];
-  if (this->_internal_has_tekton_pipeline()) {
+  // string application_id = 2 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *tekton_pipeline_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_id());
+  }
+
+  // string environment_id = 3 [json_name = "environmentId"];
+  if (!this->_internal_environment_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_environment_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1847,11 +1873,14 @@ void DeleteTektonPipelineRequest::MergeFrom(const DeleteTektonPipelineRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_user_id().empty()) {
-    _internal_set_user_id(from._internal_user_id());
+  if (!from._internal_runtime_name().empty()) {
+    _internal_set_runtime_name(from._internal_runtime_name());
   }
-  if (from._internal_has_tekton_pipeline()) {
-    _internal_mutable_tekton_pipeline()->::pipelines::tekton::v1alpha1::Pipeline::MergeFrom(from._internal_tekton_pipeline());
+  if (!from._internal_application_id().empty()) {
+    _internal_set_application_id(from._internal_application_id());
+  }
+  if (!from._internal_environment_id().empty()) {
+    _internal_set_environment_id(from._internal_environment_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1872,10 +1901,19 @@ void DeleteTektonPipelineRequest::InternalSwap(DeleteTektonPipelineRequest* othe
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &user_id_, GetArenaForAllocation(),
-      &other->user_id_, other->GetArenaForAllocation()
+      &runtime_name_, GetArenaForAllocation(),
+      &other->runtime_name_, other->GetArenaForAllocation()
   );
-  swap(tekton_pipeline_, other->tekton_pipeline_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_id_, GetArenaForAllocation(),
+      &other->application_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &environment_id_, GetArenaForAllocation(),
+      &other->environment_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteTektonPipelineRequest::GetMetadata() const {

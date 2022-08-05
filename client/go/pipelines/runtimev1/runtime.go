@@ -45,36 +45,19 @@ func CreateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.CreateRuntime(ctx, &runtimepkgv1.CreateRuntimeRequest{
-		Runtime: &runtimepkgv1.Runtime{
-			Id:                   in.Runtime.Id,
-			Name:                 in.Runtime.Name,
-			Namespace:            in.Runtime.Namespace,
-			InstanceType:         in.Runtime.InstanceType,
-			OrganizationId:       in.Runtime.OrganizationId,
-			ProjectId:            in.Runtime.ProjectId,
-			ApplicationId:        in.Runtime.ApplicationId,
-			WorkspaceId:          in.Runtime.WorkspaceId,
-			EnvironmentId:        in.Runtime.EnvironmentId,
-			Integration:          in.Runtime.Integration,
-			EnvironmentVariables: in.Runtime.EnvironmentVariables,
-			Commands:             in.Runtime.Commands,
-			Secrets:              in.Runtime.Secrets,
-			ExtraArgs:            in.Runtime.ExtraArgs,
-		},
-	})
+	response, err = client.CreateRuntime(ctx, in)
 
 	if err != nil {
-		log.Printf("%s: %v", "Error create runtime", err)
+		log.Printf("%s: %v", "error create runtime", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create runtime", err),
+			fmt.Sprintf("%s: %v", "error create runtime", err),
 		)
 	}
 	return response, nil
 }
 
-func GetRuntime(projectId uint32, runtimeId string, namespace string) (response *runtimepkgv1.GetRuntimeResponse, err error) {
+func GetRuntime(in *runtimepkgv1.GetRuntimeRequest) (response *runtimepkgv1.GetRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -82,17 +65,13 @@ func GetRuntime(projectId uint32, runtimeId string, namespace string) (response 
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.GetRuntime(ctx, &runtimepkgv1.GetRuntimeRequest{
-		ProjectId: projectId,
-		RuntimeId: runtimeId,
-		Namespace: namespace,
-	})
+	response, err = client.GetRuntime(ctx, in)
 
 	if err != nil {
-		log.Printf("%s: %v", "Error get runtime", err)
+		log.Printf("%s: %v", "error get runtime", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get runtime", err),
+			fmt.Sprintf("%s: %v", "error get runtime", err),
 		)
 	}
 	return response, nil
@@ -106,36 +85,19 @@ func UpdateRuntime(in *runtimepkgv1.UpdateRuntimeRequest) (response *runtimepkgv
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.UpdateRuntime(ctx, &runtimepkgv1.UpdateRuntimeRequest{
-		Runtime: &runtimepkgv1.Runtime{
-			Id:                   in.Runtime.Id,
-			Name:                 in.Runtime.Name,
-			Namespace:            in.Runtime.Namespace,
-			OrganizationId:       in.Runtime.OrganizationId,
-			ProjectId:            in.Runtime.ProjectId,
-			InstanceType:         in.Runtime.InstanceType,
-			ApplicationId:        in.Runtime.ApplicationId,
-			EnvironmentId:        in.Runtime.EnvironmentId,
-			WorkspaceId:          in.Runtime.WorkspaceId,
-			Integration:          in.Runtime.Integration,
-			EnvironmentVariables: in.Runtime.EnvironmentVariables,
-			Commands:             in.Runtime.Commands,
-			Secrets:              in.Runtime.Secrets,
-			ExtraArgs:            in.Runtime.ExtraArgs,
-		},
-	})
+	response, err = client.UpdateRuntime(ctx, in)
 
 	if err != nil {
-		log.Printf("%s: %v", "Error update runtime", err)
+		log.Printf("%s: %v", "error update runtime", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error update runtime", err),
+			fmt.Sprintf("%s: %v", "error update runtime", err),
 		)
 	}
 	return response, nil
 }
 
-func DeleteRuntime(runtimeId string, projectId uint32, namespace string, name string) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
+func DeleteRuntime(in *runtimepkgv1.DeleteRuntimeRequest) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -143,12 +105,7 @@ func DeleteRuntime(runtimeId string, projectId uint32, namespace string, name st
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.DeleteRuntime(ctx, &runtimepkgv1.DeleteRuntimeRequest{
-		RuntimeId: runtimeId,
-		ProjectId: projectId,
-		Namespace: namespace,
-		Name:      name,
-	})
+	response, err = client.DeleteRuntime(ctx, in)
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete runtime", err)
@@ -160,7 +117,7 @@ func DeleteRuntime(runtimeId string, projectId uint32, namespace string, name st
 	return response, nil
 }
 
-func ListRuntimes(projectId uint32) (response *runtimepkgv1.ListRuntimesResponse, err error) {
+func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.ListRuntimesResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -168,9 +125,7 @@ func ListRuntimes(projectId uint32) (response *runtimepkgv1.ListRuntimesResponse
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.ListRuntimes(ctx, &runtimepkgv1.ListRuntimesRequest{
-		ProjectId: projectId,
-	})
+	response, err = client.ListRuntimes(ctx, in)
 
 	if err != nil {
 		log.Printf("%s: %v", "Error list runtime", err)

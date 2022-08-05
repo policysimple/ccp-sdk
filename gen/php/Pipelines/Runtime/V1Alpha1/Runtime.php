@@ -24,10 +24,6 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
-     */
-    protected $namespace = '';
-    /**
      * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
      */
     protected $instance_type = '';
@@ -96,7 +92,6 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *     @type string $namespace
      *     @type string $instance_type
      *     @type int $organization_id
      *     @type int $project_id
@@ -159,28 +154,6 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->namespace;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 3 [json_name = "namespace"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNamespace($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->namespace = $var;
 
         return $this;
     }

@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteTektonPipelineRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
+     * Generated from protobuf field <code>string runtime_name = 1 [json_name = "runtimeName"];</code>
      */
-    protected $tekton_pipeline = null;
+    protected $runtime_name = '';
     /**
-     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
      */
-    protected $user_id = '';
+    protected $application_id = '';
+    /**
+     * Generated from protobuf field <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     */
+    protected $environment_id = '';
 
     /**
      * Constructor.
@@ -28,8 +32,9 @@ class DeleteTektonPipelineRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\Pipeline $tekton_pipeline
-     *     @type string $user_id
+     *     @type string $runtime_name
+     *     @type string $application_id
+     *     @type string $environment_id
      * }
      */
     public function __construct($data = NULL) {
@@ -38,55 +43,67 @@ class DeleteTektonPipelineRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\Pipeline|null
+     * Generated from protobuf field <code>string runtime_name = 1 [json_name = "runtimeName"];</code>
+     * @return string
      */
-    public function getTektonPipeline()
+    public function getRuntimeName()
     {
-        return $this->tekton_pipeline;
-    }
-
-    public function hasTektonPipeline()
-    {
-        return isset($this->tekton_pipeline);
-    }
-
-    public function clearTektonPipeline()
-    {
-        unset($this->tekton_pipeline);
+        return $this->runtime_name;
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Pipeline $var
+     * Generated from protobuf field <code>string runtime_name = 1 [json_name = "runtimeName"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setTektonPipeline($var)
+    public function setRuntimeName($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\Pipeline::class);
-        $this->tekton_pipeline = $var;
+        GPBUtil::checkString($var, True);
+        $this->runtime_name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
      * @return string
      */
-    public function getUserId()
+    public function getApplicationId()
     {
-        return $this->user_id;
+        return $this->application_id;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setApplicationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->application_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * @return string
+     */
+    public function getEnvironmentId()
+    {
+        return $this->environment_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_id = $var;
 
         return $this;
     }
