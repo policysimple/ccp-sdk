@@ -17,10 +17,6 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
      */
     protected $project_id = 0;
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
-     */
-    protected $status = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $project_id
-     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class ListRuntimesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->project_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->status = $var;
 
         return $this;
     }

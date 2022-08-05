@@ -40,9 +40,9 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
+     * Generated from protobuf field <code>string environment_id = 7 [json_name = "environmentId"];</code>
      */
-    protected $namespace_id = '';
+    protected $environment_id = '';
     /**
      * Generated from protobuf field <code>string application_id = 8 [json_name = "applicationId"];</code>
      */
@@ -108,7 +108,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type int $traffic_type
      *     @type int $organization_id
      *     @type int $project_id
-     *     @type string $namespace_id
+     *     @type string $environment_id
      *     @type string $application_id
      *     @type string $runtime_id
      *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
@@ -262,23 +262,23 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
+     * Generated from protobuf field <code>string environment_id = 7 [json_name = "environmentId"];</code>
      * @return string
      */
-    public function getNamespaceId()
+    public function getEnvironmentId()
     {
-        return $this->namespace_id;
+        return $this->environment_id;
     }
 
     /**
-     * Generated from protobuf field <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
+     * Generated from protobuf field <code>string environment_id = 7 [json_name = "environmentId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setEnvironmentId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->namespace_id = $var;
+        $this->environment_id = $var;
 
         return $this;
     }

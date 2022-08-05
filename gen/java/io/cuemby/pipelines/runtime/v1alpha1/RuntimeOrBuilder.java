@@ -32,18 +32,6 @@ public interface RuntimeOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string namespace = 3 [json_name = "namespace"];</code>
-   * @return The namespace.
-   */
-  java.lang.String getNamespace();
-  /**
-   * <code>string namespace = 3 [json_name = "namespace"];</code>
-   * @return The bytes for namespace.
-   */
-  com.google.protobuf.ByteString
-      getNamespaceBytes();
-
-  /**
    * <code>string instance_type = 4 [json_name = "instanceType"];</code>
    * @return The instanceType.
    */

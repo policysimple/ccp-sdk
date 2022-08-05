@@ -17,9 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private GetRuntimeRequest() {
     runtimeId_ = "";
-    applicationId_ = "";
-    namespace_ = "";
-    status_ = "";
   }
 
   @java.lang.Override
@@ -56,29 +53,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             runtimeId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            applicationId_ = s;
-            break;
-          }
-          case 24: {
-
-            projectId_ = input.readUInt32();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            namespace_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            status_ = s;
             break;
           }
           default: {
@@ -151,131 +125,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int APPLICATION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object applicationId_;
-  /**
-   * <code>string application_id = 2 [json_name = "applicationId"];</code>
-   * @return The applicationId.
-   */
-  @java.lang.Override
-  public java.lang.String getApplicationId() {
-    java.lang.Object ref = applicationId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      applicationId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string application_id = 2 [json_name = "applicationId"];</code>
-   * @return The bytes for applicationId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getApplicationIdBytes() {
-    java.lang.Object ref = applicationId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      applicationId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PROJECT_ID_FIELD_NUMBER = 3;
-  private int projectId_;
-  /**
-   * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-   * @return The projectId.
-   */
-  @java.lang.Override
-  public int getProjectId() {
-    return projectId_;
-  }
-
-  public static final int NAMESPACE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object namespace_;
-  /**
-   * <code>string namespace = 4 [json_name = "namespace"];</code>
-   * @return The namespace.
-   */
-  @java.lang.Override
-  public java.lang.String getNamespace() {
-    java.lang.Object ref = namespace_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      namespace_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string namespace = 4 [json_name = "namespace"];</code>
-   * @return The bytes for namespace.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNamespaceBytes() {
-    java.lang.Object ref = namespace_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      namespace_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int STATUS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object status_;
-  /**
-   * <code>string status = 5 [json_name = "status"];</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string status = 5 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -293,18 +142,6 @@ private static final long serialVersionUID = 0L;
     if (!getRuntimeIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, runtimeId_);
     }
-    if (!getApplicationIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, applicationId_);
-    }
-    if (projectId_ != 0) {
-      output.writeUInt32(3, projectId_);
-    }
-    if (!getNamespaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespace_);
-    }
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -316,19 +153,6 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getRuntimeIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, runtimeId_);
-    }
-    if (!getApplicationIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, applicationId_);
-    }
-    if (projectId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, projectId_);
-    }
-    if (!getNamespaceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespace_);
-    }
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -347,14 +171,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getRuntimeId()
         .equals(other.getRuntimeId())) return false;
-    if (!getApplicationId()
-        .equals(other.getApplicationId())) return false;
-    if (getProjectId()
-        != other.getProjectId()) return false;
-    if (!getNamespace()
-        .equals(other.getNamespace())) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -368,14 +184,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RUNTIME_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRuntimeId().hashCode();
-    hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getApplicationId().hashCode();
-    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProjectId();
-    hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-    hash = (53 * hash) + getNamespace().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -511,14 +319,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       runtimeId_ = "";
 
-      applicationId_ = "";
-
-      projectId_ = 0;
-
-      namespace_ = "";
-
-      status_ = "";
-
       return this;
     }
 
@@ -546,10 +346,6 @@ private static final long serialVersionUID = 0L;
     public io.cuemby.pipelines.runtime.v1alpha1.GetRuntimeRequest buildPartial() {
       io.cuemby.pipelines.runtime.v1alpha1.GetRuntimeRequest result = new io.cuemby.pipelines.runtime.v1alpha1.GetRuntimeRequest(this);
       result.runtimeId_ = runtimeId_;
-      result.applicationId_ = applicationId_;
-      result.projectId_ = projectId_;
-      result.namespace_ = namespace_;
-      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -600,21 +396,6 @@ private static final long serialVersionUID = 0L;
       if (other == io.cuemby.pipelines.runtime.v1alpha1.GetRuntimeRequest.getDefaultInstance()) return this;
       if (!other.getRuntimeId().isEmpty()) {
         runtimeId_ = other.runtimeId_;
-        onChanged();
-      }
-      if (!other.getApplicationId().isEmpty()) {
-        applicationId_ = other.applicationId_;
-        onChanged();
-      }
-      if (other.getProjectId() != 0) {
-        setProjectId(other.getProjectId());
-      }
-      if (!other.getNamespace().isEmpty()) {
-        namespace_ = other.namespace_;
-        onChanged();
-      }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -718,265 +499,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       runtimeId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object applicationId_ = "";
-    /**
-     * <code>string application_id = 2 [json_name = "applicationId"];</code>
-     * @return The applicationId.
-     */
-    public java.lang.String getApplicationId() {
-      java.lang.Object ref = applicationId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        applicationId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string application_id = 2 [json_name = "applicationId"];</code>
-     * @return The bytes for applicationId.
-     */
-    public com.google.protobuf.ByteString
-        getApplicationIdBytes() {
-      java.lang.Object ref = applicationId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        applicationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string application_id = 2 [json_name = "applicationId"];</code>
-     * @param value The applicationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setApplicationId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      applicationId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string application_id = 2 [json_name = "applicationId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearApplicationId() {
-      
-      applicationId_ = getDefaultInstance().getApplicationId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string application_id = 2 [json_name = "applicationId"];</code>
-     * @param value The bytes for applicationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setApplicationIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      applicationId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int projectId_ ;
-    /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return The projectId.
-     */
-    @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
-    }
-    /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @param value The projectId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProjectId(int value) {
-      
-      projectId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearProjectId() {
-      
-      projectId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object namespace_ = "";
-    /**
-     * <code>string namespace = 4 [json_name = "namespace"];</code>
-     * @return The namespace.
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string namespace = 4 [json_name = "namespace"];</code>
-     * @return The bytes for namespace.
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string namespace = 4 [json_name = "namespace"];</code>
-     * @param value The namespace to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNamespace(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      namespace_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string namespace = 4 [json_name = "namespace"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNamespace() {
-      
-      namespace_ = getDefaultInstance().getNamespace();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string namespace = 4 [json_name = "namespace"];</code>
-     * @param value The bytes for namespace to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNamespaceBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      namespace_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = getDefaultInstance().getStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 5 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      status_ = value;
       onChanged();
       return this;
     }
