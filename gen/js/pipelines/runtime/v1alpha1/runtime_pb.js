@@ -108,7 +108,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     commandsMap: (f = msg.getCommandsMap()) ? f.toObject(includeInstance, undefined) : [],
     secretsMap: (f = msg.getSecretsMap()) ? f.toObject(includeInstance, undefined) : [],
     extraArgsMap: (f = msg.getExtraArgsMap()) ? f.toObject(includeInstance, undefined) : [],
-    trafficType: jspb.Message.getFieldWithDefault(msg, 18, 0)
+    autoscalingMap: (f = msg.getAutoscalingMap()) ? f.toObject(includeInstance, undefined) : [],
+    trafficType: jspb.Message.getFieldWithDefault(msg, 19, 0)
   };
 
   if (includeInstance) {
@@ -220,6 +221,12 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
          });
       break;
     case 18:
+      var value = msg.getAutoscalingMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 19:
       var value = /** @type {!proto.pipelines.runtime.v1alpha1.TrafficType} */ (reader.readEnum());
       msg.setTrafficType(value);
       break;
@@ -349,10 +356,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f && f.getLength() > 0) {
     f.serializeBinary(17, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
+  f = message.getAutoscalingMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(18, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
   f = message.getTrafficType();
   if (f !== 0.0) {
     writer.writeEnum(
-      18,
+      19,
       f
     );
   }
@@ -668,11 +679,33 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearExtraArgsMap = function(
 
 
 /**
- * optional TrafficType traffic_type = 18;
+ * map<string, string> autoscaling = 18;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getAutoscalingMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 18, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearAutoscalingMap = function() {
+  this.getAutoscalingMap().clear();
+  return this;};
+
+
+/**
+ * optional TrafficType traffic_type = 19;
  * @return {!proto.pipelines.runtime.v1alpha1.TrafficType}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getTrafficType = function() {
-  return /** @type {!proto.pipelines.runtime.v1alpha1.TrafficType} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+  return /** @type {!proto.pipelines.runtime.v1alpha1.TrafficType} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
 
@@ -681,7 +714,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getTrafficType = function() {
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setTrafficType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 18, value);
+  return jspb.Message.setProto3EnumField(this, 19, value);
 };
 
 

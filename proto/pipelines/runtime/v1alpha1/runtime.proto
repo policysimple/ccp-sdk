@@ -34,7 +34,8 @@ message Runtime {
   map<string, string> commands = 15;
   map<string, string> secrets = 16;
   map<string, string> extra_args = 17;
-  TrafficType traffic_type = 18;
+  map<string, string> autoscaling = 18;
+  TrafficType traffic_type = 19;
 }
 
 message RuntimeList {

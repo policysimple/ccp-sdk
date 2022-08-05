@@ -80,7 +80,11 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     private $extra_args;
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * Generated from protobuf field <code>map<string, string> autoscaling = 18 [json_name = "autoscaling"];</code>
+     */
+    private $autoscaling;
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      */
     protected $traffic_type = 0;
 
@@ -106,6 +110,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $commands
      *     @type array|\Google\Protobuf\Internal\MapField $secrets
      *     @type array|\Google\Protobuf\Internal\MapField $extra_args
+     *     @type array|\Google\Protobuf\Internal\MapField $autoscaling
      *     @type int $traffic_type
      * }
      */
@@ -467,7 +472,29 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * Generated from protobuf field <code>map<string, string> autoscaling = 18 [json_name = "autoscaling"];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getAutoscaling()
+    {
+        return $this->autoscaling;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> autoscaling = 18 [json_name = "autoscaling"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setAutoscaling($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->autoscaling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @return int
      */
     public function getTrafficType()
@@ -476,7 +503,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      * @param int $var
      * @return $this
      */

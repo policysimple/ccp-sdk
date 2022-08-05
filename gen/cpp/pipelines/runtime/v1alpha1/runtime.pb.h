@@ -50,7 +50,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -66,6 +66,9 @@ extern RuntimeDefaultTypeInternal _Runtime_default_instance_;
 class RuntimeList;
 struct RuntimeListDefaultTypeInternal;
 extern RuntimeListDefaultTypeInternal _RuntimeList_default_instance_;
+class Runtime_AutoscalingEntry_DoNotUse;
+struct Runtime_AutoscalingEntry_DoNotUseDefaultTypeInternal;
+extern Runtime_AutoscalingEntry_DoNotUseDefaultTypeInternal _Runtime_AutoscalingEntry_DoNotUse_default_instance_;
 class Runtime_CommandsEntry_DoNotUse;
 struct Runtime_CommandsEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_CommandsEntry_DoNotUseDefaultTypeInternal _Runtime_CommandsEntry_DoNotUse_default_instance_;
@@ -87,6 +90,7 @@ extern Runtime_SecretsEntry_DoNotUseDefaultTypeInternal _Runtime_SecretsEntry_Do
 PROTOBUF_NAMESPACE_OPEN
 template<> ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::RuntimeList* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::RuntimeList>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::Runtime_AutoscalingEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_AutoscalingEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse>(Arena*);
@@ -260,6 +264,33 @@ public:
 
 // -------------------------------------------------------------------
 
+class Runtime_AutoscalingEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_AutoscalingEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_AutoscalingEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Runtime_AutoscalingEntry_DoNotUse();
+  explicit constexpr Runtime_AutoscalingEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Runtime_AutoscalingEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Runtime_AutoscalingEntry_DoNotUse& other);
+  static const Runtime_AutoscalingEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_AutoscalingEntry_DoNotUse*>(&_Runtime_AutoscalingEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.AutoscalingEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.AutoscalingEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class Runtime final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.Runtime) */ {
  public:
@@ -304,7 +335,7 @@ class Runtime final :
                &_Runtime_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(Runtime& a, Runtime& b) {
     a.Swap(&b);
@@ -381,6 +412,7 @@ class Runtime final :
     kCommandsFieldNumber = 15,
     kSecretsFieldNumber = 16,
     kExtraArgsFieldNumber = 17,
+    kAutoscalingFieldNumber = 18,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kInstanceTypeFieldNumber = 4,
@@ -392,7 +424,7 @@ class Runtime final :
     kPodStatusMsgFieldNumber = 12,
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
-    kTrafficTypeFieldNumber = 18,
+    kTrafficTypeFieldNumber = 19,
   };
   // map<string, string> integration = 13 [json_name = "integration"];
   int integration_size() const;
@@ -478,6 +510,23 @@ class Runtime final :
       extra_args() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_extra_args();
+
+  // map<string, string> autoscaling = 18 [json_name = "autoscaling"];
+  int autoscaling_size() const;
+  private:
+  int _internal_autoscaling_size() const;
+  public:
+  void clear_autoscaling();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_autoscaling() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_autoscaling();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      autoscaling() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_autoscaling();
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -623,7 +672,7 @@ class Runtime final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
+  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];
   void clear_traffic_type();
   ::pipelines::runtime::v1alpha1::TrafficType traffic_type() const;
   void set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
@@ -664,6 +713,11 @@ class Runtime final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Runtime_AutoscalingEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> autoscaling_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
@@ -725,7 +779,7 @@ class RuntimeList final :
                &_RuntimeList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(RuntimeList& a, RuntimeList& b) {
     a.Swap(&b);
@@ -836,6 +890,8 @@ class RuntimeList final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -1447,7 +1503,36 @@ Runtime::mutable_extra_args() {
   return _internal_mutable_extra_args();
 }
 
-// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
+// map<string, string> autoscaling = 18 [json_name = "autoscaling"];
+inline int Runtime::_internal_autoscaling_size() const {
+  return autoscaling_.size();
+}
+inline int Runtime::autoscaling_size() const {
+  return _internal_autoscaling_size();
+}
+inline void Runtime::clear_autoscaling() {
+  autoscaling_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::_internal_autoscaling() const {
+  return autoscaling_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Runtime::autoscaling() const {
+  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.autoscaling)
+  return _internal_autoscaling();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::_internal_mutable_autoscaling() {
+  return autoscaling_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Runtime::mutable_autoscaling() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.autoscaling)
+  return _internal_mutable_autoscaling();
+}
+
+// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];
 inline void Runtime::clear_traffic_type() {
   traffic_type_ = 0;
 }
@@ -1514,6 +1599,8 @@ RuntimeList::items() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

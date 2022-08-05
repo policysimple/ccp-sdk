@@ -298,12 +298,46 @@ public interface RuntimeOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+  int getAutoscalingCount();
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+  boolean containsAutoscaling(
+      java.lang.String key);
+  /**
+   * Use {@link #getAutoscalingMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getAutoscaling();
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getAutoscalingMap();
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+
+  java.lang.String getAutoscalingOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; autoscaling = 18 [json_name = "autoscaling"];</code>
+   */
+
+  java.lang.String getAutoscalingOrThrow(
+      java.lang.String key);
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
    * @return The enum numeric value on the wire for trafficType.
    */
   int getTrafficTypeValue();
   /**
-   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];</code>
+   * <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
    * @return The trafficType.
    */
   io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType();
