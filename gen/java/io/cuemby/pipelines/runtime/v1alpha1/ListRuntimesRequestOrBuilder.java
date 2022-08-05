@@ -12,16 +12,4 @@ public interface ListRuntimesRequestOrBuilder extends
    * @return The projectId.
    */
   int getProjectId();
-
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
-   */
-  java.lang.String getStatus();
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  com.google.protobuf.ByteString
-      getStatusBytes();
 }

@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     instanceType_ = "";
-    namespaceId_ = "";
+    environmentId_ = "";
     applicationId_ = "";
     runtimeId_ = "";
     params_ = java.util.Collections.emptyList();
@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            namespaceId_ = s;
+            environmentId_ = s;
             break;
           }
           case 66: {
@@ -432,38 +432,38 @@ private static final long serialVersionUID = 0L;
     return projectId_;
   }
 
-  public static final int NAMESPACE_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object namespaceId_;
+  public static final int ENVIRONMENT_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object environmentId_;
   /**
-   * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-   * @return The namespaceId.
+   * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+   * @return The environmentId.
    */
   @java.lang.Override
-  public java.lang.String getNamespaceId() {
-    java.lang.Object ref = namespaceId_;
+  public java.lang.String getEnvironmentId() {
+    java.lang.Object ref = environmentId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      namespaceId_ = s;
+      environmentId_ = s;
       return s;
     }
   }
   /**
-   * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-   * @return The bytes for namespaceId.
+   * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+   * @return The bytes for environmentId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNamespaceIdBytes() {
-    java.lang.Object ref = namespaceId_;
+      getEnvironmentIdBytes() {
+    java.lang.Object ref = environmentId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      namespaceId_ = b;
+      environmentId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1204,8 +1204,8 @@ private static final long serialVersionUID = 0L;
     if (projectId_ != 0) {
       output.writeUInt32(6, projectId_);
     }
-    if (!getNamespaceIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, namespaceId_);
+    if (!getEnvironmentIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, environmentId_);
     }
     if (!getApplicationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, applicationId_);
@@ -1294,8 +1294,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, projectId_);
     }
-    if (!getNamespaceIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, namespaceId_);
+    if (!getEnvironmentIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, environmentId_);
     }
     if (!getApplicationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, applicationId_);
@@ -1409,8 +1409,8 @@ private static final long serialVersionUID = 0L;
         != other.getOrganizationId()) return false;
     if (getProjectId()
         != other.getProjectId()) return false;
-    if (!getNamespaceId()
-        .equals(other.getNamespaceId())) return false;
+    if (!getEnvironmentId()
+        .equals(other.getEnvironmentId())) return false;
     if (!getApplicationId()
         .equals(other.getApplicationId())) return false;
     if (!getRuntimeId()
@@ -1460,8 +1460,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId();
-    hash = (37 * hash) + NAMESPACE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getNamespaceId().hashCode();
+    hash = (37 * hash) + ENVIRONMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEnvironmentId().hashCode();
     hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getApplicationId().hashCode();
     hash = (37 * hash) + RUNTIME_ID_FIELD_NUMBER;
@@ -1699,7 +1699,7 @@ private static final long serialVersionUID = 0L;
 
       projectId_ = 0;
 
-      namespaceId_ = "";
+      environmentId_ = "";
 
       applicationId_ = "";
 
@@ -1762,7 +1762,7 @@ private static final long serialVersionUID = 0L;
       result.trafficType_ = trafficType_;
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
-      result.namespaceId_ = namespaceId_;
+      result.environmentId_ = environmentId_;
       result.applicationId_ = applicationId_;
       result.runtimeId_ = runtimeId_;
       if (paramsBuilder_ == null) {
@@ -1867,8 +1867,8 @@ private static final long serialVersionUID = 0L;
       if (other.getProjectId() != 0) {
         setProjectId(other.getProjectId());
       }
-      if (!other.getNamespaceId().isEmpty()) {
-        namespaceId_ = other.namespaceId_;
+      if (!other.getEnvironmentId().isEmpty()) {
+        environmentId_ = other.environmentId_;
         onChanged();
       }
       if (!other.getApplicationId().isEmpty()) {
@@ -2304,78 +2304,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object namespaceId_ = "";
+    private java.lang.Object environmentId_ = "";
     /**
-     * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-     * @return The namespaceId.
+     * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     * @return The environmentId.
      */
-    public java.lang.String getNamespaceId() {
-      java.lang.Object ref = namespaceId_;
+    public java.lang.String getEnvironmentId() {
+      java.lang.Object ref = environmentId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        namespaceId_ = s;
+        environmentId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-     * @return The bytes for namespaceId.
+     * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     * @return The bytes for environmentId.
      */
     public com.google.protobuf.ByteString
-        getNamespaceIdBytes() {
-      java.lang.Object ref = namespaceId_;
+        getEnvironmentIdBytes() {
+      java.lang.Object ref = environmentId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        namespaceId_ = b;
+        environmentId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-     * @param value The namespaceId to set.
+     * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     * @param value The environmentId to set.
      * @return This builder for chaining.
      */
-    public Builder setNamespaceId(
+    public Builder setEnvironmentId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      namespaceId_ = value;
+      environmentId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
+     * <code>string environment_id = 7 [json_name = "environmentId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearNamespaceId() {
+    public Builder clearEnvironmentId() {
       
-      namespaceId_ = getDefaultInstance().getNamespaceId();
+      environmentId_ = getDefaultInstance().getEnvironmentId();
       onChanged();
       return this;
     }
     /**
-     * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-     * @param value The bytes for namespaceId to set.
+     * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     * @param value The bytes for environmentId to set.
      * @return This builder for chaining.
      */
-    public Builder setNamespaceIdBytes(
+    public Builder setEnvironmentIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      namespaceId_ = value;
+      environmentId_ = value;
       onChanged();
       return this;
     }

@@ -62,16 +62,16 @@ public interface PipelineOrBuilder extends
   int getProjectId();
 
   /**
-   * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-   * @return The namespaceId.
+   * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+   * @return The environmentId.
    */
-  java.lang.String getNamespaceId();
+  java.lang.String getEnvironmentId();
   /**
-   * <code>string namespace_id = 7 [json_name = "namespaceId"];</code>
-   * @return The bytes for namespaceId.
+   * <code>string environment_id = 7 [json_name = "environmentId"];</code>
+   * @return The bytes for environmentId.
    */
   com.google.protobuf.ByteString
-      getNamespaceIdBytes();
+      getEnvironmentIdBytes();
 
   /**
    * <code>string application_id = 8 [json_name = "applicationId"];</code>

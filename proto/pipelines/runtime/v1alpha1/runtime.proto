@@ -10,7 +10,6 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
-
 enum TrafficType {
   TRAFFIC_TYPE_UNSPECIFIED = 0;
   TRAFFIC_TYPE_EXTERNAL = 1;
@@ -21,7 +20,6 @@ enum TrafficType {
 message Runtime {
   string id = 1;
   string name = 2;
-  string namespace = 3;
   string instance_type = 4;
   uint32 organization_id = 5;
   uint32 project_id = 6;

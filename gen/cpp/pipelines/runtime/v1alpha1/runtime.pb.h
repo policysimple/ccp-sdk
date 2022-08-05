@@ -383,7 +383,6 @@ class Runtime final :
     kExtraArgsFieldNumber = 17,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
-    kNamespaceFieldNumber = 3,
     kInstanceTypeFieldNumber = 4,
     kApplicationIdFieldNumber = 7,
     kWorkspaceIdFieldNumber = 8,
@@ -506,20 +505,6 @@ class Runtime final :
   const std::string& _internal_name() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
   std::string* _internal_mutable_name();
-  public:
-
-  // string namespace = 3 [json_name = "namespace"];
-  void clear_namespace_();
-  const std::string& namespace_() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_namespace_(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_namespace_();
-  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
-  void set_allocated_namespace_(std::string* namespace_);
-  private:
-  const std::string& _internal_namespace_() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
-  std::string* _internal_mutable_namespace_();
   public:
 
   // string instance_type = 4 [json_name = "instanceType"];
@@ -681,7 +666,6 @@ class Runtime final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr instance_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workspace_id_;
@@ -954,52 +938,6 @@ inline void Runtime::set_allocated_name(std::string* name) {
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.name)
-}
-
-// string namespace = 3 [json_name = "namespace"];
-inline void Runtime::clear_namespace_() {
-  namespace__.ClearToEmpty();
-}
-inline const std::string& Runtime::namespace_() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.namespace)
-  return _internal_namespace_();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Runtime::set_namespace_(ArgT0&& arg0, ArgT... args) {
- 
- namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.namespace)
-}
-inline std::string* Runtime::mutable_namespace_() {
-  std::string* _s = _internal_mutable_namespace_();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.namespace)
-  return _s;
-}
-inline const std::string& Runtime::_internal_namespace_() const {
-  return namespace__.Get();
-}
-inline void Runtime::_internal_set_namespace_(const std::string& value) {
-  
-  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Runtime::_internal_mutable_namespace_() {
-  
-  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Runtime::release_namespace_() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.namespace)
-  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Runtime::set_allocated_namespace_(std::string* namespace_) {
-  if (namespace_ != nullptr) {
-    
-  } else {
-    
-  }
-  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.namespace)
 }
 
 // string instance_type = 4 [json_name = "instanceType"];

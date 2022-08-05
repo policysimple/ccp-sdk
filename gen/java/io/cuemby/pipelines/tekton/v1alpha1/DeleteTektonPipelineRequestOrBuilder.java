@@ -8,29 +8,38 @@ public interface DeleteTektonPipelineRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
-   * @return Whether the tektonPipeline field is set.
+   * <code>string runtime_name = 1 [json_name = "runtimeName"];</code>
+   * @return The runtimeName.
    */
-  boolean hasTektonPipeline();
+  java.lang.String getRuntimeName();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
-   * @return The tektonPipeline.
-   */
-  io.cuemby.pipelines.tekton.v1alpha1.Pipeline getTektonPipeline();
-  /**
-   * <code>.pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1 [json_name = "tektonPipeline"];</code>
-   */
-  io.cuemby.pipelines.tekton.v1alpha1.PipelineOrBuilder getTektonPipelineOrBuilder();
-
-  /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
-   * @return The userId.
-   */
-  java.lang.String getUserId();
-  /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
-   * @return The bytes for userId.
+   * <code>string runtime_name = 1 [json_name = "runtimeName"];</code>
+   * @return The bytes for runtimeName.
    */
   com.google.protobuf.ByteString
-      getUserIdBytes();
+      getRuntimeNameBytes();
+
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 2 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
+
+  /**
+   * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+   * @return The environmentId.
+   */
+  java.lang.String getEnvironmentId();
+  /**
+   * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+   * @return The bytes for environmentId.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentIdBytes();
 }

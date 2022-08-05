@@ -94,7 +94,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
     instanceType: jspb.Message.getFieldWithDefault(msg, 4, ""),
     organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -153,10 +152,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -268,13 +263,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
       f
     );
   }
@@ -404,24 +392,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getName = function() {
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string namespace = 3;
- * @return {string}
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
