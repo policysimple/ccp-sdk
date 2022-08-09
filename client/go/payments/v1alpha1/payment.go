@@ -373,6 +373,29 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	return response, nil
 }
 
+func DeleteProject(in *paymentpkgv1.DeleteProjectRequest) (response *paymentpkgv1.DeleteProjectResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeleteProject(ctx, &paymentpkgv1.DeleteProjectRequest{
+		OrganizationId: in.OrganizationId,
+		ProjectId:      in.ProjectId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error delete payment", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error delete payment", err),
+		)
+	}
+	return response, nil
+}
+
 func ListPayment(in *paymentpkgv1.ListPaymentRequest) (response *paymentpkgv1.ListPaymentResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
