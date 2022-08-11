@@ -28,7 +28,7 @@ func init() {
 		if metricsServiceTimeout == "" {
 			metricsServiceTimeout = "30s"
 		}
-		metricsServiceUri = os.Getenv("PERFORMANCE_SERVICE_URI")
+		metricsServiceUri = os.Getenv("PERFORMANCE_METRICS_SERVICE_URI")
 		con, err := grpc.Dial(metricsServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)
@@ -50,6 +50,28 @@ func GetMetrics(getMetrics *metricsgpkgv1.GetMetricsRequest) (response *metricsg
 		Range:      getMetrics.Range,
 		Page:       getMetrics.Page,
 		Size:       getMetrics.Size,
+	})
+	if err != nil {
+		log.Printf("%s: %v", "Error get metrics", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error get metrics", err),
+		)
+	}
+	return response, nil
+}
+
+func GetTektonMetrics(GetTektonMetrics *metricsgpkgv1.GetTektonMetricsRequest) (response *metricsgpkgv1.GetTektonMetricsResponse, err error) {
+	d, err := time.ParseDuration(metricsServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetTektonMetrics(ctx, &metricsgpkgv1.GetTektonMetricsRequest{
+		NamePipelineRun: GetTektonMetrics.NamePipelineRun,
+		From:            GetTektonMetrics.From,
 	})
 	if err != nil {
 		log.Printf("%s: %v", "Error get metrics", err)
