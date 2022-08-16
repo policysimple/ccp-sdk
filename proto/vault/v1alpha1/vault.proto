@@ -33,7 +33,8 @@ message Secret {
     uint32 project_id = 2;
     string application_id = 3;
     string namespace = 4;
-    Metadata metadata = 5;
-    SecretData data = 6;
-    SecretWarnings warnings = 7;
+    string name = 5;
+    Metadata metadata = 6;
+    SecretData data = 7;
+    SecretWarnings warnings = 8;
 }

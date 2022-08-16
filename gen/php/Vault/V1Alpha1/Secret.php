@@ -30,15 +30,19 @@ class Secret extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>string name = 5 [json_name = "name"];</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];</code>
      */
     protected $metadata = null;
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 6 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 7 [json_name = "data"];</code>
      */
     protected $data = null;
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];</code>
      */
     protected $warnings = null;
 
@@ -52,6 +56,7 @@ class Secret extends \Google\Protobuf\Internal\Message
      *     @type int $project_id
      *     @type string $application_id
      *     @type string $namespace
+     *     @type string $name
      *     @type \Vault\V1Alpha1\Metadata $metadata
      *     @type \Vault\V1Alpha1\SecretData $data
      *     @type \Vault\V1Alpha1\SecretWarnings $warnings
@@ -151,7 +156,29 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>string name = 5 [json_name = "name"];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 5 [json_name = "name"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];</code>
      * @return \Vault\V1Alpha1\Metadata|null
      */
     public function getMetadata()
@@ -170,7 +197,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];</code>
      * @param \Vault\V1Alpha1\Metadata $var
      * @return $this
      */
@@ -183,7 +210,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 6 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 7 [json_name = "data"];</code>
      * @return \Vault\V1Alpha1\SecretData|null
      */
     public function getData()
@@ -202,7 +229,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 6 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 7 [json_name = "data"];</code>
      * @param \Vault\V1Alpha1\SecretData $var
      * @return $this
      */
@@ -215,7 +242,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];</code>
      * @return \Vault\V1Alpha1\SecretWarnings|null
      */
     public function getWarnings()
@@ -234,7 +261,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];</code>
      * @param \Vault\V1Alpha1\SecretWarnings $var
      * @return $this
      */
