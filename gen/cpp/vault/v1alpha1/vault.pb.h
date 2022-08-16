@@ -751,9 +751,10 @@ class Secret final :
   enum : int {
     kApplicationIdFieldNumber = 3,
     kNamespaceFieldNumber = 4,
-    kMetadataFieldNumber = 5,
-    kDataFieldNumber = 6,
-    kWarningsFieldNumber = 7,
+    kNameFieldNumber = 5,
+    kMetadataFieldNumber = 6,
+    kDataFieldNumber = 7,
+    kWarningsFieldNumber = 8,
     kOrganizationIdFieldNumber = 1,
     kProjectIdFieldNumber = 2,
   };
@@ -785,7 +786,21 @@ class Secret final :
   std::string* _internal_mutable_namespace_();
   public:
 
-  // .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
+  // string name = 5 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];
   bool has_metadata() const;
   private:
   bool _internal_has_metadata() const;
@@ -803,7 +818,7 @@ class Secret final :
       ::vault::v1alpha1::Metadata* metadata);
   ::vault::v1alpha1::Metadata* unsafe_arena_release_metadata();
 
-  // .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
+  // .vault.v1alpha1.SecretData data = 7 [json_name = "data"];
   bool has_data() const;
   private:
   bool _internal_has_data() const;
@@ -821,7 +836,7 @@ class Secret final :
       ::vault::v1alpha1::SecretData* data);
   ::vault::v1alpha1::SecretData* unsafe_arena_release_data();
 
-  // .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
+  // .vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];
   bool has_warnings() const;
   private:
   bool _internal_has_warnings() const;
@@ -866,6 +881,7 @@ class Secret final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::vault::v1alpha1::Metadata* metadata_;
   ::vault::v1alpha1::SecretData* data_;
   ::vault::v1alpha1::SecretWarnings* warnings_;
@@ -1359,7 +1375,53 @@ inline void Secret::set_allocated_namespace_(std::string* namespace_) {
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.namespace)
 }
 
-// .vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];
+// string name = 5 [json_name = "name"];
+inline void Secret::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Secret::name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.Secret.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Secret::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.Secret.name)
+}
+inline std::string* Secret::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.Secret.name)
+  return _s;
+}
+inline const std::string& Secret::_internal_name() const {
+  return name_.Get();
+}
+inline void Secret::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Secret::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Secret::release_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.Secret.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Secret::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.name)
+}
+
+// .vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];
 inline bool Secret::_internal_has_metadata() const {
   return this != internal_default_instance() && metadata_ != nullptr;
 }
@@ -1449,7 +1511,7 @@ inline void Secret::set_allocated_metadata(::vault::v1alpha1::Metadata* metadata
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.metadata)
 }
 
-// .vault.v1alpha1.SecretData data = 6 [json_name = "data"];
+// .vault.v1alpha1.SecretData data = 7 [json_name = "data"];
 inline bool Secret::_internal_has_data() const {
   return this != internal_default_instance() && data_ != nullptr;
 }
@@ -1539,7 +1601,7 @@ inline void Secret::set_allocated_data(::vault::v1alpha1::SecretData* data) {
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.data)
 }
 
-// .vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];
+// .vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];
 inline bool Secret::_internal_has_warnings() const {
   return this != internal_default_instance() && warnings_ != nullptr;
 }
