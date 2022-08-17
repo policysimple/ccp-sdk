@@ -708,6 +708,7 @@ proto.vault.v1alpha1.Secret.toObject = function(includeInstance, msg) {
     projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     applicationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     metadata: (f = msg.getMetadata()) && proto.vault.v1alpha1.Metadata.toObject(includeInstance, f),
     data: (f = msg.getData()) && proto.vault.v1alpha1.SecretData.toObject(includeInstance, f),
     warnings: (f = msg.getWarnings()) && proto.vault.v1alpha1.SecretWarnings.toObject(includeInstance, f)
@@ -764,16 +765,20 @@ proto.vault.v1alpha1.Secret.deserializeBinaryFromReader = function(msg, reader) 
       msg.setNamespace(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 6:
       var value = new proto.vault.v1alpha1.Metadata;
       reader.readMessage(value,proto.vault.v1alpha1.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.vault.v1alpha1.SecretData;
       reader.readMessage(value,proto.vault.v1alpha1.SecretData.deserializeBinaryFromReader);
       msg.setData(value);
       break;
-    case 7:
+    case 8:
       var value = new proto.vault.v1alpha1.SecretWarnings;
       reader.readMessage(value,proto.vault.v1alpha1.SecretWarnings.deserializeBinaryFromReader);
       msg.setWarnings(value);
@@ -835,10 +840,17 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getMetadata();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.vault.v1alpha1.Metadata.serializeBinaryToWriter
     );
@@ -846,7 +858,7 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
   f = message.getData();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.vault.v1alpha1.SecretData.serializeBinaryToWriter
     );
@@ -854,7 +866,7 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
   f = message.getWarnings();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       proto.vault.v1alpha1.SecretWarnings.serializeBinaryToWriter
     );
@@ -935,12 +947,30 @@ proto.vault.v1alpha1.Secret.prototype.setNamespace = function(value) {
 
 
 /**
- * optional Metadata metadata = 5;
+ * optional string name = 5;
+ * @return {string}
+ */
+proto.vault.v1alpha1.Secret.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.Secret} returns this
+ */
+proto.vault.v1alpha1.Secret.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional Metadata metadata = 6;
  * @return {?proto.vault.v1alpha1.Metadata}
  */
 proto.vault.v1alpha1.Secret.prototype.getMetadata = function() {
   return /** @type{?proto.vault.v1alpha1.Metadata} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.Metadata, 5));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.Metadata, 6));
 };
 
 
@@ -949,7 +979,7 @@ proto.vault.v1alpha1.Secret.prototype.getMetadata = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -967,17 +997,17 @@ proto.vault.v1alpha1.Secret.prototype.clearMetadata = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasMetadata = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional SecretData data = 6;
+ * optional SecretData data = 7;
  * @return {?proto.vault.v1alpha1.SecretData}
  */
 proto.vault.v1alpha1.Secret.prototype.getData = function() {
   return /** @type{?proto.vault.v1alpha1.SecretData} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretData, 6));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretData, 7));
 };
 
 
@@ -986,7 +1016,7 @@ proto.vault.v1alpha1.Secret.prototype.getData = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setData = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1004,17 +1034,17 @@ proto.vault.v1alpha1.Secret.prototype.clearData = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasData = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional SecretWarnings warnings = 7;
+ * optional SecretWarnings warnings = 8;
  * @return {?proto.vault.v1alpha1.SecretWarnings}
  */
 proto.vault.v1alpha1.Secret.prototype.getWarnings = function() {
   return /** @type{?proto.vault.v1alpha1.SecretWarnings} */ (
-    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretWarnings, 7));
+    jspb.Message.getWrapperField(this, proto.vault.v1alpha1.SecretWarnings, 8));
 };
 
 
@@ -1023,7 +1053,7 @@ proto.vault.v1alpha1.Secret.prototype.getWarnings = function() {
  * @return {!proto.vault.v1alpha1.Secret} returns this
 */
 proto.vault.v1alpha1.Secret.prototype.setWarnings = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -1041,7 +1071,7 @@ proto.vault.v1alpha1.Secret.prototype.clearWarnings = function() {
  * @return {boolean}
  */
 proto.vault.v1alpha1.Secret.prototype.hasWarnings = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
