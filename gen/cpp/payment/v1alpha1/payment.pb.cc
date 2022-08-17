@@ -134,9 +134,14 @@ constexpr Biling::Biling(
   , account_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , month_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , year_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , period_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , statuspay_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , product_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , totalusage_(int64_t{0})
-  , cpu_(int64_t{0})
-  , ram_(int64_t{0}){}
+  , cpu_(0)
+  , ram_(0)
+  , amount_(int64_t{0}){}
 struct BilingDefaultTypeInternal {
   constexpr BilingDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -350,6 +355,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, ram_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, month_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, year_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, amount_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, period_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, statuspay_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, date_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Biling, product_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::SubscriptionItems, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -416,15 +426,15 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 51, -1, sizeof(::payment::v1alpha1::Card)},
   { 62, -1, sizeof(::payment::v1alpha1::Invoice)},
   { 73, -1, sizeof(::payment::v1alpha1::Biling)},
-  { 86, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
-  { 95, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
-  { 101, -1, sizeof(::payment::v1alpha1::InvoiceList)},
-  { 107, -1, sizeof(::payment::v1alpha1::CustomerList)},
-  { 113, -1, sizeof(::payment::v1alpha1::BilingList)},
-  { 119, -1, sizeof(::payment::v1alpha1::SuscriptionList)},
-  { 125, -1, sizeof(::payment::v1alpha1::CardList)},
-  { 131, -1, sizeof(::payment::v1alpha1::PaymentList)},
-  { 137, -1, sizeof(::payment::v1alpha1::ProjectList)},
+  { 91, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
+  { 100, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
+  { 106, -1, sizeof(::payment::v1alpha1::InvoiceList)},
+  { 112, -1, sizeof(::payment::v1alpha1::CustomerList)},
+  { 118, -1, sizeof(::payment::v1alpha1::BilingList)},
+  { 124, -1, sizeof(::payment::v1alpha1::SuscriptionList)},
+  { 130, -1, sizeof(::payment::v1alpha1::CardList)},
+  { 136, -1, sizeof(::payment::v1alpha1::PaymentList)},
+  { 142, -1, sizeof(::payment::v1alpha1::ProjectList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -482,35 +492,38 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006"
   "period\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR"
   "\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007produc"
-  "t\030\006 \001(\tR\007product\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR"
+  "t\030\006 \001(\tR\007product\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR"
   "\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014ac"
   "count_name\030\003 \001(\tR\013accountName\022\036\n\ntotalus"
-  "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022"
-  "\020\n\003ram\030\006 \001(\003R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022"
-  "\022\n\004year\030\010 \001(\tR\004year\"\215\001\n\021SubscriptionItem"
-  "s\022\016\n\002id\030\001 \001(\tR\002id\022.\n\023suscription_item_id"
-  "\030\002 \001(\tR\021suscriptionItemId\022\031\n\010price_id\030\003 "
-  "\001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tproduc"
-  "tId\"R\n\025SubscriptionItemsList\0229\n\005items\030\001 "
-  "\003(\0132#.payment.v1alpha1.SubscriptionItems"
-  "R\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031."
-  "payment.v1alpha1.InvoiceR\005items\"@\n\014Custo"
-  "merList\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha"
-  "1.CustomerR\005items\"<\n\nBilingList\022.\n\005items"
-  "\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005items\""
-  "F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035.paym"
-  "ent.v1alpha1.SuscriptionR\005items\"8\n\010CardL"
-  "ist\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha1.Ca"
-  "rdR\005items\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132"
-  "\031.payment.v1alpha1.PaymentR\005items\">\n\013Pro"
-  "jectList\022/\n\005items\030\001 \003(\0132\031.payment.v1alph"
-  "a1.ProjectR\005itemsB8Z6github.com/cuemby/c"
-  "cp-payment-service/payment/v1alpha1b\006pro"
-  "to3"
+  "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022"
+  "\020\n\003ram\030\006 \001(\001R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022"
+  "\022\n\004year\030\010 \001(\tR\004year\022\026\n\006amount\030\t \001(\003R\006amo"
+  "unt\022\026\n\006period\030\n \001(\tR\006period\022\034\n\tstatuspay"
+  "\030\013 \001(\tR\tstatuspay\022\022\n\004date\030\014 \001(\tR\004date\022\030\n"
+  "\007product\030\r \001(\tR\007product\"\215\001\n\021Subscription"
+  "Items\022\016\n\002id\030\001 \001(\tR\002id\022.\n\023suscription_ite"
+  "m_id\030\002 \001(\tR\021suscriptionItemId\022\031\n\010price_i"
+  "d\030\003 \001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tpr"
+  "oductId\"R\n\025SubscriptionItemsList\0229\n\005item"
+  "s\030\001 \003(\0132#.payment.v1alpha1.SubscriptionI"
+  "temsR\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003("
+  "\0132\031.payment.v1alpha1.InvoiceR\005items\"@\n\014C"
+  "ustomerList\0220\n\005items\030\001 \003(\0132\032.payment.v1a"
+  "lpha1.CustomerR\005items\"<\n\nBilingList\022.\n\005i"
+  "tems\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005it"
+  "ems\"F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035."
+  "payment.v1alpha1.SuscriptionR\005items\"8\n\010C"
+  "ardList\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha"
+  "1.CardR\005items\">\n\013PaymentList\022/\n\005items\030\001 "
+  "\003(\0132\031.payment.v1alpha1.PaymentR\005items\">\n"
+  "\013ProjectList\022/\n\005items\030\001 \003(\0132\031.payment.v1"
+  "alpha1.ProjectR\005itemsB8Z6github.com/cuem"
+  "by/ccp-payment-service/payment/v1alpha1b"
+  "\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 2363, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 2487, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 16,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -3253,9 +3266,29 @@ Biling::Biling(const Biling& from)
     year_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_year(), 
       GetArenaForAllocation());
   }
+  period_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_period().empty()) {
+    period_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_period(), 
+      GetArenaForAllocation());
+  }
+  statuspay_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_statuspay().empty()) {
+    statuspay_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_statuspay(), 
+      GetArenaForAllocation());
+  }
+  date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_date().empty()) {
+    date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_date(), 
+      GetArenaForAllocation());
+  }
+  product_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_product().empty()) {
+    product_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_product(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&totalusage_, &from.totalusage_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ram_) -
-    reinterpret_cast<char*>(&totalusage_)) + sizeof(ram_));
+    static_cast<size_t>(reinterpret_cast<char*>(&amount_) -
+    reinterpret_cast<char*>(&totalusage_)) + sizeof(amount_));
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Biling)
 }
 
@@ -3265,10 +3298,14 @@ invoice_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 account_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 month_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 year_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+period_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+statuspay_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+product_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&totalusage_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ram_) -
-    reinterpret_cast<char*>(&totalusage_)) + sizeof(ram_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&amount_) -
+    reinterpret_cast<char*>(&totalusage_)) + sizeof(amount_));
 }
 
 Biling::~Biling() {
@@ -3285,6 +3322,10 @@ inline void Biling::SharedDtor() {
   account_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   month_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   year_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  period_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  statuspay_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  product_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Biling::ArenaDtor(void* object) {
@@ -3308,9 +3349,13 @@ void Biling::Clear() {
   account_name_.ClearToEmpty();
   month_.ClearToEmpty();
   year_.ClearToEmpty();
+  period_.ClearToEmpty();
+  statuspay_.ClearToEmpty();
+  date_.ClearToEmpty();
+  product_.ClearToEmpty();
   ::memset(&totalusage_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ram_) -
-      reinterpret_cast<char*>(&totalusage_)) + sizeof(ram_));
+      reinterpret_cast<char*>(&amount_) -
+      reinterpret_cast<char*>(&totalusage_)) + sizeof(amount_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3354,18 +3399,18 @@ const char* Biling::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 cpu = 5 [json_name = "cpu"];
+      // double cpu = 5 [json_name = "cpu"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 41)) {
+          cpu_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // int64 ram = 6 [json_name = "ram"];
+      // double ram = 6 [json_name = "ram"];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          ram_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 49)) {
+          ram_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
       // string month = 7 [json_name = "month"];
@@ -3383,6 +3428,49 @@ const char* Biling::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           auto str = _internal_mutable_year();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Biling.year"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 amount = 9 [json_name = "amount"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string period = 10 [json_name = "period"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_period();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Biling.period"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string statuspay = 11 [json_name = "statuspay"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_statuspay();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Biling.statuspay"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string date = 12 [json_name = "date"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          auto str = _internal_mutable_date();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Biling.date"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string product = 13 [json_name = "product"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_product();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Biling.product"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3451,16 +3539,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_totalusage(), target);
   }
 
-  // int64 cpu = 5 [json_name = "cpu"];
-  if (this->_internal_cpu() != 0) {
+  // double cpu = 5 [json_name = "cpu"];
+  if (!(this->_internal_cpu() <= 0 && this->_internal_cpu() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_cpu(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(5, this->_internal_cpu(), target);
   }
 
-  // int64 ram = 6 [json_name = "ram"];
-  if (this->_internal_ram() != 0) {
+  // double ram = 6 [json_name = "ram"];
+  if (!(this->_internal_ram() <= 0 && this->_internal_ram() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_ram(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(6, this->_internal_ram(), target);
   }
 
   // string month = 7 [json_name = "month"];
@@ -3481,6 +3569,52 @@ failure:
       "payment.v1alpha1.Biling.year");
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_year(), target);
+  }
+
+  // int64 amount = 9 [json_name = "amount"];
+  if (this->_internal_amount() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(9, this->_internal_amount(), target);
+  }
+
+  // string period = 10 [json_name = "period"];
+  if (!this->_internal_period().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_period().data(), static_cast<int>(this->_internal_period().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Biling.period");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_period(), target);
+  }
+
+  // string statuspay = 11 [json_name = "statuspay"];
+  if (!this->_internal_statuspay().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_statuspay().data(), static_cast<int>(this->_internal_statuspay().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Biling.statuspay");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_statuspay(), target);
+  }
+
+  // string date = 12 [json_name = "date"];
+  if (!this->_internal_date().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Biling.date");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_date(), target);
+  }
+
+  // string product = 13 [json_name = "product"];
+  if (!this->_internal_product().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_product().data(), static_cast<int>(this->_internal_product().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Biling.product");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_product(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3534,6 +3668,34 @@ size_t Biling::ByteSizeLong() const {
         this->_internal_year());
   }
 
+  // string period = 10 [json_name = "period"];
+  if (!this->_internal_period().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_period());
+  }
+
+  // string statuspay = 11 [json_name = "statuspay"];
+  if (!this->_internal_statuspay().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_statuspay());
+  }
+
+  // string date = 12 [json_name = "date"];
+  if (!this->_internal_date().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_date());
+  }
+
+  // string product = 13 [json_name = "product"];
+  if (!this->_internal_product().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_product());
+  }
+
   // int64 totalusage = 4 [json_name = "totalusage"];
   if (this->_internal_totalusage() != 0) {
     total_size += 1 +
@@ -3541,18 +3703,21 @@ size_t Biling::ByteSizeLong() const {
         this->_internal_totalusage());
   }
 
-  // int64 cpu = 5 [json_name = "cpu"];
-  if (this->_internal_cpu() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_cpu());
+  // double cpu = 5 [json_name = "cpu"];
+  if (!(this->_internal_cpu() <= 0 && this->_internal_cpu() >= 0)) {
+    total_size += 1 + 8;
   }
 
-  // int64 ram = 6 [json_name = "ram"];
-  if (this->_internal_ram() != 0) {
+  // double ram = 6 [json_name = "ram"];
+  if (!(this->_internal_ram() <= 0 && this->_internal_ram() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // int64 amount = 9 [json_name = "amount"];
+  if (this->_internal_amount() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_ram());
+        this->_internal_amount());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3598,14 +3763,29 @@ void Biling::MergeFrom(const Biling& from) {
   if (!from._internal_year().empty()) {
     _internal_set_year(from._internal_year());
   }
+  if (!from._internal_period().empty()) {
+    _internal_set_period(from._internal_period());
+  }
+  if (!from._internal_statuspay().empty()) {
+    _internal_set_statuspay(from._internal_statuspay());
+  }
+  if (!from._internal_date().empty()) {
+    _internal_set_date(from._internal_date());
+  }
+  if (!from._internal_product().empty()) {
+    _internal_set_product(from._internal_product());
+  }
   if (from._internal_totalusage() != 0) {
     _internal_set_totalusage(from._internal_totalusage());
   }
-  if (from._internal_cpu() != 0) {
+  if (!(from._internal_cpu() <= 0 && from._internal_cpu() >= 0)) {
     _internal_set_cpu(from._internal_cpu());
   }
-  if (from._internal_ram() != 0) {
+  if (!(from._internal_ram() <= 0 && from._internal_ram() >= 0)) {
     _internal_set_ram(from._internal_ram());
+  }
+  if (from._internal_amount() != 0) {
+    _internal_set_amount(from._internal_amount());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3649,9 +3829,29 @@ void Biling::InternalSwap(Biling* other) {
       &year_, GetArenaForAllocation(),
       &other->year_, other->GetArenaForAllocation()
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &period_, GetArenaForAllocation(),
+      &other->period_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &statuspay_, GetArenaForAllocation(),
+      &other->statuspay_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &date_, GetArenaForAllocation(),
+      &other->date_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &product_, GetArenaForAllocation(),
+      &other->product_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Biling, ram_)
-      + sizeof(Biling::ram_)
+      PROTOBUF_FIELD_OFFSET(Biling, amount_)
+      + sizeof(Biling::amount_)
       - PROTOBUF_FIELD_OFFSET(Biling, totalusage_)>(
           reinterpret_cast<char*>(&totalusage_),
           reinterpret_cast<char*>(&other->totalusage_));

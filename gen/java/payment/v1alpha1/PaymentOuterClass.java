@@ -9192,16 +9192,16 @@ public final class PaymentOuterClass {
     long getTotalusage();
 
     /**
-     * <code>int64 cpu = 5 [json_name = "cpu"];</code>
+     * <code>double cpu = 5 [json_name = "cpu"];</code>
      * @return The cpu.
      */
-    long getCpu();
+    double getCpu();
 
     /**
-     * <code>int64 ram = 6 [json_name = "ram"];</code>
+     * <code>double ram = 6 [json_name = "ram"];</code>
      * @return The ram.
      */
-    long getRam();
+    double getRam();
 
     /**
      * <code>string month = 7 [json_name = "month"];</code>
@@ -9226,6 +9226,60 @@ public final class PaymentOuterClass {
      */
     com.google.protobuf.ByteString
         getYearBytes();
+
+    /**
+     * <code>int64 amount = 9 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    long getAmount();
+
+    /**
+     * <code>string period = 10 [json_name = "period"];</code>
+     * @return The period.
+     */
+    java.lang.String getPeriod();
+    /**
+     * <code>string period = 10 [json_name = "period"];</code>
+     * @return The bytes for period.
+     */
+    com.google.protobuf.ByteString
+        getPeriodBytes();
+
+    /**
+     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * @return The statuspay.
+     */
+    java.lang.String getStatuspay();
+    /**
+     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * @return The bytes for statuspay.
+     */
+    com.google.protobuf.ByteString
+        getStatuspayBytes();
+
+    /**
+     * <code>string date = 12 [json_name = "date"];</code>
+     * @return The date.
+     */
+    java.lang.String getDate();
+    /**
+     * <code>string date = 12 [json_name = "date"];</code>
+     * @return The bytes for date.
+     */
+    com.google.protobuf.ByteString
+        getDateBytes();
+
+    /**
+     * <code>string product = 13 [json_name = "product"];</code>
+     * @return The product.
+     */
+    java.lang.String getProduct();
+    /**
+     * <code>string product = 13 [json_name = "product"];</code>
+     * @return The bytes for product.
+     */
+    com.google.protobuf.ByteString
+        getProductBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Biling}
@@ -9245,6 +9299,10 @@ public final class PaymentOuterClass {
       accountName_ = "";
       month_ = "";
       year_ = "";
+      period_ = "";
+      statuspay_ = "";
+      date_ = "";
+      product_ = "";
     }
 
     @java.lang.Override
@@ -9300,14 +9358,14 @@ public final class PaymentOuterClass {
               totalusage_ = input.readInt64();
               break;
             }
-            case 40: {
+            case 41: {
 
-              cpu_ = input.readInt64();
+              cpu_ = input.readDouble();
               break;
             }
-            case 48: {
+            case 49: {
 
-              ram_ = input.readInt64();
+              ram_ = input.readDouble();
               break;
             }
             case 58: {
@@ -9320,6 +9378,35 @@ public final class PaymentOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               year_ = s;
+              break;
+            }
+            case 72: {
+
+              amount_ = input.readInt64();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              period_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statuspay_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              date_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              product_ = s;
               break;
             }
             default: {
@@ -9480,24 +9567,24 @@ public final class PaymentOuterClass {
     }
 
     public static final int CPU_FIELD_NUMBER = 5;
-    private long cpu_;
+    private double cpu_;
     /**
-     * <code>int64 cpu = 5 [json_name = "cpu"];</code>
+     * <code>double cpu = 5 [json_name = "cpu"];</code>
      * @return The cpu.
      */
     @java.lang.Override
-    public long getCpu() {
+    public double getCpu() {
       return cpu_;
     }
 
     public static final int RAM_FIELD_NUMBER = 6;
-    private long ram_;
+    private double ram_;
     /**
-     * <code>int64 ram = 6 [json_name = "ram"];</code>
+     * <code>double ram = 6 [json_name = "ram"];</code>
      * @return The ram.
      */
     @java.lang.Override
-    public long getRam() {
+    public double getRam() {
       return ram_;
     }
 
@@ -9577,6 +9664,169 @@ public final class PaymentOuterClass {
       }
     }
 
+    public static final int AMOUNT_FIELD_NUMBER = 9;
+    private long amount_;
+    /**
+     * <code>int64 amount = 9 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public long getAmount() {
+      return amount_;
+    }
+
+    public static final int PERIOD_FIELD_NUMBER = 10;
+    private volatile java.lang.Object period_;
+    /**
+     * <code>string period = 10 [json_name = "period"];</code>
+     * @return The period.
+     */
+    @java.lang.Override
+    public java.lang.String getPeriod() {
+      java.lang.Object ref = period_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        period_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string period = 10 [json_name = "period"];</code>
+     * @return The bytes for period.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPeriodBytes() {
+      java.lang.Object ref = period_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        period_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUSPAY_FIELD_NUMBER = 11;
+    private volatile java.lang.Object statuspay_;
+    /**
+     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * @return The statuspay.
+     */
+    @java.lang.Override
+    public java.lang.String getStatuspay() {
+      java.lang.Object ref = statuspay_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statuspay_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * @return The bytes for statuspay.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatuspayBytes() {
+      java.lang.Object ref = statuspay_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statuspay_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object date_;
+    /**
+     * <code>string date = 12 [json_name = "date"];</code>
+     * @return The date.
+     */
+    @java.lang.Override
+    public java.lang.String getDate() {
+      java.lang.Object ref = date_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        date_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string date = 12 [json_name = "date"];</code>
+     * @return The bytes for date.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDateBytes() {
+      java.lang.Object ref = date_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        date_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRODUCT_FIELD_NUMBER = 13;
+    private volatile java.lang.Object product_;
+    /**
+     * <code>string product = 13 [json_name = "product"];</code>
+     * @return The product.
+     */
+    @java.lang.Override
+    public java.lang.String getProduct() {
+      java.lang.Object ref = product_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        product_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product = 13 [json_name = "product"];</code>
+     * @return The bytes for product.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductBytes() {
+      java.lang.Object ref = product_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        product_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9603,17 +9853,32 @@ public final class PaymentOuterClass {
       if (totalusage_ != 0L) {
         output.writeInt64(4, totalusage_);
       }
-      if (cpu_ != 0L) {
-        output.writeInt64(5, cpu_);
+      if (cpu_ != 0D) {
+        output.writeDouble(5, cpu_);
       }
-      if (ram_ != 0L) {
-        output.writeInt64(6, ram_);
+      if (ram_ != 0D) {
+        output.writeDouble(6, ram_);
       }
       if (!getMonthBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, month_);
       }
       if (!getYearBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, year_);
+      }
+      if (amount_ != 0L) {
+        output.writeInt64(9, amount_);
+      }
+      if (!getPeriodBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, period_);
+      }
+      if (!getStatuspayBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, statuspay_);
+      }
+      if (!getDateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, date_);
+      }
+      if (!getProductBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, product_);
       }
       unknownFields.writeTo(output);
     }
@@ -9637,19 +9902,35 @@ public final class PaymentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, totalusage_);
       }
-      if (cpu_ != 0L) {
+      if (cpu_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, cpu_);
+          .computeDoubleSize(5, cpu_);
       }
-      if (ram_ != 0L) {
+      if (ram_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, ram_);
+          .computeDoubleSize(6, ram_);
       }
       if (!getMonthBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, month_);
       }
       if (!getYearBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, year_);
+      }
+      if (amount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, amount_);
+      }
+      if (!getPeriodBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, period_);
+      }
+      if (!getStatuspayBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, statuspay_);
+      }
+      if (!getDateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, date_);
+      }
+      if (!getProductBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, product_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9674,14 +9955,26 @@ public final class PaymentOuterClass {
           .equals(other.getAccountName())) return false;
       if (getTotalusage()
           != other.getTotalusage()) return false;
-      if (getCpu()
-          != other.getCpu()) return false;
-      if (getRam()
-          != other.getRam()) return false;
+      if (java.lang.Double.doubleToLongBits(getCpu())
+          != java.lang.Double.doubleToLongBits(
+              other.getCpu())) return false;
+      if (java.lang.Double.doubleToLongBits(getRam())
+          != java.lang.Double.doubleToLongBits(
+              other.getRam())) return false;
       if (!getMonth()
           .equals(other.getMonth())) return false;
       if (!getYear()
           .equals(other.getYear())) return false;
+      if (getAmount()
+          != other.getAmount()) return false;
+      if (!getPeriod()
+          .equals(other.getPeriod())) return false;
+      if (!getStatuspay()
+          .equals(other.getStatuspay())) return false;
+      if (!getDate()
+          .equals(other.getDate())) return false;
+      if (!getProduct()
+          .equals(other.getProduct())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9704,14 +9997,25 @@ public final class PaymentOuterClass {
           getTotalusage());
       hash = (37 * hash) + CPU_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCpu());
+          java.lang.Double.doubleToLongBits(getCpu()));
       hash = (37 * hash) + RAM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRam());
+          java.lang.Double.doubleToLongBits(getRam()));
       hash = (37 * hash) + MONTH_FIELD_NUMBER;
       hash = (53 * hash) + getMonth().hashCode();
       hash = (37 * hash) + YEAR_FIELD_NUMBER;
       hash = (53 * hash) + getYear().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAmount());
+      hash = (37 * hash) + PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getPeriod().hashCode();
+      hash = (37 * hash) + STATUSPAY_FIELD_NUMBER;
+      hash = (53 * hash) + getStatuspay().hashCode();
+      hash = (37 * hash) + DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDate().hashCode();
+      hash = (37 * hash) + PRODUCT_FIELD_NUMBER;
+      hash = (53 * hash) + getProduct().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9853,13 +10157,23 @@ public final class PaymentOuterClass {
 
         totalusage_ = 0L;
 
-        cpu_ = 0L;
+        cpu_ = 0D;
 
-        ram_ = 0L;
+        ram_ = 0D;
 
         month_ = "";
 
         year_ = "";
+
+        amount_ = 0L;
+
+        period_ = "";
+
+        statuspay_ = "";
+
+        date_ = "";
+
+        product_ = "";
 
         return this;
       }
@@ -9895,6 +10209,11 @@ public final class PaymentOuterClass {
         result.ram_ = ram_;
         result.month_ = month_;
         result.year_ = year_;
+        result.amount_ = amount_;
+        result.period_ = period_;
+        result.statuspay_ = statuspay_;
+        result.date_ = date_;
+        result.product_ = product_;
         onBuilt();
         return result;
       }
@@ -9958,10 +10277,10 @@ public final class PaymentOuterClass {
         if (other.getTotalusage() != 0L) {
           setTotalusage(other.getTotalusage());
         }
-        if (other.getCpu() != 0L) {
+        if (other.getCpu() != 0D) {
           setCpu(other.getCpu());
         }
-        if (other.getRam() != 0L) {
+        if (other.getRam() != 0D) {
           setRam(other.getRam());
         }
         if (!other.getMonth().isEmpty()) {
@@ -9970,6 +10289,25 @@ public final class PaymentOuterClass {
         }
         if (!other.getYear().isEmpty()) {
           year_ = other.year_;
+          onChanged();
+        }
+        if (other.getAmount() != 0L) {
+          setAmount(other.getAmount());
+        }
+        if (!other.getPeriod().isEmpty()) {
+          period_ = other.period_;
+          onChanged();
+        }
+        if (!other.getStatuspay().isEmpty()) {
+          statuspay_ = other.statuspay_;
+          onChanged();
+        }
+        if (!other.getDate().isEmpty()) {
+          date_ = other.date_;
+          onChanged();
+        }
+        if (!other.getProduct().isEmpty()) {
+          product_ = other.product_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -10260,64 +10598,64 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private long cpu_ ;
+      private double cpu_ ;
       /**
-       * <code>int64 cpu = 5 [json_name = "cpu"];</code>
+       * <code>double cpu = 5 [json_name = "cpu"];</code>
        * @return The cpu.
        */
       @java.lang.Override
-      public long getCpu() {
+      public double getCpu() {
         return cpu_;
       }
       /**
-       * <code>int64 cpu = 5 [json_name = "cpu"];</code>
+       * <code>double cpu = 5 [json_name = "cpu"];</code>
        * @param value The cpu to set.
        * @return This builder for chaining.
        */
-      public Builder setCpu(long value) {
+      public Builder setCpu(double value) {
         
         cpu_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 cpu = 5 [json_name = "cpu"];</code>
+       * <code>double cpu = 5 [json_name = "cpu"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCpu() {
         
-        cpu_ = 0L;
+        cpu_ = 0D;
         onChanged();
         return this;
       }
 
-      private long ram_ ;
+      private double ram_ ;
       /**
-       * <code>int64 ram = 6 [json_name = "ram"];</code>
+       * <code>double ram = 6 [json_name = "ram"];</code>
        * @return The ram.
        */
       @java.lang.Override
-      public long getRam() {
+      public double getRam() {
         return ram_;
       }
       /**
-       * <code>int64 ram = 6 [json_name = "ram"];</code>
+       * <code>double ram = 6 [json_name = "ram"];</code>
        * @param value The ram to set.
        * @return This builder for chaining.
        */
-      public Builder setRam(long value) {
+      public Builder setRam(double value) {
         
         ram_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 ram = 6 [json_name = "ram"];</code>
+       * <code>double ram = 6 [json_name = "ram"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRam() {
         
-        ram_ = 0L;
+        ram_ = 0D;
         onChanged();
         return this;
       }
@@ -10470,6 +10808,341 @@ public final class PaymentOuterClass {
   checkByteStringIsUtf8(value);
         
         year_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long amount_ ;
+      /**
+       * <code>int64 amount = 9 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      @java.lang.Override
+      public long getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>int64 amount = 9 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(long value) {
+        
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 amount = 9 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+        
+        amount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object period_ = "";
+      /**
+       * <code>string period = 10 [json_name = "period"];</code>
+       * @return The period.
+       */
+      public java.lang.String getPeriod() {
+        java.lang.Object ref = period_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          period_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string period = 10 [json_name = "period"];</code>
+       * @return The bytes for period.
+       */
+      public com.google.protobuf.ByteString
+          getPeriodBytes() {
+        java.lang.Object ref = period_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          period_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string period = 10 [json_name = "period"];</code>
+       * @param value The period to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPeriod(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        period_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string period = 10 [json_name = "period"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPeriod() {
+        
+        period_ = getDefaultInstance().getPeriod();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string period = 10 [json_name = "period"];</code>
+       * @param value The bytes for period to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPeriodBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        period_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object statuspay_ = "";
+      /**
+       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * @return The statuspay.
+       */
+      public java.lang.String getStatuspay() {
+        java.lang.Object ref = statuspay_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          statuspay_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * @return The bytes for statuspay.
+       */
+      public com.google.protobuf.ByteString
+          getStatuspayBytes() {
+        java.lang.Object ref = statuspay_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          statuspay_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * @param value The statuspay to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatuspay(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        statuspay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatuspay() {
+        
+        statuspay_ = getDefaultInstance().getStatuspay();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * @param value The bytes for statuspay to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatuspayBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        statuspay_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object date_ = "";
+      /**
+       * <code>string date = 12 [json_name = "date"];</code>
+       * @return The date.
+       */
+      public java.lang.String getDate() {
+        java.lang.Object ref = date_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          date_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string date = 12 [json_name = "date"];</code>
+       * @return The bytes for date.
+       */
+      public com.google.protobuf.ByteString
+          getDateBytes() {
+        java.lang.Object ref = date_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          date_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string date = 12 [json_name = "date"];</code>
+       * @param value The date to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDate(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        date_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string date = 12 [json_name = "date"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDate() {
+        
+        date_ = getDefaultInstance().getDate();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string date = 12 [json_name = "date"];</code>
+       * @param value The bytes for date to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        date_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object product_ = "";
+      /**
+       * <code>string product = 13 [json_name = "product"];</code>
+       * @return The product.
+       */
+      public java.lang.String getProduct() {
+        java.lang.Object ref = product_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          product_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product = 13 [json_name = "product"];</code>
+       * @return The bytes for product.
+       */
+      public com.google.protobuf.ByteString
+          getProductBytes() {
+        java.lang.Object ref = product_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          product_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product = 13 [json_name = "product"];</code>
+       * @param value The product to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProduct(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        product_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product = 13 [json_name = "product"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProduct() {
+        
+        product_ = getDefaultInstance().getProduct();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product = 13 [json_name = "product"];</code>
+       * @param value The bytes for product to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        product_ = value;
         onChanged();
         return this;
       }
@@ -18012,31 +18685,34 @@ public final class PaymentOuterClass {
       "id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006" +
       "period\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR" +
       "\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007produc" +
-      "t\030\006 \001(\tR\007product\"\310\001\n\006Biling\022\016\n\002id\030\001 \001(\tR" +
+      "t\030\006 \001(\tR\007product\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR" +
       "\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014ac" +
       "count_name\030\003 \001(\tR\013accountName\022\036\n\ntotalus" +
-      "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\003R\003cpu\022" +
-      "\020\n\003ram\030\006 \001(\003R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022" +
-      "\022\n\004year\030\010 \001(\tR\004year\"\215\001\n\021SubscriptionItem" +
-      "s\022\016\n\002id\030\001 \001(\tR\002id\022.\n\023suscription_item_id" +
-      "\030\002 \001(\tR\021suscriptionItemId\022\031\n\010price_id\030\003 " +
-      "\001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tproduc" +
-      "tId\"R\n\025SubscriptionItemsList\0229\n\005items\030\001 " +
-      "\003(\0132#.payment.v1alpha1.SubscriptionItems" +
-      "R\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031." +
-      "payment.v1alpha1.InvoiceR\005items\"@\n\014Custo" +
-      "merList\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha" +
-      "1.CustomerR\005items\"<\n\nBilingList\022.\n\005items" +
-      "\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005items\"" +
-      "F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035.paym" +
-      "ent.v1alpha1.SuscriptionR\005items\"8\n\010CardL" +
-      "ist\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha1.Ca" +
-      "rdR\005items\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132" +
-      "\031.payment.v1alpha1.PaymentR\005items\">\n\013Pro" +
-      "jectList\022/\n\005items\030\001 \003(\0132\031.payment.v1alph" +
-      "a1.ProjectR\005itemsB8Z6github.com/cuemby/c" +
-      "cp-payment-service/payment/v1alpha1b\006pro" +
-      "to3"
+      "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022" +
+      "\020\n\003ram\030\006 \001(\001R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022" +
+      "\022\n\004year\030\010 \001(\tR\004year\022\026\n\006amount\030\t \001(\003R\006amo" +
+      "unt\022\026\n\006period\030\n \001(\tR\006period\022\034\n\tstatuspay" +
+      "\030\013 \001(\tR\tstatuspay\022\022\n\004date\030\014 \001(\tR\004date\022\030\n" +
+      "\007product\030\r \001(\tR\007product\"\215\001\n\021Subscription" +
+      "Items\022\016\n\002id\030\001 \001(\tR\002id\022.\n\023suscription_ite" +
+      "m_id\030\002 \001(\tR\021suscriptionItemId\022\031\n\010price_i" +
+      "d\030\003 \001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tpr" +
+      "oductId\"R\n\025SubscriptionItemsList\0229\n\005item" +
+      "s\030\001 \003(\0132#.payment.v1alpha1.SubscriptionI" +
+      "temsR\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003(" +
+      "\0132\031.payment.v1alpha1.InvoiceR\005items\"@\n\014C" +
+      "ustomerList\0220\n\005items\030\001 \003(\0132\032.payment.v1a" +
+      "lpha1.CustomerR\005items\"<\n\nBilingList\022.\n\005i" +
+      "tems\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005it" +
+      "ems\"F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035." +
+      "payment.v1alpha1.SuscriptionR\005items\"8\n\010C" +
+      "ardList\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha" +
+      "1.CardR\005items\">\n\013PaymentList\022/\n\005items\030\001 " +
+      "\003(\0132\031.payment.v1alpha1.PaymentR\005items\">\n" +
+      "\013ProjectList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
+      "alpha1.ProjectR\005itemsB8Z6github.com/cuem" +
+      "by/ccp-payment-service/payment/v1alpha1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18083,7 +18759,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Biling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Biling_descriptor,
-        new java.lang.String[] { "Id", "InvoiceId", "AccountName", "Totalusage", "Cpu", "Ram", "Month", "Year", });
+        new java.lang.String[] { "Id", "InvoiceId", "AccountName", "Totalusage", "Cpu", "Ram", "Month", "Year", "Amount", "Period", "Statuspay", "Date", "Product", });
     internal_static_payment_v1alpha1_SubscriptionItems_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_payment_v1alpha1_SubscriptionItems_fieldAccessorTable = new

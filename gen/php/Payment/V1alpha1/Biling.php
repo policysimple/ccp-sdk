@@ -30,13 +30,13 @@ class Biling extends \Google\Protobuf\Internal\Message
      */
     protected $totalusage = 0;
     /**
-     * Generated from protobuf field <code>int64 cpu = 5 [json_name = "cpu"];</code>
+     * Generated from protobuf field <code>double cpu = 5 [json_name = "cpu"];</code>
      */
-    protected $cpu = 0;
+    protected $cpu = 0.0;
     /**
-     * Generated from protobuf field <code>int64 ram = 6 [json_name = "ram"];</code>
+     * Generated from protobuf field <code>double ram = 6 [json_name = "ram"];</code>
      */
-    protected $ram = 0;
+    protected $ram = 0.0;
     /**
      * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
      */
@@ -45,6 +45,26 @@ class Biling extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
      */
     protected $year = '';
+    /**
+     * Generated from protobuf field <code>int64 amount = 9 [json_name = "amount"];</code>
+     */
+    protected $amount = 0;
+    /**
+     * Generated from protobuf field <code>string period = 10 [json_name = "period"];</code>
+     */
+    protected $period = '';
+    /**
+     * Generated from protobuf field <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     */
+    protected $statuspay = '';
+    /**
+     * Generated from protobuf field <code>string date = 12 [json_name = "date"];</code>
+     */
+    protected $date = '';
+    /**
+     * Generated from protobuf field <code>string product = 13 [json_name = "product"];</code>
+     */
+    protected $product = '';
 
     /**
      * Constructor.
@@ -56,10 +76,15 @@ class Biling extends \Google\Protobuf\Internal\Message
      *     @type string $invoice_id
      *     @type string $account_name
      *     @type int|string $totalusage
-     *     @type int|string $cpu
-     *     @type int|string $ram
+     *     @type float $cpu
+     *     @type float $ram
      *     @type string $month
      *     @type string $year
+     *     @type int|string $amount
+     *     @type string $period
+     *     @type string $statuspay
+     *     @type string $date
+     *     @type string $product
      * }
      */
     public function __construct($data = NULL) {
@@ -156,8 +181,8 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 cpu = 5 [json_name = "cpu"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>double cpu = 5 [json_name = "cpu"];</code>
+     * @return float
      */
     public function getCpu()
     {
@@ -165,21 +190,21 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 cpu = 5 [json_name = "cpu"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>double cpu = 5 [json_name = "cpu"];</code>
+     * @param float $var
      * @return $this
      */
     public function setCpu($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkDouble($var);
         $this->cpu = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int64 ram = 6 [json_name = "ram"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>double ram = 6 [json_name = "ram"];</code>
+     * @return float
      */
     public function getRam()
     {
@@ -187,13 +212,13 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 ram = 6 [json_name = "ram"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>double ram = 6 [json_name = "ram"];</code>
+     * @param float $var
      * @return $this
      */
     public function setRam($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkDouble($var);
         $this->ram = $var;
 
         return $this;
@@ -239,6 +264,116 @@ class Biling extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->year = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 amount = 9 [json_name = "amount"];</code>
+     * @return int|string
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 amount = 9 [json_name = "amount"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setAmount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string period = 10 [json_name = "period"];</code>
+     * @return string
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * Generated from protobuf field <code>string period = 10 [json_name = "period"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPeriod($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->period = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * @return string
+     */
+    public function getStatuspay()
+    {
+        return $this->statuspay;
+    }
+
+    /**
+     * Generated from protobuf field <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatuspay($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->statuspay = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string date = 12 [json_name = "date"];</code>
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Generated from protobuf field <code>string date = 12 [json_name = "date"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string product = 13 [json_name = "product"];</code>
+     * @return string
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Generated from protobuf field <code>string product = 13 [json_name = "product"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProduct($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->product = $var;
 
         return $this;
     }

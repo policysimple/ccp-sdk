@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-ª
+∑
 payment/v1alpha1/payment.protopayment.v1alpha1"®
 Customer
 id (	Rid
@@ -74,7 +74,7 @@ cardHolder
 period (	Rperiod
 	statuspay (	R	statuspay
 date (	Rdate
-product (	Rproduct"»
+product (	Rproduct"ƒ
 Biling
 id (	Rid
 
@@ -83,10 +83,16 @@ invoice_id (	R	invoiceId!
 
 totalusage (R
 totalusage
-cpu (Rcpu
-ram (Rram
+cpu (Rcpu
+ram (Rram
 month (	Rmonth
-year (	Ryear"ç
+year (	Ryear
+amount	 (Ramount
+period
+ (	Rperiod
+	statuspay (	R	statuspay
+date (	Rdate
+product (	Rproduct"ç
 SubscriptionItems
 id (	Rid.
 suscription_item_id (	RsuscriptionItemId
