@@ -47,15 +47,17 @@ message InvoiceFilterRequest {
     string invoice_id = 2;
     string year = 3;
     string month = 4;
-    payment.v1alpha1.CustomerList customer_list = 5;               
+    string customer_id = 5;
+    string project_id = 6;
+    double cpu = 7;
+    double ram = 8;
+    payment.v1alpha1.CustomerList customer_list = 9;               
 }
     
 message InvoiceFilterResponse {
-    payment.v1alpha1.CustomerList customer_list = 1;
-    payment.v1alpha1.InvoiceList invoice_list = 2;
-    payment.v1alpha1.BilingList biling_list = 3;
-    payment.v1alpha1.SuscriptionList suscription_list = 4;
-    string status = 5;
+    payment.v1alpha1.Customer customer = 1;
+    payment.v1alpha1.BilingList biling_list = 2;
+    string status = 3;
 }
 
 message DeleteCustomerRequest {
@@ -148,7 +150,11 @@ message CreateProjectResponse {
 message CreateInvoiceRequest {
     uint32 organization_id = 1;
     string invoice_id = 2;
-    string status = 3;
+    string year = 3;
+    string month = 4;
+    string customer_id = 5;
+    string project_id = 6;
+    string status = 7;
 }
 
 message CreateInvoiceResponse {
