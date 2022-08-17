@@ -1,0 +1,42 @@
+syntax = "proto3";
+package blockchain.members.v1alpha1;
+
+option csharp_namespace = "Blockchain.Member.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "MembersInvitationProtoApi";
+option java_package = "io.cuemby.blockchain.members.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Blockchain\\Members\\V1Alpha1";
+
+import "blockchain/members/v1alpha1/member.proto";
+//import "member.proto";
+
+service BlockchainInvitationAPIService {
+    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc CreateInvitation(CreateInvitationRequest) returns (CreateInvitationResponse);
+}
+
+
+message CreateOrganizationResponse {
+    blockchain.members.v1alpha1.Organization register_organization = 1;
+    string status = 2;
+}
+
+message CreateInvitationResponse {
+    string message = 1;
+}
+
+message CreateOrganizationRequest {
+    uint32 user_id_new_member = 1;
+    string org_domain = 2;
+    string admin_password = 3;
+    string admin_user = 4;
+}
+
+message CreateInvitationRequest {
+    string email = 1;
+}
+
+
+
