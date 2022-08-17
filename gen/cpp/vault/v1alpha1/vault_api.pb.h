@@ -897,6 +897,7 @@ class DeleteSecretRequest final :
   enum : int {
     kApplicationIdFieldNumber = 3,
     kNamespaceFieldNumber = 4,
+    kNameFieldNumber = 5,
     kOrganizationIdFieldNumber = 1,
     kProjectIdFieldNumber = 2,
   };
@@ -928,6 +929,20 @@ class DeleteSecretRequest final :
   std::string* _internal_mutable_namespace_();
   public:
 
+  // string name = 5 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // uint32 organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -955,6 +970,7 @@ class DeleteSecretRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1239,6 +1255,7 @@ class GetSecretRequest final :
   enum : int {
     kApplicationIdFieldNumber = 3,
     kNamespaceFieldNumber = 4,
+    kNameFieldNumber = 5,
     kOrganizationIdFieldNumber = 1,
     kProjectIdFieldNumber = 2,
   };
@@ -1270,6 +1287,20 @@ class GetSecretRequest final :
   std::string* _internal_mutable_namespace_();
   public:
 
+  // string name = 5 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // uint32 organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -1297,6 +1328,7 @@ class GetSecretRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2438,6 +2470,52 @@ inline void DeleteSecretRequest::set_allocated_namespace_(std::string* namespace
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.DeleteSecretRequest.namespace)
 }
 
+// string name = 5 [json_name = "name"];
+inline void DeleteSecretRequest::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& DeleteSecretRequest::name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.DeleteSecretRequest.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteSecretRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.DeleteSecretRequest.name)
+}
+inline std::string* DeleteSecretRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.DeleteSecretRequest.name)
+  return _s;
+}
+inline const std::string& DeleteSecretRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void DeleteSecretRequest::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteSecretRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteSecretRequest::release_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.DeleteSecretRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteSecretRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.DeleteSecretRequest.name)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteSecretResponse
@@ -2668,6 +2746,52 @@ inline void GetSecretRequest::set_allocated_namespace_(std::string* namespace_) 
   namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetSecretRequest.namespace)
+}
+
+// string name = 5 [json_name = "name"];
+inline void GetSecretRequest::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& GetSecretRequest::name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetSecretRequest.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetSecretRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetSecretRequest.name)
+}
+inline std::string* GetSecretRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetSecretRequest.name)
+  return _s;
+}
+inline const std::string& GetSecretRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void GetSecretRequest::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetSecretRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetSecretRequest::release_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetSecretRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetSecretRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetSecretRequest.name)
 }
 
 // -------------------------------------------------------------------

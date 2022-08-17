@@ -42,4 +42,16 @@ public interface DeleteSecretRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNamespaceBytes();
+
+  /**
+   * <code>string name = 5 [json_name = "name"];</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 5 [json_name = "name"];</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

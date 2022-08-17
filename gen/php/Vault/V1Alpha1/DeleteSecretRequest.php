@@ -29,6 +29,10 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string namespace = 4 [json_name = "namespace"];</code>
      */
     protected $namespace = '';
+    /**
+     * Generated from protobuf field <code>string name = 5 [json_name = "name"];</code>
+     */
+    protected $name = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
      *     @type int $project_id
      *     @type string $application_id
      *     @type string $namespace
+     *     @type string $name
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class DeleteSecretRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 5 [json_name = "name"];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 5 [json_name = "name"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }
