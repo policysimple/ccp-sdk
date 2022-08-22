@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokens";
+package accounts.v1alpha1.tokens.v1;
+import "accounts/v1alpha1/tokens/tokens.proto";
+
+
+service TokenService {
+    //TOKEN CCP
+    rpc CreateTokenCCP(CreateTokenCCPRequest) returns (CreateTokenCCPResponse);
+    rpc GetOneTokenCCP(GetOneTokenCCPRequest) returns (GetOneTokenCCPResponse);
+    //Get Users Email filter
+    //LOGS REDIS
+    rpc Logs(LogsRequest) returns (LogsResponse);
+    rpc SaveLogs(SaveLogsRequest) returns (SaveLogsResponse);
+    //DOBLE AUTHETICATION
+    rpc MFA(MFARequest) returns (MFAResponse);
+    rpc EnableOrDisableMFA(EnableOrDisableMFARequest) returns (EnableOrDisableMFAResponse);
+}

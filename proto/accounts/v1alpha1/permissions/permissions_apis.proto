@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/permissions";
+
+import "accounts/v1alpha1/permissions/permissions.proto";
+package accounts.v1alpha1.permissions.v1;
+
+service PermissionService {
+    rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse);
+    rpc ListPermission(ListPermissionRequest) returns (ListPermissionResponse);
+    rpc GetOnePermission(GetOnePermissionRequest) returns (GetOnePermissionResponse);
+    rpc UpdatePermission(UpdatePermissionRequest) returns (UpdatePermissionResponse);
+    rpc DeletePermission(DeletePermissionRequest) returns (DeletePermissionResponse);
+}
