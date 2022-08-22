@@ -1,0 +1,106 @@
+syntax = "proto3";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeys";
+package accounts.v1alpha1.apikeys.v1;
+
+
+import "accounts/v1alpha1/accounts.proto";
+
+
+/*
+    Tokens Create
+*/
+
+message CreateApiKeyRequest {
+    string name = 1;
+    string user_id =2;
+    repeated uint32 roles_ids = 3;
+    repeated uint32 permissions_ids = 4;
+    uint32 organization_id = 5;
+    bool is_active = 6;
+    uint32 project_id = 7;
+
+
+}
+
+
+message CreateApiKeyResponse {
+    string msg = 1;
+    string api_key = 2;
+    uint32 access_point_id = 4;
+    string error = 5;
+}
+
+/*
+    Tokens Get One
+*/
+
+message GetOneApiKeyRequest {
+    uint32 id = 1;
+    string value_key = 2;
+}
+
+message GetOneApiKeyResponse {
+    uint32 id = 1;
+    string api_key = 2;
+    string name = 3;
+    string user_id =4;
+    repeated Role roles = 5;
+    repeated Permission permissions = 6;
+    bool is_active = 8;
+    Project project = 9;
+    Organization organization = 10;
+
+
+}
+/*
+    Tokens List
+*/
+message ListApiKeyRequest {
+    string user_id = 1;
+    uint32 organization_id = 2;
+}
+
+message ApiKeyList {
+    uint32  id = 1;
+    string api_key = 2;
+    string name = 3;
+    string user_id = 4;
+    bool is_active = 6;
+    Project project = 7;
+    Organization organization = 8;
+}
+
+message ListApiKeyResponse {
+    repeated ApiKeyList api_keys = 1;
+}
+
+/*
+    Tokens Update
+*/
+
+message UpdateApiKeyRequest {
+    uint32 id = 1;
+    CreateApiKeyRequest api_key = 6;
+}
+
+message UpdateApiKeyResponse {
+    string msg = 1;
+    string api_key = 2;
+    string error = 3;
+}
+
+/*
+    Tokens Delete   
+*/
+
+message DeleteApiKeyRequest {
+    uint32 id = 1;
+}
+
+message DeleteApiKeyResponse {
+    string msg = 1;
+    string api_key = 2;
+    string error = 3;
+}
+
+

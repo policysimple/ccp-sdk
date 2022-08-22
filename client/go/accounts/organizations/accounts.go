@@ -8,14 +8,15 @@ import (
 	"time"
 
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
-	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1"
+	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations"
+
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/status"
 )
 
-var client accountpkgv1.AccountServiceClient
+var client accountpkgv1.OrganizationServiceClient
 var doOnce sync.Once
 
 var accountServiceUri string
@@ -32,7 +33,7 @@ func init() {
 		if err != nil {
 			panic(err)
 		}
-		client = accountpkgv1.NewAccountServiceClient(con)
+		client = accountpkgv1.NewOrganizationServiceClient(con)
 	})
 }
 func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
