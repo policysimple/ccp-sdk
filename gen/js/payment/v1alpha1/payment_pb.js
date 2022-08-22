@@ -919,7 +919,8 @@ proto.payment.v1alpha1.Project.toObject = function(includeInstance, msg) {
     image: jspb.Message.getFieldWithDefault(msg, 4, ""),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    status: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -983,6 +984,10 @@ proto.payment.v1alpha1.Project.deserializeBinaryFromReader = function(msg, reade
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -1059,6 +1064,13 @@ proto.payment.v1alpha1.Project.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -1188,6 +1200,24 @@ proto.payment.v1alpha1.Project.prototype.getUpdatedAt = function() {
  */
 proto.payment.v1alpha1.Project.prototype.setUpdatedAt = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional bool status = 8;
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.Project.prototype.getStatus = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.payment.v1alpha1.Project} returns this
+ */
+proto.payment.v1alpha1.Project.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 

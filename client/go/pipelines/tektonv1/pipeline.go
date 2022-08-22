@@ -57,27 +57,6 @@ func CreateTektonPipeline(in *tektonPipelinepkgv1.CreateTektonPipelineRequest) (
 	return response, nil
 }
 
-func ListTektonPipeline(in *tektonPipelinepkgv1.ListTektonPipelineRequest) (response *tektonPipelinepkgv1.ListTektonPipelineResponse, err error) {
-	bylogs.LogInfo("client: list tekton pipeline")
-	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.ListTektonPipeline(ctx, in)
-
-	if err != nil {
-		bylogs.LogErr("client: list tekton pipeline failed", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error list tekton pipeline", err),
-		)
-	}
-	return response, nil
-}
-
 func DeleteTektonPipeline(in *tektonPipelinepkgv1.DeleteTektonPipelineRequest) (response *tektonPipelinepkgv1.DeleteTektonPipelineResponse, err error) {
 	bylogs.LogInfo("client: delete tekton pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
@@ -94,27 +73,6 @@ func DeleteTektonPipeline(in *tektonPipelinepkgv1.DeleteTektonPipelineRequest) (
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "error delete tekton pipeline", err),
-		)
-	}
-	return response, nil
-}
-
-func ListTektonTask(in *tektonPipelinepkgv1.ListTektonTaskRequest) (response *tektonPipelinepkgv1.ListTektonTaskResponse, err error) {
-	bylogs.LogInfo("client: list tekton task")
-	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.ListTektonTask(ctx, in)
-
-	if err != nil {
-		bylogs.LogErr("client: list tekton task failed", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error list tekton task", err),
 		)
 	}
 	return response, nil

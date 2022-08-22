@@ -553,6 +553,7 @@ class Project final :
     kDescriptionFieldNumber = 5,
     kCreatedAtFieldNumber = 6,
     kUpdatedAtFieldNumber = 7,
+    kStatusFieldNumber = 8,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -652,6 +653,15 @@ class Project final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // bool status = 8 [json_name = "status"];
+  void clear_status();
+  bool status() const;
+  void set_status(bool value);
+  private:
+  bool _internal_status() const;
+  void _internal_set_status(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.Project)
  private:
   class _Internal;
@@ -666,6 +676,7 @@ class Project final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  bool status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
 };
@@ -4217,6 +4228,26 @@ inline void Project::set_allocated_updated_at(std::string* updated_at) {
   updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.updated_at)
+}
+
+// bool status = 8 [json_name = "status"];
+inline void Project::clear_status() {
+  status_ = false;
+}
+inline bool Project::_internal_status() const {
+  return status_;
+}
+inline bool Project::status() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Project.status)
+  return _internal_status();
+}
+inline void Project::_internal_set_status(bool value) {
+  
+  status_ = value;
+}
+inline void Project::set_status(bool value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.status)
 }
 
 // -------------------------------------------------------------------

@@ -2376,6 +2376,12 @@ public final class PaymentOuterClass {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <code>bool status = 8 [json_name = "status"];</code>
+     * @return The status.
+     */
+    boolean getStatus();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Project}
@@ -2469,6 +2475,11 @@ public final class PaymentOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 64: {
+
+              status_ = input.readBool();
               break;
             }
             default: {
@@ -2769,6 +2780,17 @@ public final class PaymentOuterClass {
       }
     }
 
+    public static final int STATUS_FIELD_NUMBER = 8;
+    private boolean status_;
+    /**
+     * <code>bool status = 8 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2804,6 +2826,9 @@ public final class PaymentOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, updatedAt_);
       }
+      if (status_ != false) {
+        output.writeBool(8, status_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2834,6 +2859,10 @@ public final class PaymentOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, updatedAt_);
       }
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, status_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2863,6 +2892,8 @@ public final class PaymentOuterClass {
           .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (getStatus()
+          != other.getStatus()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2888,6 +2919,9 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3035,6 +3069,8 @@ public final class PaymentOuterClass {
 
         updatedAt_ = "";
 
+        status_ = false;
+
         return this;
       }
 
@@ -3068,6 +3104,7 @@ public final class PaymentOuterClass {
         result.description_ = description_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -3143,6 +3180,9 @@ public final class PaymentOuterClass {
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
           onChanged();
+        }
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3701,6 +3741,37 @@ public final class PaymentOuterClass {
   checkByteStringIsUtf8(value);
         
         updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 8 [json_name = "status"];</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 8 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 8 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
         onChanged();
         return this;
       }
@@ -18661,58 +18732,58 @@ public final class PaymentOuterClass {
       "3\n\007invoice\030\010 \001(\0132\031.payment.v1alpha1.Invo" +
       "iceR\007invoice\0220\n\006biling\030\t \001(\0132\030.payment.v" +
       "1alpha1.BilingR\006biling\0225\n\010projects\030\n \003(\013" +
-      "2\031.payment.v1alpha1.ProjectR\010projects\"\302\001" +
+      "2\031.payment.v1alpha1.ProjectR\010projects\"\332\001" +
       "\n\007Project\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_id\030" +
       "\002 \001(\tR\tprojectId\022\022\n\004name\030\003 \001(\tR\004name\022\024\n\005" +
       "image\030\004 \001(\tR\005image\022 \n\013description\030\005 \001(\tR" +
       "\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcreate" +
-      "dAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\"\237\002\n\013S" +
-      "uscription\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016suscriptio" +
-      "n_id\030\002 \001(\tR\rsuscriptionId\022.\n\023suscription" +
-      "_item_id\030\003 \001(\tR\021suscriptionItemId\022\035\n\ninv" +
-      "oice_id\030\004 \001(\tR\tinvoiceId\022\024\n\005price\030\005 \001(\tR" +
-      "\005price\022\033\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013p" +
-      "rice_bytes\030\007 \001(\tR\npriceBytes\022\032\n\010currency" +
-      "\030\010 \001(\tR\010currency\022\032\n\010interval\030\t \001(\tR\010inte" +
-      "rval\"\217\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007defa" +
-      "ult\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007ena" +
-      "bled\022\024\n\005alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\013" +
-      "2\026.payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022" +
-      "\037\n\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expm" +
-      "onth\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007e" +
-      "xpyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006" +
-      "period\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR" +
-      "\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007produc" +
-      "t\030\006 \001(\tR\007product\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014ac" +
-      "count_name\030\003 \001(\tR\013accountName\022\036\n\ntotalus" +
-      "age\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022" +
-      "\020\n\003ram\030\006 \001(\001R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022" +
-      "\022\n\004year\030\010 \001(\tR\004year\022\026\n\006amount\030\t \001(\003R\006amo" +
-      "unt\022\026\n\006period\030\n \001(\tR\006period\022\034\n\tstatuspay" +
-      "\030\013 \001(\tR\tstatuspay\022\022\n\004date\030\014 \001(\tR\004date\022\030\n" +
-      "\007product\030\r \001(\tR\007product\"\215\001\n\021Subscription" +
-      "Items\022\016\n\002id\030\001 \001(\tR\002id\022.\n\023suscription_ite" +
-      "m_id\030\002 \001(\tR\021suscriptionItemId\022\031\n\010price_i" +
-      "d\030\003 \001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tpr" +
-      "oductId\"R\n\025SubscriptionItemsList\0229\n\005item" +
-      "s\030\001 \003(\0132#.payment.v1alpha1.SubscriptionI" +
-      "temsR\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003(" +
-      "\0132\031.payment.v1alpha1.InvoiceR\005items\"@\n\014C" +
-      "ustomerList\0220\n\005items\030\001 \003(\0132\032.payment.v1a" +
-      "lpha1.CustomerR\005items\"<\n\nBilingList\022.\n\005i" +
-      "tems\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005it" +
-      "ems\"F\n\017SuscriptionList\0223\n\005items\030\001 \003(\0132\035." +
-      "payment.v1alpha1.SuscriptionR\005items\"8\n\010C" +
-      "ardList\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha" +
-      "1.CardR\005items\">\n\013PaymentList\022/\n\005items\030\001 " +
-      "\003(\0132\031.payment.v1alpha1.PaymentR\005items\">\n" +
-      "\013ProjectList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
-      "alpha1.ProjectR\005itemsB8Z6github.com/cuem" +
-      "by/ccp-payment-service/payment/v1alpha1b" +
-      "\006proto3"
+      "dAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006st" +
+      "atus\030\010 \001(\010R\006status\"\237\002\n\013Suscription\022\016\n\002id" +
+      "\030\001 \001(\tR\002id\022%\n\016suscription_id\030\002 \001(\tR\rsusc" +
+      "riptionId\022.\n\023suscription_item_id\030\003 \001(\tR\021" +
+      "suscriptionItemId\022\035\n\ninvoice_id\030\004 \001(\tR\ti" +
+      "nvoiceId\022\024\n\005price\030\005 \001(\tR\005price\022\033\n\tprice_" +
+      "cpu\030\006 \001(\tR\010priceCpu\022\037\n\013price_bytes\030\007 \001(\t" +
+      "R\npriceBytes\022\032\n\010currency\030\010 \001(\tR\010currency" +
+      "\022\032\n\010interval\030\t \001(\tR\010interval\"\217\001\n\007Payment" +
+      "\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007defau" +
+      "lt\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 " +
+      "\001(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment.v1alp" +
+      "ha1.CardR\004card\"\227\001\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\026\n\006number\030\002 \001(\tR\006number\022\037\n\013card_holder\030\003" +
+      " \001(\tR\ncardHolder\022\032\n\010expmonth\030\004 \001(\tR\010expm" +
+      "onth\022\030\n\007expyear\030\005 \001(\tR\007expyear\022\020\n\003cvc\030\006 " +
+      "\001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006" +
+      "amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006pe" +
+      "riod\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n\004da" +
+      "te\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007product" +
+      "\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_i" +
+      "d\030\002 \001(\tR\tinvoiceId\022!\n\014account_name\030\003 \001(\t" +
+      "R\013accountName\022\036\n\ntotalusage\030\004 \001(\003R\ntotal" +
+      "usage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ra" +
+      "m\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030\010 \001(\tR\004y" +
+      "ear\022\026\n\006amount\030\t \001(\003R\006amount\022\026\n\006period\030\n " +
+      "\001(\tR\006period\022\034\n\tstatuspay\030\013 \001(\tR\tstatuspa" +
+      "y\022\022\n\004date\030\014 \001(\tR\004date\022\030\n\007product\030\r \001(\tR\007" +
+      "product\"\215\001\n\021SubscriptionItems\022\016\n\002id\030\001 \001(" +
+      "\tR\002id\022.\n\023suscription_item_id\030\002 \001(\tR\021susc" +
+      "riptionItemId\022\031\n\010price_id\030\003 \001(\tR\007priceId" +
+      "\022\035\n\nproduct_id\030\004 \001(\tR\tproductId\"R\n\025Subsc" +
+      "riptionItemsList\0229\n\005items\030\001 \003(\0132#.paymen" +
+      "t.v1alpha1.SubscriptionItemsR\005items\">\n\013I" +
+      "nvoiceList\022/\n\005items\030\001 \003(\0132\031.payment.v1al" +
+      "pha1.InvoiceR\005items\"@\n\014CustomerList\0220\n\005i" +
+      "tems\030\001 \003(\0132\032.payment.v1alpha1.CustomerR\005" +
+      "items\"<\n\nBilingList\022.\n\005items\030\001 \003(\0132\030.pay" +
+      "ment.v1alpha1.BilingR\005items\"F\n\017Suscripti" +
+      "onList\0223\n\005items\030\001 \003(\0132\035.payment.v1alpha1" +
+      ".SuscriptionR\005items\"8\n\010CardList\022,\n\005items" +
+      "\030\001 \003(\0132\026.payment.v1alpha1.CardR\005items\">\n" +
+      "\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment.v1" +
+      "alpha1.PaymentR\005items\">\n\013ProjectList\022/\n\005" +
+      "items\030\001 \003(\0132\031.payment.v1alpha1.ProjectR\005" +
+      "itemsB8Z6github.com/cuemby/ccp-payment-s" +
+      "ervice/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18729,7 +18800,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Project_descriptor,
-        new java.lang.String[] { "Id", "ProjectId", "Name", "Image", "Description", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "ProjectId", "Name", "Image", "Description", "CreatedAt", "UpdatedAt", "Status", });
     internal_static_payment_v1alpha1_Suscription_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_payment_v1alpha1_Suscription_fieldAccessorTable = new

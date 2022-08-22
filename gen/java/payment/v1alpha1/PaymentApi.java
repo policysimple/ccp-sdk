@@ -31834,6 +31834,21 @@ public final class PaymentApi {
      */
     com.google.protobuf.ByteString
         getProjectIdBytes();
+
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    boolean hasProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * @return The project.
+     */
+    payment.v1alpha1.PaymentOuterClass.Project getProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.DeleteProjectRequest}
@@ -31890,6 +31905,19 @@ public final class PaymentApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               projectId_ = s;
+              break;
+            }
+            case 26: {
+              payment.v1alpha1.PaymentOuterClass.Project.Builder subBuilder = null;
+              if (project_ != null) {
+                subBuilder = project_.toBuilder();
+              }
+              project_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Project.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(project_);
+                project_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -31973,6 +32001,32 @@ public final class PaymentApi {
       }
     }
 
+    public static final int PROJECT_FIELD_NUMBER = 3;
+    private payment.v1alpha1.PaymentOuterClass.Project project_;
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    @java.lang.Override
+    public boolean hasProject() {
+      return project_ != null;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * @return The project.
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+      return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+      return getProject();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -31993,6 +32047,9 @@ public final class PaymentApi {
       if (!getProjectIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
+      if (project_ != null) {
+        output.writeMessage(3, getProject());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -32008,6 +32065,10 @@ public final class PaymentApi {
       }
       if (!getProjectIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+      }
+      if (project_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getProject());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -32028,6 +32089,11 @@ public final class PaymentApi {
           != other.getOrganizationId()) return false;
       if (!getProjectId()
           .equals(other.getProjectId())) return false;
+      if (hasProject() != other.hasProject()) return false;
+      if (hasProject()) {
+        if (!getProject()
+            .equals(other.getProject())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -32043,6 +32109,10 @@ public final class PaymentApi {
       hash = (53 * hash) + getOrganizationId();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectId().hashCode();
+      if (hasProject()) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProject().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -32180,6 +32250,12 @@ public final class PaymentApi {
 
         projectId_ = "";
 
+        if (projectBuilder_ == null) {
+          project_ = null;
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
         return this;
       }
 
@@ -32208,6 +32284,11 @@ public final class PaymentApi {
         payment.v1alpha1.PaymentApi.DeleteProjectRequest result = new payment.v1alpha1.PaymentApi.DeleteProjectRequest(this);
         result.organizationId_ = organizationId_;
         result.projectId_ = projectId_;
+        if (projectBuilder_ == null) {
+          result.project_ = project_;
+        } else {
+          result.project_ = projectBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -32262,6 +32343,9 @@ public final class PaymentApi {
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
           onChanged();
+        }
+        if (other.hasProject()) {
+          mergeProject(other.getProject());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -32397,6 +32481,125 @@ public final class PaymentApi {
         projectId_ = value;
         onChanged();
         return this;
+      }
+
+      private payment.v1alpha1.PaymentOuterClass.Project project_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectBuilder_;
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       * @return Whether the project field is set.
+       */
+      public boolean hasProject() {
+        return projectBuilder_ != null || project_ != null;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       * @return The project.
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+        if (projectBuilder_ == null) {
+          return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        } else {
+          return projectBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      public Builder setProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          project_ = value;
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      public Builder setProject(
+          payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          project_ = builderForValue.build();
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (project_ != null) {
+            project_ =
+              payment.v1alpha1.PaymentOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
+          } else {
+            project_ = value;
+          }
+          onChanged();
+        } else {
+          projectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = null;
+          onChanged();
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectBuilder() {
+        
+        onChanged();
+        return getProjectFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilder();
+        } else {
+          return project_ == null ?
+              payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder>(
+                  getProject(),
+                  getParentForChildren(),
+                  isClean());
+          project_ = null;
+        }
+        return projectBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -33368,67 +33571,68 @@ public final class PaymentApi {
       " \001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\t" +
       "R\tprojectId\"d\n\022GetProjectResponse\0226\n\010cus" +
       "tomer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR" +
-      "\010customer\022\026\n\006status\030\002 \001(\tR\006status\"^\n\024Del" +
-      "eteProjectRequest\022\'\n\017organization_id\030\001 \001" +
-      "(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR\t" +
-      "projectId\"/\n\025DeleteProjectResponse\022\026\n\006st" +
-      "atus\030\001 \001(\tR\006status2\356\020\n\021PaymentAPIService" +
-      "\022e\n\016CreateCustomer\022\'.payment.v1alpha1.Cr" +
-      "eateCustomerRequest\032(.payment.v1alpha1.C" +
-      "reateCustomerResponse\"\000\022n\n\021CreateSuscrip" +
-      "tion\022*.payment.v1alpha1.CreateSuscriptio" +
-      "nRequest\032+.payment.v1alpha1.CreateSuscri" +
-      "ptionResponse\"\000\022b\n\rCreatePayment\022&.payme" +
-      "nt.v1alpha1.CreatePaymentRequest\032\'.payme" +
-      "nt.v1alpha1.CreatePaymentResponse\"\000\022Y\n\nC" +
-      "reateCard\022#.payment.v1alpha1.CreateCardR" +
-      "equest\032$.payment.v1alpha1.CreateCardResp" +
-      "onse\"\000\022b\n\rCreateProject\022&.payment.v1alph" +
-      "a1.CreateProjectRequest\032\'.payment.v1alph" +
-      "a1.CreateProjectResponse\"\000\022b\n\rCreateInvo" +
-      "ice\022&.payment.v1alpha1.CreateInvoiceRequ" +
-      "est\032\'.payment.v1alpha1.CreateInvoiceResp" +
-      "onse\"\000\022h\n\017GetOrganization\022(.payment.v1al" +
-      "pha1.GetOrganizationRequest\032).payment.v1" +
-      "alpha1.GetOrganizationResponse\"\000\022e\n\016GetS" +
-      "uscription\022\'.payment.v1alpha1.GetSuscrip" +
-      "tionRequest\032(.payment.v1alpha1.GetSuscri" +
-      "ptionResponse\"\000\022Y\n\nGetPayment\022#.payment." +
-      "v1alpha1.GetPaymentRequest\032$.payment.v1a" +
-      "lpha1.GetPaymentResponse\"\000\022\\\n\013GetCustome" +
-      "r\022$.payment.v1alpha1.GetCustomerRequest\032" +
-      "%.payment.v1alpha1.GetCustomerResponse\"\000" +
-      "\022e\n\016GetBilingMonth\022\'.payment.v1alpha1.Ge" +
-      "tBilingMonthRequest\032(.payment.v1alpha1.G" +
-      "etBilingMonthResponse\"\000\022\\\n\013GetPayments\022$" +
-      ".payment.v1alpha1.GetPaymentsRequest\032%.p" +
-      "ayment.v1alpha1.GetPaymentsResponse\"\000\022_\n" +
-      "\014ListProjects\022%.payment.v1alpha1.ListPro" +
-      "jectsRequest\032&.payment.v1alpha1.ListProj" +
-      "ectsResponse\"\000\022\\\n\013ListPayment\022$.payment." +
-      "v1alpha1.ListPaymentRequest\032%.payment.v1" +
-      "alpha1.ListPaymentResponse\"\000\022z\n\025ListSubs" +
-      "criptionItems\022..payment.v1alpha1.ListSub" +
-      "scriptionItemsRequest\032/.payment.v1alpha1" +
-      ".ListSubscriptionItemsResponse\"\000\022n\n\021Upda" +
-      "teSuscription\022*.payment.v1alpha1.UpdateS" +
-      "uscriptionRequest\032+.payment.v1alpha1.Upd" +
-      "ateSuscriptionResponse\"\000\022b\n\rDeleteProjec" +
-      "t\022&.payment.v1alpha1.DeleteProjectReques" +
-      "t\032\'.payment.v1alpha1.DeleteProjectRespon" +
-      "se\"\000\022b\n\rDeletePayment\022&.payment.v1alpha1" +
-      ".DeletePaymentRequest\032\'.payment.v1alpha1" +
-      ".DeletePaymentResponse\"\000\022n\n\021CancelSuscri" +
-      "ption\022*.payment.v1alpha1.CancelSuscripti" +
-      "onRequest\032+.payment.v1alpha1.CancelSuscr" +
-      "iptionResponse\"\000\022e\n\016DeleteCustomer\022\'.pay" +
-      "ment.v1alpha1.DeleteCustomerRequest\032(.pa" +
-      "yment.v1alpha1.DeleteCustomerResponse\"\000\022" +
-      "b\n\rInvoiceFilter\022&.payment.v1alpha1.Invo" +
-      "iceFilterRequest\032\'.payment.v1alpha1.Invo" +
-      "iceFilterResponse\"\000B8Z6github.com/cuemby" +
-      "/ccp-payment-service/payment/v1alpha1b\006p" +
-      "roto3"
+      "\010customer\022\026\n\006status\030\002 \001(\tR\006status\"\223\001\n\024De" +
+      "leteProjectRequest\022\'\n\017organization_id\030\001 " +
+      "\001(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR" +
+      "\tprojectId\0223\n\007project\030\003 \001(\0132\031.payment.v1" +
+      "alpha1.ProjectR\007project\"/\n\025DeleteProject" +
+      "Response\022\026\n\006status\030\001 \001(\tR\006status2\356\020\n\021Pay" +
+      "mentAPIService\022e\n\016CreateCustomer\022\'.payme" +
+      "nt.v1alpha1.CreateCustomerRequest\032(.paym" +
+      "ent.v1alpha1.CreateCustomerResponse\"\000\022n\n" +
+      "\021CreateSuscription\022*.payment.v1alpha1.Cr" +
+      "eateSuscriptionRequest\032+.payment.v1alpha" +
+      "1.CreateSuscriptionResponse\"\000\022b\n\rCreateP" +
+      "ayment\022&.payment.v1alpha1.CreatePaymentR" +
+      "equest\032\'.payment.v1alpha1.CreatePaymentR" +
+      "esponse\"\000\022Y\n\nCreateCard\022#.payment.v1alph" +
+      "a1.CreateCardRequest\032$.payment.v1alpha1." +
+      "CreateCardResponse\"\000\022b\n\rCreateProject\022&." +
+      "payment.v1alpha1.CreateProjectRequest\032\'." +
+      "payment.v1alpha1.CreateProjectResponse\"\000" +
+      "\022b\n\rCreateInvoice\022&.payment.v1alpha1.Cre" +
+      "ateInvoiceRequest\032\'.payment.v1alpha1.Cre" +
+      "ateInvoiceResponse\"\000\022h\n\017GetOrganization\022" +
+      "(.payment.v1alpha1.GetOrganizationReques" +
+      "t\032).payment.v1alpha1.GetOrganizationResp" +
+      "onse\"\000\022e\n\016GetSuscription\022\'.payment.v1alp" +
+      "ha1.GetSuscriptionRequest\032(.payment.v1al" +
+      "pha1.GetSuscriptionResponse\"\000\022Y\n\nGetPaym" +
+      "ent\022#.payment.v1alpha1.GetPaymentRequest" +
+      "\032$.payment.v1alpha1.GetPaymentResponse\"\000" +
+      "\022\\\n\013GetCustomer\022$.payment.v1alpha1.GetCu" +
+      "stomerRequest\032%.payment.v1alpha1.GetCust" +
+      "omerResponse\"\000\022e\n\016GetBilingMonth\022\'.payme" +
+      "nt.v1alpha1.GetBilingMonthRequest\032(.paym" +
+      "ent.v1alpha1.GetBilingMonthResponse\"\000\022\\\n" +
+      "\013GetPayments\022$.payment.v1alpha1.GetPayme" +
+      "ntsRequest\032%.payment.v1alpha1.GetPayment" +
+      "sResponse\"\000\022_\n\014ListProjects\022%.payment.v1" +
+      "alpha1.ListProjectsRequest\032&.payment.v1a" +
+      "lpha1.ListProjectsResponse\"\000\022\\\n\013ListPaym" +
+      "ent\022$.payment.v1alpha1.ListPaymentReques" +
+      "t\032%.payment.v1alpha1.ListPaymentResponse" +
+      "\"\000\022z\n\025ListSubscriptionItems\022..payment.v1" +
+      "alpha1.ListSubscriptionItemsRequest\032/.pa" +
+      "yment.v1alpha1.ListSubscriptionItemsResp" +
+      "onse\"\000\022n\n\021UpdateSuscription\022*.payment.v1" +
+      "alpha1.UpdateSuscriptionRequest\032+.paymen" +
+      "t.v1alpha1.UpdateSuscriptionResponse\"\000\022b" +
+      "\n\rDeleteProject\022&.payment.v1alpha1.Delet" +
+      "eProjectRequest\032\'.payment.v1alpha1.Delet" +
+      "eProjectResponse\"\000\022b\n\rDeletePayment\022&.pa" +
+      "yment.v1alpha1.DeletePaymentRequest\032\'.pa" +
+      "yment.v1alpha1.DeletePaymentResponse\"\000\022n" +
+      "\n\021CancelSuscription\022*.payment.v1alpha1.C" +
+      "ancelSuscriptionRequest\032+.payment.v1alph" +
+      "a1.CancelSuscriptionResponse\"\000\022e\n\016Delete" +
+      "Customer\022\'.payment.v1alpha1.DeleteCustom" +
+      "erRequest\032(.payment.v1alpha1.DeleteCusto" +
+      "merResponse\"\000\022b\n\rInvoiceFilter\022&.payment" +
+      ".v1alpha1.InvoiceFilterRequest\032\'.payment" +
+      ".v1alpha1.InvoiceFilterResponse\"\000B8Z6git" +
+      "hub.com/cuemby/ccp-payment-service/payme" +
+      "nt/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -33692,7 +33896,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_DeleteProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeleteProjectRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "ProjectId", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "Project", });
     internal_static_payment_v1alpha1_DeleteProjectResponse_descriptor =
       getDescriptor().getMessageTypes().get(43);
     internal_static_payment_v1alpha1_DeleteProjectResponse_fieldAccessorTable = new
