@@ -7288,6 +7288,7 @@ class DeleteProjectRequest final :
 
   enum : int {
     kProjectIdFieldNumber = 2,
+    kProjectFieldNumber = 3,
     kOrganizationIdFieldNumber = 1,
   };
   // string project_id = 2 [json_name = "projectId"];
@@ -7303,6 +7304,24 @@ class DeleteProjectRequest final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
   std::string* _internal_mutable_project_id();
   public:
+
+  // .payment.v1alpha1.Project project = 3 [json_name = "project"];
+  bool has_project() const;
+  private:
+  bool _internal_has_project() const;
+  public:
+  void clear_project();
+  const ::payment::v1alpha1::Project& project() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Project* release_project();
+  ::payment::v1alpha1::Project* mutable_project();
+  void set_allocated_project(::payment::v1alpha1::Project* project);
+  private:
+  const ::payment::v1alpha1::Project& _internal_project() const;
+  ::payment::v1alpha1::Project* _internal_mutable_project();
+  public:
+  void unsafe_arena_set_allocated_project(
+      ::payment::v1alpha1::Project* project);
+  ::payment::v1alpha1::Project* unsafe_arena_release_project();
 
   // uint32 organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
@@ -7321,6 +7340,7 @@ class DeleteProjectRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
+  ::payment::v1alpha1::Project* project_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -12594,6 +12614,92 @@ inline void DeleteProjectRequest::set_allocated_project_id(std::string* project_
   project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.DeleteProjectRequest.project_id)
+}
+
+// .payment.v1alpha1.Project project = 3 [json_name = "project"];
+inline bool DeleteProjectRequest::_internal_has_project() const {
+  return this != internal_default_instance() && project_ != nullptr;
+}
+inline bool DeleteProjectRequest::has_project() const {
+  return _internal_has_project();
+}
+inline const ::payment::v1alpha1::Project& DeleteProjectRequest::_internal_project() const {
+  const ::payment::v1alpha1::Project* p = project_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Project&>(
+      ::payment::v1alpha1::_Project_default_instance_);
+}
+inline const ::payment::v1alpha1::Project& DeleteProjectRequest::project() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.DeleteProjectRequest.project)
+  return _internal_project();
+}
+inline void DeleteProjectRequest::unsafe_arena_set_allocated_project(
+    ::payment::v1alpha1::Project* project) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  project_ = project;
+  if (project) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.DeleteProjectRequest.project)
+}
+inline ::payment::v1alpha1::Project* DeleteProjectRequest::release_project() {
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::Project* DeleteProjectRequest::unsafe_arena_release_project() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.DeleteProjectRequest.project)
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::Project* DeleteProjectRequest::_internal_mutable_project() {
+  
+  if (project_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Project>(GetArenaForAllocation());
+    project_ = p;
+  }
+  return project_;
+}
+inline ::payment::v1alpha1::Project* DeleteProjectRequest::mutable_project() {
+  ::payment::v1alpha1::Project* _msg = _internal_mutable_project();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.DeleteProjectRequest.project)
+  return _msg;
+}
+inline void DeleteProjectRequest::set_allocated_project(::payment::v1alpha1::Project* project) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  if (project) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project));
+    if (message_arena != submessage_arena) {
+      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, project, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  project_ = project;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.DeleteProjectRequest.project)
 }
 
 // -------------------------------------------------------------------
