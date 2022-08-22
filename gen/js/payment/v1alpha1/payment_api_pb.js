@@ -8641,7 +8641,8 @@ proto.payment.v1alpha1.DeleteProjectRequest.prototype.toObject = function(opt_in
 proto.payment.v1alpha1.DeleteProjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    project: (f = msg.getProject()) && payment_v1alpha1_payment_pb.Project.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8686,6 +8687,11 @@ proto.payment.v1alpha1.DeleteProjectRequest.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
+    case 3:
+      var value = new payment_v1alpha1_payment_pb.Project;
+      reader.readMessage(value,payment_v1alpha1_payment_pb.Project.deserializeBinaryFromReader);
+      msg.setProject(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -8729,6 +8735,14 @@ proto.payment.v1alpha1.DeleteProjectRequest.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getProject();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      payment_v1alpha1_payment_pb.Project.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -8765,6 +8779,43 @@ proto.payment.v1alpha1.DeleteProjectRequest.prototype.getProjectId = function() 
  */
 proto.payment.v1alpha1.DeleteProjectRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional Project project = 3;
+ * @return {?proto.payment.v1alpha1.Project}
+ */
+proto.payment.v1alpha1.DeleteProjectRequest.prototype.getProject = function() {
+  return /** @type{?proto.payment.v1alpha1.Project} */ (
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 3));
+};
+
+
+/**
+ * @param {?proto.payment.v1alpha1.Project|undefined} value
+ * @return {!proto.payment.v1alpha1.DeleteProjectRequest} returns this
+*/
+proto.payment.v1alpha1.DeleteProjectRequest.prototype.setProject = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.payment.v1alpha1.DeleteProjectRequest} returns this
+ */
+proto.payment.v1alpha1.DeleteProjectRequest.prototype.clearProject = function() {
+  return this.setProject(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.DeleteProjectRequest.prototype.hasProject = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
