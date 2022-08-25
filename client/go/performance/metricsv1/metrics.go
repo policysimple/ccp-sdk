@@ -71,7 +71,9 @@ func GetTektonMetrics(GetTektonMetrics *metricsgpkgv1.GetTektonMetricsRequest) (
 
 	response, err = client.GetTektonMetrics(ctx, &metricsgpkgv1.GetTektonMetricsRequest{
 		NamePipelineRun: GetTektonMetrics.NamePipelineRun,
-		From:            GetTektonMetrics.From,
+		Range:           GetTektonMetrics.Range,
+		Page:            GetTektonMetrics.Page,
+		Size:            GetTektonMetrics.Size,
 	})
 	if err != nil {
 		log.Printf("%s: %v", "Error get metrics", err)

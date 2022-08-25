@@ -118,7 +118,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.performance.metrics.v1alpha1.GetTektonMetricsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.repeatedFields_, null);
 };
 goog.inherits(proto.performance.metrics.v1alpha1.GetTektonMetricsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -894,7 +894,9 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.toObject = 
 proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namePipelineRun: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    from: jspb.Message.getFieldWithDefault(msg, 2, "")
+    range: (f = msg.getRange()) && proto.performance.metrics.v1alpha1.Range.toObject(includeInstance, f),
+    page: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    size: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -936,8 +938,17 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.deserializeBinaryFrom
       msg.setNamePipelineRun(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFrom(value);
+      var value = new proto.performance.metrics.v1alpha1.Range;
+      reader.readMessage(value,proto.performance.metrics.v1alpha1.Range.deserializeBinaryFromReader);
+      msg.setRange(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPage(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSize(value);
       break;
     default:
       reader.skipField();
@@ -975,10 +986,25 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.serializeBinaryToWrit
       f
     );
   }
-  f = message.getFrom();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getRange();
+  if (f != null) {
+    writer.writeMessage(
       2,
+      f,
+      proto.performance.metrics.v1alpha1.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -1004,23 +1030,85 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.setNamePipe
 
 
 /**
- * optional string from = 2;
- * @return {string}
+ * optional Range range = 2;
+ * @return {?proto.performance.metrics.v1alpha1.Range}
  */
-proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.getFrom = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.getRange = function() {
+  return /** @type{?proto.performance.metrics.v1alpha1.Range} */ (
+    jspb.Message.getWrapperField(this, proto.performance.metrics.v1alpha1.Range, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.performance.metrics.v1alpha1.Range|undefined} value
  * @return {!proto.performance.metrics.v1alpha1.GetTektonMetricsRequest} returns this
- */
-proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.setFrom = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+*/
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.setRange = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.performance.metrics.v1alpha1.GetTektonMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.clearRange = function() {
+  return this.setRange(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.hasRange = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 page = 3;
+ * @return {number}
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.performance.metrics.v1alpha1.GetTektonMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional int32 size = 4;
+ * @return {number}
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.getSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.performance.metrics.v1alpha1.GetTektonMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsRequest.prototype.setSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.repeatedFields_ = [1];
 
 
 
@@ -1053,7 +1141,8 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.toObject =
  */
 proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
+    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+    performance_metrics_v1alpha1_metrics_pb.TektonMetricItem.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1091,8 +1180,9 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setResult(value);
+      var value = new performance_metrics_v1alpha1_metrics_pb.TektonMetricItem;
+      reader.readMessage(value,performance_metrics_v1alpha1_metrics_pb.TektonMetricItem.deserializeBinaryFromReader);
+      msg.addResults(value);
       break;
     default:
       reader.skipField();
@@ -1123,31 +1213,52 @@ proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.serializeB
  */
 proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResult();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getResultsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
-      f
+      f,
+      performance_metrics_v1alpha1_metrics_pb.TektonMetricItem.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional double result = 1;
- * @return {number}
+ * repeated TektonMetricItem results = 1;
+ * @return {!Array<!proto.performance.metrics.v1alpha1.TektonMetricItem>}
  */
-proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.getResult = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.getResultsList = function() {
+  return /** @type{!Array<!proto.performance.metrics.v1alpha1.TektonMetricItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, performance_metrics_v1alpha1_metrics_pb.TektonMetricItem, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {!Array<!proto.performance.metrics.v1alpha1.TektonMetricItem>} value
+ * @return {!proto.performance.metrics.v1alpha1.GetTektonMetricsResponse} returns this
+*/
+proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.setResultsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.performance.metrics.v1alpha1.TektonMetricItem=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.performance.metrics.v1alpha1.TektonMetricItem}
+ */
+proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.addResults = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.performance.metrics.v1alpha1.TektonMetricItem, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.performance.metrics.v1alpha1.GetTektonMetricsResponse} returns this
  */
-proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.setResult = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.performance.metrics.v1alpha1.GetTektonMetricsResponse.prototype.clearResultsList = function() {
+  return this.setResultsList([]);
 };
 
 

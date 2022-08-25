@@ -8,8 +8,26 @@ public interface GetTektonMetricsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>double result = 1 [json_name = "result"];</code>
-   * @return The result.
+   * <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
    */
-  double getResult();
+  java.util.List<io.cuemby.performance.metrics.v1alpha1.TektonMetricItem> 
+      getResultsList();
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
+   */
+  io.cuemby.performance.metrics.v1alpha1.TektonMetricItem getResults(int index);
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
+   */
+  int getResultsCount();
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
+   */
+  java.util.List<? extends io.cuemby.performance.metrics.v1alpha1.TektonMetricItemOrBuilder> 
+      getResultsOrBuilderList();
+  /**
+   * <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
+   */
+  io.cuemby.performance.metrics.v1alpha1.TektonMetricItemOrBuilder getResultsOrBuilder(
+      int index);
 }

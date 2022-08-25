@@ -20,14 +20,29 @@ public interface GetTektonMetricsRequestOrBuilder extends
       getNamePipelineRunBytes();
 
   /**
-   * <code>string from = 2 [json_name = "from"];</code>
-   * @return The from.
+   * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+   * @return Whether the range field is set.
    */
-  java.lang.String getFrom();
+  boolean hasRange();
   /**
-   * <code>string from = 2 [json_name = "from"];</code>
-   * @return The bytes for from.
+   * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+   * @return The range.
    */
-  com.google.protobuf.ByteString
-      getFromBytes();
+  io.cuemby.performance.metrics.v1alpha1.Range getRange();
+  /**
+   * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+   */
+  io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder getRangeOrBuilder();
+
+  /**
+   * <code>int32 page = 3 [json_name = "page"];</code>
+   * @return The page.
+   */
+  int getPage();
+
+  /**
+   * <code>int32 size = 4 [json_name = "size"];</code>
+   * @return The size.
+   */
+  int getSize();
 }

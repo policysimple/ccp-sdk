@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private GetTektonMetricsRequest() {
     namePipelineRun_ = "";
-    from_ = "";
   }
 
   @java.lang.Override
@@ -57,9 +56,26 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            io.cuemby.performance.metrics.v1alpha1.Range.Builder subBuilder = null;
+            if (range_ != null) {
+              subBuilder = range_.toBuilder();
+            }
+            range_ = input.readMessage(io.cuemby.performance.metrics.v1alpha1.Range.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(range_);
+              range_ = subBuilder.buildPartial();
+            }
 
-            from_ = s;
+            break;
+          }
+          case 24: {
+
+            page_ = input.readInt32();
+            break;
+          }
+          case 32: {
+
+            size_ = input.readInt32();
             break;
           }
           default: {
@@ -132,42 +148,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FROM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object from_;
+  public static final int RANGE_FIELD_NUMBER = 2;
+  private io.cuemby.performance.metrics.v1alpha1.Range range_;
   /**
-   * <code>string from = 2 [json_name = "from"];</code>
-   * @return The from.
+   * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+   * @return Whether the range field is set.
    */
   @java.lang.Override
-  public java.lang.String getFrom() {
-    java.lang.Object ref = from_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      from_ = s;
-      return s;
-    }
+  public boolean hasRange() {
+    return range_ != null;
   }
   /**
-   * <code>string from = 2 [json_name = "from"];</code>
-   * @return The bytes for from.
+   * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+   * @return The range.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFromBytes() {
-    java.lang.Object ref = from_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      from_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public io.cuemby.performance.metrics.v1alpha1.Range getRange() {
+    return range_ == null ? io.cuemby.performance.metrics.v1alpha1.Range.getDefaultInstance() : range_;
+  }
+  /**
+   * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder getRangeOrBuilder() {
+    return getRange();
+  }
+
+  public static final int PAGE_FIELD_NUMBER = 3;
+  private int page_;
+  /**
+   * <code>int32 page = 3 [json_name = "page"];</code>
+   * @return The page.
+   */
+  @java.lang.Override
+  public int getPage() {
+    return page_;
+  }
+
+  public static final int SIZE_FIELD_NUMBER = 4;
+  private int size_;
+  /**
+   * <code>int32 size = 4 [json_name = "size"];</code>
+   * @return The size.
+   */
+  @java.lang.Override
+  public int getSize() {
+    return size_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -187,8 +213,14 @@ private static final long serialVersionUID = 0L;
     if (!getNamePipelineRunBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namePipelineRun_);
     }
-    if (!getFromBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, from_);
+    if (range_ != null) {
+      output.writeMessage(2, getRange());
+    }
+    if (page_ != 0) {
+      output.writeInt32(3, page_);
+    }
+    if (size_ != 0) {
+      output.writeInt32(4, size_);
     }
     unknownFields.writeTo(output);
   }
@@ -202,8 +234,17 @@ private static final long serialVersionUID = 0L;
     if (!getNamePipelineRunBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namePipelineRun_);
     }
-    if (!getFromBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, from_);
+    if (range_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getRange());
+    }
+    if (page_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, page_);
+    }
+    if (size_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, size_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,8 +263,15 @@ private static final long serialVersionUID = 0L;
 
     if (!getNamePipelineRun()
         .equals(other.getNamePipelineRun())) return false;
-    if (!getFrom()
-        .equals(other.getFrom())) return false;
+    if (hasRange() != other.hasRange()) return false;
+    if (hasRange()) {
+      if (!getRange()
+          .equals(other.getRange())) return false;
+    }
+    if (getPage()
+        != other.getPage()) return false;
+    if (getSize()
+        != other.getSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,8 +285,14 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_PIPELINE_RUN_FIELD_NUMBER;
     hash = (53 * hash) + getNamePipelineRun().hashCode();
-    hash = (37 * hash) + FROM_FIELD_NUMBER;
-    hash = (53 * hash) + getFrom().hashCode();
+    if (hasRange()) {
+      hash = (37 * hash) + RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRange().hashCode();
+    }
+    hash = (37 * hash) + PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPage();
+    hash = (37 * hash) + SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getSize();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -374,7 +428,15 @@ private static final long serialVersionUID = 0L;
       super.clear();
       namePipelineRun_ = "";
 
-      from_ = "";
+      if (rangeBuilder_ == null) {
+        range_ = null;
+      } else {
+        range_ = null;
+        rangeBuilder_ = null;
+      }
+      page_ = 0;
+
+      size_ = 0;
 
       return this;
     }
@@ -403,7 +465,13 @@ private static final long serialVersionUID = 0L;
     public io.cuemby.performance.metrics.v1alpha1.GetTektonMetricsRequest buildPartial() {
       io.cuemby.performance.metrics.v1alpha1.GetTektonMetricsRequest result = new io.cuemby.performance.metrics.v1alpha1.GetTektonMetricsRequest(this);
       result.namePipelineRun_ = namePipelineRun_;
-      result.from_ = from_;
+      if (rangeBuilder_ == null) {
+        result.range_ = range_;
+      } else {
+        result.range_ = rangeBuilder_.build();
+      }
+      result.page_ = page_;
+      result.size_ = size_;
       onBuilt();
       return result;
     }
@@ -456,9 +524,14 @@ private static final long serialVersionUID = 0L;
         namePipelineRun_ = other.namePipelineRun_;
         onChanged();
       }
-      if (!other.getFrom().isEmpty()) {
-        from_ = other.from_;
-        onChanged();
+      if (other.hasRange()) {
+        mergeRange(other.getRange());
+      }
+      if (other.getPage() != 0) {
+        setPage(other.getPage());
+      }
+      if (other.getSize() != 0) {
+        setSize(other.getSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -565,78 +638,183 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object from_ = "";
+    private io.cuemby.performance.metrics.v1alpha1.Range range_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.performance.metrics.v1alpha1.Range, io.cuemby.performance.metrics.v1alpha1.Range.Builder, io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder> rangeBuilder_;
     /**
-     * <code>string from = 2 [json_name = "from"];</code>
-     * @return The from.
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     * @return Whether the range field is set.
      */
-    public java.lang.String getFrom() {
-      java.lang.Object ref = from_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        from_ = s;
-        return s;
+    public boolean hasRange() {
+      return rangeBuilder_ != null || range_ != null;
+    }
+    /**
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     * @return The range.
+     */
+    public io.cuemby.performance.metrics.v1alpha1.Range getRange() {
+      if (rangeBuilder_ == null) {
+        return range_ == null ? io.cuemby.performance.metrics.v1alpha1.Range.getDefaultInstance() : range_;
       } else {
-        return (java.lang.String) ref;
+        return rangeBuilder_.getMessage();
       }
     }
     /**
-     * <code>string from = 2 [json_name = "from"];</code>
-     * @return The bytes for from.
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
      */
-    public com.google.protobuf.ByteString
-        getFromBytes() {
-      java.lang.Object ref = from_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        from_ = b;
-        return b;
+    public Builder setRange(io.cuemby.performance.metrics.v1alpha1.Range value) {
+      if (rangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        range_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        rangeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     */
+    public Builder setRange(
+        io.cuemby.performance.metrics.v1alpha1.Range.Builder builderForValue) {
+      if (rangeBuilder_ == null) {
+        range_ = builderForValue.build();
+        onChanged();
+      } else {
+        rangeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     */
+    public Builder mergeRange(io.cuemby.performance.metrics.v1alpha1.Range value) {
+      if (rangeBuilder_ == null) {
+        if (range_ != null) {
+          range_ =
+            io.cuemby.performance.metrics.v1alpha1.Range.newBuilder(range_).mergeFrom(value).buildPartial();
+        } else {
+          range_ = value;
+        }
+        onChanged();
+      } else {
+        rangeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     */
+    public Builder clearRange() {
+      if (rangeBuilder_ == null) {
+        range_ = null;
+        onChanged();
+      } else {
+        range_ = null;
+        rangeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.Range.Builder getRangeBuilder() {
+      
+      onChanged();
+      return getRangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     */
+    public io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder getRangeOrBuilder() {
+      if (rangeBuilder_ != null) {
+        return rangeBuilder_.getMessageOrBuilder();
+      } else {
+        return range_ == null ?
+            io.cuemby.performance.metrics.v1alpha1.Range.getDefaultInstance() : range_;
       }
     }
     /**
-     * <code>string from = 2 [json_name = "from"];</code>
-     * @param value The from to set.
+     * <code>.performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.performance.metrics.v1alpha1.Range, io.cuemby.performance.metrics.v1alpha1.Range.Builder, io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder> 
+        getRangeFieldBuilder() {
+      if (rangeBuilder_ == null) {
+        rangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.performance.metrics.v1alpha1.Range, io.cuemby.performance.metrics.v1alpha1.Range.Builder, io.cuemby.performance.metrics.v1alpha1.RangeOrBuilder>(
+                getRange(),
+                getParentForChildren(),
+                isClean());
+        range_ = null;
+      }
+      return rangeBuilder_;
+    }
+
+    private int page_ ;
+    /**
+     * <code>int32 page = 3 [json_name = "page"];</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public int getPage() {
+      return page_;
+    }
+    /**
+     * <code>int32 page = 3 [json_name = "page"];</code>
+     * @param value The page to set.
      * @return This builder for chaining.
      */
-    public Builder setFrom(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      from_ = value;
+    public Builder setPage(int value) {
+      
+      page_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string from = 2 [json_name = "from"];</code>
+     * <code>int32 page = 3 [json_name = "page"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearFrom() {
+    public Builder clearPage() {
       
-      from_ = getDefaultInstance().getFrom();
+      page_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int size_ ;
+    /**
+     * <code>int32 size = 4 [json_name = "size"];</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public int getSize() {
+      return size_;
+    }
+    /**
+     * <code>int32 size = 4 [json_name = "size"];</code>
+     * @param value The size to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSize(int value) {
+      
+      size_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string from = 2 [json_name = "from"];</code>
-     * @param value The bytes for from to set.
+     * <code>int32 size = 4 [json_name = "size"];</code>
      * @return This builder for chaining.
      */
-    public Builder setFromBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public Builder clearSize() {
       
-      from_ = value;
+      size_ = 0;
       onChanged();
       return this;
     }

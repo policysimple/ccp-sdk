@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetTektonMetricsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>double result = 1 [json_name = "result"];</code>
+     * Generated from protobuf field <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
      */
-    protected $result = 0.0;
+    private $results;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetTektonMetricsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type float $result
+     *     @type \Performance\Metrics\V1Alpha1\TektonMetricItem[]|\Google\Protobuf\Internal\RepeatedField $results
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetTektonMetricsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double result = 1 [json_name = "result"];</code>
-     * @return float
+     * Generated from protobuf field <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getResult()
+    public function getResults()
     {
-        return $this->result;
+        return $this->results;
     }
 
     /**
-     * Generated from protobuf field <code>double result = 1 [json_name = "result"];</code>
-     * @param float $var
+     * Generated from protobuf field <code>repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];</code>
+     * @param \Performance\Metrics\V1Alpha1\TektonMetricItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResults($var)
     {
-        GPBUtil::checkDouble($var);
-        $this->result = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Performance\Metrics\V1Alpha1\TektonMetricItem::class);
+        $this->results = $arr;
 
         return $this;
     }

@@ -846,7 +846,9 @@ class GetTektonMetricsRequest final :
 
   enum : int {
     kNamePipelineRunFieldNumber = 1,
-    kFromFieldNumber = 2,
+    kRangeFieldNumber = 2,
+    kPageFieldNumber = 3,
+    kSizeFieldNumber = 4,
   };
   // string name_pipeline_run = 1 [json_name = "namePipelineRun"];
   void clear_name_pipeline_run();
@@ -862,18 +864,40 @@ class GetTektonMetricsRequest final :
   std::string* _internal_mutable_name_pipeline_run();
   public:
 
-  // string from = 2 [json_name = "from"];
-  void clear_from();
-  const std::string& from() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_from(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_from();
-  PROTOBUF_MUST_USE_RESULT std::string* release_from();
-  void set_allocated_from(std::string* from);
+  // .performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];
+  bool has_range() const;
   private:
-  const std::string& _internal_from() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_from(const std::string& value);
-  std::string* _internal_mutable_from();
+  bool _internal_has_range() const;
+  public:
+  void clear_range();
+  const ::performance::metrics::v1alpha1::Range& range() const;
+  PROTOBUF_MUST_USE_RESULT ::performance::metrics::v1alpha1::Range* release_range();
+  ::performance::metrics::v1alpha1::Range* mutable_range();
+  void set_allocated_range(::performance::metrics::v1alpha1::Range* range);
+  private:
+  const ::performance::metrics::v1alpha1::Range& _internal_range() const;
+  ::performance::metrics::v1alpha1::Range* _internal_mutable_range();
+  public:
+  void unsafe_arena_set_allocated_range(
+      ::performance::metrics::v1alpha1::Range* range);
+  ::performance::metrics::v1alpha1::Range* unsafe_arena_release_range();
+
+  // int32 page = 3 [json_name = "page"];
+  void clear_page();
+  ::PROTOBUF_NAMESPACE_ID::int32 page() const;
+  void set_page(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_page() const;
+  void _internal_set_page(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 size = 4 [json_name = "size"];
+  void clear_size();
+  ::PROTOBUF_NAMESPACE_ID::int32 size() const;
+  void set_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_size() const;
+  void _internal_set_size(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:performance.metrics.v1alpha1.GetTektonMetricsRequest)
@@ -884,7 +908,9 @@ class GetTektonMetricsRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_pipeline_run_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+  ::performance::metrics::v1alpha1::Range* range_;
+  ::PROTOBUF_NAMESPACE_ID::int32 page_;
+  ::PROTOBUF_NAMESPACE_ID::int32 size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto;
 };
@@ -1005,16 +1031,25 @@ class GetTektonMetricsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kResultsFieldNumber = 1,
   };
-  // double result = 1 [json_name = "result"];
-  void clear_result();
-  double result() const;
-  void set_result(double value);
+  // repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];
+  int results_size() const;
   private:
-  double _internal_result() const;
-  void _internal_set_result(double value);
+  int _internal_results_size() const;
   public:
+  void clear_results();
+  ::performance::metrics::v1alpha1::TektonMetricItem* mutable_results(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::metrics::v1alpha1::TektonMetricItem >*
+      mutable_results();
+  private:
+  const ::performance::metrics::v1alpha1::TektonMetricItem& _internal_results(int index) const;
+  ::performance::metrics::v1alpha1::TektonMetricItem* _internal_add_results();
+  public:
+  const ::performance::metrics::v1alpha1::TektonMetricItem& results(int index) const;
+  ::performance::metrics::v1alpha1::TektonMetricItem* add_results();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::metrics::v1alpha1::TektonMetricItem >&
+      results() const;
 
   // @@protoc_insertion_point(class_scope:performance.metrics.v1alpha1.GetTektonMetricsResponse)
  private:
@@ -1023,7 +1058,7 @@ class GetTektonMetricsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  double result_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::metrics::v1alpha1::TektonMetricItem > results_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto;
 };
@@ -1564,74 +1599,175 @@ inline void GetTektonMetricsRequest::set_allocated_name_pipeline_run(std::string
   // @@protoc_insertion_point(field_set_allocated:performance.metrics.v1alpha1.GetTektonMetricsRequest.name_pipeline_run)
 }
 
-// string from = 2 [json_name = "from"];
-inline void GetTektonMetricsRequest::clear_from() {
-  from_.ClearToEmpty();
+// .performance.metrics.v1alpha1.Range range = 2 [json_name = "range"];
+inline bool GetTektonMetricsRequest::_internal_has_range() const {
+  return this != internal_default_instance() && range_ != nullptr;
 }
-inline const std::string& GetTektonMetricsRequest::from() const {
-  // @@protoc_insertion_point(field_get:performance.metrics.v1alpha1.GetTektonMetricsRequest.from)
-  return _internal_from();
+inline bool GetTektonMetricsRequest::has_range() const {
+  return _internal_has_range();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GetTektonMetricsRequest::set_from(ArgT0&& arg0, ArgT... args) {
- 
- from_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:performance.metrics.v1alpha1.GetTektonMetricsRequest.from)
+inline void GetTektonMetricsRequest::clear_range() {
+  if (GetArenaForAllocation() == nullptr && range_ != nullptr) {
+    delete range_;
+  }
+  range_ = nullptr;
 }
-inline std::string* GetTektonMetricsRequest::mutable_from() {
-  std::string* _s = _internal_mutable_from();
-  // @@protoc_insertion_point(field_mutable:performance.metrics.v1alpha1.GetTektonMetricsRequest.from)
-  return _s;
+inline const ::performance::metrics::v1alpha1::Range& GetTektonMetricsRequest::_internal_range() const {
+  const ::performance::metrics::v1alpha1::Range* p = range_;
+  return p != nullptr ? *p : reinterpret_cast<const ::performance::metrics::v1alpha1::Range&>(
+      ::performance::metrics::v1alpha1::_Range_default_instance_);
 }
-inline const std::string& GetTektonMetricsRequest::_internal_from() const {
-  return from_.Get();
+inline const ::performance::metrics::v1alpha1::Range& GetTektonMetricsRequest::range() const {
+  // @@protoc_insertion_point(field_get:performance.metrics.v1alpha1.GetTektonMetricsRequest.range)
+  return _internal_range();
 }
-inline void GetTektonMetricsRequest::_internal_set_from(const std::string& value) {
-  
-  from_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GetTektonMetricsRequest::_internal_mutable_from() {
-  
-  return from_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GetTektonMetricsRequest::release_from() {
-  // @@protoc_insertion_point(field_release:performance.metrics.v1alpha1.GetTektonMetricsRequest.from)
-  return from_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GetTektonMetricsRequest::set_allocated_from(std::string* from) {
-  if (from != nullptr) {
+inline void GetTektonMetricsRequest::unsafe_arena_set_allocated_range(
+    ::performance::metrics::v1alpha1::Range* range) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(range_);
+  }
+  range_ = range;
+  if (range) {
     
   } else {
     
   }
-  from_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:performance.metrics.v1alpha1.GetTektonMetricsRequest.from)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:performance.metrics.v1alpha1.GetTektonMetricsRequest.range)
+}
+inline ::performance::metrics::v1alpha1::Range* GetTektonMetricsRequest::release_range() {
+  
+  ::performance::metrics::v1alpha1::Range* temp = range_;
+  range_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::performance::metrics::v1alpha1::Range* GetTektonMetricsRequest::unsafe_arena_release_range() {
+  // @@protoc_insertion_point(field_release:performance.metrics.v1alpha1.GetTektonMetricsRequest.range)
+  
+  ::performance::metrics::v1alpha1::Range* temp = range_;
+  range_ = nullptr;
+  return temp;
+}
+inline ::performance::metrics::v1alpha1::Range* GetTektonMetricsRequest::_internal_mutable_range() {
+  
+  if (range_ == nullptr) {
+    auto* p = CreateMaybeMessage<::performance::metrics::v1alpha1::Range>(GetArenaForAllocation());
+    range_ = p;
+  }
+  return range_;
+}
+inline ::performance::metrics::v1alpha1::Range* GetTektonMetricsRequest::mutable_range() {
+  ::performance::metrics::v1alpha1::Range* _msg = _internal_mutable_range();
+  // @@protoc_insertion_point(field_mutable:performance.metrics.v1alpha1.GetTektonMetricsRequest.range)
+  return _msg;
+}
+inline void GetTektonMetricsRequest::set_allocated_range(::performance::metrics::v1alpha1::Range* range) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete range_;
+  }
+  if (range) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::performance::metrics::v1alpha1::Range>::GetOwningArena(range);
+    if (message_arena != submessage_arena) {
+      range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, range, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  range_ = range;
+  // @@protoc_insertion_point(field_set_allocated:performance.metrics.v1alpha1.GetTektonMetricsRequest.range)
+}
+
+// int32 page = 3 [json_name = "page"];
+inline void GetTektonMetricsRequest::clear_page() {
+  page_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetTektonMetricsRequest::_internal_page() const {
+  return page_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetTektonMetricsRequest::page() const {
+  // @@protoc_insertion_point(field_get:performance.metrics.v1alpha1.GetTektonMetricsRequest.page)
+  return _internal_page();
+}
+inline void GetTektonMetricsRequest::_internal_set_page(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  page_ = value;
+}
+inline void GetTektonMetricsRequest::set_page(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_page(value);
+  // @@protoc_insertion_point(field_set:performance.metrics.v1alpha1.GetTektonMetricsRequest.page)
+}
+
+// int32 size = 4 [json_name = "size"];
+inline void GetTektonMetricsRequest::clear_size() {
+  size_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetTektonMetricsRequest::_internal_size() const {
+  return size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetTektonMetricsRequest::size() const {
+  // @@protoc_insertion_point(field_get:performance.metrics.v1alpha1.GetTektonMetricsRequest.size)
+  return _internal_size();
+}
+inline void GetTektonMetricsRequest::_internal_set_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  size_ = value;
+}
+inline void GetTektonMetricsRequest::set_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_size(value);
+  // @@protoc_insertion_point(field_set:performance.metrics.v1alpha1.GetTektonMetricsRequest.size)
 }
 
 // -------------------------------------------------------------------
 
 // GetTektonMetricsResponse
 
-// double result = 1 [json_name = "result"];
-inline void GetTektonMetricsResponse::clear_result() {
-  result_ = 0;
+// repeated .performance.metrics.v1alpha1.TektonMetricItem results = 1 [json_name = "results"];
+inline int GetTektonMetricsResponse::_internal_results_size() const {
+  return results_.size();
 }
-inline double GetTektonMetricsResponse::_internal_result() const {
-  return result_;
+inline int GetTektonMetricsResponse::results_size() const {
+  return _internal_results_size();
 }
-inline double GetTektonMetricsResponse::result() const {
-  // @@protoc_insertion_point(field_get:performance.metrics.v1alpha1.GetTektonMetricsResponse.result)
-  return _internal_result();
+inline ::performance::metrics::v1alpha1::TektonMetricItem* GetTektonMetricsResponse::mutable_results(int index) {
+  // @@protoc_insertion_point(field_mutable:performance.metrics.v1alpha1.GetTektonMetricsResponse.results)
+  return results_.Mutable(index);
 }
-inline void GetTektonMetricsResponse::_internal_set_result(double value) {
-  
-  result_ = value;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::metrics::v1alpha1::TektonMetricItem >*
+GetTektonMetricsResponse::mutable_results() {
+  // @@protoc_insertion_point(field_mutable_list:performance.metrics.v1alpha1.GetTektonMetricsResponse.results)
+  return &results_;
 }
-inline void GetTektonMetricsResponse::set_result(double value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:performance.metrics.v1alpha1.GetTektonMetricsResponse.result)
+inline const ::performance::metrics::v1alpha1::TektonMetricItem& GetTektonMetricsResponse::_internal_results(int index) const {
+  return results_.Get(index);
+}
+inline const ::performance::metrics::v1alpha1::TektonMetricItem& GetTektonMetricsResponse::results(int index) const {
+  // @@protoc_insertion_point(field_get:performance.metrics.v1alpha1.GetTektonMetricsResponse.results)
+  return _internal_results(index);
+}
+inline ::performance::metrics::v1alpha1::TektonMetricItem* GetTektonMetricsResponse::_internal_add_results() {
+  return results_.Add();
+}
+inline ::performance::metrics::v1alpha1::TektonMetricItem* GetTektonMetricsResponse::add_results() {
+  ::performance::metrics::v1alpha1::TektonMetricItem* _add = _internal_add_results();
+  // @@protoc_insertion_point(field_add:performance.metrics.v1alpha1.GetTektonMetricsResponse.results)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::performance::metrics::v1alpha1::TektonMetricItem >&
+GetTektonMetricsResponse::results() const {
+  // @@protoc_insertion_point(field_list:performance.metrics.v1alpha1.GetTektonMetricsResponse.results)
+  return results_;
 }
 
 #ifdef __GNUC__
