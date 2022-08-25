@@ -7,20 +7,20 @@ import (
 	"sync"
 	"time"
 
-	projectspkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1"
+	projectspkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
 
-var client projectspkgv1.AccountServiceClient
+var client projectspkgv1.ProjectServiceClient
 
 var doOnce sync.Once
 
 var projectServiceUri string
 var projectServiceTimeout string
 
-func init(){
-	doOnce.Do(func(){
+func init() {
+	doOnce.Do(func() {
 		projectServiceTimeout = os.Getenv("PROJECT_SERVICE_TIMEOUT")
 
 		if projectServiceTimeout == "" {
@@ -32,31 +32,30 @@ func init(){
 		if err != nil {
 			panic(err)
 		}
-		client = projectspkgv1.NewAccountServiceClient(con)
+		client = projectspkgv1.NewProjectServiceClient(con)
 	})
 
+}
 
+func ListProjects(orgId uint32) (response *projectspkgv1.ListProjectResponse, err error) {
+	log.Println("List Project SDK")
+	dur, err := time.ParseDuration(projectServiceTimeout)
+
+	if err != nil {
+		return nil, err
 	}
 
-	func ListProjects(orgId uint32) (response *projectspkgv1.ListProjectResponse, err error){
-		log.Println("List Project SDK")
-		dur, err := time.ParseDuration(projectServiceTimeout)
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(dur))
+	defer cancel()
 
-		if err != nil{
-			return nil, err
-		}
+	response, err = client.ListProject(ctx, &projectspkgv1.ListProjectRequest{
+		OrganizationId: orgId,
+	})
 
-		ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(dur))
-		defer cancel()
-
-		response, err = client.ListProject(ctx, &projectspkgv1.ListProjectRequest{
-			OrganizationId: orgId,
-		})
-
-		if err != nil{
-			log.Println("SDK Error", err)
-			return nil, err
-		}
-
-		return response, nil
+	if err != nil {
+		log.Println("SDK Error", err)
+		return nil, err
 	}
+
+	return response, nil
+}

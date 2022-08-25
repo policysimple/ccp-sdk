@@ -21,6 +21,10 @@ class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
      */
     protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     */
+    protected $project = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $organization_id
      *     @type string $project_id
+     *     @type \Payment\V1alpha1\Project $project
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,38 @@ class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * @return \Payment\V1alpha1\Project|null
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+
+    public function hasProject()
+    {
+        return isset($this->project);
+    }
+
+    public function clearProject()
+    {
+        unset($this->project);
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * @param \Payment\V1alpha1\Project $var
+     * @return $this
+     */
+    public function setProject($var)
+    {
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Project::class);
+        $this->project = $var;
 
         return $this;
     }

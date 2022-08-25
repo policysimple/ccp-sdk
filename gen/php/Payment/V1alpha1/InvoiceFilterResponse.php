@@ -14,23 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
      */
-    protected $customer_list = null;
+    protected $customer = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.InvoiceList invoice_list = 2 [json_name = "invoiceList"];</code>
-     */
-    protected $invoice_list = null;
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 3 [json_name = "bilingList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 2 [json_name = "bilingList"];</code>
      */
     protected $biling_list = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];</code>
-     */
-    protected $suscription_list = null;
-    /**
-     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -40,10 +32,8 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\CustomerList $customer_list
-     *     @type \Payment\V1alpha1\InvoiceList $invoice_list
+     *     @type \Payment\V1alpha1\Customer $customer
      *     @type \Payment\V1alpha1\BilingList $biling_list
-     *     @type \Payment\V1alpha1\SuscriptionList $suscription_list
      *     @type string $status
      * }
      */
@@ -53,71 +43,39 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @return \Payment\V1alpha1\CustomerList|null
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @return \Payment\V1alpha1\Customer|null
      */
-    public function getCustomerList()
+    public function getCustomer()
     {
-        return $this->customer_list;
+        return $this->customer;
     }
 
-    public function hasCustomerList()
+    public function hasCustomer()
     {
-        return isset($this->customer_list);
+        return isset($this->customer);
     }
 
-    public function clearCustomerList()
+    public function clearCustomer()
     {
-        unset($this->customer_list);
+        unset($this->customer);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 1 [json_name = "customerList"];</code>
-     * @param \Payment\V1alpha1\CustomerList $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * @param \Payment\V1alpha1\Customer $var
      * @return $this
      */
-    public function setCustomerList($var)
+    public function setCustomer($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\CustomerList::class);
-        $this->customer_list = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
+        $this->customer = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.InvoiceList invoice_list = 2 [json_name = "invoiceList"];</code>
-     * @return \Payment\V1alpha1\InvoiceList|null
-     */
-    public function getInvoiceList()
-    {
-        return $this->invoice_list;
-    }
-
-    public function hasInvoiceList()
-    {
-        return isset($this->invoice_list);
-    }
-
-    public function clearInvoiceList()
-    {
-        unset($this->invoice_list);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.InvoiceList invoice_list = 2 [json_name = "invoiceList"];</code>
-     * @param \Payment\V1alpha1\InvoiceList $var
-     * @return $this
-     */
-    public function setInvoiceList($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\InvoiceList::class);
-        $this->invoice_list = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 3 [json_name = "bilingList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 2 [json_name = "bilingList"];</code>
      * @return \Payment\V1alpha1\BilingList|null
      */
     public function getBilingList()
@@ -136,7 +94,7 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 3 [json_name = "bilingList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BilingList biling_list = 2 [json_name = "bilingList"];</code>
      * @param \Payment\V1alpha1\BilingList $var
      * @return $this
      */
@@ -149,39 +107,7 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];</code>
-     * @return \Payment\V1alpha1\SuscriptionList|null
-     */
-    public function getSuscriptionList()
-    {
-        return $this->suscription_list;
-    }
-
-    public function hasSuscriptionList()
-    {
-        return isset($this->suscription_list);
-    }
-
-    public function clearSuscriptionList()
-    {
-        unset($this->suscription_list);
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.SuscriptionList suscription_list = 4 [json_name = "suscriptionList"];</code>
-     * @param \Payment\V1alpha1\SuscriptionList $var
-     * @return $this
-     */
-    public function setSuscriptionList($var)
-    {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\SuscriptionList::class);
-        $this->suscription_list = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -190,7 +116,7 @@ class InvoiceFilterResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

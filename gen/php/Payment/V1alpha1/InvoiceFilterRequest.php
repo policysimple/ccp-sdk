@@ -30,7 +30,23 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      */
     protected $month = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>string customer_id = 5 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>string project_id = 6 [json_name = "projectId"];</code>
+     */
+    protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>double cpu = 7 [json_name = "cpu"];</code>
+     */
+    protected $cpu = 0.0;
+    /**
+     * Generated from protobuf field <code>double ram = 8 [json_name = "ram"];</code>
+     */
+    protected $ram = 0.0;
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 9 [json_name = "customerList"];</code>
      */
     protected $customer_list = null;
 
@@ -44,6 +60,10 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      *     @type string $invoice_id
      *     @type string $year
      *     @type string $month
+     *     @type string $customer_id
+     *     @type string $project_id
+     *     @type float $cpu
+     *     @type float $ram
      *     @type \Payment\V1alpha1\CustomerList $customer_list
      * }
      */
@@ -141,7 +161,95 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>string customer_id = 5 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 5 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 6 [json_name = "projectId"];</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 6 [json_name = "projectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double cpu = 7 [json_name = "cpu"];</code>
+     * @return float
+     */
+    public function getCpu()
+    {
+        return $this->cpu;
+    }
+
+    /**
+     * Generated from protobuf field <code>double cpu = 7 [json_name = "cpu"];</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCpu($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->cpu = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double ram = 8 [json_name = "ram"];</code>
+     * @return float
+     */
+    public function getRam()
+    {
+        return $this->ram;
+    }
+
+    /**
+     * Generated from protobuf field <code>double ram = 8 [json_name = "ram"];</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setRam($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->ram = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 9 [json_name = "customerList"];</code>
      * @return \Payment\V1alpha1\CustomerList|null
      */
     public function getCustomerList()
@@ -160,7 +268,7 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 5 [json_name = "customerList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 9 [json_name = "customerList"];</code>
      * @param \Payment\V1alpha1\CustomerList $var
      * @return $this
      */

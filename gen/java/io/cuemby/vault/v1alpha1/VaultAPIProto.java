@@ -85,16 +85,17 @@ public final class VaultAPIProto {
       "\tR\rapplicationId\022.\n\006secret\030\005 \001(\0132\026.vault" +
       ".v1alpha1.SecretR\006secret\">\n\024UpdateSecret" +
       "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error\"\242\001\n\023DeleteSecretRequest\022\'\n\017orga" +
+      "\tR\005error\"\266\001\n\023DeleteSecretRequest\022\'\n\017orga" +
       "nization_id\030\001 \001(\rR\016organizationId\022\035\n\npro" +
       "ject_id\030\002 \001(\rR\tprojectId\022%\n\016application_" +
       "id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001" +
-      "(\tR\tnamespace\">\n\024DeleteSecretResponse\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\237\001" +
-      "\n\020GetSecretRequest\022\'\n\017organization_id\030\001 " +
-      "\001(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\rR" +
-      "\tprojectId\022%\n\016application_id\030\003 \001(\tR\rappl" +
-      "icationId\022\034\n\tnamespace\030\004 \001(\tR\tnamespace\"" +
+      "(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\">\n\024Del" +
+      "eteSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
+      "rror\030\002 \001(\tR\005error\"\263\001\n\020GetSecretRequest\022\'" +
+      "\n\017organization_id\030\001 \001(\rR\016organizationId\022" +
+      "\035\n\nproject_id\030\002 \001(\rR\tprojectId\022%\n\016applic" +
+      "ation_id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespa" +
+      "ce\030\004 \001(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\"" +
       "Y\n\021GetSecretResponse\022.\n\006secret\030\001 \001(\0132\026.v" +
       "ault.v1alpha1.SecretR\006secret\022\024\n\005error\030\002 " +
       "\001(\tR\005error\"D\n\031DeleteOrganizationRequest\022" +
@@ -152,7 +153,7 @@ public final class VaultAPIProto {
     internal_static_vault_v1alpha1_DeleteSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", "Namespace", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", "Namespace", "Name", });
     internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_vault_v1alpha1_DeleteSecretResponse_fieldAccessorTable = new
@@ -164,7 +165,7 @@ public final class VaultAPIProto {
     internal_static_vault_v1alpha1_GetSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetSecretRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", "Namespace", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", "Namespace", "Name", });
     internal_static_vault_v1alpha1_GetSecretResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_vault_v1alpha1_GetSecretResponse_fieldAccessorTable = new
