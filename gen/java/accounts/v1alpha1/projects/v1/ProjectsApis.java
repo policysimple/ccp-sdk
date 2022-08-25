@@ -26,7 +26,7 @@ public final class ProjectsApis {
       "\n.accounts/v1alpha1/projects/projects_ap" +
       "is.proto\022\035accounts.v1alpha1.projects.v1\032" +
       ")accounts/v1alpha1/projects/projects.pro" +
-      "to2\232\007\n\016ProjectService\022z\n\rCreateProject\0223" +
+      "to2\257\010\n\016ProjectService\022z\n\rCreateProject\0223" +
       ".accounts.v1alpha1.projects.v1.CreatePro" +
       "jectRequest\0324.accounts.v1alpha1.projects" +
       ".v1.CreateProjectResponse\022z\n\rGetOneProje" +
@@ -41,16 +41,20 @@ public final class ProjectsApis {
       "ha1.projects.v1.DeleteProjectResponse\022t\n" +
       "\013ListProject\0221.accounts.v1alpha1.project" +
       "s.v1.ListProjectRequest\0322.accounts.v1alp" +
-      "ha1.projects.v1.ListProjectResponse\022\214\001\n\023" +
-      "DeleteUserByProject\0229.accounts.v1alpha1." +
-      "projects.v1.DeleteUserByProjectRequest\032:" +
-      ".accounts.v1alpha1.projects.v1.DeleteUse" +
-      "rByProjectResponse\022\222\001\n\025EditRoleUserByPro" +
-      "ject\022;.accounts.v1alpha1.projects.v1.Edi" +
-      "tRoleUserByProjectRequest\032<.accounts.v1a" +
-      "lpha1.projects.v1.EditRoleUserByProjectR" +
-      "esponseB=Z;github.com/cuemby/ccp-sdk/gen" +
-      "/go/accounts/v1alpha1/projectsb\006proto3"
+      "ha1.projects.v1.ListProjectResponse\022\222\001\n\025" +
+      "ListProjectPagination\022;.accounts.v1alpha" +
+      "1.projects.v1.ListProjectPaginationReque" +
+      "st\032<.accounts.v1alpha1.projects.v1.ListP" +
+      "rojectPaginationResponse\022\214\001\n\023DeleteUserB" +
+      "yProject\0229.accounts.v1alpha1.projects.v1" +
+      ".DeleteUserByProjectRequest\032:.accounts.v" +
+      "1alpha1.projects.v1.DeleteUserByProjectR" +
+      "esponse\022\222\001\n\025EditRoleUserByProject\022;.acco" +
+      "unts.v1alpha1.projects.v1.EditRoleUserBy" +
+      "ProjectRequest\032<.accounts.v1alpha1.proje" +
+      "cts.v1.EditRoleUserByProjectResponseB=Z;" +
+      "github.com/cuemby/ccp-sdk/gen/go/account" +
+      "s/v1alpha1/projectsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

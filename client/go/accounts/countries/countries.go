@@ -1,4 +1,4 @@
-package accountsclientv1
+package countries
 
 import (
 	"context"
@@ -8,15 +8,15 @@ import (
 	"time"
 
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
-	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations"
 
+	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/countries"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/status"
 )
 
-var client accountpkgv1.OrganizationServiceClient
+var client accountpkgv1.CountriesServiceClient
 var doOnce sync.Once
 
 var accountServiceUri string
@@ -33,11 +33,13 @@ func init() {
 		if err != nil {
 			panic(err)
 		}
-		client = accountpkgv1.NewOrganizationServiceClient(con)
+		client = accountpkgv1.NewCountriesServiceClient(con)
 	})
+
 }
-func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
-	bylogs.LogInfo("ListOrganization Client Sdk")
+
+func ListCountries(req *accountpkgv1.ListCountriesRequest) (*accountpkgv1.ListCountriesResponse, error) {
+	bylogs.LogInfo("ListCountries Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -45,23 +47,21 @@ func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err := client.ListOrganization(ctx, &accountpkgv1.ListOrganizationRequest{})
-
+	response, err := client.ListCountries(ctx, req)
 	if err != nil {
-		bylogs.LogErr("ListOrganization Client Sdk", err)
+		bylogs.LogErr("ListCountries Client Sdk", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("Error list Organization: %v", err),
+			fmt.Sprintf("Error ListCountries: %v", err),
 		)
 	} else {
-		bylogs.LogInfo("ListOrganization Client Sdk", "Success")
+		bylogs.LogInfo("ListCountries Client Sdk", "Success")
 	}
-
 	return response, nil
 }
 
-func DeleteOrganization() (*accountpkgv1.DeleteOrganizationResponse, error) {
-	bylogs.LogInfo("DeleteOrganization Client Sdk")
+func GetOneCountry(req *accountpkgv1.GetOneCountryRequest) (*accountpkgv1.GetOneCountryResponse, error) {
+	bylogs.LogInfo("GetOneCountry Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -69,17 +69,15 @@ func DeleteOrganization() (*accountpkgv1.DeleteOrganizationResponse, error) {
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err := client.DeleteOrganization(ctx, &accountpkgv1.DeleteOrganizationRequest{})
-
+	response, err := client.GetOneCountry(ctx, req)
 	if err != nil {
-		bylogs.LogErr("DeleteOrganization Client Sdk", err)
+		bylogs.LogErr("GetOneCountry Client Sdk", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("Error delete Organization: %v", err),
+			fmt.Sprintf("Error GetOneCountry: %v", err),
 		)
 	} else {
-		bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
+		bylogs.LogInfo("GetOneCountry Client Sdk", "Success")
 	}
-
 	return response, nil
 }

@@ -83,6 +83,19 @@ class ProjectServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Accounts\V1alpha1\Projects\V1\ListProjectPaginationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListProjectPagination(\Accounts\V1alpha1\Projects\V1\ListProjectPaginationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination',
+        $argument,
+        ['\Accounts\V1alpha1\Projects\V1\ListProjectPaginationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * EDITTS AND DELETE USERS
      * @param \Accounts\V1alpha1\Projects\V1\DeleteUserByProjectRequest $argument input argument
      * @param array $metadata metadata

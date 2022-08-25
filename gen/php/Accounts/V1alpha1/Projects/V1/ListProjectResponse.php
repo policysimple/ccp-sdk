@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.projects.v1.Project projects = 1 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
      */
     private $projects;
 
@@ -24,7 +24,7 @@ class ListProjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Accounts\V1alpha1\Projects\V1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
+     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class ListProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.projects.v1.Project projects = 1 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getProjects()
@@ -42,13 +42,13 @@ class ListProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.projects.v1.Project projects = 1 [json_name = "projects"];</code>
-     * @param \Accounts\V1alpha1\Projects\V1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProjects($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Projects\V1\Project::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
         $this->projects = $arr;
 
         return $this;

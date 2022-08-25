@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from accounts.v1alpha1 import accounts_pb2 as accounts_dot_v1alpha1_dot_accounts__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)accounts/v1alpha1/projects/projects.proto\x12\x1d\x61\x63\x63ounts.v1alpha1.projects.v1\"\xa4\x01\n\x14\x43reateProjectRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\"&\n\x14GetOneProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"&\n\x14\x44\x65leteProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"=\n\x12ListProjectRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"u\n\x14UpdateProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12M\n\x07project\x18\x02 \x01(\x0b\x32\x33.accounts.v1alpha1.projects.v1.CreateProjectRequestR\x07project\"J\n\tMenberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\"7\n\x0bProjectList\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\"\x83\x02\n\rMenberProject\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x14\n\x05image\x18\x06 \x01(\tR\x05image\x12\x12\n\x04role\x18\x07 \x01(\tR\x04role\x12\x46\n\x08projects\x18\x08 \x03(\x0b\x32*.accounts.v1alpha1.projects.v1.ProjectListR\x08projects\"O\n\x15\x43reateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\x12\x0e\n\x02id\x18\x03 \x01(\rR\x02id\"?\n\x15UpdateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x15\x44\x65leteProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe1\x02\n\x15GetOneProjectResponse\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12\x46\n\x07members\x18\x08 \x03(\x0b\x32,.accounts.v1alpha1.projects.v1.MenberProjectR\x07members\x12=\n\x05owner\x18\t \x01(\x0b\x32\'.accounts.v1alpha1.projects.v1.UserListR\x05owner\"Y\n\x13ListProjectResponse\x12\x42\n\x08projects\x18\x01 \x03(\x0b\x32&.accounts.v1alpha1.projects.v1.ProjectR\x08projects\"L\n\x1cListProjectPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"y\n\x1dListProjectPaginationResponse\x12\x42\n\x08projects\x18\x01 \x03(\x0b\x32&.accounts.v1alpha1.projects.v1.ProjectR\x08projects\x12\x14\n\x05\x63ount\x18\x02 \x01(\x03R\x05\x63ount\"\xc6\x02\n\x07Project\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12\x39\n\x05roles\x18\x08 \x03(\x0b\x32#.accounts.v1alpha1.projects.v1.RoleR\x05roles\x12=\n\x05users\x18\t \x03(\x0b\x32\'.accounts.v1alpha1.projects.v1.UserListR\x05users\"\xdc\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\x12\x14\n\x05image\x18\x08 \x01(\tR\x05image\"\xda\x01\n\x04Role\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12K\n\x0bpermissions\x18\x05 \x03(\x0b\x32).accounts.v1alpha1.projects.v1.PermissionR\x0bpermissions\x12\x19\n\x08is_admin\x18\x06 \x01(\x08R\x07isAdmin\"y\n\nPermission\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06\x61\x63tion\x18\x03 \x01(\tR\x06\x61\x63tion\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x1b\n\tfull_name\x18\x05 \x01(\tR\x08\x66ullName\"T\n\x1a\x44\x65leteUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\"E\n\x1b\x44\x65leteUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"o\n\x1c\x45\x64itRoleUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\x17\n\x07role_id\x18\x03 \x01(\rR\x06roleId\"G\n\x1d\x45\x64itRoleUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rrorB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsb\x06proto3'
-)
+  serialized_pb=b'\n)accounts/v1alpha1/projects/projects.proto\x12\x1d\x61\x63\x63ounts.v1alpha1.projects.v1\x1a accounts/v1alpha1/accounts.proto\"\xa4\x01\n\x14\x43reateProjectRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\"&\n\x14GetOneProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"&\n\x14\x44\x65leteProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\"=\n\x12ListProjectRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"u\n\x14UpdateProjectRequest\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12M\n\x07project\x18\x02 \x01(\x0b\x32\x33.accounts.v1alpha1.projects.v1.CreateProjectRequestR\x07project\"J\n\tMenberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\"7\n\x0bProjectList\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\"\x83\x02\n\rMenberProject\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x14\n\x05image\x18\x06 \x01(\tR\x05image\x12\x12\n\x04role\x18\x07 \x01(\tR\x04role\x12\x46\n\x08projects\x18\x08 \x03(\x0b\x32*.accounts.v1alpha1.projects.v1.ProjectListR\x08projects\"O\n\x15\x43reateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\x12\x0e\n\x02id\x18\x03 \x01(\rR\x02id\"?\n\x15UpdateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\x15\x44\x65leteProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe1\x02\n\x15GetOneProjectResponse\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12\x46\n\x07members\x18\x08 \x03(\x0b\x32,.accounts.v1alpha1.projects.v1.MenberProjectR\x07members\x12=\n\x05owner\x18\t \x01(\x0b\x32\'.accounts.v1alpha1.projects.v1.UserListR\x05owner\"M\n\x13ListProjectResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"L\n\x1cListProjectPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"\x9c\x01\n\x1dListProjectPaginationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\x12\x12\n\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n\x08max_page\x18\x04 \x01(\x05R\x07maxPage\"\xdc\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\x12\x14\n\x05image\x18\x08 \x01(\tR\x05image\"T\n\x1a\x44\x65leteUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\"E\n\x1b\x44\x65leteUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"o\n\x1c\x45\x64itRoleUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\x17\n\x07role_id\x18\x03 \x01(\rR\x06roleId\"G\n\x1d\x45\x64itRoleUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rrorB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsb\x06proto3'
+  ,
+  dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
 
 
@@ -80,8 +82,8 @@ _CREATEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=77,
-  serialized_end=241,
+  serialized_start=111,
+  serialized_end=275,
 )
 
 
@@ -112,8 +114,8 @@ _GETONEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=243,
-  serialized_end=281,
+  serialized_start=277,
+  serialized_end=315,
 )
 
 
@@ -144,8 +146,8 @@ _DELETEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=283,
-  serialized_end=321,
+  serialized_start=317,
+  serialized_end=355,
 )
 
 
@@ -176,8 +178,8 @@ _LISTPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=384,
+  serialized_start=357,
+  serialized_end=418,
 )
 
 
@@ -215,8 +217,8 @@ _UPDATEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=386,
-  serialized_end=503,
+  serialized_start=420,
+  serialized_end=537,
 )
 
 
@@ -261,8 +263,8 @@ _MENBERROL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=505,
-  serialized_end=579,
+  serialized_start=539,
+  serialized_end=613,
 )
 
 
@@ -300,8 +302,8 @@ _PROJECTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=581,
-  serialized_end=636,
+  serialized_start=615,
+  serialized_end=670,
 )
 
 
@@ -381,8 +383,8 @@ _MENBERPROJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=639,
-  serialized_end=898,
+  serialized_start=673,
+  serialized_end=932,
 )
 
 
@@ -427,8 +429,8 @@ _CREATEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=900,
-  serialized_end=979,
+  serialized_start=934,
+  serialized_end=1013,
 )
 
 
@@ -466,8 +468,8 @@ _UPDATEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=981,
-  serialized_end=1044,
+  serialized_start=1015,
+  serialized_end=1078,
 )
 
 
@@ -505,8 +507,8 @@ _DELETEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1046,
-  serialized_end=1109,
+  serialized_start=1080,
+  serialized_end=1143,
 )
 
 
@@ -593,8 +595,8 @@ _GETONEPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1112,
-  serialized_end=1465,
+  serialized_start=1146,
+  serialized_end=1499,
 )
 
 
@@ -625,8 +627,8 @@ _LISTPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1467,
-  serialized_end=1556,
+  serialized_start=1501,
+  serialized_end=1578,
 )
 
 
@@ -664,8 +666,8 @@ _LISTPROJECTPAGINATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1558,
-  serialized_end=1634,
+  serialized_start=1580,
+  serialized_end=1656,
 )
 
 
@@ -686,11 +688,25 @@ _LISTPROJECTPAGINATIONRESPONSE = _descriptor.Descriptor(
       serialized_options=None, json_name='projects', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='count', full_name='accounts.v1alpha1.projects.v1.ListProjectPaginationResponse.count', index=1,
-      number=2, type=3, cpp_type=2, label=1,
+      number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='count', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page', full_name='accounts.v1alpha1.projects.v1.ListProjectPaginationResponse.page', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='page', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_page', full_name='accounts.v1alpha1.projects.v1.ListProjectPaginationResponse.max_page', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxPage', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -703,96 +719,8 @@ _LISTPROJECTPAGINATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1636,
-  serialized_end=1757,
-)
-
-
-_PROJECT = _descriptor.Descriptor(
-  name='Project',
-  full_name='accounts.v1alpha1.projects.v1.Project',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.projects.v1.Project.id', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.projects.v1.Project.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='image', full_name='accounts.v1alpha1.projects.v1.Project.image', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='image', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='accounts.v1alpha1.projects.v1.Project.organization_id', index=3,
-      number=4, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='accounts.v1alpha1.projects.v1.Project.description', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='description', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_at', full_name='accounts.v1alpha1.projects.v1.Project.created_at', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='createdAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='updated_at', full_name='accounts.v1alpha1.projects.v1.Project.updated_at', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='updatedAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='roles', full_name='accounts.v1alpha1.projects.v1.Project.roles', index=7,
-      number=8, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='roles', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='users', full_name='accounts.v1alpha1.projects.v1.Project.users', index=8,
-      number=9, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='users', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1760,
-  serialized_end=2086,
+  serialized_start=1659,
+  serialized_end=1815,
 )
 
 
@@ -872,135 +800,8 @@ _USERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2089,
-  serialized_end=2309,
-)
-
-
-_ROLE = _descriptor.Descriptor(
-  name='Role',
-  full_name='accounts.v1alpha1.projects.v1.Role',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.projects.v1.Role.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.projects.v1.Role.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='project_id', full_name='accounts.v1alpha1.projects.v1.Role.project_id', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='accounts.v1alpha1.projects.v1.Role.organization_id', index=3,
-      number=4, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='permissions', full_name='accounts.v1alpha1.projects.v1.Role.permissions', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='permissions', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='is_admin', full_name='accounts.v1alpha1.projects.v1.Role.is_admin', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='isAdmin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2312,
-  serialized_end=2530,
-)
-
-
-_PERMISSION = _descriptor.Descriptor(
-  name='Permission',
-  full_name='accounts.v1alpha1.projects.v1.Permission',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.projects.v1.Permission.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.projects.v1.Permission.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='action', full_name='accounts.v1alpha1.projects.v1.Permission.action', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='action', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='accounts.v1alpha1.projects.v1.Permission.type', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='full_name', full_name='accounts.v1alpha1.projects.v1.Permission.full_name', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='fullName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2532,
-  serialized_end=2653,
+  serialized_start=1818,
+  serialized_end=2038,
 )
 
 
@@ -1038,8 +839,8 @@ _DELETEUSERBYPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2655,
-  serialized_end=2739,
+  serialized_start=2040,
+  serialized_end=2124,
 )
 
 
@@ -1077,8 +878,8 @@ _DELETEUSERBYPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2741,
-  serialized_end=2810,
+  serialized_start=2126,
+  serialized_end=2195,
 )
 
 
@@ -1123,8 +924,8 @@ _EDITROLEUSERBYPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2812,
-  serialized_end=2923,
+  serialized_start=2197,
+  serialized_end=2308,
 )
 
 
@@ -1162,19 +963,16 @@ _EDITROLEUSERBYPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2925,
-  serialized_end=2996,
+  serialized_start=2310,
+  serialized_end=2381,
 )
 
 _UPDATEPROJECTREQUEST.fields_by_name['project'].message_type = _CREATEPROJECTREQUEST
 _MENBERPROJECT.fields_by_name['projects'].message_type = _PROJECTLIST
 _GETONEPROJECTRESPONSE.fields_by_name['members'].message_type = _MENBERPROJECT
 _GETONEPROJECTRESPONSE.fields_by_name['owner'].message_type = _USERLIST
-_LISTPROJECTRESPONSE.fields_by_name['projects'].message_type = _PROJECT
-_LISTPROJECTPAGINATIONRESPONSE.fields_by_name['projects'].message_type = _PROJECT
-_PROJECT.fields_by_name['roles'].message_type = _ROLE
-_PROJECT.fields_by_name['users'].message_type = _USERLIST
-_ROLE.fields_by_name['permissions'].message_type = _PERMISSION
+_LISTPROJECTRESPONSE.fields_by_name['projects'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._PROJECT
+_LISTPROJECTPAGINATIONRESPONSE.fields_by_name['projects'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._PROJECT
 DESCRIPTOR.message_types_by_name['CreateProjectRequest'] = _CREATEPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['GetOneProjectRequest'] = _GETONEPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteProjectRequest'] = _DELETEPROJECTREQUEST
@@ -1190,10 +988,7 @@ DESCRIPTOR.message_types_by_name['GetOneProjectResponse'] = _GETONEPROJECTRESPON
 DESCRIPTOR.message_types_by_name['ListProjectResponse'] = _LISTPROJECTRESPONSE
 DESCRIPTOR.message_types_by_name['ListProjectPaginationRequest'] = _LISTPROJECTPAGINATIONREQUEST
 DESCRIPTOR.message_types_by_name['ListProjectPaginationResponse'] = _LISTPROJECTPAGINATIONRESPONSE
-DESCRIPTOR.message_types_by_name['Project'] = _PROJECT
 DESCRIPTOR.message_types_by_name['UserList'] = _USERLIST
-DESCRIPTOR.message_types_by_name['Role'] = _ROLE
-DESCRIPTOR.message_types_by_name['Permission'] = _PERMISSION
 DESCRIPTOR.message_types_by_name['DeleteUserByProjectRequest'] = _DELETEUSERBYPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteUserByProjectResponse'] = _DELETEUSERBYPROJECTRESPONSE
 DESCRIPTOR.message_types_by_name['EditRoleUserByProjectRequest'] = _EDITROLEUSERBYPROJECTREQUEST
@@ -1305,33 +1100,12 @@ ListProjectPaginationResponse = _reflection.GeneratedProtocolMessageType('ListPr
   })
 _sym_db.RegisterMessage(ListProjectPaginationResponse)
 
-Project = _reflection.GeneratedProtocolMessageType('Project', (_message.Message,), {
-  'DESCRIPTOR' : _PROJECT,
-  '__module__' : 'accounts.v1alpha1.projects.projects_pb2'
-  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.Project)
-  })
-_sym_db.RegisterMessage(Project)
-
 UserList = _reflection.GeneratedProtocolMessageType('UserList', (_message.Message,), {
   'DESCRIPTOR' : _USERLIST,
   '__module__' : 'accounts.v1alpha1.projects.projects_pb2'
   # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UserList)
   })
 _sym_db.RegisterMessage(UserList)
-
-Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), {
-  'DESCRIPTOR' : _ROLE,
-  '__module__' : 'accounts.v1alpha1.projects.projects_pb2'
-  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.Role)
-  })
-_sym_db.RegisterMessage(Role)
-
-Permission = _reflection.GeneratedProtocolMessageType('Permission', (_message.Message,), {
-  'DESCRIPTOR' : _PERMISSION,
-  '__module__' : 'accounts.v1alpha1.projects.projects_pb2'
-  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.Permission)
-  })
-_sym_db.RegisterMessage(Permission)
 
 DeleteUserByProjectRequest = _reflection.GeneratedProtocolMessageType('DeleteUserByProjectRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEUSERBYPROJECTREQUEST,
