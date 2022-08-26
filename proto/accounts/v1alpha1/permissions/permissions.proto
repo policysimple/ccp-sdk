@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/permissions";
-//import "accounts/v1alpha1/accounts.proto";
+import "accounts/v1alpha1/accounts.proto";
 
 package accounts.v1alpha1.permissions.v1;
 
