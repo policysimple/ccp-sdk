@@ -24,6 +24,7 @@ type ProjectServiceClient interface {
 	UpdateProject(ctx context.Context, in *UpdateProjectRequest, opts ...grpc.CallOption) (*UpdateProjectResponse, error)
 	DeleteProject(ctx context.Context, in *DeleteProjectRequest, opts ...grpc.CallOption) (*DeleteProjectResponse, error)
 	ListProject(ctx context.Context, in *ListProjectRequest, opts ...grpc.CallOption) (*ListProjectResponse, error)
+	ListProjectPagination(ctx context.Context, in *ListProjectPaginationRequest, opts ...grpc.CallOption) (*ListProjectPaginationResponse, error)
 	// EDITTS AND DELETE USERS
 	DeleteUserByProject(ctx context.Context, in *DeleteUserByProjectRequest, opts ...grpc.CallOption) (*DeleteUserByProjectResponse, error)
 	EditRoleUserByProject(ctx context.Context, in *EditRoleUserByProjectRequest, opts ...grpc.CallOption) (*EditRoleUserByProjectResponse, error)
@@ -82,6 +83,15 @@ func (c *projectServiceClient) ListProject(ctx context.Context, in *ListProjectR
 	return out, nil
 }
 
+func (c *projectServiceClient) ListProjectPagination(ctx context.Context, in *ListProjectPaginationRequest, opts ...grpc.CallOption) (*ListProjectPaginationResponse, error) {
+	out := new(ListProjectPaginationResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *projectServiceClient) DeleteUserByProject(ctx context.Context, in *DeleteUserByProjectRequest, opts ...grpc.CallOption) (*DeleteUserByProjectResponse, error) {
 	out := new(DeleteUserByProjectResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.projects.v1.ProjectService/DeleteUserByProject", in, out, opts...)
@@ -110,6 +120,7 @@ type ProjectServiceServer interface {
 	UpdateProject(context.Context, *UpdateProjectRequest) (*UpdateProjectResponse, error)
 	DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error)
 	ListProject(context.Context, *ListProjectRequest) (*ListProjectResponse, error)
+	ListProjectPagination(context.Context, *ListProjectPaginationRequest) (*ListProjectPaginationResponse, error)
 	// EDITTS AND DELETE USERS
 	DeleteUserByProject(context.Context, *DeleteUserByProjectRequest) (*DeleteUserByProjectResponse, error)
 	EditRoleUserByProject(context.Context, *EditRoleUserByProjectRequest) (*EditRoleUserByProjectResponse, error)
@@ -133,6 +144,9 @@ func (UnimplementedProjectServiceServer) DeleteProject(context.Context, *DeleteP
 }
 func (UnimplementedProjectServiceServer) ListProject(context.Context, *ListProjectRequest) (*ListProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListProject not implemented")
+}
+func (UnimplementedProjectServiceServer) ListProjectPagination(context.Context, *ListProjectPaginationRequest) (*ListProjectPaginationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListProjectPagination not implemented")
 }
 func (UnimplementedProjectServiceServer) DeleteUserByProject(context.Context, *DeleteUserByProjectRequest) (*DeleteUserByProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserByProject not implemented")
@@ -242,6 +256,24 @@ func _ProjectService_ListProject_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProjectService_ListProjectPagination_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProjectPaginationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProjectServiceServer).ListProjectPagination(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProjectServiceServer).ListProjectPagination(ctx, req.(*ListProjectPaginationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ProjectService_DeleteUserByProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteUserByProjectRequest)
 	if err := dec(in); err != nil {
@@ -304,6 +336,10 @@ var ProjectService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListProject",
 			Handler:    _ProjectService_ListProject_Handler,
+		},
+		{
+			MethodName: "ListProjectPagination",
+			Handler:    _ProjectService_ListProjectPagination_Handler,
 		},
 		{
 			MethodName: "DeleteUserByProject",

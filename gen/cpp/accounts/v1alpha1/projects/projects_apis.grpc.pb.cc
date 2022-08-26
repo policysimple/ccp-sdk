@@ -26,6 +26,7 @@ static const char* ProjectService_method_names[] = {
   "/accounts.v1alpha1.projects.v1.ProjectService/UpdateProject",
   "/accounts.v1alpha1.projects.v1.ProjectService/DeleteProject",
   "/accounts.v1alpha1.projects.v1.ProjectService/ListProject",
+  "/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination",
   "/accounts.v1alpha1.projects.v1.ProjectService/DeleteUserByProject",
   "/accounts.v1alpha1.projects.v1.ProjectService/EditRoleUserByProject",
 };
@@ -42,8 +43,9 @@ ProjectService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_UpdateProject_(ProjectService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteProject_(ProjectService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListProject_(ProjectService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteUserByProject_(ProjectService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EditRoleUserByProject_(ProjectService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListProjectPagination_(ProjectService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteUserByProject_(ProjectService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EditRoleUserByProject_(ProjectService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ProjectService::Stub::CreateProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::CreateProjectRequest& request, ::accounts::v1alpha1::projects::v1::CreateProjectResponse* response) {
@@ -126,6 +128,22 @@ void ProjectService::Stub::experimental_async::ListProject(::grpc::ClientContext
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::projects::v1::ListProjectResponse>::Create(channel_.get(), cq, rpcmethod_ListProject_, context, request, false);
 }
 
+::grpc::Status ProjectService::Stub::ListProjectPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest& request, ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListProjectPagination_, context, request, response);
+}
+
+void ProjectService::Stub::experimental_async::ListProjectPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListProjectPagination_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse>* ProjectService::Stub::AsyncListProjectPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse>::Create(channel_.get(), cq, rpcmethod_ListProjectPagination_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse>* ProjectService::Stub::PrepareAsyncListProjectPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse>::Create(channel_.get(), cq, rpcmethod_ListProjectPagination_, context, request, false);
+}
+
 ::grpc::Status ProjectService::Stub::DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest& request, ::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteUserByProject_, context, request, response);
 }
@@ -187,10 +205,15 @@ ProjectService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ProjectService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ProjectService::Service, ::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest, ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse>(
+          std::mem_fn(&ProjectService::Service::ListProjectPagination), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ProjectService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ProjectService::Service, ::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest, ::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse>(
           std::mem_fn(&ProjectService::Service::DeleteUserByProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      ProjectService_method_names[6],
+      ProjectService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ProjectService::Service, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse>(
           std::mem_fn(&ProjectService::Service::EditRoleUserByProject), this)));
@@ -228,6 +251,13 @@ ProjectService::Service::~Service() {
 }
 
 ::grpc::Status ProjectService::Service::ListProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ProjectService::Service::ListProjectPagination(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

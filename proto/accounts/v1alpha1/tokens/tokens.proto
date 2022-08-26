@@ -20,6 +20,7 @@ message GetOneTokenCCPResponse {
     string user_id_dex = 4;
     string first_name = 5;
     bool email_verified = 6;
+    string error = 7;
 }
 
 message CreateTokenCCPRequest {
@@ -61,6 +62,7 @@ message LogsRequest {
 }
 message LogsResponse {
     repeated Log logs = 1;
+    string error = 2;
 }
 
 
@@ -72,6 +74,7 @@ message EnableOrDisableMFARequest {
 
 message EnableOrDisableMFAResponse {
     string msg = 1;
+    string error = 2;
 }
 
 message MFARequest {

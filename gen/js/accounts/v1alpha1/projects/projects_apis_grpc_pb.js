@@ -114,6 +114,28 @@ function deserialize_accounts_v1alpha1_projects_v1_GetOneProjectResponse(buffer_
   return accounts_v1alpha1_projects_projects_pb.GetOneProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.ListProjectPaginationRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.ListProjectPaginationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.ListProjectPaginationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_projects_v1_ListProjectPaginationResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.ListProjectPaginationResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.ListProjectPaginationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_ListProjectPaginationResponse(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.ListProjectPaginationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_projects_v1_ListProjectRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.ListProjectRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.ListProjectRequest');
@@ -215,6 +237,17 @@ var ProjectServiceService = exports.ProjectServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectRequest,
     responseSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectResponse,
+  },
+  listProjectPagination: {
+    path: '/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_projects_projects_pb.ListProjectPaginationRequest,
+    responseType: accounts_v1alpha1_projects_projects_pb.ListProjectPaginationResponse,
+    requestSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest,
+    responseSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectPaginationResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectPaginationResponse,
   },
   // EDITTS AND DELETE USERS
   deleteUserByProject: {

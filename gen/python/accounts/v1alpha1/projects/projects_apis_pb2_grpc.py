@@ -39,6 +39,11 @@ class ProjectServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectResponse.FromString,
         )
+    self.ListProjectPagination = channel.unary_unary(
+        '/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination',
+        request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectPaginationRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectPaginationResponse.FromString,
+        )
     self.DeleteUserByProject = channel.unary_unary(
         '/accounts.v1alpha1.projects.v1.ProjectService/DeleteUserByProject',
         request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.DeleteUserByProjectRequest.SerializeToString,
@@ -90,6 +95,13 @@ class ProjectServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListProjectPagination(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def DeleteUserByProject(self, request, context):
     """EDITTS AND DELETE USERS
     """
@@ -131,6 +143,11 @@ def add_ProjectServiceServicer_to_server(servicer, server):
           servicer.ListProject,
           request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectResponse.SerializeToString,
+      ),
+      'ListProjectPagination': grpc.unary_unary_rpc_method_handler(
+          servicer.ListProjectPagination,
+          request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectPaginationRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectPaginationResponse.SerializeToString,
       ),
       'DeleteUserByProject': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteUserByProject,
