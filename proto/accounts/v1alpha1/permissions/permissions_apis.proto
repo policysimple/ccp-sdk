@@ -2,9 +2,9 @@ syntax = "proto3";
 
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/permissions";
 
-//import "accounts/v1alpha1/permissions/permissions.proto";
-import "../accounts.proto";
-import "permissions.proto";
+import "accounts/v1alpha1/permissions/permissions.proto";
+//import "../accounts.proto";
+//import "permissions.proto";
 package accounts.v1alpha1.permissions.v1;
 
 service PermissionService {
