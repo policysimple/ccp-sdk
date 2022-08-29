@@ -17,3 +17,22 @@ message MetricItem {
     string resource = 3;
     double value = 4;
 }
+
+message TektonMetricItem {
+    string date = 1;
+    string container = 2;
+    string instance = 3;
+    string pod = 4;
+    string created_at = 5;
+    string pipeline = 6;
+    string endpoint = 7;
+    string task = 8;
+    string service = 9;
+    string namespace = 10;
+    string exported_namespace = 11;
+    string tekton_query_name = 12;
+    string job = 13;
+    double value = 14;
+    string timestamp = 15;
+    string status = 16;
+}
