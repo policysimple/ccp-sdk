@@ -109,7 +109,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     secretsMap: (f = msg.getSecretsMap()) ? f.toObject(includeInstance, undefined) : [],
     extraArgsMap: (f = msg.getExtraArgsMap()) ? f.toObject(includeInstance, undefined) : [],
     autoscalingMap: (f = msg.getAutoscalingMap()) ? f.toObject(includeInstance, undefined) : [],
-    trafficType: jspb.Message.getFieldWithDefault(msg, 19, 0)
+    trafficType: jspb.Message.getFieldWithDefault(msg, 19, 0),
+    responseMessage: jspb.Message.getFieldWithDefault(msg, 20, "")
   };
 
   if (includeInstance) {
@@ -229,6 +230,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 19:
       var value = /** @type {!proto.pipelines.runtime.v1alpha1.TrafficType} */ (reader.readEnum());
       msg.setTrafficType(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResponseMessage(value);
       break;
     default:
       reader.skipField();
@@ -364,6 +369,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f !== 0.0) {
     writer.writeEnum(
       19,
+      f
+    );
+  }
+  f = message.getResponseMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      20,
       f
     );
   }
@@ -715,6 +727,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getTrafficType = function() {
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setTrafficType = function(value) {
   return jspb.Message.setProto3EnumField(this, 19, value);
+};
+
+
+/**
+ * optional string response_message = 20;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getResponseMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setResponseMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 20, value);
 };
 
 
