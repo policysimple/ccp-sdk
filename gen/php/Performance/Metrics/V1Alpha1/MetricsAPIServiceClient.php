@@ -29,4 +29,17 @@ class MetricsAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Performance\Metrics\V1Alpha1\GetTektonMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTektonMetrics(\Performance\Metrics\V1Alpha1\GetTektonMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/performance.metrics.v1alpha1.MetricsAPIService/GetTektonMetrics',
+        $argument,
+        ['\Performance\Metrics\V1Alpha1\GetTektonMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

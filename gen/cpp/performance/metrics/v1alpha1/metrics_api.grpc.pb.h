@@ -44,15 +44,25 @@ class MetricsAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetMetricsResponse>> PrepareAsyncGetMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetMetricsResponse>>(PrepareAsyncGetMetricsRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>> AsyncGetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>>(AsyncGetTektonMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>> PrepareAsyncGetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>>(PrepareAsyncGetTektonMetricsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       virtual void GetMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest* request, ::performance::metrics::v1alpha1::GetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetMetricsResponse>* AsyncGetMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetMetricsResponse>* PrepareAsyncGetMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* AsyncGetTektonMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* PrepareAsyncGetTektonMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -64,10 +74,18 @@ class MetricsAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetMetricsResponse>> PrepareAsyncGetMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetMetricsResponse>>(PrepareAsyncGetMetricsRaw(context, request, cq));
     }
+    ::grpc::Status GetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>> AsyncGetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>>(AsyncGetTektonMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>> PrepareAsyncGetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>>(PrepareAsyncGetTektonMetricsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void GetMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest* request, ::performance::metrics::v1alpha1::GetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -81,7 +99,10 @@ class MetricsAPIService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetMetricsResponse>* AsyncGetMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetMetricsResponse>* PrepareAsyncGetMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* AsyncGetTektonMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* PrepareAsyncGetTektonMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetMetrics_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTektonMetrics_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -90,6 +111,7 @@ class MetricsAPIService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status GetMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest* request, ::performance::metrics::v1alpha1::GetMetricsResponse* response);
+    virtual ::grpc::Status GetTektonMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetMetrics : public BaseClass {
@@ -111,7 +133,27 @@ class MetricsAPIService final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetMetrics<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetTektonMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetTektonMetrics() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_GetTektonMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTektonMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTektonMetrics(::grpc::ServerContext* context, ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::grpc::ServerAsyncResponseWriter< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetMetrics<WithAsyncMethod_GetTektonMetrics<Service > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_GetMetrics : public BaseClass {
    private:
@@ -125,6 +167,23 @@ class MetricsAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest* request, ::performance::metrics::v1alpha1::GetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetTektonMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetTektonMetrics() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_GetTektonMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTektonMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -150,6 +209,26 @@ class MetricsAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetTektonMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetTektonMetrics() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_GetTektonMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTektonMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTektonMetrics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetMetrics : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -169,9 +248,29 @@ class MetricsAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetMetrics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::metrics::v1alpha1::GetMetricsRequest,::performance::metrics::v1alpha1::GetMetricsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetMetrics<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetTektonMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetTektonMetrics() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::performance::metrics::v1alpha1::GetTektonMetricsRequest, ::performance::metrics::v1alpha1::GetTektonMetricsResponse>(std::bind(&WithStreamedUnaryMethod_GetTektonMetrics<BaseClass>::StreamedGetTektonMetrics, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetTektonMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetTektonMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetTektonMetrics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::performance::metrics::v1alpha1::GetTektonMetricsRequest,::performance::metrics::v1alpha1::GetTektonMetricsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetMetrics<WithStreamedUnaryMethod_GetTektonMetrics<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetMetrics<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_GetMetrics<WithStreamedUnaryMethod_GetTektonMetrics<Service > > StreamedService;
 };
 
 }  // namespace v1alpha1
