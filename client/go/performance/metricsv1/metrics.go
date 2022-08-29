@@ -24,7 +24,7 @@ var metricsServiceTimeout string
 
 func init() {
 	doOnce.Do(func() {
-		metricsServiceTimeout = os.Getenv("PERFORMANCE_SERVICE_TIMEOUT")
+		metricsServiceTimeout = os.Getenv("PERFORMANCE_METRICS_SERVICE_TIMEOUT")
 		if metricsServiceTimeout == "" {
 			metricsServiceTimeout = "30s"
 		}
