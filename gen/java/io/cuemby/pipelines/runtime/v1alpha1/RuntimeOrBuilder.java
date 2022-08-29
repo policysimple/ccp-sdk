@@ -341,4 +341,16 @@ public interface RuntimeOrBuilder extends
    * @return The trafficType.
    */
   io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType();
+
+  /**
+   * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+   * @return The responseMessage.
+   */
+  java.lang.String getResponseMessage();
+  /**
+   * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+   * @return The bytes for responseMessage.
+   */
+  com.google.protobuf.ByteString
+      getResponseMessageBytes();
 }

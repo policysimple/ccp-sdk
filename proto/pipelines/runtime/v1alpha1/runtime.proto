@@ -36,6 +36,7 @@ message Runtime {
   map<string, string> extra_args = 17;
   map<string, string> autoscaling = 18;
   TrafficType traffic_type = 19;
+  string response_message = 20;
 }
 
 message RuntimeList {
