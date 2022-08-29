@@ -16,17 +16,18 @@ class RegistryQuotas
         }
         $pool->internalAddGeneratedFile(
             '
-Ð
+Œ
 /artifacts/quotas/v1alpha1/registry_quotas.protoartifacts.quotas.v1alpha1"V
 HarborQuotas!
 storage_used (RstorageUsed#
-storage_limit (RstorageLimit"è
+storage_limit (RstorageLimit"¤
 QuotasRegistry
 id (	Rid\'
 organization_id (RorganizationId
 
 project_id (R	projectId%
-environment_id (	RenvironmentId
+environment_id (	RenvironmentId:
+environment_internal_name (	RenvironmentInternalName
 active (Ractive?
 harbor (2\'.artifacts.quotas.v1alpha1.HarborQuotasRharborB¶
 #io.cuemby.artifacts.quotas.v1alpha1BRegistryQuotasProtoPZ:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1¢PPXªArtifacts.Quotas.V1Alpha1ÊArtifacts\\Quotas\\V1Alpha1bproto3'
