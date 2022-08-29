@@ -29,6 +29,11 @@ class RuntimeAPIServiceStub(object):
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateRuntimeRequest.SerializeToString,
         response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateRuntimeResponse.FromString,
         )
+    self.UpdateResponseMessageRuntime = channel.unary_unary(
+        '/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateResponseMessageRuntime',
+        request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateResponseMessageRuntimeRequest.SerializeToString,
+        response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateResponseMessageRuntimeResponse.FromString,
+        )
     self.DeleteRuntime = channel.unary_unary(
         '/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntime',
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimeRequest.SerializeToString,
@@ -66,6 +71,13 @@ class RuntimeAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateResponseMessageRuntime(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def DeleteRuntime(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -97,6 +109,11 @@ def add_RuntimeAPIServiceServicer_to_server(servicer, server):
           servicer.UpdateRuntime,
           request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateRuntimeRequest.FromString,
           response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateRuntimeResponse.SerializeToString,
+      ),
+      'UpdateResponseMessageRuntime': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateResponseMessageRuntime,
+          request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateResponseMessageRuntimeRequest.FromString,
+          response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.UpdateResponseMessageRuntimeResponse.SerializeToString,
       ),
       'DeleteRuntime': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteRuntime,
