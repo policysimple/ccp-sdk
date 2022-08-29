@@ -17,7 +17,7 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ò
+ˆ
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"¤
 CreateProjectRequest
 name (	Rname 
@@ -72,9 +72,10 @@ created_at (	R	createdAt
 
 updated_at (	R	updatedAtF
 members (2,.accounts.v1alpha1.projects.v1.MenberProjectRmembers=
-owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner"M
+owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner"c
 ListProjectResponse6
-projects (2.accounts.v1alpha1.ProjectRprojects"L
+projects (2.accounts.v1alpha1.ProjectRprojects
+error (	Rerror"L
 ListProjectPaginationRequest
 offset (Roffset
 limit (Rlimit"œ

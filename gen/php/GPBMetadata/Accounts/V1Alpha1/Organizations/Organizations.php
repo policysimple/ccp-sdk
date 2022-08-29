@@ -17,7 +17,7 @@ class Organizations
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Þ
+ô
 3accounts/v1alpha1/organizations/organizations.proto"accounts.v1alpha1.organizations.v1"€
 CreateOrganizationRequest
 name (	Rname
@@ -43,9 +43,10 @@ class Organizations
 description (	Rdescription1
 owner (2.accounts.v1alpha1.UserListRowner
 error (	Rerror
-slug	 (	Rslug"a
+slug	 (	Rslug"w
 ListOrganizationResponseE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations"†
+organizations (2.accounts.v1alpha1.OrganizationRorganizations
+error (	Rerror"†
 CreateOrganizationResponse
 msg (	Rmsg0
 role_id_organization (RroleIdOrganization

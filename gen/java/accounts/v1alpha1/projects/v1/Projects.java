@@ -10521,6 +10521,18 @@ public final class Projects {
      */
     accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
         int index);
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.projects.v1.ListProjectResponse}
@@ -10536,6 +10548,7 @@ public final class Projects {
     }
     private ListProjectResponse() {
       projects_ = java.util.Collections.emptyList();
+      error_ = "";
     }
 
     @java.lang.Override
@@ -10576,6 +10589,12 @@ public final class Projects {
               }
               projects_.add(
                   input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
               break;
             }
             default: {
@@ -10653,6 +10672,44 @@ public final class Projects {
       return projects_.get(index);
     }
 
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10670,6 +10727,9 @@ public final class Projects {
       for (int i = 0; i < projects_.size(); i++) {
         output.writeMessage(1, projects_.get(i));
       }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10682,6 +10742,9 @@ public final class Projects {
       for (int i = 0; i < projects_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, projects_.get(i));
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10700,6 +10763,8 @@ public final class Projects {
 
       if (!getProjectsList()
           .equals(other.getProjectsList())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10715,6 +10780,8 @@ public final class Projects {
         hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
         hash = (53 * hash) + getProjectsList().hashCode();
       }
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10855,6 +10922,8 @@ public final class Projects {
         } else {
           projectsBuilder_.clear();
         }
+        error_ = "";
+
         return this;
       }
 
@@ -10891,6 +10960,7 @@ public final class Projects {
         } else {
           result.projects_ = projectsBuilder_.build();
         }
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -10964,6 +11034,10 @@ public final class Projects {
               projectsBuilder_.addAllMessages(other.projects_);
             }
           }
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11233,6 +11307,82 @@ public final class Projects {
           projects_ = null;
         }
         return projectsBuilder_;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -17004,31 +17154,31 @@ public final class Projects {
       "edAt\022F\n\007members\030\010 \003(\0132,.accounts.v1alpha" +
       "1.projects.v1.MenberProjectR\007members\022=\n\005" +
       "owner\030\t \001(\0132\'.accounts.v1alpha1.projects" +
-      ".v1.UserListR\005owner\"M\n\023ListProjectRespon" +
+      ".v1.UserListR\005owner\"c\n\023ListProjectRespon" +
       "se\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1" +
-      ".ProjectR\010projects\"L\n\034ListProjectPaginat" +
-      "ionRequest\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005li" +
-      "mit\030\002 \001(\005R\005limit\"\234\001\n\035ListProjectPaginati" +
-      "onResponse\0226\n\010projects\030\001 \003(\0132\032.accounts." +
-      "v1alpha1.ProjectR\010projects\022\024\n\005count\030\002 \001(" +
-      "\005R\005count\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010max_page" +
-      "\030\004 \001(\005R\007maxPage\"\334\001\n\010UserList\022\016\n\002id\030\001 \001(\r" +
-      "R\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n\tl" +
-      "ast_name\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001(\tR" +
-      "\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033\n\tis_ac" +
-      "tive\030\006 \001(\010R\010isActive\022\"\n\ris_super_user\030\007 " +
-      "\001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005image\"T" +
-      "\n\032DeleteUserByProjectRequest\022\027\n\007user_id\030" +
-      "\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\rR\tproje" +
-      "ctId\"E\n\033DeleteUserByProjectResponse\022\020\n\003m" +
-      "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"o\n\034E" +
-      "ditRoleUserByProjectRequest\022\027\n\007user_id\030\001" +
-      " \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\rR\tprojec" +
-      "tId\022\027\n\007role_id\030\003 \001(\rR\006roleId\"G\n\035EditRole" +
-      "UserByProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022" +
-      "\024\n\005error\030\002 \001(\tR\005errorB=Z;github.com/cuem" +
-      "by/ccp-sdk/gen/go/accounts/v1alpha1/proj" +
-      "ectsb\006proto3"
+      ".ProjectR\010projects\022\024\n\005error\030\002 \001(\tR\005error" +
+      "\"L\n\034ListProjectPaginationRequest\022\026\n\006offs" +
+      "et\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"\234" +
+      "\001\n\035ListProjectPaginationResponse\0226\n\010proj" +
+      "ects\030\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010" +
+      "projects\022\024\n\005count\030\002 \001(\005R\005count\022\022\n\004page\030\003" +
+      " \001(\005R\004page\022\031\n\010max_page\030\004 \001(\005R\007maxPage\"\334\001" +
+      "\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\nfirst_name" +
+      "\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010la" +
+      "stName\022\024\n\005email\030\004 \001(\tR\005email\022\027\n\007user_id\030" +
+      "\005 \001(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isActi" +
+      "ve\022\"\n\ris_super_user\030\007 \001(\010R\013isSuperUser\022\024" +
+      "\n\005image\030\010 \001(\tR\005image\"T\n\032DeleteUserByProj" +
+      "ectRequest\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\np" +
+      "roject_id\030\002 \001(\rR\tprojectId\"E\n\033DeleteUser" +
+      "ByProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
+      "rror\030\002 \001(\tR\005error\"o\n\034EditRoleUserByProje" +
+      "ctRequest\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\npr" +
+      "oject_id\030\002 \001(\rR\tprojectId\022\027\n\007role_id\030\003 \001" +
+      "(\rR\006roleId\"G\n\035EditRoleUserByProjectRespo" +
+      "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er" +
+      "rorB=Z;github.com/cuemby/ccp-sdk/gen/go/" +
+      "accounts/v1alpha1/projectsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17112,7 +17262,7 @@ public final class Projects {
     internal_static_accounts_v1alpha1_projects_v1_ListProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_projects_v1_ListProjectResponse_descriptor,
-        new java.lang.String[] { "Projects", });
+        new java.lang.String[] { "Projects", "Error", });
     internal_static_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest_fieldAccessorTable = new
