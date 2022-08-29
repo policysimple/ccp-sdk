@@ -30,6 +30,10 @@ class QuotasRegistry extends \Google\Protobuf\Internal\Message
      */
     protected $environment_id = '';
     /**
+     * Generated from protobuf field <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     */
+    protected $environment_internal_name = '';
+    /**
      * Generated from protobuf field <code>bool active = 6 [json_name = "active"];</code>
      */
     protected $active = false;
@@ -48,6 +52,7 @@ class QuotasRegistry extends \Google\Protobuf\Internal\Message
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $environment_id
+     *     @type string $environment_internal_name
      *     @type bool $active
      *     @type \Artifacts\Quotas\V1Alpha1\HarborQuotas $harbor
      * }
@@ -141,6 +146,28 @@ class QuotasRegistry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->environment_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @return string
+     */
+    public function getEnvironmentInternalName()
+    {
+        return $this->environment_internal_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentInternalName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_internal_name = $var;
 
         return $this;
     }

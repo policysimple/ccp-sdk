@@ -255,6 +255,7 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.toObject = function(includeInstan
     organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     environmentId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    environmentInternalName: jspb.Message.getFieldWithDefault(msg, 5, ""),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     harbor: (f = msg.getHarbor()) && proto.artifacts.quotas.v1alpha1.HarborQuotas.toObject(includeInstance, f)
   };
@@ -308,6 +309,10 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.deserializeBinaryFromReader = fun
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setEnvironmentId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEnvironmentInternalName(value);
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -372,6 +377,13 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.serializeBinaryToWriter = functio
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getEnvironmentInternalName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -462,6 +474,24 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.getEnvironmentId = func
  */
 proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.setEnvironmentId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string environment_internal_name = 5;
+ * @return {string}
+ */
+proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.getEnvironmentInternalName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.quotas.v1alpha1.QuotasRegistry} returns this
+ */
+proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.setEnvironmentInternalName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
