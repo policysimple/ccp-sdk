@@ -780,7 +780,7 @@ message UpdateProjectRequest {
     Responses
 */
 
-message MenberRol {
+message MemberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;
@@ -794,7 +794,7 @@ message ProjectList{
     string image = 2;
 }
 
-message MenberProject {
+message MemberProject {
 
     uint32 id = 1;
     string user_id = 2;
@@ -833,7 +833,7 @@ message GetOneProjectResponse {
     string description = 5;
     string created_at = 6;
     string updated_at = 7;
-    repeated MenberProject members = 8;
+    repeated MemberProject members = 8;
     UserList owner = 9;
 
 }
@@ -949,7 +949,7 @@ message Member {
     string first_name = 3;
     string last_name = 4;
     bool is_active = 5;
-    repeated MenberRol roles = 6;
+    repeated MemberRol roles = 6;
 
 }
 
@@ -1009,7 +1009,7 @@ message GetOneOrganizationResponse{
     string name = 2;
     string image = 3;
     repeated ProjectOrganization projects = 4;
-    repeated Member menbers = 5;
+    repeated Member members = 5;
     string description = 6;
     UserList owner = 7;
 }

@@ -39,7 +39,7 @@ class Organizations
 name (	Rname
 image (	RimageS
 projects (27.accounts.v1alpha1.organizations.v1.ProjectOrganizationRprojectsD
-menbers (2*.accounts.v1alpha1.organizations.v1.MemberRmenbers 
+members (2*.accounts.v1alpha1.organizations.v1.MemberRmembers 
 description (	Rdescription1
 owner (2.accounts.v1alpha1.UserListRowner
 error (	Rerror
@@ -65,13 +65,13 @@ class Organizations
 first_name (	R	firstName
 	last_name (	RlastName
 	is_active (RisActiveC
-roles (2-.accounts.v1alpha1.organizations.v1.MenberRolRroles"q
+roles (2-.accounts.v1alpha1.organizations.v1.MemberRolRroles"q
 ProjectOrganization
 id (Rid
 name (	Rname
 image (	Rimage 
 description (	Rdescription"J
-	MenberRol
+	MemberRol
 id (Rid
 name (	Rname
 is_admin (RisAdminBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsbproto3'

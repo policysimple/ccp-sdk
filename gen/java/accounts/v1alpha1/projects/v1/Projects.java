@@ -3273,8 +3273,8 @@ public final class Projects {
 
   }
 
-  public interface MenberRolOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.MenberRol)
+  public interface MemberRolOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.MemberRol)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3302,18 +3302,18 @@ public final class Projects {
     boolean getIsAdmin();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.projects.v1.MenberRol}
+   * Protobuf type {@code accounts.v1alpha1.projects.v1.MemberRol}
    */
-  public static final class MenberRol extends
+  public static final class MemberRol extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.MenberRol)
-      MenberRolOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.MemberRol)
+      MemberRolOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MenberRol.newBuilder() to construct.
-    private MenberRol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MemberRol.newBuilder() to construct.
+    private MemberRol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MenberRol() {
+    private MemberRol() {
       name_ = "";
     }
 
@@ -3321,7 +3321,7 @@ public final class Projects {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MenberRol();
+      return new MemberRol();
     }
 
     @java.lang.Override
@@ -3329,7 +3329,7 @@ public final class Projects {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MenberRol(
+    private MemberRol(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3384,15 +3384,15 @@ public final class Projects {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberRol_descriptor;
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberRol_fieldAccessorTable
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberRol_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.projects.v1.Projects.MenberRol.class, accounts.v1alpha1.projects.v1.Projects.MenberRol.Builder.class);
+              accounts.v1alpha1.projects.v1.Projects.MemberRol.class, accounts.v1alpha1.projects.v1.Projects.MemberRol.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -3508,10 +3508,10 @@ public final class Projects {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.MenberRol)) {
+      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.MemberRol)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.projects.v1.Projects.MenberRol other = (accounts.v1alpha1.projects.v1.Projects.MenberRol) obj;
+      accounts.v1alpha1.projects.v1.Projects.MemberRol other = (accounts.v1alpha1.projects.v1.Projects.MemberRol) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -3542,69 +3542,69 @@ public final class Projects {
       return hash;
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(byte[] data)
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseDelimitedFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3617,7 +3617,7 @@ public final class Projects {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.MenberRol prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.MemberRol prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3633,26 +3633,26 @@ public final class Projects {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.projects.v1.MenberRol}
+     * Protobuf type {@code accounts.v1alpha1.projects.v1.MemberRol}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.MenberRol)
-        accounts.v1alpha1.projects.v1.Projects.MenberRolOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.MemberRol)
+        accounts.v1alpha1.projects.v1.Projects.MemberRolOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberRol_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberRol_fieldAccessorTable
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberRol_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.projects.v1.Projects.MenberRol.class, accounts.v1alpha1.projects.v1.Projects.MenberRol.Builder.class);
+                accounts.v1alpha1.projects.v1.Projects.MemberRol.class, accounts.v1alpha1.projects.v1.Projects.MemberRol.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.projects.v1.Projects.MenberRol.newBuilder()
+      // Construct using accounts.v1alpha1.projects.v1.Projects.MemberRol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3682,17 +3682,17 @@ public final class Projects {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberRol_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.MenberRol getDefaultInstanceForType() {
-        return accounts.v1alpha1.projects.v1.Projects.MenberRol.getDefaultInstance();
+      public accounts.v1alpha1.projects.v1.Projects.MemberRol getDefaultInstanceForType() {
+        return accounts.v1alpha1.projects.v1.Projects.MemberRol.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.MenberRol build() {
-        accounts.v1alpha1.projects.v1.Projects.MenberRol result = buildPartial();
+      public accounts.v1alpha1.projects.v1.Projects.MemberRol build() {
+        accounts.v1alpha1.projects.v1.Projects.MemberRol result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3700,8 +3700,8 @@ public final class Projects {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.MenberRol buildPartial() {
-        accounts.v1alpha1.projects.v1.Projects.MenberRol result = new accounts.v1alpha1.projects.v1.Projects.MenberRol(this);
+      public accounts.v1alpha1.projects.v1.Projects.MemberRol buildPartial() {
+        accounts.v1alpha1.projects.v1.Projects.MemberRol result = new accounts.v1alpha1.projects.v1.Projects.MemberRol(this);
         result.id_ = id_;
         result.name_ = name_;
         result.isAdmin_ = isAdmin_;
@@ -3743,16 +3743,16 @@ public final class Projects {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.projects.v1.Projects.MenberRol) {
-          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.MenberRol)other);
+        if (other instanceof accounts.v1alpha1.projects.v1.Projects.MemberRol) {
+          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.MemberRol)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.MenberRol other) {
-        if (other == accounts.v1alpha1.projects.v1.Projects.MenberRol.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.MemberRol other) {
+        if (other == accounts.v1alpha1.projects.v1.Projects.MemberRol.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -3778,11 +3778,11 @@ public final class Projects {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.projects.v1.Projects.MenberRol parsedMessage = null;
+        accounts.v1alpha1.projects.v1.Projects.MemberRol parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.MenberRol) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.MemberRol) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3942,41 +3942,41 @@ public final class Projects {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.MenberRol)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.MemberRol)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.MenberRol)
-    private static final accounts.v1alpha1.projects.v1.Projects.MenberRol DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.MemberRol)
+    private static final accounts.v1alpha1.projects.v1.Projects.MemberRol DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.MenberRol();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.MemberRol();
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.MenberRol getDefaultInstance() {
+    public static accounts.v1alpha1.projects.v1.Projects.MemberRol getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MenberRol>
-        PARSER = new com.google.protobuf.AbstractParser<MenberRol>() {
+    private static final com.google.protobuf.Parser<MemberRol>
+        PARSER = new com.google.protobuf.AbstractParser<MemberRol>() {
       @java.lang.Override
-      public MenberRol parsePartialFrom(
+      public MemberRol parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MenberRol(input, extensionRegistry);
+        return new MemberRol(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MenberRol> parser() {
+    public static com.google.protobuf.Parser<MemberRol> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MenberRol> getParserForType() {
+    public com.google.protobuf.Parser<MemberRol> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.projects.v1.Projects.MenberRol getDefaultInstanceForType() {
+    public accounts.v1alpha1.projects.v1.Projects.MemberRol getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4700,8 +4700,8 @@ public final class Projects {
 
   }
 
-  public interface MenberProjectOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.MenberProject)
+  public interface MemberProjectOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.MemberProject)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4801,18 +4801,18 @@ public final class Projects {
         int index);
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.projects.v1.MenberProject}
+   * Protobuf type {@code accounts.v1alpha1.projects.v1.MemberProject}
    */
-  public static final class MenberProject extends
+  public static final class MemberProject extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.MenberProject)
-      MenberProjectOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.MemberProject)
+      MemberProjectOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MenberProject.newBuilder() to construct.
-    private MenberProject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MemberProject.newBuilder() to construct.
+    private MemberProject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MenberProject() {
+    private MemberProject() {
       userId_ = "";
       firstName_ = "";
       lastName_ = "";
@@ -4825,7 +4825,7 @@ public final class Projects {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MenberProject();
+      return new MemberProject();
     }
 
     @java.lang.Override
@@ -4833,7 +4833,7 @@ public final class Projects {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MenberProject(
+    private MemberProject(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4925,15 +4925,15 @@ public final class Projects {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberProject_descriptor;
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberProject_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberProject_fieldAccessorTable
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberProject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.projects.v1.Projects.MenberProject.class, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder.class);
+              accounts.v1alpha1.projects.v1.Projects.MemberProject.class, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -5272,10 +5272,10 @@ public final class Projects {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.MenberProject)) {
+      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.MemberProject)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.projects.v1.Projects.MenberProject other = (accounts.v1alpha1.projects.v1.Projects.MenberProject) obj;
+      accounts.v1alpha1.projects.v1.Projects.MemberProject other = (accounts.v1alpha1.projects.v1.Projects.MemberProject) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -5328,69 +5328,69 @@ public final class Projects {
       return hash;
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(byte[] data)
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseDelimitedFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5403,7 +5403,7 @@ public final class Projects {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.MenberProject prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.MemberProject prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5419,26 +5419,26 @@ public final class Projects {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.projects.v1.MenberProject}
+     * Protobuf type {@code accounts.v1alpha1.projects.v1.MemberProject}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.MenberProject)
-        accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.MemberProject)
+        accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberProject_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberProject_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberProject_fieldAccessorTable
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberProject_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.projects.v1.Projects.MenberProject.class, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder.class);
+                accounts.v1alpha1.projects.v1.Projects.MemberProject.class, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.projects.v1.Projects.MenberProject.newBuilder()
+      // Construct using accounts.v1alpha1.projects.v1.Projects.MemberProject.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5483,17 +5483,17 @@ public final class Projects {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MenberProject_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_MemberProject_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject getDefaultInstanceForType() {
-        return accounts.v1alpha1.projects.v1.Projects.MenberProject.getDefaultInstance();
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject getDefaultInstanceForType() {
+        return accounts.v1alpha1.projects.v1.Projects.MemberProject.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject build() {
-        accounts.v1alpha1.projects.v1.Projects.MenberProject result = buildPartial();
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject build() {
+        accounts.v1alpha1.projects.v1.Projects.MemberProject result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5501,8 +5501,8 @@ public final class Projects {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject buildPartial() {
-        accounts.v1alpha1.projects.v1.Projects.MenberProject result = new accounts.v1alpha1.projects.v1.Projects.MenberProject(this);
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject buildPartial() {
+        accounts.v1alpha1.projects.v1.Projects.MemberProject result = new accounts.v1alpha1.projects.v1.Projects.MemberProject(this);
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.userId_ = userId_;
@@ -5558,16 +5558,16 @@ public final class Projects {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.projects.v1.Projects.MenberProject) {
-          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.MenberProject)other);
+        if (other instanceof accounts.v1alpha1.projects.v1.Projects.MemberProject) {
+          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.MemberProject)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.MenberProject other) {
-        if (other == accounts.v1alpha1.projects.v1.Projects.MenberProject.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.MemberProject other) {
+        if (other == accounts.v1alpha1.projects.v1.Projects.MemberProject.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -5635,11 +5635,11 @@ public final class Projects {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.projects.v1.Projects.MenberProject parsedMessage = null;
+        accounts.v1alpha1.projects.v1.Projects.MemberProject parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.MenberProject) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.MemberProject) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6344,41 +6344,41 @@ public final class Projects {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.MenberProject)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.MemberProject)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.MenberProject)
-    private static final accounts.v1alpha1.projects.v1.Projects.MenberProject DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.MemberProject)
+    private static final accounts.v1alpha1.projects.v1.Projects.MemberProject DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.MenberProject();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.MemberProject();
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.MenberProject getDefaultInstance() {
+    public static accounts.v1alpha1.projects.v1.Projects.MemberProject getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MenberProject>
-        PARSER = new com.google.protobuf.AbstractParser<MenberProject>() {
+    private static final com.google.protobuf.Parser<MemberProject>
+        PARSER = new com.google.protobuf.AbstractParser<MemberProject>() {
       @java.lang.Override
-      public MenberProject parsePartialFrom(
+      public MemberProject parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MenberProject(input, extensionRegistry);
+        return new MemberProject(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MenberProject> parser() {
+    public static com.google.protobuf.Parser<MemberProject> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MenberProject> getParserForType() {
+    public com.google.protobuf.Parser<MemberProject> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.projects.v1.Projects.MenberProject getDefaultInstanceForType() {
+    public accounts.v1alpha1.projects.v1.Projects.MemberProject getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8685,27 +8685,27 @@ public final class Projects {
         getUpdatedAtBytes();
 
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
-    java.util.List<accounts.v1alpha1.projects.v1.Projects.MenberProject> 
+    java.util.List<accounts.v1alpha1.projects.v1.Projects.MemberProject> 
         getMembersList();
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
-    accounts.v1alpha1.projects.v1.Projects.MenberProject getMembers(int index);
+    accounts.v1alpha1.projects.v1.Projects.MemberProject getMembers(int index);
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
     int getMembersCount();
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
-    java.util.List<? extends accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder> 
+    java.util.List<? extends accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder> 
         getMembersOrBuilderList();
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
-    accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder getMembersOrBuilder(
+    accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder getMembersOrBuilder(
         int index);
 
     /**
@@ -8817,11 +8817,11 @@ public final class Projects {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                members_ = new java.util.ArrayList<accounts.v1alpha1.projects.v1.Projects.MenberProject>();
+                members_ = new java.util.ArrayList<accounts.v1alpha1.projects.v1.Projects.MemberProject>();
                 mutable_bitField0_ |= 0x00000001;
               }
               members_.add(
-                  input.readMessage(accounts.v1alpha1.projects.v1.Projects.MenberProject.parser(), extensionRegistry));
+                  input.readMessage(accounts.v1alpha1.projects.v1.Projects.MemberProject.parser(), extensionRegistry));
               break;
             }
             case 74: {
@@ -9085,41 +9085,41 @@ public final class Projects {
     }
 
     public static final int MEMBERS_FIELD_NUMBER = 8;
-    private java.util.List<accounts.v1alpha1.projects.v1.Projects.MenberProject> members_;
+    private java.util.List<accounts.v1alpha1.projects.v1.Projects.MemberProject> members_;
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
     @java.lang.Override
-    public java.util.List<accounts.v1alpha1.projects.v1.Projects.MenberProject> getMembersList() {
+    public java.util.List<accounts.v1alpha1.projects.v1.Projects.MemberProject> getMembersList() {
       return members_;
     }
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder> 
+    public java.util.List<? extends accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder> 
         getMembersOrBuilderList() {
       return members_;
     }
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
     @java.lang.Override
     public int getMembersCount() {
       return members_.size();
     }
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.projects.v1.Projects.MenberProject getMembers(int index) {
+    public accounts.v1alpha1.projects.v1.Projects.MemberProject getMembers(int index) {
       return members_.get(index);
     }
     /**
-     * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+     * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder getMembersOrBuilder(
+    public accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder getMembersOrBuilder(
         int index) {
       return members_.get(index);
     }
@@ -10083,22 +10083,22 @@ public final class Projects {
         return this;
       }
 
-      private java.util.List<accounts.v1alpha1.projects.v1.Projects.MenberProject> members_ =
+      private java.util.List<accounts.v1alpha1.projects.v1.Projects.MemberProject> members_ =
         java.util.Collections.emptyList();
       private void ensureMembersIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          members_ = new java.util.ArrayList<accounts.v1alpha1.projects.v1.Projects.MenberProject>(members_);
+          members_ = new java.util.ArrayList<accounts.v1alpha1.projects.v1.Projects.MemberProject>(members_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.projects.v1.Projects.MenberProject, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder, accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder> membersBuilder_;
+          accounts.v1alpha1.projects.v1.Projects.MemberProject, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder, accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder> membersBuilder_;
 
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public java.util.List<accounts.v1alpha1.projects.v1.Projects.MenberProject> getMembersList() {
+      public java.util.List<accounts.v1alpha1.projects.v1.Projects.MemberProject> getMembersList() {
         if (membersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(members_);
         } else {
@@ -10106,7 +10106,7 @@ public final class Projects {
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public int getMembersCount() {
         if (membersBuilder_ == null) {
@@ -10116,9 +10116,9 @@ public final class Projects {
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject getMembers(int index) {
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject getMembers(int index) {
         if (membersBuilder_ == null) {
           return members_.get(index);
         } else {
@@ -10126,10 +10126,10 @@ public final class Projects {
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder setMembers(
-          int index, accounts.v1alpha1.projects.v1.Projects.MenberProject value) {
+          int index, accounts.v1alpha1.projects.v1.Projects.MemberProject value) {
         if (membersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10143,10 +10143,10 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder setMembers(
-          int index, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder builderForValue) {
+          int index, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder builderForValue) {
         if (membersBuilder_ == null) {
           ensureMembersIsMutable();
           members_.set(index, builderForValue.build());
@@ -10157,9 +10157,9 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public Builder addMembers(accounts.v1alpha1.projects.v1.Projects.MenberProject value) {
+      public Builder addMembers(accounts.v1alpha1.projects.v1.Projects.MemberProject value) {
         if (membersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10173,10 +10173,10 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder addMembers(
-          int index, accounts.v1alpha1.projects.v1.Projects.MenberProject value) {
+          int index, accounts.v1alpha1.projects.v1.Projects.MemberProject value) {
         if (membersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10190,10 +10190,10 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder addMembers(
-          accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder builderForValue) {
+          accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder builderForValue) {
         if (membersBuilder_ == null) {
           ensureMembersIsMutable();
           members_.add(builderForValue.build());
@@ -10204,10 +10204,10 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder addMembers(
-          int index, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder builderForValue) {
+          int index, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder builderForValue) {
         if (membersBuilder_ == null) {
           ensureMembersIsMutable();
           members_.add(index, builderForValue.build());
@@ -10218,10 +10218,10 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder addAllMembers(
-          java.lang.Iterable<? extends accounts.v1alpha1.projects.v1.Projects.MenberProject> values) {
+          java.lang.Iterable<? extends accounts.v1alpha1.projects.v1.Projects.MemberProject> values) {
         if (membersBuilder_ == null) {
           ensureMembersIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -10233,7 +10233,7 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder clearMembers() {
         if (membersBuilder_ == null) {
@@ -10246,7 +10246,7 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
       public Builder removeMembers(int index) {
         if (membersBuilder_ == null) {
@@ -10259,16 +10259,16 @@ public final class Projects {
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder getMembersBuilder(
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder getMembersBuilder(
           int index) {
         return getMembersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder getMembersOrBuilder(
+      public accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder getMembersOrBuilder(
           int index) {
         if (membersBuilder_ == null) {
           return members_.get(index);  } else {
@@ -10276,9 +10276,9 @@ public final class Projects {
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public java.util.List<? extends accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder> 
+      public java.util.List<? extends accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder> 
            getMembersOrBuilderList() {
         if (membersBuilder_ != null) {
           return membersBuilder_.getMessageOrBuilderList();
@@ -10287,33 +10287,33 @@ public final class Projects {
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder addMembersBuilder() {
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder addMembersBuilder() {
         return getMembersFieldBuilder().addBuilder(
-            accounts.v1alpha1.projects.v1.Projects.MenberProject.getDefaultInstance());
+            accounts.v1alpha1.projects.v1.Projects.MemberProject.getDefaultInstance());
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder addMembersBuilder(
+      public accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder addMembersBuilder(
           int index) {
         return getMembersFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.projects.v1.Projects.MenberProject.getDefaultInstance());
+            index, accounts.v1alpha1.projects.v1.Projects.MemberProject.getDefaultInstance());
       }
       /**
-       * <code>repeated .accounts.v1alpha1.projects.v1.MenberProject members = 8 [json_name = "members"];</code>
+       * <code>repeated .accounts.v1alpha1.projects.v1.MemberProject members = 8 [json_name = "members"];</code>
        */
-      public java.util.List<accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder> 
+      public java.util.List<accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder> 
            getMembersBuilderList() {
         return getMembersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.projects.v1.Projects.MenberProject, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder, accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder> 
+          accounts.v1alpha1.projects.v1.Projects.MemberProject, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder, accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder> 
           getMembersFieldBuilder() {
         if (membersBuilder_ == null) {
           membersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.projects.v1.Projects.MenberProject, accounts.v1alpha1.projects.v1.Projects.MenberProject.Builder, accounts.v1alpha1.projects.v1.Projects.MenberProjectOrBuilder>(
+              accounts.v1alpha1.projects.v1.Projects.MemberProject, accounts.v1alpha1.projects.v1.Projects.MemberProject.Builder, accounts.v1alpha1.projects.v1.Projects.MemberProjectOrBuilder>(
                   members_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -17034,20 +17034,20 @@ public final class Projects {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_projects_v1_MenberRol_descriptor;
+    internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_projects_v1_MenberRol_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_projects_v1_MemberRol_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_projects_v1_ProjectList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_projects_v1_ProjectList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_projects_v1_MenberProject_descriptor;
+    internal_static_accounts_v1alpha1_projects_v1_MemberProject_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_projects_v1_MenberProject_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_projects_v1_MemberProject_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_projects_v1_CreateProjectResponse_descriptor;
   private static final 
@@ -17130,10 +17130,10 @@ public final class Projects {
       "(\rR\016organizationId\"u\n\024UpdateProjectReque" +
       "st\022\016\n\002id\030\001 \001(\005R\002id\022M\n\007project\030\002 \001(\01323.ac" +
       "counts.v1alpha1.projects.v1.CreateProjec" +
-      "tRequestR\007project\"J\n\tMenberRol\022\016\n\002id\030\001 \001" +
+      "tRequestR\007project\"J\n\tMemberRol\022\016\n\002id\030\001 \001" +
       "(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003" +
       " \001(\010R\007isAdmin\"7\n\013ProjectList\022\022\n\004name\030\001 \001" +
-      "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"\203\002\n\rMenbe" +
+      "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"\203\002\n\rMembe" +
       "rProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(" +
       "\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName" +
       "\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_acti" +
@@ -17152,7 +17152,7 @@ public final class Projects {
       "ion\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006 \001" +
       "(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdat" +
       "edAt\022F\n\007members\030\010 \003(\0132,.accounts.v1alpha" +
-      "1.projects.v1.MenberProjectR\007members\022=\n\005" +
+      "1.projects.v1.MemberProjectR\007members\022=\n\005" +
       "owner\030\t \001(\0132\'.accounts.v1alpha1.projects" +
       ".v1.UserListR\005owner\"c\n\023ListProjectRespon" +
       "se\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1" +
@@ -17215,11 +17215,11 @@ public final class Projects {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRequest_descriptor,
         new java.lang.String[] { "Id", "Project", });
-    internal_static_accounts_v1alpha1_projects_v1_MenberRol_descriptor =
+    internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_accounts_v1alpha1_projects_v1_MenberRol_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_projects_v1_MemberRol_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_projects_v1_MenberRol_descriptor,
+        internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor,
         new java.lang.String[] { "Id", "Name", "IsAdmin", });
     internal_static_accounts_v1alpha1_projects_v1_ProjectList_descriptor =
       getDescriptor().getMessageTypes().get(6);
@@ -17227,11 +17227,11 @@ public final class Projects {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_projects_v1_ProjectList_descriptor,
         new java.lang.String[] { "Name", "Image", });
-    internal_static_accounts_v1alpha1_projects_v1_MenberProject_descriptor =
+    internal_static_accounts_v1alpha1_projects_v1_MemberProject_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_accounts_v1alpha1_projects_v1_MenberProject_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_projects_v1_MemberProject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_projects_v1_MenberProject_descriptor,
+        internal_static_accounts_v1alpha1_projects_v1_MemberProject_descriptor,
         new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Image", "Role", "Projects", });
     internal_static_accounts_v1alpha1_projects_v1_CreateProjectResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);

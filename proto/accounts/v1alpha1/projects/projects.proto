@@ -37,7 +37,7 @@ message UpdateProjectRequest {
     Responses
 */
 
-message MenberRol {
+message MemberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;
@@ -51,7 +51,7 @@ message ProjectList{
     string image = 2;
 }
 
-message MenberProject {
+message MemberProject {
 
     uint32 id = 1;
     string user_id = 2;
@@ -90,7 +90,7 @@ message GetOneProjectResponse {
     string description = 5;
     string created_at = 6;
     string updated_at = 7;
-    repeated MenberProject members = 8;
+    repeated MemberProject members = 8;
     UserList owner = 9;
 
 }

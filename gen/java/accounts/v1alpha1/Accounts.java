@@ -2468,8 +2468,8 @@ public final class Accounts {
 
   }
 
-  public interface MenberRolOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.MenberRol)
+  public interface MemberRolOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.MemberRol)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2497,18 +2497,18 @@ public final class Accounts {
     boolean getIsAdmin();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.MenberRol}
+   * Protobuf type {@code accounts.v1alpha1.MemberRol}
    */
-  public static final class MenberRol extends
+  public static final class MemberRol extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.MenberRol)
-      MenberRolOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.MemberRol)
+      MemberRolOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MenberRol.newBuilder() to construct.
-    private MenberRol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MemberRol.newBuilder() to construct.
+    private MemberRol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MenberRol() {
+    private MemberRol() {
       name_ = "";
     }
 
@@ -2516,7 +2516,7 @@ public final class Accounts {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MenberRol();
+      return new MemberRol();
     }
 
     @java.lang.Override
@@ -2524,7 +2524,7 @@ public final class Accounts {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MenberRol(
+    private MemberRol(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2579,15 +2579,15 @@ public final class Accounts {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MenberRol_descriptor;
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MemberRol_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MenberRol_fieldAccessorTable
+      return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MemberRol_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.Accounts.MenberRol.class, accounts.v1alpha1.Accounts.MenberRol.Builder.class);
+              accounts.v1alpha1.Accounts.MemberRol.class, accounts.v1alpha1.Accounts.MemberRol.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -2703,10 +2703,10 @@ public final class Accounts {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.Accounts.MenberRol)) {
+      if (!(obj instanceof accounts.v1alpha1.Accounts.MemberRol)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.Accounts.MenberRol other = (accounts.v1alpha1.Accounts.MenberRol) obj;
+      accounts.v1alpha1.Accounts.MemberRol other = (accounts.v1alpha1.Accounts.MemberRol) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -2737,69 +2737,69 @@ public final class Accounts {
       return hash;
     }
 
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(byte[] data)
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.Accounts.MemberRol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseDelimitedFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.Accounts.MenberRol parseFrom(
+    public static accounts.v1alpha1.Accounts.MemberRol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2812,7 +2812,7 @@ public final class Accounts {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.Accounts.MenberRol prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.Accounts.MemberRol prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2828,26 +2828,26 @@ public final class Accounts {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.MenberRol}
+     * Protobuf type {@code accounts.v1alpha1.MemberRol}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.MenberRol)
-        accounts.v1alpha1.Accounts.MenberRolOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.MemberRol)
+        accounts.v1alpha1.Accounts.MemberRolOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MenberRol_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MemberRol_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MenberRol_fieldAccessorTable
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MemberRol_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.Accounts.MenberRol.class, accounts.v1alpha1.Accounts.MenberRol.Builder.class);
+                accounts.v1alpha1.Accounts.MemberRol.class, accounts.v1alpha1.Accounts.MemberRol.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.Accounts.MenberRol.newBuilder()
+      // Construct using accounts.v1alpha1.Accounts.MemberRol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2877,17 +2877,17 @@ public final class Accounts {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MenberRol_descriptor;
+        return accounts.v1alpha1.Accounts.internal_static_accounts_v1alpha1_MemberRol_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.MenberRol getDefaultInstanceForType() {
-        return accounts.v1alpha1.Accounts.MenberRol.getDefaultInstance();
+      public accounts.v1alpha1.Accounts.MemberRol getDefaultInstanceForType() {
+        return accounts.v1alpha1.Accounts.MemberRol.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.MenberRol build() {
-        accounts.v1alpha1.Accounts.MenberRol result = buildPartial();
+      public accounts.v1alpha1.Accounts.MemberRol build() {
+        accounts.v1alpha1.Accounts.MemberRol result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2895,8 +2895,8 @@ public final class Accounts {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.Accounts.MenberRol buildPartial() {
-        accounts.v1alpha1.Accounts.MenberRol result = new accounts.v1alpha1.Accounts.MenberRol(this);
+      public accounts.v1alpha1.Accounts.MemberRol buildPartial() {
+        accounts.v1alpha1.Accounts.MemberRol result = new accounts.v1alpha1.Accounts.MemberRol(this);
         result.id_ = id_;
         result.name_ = name_;
         result.isAdmin_ = isAdmin_;
@@ -2938,16 +2938,16 @@ public final class Accounts {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.Accounts.MenberRol) {
-          return mergeFrom((accounts.v1alpha1.Accounts.MenberRol)other);
+        if (other instanceof accounts.v1alpha1.Accounts.MemberRol) {
+          return mergeFrom((accounts.v1alpha1.Accounts.MemberRol)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.Accounts.MenberRol other) {
-        if (other == accounts.v1alpha1.Accounts.MenberRol.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.Accounts.MemberRol other) {
+        if (other == accounts.v1alpha1.Accounts.MemberRol.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -2973,11 +2973,11 @@ public final class Accounts {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.Accounts.MenberRol parsedMessage = null;
+        accounts.v1alpha1.Accounts.MemberRol parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.Accounts.MenberRol) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.Accounts.MemberRol) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3137,41 +3137,41 @@ public final class Accounts {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.MenberRol)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.MemberRol)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.MenberRol)
-    private static final accounts.v1alpha1.Accounts.MenberRol DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.MemberRol)
+    private static final accounts.v1alpha1.Accounts.MemberRol DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.MenberRol();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.Accounts.MemberRol();
     }
 
-    public static accounts.v1alpha1.Accounts.MenberRol getDefaultInstance() {
+    public static accounts.v1alpha1.Accounts.MemberRol getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MenberRol>
-        PARSER = new com.google.protobuf.AbstractParser<MenberRol>() {
+    private static final com.google.protobuf.Parser<MemberRol>
+        PARSER = new com.google.protobuf.AbstractParser<MemberRol>() {
       @java.lang.Override
-      public MenberRol parsePartialFrom(
+      public MemberRol parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MenberRol(input, extensionRegistry);
+        return new MemberRol(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MenberRol> parser() {
+    public static com.google.protobuf.Parser<MemberRol> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MenberRol> getParserForType() {
+    public com.google.protobuf.Parser<MemberRol> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.MenberRol getDefaultInstanceForType() {
+    public accounts.v1alpha1.Accounts.MemberRol getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7997,10 +7997,10 @@ public final class Accounts {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_UserList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_MenberRol_descriptor;
+    internal_static_accounts_v1alpha1_MemberRol_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_MenberRol_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_MemberRol_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_Permission_descriptor;
   private static final 
@@ -8036,7 +8036,7 @@ public final class Accounts {
       "me\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email" +
       "\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033" +
       "\n\tis_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_" +
-      "user\030\007 \001(\010R\013isSuperUser\"J\n\tMenberRol\022\016\n\002" +
+      "user\030\007 \001(\010R\013isSuperUser\"J\n\tMemberRol\022\016\n\002" +
       "id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_a" +
       "dmin\030\003 \001(\010R\007isAdmin\"y\n\nPermission\022\016\n\002id\030" +
       "\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action\030" +
@@ -8074,11 +8074,11 @@ public final class Accounts {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UserList_descriptor,
         new java.lang.String[] { "Id", "FirstName", "LastName", "Email", "UserId", "IsActive", "IsSuperUser", });
-    internal_static_accounts_v1alpha1_MenberRol_descriptor =
+    internal_static_accounts_v1alpha1_MemberRol_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_accounts_v1alpha1_MenberRol_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_MemberRol_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_MenberRol_descriptor,
+        internal_static_accounts_v1alpha1_MemberRol_descriptor,
         new java.lang.String[] { "Id", "Name", "IsAdmin", });
     internal_static_accounts_v1alpha1_Permission_descriptor =
       getDescriptor().getMessageTypes().get(3);
