@@ -55,9 +55,9 @@ struct TableStruct_accounts_2fv1alpha1_2faccounts_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto;
 namespace accounts {
 namespace v1alpha1 {
-class MenberRol;
-struct MenberRolDefaultTypeInternal;
-extern MenberRolDefaultTypeInternal _MenberRol_default_instance_;
+class MemberRol;
+struct MemberRolDefaultTypeInternal;
+extern MemberRolDefaultTypeInternal _MemberRol_default_instance_;
 class Organization;
 struct OrganizationDefaultTypeInternal;
 extern OrganizationDefaultTypeInternal _Organization_default_instance_;
@@ -76,7 +76,7 @@ extern UserListDefaultTypeInternal _UserList_default_instance_;
 }  // namespace v1alpha1
 }  // namespace accounts
 PROTOBUF_NAMESPACE_OPEN
-template<> ::accounts::v1alpha1::MenberRol* Arena::CreateMaybeMessage<::accounts::v1alpha1::MenberRol>(Arena*);
+template<> ::accounts::v1alpha1::MemberRol* Arena::CreateMaybeMessage<::accounts::v1alpha1::MemberRol>(Arena*);
 template<> ::accounts::v1alpha1::Organization* Arena::CreateMaybeMessage<::accounts::v1alpha1::Organization>(Arena*);
 template<> ::accounts::v1alpha1::Permission* Arena::CreateMaybeMessage<::accounts::v1alpha1::Permission>(Arena*);
 template<> ::accounts::v1alpha1::Project* Arena::CreateMaybeMessage<::accounts::v1alpha1::Project>(Arena*);
@@ -521,24 +521,24 @@ class UserList final :
 };
 // -------------------------------------------------------------------
 
-class MenberRol final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.MenberRol) */ {
+class MemberRol final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.MemberRol) */ {
  public:
-  inline MenberRol() : MenberRol(nullptr) {}
-  ~MenberRol() override;
-  explicit constexpr MenberRol(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline MemberRol() : MemberRol(nullptr) {}
+  ~MemberRol() override;
+  explicit constexpr MemberRol(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  MenberRol(const MenberRol& from);
-  MenberRol(MenberRol&& from) noexcept
-    : MenberRol() {
+  MemberRol(const MemberRol& from);
+  MemberRol(MemberRol&& from) noexcept
+    : MemberRol() {
     *this = ::std::move(from);
   }
 
-  inline MenberRol& operator=(const MenberRol& from) {
+  inline MemberRol& operator=(const MemberRol& from) {
     CopyFrom(from);
     return *this;
   }
-  inline MenberRol& operator=(MenberRol&& from) noexcept {
+  inline MemberRol& operator=(MemberRol&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -557,20 +557,20 @@ class MenberRol final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const MenberRol& default_instance() {
+  static const MemberRol& default_instance() {
     return *internal_default_instance();
   }
-  static inline const MenberRol* internal_default_instance() {
-    return reinterpret_cast<const MenberRol*>(
-               &_MenberRol_default_instance_);
+  static inline const MemberRol* internal_default_instance() {
+    return reinterpret_cast<const MemberRol*>(
+               &_MemberRol_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(MenberRol& a, MenberRol& b) {
+  friend void swap(MemberRol& a, MemberRol& b) {
     a.Swap(&b);
   }
-  inline void Swap(MenberRol* other) {
+  inline void Swap(MemberRol* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -578,7 +578,7 @@ class MenberRol final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(MenberRol* other) {
+  void UnsafeArenaSwap(MemberRol* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -586,17 +586,17 @@ class MenberRol final :
 
   // implements Message ----------------------------------------------
 
-  inline MenberRol* New() const final {
-    return new MenberRol();
+  inline MemberRol* New() const final {
+    return new MemberRol();
   }
 
-  MenberRol* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<MenberRol>(arena);
+  MemberRol* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MemberRol>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const MenberRol& from);
+  void CopyFrom(const MemberRol& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const MenberRol& from);
+  void MergeFrom(const MemberRol& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -613,13 +613,13 @@ class MenberRol final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(MenberRol* other);
+  void InternalSwap(MemberRol* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "accounts.v1alpha1.MenberRol";
+    return "accounts.v1alpha1.MemberRol";
   }
   protected:
-  explicit MenberRol(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit MemberRol(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -672,7 +672,7 @@ class MenberRol final :
   void _internal_set_is_admin(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.MenberRol)
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.MemberRol)
  private:
   class _Internal;
 
@@ -1828,64 +1828,64 @@ inline void UserList::set_is_super_user(bool value) {
 
 // -------------------------------------------------------------------
 
-// MenberRol
+// MemberRol
 
 // uint32 id = 1 [json_name = "id"];
-inline void MenberRol::clear_id() {
+inline void MemberRol::clear_id() {
   id_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 MenberRol::_internal_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MemberRol::_internal_id() const {
   return id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 MenberRol::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberRol.id)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MemberRol::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberRol.id)
   return _internal_id();
 }
-inline void MenberRol::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void MemberRol::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   id_ = value;
 }
-inline void MenberRol::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void MemberRol::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberRol.id)
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberRol.id)
 }
 
 // string name = 2 [json_name = "name"];
-inline void MenberRol::clear_name() {
+inline void MemberRol::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& MenberRol::name() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberRol.name)
+inline const std::string& MemberRol::name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberRol.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void MenberRol::set_name(ArgT0&& arg0, ArgT... args) {
+void MemberRol::set_name(ArgT0&& arg0, ArgT... args) {
  
  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberRol.name)
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberRol.name)
 }
-inline std::string* MenberRol::mutable_name() {
+inline std::string* MemberRol::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MenberRol.name)
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MemberRol.name)
   return _s;
 }
-inline const std::string& MenberRol::_internal_name() const {
+inline const std::string& MemberRol::_internal_name() const {
   return name_.Get();
 }
-inline void MenberRol::_internal_set_name(const std::string& value) {
+inline void MemberRol::_internal_set_name(const std::string& value) {
   
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* MenberRol::_internal_mutable_name() {
+inline std::string* MemberRol::_internal_mutable_name() {
   
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* MenberRol::release_name() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MenberRol.name)
+inline std::string* MemberRol::release_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MemberRol.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void MenberRol::set_allocated_name(std::string* name) {
+inline void MemberRol::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -1893,27 +1893,27 @@ inline void MenberRol::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MenberRol.name)
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberRol.name)
 }
 
 // bool is_admin = 3 [json_name = "isAdmin"];
-inline void MenberRol::clear_is_admin() {
+inline void MemberRol::clear_is_admin() {
   is_admin_ = false;
 }
-inline bool MenberRol::_internal_is_admin() const {
+inline bool MemberRol::_internal_is_admin() const {
   return is_admin_;
 }
-inline bool MenberRol::is_admin() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MenberRol.is_admin)
+inline bool MemberRol::is_admin() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberRol.is_admin)
   return _internal_is_admin();
 }
-inline void MenberRol::_internal_set_is_admin(bool value) {
+inline void MemberRol::_internal_set_is_admin(bool value) {
   
   is_admin_ = value;
 }
-inline void MenberRol::set_is_admin(bool value) {
+inline void MemberRol::set_is_admin(bool value) {
   _internal_set_is_admin(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MenberRol.is_admin)
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberRol.is_admin)
 }
 
 // -------------------------------------------------------------------
