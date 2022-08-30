@@ -17,7 +17,7 @@ class Users
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ó=
+‰/
 #accounts/v1alpha1/users/users.protoaccounts.v1alpha1.users.v1"<
 CreateUserResponse
 msg (	Rmsg
@@ -126,54 +126,7 @@ phone_code  (	R	phoneCode"N
 limit (Rlimit"n
 ListUserPaginationResponse
 count (Rcount:
-users (2$.accounts.v1alpha1.users.v1.UserListRusers"Ø
-SendInvitationUserRequest
-name (	Rname
-email (	Remail"
-user_id_admin (	RuserIdAdmin
-	roles_ids (RrolesIds\'
-permissions_ids (RpermissionsIds\'
-organization_id (RorganizationId"à
-SendInvitationUserResponseC
-organization (2.accounts.v1alpha1.OrganizationRorganization6
-projects (2.accounts.v1alpha1.ProjectRprojects\'
-invitation_code (	RinvitationCode
-result (	Rresult-
-roles (2.accounts.v1alpha1.RoleRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissions
-error (	Rerror"Y
-GetInvitationUserRequest\'
-invitation_code (	RinvitationCode
-email (	Remail"¬
-OrganizationInvitation
-id (Rid
-name (	Rname
-image (	Rimage 
-description (	Rdescription6
-projects (2.accounts.v1alpha1.ProjectRprojects"Ì
-GetInvitationUserResponse
-id (Rid\'
-invitation_code (	RinvitationCode-
-roles (2.accounts.v1alpha1.RoleRroles?
-permissions (2.accounts.v1alpha1.PermissionRpermissionsV
-organization (22.accounts.v1alpha1.users.v1.OrganizationInvitationRorganization
-email (	Remail
-success (Rsuccess"ÿ
-AgreeInvitationUserRequest\'
-invitation_code (	RinvitationCode
-email (	Remail"
-guest_user_id (	RguestUserId_
-invitation_response (2..accounts.v1alpha1.users.v1.InvitationResponseRinvitationResponse`
-projects (2D.accounts.v1alpha1.users.v1.AgreeInvitationUserRequest.ProjectsEntryRprojects;
-ProjectsEntry
-key (Rkey
-value (Rvalue:8"5
-AgreeInvitationUserResponse
-result (	Rresult"4
-ListInvitationUserRequest
-user_id (	RuserId"|
-ListInvitationUserResponse^
-invitation_user (25.accounts.v1alpha1.users.v1.GetInvitationUserResponseRinvitationUser"
+users (2$.accounts.v1alpha1.users.v1.UserListRusers"
 GetListUserDexRequest"[
 GetListUserDexResponseA
 	users_dex (2$.accounts.v1alpha1.users.v1.UsersDexRusersDex"r
@@ -263,10 +216,7 @@ permission
 GetUsersEmailFilterRequest
 value (	Rvalue"Y
 GetUsersEmailFilterResponse:
-users (2$.accounts.v1alpha1.users.v1.UserListRusers*d
-InvitationResponse,
-(INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED  
-INVITATION_RESPONSE_REJECTEDB:Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/usersbproto3'
+users (2$.accounts.v1alpha1.users.v1.UserListRusersB:Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/usersbproto3'
         , true);
 
         static::$is_initialized = true;

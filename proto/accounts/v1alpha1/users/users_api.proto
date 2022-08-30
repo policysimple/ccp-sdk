@@ -18,12 +18,6 @@ service UserService {
     rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
     rpc ListUserPagination(ListUserPaginationRequest) returns (ListUserPaginationResponse);
 
-    //invitation
-    rpc SendInvitationUser(SendInvitationUserRequest) returns (SendInvitationUserResponse);
-    rpc GetInvitationUser(GetInvitationUserRequest) returns (GetInvitationUserResponse);
-    rpc AgreeInvitationUser(AgreeInvitationUserRequest) returns (AgreeInvitationUserResponse);
-    rpc ListInvitationUser(ListInvitationUserRequest) returns (ListInvitationUserResponse);
-
 
     //CHECK USER
     rpc CheckUser(CheckUserRequest) returns (CheckUserResponse);

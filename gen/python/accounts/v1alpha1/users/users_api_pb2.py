@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/users',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'accounts/v1alpha1/users/users_api.proto\x12\x1a\x61\x63\x63ounts.v1alpha1.users.v1\x1a#accounts/v1alpha1/users/users.proto2\xa7\x0f\n\x0bUserService\x12k\n\nCreateUser\x12-.accounts.v1alpha1.users.v1.CreateUserRequest\x1a..accounts.v1alpha1.users.v1.CreateUserResponse\x12\x65\n\x08ListUser\x12+.accounts.v1alpha1.users.v1.ListUserRequest\x1a,.accounts.v1alpha1.users.v1.ListUserResponse\x12k\n\nGetOneUser\x12-.accounts.v1alpha1.users.v1.GetOneUserRequest\x1a..accounts.v1alpha1.users.v1.GetOneUserResponse\x12k\n\nUpdateUser\x12-.accounts.v1alpha1.users.v1.UpdateUserRequest\x1a..accounts.v1alpha1.users.v1.UpdateUserResponse\x12k\n\nDeleteUser\x12-.accounts.v1alpha1.users.v1.DeleteUserRequest\x1a..accounts.v1alpha1.users.v1.DeleteUserResponse\x12\x83\x01\n\x12ListUserPagination\x12\x35.accounts.v1alpha1.users.v1.ListUserPaginationRequest\x1a\x36.accounts.v1alpha1.users.v1.ListUserPaginationResponse\x12\x83\x01\n\x12SendInvitationUser\x12\x35.accounts.v1alpha1.users.v1.SendInvitationUserRequest\x1a\x36.accounts.v1alpha1.users.v1.SendInvitationUserResponse\x12\x80\x01\n\x11GetInvitationUser\x12\x34.accounts.v1alpha1.users.v1.GetInvitationUserRequest\x1a\x35.accounts.v1alpha1.users.v1.GetInvitationUserResponse\x12\x86\x01\n\x13\x41greeInvitationUser\x12\x36.accounts.v1alpha1.users.v1.AgreeInvitationUserRequest\x1a\x37.accounts.v1alpha1.users.v1.AgreeInvitationUserResponse\x12\x83\x01\n\x12ListInvitationUser\x12\x35.accounts.v1alpha1.users.v1.ListInvitationUserRequest\x1a\x36.accounts.v1alpha1.users.v1.ListInvitationUserResponse\x12h\n\tCheckUser\x12,.accounts.v1alpha1.users.v1.CheckUserRequest\x1a-.accounts.v1alpha1.users.v1.CheckUserResponse\x12\x8c\x01\n\x15SendVerificationEmail\x12\x38.accounts.v1alpha1.users.v1.SendVerificationEmailRequest\x1a\x39.accounts.v1alpha1.users.v1.SendVerificationEmailResponse\x12n\n\x0bVerifyEmail\x12..accounts.v1alpha1.users.v1.VerifyEmailRequest\x1a/.accounts.v1alpha1.users.v1.VerifyEmailResponse\x12\x86\x01\n\x13GetUsersEmailFilter\x12\x36.accounts.v1alpha1.users.v1.GetUsersEmailFilterRequest\x1a\x37.accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse\x12w\n\x0eGetListUserDex\x12\x31.accounts.v1alpha1.users.v1.GetListUserDexRequest\x1a\x32.accounts.v1alpha1.users.v1.GetListUserDexResponse\x12t\n\rGetOneUserDex\x12\x30.accounts.v1alpha1.users.v1.GetOneUserDexRequest\x1a\x31.accounts.v1alpha1.users.v1.GetOneUserDexResponseB:Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/usersb\x06proto3'
+  serialized_pb=b'\n\'accounts/v1alpha1/users/users_api.proto\x12\x1a\x61\x63\x63ounts.v1alpha1.users.v1\x1a#accounts/v1alpha1/users/users.proto2\x8f\x0b\n\x0bUserService\x12k\n\nCreateUser\x12-.accounts.v1alpha1.users.v1.CreateUserRequest\x1a..accounts.v1alpha1.users.v1.CreateUserResponse\x12\x65\n\x08ListUser\x12+.accounts.v1alpha1.users.v1.ListUserRequest\x1a,.accounts.v1alpha1.users.v1.ListUserResponse\x12k\n\nGetOneUser\x12-.accounts.v1alpha1.users.v1.GetOneUserRequest\x1a..accounts.v1alpha1.users.v1.GetOneUserResponse\x12k\n\nUpdateUser\x12-.accounts.v1alpha1.users.v1.UpdateUserRequest\x1a..accounts.v1alpha1.users.v1.UpdateUserResponse\x12k\n\nDeleteUser\x12-.accounts.v1alpha1.users.v1.DeleteUserRequest\x1a..accounts.v1alpha1.users.v1.DeleteUserResponse\x12\x83\x01\n\x12ListUserPagination\x12\x35.accounts.v1alpha1.users.v1.ListUserPaginationRequest\x1a\x36.accounts.v1alpha1.users.v1.ListUserPaginationResponse\x12h\n\tCheckUser\x12,.accounts.v1alpha1.users.v1.CheckUserRequest\x1a-.accounts.v1alpha1.users.v1.CheckUserResponse\x12\x8c\x01\n\x15SendVerificationEmail\x12\x38.accounts.v1alpha1.users.v1.SendVerificationEmailRequest\x1a\x39.accounts.v1alpha1.users.v1.SendVerificationEmailResponse\x12n\n\x0bVerifyEmail\x12..accounts.v1alpha1.users.v1.VerifyEmailRequest\x1a/.accounts.v1alpha1.users.v1.VerifyEmailResponse\x12\x86\x01\n\x13GetUsersEmailFilter\x12\x36.accounts.v1alpha1.users.v1.GetUsersEmailFilterRequest\x1a\x37.accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse\x12w\n\x0eGetListUserDex\x12\x31.accounts.v1alpha1.users.v1.GetListUserDexRequest\x1a\x32.accounts.v1alpha1.users.v1.GetListUserDexResponse\x12t\n\rGetOneUserDex\x12\x30.accounts.v1alpha1.users.v1.GetOneUserDexRequest\x1a\x31.accounts.v1alpha1.users.v1.GetOneUserDexResponseB:Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/usersb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_users_dot_users__pb2.DESCRIPTOR,])
 
@@ -39,7 +39,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=109,
-  serialized_end=2068,
+  serialized_end=1532,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateUser',
@@ -102,49 +102,9 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='SendInvitationUser',
-    full_name='accounts.v1alpha1.users.v1.UserService.SendInvitationUser',
-    index=6,
-    containing_service=None,
-    input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._SENDINVITATIONUSERREQUEST,
-    output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._SENDINVITATIONUSERRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetInvitationUser',
-    full_name='accounts.v1alpha1.users.v1.UserService.GetInvitationUser',
-    index=7,
-    containing_service=None,
-    input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETINVITATIONUSERREQUEST,
-    output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETINVITATIONUSERRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='AgreeInvitationUser',
-    full_name='accounts.v1alpha1.users.v1.UserService.AgreeInvitationUser',
-    index=8,
-    containing_service=None,
-    input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._AGREEINVITATIONUSERREQUEST,
-    output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._AGREEINVITATIONUSERRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListInvitationUser',
-    full_name='accounts.v1alpha1.users.v1.UserService.ListInvitationUser',
-    index=9,
-    containing_service=None,
-    input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._LISTINVITATIONUSERREQUEST,
-    output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._LISTINVITATIONUSERRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
     name='CheckUser',
     full_name='accounts.v1alpha1.users.v1.UserService.CheckUser',
-    index=10,
+    index=6,
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._CHECKUSERREQUEST,
     output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._CHECKUSERRESPONSE,
@@ -154,7 +114,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SendVerificationEmail',
     full_name='accounts.v1alpha1.users.v1.UserService.SendVerificationEmail',
-    index=11,
+    index=7,
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._SENDVERIFICATIONEMAILREQUEST,
     output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._SENDVERIFICATIONEMAILRESPONSE,
@@ -164,7 +124,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='VerifyEmail',
     full_name='accounts.v1alpha1.users.v1.UserService.VerifyEmail',
-    index=12,
+    index=8,
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._VERIFYEMAILREQUEST,
     output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._VERIFYEMAILRESPONSE,
@@ -174,7 +134,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetUsersEmailFilter',
     full_name='accounts.v1alpha1.users.v1.UserService.GetUsersEmailFilter',
-    index=13,
+    index=9,
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETUSERSEMAILFILTERREQUEST,
     output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETUSERSEMAILFILTERRESPONSE,
@@ -184,7 +144,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetListUserDex',
     full_name='accounts.v1alpha1.users.v1.UserService.GetListUserDex',
-    index=14,
+    index=10,
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETLISTUSERDEXREQUEST,
     output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETLISTUSERDEXRESPONSE,
@@ -194,7 +154,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetOneUserDex',
     full_name='accounts.v1alpha1.users.v1.UserService.GetOneUserDex',
-    index=15,
+    index=11,
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETONEUSERDEXREQUEST,
     output_type=accounts_dot_v1alpha1_dot_users_dot_users__pb2._GETONEUSERDEXRESPONSE,

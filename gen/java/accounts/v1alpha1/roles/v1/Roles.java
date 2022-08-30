@@ -2461,6 +2461,18 @@ public final class Roles {
      * @return The isAdmin.
      */
     boolean getIsAdmin();
+
+    /**
+     * <code>string error = 7 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 7 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.GetOneRoleResponse}
@@ -2477,6 +2489,7 @@ public final class Roles {
     private GetOneRoleResponse() {
       name_ = "";
       permissions_ = java.util.Collections.emptyList();
+      error_ = "";
     }
 
     @java.lang.Override
@@ -2543,6 +2556,12 @@ public final class Roles {
             case 48: {
 
               isAdmin_ = input.readBool();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
               break;
             }
             default: {
@@ -2702,6 +2721,44 @@ public final class Roles {
       return isAdmin_;
     }
 
+    public static final int ERROR_FIELD_NUMBER = 7;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 7 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 7 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2733,6 +2790,9 @@ public final class Roles {
       }
       if (isAdmin_ != false) {
         output.writeBool(6, isAdmin_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -2766,6 +2826,9 @@ public final class Roles {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isAdmin_);
       }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, error_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2793,6 +2856,8 @@ public final class Roles {
           .equals(other.getPermissionsList())) return false;
       if (getIsAdmin()
           != other.getIsAdmin()) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2819,6 +2884,8 @@ public final class Roles {
       hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAdmin());
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2969,6 +3036,8 @@ public final class Roles {
         }
         isAdmin_ = false;
 
+        error_ = "";
+
         return this;
       }
 
@@ -3010,6 +3079,7 @@ public final class Roles {
           result.permissions_ = permissionsBuilder_.build();
         }
         result.isAdmin_ = isAdmin_;
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -3099,6 +3169,10 @@ public final class Roles {
         }
         if (other.getIsAdmin() != false) {
           setIsAdmin(other.getIsAdmin());
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3566,6 +3640,82 @@ public final class Roles {
       public Builder clearIsAdmin() {
         
         isAdmin_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 7 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 7 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 7 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 7 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 7 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
         onChanged();
         return this;
       }
@@ -11310,36 +11460,36 @@ public final class Roles {
       " \001(\rR\005rolId\022?\n\003rol\030\002 \001(\0132-.accounts.v1al" +
       "pha1.roles.v1.CreateRoleRequestR\003rol\"*\n\021" +
       "GetOneRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId" +
-      "\"\334\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022" +
+      "\"\362\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022" +
       "\022\n\004name\030\002 \001(\tR\004name\022\'\n\017organization_id\030\003" +
       " \001(\rR\016organizationId\022\035\n\nproject_id\030\004 \001(\r" +
       "R\tprojectId\022?\n\013permissions\030\005 \003(\0132\035.accou" +
       "nts.v1alpha1.PermissionR\013permissions\022\031\n\010" +
-      "is_admin\030\006 \001(\010R\007isAdmin\"*\n\021DeleteRoleReq" +
-      "uest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"Z\n\020ListRoles" +
-      "Request\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'" +
-      "\n\017organization_id\030\002 \001(\rR\016organizationId\"" +
-      "B\n\021ListRolesResponse\022-\n\005roles\030\001 \003(\0132\027.ac" +
-      "counts.v1alpha1.RoleR\005roles\"L\n\022CreateRol" +
-      "eResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001" +
-      "(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"<\n\022UpdateRoleR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
-      "R\005error\"<\n\022DeleteRoleResponse\022\020\n\003msg\030\001 \001" +
-      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"0\n\025GetRole" +
-      "sByUserRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"" +
-      "\223\001\n\026GetRolesByUserResponse\022C\n\014organizati" +
-      "on\030\001 \003(\0132\037.accounts.v1alpha1.Organizatio" +
-      "nR\014organization\0224\n\007project\030\002 \003(\0132\032.accou" +
-      "nts.v1alpha1.ProjectR\007project\"{\n\030GetRole" +
-      "sByOrgUserRequest\022\'\n\017organization_id\030\001 \001" +
-      "(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\rR\t" +
-      "projectId\022\027\n\007user_id\030\003 \001(\rR\006userId\"\226\001\n\031G" +
-      "etRolesByOrgUserResponse\022C\n\014organization" +
-      "\030\001 \003(\0132\037.accounts.v1alpha1.OrganizationR" +
-      "\014organization\0224\n\007project\030\002 \003(\0132\032.account" +
-      "s.v1alpha1.ProjectR\007projectB:Z8github.co" +
-      "m/cuemby/ccp-sdk/gen/go/accounts/v1alpha" +
-      "1/rolesb\006proto3"
+      "is_admin\030\006 \001(\010R\007isAdmin\022\024\n\005error\030\007 \001(\tR\005" +
+      "error\"*\n\021DeleteRoleRequest\022\025\n\006rol_id\030\001 \001" +
+      "(\rR\005rolId\"Z\n\020ListRolesRequest\022\035\n\nproject" +
+      "_id\030\001 \001(\rR\tprojectId\022\'\n\017organization_id\030" +
+      "\002 \001(\rR\016organizationId\"B\n\021ListRolesRespon" +
+      "se\022-\n\005roles\030\001 \003(\0132\027.accounts.v1alpha1.Ro" +
+      "leR\005roles\"L\n\022CreateRoleResponse\022\020\n\003msg\030\001" +
+      " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 " +
+      "\001(\rR\002id\"<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001" +
+      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteR" +
+      "oleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
+      " \001(\tR\005error\"0\n\025GetRolesByUserRequest\022\027\n\007" +
+      "user_id\030\001 \001(\tR\006userId\"\223\001\n\026GetRolesByUser" +
+      "Response\022C\n\014organization\030\001 \003(\0132\037.account" +
+      "s.v1alpha1.OrganizationR\014organization\0224\n" +
+      "\007project\030\002 \003(\0132\032.accounts.v1alpha1.Proje" +
+      "ctR\007project\"{\n\030GetRolesByOrgUserRequest\022" +
+      "\'\n\017organization_id\030\001 \001(\rR\016organizationId" +
+      "\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\027\n\007user_" +
+      "id\030\003 \001(\rR\006userId\"\226\001\n\031GetRolesByOrgUserRe" +
+      "sponse\022C\n\014organization\030\001 \003(\0132\037.accounts." +
+      "v1alpha1.OrganizationR\014organization\0224\n\007p" +
+      "roject\030\002 \003(\0132\032.accounts.v1alpha1.Project" +
+      "R\007projectB:Z8github.com/cuemby/ccp-sdk/g" +
+      "en/go/accounts/v1alpha1/rolesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11369,7 +11519,7 @@ public final class Roles {
     internal_static_accounts_v1alpha1_roles_v1_GetOneRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_roles_v1_GetOneRoleResponse_descriptor,
-        new java.lang.String[] { "Id", "Name", "OrganizationId", "ProjectId", "Permissions", "IsAdmin", });
+        new java.lang.String[] { "Id", "Name", "OrganizationId", "ProjectId", "Permissions", "IsAdmin", "Error", });
     internal_static_accounts_v1alpha1_roles_v1_DeleteRoleRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_roles_v1_DeleteRoleRequest_fieldAccessorTable = new

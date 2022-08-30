@@ -67,6 +67,7 @@ constexpr GetOneRoleResponse::GetOneRoleResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : permissions_()
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(0u)
   , organization_id_(0u)
   , project_id_(0u)
@@ -253,6 +254,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2froles_2f
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::roles::v1::GetOneRoleResponse, project_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::roles::v1::GetOneRoleResponse, permissions_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::roles::v1::GetOneRoleResponse, is_admin_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::roles::v1::GetOneRoleResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::roles::v1::DeleteRoleRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -328,16 +330,16 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 11, -1, sizeof(::accounts::v1alpha1::roles::v1::UpdateRoleRequest)},
   { 18, -1, sizeof(::accounts::v1alpha1::roles::v1::GetOneRoleRequest)},
   { 24, -1, sizeof(::accounts::v1alpha1::roles::v1::GetOneRoleResponse)},
-  { 35, -1, sizeof(::accounts::v1alpha1::roles::v1::DeleteRoleRequest)},
-  { 41, -1, sizeof(::accounts::v1alpha1::roles::v1::ListRolesRequest)},
-  { 48, -1, sizeof(::accounts::v1alpha1::roles::v1::ListRolesResponse)},
-  { 54, -1, sizeof(::accounts::v1alpha1::roles::v1::CreateRoleResponse)},
-  { 62, -1, sizeof(::accounts::v1alpha1::roles::v1::UpdateRoleResponse)},
-  { 69, -1, sizeof(::accounts::v1alpha1::roles::v1::DeleteRoleResponse)},
-  { 76, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByUserRequest)},
-  { 82, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByUserResponse)},
-  { 89, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByOrgUserRequest)},
-  { 97, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByOrgUserResponse)},
+  { 36, -1, sizeof(::accounts::v1alpha1::roles::v1::DeleteRoleRequest)},
+  { 42, -1, sizeof(::accounts::v1alpha1::roles::v1::ListRolesRequest)},
+  { 49, -1, sizeof(::accounts::v1alpha1::roles::v1::ListRolesResponse)},
+  { 55, -1, sizeof(::accounts::v1alpha1::roles::v1::CreateRoleResponse)},
+  { 63, -1, sizeof(::accounts::v1alpha1::roles::v1::UpdateRoleResponse)},
+  { 70, -1, sizeof(::accounts::v1alpha1::roles::v1::DeleteRoleResponse)},
+  { 77, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByUserRequest)},
+  { 83, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByUserResponse)},
+  { 90, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByOrgUserRequest)},
+  { 98, -1, sizeof(::accounts::v1alpha1::roles::v1::GetRolesByOrgUserResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -370,43 +372,43 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2froles_2froles_2eproto
   " \001(\rR\005rolId\022\?\n\003rol\030\002 \001(\0132-.accounts.v1al"
   "pha1.roles.v1.CreateRoleRequestR\003rol\"*\n\021"
   "GetOneRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId"
-  "\"\334\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022"
+  "\"\362\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022"
   "\022\n\004name\030\002 \001(\tR\004name\022\'\n\017organization_id\030\003"
   " \001(\rR\016organizationId\022\035\n\nproject_id\030\004 \001(\r"
   "R\tprojectId\022\?\n\013permissions\030\005 \003(\0132\035.accou"
   "nts.v1alpha1.PermissionR\013permissions\022\031\n\010"
-  "is_admin\030\006 \001(\010R\007isAdmin\"*\n\021DeleteRoleReq"
-  "uest\022\025\n\006rol_id\030\001 \001(\rR\005rolId\"Z\n\020ListRoles"
-  "Request\022\035\n\nproject_id\030\001 \001(\rR\tprojectId\022\'"
-  "\n\017organization_id\030\002 \001(\rR\016organizationId\""
-  "B\n\021ListRolesResponse\022-\n\005roles\030\001 \003(\0132\027.ac"
-  "counts.v1alpha1.RoleR\005roles\"L\n\022CreateRol"
-  "eResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001"
-  "(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"<\n\022UpdateRoleR"
-  "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t"
-  "R\005error\"<\n\022DeleteRoleResponse\022\020\n\003msg\030\001 \001"
-  "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"0\n\025GetRole"
-  "sByUserRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\""
-  "\223\001\n\026GetRolesByUserResponse\022C\n\014organizati"
-  "on\030\001 \003(\0132\037.accounts.v1alpha1.Organizatio"
-  "nR\014organization\0224\n\007project\030\002 \003(\0132\032.accou"
-  "nts.v1alpha1.ProjectR\007project\"{\n\030GetRole"
-  "sByOrgUserRequest\022\'\n\017organization_id\030\001 \001"
-  "(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\rR\t"
-  "projectId\022\027\n\007user_id\030\003 \001(\rR\006userId\"\226\001\n\031G"
-  "etRolesByOrgUserResponse\022C\n\014organization"
-  "\030\001 \003(\0132\037.accounts.v1alpha1.OrganizationR"
-  "\014organization\0224\n\007project\030\002 \003(\0132\032.account"
-  "s.v1alpha1.ProjectR\007projectB:Z8github.co"
-  "m/cuemby/ccp-sdk/gen/go/accounts/v1alpha"
-  "1/rolesb\006proto3"
+  "is_admin\030\006 \001(\010R\007isAdmin\022\024\n\005error\030\007 \001(\tR\005"
+  "error\"*\n\021DeleteRoleRequest\022\025\n\006rol_id\030\001 \001"
+  "(\rR\005rolId\"Z\n\020ListRolesRequest\022\035\n\nproject"
+  "_id\030\001 \001(\rR\tprojectId\022\'\n\017organization_id\030"
+  "\002 \001(\rR\016organizationId\"B\n\021ListRolesRespon"
+  "se\022-\n\005roles\030\001 \003(\0132\027.accounts.v1alpha1.Ro"
+  "leR\005roles\"L\n\022CreateRoleResponse\022\020\n\003msg\030\001"
+  " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 "
+  "\001(\rR\002id\"<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001"
+  "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteR"
+  "oleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002"
+  " \001(\tR\005error\"0\n\025GetRolesByUserRequest\022\027\n\007"
+  "user_id\030\001 \001(\tR\006userId\"\223\001\n\026GetRolesByUser"
+  "Response\022C\n\014organization\030\001 \003(\0132\037.account"
+  "s.v1alpha1.OrganizationR\014organization\0224\n"
+  "\007project\030\002 \003(\0132\032.accounts.v1alpha1.Proje"
+  "ctR\007project\"{\n\030GetRolesByOrgUserRequest\022"
+  "\'\n\017organization_id\030\001 \001(\rR\016organizationId"
+  "\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\027\n\007user_"
+  "id\030\003 \001(\rR\006userId\"\226\001\n\031GetRolesByOrgUserRe"
+  "sponse\022C\n\014organization\030\001 \003(\0132\037.accounts."
+  "v1alpha1.OrganizationR\014organization\0224\n\007p"
+  "roject\030\002 \003(\0132\032.accounts.v1alpha1.Project"
+  "R\007projectB:Z8github.com/cuemby/ccp-sdk/g"
+  "en/go/accounts/v1alpha1/rolesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2froles_2froles_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2froles_2froles_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2froles_2froles_2eproto = {
-  false, false, 1655, descriptor_table_protodef_accounts_2fv1alpha1_2froles_2froles_2eproto, "accounts/v1alpha1/roles/roles.proto", 
+  false, false, 1677, descriptor_table_protodef_accounts_2fv1alpha1_2froles_2froles_2eproto, "accounts/v1alpha1/roles/roles.proto", 
   &descriptor_table_accounts_2fv1alpha1_2froles_2froles_2eproto_once, descriptor_table_accounts_2fv1alpha1_2froles_2froles_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2froles_2froles_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2froles_2froles_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2froles_2froles_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2froles_2froles_2eproto,
@@ -1253,6 +1255,11 @@ GetOneRoleResponse::GetOneRoleResponse(const GetOneRoleResponse& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_admin_) -
     reinterpret_cast<char*>(&id_)) + sizeof(is_admin_));
@@ -1261,6 +1268,7 @@ GetOneRoleResponse::GetOneRoleResponse(const GetOneRoleResponse& from)
 
 inline void GetOneRoleResponse::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&is_admin_) -
@@ -1277,6 +1285,7 @@ GetOneRoleResponse::~GetOneRoleResponse() {
 inline void GetOneRoleResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetOneRoleResponse::ArenaDtor(void* object) {
@@ -1297,6 +1306,7 @@ void GetOneRoleResponse::Clear() {
 
   permissions_.Clear();
   name_.ClearToEmpty();
+  error_.ClearToEmpty();
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_admin_) -
       reinterpret_cast<char*>(&id_)) + sizeof(is_admin_));
@@ -1355,6 +1365,15 @@ const char* GetOneRoleResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           is_admin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 7 [json_name = "error"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_error();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.roles.v1.GetOneRoleResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1429,6 +1448,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_is_admin(), target);
   }
 
+  // string error = 7 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.roles.v1.GetOneRoleResponse.error");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_error(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1457,6 +1486,13 @@ size_t GetOneRoleResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // string error = 7 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
   }
 
   // uint32 id = 1 [json_name = "id"];
@@ -1517,6 +1553,9 @@ void GetOneRoleResponse::MergeFrom(const GetOneRoleResponse& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
+  }
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -1551,6 +1590,11 @@ void GetOneRoleResponse::InternalSwap(GetOneRoleResponse* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
       &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetOneRoleResponse, is_admin_)
