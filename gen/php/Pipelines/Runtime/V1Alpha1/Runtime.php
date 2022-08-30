@@ -24,9 +24,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    protected $instance_type = '';
+    private $instance_types;
     /**
      * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
      */
@@ -96,7 +96,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *     @type string $instance_type
+     *     @type \Pipelines\Runtime\V1Alpha1\IntanceType[]|\Google\Protobuf\Internal\RepeatedField $instance_types
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $application_id
@@ -164,23 +164,23 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getInstanceType()
+    public function getInstanceTypes()
     {
-        return $this->instance_type;
+        return $this->instance_types;
     }
 
     /**
-     * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\IntanceType[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setInstanceType($var)
+    public function setInstanceTypes($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->instance_type = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Runtime\V1Alpha1\IntanceType::class);
+        $this->instance_types = $arr;
 
         return $this;
     }
