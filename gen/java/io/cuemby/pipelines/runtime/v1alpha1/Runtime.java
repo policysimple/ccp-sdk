@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     podStatus_ = "";
     podStatusMsg_ = "";
     trafficType_ = 0;
+    responseMessage_ = "";
   }
 
   @java.lang.Override
@@ -212,6 +213,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             trafficType_ = rawValue;
+            break;
+          }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            responseMessage_ = s;
             break;
           }
           default: {
@@ -1142,6 +1149,44 @@ private static final long serialVersionUID = 0L;
     return result == null ? io.cuemby.pipelines.runtime.v1alpha1.TrafficType.UNRECOGNIZED : result;
   }
 
+  public static final int RESPONSE_MESSAGE_FIELD_NUMBER = 20;
+  private volatile java.lang.Object responseMessage_;
+  /**
+   * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+   * @return The responseMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getResponseMessage() {
+    java.lang.Object ref = responseMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      responseMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+   * @return The bytes for responseMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResponseMessageBytes() {
+    java.lang.Object ref = responseMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      responseMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1227,6 +1272,9 @@ private static final long serialVersionUID = 0L;
         18);
     if (trafficType_ != io.cuemby.pipelines.runtime.v1alpha1.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(19, trafficType_);
+    }
+    if (!getResponseMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, responseMessage_);
     }
     unknownFields.writeTo(output);
   }
@@ -1337,6 +1385,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(19, trafficType_);
     }
+    if (!getResponseMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, responseMessage_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1387,6 +1438,8 @@ private static final long serialVersionUID = 0L;
     if (!internalGetAutoscaling().equals(
         other.internalGetAutoscaling())) return false;
     if (trafficType_ != other.trafficType_) return false;
+    if (!getResponseMessage()
+        .equals(other.getResponseMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1448,6 +1501,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + trafficType_;
+    hash = (37 * hash) + RESPONSE_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getResponseMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1662,6 +1717,8 @@ private static final long serialVersionUID = 0L;
       internalGetMutableAutoscaling().clear();
       trafficType_ = 0;
 
+      responseMessage_ = "";
+
       return this;
     }
 
@@ -1721,6 +1778,7 @@ private static final long serialVersionUID = 0L;
       result.autoscaling_ = internalGetAutoscaling();
       result.autoscaling_.makeImmutable();
       result.trafficType_ = trafficType_;
+      result.responseMessage_ = responseMessage_;
       onBuilt();
       return result;
     }
@@ -1847,6 +1905,10 @@ private static final long serialVersionUID = 0L;
           other.internalGetAutoscaling());
       if (other.trafficType_ != 0) {
         setTrafficTypeValue(other.getTrafficTypeValue());
+      }
+      if (!other.getResponseMessage().isEmpty()) {
+        responseMessage_ = other.responseMessage_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3606,6 +3668,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearTrafficType() {
       
       trafficType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object responseMessage_ = "";
+    /**
+     * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @return The responseMessage.
+     */
+    public java.lang.String getResponseMessage() {
+      java.lang.Object ref = responseMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @return The bytes for responseMessage.
+     */
+    public com.google.protobuf.ByteString
+        getResponseMessageBytes() {
+      java.lang.Object ref = responseMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @param value The responseMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      responseMessage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseMessage() {
+      
+      responseMessage_ = getDefaultInstance().getResponseMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @param value The bytes for responseMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      responseMessage_ = value;
       onChanged();
       return this;
     }

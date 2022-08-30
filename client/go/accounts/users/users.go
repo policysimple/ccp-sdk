@@ -3,6 +3,7 @@ package users
 import (
 	"context"
 	"fmt"
+	"log"
 	"os"
 	"sync"
 	"time"
@@ -48,7 +49,7 @@ func init() {
 	doOnce.Do(func() {
 		accountServiceTimeout = os.Getenv("ACCOUNT_SERVICE_TIMEOUT")
 		if accountServiceTimeout == "" {
-			accountServiceTimeout = "30s"
+			accountServiceTimeout = "60s"
 		}
 		accountServiceUri = os.Getenv("ACCOUNT_SERVICE_URI")
 		con, err := grpc.Dial(accountServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -64,7 +65,7 @@ func init() {
 */
 
 func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
-	var checkUser *accountpkgv1.CheckUserRequest
+	var checkUser = &accountpkgv1.CheckUserRequest{}
 
 	bylogs.LogInfo("CheckUser Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
@@ -74,10 +75,13 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
+	log.Println(req.UserIdAdmin)
+
 	if req.ApiKeyValue != "" {
 		checkUser.ApiKeyValue = req.ApiKeyValue
 	} else if req.UserIdAdmin != "" {
 		checkUser.UserIdAdmin = req.UserIdAdmin
+
 	} else {
 		return &accountpkgv1.CheckUserResponse{
 			Error: "ApiKey or CCP token not found",
@@ -94,11 +98,16 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 		}, nil
 	}
 
+	log.Println("TEST3")
+
 	checkUser.TypePermission = req.TypePermission
 	checkUser.UserId = req.UserId
 	checkUser.UserIdDex = req.UserIdDex
 
+	log.Println("TEST4")
+
 	response, err := client.CheckUser(ctx, checkUser)
+	log.Println("TEST5")
 
 	if err != nil {
 		bylogs.LogErr("CheckUser Client Sdk", err)

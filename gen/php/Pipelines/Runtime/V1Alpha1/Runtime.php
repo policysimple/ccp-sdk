@@ -87,6 +87,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      */
     protected $traffic_type = 0;
+    /**
+     * Generated from protobuf field <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     */
+    protected $response_message = '';
 
     /**
      * Constructor.
@@ -112,6 +116,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $extra_args
      *     @type array|\Google\Protobuf\Internal\MapField $autoscaling
      *     @type int $traffic_type
+     *     @type string $response_message
      * }
      */
     public function __construct($data = NULL) {
@@ -511,6 +516,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Pipelines\Runtime\V1Alpha1\TrafficType::class);
         $this->traffic_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @return string
+     */
+    public function getResponseMessage()
+    {
+        return $this->response_message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResponseMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->response_message = $var;
 
         return $this;
     }

@@ -18,6 +18,7 @@ service RuntimeAPIService{
     rpc GetRuntime(GetRuntimeRequest) returns (GetRuntimeResponse) {};
     rpc CreateRuntime(CreateRuntimeRequest) returns (CreateRuntimeResponse) {};
     rpc UpdateRuntime(UpdateRuntimeRequest) returns (UpdateRuntimeResponse) {};
+    rpc UpdateResponseMessageRuntime(UpdateResponseMessageRuntimeRequest) returns (UpdateResponseMessageRuntimeResponse) {};
     rpc DeleteRuntime(DeleteRuntimeRequest) returns (DeleteRuntimeResponse) {};
     rpc ListRuntimes(ListRuntimesRequest) returns (ListRuntimesResponse) {};
 }
@@ -38,6 +39,16 @@ message UpdateRuntimeRequest {
 }
 
 message UpdateRuntimeResponse {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
+}
+
+message UpdateResponseMessageRuntimeRequest {
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
+}
+
+message UpdateResponseMessageRuntimeResponse {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
     string status = 2;
 }

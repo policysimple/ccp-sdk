@@ -342,6 +342,7 @@ class QuotasRegistry final :
   enum : int {
     kIdFieldNumber = 1,
     kEnvironmentIdFieldNumber = 4,
+    kEnvironmentInternalNameFieldNumber = 5,
     kHarborFieldNumber = 7,
     kOrganizationIdFieldNumber = 2,
     kProjectIdFieldNumber = 3,
@@ -373,6 +374,20 @@ class QuotasRegistry final :
   const std::string& _internal_environment_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_id(const std::string& value);
   std::string* _internal_mutable_environment_id();
+  public:
+
+  // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+  void clear_environment_internal_name();
+  const std::string& environment_internal_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_internal_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_internal_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_internal_name();
+  void set_allocated_environment_internal_name(std::string* environment_internal_name);
+  private:
+  const std::string& _internal_environment_internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_internal_name(const std::string& value);
+  std::string* _internal_mutable_environment_internal_name();
   public:
 
   // .artifacts.quotas.v1alpha1.HarborQuotas harbor = 7 [json_name = "harbor"];
@@ -429,6 +444,7 @@ class QuotasRegistry final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_internal_name_;
   ::artifacts::quotas::v1alpha1::HarborQuotas* harbor_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
@@ -621,6 +637,52 @@ inline void QuotasRegistry::set_allocated_environment_id(std::string* environmen
   environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.QuotasRegistry.environment_id)
+}
+
+// string environment_internal_name = 5 [json_name = "environmentInternalName"];
+inline void QuotasRegistry::clear_environment_internal_name() {
+  environment_internal_name_.ClearToEmpty();
+}
+inline const std::string& QuotasRegistry::environment_internal_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name)
+  return _internal_environment_internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QuotasRegistry::set_environment_internal_name(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name)
+}
+inline std::string* QuotasRegistry::mutable_environment_internal_name() {
+  std::string* _s = _internal_mutable_environment_internal_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name)
+  return _s;
+}
+inline const std::string& QuotasRegistry::_internal_environment_internal_name() const {
+  return environment_internal_name_.Get();
+}
+inline void QuotasRegistry::_internal_set_environment_internal_name(const std::string& value) {
+  
+  environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QuotasRegistry::_internal_mutable_environment_internal_name() {
+  
+  return environment_internal_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QuotasRegistry::release_environment_internal_name() {
+  // @@protoc_insertion_point(field_release:artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name)
+  return environment_internal_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QuotasRegistry::set_allocated_environment_internal_name(std::string* environment_internal_name) {
+  if (environment_internal_name != nullptr) {
+    
+  } else {
+    
+  }
+  environment_internal_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_internal_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name)
 }
 
 // bool active = 6 [json_name = "active"];

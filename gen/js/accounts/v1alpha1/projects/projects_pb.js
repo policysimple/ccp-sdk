@@ -2969,7 +2969,8 @@ proto.accounts.v1alpha1.projects.v1.ListProjectResponse.prototype.toObject = fun
 proto.accounts.v1alpha1.projects.v1.ListProjectResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
-    accounts_v1alpha1_accounts_pb.Project.toObject, includeInstance)
+    accounts_v1alpha1_accounts_pb.Project.toObject, includeInstance),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3011,6 +3012,10 @@ proto.accounts.v1alpha1.projects.v1.ListProjectResponse.deserializeBinaryFromRea
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Project.deserializeBinaryFromReader);
       msg.addProjects(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3046,6 +3051,13 @@ proto.accounts.v1alpha1.projects.v1.ListProjectResponse.serializeBinaryToWriter 
       1,
       f,
       accounts_v1alpha1_accounts_pb.Project.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -3086,6 +3098,24 @@ proto.accounts.v1alpha1.projects.v1.ListProjectResponse.prototype.addProjects = 
  */
 proto.accounts.v1alpha1.projects.v1.ListProjectResponse.prototype.clearProjectsList = function() {
   return this.setProjectsList([]);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.projects.v1.ListProjectResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.ListProjectResponse} returns this
+ */
+proto.accounts.v1alpha1.projects.v1.ListProjectResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

@@ -1301,6 +1301,7 @@ class ListOrganizationResponse final :
 
   enum : int {
     kOrganizationsFieldNumber = 1,
+    kErrorFieldNumber = 2,
   };
   // repeated .accounts.v1alpha1.Organization organizations = 1 [json_name = "organizations"];
   int organizations_size() const;
@@ -1320,6 +1321,20 @@ class ListOrganizationResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >&
       organizations() const;
 
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.ListOrganizationResponse)
  private:
   class _Internal;
@@ -1328,6 +1343,7 @@ class ListOrganizationResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization > organizations_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto;
 };
@@ -3272,6 +3288,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Or
 ListOrganizationResponse::organizations() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.organizations.v1.ListOrganizationResponse.organizations)
   return organizations_;
+}
+
+// string error = 2 [json_name = "error"];
+inline void ListOrganizationResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& ListOrganizationResponse::error() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.ListOrganizationResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListOrganizationResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.ListOrganizationResponse.error)
+}
+inline std::string* ListOrganizationResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.ListOrganizationResponse.error)
+  return _s;
+}
+inline const std::string& ListOrganizationResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void ListOrganizationResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListOrganizationResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListOrganizationResponse::release_error() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.organizations.v1.ListOrganizationResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListOrganizationResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.ListOrganizationResponse.error)
 }
 
 // -------------------------------------------------------------------

@@ -34,6 +34,16 @@ public final class MetricsApiProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_performance_metrics_v1alpha1_GetMetricsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_performance_metrics_v1alpha1_GetTektonMetricsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_performance_metrics_v1alpha1_GetTektonMetricsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_performance_metrics_v1alpha1_GetTektonMetricsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_performance_metrics_v1alpha1_GetTektonMetricsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -61,22 +71,33 @@ public final class MetricsApiProto {
       "Response\022@\n\006memory\030\001 \003(\0132(.performance.m" +
       "etrics.v1alpha1.MetricItemR\006memory\022:\n\003cp" +
       "u\030\002 \003(\0132(.performance.metrics.v1alpha1.M" +
-      "etricItemR\003cpu*\251\002\n\017MetricsInterval\022 \n\034ME" +
-      "TRICS_INTERVAL_UNSPECIFIED\020\000\022\035\n\031METRICS_" +
-      "INTERVAL_1_MUNITE\020\001\022\036\n\032METRICS_INTERVAL_" +
-      "5_MUNITES\020\002\022\037\n\033METRICS_INTERVAL_15_MUNIT" +
-      "ES\020\003\022\037\n\033METRICS_INTERVAL_30_MUNITES\020\004\022\033\n" +
-      "\027METRICS_INTERVAL_1_HOUR\020\005\022\035\n\031METRICS_IN" +
-      "TERVAL_12_HOURS\020\006\022\032\n\026METRICS_INTERVAL_1_" +
-      "DAY\020\007\022\033\n\027METRICS_INTERVAL_1_WEEK\020\0102\206\001\n\021M" +
-      "etricsAPIService\022q\n\nGetMetrics\022/.perform" +
-      "ance.metrics.v1alpha1.GetMetricsRequest\032" +
-      "0.performance.metrics.v1alpha1.GetMetric" +
-      "sResponse\"\000B\260\001\n&io.cuemby.performance.me" +
-      "trics.v1alpha1B\017MetricsApiProtoP\001Z/githu" +
-      "b.com/performance-grpc-sdk/metricsv1alph" +
-      "a1\242\002\003PFX\252\002\034Performance.Metrics.V1Alpha1\312" +
-      "\002\034Performance\\Metrics\\V1Alpha1b\006proto3"
+      "etricItemR\003cpu\"\250\001\n\027GetTektonMetricsReque" +
+      "st\022*\n\021name_pipeline_run\030\001 \001(\tR\017namePipel" +
+      "ineRun\0229\n\005range\030\002 \001(\0132#.performance.metr" +
+      "ics.v1alpha1.RangeR\005range\022\022\n\004page\030\003 \001(\005R" +
+      "\004page\022\022\n\004size\030\004 \001(\005R\004size\"d\n\030GetTektonMe" +
+      "tricsResponse\022H\n\007results\030\001 \003(\0132..perform" +
+      "ance.metrics.v1alpha1.TektonMetricItemR\007" +
+      "results*\251\002\n\017MetricsInterval\022 \n\034METRICS_I" +
+      "NTERVAL_UNSPECIFIED\020\000\022\035\n\031METRICS_INTERVA" +
+      "L_1_MUNITE\020\001\022\036\n\032METRICS_INTERVAL_5_MUNIT" +
+      "ES\020\002\022\037\n\033METRICS_INTERVAL_15_MUNITES\020\003\022\037\n" +
+      "\033METRICS_INTERVAL_30_MUNITES\020\004\022\033\n\027METRIC" +
+      "S_INTERVAL_1_HOUR\020\005\022\035\n\031METRICS_INTERVAL_" +
+      "12_HOURS\020\006\022\032\n\026METRICS_INTERVAL_1_DAY\020\007\022\033" +
+      "\n\027METRICS_INTERVAL_1_WEEK\020\0102\214\002\n\021MetricsA" +
+      "PIService\022q\n\nGetMetrics\022/.performance.me" +
+      "trics.v1alpha1.GetMetricsRequest\0320.perfo" +
+      "rmance.metrics.v1alpha1.GetMetricsRespon" +
+      "se\"\000\022\203\001\n\020GetTektonMetrics\0225.performance." +
+      "metrics.v1alpha1.GetTektonMetricsRequest" +
+      "\0326.performance.metrics.v1alpha1.GetTekto" +
+      "nMetricsResponse\"\000B\260\001\n&io.cuemby.perform" +
+      "ance.metrics.v1alpha1B\017MetricsApiProtoP\001" +
+      "Z/github.com/performance-grpc-sdk/metric" +
+      "sv1alpha1\242\002\003PFX\252\002\034Performance.Metrics.V1" +
+      "Alpha1\312\002\034Performance\\Metrics\\V1Alpha1b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -107,6 +128,18 @@ public final class MetricsApiProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_metrics_v1alpha1_GetMetricsResponse_descriptor,
         new java.lang.String[] { "Memory", "Cpu", });
+    internal_static_performance_metrics_v1alpha1_GetTektonMetricsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_performance_metrics_v1alpha1_GetTektonMetricsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_performance_metrics_v1alpha1_GetTektonMetricsRequest_descriptor,
+        new java.lang.String[] { "NamePipelineRun", "Range", "Page", "Size", });
+    internal_static_performance_metrics_v1alpha1_GetTektonMetricsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_performance_metrics_v1alpha1_GetTektonMetricsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_performance_metrics_v1alpha1_GetTektonMetricsResponse_descriptor,
+        new java.lang.String[] { "Results", });
     io.cuemby.performance.metrics.v1alpha1.MetricsProto.getDescriptor();
   }
 

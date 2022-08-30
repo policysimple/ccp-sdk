@@ -101,6 +101,7 @@ message GetOneProjectResponse {
 
 message ListProjectResponse {
     repeated Project projects = 1;
+    string error = 2;
 }
 
 message ListProjectPaginationRequest {

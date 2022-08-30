@@ -93,6 +93,28 @@ function deserialize_pipelines_runtime_v1alpha1_ListRuntimesResponse(buffer_arg)
   return pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_UpdateRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateRuntimeRequest');
@@ -149,6 +171,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateRuntimeRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_UpdateRuntimeResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateRuntimeResponse,
+  },
+  updateResponseMessageRuntime: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateResponseMessageRuntime',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeResponse,
   },
   deleteRuntime: {
     path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntime',

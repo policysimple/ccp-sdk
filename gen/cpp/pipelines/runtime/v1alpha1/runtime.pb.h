@@ -438,6 +438,7 @@ class Runtime final :
     kScalerFieldNumber = 10,
     kPodStatusFieldNumber = 11,
     kPodStatusMsgFieldNumber = 12,
+    kResponseMessageFieldNumber = 20,
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
     kTrafficTypeFieldNumber = 19,
@@ -674,6 +675,20 @@ class Runtime final :
   std::string* _internal_mutable_pod_status_msg();
   public:
 
+  // string response_message = 20 [json_name = "responseMessage"];
+  void clear_response_message();
+  const std::string& response_message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_response_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_response_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_response_message();
+  void set_allocated_response_message(std::string* response_message);
+  private:
+  const std::string& _internal_response_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_response_message(const std::string& value);
+  std::string* _internal_mutable_response_message();
+  public:
+
   // uint32 organization_id = 5 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -747,6 +762,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scaler_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_status_msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr response_message_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   int traffic_type_;
@@ -2232,6 +2248,52 @@ inline void Runtime::_internal_set_traffic_type(::pipelines::runtime::v1alpha1::
 inline void Runtime::set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value) {
   _internal_set_traffic_type(value);
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.traffic_type)
+}
+
+// string response_message = 20 [json_name = "responseMessage"];
+inline void Runtime::clear_response_message() {
+  response_message_.ClearToEmpty();
+}
+inline const std::string& Runtime::response_message() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.response_message)
+  return _internal_response_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_response_message(ArgT0&& arg0, ArgT... args) {
+ 
+ response_message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.response_message)
+}
+inline std::string* Runtime::mutable_response_message() {
+  std::string* _s = _internal_mutable_response_message();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.response_message)
+  return _s;
+}
+inline const std::string& Runtime::_internal_response_message() const {
+  return response_message_.Get();
+}
+inline void Runtime::_internal_set_response_message(const std::string& value) {
+  
+  response_message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_response_message() {
+  
+  return response_message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_response_message() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.response_message)
+  return response_message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_response_message(std::string* response_message) {
+  if (response_message != nullptr) {
+    
+  } else {
+    
+  }
+  response_message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), response_message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.response_message)
 }
 
 // -------------------------------------------------------------------

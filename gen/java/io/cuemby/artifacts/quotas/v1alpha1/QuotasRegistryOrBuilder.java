@@ -44,6 +44,18 @@ public interface QuotasRegistryOrBuilder extends
       getEnvironmentIdBytes();
 
   /**
+   * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+   * @return The environmentInternalName.
+   */
+  java.lang.String getEnvironmentInternalName();
+  /**
+   * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+   * @return The bytes for environmentInternalName.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentInternalNameBytes();
+
+  /**
    * <code>bool active = 6 [json_name = "active"];</code>
    * @return The active.
    */

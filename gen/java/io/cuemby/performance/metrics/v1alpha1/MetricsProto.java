@@ -19,6 +19,11 @@ public final class MetricsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_performance_metrics_v1alpha1_MetricItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_performance_metrics_v1alpha1_TektonMetricItem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_performance_metrics_v1alpha1_TektonMetricItem_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -32,12 +37,23 @@ public final class MetricsProto {
       "roto\022\034performance.metrics.v1alpha1\"p\n\nMe" +
       "tricItem\022\022\n\004date\030\001 \001(\tR\004date\022\034\n\tcontaine" +
       "r\030\002 \001(\tR\tcontainer\022\032\n\010resource\030\003 \001(\tR\010re" +
-      "source\022\024\n\005value\030\004 \001(\001R\005valueB\255\001\n&io.cuem" +
-      "by.performance.metrics.v1alpha1B\014Metrics" +
-      "ProtoP\001Z/github.com/performance-grpc-sdk" +
-      "/metricsv1alpha1\242\002\003PFX\252\002\034Performance.Met" +
-      "rics.V1Alpha1\312\002\034Performance\\Metrics\\V1Al" +
-      "pha1b\006proto3"
+      "source\022\024\n\005value\030\004 \001(\001R\005value\"\316\003\n\020TektonM" +
+      "etricItem\022\022\n\004date\030\001 \001(\tR\004date\022\034\n\tcontain" +
+      "er\030\002 \001(\tR\tcontainer\022\032\n\010instance\030\003 \001(\tR\010i" +
+      "nstance\022\020\n\003pod\030\004 \001(\tR\003pod\022\035\n\ncreated_at\030" +
+      "\005 \001(\tR\tcreatedAt\022\032\n\010pipeline\030\006 \001(\tR\010pipe" +
+      "line\022\032\n\010endpoint\030\007 \001(\tR\010endpoint\022\022\n\004task" +
+      "\030\010 \001(\tR\004task\022\030\n\007service\030\t \001(\tR\007service\022\034" +
+      "\n\tnamespace\030\n \001(\tR\tnamespace\022-\n\022exported" +
+      "_namespace\030\013 \001(\tR\021exportedNamespace\022*\n\021t" +
+      "ekton_query_name\030\014 \001(\tR\017tektonQueryName\022" +
+      "\020\n\003job\030\r \001(\tR\003job\022\024\n\005value\030\016 \001(\001R\005value\022" +
+      "\034\n\ttimestamp\030\017 \001(\tR\ttimestamp\022\026\n\006status\030" +
+      "\020 \001(\tR\006statusB\255\001\n&io.cuemby.performance." +
+      "metrics.v1alpha1B\014MetricsProtoP\001Z/github" +
+      ".com/performance-grpc-sdk/metricsv1alpha" +
+      "1\242\002\003PFX\252\002\034Performance.Metrics.V1Alpha1\312\002" +
+      "\034Performance\\Metrics\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -49,6 +65,12 @@ public final class MetricsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_performance_metrics_v1alpha1_MetricItem_descriptor,
         new java.lang.String[] { "Date", "Container", "Resource", "Value", });
+    internal_static_performance_metrics_v1alpha1_TektonMetricItem_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_performance_metrics_v1alpha1_TektonMetricItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_performance_metrics_v1alpha1_TektonMetricItem_descriptor,
+        new java.lang.String[] { "Date", "Container", "Instance", "Pod", "CreatedAt", "Pipeline", "Endpoint", "Task", "Service", "Namespace", "ExportedNamespace", "TektonQueryName", "Job", "Value", "Timestamp", "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

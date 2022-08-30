@@ -5587,6 +5587,18 @@ public final class Organizations {
      */
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
         int index);
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.organizations.v1.ListOrganizationResponse}
@@ -5602,6 +5614,7 @@ public final class Organizations {
     }
     private ListOrganizationResponse() {
       organizations_ = java.util.Collections.emptyList();
+      error_ = "";
     }
 
     @java.lang.Override
@@ -5642,6 +5655,12 @@ public final class Organizations {
               }
               organizations_.add(
                   input.readMessage(accounts.v1alpha1.Accounts.Organization.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
               break;
             }
             default: {
@@ -5719,6 +5738,44 @@ public final class Organizations {
       return organizations_.get(index);
     }
 
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5736,6 +5793,9 @@ public final class Organizations {
       for (int i = 0; i < organizations_.size(); i++) {
         output.writeMessage(1, organizations_.get(i));
       }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5748,6 +5808,9 @@ public final class Organizations {
       for (int i = 0; i < organizations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, organizations_.get(i));
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5766,6 +5829,8 @@ public final class Organizations {
 
       if (!getOrganizationsList()
           .equals(other.getOrganizationsList())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5781,6 +5846,8 @@ public final class Organizations {
         hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getOrganizationsList().hashCode();
       }
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5921,6 +5988,8 @@ public final class Organizations {
         } else {
           organizationsBuilder_.clear();
         }
+        error_ = "";
+
         return this;
       }
 
@@ -5957,6 +6026,7 @@ public final class Organizations {
         } else {
           result.organizations_ = organizationsBuilder_.build();
         }
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -6030,6 +6100,10 @@ public final class Organizations {
               organizationsBuilder_.addAllMessages(other.organizations_);
             }
           }
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6299,6 +6373,82 @@ public final class Organizations {
           organizations_ = null;
         }
         return organizationsBuilder_;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11783,28 +11933,29 @@ public final class Organizations {
       "berR\007menbers\022 \n\013description\030\006 \001(\tR\013descr" +
       "iption\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alpha" +
       "1.UserListR\005owner\022\024\n\005error\030\010 \001(\tR\005error\022" +
-      "\022\n\004slug\030\t \001(\tR\004slug\"a\n\030ListOrganizationR" +
+      "\022\n\004slug\030\t \001(\tR\004slug\"w\n\030ListOrganizationR" +
       "esponse\022E\n\rorganizations\030\001 \003(\0132\037.account" +
-      "s.v1alpha1.OrganizationR\rorganizations\"\206" +
-      "\001\n\032CreateOrganizationResponse\022\020\n\003msg\030\001 \001" +
-      "(\tR\003msg\0220\n\024role_id_organization\030\002 \001(\rR\022r" +
-      "oleIdOrganization\022\024\n\005error\030\003 \001(\tR\005error\022" +
-      "\016\n\002id\030\004 \001(\rR\002id\"D\n\032UpdateOrganizationRes" +
-      "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005" +
-      "error\"D\n\032DeleteOrganizationResponse\022\020\n\003m" +
-      "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\317\001\n\006" +
-      "Member\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR" +
-      "\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033" +
-      "\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_active" +
-      "\030\005 \001(\010R\010isActive\022C\n\005roles\030\006 \003(\0132-.accoun" +
-      "ts.v1alpha1.organizations.v1.MenberRolR\005" +
-      "roles\"q\n\023ProjectOrganization\022\016\n\002id\030\001 \001(\005" +
-      "R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR" +
-      "\005image\022 \n\013description\030\004 \001(\tR\013description" +
-      "\"J\n\tMenberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 " +
-      "\001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdminBBZ@" +
-      "github.com/cuemby/ccp-sdk/gen/go/account" +
-      "s/v1alpha1/organizationsb\006proto3"
+      "s.v1alpha1.OrganizationR\rorganizations\022\024" +
+      "\n\005error\030\002 \001(\tR\005error\"\206\001\n\032CreateOrganizat" +
+      "ionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id" +
+      "_organization\030\002 \001(\rR\022roleIdOrganization\022" +
+      "\024\n\005error\030\003 \001(\tR\005error\022\016\n\002id\030\004 \001(\rR\002id\"D\n" +
+      "\032UpdateOrganizationResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"D\n\032DeleteOrg" +
+      "anizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
+      "rror\030\002 \001(\tR\005error\"\317\001\n\006Member\022\016\n\002id\030\001 \001(\r" +
+      "R\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_n" +
+      "ame\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR" +
+      "\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isActive\022C" +
+      "\n\005roles\030\006 \003(\0132-.accounts.v1alpha1.organi" +
+      "zations.v1.MenberRolR\005roles\"q\n\023ProjectOr" +
+      "ganization\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\t" +
+      "R\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013descript" +
+      "ion\030\004 \001(\tR\013description\"J\n\tMenberRol\022\016\n\002i" +
+      "d\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_ad" +
+      "min\030\003 \001(\010R\007isAdminBBZ@github.com/cuemby/" +
+      "ccp-sdk/gen/go/accounts/v1alpha1/organiz" +
+      "ationsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11852,7 +12003,7 @@ public final class Organizations {
     internal_static_accounts_v1alpha1_organizations_v1_ListOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_organizations_v1_ListOrganizationResponse_descriptor,
-        new java.lang.String[] { "Organizations", });
+        new java.lang.String[] { "Organizations", "Error", });
     internal_static_accounts_v1alpha1_organizations_v1_CreateOrganizationResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_organizations_v1_CreateOrganizationResponse_fieldAccessorTable = new
