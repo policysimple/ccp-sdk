@@ -32,16 +32,28 @@ public interface RuntimeOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-   * @return The instanceType.
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
    */
-  java.lang.String getInstanceType();
+  java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType> 
+      getInstanceTypesList();
   /**
-   * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-   * @return The bytes for instanceType.
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceTypeBytes();
+  io.cuemby.pipelines.runtime.v1alpha1.IntanceType getInstanceTypes(int index);
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  int getInstanceTypesCount();
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder> 
+      getInstanceTypesOrBuilderList();
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder getInstanceTypesOrBuilder(
+      int index);
 
   /**
    * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>

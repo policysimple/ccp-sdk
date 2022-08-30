@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private Runtime() {
     id_ = "";
     name_ = "";
-    instanceType_ = "";
+    instanceTypes_ = java.util.Collections.emptyList();
     applicationId_ = "";
     workspaceId_ = "";
     environmentId_ = "";
@@ -77,9 +77,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            instanceType_ = s;
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              instanceTypes_ = new java.util.ArrayList<io.cuemby.pipelines.runtime.v1alpha1.IntanceType>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            instanceTypes_.add(
+                input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.IntanceType.parser(), extensionRegistry));
             break;
           }
           case 40: {
@@ -129,10 +132,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               integration_ = com.google.protobuf.MapField.newMapField(
                   IntegrationDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             integration__ = input.readMessage(
@@ -142,10 +145,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 114: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               environmentVariables_ = com.google.protobuf.MapField.newMapField(
                   EnvironmentVariablesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000004;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             environmentVariables__ = input.readMessage(
@@ -155,10 +158,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 122: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               commands_ = com.google.protobuf.MapField.newMapField(
                   CommandsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             commands__ = input.readMessage(
@@ -168,10 +171,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 130: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               secrets_ = com.google.protobuf.MapField.newMapField(
                   SecretsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000010;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             secrets__ = input.readMessage(
@@ -181,10 +184,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 138: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               extraArgs_ = com.google.protobuf.MapField.newMapField(
                   ExtraArgsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             extraArgs__ = input.readMessage(
@@ -194,10 +197,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 146: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
               autoscaling_ = com.google.protobuf.MapField.newMapField(
                   AutoscalingDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000040;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             autoscaling__ = input.readMessage(
@@ -233,6 +236,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        instanceTypes_ = java.util.Collections.unmodifiableList(instanceTypes_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -348,42 +354,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INSTANCE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object instanceType_;
+  public static final int INSTANCE_TYPES_FIELD_NUMBER = 4;
+  private java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType> instanceTypes_;
   /**
-   * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-   * @return The instanceType.
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
    */
   @java.lang.Override
-  public java.lang.String getInstanceType() {
-    java.lang.Object ref = instanceType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      instanceType_ = s;
-      return s;
-    }
+  public java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType> getInstanceTypesList() {
+    return instanceTypes_;
   }
   /**
-   * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-   * @return The bytes for instanceType.
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInstanceTypeBytes() {
-    java.lang.Object ref = instanceType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      instanceType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public java.util.List<? extends io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder> 
+      getInstanceTypesOrBuilderList() {
+    return instanceTypes_;
+  }
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  @java.lang.Override
+  public int getInstanceTypesCount() {
+    return instanceTypes_.size();
+  }
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.IntanceType getInstanceTypes(int index) {
+    return instanceTypes_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder getInstanceTypesOrBuilder(
+      int index) {
+    return instanceTypes_.get(index);
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 5;
@@ -1199,8 +1207,8 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getInstanceTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instanceType_);
+    for (int i = 0; i < instanceTypes_.size(); i++) {
+      output.writeMessage(4, instanceTypes_.get(i));
     }
     if (organizationId_ != 0) {
       output.writeUInt32(5, organizationId_);
@@ -1283,8 +1291,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getInstanceTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instanceType_);
+    for (int i = 0; i < instanceTypes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, instanceTypes_.get(i));
     }
     if (organizationId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -1398,8 +1407,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getInstanceType()
-        .equals(other.getInstanceType())) return false;
+    if (!getInstanceTypesList()
+        .equals(other.getInstanceTypesList())) return false;
     if (getOrganizationId()
         != other.getOrganizationId()) return false;
     if (getProjectId()
@@ -1446,8 +1455,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstanceType().hashCode();
+    if (getInstanceTypesCount() > 0) {
+      hash = (37 * hash) + INSTANCE_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceTypesList().hashCode();
+    }
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
@@ -1666,6 +1677,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getInstanceTypesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1675,8 +1687,12 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
-      instanceType_ = "";
-
+      if (instanceTypesBuilder_ == null) {
+        instanceTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        instanceTypesBuilder_.clear();
+      }
       organizationId_ = 0;
 
       projectId_ = 0;
@@ -1732,7 +1748,15 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.name_ = name_;
-      result.instanceType_ = instanceType_;
+      if (instanceTypesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          instanceTypes_ = java.util.Collections.unmodifiableList(instanceTypes_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.instanceTypes_ = instanceTypes_;
+      } else {
+        result.instanceTypes_ = instanceTypesBuilder_.build();
+      }
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
       result.applicationId_ = applicationId_;
@@ -1811,9 +1835,31 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getInstanceType().isEmpty()) {
-        instanceType_ = other.instanceType_;
-        onChanged();
+      if (instanceTypesBuilder_ == null) {
+        if (!other.instanceTypes_.isEmpty()) {
+          if (instanceTypes_.isEmpty()) {
+            instanceTypes_ = other.instanceTypes_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureInstanceTypesIsMutable();
+            instanceTypes_.addAll(other.instanceTypes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.instanceTypes_.isEmpty()) {
+          if (instanceTypesBuilder_.isEmpty()) {
+            instanceTypesBuilder_.dispose();
+            instanceTypesBuilder_ = null;
+            instanceTypes_ = other.instanceTypes_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            instanceTypesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getInstanceTypesFieldBuilder() : null;
+          } else {
+            instanceTypesBuilder_.addAllMessages(other.instanceTypes_);
+          }
+        }
       }
       if (other.getOrganizationId() != 0) {
         setOrganizationId(other.getOrganizationId());
@@ -2046,80 +2092,244 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object instanceType_ = "";
+    private java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType> instanceTypes_ =
+      java.util.Collections.emptyList();
+    private void ensureInstanceTypesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        instanceTypes_ = new java.util.ArrayList<io.cuemby.pipelines.runtime.v1alpha1.IntanceType>(instanceTypes_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.IntanceType, io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder> instanceTypesBuilder_;
+
     /**
-     * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @return The instanceType.
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    public java.lang.String getInstanceType() {
-      java.lang.Object ref = instanceType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        instanceType_ = s;
-        return s;
+    public java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType> getInstanceTypesList() {
+      if (instanceTypesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(instanceTypes_);
       } else {
-        return (java.lang.String) ref;
+        return instanceTypesBuilder_.getMessageList();
       }
     }
     /**
-     * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @return The bytes for instanceType.
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    public com.google.protobuf.ByteString
-        getInstanceTypeBytes() {
-      java.lang.Object ref = instanceType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        instanceType_ = b;
-        return b;
+    public int getInstanceTypesCount() {
+      if (instanceTypesBuilder_ == null) {
+        return instanceTypes_.size();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return instanceTypesBuilder_.getCount();
       }
     }
     /**
-     * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @param value The instanceType to set.
-     * @return This builder for chaining.
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    public Builder setInstanceType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      instanceType_ = value;
-      onChanged();
+    public io.cuemby.pipelines.runtime.v1alpha1.IntanceType getInstanceTypes(int index) {
+      if (instanceTypesBuilder_ == null) {
+        return instanceTypes_.get(index);
+      } else {
+        return instanceTypesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder setInstanceTypes(
+        int index, io.cuemby.pipelines.runtime.v1alpha1.IntanceType value) {
+      if (instanceTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.set(index, value);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @return This builder for chaining.
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    public Builder clearInstanceType() {
-      
-      instanceType_ = getDefaultInstance().getInstanceType();
-      onChanged();
+    public Builder setInstanceTypes(
+        int index, io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder builderForValue) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        instanceTypesBuilder_.setMessage(index, builderForValue.build());
+      }
       return this;
     }
     /**
-     * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @param value The bytes for instanceType to set.
-     * @return This builder for chaining.
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    public Builder setInstanceTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      instanceType_ = value;
-      onChanged();
+    public Builder addInstanceTypes(io.cuemby.pipelines.runtime.v1alpha1.IntanceType value) {
+      if (instanceTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(value);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(value);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder addInstanceTypes(
+        int index, io.cuemby.pipelines.runtime.v1alpha1.IntanceType value) {
+      if (instanceTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(index, value);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder addInstanceTypes(
+        io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder builderForValue) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder addInstanceTypes(
+        int index, io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder builderForValue) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder addAllInstanceTypes(
+        java.lang.Iterable<? extends io.cuemby.pipelines.runtime.v1alpha1.IntanceType> values) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, instanceTypes_);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder clearInstanceTypes() {
+      if (instanceTypesBuilder_ == null) {
+        instanceTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public Builder removeInstanceTypes(int index) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.remove(index);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder getInstanceTypesBuilder(
+        int index) {
+      return getInstanceTypesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder getInstanceTypesOrBuilder(
+        int index) {
+      if (instanceTypesBuilder_ == null) {
+        return instanceTypes_.get(index);  } else {
+        return instanceTypesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public java.util.List<? extends io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder> 
+         getInstanceTypesOrBuilderList() {
+      if (instanceTypesBuilder_ != null) {
+        return instanceTypesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(instanceTypes_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder addInstanceTypesBuilder() {
+      return getInstanceTypesFieldBuilder().addBuilder(
+          io.cuemby.pipelines.runtime.v1alpha1.IntanceType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder addInstanceTypesBuilder(
+        int index) {
+      return getInstanceTypesFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.runtime.v1alpha1.IntanceType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder> 
+         getInstanceTypesBuilderList() {
+      return getInstanceTypesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.IntanceType, io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder> 
+        getInstanceTypesFieldBuilder() {
+      if (instanceTypesBuilder_ == null) {
+        instanceTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.cuemby.pipelines.runtime.v1alpha1.IntanceType, io.cuemby.pipelines.runtime.v1alpha1.IntanceType.Builder, io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder>(
+                instanceTypes_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        instanceTypes_ = null;
+      }
+      return instanceTypesBuilder_;
     }
 
     private int organizationId_ ;
