@@ -39,6 +39,7 @@ message GetOneRoleResponse{
     uint32 project_id = 4;
     repeated Permission permissions = 5;
     bool is_admin = 6; 
+    string error = 7;
 }
 
 message DeleteRoleRequest {

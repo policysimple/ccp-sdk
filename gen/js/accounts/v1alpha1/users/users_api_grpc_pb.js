@@ -4,28 +4,6 @@
 var grpc = require('grpc');
 var accounts_v1alpha1_users_users_pb = require('../../../accounts/v1alpha1/users/users_pb.js');
 
-function serialize_accounts_v1alpha1_users_v1_AgreeInvitationUserRequest(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.AgreeInvitationUserRequest)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.AgreeInvitationUserRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_AgreeInvitationUserRequest(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.AgreeInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_users_v1_AgreeInvitationUserResponse(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.AgreeInvitationUserResponse)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.AgreeInvitationUserResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_AgreeInvitationUserResponse(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.AgreeInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_accounts_v1alpha1_users_v1_CheckUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_users_users_pb.CheckUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.users.v1.CheckUserRequest');
@@ -90,28 +68,6 @@ function serialize_accounts_v1alpha1_users_v1_DeleteUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_users_v1_DeleteUserResponse(buffer_arg) {
   return accounts_v1alpha1_users_users_pb.DeleteUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_users_v1_GetInvitationUserRequest(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.GetInvitationUserRequest)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.GetInvitationUserRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_GetInvitationUserRequest(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.GetInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_users_v1_GetInvitationUserResponse(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.GetInvitationUserResponse)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.GetInvitationUserResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_GetInvitationUserResponse(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.GetInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_users_v1_GetListUserDexRequest(arg) {
@@ -202,28 +158,6 @@ function deserialize_accounts_v1alpha1_users_v1_GetUsersEmailFilterResponse(buff
   return accounts_v1alpha1_users_users_pb.GetUsersEmailFilterResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_accounts_v1alpha1_users_v1_ListInvitationUserRequest(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.ListInvitationUserRequest)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.ListInvitationUserRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_ListInvitationUserRequest(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.ListInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_users_v1_ListInvitationUserResponse(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.ListInvitationUserResponse)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.ListInvitationUserResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_ListInvitationUserResponse(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.ListInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_accounts_v1alpha1_users_v1_ListUserPaginationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_users_users_pb.ListUserPaginationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.users.v1.ListUserPaginationRequest');
@@ -266,28 +200,6 @@ function serialize_accounts_v1alpha1_users_v1_ListUserResponse(arg) {
 
 function deserialize_accounts_v1alpha1_users_v1_ListUserResponse(buffer_arg) {
   return accounts_v1alpha1_users_users_pb.ListUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_users_v1_SendInvitationUserRequest(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.SendInvitationUserRequest)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.SendInvitationUserRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_SendInvitationUserRequest(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.SendInvitationUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_users_v1_SendInvitationUserResponse(arg) {
-  if (!(arg instanceof accounts_v1alpha1_users_users_pb.SendInvitationUserResponse)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.users.v1.SendInvitationUserResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_users_v1_SendInvitationUserResponse(buffer_arg) {
-  return accounts_v1alpha1_users_users_pb.SendInvitationUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_accounts_v1alpha1_users_v1_SendVerificationEmailRequest(arg) {
@@ -424,51 +336,6 @@ var UserServiceService = exports.UserServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_users_v1_ListUserPaginationRequest,
     responseSerialize: serialize_accounts_v1alpha1_users_v1_ListUserPaginationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_users_v1_ListUserPaginationResponse,
-  },
-  // invitation
-  sendInvitationUser: {
-    path: '/accounts.v1alpha1.users.v1.UserService/SendInvitationUser',
-    requestStream: false,
-    responseStream: false,
-    requestType: accounts_v1alpha1_users_users_pb.SendInvitationUserRequest,
-    responseType: accounts_v1alpha1_users_users_pb.SendInvitationUserResponse,
-    requestSerialize: serialize_accounts_v1alpha1_users_v1_SendInvitationUserRequest,
-    requestDeserialize: deserialize_accounts_v1alpha1_users_v1_SendInvitationUserRequest,
-    responseSerialize: serialize_accounts_v1alpha1_users_v1_SendInvitationUserResponse,
-    responseDeserialize: deserialize_accounts_v1alpha1_users_v1_SendInvitationUserResponse,
-  },
-  getInvitationUser: {
-    path: '/accounts.v1alpha1.users.v1.UserService/GetInvitationUser',
-    requestStream: false,
-    responseStream: false,
-    requestType: accounts_v1alpha1_users_users_pb.GetInvitationUserRequest,
-    responseType: accounts_v1alpha1_users_users_pb.GetInvitationUserResponse,
-    requestSerialize: serialize_accounts_v1alpha1_users_v1_GetInvitationUserRequest,
-    requestDeserialize: deserialize_accounts_v1alpha1_users_v1_GetInvitationUserRequest,
-    responseSerialize: serialize_accounts_v1alpha1_users_v1_GetInvitationUserResponse,
-    responseDeserialize: deserialize_accounts_v1alpha1_users_v1_GetInvitationUserResponse,
-  },
-  agreeInvitationUser: {
-    path: '/accounts.v1alpha1.users.v1.UserService/AgreeInvitationUser',
-    requestStream: false,
-    responseStream: false,
-    requestType: accounts_v1alpha1_users_users_pb.AgreeInvitationUserRequest,
-    responseType: accounts_v1alpha1_users_users_pb.AgreeInvitationUserResponse,
-    requestSerialize: serialize_accounts_v1alpha1_users_v1_AgreeInvitationUserRequest,
-    requestDeserialize: deserialize_accounts_v1alpha1_users_v1_AgreeInvitationUserRequest,
-    responseSerialize: serialize_accounts_v1alpha1_users_v1_AgreeInvitationUserResponse,
-    responseDeserialize: deserialize_accounts_v1alpha1_users_v1_AgreeInvitationUserResponse,
-  },
-  listInvitationUser: {
-    path: '/accounts.v1alpha1.users.v1.UserService/ListInvitationUser',
-    requestStream: false,
-    responseStream: false,
-    requestType: accounts_v1alpha1_users_users_pb.ListInvitationUserRequest,
-    responseType: accounts_v1alpha1_users_users_pb.ListInvitationUserResponse,
-    requestSerialize: serialize_accounts_v1alpha1_users_v1_ListInvitationUserRequest,
-    requestDeserialize: deserialize_accounts_v1alpha1_users_v1_ListInvitationUserRequest,
-    responseSerialize: serialize_accounts_v1alpha1_users_v1_ListInvitationUserResponse,
-    responseDeserialize: deserialize_accounts_v1alpha1_users_v1_ListInvitationUserResponse,
   },
   // CHECK USER
   checkUser: {

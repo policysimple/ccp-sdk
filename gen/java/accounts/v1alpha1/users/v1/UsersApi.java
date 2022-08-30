@@ -25,7 +25,7 @@ public final class UsersApi {
     java.lang.String[] descriptorData = {
       "\n\'accounts/v1alpha1/users/users_api.prot" +
       "o\022\032accounts.v1alpha1.users.v1\032#accounts/" +
-      "v1alpha1/users/users.proto2\247\017\n\013UserServi" +
+      "v1alpha1/users/users.proto2\217\013\n\013UserServi" +
       "ce\022k\n\nCreateUser\022-.accounts.v1alpha1.use" +
       "rs.v1.CreateUserRequest\032..accounts.v1alp" +
       "ha1.users.v1.CreateUserResponse\022e\n\010ListU" +
@@ -42,41 +42,27 @@ public final class UsersApi {
       "v1.DeleteUserResponse\022\203\001\n\022ListUserPagina" +
       "tion\0225.accounts.v1alpha1.users.v1.ListUs" +
       "erPaginationRequest\0326.accounts.v1alpha1." +
-      "users.v1.ListUserPaginationResponse\022\203\001\n\022" +
-      "SendInvitationUser\0225.accounts.v1alpha1.u" +
-      "sers.v1.SendInvitationUserRequest\0326.acco" +
-      "unts.v1alpha1.users.v1.SendInvitationUse" +
-      "rResponse\022\200\001\n\021GetInvitationUser\0224.accoun" +
-      "ts.v1alpha1.users.v1.GetInvitationUserRe" +
-      "quest\0325.accounts.v1alpha1.users.v1.GetIn" +
-      "vitationUserResponse\022\206\001\n\023AgreeInvitation" +
-      "User\0226.accounts.v1alpha1.users.v1.AgreeI" +
-      "nvitationUserRequest\0327.accounts.v1alpha1" +
-      ".users.v1.AgreeInvitationUserResponse\022\203\001" +
-      "\n\022ListInvitationUser\0225.accounts.v1alpha1" +
-      ".users.v1.ListInvitationUserRequest\0326.ac" +
-      "counts.v1alpha1.users.v1.ListInvitationU" +
-      "serResponse\022h\n\tCheckUser\022,.accounts.v1al" +
-      "pha1.users.v1.CheckUserRequest\032-.account" +
-      "s.v1alpha1.users.v1.CheckUserResponse\022\214\001" +
-      "\n\025SendVerificationEmail\0228.accounts.v1alp" +
-      "ha1.users.v1.SendVerificationEmailReques" +
-      "t\0329.accounts.v1alpha1.users.v1.SendVerif" +
-      "icationEmailResponse\022n\n\013VerifyEmail\022..ac" +
-      "counts.v1alpha1.users.v1.VerifyEmailRequ" +
-      "est\032/.accounts.v1alpha1.users.v1.VerifyE" +
-      "mailResponse\022\206\001\n\023GetUsersEmailFilter\0226.a" +
+      "users.v1.ListUserPaginationResponse\022h\n\tC" +
+      "heckUser\022,.accounts.v1alpha1.users.v1.Ch" +
+      "eckUserRequest\032-.accounts.v1alpha1.users" +
+      ".v1.CheckUserResponse\022\214\001\n\025SendVerificati" +
+      "onEmail\0228.accounts.v1alpha1.users.v1.Sen" +
+      "dVerificationEmailRequest\0329.accounts.v1a" +
+      "lpha1.users.v1.SendVerificationEmailResp" +
+      "onse\022n\n\013VerifyEmail\022..accounts.v1alpha1." +
+      "users.v1.VerifyEmailRequest\032/.accounts.v" +
+      "1alpha1.users.v1.VerifyEmailResponse\022\206\001\n" +
+      "\023GetUsersEmailFilter\0226.accounts.v1alpha1" +
+      ".users.v1.GetUsersEmailFilterRequest\0327.a" +
       "ccounts.v1alpha1.users.v1.GetUsersEmailF" +
-      "ilterRequest\0327.accounts.v1alpha1.users.v" +
-      "1.GetUsersEmailFilterResponse\022w\n\016GetList" +
-      "UserDex\0221.accounts.v1alpha1.users.v1.Get" +
-      "ListUserDexRequest\0322.accounts.v1alpha1.u" +
-      "sers.v1.GetListUserDexResponse\022t\n\rGetOne" +
-      "UserDex\0220.accounts.v1alpha1.users.v1.Get" +
-      "OneUserDexRequest\0321.accounts.v1alpha1.us" +
-      "ers.v1.GetOneUserDexResponseB:Z8github.c" +
-      "om/cuemby/ccp-sdk/gen/go/accounts/v1alph" +
-      "a1/usersb\006proto3"
+      "ilterResponse\022w\n\016GetListUserDex\0221.accoun" +
+      "ts.v1alpha1.users.v1.GetListUserDexReque" +
+      "st\0322.accounts.v1alpha1.users.v1.GetListU" +
+      "serDexResponse\022t\n\rGetOneUserDex\0220.accoun" +
+      "ts.v1alpha1.users.v1.GetOneUserDexReques" +
+      "t\0321.accounts.v1alpha1.users.v1.GetOneUse" +
+      "rDexResponseB:Z8github.com/cuemby/ccp-sd" +
+      "k/gen/go/accounts/v1alpha1/usersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
