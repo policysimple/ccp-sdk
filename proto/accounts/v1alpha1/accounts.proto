@@ -30,7 +30,7 @@ message UserList {
 
 }
 
-message MenberRol {
+message MemberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;

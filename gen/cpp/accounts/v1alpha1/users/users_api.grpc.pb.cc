@@ -27,10 +27,6 @@ static const char* UserService_method_names[] = {
   "/accounts.v1alpha1.users.v1.UserService/UpdateUser",
   "/accounts.v1alpha1.users.v1.UserService/DeleteUser",
   "/accounts.v1alpha1.users.v1.UserService/ListUserPagination",
-  "/accounts.v1alpha1.users.v1.UserService/SendInvitationUser",
-  "/accounts.v1alpha1.users.v1.UserService/GetInvitationUser",
-  "/accounts.v1alpha1.users.v1.UserService/AgreeInvitationUser",
-  "/accounts.v1alpha1.users.v1.UserService/ListInvitationUser",
   "/accounts.v1alpha1.users.v1.UserService/CheckUser",
   "/accounts.v1alpha1.users.v1.UserService/SendVerificationEmail",
   "/accounts.v1alpha1.users.v1.UserService/VerifyEmail",
@@ -52,16 +48,12 @@ UserService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
   , rpcmethod_UpdateUser_(UserService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteUser_(UserService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListUserPagination_(UserService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendInvitationUser_(UserService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInvitationUser_(UserService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AgreeInvitationUser_(UserService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListInvitationUser_(UserService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CheckUser_(UserService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendVerificationEmail_(UserService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_VerifyEmail_(UserService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetUsersEmailFilter_(UserService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetListUserDex_(UserService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOneUserDex_(UserService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CheckUser_(UserService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendVerificationEmail_(UserService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_VerifyEmail_(UserService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetUsersEmailFilter_(UserService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetListUserDex_(UserService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOneUserDex_(UserService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status UserService::Stub::CreateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CreateUserRequest& request, ::accounts::v1alpha1::users::v1::CreateUserResponse* response) {
@@ -158,70 +150,6 @@ void UserService::Stub::experimental_async::ListUserPagination(::grpc::ClientCon
 
 ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>* UserService::Stub::PrepareAsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>::Create(channel_.get(), cq, rpcmethod_ListUserPagination_, context, request, false);
-}
-
-::grpc::Status UserService::Stub::SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SendInvitationUser_, context, request, response);
-}
-
-void UserService::Stub::experimental_async::SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SendInvitationUser_, context, request, response, std::move(f));
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* UserService::Stub::AsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_SendInvitationUser_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* UserService::Stub::PrepareAsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_SendInvitationUser_, context, request, false);
-}
-
-::grpc::Status UserService::Stub::GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetInvitationUser_, context, request, response);
-}
-
-void UserService::Stub::experimental_async::GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetInvitationUser_, context, request, response, std::move(f));
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* UserService::Stub::AsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_GetInvitationUser_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* UserService::Stub::PrepareAsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_GetInvitationUser_, context, request, false);
-}
-
-::grpc::Status UserService::Stub::AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AgreeInvitationUser_, context, request, response);
-}
-
-void UserService::Stub::experimental_async::AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AgreeInvitationUser_, context, request, response, std::move(f));
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* UserService::Stub::AsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_AgreeInvitationUser_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* UserService::Stub::PrepareAsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_AgreeInvitationUser_, context, request, false);
-}
-
-::grpc::Status UserService::Stub::ListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListInvitationUser_, context, request, response);
-}
-
-void UserService::Stub::experimental_async::ListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListInvitationUser_, context, request, response, std::move(f));
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* UserService::Stub::AsyncListInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_ListInvitationUser_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* UserService::Stub::PrepareAsyncListInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>::Create(channel_.get(), cq, rpcmethod_ListInvitationUser_, context, request, false);
 }
 
 ::grpc::Status UserService::Stub::CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::accounts::v1alpha1::users::v1::CheckUserResponse* response) {
@@ -354,50 +282,30 @@ UserService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       UserService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::SendInvitationUserRequest, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>(
-          std::mem_fn(&UserService::Service::SendInvitationUser), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[7],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::GetInvitationUserRequest, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>(
-          std::mem_fn(&UserService::Service::GetInvitationUser), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[8],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>(
-          std::mem_fn(&UserService::Service::AgreeInvitationUser), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[9],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::ListInvitationUserRequest, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>(
-          std::mem_fn(&UserService::Service::ListInvitationUser), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[10],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::CheckUserRequest, ::accounts::v1alpha1::users::v1::CheckUserResponse>(
           std::mem_fn(&UserService::Service::CheckUser), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[11],
+      UserService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest, ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse>(
           std::mem_fn(&UserService::Service::SendVerificationEmail), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[12],
+      UserService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::VerifyEmailRequest, ::accounts::v1alpha1::users::v1::VerifyEmailResponse>(
           std::mem_fn(&UserService::Service::VerifyEmail), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[13],
+      UserService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest, ::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse>(
           std::mem_fn(&UserService::Service::GetUsersEmailFilter), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[14],
+      UserService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::GetListUserDexRequest, ::accounts::v1alpha1::users::v1::GetListUserDexResponse>(
           std::mem_fn(&UserService::Service::GetListUserDex), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      UserService_method_names[15],
+      UserService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< UserService::Service, ::accounts::v1alpha1::users::v1::GetOneUserDexRequest, ::accounts::v1alpha1::users::v1::GetOneUserDexResponse>(
           std::mem_fn(&UserService::Service::GetOneUserDex), this)));
@@ -442,34 +350,6 @@ UserService::Service::~Service() {
 }
 
 ::grpc::Status UserService::Service::ListUserPagination(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest* request, ::accounts::v1alpha1::users::v1::ListUserPaginationResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UserService::Service::SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UserService::Service::GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UserService::Service::AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UserService::Service::ListInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) {
   (void) context;
   (void) request;
   (void) response;

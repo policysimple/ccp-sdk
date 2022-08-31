@@ -96,59 +96,6 @@ class UserServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * invitation
-     * @param \Accounts\V1alpha1\Users\V1\SendInvitationUserRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function SendInvitationUser(\Accounts\V1alpha1\Users\V1\SendInvitationUserRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/accounts.v1alpha1.users.v1.UserService/SendInvitationUser',
-        $argument,
-        ['\Accounts\V1alpha1\Users\V1\SendInvitationUserResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Accounts\V1alpha1\Users\V1\GetInvitationUserRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function GetInvitationUser(\Accounts\V1alpha1\Users\V1\GetInvitationUserRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/accounts.v1alpha1.users.v1.UserService/GetInvitationUser',
-        $argument,
-        ['\Accounts\V1alpha1\Users\V1\GetInvitationUserResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Accounts\V1alpha1\Users\V1\AgreeInvitationUserRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function AgreeInvitationUser(\Accounts\V1alpha1\Users\V1\AgreeInvitationUserRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/accounts.v1alpha1.users.v1.UserService/AgreeInvitationUser',
-        $argument,
-        ['\Accounts\V1alpha1\Users\V1\AgreeInvitationUserResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Accounts\V1alpha1\Users\V1\ListInvitationUserRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function ListInvitationUser(\Accounts\V1alpha1\Users\V1\ListInvitationUserRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/accounts.v1alpha1.users.v1.UserService/ListInvitationUser',
-        $argument,
-        ['\Accounts\V1alpha1\Users\V1\ListInvitationUserResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * CHECK USER
      * @param \Accounts\V1alpha1\Users\V1\CheckUserRequest $argument input argument
      * @param array $metadata metadata

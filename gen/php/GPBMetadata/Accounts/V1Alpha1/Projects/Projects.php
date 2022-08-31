@@ -34,14 +34,14 @@ class Projects
 UpdateProjectRequest
 id (RidM
 project (23.accounts.v1alpha1.projects.v1.CreateProjectRequestRproject"J
-	MenberRol
+	MemberRol
 id (Rid
 name (	Rname
 is_admin (RisAdmin"7
 ProjectList
 name (	Rname
 image (	Rimage"ƒ
-MenberProject
+MemberProject
 id (Rid
 user_id (	RuserId
 
@@ -71,7 +71,7 @@ first_name (	R	firstName
 created_at (	R	createdAt
 
 updated_at (	R	updatedAtF
-members (2,.accounts.v1alpha1.projects.v1.MenberProjectRmembers=
+members (2,.accounts.v1alpha1.projects.v1.MemberProjectRmembers=
 owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner"c
 ListProjectResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects

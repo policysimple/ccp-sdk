@@ -85,9 +85,9 @@ extern ListOrganizationResponseDefaultTypeInternal _ListOrganizationResponse_def
 class Member;
 struct MemberDefaultTypeInternal;
 extern MemberDefaultTypeInternal _Member_default_instance_;
-class MenberRol;
-struct MenberRolDefaultTypeInternal;
-extern MenberRolDefaultTypeInternal _MenberRol_default_instance_;
+class MemberRol;
+struct MemberRolDefaultTypeInternal;
+extern MemberRolDefaultTypeInternal _MemberRol_default_instance_;
 class ProjectOrganization;
 struct ProjectOrganizationDefaultTypeInternal;
 extern ProjectOrganizationDefaultTypeInternal _ProjectOrganization_default_instance_;
@@ -111,7 +111,7 @@ template<> ::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse* 
 template<> ::accounts::v1alpha1::organizations::v1::ListOrganizationRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::ListOrganizationRequest>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::ListOrganizationResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::ListOrganizationResponse>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::Member* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::Member>(Arena*);
-template<> ::accounts::v1alpha1::organizations::v1::MenberRol* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::MenberRol>(Arena*);
+template<> ::accounts::v1alpha1::organizations::v1::MemberRol* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::MemberRol>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::ProjectOrganization* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::ProjectOrganization>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse>(Arena*);
@@ -1022,7 +1022,7 @@ class GetOneOrganizationResponse final :
 
   enum : int {
     kProjectsFieldNumber = 4,
-    kMenbersFieldNumber = 5,
+    kMembersFieldNumber = 5,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 6,
@@ -1049,23 +1049,23 @@ class GetOneOrganizationResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::ProjectOrganization >&
       projects() const;
 
-  // repeated .accounts.v1alpha1.organizations.v1.Member menbers = 5 [json_name = "menbers"];
-  int menbers_size() const;
+  // repeated .accounts.v1alpha1.organizations.v1.Member members = 5 [json_name = "members"];
+  int members_size() const;
   private:
-  int _internal_menbers_size() const;
+  int _internal_members_size() const;
   public:
-  void clear_menbers();
-  ::accounts::v1alpha1::organizations::v1::Member* mutable_menbers(int index);
+  void clear_members();
+  ::accounts::v1alpha1::organizations::v1::Member* mutable_members(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::Member >*
-      mutable_menbers();
+      mutable_members();
   private:
-  const ::accounts::v1alpha1::organizations::v1::Member& _internal_menbers(int index) const;
-  ::accounts::v1alpha1::organizations::v1::Member* _internal_add_menbers();
+  const ::accounts::v1alpha1::organizations::v1::Member& _internal_members(int index) const;
+  ::accounts::v1alpha1::organizations::v1::Member* _internal_add_members();
   public:
-  const ::accounts::v1alpha1::organizations::v1::Member& menbers(int index) const;
-  ::accounts::v1alpha1::organizations::v1::Member* add_menbers();
+  const ::accounts::v1alpha1::organizations::v1::Member& members(int index) const;
+  ::accounts::v1alpha1::organizations::v1::Member* add_members();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::Member >&
-      menbers() const;
+      members() const;
 
   // string name = 2 [json_name = "name"];
   void clear_name();
@@ -1172,7 +1172,7 @@ class GetOneOrganizationResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::ProjectOrganization > projects_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::Member > menbers_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::Member > members_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -1973,22 +1973,22 @@ class Member final :
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 5,
   };
-  // repeated .accounts.v1alpha1.organizations.v1.MenberRol roles = 6 [json_name = "roles"];
+  // repeated .accounts.v1alpha1.organizations.v1.MemberRol roles = 6 [json_name = "roles"];
   int roles_size() const;
   private:
   int _internal_roles_size() const;
   public:
   void clear_roles();
-  ::accounts::v1alpha1::organizations::v1::MenberRol* mutable_roles(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MenberRol >*
+  ::accounts::v1alpha1::organizations::v1::MemberRol* mutable_roles(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MemberRol >*
       mutable_roles();
   private:
-  const ::accounts::v1alpha1::organizations::v1::MenberRol& _internal_roles(int index) const;
-  ::accounts::v1alpha1::organizations::v1::MenberRol* _internal_add_roles();
+  const ::accounts::v1alpha1::organizations::v1::MemberRol& _internal_roles(int index) const;
+  ::accounts::v1alpha1::organizations::v1::MemberRol* _internal_add_roles();
   public:
-  const ::accounts::v1alpha1::organizations::v1::MenberRol& roles(int index) const;
-  ::accounts::v1alpha1::organizations::v1::MenberRol* add_roles();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MenberRol >&
+  const ::accounts::v1alpha1::organizations::v1::MemberRol& roles(int index) const;
+  ::accounts::v1alpha1::organizations::v1::MemberRol* add_roles();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MemberRol >&
       roles() const;
 
   // string user_id = 2 [json_name = "userId"];
@@ -2058,7 +2058,7 @@ class Member final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MenberRol > roles_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MemberRol > roles_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
@@ -2256,24 +2256,24 @@ class ProjectOrganization final :
 };
 // -------------------------------------------------------------------
 
-class MenberRol final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.organizations.v1.MenberRol) */ {
+class MemberRol final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.organizations.v1.MemberRol) */ {
  public:
-  inline MenberRol() : MenberRol(nullptr) {}
-  ~MenberRol() override;
-  explicit constexpr MenberRol(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline MemberRol() : MemberRol(nullptr) {}
+  ~MemberRol() override;
+  explicit constexpr MemberRol(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  MenberRol(const MenberRol& from);
-  MenberRol(MenberRol&& from) noexcept
-    : MenberRol() {
+  MemberRol(const MemberRol& from);
+  MemberRol(MemberRol&& from) noexcept
+    : MemberRol() {
     *this = ::std::move(from);
   }
 
-  inline MenberRol& operator=(const MenberRol& from) {
+  inline MemberRol& operator=(const MemberRol& from) {
     CopyFrom(from);
     return *this;
   }
-  inline MenberRol& operator=(MenberRol&& from) noexcept {
+  inline MemberRol& operator=(MemberRol&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -2292,20 +2292,20 @@ class MenberRol final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const MenberRol& default_instance() {
+  static const MemberRol& default_instance() {
     return *internal_default_instance();
   }
-  static inline const MenberRol* internal_default_instance() {
-    return reinterpret_cast<const MenberRol*>(
-               &_MenberRol_default_instance_);
+  static inline const MemberRol* internal_default_instance() {
+    return reinterpret_cast<const MemberRol*>(
+               &_MemberRol_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     12;
 
-  friend void swap(MenberRol& a, MenberRol& b) {
+  friend void swap(MemberRol& a, MemberRol& b) {
     a.Swap(&b);
   }
-  inline void Swap(MenberRol* other) {
+  inline void Swap(MemberRol* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -2313,7 +2313,7 @@ class MenberRol final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(MenberRol* other) {
+  void UnsafeArenaSwap(MemberRol* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2321,17 +2321,17 @@ class MenberRol final :
 
   // implements Message ----------------------------------------------
 
-  inline MenberRol* New() const final {
-    return new MenberRol();
+  inline MemberRol* New() const final {
+    return new MemberRol();
   }
 
-  MenberRol* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<MenberRol>(arena);
+  MemberRol* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MemberRol>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const MenberRol& from);
+  void CopyFrom(const MemberRol& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const MenberRol& from);
+  void MergeFrom(const MemberRol& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -2348,13 +2348,13 @@ class MenberRol final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(MenberRol* other);
+  void InternalSwap(MemberRol* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "accounts.v1alpha1.organizations.v1.MenberRol";
+    return "accounts.v1alpha1.organizations.v1.MemberRol";
   }
   protected:
-  explicit MenberRol(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit MemberRol(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -2407,7 +2407,7 @@ class MenberRol final :
   void _internal_set_is_admin(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.MenberRol)
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.MemberRol)
  private:
   class _Internal;
 
@@ -2985,44 +2985,44 @@ GetOneOrganizationResponse::projects() const {
   return projects_;
 }
 
-// repeated .accounts.v1alpha1.organizations.v1.Member menbers = 5 [json_name = "menbers"];
-inline int GetOneOrganizationResponse::_internal_menbers_size() const {
-  return menbers_.size();
+// repeated .accounts.v1alpha1.organizations.v1.Member members = 5 [json_name = "members"];
+inline int GetOneOrganizationResponse::_internal_members_size() const {
+  return members_.size();
 }
-inline int GetOneOrganizationResponse::menbers_size() const {
-  return _internal_menbers_size();
+inline int GetOneOrganizationResponse::members_size() const {
+  return _internal_members_size();
 }
-inline void GetOneOrganizationResponse::clear_menbers() {
-  menbers_.Clear();
+inline void GetOneOrganizationResponse::clear_members() {
+  members_.Clear();
 }
-inline ::accounts::v1alpha1::organizations::v1::Member* GetOneOrganizationResponse::mutable_menbers(int index) {
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.menbers)
-  return menbers_.Mutable(index);
+inline ::accounts::v1alpha1::organizations::v1::Member* GetOneOrganizationResponse::mutable_members(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members)
+  return members_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::Member >*
-GetOneOrganizationResponse::mutable_menbers() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.menbers)
-  return &menbers_;
+GetOneOrganizationResponse::mutable_members() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members)
+  return &members_;
 }
-inline const ::accounts::v1alpha1::organizations::v1::Member& GetOneOrganizationResponse::_internal_menbers(int index) const {
-  return menbers_.Get(index);
+inline const ::accounts::v1alpha1::organizations::v1::Member& GetOneOrganizationResponse::_internal_members(int index) const {
+  return members_.Get(index);
 }
-inline const ::accounts::v1alpha1::organizations::v1::Member& GetOneOrganizationResponse::menbers(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.menbers)
-  return _internal_menbers(index);
+inline const ::accounts::v1alpha1::organizations::v1::Member& GetOneOrganizationResponse::members(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members)
+  return _internal_members(index);
 }
-inline ::accounts::v1alpha1::organizations::v1::Member* GetOneOrganizationResponse::_internal_add_menbers() {
-  return menbers_.Add();
+inline ::accounts::v1alpha1::organizations::v1::Member* GetOneOrganizationResponse::_internal_add_members() {
+  return members_.Add();
 }
-inline ::accounts::v1alpha1::organizations::v1::Member* GetOneOrganizationResponse::add_menbers() {
-  ::accounts::v1alpha1::organizations::v1::Member* _add = _internal_add_menbers();
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.menbers)
+inline ::accounts::v1alpha1::organizations::v1::Member* GetOneOrganizationResponse::add_members() {
+  ::accounts::v1alpha1::organizations::v1::Member* _add = _internal_add_members();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::Member >&
-GetOneOrganizationResponse::menbers() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.menbers)
-  return menbers_;
+GetOneOrganizationResponse::members() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members)
+  return members_;
 }
 
 // string description = 6 [json_name = "description"];
@@ -3846,7 +3846,7 @@ inline void Member::set_is_active(bool value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.Member.is_active)
 }
 
-// repeated .accounts.v1alpha1.organizations.v1.MenberRol roles = 6 [json_name = "roles"];
+// repeated .accounts.v1alpha1.organizations.v1.MemberRol roles = 6 [json_name = "roles"];
 inline int Member::_internal_roles_size() const {
   return roles_.size();
 }
@@ -3856,31 +3856,31 @@ inline int Member::roles_size() const {
 inline void Member::clear_roles() {
   roles_.Clear();
 }
-inline ::accounts::v1alpha1::organizations::v1::MenberRol* Member::mutable_roles(int index) {
+inline ::accounts::v1alpha1::organizations::v1::MemberRol* Member::mutable_roles(int index) {
   // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.Member.roles)
   return roles_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MenberRol >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MemberRol >*
 Member::mutable_roles() {
   // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.organizations.v1.Member.roles)
   return &roles_;
 }
-inline const ::accounts::v1alpha1::organizations::v1::MenberRol& Member::_internal_roles(int index) const {
+inline const ::accounts::v1alpha1::organizations::v1::MemberRol& Member::_internal_roles(int index) const {
   return roles_.Get(index);
 }
-inline const ::accounts::v1alpha1::organizations::v1::MenberRol& Member::roles(int index) const {
+inline const ::accounts::v1alpha1::organizations::v1::MemberRol& Member::roles(int index) const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.Member.roles)
   return _internal_roles(index);
 }
-inline ::accounts::v1alpha1::organizations::v1::MenberRol* Member::_internal_add_roles() {
+inline ::accounts::v1alpha1::organizations::v1::MemberRol* Member::_internal_add_roles() {
   return roles_.Add();
 }
-inline ::accounts::v1alpha1::organizations::v1::MenberRol* Member::add_roles() {
-  ::accounts::v1alpha1::organizations::v1::MenberRol* _add = _internal_add_roles();
+inline ::accounts::v1alpha1::organizations::v1::MemberRol* Member::add_roles() {
+  ::accounts::v1alpha1::organizations::v1::MemberRol* _add = _internal_add_roles();
   // @@protoc_insertion_point(field_add:accounts.v1alpha1.organizations.v1.Member.roles)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MenberRol >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::organizations::v1::MemberRol >&
 Member::roles() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.organizations.v1.Member.roles)
   return roles_;
@@ -4050,64 +4050,64 @@ inline void ProjectOrganization::set_allocated_description(std::string* descript
 
 // -------------------------------------------------------------------
 
-// MenberRol
+// MemberRol
 
 // uint32 id = 1 [json_name = "id"];
-inline void MenberRol::clear_id() {
+inline void MemberRol::clear_id() {
   id_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 MenberRol::_internal_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MemberRol::_internal_id() const {
   return id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 MenberRol::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.MenberRol.id)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MemberRol::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.MemberRol.id)
   return _internal_id();
 }
-inline void MenberRol::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void MemberRol::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   id_ = value;
 }
-inline void MenberRol::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void MemberRol::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.MenberRol.id)
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.MemberRol.id)
 }
 
 // string name = 2 [json_name = "name"];
-inline void MenberRol::clear_name() {
+inline void MemberRol::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& MenberRol::name() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.MenberRol.name)
+inline const std::string& MemberRol::name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.MemberRol.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void MenberRol::set_name(ArgT0&& arg0, ArgT... args) {
+void MemberRol::set_name(ArgT0&& arg0, ArgT... args) {
  
  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.MenberRol.name)
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.MemberRol.name)
 }
-inline std::string* MenberRol::mutable_name() {
+inline std::string* MemberRol::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.MenberRol.name)
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.MemberRol.name)
   return _s;
 }
-inline const std::string& MenberRol::_internal_name() const {
+inline const std::string& MemberRol::_internal_name() const {
   return name_.Get();
 }
-inline void MenberRol::_internal_set_name(const std::string& value) {
+inline void MemberRol::_internal_set_name(const std::string& value) {
   
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* MenberRol::_internal_mutable_name() {
+inline std::string* MemberRol::_internal_mutable_name() {
   
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* MenberRol::release_name() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.organizations.v1.MenberRol.name)
+inline std::string* MemberRol::release_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.organizations.v1.MemberRol.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void MenberRol::set_allocated_name(std::string* name) {
+inline void MemberRol::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -4115,27 +4115,27 @@ inline void MenberRol::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.MenberRol.name)
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.MemberRol.name)
 }
 
 // bool is_admin = 3 [json_name = "isAdmin"];
-inline void MenberRol::clear_is_admin() {
+inline void MemberRol::clear_is_admin() {
   is_admin_ = false;
 }
-inline bool MenberRol::_internal_is_admin() const {
+inline bool MemberRol::_internal_is_admin() const {
   return is_admin_;
 }
-inline bool MenberRol::is_admin() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.MenberRol.is_admin)
+inline bool MemberRol::is_admin() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.MemberRol.is_admin)
   return _internal_is_admin();
 }
-inline void MenberRol::_internal_set_is_admin(bool value) {
+inline void MemberRol::_internal_set_is_admin(bool value) {
   
   is_admin_ = value;
 }
-inline void MenberRol::set_is_admin(bool value) {
+inline void MemberRol::set_is_admin(bool value) {
   _internal_set_is_admin(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.MenberRol.is_admin)
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.MemberRol.is_admin)
 }
 
 #ifdef __GNUC__

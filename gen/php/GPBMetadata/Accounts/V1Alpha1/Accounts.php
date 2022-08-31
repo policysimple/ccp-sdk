@@ -35,7 +35,7 @@ first_name (	R	firstName
 user_id (	RuserId
 	is_active (RisActive"
 is_super_user (RisSuperUser"J
-	MenberRol
+	MemberRol
 id (Rid
 name (	Rname
 is_admin (RisAdmin"y

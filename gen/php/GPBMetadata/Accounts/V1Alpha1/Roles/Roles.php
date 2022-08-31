@@ -17,7 +17,7 @@ class Roles
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Õ
+ë
 #accounts/v1alpha1/roles/roles.protoaccounts.v1alpha1.roles.v1"á
 CreateRoleRequest
 name (	Rname 
@@ -31,7 +31,7 @@ project_id (R	projectId\'
 rol_id (RrolId?
 rol (2-.accounts.v1alpha1.roles.v1.CreateRoleRequestRrol"*
 GetOneRoleRequest
-rol_id (RrolId"Ü
+rol_id (RrolId"ò
 GetOneRoleResponse
 id (Rid
 name (	Rname\'
@@ -39,7 +39,8 @@ project_id (R	projectId\'
 
 project_id (R	projectId?
 permissions (2.accounts.v1alpha1.PermissionRpermissions
-is_admin (RisAdmin"*
+is_admin (RisAdmin
+error (	Rerror"*
 DeleteRoleRequest
 rol_id (RrolId"Z
 ListRolesRequest
