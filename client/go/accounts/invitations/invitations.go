@@ -127,3 +127,24 @@ func ListInvitationSend(req *accountpkgv1.ListInvitationSendRequest) (*accountpk
 	}
 	return response, nil
 }
+
+func DeleteInvitation(req *accountpkgv1.DeleteInvitationRequest) (*accountpkgv1.DeleteInvitationResponse, error) {
+	bylogs.LogInfo("DeleteInvitation Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+	response, err := client.DeleteInvitation(ctx, req)
+	if err != nil {
+		bylogs.LogErr("DeleteInvitation Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error DeleteInvitation: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("DeleteInvitation Client Sdk", "Success")
+	}
+	return response, nil
+}

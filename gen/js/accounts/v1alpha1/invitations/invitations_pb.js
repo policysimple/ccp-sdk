@@ -2645,7 +2645,8 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.toObjec
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    invitationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2682,9 +2683,13 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.deserializeBinary
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOrganizationId(value);
+      break;
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      msg.setInvitationId(value);
       break;
     default:
       reader.skipField();
@@ -2715,7 +2720,14 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.seriali
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getInvitationId();
   if (f !== 0) {
     writer.writeUint32(
       1,
@@ -2726,10 +2738,28 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.serializeBinaryTo
 
 
 /**
- * optional uint32 id = 1;
+ * optional uint32 organization_id = 2;
  * @return {number}
  */
-proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.getId = function() {
+proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest} returns this
+ */
+proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 invitation_id = 1;
+ * @return {number}
+ */
+proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.getInvitationId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2738,7 +2768,7 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.getId =
  * @param {number} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest} returns this
  */
-proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.setId = function(value) {
+proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.setInvitationId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
