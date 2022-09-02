@@ -440,6 +440,7 @@ class Runtime final :
     kPodStatusMsgFieldNumber = 12,
     kResponseMessageFieldNumber = 20,
     kEnvironmentNameFieldNumber = 21,
+    kEnvironmentInternalNameFieldNumber = 22,
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
     kTrafficTypeFieldNumber = 19,
@@ -704,6 +705,20 @@ class Runtime final :
   std::string* _internal_mutable_environment_name();
   public:
 
+  // string environment_internal_name = 22 [json_name = "environmentInternalName"];
+  void clear_environment_internal_name();
+  const std::string& environment_internal_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_internal_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_internal_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_internal_name();
+  void set_allocated_environment_internal_name(std::string* environment_internal_name);
+  private:
+  const std::string& _internal_environment_internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_internal_name(const std::string& value);
+  std::string* _internal_mutable_environment_internal_name();
+  public:
+
   // uint32 organization_id = 5 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -779,6 +794,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_status_msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr response_message_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_internal_name_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   int traffic_type_;
@@ -2356,6 +2372,52 @@ inline void Runtime::set_allocated_environment_name(std::string* environment_nam
   environment_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_name)
+}
+
+// string environment_internal_name = 22 [json_name = "environmentInternalName"];
+inline void Runtime::clear_environment_internal_name() {
+  environment_internal_name_.ClearToEmpty();
+}
+inline const std::string& Runtime::environment_internal_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
+  return _internal_environment_internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_environment_internal_name(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
+}
+inline std::string* Runtime::mutable_environment_internal_name() {
+  std::string* _s = _internal_mutable_environment_internal_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
+  return _s;
+}
+inline const std::string& Runtime::_internal_environment_internal_name() const {
+  return environment_internal_name_.Get();
+}
+inline void Runtime::_internal_set_environment_internal_name(const std::string& value) {
+  
+  environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_environment_internal_name() {
+  
+  return environment_internal_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_environment_internal_name() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
+  return environment_internal_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_environment_internal_name(std::string* environment_internal_name) {
+  if (environment_internal_name != nullptr) {
+    
+  } else {
+    
+  }
+  environment_internal_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_internal_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
 }
 
 // -------------------------------------------------------------------

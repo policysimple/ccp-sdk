@@ -377,4 +377,16 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEnvironmentNameBytes();
+
+  /**
+   * <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+   * @return The environmentInternalName.
+   */
+  java.lang.String getEnvironmentInternalName();
+  /**
+   * <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+   * @return The bytes for environmentInternalName.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentInternalNameBytes();
 }
