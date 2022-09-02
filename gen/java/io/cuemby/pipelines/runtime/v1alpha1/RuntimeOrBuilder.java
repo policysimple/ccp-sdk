@@ -365,4 +365,16 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResponseMessageBytes();
+
+  /**
+   * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+   * @return The environmentName.
+   */
+  java.lang.String getEnvironmentName();
+  /**
+   * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+   * @return The bytes for environmentName.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentNameBytes();
 }

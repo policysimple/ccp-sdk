@@ -206,7 +206,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     extraArgsMap: (f = msg.getExtraArgsMap()) ? f.toObject(includeInstance, undefined) : [],
     autoscalingMap: (f = msg.getAutoscalingMap()) ? f.toObject(includeInstance, undefined) : [],
     trafficType: jspb.Message.getFieldWithDefault(msg, 19, 0),
-    responseMessage: jspb.Message.getFieldWithDefault(msg, 20, "")
+    responseMessage: jspb.Message.getFieldWithDefault(msg, 20, ""),
+    environmentName: jspb.Message.getFieldWithDefault(msg, 21, "")
   };
 
   if (includeInstance) {
@@ -331,6 +332,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.setResponseMessage(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEnvironmentName(value);
       break;
     default:
       reader.skipField();
@@ -474,6 +479,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       20,
+      f
+    );
+  }
+  f = message.getEnvironmentName();
+  if (f.length > 0) {
+    writer.writeString(
+      21,
       f
     );
   }
@@ -863,6 +875,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getResponseMessage = function
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setResponseMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 20, value);
+};
+
+
+/**
+ * optional string environment_name = 21;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getEnvironmentName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setEnvironmentName = function(value) {
+  return jspb.Message.setProto3StringField(this, 21, value);
 };
 
 
