@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Organization extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 user_id = 1 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
-    protected $user_id = 0;
+    protected $user_id = '';
     /**
      * Generated from protobuf field <code>string domain_org = 2 [json_name = "domainOrg"];</code>
      */
@@ -29,6 +29,10 @@ class Organization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string admin_user = 4 [json_name = "adminUser"];</code>
      */
     protected $admin_user = '';
+    /**
+     * Generated from protobuf field <code>string bc_id = 5 [json_name = "bcId"];</code>
+     */
+    protected $bc_id = '';
 
     /**
      * Constructor.
@@ -36,10 +40,11 @@ class Organization extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $user_id
+     *     @type string $user_id
      *     @type string $domain_org
      *     @type string $admin_password
      *     @type string $admin_user
+     *     @type string $bc_id
      * }
      */
     public function __construct($data = NULL) {
@@ -48,8 +53,8 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 user_id = 1 [json_name = "userId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return string
      */
     public function getUserId()
     {
@@ -57,13 +62,13 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 user_id = 1 [json_name = "userId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setUserId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->user_id = $var;
 
         return $this;
@@ -131,6 +136,28 @@ class Organization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->admin_user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * @return string
+     */
+    public function getBcId()
+    {
+        return $this->bc_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBcId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->bc_id = $var;
 
         return $this;
     }

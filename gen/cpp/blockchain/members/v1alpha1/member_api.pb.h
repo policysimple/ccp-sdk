@@ -694,21 +694,25 @@ class CreateInvitationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEmailFieldNumber = 1,
+    kInvitationFieldNumber = 1,
   };
-  // string email = 1 [json_name = "email"];
-  void clear_email();
-  const std::string& email() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_email(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_email();
-  PROTOBUF_MUST_USE_RESULT std::string* release_email();
-  void set_allocated_email(std::string* email);
+  // .blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+  bool has_invitation() const;
   private:
-  const std::string& _internal_email() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
-  std::string* _internal_mutable_email();
+  bool _internal_has_invitation() const;
   public:
+  void clear_invitation();
+  const ::blockchain::members::v1alpha1::Invitation& invitation() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::members::v1alpha1::Invitation* release_invitation();
+  ::blockchain::members::v1alpha1::Invitation* mutable_invitation();
+  void set_allocated_invitation(::blockchain::members::v1alpha1::Invitation* invitation);
+  private:
+  const ::blockchain::members::v1alpha1::Invitation& _internal_invitation() const;
+  ::blockchain::members::v1alpha1::Invitation* _internal_mutable_invitation();
+  public:
+  void unsafe_arena_set_allocated_invitation(
+      ::blockchain::members::v1alpha1::Invitation* invitation);
+  ::blockchain::members::v1alpha1::Invitation* unsafe_arena_release_invitation();
 
   // @@protoc_insertion_point(class_scope:blockchain.members.v1alpha1.CreateInvitationRequest)
  private:
@@ -717,7 +721,7 @@ class CreateInvitationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  ::blockchain::members::v1alpha1::Invitation* invitation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto;
 };
@@ -1080,50 +1084,90 @@ inline void CreateOrganizationRequest::set_allocated_admin_user(std::string* adm
 
 // CreateInvitationRequest
 
-// string email = 1 [json_name = "email"];
-inline void CreateInvitationRequest::clear_email() {
-  email_.ClearToEmpty();
+// .blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+inline bool CreateInvitationRequest::_internal_has_invitation() const {
+  return this != internal_default_instance() && invitation_ != nullptr;
 }
-inline const std::string& CreateInvitationRequest::email() const {
-  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateInvitationRequest.email)
-  return _internal_email();
+inline bool CreateInvitationRequest::has_invitation() const {
+  return _internal_has_invitation();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateInvitationRequest::set_email(ArgT0&& arg0, ArgT... args) {
- 
- email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.CreateInvitationRequest.email)
+inline const ::blockchain::members::v1alpha1::Invitation& CreateInvitationRequest::_internal_invitation() const {
+  const ::blockchain::members::v1alpha1::Invitation* p = invitation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::members::v1alpha1::Invitation&>(
+      ::blockchain::members::v1alpha1::_Invitation_default_instance_);
 }
-inline std::string* CreateInvitationRequest::mutable_email() {
-  std::string* _s = _internal_mutable_email();
-  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateInvitationRequest.email)
-  return _s;
+inline const ::blockchain::members::v1alpha1::Invitation& CreateInvitationRequest::invitation() const {
+  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateInvitationRequest.invitation)
+  return _internal_invitation();
 }
-inline const std::string& CreateInvitationRequest::_internal_email() const {
-  return email_.Get();
-}
-inline void CreateInvitationRequest::_internal_set_email(const std::string& value) {
-  
-  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateInvitationRequest::_internal_mutable_email() {
-  
-  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateInvitationRequest::release_email() {
-  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateInvitationRequest.email)
-  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateInvitationRequest::set_allocated_email(std::string* email) {
-  if (email != nullptr) {
+inline void CreateInvitationRequest::unsafe_arena_set_allocated_invitation(
+    ::blockchain::members::v1alpha1::Invitation* invitation) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation_);
+  }
+  invitation_ = invitation;
+  if (invitation) {
     
   } else {
     
   }
-  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateInvitationRequest.email)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.members.v1alpha1.CreateInvitationRequest.invitation)
+}
+inline ::blockchain::members::v1alpha1::Invitation* CreateInvitationRequest::release_invitation() {
+  
+  ::blockchain::members::v1alpha1::Invitation* temp = invitation_;
+  invitation_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::members::v1alpha1::Invitation* CreateInvitationRequest::unsafe_arena_release_invitation() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateInvitationRequest.invitation)
+  
+  ::blockchain::members::v1alpha1::Invitation* temp = invitation_;
+  invitation_ = nullptr;
+  return temp;
+}
+inline ::blockchain::members::v1alpha1::Invitation* CreateInvitationRequest::_internal_mutable_invitation() {
+  
+  if (invitation_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::members::v1alpha1::Invitation>(GetArenaForAllocation());
+    invitation_ = p;
+  }
+  return invitation_;
+}
+inline ::blockchain::members::v1alpha1::Invitation* CreateInvitationRequest::mutable_invitation() {
+  ::blockchain::members::v1alpha1::Invitation* _msg = _internal_mutable_invitation();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateInvitationRequest.invitation)
+  return _msg;
+}
+inline void CreateInvitationRequest::set_allocated_invitation(::blockchain::members::v1alpha1::Invitation* invitation) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation_);
+  }
+  if (invitation) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation));
+    if (message_arena != submessage_arena) {
+      invitation = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, invitation, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  invitation_ = invitation;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateInvitationRequest.invitation)
 }
 
 #ifdef __GNUC__

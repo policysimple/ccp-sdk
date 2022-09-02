@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%io.cuemby.blockchain.members.v1alpha1B\031MembersInvitationProtoApiP\001Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain.Member.V1Alpha1\312\002\033Blockchain\\Members\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,blockchain/members/v1alpha1/member_api.proto\x12\x1b\x62lockchain.members.v1alpha1\x1a(blockchain/members/v1alpha1/member.proto\"\x94\x01\n\x1a\x43reateOrganizationResponse\x12^\n\x15register_organization\x18\x01 \x01(\x0b\x32).blockchain.members.v1alpha1.OrganizationR\x14registerOrganization\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"4\n\x18\x43reateInvitationResponse\x12\x18\n\x07message\x18\x01 \x01(\tR\x07message\"\xad\x01\n\x19\x43reateOrganizationRequest\x12+\n\x12user_id_new_member\x18\x01 \x01(\rR\x0fuserIdNewMember\x12\x1d\n\norg_domain\x18\x02 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\"/\n\x17\x43reateInvitationRequest\x12\x14\n\x05\x65mail\x18\x01 \x01(\tR\x05\x65mail2\xa9\x02\n\x1e\x42lockchainInvitationAPIService\x12\x85\x01\n\x12\x43reateOrganization\x12\x36.blockchain.members.v1alpha1.CreateOrganizationRequest\x1a\x37.blockchain.members.v1alpha1.CreateOrganizationResponse\x12\x7f\n\x10\x43reateInvitation\x12\x34.blockchain.members.v1alpha1.CreateInvitationRequest\x1a\x35.blockchain.members.v1alpha1.CreateInvitationResponseB\xc3\x01\n%io.cuemby.blockchain.members.v1alpha1B\x19MembersInvitationProtoApiP\x01Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1a\x42lockchain.Member.V1Alpha1\xca\x02\x1b\x42lockchain\\Members\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n,blockchain/members/v1alpha1/member_api.proto\x12\x1b\x62lockchain.members.v1alpha1\x1a(blockchain/members/v1alpha1/member.proto\"\x94\x01\n\x1a\x43reateOrganizationResponse\x12^\n\x15register_organization\x18\x01 \x01(\x0b\x32).blockchain.members.v1alpha1.OrganizationR\x14registerOrganization\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"4\n\x18\x43reateInvitationResponse\x12\x18\n\x07message\x18\x01 \x01(\tR\x07message\"\xad\x01\n\x19\x43reateOrganizationRequest\x12+\n\x12user_id_new_member\x18\x01 \x01(\rR\x0fuserIdNewMember\x12\x1d\n\norg_domain\x18\x02 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\"b\n\x17\x43reateInvitationRequest\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.members.v1alpha1.InvitationR\ninvitation2\xa9\x02\n\x1e\x42lockchainInvitationAPIService\x12\x85\x01\n\x12\x43reateOrganization\x12\x36.blockchain.members.v1alpha1.CreateOrganizationRequest\x1a\x37.blockchain.members.v1alpha1.CreateOrganizationResponse\x12\x7f\n\x10\x43reateInvitation\x12\x34.blockchain.members.v1alpha1.CreateInvitationRequest\x1a\x35.blockchain.members.v1alpha1.CreateInvitationResponseB\xc3\x01\n%io.cuemby.blockchain.members.v1alpha1B\x19MembersInvitationProtoApiP\x01Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1a\x42lockchain.Member.V1Alpha1\xca\x02\x1b\x42lockchain\\Members\\V1Alpha1b\x06proto3'
   ,
   dependencies=[blockchain_dot_members_dot_v1alpha1_dot_member__pb2.DESCRIPTOR,])
 
@@ -160,12 +160,12 @@ _CREATEINVITATIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='email', full_name='blockchain.members.v1alpha1.CreateInvitationRequest.email', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='invitation', full_name='blockchain.members.v1alpha1.CreateInvitationRequest.invitation', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='email', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='invitation', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -179,10 +179,11 @@ _CREATEINVITATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=500,
-  serialized_end=547,
+  serialized_end=598,
 )
 
 _CREATEORGANIZATIONRESPONSE.fields_by_name['register_organization'].message_type = blockchain_dot_members_dot_v1alpha1_dot_member__pb2._ORGANIZATION
+_CREATEINVITATIONREQUEST.fields_by_name['invitation'].message_type = blockchain_dot_members_dot_v1alpha1_dot_member__pb2._INVITATION
 DESCRIPTOR.message_types_by_name['CreateOrganizationResponse'] = _CREATEORGANIZATIONRESPONSE
 DESCRIPTOR.message_types_by_name['CreateInvitationResponse'] = _CREATEINVITATIONRESPONSE
 DESCRIPTOR.message_types_by_name['CreateOrganizationRequest'] = _CREATEORGANIZATIONREQUEST
@@ -227,8 +228,8 @@ _BLOCKCHAININVITATIONAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=550,
-  serialized_end=847,
+  serialized_start=601,
+  serialized_end=898,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateOrganization',

@@ -668,7 +668,7 @@ proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.toObject = f
  */
 proto.blockchain.members.v1alpha1.CreateInvitationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    email: jspb.Message.getFieldWithDefault(msg, 1, "")
+    invitation: (f = msg.getInvitation()) && blockchain_members_v1alpha1_member_pb.Invitation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -706,8 +706,9 @@ proto.blockchain.members.v1alpha1.CreateInvitationRequest.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      var value = new blockchain_members_v1alpha1_member_pb.Invitation;
+      reader.readMessage(value,blockchain_members_v1alpha1_member_pb.Invitation.deserializeBinaryFromReader);
+      msg.setInvitation(value);
       break;
     default:
       reader.skipField();
@@ -738,31 +739,51 @@ proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.serializeBin
  */
 proto.blockchain.members.v1alpha1.CreateInvitationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getInvitation();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      blockchain_members_v1alpha1_member_pb.Invitation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string email = 1;
- * @return {string}
+ * optional Invitation invitation = 1;
+ * @return {?proto.blockchain.members.v1alpha1.Invitation}
  */
-proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.getInvitation = function() {
+  return /** @type{?proto.blockchain.members.v1alpha1.Invitation} */ (
+    jspb.Message.getWrapperField(this, blockchain_members_v1alpha1_member_pb.Invitation, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.blockchain.members.v1alpha1.Invitation|undefined} value
+ * @return {!proto.blockchain.members.v1alpha1.CreateInvitationRequest} returns this
+*/
+proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.setInvitation = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.blockchain.members.v1alpha1.CreateInvitationRequest} returns this
  */
-proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.clearInvitation = function() {
+  return this.setInvitation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.blockchain.members.v1alpha1.CreateInvitationRequest.prototype.hasInvitation = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

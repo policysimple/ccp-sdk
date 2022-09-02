@@ -17,6 +17,10 @@ class Invitation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string email = 1 [json_name = "email"];</code>
      */
     protected $email = '';
+    /**
+     * Generated from protobuf field <code>string bc_id = 2 [json_name = "bcId"];</code>
+     */
+    protected $bc_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class Invitation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $email
+     *     @type string $bc_id
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class Invitation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @return string
+     */
+    public function getBcId()
+    {
+        return $this->bc_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBcId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->bc_id = $var;
 
         return $this;
     }

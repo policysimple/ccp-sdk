@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%io.cuemby.blockchain.members.v1alpha1B\026MembersInvitationProtoP\001Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain.Member.V1Alpha1\312\002\033Blockchain\\Members\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(blockchain/members/v1alpha1/member.proto\x12\x1b\x62lockchain.members.v1alpha1\"\x8c\x01\n\x0cOrganization\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\ndomain_org\x18\x02 \x01(\tR\tdomainOrg\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\"\"\n\nInvitation\x12\x14\n\x05\x65mail\x18\x01 \x01(\tR\x05\x65mailB\xc0\x01\n%io.cuemby.blockchain.members.v1alpha1B\x16MembersInvitationProtoP\x01Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1a\x42lockchain.Member.V1Alpha1\xca\x02\x1b\x42lockchain\\Members\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(blockchain/members/v1alpha1/member.proto\x12\x1b\x62lockchain.members.v1alpha1\"\xa1\x01\n\x0cOrganization\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\ndomain_org\x18\x02 \x01(\tR\tdomainOrg\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\x12\x13\n\x05\x62\x63_id\x18\x05 \x01(\tR\x04\x62\x63Id\"7\n\nInvitation\x12\x14\n\x05\x65mail\x18\x01 \x01(\tR\x05\x65mail\x12\x13\n\x05\x62\x63_id\x18\x02 \x01(\tR\x04\x62\x63IdB\xc0\x01\n%io.cuemby.blockchain.members.v1alpha1B\x16MembersInvitationProtoP\x01Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1a\x42lockchain.Member.V1Alpha1\xca\x02\x1b\x42lockchain\\Members\\V1Alpha1b\x06proto3'
 )
 
 
@@ -35,8 +35,8 @@ _ORGANIZATION = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='user_id', full_name='blockchain.members.v1alpha1.Organization.user_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -61,6 +61,13 @@ _ORGANIZATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='adminUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bc_id', full_name='blockchain.members.v1alpha1.Organization.bc_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='bcId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -74,7 +81,7 @@ _ORGANIZATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=74,
-  serialized_end=214,
+  serialized_end=235,
 )
 
 
@@ -93,6 +100,13 @@ _INVITATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='email', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bc_id', full_name='blockchain.members.v1alpha1.Invitation.bc_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='bcId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -105,8 +119,8 @@ _INVITATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=250,
+  serialized_start=237,
+  serialized_end=292,
 )
 
 DESCRIPTOR.message_types_by_name['Organization'] = _ORGANIZATION

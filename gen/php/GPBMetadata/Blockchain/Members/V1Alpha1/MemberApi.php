@@ -17,7 +17,7 @@ class MemberApi
         \GPBMetadata\Blockchain\Members\V1Alpha1\Member::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ó
+¦
 ,blockchain/members/v1alpha1/member_api.protoblockchain.members.v1alpha1"”
 CreateOrganizationResponse^
 register_organization (2).blockchain.members.v1alpha1.OrganizationRregisterOrganization
@@ -30,9 +30,11 @@ class MemberApi
 org_domain (	R	orgDomain%
 admin_password (	RadminPassword
 
-admin_user (	R	adminUser"/
-CreateInvitationRequest
-email (	Remail2©
+admin_user (	R	adminUser"b
+CreateInvitationRequestG
+
+invitation (2\'.blockchain.members.v1alpha1.InvitationR
+invitation2©
 BlockchainInvitationAPIService…
 CreateOrganization6.blockchain.members.v1alpha1.CreateOrganizationRequest7.blockchain.members.v1alpha1.CreateOrganizationResponse
 CreateInvitation4.blockchain.members.v1alpha1.CreateInvitationRequest5.blockchain.members.v1alpha1.CreateInvitationResponseBÃ

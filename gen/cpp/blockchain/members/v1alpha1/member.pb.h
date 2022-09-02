@@ -190,11 +190,26 @@ class Organization final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kUserIdFieldNumber = 1,
     kDomainOrgFieldNumber = 2,
     kAdminPasswordFieldNumber = 3,
     kAdminUserFieldNumber = 4,
-    kUserIdFieldNumber = 1,
+    kBcIdFieldNumber = 5,
   };
+  // string user_id = 1 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
   // string domain_org = 2 [json_name = "domainOrg"];
   void clear_domain_org();
   const std::string& domain_org() const;
@@ -237,13 +252,18 @@ class Organization final :
   std::string* _internal_mutable_admin_user();
   public:
 
-  // uint32 user_id = 1 [json_name = "userId"];
-  void clear_user_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 user_id() const;
-  void set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // string bc_id = 5 [json_name = "bcId"];
+  void clear_bc_id();
+  const std::string& bc_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_bc_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_bc_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_bc_id();
+  void set_allocated_bc_id(std::string* bc_id);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_user_id() const;
-  void _internal_set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const std::string& _internal_bc_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_bc_id(const std::string& value);
+  std::string* _internal_mutable_bc_id();
   public:
 
   // @@protoc_insertion_point(class_scope:blockchain.members.v1alpha1.Organization)
@@ -253,10 +273,11 @@ class Organization final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr domain_org_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_password_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_user_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bc_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto;
 };
@@ -378,6 +399,7 @@ class Invitation final :
 
   enum : int {
     kEmailFieldNumber = 1,
+    kBcIdFieldNumber = 2,
   };
   // string email = 1 [json_name = "email"];
   void clear_email();
@@ -393,6 +415,20 @@ class Invitation final :
   std::string* _internal_mutable_email();
   public:
 
+  // string bc_id = 2 [json_name = "bcId"];
+  void clear_bc_id();
+  const std::string& bc_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_bc_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_bc_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_bc_id();
+  void set_allocated_bc_id(std::string* bc_id);
+  private:
+  const std::string& _internal_bc_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_bc_id(const std::string& value);
+  std::string* _internal_mutable_bc_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.members.v1alpha1.Invitation)
  private:
   class _Internal;
@@ -401,6 +437,7 @@ class Invitation final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bc_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto;
 };
@@ -415,24 +452,50 @@ class Invitation final :
 #endif  // __GNUC__
 // Organization
 
-// uint32 user_id = 1 [json_name = "userId"];
+// string user_id = 1 [json_name = "userId"];
 inline void Organization::clear_user_id() {
-  user_id_ = 0u;
+  user_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Organization::_internal_user_id() const {
-  return user_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Organization::user_id() const {
+inline const std::string& Organization::user_id() const {
   // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.Organization.user_id)
   return _internal_user_id();
 }
-inline void Organization::_internal_set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  user_id_ = value;
-}
-inline void Organization::set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_user_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.Organization.user_id)
+}
+inline std::string* Organization::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.Organization.user_id)
+  return _s;
+}
+inline const std::string& Organization::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void Organization::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_user_id() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.Organization.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.Organization.user_id)
 }
 
 // string domain_org = 2 [json_name = "domainOrg"];
@@ -573,6 +636,52 @@ inline void Organization::set_allocated_admin_user(std::string* admin_user) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.Organization.admin_user)
 }
 
+// string bc_id = 5 [json_name = "bcId"];
+inline void Organization::clear_bc_id() {
+  bc_id_.ClearToEmpty();
+}
+inline const std::string& Organization::bc_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.Organization.bc_id)
+  return _internal_bc_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_bc_id(ArgT0&& arg0, ArgT... args) {
+ 
+ bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.Organization.bc_id)
+}
+inline std::string* Organization::mutable_bc_id() {
+  std::string* _s = _internal_mutable_bc_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.Organization.bc_id)
+  return _s;
+}
+inline const std::string& Organization::_internal_bc_id() const {
+  return bc_id_.Get();
+}
+inline void Organization::_internal_set_bc_id(const std::string& value) {
+  
+  bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_bc_id() {
+  
+  return bc_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_bc_id() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.Organization.bc_id)
+  return bc_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_bc_id(std::string* bc_id) {
+  if (bc_id != nullptr) {
+    
+  } else {
+    
+  }
+  bc_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bc_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.Organization.bc_id)
+}
+
 // -------------------------------------------------------------------
 
 // Invitation
@@ -621,6 +730,52 @@ inline void Invitation::set_allocated_email(std::string* email) {
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.Invitation.email)
+}
+
+// string bc_id = 2 [json_name = "bcId"];
+inline void Invitation::clear_bc_id() {
+  bc_id_.ClearToEmpty();
+}
+inline const std::string& Invitation::bc_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.Invitation.bc_id)
+  return _internal_bc_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Invitation::set_bc_id(ArgT0&& arg0, ArgT... args) {
+ 
+ bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.Invitation.bc_id)
+}
+inline std::string* Invitation::mutable_bc_id() {
+  std::string* _s = _internal_mutable_bc_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.Invitation.bc_id)
+  return _s;
+}
+inline const std::string& Invitation::_internal_bc_id() const {
+  return bc_id_.Get();
+}
+inline void Invitation::_internal_set_bc_id(const std::string& value) {
+  
+  bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Invitation::_internal_mutable_bc_id() {
+  
+  return bc_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Invitation::release_bc_id() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.Invitation.bc_id)
+  return bc_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Invitation::set_allocated_bc_id(std::string* bc_id) {
+  if (bc_id != nullptr) {
+    
+  } else {
+    
+  }
+  bc_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bc_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.Invitation.bc_id)
 }
 
 #ifdef __GNUC__

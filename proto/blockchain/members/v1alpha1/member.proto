@@ -11,13 +11,15 @@ option php_namespace = "Blockchain\\Members\\V1Alpha1";
 
 
 message Organization {
-    uint32 user_id = 1;
+    string user_id = 1;
     string domain_org = 2;
     string admin_password = 3;
     string admin_user = 4;
+    string bc_id = 5;
 }
 
 
 message Invitation {
     string email = 1;
+    string bc_id = 2;
 }

@@ -61,7 +61,7 @@ struct CreateOrganizationRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateOrganizationRequestDefaultTypeInternal _CreateOrganizationRequest_default_instance_;
 constexpr CreateInvitationRequest::CreateInvitationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : invitation_(nullptr){}
 struct CreateInvitationRequestDefaultTypeInternal {
   constexpr CreateInvitationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -106,7 +106,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fmembers_2fv1alpha
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateInvitationRequest, email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateInvitationRequest, invitation_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::members::v1alpha1::CreateOrganizationResponse)},
@@ -135,28 +135,29 @@ const char descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_5f
   "_id_new_member\030\001 \001(\rR\017userIdNewMember\022\035\n"
   "\norg_domain\030\002 \001(\tR\torgDomain\022%\n\016admin_pa"
   "ssword\030\003 \001(\tR\radminPassword\022\035\n\nadmin_use"
-  "r\030\004 \001(\tR\tadminUser\"/\n\027CreateInvitationRe"
-  "quest\022\024\n\005email\030\001 \001(\tR\005email2\251\002\n\036Blockcha"
-  "inInvitationAPIService\022\205\001\n\022CreateOrganiz"
-  "ation\0226.blockchain.members.v1alpha1.Crea"
-  "teOrganizationRequest\0327.blockchain.membe"
-  "rs.v1alpha1.CreateOrganizationResponse\022\177"
-  "\n\020CreateInvitation\0224.blockchain.members."
-  "v1alpha1.CreateInvitationRequest\0325.block"
-  "chain.members.v1alpha1.CreateInvitationR"
-  "esponseB\303\001\n%io.cuemby.blockchain.members"
-  ".v1alpha1B\031MembersInvitationProtoApiP\001Z<"
-  "github.com/cuemby/ccp-sdk/gen/go/blockch"
-  "ain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain."
-  "Member.V1Alpha1\312\002\033Blockchain\\Members\\V1A"
-  "lpha1b\006proto3"
+  "r\030\004 \001(\tR\tadminUser\"b\n\027CreateInvitationRe"
+  "quest\022G\n\ninvitation\030\001 \001(\0132\'.blockchain.m"
+  "embers.v1alpha1.InvitationR\ninvitation2\251"
+  "\002\n\036BlockchainInvitationAPIService\022\205\001\n\022Cr"
+  "eateOrganization\0226.blockchain.members.v1"
+  "alpha1.CreateOrganizationRequest\0327.block"
+  "chain.members.v1alpha1.CreateOrganizatio"
+  "nResponse\022\177\n\020CreateInvitation\0224.blockcha"
+  "in.members.v1alpha1.CreateInvitationRequ"
+  "est\0325.blockchain.members.v1alpha1.Create"
+  "InvitationResponseB\303\001\n%io.cuemby.blockch"
+  "ain.members.v1alpha1B\031MembersInvitationP"
+  "rotoApiP\001Z<github.com/cuemby/ccp-sdk/gen"
+  "/go/blockchain/members/v1alpha1\242\002\003PPX\252\002\032"
+  "Blockchain.Member.V1Alpha1\312\002\033Blockchain\\"
+  "Members\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_deps[1] = {
   &::descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto = {
-  false, false, 1053, descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, "blockchain/members/v1alpha1/member_api.proto", 
+  false, false, 1104, descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, "blockchain/members/v1alpha1/member_api.proto", 
   &descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_once, descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto::offsets,
   file_level_metadata_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, file_level_enum_descriptors_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, file_level_service_descriptors_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto,
@@ -934,8 +935,19 @@ void CreateOrganizationRequest::InternalSwap(CreateOrganizationRequest* other) {
 
 class CreateInvitationRequest::_Internal {
  public:
+  static const ::blockchain::members::v1alpha1::Invitation& invitation(const CreateInvitationRequest* msg);
 };
 
+const ::blockchain::members::v1alpha1::Invitation&
+CreateInvitationRequest::_Internal::invitation(const CreateInvitationRequest* msg) {
+  return *msg->invitation_;
+}
+void CreateInvitationRequest::clear_invitation() {
+  if (GetArenaForAllocation() == nullptr && invitation_ != nullptr) {
+    delete invitation_;
+  }
+  invitation_ = nullptr;
+}
 CreateInvitationRequest::CreateInvitationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -948,16 +960,16 @@ CreateInvitationRequest::CreateInvitationRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 CreateInvitationRequest::CreateInvitationRequest(const CreateInvitationRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_email().empty()) {
-    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
-      GetArenaForAllocation());
+  if (from._internal_has_invitation()) {
+    invitation_ = new ::blockchain::members::v1alpha1::Invitation(*from.invitation_);
+  } else {
+    invitation_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:blockchain.members.v1alpha1.CreateInvitationRequest)
 }
 
 inline void CreateInvitationRequest::SharedCtor() {
-email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+invitation_ = nullptr;
 }
 
 CreateInvitationRequest::~CreateInvitationRequest() {
@@ -969,7 +981,7 @@ CreateInvitationRequest::~CreateInvitationRequest() {
 
 inline void CreateInvitationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete invitation_;
 }
 
 void CreateInvitationRequest::ArenaDtor(void* object) {
@@ -988,7 +1000,10 @@ void CreateInvitationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  email_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && invitation_ != nullptr) {
+    delete invitation_;
+  }
+  invitation_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -998,12 +1013,10 @@ const char* CreateInvitationRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string email = 1 [json_name = "email"];
+      // .blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_email();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.CreateInvitationRequest.email"));
+          ptr = ctx->ParseMessage(_internal_mutable_invitation(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1036,14 +1049,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string email = 1 [json_name = "email"];
-  if (!this->_internal_email().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "blockchain.members.v1alpha1.CreateInvitationRequest.email");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_email(), target);
+  // .blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+  if (this->_internal_has_invitation()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::invitation(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1062,11 +1073,11 @@ size_t CreateInvitationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string email = 1 [json_name = "email"];
-  if (!this->_internal_email().empty()) {
+  // .blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+  if (this->_internal_has_invitation()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_email());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *invitation_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1097,8 +1108,8 @@ void CreateInvitationRequest::MergeFrom(const CreateInvitationRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_email().empty()) {
-    _internal_set_email(from._internal_email());
+  if (from._internal_has_invitation()) {
+    _internal_mutable_invitation()->::blockchain::members::v1alpha1::Invitation::MergeFrom(from._internal_invitation());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1117,11 +1128,7 @@ bool CreateInvitationRequest::IsInitialized() const {
 void CreateInvitationRequest::InternalSwap(CreateInvitationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &email_, GetArenaForAllocation(),
-      &other->email_, other->GetArenaForAllocation()
-  );
+  swap(invitation_, other->invitation_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateInvitationRequest::GetMetadata() const {

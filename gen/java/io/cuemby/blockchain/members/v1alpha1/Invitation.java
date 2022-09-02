@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Invitation() {
     email_ = "";
+    bcId_ = "";
   }
 
   @java.lang.Override
@@ -53,6 +54,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             email_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            bcId_ = s;
             break;
           }
           default: {
@@ -125,6 +132,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BC_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object bcId_;
+  /**
+   * <code>string bc_id = 2 [json_name = "bcId"];</code>
+   * @return The bcId.
+   */
+  @java.lang.Override
+  public java.lang.String getBcId() {
+    java.lang.Object ref = bcId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bcId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string bc_id = 2 [json_name = "bcId"];</code>
+   * @return The bytes for bcId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBcIdBytes() {
+    java.lang.Object ref = bcId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bcId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -142,6 +187,9 @@ private static final long serialVersionUID = 0L;
     if (!getEmailBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
     }
+    if (!getBcIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bcId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -153,6 +201,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getEmailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    }
+    if (!getBcIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bcId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,6 +222,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getEmail()
         .equals(other.getEmail())) return false;
+    if (!getBcId()
+        .equals(other.getBcId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +237,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + BC_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBcId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,6 +374,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       email_ = "";
 
+      bcId_ = "";
+
       return this;
     }
 
@@ -346,6 +403,7 @@ private static final long serialVersionUID = 0L;
     public io.cuemby.blockchain.members.v1alpha1.Invitation buildPartial() {
       io.cuemby.blockchain.members.v1alpha1.Invitation result = new io.cuemby.blockchain.members.v1alpha1.Invitation(this);
       result.email_ = email_;
+      result.bcId_ = bcId_;
       onBuilt();
       return result;
     }
@@ -396,6 +454,10 @@ private static final long serialVersionUID = 0L;
       if (other == io.cuemby.blockchain.members.v1alpha1.Invitation.getDefaultInstance()) return this;
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        onChanged();
+      }
+      if (!other.getBcId().isEmpty()) {
+        bcId_ = other.bcId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -499,6 +561,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       email_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bcId_ = "";
+    /**
+     * <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @return The bcId.
+     */
+    public java.lang.String getBcId() {
+      java.lang.Object ref = bcId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bcId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @return The bytes for bcId.
+     */
+    public com.google.protobuf.ByteString
+        getBcIdBytes() {
+      java.lang.Object ref = bcId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bcId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @param value The bcId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBcId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bcId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBcId() {
+      
+      bcId_ = getDefaultInstance().getBcId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string bc_id = 2 [json_name = "bcId"];</code>
+     * @param value The bytes for bcId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBcIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bcId_ = value;
       onChanged();
       return this;
     }

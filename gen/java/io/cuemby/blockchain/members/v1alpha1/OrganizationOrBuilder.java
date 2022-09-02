@@ -8,10 +8,16 @@ public interface OrganizationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 user_id = 1 [json_name = "userId"];</code>
+   * <code>string user_id = 1 [json_name = "userId"];</code>
    * @return The userId.
    */
-  int getUserId();
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 
   /**
    * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
@@ -48,4 +54,16 @@ public interface OrganizationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdminUserBytes();
+
+  /**
+   * <code>string bc_id = 5 [json_name = "bcId"];</code>
+   * @return The bcId.
+   */
+  java.lang.String getBcId();
+  /**
+   * <code>string bc_id = 5 [json_name = "bcId"];</code>
+   * @return The bytes for bcId.
+   */
+  com.google.protobuf.ByteString
+      getBcIdBytes();
 }

@@ -18,4 +18,16 @@ public interface InvitationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEmailBytes();
+
+  /**
+   * <code>string bc_id = 2 [json_name = "bcId"];</code>
+   * @return The bcId.
+   */
+  java.lang.String getBcId();
+  /**
+   * <code>string bc_id = 2 [json_name = "bcId"];</code>
+   * @return The bytes for bcId.
+   */
+  com.google.protobuf.ByteString
+      getBcIdBytes();
 }

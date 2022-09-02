@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateInvitationRequest() {
-    email_ = "";
   }
 
   @java.lang.Override
@@ -50,9 +49,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            io.cuemby.blockchain.members.v1alpha1.Invitation.Builder subBuilder = null;
+            if (invitation_ != null) {
+              subBuilder = invitation_.toBuilder();
+            }
+            invitation_ = input.readMessage(io.cuemby.blockchain.members.v1alpha1.Invitation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(invitation_);
+              invitation_ = subBuilder.buildPartial();
+            }
 
-            email_ = s;
             break;
           }
           default: {
@@ -87,42 +93,30 @@ private static final long serialVersionUID = 0L;
             io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest.class, io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest.Builder.class);
   }
 
-  public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+  public static final int INVITATION_FIELD_NUMBER = 1;
+  private io.cuemby.blockchain.members.v1alpha1.Invitation invitation_;
   /**
-   * <code>string email = 1 [json_name = "email"];</code>
-   * @return The email.
+   * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+   * @return Whether the invitation field is set.
    */
   @java.lang.Override
-  public java.lang.String getEmail() {
-    java.lang.Object ref = email_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      email_ = s;
-      return s;
-    }
+  public boolean hasInvitation() {
+    return invitation_ != null;
   }
   /**
-   * <code>string email = 1 [json_name = "email"];</code>
-   * @return The bytes for email.
+   * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+   * @return The invitation.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEmailBytes() {
-    java.lang.Object ref = email_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      email_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public io.cuemby.blockchain.members.v1alpha1.Invitation getInvitation() {
+    return invitation_ == null ? io.cuemby.blockchain.members.v1alpha1.Invitation.getDefaultInstance() : invitation_;
+  }
+  /**
+   * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.blockchain.members.v1alpha1.InvitationOrBuilder getInvitationOrBuilder() {
+    return getInvitation();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEmailBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+    if (invitation_ != null) {
+      output.writeMessage(1, getInvitation());
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEmailBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    if (invitation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getInvitation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest other = (io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest) obj;
 
-    if (!getEmail()
-        .equals(other.getEmail())) return false;
+    if (hasInvitation() != other.hasInvitation()) return false;
+    if (hasInvitation()) {
+      if (!getInvitation()
+          .equals(other.getInvitation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getEmail().hashCode();
+    if (hasInvitation()) {
+      hash = (37 * hash) + INVITATION_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitation().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      email_ = "";
-
+      if (invitationBuilder_ == null) {
+        invitation_ = null;
+      } else {
+        invitation_ = null;
+        invitationBuilder_ = null;
+      }
       return this;
     }
 
@@ -345,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest buildPartial() {
       io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest result = new io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest(this);
-      result.email_ = email_;
+      if (invitationBuilder_ == null) {
+        result.invitation_ = invitation_;
+      } else {
+        result.invitation_ = invitationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -394,9 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest other) {
       if (other == io.cuemby.blockchain.members.v1alpha1.CreateInvitationRequest.getDefaultInstance()) return this;
-      if (!other.getEmail().isEmpty()) {
-        email_ = other.email_;
-        onChanged();
+      if (other.hasInvitation()) {
+        mergeInvitation(other.getInvitation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -427,80 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object email_ = "";
+    private io.cuemby.blockchain.members.v1alpha1.Invitation invitation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.blockchain.members.v1alpha1.Invitation, io.cuemby.blockchain.members.v1alpha1.Invitation.Builder, io.cuemby.blockchain.members.v1alpha1.InvitationOrBuilder> invitationBuilder_;
     /**
-     * <code>string email = 1 [json_name = "email"];</code>
-     * @return The email.
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     * @return Whether the invitation field is set.
      */
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
+    public boolean hasInvitation() {
+      return invitationBuilder_ != null || invitation_ != null;
+    }
+    /**
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     * @return The invitation.
+     */
+    public io.cuemby.blockchain.members.v1alpha1.Invitation getInvitation() {
+      if (invitationBuilder_ == null) {
+        return invitation_ == null ? io.cuemby.blockchain.members.v1alpha1.Invitation.getDefaultInstance() : invitation_;
       } else {
-        return (java.lang.String) ref;
+        return invitationBuilder_.getMessage();
       }
     }
     /**
-     * <code>string email = 1 [json_name = "email"];</code>
-     * @return The bytes for email.
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
      */
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
+    public Builder setInvitation(io.cuemby.blockchain.members.v1alpha1.Invitation value) {
+      if (invitationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        invitation_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        invitationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     */
+    public Builder setInvitation(
+        io.cuemby.blockchain.members.v1alpha1.Invitation.Builder builderForValue) {
+      if (invitationBuilder_ == null) {
+        invitation_ = builderForValue.build();
+        onChanged();
+      } else {
+        invitationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     */
+    public Builder mergeInvitation(io.cuemby.blockchain.members.v1alpha1.Invitation value) {
+      if (invitationBuilder_ == null) {
+        if (invitation_ != null) {
+          invitation_ =
+            io.cuemby.blockchain.members.v1alpha1.Invitation.newBuilder(invitation_).mergeFrom(value).buildPartial();
+        } else {
+          invitation_ = value;
+        }
+        onChanged();
+      } else {
+        invitationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     */
+    public Builder clearInvitation() {
+      if (invitationBuilder_ == null) {
+        invitation_ = null;
+        onChanged();
+      } else {
+        invitation_ = null;
+        invitationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     */
+    public io.cuemby.blockchain.members.v1alpha1.Invitation.Builder getInvitationBuilder() {
+      
+      onChanged();
+      return getInvitationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     */
+    public io.cuemby.blockchain.members.v1alpha1.InvitationOrBuilder getInvitationOrBuilder() {
+      if (invitationBuilder_ != null) {
+        return invitationBuilder_.getMessageOrBuilder();
+      } else {
+        return invitation_ == null ?
+            io.cuemby.blockchain.members.v1alpha1.Invitation.getDefaultInstance() : invitation_;
       }
     }
     /**
-     * <code>string email = 1 [json_name = "email"];</code>
-     * @param value The email to set.
-     * @return This builder for chaining.
+     * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
      */
-    public Builder setEmail(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      email_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string email = 1 [json_name = "email"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEmail() {
-      
-      email_ = getDefaultInstance().getEmail();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string email = 1 [json_name = "email"];</code>
-     * @param value The bytes for email to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEmailBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      email_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.blockchain.members.v1alpha1.Invitation, io.cuemby.blockchain.members.v1alpha1.Invitation.Builder, io.cuemby.blockchain.members.v1alpha1.InvitationOrBuilder> 
+        getInvitationFieldBuilder() {
+      if (invitationBuilder_ == null) {
+        invitationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.blockchain.members.v1alpha1.Invitation, io.cuemby.blockchain.members.v1alpha1.Invitation.Builder, io.cuemby.blockchain.members.v1alpha1.InvitationOrBuilder>(
+                getInvitation(),
+                getParentForChildren(),
+                isClean());
+        invitation_ = null;
+      }
+      return invitationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

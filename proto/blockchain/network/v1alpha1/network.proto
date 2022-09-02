@@ -1,0 +1,15 @@
+syntax = "proto3";
+package blockchain.network.v1alpha1;
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1";
+
+
+message Network {
+    string network_name = 1;
+    string framework = 2;
+    string type = 3;
+    string org_domain = 4;
+    string user_id = 5;
+    string admin_password = 6;
+    string admin_user = 7;
+}

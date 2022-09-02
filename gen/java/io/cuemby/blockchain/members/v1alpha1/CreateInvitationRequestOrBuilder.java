@@ -8,14 +8,17 @@ public interface CreateInvitationRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string email = 1 [json_name = "email"];</code>
-   * @return The email.
+   * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+   * @return Whether the invitation field is set.
    */
-  java.lang.String getEmail();
+  boolean hasInvitation();
   /**
-   * <code>string email = 1 [json_name = "email"];</code>
-   * @return The bytes for email.
+   * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+   * @return The invitation.
    */
-  com.google.protobuf.ByteString
-      getEmailBytes();
+  io.cuemby.blockchain.members.v1alpha1.Invitation getInvitation();
+  /**
+   * <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+   */
+  io.cuemby.blockchain.members.v1alpha1.InvitationOrBuilder getInvitationOrBuilder();
 }

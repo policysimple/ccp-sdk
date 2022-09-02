@@ -55,21 +55,22 @@ public final class MembersInvitationProtoApi {
       "_id_new_member\030\001 \001(\rR\017userIdNewMember\022\035\n" +
       "\norg_domain\030\002 \001(\tR\torgDomain\022%\n\016admin_pa" +
       "ssword\030\003 \001(\tR\radminPassword\022\035\n\nadmin_use" +
-      "r\030\004 \001(\tR\tadminUser\"/\n\027CreateInvitationRe" +
-      "quest\022\024\n\005email\030\001 \001(\tR\005email2\251\002\n\036Blockcha" +
-      "inInvitationAPIService\022\205\001\n\022CreateOrganiz" +
-      "ation\0226.blockchain.members.v1alpha1.Crea" +
-      "teOrganizationRequest\0327.blockchain.membe" +
-      "rs.v1alpha1.CreateOrganizationResponse\022\177" +
-      "\n\020CreateInvitation\0224.blockchain.members." +
-      "v1alpha1.CreateInvitationRequest\0325.block" +
-      "chain.members.v1alpha1.CreateInvitationR" +
-      "esponseB\303\001\n%io.cuemby.blockchain.members" +
-      ".v1alpha1B\031MembersInvitationProtoApiP\001Z<" +
-      "github.com/cuemby/ccp-sdk/gen/go/blockch" +
-      "ain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain." +
-      "Member.V1Alpha1\312\002\033Blockchain\\Members\\V1A" +
-      "lpha1b\006proto3"
+      "r\030\004 \001(\tR\tadminUser\"b\n\027CreateInvitationRe" +
+      "quest\022G\n\ninvitation\030\001 \001(\0132\'.blockchain.m" +
+      "embers.v1alpha1.InvitationR\ninvitation2\251" +
+      "\002\n\036BlockchainInvitationAPIService\022\205\001\n\022Cr" +
+      "eateOrganization\0226.blockchain.members.v1" +
+      "alpha1.CreateOrganizationRequest\0327.block" +
+      "chain.members.v1alpha1.CreateOrganizatio" +
+      "nResponse\022\177\n\020CreateInvitation\0224.blockcha" +
+      "in.members.v1alpha1.CreateInvitationRequ" +
+      "est\0325.blockchain.members.v1alpha1.Create" +
+      "InvitationResponseB\303\001\n%io.cuemby.blockch" +
+      "ain.members.v1alpha1B\031MembersInvitationP" +
+      "rotoApiP\001Z<github.com/cuemby/ccp-sdk/gen" +
+      "/go/blockchain/members/v1alpha1\242\002\003PPX\252\002\032" +
+      "Blockchain.Member.V1Alpha1\312\002\033Blockchain\\" +
+      "Members\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -99,7 +100,7 @@ public final class MembersInvitationProtoApi {
     internal_static_blockchain_members_v1alpha1_CreateInvitationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_members_v1alpha1_CreateInvitationRequest_descriptor,
-        new java.lang.String[] { "Email", });
+        new java.lang.String[] { "Invitation", });
     io.cuemby.blockchain.members.v1alpha1.MembersInvitationProto.getDescriptor();
   }
 

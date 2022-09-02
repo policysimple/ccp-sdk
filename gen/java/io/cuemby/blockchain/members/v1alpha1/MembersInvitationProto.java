@@ -34,17 +34,18 @@ public final class MembersInvitationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(blockchain/members/v1alpha1/member.pro" +
-      "to\022\033blockchain.members.v1alpha1\"\214\001\n\014Orga" +
-      "nization\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\ndom" +
+      "to\022\033blockchain.members.v1alpha1\"\241\001\n\014Orga" +
+      "nization\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\ndom" +
       "ain_org\030\002 \001(\tR\tdomainOrg\022%\n\016admin_passwo" +
       "rd\030\003 \001(\tR\radminPassword\022\035\n\nadmin_user\030\004 " +
-      "\001(\tR\tadminUser\"\"\n\nInvitation\022\024\n\005email\030\001 " +
-      "\001(\tR\005emailB\300\001\n%io.cuemby.blockchain.memb" +
-      "ers.v1alpha1B\026MembersInvitationProtoP\001Z<" +
-      "github.com/cuemby/ccp-sdk/gen/go/blockch" +
-      "ain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain." +
-      "Member.V1Alpha1\312\002\033Blockchain\\Members\\V1A" +
-      "lpha1b\006proto3"
+      "\001(\tR\tadminUser\022\023\n\005bc_id\030\005 \001(\tR\004bcId\"7\n\nI" +
+      "nvitation\022\024\n\005email\030\001 \001(\tR\005email\022\023\n\005bc_id" +
+      "\030\002 \001(\tR\004bcIdB\300\001\n%io.cuemby.blockchain.me" +
+      "mbers.v1alpha1B\026MembersInvitationProtoP\001" +
+      "Z<github.com/cuemby/ccp-sdk/gen/go/block" +
+      "chain/members/v1alpha1\242\002\003PPX\252\002\032Blockchai" +
+      "n.Member.V1Alpha1\312\002\033Blockchain\\Members\\V" +
+      "1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -55,13 +56,13 @@ public final class MembersInvitationProto {
     internal_static_blockchain_members_v1alpha1_Organization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_members_v1alpha1_Organization_descriptor,
-        new java.lang.String[] { "UserId", "DomainOrg", "AdminPassword", "AdminUser", });
+        new java.lang.String[] { "UserId", "DomainOrg", "AdminPassword", "AdminUser", "BcId", });
     internal_static_blockchain_members_v1alpha1_Invitation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_members_v1alpha1_Invitation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_members_v1alpha1_Invitation_descriptor,
-        new java.lang.String[] { "Email", });
+        new java.lang.String[] { "Email", "BcId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

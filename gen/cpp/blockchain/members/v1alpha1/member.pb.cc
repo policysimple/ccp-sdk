@@ -21,10 +21,11 @@ namespace members {
 namespace v1alpha1 {
 constexpr Organization::Organization(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : domain_org_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , domain_org_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , admin_password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , admin_user_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , user_id_(0u){}
+  , bc_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct OrganizationDefaultTypeInternal {
   constexpr OrganizationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -36,7 +37,8 @@ struct OrganizationDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrganizationDefaultTypeInternal _Organization_default_instance_;
 constexpr Invitation::Invitation(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , bc_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct InvitationDefaultTypeInternal {
   constexpr InvitationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -63,16 +65,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fmembers_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Organization, domain_org_),
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Organization, admin_password_),
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Organization, admin_user_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Organization, bc_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Invitation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Invitation, email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::Invitation, bc_id_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::members::v1alpha1::Organization)},
-  { 9, -1, sizeof(::blockchain::members::v1alpha1::Invitation)},
+  { 10, -1, sizeof(::blockchain::members::v1alpha1::Invitation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -82,21 +86,22 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n(blockchain/members/v1alpha1/member.pro"
-  "to\022\033blockchain.members.v1alpha1\"\214\001\n\014Orga"
-  "nization\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\ndom"
+  "to\022\033blockchain.members.v1alpha1\"\241\001\n\014Orga"
+  "nization\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\ndom"
   "ain_org\030\002 \001(\tR\tdomainOrg\022%\n\016admin_passwo"
   "rd\030\003 \001(\tR\radminPassword\022\035\n\nadmin_user\030\004 "
-  "\001(\tR\tadminUser\"\"\n\nInvitation\022\024\n\005email\030\001 "
-  "\001(\tR\005emailB\300\001\n%io.cuemby.blockchain.memb"
-  "ers.v1alpha1B\026MembersInvitationProtoP\001Z<"
-  "github.com/cuemby/ccp-sdk/gen/go/blockch"
-  "ain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain."
-  "Member.V1Alpha1\312\002\033Blockchain\\Members\\V1A"
-  "lpha1b\006proto3"
+  "\001(\tR\tadminUser\022\023\n\005bc_id\030\005 \001(\tR\004bcId\"7\n\nI"
+  "nvitation\022\024\n\005email\030\001 \001(\tR\005email\022\023\n\005bc_id"
+  "\030\002 \001(\tR\004bcIdB\300\001\n%io.cuemby.blockchain.me"
+  "mbers.v1alpha1B\026MembersInvitationProtoP\001"
+  "Z<github.com/cuemby/ccp-sdk/gen/go/block"
+  "chain/members/v1alpha1\242\002\003PPX\252\002\032Blockchai"
+  "n.Member.V1Alpha1\312\002\033Blockchain\\Members\\V"
+  "1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto = {
-  false, false, 453, descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto, "blockchain/members/v1alpha1/member.proto", 
+  false, false, 495, descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto, "blockchain/members/v1alpha1/member.proto", 
   &descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto::offsets,
   file_level_metadata_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto, file_level_enum_descriptors_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto, file_level_service_descriptors_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto,
@@ -129,6 +134,11 @@ Organization::Organization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Organization::Organization(const Organization& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   domain_org_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_domain_org().empty()) {
     domain_org_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_domain_org(), 
@@ -144,15 +154,20 @@ Organization::Organization(const Organization& from)
     admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_admin_user(), 
       GetArenaForAllocation());
   }
-  user_id_ = from.user_id_;
+  bc_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_bc_id().empty()) {
+    bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_bc_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.members.v1alpha1.Organization)
 }
 
 inline void Organization::SharedCtor() {
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 domain_org_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 admin_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 admin_user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-user_id_ = 0u;
+bc_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Organization::~Organization() {
@@ -164,9 +179,11 @@ Organization::~Organization() {
 
 inline void Organization::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   domain_org_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   admin_password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   admin_user_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  bc_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Organization::ArenaDtor(void* object) {
@@ -185,10 +202,11 @@ void Organization::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  user_id_.ClearToEmpty();
   domain_org_.ClearToEmpty();
   admin_password_.ClearToEmpty();
   admin_user_.ClearToEmpty();
-  user_id_ = 0u;
+  bc_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -198,10 +216,12 @@ const char* Organization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 user_id = 1 [json_name = "userId"];
+      // string user_id = 1 [json_name = "userId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          user_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.Organization.user_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -229,6 +249,15 @@ const char* Organization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           auto str = _internal_mutable_admin_user();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.Organization.admin_user"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string bc_id = 5 [json_name = "bcId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_bc_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.Organization.bc_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -261,10 +290,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 user_id = 1 [json_name = "userId"];
-  if (this->_internal_user_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_user_id(), target);
+  // string user_id = 1 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.members.v1alpha1.Organization.user_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_user_id(), target);
   }
 
   // string domain_org = 2 [json_name = "domainOrg"];
@@ -297,6 +330,16 @@ failure:
         4, this->_internal_admin_user(), target);
   }
 
+  // string bc_id = 5 [json_name = "bcId"];
+  if (!this->_internal_bc_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_bc_id().data(), static_cast<int>(this->_internal_bc_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.members.v1alpha1.Organization.bc_id");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_bc_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -312,6 +355,13 @@ size_t Organization::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string user_id = 1 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
 
   // string domain_org = 2 [json_name = "domainOrg"];
   if (!this->_internal_domain_org().empty()) {
@@ -334,11 +384,11 @@ size_t Organization::ByteSizeLong() const {
         this->_internal_admin_user());
   }
 
-  // uint32 user_id = 1 [json_name = "userId"];
-  if (this->_internal_user_id() != 0) {
+  // string bc_id = 5 [json_name = "bcId"];
+  if (!this->_internal_bc_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_user_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_bc_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -369,6 +419,9 @@ void Organization::MergeFrom(const Organization& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   if (!from._internal_domain_org().empty()) {
     _internal_set_domain_org(from._internal_domain_org());
   }
@@ -378,8 +431,8 @@ void Organization::MergeFrom(const Organization& from) {
   if (!from._internal_admin_user().empty()) {
     _internal_set_admin_user(from._internal_admin_user());
   }
-  if (from._internal_user_id() != 0) {
-    _internal_set_user_id(from._internal_user_id());
+  if (!from._internal_bc_id().empty()) {
+    _internal_set_bc_id(from._internal_bc_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -400,6 +453,11 @@ void Organization::InternalSwap(Organization* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &domain_org_, GetArenaForAllocation(),
       &other->domain_org_, other->GetArenaForAllocation()
   );
@@ -413,7 +471,11 @@ void Organization::InternalSwap(Organization* other) {
       &admin_user_, GetArenaForAllocation(),
       &other->admin_user_, other->GetArenaForAllocation()
   );
-  swap(user_id_, other->user_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &bc_id_, GetArenaForAllocation(),
+      &other->bc_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Organization::GetMetadata() const {
@@ -445,11 +507,17 @@ Invitation::Invitation(const Invitation& from)
     email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
       GetArenaForAllocation());
   }
+  bc_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_bc_id().empty()) {
+    bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_bc_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.members.v1alpha1.Invitation)
 }
 
 inline void Invitation::SharedCtor() {
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+bc_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Invitation::~Invitation() {
@@ -462,6 +530,7 @@ Invitation::~Invitation() {
 inline void Invitation::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  bc_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Invitation::ArenaDtor(void* object) {
@@ -481,6 +550,7 @@ void Invitation::Clear() {
   (void) cached_has_bits;
 
   email_.ClearToEmpty();
+  bc_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -496,6 +566,15 @@ const char* Invitation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           auto str = _internal_mutable_email();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.Invitation.email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string bc_id = 2 [json_name = "bcId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_bc_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.Invitation.bc_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -538,6 +617,16 @@ failure:
         1, this->_internal_email(), target);
   }
 
+  // string bc_id = 2 [json_name = "bcId"];
+  if (!this->_internal_bc_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_bc_id().data(), static_cast<int>(this->_internal_bc_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.members.v1alpha1.Invitation.bc_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_bc_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -559,6 +648,13 @@ size_t Invitation::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_email());
+  }
+
+  // string bc_id = 2 [json_name = "bcId"];
+  if (!this->_internal_bc_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_bc_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -592,6 +688,9 @@ void Invitation::MergeFrom(const Invitation& from) {
   if (!from._internal_email().empty()) {
     _internal_set_email(from._internal_email());
   }
+  if (!from._internal_bc_id().empty()) {
+    _internal_set_bc_id(from._internal_bc_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -613,6 +712,11 @@ void Invitation::InternalSwap(Invitation* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &email_, GetArenaForAllocation(),
       &other->email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &bc_id_, GetArenaForAllocation(),
+      &other->bc_id_, other->GetArenaForAllocation()
   );
 }
 

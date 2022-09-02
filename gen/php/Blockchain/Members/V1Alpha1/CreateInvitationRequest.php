@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateInvitationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string email = 1 [json_name = "email"];</code>
+     * Generated from protobuf field <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
      */
-    protected $email = '';
+    protected $invitation = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class CreateInvitationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $email
+     *     @type \Blockchain\Members\V1Alpha1\Invitation $invitation
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,33 @@ class CreateInvitationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 1 [json_name = "email"];</code>
-     * @return string
+     * Generated from protobuf field <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     * @return \Blockchain\Members\V1Alpha1\Invitation|null
      */
-    public function getEmail()
+    public function getInvitation()
     {
-        return $this->email;
+        return $this->invitation;
+    }
+
+    public function hasInvitation()
+    {
+        return isset($this->invitation);
+    }
+
+    public function clearInvitation()
+    {
+        unset($this->invitation);
     }
 
     /**
-     * Generated from protobuf field <code>string email = 1 [json_name = "email"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.blockchain.members.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     * @param \Blockchain\Members\V1Alpha1\Invitation $var
      * @return $this
      */
-    public function setEmail($var)
+    public function setInvitation($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
+        GPBUtil::checkMessage($var, \Blockchain\Members\V1Alpha1\Invitation::class);
+        $this->invitation = $var;
 
         return $this;
     }

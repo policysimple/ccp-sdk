@@ -16,18 +16,20 @@ class Member
         }
         $pool->internalAddGeneratedFile(
             '
-Å
-(blockchain/members/v1alpha1/member.protoblockchain.members.v1alpha1"Œ
+ï
+(blockchain/members/v1alpha1/member.protoblockchain.members.v1alpha1"¡
 Organization
-user_id (RuserId
+user_id (	RuserId
 
 domain_org (	R	domainOrg%
 admin_password (	RadminPassword
 
-admin_user (	R	adminUser""
+admin_user (	R	adminUser
+bc_id (	RbcId"7
 
 Invitation
-email (	RemailBÀ
+email (	Remail
+bc_id (	RbcIdBÀ
 %io.cuemby.blockchain.members.v1alpha1BMembersInvitationProtoPZ<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1¢PPXªBlockchain.Member.V1Alpha1ÊBlockchain\\Members\\V1Alpha1bproto3'
         , true);
 

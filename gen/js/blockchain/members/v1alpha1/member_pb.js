@@ -91,10 +91,11 @@ proto.blockchain.members.v1alpha1.Organization.prototype.toObject = function(opt
  */
 proto.blockchain.members.v1alpha1.Organization.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     domainOrg: jspb.Message.getFieldWithDefault(msg, 2, ""),
     adminPassword: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    adminUser: jspb.Message.getFieldWithDefault(msg, 4, "")
+    adminUser: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    bcId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -132,7 +133,7 @@ proto.blockchain.members.v1alpha1.Organization.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
     case 2:
@@ -146,6 +147,10 @@ proto.blockchain.members.v1alpha1.Organization.deserializeBinaryFromReader = fun
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setAdminUser(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBcId(value);
       break;
     default:
       reader.skipField();
@@ -177,8 +182,8 @@ proto.blockchain.members.v1alpha1.Organization.prototype.serializeBinary = funct
 proto.blockchain.members.v1alpha1.Organization.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUserId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -204,24 +209,31 @@ proto.blockchain.members.v1alpha1.Organization.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getBcId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
 /**
- * optional uint32 user_id = 1;
- * @return {number}
+ * optional string user_id = 1;
+ * @return {string}
  */
 proto.blockchain.members.v1alpha1.Organization.prototype.getUserId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.blockchain.members.v1alpha1.Organization} returns this
  */
 proto.blockchain.members.v1alpha1.Organization.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -279,6 +291,24 @@ proto.blockchain.members.v1alpha1.Organization.prototype.setAdminUser = function
 };
 
 
+/**
+ * optional string bc_id = 5;
+ * @return {string}
+ */
+proto.blockchain.members.v1alpha1.Organization.prototype.getBcId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.members.v1alpha1.Organization} returns this
+ */
+proto.blockchain.members.v1alpha1.Organization.prototype.setBcId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -311,7 +341,8 @@ proto.blockchain.members.v1alpha1.Invitation.prototype.toObject = function(opt_i
  */
 proto.blockchain.members.v1alpha1.Invitation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    email: jspb.Message.getFieldWithDefault(msg, 1, "")
+    email: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    bcId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -352,6 +383,10 @@ proto.blockchain.members.v1alpha1.Invitation.deserializeBinaryFromReader = funct
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBcId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -388,6 +423,13 @@ proto.blockchain.members.v1alpha1.Invitation.serializeBinaryToWriter = function(
       f
     );
   }
+  f = message.getBcId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -406,6 +448,24 @@ proto.blockchain.members.v1alpha1.Invitation.prototype.getEmail = function() {
  */
 proto.blockchain.members.v1alpha1.Invitation.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string bc_id = 2;
+ * @return {string}
+ */
+proto.blockchain.members.v1alpha1.Invitation.prototype.getBcId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.members.v1alpha1.Invitation} returns this
+ */
+proto.blockchain.members.v1alpha1.Invitation.prototype.setBcId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
