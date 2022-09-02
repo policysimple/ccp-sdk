@@ -95,6 +95,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string environment_name = 21 [json_name = "environmentName"];</code>
      */
     protected $environment_name = '';
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+     */
+    protected $environment_internal_name = '';
 
     /**
      * Constructor.
@@ -122,6 +126,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type int $traffic_type
      *     @type string $response_message
      *     @type string $environment_name
+     *     @type string $environment_internal_name
      * }
      */
     public function __construct($data = NULL) {
@@ -565,6 +570,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->environment_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+     * @return string
+     */
+    public function getEnvironmentInternalName()
+    {
+        return $this->environment_internal_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentInternalName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_internal_name = $var;
 
         return $this;
     }
