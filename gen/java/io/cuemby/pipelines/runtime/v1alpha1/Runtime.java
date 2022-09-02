@@ -31,6 +31,7 @@ private static final long serialVersionUID = 0L;
     podStatusMsg_ = "";
     trafficType_ = 0;
     responseMessage_ = "";
+    environmentName_ = "";
   }
 
   @java.lang.Override
@@ -219,6 +220,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             responseMessage_ = s;
+            break;
+          }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            environmentName_ = s;
             break;
           }
           default: {
@@ -1187,6 +1194,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ENVIRONMENT_NAME_FIELD_NUMBER = 21;
+  private volatile java.lang.Object environmentName_;
+  /**
+   * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+   * @return The environmentName.
+   */
+  @java.lang.Override
+  public java.lang.String getEnvironmentName() {
+    java.lang.Object ref = environmentName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      environmentName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+   * @return The bytes for environmentName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEnvironmentNameBytes() {
+    java.lang.Object ref = environmentName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      environmentName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1275,6 +1320,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getResponseMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, responseMessage_);
+    }
+    if (!getEnvironmentNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, environmentName_);
     }
     unknownFields.writeTo(output);
   }
@@ -1388,6 +1436,9 @@ private static final long serialVersionUID = 0L;
     if (!getResponseMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, responseMessage_);
     }
+    if (!getEnvironmentNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, environmentName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1440,6 +1491,8 @@ private static final long serialVersionUID = 0L;
     if (trafficType_ != other.trafficType_) return false;
     if (!getResponseMessage()
         .equals(other.getResponseMessage())) return false;
+    if (!getEnvironmentName()
+        .equals(other.getEnvironmentName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1503,6 +1556,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + trafficType_;
     hash = (37 * hash) + RESPONSE_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getResponseMessage().hashCode();
+    hash = (37 * hash) + ENVIRONMENT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getEnvironmentName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1719,6 +1774,8 @@ private static final long serialVersionUID = 0L;
 
       responseMessage_ = "";
 
+      environmentName_ = "";
+
       return this;
     }
 
@@ -1779,6 +1836,7 @@ private static final long serialVersionUID = 0L;
       result.autoscaling_.makeImmutable();
       result.trafficType_ = trafficType_;
       result.responseMessage_ = responseMessage_;
+      result.environmentName_ = environmentName_;
       onBuilt();
       return result;
     }
@@ -1908,6 +1966,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getResponseMessage().isEmpty()) {
         responseMessage_ = other.responseMessage_;
+        onChanged();
+      }
+      if (!other.getEnvironmentName().isEmpty()) {
+        environmentName_ = other.environmentName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3744,6 +3806,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       responseMessage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object environmentName_ = "";
+    /**
+     * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @return The environmentName.
+     */
+    public java.lang.String getEnvironmentName() {
+      java.lang.Object ref = environmentName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        environmentName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @return The bytes for environmentName.
+     */
+    public com.google.protobuf.ByteString
+        getEnvironmentNameBytes() {
+      java.lang.Object ref = environmentName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        environmentName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @param value The environmentName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      environmentName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvironmentName() {
+      
+      environmentName_ = getDefaultInstance().getEnvironmentName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @param value The bytes for environmentName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      environmentName_ = value;
       onChanged();
       return this;
     }
