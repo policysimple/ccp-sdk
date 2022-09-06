@@ -5372,6 +5372,18 @@ public final class Tokens {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.SaveLogsResponse}
@@ -5387,6 +5399,7 @@ public final class Tokens {
     }
     private SaveLogsResponse() {
       msg_ = "";
+      error_ = "";
     }
 
     @java.lang.Override
@@ -5423,6 +5436,12 @@ public final class Tokens {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
               break;
             }
             default: {
@@ -5495,6 +5514,44 @@ public final class Tokens {
       }
     }
 
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5512,6 +5569,9 @@ public final class Tokens {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5523,6 +5583,9 @@ public final class Tokens {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5541,6 +5604,8 @@ public final class Tokens {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5554,6 +5619,8 @@ public final class Tokens {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5689,6 +5756,8 @@ public final class Tokens {
         super.clear();
         msg_ = "";
 
+        error_ = "";
+
         return this;
       }
 
@@ -5716,6 +5785,7 @@ public final class Tokens {
       public accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse buildPartial() {
         accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse result = new accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse(this);
         result.msg_ = msg_;
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -5766,6 +5836,10 @@ public final class Tokens {
         if (other == accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5869,6 +5943,82 @@ public final class Tokens {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
         onChanged();
         return this;
       }
@@ -10447,20 +10597,21 @@ public final class Tokens {
       "\030\002 \001(\tR\006system\022\035\n\nclient_web\030\003 \001(\tR\tclie" +
       "ntWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 \001(\tR\004dat" +
       "e\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .acco" +
-      "unts.v1alpha1.tokens.v1.LogR\003log\"$\n\020Save" +
-      "LogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsRe" +
-      "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"Z\n\014LogsRe" +
-      "sponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1" +
-      ".tokens.v1.LogR\004logs\022\024\n\005error\030\002 \001(\tR\005err" +
-      "or\"4\n\031EnableOrDisableMFARequest\022\027\n\007user_" +
-      "id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisableMFARe" +
-      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
-      "\005error\"?\n\nMFARequest\022\027\n\007user_id\030\001 \001(\tR\006u" +
-      "serId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013MFARe" +
-      "sponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003m" +
-      "sg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005errorB;Z9g" +
-      "ithub.com/cuemby/ccp-sdk/gen/go/accounts" +
-      "/v1alpha1/tokensb\006proto3"
+      "unts.v1alpha1.tokens.v1.LogR\003log\":\n\020Save" +
+      "LogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
+      "\002 \001(\tR\005error\"&\n\013LogsRequest\022\027\n\007user_id\030\001" +
+      " \001(\tR\006userId\"Z\n\014LogsResponse\0224\n\004logs\030\001 \003" +
+      "(\0132 .accounts.v1alpha1.tokens.v1.LogR\004lo" +
+      "gs\022\024\n\005error\030\002 \001(\tR\005error\"4\n\031EnableOrDisa" +
+      "bleMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D" +
+      "\n\032EnableOrDisableMFAResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\nMFAReque" +
+      "st\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003" +
+      " \003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoken_cc" +
+      "p\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005e" +
+      "rror\030\003 \001(\tR\005errorB;Z9github.com/cuemby/c" +
+      "cp-sdk/gen/go/accounts/v1alpha1/tokensb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10507,7 +10658,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_descriptor,
-        new java.lang.String[] { "Msg", });
+        new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_fieldAccessorTable = new
