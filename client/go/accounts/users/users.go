@@ -109,11 +109,7 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 	checkUser.TypePermission = req.TypePermission
 	checkUser.UserId = req.UserId
 	checkUser.UserIdDex = req.UserIdDex
-
-	log.Println("TEST4")
-
 	response, err := client.CheckUser(ctx, checkUser)
-	log.Println("TEST5")
 
 	if err != nil {
 		bylogs.LogErr("CheckUser Client Sdk", err)
