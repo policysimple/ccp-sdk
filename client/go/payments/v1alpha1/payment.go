@@ -82,7 +82,7 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 	return response, nil
 }
 
-func CreateSuscription(in *paymentpkgv1.CreateSubscriptionRequest) (response *paymentpkgv1.CreateSubscriptionResponse, err error) {
+func CreateSubscription(in *paymentpkgv1.CreateSubscriptionRequest) (response *paymentpkgv1.CreateSubscriptionResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -150,7 +150,7 @@ func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv
 	return response, nil
 }
 
-func CancelSuscription(in *paymentpkgv1.CancelSubscriptionRequest) (response *paymentpkgv1.CancelSubscriptionResponse, err error) {
+func CancelSubscription(in *paymentpkgv1.CancelSubscriptionRequest) (response *paymentpkgv1.CancelSubscriptionResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -172,7 +172,7 @@ func CancelSuscription(in *paymentpkgv1.CancelSubscriptionRequest) (response *pa
 	return response, nil
 }
 
-func GetSuscription(in *paymentpkgv1.GetSubscriptionRequest) (response *paymentpkgv1.GetSubscriptionResponse, err error) {
+func GetSubscription(in *paymentpkgv1.GetSubscriptionRequest) (response *paymentpkgv1.GetSubscriptionResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -185,10 +185,10 @@ func GetSuscription(in *paymentpkgv1.GetSubscriptionRequest) (response *paymentp
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error get suscription", err)
+		log.Printf("%s: %v", "Error get susbcription", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get suscription", err),
+			fmt.Sprintf("%s: %v", "Error get subscription", err),
 		)
 	}
 	return response, nil
