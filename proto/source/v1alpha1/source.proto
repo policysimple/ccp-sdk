@@ -93,6 +93,8 @@ message GetOneProviderByNameRequest {
 
 message GetOneProviderByNameResponse {
     Provider provider = 1;
+    string error = 2;
+
 }
 /*
   CreateProviderRequest is the request for the CreateProvider method.
@@ -113,6 +115,8 @@ message ListRepositoriesProviderResponse {
     repeated Repository repositories = 1;
     uint32 total_pages = 2;
     uint32 count = 3;
+    string error = 4;
+
 }
 
 message GetRepositoryProviderRequest {
@@ -122,6 +126,7 @@ message GetRepositoryProviderRequest {
 
 message GetRepositoryProviderResponse {
     repeated Branch branchs = 1;
+    string error = 2;
 }
 
 /*
@@ -200,6 +205,7 @@ message GetRepositoryRequest {
 
 message  GetRepositoryResponse {
     DetailRepository repository = 1;
+    string error = 2;
     
 }
 
@@ -215,6 +221,8 @@ message DeleteRepositoryResponse {
 message UpdateRepositoryRequest {
     string repository_id = 1;
     DetailRepository repository = 2;
+    string error = 3;
+
 }
 
 message UpdateRepositoryResponse {
@@ -281,6 +289,8 @@ message ListIntegrationsRequest {
 
 message ListIntegrationsResponse{
     repeated Integration integrations = 1;
+    string error = 2;
+
 }
 
 message GetIntegrationRequest {
@@ -289,6 +299,7 @@ message GetIntegrationRequest {
 
 message GetIntegrationResponse {
     Integration integration = 1;
+    string error = 2;
     //repeated Repository repositories = 2;
 }
 
