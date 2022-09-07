@@ -89,7 +89,8 @@ message ListInvitationSendResponse {
 */
 
 message DeleteInvitationRequest {
-    uint32 id = 1; 
+    uint32 organization_id = 2;
+    uint32 invitation_id = 1; 
 }
 
 message DeleteInvitationResponse {

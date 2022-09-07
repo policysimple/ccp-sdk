@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteInvitationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      */
-    protected $id = 0;
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+     */
+    protected $invitation_id = 0;
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class DeleteInvitationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type int $organization_id
+     *     @type int $invitation_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +38,45 @@ class DeleteInvitationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      * @return int
      */
-    public function getId()
+    public function getOrganizationId()
     {
-        return $this->id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
-    public function setId($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkUint32($var);
-        $this->id = $var;
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+     * @return int
+     */
+    public function getInvitationId()
+    {
+        return $this->invitation_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInvitationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->invitation_id = $var;
 
         return $this;
     }

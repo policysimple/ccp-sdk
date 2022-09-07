@@ -55,6 +55,7 @@ message SaveLogsRequest {
 }
 message SaveLogsResponse {
     string msg = 1;
+    string error = 2;
 }
 
 message LogsRequest {

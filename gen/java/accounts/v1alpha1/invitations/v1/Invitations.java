@@ -11197,10 +11197,16 @@ public final class Invitations {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The organizationId.
      */
-    int getId();
+    int getOrganizationId();
+
+    /**
+     * <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+     * @return The invitationId.
+     */
+    int getInvitationId();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.invitations.v1.DeleteInvitationRequest}
@@ -11249,7 +11255,12 @@ public final class Invitations {
               break;
             case 8: {
 
-              id_ = input.readUInt32();
+              invitationId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              organizationId_ = input.readUInt32();
               break;
             }
             default: {
@@ -11284,15 +11295,26 @@ public final class Invitations {
               accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest.class, accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
+    private int organizationId_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The organizationId.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public int getOrganizationId() {
+      return organizationId_;
+    }
+
+    public static final int INVITATION_ID_FIELD_NUMBER = 1;
+    private int invitationId_;
+    /**
+     * <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+     * @return The invitationId.
+     */
+    @java.lang.Override
+    public int getInvitationId() {
+      return invitationId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11309,8 +11331,11 @@ public final class Invitations {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (invitationId_ != 0) {
+        output.writeUInt32(1, invitationId_);
+      }
+      if (organizationId_ != 0) {
+        output.writeUInt32(2, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -11321,9 +11346,13 @@ public final class Invitations {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
+      if (invitationId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+          .computeUInt32Size(1, invitationId_);
+      }
+      if (organizationId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11340,8 +11369,10 @@ public final class Invitations {
       }
       accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest other = (accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (getOrganizationId()
+          != other.getOrganizationId()) return false;
+      if (getInvitationId()
+          != other.getInvitationId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11353,8 +11384,10 @@ public final class Invitations {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + INVITATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11488,7 +11521,9 @@ public final class Invitations {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        organizationId_ = 0;
+
+        invitationId_ = 0;
 
         return this;
       }
@@ -11516,7 +11551,8 @@ public final class Invitations {
       @java.lang.Override
       public accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest buildPartial() {
         accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest result = new accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest(this);
-        result.id_ = id_;
+        result.organizationId_ = organizationId_;
+        result.invitationId_ = invitationId_;
         onBuilt();
         return result;
       }
@@ -11565,8 +11601,11 @@ public final class Invitations {
 
       public Builder mergeFrom(accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest other) {
         if (other == accounts.v1alpha1.invitations.v1.Invitations.DeleteInvitationRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (other.getOrganizationId() != 0) {
+          setOrganizationId(other.getOrganizationId());
+        }
+        if (other.getInvitationId() != 0) {
+          setInvitationId(other.getInvitationId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11597,33 +11636,64 @@ public final class Invitations {
         return this;
       }
 
-      private int id_ ;
+      private int organizationId_ ;
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * @return The organizationId.
        */
       @java.lang.Override
-      public int getId() {
-        return id_;
+      public int getOrganizationId() {
+        return organizationId_;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
+      public Builder setOrganizationId(int value) {
         
-        id_ = value;
+        organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearOrganizationId() {
         
-        id_ = 0;
+        organizationId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int invitationId_ ;
+      /**
+       * <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+       * @return The invitationId.
+       */
+      @java.lang.Override
+      public int getInvitationId() {
+        return invitationId_;
+      }
+      /**
+       * <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+       * @param value The invitationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvitationId(int value) {
+        
+        invitationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 invitation_id = 1 [json_name = "invitationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInvitationId() {
+        
+        invitationId_ = 0;
         onChanged();
         return this;
       }
@@ -12518,14 +12588,16 @@ public final class Invitations {
       "mail\"\202\001\n\032ListInvitationSendResponse\022d\n\017i" +
       "nvitation_user\030\001 \003(\0132;.accounts.v1alpha1" +
       ".invitations.v1.GetInvitationUserRespons" +
-      "eR\016invitationUser\")\n\027DeleteInvitationReq" +
-      "uest\022\016\n\002id\030\001 \001(\rR\002id\"B\n\030DeleteInvitation" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error*d\n\022InvitationResponse\022,\n(INVITA" +
-      "TION_RESPONSE_ACCEPTED_UNSPECIFIED\020\000\022 \n\034" +
-      "INVITATION_RESPONSE_REJECTED\020\001B@Z>github" +
-      ".com/cuemby/ccp-sdk/gen/go/accounts/v1al" +
-      "pha1/invitationsb\006proto3"
+      "eR\016invitationUser\"g\n\027DeleteInvitationReq" +
+      "uest\022\'\n\017organization_id\030\002 \001(\rR\016organizat" +
+      "ionId\022#\n\rinvitation_id\030\001 \001(\rR\014invitation" +
+      "Id\"B\n\030DeleteInvitationResponse\022\020\n\003msg\030\001 " +
+      "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error*d\n\022Invita" +
+      "tionResponse\022,\n(INVITATION_RESPONSE_ACCE" +
+      "PTED_UNSPECIFIED\020\000\022 \n\034INVITATION_RESPONS" +
+      "E_REJECTED\020\001B@Z>github.com/cuemby/ccp-sd" +
+      "k/gen/go/accounts/v1alpha1/invitationsb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12597,7 +12669,7 @@ public final class Invitations {
     internal_static_accounts_v1alpha1_invitations_v1_DeleteInvitationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_invitations_v1_DeleteInvitationRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "OrganizationId", "InvitationId", });
     internal_static_accounts_v1alpha1_invitations_v1_DeleteInvitationResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_accounts_v1alpha1_invitations_v1_DeleteInvitationResponse_fieldAccessorTable = new

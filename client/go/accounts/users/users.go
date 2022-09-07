@@ -98,8 +98,13 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 			Error: "OrganizationId or ProjectId is required",
 		}, nil
 	}
+	log.Println("a")
 
-	log.Println("TEST3")
+	if len(req.RolesIds) > 0 {
+		log.Println("ab")
+
+		checkUser.RolesIds = req.RolesIds
+	}
 
 	checkUser.TypePermission = req.TypePermission
 	checkUser.UserId = req.UserId
