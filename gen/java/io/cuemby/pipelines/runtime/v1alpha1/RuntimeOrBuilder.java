@@ -401,4 +401,16 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getApplicationNameBytes();
+
+  /**
+   * <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+   * @return The storageUsed.
+   */
+  int getStorageUsed();
+
+  /**
+   * <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+   * @return The storageLimit.
+   */
+  int getStorageLimit();
 }
