@@ -40,6 +40,8 @@ message Runtime {
   string environment_name=21;
   string environment_internal_name=22;
   string application_name = 23;
+  uint32 storage_used = 24;
+	uint32 storage_limit = 25;
 }
 
 message RuntimeList {

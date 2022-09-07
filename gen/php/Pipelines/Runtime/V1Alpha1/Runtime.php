@@ -103,6 +103,14 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string application_name = 23 [json_name = "applicationName"];</code>
      */
     protected $application_name = '';
+    /**
+     * Generated from protobuf field <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     */
+    protected $storage_used = 0;
+    /**
+     * Generated from protobuf field <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     */
+    protected $storage_limit = 0;
 
     /**
      * Constructor.
@@ -132,6 +140,8 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $environment_name
      *     @type string $environment_internal_name
      *     @type string $application_name
+     *     @type int $storage_used
+     *     @type int $storage_limit
      * }
      */
     public function __construct($data = NULL) {
@@ -619,6 +629,50 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->application_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @return int
+     */
+    public function getStorageUsed()
+    {
+        return $this->storage_used;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStorageUsed($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->storage_used = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @return int
+     */
+    public function getStorageLimit()
+    {
+        return $this->storage_limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStorageLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->storage_limit = $var;
 
         return $this;
     }

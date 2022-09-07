@@ -209,7 +209,9 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     responseMessage: jspb.Message.getFieldWithDefault(msg, 20, ""),
     environmentName: jspb.Message.getFieldWithDefault(msg, 21, ""),
     environmentInternalName: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    applicationName: jspb.Message.getFieldWithDefault(msg, 23, "")
+    applicationName: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    storageUsed: jspb.Message.getFieldWithDefault(msg, 24, 0),
+    storageLimit: jspb.Message.getFieldWithDefault(msg, 25, 0)
   };
 
   if (includeInstance) {
@@ -346,6 +348,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 23:
       var value = /** @type {string} */ (reader.readString());
       msg.setApplicationName(value);
+      break;
+    case 24:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setStorageUsed(value);
+      break;
+    case 25:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setStorageLimit(value);
       break;
     default:
       reader.skipField();
@@ -510,6 +520,20 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       23,
+      f
+    );
+  }
+  f = message.getStorageUsed();
+  if (f !== 0) {
+    writer.writeUint32(
+      24,
+      f
+    );
+  }
+  f = message.getStorageLimit();
+  if (f !== 0) {
+    writer.writeUint32(
+      25,
       f
     );
   }
@@ -953,6 +977,42 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getApplicationName = function
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationName = function(value) {
   return jspb.Message.setProto3StringField(this, 23, value);
+};
+
+
+/**
+ * optional uint32 storage_used = 24;
+ * @return {number}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getStorageUsed = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setStorageUsed = function(value) {
+  return jspb.Message.setProto3IntField(this, 24, value);
+};
+
+
+/**
+ * optional uint32 storage_limit = 25;
+ * @return {number}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getStorageLimit = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 25, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setStorageLimit = function(value) {
+  return jspb.Message.setProto3IntField(this, 25, value);
 };
 
 

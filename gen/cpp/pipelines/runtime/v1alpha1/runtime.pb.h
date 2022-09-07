@@ -445,6 +445,8 @@ class Runtime final :
     kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
     kTrafficTypeFieldNumber = 19,
+    kStorageUsedFieldNumber = 24,
+    kStorageLimitFieldNumber = 25,
   };
   // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];
   int instance_types_size() const;
@@ -761,6 +763,24 @@ class Runtime final :
   void _internal_set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
   public:
 
+  // uint32 storage_used = 24 [json_name = "storageUsed"];
+  void clear_storage_used();
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_used() const;
+  void set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_storage_used() const;
+  void _internal_set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 storage_limit = 25 [json_name = "storageLimit"];
+  void clear_storage_limit();
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit() const;
+  void set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_storage_limit() const;
+  void _internal_set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
  private:
   class _Internal;
@@ -814,6 +834,8 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   int traffic_type_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -2480,6 +2502,46 @@ inline void Runtime::set_allocated_application_name(std::string* application_nam
   application_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_name)
+}
+
+// uint32 storage_used = 24 [json_name = "storageUsed"];
+inline void Runtime::clear_storage_used() {
+  storage_used_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Runtime::_internal_storage_used() const {
+  return storage_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Runtime::storage_used() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.storage_used)
+  return _internal_storage_used();
+}
+inline void Runtime::_internal_set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  storage_used_ = value;
+}
+inline void Runtime::set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_storage_used(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.storage_used)
+}
+
+// uint32 storage_limit = 25 [json_name = "storageLimit"];
+inline void Runtime::clear_storage_limit() {
+  storage_limit_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Runtime::_internal_storage_limit() const {
+  return storage_limit_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Runtime::storage_limit() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.storage_limit)
+  return _internal_storage_limit();
+}
+inline void Runtime::_internal_set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  storage_limit_ = value;
+}
+inline void Runtime::set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_storage_limit(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.storage_limit)
 }
 
 // -------------------------------------------------------------------

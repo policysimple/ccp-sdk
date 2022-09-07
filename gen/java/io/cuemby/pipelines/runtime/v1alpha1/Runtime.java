@@ -242,6 +242,16 @@ private static final long serialVersionUID = 0L;
             applicationName_ = s;
             break;
           }
+          case 192: {
+
+            storageUsed_ = input.readUInt32();
+            break;
+          }
+          case 200: {
+
+            storageLimit_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1322,6 +1332,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STORAGE_USED_FIELD_NUMBER = 24;
+  private int storageUsed_;
+  /**
+   * <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+   * @return The storageUsed.
+   */
+  @java.lang.Override
+  public int getStorageUsed() {
+    return storageUsed_;
+  }
+
+  public static final int STORAGE_LIMIT_FIELD_NUMBER = 25;
+  private int storageLimit_;
+  /**
+   * <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+   * @return The storageLimit.
+   */
+  @java.lang.Override
+  public int getStorageLimit() {
+    return storageLimit_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1419,6 +1451,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getApplicationNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, applicationName_);
+    }
+    if (storageUsed_ != 0) {
+      output.writeUInt32(24, storageUsed_);
+    }
+    if (storageLimit_ != 0) {
+      output.writeUInt32(25, storageLimit_);
     }
     unknownFields.writeTo(output);
   }
@@ -1541,6 +1579,14 @@ private static final long serialVersionUID = 0L;
     if (!getApplicationNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, applicationName_);
     }
+    if (storageUsed_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(24, storageUsed_);
+    }
+    if (storageLimit_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(25, storageLimit_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1599,6 +1645,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEnvironmentInternalName())) return false;
     if (!getApplicationName()
         .equals(other.getApplicationName())) return false;
+    if (getStorageUsed()
+        != other.getStorageUsed()) return false;
+    if (getStorageLimit()
+        != other.getStorageLimit()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1668,6 +1718,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEnvironmentInternalName().hashCode();
     hash = (37 * hash) + APPLICATION_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getApplicationName().hashCode();
+    hash = (37 * hash) + STORAGE_USED_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageUsed();
+    hash = (37 * hash) + STORAGE_LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageLimit();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1890,6 +1944,10 @@ private static final long serialVersionUID = 0L;
 
       applicationName_ = "";
 
+      storageUsed_ = 0;
+
+      storageLimit_ = 0;
+
       return this;
     }
 
@@ -1953,6 +2011,8 @@ private static final long serialVersionUID = 0L;
       result.environmentName_ = environmentName_;
       result.environmentInternalName_ = environmentInternalName_;
       result.applicationName_ = applicationName_;
+      result.storageUsed_ = storageUsed_;
+      result.storageLimit_ = storageLimit_;
       onBuilt();
       return result;
     }
@@ -2095,6 +2155,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getApplicationName().isEmpty()) {
         applicationName_ = other.applicationName_;
         onChanged();
+      }
+      if (other.getStorageUsed() != 0) {
+        setStorageUsed(other.getStorageUsed());
+      }
+      if (other.getStorageLimit() != 0) {
+        setStorageLimit(other.getStorageLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4158,6 +4224,68 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       applicationName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int storageUsed_ ;
+    /**
+     * <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @return The storageUsed.
+     */
+    @java.lang.Override
+    public int getStorageUsed() {
+      return storageUsed_;
+    }
+    /**
+     * <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @param value The storageUsed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageUsed(int value) {
+      
+      storageUsed_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageUsed() {
+      
+      storageUsed_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int storageLimit_ ;
+    /**
+     * <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @return The storageLimit.
+     */
+    @java.lang.Override
+    public int getStorageLimit() {
+      return storageLimit_;
+    }
+    /**
+     * <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @param value The storageLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageLimit(int value) {
+      
+      storageLimit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageLimit() {
+      
+      storageLimit_ = 0;
       onChanged();
       return this;
     }
