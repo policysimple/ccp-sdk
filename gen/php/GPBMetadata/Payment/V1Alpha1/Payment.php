@@ -16,16 +16,16 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-œ
-payment/v1alpha1/payment.protopayment.v1alpha1"®
+€
+payment/v1alpha1/payment.protopayment.v1alpha1"´
 Customer
 id (	Rid
 customer_id (	R
 customerId\'
 organization_id (RorganizationId
 name (	Rname
-email (	Remail?
-suscription (2.payment.v1alpha1.SuscriptionRsuscription9
+email (	RemailB
+subscription (2.payment.v1alpha1.SubscriptionRsubscription9
 payments (2.payment.v1alpha1.PaymentListRpayments3
 invoice (2.payment.v1alpha1.InvoiceRinvoice0
 biling	 (2.payment.v1alpha1.BilingRbiling5
@@ -42,11 +42,11 @@ project_id (	R	projectId
 created_at (	R	createdAt
 
 updated_at (	R	updatedAt
-status (Rstatus"ü
-Suscription
-id (	Rid%
-suscription_id (	RsuscriptionId.
-suscription_item_id (	RsuscriptionItemId
+status (Rstatus"§
+Subscription
+id (	Rid\'
+subscription_id (	RsubscriptionId0
+subscription_item_id (	RsubscriptionItemId
 
 invoice_id (	R	invoiceId
 price (	Rprice
@@ -93,10 +93,10 @@ totalusage
  (	Rperiod
 	statuspay (	R	statuspay
 date (	Rdate
-product (	Rproduct"ç
+product (	Rproduct"è
 SubscriptionItems
-id (	Rid.
-suscription_item_id (	RsuscriptionItemId
+id (	Rid0
+subscription_item_id (	RsubscriptionItemId
 price_id (	RpriceId
 
 product_id (	R	productId"R
@@ -108,9 +108,9 @@ product_id (	R	productId"R
 items (2.payment.v1alpha1.CustomerRitems"<
 
 BilingList.
-items (2.payment.v1alpha1.BilingRitems"F
-SuscriptionList3
-items (2.payment.v1alpha1.SuscriptionRitems"8
+items (2.payment.v1alpha1.BilingRitems"H
+SubscriptionList4
+items (2.payment.v1alpha1.SubscriptionRitems"8
 CardList,
 items (2.payment.v1alpha1.CardRitems">
 PaymentList/

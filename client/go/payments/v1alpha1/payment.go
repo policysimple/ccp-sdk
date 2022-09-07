@@ -82,7 +82,7 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 	return response, nil
 }
 
-func CreateSuscription(in *paymentpkgv1.CreateSuscriptionRequest) (response *paymentpkgv1.CreateSuscriptionResponse, err error) {
+func CreateSubscription(in *paymentpkgv1.CreateSubscriptionRequest) (response *paymentpkgv1.CreateSubscriptionResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -90,9 +90,9 @@ func CreateSuscription(in *paymentpkgv1.CreateSuscriptionRequest) (response *pay
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.CreateSuscription(ctx, &paymentpkgv1.CreateSuscriptionRequest{
-		CustomerId:  in.CustomerId,
-		Suscription: in.Suscription,
+	response, err = client.CreateSubscription(ctx, &paymentpkgv1.CreateSubscriptionRequest{
+		CustomerId:   in.CustomerId,
+		Subscription: in.Subscription,
 	})
 
 	if err != nil {
@@ -150,7 +150,7 @@ func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv
 	return response, nil
 }
 
-func CancelSuscription(in *paymentpkgv1.CancelSuscriptionRequest) (response *paymentpkgv1.CancelSuscriptionResponse, err error) {
+func CancelSubscription(in *paymentpkgv1.CancelSubscriptionRequest) (response *paymentpkgv1.CancelSubscriptionResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -158,8 +158,8 @@ func CancelSuscription(in *paymentpkgv1.CancelSuscriptionRequest) (response *pay
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.CancelSuscription(ctx, &paymentpkgv1.CancelSuscriptionRequest{
-		SuscriptionId: in.SuscriptionId,
+	response, err = client.CancelSubscription(ctx, &paymentpkgv1.CancelSubscriptionRequest{
+		SubscriptionId: in.SubscriptionId,
 	})
 
 	if err != nil {
@@ -172,7 +172,7 @@ func CancelSuscription(in *paymentpkgv1.CancelSuscriptionRequest) (response *pay
 	return response, nil
 }
 
-func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpkgv1.GetSuscriptionResponse, err error) {
+func GetSubscription(in *paymentpkgv1.GetSubscriptionRequest) (response *paymentpkgv1.GetSubscriptionResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -180,15 +180,15 @@ func GetSuscription(in *paymentpkgv1.GetSuscriptionRequest) (response *paymentpk
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.GetSuscription(ctx, &paymentpkgv1.GetSuscriptionRequest{
-		SuscriptionId: in.SuscriptionId,
+	response, err = client.GetSubscription(ctx, &paymentpkgv1.GetSubscriptionRequest{
+		SubscriptionId: in.SubscriptionId,
 	})
 
 	if err != nil {
-		log.Printf("%s: %v", "Error get suscription", err)
+		log.Printf("%s: %v", "Error get susbcription", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get suscription", err),
+			fmt.Sprintf("%s: %v", "Error get subscription", err),
 		)
 	}
 	return response, nil

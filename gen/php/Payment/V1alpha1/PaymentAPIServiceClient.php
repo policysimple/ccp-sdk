@@ -31,15 +31,15 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\CreateSuscriptionRequest $argument input argument
+     * @param \Payment\V1alpha1\CreateSubscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function CreateSuscription(\Payment\V1alpha1\CreateSuscriptionRequest $argument,
+    public function CreateSubscription(\Payment\V1alpha1\CreateSubscriptionRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateSuscription',
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateSubscription',
         $argument,
-        ['\Payment\V1alpha1\CreateSuscriptionResponse', 'decode'],
+        ['\Payment\V1alpha1\CreateSubscriptionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -110,15 +110,15 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\GetSuscriptionRequest $argument input argument
+     * @param \Payment\V1alpha1\GetSubscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetSuscription(\Payment\V1alpha1\GetSuscriptionRequest $argument,
+    public function GetSubscription(\Payment\V1alpha1\GetSubscriptionRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetSuscription',
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetSubscription',
         $argument,
-        ['\Payment\V1alpha1\GetSuscriptionResponse', 'decode'],
+        ['\Payment\V1alpha1\GetSubscriptionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -216,15 +216,15 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
 
     /**
      * Update service
-     * @param \Payment\V1alpha1\UpdateSuscriptionRequest $argument input argument
+     * @param \Payment\V1alpha1\UpdateSubscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function UpdateSuscription(\Payment\V1alpha1\UpdateSuscriptionRequest $argument,
+    public function UpdateSubscription(\Payment\V1alpha1\UpdateSubscriptionRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/UpdateSuscription',
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/UpdateSubscription',
         $argument,
-        ['\Payment\V1alpha1\UpdateSuscriptionResponse', 'decode'],
+        ['\Payment\V1alpha1\UpdateSubscriptionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -256,15 +256,15 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\CancelSuscriptionRequest $argument input argument
+     * @param \Payment\V1alpha1\CancelSubscriptionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function CancelSuscription(\Payment\V1alpha1\CancelSuscriptionRequest $argument,
+    public function CancelSubscription(\Payment\V1alpha1\CancelSubscriptionRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CancelSuscription',
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CancelSubscription',
         $argument,
-        ['\Payment\V1alpha1\CancelSuscriptionResponse', 'decode'],
+        ['\Payment\V1alpha1\CancelSubscriptionResponse', 'decode'],
         $metadata, $options);
     }
 
