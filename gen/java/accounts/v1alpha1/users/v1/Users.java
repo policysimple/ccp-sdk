@@ -3032,6 +3032,18 @@ public final class Users {
      */
     com.google.protobuf.ByteString
         getPhoneCodeBytes();
+
+    /**
+     * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     * @return The optionalAddress.
+     */
+    java.lang.String getOptionalAddress();
+    /**
+     * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     * @return The bytes for optionalAddress.
+     */
+    com.google.protobuf.ByteString
+        getOptionalAddressBytes();
   }
   /**
    * <pre>
@@ -3067,6 +3079,7 @@ public final class Users {
       invitationCode_ = "";
       language_ = "";
       phoneCode_ = "";
+      optionalAddress_ = "";
     }
 
     @java.lang.Override
@@ -3295,6 +3308,12 @@ public final class Users {
               java.lang.String s = input.readStringRequireUtf8();
 
               phoneCode_ = s;
+              break;
+            }
+            case 226: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              optionalAddress_ = s;
               break;
             }
             default: {
@@ -4080,6 +4099,44 @@ public final class Users {
       }
     }
 
+    public static final int OPTIONAL_ADDRESS_FIELD_NUMBER = 28;
+    private volatile java.lang.Object optionalAddress_;
+    /**
+     * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     * @return The optionalAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getOptionalAddress() {
+      java.lang.Object ref = optionalAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        optionalAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     * @return The bytes for optionalAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOptionalAddressBytes() {
+      java.lang.Object ref = optionalAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        optionalAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4187,6 +4244,9 @@ public final class Users {
       }
       if (!getPhoneCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 27, phoneCode_);
+      }
+      if (!getOptionalAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 28, optionalAddress_);
       }
       unknownFields.writeTo(output);
     }
@@ -4321,6 +4381,9 @@ public final class Users {
       if (!getPhoneCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, phoneCode_);
       }
+      if (!getOptionalAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, optionalAddress_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4390,6 +4453,8 @@ public final class Users {
           != other.getReadNotification()) return false;
       if (!getPhoneCode()
           .equals(other.getPhoneCode())) return false;
+      if (!getOptionalAddress()
+          .equals(other.getOptionalAddress())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4471,6 +4536,8 @@ public final class Users {
           getReadNotification());
       hash = (37 * hash) + PHONE_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getPhoneCode().hashCode();
+      hash = (37 * hash) + OPTIONAL_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getOptionalAddress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4662,6 +4729,8 @@ public final class Users {
 
         phoneCode_ = "";
 
+        optionalAddress_ = "";
+
         return this;
       }
 
@@ -4728,6 +4797,7 @@ public final class Users {
         result.applicationNotification_ = applicationNotification_;
         result.readNotification_ = readNotification_;
         result.phoneCode_ = phoneCode_;
+        result.optionalAddress_ = optionalAddress_;
         onBuilt();
         return result;
       }
@@ -4890,6 +4960,10 @@ public final class Users {
         }
         if (!other.getPhoneCode().isEmpty()) {
           phoneCode_ = other.phoneCode_;
+          onChanged();
+        }
+        if (!other.getOptionalAddress().isEmpty()) {
+          optionalAddress_ = other.optionalAddress_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6569,6 +6643,82 @@ public final class Users {
   checkByteStringIsUtf8(value);
         
         phoneCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object optionalAddress_ = "";
+      /**
+       * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+       * @return The optionalAddress.
+       */
+      public java.lang.String getOptionalAddress() {
+        java.lang.Object ref = optionalAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          optionalAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+       * @return The bytes for optionalAddress.
+       */
+      public com.google.protobuf.ByteString
+          getOptionalAddressBytes() {
+        java.lang.Object ref = optionalAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          optionalAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+       * @param value The optionalAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOptionalAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        optionalAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOptionalAddress() {
+        
+        optionalAddress_ = getDefaultInstance().getOptionalAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+       * @param value The bytes for optionalAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOptionalAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        optionalAddress_ = value;
         onChanged();
         return this;
       }
@@ -9699,370 +9849,43 @@ public final class Users {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return Whether the user field is set.
      */
-    int getId();
+    boolean hasUser();
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return The user.
+     */
+    accounts.v1alpha1.Accounts.UserDetail getUser();
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     */
+    accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder();
 
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The userId.
+     * <code>string msg = 2 [json_name = "msg"];</code>
+     * @return The msg.
      */
-    java.lang.String getUserId();
+    java.lang.String getMsg();
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The bytes for userId.
+     * <code>string msg = 2 [json_name = "msg"];</code>
+     * @return The bytes for msg.
      */
     com.google.protobuf.ByteString
-        getUserIdBytes();
+        getMsgBytes();
 
     /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The firstName.
+     * <code>string error = 3 [json_name = "error"];</code>
+     * @return The error.
      */
-    java.lang.String getFirstName();
+    java.lang.String getError();
     /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The bytes for firstName.
+     * <code>string error = 3 [json_name = "error"];</code>
+     * @return The bytes for error.
      */
     com.google.protobuf.ByteString
-        getFirstNameBytes();
-
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The lastName.
-     */
-    java.lang.String getLastName();
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The bytes for lastName.
-     */
-    com.google.protobuf.ByteString
-        getLastNameBytes();
-
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The email.
-     */
-    java.lang.String getEmail();
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
-
-    /**
-     * <code>bool is_active = 6 [json_name = "isActive"];</code>
-     * @return The isActive.
-     */
-    boolean getIsActive();
-
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The createdAt.
-     */
-    java.lang.String getCreatedAt();
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The bytes for createdAt.
-     */
-    com.google.protobuf.ByteString
-        getCreatedAtBytes();
-
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The updatedAt.
-     */
-    java.lang.String getUpdatedAt();
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The bytes for updatedAt.
-     */
-    com.google.protobuf.ByteString
-        getUpdatedAtBytes();
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Role> 
-        getRolesList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    accounts.v1alpha1.Accounts.Role getRoles(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    int getRolesCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-        getRolesOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Permission> 
-        getPermissionsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    accounts.v1alpha1.Accounts.Permission getPermissions(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    int getPermissionsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-        getPermissionsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    accounts.v1alpha1.Accounts.PermissionOrBuilder getPermissionsOrBuilder(
-        int index);
-
-    /**
-     * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-     * @return The isSuperUser.
-     */
-    boolean getIsSuperUser();
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Organization> 
-        getOrganizationsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    accounts.v1alpha1.Accounts.Organization getOrganizations(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    int getOrganizationsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-        getOrganizationsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Project> 
-        getProjectsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    accounts.v1alpha1.Accounts.Project getProjects(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    int getProjectsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-        getProjectsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-     * @return The phoneNumber.
-     */
-    java.lang.String getPhoneNumber();
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-     * @return The bytes for phoneNumber.
-     */
-    com.google.protobuf.ByteString
-        getPhoneNumberBytes();
-
-    /**
-     * <code>string country = 15 [json_name = "country"];</code>
-     * @return The country.
-     */
-    java.lang.String getCountry();
-    /**
-     * <code>string country = 15 [json_name = "country"];</code>
-     * @return The bytes for country.
-     */
-    com.google.protobuf.ByteString
-        getCountryBytes();
-
-    /**
-     * <code>string city = 16 [json_name = "city"];</code>
-     * @return The city.
-     */
-    java.lang.String getCity();
-    /**
-     * <code>string city = 16 [json_name = "city"];</code>
-     * @return The bytes for city.
-     */
-    com.google.protobuf.ByteString
-        getCityBytes();
-
-    /**
-     * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-     * @return The zipCode.
-     */
-    java.lang.String getZipCode();
-    /**
-     * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-     * @return The bytes for zipCode.
-     */
-    com.google.protobuf.ByteString
-        getZipCodeBytes();
-
-    /**
-     * <code>string address = 18 [json_name = "address"];</code>
-     * @return The address.
-     */
-    java.lang.String getAddress();
-    /**
-     * <code>string address = 18 [json_name = "address"];</code>
-     * @return The bytes for address.
-     */
-    com.google.protobuf.ByteString
-        getAddressBytes();
-
-    /**
-     * <code>string state = 19 [json_name = "state"];</code>
-     * @return The state.
-     */
-    java.lang.String getState();
-    /**
-     * <code>string state = 19 [json_name = "state"];</code>
-     * @return The bytes for state.
-     */
-    com.google.protobuf.ByteString
-        getStateBytes();
-
-    /**
-     * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-     * @return The emojiCountry.
-     */
-    java.lang.String getEmojiCountry();
-    /**
-     * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-     * @return The bytes for emojiCountry.
-     */
-    com.google.protobuf.ByteString
-        getEmojiCountryBytes();
-
-    /**
-     * <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
-     * @return The emailVerified.
-     */
-    boolean getEmailVerified();
-
-    /**
-     * <pre>
-     * preferences
-     * </pre>
-     *
-     * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-     * @return The isMfaEnabled.
-     */
-    boolean getIsMfaEnabled();
-
-    /**
-     * <code>string language = 23 [json_name = "language"];</code>
-     * @return The language.
-     */
-    java.lang.String getLanguage();
-    /**
-     * <code>string language = 23 [json_name = "language"];</code>
-     * @return The bytes for language.
-     */
-    com.google.protobuf.ByteString
-        getLanguageBytes();
-
-    /**
-     * <code>bool push_notification = 24 [json_name = "pushNotification"];</code>
-     * @return The pushNotification.
-     */
-    boolean getPushNotification();
-
-    /**
-     * <code>bool email_notification = 25 [json_name = "emailNotification"];</code>
-     * @return The emailNotification.
-     */
-    boolean getEmailNotification();
-
-    /**
-     * <code>bool new_login_notification = 26 [json_name = "newLoginNotification"];</code>
-     * @return The newLoginNotification.
-     */
-    boolean getNewLoginNotification();
-
-    /**
-     * <code>bool create_notification = 27 [json_name = "createNotification"];</code>
-     * @return The createNotification.
-     */
-    boolean getCreateNotification();
-
-    /**
-     * <code>bool update_notification = 28 [json_name = "updateNotification"];</code>
-     * @return The updateNotification.
-     */
-    boolean getUpdateNotification();
-
-    /**
-     * <code>bool delete_notification = 29 [json_name = "deleteNotification"];</code>
-     * @return The deleteNotification.
-     */
-    boolean getDeleteNotification();
-
-    /**
-     * <code>bool application_notification = 30 [json_name = "applicationNotification"];</code>
-     * @return The applicationNotification.
-     */
-    boolean getApplicationNotification();
-
-    /**
-     * <code>bool read_notification = 31 [json_name = "readNotification"];</code>
-     * @return The readNotification.
-     */
-    boolean getReadNotification();
-
-    /**
-     * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-     * @return The phoneCode.
-     */
-    java.lang.String getPhoneCode();
-    /**
-     * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-     * @return The bytes for phoneCode.
-     */
-    com.google.protobuf.ByteString
-        getPhoneCodeBytes();
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.users.v1.GetOneUserResponse}
@@ -10077,25 +9900,8 @@ public final class Users {
       super(builder);
     }
     private GetOneUserResponse() {
-      userId_ = "";
-      firstName_ = "";
-      lastName_ = "";
-      email_ = "";
-      createdAt_ = "";
-      updatedAt_ = "";
-      roles_ = java.util.Collections.emptyList();
-      permissions_ = java.util.Collections.emptyList();
-      organizations_ = java.util.Collections.emptyList();
-      projects_ = java.util.Collections.emptyList();
-      phoneNumber_ = "";
-      country_ = "";
-      city_ = "";
-      zipCode_ = "";
-      address_ = "";
-      state_ = "";
-      emojiCountry_ = "";
-      language_ = "";
-      phoneCode_ = "";
+      msg_ = "";
+      error_ = "";
     }
 
     @java.lang.Override
@@ -10118,7 +9924,6 @@ public final class Users {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10129,195 +9934,29 @@ public final class Users {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              accounts.v1alpha1.Accounts.UserDetail.Builder subBuilder = null;
+              if (user_ != null) {
+                subBuilder = user_.toBuilder();
+              }
+              user_ = input.readMessage(accounts.v1alpha1.Accounts.UserDetail.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
+              }
 
-              id_ = input.readUInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userId_ = s;
+              msg_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              firstName_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastName_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              email_ = s;
-              break;
-            }
-            case 48: {
-
-              isActive_ = input.readBool();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createdAt_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              updatedAt_ = s;
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Role>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              roles_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Role.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              permissions_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Permission.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              isSuperUser_ = input.readBool();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                organizations_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Organization>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              organizations_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Organization.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              projects_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              phoneNumber_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              country_ = s;
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              city_ = s;
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zipCode_ = s;
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
-            case 154: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              state_ = s;
-              break;
-            }
-            case 162: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              emojiCountry_ = s;
-              break;
-            }
-            case 168: {
-
-              emailVerified_ = input.readBool();
-              break;
-            }
-            case 176: {
-
-              isMfaEnabled_ = input.readBool();
-              break;
-            }
-            case 186: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              language_ = s;
-              break;
-            }
-            case 192: {
-
-              pushNotification_ = input.readBool();
-              break;
-            }
-            case 200: {
-
-              emailNotification_ = input.readBool();
-              break;
-            }
-            case 208: {
-
-              newLoginNotification_ = input.readBool();
-              break;
-            }
-            case 216: {
-
-              createNotification_ = input.readBool();
-              break;
-            }
-            case 224: {
-
-              updateNotification_ = input.readBool();
-              break;
-            }
-            case 232: {
-
-              deleteNotification_ = input.readBool();
-              break;
-            }
-            case 240: {
-
-              applicationNotification_ = input.readBool();
-              break;
-            }
-            case 248: {
-
-              readNotification_ = input.readBool();
-              break;
-            }
-            case 258: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              phoneCode_ = s;
+              error_ = s;
               break;
             }
             default: {
@@ -10335,18 +9974,6 @@ public final class Users {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roles_ = java.util.Collections.unmodifiableList(roles_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          permissions_ = java.util.Collections.unmodifiableList(permissions_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          organizations_ = java.util.Collections.unmodifiableList(organizations_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          projects_ = java.util.Collections.unmodifiableList(projects_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -10364,885 +9991,102 @@ public final class Users {
               accounts.v1alpha1.users.v1.Users.GetOneUserResponse.class, accounts.v1alpha1.users.v1.Users.GetOneUserResponse.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int USER_FIELD_NUMBER = 1;
+    private accounts.v1alpha1.Accounts.UserDetail user_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return Whether the user field is set.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.UserDetail getUser() {
+      return user_ == null ? accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder() {
+      return getUser();
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object userId_;
+    public static final int MSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msg_;
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The userId.
+     * <code>string msg = 2 [json_name = "msg"];</code>
+     * @return The msg.
      */
     @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
+        msg_ = s;
         return s;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The bytes for userId.
+     * <code>string msg = 2 [json_name = "msg"];</code>
+     * @return The bytes for msg.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userId_ = b;
+        msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int FIRST_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object firstName_;
+    public static final int ERROR_FIELD_NUMBER = 3;
+    private volatile java.lang.Object error_;
     /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The firstName.
+     * <code>string error = 3 [json_name = "error"];</code>
+     * @return The error.
      */
     @java.lang.Override
-    public java.lang.String getFirstName() {
-      java.lang.Object ref = firstName_;
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        firstName_ = s;
+        error_ = s;
         return s;
       }
     }
     /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The bytes for firstName.
+     * <code>string error = 3 [json_name = "error"];</code>
+     * @return The bytes for error.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getFirstNameBytes() {
-      java.lang.Object ref = firstName_;
+        getErrorBytes() {
+      java.lang.Object ref = error_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        firstName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LAST_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object lastName_;
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The lastName.
-     */
-    @java.lang.Override
-    public java.lang.String getLastName() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The bytes for lastName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLastNameBytes() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lastName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 5;
-    private volatile java.lang.Object email_;
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The email.
-     */
-    @java.lang.Override
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The bytes for email.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_ACTIVE_FIELD_NUMBER = 6;
-    private boolean isActive_;
-    /**
-     * <code>bool is_active = 6 [json_name = "isActive"];</code>
-     * @return The isActive.
-     */
-    @java.lang.Override
-    public boolean getIsActive() {
-      return isActive_;
-    }
-
-    public static final int CREATED_AT_FIELD_NUMBER = 7;
-    private volatile java.lang.Object createdAt_;
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The createdAt.
-     */
-    @java.lang.Override
-    public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdAt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The bytes for createdAt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreatedAtBytes() {
-      java.lang.Object ref = createdAt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdAt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UPDATED_AT_FIELD_NUMBER = 8;
-    private volatile java.lang.Object updatedAt_;
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The updatedAt.
-     */
-    @java.lang.Override
-    public java.lang.String getUpdatedAt() {
-      java.lang.Object ref = updatedAt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updatedAt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The bytes for updatedAt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUpdatedAtBytes() {
-      java.lang.Object ref = updatedAt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updatedAt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROLES_FIELD_NUMBER = 9;
-    private java.util.List<accounts.v1alpha1.Accounts.Role> roles_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Role> getRolesList() {
-      return roles_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-        getRolesOrBuilderList() {
-      return roles_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public int getRolesCount() {
-      return roles_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Role getRoles(int index) {
-      return roles_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-        int index) {
-      return roles_.get(index);
-    }
-
-    public static final int PERMISSIONS_FIELD_NUMBER = 10;
-    private java.util.List<accounts.v1alpha1.Accounts.Permission> permissions_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Permission> getPermissionsList() {
-      return permissions_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-        getPermissionsOrBuilderList() {
-      return permissions_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public int getPermissionsCount() {
-      return permissions_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Permission getPermissions(int index) {
-      return permissions_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.PermissionOrBuilder getPermissionsOrBuilder(
-        int index) {
-      return permissions_.get(index);
-    }
-
-    public static final int IS_SUPER_USER_FIELD_NUMBER = 11;
-    private boolean isSuperUser_;
-    /**
-     * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-     * @return The isSuperUser.
-     */
-    @java.lang.Override
-    public boolean getIsSuperUser() {
-      return isSuperUser_;
-    }
-
-    public static final int ORGANIZATIONS_FIELD_NUMBER = 12;
-    private java.util.List<accounts.v1alpha1.Accounts.Organization> organizations_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Organization> getOrganizationsList() {
-      return organizations_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-        getOrganizationsOrBuilderList() {
-      return organizations_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public int getOrganizationsCount() {
-      return organizations_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Organization getOrganizations(int index) {
-      return organizations_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-        int index) {
-      return organizations_.get(index);
-    }
-
-    public static final int PROJECTS_FIELD_NUMBER = 13;
-    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
-      return projects_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-        getProjectsOrBuilderList() {
-      return projects_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public int getProjectsCount() {
-      return projects_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
-      return projects_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-        int index) {
-      return projects_.get(index);
-    }
-
-    public static final int PHONE_NUMBER_FIELD_NUMBER = 14;
-    private volatile java.lang.Object phoneNumber_;
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-     * @return The phoneNumber.
-     */
-    @java.lang.Override
-    public java.lang.String getPhoneNumber() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneNumber_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-     * @return The bytes for phoneNumber.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int COUNTRY_FIELD_NUMBER = 15;
-    private volatile java.lang.Object country_;
-    /**
-     * <code>string country = 15 [json_name = "country"];</code>
-     * @return The country.
-     */
-    @java.lang.Override
-    public java.lang.String getCountry() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        country_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string country = 15 [json_name = "country"];</code>
-     * @return The bytes for country.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCountryBytes() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        country_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CITY_FIELD_NUMBER = 16;
-    private volatile java.lang.Object city_;
-    /**
-     * <code>string city = 16 [json_name = "city"];</code>
-     * @return The city.
-     */
-    @java.lang.Override
-    public java.lang.String getCity() {
-      java.lang.Object ref = city_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        city_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string city = 16 [json_name = "city"];</code>
-     * @return The bytes for city.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCityBytes() {
-      java.lang.Object ref = city_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        city_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ZIP_CODE_FIELD_NUMBER = 17;
-    private volatile java.lang.Object zipCode_;
-    /**
-     * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-     * @return The zipCode.
-     */
-    @java.lang.Override
-    public java.lang.String getZipCode() {
-      java.lang.Object ref = zipCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        zipCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-     * @return The bytes for zipCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getZipCodeBytes() {
-      java.lang.Object ref = zipCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        zipCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ADDRESS_FIELD_NUMBER = 18;
-    private volatile java.lang.Object address_;
-    /**
-     * <code>string address = 18 [json_name = "address"];</code>
-     * @return The address.
-     */
-    @java.lang.Override
-    public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        address_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string address = 18 [json_name = "address"];</code>
-     * @return The bytes for address.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAddressBytes() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        address_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATE_FIELD_NUMBER = 19;
-    private volatile java.lang.Object state_;
-    /**
-     * <code>string state = 19 [json_name = "state"];</code>
-     * @return The state.
-     */
-    @java.lang.Override
-    public java.lang.String getState() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        state_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string state = 19 [json_name = "state"];</code>
-     * @return The bytes for state.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        state_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMOJI_COUNTRY_FIELD_NUMBER = 20;
-    private volatile java.lang.Object emojiCountry_;
-    /**
-     * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-     * @return The emojiCountry.
-     */
-    @java.lang.Override
-    public java.lang.String getEmojiCountry() {
-      java.lang.Object ref = emojiCountry_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        emojiCountry_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-     * @return The bytes for emojiCountry.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmojiCountryBytes() {
-      java.lang.Object ref = emojiCountry_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        emojiCountry_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_VERIFIED_FIELD_NUMBER = 21;
-    private boolean emailVerified_;
-    /**
-     * <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
-     * @return The emailVerified.
-     */
-    @java.lang.Override
-    public boolean getEmailVerified() {
-      return emailVerified_;
-    }
-
-    public static final int IS_MFA_ENABLED_FIELD_NUMBER = 22;
-    private boolean isMfaEnabled_;
-    /**
-     * <pre>
-     * preferences
-     * </pre>
-     *
-     * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-     * @return The isMfaEnabled.
-     */
-    @java.lang.Override
-    public boolean getIsMfaEnabled() {
-      return isMfaEnabled_;
-    }
-
-    public static final int LANGUAGE_FIELD_NUMBER = 23;
-    private volatile java.lang.Object language_;
-    /**
-     * <code>string language = 23 [json_name = "language"];</code>
-     * @return The language.
-     */
-    @java.lang.Override
-    public java.lang.String getLanguage() {
-      java.lang.Object ref = language_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        language_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string language = 23 [json_name = "language"];</code>
-     * @return The bytes for language.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLanguageBytes() {
-      java.lang.Object ref = language_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        language_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PUSH_NOTIFICATION_FIELD_NUMBER = 24;
-    private boolean pushNotification_;
-    /**
-     * <code>bool push_notification = 24 [json_name = "pushNotification"];</code>
-     * @return The pushNotification.
-     */
-    @java.lang.Override
-    public boolean getPushNotification() {
-      return pushNotification_;
-    }
-
-    public static final int EMAIL_NOTIFICATION_FIELD_NUMBER = 25;
-    private boolean emailNotification_;
-    /**
-     * <code>bool email_notification = 25 [json_name = "emailNotification"];</code>
-     * @return The emailNotification.
-     */
-    @java.lang.Override
-    public boolean getEmailNotification() {
-      return emailNotification_;
-    }
-
-    public static final int NEW_LOGIN_NOTIFICATION_FIELD_NUMBER = 26;
-    private boolean newLoginNotification_;
-    /**
-     * <code>bool new_login_notification = 26 [json_name = "newLoginNotification"];</code>
-     * @return The newLoginNotification.
-     */
-    @java.lang.Override
-    public boolean getNewLoginNotification() {
-      return newLoginNotification_;
-    }
-
-    public static final int CREATE_NOTIFICATION_FIELD_NUMBER = 27;
-    private boolean createNotification_;
-    /**
-     * <code>bool create_notification = 27 [json_name = "createNotification"];</code>
-     * @return The createNotification.
-     */
-    @java.lang.Override
-    public boolean getCreateNotification() {
-      return createNotification_;
-    }
-
-    public static final int UPDATE_NOTIFICATION_FIELD_NUMBER = 28;
-    private boolean updateNotification_;
-    /**
-     * <code>bool update_notification = 28 [json_name = "updateNotification"];</code>
-     * @return The updateNotification.
-     */
-    @java.lang.Override
-    public boolean getUpdateNotification() {
-      return updateNotification_;
-    }
-
-    public static final int DELETE_NOTIFICATION_FIELD_NUMBER = 29;
-    private boolean deleteNotification_;
-    /**
-     * <code>bool delete_notification = 29 [json_name = "deleteNotification"];</code>
-     * @return The deleteNotification.
-     */
-    @java.lang.Override
-    public boolean getDeleteNotification() {
-      return deleteNotification_;
-    }
-
-    public static final int APPLICATION_NOTIFICATION_FIELD_NUMBER = 30;
-    private boolean applicationNotification_;
-    /**
-     * <code>bool application_notification = 30 [json_name = "applicationNotification"];</code>
-     * @return The applicationNotification.
-     */
-    @java.lang.Override
-    public boolean getApplicationNotification() {
-      return applicationNotification_;
-    }
-
-    public static final int READ_NOTIFICATION_FIELD_NUMBER = 31;
-    private boolean readNotification_;
-    /**
-     * <code>bool read_notification = 31 [json_name = "readNotification"];</code>
-     * @return The readNotification.
-     */
-    @java.lang.Override
-    public boolean getReadNotification() {
-      return readNotification_;
-    }
-
-    public static final int PHONE_CODE_FIELD_NUMBER = 32;
-    private volatile java.lang.Object phoneCode_;
-    /**
-     * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-     * @return The phoneCode.
-     */
-    @java.lang.Override
-    public java.lang.String getPhoneCode() {
-      java.lang.Object ref = phoneCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-     * @return The bytes for phoneCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPhoneCodeBytes() {
-      java.lang.Object ref = phoneCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneCode_ = b;
+        error_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -11263,101 +10107,14 @@ public final class Users {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (user_ != null) {
+        output.writeMessage(1, getUser());
       }
-      if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
       }
-      if (!getFirstNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
-      }
-      if (!getLastNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastName_);
-      }
-      if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
-      }
-      if (isActive_ != false) {
-        output.writeBool(6, isActive_);
-      }
-      if (!getCreatedAtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdAt_);
-      }
-      if (!getUpdatedAtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt_);
-      }
-      for (int i = 0; i < roles_.size(); i++) {
-        output.writeMessage(9, roles_.get(i));
-      }
-      for (int i = 0; i < permissions_.size(); i++) {
-        output.writeMessage(10, permissions_.get(i));
-      }
-      if (isSuperUser_ != false) {
-        output.writeBool(11, isSuperUser_);
-      }
-      for (int i = 0; i < organizations_.size(); i++) {
-        output.writeMessage(12, organizations_.get(i));
-      }
-      for (int i = 0; i < projects_.size(); i++) {
-        output.writeMessage(13, projects_.get(i));
-      }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, phoneNumber_);
-      }
-      if (!getCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, country_);
-      }
-      if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, city_);
-      }
-      if (!getZipCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, zipCode_);
-      }
-      if (!getAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, address_);
-      }
-      if (!getStateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, state_);
-      }
-      if (!getEmojiCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, emojiCountry_);
-      }
-      if (emailVerified_ != false) {
-        output.writeBool(21, emailVerified_);
-      }
-      if (isMfaEnabled_ != false) {
-        output.writeBool(22, isMfaEnabled_);
-      }
-      if (!getLanguageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, language_);
-      }
-      if (pushNotification_ != false) {
-        output.writeBool(24, pushNotification_);
-      }
-      if (emailNotification_ != false) {
-        output.writeBool(25, emailNotification_);
-      }
-      if (newLoginNotification_ != false) {
-        output.writeBool(26, newLoginNotification_);
-      }
-      if (createNotification_ != false) {
-        output.writeBool(27, createNotification_);
-      }
-      if (updateNotification_ != false) {
-        output.writeBool(28, updateNotification_);
-      }
-      if (deleteNotification_ != false) {
-        output.writeBool(29, deleteNotification_);
-      }
-      if (applicationNotification_ != false) {
-        output.writeBool(30, applicationNotification_);
-      }
-      if (readNotification_ != false) {
-        output.writeBool(31, readNotification_);
-      }
-      if (!getPhoneCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 32, phoneCode_);
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -11368,118 +10125,15 @@ public final class Users {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
+      if (user_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+          .computeMessageSize(1, getUser());
       }
-      if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
       }
-      if (!getFirstNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
-      }
-      if (!getLastNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastName_);
-      }
-      if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
-      }
-      if (isActive_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isActive_);
-      }
-      if (!getCreatedAtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdAt_);
-      }
-      if (!getUpdatedAtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt_);
-      }
-      for (int i = 0; i < roles_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, roles_.get(i));
-      }
-      for (int i = 0; i < permissions_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, permissions_.get(i));
-      }
-      if (isSuperUser_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isSuperUser_);
-      }
-      for (int i = 0; i < organizations_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, organizations_.get(i));
-      }
-      for (int i = 0; i < projects_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, projects_.get(i));
-      }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, phoneNumber_);
-      }
-      if (!getCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, country_);
-      }
-      if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, city_);
-      }
-      if (!getZipCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, zipCode_);
-      }
-      if (!getAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, address_);
-      }
-      if (!getStateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, state_);
-      }
-      if (!getEmojiCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, emojiCountry_);
-      }
-      if (emailVerified_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(21, emailVerified_);
-      }
-      if (isMfaEnabled_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(22, isMfaEnabled_);
-      }
-      if (!getLanguageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, language_);
-      }
-      if (pushNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(24, pushNotification_);
-      }
-      if (emailNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(25, emailNotification_);
-      }
-      if (newLoginNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(26, newLoginNotification_);
-      }
-      if (createNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(27, createNotification_);
-      }
-      if (updateNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(28, updateNotification_);
-      }
-      if (deleteNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(29, deleteNotification_);
-      }
-      if (applicationNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(30, applicationNotification_);
-      }
-      if (readNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(31, readNotification_);
-      }
-      if (!getPhoneCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(32, phoneCode_);
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11496,70 +10150,15 @@ public final class Users {
       }
       accounts.v1alpha1.users.v1.Users.GetOneUserResponse other = (accounts.v1alpha1.users.v1.Users.GetOneUserResponse) obj;
 
-      if (getId()
-          != other.getId()) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
-      if (!getFirstName()
-          .equals(other.getFirstName())) return false;
-      if (!getLastName()
-          .equals(other.getLastName())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-      if (getIsActive()
-          != other.getIsActive()) return false;
-      if (!getCreatedAt()
-          .equals(other.getCreatedAt())) return false;
-      if (!getUpdatedAt()
-          .equals(other.getUpdatedAt())) return false;
-      if (!getRolesList()
-          .equals(other.getRolesList())) return false;
-      if (!getPermissionsList()
-          .equals(other.getPermissionsList())) return false;
-      if (getIsSuperUser()
-          != other.getIsSuperUser()) return false;
-      if (!getOrganizationsList()
-          .equals(other.getOrganizationsList())) return false;
-      if (!getProjectsList()
-          .equals(other.getProjectsList())) return false;
-      if (!getPhoneNumber()
-          .equals(other.getPhoneNumber())) return false;
-      if (!getCountry()
-          .equals(other.getCountry())) return false;
-      if (!getCity()
-          .equals(other.getCity())) return false;
-      if (!getZipCode()
-          .equals(other.getZipCode())) return false;
-      if (!getAddress()
-          .equals(other.getAddress())) return false;
-      if (!getState()
-          .equals(other.getState())) return false;
-      if (!getEmojiCountry()
-          .equals(other.getEmojiCountry())) return false;
-      if (getEmailVerified()
-          != other.getEmailVerified()) return false;
-      if (getIsMfaEnabled()
-          != other.getIsMfaEnabled()) return false;
-      if (!getLanguage()
-          .equals(other.getLanguage())) return false;
-      if (getPushNotification()
-          != other.getPushNotification()) return false;
-      if (getEmailNotification()
-          != other.getEmailNotification()) return false;
-      if (getNewLoginNotification()
-          != other.getNewLoginNotification()) return false;
-      if (getCreateNotification()
-          != other.getCreateNotification()) return false;
-      if (getUpdateNotification()
-          != other.getUpdateNotification()) return false;
-      if (getDeleteNotification()
-          != other.getDeleteNotification()) return false;
-      if (getApplicationNotification()
-          != other.getApplicationNotification()) return false;
-      if (getReadNotification()
-          != other.getReadNotification()) return false;
-      if (!getPhoneCode()
-          .equals(other.getPhoneCode())) return false;
+      if (hasUser() != other.hasUser()) return false;
+      if (hasUser()) {
+        if (!getUser()
+            .equals(other.getUser())) return false;
+      }
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11571,90 +10170,14 @@ public final class Users {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstName().hashCode();
-      hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getLastName().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsActive());
-      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatedAt().hashCode();
-      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdatedAt().hashCode();
-      if (getRolesCount() > 0) {
-        hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + getRolesList().hashCode();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
       }
-      if (getPermissionsCount() > 0) {
-        hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getPermissionsList().hashCode();
-      }
-      hash = (37 * hash) + IS_SUPER_USER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSuperUser());
-      if (getOrganizationsCount() > 0) {
-        hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganizationsList().hashCode();
-      }
-      if (getProjectsCount() > 0) {
-        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
-        hash = (53 * hash) + getProjectsList().hashCode();
-      }
-      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumber().hashCode();
-      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getCountry().hashCode();
-      hash = (37 * hash) + CITY_FIELD_NUMBER;
-      hash = (53 * hash) + getCity().hashCode();
-      hash = (37 * hash) + ZIP_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getZipCode().hashCode();
-      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getAddress().hashCode();
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState().hashCode();
-      hash = (37 * hash) + EMOJI_COUNTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getEmojiCountry().hashCode();
-      hash = (37 * hash) + EMAIL_VERIFIED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEmailVerified());
-      hash = (37 * hash) + IS_MFA_ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsMfaEnabled());
-      hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getLanguage().hashCode();
-      hash = (37 * hash) + PUSH_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPushNotification());
-      hash = (37 * hash) + EMAIL_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEmailNotification());
-      hash = (37 * hash) + NEW_LOGIN_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNewLoginNotification());
-      hash = (37 * hash) + CREATE_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCreateNotification());
-      hash = (37 * hash) + UPDATE_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUpdateNotification());
-      hash = (37 * hash) + DELETE_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDeleteNotification());
-      hash = (37 * hash) + APPLICATION_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getApplicationNotification());
-      hash = (37 * hash) + READ_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getReadNotification());
-      hash = (37 * hash) + PHONE_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneCode().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11783,94 +10306,20 @@ public final class Users {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRolesFieldBuilder();
-          getPermissionsFieldBuilder();
-          getOrganizationsFieldBuilder();
-          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
-
-        userId_ = "";
-
-        firstName_ = "";
-
-        lastName_ = "";
-
-        email_ = "";
-
-        isActive_ = false;
-
-        createdAt_ = "";
-
-        updatedAt_ = "";
-
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (userBuilder_ == null) {
+          user_ = null;
         } else {
-          rolesBuilder_.clear();
+          user_ = null;
+          userBuilder_ = null;
         }
-        if (permissionsBuilder_ == null) {
-          permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          permissionsBuilder_.clear();
-        }
-        isSuperUser_ = false;
+        msg_ = "";
 
-        if (organizationsBuilder_ == null) {
-          organizations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          organizationsBuilder_.clear();
-        }
-        if (projectsBuilder_ == null) {
-          projects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          projectsBuilder_.clear();
-        }
-        phoneNumber_ = "";
-
-        country_ = "";
-
-        city_ = "";
-
-        zipCode_ = "";
-
-        address_ = "";
-
-        state_ = "";
-
-        emojiCountry_ = "";
-
-        emailVerified_ = false;
-
-        isMfaEnabled_ = false;
-
-        language_ = "";
-
-        pushNotification_ = false;
-
-        emailNotification_ = false;
-
-        newLoginNotification_ = false;
-
-        createNotification_ = false;
-
-        updateNotification_ = false;
-
-        deleteNotification_ = false;
-
-        applicationNotification_ = false;
-
-        readNotification_ = false;
-
-        phoneCode_ = "";
+        error_ = "";
 
         return this;
       }
@@ -11898,71 +10347,13 @@ public final class Users {
       @java.lang.Override
       public accounts.v1alpha1.users.v1.Users.GetOneUserResponse buildPartial() {
         accounts.v1alpha1.users.v1.Users.GetOneUserResponse result = new accounts.v1alpha1.users.v1.Users.GetOneUserResponse(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        result.userId_ = userId_;
-        result.firstName_ = firstName_;
-        result.lastName_ = lastName_;
-        result.email_ = email_;
-        result.isActive_ = isActive_;
-        result.createdAt_ = createdAt_;
-        result.updatedAt_ = updatedAt_;
-        if (rolesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            roles_ = java.util.Collections.unmodifiableList(roles_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.roles_ = roles_;
+        if (userBuilder_ == null) {
+          result.user_ = user_;
         } else {
-          result.roles_ = rolesBuilder_.build();
+          result.user_ = userBuilder_.build();
         }
-        if (permissionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            permissions_ = java.util.Collections.unmodifiableList(permissions_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.permissions_ = permissions_;
-        } else {
-          result.permissions_ = permissionsBuilder_.build();
-        }
-        result.isSuperUser_ = isSuperUser_;
-        if (organizationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            organizations_ = java.util.Collections.unmodifiableList(organizations_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.organizations_ = organizations_;
-        } else {
-          result.organizations_ = organizationsBuilder_.build();
-        }
-        if (projectsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            projects_ = java.util.Collections.unmodifiableList(projects_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.projects_ = projects_;
-        } else {
-          result.projects_ = projectsBuilder_.build();
-        }
-        result.phoneNumber_ = phoneNumber_;
-        result.country_ = country_;
-        result.city_ = city_;
-        result.zipCode_ = zipCode_;
-        result.address_ = address_;
-        result.state_ = state_;
-        result.emojiCountry_ = emojiCountry_;
-        result.emailVerified_ = emailVerified_;
-        result.isMfaEnabled_ = isMfaEnabled_;
-        result.language_ = language_;
-        result.pushNotification_ = pushNotification_;
-        result.emailNotification_ = emailNotification_;
-        result.newLoginNotification_ = newLoginNotification_;
-        result.createNotification_ = createNotification_;
-        result.updateNotification_ = updateNotification_;
-        result.deleteNotification_ = deleteNotification_;
-        result.applicationNotification_ = applicationNotification_;
-        result.readNotification_ = readNotification_;
-        result.phoneCode_ = phoneCode_;
+        result.msg_ = msg_;
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -12011,207 +10402,15 @@ public final class Users {
 
       public Builder mergeFrom(accounts.v1alpha1.users.v1.Users.GetOneUserResponse other) {
         if (other == accounts.v1alpha1.users.v1.Users.GetOneUserResponse.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
         }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
           onChanged();
         }
-        if (!other.getFirstName().isEmpty()) {
-          firstName_ = other.firstName_;
-          onChanged();
-        }
-        if (!other.getLastName().isEmpty()) {
-          lastName_ = other.lastName_;
-          onChanged();
-        }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
-          onChanged();
-        }
-        if (other.getIsActive() != false) {
-          setIsActive(other.getIsActive());
-        }
-        if (!other.getCreatedAt().isEmpty()) {
-          createdAt_ = other.createdAt_;
-          onChanged();
-        }
-        if (!other.getUpdatedAt().isEmpty()) {
-          updatedAt_ = other.updatedAt_;
-          onChanged();
-        }
-        if (rolesBuilder_ == null) {
-          if (!other.roles_.isEmpty()) {
-            if (roles_.isEmpty()) {
-              roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRolesIsMutable();
-              roles_.addAll(other.roles_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.roles_.isEmpty()) {
-            if (rolesBuilder_.isEmpty()) {
-              rolesBuilder_.dispose();
-              rolesBuilder_ = null;
-              roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              rolesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRolesFieldBuilder() : null;
-            } else {
-              rolesBuilder_.addAllMessages(other.roles_);
-            }
-          }
-        }
-        if (permissionsBuilder_ == null) {
-          if (!other.permissions_.isEmpty()) {
-            if (permissions_.isEmpty()) {
-              permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensurePermissionsIsMutable();
-              permissions_.addAll(other.permissions_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.permissions_.isEmpty()) {
-            if (permissionsBuilder_.isEmpty()) {
-              permissionsBuilder_.dispose();
-              permissionsBuilder_ = null;
-              permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              permissionsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPermissionsFieldBuilder() : null;
-            } else {
-              permissionsBuilder_.addAllMessages(other.permissions_);
-            }
-          }
-        }
-        if (other.getIsSuperUser() != false) {
-          setIsSuperUser(other.getIsSuperUser());
-        }
-        if (organizationsBuilder_ == null) {
-          if (!other.organizations_.isEmpty()) {
-            if (organizations_.isEmpty()) {
-              organizations_ = other.organizations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureOrganizationsIsMutable();
-              organizations_.addAll(other.organizations_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.organizations_.isEmpty()) {
-            if (organizationsBuilder_.isEmpty()) {
-              organizationsBuilder_.dispose();
-              organizationsBuilder_ = null;
-              organizations_ = other.organizations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              organizationsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOrganizationsFieldBuilder() : null;
-            } else {
-              organizationsBuilder_.addAllMessages(other.organizations_);
-            }
-          }
-        }
-        if (projectsBuilder_ == null) {
-          if (!other.projects_.isEmpty()) {
-            if (projects_.isEmpty()) {
-              projects_ = other.projects_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureProjectsIsMutable();
-              projects_.addAll(other.projects_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.projects_.isEmpty()) {
-            if (projectsBuilder_.isEmpty()) {
-              projectsBuilder_.dispose();
-              projectsBuilder_ = null;
-              projects_ = other.projects_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              projectsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getProjectsFieldBuilder() : null;
-            } else {
-              projectsBuilder_.addAllMessages(other.projects_);
-            }
-          }
-        }
-        if (!other.getPhoneNumber().isEmpty()) {
-          phoneNumber_ = other.phoneNumber_;
-          onChanged();
-        }
-        if (!other.getCountry().isEmpty()) {
-          country_ = other.country_;
-          onChanged();
-        }
-        if (!other.getCity().isEmpty()) {
-          city_ = other.city_;
-          onChanged();
-        }
-        if (!other.getZipCode().isEmpty()) {
-          zipCode_ = other.zipCode_;
-          onChanged();
-        }
-        if (!other.getAddress().isEmpty()) {
-          address_ = other.address_;
-          onChanged();
-        }
-        if (!other.getState().isEmpty()) {
-          state_ = other.state_;
-          onChanged();
-        }
-        if (!other.getEmojiCountry().isEmpty()) {
-          emojiCountry_ = other.emojiCountry_;
-          onChanged();
-        }
-        if (other.getEmailVerified() != false) {
-          setEmailVerified(other.getEmailVerified());
-        }
-        if (other.getIsMfaEnabled() != false) {
-          setIsMfaEnabled(other.getIsMfaEnabled());
-        }
-        if (!other.getLanguage().isEmpty()) {
-          language_ = other.language_;
-          onChanged();
-        }
-        if (other.getPushNotification() != false) {
-          setPushNotification(other.getPushNotification());
-        }
-        if (other.getEmailNotification() != false) {
-          setEmailNotification(other.getEmailNotification());
-        }
-        if (other.getNewLoginNotification() != false) {
-          setNewLoginNotification(other.getNewLoginNotification());
-        }
-        if (other.getCreateNotification() != false) {
-          setCreateNotification(other.getCreateNotification());
-        }
-        if (other.getUpdateNotification() != false) {
-          setUpdateNotification(other.getUpdateNotification());
-        }
-        if (other.getDeleteNotification() != false) {
-          setDeleteNotification(other.getDeleteNotification());
-        }
-        if (other.getApplicationNotification() != false) {
-          setApplicationNotification(other.getApplicationNotification());
-        }
-        if (other.getReadNotification() != false) {
-          setReadNotification(other.getReadNotification());
-        }
-        if (!other.getPhoneCode().isEmpty()) {
-          phoneCode_ = other.phoneCode_;
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -12242,2539 +10441,274 @@ public final class Users {
         }
         return this;
       }
-      private int bitField0_;
 
-      private int id_ ;
+      private accounts.v1alpha1.Accounts.UserDetail user_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder> userBuilder_;
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * @return Whether the user field is set.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * @return The user.
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @return The userId.
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
+      public accounts.v1alpha1.Accounts.UserDetail getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
         } else {
-          return (java.lang.String) ref;
+          return userBuilder_.getMessage();
         }
       }
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @return The bytes for userId.
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object firstName_ = "";
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @return The firstName.
-       */
-      public java.lang.String getFirstName() {
-        java.lang.Object ref = firstName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firstName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @return The bytes for firstName.
-       */
-      public com.google.protobuf.ByteString
-          getFirstNameBytes() {
-        java.lang.Object ref = firstName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firstName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @param value The firstName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFirstName() {
-        
-        firstName_ = getDefaultInstance().getFirstName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @param value The bytes for firstName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object lastName_ = "";
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @return The lastName.
-       */
-      public java.lang.String getLastName() {
-        java.lang.Object ref = lastName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lastName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @return The bytes for lastName.
-       */
-      public com.google.protobuf.ByteString
-          getLastNameBytes() {
-        java.lang.Object ref = lastName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lastName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @param value The lastName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLastName() {
-        
-        lastName_ = getDefaultInstance().getLastName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @param value The bytes for lastName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @return The email.
-       */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          email_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @return The bytes for email.
-       */
-      public com.google.protobuf.ByteString
-          getEmailBytes() {
-        java.lang.Object ref = email_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          email_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        email_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        email_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean isActive_ ;
-      /**
-       * <code>bool is_active = 6 [json_name = "isActive"];</code>
-       * @return The isActive.
-       */
-      @java.lang.Override
-      public boolean getIsActive() {
-        return isActive_;
-      }
-      /**
-       * <code>bool is_active = 6 [json_name = "isActive"];</code>
-       * @param value The isActive to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsActive(boolean value) {
-        
-        isActive_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_active = 6 [json_name = "isActive"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsActive() {
-        
-        isActive_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createdAt_ = "";
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @return The createdAt.
-       */
-      public java.lang.String getCreatedAt() {
-        java.lang.Object ref = createdAt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createdAt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @return The bytes for createdAt.
-       */
-      public com.google.protobuf.ByteString
-          getCreatedAtBytes() {
-        java.lang.Object ref = createdAt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createdAt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @param value The createdAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedAt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createdAt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreatedAt() {
-        
-        createdAt_ = getDefaultInstance().getCreatedAt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @param value The bytes for createdAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedAtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createdAt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object updatedAt_ = "";
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @return The updatedAt.
-       */
-      public java.lang.String getUpdatedAt() {
-        java.lang.Object ref = updatedAt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          updatedAt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @return The bytes for updatedAt.
-       */
-      public com.google.protobuf.ByteString
-          getUpdatedAtBytes() {
-        java.lang.Object ref = updatedAt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          updatedAt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @param value The updatedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdatedAt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        updatedAt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdatedAt() {
-        
-        updatedAt_ = getDefaultInstance().getUpdatedAt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @param value The bytes for updatedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdatedAtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        updatedAt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Role> roles_ =
-        java.util.Collections.emptyList();
-      private void ensureRolesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Role>(roles_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> rolesBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Role> getRolesList() {
-        if (rolesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(roles_);
-        } else {
-          return rolesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public int getRolesCount() {
-        if (rolesBuilder_ == null) {
-          return roles_.size();
-        } else {
-          return rolesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role getRoles(int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);
-        } else {
-          return rolesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder setRoles(
-          int index, accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
+      public Builder setUser(accounts.v1alpha1.Accounts.UserDetail value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRolesIsMutable();
-          roles_.set(index, value);
+          user_ = value;
           onChanged();
         } else {
-          rolesBuilder_.setMessage(index, value);
+          userBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder setRoles(
-          int index, accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.set(index, builderForValue.build());
+      public Builder setUser(
+          accounts.v1alpha1.Accounts.UserDetail.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
           onChanged();
         } else {
-          rolesBuilder_.setMessage(index, builderForValue.build());
+          userBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder addRoles(accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeUser(accounts.v1alpha1.Accounts.UserDetail value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              accounts.v1alpha1.Accounts.UserDetail.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
           }
-          ensureRolesIsMutable();
-          roles_.add(value);
           onChanged();
         } else {
-          rolesBuilder_.addMessage(value);
+          userBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder addRoles(
-          int index, accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRolesIsMutable();
-          roles_.add(index, value);
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
           onChanged();
         } else {
-          rolesBuilder_.addMessage(index, value);
+          user_ = null;
+          userBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder addRoles(
-          accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(builderForValue.build());
-          onChanged();
+      public accounts.v1alpha1.Accounts.UserDetail.Builder getUserBuilder() {
+        
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       */
+      public accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
         } else {
-          rolesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder addRoles(
-          int index, accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          rolesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder addAllRoles(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Role> values) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, roles_);
-          onChanged();
-        } else {
-          rolesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder clearRoles() {
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          rolesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder removeRoles(int index) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.remove(index);
-          onChanged();
-        } else {
-          rolesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder getRolesBuilder(
-          int index) {
-        return getRolesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-          int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);  } else {
-          return rolesBuilder_.getMessageOrBuilder(index);
+          return user_ == null ?
+              accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-           getRolesOrBuilderList() {
-        if (rolesBuilder_ != null) {
-          return rolesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(roles_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder addRolesBuilder() {
-        return getRolesFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Role.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder addRolesBuilder(
-          int index) {
-        return getRolesFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Role.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Role.Builder> 
-           getRolesBuilderList() {
-        return getRolesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> 
-          getRolesFieldBuilder() {
-        if (rolesBuilder_ == null) {
-          rolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder>(
-                  roles_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder>(
+                  getUser(),
                   getParentForChildren(),
                   isClean());
-          roles_ = null;
+          user_ = null;
         }
-        return rolesBuilder_;
+        return userBuilder_;
       }
 
-      private java.util.List<accounts.v1alpha1.Accounts.Permission> permissions_ =
-        java.util.Collections.emptyList();
-      private void ensurePermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>(permissions_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder> permissionsBuilder_;
-
+      private java.lang.Object msg_ = "";
       /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
+       * @return The msg.
        */
-      public java.util.List<accounts.v1alpha1.Accounts.Permission> getPermissionsList() {
-        if (permissionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(permissions_);
-        } else {
-          return permissionsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public int getPermissionsCount() {
-        if (permissionsBuilder_ == null) {
-          return permissions_.size();
-        } else {
-          return permissionsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission getPermissions(int index) {
-        if (permissionsBuilder_ == null) {
-          return permissions_.get(index);
-        } else {
-          return permissionsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder setPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission value) {
-        if (permissionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePermissionsIsMutable();
-          permissions_.set(index, value);
-          onChanged();
-        } else {
-          permissionsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder setPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission.Builder builderForValue) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          permissionsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(accounts.v1alpha1.Accounts.Permission value) {
-        if (permissionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePermissionsIsMutable();
-          permissions_.add(value);
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission value) {
-        if (permissionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePermissionsIsMutable();
-          permissions_.add(index, value);
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(
-          accounts.v1alpha1.Accounts.Permission.Builder builderForValue) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.add(builderForValue.build());
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission.Builder builderForValue) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addAllPermissions(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Permission> values) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, permissions_);
-          onChanged();
-        } else {
-          permissionsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder clearPermissions() {
-        if (permissionsBuilder_ == null) {
-          permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          permissionsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder removePermissions(int index) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.remove(index);
-          onChanged();
-        } else {
-          permissionsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission.Builder getPermissionsBuilder(
-          int index) {
-        return getPermissionsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.PermissionOrBuilder getPermissionsOrBuilder(
-          int index) {
-        if (permissionsBuilder_ == null) {
-          return permissions_.get(index);  } else {
-          return permissionsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-           getPermissionsOrBuilderList() {
-        if (permissionsBuilder_ != null) {
-          return permissionsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(permissions_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission.Builder addPermissionsBuilder() {
-        return getPermissionsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Permission.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission.Builder addPermissionsBuilder(
-          int index) {
-        return getPermissionsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Permission.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Permission.Builder> 
-           getPermissionsBuilderList() {
-        return getPermissionsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-          getPermissionsFieldBuilder() {
-        if (permissionsBuilder_ == null) {
-          permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder>(
-                  permissions_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          permissions_ = null;
-        }
-        return permissionsBuilder_;
-      }
-
-      private boolean isSuperUser_ ;
-      /**
-       * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-       * @return The isSuperUser.
-       */
-      @java.lang.Override
-      public boolean getIsSuperUser() {
-        return isSuperUser_;
-      }
-      /**
-       * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-       * @param value The isSuperUser to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSuperUser(boolean value) {
-        
-        isSuperUser_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSuperUser() {
-        
-        isSuperUser_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Organization> organizations_ =
-        java.util.Collections.emptyList();
-      private void ensureOrganizationsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          organizations_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Organization>(organizations_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Organization, accounts.v1alpha1.Accounts.Organization.Builder, accounts.v1alpha1.Accounts.OrganizationOrBuilder> organizationsBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Organization> getOrganizationsList() {
-        if (organizationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(organizations_);
-        } else {
-          return organizationsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public int getOrganizationsCount() {
-        if (organizationsBuilder_ == null) {
-          return organizations_.size();
-        } else {
-          return organizationsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization getOrganizations(int index) {
-        if (organizationsBuilder_ == null) {
-          return organizations_.get(index);
-        } else {
-          return organizationsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder setOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization value) {
-        if (organizationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOrganizationsIsMutable();
-          organizations_.set(index, value);
-          onChanged();
-        } else {
-          organizationsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder setOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          organizationsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(accounts.v1alpha1.Accounts.Organization value) {
-        if (organizationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOrganizationsIsMutable();
-          organizations_.add(value);
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization value) {
-        if (organizationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOrganizationsIsMutable();
-          organizations_.add(index, value);
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(
-          accounts.v1alpha1.Accounts.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.add(builderForValue.build());
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addAllOrganizations(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Organization> values) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, organizations_);
-          onChanged();
-        } else {
-          organizationsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder clearOrganizations() {
-        if (organizationsBuilder_ == null) {
-          organizations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          organizationsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder removeOrganizations(int index) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.remove(index);
-          onChanged();
-        } else {
-          organizationsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization.Builder getOrganizationsBuilder(
-          int index) {
-        return getOrganizationsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-          int index) {
-        if (organizationsBuilder_ == null) {
-          return organizations_.get(index);  } else {
-          return organizationsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-           getOrganizationsOrBuilderList() {
-        if (organizationsBuilder_ != null) {
-          return organizationsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(organizations_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization.Builder addOrganizationsBuilder() {
-        return getOrganizationsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Organization.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization.Builder addOrganizationsBuilder(
-          int index) {
-        return getOrganizationsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Organization.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Organization.Builder> 
-           getOrganizationsBuilderList() {
-        return getOrganizationsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Organization, accounts.v1alpha1.Accounts.Organization.Builder, accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-          getOrganizationsFieldBuilder() {
-        if (organizationsBuilder_ == null) {
-          organizationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Organization, accounts.v1alpha1.Accounts.Organization.Builder, accounts.v1alpha1.Accounts.OrganizationOrBuilder>(
-                  organizations_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          organizations_ = null;
-        }
-        return organizationsBuilder_;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
-        java.util.Collections.emptyList();
-      private void ensureProjectsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
-        if (projectsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(projects_);
-        } else {
-          return projectsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public int getProjectsCount() {
-        if (projectsBuilder_ == null) {
-          return projects_.size();
-        } else {
-          return projectsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
-        if (projectsBuilder_ == null) {
-          return projects_.get(index);
-        } else {
-          return projectsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder setProjects(
-          int index, accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.set(index, value);
-          onChanged();
-        } else {
-          projectsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder setProjects(
-          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.add(value);
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          int index, accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.add(index, value);
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.add(builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder addAllProjects(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, projects_);
-          onChanged();
-        } else {
-          projectsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder clearProjects() {
-        if (projectsBuilder_ == null) {
-          projects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          projectsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public Builder removeProjects(int index) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.remove(index);
-          onChanged();
-        } else {
-          projectsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
-          int index) {
-        return getProjectsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-          int index) {
-        if (projectsBuilder_ == null) {
-          return projects_.get(index);  } else {
-          return projectsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-           getProjectsOrBuilderList() {
-        if (projectsBuilder_ != null) {
-          return projectsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(projects_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
-        return getProjectsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
-          int index) {
-        return getProjectsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
-           getProjectsBuilderList() {
-        return getProjectsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-          getProjectsFieldBuilder() {
-        if (projectsBuilder_ == null) {
-          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
-                  projects_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          projects_ = null;
-        }
-        return projectsBuilder_;
-      }
-
-      private java.lang.Object phoneNumber_ = "";
-      /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-       * @return The phoneNumber.
-       */
-      public java.lang.String getPhoneNumber() {
-        java.lang.Object ref = phoneNumber_;
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          phoneNumber_ = s;
+          msg_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-       * @return The bytes for phoneNumber.
+       * <code>string msg = 2 [json_name = "msg"];</code>
+       * @return The bytes for msg.
        */
       public com.google.protobuf.ByteString
-          getPhoneNumberBytes() {
-        java.lang.Object ref = phoneNumber_;
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          phoneNumber_ = b;
+          msg_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-       * @param value The phoneNumber to set.
+       * <code>string msg = 2 [json_name = "msg"];</code>
+       * @param value The msg to set.
        * @return This builder for chaining.
        */
-      public Builder setPhoneNumber(
+      public Builder setMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        phoneNumber_ = value;
+        msg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPhoneNumber() {
+      public Builder clearMsg() {
         
-        phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        msg_ = getDefaultInstance().getMsg();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 14 [json_name = "phoneNumber"];</code>
-       * @param value The bytes for phoneNumber to set.
+       * <code>string msg = 2 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
        * @return This builder for chaining.
        */
-      public Builder setPhoneNumberBytes(
+      public Builder setMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        phoneNumber_ = value;
+        msg_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object country_ = "";
+      private java.lang.Object error_ = "";
       /**
-       * <code>string country = 15 [json_name = "country"];</code>
-       * @return The country.
+       * <code>string error = 3 [json_name = "error"];</code>
+       * @return The error.
        */
-      public java.lang.String getCountry() {
-        java.lang.Object ref = country_;
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          country_ = s;
+          error_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string country = 15 [json_name = "country"];</code>
-       * @return The bytes for country.
+       * <code>string error = 3 [json_name = "error"];</code>
+       * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
-          getCountryBytes() {
-        java.lang.Object ref = country_;
+          getErrorBytes() {
+        java.lang.Object ref = error_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          country_ = b;
+          error_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string country = 15 [json_name = "country"];</code>
-       * @param value The country to set.
+       * <code>string error = 3 [json_name = "error"];</code>
+       * @param value The error to set.
        * @return This builder for chaining.
        */
-      public Builder setCountry(
+      public Builder setError(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        country_ = value;
+        error_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string country = 15 [json_name = "country"];</code>
+       * <code>string error = 3 [json_name = "error"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearCountry() {
+      public Builder clearError() {
         
-        country_ = getDefaultInstance().getCountry();
+        error_ = getDefaultInstance().getError();
         onChanged();
         return this;
       }
       /**
-       * <code>string country = 15 [json_name = "country"];</code>
-       * @param value The bytes for country to set.
+       * <code>string error = 3 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
-      public Builder setCountryBytes(
+      public Builder setErrorBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        country_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object city_ = "";
-      /**
-       * <code>string city = 16 [json_name = "city"];</code>
-       * @return The city.
-       */
-      public java.lang.String getCity() {
-        java.lang.Object ref = city_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          city_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string city = 16 [json_name = "city"];</code>
-       * @return The bytes for city.
-       */
-      public com.google.protobuf.ByteString
-          getCityBytes() {
-        java.lang.Object ref = city_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          city_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string city = 16 [json_name = "city"];</code>
-       * @param value The city to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCity(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        city_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string city = 16 [json_name = "city"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCity() {
-        
-        city_ = getDefaultInstance().getCity();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string city = 16 [json_name = "city"];</code>
-       * @param value The bytes for city to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCityBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        city_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object zipCode_ = "";
-      /**
-       * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-       * @return The zipCode.
-       */
-      public java.lang.String getZipCode() {
-        java.lang.Object ref = zipCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          zipCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-       * @return The bytes for zipCode.
-       */
-      public com.google.protobuf.ByteString
-          getZipCodeBytes() {
-        java.lang.Object ref = zipCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          zipCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-       * @param value The zipCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZipCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        zipCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearZipCode() {
-        
-        zipCode_ = getDefaultInstance().getZipCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string zip_code = 17 [json_name = "zipCode"];</code>
-       * @param value The bytes for zipCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZipCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        zipCode_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object address_ = "";
-      /**
-       * <code>string address = 18 [json_name = "address"];</code>
-       * @return The address.
-       */
-      public java.lang.String getAddress() {
-        java.lang.Object ref = address_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          address_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string address = 18 [json_name = "address"];</code>
-       * @return The bytes for address.
-       */
-      public com.google.protobuf.ByteString
-          getAddressBytes() {
-        java.lang.Object ref = address_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          address_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string address = 18 [json_name = "address"];</code>
-       * @param value The address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddress(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        address_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string address = 18 [json_name = "address"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAddress() {
-        
-        address_ = getDefaultInstance().getAddress();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string address = 18 [json_name = "address"];</code>
-       * @param value The bytes for address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        address_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object state_ = "";
-      /**
-       * <code>string state = 19 [json_name = "state"];</code>
-       * @return The state.
-       */
-      public java.lang.String getState() {
-        java.lang.Object ref = state_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          state_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string state = 19 [json_name = "state"];</code>
-       * @return The bytes for state.
-       */
-      public com.google.protobuf.ByteString
-          getStateBytes() {
-        java.lang.Object ref = state_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          state_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string state = 19 [json_name = "state"];</code>
-       * @param value The state to set.
-       * @return This builder for chaining.
-       */
-      public Builder setState(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        state_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 19 [json_name = "state"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearState() {
-        
-        state_ = getDefaultInstance().getState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 19 [json_name = "state"];</code>
-       * @param value The bytes for state to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        state_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object emojiCountry_ = "";
-      /**
-       * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-       * @return The emojiCountry.
-       */
-      public java.lang.String getEmojiCountry() {
-        java.lang.Object ref = emojiCountry_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          emojiCountry_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-       * @return The bytes for emojiCountry.
-       */
-      public com.google.protobuf.ByteString
-          getEmojiCountryBytes() {
-        java.lang.Object ref = emojiCountry_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          emojiCountry_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-       * @param value The emojiCountry to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmojiCountry(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        emojiCountry_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmojiCountry() {
-        
-        emojiCountry_ = getDefaultInstance().getEmojiCountry();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string emoji_country = 20 [json_name = "emojiCountry"];</code>
-       * @param value The bytes for emojiCountry to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmojiCountryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        emojiCountry_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean emailVerified_ ;
-      /**
-       * <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
-       * @return The emailVerified.
-       */
-      @java.lang.Override
-      public boolean getEmailVerified() {
-        return emailVerified_;
-      }
-      /**
-       * <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
-       * @param value The emailVerified to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailVerified(boolean value) {
-        
-        emailVerified_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool email_verified = 21 [json_name = "emailVerified"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmailVerified() {
-        
-        emailVerified_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isMfaEnabled_ ;
-      /**
-       * <pre>
-       * preferences
-       * </pre>
-       *
-       * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-       * @return The isMfaEnabled.
-       */
-      @java.lang.Override
-      public boolean getIsMfaEnabled() {
-        return isMfaEnabled_;
-      }
-      /**
-       * <pre>
-       * preferences
-       * </pre>
-       *
-       * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-       * @param value The isMfaEnabled to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsMfaEnabled(boolean value) {
-        
-        isMfaEnabled_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * preferences
-       * </pre>
-       *
-       * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsMfaEnabled() {
-        
-        isMfaEnabled_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object language_ = "";
-      /**
-       * <code>string language = 23 [json_name = "language"];</code>
-       * @return The language.
-       */
-      public java.lang.String getLanguage() {
-        java.lang.Object ref = language_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          language_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string language = 23 [json_name = "language"];</code>
-       * @return The bytes for language.
-       */
-      public com.google.protobuf.ByteString
-          getLanguageBytes() {
-        java.lang.Object ref = language_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          language_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string language = 23 [json_name = "language"];</code>
-       * @param value The language to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLanguage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        language_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string language = 23 [json_name = "language"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLanguage() {
-        
-        language_ = getDefaultInstance().getLanguage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string language = 23 [json_name = "language"];</code>
-       * @param value The bytes for language to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLanguageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        language_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean pushNotification_ ;
-      /**
-       * <code>bool push_notification = 24 [json_name = "pushNotification"];</code>
-       * @return The pushNotification.
-       */
-      @java.lang.Override
-      public boolean getPushNotification() {
-        return pushNotification_;
-      }
-      /**
-       * <code>bool push_notification = 24 [json_name = "pushNotification"];</code>
-       * @param value The pushNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPushNotification(boolean value) {
-        
-        pushNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool push_notification = 24 [json_name = "pushNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPushNotification() {
-        
-        pushNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean emailNotification_ ;
-      /**
-       * <code>bool email_notification = 25 [json_name = "emailNotification"];</code>
-       * @return The emailNotification.
-       */
-      @java.lang.Override
-      public boolean getEmailNotification() {
-        return emailNotification_;
-      }
-      /**
-       * <code>bool email_notification = 25 [json_name = "emailNotification"];</code>
-       * @param value The emailNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailNotification(boolean value) {
-        
-        emailNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool email_notification = 25 [json_name = "emailNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmailNotification() {
-        
-        emailNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean newLoginNotification_ ;
-      /**
-       * <code>bool new_login_notification = 26 [json_name = "newLoginNotification"];</code>
-       * @return The newLoginNotification.
-       */
-      @java.lang.Override
-      public boolean getNewLoginNotification() {
-        return newLoginNotification_;
-      }
-      /**
-       * <code>bool new_login_notification = 26 [json_name = "newLoginNotification"];</code>
-       * @param value The newLoginNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNewLoginNotification(boolean value) {
-        
-        newLoginNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool new_login_notification = 26 [json_name = "newLoginNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNewLoginNotification() {
-        
-        newLoginNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean createNotification_ ;
-      /**
-       * <code>bool create_notification = 27 [json_name = "createNotification"];</code>
-       * @return The createNotification.
-       */
-      @java.lang.Override
-      public boolean getCreateNotification() {
-        return createNotification_;
-      }
-      /**
-       * <code>bool create_notification = 27 [json_name = "createNotification"];</code>
-       * @param value The createNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateNotification(boolean value) {
-        
-        createNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool create_notification = 27 [json_name = "createNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreateNotification() {
-        
-        createNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean updateNotification_ ;
-      /**
-       * <code>bool update_notification = 28 [json_name = "updateNotification"];</code>
-       * @return The updateNotification.
-       */
-      @java.lang.Override
-      public boolean getUpdateNotification() {
-        return updateNotification_;
-      }
-      /**
-       * <code>bool update_notification = 28 [json_name = "updateNotification"];</code>
-       * @param value The updateNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdateNotification(boolean value) {
-        
-        updateNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool update_notification = 28 [json_name = "updateNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdateNotification() {
-        
-        updateNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean deleteNotification_ ;
-      /**
-       * <code>bool delete_notification = 29 [json_name = "deleteNotification"];</code>
-       * @return The deleteNotification.
-       */
-      @java.lang.Override
-      public boolean getDeleteNotification() {
-        return deleteNotification_;
-      }
-      /**
-       * <code>bool delete_notification = 29 [json_name = "deleteNotification"];</code>
-       * @param value The deleteNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeleteNotification(boolean value) {
-        
-        deleteNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool delete_notification = 29 [json_name = "deleteNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDeleteNotification() {
-        
-        deleteNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean applicationNotification_ ;
-      /**
-       * <code>bool application_notification = 30 [json_name = "applicationNotification"];</code>
-       * @return The applicationNotification.
-       */
-      @java.lang.Override
-      public boolean getApplicationNotification() {
-        return applicationNotification_;
-      }
-      /**
-       * <code>bool application_notification = 30 [json_name = "applicationNotification"];</code>
-       * @param value The applicationNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApplicationNotification(boolean value) {
-        
-        applicationNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool application_notification = 30 [json_name = "applicationNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearApplicationNotification() {
-        
-        applicationNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean readNotification_ ;
-      /**
-       * <code>bool read_notification = 31 [json_name = "readNotification"];</code>
-       * @return The readNotification.
-       */
-      @java.lang.Override
-      public boolean getReadNotification() {
-        return readNotification_;
-      }
-      /**
-       * <code>bool read_notification = 31 [json_name = "readNotification"];</code>
-       * @param value The readNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReadNotification(boolean value) {
-        
-        readNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool read_notification = 31 [json_name = "readNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReadNotification() {
-        
-        readNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object phoneCode_ = "";
-      /**
-       * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-       * @return The phoneCode.
-       */
-      public java.lang.String getPhoneCode() {
-        java.lang.Object ref = phoneCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          phoneCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-       * @return The bytes for phoneCode.
-       */
-      public com.google.protobuf.ByteString
-          getPhoneCodeBytes() {
-        java.lang.Object ref = phoneCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          phoneCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-       * @param value The phoneCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phoneCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhoneCode() {
-        
-        phoneCode_ = getDefaultInstance().getPhoneCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone_code = 32 [json_name = "phoneCode"];</code>
-       * @param value The bytes for phoneCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phoneCode_ = value;
+        error_ = value;
         onChanged();
         return this;
       }
@@ -19049,414 +14983,43 @@ public final class Users {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return Whether the user field is set.
      */
-    int getId();
+    boolean hasUser();
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return The user.
+     */
+    accounts.v1alpha1.Accounts.UserDetail getUser();
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     */
+    accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder();
 
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The userId.
-     */
-    java.lang.String getUserId();
-    /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The bytes for userId.
-     */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
-
-    /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The firstName.
-     */
-    java.lang.String getFirstName();
-    /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The bytes for firstName.
-     */
-    com.google.protobuf.ByteString
-        getFirstNameBytes();
-
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The lastName.
-     */
-    java.lang.String getLastName();
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The bytes for lastName.
-     */
-    com.google.protobuf.ByteString
-        getLastNameBytes();
-
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The email.
-     */
-    java.lang.String getEmail();
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
-
-    /**
-     * <code>bool is_active = 6 [json_name = "isActive"];</code>
-     * @return The isActive.
-     */
-    boolean getIsActive();
-
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The createdAt.
-     */
-    java.lang.String getCreatedAt();
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The bytes for createdAt.
-     */
-    com.google.protobuf.ByteString
-        getCreatedAtBytes();
-
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The updatedAt.
-     */
-    java.lang.String getUpdatedAt();
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The bytes for updatedAt.
-     */
-    com.google.protobuf.ByteString
-        getUpdatedAtBytes();
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Role> 
-        getRolesList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    accounts.v1alpha1.Accounts.Role getRoles(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    int getRolesCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-        getRolesOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Permission> 
-        getPermissionsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    accounts.v1alpha1.Accounts.Permission getPermissions(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    int getPermissionsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-        getPermissionsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    accounts.v1alpha1.Accounts.PermissionOrBuilder getPermissionsOrBuilder(
-        int index);
-
-    /**
-     * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-     * @return The isSuperUser.
-     */
-    boolean getIsSuperUser();
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Organization> 
-        getOrganizationsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    accounts.v1alpha1.Accounts.Organization getOrganizations(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    int getOrganizationsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-        getOrganizationsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-        int index);
-
-    /**
-     * <code>string msg = 13 [json_name = "msg"];</code>
+     * <code>string msg = 2 [json_name = "msg"];</code>
      * @return The msg.
      */
     java.lang.String getMsg();
     /**
-     * <code>string msg = 13 [json_name = "msg"];</code>
+     * <code>string msg = 2 [json_name = "msg"];</code>
      * @return The bytes for msg.
      */
     com.google.protobuf.ByteString
         getMsgBytes();
 
     /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Project> 
-        getProjectsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    accounts.v1alpha1.Accounts.Project getProjects(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    int getProjectsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-        getProjectsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-     * @return The phoneNumber.
-     */
-    java.lang.String getPhoneNumber();
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-     * @return The bytes for phoneNumber.
-     */
-    com.google.protobuf.ByteString
-        getPhoneNumberBytes();
-
-    /**
-     * <code>string country = 16 [json_name = "country"];</code>
-     * @return The country.
-     */
-    java.lang.String getCountry();
-    /**
-     * <code>string country = 16 [json_name = "country"];</code>
-     * @return The bytes for country.
-     */
-    com.google.protobuf.ByteString
-        getCountryBytes();
-
-    /**
-     * <code>string city = 17 [json_name = "city"];</code>
-     * @return The city.
-     */
-    java.lang.String getCity();
-    /**
-     * <code>string city = 17 [json_name = "city"];</code>
-     * @return The bytes for city.
-     */
-    com.google.protobuf.ByteString
-        getCityBytes();
-
-    /**
-     * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-     * @return The zipCode.
-     */
-    java.lang.String getZipCode();
-    /**
-     * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-     * @return The bytes for zipCode.
-     */
-    com.google.protobuf.ByteString
-        getZipCodeBytes();
-
-    /**
-     * <code>string address = 19 [json_name = "address"];</code>
-     * @return The address.
-     */
-    java.lang.String getAddress();
-    /**
-     * <code>string address = 19 [json_name = "address"];</code>
-     * @return The bytes for address.
-     */
-    com.google.protobuf.ByteString
-        getAddressBytes();
-
-    /**
-     * <code>string state = 20 [json_name = "state"];</code>
-     * @return The state.
-     */
-    java.lang.String getState();
-    /**
-     * <code>string state = 20 [json_name = "state"];</code>
-     * @return The bytes for state.
-     */
-    com.google.protobuf.ByteString
-        getStateBytes();
-
-    /**
-     * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-     * @return The emojiCountry.
-     */
-    java.lang.String getEmojiCountry();
-    /**
-     * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-     * @return The bytes for emojiCountry.
-     */
-    com.google.protobuf.ByteString
-        getEmojiCountryBytes();
-
-    /**
-     * <pre>
-     *multi-factor
-     * </pre>
-     *
-     * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-     * @return The isMfaEnabled.
-     */
-    boolean getIsMfaEnabled();
-
-    /**
-     * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-     * @return The tokenCcp.
-     */
-    java.lang.String getTokenCcp();
-    /**
-     * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-     * @return The bytes for tokenCcp.
-     */
-    com.google.protobuf.ByteString
-        getTokenCcpBytes();
-
-    /**
-     * <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
-     * @return The emailVerified.
-     */
-    boolean getEmailVerified();
-
-    /**
-     * <code>string error = 25 [json_name = "error"];</code>
+     * <code>string error = 3 [json_name = "error"];</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 25 [json_name = "error"];</code>
+     * <code>string error = 3 [json_name = "error"];</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
         getErrorBytes();
-
-    /**
-     * <pre>
-     *preferences
-     * </pre>
-     *
-     * <code>string language = 26 [json_name = "language"];</code>
-     * @return The language.
-     */
-    java.lang.String getLanguage();
-    /**
-     * <pre>
-     *preferences
-     * </pre>
-     *
-     * <code>string language = 26 [json_name = "language"];</code>
-     * @return The bytes for language.
-     */
-    com.google.protobuf.ByteString
-        getLanguageBytes();
-
-    /**
-     * <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
-     * @return The pushNotification.
-     */
-    boolean getPushNotification();
-
-    /**
-     * <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
-     * @return The emailNotification.
-     */
-    boolean getEmailNotification();
-
-    /**
-     * <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
-     * @return The newLoginNotification.
-     */
-    boolean getNewLoginNotification();
-
-    /**
-     * <code>bool create_notification = 30 [json_name = "createNotification"];</code>
-     * @return The createNotification.
-     */
-    boolean getCreateNotification();
-
-    /**
-     * <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
-     * @return The updateNotification.
-     */
-    boolean getUpdateNotification();
-
-    /**
-     * <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
-     * @return The deleteNotification.
-     */
-    boolean getDeleteNotification();
-
-    /**
-     * <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
-     * @return The applicationNotification.
-     */
-    boolean getApplicationNotification();
-
-    /**
-     * <code>bool read_notification = 34 [json_name = "readNotification"];</code>
-     * @return The readNotification.
-     */
-    boolean getReadNotification();
-
-    /**
-     * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-     * @return The phoneCode.
-     */
-    java.lang.String getPhoneCode();
-    /**
-     * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-     * @return The bytes for phoneCode.
-     */
-    com.google.protobuf.ByteString
-        getPhoneCodeBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.users.v1.GetOneUserDexResponse}
@@ -19471,28 +15034,8 @@ public final class Users {
       super(builder);
     }
     private GetOneUserDexResponse() {
-      userId_ = "";
-      firstName_ = "";
-      lastName_ = "";
-      email_ = "";
-      createdAt_ = "";
-      updatedAt_ = "";
-      roles_ = java.util.Collections.emptyList();
-      permissions_ = java.util.Collections.emptyList();
-      organizations_ = java.util.Collections.emptyList();
       msg_ = "";
-      projects_ = java.util.Collections.emptyList();
-      phoneNumber_ = "";
-      country_ = "";
-      city_ = "";
-      zipCode_ = "";
-      address_ = "";
-      state_ = "";
-      emojiCountry_ = "";
-      tokenCcp_ = "";
       error_ = "";
-      language_ = "";
-      phoneCode_ = "";
     }
 
     @java.lang.Override
@@ -19515,7 +15058,6 @@ public final class Users {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -19526,213 +15068,29 @@ public final class Users {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              accounts.v1alpha1.Accounts.UserDetail.Builder subBuilder = null;
+              if (user_ != null) {
+                subBuilder = user_.toBuilder();
+              }
+              user_ = input.readMessage(accounts.v1alpha1.Accounts.UserDetail.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
+              }
 
-              id_ = input.readUInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userId_ = s;
+              msg_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              firstName_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastName_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              email_ = s;
-              break;
-            }
-            case 48: {
-
-              isActive_ = input.readBool();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createdAt_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              updatedAt_ = s;
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Role>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              roles_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Role.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              permissions_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Permission.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              isSuperUser_ = input.readBool();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                organizations_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Organization>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              organizations_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Organization.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              msg_ = s;
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              projects_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              phoneNumber_ = s;
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              country_ = s;
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              city_ = s;
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zipCode_ = s;
-              break;
-            }
-            case 154: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
-            case 162: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              state_ = s;
-              break;
-            }
-            case 170: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              emojiCountry_ = s;
-              break;
-            }
-            case 176: {
-
-              isMfaEnabled_ = input.readBool();
-              break;
-            }
-            case 186: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tokenCcp_ = s;
-              break;
-            }
-            case 192: {
-
-              emailVerified_ = input.readBool();
-              break;
-            }
-            case 202: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               error_ = s;
-              break;
-            }
-            case 210: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              language_ = s;
-              break;
-            }
-            case 216: {
-
-              pushNotification_ = input.readBool();
-              break;
-            }
-            case 224: {
-
-              emailNotification_ = input.readBool();
-              break;
-            }
-            case 232: {
-
-              newLoginNotification_ = input.readBool();
-              break;
-            }
-            case 240: {
-
-              createNotification_ = input.readBool();
-              break;
-            }
-            case 248: {
-
-              updateNotification_ = input.readBool();
-              break;
-            }
-            case 256: {
-
-              deleteNotification_ = input.readBool();
-              break;
-            }
-            case 264: {
-
-              applicationNotification_ = input.readBool();
-              break;
-            }
-            case 272: {
-
-              readNotification_ = input.readBool();
-              break;
-            }
-            case 282: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              phoneCode_ = s;
               break;
             }
             default: {
@@ -19750,18 +15108,6 @@ public final class Users {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roles_ = java.util.Collections.unmodifiableList(roles_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          permissions_ = java.util.Collections.unmodifiableList(permissions_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          organizations_ = java.util.Collections.unmodifiableList(organizations_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          projects_ = java.util.Collections.unmodifiableList(projects_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -19779,391 +15125,36 @@ public final class Users {
               accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse.class, accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int USER_FIELD_NUMBER = 1;
+    private accounts.v1alpha1.Accounts.UserDetail user_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return Whether the user field is set.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.UserDetail getUser() {
+      return user_ == null ? accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder() {
+      return getUser();
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object userId_;
-    /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The userId.
-     */
-    @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
-     * @return The bytes for userId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FIRST_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object firstName_;
-    /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The firstName.
-     */
-    @java.lang.Override
-    public java.lang.String getFirstName() {
-      java.lang.Object ref = firstName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        firstName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string first_name = 3 [json_name = "firstName"];</code>
-     * @return The bytes for firstName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFirstNameBytes() {
-      java.lang.Object ref = firstName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        firstName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LAST_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object lastName_;
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The lastName.
-     */
-    @java.lang.Override
-    public java.lang.String getLastName() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string last_name = 4 [json_name = "lastName"];</code>
-     * @return The bytes for lastName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLastNameBytes() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lastName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 5;
-    private volatile java.lang.Object email_;
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The email.
-     */
-    @java.lang.Override
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string email = 5 [json_name = "email"];</code>
-     * @return The bytes for email.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_ACTIVE_FIELD_NUMBER = 6;
-    private boolean isActive_;
-    /**
-     * <code>bool is_active = 6 [json_name = "isActive"];</code>
-     * @return The isActive.
-     */
-    @java.lang.Override
-    public boolean getIsActive() {
-      return isActive_;
-    }
-
-    public static final int CREATED_AT_FIELD_NUMBER = 7;
-    private volatile java.lang.Object createdAt_;
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The createdAt.
-     */
-    @java.lang.Override
-    public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdAt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string created_at = 7 [json_name = "createdAt"];</code>
-     * @return The bytes for createdAt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreatedAtBytes() {
-      java.lang.Object ref = createdAt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdAt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UPDATED_AT_FIELD_NUMBER = 8;
-    private volatile java.lang.Object updatedAt_;
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The updatedAt.
-     */
-    @java.lang.Override
-    public java.lang.String getUpdatedAt() {
-      java.lang.Object ref = updatedAt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updatedAt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-     * @return The bytes for updatedAt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUpdatedAtBytes() {
-      java.lang.Object ref = updatedAt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updatedAt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROLES_FIELD_NUMBER = 9;
-    private java.util.List<accounts.v1alpha1.Accounts.Role> roles_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Role> getRolesList() {
-      return roles_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-        getRolesOrBuilderList() {
-      return roles_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public int getRolesCount() {
-      return roles_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Role getRoles(int index) {
-      return roles_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-        int index) {
-      return roles_.get(index);
-    }
-
-    public static final int PERMISSIONS_FIELD_NUMBER = 10;
-    private java.util.List<accounts.v1alpha1.Accounts.Permission> permissions_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Permission> getPermissionsList() {
-      return permissions_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-        getPermissionsOrBuilderList() {
-      return permissions_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public int getPermissionsCount() {
-      return permissions_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Permission getPermissions(int index) {
-      return permissions_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.PermissionOrBuilder getPermissionsOrBuilder(
-        int index) {
-      return permissions_.get(index);
-    }
-
-    public static final int IS_SUPER_USER_FIELD_NUMBER = 11;
-    private boolean isSuperUser_;
-    /**
-     * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-     * @return The isSuperUser.
-     */
-    @java.lang.Override
-    public boolean getIsSuperUser() {
-      return isSuperUser_;
-    }
-
-    public static final int ORGANIZATIONS_FIELD_NUMBER = 12;
-    private java.util.List<accounts.v1alpha1.Accounts.Organization> organizations_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Organization> getOrganizationsList() {
-      return organizations_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-        getOrganizationsOrBuilderList() {
-      return organizations_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public int getOrganizationsCount() {
-      return organizations_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Organization getOrganizations(int index) {
-      return organizations_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-        int index) {
-      return organizations_.get(index);
-    }
-
-    public static final int MSG_FIELD_NUMBER = 13;
+    public static final int MSG_FIELD_NUMBER = 2;
     private volatile java.lang.Object msg_;
     /**
-     * <code>string msg = 13 [json_name = "msg"];</code>
+     * <code>string msg = 2 [json_name = "msg"];</code>
      * @return The msg.
      */
     @java.lang.Override
@@ -20180,7 +15171,7 @@ public final class Users {
       }
     }
     /**
-     * <code>string msg = 13 [json_name = "msg"];</code>
+     * <code>string msg = 2 [json_name = "msg"];</code>
      * @return The bytes for msg.
      */
     @java.lang.Override
@@ -20198,388 +15189,10 @@ public final class Users {
       }
     }
 
-    public static final int PROJECTS_FIELD_NUMBER = 14;
-    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
-      return projects_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-        getProjectsOrBuilderList() {
-      return projects_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public int getProjectsCount() {
-      return projects_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
-      return projects_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-        int index) {
-      return projects_.get(index);
-    }
-
-    public static final int PHONE_NUMBER_FIELD_NUMBER = 15;
-    private volatile java.lang.Object phoneNumber_;
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-     * @return The phoneNumber.
-     */
-    @java.lang.Override
-    public java.lang.String getPhoneNumber() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneNumber_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * details
-     * </pre>
-     *
-     * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-     * @return The bytes for phoneNumber.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int COUNTRY_FIELD_NUMBER = 16;
-    private volatile java.lang.Object country_;
-    /**
-     * <code>string country = 16 [json_name = "country"];</code>
-     * @return The country.
-     */
-    @java.lang.Override
-    public java.lang.String getCountry() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        country_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string country = 16 [json_name = "country"];</code>
-     * @return The bytes for country.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCountryBytes() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        country_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CITY_FIELD_NUMBER = 17;
-    private volatile java.lang.Object city_;
-    /**
-     * <code>string city = 17 [json_name = "city"];</code>
-     * @return The city.
-     */
-    @java.lang.Override
-    public java.lang.String getCity() {
-      java.lang.Object ref = city_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        city_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string city = 17 [json_name = "city"];</code>
-     * @return The bytes for city.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCityBytes() {
-      java.lang.Object ref = city_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        city_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ZIP_CODE_FIELD_NUMBER = 18;
-    private volatile java.lang.Object zipCode_;
-    /**
-     * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-     * @return The zipCode.
-     */
-    @java.lang.Override
-    public java.lang.String getZipCode() {
-      java.lang.Object ref = zipCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        zipCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-     * @return The bytes for zipCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getZipCodeBytes() {
-      java.lang.Object ref = zipCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        zipCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ADDRESS_FIELD_NUMBER = 19;
-    private volatile java.lang.Object address_;
-    /**
-     * <code>string address = 19 [json_name = "address"];</code>
-     * @return The address.
-     */
-    @java.lang.Override
-    public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        address_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string address = 19 [json_name = "address"];</code>
-     * @return The bytes for address.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAddressBytes() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        address_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATE_FIELD_NUMBER = 20;
-    private volatile java.lang.Object state_;
-    /**
-     * <code>string state = 20 [json_name = "state"];</code>
-     * @return The state.
-     */
-    @java.lang.Override
-    public java.lang.String getState() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        state_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string state = 20 [json_name = "state"];</code>
-     * @return The bytes for state.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        state_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMOJI_COUNTRY_FIELD_NUMBER = 21;
-    private volatile java.lang.Object emojiCountry_;
-    /**
-     * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-     * @return The emojiCountry.
-     */
-    @java.lang.Override
-    public java.lang.String getEmojiCountry() {
-      java.lang.Object ref = emojiCountry_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        emojiCountry_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-     * @return The bytes for emojiCountry.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmojiCountryBytes() {
-      java.lang.Object ref = emojiCountry_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        emojiCountry_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_MFA_ENABLED_FIELD_NUMBER = 22;
-    private boolean isMfaEnabled_;
-    /**
-     * <pre>
-     *multi-factor
-     * </pre>
-     *
-     * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-     * @return The isMfaEnabled.
-     */
-    @java.lang.Override
-    public boolean getIsMfaEnabled() {
-      return isMfaEnabled_;
-    }
-
-    public static final int TOKEN_CCP_FIELD_NUMBER = 23;
-    private volatile java.lang.Object tokenCcp_;
-    /**
-     * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-     * @return The tokenCcp.
-     */
-    @java.lang.Override
-    public java.lang.String getTokenCcp() {
-      java.lang.Object ref = tokenCcp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tokenCcp_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-     * @return The bytes for tokenCcp.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenCcpBytes() {
-      java.lang.Object ref = tokenCcp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tokenCcp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_VERIFIED_FIELD_NUMBER = 24;
-    private boolean emailVerified_;
-    /**
-     * <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
-     * @return The emailVerified.
-     */
-    @java.lang.Override
-    public boolean getEmailVerified() {
-      return emailVerified_;
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 25;
+    public static final int ERROR_FIELD_NUMBER = 3;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 25 [json_name = "error"];</code>
+     * <code>string error = 3 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
@@ -20596,7 +15209,7 @@ public final class Users {
       }
     }
     /**
-     * <code>string error = 25 [json_name = "error"];</code>
+     * <code>string error = 3 [json_name = "error"];</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -20608,178 +15221,6 @@ public final class Users {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LANGUAGE_FIELD_NUMBER = 26;
-    private volatile java.lang.Object language_;
-    /**
-     * <pre>
-     *preferences
-     * </pre>
-     *
-     * <code>string language = 26 [json_name = "language"];</code>
-     * @return The language.
-     */
-    @java.lang.Override
-    public java.lang.String getLanguage() {
-      java.lang.Object ref = language_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        language_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *preferences
-     * </pre>
-     *
-     * <code>string language = 26 [json_name = "language"];</code>
-     * @return The bytes for language.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLanguageBytes() {
-      java.lang.Object ref = language_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        language_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PUSH_NOTIFICATION_FIELD_NUMBER = 27;
-    private boolean pushNotification_;
-    /**
-     * <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
-     * @return The pushNotification.
-     */
-    @java.lang.Override
-    public boolean getPushNotification() {
-      return pushNotification_;
-    }
-
-    public static final int EMAIL_NOTIFICATION_FIELD_NUMBER = 28;
-    private boolean emailNotification_;
-    /**
-     * <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
-     * @return The emailNotification.
-     */
-    @java.lang.Override
-    public boolean getEmailNotification() {
-      return emailNotification_;
-    }
-
-    public static final int NEW_LOGIN_NOTIFICATION_FIELD_NUMBER = 29;
-    private boolean newLoginNotification_;
-    /**
-     * <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
-     * @return The newLoginNotification.
-     */
-    @java.lang.Override
-    public boolean getNewLoginNotification() {
-      return newLoginNotification_;
-    }
-
-    public static final int CREATE_NOTIFICATION_FIELD_NUMBER = 30;
-    private boolean createNotification_;
-    /**
-     * <code>bool create_notification = 30 [json_name = "createNotification"];</code>
-     * @return The createNotification.
-     */
-    @java.lang.Override
-    public boolean getCreateNotification() {
-      return createNotification_;
-    }
-
-    public static final int UPDATE_NOTIFICATION_FIELD_NUMBER = 31;
-    private boolean updateNotification_;
-    /**
-     * <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
-     * @return The updateNotification.
-     */
-    @java.lang.Override
-    public boolean getUpdateNotification() {
-      return updateNotification_;
-    }
-
-    public static final int DELETE_NOTIFICATION_FIELD_NUMBER = 32;
-    private boolean deleteNotification_;
-    /**
-     * <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
-     * @return The deleteNotification.
-     */
-    @java.lang.Override
-    public boolean getDeleteNotification() {
-      return deleteNotification_;
-    }
-
-    public static final int APPLICATION_NOTIFICATION_FIELD_NUMBER = 33;
-    private boolean applicationNotification_;
-    /**
-     * <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
-     * @return The applicationNotification.
-     */
-    @java.lang.Override
-    public boolean getApplicationNotification() {
-      return applicationNotification_;
-    }
-
-    public static final int READ_NOTIFICATION_FIELD_NUMBER = 34;
-    private boolean readNotification_;
-    /**
-     * <code>bool read_notification = 34 [json_name = "readNotification"];</code>
-     * @return The readNotification.
-     */
-    @java.lang.Override
-    public boolean getReadNotification() {
-      return readNotification_;
-    }
-
-    public static final int PHONE_CODE_FIELD_NUMBER = 35;
-    private volatile java.lang.Object phoneCode_;
-    /**
-     * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-     * @return The phoneCode.
-     */
-    @java.lang.Override
-    public java.lang.String getPhoneCode() {
-      java.lang.Object ref = phoneCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-     * @return The bytes for phoneCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPhoneCodeBytes() {
-      java.lang.Object ref = phoneCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -20800,110 +15241,14 @@ public final class Users {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
-      }
-      if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
-      }
-      if (!getFirstNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
-      }
-      if (!getLastNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastName_);
-      }
-      if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
-      }
-      if (isActive_ != false) {
-        output.writeBool(6, isActive_);
-      }
-      if (!getCreatedAtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdAt_);
-      }
-      if (!getUpdatedAtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt_);
-      }
-      for (int i = 0; i < roles_.size(); i++) {
-        output.writeMessage(9, roles_.get(i));
-      }
-      for (int i = 0; i < permissions_.size(); i++) {
-        output.writeMessage(10, permissions_.get(i));
-      }
-      if (isSuperUser_ != false) {
-        output.writeBool(11, isSuperUser_);
-      }
-      for (int i = 0; i < organizations_.size(); i++) {
-        output.writeMessage(12, organizations_.get(i));
+      if (user_ != null) {
+        output.writeMessage(1, getUser());
       }
       if (!getMsgBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, msg_);
-      }
-      for (int i = 0; i < projects_.size(); i++) {
-        output.writeMessage(14, projects_.get(i));
-      }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, phoneNumber_);
-      }
-      if (!getCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, country_);
-      }
-      if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, city_);
-      }
-      if (!getZipCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, zipCode_);
-      }
-      if (!getAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, address_);
-      }
-      if (!getStateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, state_);
-      }
-      if (!getEmojiCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, emojiCountry_);
-      }
-      if (isMfaEnabled_ != false) {
-        output.writeBool(22, isMfaEnabled_);
-      }
-      if (!getTokenCcpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, tokenCcp_);
-      }
-      if (emailVerified_ != false) {
-        output.writeBool(24, emailVerified_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, error_);
-      }
-      if (!getLanguageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, language_);
-      }
-      if (pushNotification_ != false) {
-        output.writeBool(27, pushNotification_);
-      }
-      if (emailNotification_ != false) {
-        output.writeBool(28, emailNotification_);
-      }
-      if (newLoginNotification_ != false) {
-        output.writeBool(29, newLoginNotification_);
-      }
-      if (createNotification_ != false) {
-        output.writeBool(30, createNotification_);
-      }
-      if (updateNotification_ != false) {
-        output.writeBool(31, updateNotification_);
-      }
-      if (deleteNotification_ != false) {
-        output.writeBool(32, deleteNotification_);
-      }
-      if (applicationNotification_ != false) {
-        output.writeBool(33, applicationNotification_);
-      }
-      if (readNotification_ != false) {
-        output.writeBool(34, readNotification_);
-      }
-      if (!getPhoneCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 35, phoneCode_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -20914,127 +15259,15 @@ public final class Users {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
+      if (user_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
-      }
-      if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
-      }
-      if (!getFirstNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
-      }
-      if (!getLastNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastName_);
-      }
-      if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
-      }
-      if (isActive_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isActive_);
-      }
-      if (!getCreatedAtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdAt_);
-      }
-      if (!getUpdatedAtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt_);
-      }
-      for (int i = 0; i < roles_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, roles_.get(i));
-      }
-      for (int i = 0; i < permissions_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, permissions_.get(i));
-      }
-      if (isSuperUser_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isSuperUser_);
-      }
-      for (int i = 0; i < organizations_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, organizations_.get(i));
+          .computeMessageSize(1, getUser());
       }
       if (!getMsgBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, msg_);
-      }
-      for (int i = 0; i < projects_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, projects_.get(i));
-      }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, phoneNumber_);
-      }
-      if (!getCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, country_);
-      }
-      if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, city_);
-      }
-      if (!getZipCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, zipCode_);
-      }
-      if (!getAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, address_);
-      }
-      if (!getStateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, state_);
-      }
-      if (!getEmojiCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, emojiCountry_);
-      }
-      if (isMfaEnabled_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(22, isMfaEnabled_);
-      }
-      if (!getTokenCcpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, tokenCcp_);
-      }
-      if (emailVerified_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(24, emailVerified_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, error_);
-      }
-      if (!getLanguageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, language_);
-      }
-      if (pushNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(27, pushNotification_);
-      }
-      if (emailNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(28, emailNotification_);
-      }
-      if (newLoginNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(29, newLoginNotification_);
-      }
-      if (createNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(30, createNotification_);
-      }
-      if (updateNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(31, updateNotification_);
-      }
-      if (deleteNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(32, deleteNotification_);
-      }
-      if (applicationNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(33, applicationNotification_);
-      }
-      if (readNotification_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(34, readNotification_);
-      }
-      if (!getPhoneCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(35, phoneCode_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -21051,76 +15284,15 @@ public final class Users {
       }
       accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse other = (accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse) obj;
 
-      if (getId()
-          != other.getId()) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
-      if (!getFirstName()
-          .equals(other.getFirstName())) return false;
-      if (!getLastName()
-          .equals(other.getLastName())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-      if (getIsActive()
-          != other.getIsActive()) return false;
-      if (!getCreatedAt()
-          .equals(other.getCreatedAt())) return false;
-      if (!getUpdatedAt()
-          .equals(other.getUpdatedAt())) return false;
-      if (!getRolesList()
-          .equals(other.getRolesList())) return false;
-      if (!getPermissionsList()
-          .equals(other.getPermissionsList())) return false;
-      if (getIsSuperUser()
-          != other.getIsSuperUser()) return false;
-      if (!getOrganizationsList()
-          .equals(other.getOrganizationsList())) return false;
+      if (hasUser() != other.hasUser()) return false;
+      if (hasUser()) {
+        if (!getUser()
+            .equals(other.getUser())) return false;
+      }
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getProjectsList()
-          .equals(other.getProjectsList())) return false;
-      if (!getPhoneNumber()
-          .equals(other.getPhoneNumber())) return false;
-      if (!getCountry()
-          .equals(other.getCountry())) return false;
-      if (!getCity()
-          .equals(other.getCity())) return false;
-      if (!getZipCode()
-          .equals(other.getZipCode())) return false;
-      if (!getAddress()
-          .equals(other.getAddress())) return false;
-      if (!getState()
-          .equals(other.getState())) return false;
-      if (!getEmojiCountry()
-          .equals(other.getEmojiCountry())) return false;
-      if (getIsMfaEnabled()
-          != other.getIsMfaEnabled()) return false;
-      if (!getTokenCcp()
-          .equals(other.getTokenCcp())) return false;
-      if (getEmailVerified()
-          != other.getEmailVerified()) return false;
       if (!getError()
           .equals(other.getError())) return false;
-      if (!getLanguage()
-          .equals(other.getLanguage())) return false;
-      if (getPushNotification()
-          != other.getPushNotification()) return false;
-      if (getEmailNotification()
-          != other.getEmailNotification()) return false;
-      if (getNewLoginNotification()
-          != other.getNewLoginNotification()) return false;
-      if (getCreateNotification()
-          != other.getCreateNotification()) return false;
-      if (getUpdateNotification()
-          != other.getUpdateNotification()) return false;
-      if (getDeleteNotification()
-          != other.getDeleteNotification()) return false;
-      if (getApplicationNotification()
-          != other.getApplicationNotification()) return false;
-      if (getReadNotification()
-          != other.getReadNotification()) return false;
-      if (!getPhoneCode()
-          .equals(other.getPhoneCode())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -21132,96 +15304,14 @@ public final class Users {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstName().hashCode();
-      hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getLastName().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsActive());
-      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatedAt().hashCode();
-      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdatedAt().hashCode();
-      if (getRolesCount() > 0) {
-        hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + getRolesList().hashCode();
-      }
-      if (getPermissionsCount() > 0) {
-        hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getPermissionsList().hashCode();
-      }
-      hash = (37 * hash) + IS_SUPER_USER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSuperUser());
-      if (getOrganizationsCount() > 0) {
-        hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganizationsList().hashCode();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
       }
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      if (getProjectsCount() > 0) {
-        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
-        hash = (53 * hash) + getProjectsList().hashCode();
-      }
-      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumber().hashCode();
-      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getCountry().hashCode();
-      hash = (37 * hash) + CITY_FIELD_NUMBER;
-      hash = (53 * hash) + getCity().hashCode();
-      hash = (37 * hash) + ZIP_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getZipCode().hashCode();
-      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getAddress().hashCode();
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState().hashCode();
-      hash = (37 * hash) + EMOJI_COUNTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getEmojiCountry().hashCode();
-      hash = (37 * hash) + IS_MFA_ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsMfaEnabled());
-      hash = (37 * hash) + TOKEN_CCP_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenCcp().hashCode();
-      hash = (37 * hash) + EMAIL_VERIFIED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEmailVerified());
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
-      hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getLanguage().hashCode();
-      hash = (37 * hash) + PUSH_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPushNotification());
-      hash = (37 * hash) + EMAIL_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEmailNotification());
-      hash = (37 * hash) + NEW_LOGIN_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNewLoginNotification());
-      hash = (37 * hash) + CREATE_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCreateNotification());
-      hash = (37 * hash) + UPDATE_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUpdateNotification());
-      hash = (37 * hash) + DELETE_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDeleteNotification());
-      hash = (37 * hash) + APPLICATION_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getApplicationNotification());
-      hash = (37 * hash) + READ_NOTIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getReadNotification());
-      hash = (37 * hash) + PHONE_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneCode().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -21350,100 +15440,20 @@ public final class Users {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRolesFieldBuilder();
-          getPermissionsFieldBuilder();
-          getOrganizationsFieldBuilder();
-          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
-
-        userId_ = "";
-
-        firstName_ = "";
-
-        lastName_ = "";
-
-        email_ = "";
-
-        isActive_ = false;
-
-        createdAt_ = "";
-
-        updatedAt_ = "";
-
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (userBuilder_ == null) {
+          user_ = null;
         } else {
-          rolesBuilder_.clear();
-        }
-        if (permissionsBuilder_ == null) {
-          permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          permissionsBuilder_.clear();
-        }
-        isSuperUser_ = false;
-
-        if (organizationsBuilder_ == null) {
-          organizations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          organizationsBuilder_.clear();
+          user_ = null;
+          userBuilder_ = null;
         }
         msg_ = "";
 
-        if (projectsBuilder_ == null) {
-          projects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          projectsBuilder_.clear();
-        }
-        phoneNumber_ = "";
-
-        country_ = "";
-
-        city_ = "";
-
-        zipCode_ = "";
-
-        address_ = "";
-
-        state_ = "";
-
-        emojiCountry_ = "";
-
-        isMfaEnabled_ = false;
-
-        tokenCcp_ = "";
-
-        emailVerified_ = false;
-
         error_ = "";
-
-        language_ = "";
-
-        pushNotification_ = false;
-
-        emailNotification_ = false;
-
-        newLoginNotification_ = false;
-
-        createNotification_ = false;
-
-        updateNotification_ = false;
-
-        deleteNotification_ = false;
-
-        applicationNotification_ = false;
-
-        readNotification_ = false;
-
-        phoneCode_ = "";
 
         return this;
       }
@@ -21471,74 +15481,13 @@ public final class Users {
       @java.lang.Override
       public accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse buildPartial() {
         accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse result = new accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        result.userId_ = userId_;
-        result.firstName_ = firstName_;
-        result.lastName_ = lastName_;
-        result.email_ = email_;
-        result.isActive_ = isActive_;
-        result.createdAt_ = createdAt_;
-        result.updatedAt_ = updatedAt_;
-        if (rolesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            roles_ = java.util.Collections.unmodifiableList(roles_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.roles_ = roles_;
+        if (userBuilder_ == null) {
+          result.user_ = user_;
         } else {
-          result.roles_ = rolesBuilder_.build();
-        }
-        if (permissionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            permissions_ = java.util.Collections.unmodifiableList(permissions_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.permissions_ = permissions_;
-        } else {
-          result.permissions_ = permissionsBuilder_.build();
-        }
-        result.isSuperUser_ = isSuperUser_;
-        if (organizationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            organizations_ = java.util.Collections.unmodifiableList(organizations_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.organizations_ = organizations_;
-        } else {
-          result.organizations_ = organizationsBuilder_.build();
+          result.user_ = userBuilder_.build();
         }
         result.msg_ = msg_;
-        if (projectsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            projects_ = java.util.Collections.unmodifiableList(projects_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.projects_ = projects_;
-        } else {
-          result.projects_ = projectsBuilder_.build();
-        }
-        result.phoneNumber_ = phoneNumber_;
-        result.country_ = country_;
-        result.city_ = city_;
-        result.zipCode_ = zipCode_;
-        result.address_ = address_;
-        result.state_ = state_;
-        result.emojiCountry_ = emojiCountry_;
-        result.isMfaEnabled_ = isMfaEnabled_;
-        result.tokenCcp_ = tokenCcp_;
-        result.emailVerified_ = emailVerified_;
         result.error_ = error_;
-        result.language_ = language_;
-        result.pushNotification_ = pushNotification_;
-        result.emailNotification_ = emailNotification_;
-        result.newLoginNotification_ = newLoginNotification_;
-        result.createNotification_ = createNotification_;
-        result.updateNotification_ = updateNotification_;
-        result.deleteNotification_ = deleteNotification_;
-        result.applicationNotification_ = applicationNotification_;
-        result.readNotification_ = readNotification_;
-        result.phoneCode_ = phoneCode_;
         onBuilt();
         return result;
       }
@@ -21587,219 +15536,15 @@ public final class Users {
 
       public Builder mergeFrom(accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse other) {
         if (other == accounts.v1alpha1.users.v1.Users.GetOneUserDexResponse.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
-          onChanged();
-        }
-        if (!other.getFirstName().isEmpty()) {
-          firstName_ = other.firstName_;
-          onChanged();
-        }
-        if (!other.getLastName().isEmpty()) {
-          lastName_ = other.lastName_;
-          onChanged();
-        }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
-          onChanged();
-        }
-        if (other.getIsActive() != false) {
-          setIsActive(other.getIsActive());
-        }
-        if (!other.getCreatedAt().isEmpty()) {
-          createdAt_ = other.createdAt_;
-          onChanged();
-        }
-        if (!other.getUpdatedAt().isEmpty()) {
-          updatedAt_ = other.updatedAt_;
-          onChanged();
-        }
-        if (rolesBuilder_ == null) {
-          if (!other.roles_.isEmpty()) {
-            if (roles_.isEmpty()) {
-              roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRolesIsMutable();
-              roles_.addAll(other.roles_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.roles_.isEmpty()) {
-            if (rolesBuilder_.isEmpty()) {
-              rolesBuilder_.dispose();
-              rolesBuilder_ = null;
-              roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              rolesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRolesFieldBuilder() : null;
-            } else {
-              rolesBuilder_.addAllMessages(other.roles_);
-            }
-          }
-        }
-        if (permissionsBuilder_ == null) {
-          if (!other.permissions_.isEmpty()) {
-            if (permissions_.isEmpty()) {
-              permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensurePermissionsIsMutable();
-              permissions_.addAll(other.permissions_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.permissions_.isEmpty()) {
-            if (permissionsBuilder_.isEmpty()) {
-              permissionsBuilder_.dispose();
-              permissionsBuilder_ = null;
-              permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              permissionsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPermissionsFieldBuilder() : null;
-            } else {
-              permissionsBuilder_.addAllMessages(other.permissions_);
-            }
-          }
-        }
-        if (other.getIsSuperUser() != false) {
-          setIsSuperUser(other.getIsSuperUser());
-        }
-        if (organizationsBuilder_ == null) {
-          if (!other.organizations_.isEmpty()) {
-            if (organizations_.isEmpty()) {
-              organizations_ = other.organizations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureOrganizationsIsMutable();
-              organizations_.addAll(other.organizations_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.organizations_.isEmpty()) {
-            if (organizationsBuilder_.isEmpty()) {
-              organizationsBuilder_.dispose();
-              organizationsBuilder_ = null;
-              organizations_ = other.organizations_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              organizationsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOrganizationsFieldBuilder() : null;
-            } else {
-              organizationsBuilder_.addAllMessages(other.organizations_);
-            }
-          }
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
         }
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
         }
-        if (projectsBuilder_ == null) {
-          if (!other.projects_.isEmpty()) {
-            if (projects_.isEmpty()) {
-              projects_ = other.projects_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureProjectsIsMutable();
-              projects_.addAll(other.projects_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.projects_.isEmpty()) {
-            if (projectsBuilder_.isEmpty()) {
-              projectsBuilder_.dispose();
-              projectsBuilder_ = null;
-              projects_ = other.projects_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              projectsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getProjectsFieldBuilder() : null;
-            } else {
-              projectsBuilder_.addAllMessages(other.projects_);
-            }
-          }
-        }
-        if (!other.getPhoneNumber().isEmpty()) {
-          phoneNumber_ = other.phoneNumber_;
-          onChanged();
-        }
-        if (!other.getCountry().isEmpty()) {
-          country_ = other.country_;
-          onChanged();
-        }
-        if (!other.getCity().isEmpty()) {
-          city_ = other.city_;
-          onChanged();
-        }
-        if (!other.getZipCode().isEmpty()) {
-          zipCode_ = other.zipCode_;
-          onChanged();
-        }
-        if (!other.getAddress().isEmpty()) {
-          address_ = other.address_;
-          onChanged();
-        }
-        if (!other.getState().isEmpty()) {
-          state_ = other.state_;
-          onChanged();
-        }
-        if (!other.getEmojiCountry().isEmpty()) {
-          emojiCountry_ = other.emojiCountry_;
-          onChanged();
-        }
-        if (other.getIsMfaEnabled() != false) {
-          setIsMfaEnabled(other.getIsMfaEnabled());
-        }
-        if (!other.getTokenCcp().isEmpty()) {
-          tokenCcp_ = other.tokenCcp_;
-          onChanged();
-        }
-        if (other.getEmailVerified() != false) {
-          setEmailVerified(other.getEmailVerified());
-        }
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
-          onChanged();
-        }
-        if (!other.getLanguage().isEmpty()) {
-          language_ = other.language_;
-          onChanged();
-        }
-        if (other.getPushNotification() != false) {
-          setPushNotification(other.getPushNotification());
-        }
-        if (other.getEmailNotification() != false) {
-          setEmailNotification(other.getEmailNotification());
-        }
-        if (other.getNewLoginNotification() != false) {
-          setNewLoginNotification(other.getNewLoginNotification());
-        }
-        if (other.getCreateNotification() != false) {
-          setCreateNotification(other.getCreateNotification());
-        }
-        if (other.getUpdateNotification() != false) {
-          setUpdateNotification(other.getUpdateNotification());
-        }
-        if (other.getDeleteNotification() != false) {
-          setDeleteNotification(other.getDeleteNotification());
-        }
-        if (other.getApplicationNotification() != false) {
-          setApplicationNotification(other.getApplicationNotification());
-        }
-        if (other.getReadNotification() != false) {
-          setReadNotification(other.getReadNotification());
-        }
-        if (!other.getPhoneCode().isEmpty()) {
-          phoneCode_ = other.phoneCode_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -21830,1280 +15575,129 @@ public final class Users {
         }
         return this;
       }
-      private int bitField0_;
 
-      private int id_ ;
+      private accounts.v1alpha1.Accounts.UserDetail user_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder> userBuilder_;
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * @return Whether the user field is set.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * @return The user.
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @return The userId.
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
+      public accounts.v1alpha1.Accounts.UserDetail getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
         } else {
-          return (java.lang.String) ref;
+          return userBuilder_.getMessage();
         }
       }
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @return The bytes for userId.
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object firstName_ = "";
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @return The firstName.
-       */
-      public java.lang.String getFirstName() {
-        java.lang.Object ref = firstName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firstName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @return The bytes for firstName.
-       */
-      public com.google.protobuf.ByteString
-          getFirstNameBytes() {
-        java.lang.Object ref = firstName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firstName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @param value The firstName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFirstName() {
-        
-        firstName_ = getDefaultInstance().getFirstName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string first_name = 3 [json_name = "firstName"];</code>
-       * @param value The bytes for firstName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object lastName_ = "";
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @return The lastName.
-       */
-      public java.lang.String getLastName() {
-        java.lang.Object ref = lastName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lastName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @return The bytes for lastName.
-       */
-      public com.google.protobuf.ByteString
-          getLastNameBytes() {
-        java.lang.Object ref = lastName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lastName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @param value The lastName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLastName() {
-        
-        lastName_ = getDefaultInstance().getLastName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_name = 4 [json_name = "lastName"];</code>
-       * @param value The bytes for lastName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @return The email.
-       */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          email_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @return The bytes for email.
-       */
-      public com.google.protobuf.ByteString
-          getEmailBytes() {
-        java.lang.Object ref = email_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          email_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        email_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 5 [json_name = "email"];</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        email_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean isActive_ ;
-      /**
-       * <code>bool is_active = 6 [json_name = "isActive"];</code>
-       * @return The isActive.
-       */
-      @java.lang.Override
-      public boolean getIsActive() {
-        return isActive_;
-      }
-      /**
-       * <code>bool is_active = 6 [json_name = "isActive"];</code>
-       * @param value The isActive to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsActive(boolean value) {
-        
-        isActive_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_active = 6 [json_name = "isActive"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsActive() {
-        
-        isActive_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createdAt_ = "";
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @return The createdAt.
-       */
-      public java.lang.String getCreatedAt() {
-        java.lang.Object ref = createdAt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createdAt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @return The bytes for createdAt.
-       */
-      public com.google.protobuf.ByteString
-          getCreatedAtBytes() {
-        java.lang.Object ref = createdAt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createdAt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @param value The createdAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedAt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createdAt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreatedAt() {
-        
-        createdAt_ = getDefaultInstance().getCreatedAt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string created_at = 7 [json_name = "createdAt"];</code>
-       * @param value The bytes for createdAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedAtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createdAt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object updatedAt_ = "";
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @return The updatedAt.
-       */
-      public java.lang.String getUpdatedAt() {
-        java.lang.Object ref = updatedAt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          updatedAt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @return The bytes for updatedAt.
-       */
-      public com.google.protobuf.ByteString
-          getUpdatedAtBytes() {
-        java.lang.Object ref = updatedAt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          updatedAt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @param value The updatedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdatedAt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        updatedAt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdatedAt() {
-        
-        updatedAt_ = getDefaultInstance().getUpdatedAt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
-       * @param value The bytes for updatedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdatedAtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        updatedAt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Role> roles_ =
-        java.util.Collections.emptyList();
-      private void ensureRolesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Role>(roles_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> rolesBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Role> getRolesList() {
-        if (rolesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(roles_);
-        } else {
-          return rolesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public int getRolesCount() {
-        if (rolesBuilder_ == null) {
-          return roles_.size();
-        } else {
-          return rolesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role getRoles(int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);
-        } else {
-          return rolesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder setRoles(
-          int index, accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
+      public Builder setUser(accounts.v1alpha1.Accounts.UserDetail value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRolesIsMutable();
-          roles_.set(index, value);
+          user_ = value;
           onChanged();
         } else {
-          rolesBuilder_.setMessage(index, value);
+          userBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder setRoles(
-          int index, accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.set(index, builderForValue.build());
+      public Builder setUser(
+          accounts.v1alpha1.Accounts.UserDetail.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
           onChanged();
         } else {
-          rolesBuilder_.setMessage(index, builderForValue.build());
+          userBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder addRoles(accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeUser(accounts.v1alpha1.Accounts.UserDetail value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              accounts.v1alpha1.Accounts.UserDetail.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
           }
-          ensureRolesIsMutable();
-          roles_.add(value);
           onChanged();
         } else {
-          rolesBuilder_.addMessage(value);
+          userBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder addRoles(
-          int index, accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRolesIsMutable();
-          roles_.add(index, value);
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
           onChanged();
         } else {
-          rolesBuilder_.addMessage(index, value);
+          user_ = null;
+          userBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public Builder addRoles(
-          accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(builderForValue.build());
-          onChanged();
+      public accounts.v1alpha1.Accounts.UserDetail.Builder getUserBuilder() {
+        
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       */
+      public accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
         } else {
-          rolesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder addRoles(
-          int index, accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          rolesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder addAllRoles(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Role> values) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, roles_);
-          onChanged();
-        } else {
-          rolesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder clearRoles() {
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          rolesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public Builder removeRoles(int index) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.remove(index);
-          onChanged();
-        } else {
-          rolesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder getRolesBuilder(
-          int index) {
-        return getRolesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-          int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);  } else {
-          return rolesBuilder_.getMessageOrBuilder(index);
+          return user_ == null ?
+              accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
        */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-           getRolesOrBuilderList() {
-        if (rolesBuilder_ != null) {
-          return rolesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(roles_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder addRolesBuilder() {
-        return getRolesFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Role.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder addRolesBuilder(
-          int index) {
-        return getRolesFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Role.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Role.Builder> 
-           getRolesBuilderList() {
-        return getRolesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> 
-          getRolesFieldBuilder() {
-        if (rolesBuilder_ == null) {
-          rolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder>(
-                  roles_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder>(
+                  getUser(),
                   getParentForChildren(),
                   isClean());
-          roles_ = null;
+          user_ = null;
         }
-        return rolesBuilder_;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Permission> permissions_ =
-        java.util.Collections.emptyList();
-      private void ensurePermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>(permissions_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder> permissionsBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Permission> getPermissionsList() {
-        if (permissionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(permissions_);
-        } else {
-          return permissionsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public int getPermissionsCount() {
-        if (permissionsBuilder_ == null) {
-          return permissions_.size();
-        } else {
-          return permissionsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission getPermissions(int index) {
-        if (permissionsBuilder_ == null) {
-          return permissions_.get(index);
-        } else {
-          return permissionsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder setPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission value) {
-        if (permissionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePermissionsIsMutable();
-          permissions_.set(index, value);
-          onChanged();
-        } else {
-          permissionsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder setPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission.Builder builderForValue) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          permissionsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(accounts.v1alpha1.Accounts.Permission value) {
-        if (permissionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePermissionsIsMutable();
-          permissions_.add(value);
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission value) {
-        if (permissionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePermissionsIsMutable();
-          permissions_.add(index, value);
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(
-          accounts.v1alpha1.Accounts.Permission.Builder builderForValue) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.add(builderForValue.build());
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addPermissions(
-          int index, accounts.v1alpha1.Accounts.Permission.Builder builderForValue) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          permissionsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder addAllPermissions(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Permission> values) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, permissions_);
-          onChanged();
-        } else {
-          permissionsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder clearPermissions() {
-        if (permissionsBuilder_ == null) {
-          permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          permissionsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public Builder removePermissions(int index) {
-        if (permissionsBuilder_ == null) {
-          ensurePermissionsIsMutable();
-          permissions_.remove(index);
-          onChanged();
-        } else {
-          permissionsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission.Builder getPermissionsBuilder(
-          int index) {
-        return getPermissionsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.PermissionOrBuilder getPermissionsOrBuilder(
-          int index) {
-        if (permissionsBuilder_ == null) {
-          return permissions_.get(index);  } else {
-          return permissionsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-           getPermissionsOrBuilderList() {
-        if (permissionsBuilder_ != null) {
-          return permissionsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(permissions_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission.Builder addPermissionsBuilder() {
-        return getPermissionsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Permission.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Permission.Builder addPermissionsBuilder(
-          int index) {
-        return getPermissionsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Permission.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Permission.Builder> 
-           getPermissionsBuilderList() {
-        return getPermissionsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder> 
-          getPermissionsFieldBuilder() {
-        if (permissionsBuilder_ == null) {
-          permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder>(
-                  permissions_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          permissions_ = null;
-        }
-        return permissionsBuilder_;
-      }
-
-      private boolean isSuperUser_ ;
-      /**
-       * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-       * @return The isSuperUser.
-       */
-      @java.lang.Override
-      public boolean getIsSuperUser() {
-        return isSuperUser_;
-      }
-      /**
-       * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-       * @param value The isSuperUser to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSuperUser(boolean value) {
-        
-        isSuperUser_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_super_user = 11 [json_name = "isSuperUser"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSuperUser() {
-        
-        isSuperUser_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Organization> organizations_ =
-        java.util.Collections.emptyList();
-      private void ensureOrganizationsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          organizations_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Organization>(organizations_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Organization, accounts.v1alpha1.Accounts.Organization.Builder, accounts.v1alpha1.Accounts.OrganizationOrBuilder> organizationsBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Organization> getOrganizationsList() {
-        if (organizationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(organizations_);
-        } else {
-          return organizationsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public int getOrganizationsCount() {
-        if (organizationsBuilder_ == null) {
-          return organizations_.size();
-        } else {
-          return organizationsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization getOrganizations(int index) {
-        if (organizationsBuilder_ == null) {
-          return organizations_.get(index);
-        } else {
-          return organizationsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder setOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization value) {
-        if (organizationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOrganizationsIsMutable();
-          organizations_.set(index, value);
-          onChanged();
-        } else {
-          organizationsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder setOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          organizationsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(accounts.v1alpha1.Accounts.Organization value) {
-        if (organizationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOrganizationsIsMutable();
-          organizations_.add(value);
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization value) {
-        if (organizationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOrganizationsIsMutable();
-          organizations_.add(index, value);
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(
-          accounts.v1alpha1.Accounts.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.add(builderForValue.build());
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addOrganizations(
-          int index, accounts.v1alpha1.Accounts.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          organizationsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder addAllOrganizations(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Organization> values) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, organizations_);
-          onChanged();
-        } else {
-          organizationsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder clearOrganizations() {
-        if (organizationsBuilder_ == null) {
-          organizations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          organizationsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public Builder removeOrganizations(int index) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.remove(index);
-          onChanged();
-        } else {
-          organizationsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization.Builder getOrganizationsBuilder(
-          int index) {
-        return getOrganizationsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-          int index) {
-        if (organizationsBuilder_ == null) {
-          return organizations_.get(index);  } else {
-          return organizationsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-           getOrganizationsOrBuilderList() {
-        if (organizationsBuilder_ != null) {
-          return organizationsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(organizations_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization.Builder addOrganizationsBuilder() {
-        return getOrganizationsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Organization.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Organization.Builder addOrganizationsBuilder(
-          int index) {
-        return getOrganizationsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Organization.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Organization.Builder> 
-           getOrganizationsBuilderList() {
-        return getOrganizationsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Organization, accounts.v1alpha1.Accounts.Organization.Builder, accounts.v1alpha1.Accounts.OrganizationOrBuilder> 
-          getOrganizationsFieldBuilder() {
-        if (organizationsBuilder_ == null) {
-          organizationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Organization, accounts.v1alpha1.Accounts.Organization.Builder, accounts.v1alpha1.Accounts.OrganizationOrBuilder>(
-                  organizations_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          organizations_ = null;
-        }
-        return organizationsBuilder_;
+        return userBuilder_;
       }
 
       private java.lang.Object msg_ = "";
       /**
-       * <code>string msg = 13 [json_name = "msg"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
        * @return The msg.
        */
       public java.lang.String getMsg() {
@@ -23119,7 +15713,7 @@ public final class Users {
         }
       }
       /**
-       * <code>string msg = 13 [json_name = "msg"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
        * @return The bytes for msg.
        */
       public com.google.protobuf.ByteString
@@ -23136,7 +15730,7 @@ public final class Users {
         }
       }
       /**
-       * <code>string msg = 13 [json_name = "msg"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
        * @param value The msg to set.
        * @return This builder for chaining.
        */
@@ -23151,7 +15745,7 @@ public final class Users {
         return this;
       }
       /**
-       * <code>string msg = 13 [json_name = "msg"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMsg() {
@@ -23161,7 +15755,7 @@ public final class Users {
         return this;
       }
       /**
-       * <code>string msg = 13 [json_name = "msg"];</code>
+       * <code>string msg = 2 [json_name = "msg"];</code>
        * @param value The bytes for msg to set.
        * @return This builder for chaining.
        */
@@ -23177,951 +15771,9 @@ public final class Users {
         return this;
       }
 
-      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
-        java.util.Collections.emptyList();
-      private void ensureProjectsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
-        if (projectsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(projects_);
-        } else {
-          return projectsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public int getProjectsCount() {
-        if (projectsBuilder_ == null) {
-          return projects_.size();
-        } else {
-          return projectsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
-        if (projectsBuilder_ == null) {
-          return projects_.get(index);
-        } else {
-          return projectsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder setProjects(
-          int index, accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.set(index, value);
-          onChanged();
-        } else {
-          projectsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder setProjects(
-          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.add(value);
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          int index, accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.add(index, value);
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.add(builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addAllProjects(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, projects_);
-          onChanged();
-        } else {
-          projectsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder clearProjects() {
-        if (projectsBuilder_ == null) {
-          projects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          projectsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder removeProjects(int index) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.remove(index);
-          onChanged();
-        } else {
-          projectsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
-          int index) {
-        return getProjectsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-          int index) {
-        if (projectsBuilder_ == null) {
-          return projects_.get(index);  } else {
-          return projectsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-           getProjectsOrBuilderList() {
-        if (projectsBuilder_ != null) {
-          return projectsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(projects_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
-        return getProjectsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
-          int index) {
-        return getProjectsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
-           getProjectsBuilderList() {
-        return getProjectsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-          getProjectsFieldBuilder() {
-        if (projectsBuilder_ == null) {
-          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
-                  projects_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          projects_ = null;
-        }
-        return projectsBuilder_;
-      }
-
-      private java.lang.Object phoneNumber_ = "";
-      /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-       * @return The phoneNumber.
-       */
-      public java.lang.String getPhoneNumber() {
-        java.lang.Object ref = phoneNumber_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          phoneNumber_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-       * @return The bytes for phoneNumber.
-       */
-      public com.google.protobuf.ByteString
-          getPhoneNumberBytes() {
-        java.lang.Object ref = phoneNumber_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          phoneNumber_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-       * @param value The phoneNumber to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneNumber(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhoneNumber() {
-        
-        phoneNumber_ = getDefaultInstance().getPhoneNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * details
-       * </pre>
-       *
-       * <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
-       * @param value The bytes for phoneNumber to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneNumberBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object country_ = "";
-      /**
-       * <code>string country = 16 [json_name = "country"];</code>
-       * @return The country.
-       */
-      public java.lang.String getCountry() {
-        java.lang.Object ref = country_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          country_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string country = 16 [json_name = "country"];</code>
-       * @return The bytes for country.
-       */
-      public com.google.protobuf.ByteString
-          getCountryBytes() {
-        java.lang.Object ref = country_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          country_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string country = 16 [json_name = "country"];</code>
-       * @param value The country to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountry(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        country_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string country = 16 [json_name = "country"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCountry() {
-        
-        country_ = getDefaultInstance().getCountry();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string country = 16 [json_name = "country"];</code>
-       * @param value The bytes for country to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        country_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object city_ = "";
-      /**
-       * <code>string city = 17 [json_name = "city"];</code>
-       * @return The city.
-       */
-      public java.lang.String getCity() {
-        java.lang.Object ref = city_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          city_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string city = 17 [json_name = "city"];</code>
-       * @return The bytes for city.
-       */
-      public com.google.protobuf.ByteString
-          getCityBytes() {
-        java.lang.Object ref = city_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          city_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string city = 17 [json_name = "city"];</code>
-       * @param value The city to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCity(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        city_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string city = 17 [json_name = "city"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCity() {
-        
-        city_ = getDefaultInstance().getCity();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string city = 17 [json_name = "city"];</code>
-       * @param value The bytes for city to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCityBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        city_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object zipCode_ = "";
-      /**
-       * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-       * @return The zipCode.
-       */
-      public java.lang.String getZipCode() {
-        java.lang.Object ref = zipCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          zipCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-       * @return The bytes for zipCode.
-       */
-      public com.google.protobuf.ByteString
-          getZipCodeBytes() {
-        java.lang.Object ref = zipCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          zipCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-       * @param value The zipCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZipCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        zipCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearZipCode() {
-        
-        zipCode_ = getDefaultInstance().getZipCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string zip_code = 18 [json_name = "zipCode"];</code>
-       * @param value The bytes for zipCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZipCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        zipCode_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object address_ = "";
-      /**
-       * <code>string address = 19 [json_name = "address"];</code>
-       * @return The address.
-       */
-      public java.lang.String getAddress() {
-        java.lang.Object ref = address_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          address_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string address = 19 [json_name = "address"];</code>
-       * @return The bytes for address.
-       */
-      public com.google.protobuf.ByteString
-          getAddressBytes() {
-        java.lang.Object ref = address_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          address_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string address = 19 [json_name = "address"];</code>
-       * @param value The address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddress(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        address_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string address = 19 [json_name = "address"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAddress() {
-        
-        address_ = getDefaultInstance().getAddress();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string address = 19 [json_name = "address"];</code>
-       * @param value The bytes for address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        address_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object state_ = "";
-      /**
-       * <code>string state = 20 [json_name = "state"];</code>
-       * @return The state.
-       */
-      public java.lang.String getState() {
-        java.lang.Object ref = state_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          state_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string state = 20 [json_name = "state"];</code>
-       * @return The bytes for state.
-       */
-      public com.google.protobuf.ByteString
-          getStateBytes() {
-        java.lang.Object ref = state_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          state_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string state = 20 [json_name = "state"];</code>
-       * @param value The state to set.
-       * @return This builder for chaining.
-       */
-      public Builder setState(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        state_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 20 [json_name = "state"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearState() {
-        
-        state_ = getDefaultInstance().getState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 20 [json_name = "state"];</code>
-       * @param value The bytes for state to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        state_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object emojiCountry_ = "";
-      /**
-       * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-       * @return The emojiCountry.
-       */
-      public java.lang.String getEmojiCountry() {
-        java.lang.Object ref = emojiCountry_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          emojiCountry_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-       * @return The bytes for emojiCountry.
-       */
-      public com.google.protobuf.ByteString
-          getEmojiCountryBytes() {
-        java.lang.Object ref = emojiCountry_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          emojiCountry_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-       * @param value The emojiCountry to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmojiCountry(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        emojiCountry_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmojiCountry() {
-        
-        emojiCountry_ = getDefaultInstance().getEmojiCountry();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string emoji_country = 21 [json_name = "emojiCountry"];</code>
-       * @param value The bytes for emojiCountry to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmojiCountryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        emojiCountry_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean isMfaEnabled_ ;
-      /**
-       * <pre>
-       *multi-factor
-       * </pre>
-       *
-       * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-       * @return The isMfaEnabled.
-       */
-      @java.lang.Override
-      public boolean getIsMfaEnabled() {
-        return isMfaEnabled_;
-      }
-      /**
-       * <pre>
-       *multi-factor
-       * </pre>
-       *
-       * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-       * @param value The isMfaEnabled to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsMfaEnabled(boolean value) {
-        
-        isMfaEnabled_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *multi-factor
-       * </pre>
-       *
-       * <code>bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsMfaEnabled() {
-        
-        isMfaEnabled_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tokenCcp_ = "";
-      /**
-       * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-       * @return The tokenCcp.
-       */
-      public java.lang.String getTokenCcp() {
-        java.lang.Object ref = tokenCcp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tokenCcp_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-       * @return The bytes for tokenCcp.
-       */
-      public com.google.protobuf.ByteString
-          getTokenCcpBytes() {
-        java.lang.Object ref = tokenCcp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tokenCcp_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-       * @param value The tokenCcp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenCcp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tokenCcp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenCcp() {
-        
-        tokenCcp_ = getDefaultInstance().getTokenCcp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token_ccp = 23 [json_name = "tokenCcp"];</code>
-       * @param value The bytes for tokenCcp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenCcpBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tokenCcp_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean emailVerified_ ;
-      /**
-       * <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
-       * @return The emailVerified.
-       */
-      @java.lang.Override
-      public boolean getEmailVerified() {
-        return emailVerified_;
-      }
-      /**
-       * <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
-       * @param value The emailVerified to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailVerified(boolean value) {
-        
-        emailVerified_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool email_verified = 24 [json_name = "emailVerified"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmailVerified() {
-        
-        emailVerified_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 25 [json_name = "error"];</code>
+       * <code>string error = 3 [json_name = "error"];</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -24137,7 +15789,7 @@ public final class Users {
         }
       }
       /**
-       * <code>string error = 25 [json_name = "error"];</code>
+       * <code>string error = 3 [json_name = "error"];</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -24154,7 +15806,7 @@ public final class Users {
         }
       }
       /**
-       * <code>string error = 25 [json_name = "error"];</code>
+       * <code>string error = 3 [json_name = "error"];</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -24169,7 +15821,7 @@ public final class Users {
         return this;
       }
       /**
-       * <code>string error = 25 [json_name = "error"];</code>
+       * <code>string error = 3 [json_name = "error"];</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -24179,7 +15831,7 @@ public final class Users {
         return this;
       }
       /**
-       * <code>string error = 25 [json_name = "error"];</code>
+       * <code>string error = 3 [json_name = "error"];</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -24191,426 +15843,6 @@ public final class Users {
   checkByteStringIsUtf8(value);
         
         error_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object language_ = "";
-      /**
-       * <pre>
-       *preferences
-       * </pre>
-       *
-       * <code>string language = 26 [json_name = "language"];</code>
-       * @return The language.
-       */
-      public java.lang.String getLanguage() {
-        java.lang.Object ref = language_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          language_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *preferences
-       * </pre>
-       *
-       * <code>string language = 26 [json_name = "language"];</code>
-       * @return The bytes for language.
-       */
-      public com.google.protobuf.ByteString
-          getLanguageBytes() {
-        java.lang.Object ref = language_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          language_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *preferences
-       * </pre>
-       *
-       * <code>string language = 26 [json_name = "language"];</code>
-       * @param value The language to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLanguage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        language_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *preferences
-       * </pre>
-       *
-       * <code>string language = 26 [json_name = "language"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLanguage() {
-        
-        language_ = getDefaultInstance().getLanguage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *preferences
-       * </pre>
-       *
-       * <code>string language = 26 [json_name = "language"];</code>
-       * @param value The bytes for language to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLanguageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        language_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean pushNotification_ ;
-      /**
-       * <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
-       * @return The pushNotification.
-       */
-      @java.lang.Override
-      public boolean getPushNotification() {
-        return pushNotification_;
-      }
-      /**
-       * <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
-       * @param value The pushNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPushNotification(boolean value) {
-        
-        pushNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool push_notification = 27 [json_name = "pushNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPushNotification() {
-        
-        pushNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean emailNotification_ ;
-      /**
-       * <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
-       * @return The emailNotification.
-       */
-      @java.lang.Override
-      public boolean getEmailNotification() {
-        return emailNotification_;
-      }
-      /**
-       * <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
-       * @param value The emailNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailNotification(boolean value) {
-        
-        emailNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool email_notification = 28 [json_name = "emailNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmailNotification() {
-        
-        emailNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean newLoginNotification_ ;
-      /**
-       * <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
-       * @return The newLoginNotification.
-       */
-      @java.lang.Override
-      public boolean getNewLoginNotification() {
-        return newLoginNotification_;
-      }
-      /**
-       * <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
-       * @param value The newLoginNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNewLoginNotification(boolean value) {
-        
-        newLoginNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool new_login_notification = 29 [json_name = "newLoginNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNewLoginNotification() {
-        
-        newLoginNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean createNotification_ ;
-      /**
-       * <code>bool create_notification = 30 [json_name = "createNotification"];</code>
-       * @return The createNotification.
-       */
-      @java.lang.Override
-      public boolean getCreateNotification() {
-        return createNotification_;
-      }
-      /**
-       * <code>bool create_notification = 30 [json_name = "createNotification"];</code>
-       * @param value The createNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateNotification(boolean value) {
-        
-        createNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool create_notification = 30 [json_name = "createNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreateNotification() {
-        
-        createNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean updateNotification_ ;
-      /**
-       * <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
-       * @return The updateNotification.
-       */
-      @java.lang.Override
-      public boolean getUpdateNotification() {
-        return updateNotification_;
-      }
-      /**
-       * <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
-       * @param value The updateNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdateNotification(boolean value) {
-        
-        updateNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool update_notification = 31 [json_name = "updateNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdateNotification() {
-        
-        updateNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean deleteNotification_ ;
-      /**
-       * <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
-       * @return The deleteNotification.
-       */
-      @java.lang.Override
-      public boolean getDeleteNotification() {
-        return deleteNotification_;
-      }
-      /**
-       * <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
-       * @param value The deleteNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeleteNotification(boolean value) {
-        
-        deleteNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool delete_notification = 32 [json_name = "deleteNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDeleteNotification() {
-        
-        deleteNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean applicationNotification_ ;
-      /**
-       * <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
-       * @return The applicationNotification.
-       */
-      @java.lang.Override
-      public boolean getApplicationNotification() {
-        return applicationNotification_;
-      }
-      /**
-       * <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
-       * @param value The applicationNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApplicationNotification(boolean value) {
-        
-        applicationNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool application_notification = 33 [json_name = "applicationNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearApplicationNotification() {
-        
-        applicationNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean readNotification_ ;
-      /**
-       * <code>bool read_notification = 34 [json_name = "readNotification"];</code>
-       * @return The readNotification.
-       */
-      @java.lang.Override
-      public boolean getReadNotification() {
-        return readNotification_;
-      }
-      /**
-       * <code>bool read_notification = 34 [json_name = "readNotification"];</code>
-       * @param value The readNotification to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReadNotification(boolean value) {
-        
-        readNotification_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool read_notification = 34 [json_name = "readNotification"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReadNotification() {
-        
-        readNotification_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object phoneCode_ = "";
-      /**
-       * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-       * @return The phoneCode.
-       */
-      public java.lang.String getPhoneCode() {
-        java.lang.Object ref = phoneCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          phoneCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-       * @return The bytes for phoneCode.
-       */
-      public com.google.protobuf.ByteString
-          getPhoneCodeBytes() {
-        java.lang.Object ref = phoneCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          phoneCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-       * @param value The phoneCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phoneCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhoneCode() {
-        
-        phoneCode_ = getDefaultInstance().getPhoneCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone_code = 35 [json_name = "phoneCode"];</code>
-       * @param value The bytes for phoneCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phoneCode_ = value;
         onChanged();
         return this;
       }
@@ -32651,7 +23883,7 @@ public final class Users {
       "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005" +
       "error\"Y\n\017ListUserRequest\022\'\n\017organization" +
       "_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_id\030" +
-      "\002 \001(\rR\tprojectId\"\346\007\n\021CreateUserRequest\022\027" +
+      "\002 \001(\rR\tprojectId\"\221\010\n\021CreateUserRequest\022\027" +
       "\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nfirst_name\030\002 " +
       "\001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010lastN" +
       "ame\022\024\n\005email\030\004 \001(\tR\005email\022\033\n\tis_active\030\005" +
@@ -32676,124 +23908,67 @@ public final class Users {
       "on\0229\n\030application_notification\030\031 \001(\010R\027ap" +
       "plicationNotification\022+\n\021read_notificati" +
       "on\030\032 \001(\010R\020readNotification\022\035\n\nphone_code" +
-      "\030\033 \001(\tR\tphoneCode\"o\n\021UpdateUserRequest\022\027" +
-      "\n\007auth_id\030\001 \001(\rR\006authId\022A\n\004auth\030\002 \001(\0132-." +
-      "accounts.v1alpha1.users.v1.CreateUserReq" +
-      "uestR\004auth\"U\n\021DeleteUserRequest\022\027\n\007user_" +
-      "id\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002 \001(" +
-      "\rR\016organizationId\"\306\001\n\010UserList\022\016\n\002id\030\001 \001" +
-      "(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n" +
-      "\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001(" +
-      "\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033\n\tis_" +
-      "active\030\006 \001(\010R\010isActive\022\"\n\ris_super_user\030" +
-      "\007 \001(\010R\013isSuperUser\"L\n\021GetOneUserRequest\022" +
-      "\016\n\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 \001(\r" +
-      "R\016organizationId\"\323\t\n\022GetOneUserResponse\022" +
-      "\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId" +
-      "\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_" +
-      "name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005ema" +
-      "il\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\ncreat" +
-      "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001" +
-      "(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.accounts." +
-      "v1alpha1.RoleR\005roles\022?\n\013permissions\030\n \003(" +
-      "\0132\035.accounts.v1alpha1.PermissionR\013permis" +
-      "sions\022\"\n\ris_super_user\030\013 \001(\010R\013isSuperUse" +
-      "r\022E\n\rorganizations\030\014 \003(\0132\037.accounts.v1al" +
-      "pha1.OrganizationR\rorganizations\0226\n\010proj" +
-      "ects\030\r \003(\0132\032.accounts.v1alpha1.ProjectR\010" +
-      "projects\022!\n\014phone_number\030\016 \001(\tR\013phoneNum" +
-      "ber\022\030\n\007country\030\017 \001(\tR\007country\022\022\n\004city\030\020 " +
-      "\001(\tR\004city\022\031\n\010zip_code\030\021 \001(\tR\007zipCode\022\030\n\007" +
-      "address\030\022 \001(\tR\007address\022\024\n\005state\030\023 \001(\tR\005s" +
-      "tate\022#\n\remoji_country\030\024 \001(\tR\014emojiCountr" +
-      "y\022%\n\016email_verified\030\025 \001(\010R\remailVerified" +
-      "\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022\032" +
-      "\n\010language\030\027 \001(\tR\010language\022+\n\021push_notif" +
-      "ication\030\030 \001(\010R\020pushNotification\022-\n\022email" +
-      "_notification\030\031 \001(\010R\021emailNotification\0224" +
-      "\n\026new_login_notification\030\032 \001(\010R\024newLogin" +
-      "Notification\022/\n\023create_notification\030\033 \001(" +
-      "\010R\022createNotification\022/\n\023update_notifica" +
-      "tion\030\034 \001(\010R\022updateNotification\022/\n\023delete" +
-      "_notification\030\035 \001(\010R\022deleteNotification\022" +
-      "9\n\030application_notification\030\036 \001(\010R\027appli" +
-      "cationNotification\022+\n\021read_notification\030" +
-      "\037 \001(\010R\020readNotification\022\035\n\nphone_code\030  " +
-      "\001(\tR\tphoneCode\"N\n\020ListUserResponse\022:\n\005us" +
-      "ers\030\001 \003(\0132$.accounts.v1alpha1.users.v1.U" +
-      "serListR\005users\"I\n\031ListUserPaginationRequ" +
-      "est\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001" +
-      "(\005R\005limit\"n\n\032ListUserPaginationResponse\022" +
-      "\024\n\005count\030\001 \001(\003R\005count\022:\n\005users\030\002 \003(\0132$.a" +
-      "ccounts.v1alpha1.users.v1.UserListR\005user" +
-      "s\"\027\n\025GetListUserDexRequest\"[\n\026GetListUse" +
-      "rDexResponse\022A\n\tusers_dex\030\001 \003(\0132$.accoun" +
-      "ts.v1alpha1.users.v1.UsersDexR\010usersDex\"" +
-      "r\n\024GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(\t" +
-      "R\006userId\022A\n\004user\030\002 \001(\0132-.accounts.v1alph" +
-      "a1.users.v1.CreateUserRequestR\004user\"\233\n\n\025" +
-      "GetOneUserDexResponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n" +
-      "\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001" +
-      "(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastNa" +
-      "me\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030\006 " +
-      "\001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcreat" +
-      "edAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022-\n\005r" +
-      "oles\030\t \003(\0132\027.accounts.v1alpha1.RoleR\005rol" +
-      "es\022?\n\013permissions\030\n \003(\0132\035.accounts.v1alp" +
-      "ha1.PermissionR\013permissions\022\"\n\ris_super_" +
-      "user\030\013 \001(\010R\013isSuperUser\022E\n\rorganizations" +
-      "\030\014 \003(\0132\037.accounts.v1alpha1.OrganizationR" +
-      "\rorganizations\022\020\n\003msg\030\r \001(\tR\003msg\0226\n\010proj" +
-      "ects\030\016 \003(\0132\032.accounts.v1alpha1.ProjectR\010" +
-      "projects\022!\n\014phone_number\030\017 \001(\tR\013phoneNum" +
-      "ber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n\004city\030\021 " +
-      "\001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007" +
-      "address\030\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005s" +
-      "tate\022#\n\remoji_country\030\025 \001(\tR\014emojiCountr" +
-      "y\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022" +
-      "\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016email_ve" +
-      "rified\030\030 \001(\010R\remailVerified\022\024\n\005error\030\031 \001" +
-      "(\tR\005error\022\032\n\010language\030\032 \001(\tR\010language\022+\n" +
-      "\021push_notification\030\033 \001(\010R\020pushNotificati" +
-      "on\022-\n\022email_notification\030\034 \001(\010R\021emailNot" +
-      "ification\0224\n\026new_login_notification\030\035 \001(" +
-      "\010R\024newLoginNotification\022/\n\023create_notifi" +
-      "cation\030\036 \001(\010R\022createNotification\022/\n\023upda" +
-      "te_notification\030\037 \001(\010R\022updateNotificatio" +
-      "n\022/\n\023delete_notification\030  \001(\010R\022deleteNo" +
-      "tification\0229\n\030application_notification\030!" +
-      " \001(\010R\027applicationNotification\022+\n\021read_no" +
-      "tification\030\" \001(\010R\020readNotification\022\035\n\nph" +
-      "one_code\030# \001(\tR\tphoneCode\"Z\n\034SendVerific" +
-      "ationEmailRequest\022\024\n\005email\030\001 \001(\tR\005email\022" +
-      "\022\n\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR\003url\"V\n" +
-      "\035SendVerificationEmailResponse\022\037\n\013html_r" +
-      "esult\030\001 \001(\tR\nhtmlResult\022\024\n\005error\030\002 \001(\tR\005" +
-      "error\"*\n\022VerifyEmailRequest\022\024\n\005token\030\001 \001" +
-      "(\tR\005token\"=\n\023VerifyEmailResponse\022\020\n\003msg\030" +
-      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\327\003\n\020Che" +
-      "ckUserRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
-      "organizationId\022\035\n\nproject_id\030\002 \001(\rR\tproj" +
-      "ectId\022A\n\035get_organization_from_project\030\003" +
-      " \001(\rR\032getOrganizationFromProject\022\036\n\nperm" +
-      "ission\030\004 \001(\tR\npermission\022\036\n\013user_id_dex\030" +
-      "\005 \001(\tR\tuserIdDex\022\"\n\ruser_id_admin\030\006 \001(\tR" +
-      "\013userIdAdmin\022\027\n\007user_id\030\007 \001(\rR\006userId\022\'\n" +
-      "\017type_permission\030\t \001(\tR\016typePermission\022\033" +
-      "\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rapi_key_v" +
-      "alue\030\013 \001(\tR\013apiKeyValue\022&\n\017token_ccp_adm" +
-      "in\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_ccp_use" +
-      "r_id\030\r \001(\tR\016tokenCcpUserId\"s\n\021CheckUserR" +
-      "esponse\022\033\n\tis_exists\030\001 \001(\010R\010isExists\022\024\n\005" +
-      "error\030\002 \001(\tR\005error\022\031\n\010is_admin\030\003 \001(\010R\007is" +
-      "Admin\022\020\n\003msg\030\004 \001(\tR\003msg\"?\n\010UsersDex\022\027\n\007u" +
-      "ser_id\030\001 \001(\tR\006userId\022\032\n\010provider\030\002 \001(\tR\010" +
-      "provider\"2\n\032GetUsersEmailFilterRequest\022\024" +
-      "\n\005value\030\001 \001(\tR\005value\"Y\n\033GetUsersEmailFil" +
-      "terResponse\022:\n\005users\030\001 \003(\0132$.accounts.v1" +
-      "alpha1.users.v1.UserListR\005usersB:Z8githu" +
-      "b.com/cuemby/ccp-sdk/gen/go/accounts/v1a" +
-      "lpha1/usersb\006proto3"
+      "\030\033 \001(\tR\tphoneCode\022)\n\020optional_address\030\034 " +
+      "\001(\tR\017optionalAddress\"o\n\021UpdateUserReques" +
+      "t\022\027\n\007auth_id\030\001 \001(\rR\006authId\022A\n\004auth\030\002 \001(\013" +
+      "2-.accounts.v1alpha1.users.v1.CreateUser" +
+      "RequestR\004auth\"U\n\021DeleteUserRequest\022\027\n\007us" +
+      "er_id\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002" +
+      " \001(\rR\016organizationId\"\306\001\n\010UserList\022\016\n\002id\030" +
+      "\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName" +
+      "\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email\030\004" +
+      " \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033\n\t" +
+      "is_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_us" +
+      "er\030\007 \001(\010R\013isSuperUser\"L\n\021GetOneUserReque" +
+      "st\022\016\n\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 " +
+      "\001(\rR\016organizationId\"o\n\022GetOneUserRespons" +
+      "e\0221\n\004user\030\001 \001(\0132\035.accounts.v1alpha1.User" +
+      "DetailR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030" +
+      "\003 \001(\tR\005error\"N\n\020ListUserResponse\022:\n\005user" +
+      "s\030\001 \003(\0132$.accounts.v1alpha1.users.v1.Use" +
+      "rListR\005users\"I\n\031ListUserPaginationReques" +
+      "t\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005" +
+      "R\005limit\"n\n\032ListUserPaginationResponse\022\024\n" +
+      "\005count\030\001 \001(\003R\005count\022:\n\005users\030\002 \003(\0132$.acc" +
+      "ounts.v1alpha1.users.v1.UserListR\005users\"" +
+      "\027\n\025GetListUserDexRequest\"[\n\026GetListUserD" +
+      "exResponse\022A\n\tusers_dex\030\001 \003(\0132$.accounts" +
+      ".v1alpha1.users.v1.UsersDexR\010usersDex\"r\n" +
+      "\024GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(\tR\006" +
+      "userId\022A\n\004user\030\002 \001(\0132-.accounts.v1alpha1" +
+      ".users.v1.CreateUserRequestR\004user\"r\n\025Get" +
+      "OneUserDexResponse\0221\n\004user\030\001 \001(\0132\035.accou" +
+      "nts.v1alpha1.UserDetailR\004user\022\020\n\003msg\030\002 \001" +
+      "(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error\"Z\n\034SendVer" +
+      "ificationEmailRequest\022\024\n\005email\030\001 \001(\tR\005em" +
+      "ail\022\022\n\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR\003ur" +
+      "l\"V\n\035SendVerificationEmailResponse\022\037\n\013ht" +
+      "ml_result\030\001 \001(\tR\nhtmlResult\022\024\n\005error\030\002 \001" +
+      "(\tR\005error\"*\n\022VerifyEmailRequest\022\024\n\005token" +
+      "\030\001 \001(\tR\005token\"=\n\023VerifyEmailResponse\022\020\n\003" +
+      "msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\327\003\n" +
+      "\020CheckUserRequest\022\'\n\017organization_id\030\001 \001" +
+      "(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\rR\t" +
+      "projectId\022A\n\035get_organization_from_proje" +
+      "ct\030\003 \001(\rR\032getOrganizationFromProject\022\036\n\n" +
+      "permission\030\004 \001(\tR\npermission\022\036\n\013user_id_" +
+      "dex\030\005 \001(\tR\tuserIdDex\022\"\n\ruser_id_admin\030\006 " +
+      "\001(\tR\013userIdAdmin\022\027\n\007user_id\030\007 \001(\rR\006userI" +
+      "d\022\'\n\017type_permission\030\t \001(\tR\016typePermissi" +
+      "on\022\033\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rapi_k" +
+      "ey_value\030\013 \001(\tR\013apiKeyValue\022&\n\017token_ccp" +
+      "_admin\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_ccp" +
+      "_user_id\030\r \001(\tR\016tokenCcpUserId\"s\n\021CheckU" +
+      "serResponse\022\033\n\tis_exists\030\001 \001(\010R\010isExists" +
+      "\022\024\n\005error\030\002 \001(\tR\005error\022\031\n\010is_admin\030\003 \001(\010" +
+      "R\007isAdmin\022\020\n\003msg\030\004 \001(\tR\003msg\"?\n\010UsersDex\022" +
+      "\027\n\007user_id\030\001 \001(\tR\006userId\022\032\n\010provider\030\002 \001" +
+      "(\tR\010provider\"2\n\032GetUsersEmailFilterReque" +
+      "st\022\024\n\005value\030\001 \001(\tR\005value\"Y\n\033GetUsersEmai" +
+      "lFilterResponse\022:\n\005users\030\001 \003(\0132$.account" +
+      "s.v1alpha1.users.v1.UserListR\005usersB:Z8g" +
+      "ithub.com/cuemby/ccp-sdk/gen/go/accounts" +
+      "/v1alpha1/usersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -32829,7 +24004,7 @@ public final class Users {
     internal_static_accounts_v1alpha1_users_v1_CreateUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_CreateUserRequest_descriptor,
-        new java.lang.String[] { "UserId", "FirstName", "LastName", "Email", "IsActive", "RolesIds", "PermissionsIds", "OrganizationsIds", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "InvitationCode", "IsMfaEnabled", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", });
+        new java.lang.String[] { "UserId", "FirstName", "LastName", "Email", "IsActive", "RolesIds", "PermissionsIds", "OrganizationsIds", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "InvitationCode", "IsMfaEnabled", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", "OptionalAddress", });
     internal_static_accounts_v1alpha1_users_v1_UpdateUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_accounts_v1alpha1_users_v1_UpdateUserRequest_fieldAccessorTable = new
@@ -32859,7 +24034,7 @@ public final class Users {
     internal_static_accounts_v1alpha1_users_v1_GetOneUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_GetOneUserResponse_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Projects", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "EmailVerified", "IsMfaEnabled", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", });
+        new java.lang.String[] { "User", "Msg", "Error", });
     internal_static_accounts_v1alpha1_users_v1_ListUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_accounts_v1alpha1_users_v1_ListUserResponse_fieldAccessorTable = new
@@ -32901,7 +24076,7 @@ public final class Users {
     internal_static_accounts_v1alpha1_users_v1_GetOneUserDexResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_GetOneUserDexResponse_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Msg", "Projects", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "IsMfaEnabled", "TokenCcp", "EmailVerified", "Error", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", });
+        new java.lang.String[] { "User", "Msg", "Error", });
     internal_static_accounts_v1alpha1_users_v1_SendVerificationEmailRequest_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_accounts_v1alpha1_users_v1_SendVerificationEmailRequest_fieldAccessorTable = new

@@ -3,7 +3,6 @@ package users
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 	"sync"
 	"time"
@@ -36,16 +35,6 @@ type CheckUserData struct {
 	UserId         uint32
 }
 
-/*
-	//FILTER
-    rpc GetUsersEmailFilter(GetUsersEmailFilterRequest) returns (GetUsersEmailFilterResponse);
-
-
-    //DEX
-    rpc GetListUserDex(GetListUserDexRequest) returns (GetListUserDexResponse);
-    rpc GetOneUserDex(GetOneUserDexRequest) returns (GetOneUserDexResponse);
-*/
-
 func init() {
 	doOnce.Do(func() {
 		accountServiceTimeout = os.Getenv("ACCOUNT_SERVICE_TIMEOUT")
@@ -76,8 +65,6 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	log.Println(req.UserIdAdmin)
-
 	if req.ApiKeyValue != "" {
 		checkUser.ApiKeyValue = req.ApiKeyValue
 	} else if req.UserIdAdmin != "" {
@@ -98,11 +85,8 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 			Error: "OrganizationId or ProjectId is required",
 		}, nil
 	}
-	log.Println("a")
 
 	if len(req.RolesIds) > 0 {
-		log.Println("ab")
-
 		checkUser.RolesIds = req.RolesIds
 	}
 

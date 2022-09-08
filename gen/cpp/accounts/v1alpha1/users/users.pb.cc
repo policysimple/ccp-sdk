@@ -94,6 +94,7 @@ constexpr CreateUserRequest::CreateUserRequest(
   , invitation_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , language_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , phone_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , optional_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , is_active_(false)
   , is_mfa_enabled_(false)
   , push_notification_(false)
@@ -172,38 +173,9 @@ struct GetOneUserRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetOneUserRequestDefaultTypeInternal _GetOneUserRequest_default_instance_;
 constexpr GetOneUserResponse::GetOneUserResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : roles_()
-  , permissions_()
-  , organizations_()
-  , projects_()
-  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , phone_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , city_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , zip_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , state_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , emoji_country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , language_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , phone_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(0u)
-  , is_active_(false)
-  , is_super_user_(false)
-  , email_verified_(false)
-  , is_mfa_enabled_(false)
-  , push_notification_(false)
-  , email_notification_(false)
-  , new_login_notification_(false)
-  , create_notification_(false)
-  , update_notification_(false)
-  , delete_notification_(false)
-  , application_notification_(false)
-  , read_notification_(false){}
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_(nullptr){}
 struct GetOneUserResponseDefaultTypeInternal {
   constexpr GetOneUserResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -289,41 +261,9 @@ struct GetOneUserDexRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetOneUserDexRequestDefaultTypeInternal _GetOneUserDexRequest_default_instance_;
 constexpr GetOneUserDexResponse::GetOneUserDexResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : roles_()
-  , permissions_()
-  , organizations_()
-  , projects_()
-  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , phone_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , city_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , zip_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , state_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , emoji_country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , token_ccp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , language_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , phone_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(0u)
-  , is_active_(false)
-  , is_super_user_(false)
-  , is_mfa_enabled_(false)
-  , email_verified_(false)
-  , push_notification_(false)
-  , email_notification_(false)
-  , new_login_notification_(false)
-  , create_notification_(false)
-  , update_notification_(false)
-  , delete_notification_(false)
-  , application_notification_(false)
-  , read_notification_(false){}
+  , user_(nullptr){}
 struct GetOneUserDexResponseDefaultTypeInternal {
   constexpr GetOneUserDexResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -530,6 +470,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fusers_2f
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CreateUserRequest, application_notification_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CreateUserRequest, read_notification_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CreateUserRequest, phone_code_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CreateUserRequest, optional_address_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::UpdateUserRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -568,38 +509,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fusers_2f
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, id_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, user_id_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, first_name_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, last_name_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, email_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, is_active_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, created_at_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, updated_at_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, roles_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, permissions_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, is_super_user_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, organizations_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, projects_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, phone_number_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, country_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, city_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, zip_code_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, address_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, state_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, emoji_country_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, email_verified_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, is_mfa_enabled_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, language_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, push_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, email_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, new_login_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, create_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, update_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, delete_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, application_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, read_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, phone_code_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, user_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, msg_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::ListUserResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -643,41 +555,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fusers_2f
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, id_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, user_id_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, first_name_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, last_name_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, email_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, is_active_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, created_at_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, updated_at_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, roles_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, permissions_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, is_super_user_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, organizations_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, user_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, projects_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, phone_number_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, country_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, city_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, zip_code_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, address_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, state_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, emoji_country_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, is_mfa_enabled_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, token_ccp_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, email_verified_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, error_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, language_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, push_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, email_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, new_login_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, create_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, update_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, delete_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, application_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, read_notification_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::GetOneUserDexResponse, phone_code_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::SendVerificationEmailRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -758,27 +638,27 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 14, -1, sizeof(::accounts::v1alpha1::users::v1::DeleteUserResponse)},
   { 21, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserRequest)},
   { 28, -1, sizeof(::accounts::v1alpha1::users::v1::CreateUserRequest)},
-  { 60, -1, sizeof(::accounts::v1alpha1::users::v1::UpdateUserRequest)},
-  { 67, -1, sizeof(::accounts::v1alpha1::users::v1::DeleteUserRequest)},
-  { 74, -1, sizeof(::accounts::v1alpha1::users::v1::UserList)},
-  { 86, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserRequest)},
-  { 93, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserResponse)},
-  { 130, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserResponse)},
-  { 136, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserPaginationRequest)},
-  { 143, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserPaginationResponse)},
-  { 150, -1, sizeof(::accounts::v1alpha1::users::v1::GetListUserDexRequest)},
-  { 155, -1, sizeof(::accounts::v1alpha1::users::v1::GetListUserDexResponse)},
-  { 161, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserDexRequest)},
-  { 168, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserDexResponse)},
-  { 208, -1, sizeof(::accounts::v1alpha1::users::v1::SendVerificationEmailRequest)},
-  { 216, -1, sizeof(::accounts::v1alpha1::users::v1::SendVerificationEmailResponse)},
-  { 223, -1, sizeof(::accounts::v1alpha1::users::v1::VerifyEmailRequest)},
-  { 229, -1, sizeof(::accounts::v1alpha1::users::v1::VerifyEmailResponse)},
-  { 236, -1, sizeof(::accounts::v1alpha1::users::v1::CheckUserRequest)},
-  { 253, -1, sizeof(::accounts::v1alpha1::users::v1::CheckUserResponse)},
-  { 262, -1, sizeof(::accounts::v1alpha1::users::v1::UsersDex)},
-  { 269, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest)},
-  { 275, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse)},
+  { 61, -1, sizeof(::accounts::v1alpha1::users::v1::UpdateUserRequest)},
+  { 68, -1, sizeof(::accounts::v1alpha1::users::v1::DeleteUserRequest)},
+  { 75, -1, sizeof(::accounts::v1alpha1::users::v1::UserList)},
+  { 87, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserRequest)},
+  { 94, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserResponse)},
+  { 102, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserResponse)},
+  { 108, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserPaginationRequest)},
+  { 115, -1, sizeof(::accounts::v1alpha1::users::v1::ListUserPaginationResponse)},
+  { 122, -1, sizeof(::accounts::v1alpha1::users::v1::GetListUserDexRequest)},
+  { 127, -1, sizeof(::accounts::v1alpha1::users::v1::GetListUserDexResponse)},
+  { 133, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserDexRequest)},
+  { 140, -1, sizeof(::accounts::v1alpha1::users::v1::GetOneUserDexResponse)},
+  { 148, -1, sizeof(::accounts::v1alpha1::users::v1::SendVerificationEmailRequest)},
+  { 156, -1, sizeof(::accounts::v1alpha1::users::v1::SendVerificationEmailResponse)},
+  { 163, -1, sizeof(::accounts::v1alpha1::users::v1::VerifyEmailRequest)},
+  { 169, -1, sizeof(::accounts::v1alpha1::users::v1::VerifyEmailResponse)},
+  { 176, -1, sizeof(::accounts::v1alpha1::users::v1::CheckUserRequest)},
+  { 193, -1, sizeof(::accounts::v1alpha1::users::v1::CheckUserResponse)},
+  { 202, -1, sizeof(::accounts::v1alpha1::users::v1::UsersDex)},
+  { 209, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest)},
+  { 215, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -820,7 +700,7 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto
   "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005"
   "error\"Y\n\017ListUserRequest\022\'\n\017organization"
   "_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_id\030"
-  "\002 \001(\rR\tprojectId\"\346\007\n\021CreateUserRequest\022\027"
+  "\002 \001(\rR\tprojectId\"\221\010\n\021CreateUserRequest\022\027"
   "\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nfirst_name\030\002 "
   "\001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010lastN"
   "ame\022\024\n\005email\030\004 \001(\tR\005email\022\033\n\tis_active\030\005"
@@ -845,131 +725,74 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto
   "on\0229\n\030application_notification\030\031 \001(\010R\027ap"
   "plicationNotification\022+\n\021read_notificati"
   "on\030\032 \001(\010R\020readNotification\022\035\n\nphone_code"
-  "\030\033 \001(\tR\tphoneCode\"o\n\021UpdateUserRequest\022\027"
-  "\n\007auth_id\030\001 \001(\rR\006authId\022A\n\004auth\030\002 \001(\0132-."
-  "accounts.v1alpha1.users.v1.CreateUserReq"
-  "uestR\004auth\"U\n\021DeleteUserRequest\022\027\n\007user_"
-  "id\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002 \001("
-  "\rR\016organizationId\"\306\001\n\010UserList\022\016\n\002id\030\001 \001"
-  "(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n"
-  "\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001("
-  "\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033\n\tis_"
-  "active\030\006 \001(\010R\010isActive\022\"\n\ris_super_user\030"
-  "\007 \001(\010R\013isSuperUser\"L\n\021GetOneUserRequest\022"
-  "\016\n\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 \001(\r"
-  "R\016organizationId\"\323\t\n\022GetOneUserResponse\022"
-  "\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId"
-  "\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_"
-  "name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005ema"
-  "il\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\ncreat"
-  "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001"
-  "(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.accounts."
-  "v1alpha1.RoleR\005roles\022\?\n\013permissions\030\n \003("
-  "\0132\035.accounts.v1alpha1.PermissionR\013permis"
-  "sions\022\"\n\ris_super_user\030\013 \001(\010R\013isSuperUse"
-  "r\022E\n\rorganizations\030\014 \003(\0132\037.accounts.v1al"
-  "pha1.OrganizationR\rorganizations\0226\n\010proj"
-  "ects\030\r \003(\0132\032.accounts.v1alpha1.ProjectR\010"
-  "projects\022!\n\014phone_number\030\016 \001(\tR\013phoneNum"
-  "ber\022\030\n\007country\030\017 \001(\tR\007country\022\022\n\004city\030\020 "
-  "\001(\tR\004city\022\031\n\010zip_code\030\021 \001(\tR\007zipCode\022\030\n\007"
-  "address\030\022 \001(\tR\007address\022\024\n\005state\030\023 \001(\tR\005s"
-  "tate\022#\n\remoji_country\030\024 \001(\tR\014emojiCountr"
-  "y\022%\n\016email_verified\030\025 \001(\010R\remailVerified"
-  "\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022\032"
-  "\n\010language\030\027 \001(\tR\010language\022+\n\021push_notif"
-  "ication\030\030 \001(\010R\020pushNotification\022-\n\022email"
-  "_notification\030\031 \001(\010R\021emailNotification\0224"
-  "\n\026new_login_notification\030\032 \001(\010R\024newLogin"
-  "Notification\022/\n\023create_notification\030\033 \001("
-  "\010R\022createNotification\022/\n\023update_notifica"
-  "tion\030\034 \001(\010R\022updateNotification\022/\n\023delete"
-  "_notification\030\035 \001(\010R\022deleteNotification\022"
-  "9\n\030application_notification\030\036 \001(\010R\027appli"
-  "cationNotification\022+\n\021read_notification\030"
-  "\037 \001(\010R\020readNotification\022\035\n\nphone_code\030  "
-  "\001(\tR\tphoneCode\"N\n\020ListUserResponse\022:\n\005us"
-  "ers\030\001 \003(\0132$.accounts.v1alpha1.users.v1.U"
-  "serListR\005users\"I\n\031ListUserPaginationRequ"
-  "est\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001"
-  "(\005R\005limit\"n\n\032ListUserPaginationResponse\022"
-  "\024\n\005count\030\001 \001(\003R\005count\022:\n\005users\030\002 \003(\0132$.a"
-  "ccounts.v1alpha1.users.v1.UserListR\005user"
-  "s\"\027\n\025GetListUserDexRequest\"[\n\026GetListUse"
-  "rDexResponse\022A\n\tusers_dex\030\001 \003(\0132$.accoun"
-  "ts.v1alpha1.users.v1.UsersDexR\010usersDex\""
-  "r\n\024GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(\t"
-  "R\006userId\022A\n\004user\030\002 \001(\0132-.accounts.v1alph"
-  "a1.users.v1.CreateUserRequestR\004user\"\233\n\n\025"
-  "GetOneUserDexResponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n"
-  "\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001"
-  "(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastNa"
-  "me\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030\006 "
-  "\001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcreat"
-  "edAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022-\n\005r"
-  "oles\030\t \003(\0132\027.accounts.v1alpha1.RoleR\005rol"
-  "es\022\?\n\013permissions\030\n \003(\0132\035.accounts.v1alp"
-  "ha1.PermissionR\013permissions\022\"\n\ris_super_"
-  "user\030\013 \001(\010R\013isSuperUser\022E\n\rorganizations"
-  "\030\014 \003(\0132\037.accounts.v1alpha1.OrganizationR"
-  "\rorganizations\022\020\n\003msg\030\r \001(\tR\003msg\0226\n\010proj"
-  "ects\030\016 \003(\0132\032.accounts.v1alpha1.ProjectR\010"
-  "projects\022!\n\014phone_number\030\017 \001(\tR\013phoneNum"
-  "ber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n\004city\030\021 "
-  "\001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007"
-  "address\030\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005s"
-  "tate\022#\n\remoji_country\030\025 \001(\tR\014emojiCountr"
-  "y\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022"
-  "\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016email_ve"
-  "rified\030\030 \001(\010R\remailVerified\022\024\n\005error\030\031 \001"
-  "(\tR\005error\022\032\n\010language\030\032 \001(\tR\010language\022+\n"
-  "\021push_notification\030\033 \001(\010R\020pushNotificati"
-  "on\022-\n\022email_notification\030\034 \001(\010R\021emailNot"
-  "ification\0224\n\026new_login_notification\030\035 \001("
-  "\010R\024newLoginNotification\022/\n\023create_notifi"
-  "cation\030\036 \001(\010R\022createNotification\022/\n\023upda"
-  "te_notification\030\037 \001(\010R\022updateNotificatio"
-  "n\022/\n\023delete_notification\030  \001(\010R\022deleteNo"
-  "tification\0229\n\030application_notification\030!"
-  " \001(\010R\027applicationNotification\022+\n\021read_no"
-  "tification\030\" \001(\010R\020readNotification\022\035\n\nph"
-  "one_code\030# \001(\tR\tphoneCode\"Z\n\034SendVerific"
-  "ationEmailRequest\022\024\n\005email\030\001 \001(\tR\005email\022"
-  "\022\n\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR\003url\"V\n"
-  "\035SendVerificationEmailResponse\022\037\n\013html_r"
-  "esult\030\001 \001(\tR\nhtmlResult\022\024\n\005error\030\002 \001(\tR\005"
-  "error\"*\n\022VerifyEmailRequest\022\024\n\005token\030\001 \001"
-  "(\tR\005token\"=\n\023VerifyEmailResponse\022\020\n\003msg\030"
-  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\327\003\n\020Che"
-  "ckUserRequest\022\'\n\017organization_id\030\001 \001(\rR\016"
-  "organizationId\022\035\n\nproject_id\030\002 \001(\rR\tproj"
-  "ectId\022A\n\035get_organization_from_project\030\003"
-  " \001(\rR\032getOrganizationFromProject\022\036\n\nperm"
-  "ission\030\004 \001(\tR\npermission\022\036\n\013user_id_dex\030"
-  "\005 \001(\tR\tuserIdDex\022\"\n\ruser_id_admin\030\006 \001(\tR"
-  "\013userIdAdmin\022\027\n\007user_id\030\007 \001(\rR\006userId\022\'\n"
-  "\017type_permission\030\t \001(\tR\016typePermission\022\033"
-  "\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rapi_key_v"
-  "alue\030\013 \001(\tR\013apiKeyValue\022&\n\017token_ccp_adm"
-  "in\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_ccp_use"
-  "r_id\030\r \001(\tR\016tokenCcpUserId\"s\n\021CheckUserR"
-  "esponse\022\033\n\tis_exists\030\001 \001(\010R\010isExists\022\024\n\005"
-  "error\030\002 \001(\tR\005error\022\031\n\010is_admin\030\003 \001(\010R\007is"
-  "Admin\022\020\n\003msg\030\004 \001(\tR\003msg\"\?\n\010UsersDex\022\027\n\007u"
-  "ser_id\030\001 \001(\tR\006userId\022\032\n\010provider\030\002 \001(\tR\010"
-  "provider\"2\n\032GetUsersEmailFilterRequest\022\024"
-  "\n\005value\030\001 \001(\tR\005value\"Y\n\033GetUsersEmailFil"
-  "terResponse\022:\n\005users\030\001 \003(\0132$.accounts.v1"
-  "alpha1.users.v1.UserListR\005usersB:Z8githu"
-  "b.com/cuemby/ccp-sdk/gen/go/accounts/v1a"
-  "lpha1/usersb\006proto3"
+  "\030\033 \001(\tR\tphoneCode\022)\n\020optional_address\030\034 "
+  "\001(\tR\017optionalAddress\"o\n\021UpdateUserReques"
+  "t\022\027\n\007auth_id\030\001 \001(\rR\006authId\022A\n\004auth\030\002 \001(\013"
+  "2-.accounts.v1alpha1.users.v1.CreateUser"
+  "RequestR\004auth\"U\n\021DeleteUserRequest\022\027\n\007us"
+  "er_id\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002"
+  " \001(\rR\016organizationId\"\306\001\n\010UserList\022\016\n\002id\030"
+  "\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName"
+  "\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email\030\004"
+  " \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033\n\t"
+  "is_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_us"
+  "er\030\007 \001(\010R\013isSuperUser\"L\n\021GetOneUserReque"
+  "st\022\016\n\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 "
+  "\001(\rR\016organizationId\"o\n\022GetOneUserRespons"
+  "e\0221\n\004user\030\001 \001(\0132\035.accounts.v1alpha1.User"
+  "DetailR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030"
+  "\003 \001(\tR\005error\"N\n\020ListUserResponse\022:\n\005user"
+  "s\030\001 \003(\0132$.accounts.v1alpha1.users.v1.Use"
+  "rListR\005users\"I\n\031ListUserPaginationReques"
+  "t\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005"
+  "R\005limit\"n\n\032ListUserPaginationResponse\022\024\n"
+  "\005count\030\001 \001(\003R\005count\022:\n\005users\030\002 \003(\0132$.acc"
+  "ounts.v1alpha1.users.v1.UserListR\005users\""
+  "\027\n\025GetListUserDexRequest\"[\n\026GetListUserD"
+  "exResponse\022A\n\tusers_dex\030\001 \003(\0132$.accounts"
+  ".v1alpha1.users.v1.UsersDexR\010usersDex\"r\n"
+  "\024GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(\tR\006"
+  "userId\022A\n\004user\030\002 \001(\0132-.accounts.v1alpha1"
+  ".users.v1.CreateUserRequestR\004user\"r\n\025Get"
+  "OneUserDexResponse\0221\n\004user\030\001 \001(\0132\035.accou"
+  "nts.v1alpha1.UserDetailR\004user\022\020\n\003msg\030\002 \001"
+  "(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error\"Z\n\034SendVer"
+  "ificationEmailRequest\022\024\n\005email\030\001 \001(\tR\005em"
+  "ail\022\022\n\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR\003ur"
+  "l\"V\n\035SendVerificationEmailResponse\022\037\n\013ht"
+  "ml_result\030\001 \001(\tR\nhtmlResult\022\024\n\005error\030\002 \001"
+  "(\tR\005error\"*\n\022VerifyEmailRequest\022\024\n\005token"
+  "\030\001 \001(\tR\005token\"=\n\023VerifyEmailResponse\022\020\n\003"
+  "msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\327\003\n"
+  "\020CheckUserRequest\022\'\n\017organization_id\030\001 \001"
+  "(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(\rR\t"
+  "projectId\022A\n\035get_organization_from_proje"
+  "ct\030\003 \001(\rR\032getOrganizationFromProject\022\036\n\n"
+  "permission\030\004 \001(\tR\npermission\022\036\n\013user_id_"
+  "dex\030\005 \001(\tR\tuserIdDex\022\"\n\ruser_id_admin\030\006 "
+  "\001(\tR\013userIdAdmin\022\027\n\007user_id\030\007 \001(\rR\006userI"
+  "d\022\'\n\017type_permission\030\t \001(\tR\016typePermissi"
+  "on\022\033\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rapi_k"
+  "ey_value\030\013 \001(\tR\013apiKeyValue\022&\n\017token_ccp"
+  "_admin\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_ccp"
+  "_user_id\030\r \001(\tR\016tokenCcpUserId\"s\n\021CheckU"
+  "serResponse\022\033\n\tis_exists\030\001 \001(\010R\010isExists"
+  "\022\024\n\005error\030\002 \001(\tR\005error\022\031\n\010is_admin\030\003 \001(\010"
+  "R\007isAdmin\022\020\n\003msg\030\004 \001(\tR\003msg\"\?\n\010UsersDex\022"
+  "\027\n\007user_id\030\001 \001(\tR\006userId\022\032\n\010provider\030\002 \001"
+  "(\tR\010provider\"2\n\032GetUsersEmailFilterReque"
+  "st\022\024\n\005value\030\001 \001(\tR\005value\"Y\n\033GetUsersEmai"
+  "lFilterResponse\022:\n\005users\030\001 \003(\0132$.account"
+  "s.v1alpha1.users.v1.UserListR\005usersB:Z8g"
+  "ithub.com/cuemby/ccp-sdk/gen/go/accounts"
+  "/v1alpha1/usersb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto = {
-  false, false, 6059, descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto, "accounts/v1alpha1/users/users.proto", 
+  false, false, 3783, descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto, "accounts/v1alpha1/users/users.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_deps, 1, 26,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fusers_2fusers_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fusers_2fusers_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fusers_2fusers_2eproto,
@@ -2025,6 +1848,11 @@ CreateUserRequest::CreateUserRequest(const CreateUserRequest& from)
     phone_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_code(), 
       GetArenaForAllocation());
   }
+  optional_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_optional_address().empty()) {
+    optional_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_optional_address(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&is_active_, &from.is_active_,
     static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
     reinterpret_cast<char*>(&is_active_)) + sizeof(read_notification_));
@@ -2046,6 +1874,7 @@ emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 invitation_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+optional_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&is_active_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
@@ -2075,6 +1904,7 @@ inline void CreateUserRequest::SharedDtor() {
   invitation_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   phone_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  optional_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateUserRequest::ArenaDtor(void* object) {
@@ -2110,6 +1940,7 @@ void CreateUserRequest::Clear() {
   invitation_code_.ClearToEmpty();
   language_.ClearToEmpty();
   phone_code_.ClearToEmpty();
+  optional_address_.ClearToEmpty();
   ::memset(&is_active_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&read_notification_) -
       reinterpret_cast<char*>(&is_active_)) + sizeof(read_notification_));
@@ -2345,6 +2176,15 @@ const char* CreateUserRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           auto str = _internal_mutable_phone_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.CreateUserRequest.phone_code"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string optional_address = 28 [json_name = "optionalAddress"];
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 226)) {
+          auto str = _internal_mutable_optional_address();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.CreateUserRequest.optional_address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2604,6 +2444,16 @@ failure:
         27, this->_internal_phone_code(), target);
   }
 
+  // string optional_address = 28 [json_name = "optionalAddress"];
+  if (!this->_internal_optional_address().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_optional_address().data(), static_cast<int>(this->_internal_optional_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.users.v1.CreateUserRequest.optional_address");
+    target = stream->WriteStringMaybeAliased(
+        28, this->_internal_optional_address(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2763,6 +2613,13 @@ size_t CreateUserRequest::ByteSizeLong() const {
         this->_internal_phone_code());
   }
 
+  // string optional_address = 28 [json_name = "optionalAddress"];
+  if (!this->_internal_optional_address().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_optional_address());
+  }
+
   // bool is_active = 5 [json_name = "isActive"];
   if (this->_internal_is_active() != 0) {
     total_size += 1 + 1;
@@ -2886,6 +2743,9 @@ void CreateUserRequest::MergeFrom(const CreateUserRequest& from) {
   if (!from._internal_phone_code().empty()) {
     _internal_set_phone_code(from._internal_phone_code());
   }
+  if (!from._internal_optional_address().empty()) {
+    _internal_set_optional_address(from._internal_optional_address());
+  }
   if (from._internal_is_active() != 0) {
     _internal_set_is_active(from._internal_is_active());
   }
@@ -3005,6 +2865,11 @@ void CreateUserRequest::InternalSwap(CreateUserRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &phone_code_, GetArenaForAllocation(),
       &other->phone_code_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &optional_address_, GetArenaForAllocation(),
+      &other->optional_address_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CreateUserRequest, read_notification_)
@@ -4104,27 +3969,22 @@ void GetOneUserRequest::InternalSwap(GetOneUserRequest* other) {
 
 class GetOneUserResponse::_Internal {
  public:
+  static const ::accounts::v1alpha1::UserDetail& user(const GetOneUserResponse* msg);
 };
 
-void GetOneUserResponse::clear_roles() {
-  roles_.Clear();
+const ::accounts::v1alpha1::UserDetail&
+GetOneUserResponse::_Internal::user(const GetOneUserResponse* msg) {
+  return *msg->user_;
 }
-void GetOneUserResponse::clear_permissions() {
-  permissions_.Clear();
-}
-void GetOneUserResponse::clear_organizations() {
-  organizations_.Clear();
-}
-void GetOneUserResponse::clear_projects() {
-  projects_.Clear();
+void GetOneUserResponse::clear_user() {
+  if (GetArenaForAllocation() == nullptr && user_ != nullptr) {
+    delete user_;
+  }
+  user_ = nullptr;
 }
 GetOneUserResponse::GetOneUserResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  roles_(arena),
-  permissions_(arena),
-  organizations_(arena),
-  projects_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -4132,113 +3992,30 @@ GetOneUserResponse::GetOneUserResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.users.v1.GetOneUserResponse)
 }
 GetOneUserResponse::GetOneUserResponse(const GetOneUserResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      roles_(from.roles_),
-      permissions_(from.permissions_),
-      organizations_(from.organizations_),
-      projects_(from.projects_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_user_id().empty()) {
-    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_first_name().empty()) {
-    first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_first_name(), 
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
       GetArenaForAllocation());
   }
-  last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_last_name().empty()) {
-    last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_last_name(), 
-      GetArenaForAllocation());
+  if (from._internal_has_user()) {
+    user_ = new ::accounts::v1alpha1::UserDetail(*from.user_);
+  } else {
+    user_ = nullptr;
   }
-  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_email().empty()) {
-    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
-      GetArenaForAllocation());
-  }
-  created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_created_at().empty()) {
-    created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_at(), 
-      GetArenaForAllocation());
-  }
-  updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_updated_at().empty()) {
-    updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
-      GetArenaForAllocation());
-  }
-  phone_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_phone_number().empty()) {
-    phone_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_number(), 
-      GetArenaForAllocation());
-  }
-  country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_country().empty()) {
-    country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_country(), 
-      GetArenaForAllocation());
-  }
-  city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_city().empty()) {
-    city_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_city(), 
-      GetArenaForAllocation());
-  }
-  zip_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_zip_code().empty()) {
-    zip_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_zip_code(), 
-      GetArenaForAllocation());
-  }
-  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_address().empty()) {
-    address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_address(), 
-      GetArenaForAllocation());
-  }
-  state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_state().empty()) {
-    state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_state(), 
-      GetArenaForAllocation());
-  }
-  emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_emoji_country().empty()) {
-    emoji_country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_emoji_country(), 
-      GetArenaForAllocation());
-  }
-  language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_language().empty()) {
-    language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_language(), 
-      GetArenaForAllocation());
-  }
-  phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_phone_code().empty()) {
-    phone_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_code(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.users.v1.GetOneUserResponse)
 }
 
 inline void GetOneUserResponse::SharedCtor() {
-user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-phone_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-zip_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_ = nullptr;
 }
 
 GetOneUserResponse::~GetOneUserResponse() {
@@ -4250,21 +4027,9 @@ GetOneUserResponse::~GetOneUserResponse() {
 
 inline void GetOneUserResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  first_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  phone_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  city_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  zip_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  state_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  emoji_country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  phone_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete user_;
 }
 
 void GetOneUserResponse::ArenaDtor(void* object) {
@@ -4283,28 +4048,12 @@ void GetOneUserResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  roles_.Clear();
-  permissions_.Clear();
-  organizations_.Clear();
-  projects_.Clear();
-  user_id_.ClearToEmpty();
-  first_name_.ClearToEmpty();
-  last_name_.ClearToEmpty();
-  email_.ClearToEmpty();
-  created_at_.ClearToEmpty();
-  updated_at_.ClearToEmpty();
-  phone_number_.ClearToEmpty();
-  country_.ClearToEmpty();
-  city_.ClearToEmpty();
-  zip_code_.ClearToEmpty();
-  address_.ClearToEmpty();
-  state_.ClearToEmpty();
-  emoji_country_.ClearToEmpty();
-  language_.ClearToEmpty();
-  phone_code_.ClearToEmpty();
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&read_notification_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
+  msg_.ClearToEmpty();
+  error_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && user_ != nullptr) {
+    delete user_;
+  }
+  user_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4314,277 +4063,28 @@ const char* GetOneUserResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 id = 1 [json_name = "id"];
+      // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_user(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string user_id = 2 [json_name = "userId"];
+      // string msg = 2 [json_name = "msg"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_user_id();
+          auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.user_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.msg"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string first_name = 3 [json_name = "firstName"];
+      // string error = 3 [json_name = "error"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_first_name();
+          auto str = _internal_mutable_error();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.first_name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string last_name = 4 [json_name = "lastName"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_last_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.last_name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string email = 5 [json_name = "email"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_email();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.email"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool is_active = 6 [json_name = "isActive"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          is_active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string created_at = 7 [json_name = "createdAt"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          auto str = _internal_mutable_created_at();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.created_at"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string updated_at = 8 [json_name = "updatedAt"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
-          auto str = _internal_mutable_updated_at();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.updated_at"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_roles(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // bool is_super_user = 11 [json_name = "isSuperUser"];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
-          is_super_user_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_organizations(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_projects(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // string phone_number = 14 [json_name = "phoneNumber"];
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
-          auto str = _internal_mutable_phone_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.phone_number"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string country = 15 [json_name = "country"];
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
-          auto str = _internal_mutable_country();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.country"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string city = 16 [json_name = "city"];
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
-          auto str = _internal_mutable_city();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.city"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string zip_code = 17 [json_name = "zipCode"];
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
-          auto str = _internal_mutable_zip_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.zip_code"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string address = 18 [json_name = "address"];
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
-          auto str = _internal_mutable_address();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.address"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string state = 19 [json_name = "state"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
-          auto str = _internal_mutable_state();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.state"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string emoji_country = 20 [json_name = "emojiCountry"];
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
-          auto str = _internal_mutable_emoji_country();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.emoji_country"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool email_verified = 21 [json_name = "emailVerified"];
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 168)) {
-          email_verified_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 176)) {
-          is_mfa_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string language = 23 [json_name = "language"];
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
-          auto str = _internal_mutable_language();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.language"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool push_notification = 24 [json_name = "pushNotification"];
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 192)) {
-          push_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool email_notification = 25 [json_name = "emailNotification"];
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 200)) {
-          email_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool new_login_notification = 26 [json_name = "newLoginNotification"];
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 208)) {
-          new_login_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool create_notification = 27 [json_name = "createNotification"];
-      case 27:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
-          create_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool update_notification = 28 [json_name = "updateNotification"];
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 224)) {
-          update_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool delete_notification = 29 [json_name = "deleteNotification"];
-      case 29:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 232)) {
-          delete_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool application_notification = 30 [json_name = "applicationNotification"];
-      case 30:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 240)) {
-          application_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool read_notification = 31 [json_name = "readNotification"];
-      case 31:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
-          read_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string phone_code = 32 [json_name = "phoneCode"];
-      case 32:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 2)) {
-          auto str = _internal_mutable_phone_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.phone_code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4617,264 +4117,32 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
-  }
-
-  // string user_id = 2 [json_name = "userId"];
-  if (!this->_internal_user_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.user_id");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_user_id(), target);
-  }
-
-  // string first_name = 3 [json_name = "firstName"];
-  if (!this->_internal_first_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_first_name().data(), static_cast<int>(this->_internal_first_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.first_name");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_first_name(), target);
-  }
-
-  // string last_name = 4 [json_name = "lastName"];
-  if (!this->_internal_last_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_last_name().data(), static_cast<int>(this->_internal_last_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.last_name");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_last_name(), target);
-  }
-
-  // string email = 5 [json_name = "email"];
-  if (!this->_internal_email().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.email");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_email(), target);
-  }
-
-  // bool is_active = 6 [json_name = "isActive"];
-  if (this->_internal_is_active() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_is_active(), target);
-  }
-
-  // string created_at = 7 [json_name = "createdAt"];
-  if (!this->_internal_created_at().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_created_at().data(), static_cast<int>(this->_internal_created_at().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.created_at");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_created_at(), target);
-  }
-
-  // string updated_at = 8 [json_name = "updatedAt"];
-  if (!this->_internal_updated_at().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_updated_at().data(), static_cast<int>(this->_internal_updated_at().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.updated_at");
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_updated_at(), target);
-  }
-
-  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_roles_size()); i < n; i++) {
+  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  if (this->_internal_has_user()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(9, this->_internal_roles(i), target, stream);
+      InternalWriteMessage(
+        1, _Internal::user(this), target, stream);
   }
 
-  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(10, this->_internal_permissions(i), target, stream);
-  }
-
-  // bool is_super_user = 11 [json_name = "isSuperUser"];
-  if (this->_internal_is_super_user() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_is_super_user(), target);
-  }
-
-  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_organizations_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(12, this->_internal_organizations(i), target, stream);
-  }
-
-  // repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_projects_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(13, this->_internal_projects(i), target, stream);
-  }
-
-  // string phone_number = 14 [json_name = "phoneNumber"];
-  if (!this->_internal_phone_number().empty()) {
+  // string msg = 2 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_phone_number().data(), static_cast<int>(this->_internal_phone_number().length()),
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.phone_number");
+      "accounts.v1alpha1.users.v1.GetOneUserResponse.msg");
     target = stream->WriteStringMaybeAliased(
-        14, this->_internal_phone_number(), target);
+        2, this->_internal_msg(), target);
   }
 
-  // string country = 15 [json_name = "country"];
-  if (!this->_internal_country().empty()) {
+  // string error = 3 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.country");
+      "accounts.v1alpha1.users.v1.GetOneUserResponse.error");
     target = stream->WriteStringMaybeAliased(
-        15, this->_internal_country(), target);
-  }
-
-  // string city = 16 [json_name = "city"];
-  if (!this->_internal_city().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_city().data(), static_cast<int>(this->_internal_city().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.city");
-    target = stream->WriteStringMaybeAliased(
-        16, this->_internal_city(), target);
-  }
-
-  // string zip_code = 17 [json_name = "zipCode"];
-  if (!this->_internal_zip_code().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_zip_code().data(), static_cast<int>(this->_internal_zip_code().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.zip_code");
-    target = stream->WriteStringMaybeAliased(
-        17, this->_internal_zip_code(), target);
-  }
-
-  // string address = 18 [json_name = "address"];
-  if (!this->_internal_address().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.address");
-    target = stream->WriteStringMaybeAliased(
-        18, this->_internal_address(), target);
-  }
-
-  // string state = 19 [json_name = "state"];
-  if (!this->_internal_state().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_state().data(), static_cast<int>(this->_internal_state().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.state");
-    target = stream->WriteStringMaybeAliased(
-        19, this->_internal_state(), target);
-  }
-
-  // string emoji_country = 20 [json_name = "emojiCountry"];
-  if (!this->_internal_emoji_country().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_emoji_country().data(), static_cast<int>(this->_internal_emoji_country().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.emoji_country");
-    target = stream->WriteStringMaybeAliased(
-        20, this->_internal_emoji_country(), target);
-  }
-
-  // bool email_verified = 21 [json_name = "emailVerified"];
-  if (this->_internal_email_verified() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(21, this->_internal_email_verified(), target);
-  }
-
-  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
-  if (this->_internal_is_mfa_enabled() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(22, this->_internal_is_mfa_enabled(), target);
-  }
-
-  // string language = 23 [json_name = "language"];
-  if (!this->_internal_language().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.language");
-    target = stream->WriteStringMaybeAliased(
-        23, this->_internal_language(), target);
-  }
-
-  // bool push_notification = 24 [json_name = "pushNotification"];
-  if (this->_internal_push_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(24, this->_internal_push_notification(), target);
-  }
-
-  // bool email_notification = 25 [json_name = "emailNotification"];
-  if (this->_internal_email_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(25, this->_internal_email_notification(), target);
-  }
-
-  // bool new_login_notification = 26 [json_name = "newLoginNotification"];
-  if (this->_internal_new_login_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(26, this->_internal_new_login_notification(), target);
-  }
-
-  // bool create_notification = 27 [json_name = "createNotification"];
-  if (this->_internal_create_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(27, this->_internal_create_notification(), target);
-  }
-
-  // bool update_notification = 28 [json_name = "updateNotification"];
-  if (this->_internal_update_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(28, this->_internal_update_notification(), target);
-  }
-
-  // bool delete_notification = 29 [json_name = "deleteNotification"];
-  if (this->_internal_delete_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(29, this->_internal_delete_notification(), target);
-  }
-
-  // bool application_notification = 30 [json_name = "applicationNotification"];
-  if (this->_internal_application_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(30, this->_internal_application_notification(), target);
-  }
-
-  // bool read_notification = 31 [json_name = "readNotification"];
-  if (this->_internal_read_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(31, this->_internal_read_notification(), target);
-  }
-
-  // string phone_code = 32 [json_name = "phoneCode"];
-  if (!this->_internal_phone_code().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_phone_code().data(), static_cast<int>(this->_internal_phone_code().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserResponse.phone_code");
-    target = stream->WriteStringMaybeAliased(
-        32, this->_internal_phone_code(), target);
+        3, this->_internal_error(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4893,204 +4161,25 @@ size_t GetOneUserResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
-  total_size += 1UL * this->_internal_roles_size();
-  for (const auto& msg : this->roles_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
-  total_size += 1UL * this->_internal_permissions_size();
-  for (const auto& msg : this->permissions_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
-  total_size += 1UL * this->_internal_organizations_size();
-  for (const auto& msg : this->organizations_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Project projects = 13 [json_name = "projects"];
-  total_size += 1UL * this->_internal_projects_size();
-  for (const auto& msg : this->projects_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // string user_id = 2 [json_name = "userId"];
-  if (!this->_internal_user_id().empty()) {
+  // string msg = 2 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_user_id());
+        this->_internal_msg());
   }
 
-  // string first_name = 3 [json_name = "firstName"];
-  if (!this->_internal_first_name().empty()) {
+  // string error = 3 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_first_name());
+        this->_internal_error());
   }
 
-  // string last_name = 4 [json_name = "lastName"];
-  if (!this->_internal_last_name().empty()) {
+  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  if (this->_internal_has_user()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_last_name());
-  }
-
-  // string email = 5 [json_name = "email"];
-  if (!this->_internal_email().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_email());
-  }
-
-  // string created_at = 7 [json_name = "createdAt"];
-  if (!this->_internal_created_at().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_created_at());
-  }
-
-  // string updated_at = 8 [json_name = "updatedAt"];
-  if (!this->_internal_updated_at().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_updated_at());
-  }
-
-  // string phone_number = 14 [json_name = "phoneNumber"];
-  if (!this->_internal_phone_number().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_phone_number());
-  }
-
-  // string country = 15 [json_name = "country"];
-  if (!this->_internal_country().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_country());
-  }
-
-  // string city = 16 [json_name = "city"];
-  if (!this->_internal_city().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_city());
-  }
-
-  // string zip_code = 17 [json_name = "zipCode"];
-  if (!this->_internal_zip_code().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_zip_code());
-  }
-
-  // string address = 18 [json_name = "address"];
-  if (!this->_internal_address().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_address());
-  }
-
-  // string state = 19 [json_name = "state"];
-  if (!this->_internal_state().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_state());
-  }
-
-  // string emoji_country = 20 [json_name = "emojiCountry"];
-  if (!this->_internal_emoji_country().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_emoji_country());
-  }
-
-  // string language = 23 [json_name = "language"];
-  if (!this->_internal_language().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_language());
-  }
-
-  // string phone_code = 32 [json_name = "phoneCode"];
-  if (!this->_internal_phone_code().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_phone_code());
-  }
-
-  // uint32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
-  }
-
-  // bool is_active = 6 [json_name = "isActive"];
-  if (this->_internal_is_active() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool is_super_user = 11 [json_name = "isSuperUser"];
-  if (this->_internal_is_super_user() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool email_verified = 21 [json_name = "emailVerified"];
-  if (this->_internal_email_verified() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
-  if (this->_internal_is_mfa_enabled() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool push_notification = 24 [json_name = "pushNotification"];
-  if (this->_internal_push_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool email_notification = 25 [json_name = "emailNotification"];
-  if (this->_internal_email_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool new_login_notification = 26 [json_name = "newLoginNotification"];
-  if (this->_internal_new_login_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool create_notification = 27 [json_name = "createNotification"];
-  if (this->_internal_create_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool update_notification = 28 [json_name = "updateNotification"];
-  if (this->_internal_update_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool delete_notification = 29 [json_name = "deleteNotification"];
-  if (this->_internal_delete_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool application_notification = 30 [json_name = "applicationNotification"];
-  if (this->_internal_application_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool read_notification = 31 [json_name = "readNotification"];
-  if (this->_internal_read_notification() != 0) {
-    total_size += 2 + 1;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *user_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5121,93 +4210,14 @@ void GetOneUserResponse::MergeFrom(const GetOneUserResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  roles_.MergeFrom(from.roles_);
-  permissions_.MergeFrom(from.permissions_);
-  organizations_.MergeFrom(from.organizations_);
-  projects_.MergeFrom(from.projects_);
-  if (!from._internal_user_id().empty()) {
-    _internal_set_user_id(from._internal_user_id());
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_first_name().empty()) {
-    _internal_set_first_name(from._internal_first_name());
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
   }
-  if (!from._internal_last_name().empty()) {
-    _internal_set_last_name(from._internal_last_name());
-  }
-  if (!from._internal_email().empty()) {
-    _internal_set_email(from._internal_email());
-  }
-  if (!from._internal_created_at().empty()) {
-    _internal_set_created_at(from._internal_created_at());
-  }
-  if (!from._internal_updated_at().empty()) {
-    _internal_set_updated_at(from._internal_updated_at());
-  }
-  if (!from._internal_phone_number().empty()) {
-    _internal_set_phone_number(from._internal_phone_number());
-  }
-  if (!from._internal_country().empty()) {
-    _internal_set_country(from._internal_country());
-  }
-  if (!from._internal_city().empty()) {
-    _internal_set_city(from._internal_city());
-  }
-  if (!from._internal_zip_code().empty()) {
-    _internal_set_zip_code(from._internal_zip_code());
-  }
-  if (!from._internal_address().empty()) {
-    _internal_set_address(from._internal_address());
-  }
-  if (!from._internal_state().empty()) {
-    _internal_set_state(from._internal_state());
-  }
-  if (!from._internal_emoji_country().empty()) {
-    _internal_set_emoji_country(from._internal_emoji_country());
-  }
-  if (!from._internal_language().empty()) {
-    _internal_set_language(from._internal_language());
-  }
-  if (!from._internal_phone_code().empty()) {
-    _internal_set_phone_code(from._internal_phone_code());
-  }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
-  if (from._internal_is_active() != 0) {
-    _internal_set_is_active(from._internal_is_active());
-  }
-  if (from._internal_is_super_user() != 0) {
-    _internal_set_is_super_user(from._internal_is_super_user());
-  }
-  if (from._internal_email_verified() != 0) {
-    _internal_set_email_verified(from._internal_email_verified());
-  }
-  if (from._internal_is_mfa_enabled() != 0) {
-    _internal_set_is_mfa_enabled(from._internal_is_mfa_enabled());
-  }
-  if (from._internal_push_notification() != 0) {
-    _internal_set_push_notification(from._internal_push_notification());
-  }
-  if (from._internal_email_notification() != 0) {
-    _internal_set_email_notification(from._internal_email_notification());
-  }
-  if (from._internal_new_login_notification() != 0) {
-    _internal_set_new_login_notification(from._internal_new_login_notification());
-  }
-  if (from._internal_create_notification() != 0) {
-    _internal_set_create_notification(from._internal_create_notification());
-  }
-  if (from._internal_update_notification() != 0) {
-    _internal_set_update_notification(from._internal_update_notification());
-  }
-  if (from._internal_delete_notification() != 0) {
-    _internal_set_delete_notification(from._internal_delete_notification());
-  }
-  if (from._internal_application_notification() != 0) {
-    _internal_set_application_notification(from._internal_application_notification());
-  }
-  if (from._internal_read_notification() != 0) {
-    _internal_set_read_notification(from._internal_read_notification());
+  if (from._internal_has_user()) {
+    _internal_mutable_user()->::accounts::v1alpha1::UserDetail::MergeFrom(from._internal_user());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5226,91 +4236,17 @@ bool GetOneUserResponse::IsInitialized() const {
 void GetOneUserResponse::InternalSwap(GetOneUserResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  roles_.InternalSwap(&other->roles_);
-  permissions_.InternalSwap(&other->permissions_);
-  organizations_.InternalSwap(&other->organizations_);
-  projects_.InternalSwap(&other->projects_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &user_id_, GetArenaForAllocation(),
-      &other->user_id_, other->GetArenaForAllocation()
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &first_name_, GetArenaForAllocation(),
-      &other->first_name_, other->GetArenaForAllocation()
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &last_name_, GetArenaForAllocation(),
-      &other->last_name_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &email_, GetArenaForAllocation(),
-      &other->email_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &created_at_, GetArenaForAllocation(),
-      &other->created_at_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &updated_at_, GetArenaForAllocation(),
-      &other->updated_at_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &phone_number_, GetArenaForAllocation(),
-      &other->phone_number_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &country_, GetArenaForAllocation(),
-      &other->country_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &city_, GetArenaForAllocation(),
-      &other->city_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &zip_code_, GetArenaForAllocation(),
-      &other->zip_code_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &address_, GetArenaForAllocation(),
-      &other->address_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &state_, GetArenaForAllocation(),
-      &other->state_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &emoji_country_, GetArenaForAllocation(),
-      &other->emoji_country_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &language_, GetArenaForAllocation(),
-      &other->language_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &phone_code_, GetArenaForAllocation(),
-      &other->phone_code_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetOneUserResponse, read_notification_)
-      + sizeof(GetOneUserResponse::read_notification_)
-      - PROTOBUF_FIELD_OFFSET(GetOneUserResponse, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  swap(user_, other->user_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneUserResponse::GetMetadata() const {
@@ -6535,27 +5471,22 @@ void GetOneUserDexRequest::InternalSwap(GetOneUserDexRequest* other) {
 
 class GetOneUserDexResponse::_Internal {
  public:
+  static const ::accounts::v1alpha1::UserDetail& user(const GetOneUserDexResponse* msg);
 };
 
-void GetOneUserDexResponse::clear_roles() {
-  roles_.Clear();
+const ::accounts::v1alpha1::UserDetail&
+GetOneUserDexResponse::_Internal::user(const GetOneUserDexResponse* msg) {
+  return *msg->user_;
 }
-void GetOneUserDexResponse::clear_permissions() {
-  permissions_.Clear();
-}
-void GetOneUserDexResponse::clear_organizations() {
-  organizations_.Clear();
-}
-void GetOneUserDexResponse::clear_projects() {
-  projects_.Clear();
+void GetOneUserDexResponse::clear_user() {
+  if (GetArenaForAllocation() == nullptr && user_ != nullptr) {
+    delete user_;
+  }
+  user_ = nullptr;
 }
 GetOneUserDexResponse::GetOneUserDexResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  roles_(arena),
-  permissions_(arena),
-  organizations_(arena),
-  projects_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -6563,85 +5494,11 @@ GetOneUserDexResponse::GetOneUserDexResponse(::PROTOBUF_NAMESPACE_ID::Arena* are
   // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.users.v1.GetOneUserDexResponse)
 }
 GetOneUserDexResponse::GetOneUserDexResponse(const GetOneUserDexResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      roles_(from.roles_),
-      permissions_(from.permissions_),
-      organizations_(from.organizations_),
-      projects_(from.projects_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_user_id().empty()) {
-    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
-      GetArenaForAllocation());
-  }
-  first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_first_name().empty()) {
-    first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_first_name(), 
-      GetArenaForAllocation());
-  }
-  last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_last_name().empty()) {
-    last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_last_name(), 
-      GetArenaForAllocation());
-  }
-  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_email().empty()) {
-    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
-      GetArenaForAllocation());
-  }
-  created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_created_at().empty()) {
-    created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_at(), 
-      GetArenaForAllocation());
-  }
-  updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_updated_at().empty()) {
-    updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
-      GetArenaForAllocation());
-  }
   msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_msg().empty()) {
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
-      GetArenaForAllocation());
-  }
-  phone_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_phone_number().empty()) {
-    phone_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_number(), 
-      GetArenaForAllocation());
-  }
-  country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_country().empty()) {
-    country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_country(), 
-      GetArenaForAllocation());
-  }
-  city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_city().empty()) {
-    city_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_city(), 
-      GetArenaForAllocation());
-  }
-  zip_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_zip_code().empty()) {
-    zip_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_zip_code(), 
-      GetArenaForAllocation());
-  }
-  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_address().empty()) {
-    address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_address(), 
-      GetArenaForAllocation());
-  }
-  state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_state().empty()) {
-    state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_state(), 
-      GetArenaForAllocation());
-  }
-  emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_emoji_country().empty()) {
-    emoji_country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_emoji_country(), 
-      GetArenaForAllocation());
-  }
-  token_ccp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_token_ccp().empty()) {
-    token_ccp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token_ccp(), 
       GetArenaForAllocation());
   }
   error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -6649,45 +5506,18 @@ GetOneUserDexResponse::GetOneUserDexResponse(const GetOneUserDexResponse& from)
     error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
       GetArenaForAllocation());
   }
-  language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_language().empty()) {
-    language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_language(), 
-      GetArenaForAllocation());
+  if (from._internal_has_user()) {
+    user_ = new ::accounts::v1alpha1::UserDetail(*from.user_);
+  } else {
+    user_ = nullptr;
   }
-  phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_phone_code().empty()) {
-    phone_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_code(), 
-      GetArenaForAllocation());
-  }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.users.v1.GetOneUserDexResponse)
 }
 
 inline void GetOneUserDexResponse::SharedCtor() {
-user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-phone_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-zip_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-token_ccp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
+user_ = nullptr;
 }
 
 GetOneUserDexResponse::~GetOneUserDexResponse() {
@@ -6699,24 +5529,9 @@ GetOneUserDexResponse::~GetOneUserDexResponse() {
 
 inline void GetOneUserDexResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  first_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  phone_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  city_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  zip_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  state_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  emoji_country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  token_ccp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  phone_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete user_;
 }
 
 void GetOneUserDexResponse::ArenaDtor(void* object) {
@@ -6735,31 +5550,12 @@ void GetOneUserDexResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  roles_.Clear();
-  permissions_.Clear();
-  organizations_.Clear();
-  projects_.Clear();
-  user_id_.ClearToEmpty();
-  first_name_.ClearToEmpty();
-  last_name_.ClearToEmpty();
-  email_.ClearToEmpty();
-  created_at_.ClearToEmpty();
-  updated_at_.ClearToEmpty();
   msg_.ClearToEmpty();
-  phone_number_.ClearToEmpty();
-  country_.ClearToEmpty();
-  city_.ClearToEmpty();
-  zip_code_.ClearToEmpty();
-  address_.ClearToEmpty();
-  state_.ClearToEmpty();
-  emoji_country_.ClearToEmpty();
-  token_ccp_.ClearToEmpty();
   error_.ClearToEmpty();
-  language_.ClearToEmpty();
-  phone_code_.ClearToEmpty();
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&read_notification_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
+  if (GetArenaForAllocation() == nullptr && user_ != nullptr) {
+    delete user_;
+  }
+  user_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6769,304 +5565,28 @@ const char* GetOneUserDexResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 id = 1 [json_name = "id"];
+      // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_user(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string user_id = 2 [json_name = "userId"];
+      // string msg = 2 [json_name = "msg"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_user_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.user_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string first_name = 3 [json_name = "firstName"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_first_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.first_name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string last_name = 4 [json_name = "lastName"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_last_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.last_name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string email = 5 [json_name = "email"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_email();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.email"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool is_active = 6 [json_name = "isActive"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          is_active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string created_at = 7 [json_name = "createdAt"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          auto str = _internal_mutable_created_at();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.created_at"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string updated_at = 8 [json_name = "updatedAt"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
-          auto str = _internal_mutable_updated_at();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.updated_at"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_roles(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // bool is_super_user = 11 [json_name = "isSuperUser"];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
-          is_super_user_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_organizations(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // string msg = 13 [json_name = "msg"];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.msg"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_projects(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // string phone_number = 15 [json_name = "phoneNumber"];
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
-          auto str = _internal_mutable_phone_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.phone_number"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string country = 16 [json_name = "country"];
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
-          auto str = _internal_mutable_country();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.country"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string city = 17 [json_name = "city"];
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
-          auto str = _internal_mutable_city();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.city"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string zip_code = 18 [json_name = "zipCode"];
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
-          auto str = _internal_mutable_zip_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.zip_code"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string address = 19 [json_name = "address"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
-          auto str = _internal_mutable_address();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.address"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string state = 20 [json_name = "state"];
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
-          auto str = _internal_mutable_state();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.state"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string emoji_country = 21 [json_name = "emojiCountry"];
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
-          auto str = _internal_mutable_emoji_country();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.emoji_country"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 176)) {
-          is_mfa_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string token_ccp = 23 [json_name = "tokenCcp"];
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
-          auto str = _internal_mutable_token_ccp();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.token_ccp"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool email_verified = 24 [json_name = "emailVerified"];
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 192)) {
-          email_verified_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 25 [json_name = "error"];
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 202)) {
+      // string error = 3 [json_name = "error"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_error();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.error"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string language = 26 [json_name = "language"];
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 210)) {
-          auto str = _internal_mutable_language();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.language"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool push_notification = 27 [json_name = "pushNotification"];
-      case 27:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
-          push_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool email_notification = 28 [json_name = "emailNotification"];
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 224)) {
-          email_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool new_login_notification = 29 [json_name = "newLoginNotification"];
-      case 29:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 232)) {
-          new_login_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool create_notification = 30 [json_name = "createNotification"];
-      case 30:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 240)) {
-          create_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool update_notification = 31 [json_name = "updateNotification"];
-      case 31:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
-          update_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool delete_notification = 32 [json_name = "deleteNotification"];
-      case 32:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 0)) {
-          delete_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool application_notification = 33 [json_name = "applicationNotification"];
-      case 33:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          application_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool read_notification = 34 [json_name = "readNotification"];
-      case 34:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          read_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string phone_code = 35 [json_name = "phoneCode"];
-      case 35:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_phone_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.GetOneUserDexResponse.phone_code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7099,294 +5619,32 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
-  }
-
-  // string user_id = 2 [json_name = "userId"];
-  if (!this->_internal_user_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.user_id");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_user_id(), target);
-  }
-
-  // string first_name = 3 [json_name = "firstName"];
-  if (!this->_internal_first_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_first_name().data(), static_cast<int>(this->_internal_first_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.first_name");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_first_name(), target);
-  }
-
-  // string last_name = 4 [json_name = "lastName"];
-  if (!this->_internal_last_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_last_name().data(), static_cast<int>(this->_internal_last_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.last_name");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_last_name(), target);
-  }
-
-  // string email = 5 [json_name = "email"];
-  if (!this->_internal_email().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.email");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_email(), target);
-  }
-
-  // bool is_active = 6 [json_name = "isActive"];
-  if (this->_internal_is_active() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_is_active(), target);
-  }
-
-  // string created_at = 7 [json_name = "createdAt"];
-  if (!this->_internal_created_at().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_created_at().data(), static_cast<int>(this->_internal_created_at().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.created_at");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_created_at(), target);
-  }
-
-  // string updated_at = 8 [json_name = "updatedAt"];
-  if (!this->_internal_updated_at().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_updated_at().data(), static_cast<int>(this->_internal_updated_at().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.updated_at");
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_updated_at(), target);
-  }
-
-  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_roles_size()); i < n; i++) {
+  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  if (this->_internal_has_user()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(9, this->_internal_roles(i), target, stream);
+      InternalWriteMessage(
+        1, _Internal::user(this), target, stream);
   }
 
-  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(10, this->_internal_permissions(i), target, stream);
-  }
-
-  // bool is_super_user = 11 [json_name = "isSuperUser"];
-  if (this->_internal_is_super_user() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_is_super_user(), target);
-  }
-
-  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_organizations_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(12, this->_internal_organizations(i), target, stream);
-  }
-
-  // string msg = 13 [json_name = "msg"];
+  // string msg = 2 [json_name = "msg"];
   if (!this->_internal_msg().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "accounts.v1alpha1.users.v1.GetOneUserDexResponse.msg");
     target = stream->WriteStringMaybeAliased(
-        13, this->_internal_msg(), target);
+        2, this->_internal_msg(), target);
   }
 
-  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_projects_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(14, this->_internal_projects(i), target, stream);
-  }
-
-  // string phone_number = 15 [json_name = "phoneNumber"];
-  if (!this->_internal_phone_number().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_phone_number().data(), static_cast<int>(this->_internal_phone_number().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.phone_number");
-    target = stream->WriteStringMaybeAliased(
-        15, this->_internal_phone_number(), target);
-  }
-
-  // string country = 16 [json_name = "country"];
-  if (!this->_internal_country().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.country");
-    target = stream->WriteStringMaybeAliased(
-        16, this->_internal_country(), target);
-  }
-
-  // string city = 17 [json_name = "city"];
-  if (!this->_internal_city().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_city().data(), static_cast<int>(this->_internal_city().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.city");
-    target = stream->WriteStringMaybeAliased(
-        17, this->_internal_city(), target);
-  }
-
-  // string zip_code = 18 [json_name = "zipCode"];
-  if (!this->_internal_zip_code().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_zip_code().data(), static_cast<int>(this->_internal_zip_code().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.zip_code");
-    target = stream->WriteStringMaybeAliased(
-        18, this->_internal_zip_code(), target);
-  }
-
-  // string address = 19 [json_name = "address"];
-  if (!this->_internal_address().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.address");
-    target = stream->WriteStringMaybeAliased(
-        19, this->_internal_address(), target);
-  }
-
-  // string state = 20 [json_name = "state"];
-  if (!this->_internal_state().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_state().data(), static_cast<int>(this->_internal_state().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.state");
-    target = stream->WriteStringMaybeAliased(
-        20, this->_internal_state(), target);
-  }
-
-  // string emoji_country = 21 [json_name = "emojiCountry"];
-  if (!this->_internal_emoji_country().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_emoji_country().data(), static_cast<int>(this->_internal_emoji_country().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.emoji_country");
-    target = stream->WriteStringMaybeAliased(
-        21, this->_internal_emoji_country(), target);
-  }
-
-  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
-  if (this->_internal_is_mfa_enabled() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(22, this->_internal_is_mfa_enabled(), target);
-  }
-
-  // string token_ccp = 23 [json_name = "tokenCcp"];
-  if (!this->_internal_token_ccp().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_token_ccp().data(), static_cast<int>(this->_internal_token_ccp().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.token_ccp");
-    target = stream->WriteStringMaybeAliased(
-        23, this->_internal_token_ccp(), target);
-  }
-
-  // bool email_verified = 24 [json_name = "emailVerified"];
-  if (this->_internal_email_verified() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(24, this->_internal_email_verified(), target);
-  }
-
-  // string error = 25 [json_name = "error"];
+  // string error = 3 [json_name = "error"];
   if (!this->_internal_error().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "accounts.v1alpha1.users.v1.GetOneUserDexResponse.error");
     target = stream->WriteStringMaybeAliased(
-        25, this->_internal_error(), target);
-  }
-
-  // string language = 26 [json_name = "language"];
-  if (!this->_internal_language().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.language");
-    target = stream->WriteStringMaybeAliased(
-        26, this->_internal_language(), target);
-  }
-
-  // bool push_notification = 27 [json_name = "pushNotification"];
-  if (this->_internal_push_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(27, this->_internal_push_notification(), target);
-  }
-
-  // bool email_notification = 28 [json_name = "emailNotification"];
-  if (this->_internal_email_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(28, this->_internal_email_notification(), target);
-  }
-
-  // bool new_login_notification = 29 [json_name = "newLoginNotification"];
-  if (this->_internal_new_login_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(29, this->_internal_new_login_notification(), target);
-  }
-
-  // bool create_notification = 30 [json_name = "createNotification"];
-  if (this->_internal_create_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(30, this->_internal_create_notification(), target);
-  }
-
-  // bool update_notification = 31 [json_name = "updateNotification"];
-  if (this->_internal_update_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(31, this->_internal_update_notification(), target);
-  }
-
-  // bool delete_notification = 32 [json_name = "deleteNotification"];
-  if (this->_internal_delete_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(32, this->_internal_delete_notification(), target);
-  }
-
-  // bool application_notification = 33 [json_name = "applicationNotification"];
-  if (this->_internal_application_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(33, this->_internal_application_notification(), target);
-  }
-
-  // bool read_notification = 34 [json_name = "readNotification"];
-  if (this->_internal_read_notification() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(34, this->_internal_read_notification(), target);
-  }
-
-  // string phone_code = 35 [json_name = "phoneCode"];
-  if (!this->_internal_phone_code().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_phone_code().data(), static_cast<int>(this->_internal_phone_code().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.GetOneUserDexResponse.phone_code");
-    target = stream->WriteStringMaybeAliased(
-        35, this->_internal_phone_code(), target);
+        3, this->_internal_error(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7405,225 +5663,25 @@ size_t GetOneUserDexResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
-  total_size += 1UL * this->_internal_roles_size();
-  for (const auto& msg : this->roles_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
-  total_size += 1UL * this->_internal_permissions_size();
-  for (const auto& msg : this->permissions_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
-  total_size += 1UL * this->_internal_organizations_size();
-  for (const auto& msg : this->organizations_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-  total_size += 1UL * this->_internal_projects_size();
-  for (const auto& msg : this->projects_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // string user_id = 2 [json_name = "userId"];
-  if (!this->_internal_user_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_user_id());
-  }
-
-  // string first_name = 3 [json_name = "firstName"];
-  if (!this->_internal_first_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_first_name());
-  }
-
-  // string last_name = 4 [json_name = "lastName"];
-  if (!this->_internal_last_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_last_name());
-  }
-
-  // string email = 5 [json_name = "email"];
-  if (!this->_internal_email().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_email());
-  }
-
-  // string created_at = 7 [json_name = "createdAt"];
-  if (!this->_internal_created_at().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_created_at());
-  }
-
-  // string updated_at = 8 [json_name = "updatedAt"];
-  if (!this->_internal_updated_at().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_updated_at());
-  }
-
-  // string msg = 13 [json_name = "msg"];
+  // string msg = 2 [json_name = "msg"];
   if (!this->_internal_msg().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
   }
 
-  // string phone_number = 15 [json_name = "phoneNumber"];
-  if (!this->_internal_phone_number().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_phone_number());
-  }
-
-  // string country = 16 [json_name = "country"];
-  if (!this->_internal_country().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_country());
-  }
-
-  // string city = 17 [json_name = "city"];
-  if (!this->_internal_city().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_city());
-  }
-
-  // string zip_code = 18 [json_name = "zipCode"];
-  if (!this->_internal_zip_code().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_zip_code());
-  }
-
-  // string address = 19 [json_name = "address"];
-  if (!this->_internal_address().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_address());
-  }
-
-  // string state = 20 [json_name = "state"];
-  if (!this->_internal_state().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_state());
-  }
-
-  // string emoji_country = 21 [json_name = "emojiCountry"];
-  if (!this->_internal_emoji_country().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_emoji_country());
-  }
-
-  // string token_ccp = 23 [json_name = "tokenCcp"];
-  if (!this->_internal_token_ccp().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_token_ccp());
-  }
-
-  // string error = 25 [json_name = "error"];
+  // string error = 3 [json_name = "error"];
   if (!this->_internal_error().empty()) {
-    total_size += 2 +
+    total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_error());
   }
 
-  // string language = 26 [json_name = "language"];
-  if (!this->_internal_language().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_language());
-  }
-
-  // string phone_code = 35 [json_name = "phoneCode"];
-  if (!this->_internal_phone_code().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_phone_code());
-  }
-
-  // uint32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
+  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  if (this->_internal_has_user()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
-  }
-
-  // bool is_active = 6 [json_name = "isActive"];
-  if (this->_internal_is_active() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool is_super_user = 11 [json_name = "isSuperUser"];
-  if (this->_internal_is_super_user() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
-  if (this->_internal_is_mfa_enabled() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool email_verified = 24 [json_name = "emailVerified"];
-  if (this->_internal_email_verified() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool push_notification = 27 [json_name = "pushNotification"];
-  if (this->_internal_push_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool email_notification = 28 [json_name = "emailNotification"];
-  if (this->_internal_email_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool new_login_notification = 29 [json_name = "newLoginNotification"];
-  if (this->_internal_new_login_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool create_notification = 30 [json_name = "createNotification"];
-  if (this->_internal_create_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool update_notification = 31 [json_name = "updateNotification"];
-  if (this->_internal_update_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool delete_notification = 32 [json_name = "deleteNotification"];
-  if (this->_internal_delete_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool application_notification = 33 [json_name = "applicationNotification"];
-  if (this->_internal_application_notification() != 0) {
-    total_size += 2 + 1;
-  }
-
-  // bool read_notification = 34 [json_name = "readNotification"];
-  if (this->_internal_read_notification() != 0) {
-    total_size += 2 + 1;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *user_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7654,102 +5712,14 @@ void GetOneUserDexResponse::MergeFrom(const GetOneUserDexResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  roles_.MergeFrom(from.roles_);
-  permissions_.MergeFrom(from.permissions_);
-  organizations_.MergeFrom(from.organizations_);
-  projects_.MergeFrom(from.projects_);
-  if (!from._internal_user_id().empty()) {
-    _internal_set_user_id(from._internal_user_id());
-  }
-  if (!from._internal_first_name().empty()) {
-    _internal_set_first_name(from._internal_first_name());
-  }
-  if (!from._internal_last_name().empty()) {
-    _internal_set_last_name(from._internal_last_name());
-  }
-  if (!from._internal_email().empty()) {
-    _internal_set_email(from._internal_email());
-  }
-  if (!from._internal_created_at().empty()) {
-    _internal_set_created_at(from._internal_created_at());
-  }
-  if (!from._internal_updated_at().empty()) {
-    _internal_set_updated_at(from._internal_updated_at());
-  }
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
-  }
-  if (!from._internal_phone_number().empty()) {
-    _internal_set_phone_number(from._internal_phone_number());
-  }
-  if (!from._internal_country().empty()) {
-    _internal_set_country(from._internal_country());
-  }
-  if (!from._internal_city().empty()) {
-    _internal_set_city(from._internal_city());
-  }
-  if (!from._internal_zip_code().empty()) {
-    _internal_set_zip_code(from._internal_zip_code());
-  }
-  if (!from._internal_address().empty()) {
-    _internal_set_address(from._internal_address());
-  }
-  if (!from._internal_state().empty()) {
-    _internal_set_state(from._internal_state());
-  }
-  if (!from._internal_emoji_country().empty()) {
-    _internal_set_emoji_country(from._internal_emoji_country());
-  }
-  if (!from._internal_token_ccp().empty()) {
-    _internal_set_token_ccp(from._internal_token_ccp());
   }
   if (!from._internal_error().empty()) {
     _internal_set_error(from._internal_error());
   }
-  if (!from._internal_language().empty()) {
-    _internal_set_language(from._internal_language());
-  }
-  if (!from._internal_phone_code().empty()) {
-    _internal_set_phone_code(from._internal_phone_code());
-  }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
-  if (from._internal_is_active() != 0) {
-    _internal_set_is_active(from._internal_is_active());
-  }
-  if (from._internal_is_super_user() != 0) {
-    _internal_set_is_super_user(from._internal_is_super_user());
-  }
-  if (from._internal_is_mfa_enabled() != 0) {
-    _internal_set_is_mfa_enabled(from._internal_is_mfa_enabled());
-  }
-  if (from._internal_email_verified() != 0) {
-    _internal_set_email_verified(from._internal_email_verified());
-  }
-  if (from._internal_push_notification() != 0) {
-    _internal_set_push_notification(from._internal_push_notification());
-  }
-  if (from._internal_email_notification() != 0) {
-    _internal_set_email_notification(from._internal_email_notification());
-  }
-  if (from._internal_new_login_notification() != 0) {
-    _internal_set_new_login_notification(from._internal_new_login_notification());
-  }
-  if (from._internal_create_notification() != 0) {
-    _internal_set_create_notification(from._internal_create_notification());
-  }
-  if (from._internal_update_notification() != 0) {
-    _internal_set_update_notification(from._internal_update_notification());
-  }
-  if (from._internal_delete_notification() != 0) {
-    _internal_set_delete_notification(from._internal_delete_notification());
-  }
-  if (from._internal_application_notification() != 0) {
-    _internal_set_application_notification(from._internal_application_notification());
-  }
-  if (from._internal_read_notification() != 0) {
-    _internal_set_read_notification(from._internal_read_notification());
+  if (from._internal_has_user()) {
+    _internal_mutable_user()->::accounts::v1alpha1::UserDetail::MergeFrom(from._internal_user());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7768,40 +5738,6 @@ bool GetOneUserDexResponse::IsInitialized() const {
 void GetOneUserDexResponse::InternalSwap(GetOneUserDexResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  roles_.InternalSwap(&other->roles_);
-  permissions_.InternalSwap(&other->permissions_);
-  organizations_.InternalSwap(&other->organizations_);
-  projects_.InternalSwap(&other->projects_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &user_id_, GetArenaForAllocation(),
-      &other->user_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &first_name_, GetArenaForAllocation(),
-      &other->first_name_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &last_name_, GetArenaForAllocation(),
-      &other->last_name_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &email_, GetArenaForAllocation(),
-      &other->email_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &created_at_, GetArenaForAllocation(),
-      &other->created_at_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &updated_at_, GetArenaForAllocation(),
-      &other->updated_at_, other->GetArenaForAllocation()
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
@@ -7809,65 +5745,10 @@ void GetOneUserDexResponse::InternalSwap(GetOneUserDexResponse* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &phone_number_, GetArenaForAllocation(),
-      &other->phone_number_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &country_, GetArenaForAllocation(),
-      &other->country_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &city_, GetArenaForAllocation(),
-      &other->city_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &zip_code_, GetArenaForAllocation(),
-      &other->zip_code_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &address_, GetArenaForAllocation(),
-      &other->address_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &state_, GetArenaForAllocation(),
-      &other->state_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &emoji_country_, GetArenaForAllocation(),
-      &other->emoji_country_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &token_ccp_, GetArenaForAllocation(),
-      &other->token_ccp_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &error_, GetArenaForAllocation(),
       &other->error_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &language_, GetArenaForAllocation(),
-      &other->language_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &phone_code_, GetArenaForAllocation(),
-      &other->phone_code_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetOneUserDexResponse, read_notification_)
-      + sizeof(GetOneUserDexResponse::read_notification_)
-      - PROTOBUF_FIELD_OFFSET(GetOneUserDexResponse, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  swap(user_, other->user_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneUserDexResponse::GetMetadata() const {

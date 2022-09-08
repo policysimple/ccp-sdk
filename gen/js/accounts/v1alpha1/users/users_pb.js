@@ -243,7 +243,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.users.v1.GetOneUserResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.accounts.v1alpha1.users.v1.GetOneUserResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -390,7 +390,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1294,7 +1294,8 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.toObject = function(includeIn
     deleteNotification: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
     applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
     readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
-    phoneCode: jspb.Message.getFieldWithDefault(msg, 27, "")
+    phoneCode: jspb.Message.getFieldWithDefault(msg, 27, ""),
+    optionalAddress: jspb.Message.getFieldWithDefault(msg, 28, "")
   };
 
   if (includeInstance) {
@@ -1444,6 +1445,10 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.deserializeBinaryFromReader =
     case 27:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhoneCode(value);
+      break;
+    case 28:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOptionalAddress(value);
       break;
     default:
       reader.skipField();
@@ -1660,6 +1665,13 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.serializeBinaryToWriter = fun
   if (f.length > 0) {
     writer.writeString(
       27,
+      f
+    );
+  }
+  f = message.getOptionalAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      28,
       f
     );
   }
@@ -2206,6 +2218,24 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.getPhoneCode = func
  */
 proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setPhoneCode = function(value) {
   return jspb.Message.setProto3StringField(this, 27, value);
+};
+
+
+/**
+ * optional string optional_address = 28;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.getOptionalAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.users.v1.CreateUserRequest} returns this
+ */
+proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setOptionalAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 28, value);
 };
 
 
@@ -3021,13 +3051,6 @@ proto.accounts.v1alpha1.users.v1.GetOneUserRequest.prototype.setOrganizationId =
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.repeatedFields_ = [9,10,12,13];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3059,42 +3082,9 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
-    accounts_v1alpha1_accounts_pb.Role.toObject, includeInstance),
-    permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
-    accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
-    isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
-    accounts_v1alpha1_accounts_pb.Organization.toObject, includeInstance),
-    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
-    accounts_v1alpha1_accounts_pb.Project.toObject, includeInstance),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    city: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    zipCode: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    emojiCountry: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    language: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    pushNotification: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
-    emailNotification: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
-    newLoginNotification: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
-    createNotification: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
-    updateNotification: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
-    deleteNotification: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
-    applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
-    readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
-    phoneCode: jspb.Message.getFieldWithDefault(msg, 32, "")
+    user: (f = msg.getUser()) && accounts_v1alpha1_accounts_pb.UserDetail.toObject(includeInstance, f),
+    msg: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    error: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3132,136 +3122,17 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      var value = new accounts_v1alpha1_accounts_pb.UserDetail;
+      reader.readMessage(value,accounts_v1alpha1_accounts_pb.UserDetail.deserializeBinaryFromReader);
+      msg.setUser(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      msg.setMsg(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFirstName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLastName(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsActive(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedAt(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUpdatedAt(value);
-      break;
-    case 9:
-      var value = new accounts_v1alpha1_accounts_pb.Role;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Role.deserializeBinaryFromReader);
-      msg.addRoles(value);
-      break;
-    case 10:
-      var value = new accounts_v1alpha1_accounts_pb.Permission;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Permission.deserializeBinaryFromReader);
-      msg.addPermissions(value);
-      break;
-    case 11:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsSuperUser(value);
-      break;
-    case 12:
-      var value = new accounts_v1alpha1_accounts_pb.Organization;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Organization.deserializeBinaryFromReader);
-      msg.addOrganizations(value);
-      break;
-    case 13:
-      var value = new accounts_v1alpha1_accounts_pb.Project;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Project.deserializeBinaryFromReader);
-      msg.addProjects(value);
-      break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhoneNumber(value);
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCountry(value);
-      break;
-    case 16:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCity(value);
-      break;
-    case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setZipCode(value);
-      break;
-    case 18:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAddress(value);
-      break;
-    case 19:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setState(value);
-      break;
-    case 20:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmojiCountry(value);
-      break;
-    case 21:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmailVerified(value);
-      break;
-    case 22:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsMfaEnabled(value);
-      break;
-    case 23:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLanguage(value);
-      break;
-    case 24:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPushNotification(value);
-      break;
-    case 25:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmailNotification(value);
-      break;
-    case 26:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNewLoginNotification(value);
-      break;
-    case 27:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCreateNotification(value);
-      break;
-    case 28:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUpdateNotification(value);
-      break;
-    case 29:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDeleteNotification(value);
-      break;
-    case 30:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setApplicationNotification(value);
-      break;
-    case 31:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReadNotification(value);
-      break;
-    case 32:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhoneCode(value);
+      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -3292,260 +3163,73 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.serializeBinary = 
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUser();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      accounts_v1alpha1_accounts_pb.UserDetail.serializeBinaryToWriter
     );
   }
-  f = message.getUserId();
+  f = message.getMsg();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getFirstName();
+  f = message.getError();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getLastName();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getIsActive();
-  if (f) {
-    writer.writeBool(
-      6,
-      f
-    );
-  }
-  f = message.getCreatedAt();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
-  f = message.getUpdatedAt();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getRolesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      accounts_v1alpha1_accounts_pb.Role.serializeBinaryToWriter
-    );
-  }
-  f = message.getPermissionsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      10,
-      f,
-      accounts_v1alpha1_accounts_pb.Permission.serializeBinaryToWriter
-    );
-  }
-  f = message.getIsSuperUser();
-  if (f) {
-    writer.writeBool(
-      11,
-      f
-    );
-  }
-  f = message.getOrganizationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      12,
-      f,
-      accounts_v1alpha1_accounts_pb.Organization.serializeBinaryToWriter
-    );
-  }
-  f = message.getProjectsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      13,
-      f,
-      accounts_v1alpha1_accounts_pb.Project.serializeBinaryToWriter
-    );
-  }
-  f = message.getPhoneNumber();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = message.getCountry();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-  f = message.getCity();
-  if (f.length > 0) {
-    writer.writeString(
-      16,
-      f
-    );
-  }
-  f = message.getZipCode();
-  if (f.length > 0) {
-    writer.writeString(
-      17,
-      f
-    );
-  }
-  f = message.getAddress();
-  if (f.length > 0) {
-    writer.writeString(
-      18,
-      f
-    );
-  }
-  f = message.getState();
-  if (f.length > 0) {
-    writer.writeString(
-      19,
-      f
-    );
-  }
-  f = message.getEmojiCountry();
-  if (f.length > 0) {
-    writer.writeString(
-      20,
-      f
-    );
-  }
-  f = message.getEmailVerified();
-  if (f) {
-    writer.writeBool(
-      21,
-      f
-    );
-  }
-  f = message.getIsMfaEnabled();
-  if (f) {
-    writer.writeBool(
-      22,
-      f
-    );
-  }
-  f = message.getLanguage();
-  if (f.length > 0) {
-    writer.writeString(
-      23,
-      f
-    );
-  }
-  f = message.getPushNotification();
-  if (f) {
-    writer.writeBool(
-      24,
-      f
-    );
-  }
-  f = message.getEmailNotification();
-  if (f) {
-    writer.writeBool(
-      25,
-      f
-    );
-  }
-  f = message.getNewLoginNotification();
-  if (f) {
-    writer.writeBool(
-      26,
-      f
-    );
-  }
-  f = message.getCreateNotification();
-  if (f) {
-    writer.writeBool(
-      27,
-      f
-    );
-  }
-  f = message.getUpdateNotification();
-  if (f) {
-    writer.writeBool(
-      28,
-      f
-    );
-  }
-  f = message.getDeleteNotification();
-  if (f) {
-    writer.writeBool(
-      29,
-      f
-    );
-  }
-  f = message.getApplicationNotification();
-  if (f) {
-    writer.writeBool(
-      30,
-      f
-    );
-  }
-  f = message.getReadNotification();
-  if (f) {
-    writer.writeBool(
-      31,
-      f
-    );
-  }
-  f = message.getPhoneCode();
-  if (f.length > 0) {
-    writer.writeString(
-      32,
-      f
-    );
-  }
 };
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional accounts.v1alpha1.UserDetail user = 1;
+ * @return {?proto.accounts.v1alpha1.UserDetail}
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getUser = function() {
+  return /** @type{?proto.accounts.v1alpha1.UserDetail} */ (
+    jspb.Message.getWrapperField(this, accounts_v1alpha1_accounts_pb.UserDetail, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.accounts.v1alpha1.UserDetail|undefined} value
+ * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
+*/
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setUser = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.clearUser = function() {
+  return this.setUser(undefined);
 };
 
 
 /**
- * optional string user_id = 2;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.hasUser = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string msg = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getUserId = function() {
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getMsg = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -3554,16 +3238,16 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getUserId = functi
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string first_name = 3;
+ * optional string error = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getFirstName = function() {
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -3572,610 +3256,8 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getFirstName = fun
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setFirstName = function(value) {
+proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string last_name = 4;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getLastName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setLastName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string email = 5;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional bool is_active = 6;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getIsActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setIsActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
-};
-
-
-/**
- * optional string created_at = 7;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getCreatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string updated_at = 8;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getUpdatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Role roles = 9;
- * @return {!Array<!proto.accounts.v1alpha1.Role>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getRolesList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Role>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Role, 9));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Role>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setRolesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Role=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Role}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.addRoles = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.accounts.v1alpha1.Role, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.clearRolesList = function() {
-  return this.setRolesList([]);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Permission permissions = 10;
- * @return {!Array<!proto.accounts.v1alpha1.Permission>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getPermissionsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Permission, 10));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Permission>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setPermissionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Permission=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Permission}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.addPermissions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.clearPermissionsList = function() {
-  return this.setPermissionsList([]);
-};
-
-
-/**
- * optional bool is_super_user = 11;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getIsSuperUser = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setIsSuperUser = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 11, value);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Organization organizations = 12;
- * @return {!Array<!proto.accounts.v1alpha1.Organization>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getOrganizationsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Organization>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Organization, 12));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Organization>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setOrganizationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Organization=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Organization}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.addOrganizations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.accounts.v1alpha1.Organization, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.clearOrganizationsList = function() {
-  return this.setOrganizationsList([]);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Project projects = 13;
- * @return {!Array<!proto.accounts.v1alpha1.Project>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getProjectsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Project>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Project, 13));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Project>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setProjectsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 13, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Project=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Project}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.addProjects = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.accounts.v1alpha1.Project, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.clearProjectsList = function() {
-  return this.setProjectsList([]);
-};
-
-
-/**
- * optional string phone_number = 14;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getPhoneNumber = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setPhoneNumber = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * optional string country = 15;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
-};
-
-
-/**
- * optional string city = 16;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getCity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setCity = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
-};
-
-
-/**
- * optional string zip_code = 17;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getZipCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setZipCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
-/**
- * optional string address = 18;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setAddress = function(value) {
-  return jspb.Message.setProto3StringField(this, 18, value);
-};
-
-
-/**
- * optional string state = 19;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getState = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setState = function(value) {
-  return jspb.Message.setProto3StringField(this, 19, value);
-};
-
-
-/**
- * optional string emoji_country = 20;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getEmojiCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setEmojiCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 20, value);
-};
-
-
-/**
- * optional bool email_verified = 21;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getEmailVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setEmailVerified = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 21, value);
-};
-
-
-/**
- * optional bool is_mfa_enabled = 22;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getIsMfaEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setIsMfaEnabled = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 22, value);
-};
-
-
-/**
- * optional string language = 23;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getLanguage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setLanguage = function(value) {
-  return jspb.Message.setProto3StringField(this, 23, value);
-};
-
-
-/**
- * optional bool push_notification = 24;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getPushNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setPushNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 24, value);
-};
-
-
-/**
- * optional bool email_notification = 25;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getEmailNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setEmailNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 25, value);
-};
-
-
-/**
- * optional bool new_login_notification = 26;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getNewLoginNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setNewLoginNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 26, value);
-};
-
-
-/**
- * optional bool create_notification = 27;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getCreateNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setCreateNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 27, value);
-};
-
-
-/**
- * optional bool update_notification = 28;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getUpdateNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setUpdateNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 28, value);
-};
-
-
-/**
- * optional bool delete_notification = 29;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getDeleteNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setDeleteNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 29, value);
-};
-
-
-/**
- * optional bool application_notification = 30;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getApplicationNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setApplicationNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 30, value);
-};
-
-
-/**
- * optional bool read_notification = 31;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getReadNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setReadNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 31, value);
-};
-
-
-/**
- * optional string phone_code = 32;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getPhoneCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 32, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setPhoneCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 32, value);
 };
 
 
@@ -5132,13 +4214,6 @@ proto.accounts.v1alpha1.users.v1.GetOneUserDexRequest.prototype.hasUser = functi
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.repeatedFields_ = [9,10,12,14];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5170,45 +4245,9 @@ proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.toObject = func
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
-    accounts_v1alpha1_accounts_pb.Role.toObject, includeInstance),
-    permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
-    accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
-    isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
-    accounts_v1alpha1_accounts_pb.Organization.toObject, includeInstance),
-    msg: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
-    accounts_v1alpha1_accounts_pb.Project.toObject, includeInstance),
-    phoneNumber: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    country: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    city: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    zipCode: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    emojiCountry: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    isMfaEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    tokenCcp: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
-    error: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    pushNotification: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
-    emailNotification: jspb.Message.getBooleanFieldWithDefault(msg, 28, false),
-    newLoginNotification: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
-    createNotification: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
-    updateNotification: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
-    deleteNotification: jspb.Message.getBooleanFieldWithDefault(msg, 32, false),
-    applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 33, false),
-    readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 34, false),
-    phoneCode: jspb.Message.getFieldWithDefault(msg, 35, "")
+    user: (f = msg.getUser()) && accounts_v1alpha1_accounts_pb.UserDetail.toObject(includeInstance, f),
+    msg: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    error: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5246,148 +4285,17 @@ proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      var value = new accounts_v1alpha1_accounts_pb.UserDetail;
+      reader.readMessage(value,accounts_v1alpha1_accounts_pb.UserDetail.deserializeBinaryFromReader);
+      msg.setUser(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      msg.setMsg(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFirstName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLastName(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsActive(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedAt(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUpdatedAt(value);
-      break;
-    case 9:
-      var value = new accounts_v1alpha1_accounts_pb.Role;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Role.deserializeBinaryFromReader);
-      msg.addRoles(value);
-      break;
-    case 10:
-      var value = new accounts_v1alpha1_accounts_pb.Permission;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Permission.deserializeBinaryFromReader);
-      msg.addPermissions(value);
-      break;
-    case 11:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsSuperUser(value);
-      break;
-    case 12:
-      var value = new accounts_v1alpha1_accounts_pb.Organization;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Organization.deserializeBinaryFromReader);
-      msg.addOrganizations(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMsg(value);
-      break;
-    case 14:
-      var value = new accounts_v1alpha1_accounts_pb.Project;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Project.deserializeBinaryFromReader);
-      msg.addProjects(value);
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhoneNumber(value);
-      break;
-    case 16:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCountry(value);
-      break;
-    case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCity(value);
-      break;
-    case 18:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setZipCode(value);
-      break;
-    case 19:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAddress(value);
-      break;
-    case 20:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setState(value);
-      break;
-    case 21:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmojiCountry(value);
-      break;
-    case 22:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsMfaEnabled(value);
-      break;
-    case 23:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTokenCcp(value);
-      break;
-    case 24:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmailVerified(value);
-      break;
-    case 25:
-      var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
-      break;
-    case 26:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLanguage(value);
-      break;
-    case 27:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPushNotification(value);
-      break;
-    case 28:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmailNotification(value);
-      break;
-    case 29:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNewLoginNotification(value);
-      break;
-    case 30:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCreateNotification(value);
-      break;
-    case 31:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUpdateNotification(value);
-      break;
-    case 32:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDeleteNotification(value);
-      break;
-    case 33:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setApplicationNotification(value);
-      break;
-    case 34:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReadNotification(value);
-      break;
-    case 35:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhoneCode(value);
       break;
     default:
       reader.skipField();
@@ -5418,281 +4326,73 @@ proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.serializeBinary
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUser();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      accounts_v1alpha1_accounts_pb.UserDetail.serializeBinaryToWriter
     );
   }
-  f = message.getUserId();
+  f = message.getMsg();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getFirstName();
+  f = message.getError();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getLastName();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getIsActive();
-  if (f) {
-    writer.writeBool(
-      6,
-      f
-    );
-  }
-  f = message.getCreatedAt();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
-  f = message.getUpdatedAt();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getRolesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      accounts_v1alpha1_accounts_pb.Role.serializeBinaryToWriter
-    );
-  }
-  f = message.getPermissionsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      10,
-      f,
-      accounts_v1alpha1_accounts_pb.Permission.serializeBinaryToWriter
-    );
-  }
-  f = message.getIsSuperUser();
-  if (f) {
-    writer.writeBool(
-      11,
-      f
-    );
-  }
-  f = message.getOrganizationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      12,
-      f,
-      accounts_v1alpha1_accounts_pb.Organization.serializeBinaryToWriter
-    );
-  }
-  f = message.getMsg();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
-  f = message.getProjectsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      14,
-      f,
-      accounts_v1alpha1_accounts_pb.Project.serializeBinaryToWriter
-    );
-  }
-  f = message.getPhoneNumber();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-  f = message.getCountry();
-  if (f.length > 0) {
-    writer.writeString(
-      16,
-      f
-    );
-  }
-  f = message.getCity();
-  if (f.length > 0) {
-    writer.writeString(
-      17,
-      f
-    );
-  }
-  f = message.getZipCode();
-  if (f.length > 0) {
-    writer.writeString(
-      18,
-      f
-    );
-  }
-  f = message.getAddress();
-  if (f.length > 0) {
-    writer.writeString(
-      19,
-      f
-    );
-  }
-  f = message.getState();
-  if (f.length > 0) {
-    writer.writeString(
-      20,
-      f
-    );
-  }
-  f = message.getEmojiCountry();
-  if (f.length > 0) {
-    writer.writeString(
-      21,
-      f
-    );
-  }
-  f = message.getIsMfaEnabled();
-  if (f) {
-    writer.writeBool(
-      22,
-      f
-    );
-  }
-  f = message.getTokenCcp();
-  if (f.length > 0) {
-    writer.writeString(
-      23,
-      f
-    );
-  }
-  f = message.getEmailVerified();
-  if (f) {
-    writer.writeBool(
-      24,
-      f
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      25,
-      f
-    );
-  }
-  f = message.getLanguage();
-  if (f.length > 0) {
-    writer.writeString(
-      26,
-      f
-    );
-  }
-  f = message.getPushNotification();
-  if (f) {
-    writer.writeBool(
-      27,
-      f
-    );
-  }
-  f = message.getEmailNotification();
-  if (f) {
-    writer.writeBool(
-      28,
-      f
-    );
-  }
-  f = message.getNewLoginNotification();
-  if (f) {
-    writer.writeBool(
-      29,
-      f
-    );
-  }
-  f = message.getCreateNotification();
-  if (f) {
-    writer.writeBool(
-      30,
-      f
-    );
-  }
-  f = message.getUpdateNotification();
-  if (f) {
-    writer.writeBool(
-      31,
-      f
-    );
-  }
-  f = message.getDeleteNotification();
-  if (f) {
-    writer.writeBool(
-      32,
-      f
-    );
-  }
-  f = message.getApplicationNotification();
-  if (f) {
-    writer.writeBool(
-      33,
-      f
-    );
-  }
-  f = message.getReadNotification();
-  if (f) {
-    writer.writeBool(
-      34,
-      f
-    );
-  }
-  f = message.getPhoneCode();
-  if (f.length > 0) {
-    writer.writeString(
-      35,
-      f
-    );
-  }
 };
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional accounts.v1alpha1.UserDetail user = 1;
+ * @return {?proto.accounts.v1alpha1.UserDetail}
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getUser = function() {
+  return /** @type{?proto.accounts.v1alpha1.UserDetail} */ (
+    jspb.Message.getWrapperField(this, accounts_v1alpha1_accounts_pb.UserDetail, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.accounts.v1alpha1.UserDetail|undefined} value
+ * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
+*/
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setUser = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.clearUser = function() {
+  return this.setUser(undefined);
 };
 
 
 /**
- * optional string user_id = 2;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.hasUser = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string msg = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getUserId = function() {
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getMsg = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -5701,16 +4401,16 @@ proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getUserId = fun
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setUserId = function(value) {
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string first_name = 3;
+ * optional string error = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getFirstName = function() {
+proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -5719,664 +4419,8 @@ proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getFirstName = 
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
  */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setFirstName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string last_name = 4;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getLastName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setLastName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string email = 5;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional bool is_active = 6;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getIsActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setIsActive = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
-};
-
-
-/**
- * optional string created_at = 7;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getCreatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string updated_at = 8;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getUpdatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Role roles = 9;
- * @return {!Array<!proto.accounts.v1alpha1.Role>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getRolesList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Role>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Role, 9));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Role>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setRolesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Role=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Role}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.addRoles = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.accounts.v1alpha1.Role, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.clearRolesList = function() {
-  return this.setRolesList([]);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Permission permissions = 10;
- * @return {!Array<!proto.accounts.v1alpha1.Permission>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getPermissionsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Permission, 10));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Permission>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setPermissionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Permission=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Permission}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.addPermissions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.clearPermissionsList = function() {
-  return this.setPermissionsList([]);
-};
-
-
-/**
- * optional bool is_super_user = 11;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getIsSuperUser = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setIsSuperUser = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 11, value);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Organization organizations = 12;
- * @return {!Array<!proto.accounts.v1alpha1.Organization>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getOrganizationsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Organization>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Organization, 12));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Organization>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setOrganizationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Organization=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Organization}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.addOrganizations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.accounts.v1alpha1.Organization, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.clearOrganizationsList = function() {
-  return this.setOrganizationsList([]);
-};
-
-
-/**
- * optional string msg = 13;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getMsg = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setMsg = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
-};
-
-
-/**
- * repeated accounts.v1alpha1.Project projects = 14;
- * @return {!Array<!proto.accounts.v1alpha1.Project>}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getProjectsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Project>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Project, 14));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Project>} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
-*/
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setProjectsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 14, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Project=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Project}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.addProjects = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 14, opt_value, proto.accounts.v1alpha1.Project, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.clearProjectsList = function() {
-  return this.setProjectsList([]);
-};
-
-
-/**
- * optional string phone_number = 15;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getPhoneNumber = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setPhoneNumber = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
-};
-
-
-/**
- * optional string country = 16;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
-};
-
-
-/**
- * optional string city = 17;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getCity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setCity = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
-/**
- * optional string zip_code = 18;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getZipCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setZipCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 18, value);
-};
-
-
-/**
- * optional string address = 19;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setAddress = function(value) {
-  return jspb.Message.setProto3StringField(this, 19, value);
-};
-
-
-/**
- * optional string state = 20;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getState = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setState = function(value) {
-  return jspb.Message.setProto3StringField(this, 20, value);
-};
-
-
-/**
- * optional string emoji_country = 21;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getEmojiCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setEmojiCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 21, value);
-};
-
-
-/**
- * optional bool is_mfa_enabled = 22;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getIsMfaEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setIsMfaEnabled = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 22, value);
-};
-
-
-/**
- * optional string token_ccp = 23;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getTokenCcp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setTokenCcp = function(value) {
-  return jspb.Message.setProto3StringField(this, 23, value);
-};
-
-
-/**
- * optional bool email_verified = 24;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getEmailVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setEmailVerified = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 24, value);
-};
-
-
-/**
- * optional string error = 25;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
 proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 25, value);
-};
-
-
-/**
- * optional string language = 26;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getLanguage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setLanguage = function(value) {
-  return jspb.Message.setProto3StringField(this, 26, value);
-};
-
-
-/**
- * optional bool push_notification = 27;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getPushNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setPushNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 27, value);
-};
-
-
-/**
- * optional bool email_notification = 28;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getEmailNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setEmailNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 28, value);
-};
-
-
-/**
- * optional bool new_login_notification = 29;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getNewLoginNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setNewLoginNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 29, value);
-};
-
-
-/**
- * optional bool create_notification = 30;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getCreateNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setCreateNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 30, value);
-};
-
-
-/**
- * optional bool update_notification = 31;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getUpdateNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setUpdateNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 31, value);
-};
-
-
-/**
- * optional bool delete_notification = 32;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getDeleteNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 32, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setDeleteNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 32, value);
-};
-
-
-/**
- * optional bool application_notification = 33;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getApplicationNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 33, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setApplicationNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 33, value);
-};
-
-
-/**
- * optional bool read_notification = 34;
- * @return {boolean}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getReadNotification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 34, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setReadNotification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 34, value);
-};
-
-
-/**
- * optional string phone_code = 35;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.getPhoneCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 35, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.GetOneUserDexResponse.prototype.setPhoneCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 35, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
