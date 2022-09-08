@@ -119,6 +119,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterResponse.FromString,
         )
+    self.StopProject = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/StopProject',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.StopProjectRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.StopProjectResponse.FromString,
+        )
 
 
 class PaymentAPIServiceServicer(object):
@@ -272,6 +277,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def StopProject(self, request, context):
+    """Pause Project Consumption
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_PaymentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -379,6 +391,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.InvoiceFilter,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterResponse.SerializeToString,
+      ),
+      'StopProject': grpc.unary_unary_rpc_method_handler(
+          servicer.StopProject,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.StopProjectRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.StopProjectResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

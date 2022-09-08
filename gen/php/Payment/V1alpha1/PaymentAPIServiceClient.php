@@ -295,4 +295,18 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Pause Project Consumption
+     * @param \Payment\V1alpha1\StopProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function StopProject(\Payment\V1alpha1\StopProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/StopProject',
+        $argument,
+        ['\Payment\V1alpha1\StopProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

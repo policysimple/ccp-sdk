@@ -40,6 +40,7 @@ static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/CancelSubscription",
   "/payment.v1alpha1.PaymentAPIService/DeleteCustomer",
   "/payment.v1alpha1.PaymentAPIService/InvoiceFilter",
+  "/payment.v1alpha1.PaymentAPIService/StopProject",
 };
 
 std::unique_ptr< PaymentAPIService::Stub> PaymentAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -70,6 +71,7 @@ PaymentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_CancelSubscription_(PaymentAPIService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteCustomer_(PaymentAPIService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_InvoiceFilter_(PaymentAPIService_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StopProject_(PaymentAPIService_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PaymentAPIService::Stub::CreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::payment::v1alpha1::CreateCustomerResponse* response) {
@@ -408,6 +410,22 @@ void PaymentAPIService::Stub::experimental_async::InvoiceFilter(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::InvoiceFilterResponse>::Create(channel_.get(), cq, rpcmethod_InvoiceFilter_, context, request, false);
 }
 
+::grpc::Status PaymentAPIService::Stub::StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::payment::v1alpha1::StopProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_StopProject_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StopProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* PaymentAPIService::Stub::AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::StopProjectResponse>::Create(channel_.get(), cq, rpcmethod_StopProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* PaymentAPIService::Stub::PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::StopProjectResponse>::Create(channel_.get(), cq, rpcmethod_StopProject_, context, request, false);
+}
+
 PaymentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PaymentAPIService_method_names[0],
@@ -514,6 +532,11 @@ PaymentAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::InvoiceFilterRequest, ::payment::v1alpha1::InvoiceFilterResponse>(
           std::mem_fn(&PaymentAPIService::Service::InvoiceFilter), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[21],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::StopProjectRequest, ::payment::v1alpha1::StopProjectResponse>(
+          std::mem_fn(&PaymentAPIService::Service::StopProject), this)));
 }
 
 PaymentAPIService::Service::~Service() {
@@ -660,6 +683,13 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::InvoiceFilter(::grpc::ServerContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -14,6 +14,1398 @@ public final class PaymentApi {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface StopProjectRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.StopProjectRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+
+    /**
+     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    boolean hasProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * @return The project.
+     */
+    payment.v1alpha1.PaymentOuterClass.Project getProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.StopProjectRequest}
+   */
+  public static final class StopProjectRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.StopProjectRequest)
+      StopProjectRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StopProjectRequest.newBuilder() to construct.
+    private StopProjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StopProjectRequest() {
+      organizationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopProjectRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StopProjectRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            case 18: {
+              payment.v1alpha1.PaymentOuterClass.Project.Builder subBuilder = null;
+              if (project_ != null) {
+                subBuilder = project_.toBuilder();
+              }
+              project_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Project.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(project_);
+                project_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.StopProjectRequest.class, payment.v1alpha1.PaymentApi.StopProjectRequest.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 2;
+    private payment.v1alpha1.PaymentOuterClass.Project project_;
+    /**
+     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    @java.lang.Override
+    public boolean hasProject() {
+      return project_ != null;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * @return The project.
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+      return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+      return getProject();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      if (project_ != null) {
+        output.writeMessage(2, getProject());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      if (project_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getProject());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.StopProjectRequest)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.StopProjectRequest other = (payment.v1alpha1.PaymentApi.StopProjectRequest) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (hasProject() != other.hasProject()) return false;
+      if (hasProject()) {
+        if (!getProject()
+            .equals(other.getProject())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      if (hasProject()) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProject().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.StopProjectRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.StopProjectRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.StopProjectRequest)
+        payment.v1alpha1.PaymentApi.StopProjectRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.StopProjectRequest.class, payment.v1alpha1.PaymentApi.StopProjectRequest.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.StopProjectRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        if (projectBuilder_ == null) {
+          project_ = null;
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.StopProjectRequest getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.StopProjectRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.StopProjectRequest build() {
+        payment.v1alpha1.PaymentApi.StopProjectRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.StopProjectRequest buildPartial() {
+        payment.v1alpha1.PaymentApi.StopProjectRequest result = new payment.v1alpha1.PaymentApi.StopProjectRequest(this);
+        result.organizationId_ = organizationId_;
+        if (projectBuilder_ == null) {
+          result.project_ = project_;
+        } else {
+          result.project_ = projectBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.StopProjectRequest) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.StopProjectRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.StopProjectRequest other) {
+        if (other == payment.v1alpha1.PaymentApi.StopProjectRequest.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        if (other.hasProject()) {
+          mergeProject(other.getProject());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.StopProjectRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.StopProjectRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private payment.v1alpha1.PaymentOuterClass.Project project_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectBuilder_;
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * @return Whether the project field is set.
+       */
+      public boolean hasProject() {
+        return projectBuilder_ != null || project_ != null;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * @return The project.
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+        if (projectBuilder_ == null) {
+          return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        } else {
+          return projectBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      public Builder setProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          project_ = value;
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      public Builder setProject(
+          payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          project_ = builderForValue.build();
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (project_ != null) {
+            project_ =
+              payment.v1alpha1.PaymentOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
+          } else {
+            project_ = value;
+          }
+          onChanged();
+        } else {
+          projectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = null;
+          onChanged();
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectBuilder() {
+        
+        onChanged();
+        return getProjectFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilder();
+        } else {
+          return project_ == null ?
+              payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder>(
+                  getProject(),
+                  getParentForChildren(),
+                  isClean());
+          project_ = null;
+        }
+        return projectBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.StopProjectRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.StopProjectRequest)
+    private static final payment.v1alpha1.PaymentApi.StopProjectRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.StopProjectRequest();
+    }
+
+    public static payment.v1alpha1.PaymentApi.StopProjectRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StopProjectRequest>
+        PARSER = new com.google.protobuf.AbstractParser<StopProjectRequest>() {
+      @java.lang.Override
+      public StopProjectRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StopProjectRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StopProjectRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StopProjectRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.StopProjectRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StopProjectResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.StopProjectResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    boolean hasProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return The project.
+     */
+    payment.v1alpha1.PaymentOuterClass.Project getProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.StopProjectResponse}
+   */
+  public static final class StopProjectResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.StopProjectResponse)
+      StopProjectResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StopProjectResponse.newBuilder() to construct.
+    private StopProjectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StopProjectResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopProjectResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StopProjectResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              payment.v1alpha1.PaymentOuterClass.Project.Builder subBuilder = null;
+              if (project_ != null) {
+                subBuilder = project_.toBuilder();
+              }
+              project_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Project.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(project_);
+                project_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.StopProjectResponse.class, payment.v1alpha1.PaymentApi.StopProjectResponse.Builder.class);
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 1;
+    private payment.v1alpha1.PaymentOuterClass.Project project_;
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    @java.lang.Override
+    public boolean hasProject() {
+      return project_ != null;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return The project.
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+      return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+      return getProject();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (project_ != null) {
+        output.writeMessage(1, getProject());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (project_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getProject());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.StopProjectResponse)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.StopProjectResponse other = (payment.v1alpha1.PaymentApi.StopProjectResponse) obj;
+
+      if (hasProject() != other.hasProject()) return false;
+      if (hasProject()) {
+        if (!getProject()
+            .equals(other.getProject())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasProject()) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProject().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.StopProjectResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.StopProjectResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.StopProjectResponse)
+        payment.v1alpha1.PaymentApi.StopProjectResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.StopProjectResponse.class, payment.v1alpha1.PaymentApi.StopProjectResponse.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.StopProjectResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (projectBuilder_ == null) {
+          project_ = null;
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_StopProjectResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.StopProjectResponse getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.StopProjectResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.StopProjectResponse build() {
+        payment.v1alpha1.PaymentApi.StopProjectResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.StopProjectResponse buildPartial() {
+        payment.v1alpha1.PaymentApi.StopProjectResponse result = new payment.v1alpha1.PaymentApi.StopProjectResponse(this);
+        if (projectBuilder_ == null) {
+          result.project_ = project_;
+        } else {
+          result.project_ = projectBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.StopProjectResponse) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.StopProjectResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.StopProjectResponse other) {
+        if (other == payment.v1alpha1.PaymentApi.StopProjectResponse.getDefaultInstance()) return this;
+        if (other.hasProject()) {
+          mergeProject(other.getProject());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.StopProjectResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.StopProjectResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private payment.v1alpha1.PaymentOuterClass.Project project_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectBuilder_;
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * @return Whether the project field is set.
+       */
+      public boolean hasProject() {
+        return projectBuilder_ != null || project_ != null;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * @return The project.
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+        if (projectBuilder_ == null) {
+          return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        } else {
+          return projectBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder setProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          project_ = value;
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder setProject(
+          payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          project_ = builderForValue.build();
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (project_ != null) {
+            project_ =
+              payment.v1alpha1.PaymentOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
+          } else {
+            project_ = value;
+          }
+          onChanged();
+        } else {
+          projectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = null;
+          onChanged();
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectBuilder() {
+        
+        onChanged();
+        return getProjectFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilder();
+        } else {
+          return project_ == null ?
+              payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder>(
+                  getProject(),
+                  getParentForChildren(),
+                  isClean());
+          project_ = null;
+        }
+        return projectBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.StopProjectResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.StopProjectResponse)
+    private static final payment.v1alpha1.PaymentApi.StopProjectResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.StopProjectResponse();
+    }
+
+    public static payment.v1alpha1.PaymentApi.StopProjectResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StopProjectResponse>
+        PARSER = new com.google.protobuf.AbstractParser<StopProjectResponse>() {
+      @java.lang.Override
+      public StopProjectResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StopProjectResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StopProjectResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StopProjectResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.StopProjectResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface InvoiceFilterRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:payment.v1alpha1.InvoiceFilterRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -33223,6 +34615,16 @@ public final class PaymentApi {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_StopProjectRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_StopProjectRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_StopProjectResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_StopProjectResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_payment_v1alpha1_InvoiceFilterRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -33453,453 +34855,472 @@ public final class PaymentApi {
     java.lang.String[] descriptorData = {
       "\n\"payment/v1alpha1/payment_api.proto\022\020pa" +
       "yment.v1alpha1\032\036payment/v1alpha1/payment" +
-      ".proto\"\261\002\n\024InvoiceFilterRequest\022\'\n\017organ" +
-      "ization_id\030\001 \001(\rR\016organizationId\022\035\n\ninvo" +
-      "ice_id\030\002 \001(\tR\tinvoiceId\022\022\n\004year\030\003 \001(\tR\004y" +
-      "ear\022\024\n\005month\030\004 \001(\tR\005month\022\037\n\013customer_id" +
-      "\030\005 \001(\tR\ncustomerId\022\035\n\nproject_id\030\006 \001(\tR\t" +
-      "projectId\022\020\n\003cpu\030\007 \001(\001R\003cpu\022\020\n\003ram\030\010 \001(\001" +
-      "R\003ram\022C\n\rcustomer_list\030\t \001(\0132\036.payment.v" +
-      "1alpha1.CustomerListR\014customerList\"\246\001\n\025I" +
-      "nvoiceFilterResponse\0226\n\010customer\030\001 \001(\0132\032" +
-      ".payment.v1alpha1.CustomerR\010customer\022=\n\013" +
-      "biling_list\030\002 \001(\0132\034.payment.v1alpha1.Bil" +
-      "ingListR\nbilingList\022\026\n\006status\030\003 \001(\tR\006sta" +
-      "tus\"a\n\025DeleteCustomerRequest\022\'\n\017organiza" +
-      "tion_id\030\001 \001(\rR\016organizationId\022\037\n\013custome" +
-      "r_id\030\002 \001(\tR\ncustomerId\"h\n\026DeleteCustomer" +
-      "Response\022\026\n\006status\030\001 \001(\tR\006status\0226\n\010cust" +
-      "omer\030\002 \001(\0132\032.payment.v1alpha1.CustomerR\010" +
-      "customer\"j\n\026GetSubscriptionRequest\022\'\n\017or" +
-      "ganization_id\030\001 \001(\rR\016organizationId\022\'\n\017s" +
-      "ubscription_id\030\002 \001(\tR\016subscriptionId\"u\n\027" +
-      "GetSubscriptionResponse\022B\n\014subscription\030" +
-      "\001 \001(\0132\036.payment.v1alpha1.SubscriptionR\014s" +
-      "ubscription\022\026\n\006status\030\002 \001(\tR\006status\"A\n\026G" +
-      "etOrganizationRequest\022\'\n\017organization_id" +
-      "\030\001 \001(\rR\016organizationId\"i\n\027GetOrganizatio" +
-      "nResponse\0226\n\010customer\030\001 \001(\0132\032.payment.v1" +
-      "alpha1.CustomerR\010customer\022\026\n\006status\030\002 \001(" +
-      "\tR\006status\"^\n\022GetCustomerRequest\022\'\n\017organ" +
-      "ization_id\030\001 \001(\rR\016organizationId\022\037\n\013cust" +
-      "omer_id\030\002 \001(\tR\ncustomerId\"e\n\023GetCustomer" +
-      "Response\0226\n\010customer\030\001 \001(\0132\032.payment.v1a" +
-      "lpha1.CustomerR\010customer\022\026\n\006status\030\002 \001(\t" +
-      "R\006status\"_\n\025GetBilingMonthRequest\022\'\n\017org" +
-      "anization_id\030\001 \001(\rR\016organizationId\022\035\n\nin" +
-      "voice_id\030\002 \001(\tR\tinvoiceId\"b\n\026GetBilingMo" +
-      "nthResponse\0220\n\006biling\030\001 \001(\0132\030.payment.v1" +
-      "alpha1.BilingR\006biling\022\026\n\006status\030\002 \001(\tR\006s" +
-      "tatus\"^\n\022GetPaymentsRequest\022\'\n\017organizat" +
-      "ion_id\030\001 \001(\rR\016organizationId\022\037\n\013customer" +
-      "_id\030\002 \001(\tR\ncustomerId\"]\n\023GetPaymentsResp" +
-      "onse\022.\n\004card\030\001 \001(\0132\032.payment.v1alpha1.Ca" +
-      "rdListR\004card\022\026\n\006status\030\002 \001(\tR\006status\"\251\001\n" +
-      "\031CreateSubscriptionRequest\022\'\n\017organizati" +
-      "on_id\030\001 \001(\rR\016organizationId\022\037\n\013customer_" +
-      "id\030\002 \001(\tR\ncustomerId\022B\n\014subscription\030\003 \001" +
-      "(\0132\036.payment.v1alpha1.SubscriptionR\014subs" +
-      "cription\"x\n\032CreateSubscriptionResponse\022B" +
-      "\n\014subscription\030\001 \001(\0132\036.payment.v1alpha1." +
-      "SubscriptionR\014subscription\022\026\n\006status\030\002 \001" +
-      "(\tR\006status\"m\n\031UpdateSubscriptionRequest\022" +
-      "\'\n\017subscription_id\030\001 \001(\tR\016subscriptionId" +
-      "\022\'\n\017organization_id\030\002 \001(\rR\016organizationI" +
-      "d\"l\n\032UpdateSubscriptionResponse\0226\n\010custo" +
-      "mer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR\010c" +
-      "ustomer\022\026\n\006status\030\002 \001(\tR\006status\"t\n\024Creat" +
-      "eProjectRequest\022\'\n\017organization_id\030\001 \001(\r" +
-      "R\016organizationId\0223\n\007project\030\002 \001(\0132\031.paym" +
-      "ent.v1alpha1.ProjectR\007project\"/\n\025CreateP" +
-      "rojectResponse\022\026\n\006status\030\001 \001(\tR\006status\"\340" +
-      "\001\n\024CreateInvoiceRequest\022\'\n\017organization_" +
+      ".proto\"r\n\022StopProjectRequest\022\'\n\017organiza" +
+      "tion_id\030\001 \001(\tR\016organizationId\0223\n\007project" +
+      "\030\002 \001(\0132\031.payment.v1alpha1.ProjectR\007proje" +
+      "ct\"J\n\023StopProjectResponse\0223\n\007project\030\001 \001" +
+      "(\0132\031.payment.v1alpha1.ProjectR\007project\"\261" +
+      "\002\n\024InvoiceFilterRequest\022\'\n\017organization_" +
       "id\030\001 \001(\rR\016organizationId\022\035\n\ninvoice_id\030\002" +
       " \001(\tR\tinvoiceId\022\022\n\004year\030\003 \001(\tR\004year\022\024\n\005m" +
       "onth\030\004 \001(\tR\005month\022\037\n\013customer_id\030\005 \001(\tR\n" +
       "customerId\022\035\n\nproject_id\030\006 \001(\tR\tprojectI" +
-      "d\022\026\n\006status\030\007 \001(\tR\006status\"g\n\025CreateInvoi" +
-      "ceResponse\0226\n\010customer\030\001 \001(\0132\032.payment.v" +
-      "1alpha1.CustomerR\010customer\022\026\n\006status\030\002 \001" +
-      "(\tR\006status\"\211\001\n\021CreateCardRequest\022\'\n\017orga" +
-      "nization_id\030\001 \001(\rR\016organizationId\022\037\n\013cus" +
-      "tomer_id\030\002 \001(\tR\ncustomerId\022*\n\004card\030\003 \001(\013" +
-      "2\026.payment.v1alpha1.CardR\004card\"G\n\022Create" +
-      "CardResponse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022" +
-      "\026\n\006status\030\002 \001(\tR\006status\"\216\001\n\031CancelSubscr" +
-      "iptionRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
-      "organizationId\022\037\n\013customer_id\030\002 \001(\tR\ncus" +
-      "tomerId\022\'\n\017subscription_id\030\003 \001(\tR\016subscr" +
-      "iptionId\"4\n\032CancelSubscriptionResponse\022\026" +
-      "\n\006status\030\001 \001(\tR\006status\"O\n\025CreateCustomer" +
-      "Request\0226\n\010customer\030\001 \001(\0132\032.payment.v1al" +
-      "pha1.CustomerR\010customer\"Q\n\026CreateCustome" +
-      "rResponse\022\037\n\013customer_id\030\001 \001(\tR\ncustomer" +
-      "Id\022\026\n\006status\030\002 \001(\tR\006status\"\225\001\n\024CreatePay" +
-      "mentRequest\022\'\n\017organization_id\030\001 \001(\rR\016or" +
-      "ganizationId\022\037\n\013customer_id\030\002 \001(\tR\ncusto" +
-      "merId\0223\n\007payment\030\003 \001(\0132\031.payment.v1alpha" +
-      "1.PaymentR\007payment\"H\n\025CreatePaymentRespo" +
-      "nse\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"y\n\024DeletePaymentRequest\022\'\n\017" +
-      "organization_id\030\001 \001(\rR\016organizationId\022\037\n" +
-      "\013customer_id\030\002 \001(\tR\ncustomerId\022\027\n\007card_i" +
-      "d\030\003 \001(\tR\006cardId\"/\n\025DeletePaymentResponse" +
-      "\022\026\n\006status\030\001 \001(\tR\006status\"v\n\021GetPaymentRe" +
+      "d\022\020\n\003cpu\030\007 \001(\001R\003cpu\022\020\n\003ram\030\010 \001(\001R\003ram\022C\n" +
+      "\rcustomer_list\030\t \001(\0132\036.payment.v1alpha1." +
+      "CustomerListR\014customerList\"\246\001\n\025InvoiceFi" +
+      "lterResponse\0226\n\010customer\030\001 \001(\0132\032.payment" +
+      ".v1alpha1.CustomerR\010customer\022=\n\013biling_l" +
+      "ist\030\002 \001(\0132\034.payment.v1alpha1.BilingListR" +
+      "\nbilingList\022\026\n\006status\030\003 \001(\tR\006status\"a\n\025D" +
+      "eleteCustomerRequest\022\'\n\017organization_id\030" +
+      "\001 \001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001" +
+      "(\tR\ncustomerId\"h\n\026DeleteCustomerResponse" +
+      "\022\026\n\006status\030\001 \001(\tR\006status\0226\n\010customer\030\002 \001" +
+      "(\0132\032.payment.v1alpha1.CustomerR\010customer" +
+      "\"j\n\026GetSubscriptionRequest\022\'\n\017organizati" +
+      "on_id\030\001 \001(\rR\016organizationId\022\'\n\017subscript" +
+      "ion_id\030\002 \001(\tR\016subscriptionId\"u\n\027GetSubsc" +
+      "riptionResponse\022B\n\014subscription\030\001 \001(\0132\036." +
+      "payment.v1alpha1.SubscriptionR\014subscript" +
+      "ion\022\026\n\006status\030\002 \001(\tR\006status\"A\n\026GetOrgani" +
+      "zationRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
+      "organizationId\"i\n\027GetOrganizationRespons" +
+      "e\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.C" +
+      "ustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006statu" +
+      "s\"^\n\022GetCustomerRequest\022\'\n\017organization_" +
+      "id\030\001 \001(\rR\016organizationId\022\037\n\013customer_id\030" +
+      "\002 \001(\tR\ncustomerId\"e\n\023GetCustomerResponse" +
+      "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu" +
+      "stomerR\010customer\022\026\n\006status\030\002 \001(\tR\006status" +
+      "\"_\n\025GetBilingMonthRequest\022\'\n\017organizatio" +
+      "n_id\030\001 \001(\rR\016organizationId\022\035\n\ninvoice_id" +
+      "\030\002 \001(\tR\tinvoiceId\"b\n\026GetBilingMonthRespo" +
+      "nse\0220\n\006biling\030\001 \001(\0132\030.payment.v1alpha1.B" +
+      "ilingR\006biling\022\026\n\006status\030\002 \001(\tR\006status\"^\n" +
+      "\022GetPaymentsRequest\022\'\n\017organization_id\030\001" +
+      " \001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001(" +
+      "\tR\ncustomerId\"]\n\023GetPaymentsResponse\022.\n\004" +
+      "card\030\001 \001(\0132\032.payment.v1alpha1.CardListR\004" +
+      "card\022\026\n\006status\030\002 \001(\tR\006status\"\251\001\n\031CreateS" +
+      "ubscriptionRequest\022\'\n\017organization_id\030\001 " +
+      "\001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001(\t" +
+      "R\ncustomerId\022B\n\014subscription\030\003 \001(\0132\036.pay" +
+      "ment.v1alpha1.SubscriptionR\014subscription" +
+      "\"x\n\032CreateSubscriptionResponse\022B\n\014subscr" +
+      "iption\030\001 \001(\0132\036.payment.v1alpha1.Subscrip" +
+      "tionR\014subscription\022\026\n\006status\030\002 \001(\tR\006stat" +
+      "us\"m\n\031UpdateSubscriptionRequest\022\'\n\017subsc" +
+      "ription_id\030\001 \001(\tR\016subscriptionId\022\'\n\017orga" +
+      "nization_id\030\002 \001(\rR\016organizationId\"l\n\032Upd" +
+      "ateSubscriptionResponse\0226\n\010customer\030\001 \001(" +
+      "\0132\032.payment.v1alpha1.CustomerR\010customer\022" +
+      "\026\n\006status\030\002 \001(\tR\006status\"t\n\024CreateProject" +
+      "Request\022\'\n\017organization_id\030\001 \001(\rR\016organi" +
+      "zationId\0223\n\007project\030\002 \001(\0132\031.payment.v1al" +
+      "pha1.ProjectR\007project\"/\n\025CreateProjectRe" +
+      "sponse\022\026\n\006status\030\001 \001(\tR\006status\"\340\001\n\024Creat" +
+      "eInvoiceRequest\022\'\n\017organization_id\030\001 \001(\r" +
+      "R\016organizationId\022\035\n\ninvoice_id\030\002 \001(\tR\tin" +
+      "voiceId\022\022\n\004year\030\003 \001(\tR\004year\022\024\n\005month\030\004 \001" +
+      "(\tR\005month\022\037\n\013customer_id\030\005 \001(\tR\ncustomer" +
+      "Id\022\035\n\nproject_id\030\006 \001(\tR\tprojectId\022\026\n\006sta" +
+      "tus\030\007 \001(\tR\006status\"g\n\025CreateInvoiceRespon" +
+      "se\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1." +
+      "CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006stat" +
+      "us\"\211\001\n\021CreateCardRequest\022\'\n\017organization" +
+      "_id\030\001 \001(\rR\016organizationId\022\037\n\013customer_id" +
+      "\030\002 \001(\tR\ncustomerId\022*\n\004card\030\003 \001(\0132\026.payme" +
+      "nt.v1alpha1.CardR\004card\"G\n\022CreateCardResp" +
+      "onse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026\n\006statu" +
+      "s\030\002 \001(\tR\006status\"\216\001\n\031CancelSubscriptionRe" +
       "quest\022\'\n\017organization_id\030\001 \001(\rR\016organiza" +
       "tionId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\022" +
-      "\027\n\007card_id\030\003 \001(\tR\006cardId\"a\n\022GetPaymentRe" +
-      "sponse\0223\n\007payment\030\001 \001(\0132\031.payment.v1alph" +
-      "a1.PaymentR\007payment\022\026\n\006status\030\002 \001(\tR\006sta" +
-      "tus\"^\n\022ListPaymentRequest\022\'\n\017organizatio" +
-      "n_id\030\001 \001(\rR\016organizationId\022\037\n\013customer_i" +
-      "d\030\002 \001(\tR\ncustomerId\"o\n\023ListPaymentRespon" +
-      "se\022@\n\014payment_list\030\001 \001(\0132\035.payment.v1alp" +
-      "ha1.PaymentListR\013paymentList\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"p\n\034ListSubscriptionItemsReq" +
-      "uest\022\'\n\017organization_id\030\001 \001(\rR\016organizat" +
-      "ionId\022\'\n\017subscription_id\030\002 \001(\tR\016subscrip" +
-      "tionId\"\320\001\n\035ListSubscriptionItemsResponse" +
-      "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu" +
-      "stomerR\010customer\022_\n\027subscription_items_l" +
-      "ist\030\002 \001(\0132\'.payment.v1alpha1.Subscriptio" +
-      "nItemsListR\025subscriptionItemsList\022\026\n\006sta" +
-      "tus\030\003 \001(\tR\006status\">\n\023ListProjectsRequest" +
-      "\022\'\n\017organization_id\030\001 \001(\rR\016organizationI" +
-      "d\"f\n\024ListProjectsResponse\0226\n\010customer\030\001 " +
-      "\001(\0132\032.payment.v1alpha1.CustomerR\010custome" +
-      "r\022\026\n\006status\030\002 \001(\tR\006status\"[\n\021GetProjectR" +
-      "equest\022\'\n\017organization_id\030\001 \001(\tR\016organiz" +
-      "ationId\022\035\n\nproject_id\030\002 \001(\tR\tprojectId\"d" +
-      "\n\022GetProjectResponse\0226\n\010customer\030\001 \001(\0132\032" +
-      ".payment.v1alpha1.CustomerR\010customer\022\026\n\006" +
-      "status\030\002 \001(\tR\006status\"\223\001\n\024DeleteProjectRe" +
-      "quest\022\'\n\017organization_id\030\001 \001(\rR\016organiza" +
-      "tionId\022\035\n\nproject_id\030\002 \001(\tR\tprojectId\0223\n" +
-      "\007project\030\003 \001(\0132\031.payment.v1alpha1.Projec" +
-      "tR\007project\"/\n\025DeleteProjectResponse\022\026\n\006s" +
-      "tatus\030\001 \001(\tR\006status2\372\020\n\021PaymentAPIServic" +
-      "e\022e\n\016CreateCustomer\022\'.payment.v1alpha1.C" +
-      "reateCustomerRequest\032(.payment.v1alpha1." +
-      "CreateCustomerResponse\"\000\022q\n\022CreateSubscr" +
-      "iption\022+.payment.v1alpha1.CreateSubscrip" +
-      "tionRequest\032,.payment.v1alpha1.CreateSub" +
-      "scriptionResponse\"\000\022b\n\rCreatePayment\022&.p" +
-      "ayment.v1alpha1.CreatePaymentRequest\032\'.p" +
-      "ayment.v1alpha1.CreatePaymentResponse\"\000\022" +
-      "Y\n\nCreateCard\022#.payment.v1alpha1.CreateC" +
-      "ardRequest\032$.payment.v1alpha1.CreateCard" +
-      "Response\"\000\022b\n\rCreateProject\022&.payment.v1" +
-      "alpha1.CreateProjectRequest\032\'.payment.v1" +
-      "alpha1.CreateProjectResponse\"\000\022b\n\rCreate" +
-      "Invoice\022&.payment.v1alpha1.CreateInvoice" +
-      "Request\032\'.payment.v1alpha1.CreateInvoice" +
-      "Response\"\000\022h\n\017GetOrganization\022(.payment." +
-      "v1alpha1.GetOrganizationRequest\032).paymen" +
-      "t.v1alpha1.GetOrganizationResponse\"\000\022h\n\017" +
-      "GetSubscription\022(.payment.v1alpha1.GetSu" +
-      "bscriptionRequest\032).payment.v1alpha1.Get" +
-      "SubscriptionResponse\"\000\022Y\n\nGetPayment\022#.p" +
-      "ayment.v1alpha1.GetPaymentRequest\032$.paym" +
-      "ent.v1alpha1.GetPaymentResponse\"\000\022\\\n\013Get" +
-      "Customer\022$.payment.v1alpha1.GetCustomerR" +
-      "equest\032%.payment.v1alpha1.GetCustomerRes" +
-      "ponse\"\000\022e\n\016GetBilingMonth\022\'.payment.v1al" +
-      "pha1.GetBilingMonthRequest\032(.payment.v1a" +
-      "lpha1.GetBilingMonthResponse\"\000\022\\\n\013GetPay" +
-      "ments\022$.payment.v1alpha1.GetPaymentsRequ" +
-      "est\032%.payment.v1alpha1.GetPaymentsRespon" +
-      "se\"\000\022_\n\014ListProjects\022%.payment.v1alpha1." +
-      "ListProjectsRequest\032&.payment.v1alpha1.L" +
-      "istProjectsResponse\"\000\022\\\n\013ListPayment\022$.p" +
-      "ayment.v1alpha1.ListPaymentRequest\032%.pay" +
-      "ment.v1alpha1.ListPaymentResponse\"\000\022z\n\025L" +
-      "istSubscriptionItems\022..payment.v1alpha1." +
-      "ListSubscriptionItemsRequest\032/.payment.v" +
-      "1alpha1.ListSubscriptionItemsResponse\"\000\022" +
-      "q\n\022UpdateSubscription\022+.payment.v1alpha1" +
-      ".UpdateSubscriptionRequest\032,.payment.v1a" +
-      "lpha1.UpdateSubscriptionResponse\"\000\022b\n\rDe" +
-      "leteProject\022&.payment.v1alpha1.DeletePro" +
-      "jectRequest\032\'.payment.v1alpha1.DeletePro" +
-      "jectResponse\"\000\022b\n\rDeletePayment\022&.paymen" +
-      "t.v1alpha1.DeletePaymentRequest\032\'.paymen" +
-      "t.v1alpha1.DeletePaymentResponse\"\000\022q\n\022Ca" +
-      "ncelSubscription\022+.payment.v1alpha1.Canc" +
-      "elSubscriptionRequest\032,.payment.v1alpha1" +
-      ".CancelSubscriptionResponse\"\000\022e\n\016DeleteC" +
-      "ustomer\022\'.payment.v1alpha1.DeleteCustome" +
-      "rRequest\032(.payment.v1alpha1.DeleteCustom" +
-      "erResponse\"\000\022b\n\rInvoiceFilter\022&.payment." +
-      "v1alpha1.InvoiceFilterRequest\032\'.payment." +
-      "v1alpha1.InvoiceFilterResponse\"\000B8Z6gith" +
-      "ub.com/cuemby/ccp-payment-service/paymen" +
-      "t/v1alpha1b\006proto3"
+      "\'\n\017subscription_id\030\003 \001(\tR\016subscriptionId" +
+      "\"4\n\032CancelSubscriptionResponse\022\026\n\006status" +
+      "\030\001 \001(\tR\006status\"O\n\025CreateCustomerRequest\022" +
+      "6\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cus" +
+      "tomerR\010customer\"Q\n\026CreateCustomerRespons" +
+      "e\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\026\n\006st" +
+      "atus\030\002 \001(\tR\006status\"\225\001\n\024CreatePaymentRequ" +
+      "est\022\'\n\017organization_id\030\001 \001(\rR\016organizati" +
+      "onId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\0223\n" +
+      "\007payment\030\003 \001(\0132\031.payment.v1alpha1.Paymen" +
+      "tR\007payment\"H\n\025CreatePaymentResponse\022\027\n\007c" +
+      "ard_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus\"y\n\024DeletePaymentRequest\022\'\n\017organiza" +
+      "tion_id\030\001 \001(\rR\016organizationId\022\037\n\013custome" +
+      "r_id\030\002 \001(\tR\ncustomerId\022\027\n\007card_id\030\003 \001(\tR" +
+      "\006cardId\"/\n\025DeletePaymentResponse\022\026\n\006stat" +
+      "us\030\001 \001(\tR\006status\"v\n\021GetPaymentRequest\022\'\n" +
+      "\017organization_id\030\001 \001(\rR\016organizationId\022\037" +
+      "\n\013customer_id\030\002 \001(\tR\ncustomerId\022\027\n\007card_" +
+      "id\030\003 \001(\tR\006cardId\"a\n\022GetPaymentResponse\0223" +
+      "\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Payme" +
+      "ntR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"^\n\022L" +
+      "istPaymentRequest\022\'\n\017organization_id\030\001 \001" +
+      "(\rR\016organizationId\022\037\n\013customer_id\030\002 \001(\tR" +
+      "\ncustomerId\"o\n\023ListPaymentResponse\022@\n\014pa" +
+      "yment_list\030\001 \001(\0132\035.payment.v1alpha1.Paym" +
+      "entListR\013paymentList\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus\"p\n\034ListSubscriptionItemsRequest\022\'\n\017" +
+      "organization_id\030\001 \001(\rR\016organizationId\022\'\n" +
+      "\017subscription_id\030\002 \001(\tR\016subscriptionId\"\320" +
+      "\001\n\035ListSubscriptionItemsResponse\0226\n\010cust" +
+      "omer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR\010" +
+      "customer\022_\n\027subscription_items_list\030\002 \001(" +
+      "\0132\'.payment.v1alpha1.SubscriptionItemsLi" +
+      "stR\025subscriptionItemsList\022\026\n\006status\030\003 \001(" +
+      "\tR\006status\">\n\023ListProjectsRequest\022\'\n\017orga" +
+      "nization_id\030\001 \001(\rR\016organizationId\"f\n\024Lis" +
+      "tProjectsResponse\0226\n\010customer\030\001 \001(\0132\032.pa" +
+      "yment.v1alpha1.CustomerR\010customer\022\026\n\006sta" +
+      "tus\030\002 \001(\tR\006status\"[\n\021GetProjectRequest\022\'" +
+      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
+      "\035\n\nproject_id\030\002 \001(\tR\tprojectId\"d\n\022GetPro" +
+      "jectResponse\0226\n\010customer\030\001 \001(\0132\032.payment" +
+      ".v1alpha1.CustomerR\010customer\022\026\n\006status\030\002" +
+      " \001(\tR\006status\"\223\001\n\024DeleteProjectRequest\022\'\n" +
+      "\017organization_id\030\001 \001(\rR\016organizationId\022\035" +
+      "\n\nproject_id\030\002 \001(\tR\tprojectId\0223\n\007project" +
+      "\030\003 \001(\0132\031.payment.v1alpha1.ProjectR\007proje" +
+      "ct\"/\n\025DeleteProjectResponse\022\026\n\006status\030\001 " +
+      "\001(\tR\006status2\330\021\n\021PaymentAPIService\022e\n\016Cre" +
+      "ateCustomer\022\'.payment.v1alpha1.CreateCus" +
+      "tomerRequest\032(.payment.v1alpha1.CreateCu" +
+      "stomerResponse\"\000\022q\n\022CreateSubscription\022+" +
+      ".payment.v1alpha1.CreateSubscriptionRequ" +
+      "est\032,.payment.v1alpha1.CreateSubscriptio" +
+      "nResponse\"\000\022b\n\rCreatePayment\022&.payment.v" +
+      "1alpha1.CreatePaymentRequest\032\'.payment.v" +
+      "1alpha1.CreatePaymentResponse\"\000\022Y\n\nCreat" +
+      "eCard\022#.payment.v1alpha1.CreateCardReque" +
+      "st\032$.payment.v1alpha1.CreateCardResponse" +
+      "\"\000\022b\n\rCreateProject\022&.payment.v1alpha1.C" +
+      "reateProjectRequest\032\'.payment.v1alpha1.C" +
+      "reateProjectResponse\"\000\022b\n\rCreateInvoice\022" +
+      "&.payment.v1alpha1.CreateInvoiceRequest\032" +
+      "\'.payment.v1alpha1.CreateInvoiceResponse" +
+      "\"\000\022h\n\017GetOrganization\022(.payment.v1alpha1" +
+      ".GetOrganizationRequest\032).payment.v1alph" +
+      "a1.GetOrganizationResponse\"\000\022h\n\017GetSubsc" +
+      "ription\022(.payment.v1alpha1.GetSubscripti" +
+      "onRequest\032).payment.v1alpha1.GetSubscrip" +
+      "tionResponse\"\000\022Y\n\nGetPayment\022#.payment.v" +
+      "1alpha1.GetPaymentRequest\032$.payment.v1al" +
+      "pha1.GetPaymentResponse\"\000\022\\\n\013GetCustomer" +
+      "\022$.payment.v1alpha1.GetCustomerRequest\032%" +
+      ".payment.v1alpha1.GetCustomerResponse\"\000\022" +
+      "e\n\016GetBilingMonth\022\'.payment.v1alpha1.Get" +
+      "BilingMonthRequest\032(.payment.v1alpha1.Ge" +
+      "tBilingMonthResponse\"\000\022\\\n\013GetPayments\022$." +
+      "payment.v1alpha1.GetPaymentsRequest\032%.pa" +
+      "yment.v1alpha1.GetPaymentsResponse\"\000\022_\n\014" +
+      "ListProjects\022%.payment.v1alpha1.ListProj" +
+      "ectsRequest\032&.payment.v1alpha1.ListProje" +
+      "ctsResponse\"\000\022\\\n\013ListPayment\022$.payment.v" +
+      "1alpha1.ListPaymentRequest\032%.payment.v1a" +
+      "lpha1.ListPaymentResponse\"\000\022z\n\025ListSubsc" +
+      "riptionItems\022..payment.v1alpha1.ListSubs" +
+      "criptionItemsRequest\032/.payment.v1alpha1." +
+      "ListSubscriptionItemsResponse\"\000\022q\n\022Updat" +
+      "eSubscription\022+.payment.v1alpha1.UpdateS" +
+      "ubscriptionRequest\032,.payment.v1alpha1.Up" +
+      "dateSubscriptionResponse\"\000\022b\n\rDeleteProj" +
+      "ect\022&.payment.v1alpha1.DeleteProjectRequ" +
+      "est\032\'.payment.v1alpha1.DeleteProjectResp" +
+      "onse\"\000\022b\n\rDeletePayment\022&.payment.v1alph" +
+      "a1.DeletePaymentRequest\032\'.payment.v1alph" +
+      "a1.DeletePaymentResponse\"\000\022q\n\022CancelSubs" +
+      "cription\022+.payment.v1alpha1.CancelSubscr" +
+      "iptionRequest\032,.payment.v1alpha1.CancelS" +
+      "ubscriptionResponse\"\000\022e\n\016DeleteCustomer\022" +
+      "\'.payment.v1alpha1.DeleteCustomerRequest" +
+      "\032(.payment.v1alpha1.DeleteCustomerRespon" +
+      "se\"\000\022b\n\rInvoiceFilter\022&.payment.v1alpha1" +
+      ".InvoiceFilterRequest\032\'.payment.v1alpha1" +
+      ".InvoiceFilterResponse\"\000\022\\\n\013StopProject\022" +
+      "$.payment.v1alpha1.StopProjectRequest\032%." +
+      "payment.v1alpha1.StopProjectResponse\"\000B8" +
+      "Z6github.com/cuemby/ccp-payment-service/" +
+      "payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           payment.v1alpha1.PaymentOuterClass.getDescriptor(),
         });
-    internal_static_payment_v1alpha1_InvoiceFilterRequest_descriptor =
+    internal_static_payment_v1alpha1_StopProjectRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_payment_v1alpha1_StopProjectRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_StopProjectRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", "Project", });
+    internal_static_payment_v1alpha1_StopProjectResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_payment_v1alpha1_StopProjectResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_StopProjectResponse_descriptor,
+        new java.lang.String[] { "Project", });
+    internal_static_payment_v1alpha1_InvoiceFilterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_payment_v1alpha1_InvoiceFilterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_InvoiceFilterRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "InvoiceId", "Year", "Month", "CustomerId", "ProjectId", "Cpu", "Ram", "CustomerList", });
     internal_static_payment_v1alpha1_InvoiceFilterResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_payment_v1alpha1_InvoiceFilterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_InvoiceFilterResponse_descriptor,
         new java.lang.String[] { "Customer", "BilingList", "Status", });
     internal_static_payment_v1alpha1_DeleteCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_payment_v1alpha1_DeleteCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeleteCustomerRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", });
     internal_static_payment_v1alpha1_DeleteCustomerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_payment_v1alpha1_DeleteCustomerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeleteCustomerResponse_descriptor,
         new java.lang.String[] { "Status", "Customer", });
     internal_static_payment_v1alpha1_GetSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_payment_v1alpha1_GetSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetSubscriptionRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "SubscriptionId", });
     internal_static_payment_v1alpha1_GetSubscriptionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_payment_v1alpha1_GetSubscriptionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetSubscriptionResponse_descriptor,
         new java.lang.String[] { "Subscription", "Status", });
     internal_static_payment_v1alpha1_GetOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_payment_v1alpha1_GetOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_payment_v1alpha1_GetOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_payment_v1alpha1_GetOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetOrganizationResponse_descriptor,
         new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_GetCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_payment_v1alpha1_GetCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetCustomerRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", });
     internal_static_payment_v1alpha1_GetCustomerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_payment_v1alpha1_GetCustomerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetCustomerResponse_descriptor,
         new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_GetBilingMonthRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_payment_v1alpha1_GetBilingMonthRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetBilingMonthRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "InvoiceId", });
     internal_static_payment_v1alpha1_GetBilingMonthResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_payment_v1alpha1_GetBilingMonthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetBilingMonthResponse_descriptor,
         new java.lang.String[] { "Biling", "Status", });
     internal_static_payment_v1alpha1_GetPaymentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_payment_v1alpha1_GetPaymentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetPaymentsRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", });
     internal_static_payment_v1alpha1_GetPaymentsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_payment_v1alpha1_GetPaymentsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetPaymentsResponse_descriptor,
         new java.lang.String[] { "Card", "Status", });
     internal_static_payment_v1alpha1_CreateSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_payment_v1alpha1_CreateSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateSubscriptionRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", "Subscription", });
     internal_static_payment_v1alpha1_CreateSubscriptionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_payment_v1alpha1_CreateSubscriptionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateSubscriptionResponse_descriptor,
         new java.lang.String[] { "Subscription", "Status", });
     internal_static_payment_v1alpha1_UpdateSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_payment_v1alpha1_UpdateSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_UpdateSubscriptionRequest_descriptor,
         new java.lang.String[] { "SubscriptionId", "OrganizationId", });
     internal_static_payment_v1alpha1_UpdateSubscriptionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_payment_v1alpha1_UpdateSubscriptionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_UpdateSubscriptionResponse_descriptor,
         new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_CreateProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_payment_v1alpha1_CreateProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateProjectRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "Project", });
     internal_static_payment_v1alpha1_CreateProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_payment_v1alpha1_CreateProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateProjectResponse_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_payment_v1alpha1_CreateInvoiceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_payment_v1alpha1_CreateInvoiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateInvoiceRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "InvoiceId", "Year", "Month", "CustomerId", "ProjectId", "Status", });
     internal_static_payment_v1alpha1_CreateInvoiceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_payment_v1alpha1_CreateInvoiceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateInvoiceResponse_descriptor,
         new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_CreateCardRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_payment_v1alpha1_CreateCardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCardRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", "Card", });
     internal_static_payment_v1alpha1_CreateCardResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_payment_v1alpha1_CreateCardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCardResponse_descriptor,
         new java.lang.String[] { "TokenId", "Status", });
     internal_static_payment_v1alpha1_CancelSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_payment_v1alpha1_CancelSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CancelSubscriptionRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", "SubscriptionId", });
     internal_static_payment_v1alpha1_CancelSubscriptionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_payment_v1alpha1_CancelSubscriptionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CancelSubscriptionResponse_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_payment_v1alpha1_CreateCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_payment_v1alpha1_CreateCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCustomerRequest_descriptor,
         new java.lang.String[] { "Customer", });
     internal_static_payment_v1alpha1_CreateCustomerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_payment_v1alpha1_CreateCustomerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreateCustomerResponse_descriptor,
         new java.lang.String[] { "CustomerId", "Status", });
     internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_payment_v1alpha1_CreatePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreatePaymentRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", "Payment", });
     internal_static_payment_v1alpha1_CreatePaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_payment_v1alpha1_CreatePaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_CreatePaymentResponse_descriptor,
         new java.lang.String[] { "CardId", "Status", });
     internal_static_payment_v1alpha1_DeletePaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_payment_v1alpha1_DeletePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeletePaymentRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", "CardId", });
     internal_static_payment_v1alpha1_DeletePaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_payment_v1alpha1_DeletePaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeletePaymentResponse_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_payment_v1alpha1_GetPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_payment_v1alpha1_GetPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetPaymentRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", "CardId", });
     internal_static_payment_v1alpha1_GetPaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_payment_v1alpha1_GetPaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetPaymentResponse_descriptor,
         new java.lang.String[] { "Payment", "Status", });
     internal_static_payment_v1alpha1_ListPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_payment_v1alpha1_ListPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListPaymentRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "CustomerId", });
     internal_static_payment_v1alpha1_ListPaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_payment_v1alpha1_ListPaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListPaymentResponse_descriptor,
         new java.lang.String[] { "PaymentList", "Status", });
     internal_static_payment_v1alpha1_ListSubscriptionItemsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_payment_v1alpha1_ListSubscriptionItemsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListSubscriptionItemsRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "SubscriptionId", });
     internal_static_payment_v1alpha1_ListSubscriptionItemsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_payment_v1alpha1_ListSubscriptionItemsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListSubscriptionItemsResponse_descriptor,
         new java.lang.String[] { "Customer", "SubscriptionItemsList", "Status", });
     internal_static_payment_v1alpha1_ListProjectsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_payment_v1alpha1_ListProjectsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListProjectsRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_payment_v1alpha1_ListProjectsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_payment_v1alpha1_ListProjectsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListProjectsResponse_descriptor,
         new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_GetProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_payment_v1alpha1_GetProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetProjectRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "ProjectId", });
     internal_static_payment_v1alpha1_GetProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_payment_v1alpha1_GetProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_GetProjectResponse_descriptor,
         new java.lang.String[] { "Customer", "Status", });
     internal_static_payment_v1alpha1_DeleteProjectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_payment_v1alpha1_DeleteProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeleteProjectRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "ProjectId", "Project", });
     internal_static_payment_v1alpha1_DeleteProjectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_payment_v1alpha1_DeleteProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_DeleteProjectResponse_descriptor,
