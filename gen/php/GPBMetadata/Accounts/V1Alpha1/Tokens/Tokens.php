@@ -16,10 +16,11 @@ class Tokens
         }
         $pool->internalAddGeneratedFile(
             '
-®	
+†
+
 %accounts/v1alpha1/tokens/tokens.protoaccounts.v1alpha1.tokens.v1"-
 GetOneTokenCCPRequest
-token (	Rtoken"Ã
+token (	Rtoken"Ù
 GetOneTokenCCPResponse
 user_id (RuserId
 token (	Rtoken
@@ -27,7 +28,8 @@ class Tokens
 user_id_dex (	R	userIdDex
 
 first_name (	R	firstName%
-email_verified (RemailVerified"4
+email_verified (RemailVerified
+error (	Rerror"4
 CreateTokenCCPRequest
 	token_dex (	RtokenDex"¦
 CreateTokenCCPResponse
@@ -44,17 +46,20 @@ client_web (	R	clientWeb
 ip (	Rip
 date (	Rdate"E
 SaveLogsRequest2
-log (2 .accounts.v1alpha1.tokens.v1.LogRlog"$
+log (2 .accounts.v1alpha1.tokens.v1.LogRlog":
 SaveLogsResponse
-msg (	Rmsg"&
+msg (	Rmsg
+error (	Rerror"&
 LogsRequest
-user_id (	RuserId"D
+user_id (	RuserId"Z
 LogsResponse4
-logs (2 .accounts.v1alpha1.tokens.v1.LogRlogs"4
+logs (2 .accounts.v1alpha1.tokens.v1.LogRlogs
+error (	Rerror"4
 EnableOrDisableMFARequest
-user_id (	RuserId".
+user_id (	RuserId"D
 EnableOrDisableMFAResponse
-msg (	Rmsg"?
+msg (	Rmsg
+error (	Rerror"?
 
 MFARequest
 user_id (	RuserId

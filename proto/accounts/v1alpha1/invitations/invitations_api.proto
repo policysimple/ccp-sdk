@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitations";
+import "accounts/v1alpha1/invitations/invitations.proto";
+
+
+package accounts.v1alpha1.invitations.v1;
+
+
+service InvitationService {
+
+
+    //invitation
+    rpc SendInvitationUser(SendInvitationUserRequest) returns (SendInvitationUserResponse);
+    rpc GetInvitationUser(GetInvitationUserRequest) returns (GetInvitationUserResponse);
+    rpc AgreeInvitationUser(AgreeInvitationUserRequest) returns (AgreeInvitationUserResponse);
+    rpc ListInvitationSend(ListInvitationSendRequest) returns (ListInvitationSendResponse);
+    rpc DeleteInvitation(DeleteInvitationRequest) returns (DeleteInvitationResponse);
+
+
+
+}

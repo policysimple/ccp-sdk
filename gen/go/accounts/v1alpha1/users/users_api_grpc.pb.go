@@ -25,11 +25,6 @@ type UserServiceClient interface {
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 	ListUserPagination(ctx context.Context, in *ListUserPaginationRequest, opts ...grpc.CallOption) (*ListUserPaginationResponse, error)
-	//invitation
-	SendInvitationUser(ctx context.Context, in *SendInvitationUserRequest, opts ...grpc.CallOption) (*SendInvitationUserResponse, error)
-	GetInvitationUser(ctx context.Context, in *GetInvitationUserRequest, opts ...grpc.CallOption) (*GetInvitationUserResponse, error)
-	AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error)
-	ListInvitationUser(ctx context.Context, in *ListInvitationUserRequest, opts ...grpc.CallOption) (*ListInvitationUserResponse, error)
 	//CHECK USER
 	CheckUser(ctx context.Context, in *CheckUserRequest, opts ...grpc.CallOption) (*CheckUserResponse, error)
 	SendVerificationEmail(ctx context.Context, in *SendVerificationEmailRequest, opts ...grpc.CallOption) (*SendVerificationEmailResponse, error)
@@ -103,42 +98,6 @@ func (c *userServiceClient) ListUserPagination(ctx context.Context, in *ListUser
 	return out, nil
 }
 
-func (c *userServiceClient) SendInvitationUser(ctx context.Context, in *SendInvitationUserRequest, opts ...grpc.CallOption) (*SendInvitationUserResponse, error) {
-	out := new(SendInvitationUserResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.users.v1.UserService/SendInvitationUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) GetInvitationUser(ctx context.Context, in *GetInvitationUserRequest, opts ...grpc.CallOption) (*GetInvitationUserResponse, error) {
-	out := new(GetInvitationUserResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.users.v1.UserService/GetInvitationUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error) {
-	out := new(AgreeInvitationUserResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.users.v1.UserService/AgreeInvitationUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) ListInvitationUser(ctx context.Context, in *ListInvitationUserRequest, opts ...grpc.CallOption) (*ListInvitationUserResponse, error) {
-	out := new(ListInvitationUserResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.users.v1.UserService/ListInvitationUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *userServiceClient) CheckUser(ctx context.Context, in *CheckUserRequest, opts ...grpc.CallOption) (*CheckUserResponse, error) {
 	out := new(CheckUserResponse)
 	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.users.v1.UserService/CheckUser", in, out, opts...)
@@ -204,11 +163,6 @@ type UserServiceServer interface {
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
 	ListUserPagination(context.Context, *ListUserPaginationRequest) (*ListUserPaginationResponse, error)
-	//invitation
-	SendInvitationUser(context.Context, *SendInvitationUserRequest) (*SendInvitationUserResponse, error)
-	GetInvitationUser(context.Context, *GetInvitationUserRequest) (*GetInvitationUserResponse, error)
-	AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error)
-	ListInvitationUser(context.Context, *ListInvitationUserRequest) (*ListInvitationUserResponse, error)
 	//CHECK USER
 	CheckUser(context.Context, *CheckUserRequest) (*CheckUserResponse, error)
 	SendVerificationEmail(context.Context, *SendVerificationEmailRequest) (*SendVerificationEmailResponse, error)
@@ -241,18 +195,6 @@ func (UnimplementedUserServiceServer) DeleteUser(context.Context, *DeleteUserReq
 }
 func (UnimplementedUserServiceServer) ListUserPagination(context.Context, *ListUserPaginationRequest) (*ListUserPaginationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUserPagination not implemented")
-}
-func (UnimplementedUserServiceServer) SendInvitationUser(context.Context, *SendInvitationUserRequest) (*SendInvitationUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendInvitationUser not implemented")
-}
-func (UnimplementedUserServiceServer) GetInvitationUser(context.Context, *GetInvitationUserRequest) (*GetInvitationUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetInvitationUser not implemented")
-}
-func (UnimplementedUserServiceServer) AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AgreeInvitationUser not implemented")
-}
-func (UnimplementedUserServiceServer) ListInvitationUser(context.Context, *ListInvitationUserRequest) (*ListInvitationUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListInvitationUser not implemented")
 }
 func (UnimplementedUserServiceServer) CheckUser(context.Context, *CheckUserRequest) (*CheckUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckUser not implemented")
@@ -388,78 +330,6 @@ func _UserService_ListUserPagination_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServiceServer).ListUserPagination(ctx, req.(*ListUserPaginationRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_SendInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendInvitationUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).SendInvitationUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.users.v1.UserService/SendInvitationUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).SendInvitationUser(ctx, req.(*SendInvitationUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_GetInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetInvitationUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).GetInvitationUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.users.v1.UserService/GetInvitationUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetInvitationUser(ctx, req.(*GetInvitationUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_AgreeInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AgreeInvitationUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).AgreeInvitationUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.users.v1.UserService/AgreeInvitationUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).AgreeInvitationUser(ctx, req.(*AgreeInvitationUserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_ListInvitationUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListInvitationUserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).ListInvitationUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.users.v1.UserService/ListInvitationUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ListInvitationUser(ctx, req.(*ListInvitationUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -602,22 +472,6 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListUserPagination",
 			Handler:    _UserService_ListUserPagination_Handler,
-		},
-		{
-			MethodName: "SendInvitationUser",
-			Handler:    _UserService_SendInvitationUser_Handler,
-		},
-		{
-			MethodName: "GetInvitationUser",
-			Handler:    _UserService_GetInvitationUser_Handler,
-		},
-		{
-			MethodName: "AgreeInvitationUser",
-			Handler:    _UserService_AgreeInvitationUser_Handler,
-		},
-		{
-			MethodName: "ListInvitationUser",
-			Handler:    _UserService_ListInvitationUser_Handler,
 		},
 		{
 			MethodName: "CheckUser",

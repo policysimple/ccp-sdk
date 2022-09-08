@@ -15,6 +15,7 @@ import "performance/metrics/v1alpha1/metrics.proto";
 
 service MetricsAPIService{
     rpc GetMetrics(GetMetricsRequest) returns (GetMetricsResponse) {};
+    rpc GetTektonMetrics(GetTektonMetricsRequest) returns (GetTektonMetricsResponse) {};
 }
 
 enum MetricsInterval {
@@ -38,7 +39,7 @@ message Range {
 message GetMetricsRequest {
     map<string, string> labels = 1;
     repeated string containers = 2;
-    MetricsInterval interval =3;
+    MetricsInterval interval = 3;
     Range range =4;
     int32 page = 5;
     int32 size = 6;
@@ -47,4 +48,15 @@ message GetMetricsRequest {
 message GetMetricsResponse {
     repeated performance.metrics.v1alpha1.MetricItem memory = 1;
     repeated performance.metrics.v1alpha1.MetricItem cpu = 2;
+}
+
+message GetTektonMetricsRequest {
+    string name_pipeline_run = 1;
+    Range range = 2;
+    int32 page = 3;
+    int32 size = 4;
+}
+
+message GetTektonMetricsResponse {
+    repeated performance.metrics.v1alpha1.TektonMetricItem results = 1;
 }

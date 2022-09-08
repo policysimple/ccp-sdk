@@ -14,9 +14,10 @@ class Projects
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-û
+ˆ
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"¤
 CreateProjectRequest
 name (	Rname 
@@ -33,14 +34,14 @@ class Projects
 UpdateProjectRequest
 id (RidM
 project (23.accounts.v1alpha1.projects.v1.CreateProjectRequestRproject"J
-	MenberRol
+	MemberRol
 id (Rid
 name (	Rname
 is_admin (RisAdmin"7
 ProjectList
 name (	Rname
 image (	Rimage"ƒ
-MenberProject
+MemberProject
 id (Rid
 user_id (	RuserId
 
@@ -70,28 +71,19 @@ first_name (	R	firstName
 created_at (	R	createdAt
 
 updated_at (	R	updatedAtF
-members (2,.accounts.v1alpha1.projects.v1.MenberProjectRmembers=
-owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner"Y
-ListProjectResponseB
-projects (2&.accounts.v1alpha1.projects.v1.ProjectRprojects"L
+members (2,.accounts.v1alpha1.projects.v1.MemberProjectRmembers=
+owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner"c
+ListProjectResponse6
+projects (2.accounts.v1alpha1.ProjectRprojects
+error (	Rerror"L
 ListProjectPaginationRequest
 offset (Roffset
-limit (Rlimit"y
-ListProjectPaginationResponseB
-projects (2&.accounts.v1alpha1.projects.v1.ProjectRprojects
-count (Rcount"Æ
-Project
-id (Rid
-name (	Rname
-image (	Rimage\'
-organization_id (RorganizationId 
-description (	Rdescription
-
-created_at (	R	createdAt
-
-updated_at (	R	updatedAt9
-roles (2#.accounts.v1alpha1.projects.v1.RoleRroles=
-users	 (2\'.accounts.v1alpha1.projects.v1.UserListRusers"Ü
+limit (Rlimit"œ
+ListProjectPaginationResponse6
+projects (2.accounts.v1alpha1.ProjectRprojects
+count (Rcount
+page (Rpage
+max_page (RmaxPage"Ü
 UserList
 id (Rid
 
@@ -101,22 +93,7 @@ first_name (	R	firstName
 user_id (	RuserId
 	is_active (RisActive"
 is_super_user (RisSuperUser
-image (	Rimage"Ú
-Role
-id (Rid
-name (	Rname
-
-project_id (R	projectId\'
-organization_id (RorganizationIdK
-permissions (2).accounts.v1alpha1.projects.v1.PermissionRpermissions
-is_admin (RisAdmin"y
-
-Permission
-id (Rid
-name (	Rname
-action (	Raction
-type (	Rtype
-	full_name (	RfullName"T
+image (	Rimage"T
 DeleteUserByProjectRequest
 user_id (RuserId
 

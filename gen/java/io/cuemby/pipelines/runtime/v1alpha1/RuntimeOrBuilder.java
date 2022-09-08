@@ -32,16 +32,28 @@ public interface RuntimeOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-   * @return The instanceType.
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
    */
-  java.lang.String getInstanceType();
+  java.util.List<io.cuemby.pipelines.runtime.v1alpha1.IntanceType> 
+      getInstanceTypesList();
   /**
-   * <code>string instance_type = 4 [json_name = "instanceType"];</code>
-   * @return The bytes for instanceType.
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceTypeBytes();
+  io.cuemby.pipelines.runtime.v1alpha1.IntanceType getInstanceTypes(int index);
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  int getInstanceTypesCount();
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder> 
+      getInstanceTypesOrBuilderList();
+  /**
+   * <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.IntanceTypeOrBuilder getInstanceTypesOrBuilder(
+      int index);
 
   /**
    * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
@@ -341,4 +353,64 @@ public interface RuntimeOrBuilder extends
    * @return The trafficType.
    */
   io.cuemby.pipelines.runtime.v1alpha1.TrafficType getTrafficType();
+
+  /**
+   * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+   * @return The responseMessage.
+   */
+  java.lang.String getResponseMessage();
+  /**
+   * <code>string response_message = 20 [json_name = "responseMessage"];</code>
+   * @return The bytes for responseMessage.
+   */
+  com.google.protobuf.ByteString
+      getResponseMessageBytes();
+
+  /**
+   * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+   * @return The environmentName.
+   */
+  java.lang.String getEnvironmentName();
+  /**
+   * <code>string environment_name = 21 [json_name = "environmentName"];</code>
+   * @return The bytes for environmentName.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentNameBytes();
+
+  /**
+   * <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+   * @return The environmentInternalName.
+   */
+  java.lang.String getEnvironmentInternalName();
+  /**
+   * <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+   * @return The bytes for environmentInternalName.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentInternalNameBytes();
+
+  /**
+   * <code>string application_name = 23 [json_name = "applicationName"];</code>
+   * @return The applicationName.
+   */
+  java.lang.String getApplicationName();
+  /**
+   * <code>string application_name = 23 [json_name = "applicationName"];</code>
+   * @return The bytes for applicationName.
+   */
+  com.google.protobuf.ByteString
+      getApplicationNameBytes();
+
+  /**
+   * <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+   * @return The storageUsed.
+   */
+  int getStorageUsed();
+
+  /**
+   * <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+   * @return The storageLimit.
+   */
+  int getStorageLimit();
 }

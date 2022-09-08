@@ -468,7 +468,8 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.toObject = function(inc
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userIdDex: jspb.Message.getFieldWithDefault(msg, 4, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    error: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -528,6 +529,10 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.deserializeBinaryFromRe
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -597,6 +602,13 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.serializeBinaryToWriter
   if (f) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -708,6 +720,24 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.getEmailVerif
  */
 proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.setEmailVerified = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string error = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1524,7 +1554,8 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.toObject = function
  */
 proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1565,6 +1596,10 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.deserializeBinaryFromReader =
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1601,6 +1636,13 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.serializeBinaryToWriter = fun
       f
     );
   }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1619,6 +1661,24 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.getMsg = function()
  */
 proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1792,7 +1852,8 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.toObject = function(opt
 proto.accounts.v1alpha1.tokens.v1.LogsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     logsList: jspb.Message.toObjectList(msg.getLogsList(),
-    proto.accounts.v1alpha1.tokens.v1.Log.toObject, includeInstance)
+    proto.accounts.v1alpha1.tokens.v1.Log.toObject, includeInstance),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1834,6 +1895,10 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.accounts.v1alpha1.tokens.v1.Log.deserializeBinaryFromReader);
       msg.addLogs(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1869,6 +1934,13 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.serializeBinaryToWriter = functio
       1,
       f,
       proto.accounts.v1alpha1.tokens.v1.Log.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1909,6 +1981,24 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.addLogs = function(opt_
  */
 proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.clearLogsList = function() {
   return this.setLogsList([]);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.LogsResponse} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2074,7 +2164,8 @@ proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.prototype.toObject 
  */
 proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2115,6 +2206,10 @@ proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.deserializeBinaryFr
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2151,6 +2246,13 @@ proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.serializeBinaryToWr
       f
     );
   }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -2169,6 +2271,24 @@ proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.prototype.getMsg = 
  */
 proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

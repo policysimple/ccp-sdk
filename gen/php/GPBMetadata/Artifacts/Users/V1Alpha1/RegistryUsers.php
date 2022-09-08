@@ -16,7 +16,7 @@ class RegistryUsers
         }
         $pool->internalAddGeneratedFile(
             '
-Í
+‰
 -artifacts/users/v1alpha1/registry_users.protoartifacts.users.v1alpha1"Z
 AccessHarbor
 action (	Raction
@@ -33,13 +33,14 @@ class RegistryUsers
 level (	Rlevel
 duration (Rduration 
 description (	RdescriptionZ
-permissions_harbor (2+.artifacts.users.v1alpha1.PermissionsHarborRpermissionsHarbor"à
+permissions_harbor (2+.artifacts.users.v1alpha1.PermissionsHarborRpermissionsHarbor"œ
 UsersRegistry
 id (	Rid\'
 organization_id (RorganizationId
 
 project_id (R	projectId%
-environment_id (	RenvironmentId
+environment_id (	RenvironmentId:
+environment_internal_name (	RenvironmentInternalName
 active (Ractive8
 harbor (2 .artifacts.users.v1alpha1.HarborRharborB±
 "io.cuemby.artifacts.users.v1alpha1BRegistryUsersProtoPZ9github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1¢PPXªArtifacts.Users.V1Alpha1ÊArtifacts\\Users\\V1Alpha1bproto3'

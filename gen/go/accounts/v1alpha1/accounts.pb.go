@@ -202,7 +202,7 @@ func (x *UserList) GetIsSuperUser() bool {
 	return false
 }
 
-type MenberRol struct {
+type MemberRol struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -212,8 +212,8 @@ type MenberRol struct {
 	IsAdmin bool   `protobuf:"varint,3,opt,name=is_admin,json=isAdmin,proto3" json:"is_admin,omitempty"`
 }
 
-func (x *MenberRol) Reset() {
-	*x = MenberRol{}
+func (x *MemberRol) Reset() {
+	*x = MemberRol{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_accounts_v1alpha1_accounts_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -221,13 +221,13 @@ func (x *MenberRol) Reset() {
 	}
 }
 
-func (x *MenberRol) String() string {
+func (x *MemberRol) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MenberRol) ProtoMessage() {}
+func (*MemberRol) ProtoMessage() {}
 
-func (x *MenberRol) ProtoReflect() protoreflect.Message {
+func (x *MemberRol) ProtoReflect() protoreflect.Message {
 	mi := &file_accounts_v1alpha1_accounts_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -239,26 +239,26 @@ func (x *MenberRol) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use MenberRol.ProtoReflect.Descriptor instead.
-func (*MenberRol) Descriptor() ([]byte, []int) {
+// Deprecated: Use MemberRol.ProtoReflect.Descriptor instead.
+func (*MemberRol) Descriptor() ([]byte, []int) {
 	return file_accounts_v1alpha1_accounts_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *MenberRol) GetId() uint32 {
+func (x *MemberRol) GetId() uint32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *MenberRol) GetName() string {
+func (x *MemberRol) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *MenberRol) GetIsAdmin() bool {
+func (x *MemberRol) GetIsAdmin() bool {
 	if x != nil {
 		return x.IsAdmin
 	}
@@ -582,7 +582,7 @@ var file_accounts_v1alpha1_accounts_proto_rawDesc = []byte{
 	0x08, 0x52, 0x08, 0x69, 0x73, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x12, 0x22, 0x0a, 0x0d, 0x69,
 	0x73, 0x5f, 0x73, 0x75, 0x70, 0x65, 0x72, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x18, 0x07, 0x20, 0x01,
 	0x28, 0x08, 0x52, 0x0b, 0x69, 0x73, 0x53, 0x75, 0x70, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x22,
-	0x4a, 0x0a, 0x09, 0x4d, 0x65, 0x6e, 0x62, 0x65, 0x72, 0x52, 0x6f, 0x6c, 0x12, 0x0e, 0x0a, 0x02,
+	0x4a, 0x0a, 0x09, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x6f, 0x6c, 0x12, 0x0e, 0x0a, 0x02,
 	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04,
 	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
 	0x12, 0x19, 0x0a, 0x08, 0x69, 0x73, 0x5f, 0x61, 0x64, 0x6d, 0x69, 0x6e, 0x18, 0x03, 0x20, 0x01,
@@ -650,7 +650,7 @@ var file_accounts_v1alpha1_accounts_proto_msgTypes = make([]protoimpl.MessageInf
 var file_accounts_v1alpha1_accounts_proto_goTypes = []interface{}{
 	(*Role)(nil),         // 0: accounts.v1alpha1.Role
 	(*UserList)(nil),     // 1: accounts.v1alpha1.UserList
-	(*MenberRol)(nil),    // 2: accounts.v1alpha1.MenberRol
+	(*MemberRol)(nil),    // 2: accounts.v1alpha1.MemberRol
 	(*Permission)(nil),   // 3: accounts.v1alpha1.Permission
 	(*Project)(nil),      // 4: accounts.v1alpha1.Project
 	(*Organization)(nil), // 5: accounts.v1alpha1.Organization
@@ -699,7 +699,7 @@ func file_accounts_v1alpha1_accounts_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_accounts_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MenberRol); i {
+			switch v := v.(*MemberRol); i {
 			case 0:
 				return &v.state
 			case 1:

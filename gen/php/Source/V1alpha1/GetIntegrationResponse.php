@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     *repeated Repository repositories = 2;
-     *
      * Generated from protobuf field <code>.source.v1alpha1.Integration integration = 1 [json_name = "integration"];</code>
      */
     protected $integration = null;
+    /**
+     *repeated Repository repositories = 2;
+     *
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     */
+    protected $error = '';
 
     /**
      * Constructor.
@@ -27,6 +31,7 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Source\V1alpha1\Integration $integration
+     *     @type string $error
      *          repeated Repository repositories = 2;
      * }
      */
@@ -36,8 +41,6 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated Repository repositories = 2;
-     *
      * Generated from protobuf field <code>.source.v1alpha1.Integration integration = 1 [json_name = "integration"];</code>
      * @return \Source\V1alpha1\Integration|null
      */
@@ -57,8 +60,6 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *repeated Repository repositories = 2;
-     *
      * Generated from protobuf field <code>.source.v1alpha1.Integration integration = 1 [json_name = "integration"];</code>
      * @param \Source\V1alpha1\Integration $var
      * @return $this
@@ -67,6 +68,32 @@ class GetIntegrationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Source\V1alpha1\Integration::class);
         $this->integration = $var;
+
+        return $this;
+    }
+
+    /**
+     *repeated Repository repositories = 2;
+     *
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * @return string
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     *repeated Repository repositories = 2;
+     *
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error = $var;
 
         return $this;
     }

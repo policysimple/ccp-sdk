@@ -2,6 +2,7 @@
 syntax = "proto3";
 
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects";
+import "accounts/v1alpha1/accounts.proto";
 package accounts.v1alpha1.projects.v1;
 
 
@@ -36,7 +37,7 @@ message UpdateProjectRequest {
     Responses
 */
 
-message MenberRol {
+message MemberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;
@@ -50,7 +51,7 @@ message ProjectList{
     string image = 2;
 }
 
-message MenberProject {
+message MemberProject {
 
     uint32 id = 1;
     string user_id = 2;
@@ -89,14 +90,18 @@ message GetOneProjectResponse {
     string description = 5;
     string created_at = 6;
     string updated_at = 7;
-    repeated MenberProject members = 8;
+    repeated MemberProject members = 8;
     UserList owner = 9;
 
 }
 
+/*
+    List Projects pagination
+*/
 
 message ListProjectResponse {
     repeated Project projects = 1;
+    string error = 2;
 }
 
 message ListProjectPaginationRequest {
@@ -106,21 +111,12 @@ message ListProjectPaginationRequest {
 
 message ListProjectPaginationResponse {
     repeated Project projects = 1;
-    int64 count = 2;
+    int32 count = 2;
+    int32 page = 3;
+    int32 max_page = 4;
 }
 
-message Project {
-    int32 id = 1;
-    string name = 2;
-    string image = 3;
-    uint32 organization_id = 4;
-    string description = 5;
-    string created_at = 6;
-    string updated_at = 7;
-    repeated Role roles = 8;
-    repeated UserList users = 9;
 
-}
 
 /* PROJECTS */
 //Authentication without group and permission
@@ -136,24 +132,6 @@ message UserList {
 
 }
 
-
-message Role {
-    uint32 id = 1;
-    string name = 2;
-    uint32 project_id = 3;
-    uint32 organization_id = 4;
-    repeated Permission permissions = 5;
-    bool is_admin = 6;
-}
-
-
-message Permission {
-    uint32 id = 1;
-    string name = 2;
-    string action =3;
-    string type = 4;
-    string full_name = 5;
-}
 
 /*
     DELETE ROLE BY USER

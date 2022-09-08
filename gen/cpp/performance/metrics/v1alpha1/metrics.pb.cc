@@ -34,10 +34,37 @@ struct MetricItemDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MetricItemDefaultTypeInternal _MetricItem_default_instance_;
+constexpr TektonMetricItem::TektonMetricItem(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , container_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , instance_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pod_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pipeline_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , endpoint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , task_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , service_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , exported_namespace_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tekton_query_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , job_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , timestamp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(0){}
+struct TektonMetricItemDefaultTypeInternal {
+  constexpr TektonMetricItemDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TektonMetricItemDefaultTypeInternal() {}
+  union {
+    TektonMetricItem _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TektonMetricItemDefaultTypeInternal _TektonMetricItem_default_instance_;
 }  // namespace v1alpha1
 }  // namespace metrics
 }  // namespace performance
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto = nullptr;
 
@@ -51,13 +78,36 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2fmetrics_2fv1alph
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::MetricItem, container_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::MetricItem, resource_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::MetricItem, value_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, date_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, container_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, instance_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, pod_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, created_at_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, pipeline_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, endpoint_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, task_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, service_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, namespace__),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, exported_namespace_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, tekton_query_name_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, job_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, value_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::TektonMetricItem, status_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::performance::metrics::v1alpha1::MetricItem)},
+  { 9, -1, sizeof(::performance::metrics::v1alpha1::TektonMetricItem)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_MetricItem_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_TektonMetricItem_default_instance_),
 };
 
 const char descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -65,17 +115,28 @@ const char descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_
   "roto\022\034performance.metrics.v1alpha1\"p\n\nMe"
   "tricItem\022\022\n\004date\030\001 \001(\tR\004date\022\034\n\tcontaine"
   "r\030\002 \001(\tR\tcontainer\022\032\n\010resource\030\003 \001(\tR\010re"
-  "source\022\024\n\005value\030\004 \001(\001R\005valueB\255\001\n&io.cuem"
-  "by.performance.metrics.v1alpha1B\014Metrics"
-  "ProtoP\001Z/github.com/performance-grpc-sdk"
-  "/metricsv1alpha1\242\002\003PFX\252\002\034Performance.Met"
-  "rics.V1Alpha1\312\002\034Performance\\Metrics\\V1Al"
-  "pha1b\006proto3"
+  "source\022\024\n\005value\030\004 \001(\001R\005value\"\316\003\n\020TektonM"
+  "etricItem\022\022\n\004date\030\001 \001(\tR\004date\022\034\n\tcontain"
+  "er\030\002 \001(\tR\tcontainer\022\032\n\010instance\030\003 \001(\tR\010i"
+  "nstance\022\020\n\003pod\030\004 \001(\tR\003pod\022\035\n\ncreated_at\030"
+  "\005 \001(\tR\tcreatedAt\022\032\n\010pipeline\030\006 \001(\tR\010pipe"
+  "line\022\032\n\010endpoint\030\007 \001(\tR\010endpoint\022\022\n\004task"
+  "\030\010 \001(\tR\004task\022\030\n\007service\030\t \001(\tR\007service\022\034"
+  "\n\tnamespace\030\n \001(\tR\tnamespace\022-\n\022exported"
+  "_namespace\030\013 \001(\tR\021exportedNamespace\022*\n\021t"
+  "ekton_query_name\030\014 \001(\tR\017tektonQueryName\022"
+  "\020\n\003job\030\r \001(\tR\003job\022\024\n\005value\030\016 \001(\001R\005value\022"
+  "\034\n\ttimestamp\030\017 \001(\tR\ttimestamp\022\026\n\006status\030"
+  "\020 \001(\tR\006statusB\255\001\n&io.cuemby.performance."
+  "metrics.v1alpha1B\014MetricsProtoP\001Z/github"
+  ".com/performance-grpc-sdk/metricsv1alpha"
+  "1\242\002\003PFX\252\002\034Performance.Metrics.V1Alpha1\312\002"
+  "\034Performance\\Metrics\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto = {
-  false, false, 372, descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto, "performance/metrics/v1alpha1/metrics.proto", 
-  &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto_once, nullptr, 0, 1,
+  false, false, 837, descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto, "performance/metrics/v1alpha1/metrics.proto", 
+  &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto::offsets,
   file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto, file_level_enum_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto, file_level_service_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto,
 };
@@ -398,6 +459,819 @@ void MetricItem::InternalSwap(MetricItem* other) {
       file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto[0]);
 }
 
+// ===================================================================
+
+class TektonMetricItem::_Internal {
+ public:
+};
+
+TektonMetricItem::TektonMetricItem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:performance.metrics.v1alpha1.TektonMetricItem)
+}
+TektonMetricItem::TektonMetricItem(const TektonMetricItem& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_date().empty()) {
+    date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_date(), 
+      GetArenaForAllocation());
+  }
+  container_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_container().empty()) {
+    container_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_container(), 
+      GetArenaForAllocation());
+  }
+  instance_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_instance().empty()) {
+    instance_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_instance(), 
+      GetArenaForAllocation());
+  }
+  pod_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pod().empty()) {
+    pod_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pod(), 
+      GetArenaForAllocation());
+  }
+  created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_created_at().empty()) {
+    created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_at(), 
+      GetArenaForAllocation());
+  }
+  pipeline_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pipeline().empty()) {
+    pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pipeline(), 
+      GetArenaForAllocation());
+  }
+  endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_endpoint().empty()) {
+    endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_endpoint(), 
+      GetArenaForAllocation());
+  }
+  task_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_task().empty()) {
+    task_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_task(), 
+      GetArenaForAllocation());
+  }
+  service_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_service().empty()) {
+    service_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_service(), 
+      GetArenaForAllocation());
+  }
+  namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_namespace_().empty()) {
+    namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
+      GetArenaForAllocation());
+  }
+  exported_namespace_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_exported_namespace().empty()) {
+    exported_namespace_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exported_namespace(), 
+      GetArenaForAllocation());
+  }
+  tekton_query_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tekton_query_name().empty()) {
+    tekton_query_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tekton_query_name(), 
+      GetArenaForAllocation());
+  }
+  job_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_job().empty()) {
+    job_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_job(), 
+      GetArenaForAllocation());
+  }
+  timestamp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_timestamp().empty()) {
+    timestamp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_timestamp(), 
+      GetArenaForAllocation());
+  }
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  value_ = from.value_;
+  // @@protoc_insertion_point(copy_constructor:performance.metrics.v1alpha1.TektonMetricItem)
+}
+
+inline void TektonMetricItem::SharedCtor() {
+date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+container_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+instance_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pod_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pipeline_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+task_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+service_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+exported_namespace_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tekton_query_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+job_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+timestamp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_ = 0;
+}
+
+TektonMetricItem::~TektonMetricItem() {
+  // @@protoc_insertion_point(destructor:performance.metrics.v1alpha1.TektonMetricItem)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TektonMetricItem::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  container_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  instance_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pod_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pipeline_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  endpoint_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  task_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  service_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  exported_namespace_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tekton_query_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  job_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  timestamp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void TektonMetricItem::ArenaDtor(void* object) {
+  TektonMetricItem* _this = reinterpret_cast< TektonMetricItem* >(object);
+  (void)_this;
+}
+void TektonMetricItem::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TektonMetricItem::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TektonMetricItem::Clear() {
+// @@protoc_insertion_point(message_clear_start:performance.metrics.v1alpha1.TektonMetricItem)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  date_.ClearToEmpty();
+  container_.ClearToEmpty();
+  instance_.ClearToEmpty();
+  pod_.ClearToEmpty();
+  created_at_.ClearToEmpty();
+  pipeline_.ClearToEmpty();
+  endpoint_.ClearToEmpty();
+  task_.ClearToEmpty();
+  service_.ClearToEmpty();
+  namespace__.ClearToEmpty();
+  exported_namespace_.ClearToEmpty();
+  tekton_query_name_.ClearToEmpty();
+  job_.ClearToEmpty();
+  timestamp_.ClearToEmpty();
+  status_.ClearToEmpty();
+  value_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TektonMetricItem::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string date = 1 [json_name = "date"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_date();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.date"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string container = 2 [json_name = "container"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_container();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.container"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string instance = 3 [json_name = "instance"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_instance();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.instance"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string pod = 4 [json_name = "pod"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_pod();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.pod"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string created_at = 5 [json_name = "createdAt"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_created_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.created_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string pipeline = 6 [json_name = "pipeline"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_pipeline();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.pipeline"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string endpoint = 7 [json_name = "endpoint"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_endpoint();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.endpoint"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string task = 8 [json_name = "task"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_task();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.task"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string service = 9 [json_name = "service"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_service();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.service"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string namespace = 10 [json_name = "namespace"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_namespace_();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.namespace"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string exported_namespace = 11 [json_name = "exportedNamespace"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_exported_namespace();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.exported_namespace"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tekton_query_name = 12 [json_name = "tektonQueryName"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          auto str = _internal_mutable_tekton_query_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.tekton_query_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string job = 13 [json_name = "job"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_job();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.job"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double value = 14 [json_name = "value"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 113)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // string timestamp = 15 [json_name = "timestamp"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          auto str = _internal_mutable_timestamp();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.timestamp"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 16 [json_name = "status"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.TektonMetricItem.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TektonMetricItem::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:performance.metrics.v1alpha1.TektonMetricItem)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string date = 1 [json_name = "date"];
+  if (!this->_internal_date().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.date");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_date(), target);
+  }
+
+  // string container = 2 [json_name = "container"];
+  if (!this->_internal_container().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_container().data(), static_cast<int>(this->_internal_container().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.container");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_container(), target);
+  }
+
+  // string instance = 3 [json_name = "instance"];
+  if (!this->_internal_instance().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_instance().data(), static_cast<int>(this->_internal_instance().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.instance");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_instance(), target);
+  }
+
+  // string pod = 4 [json_name = "pod"];
+  if (!this->_internal_pod().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_pod().data(), static_cast<int>(this->_internal_pod().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.pod");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_pod(), target);
+  }
+
+  // string created_at = 5 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_created_at().data(), static_cast<int>(this->_internal_created_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.created_at");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_created_at(), target);
+  }
+
+  // string pipeline = 6 [json_name = "pipeline"];
+  if (!this->_internal_pipeline().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_pipeline().data(), static_cast<int>(this->_internal_pipeline().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.pipeline");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_pipeline(), target);
+  }
+
+  // string endpoint = 7 [json_name = "endpoint"];
+  if (!this->_internal_endpoint().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_endpoint().data(), static_cast<int>(this->_internal_endpoint().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.endpoint");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_endpoint(), target);
+  }
+
+  // string task = 8 [json_name = "task"];
+  if (!this->_internal_task().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_task().data(), static_cast<int>(this->_internal_task().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.task");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_task(), target);
+  }
+
+  // string service = 9 [json_name = "service"];
+  if (!this->_internal_service().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_service().data(), static_cast<int>(this->_internal_service().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.service");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_service(), target);
+  }
+
+  // string namespace = 10 [json_name = "namespace"];
+  if (!this->_internal_namespace_().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.namespace");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_namespace_(), target);
+  }
+
+  // string exported_namespace = 11 [json_name = "exportedNamespace"];
+  if (!this->_internal_exported_namespace().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_exported_namespace().data(), static_cast<int>(this->_internal_exported_namespace().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.exported_namespace");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_exported_namespace(), target);
+  }
+
+  // string tekton_query_name = 12 [json_name = "tektonQueryName"];
+  if (!this->_internal_tekton_query_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tekton_query_name().data(), static_cast<int>(this->_internal_tekton_query_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.tekton_query_name");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_tekton_query_name(), target);
+  }
+
+  // string job = 13 [json_name = "job"];
+  if (!this->_internal_job().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_job().data(), static_cast<int>(this->_internal_job().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.job");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_job(), target);
+  }
+
+  // double value = 14 [json_name = "value"];
+  if (!(this->_internal_value() <= 0 && this->_internal_value() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(14, this->_internal_value(), target);
+  }
+
+  // string timestamp = 15 [json_name = "timestamp"];
+  if (!this->_internal_timestamp().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_timestamp().data(), static_cast<int>(this->_internal_timestamp().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.timestamp");
+    target = stream->WriteStringMaybeAliased(
+        15, this->_internal_timestamp(), target);
+  }
+
+  // string status = 16 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.TektonMetricItem.status");
+    target = stream->WriteStringMaybeAliased(
+        16, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:performance.metrics.v1alpha1.TektonMetricItem)
+  return target;
+}
+
+size_t TektonMetricItem::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:performance.metrics.v1alpha1.TektonMetricItem)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string date = 1 [json_name = "date"];
+  if (!this->_internal_date().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_date());
+  }
+
+  // string container = 2 [json_name = "container"];
+  if (!this->_internal_container().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_container());
+  }
+
+  // string instance = 3 [json_name = "instance"];
+  if (!this->_internal_instance().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_instance());
+  }
+
+  // string pod = 4 [json_name = "pod"];
+  if (!this->_internal_pod().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_pod());
+  }
+
+  // string created_at = 5 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_created_at());
+  }
+
+  // string pipeline = 6 [json_name = "pipeline"];
+  if (!this->_internal_pipeline().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_pipeline());
+  }
+
+  // string endpoint = 7 [json_name = "endpoint"];
+  if (!this->_internal_endpoint().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_endpoint());
+  }
+
+  // string task = 8 [json_name = "task"];
+  if (!this->_internal_task().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_task());
+  }
+
+  // string service = 9 [json_name = "service"];
+  if (!this->_internal_service().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_service());
+  }
+
+  // string namespace = 10 [json_name = "namespace"];
+  if (!this->_internal_namespace_().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_namespace_());
+  }
+
+  // string exported_namespace = 11 [json_name = "exportedNamespace"];
+  if (!this->_internal_exported_namespace().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_exported_namespace());
+  }
+
+  // string tekton_query_name = 12 [json_name = "tektonQueryName"];
+  if (!this->_internal_tekton_query_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tekton_query_name());
+  }
+
+  // string job = 13 [json_name = "job"];
+  if (!this->_internal_job().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_job());
+  }
+
+  // string timestamp = 15 [json_name = "timestamp"];
+  if (!this->_internal_timestamp().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_timestamp());
+  }
+
+  // string status = 16 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // double value = 14 [json_name = "value"];
+  if (!(this->_internal_value() <= 0 && this->_internal_value() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TektonMetricItem::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TektonMetricItem::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TektonMetricItem::GetClassData() const { return &_class_data_; }
+
+void TektonMetricItem::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<TektonMetricItem *>(to)->MergeFrom(
+      static_cast<const TektonMetricItem &>(from));
+}
+
+
+void TektonMetricItem::MergeFrom(const TektonMetricItem& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:performance.metrics.v1alpha1.TektonMetricItem)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_date().empty()) {
+    _internal_set_date(from._internal_date());
+  }
+  if (!from._internal_container().empty()) {
+    _internal_set_container(from._internal_container());
+  }
+  if (!from._internal_instance().empty()) {
+    _internal_set_instance(from._internal_instance());
+  }
+  if (!from._internal_pod().empty()) {
+    _internal_set_pod(from._internal_pod());
+  }
+  if (!from._internal_created_at().empty()) {
+    _internal_set_created_at(from._internal_created_at());
+  }
+  if (!from._internal_pipeline().empty()) {
+    _internal_set_pipeline(from._internal_pipeline());
+  }
+  if (!from._internal_endpoint().empty()) {
+    _internal_set_endpoint(from._internal_endpoint());
+  }
+  if (!from._internal_task().empty()) {
+    _internal_set_task(from._internal_task());
+  }
+  if (!from._internal_service().empty()) {
+    _internal_set_service(from._internal_service());
+  }
+  if (!from._internal_namespace_().empty()) {
+    _internal_set_namespace_(from._internal_namespace_());
+  }
+  if (!from._internal_exported_namespace().empty()) {
+    _internal_set_exported_namespace(from._internal_exported_namespace());
+  }
+  if (!from._internal_tekton_query_name().empty()) {
+    _internal_set_tekton_query_name(from._internal_tekton_query_name());
+  }
+  if (!from._internal_job().empty()) {
+    _internal_set_job(from._internal_job());
+  }
+  if (!from._internal_timestamp().empty()) {
+    _internal_set_timestamp(from._internal_timestamp());
+  }
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (!(from._internal_value() <= 0 && from._internal_value() >= 0)) {
+    _internal_set_value(from._internal_value());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TektonMetricItem::CopyFrom(const TektonMetricItem& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:performance.metrics.v1alpha1.TektonMetricItem)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TektonMetricItem::IsInitialized() const {
+  return true;
+}
+
+void TektonMetricItem::InternalSwap(TektonMetricItem* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &date_, GetArenaForAllocation(),
+      &other->date_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &container_, GetArenaForAllocation(),
+      &other->container_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &instance_, GetArenaForAllocation(),
+      &other->instance_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &pod_, GetArenaForAllocation(),
+      &other->pod_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &created_at_, GetArenaForAllocation(),
+      &other->created_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &pipeline_, GetArenaForAllocation(),
+      &other->pipeline_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &endpoint_, GetArenaForAllocation(),
+      &other->endpoint_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &task_, GetArenaForAllocation(),
+      &other->task_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &service_, GetArenaForAllocation(),
+      &other->service_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &namespace__, GetArenaForAllocation(),
+      &other->namespace__, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &exported_namespace_, GetArenaForAllocation(),
+      &other->exported_namespace_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &tekton_query_name_, GetArenaForAllocation(),
+      &other->tekton_query_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &job_, GetArenaForAllocation(),
+      &other->job_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &timestamp_, GetArenaForAllocation(),
+      &other->timestamp_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  swap(value_, other->value_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TektonMetricItem::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto_getter, &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto_once,
+      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto[1]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace metrics
@@ -405,6 +1279,9 @@ void MetricItem::InternalSwap(MetricItem* other) {
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::performance::metrics::v1alpha1::MetricItem* Arena::CreateMaybeMessage< ::performance::metrics::v1alpha1::MetricItem >(Arena* arena) {
   return Arena::CreateMessageInternal< ::performance::metrics::v1alpha1::MetricItem >(arena);
+}
+template<> PROTOBUF_NOINLINE ::performance::metrics::v1alpha1::TektonMetricItem* Arena::CreateMaybeMessage< ::performance::metrics::v1alpha1::TektonMetricItem >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::performance::metrics::v1alpha1::TektonMetricItem >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

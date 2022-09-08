@@ -26,7 +26,7 @@ goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationRe
 goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.ListOrganizationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.Member', null, global);
-goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.MenberRol', null, global);
+goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.MemberRol', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.ProjectOrganization', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest', null, global);
 goog.exportSymbol('proto.accounts.v1alpha1.organizations.v1.UpdateOrganizationResponse', null, global);
@@ -292,16 +292,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol = function(opt_data) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.accounts.v1alpha1.organizations.v1.MenberRol, jspb.Message);
+goog.inherits(proto.accounts.v1alpha1.organizations.v1.MemberRol, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.accounts.v1alpha1.organizations.v1.MenberRol.displayName = 'proto.accounts.v1alpha1.organizations.v1.MenberRol';
+  proto.accounts.v1alpha1.organizations.v1.MemberRol.displayName = 'proto.accounts.v1alpha1.organizations.v1.MemberRol';
 }
 
 
@@ -1148,7 +1148,7 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.toObject = f
     image: jspb.Message.getFieldWithDefault(msg, 3, ""),
     projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
     proto.accounts.v1alpha1.organizations.v1.ProjectOrganization.toObject, includeInstance),
-    menbersList: jspb.Message.toObjectList(msg.getMenbersList(),
+    membersList: jspb.Message.toObjectList(msg.getMembersList(),
     proto.accounts.v1alpha1.organizations.v1.Member.toObject, includeInstance),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     owner: (f = msg.getOwner()) && accounts_v1alpha1_accounts_pb.UserList.toObject(includeInstance, f),
@@ -1210,7 +1210,7 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.deserializeB
     case 5:
       var value = new proto.accounts.v1alpha1.organizations.v1.Member;
       reader.readMessage(value,proto.accounts.v1alpha1.organizations.v1.Member.deserializeBinaryFromReader);
-      msg.addMenbers(value);
+      msg.addMembers(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -1287,7 +1287,7 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.serializeBin
       proto.accounts.v1alpha1.organizations.v1.ProjectOrganization.serializeBinaryToWriter
     );
   }
-  f = message.getMenbersList();
+  f = message.getMembersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
@@ -1420,10 +1420,10 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.cl
 
 
 /**
- * repeated Member menbers = 5;
+ * repeated Member members = 5;
  * @return {!Array<!proto.accounts.v1alpha1.organizations.v1.Member>}
  */
-proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.getMenbersList = function() {
+proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.getMembersList = function() {
   return /** @type{!Array<!proto.accounts.v1alpha1.organizations.v1.Member>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.organizations.v1.Member, 5));
 };
@@ -1433,7 +1433,7 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.ge
  * @param {!Array<!proto.accounts.v1alpha1.organizations.v1.Member>} value
  * @return {!proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse} returns this
 */
-proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.setMenbersList = function(value) {
+proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.setMembersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -1443,7 +1443,7 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.se
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.organizations.v1.Member}
  */
-proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.addMenbers = function(opt_value, opt_index) {
+proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.addMembers = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.accounts.v1alpha1.organizations.v1.Member, opt_index);
 };
 
@@ -1452,8 +1452,8 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.ad
  * Clears the list making it empty but non-null.
  * @return {!proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse} returns this
  */
-proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.clearMenbersList = function() {
-  return this.setMenbersList([]);
+proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.clearMembersList = function() {
+  return this.setMembersList([]);
 };
 
 
@@ -1588,7 +1588,8 @@ proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.prototype.toOb
 proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
-    accounts_v1alpha1_accounts_pb.Organization.toObject, includeInstance)
+    accounts_v1alpha1_accounts_pb.Organization.toObject, includeInstance),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1630,6 +1631,10 @@ proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.deserializeBin
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Organization.deserializeBinaryFromReader);
       msg.addOrganizations(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1665,6 +1670,13 @@ proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.serializeBinar
       1,
       f,
       accounts_v1alpha1_accounts_pb.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1705,6 +1717,24 @@ proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.prototype.addO
  */
 proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.prototype.clearOrganizationsList = function() {
   return this.setOrganizationsList([]);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse} returns this
+ */
+proto.accounts.v1alpha1.organizations.v1.ListOrganizationResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2293,7 +2323,7 @@ proto.accounts.v1alpha1.organizations.v1.Member.toObject = function(includeInsta
     lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
-    proto.accounts.v1alpha1.organizations.v1.MenberRol.toObject, includeInstance)
+    proto.accounts.v1alpha1.organizations.v1.MemberRol.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2351,8 +2381,8 @@ proto.accounts.v1alpha1.organizations.v1.Member.deserializeBinaryFromReader = fu
       msg.setIsActive(value);
       break;
     case 6:
-      var value = new proto.accounts.v1alpha1.organizations.v1.MenberRol;
-      reader.readMessage(value,proto.accounts.v1alpha1.organizations.v1.MenberRol.deserializeBinaryFromReader);
+      var value = new proto.accounts.v1alpha1.organizations.v1.MemberRol;
+      reader.readMessage(value,proto.accounts.v1alpha1.organizations.v1.MemberRol.deserializeBinaryFromReader);
       msg.addRoles(value);
       break;
     default:
@@ -2424,7 +2454,7 @@ proto.accounts.v1alpha1.organizations.v1.Member.serializeBinaryToWriter = functi
     writer.writeRepeatedMessage(
       6,
       f,
-      proto.accounts.v1alpha1.organizations.v1.MenberRol.serializeBinaryToWriter
+      proto.accounts.v1alpha1.organizations.v1.MemberRol.serializeBinaryToWriter
     );
   }
 };
@@ -2521,17 +2551,17 @@ proto.accounts.v1alpha1.organizations.v1.Member.prototype.setIsActive = function
 
 
 /**
- * repeated MenberRol roles = 6;
- * @return {!Array<!proto.accounts.v1alpha1.organizations.v1.MenberRol>}
+ * repeated MemberRol roles = 6;
+ * @return {!Array<!proto.accounts.v1alpha1.organizations.v1.MemberRol>}
  */
 proto.accounts.v1alpha1.organizations.v1.Member.prototype.getRolesList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.organizations.v1.MenberRol>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.organizations.v1.MenberRol, 6));
+  return /** @type{!Array<!proto.accounts.v1alpha1.organizations.v1.MemberRol>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.organizations.v1.MemberRol, 6));
 };
 
 
 /**
- * @param {!Array<!proto.accounts.v1alpha1.organizations.v1.MenberRol>} value
+ * @param {!Array<!proto.accounts.v1alpha1.organizations.v1.MemberRol>} value
  * @return {!proto.accounts.v1alpha1.organizations.v1.Member} returns this
 */
 proto.accounts.v1alpha1.organizations.v1.Member.prototype.setRolesList = function(value) {
@@ -2540,12 +2570,12 @@ proto.accounts.v1alpha1.organizations.v1.Member.prototype.setRolesList = functio
 
 
 /**
- * @param {!proto.accounts.v1alpha1.organizations.v1.MenberRol=} opt_value
+ * @param {!proto.accounts.v1alpha1.organizations.v1.MemberRol=} opt_value
  * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.organizations.v1.MenberRol}
+ * @return {!proto.accounts.v1alpha1.organizations.v1.MemberRol}
  */
 proto.accounts.v1alpha1.organizations.v1.Member.prototype.addRoles = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.accounts.v1alpha1.organizations.v1.MenberRol, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.accounts.v1alpha1.organizations.v1.MemberRol, opt_index);
 };
 
 
@@ -2794,8 +2824,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.toObject = function(opt_includeInstance) {
-  return proto.accounts.v1alpha1.organizations.v1.MenberRol.toObject(opt_includeInstance, this);
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.toObject = function(opt_includeInstance) {
+  return proto.accounts.v1alpha1.organizations.v1.MemberRol.toObject(opt_includeInstance, this);
 };
 
 
@@ -2804,11 +2834,11 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.toObject = function
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.accounts.v1alpha1.organizations.v1.MenberRol} msg The msg instance to transform.
+ * @param {!proto.accounts.v1alpha1.organizations.v1.MemberRol} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.toObject = function(includeInstance, msg) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -2826,23 +2856,23 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.toObject = function(includeIn
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.accounts.v1alpha1.organizations.v1.MenberRol}
+ * @return {!proto.accounts.v1alpha1.organizations.v1.MemberRol}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.deserializeBinary = function(bytes) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.accounts.v1alpha1.organizations.v1.MenberRol;
-  return proto.accounts.v1alpha1.organizations.v1.MenberRol.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.accounts.v1alpha1.organizations.v1.MemberRol;
+  return proto.accounts.v1alpha1.organizations.v1.MemberRol.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.accounts.v1alpha1.organizations.v1.MenberRol} msg The message object to deserialize into.
+ * @param {!proto.accounts.v1alpha1.organizations.v1.MemberRol} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.accounts.v1alpha1.organizations.v1.MenberRol}
+ * @return {!proto.accounts.v1alpha1.organizations.v1.MemberRol}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.deserializeBinaryFromReader = function(msg, reader) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2874,9 +2904,9 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.deserializeBinaryFromReader =
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.serializeBinary = function() {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.accounts.v1alpha1.organizations.v1.MenberRol.serializeBinaryToWriter(this, writer);
+  proto.accounts.v1alpha1.organizations.v1.MemberRol.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2884,11 +2914,11 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.serializeBinary = f
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.accounts.v1alpha1.organizations.v1.MenberRol} message
+ * @param {!proto.accounts.v1alpha1.organizations.v1.MemberRol} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.serializeBinaryToWriter = function(message, writer) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f !== 0) {
@@ -2918,16 +2948,16 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.serializeBinaryToWriter = fun
  * optional uint32 id = 1;
  * @return {number}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.getId = function() {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.accounts.v1alpha1.organizations.v1.MenberRol} returns this
+ * @return {!proto.accounts.v1alpha1.organizations.v1.MemberRol} returns this
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.setId = function(value) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -2936,16 +2966,16 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.setId = function(va
  * optional string name = 2;
  * @return {string}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.getName = function() {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.accounts.v1alpha1.organizations.v1.MenberRol} returns this
+ * @return {!proto.accounts.v1alpha1.organizations.v1.MemberRol} returns this
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.setName = function(value) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2954,16 +2984,16 @@ proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.setName = function(
  * optional bool is_admin = 3;
  * @return {boolean}
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.getIsAdmin = function() {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.getIsAdmin = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.accounts.v1alpha1.organizations.v1.MenberRol} returns this
+ * @return {!proto.accounts.v1alpha1.organizations.v1.MemberRol} returns this
  */
-proto.accounts.v1alpha1.organizations.v1.MenberRol.prototype.setIsAdmin = function(value) {
+proto.accounts.v1alpha1.organizations.v1.MemberRol.prototype.setIsAdmin = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 

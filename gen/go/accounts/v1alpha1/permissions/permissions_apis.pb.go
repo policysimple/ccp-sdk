@@ -4,6 +4,9 @@
 // 	protoc        v3.17.3
 // source: accounts/v1alpha1/permissions/permissions_apis.proto
 
+//import "../accounts.proto";
+//import "permissions.proto";
+
 package permissions
 
 import (

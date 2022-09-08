@@ -790,6 +790,7 @@ class UsersRegistry final :
   enum : int {
     kIdFieldNumber = 1,
     kEnvironmentIdFieldNumber = 4,
+    kEnvironmentInternalNameFieldNumber = 5,
     kHarborFieldNumber = 7,
     kOrganizationIdFieldNumber = 2,
     kProjectIdFieldNumber = 3,
@@ -821,6 +822,20 @@ class UsersRegistry final :
   const std::string& _internal_environment_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_id(const std::string& value);
   std::string* _internal_mutable_environment_id();
+  public:
+
+  // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+  void clear_environment_internal_name();
+  const std::string& environment_internal_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_internal_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_internal_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_internal_name();
+  void set_allocated_environment_internal_name(std::string* environment_internal_name);
+  private:
+  const std::string& _internal_environment_internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_internal_name(const std::string& value);
+  std::string* _internal_mutable_environment_internal_name();
   public:
 
   // .artifacts.users.v1alpha1.Harbor harbor = 7 [json_name = "harbor"];
@@ -877,6 +892,7 @@ class UsersRegistry final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_internal_name_;
   ::artifacts::users::v1alpha1::Harbor* harbor_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
@@ -1571,6 +1587,52 @@ inline void UsersRegistry::set_allocated_environment_id(std::string* environment
   environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:artifacts.users.v1alpha1.UsersRegistry.environment_id)
+}
+
+// string environment_internal_name = 5 [json_name = "environmentInternalName"];
+inline void UsersRegistry::clear_environment_internal_name() {
+  environment_internal_name_.ClearToEmpty();
+}
+inline const std::string& UsersRegistry::environment_internal_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.users.v1alpha1.UsersRegistry.environment_internal_name)
+  return _internal_environment_internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UsersRegistry::set_environment_internal_name(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.users.v1alpha1.UsersRegistry.environment_internal_name)
+}
+inline std::string* UsersRegistry::mutable_environment_internal_name() {
+  std::string* _s = _internal_mutable_environment_internal_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.users.v1alpha1.UsersRegistry.environment_internal_name)
+  return _s;
+}
+inline const std::string& UsersRegistry::_internal_environment_internal_name() const {
+  return environment_internal_name_.Get();
+}
+inline void UsersRegistry::_internal_set_environment_internal_name(const std::string& value) {
+  
+  environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UsersRegistry::_internal_mutable_environment_internal_name() {
+  
+  return environment_internal_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UsersRegistry::release_environment_internal_name() {
+  // @@protoc_insertion_point(field_release:artifacts.users.v1alpha1.UsersRegistry.environment_internal_name)
+  return environment_internal_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UsersRegistry::set_allocated_environment_internal_name(std::string* environment_internal_name) {
+  if (environment_internal_name != nullptr) {
+    
+  } else {
+    
+  }
+  environment_internal_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_internal_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.users.v1alpha1.UsersRegistry.environment_internal_name)
 }
 
 // bool active = 6 [json_name = "active"];

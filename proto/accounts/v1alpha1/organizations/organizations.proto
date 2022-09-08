@@ -48,7 +48,7 @@ message GetOneOrganizationResponse{
     string name = 2;
     string image = 3;
     repeated ProjectOrganization projects = 4;
-    repeated Member menbers = 5;
+    repeated Member members = 5;
     string description = 6;
     UserList owner = 7;
     string error = 8;
@@ -59,6 +59,7 @@ message GetOneOrganizationResponse{
 
 message ListOrganizationResponse {
     repeated Organization organizations = 1;
+    string error = 2;
 }
 
 message CreateOrganizationResponse {
@@ -85,7 +86,7 @@ message Member {
     string first_name = 3;
     string last_name = 4;
     bool is_active = 5;
-    repeated MenberRol roles = 6;
+    repeated MemberRol roles = 6;
 
 }
 
@@ -106,7 +107,7 @@ message ProjectOrganization {
 
 
 
-message MenberRol {
+message MemberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;

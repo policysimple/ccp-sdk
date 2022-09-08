@@ -24,11 +24,11 @@ var logsServiceTimeout string
 
 func init() {
 	doOnce.Do(func() {
-		logsServiceTimeout = os.Getenv("PERFORMANCE_SERVICE_TIMEOUT")
+		logsServiceTimeout = os.Getenv("PERFORMANCE_LOG_SERVICE_TIMEOUT")
 		if logsServiceTimeout == "" {
 			logsServiceTimeout = "30s"
 		}
-		logsServiceUri = os.Getenv("PERFORMANCE_SERVICE_URI")
+		logsServiceUri = os.Getenv("PERFORMANCE_LOGS_SERVICE_URI")
 		con, err := grpc.Dial(logsServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
 		if err != nil {
 			panic(err)

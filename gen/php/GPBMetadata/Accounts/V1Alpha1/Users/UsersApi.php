@@ -17,8 +17,8 @@ class UsersApi
         \GPBMetadata\Accounts\V1Alpha1\Users\Users::initOnce();
         $pool->internalAddGeneratedFile(
             '
-≥
-\'accounts/v1alpha1/users/users_api.protoaccounts.v1alpha1.users.v12ß
+õ
+\'accounts/v1alpha1/users/users_api.protoaccounts.v1alpha1.users.v12è
 UserServicek
 
 CreateUser-.accounts.v1alpha1.users.v1.CreateUserRequest..accounts.v1alpha1.users.v1.CreateUserResponsee
@@ -29,11 +29,7 @@ GetOneUser-.accounts.v1alpha1.users.v1.GetOneUserRequest..accounts.v1alpha1.us
 UpdateUser-.accounts.v1alpha1.users.v1.UpdateUserRequest..accounts.v1alpha1.users.v1.UpdateUserResponsek
 
 DeleteUser-.accounts.v1alpha1.users.v1.DeleteUserRequest..accounts.v1alpha1.users.v1.DeleteUserResponseÉ
-ListUserPagination5.accounts.v1alpha1.users.v1.ListUserPaginationRequest6.accounts.v1alpha1.users.v1.ListUserPaginationResponseÉ
-SendInvitationUser5.accounts.v1alpha1.users.v1.SendInvitationUserRequest6.accounts.v1alpha1.users.v1.SendInvitationUserResponseÄ
-GetInvitationUser4.accounts.v1alpha1.users.v1.GetInvitationUserRequest5.accounts.v1alpha1.users.v1.GetInvitationUserResponseÜ
-AgreeInvitationUser6.accounts.v1alpha1.users.v1.AgreeInvitationUserRequest7.accounts.v1alpha1.users.v1.AgreeInvitationUserResponseÉ
-ListInvitationUser5.accounts.v1alpha1.users.v1.ListInvitationUserRequest6.accounts.v1alpha1.users.v1.ListInvitationUserResponseh
+ListUserPagination5.accounts.v1alpha1.users.v1.ListUserPaginationRequest6.accounts.v1alpha1.users.v1.ListUserPaginationResponseh
 	CheckUser,.accounts.v1alpha1.users.v1.CheckUserRequest-.accounts.v1alpha1.users.v1.CheckUserResponseå
 SendVerificationEmail8.accounts.v1alpha1.users.v1.SendVerificationEmailRequest9.accounts.v1alpha1.users.v1.SendVerificationEmailResponsen
 VerifyEmail..accounts.v1alpha1.users.v1.VerifyEmailRequest/.accounts.v1alpha1.users.v1.VerifyEmailResponseÜ

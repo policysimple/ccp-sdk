@@ -989,7 +989,8 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.toObject = function(includeI
     projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
     accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
-    isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    error: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1050,6 +1051,10 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.deserializeBinaryFromReader 
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsAdmin(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -1120,6 +1125,13 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.serializeBinaryToWriter = fu
   if (f) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -1251,6 +1263,24 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getIsAdmin = funct
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setIsAdmin = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string error = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse} returns this
+ */
+proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

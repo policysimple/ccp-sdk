@@ -16,14 +16,33 @@ class Metrics
         }
         $pool->internalAddGeneratedFile(
             '
-ô
+Å
 *performance/metrics/v1alpha1/metrics.protoperformance.metrics.v1alpha1"p
 
 MetricItem
 date (	Rdate
 	container (	R	container
 resource (	Rresource
-value (RvalueB­
+value (Rvalue"Î
+TektonMetricItem
+date (	Rdate
+	container (	R	container
+instance (	Rinstance
+pod (	Rpod
+
+created_at (	R	createdAt
+pipeline (	Rpipeline
+endpoint (	Rendpoint
+task (	Rtask
+service	 (	Rservice
+	namespace
+ (	R	namespace-
+exported_namespace (	RexportedNamespace*
+tekton_query_name (	RtektonQueryName
+job (	Rjob
+value (Rvalue
+	timestamp (	R	timestamp
+status (	RstatusB­
 &io.cuemby.performance.metrics.v1alpha1BMetricsProtoPZ/github.com/performance-grpc-sdk/metricsv1alpha1¢PFXªPerformance.Metrics.V1Alpha1ÊPerformance\\Metrics\\V1Alpha1bproto3'
         , true);
 

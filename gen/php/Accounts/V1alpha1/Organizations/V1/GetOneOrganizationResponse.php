@@ -30,9 +30,9 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      */
     private $projects;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.Member menbers = 5 [json_name = "menbers"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.Member members = 5 [json_name = "members"];</code>
      */
-    private $menbers;
+    private $members;
     /**
      * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
      */
@@ -60,7 +60,7 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $image
      *     @type \Accounts\V1alpha1\Organizations\V1\ProjectOrganization[]|\Google\Protobuf\Internal\RepeatedField $projects
-     *     @type \Accounts\V1alpha1\Organizations\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $menbers
+     *     @type \Accounts\V1alpha1\Organizations\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      *     @type string $description
      *     @type \Accounts\V1alpha1\UserList $owner
      *     @type string $error
@@ -161,23 +161,23 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.Member menbers = 5 [json_name = "menbers"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.Member members = 5 [json_name = "members"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getMenbers()
+    public function getMembers()
     {
-        return $this->menbers;
+        return $this->members;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.Member menbers = 5 [json_name = "menbers"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.Member members = 5 [json_name = "members"];</code>
      * @param \Accounts\V1alpha1\Organizations\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setMenbers($var)
+    public function setMembers($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Organizations\V1\Member::class);
-        $this->menbers = $arr;
+        $this->members = $arr;
 
         return $this;
     }

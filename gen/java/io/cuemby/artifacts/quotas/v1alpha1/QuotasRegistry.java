@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private QuotasRegistry() {
     id_ = "";
     environmentId_ = "";
+    environmentInternalName_ = "";
   }
 
   @java.lang.Override
@@ -70,6 +71,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             environmentId_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            environmentInternalName_ = s;
             break;
           }
           case 48: {
@@ -220,6 +227,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ENVIRONMENT_INTERNAL_NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object environmentInternalName_;
+  /**
+   * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+   * @return The environmentInternalName.
+   */
+  @java.lang.Override
+  public java.lang.String getEnvironmentInternalName() {
+    java.lang.Object ref = environmentInternalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      environmentInternalName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+   * @return The bytes for environmentInternalName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEnvironmentInternalNameBytes() {
+    java.lang.Object ref = environmentInternalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      environmentInternalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ACTIVE_FIELD_NUMBER = 6;
   private boolean active_;
   /**
@@ -283,6 +328,9 @@ private static final long serialVersionUID = 0L;
     if (!getEnvironmentIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, environmentId_);
     }
+    if (!getEnvironmentInternalNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, environmentInternalName_);
+    }
     if (active_ != false) {
       output.writeBool(6, active_);
     }
@@ -311,6 +359,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEnvironmentIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, environmentId_);
+    }
+    if (!getEnvironmentInternalNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, environmentInternalName_);
     }
     if (active_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -343,6 +394,8 @@ private static final long serialVersionUID = 0L;
         != other.getProjectId()) return false;
     if (!getEnvironmentId()
         .equals(other.getEnvironmentId())) return false;
+    if (!getEnvironmentInternalName()
+        .equals(other.getEnvironmentInternalName())) return false;
     if (getActive()
         != other.getActive()) return false;
     if (hasHarbor() != other.hasHarbor()) return false;
@@ -369,6 +422,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProjectId();
     hash = (37 * hash) + ENVIRONMENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getEnvironmentId().hashCode();
+    hash = (37 * hash) + ENVIRONMENT_INTERNAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getEnvironmentInternalName().hashCode();
     hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getActive());
@@ -517,6 +572,8 @@ private static final long serialVersionUID = 0L;
 
       environmentId_ = "";
 
+      environmentInternalName_ = "";
+
       active_ = false;
 
       if (harborBuilder_ == null) {
@@ -555,6 +612,7 @@ private static final long serialVersionUID = 0L;
       result.organizationId_ = organizationId_;
       result.projectId_ = projectId_;
       result.environmentId_ = environmentId_;
+      result.environmentInternalName_ = environmentInternalName_;
       result.active_ = active_;
       if (harborBuilder_ == null) {
         result.harbor_ = harbor_;
@@ -621,6 +679,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getEnvironmentId().isEmpty()) {
         environmentId_ = other.environmentId_;
+        onChanged();
+      }
+      if (!other.getEnvironmentInternalName().isEmpty()) {
+        environmentInternalName_ = other.environmentInternalName_;
         onChanged();
       }
       if (other.getActive() != false) {
@@ -868,6 +930,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       environmentId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object environmentInternalName_ = "";
+    /**
+     * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @return The environmentInternalName.
+     */
+    public java.lang.String getEnvironmentInternalName() {
+      java.lang.Object ref = environmentInternalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        environmentInternalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @return The bytes for environmentInternalName.
+     */
+    public com.google.protobuf.ByteString
+        getEnvironmentInternalNameBytes() {
+      java.lang.Object ref = environmentInternalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        environmentInternalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @param value The environmentInternalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentInternalName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      environmentInternalName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvironmentInternalName() {
+      
+      environmentInternalName_ = getDefaultInstance().getEnvironmentInternalName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string environment_internal_name = 5 [json_name = "environmentInternalName"];</code>
+     * @param value The bytes for environmentInternalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentInternalNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      environmentInternalName_ = value;
       onChanged();
       return this;
     }

@@ -18,9 +18,9 @@ class SubscriptionItems extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 2 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string subscription_item_id = 2 [json_name = "subscriptionItemId"];</code>
      */
-    protected $suscription_item_id = '';
+    protected $subscription_item_id = '';
     /**
      * Generated from protobuf field <code>string price_id = 3 [json_name = "priceId"];</code>
      */
@@ -37,7 +37,7 @@ class SubscriptionItems extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $suscription_item_id
+     *     @type string $subscription_item_id
      *     @type string $price_id
      *     @type string $product_id
      * }
@@ -70,23 +70,23 @@ class SubscriptionItems extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 2 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string subscription_item_id = 2 [json_name = "subscriptionItemId"];</code>
      * @return string
      */
-    public function getSuscriptionItemId()
+    public function getSubscriptionItemId()
     {
-        return $this->suscription_item_id;
+        return $this->subscription_item_id;
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_item_id = 2 [json_name = "suscriptionItemId"];</code>
+     * Generated from protobuf field <code>string subscription_item_id = 2 [json_name = "subscriptionItemId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setSuscriptionItemId($var)
+    public function setSubscriptionItemId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->suscription_item_id = $var;
+        $this->subscription_item_id = $var;
 
         return $this;
     }

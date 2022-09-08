@@ -18,9 +18,9 @@ class ListSubscriptionItemsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
+     * Generated from protobuf field <code>string subscription_id = 2 [json_name = "subscriptionId"];</code>
      */
-    protected $suscription_id = '';
+    protected $subscription_id = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class ListSubscriptionItemsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $organization_id
-     *     @type string $suscription_id
+     *     @type string $subscription_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class ListSubscriptionItemsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
+     * Generated from protobuf field <code>string subscription_id = 2 [json_name = "subscriptionId"];</code>
      * @return string
      */
-    public function getSuscriptionId()
+    public function getSubscriptionId()
     {
-        return $this->suscription_id;
+        return $this->subscription_id;
     }
 
     /**
-     * Generated from protobuf field <code>string suscription_id = 2 [json_name = "suscriptionId"];</code>
+     * Generated from protobuf field <code>string subscription_id = 2 [json_name = "subscriptionId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setSuscriptionId($var)
+    public function setSubscriptionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->suscription_id = $var;
+        $this->subscription_id = $var;
 
         return $this;
     }

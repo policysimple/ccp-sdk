@@ -44,26 +44,6 @@ class UserServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListUserPaginationRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListUserPaginationResponse.FromString,
         )
-    self.SendInvitationUser = channel.unary_unary(
-        '/accounts.v1alpha1.users.v1.UserService/SendInvitationUser',
-        request_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.SendInvitationUserRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.SendInvitationUserResponse.FromString,
-        )
-    self.GetInvitationUser = channel.unary_unary(
-        '/accounts.v1alpha1.users.v1.UserService/GetInvitationUser',
-        request_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.GetInvitationUserRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.GetInvitationUserResponse.FromString,
-        )
-    self.AgreeInvitationUser = channel.unary_unary(
-        '/accounts.v1alpha1.users.v1.UserService/AgreeInvitationUser',
-        request_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.AgreeInvitationUserRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.AgreeInvitationUserResponse.FromString,
-        )
-    self.ListInvitationUser = channel.unary_unary(
-        '/accounts.v1alpha1.users.v1.UserService/ListInvitationUser',
-        request_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListInvitationUserRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListInvitationUserResponse.FromString,
-        )
     self.CheckUser = channel.unary_unary(
         '/accounts.v1alpha1.users.v1.UserService/CheckUser',
         request_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.CheckUserRequest.SerializeToString,
@@ -136,34 +116,6 @@ class UserServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListUserPagination(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def SendInvitationUser(self, request, context):
-    """invitation
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def GetInvitationUser(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def AgreeInvitationUser(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ListInvitationUser(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -244,26 +196,6 @@ def add_UserServiceServicer_to_server(servicer, server):
           servicer.ListUserPagination,
           request_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListUserPaginationRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListUserPaginationResponse.SerializeToString,
-      ),
-      'SendInvitationUser': grpc.unary_unary_rpc_method_handler(
-          servicer.SendInvitationUser,
-          request_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.SendInvitationUserRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.SendInvitationUserResponse.SerializeToString,
-      ),
-      'GetInvitationUser': grpc.unary_unary_rpc_method_handler(
-          servicer.GetInvitationUser,
-          request_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.GetInvitationUserRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.GetInvitationUserResponse.SerializeToString,
-      ),
-      'AgreeInvitationUser': grpc.unary_unary_rpc_method_handler(
-          servicer.AgreeInvitationUser,
-          request_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.AgreeInvitationUserRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.AgreeInvitationUserResponse.SerializeToString,
-      ),
-      'ListInvitationUser': grpc.unary_unary_rpc_method_handler(
-          servicer.ListInvitationUser,
-          request_deserializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListInvitationUserRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_users_dot_users__pb2.ListInvitationUserResponse.SerializeToString,
       ),
       'CheckUser': grpc.unary_unary_rpc_method_handler(
           servicer.CheckUser,

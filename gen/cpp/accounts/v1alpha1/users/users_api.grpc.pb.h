@@ -81,35 +81,6 @@ class UserService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>> PrepareAsyncListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>>(PrepareAsyncListUserPaginationRaw(context, request, cq));
     }
-    // invitation
-    virtual ::grpc::Status SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>> AsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>>(AsyncSendInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>> PrepareAsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>>(PrepareAsyncSendInvitationUserRaw(context, request, cq));
-    }
-    virtual ::grpc::Status GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>> AsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>>(AsyncGetInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>> PrepareAsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>>(PrepareAsyncGetInvitationUserRaw(context, request, cq));
-    }
-    virtual ::grpc::Status AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>> AsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>>(AsyncAgreeInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>> PrepareAsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>>(PrepareAsyncAgreeInvitationUserRaw(context, request, cq));
-    }
-    virtual ::grpc::Status ListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>> AsyncListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>>(AsyncListInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>> PrepareAsyncListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>>(PrepareAsyncListInvitationUserRaw(context, request, cq));
-    }
     // CHECK USER
     virtual ::grpc::Status CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::accounts::v1alpha1::users::v1::CheckUserResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::CheckUserResponse>> AsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
@@ -165,11 +136,6 @@ class UserService final {
       virtual void UpdateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::UpdateUserRequest* request, ::accounts::v1alpha1::users::v1::UpdateUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::DeleteUserRequest* request, ::accounts::v1alpha1::users::v1::DeleteUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest* request, ::accounts::v1alpha1::users::v1::ListUserPaginationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      // invitation
-      virtual void SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       // CHECK USER
       virtual void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest* request, ::accounts::v1alpha1::users::v1::CheckUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -194,14 +160,6 @@ class UserService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::DeleteUserResponse>* PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>* AsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>* PrepareAsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* AsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* PrepareAsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* AsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* PrepareAsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* AsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* PrepareAsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* AsyncListInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* PrepareAsyncListInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::CheckUserResponse>* AsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::CheckUserResponse>* PrepareAsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse>* AsyncSendVerificationEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -260,34 +218,6 @@ class UserService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>> PrepareAsyncListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>>(PrepareAsyncListUserPaginationRaw(context, request, cq));
     }
-    ::grpc::Status SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>> AsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>>(AsyncSendInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>> PrepareAsyncSendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>>(PrepareAsyncSendInvitationUserRaw(context, request, cq));
-    }
-    ::grpc::Status GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>> AsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>>(AsyncGetInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>> PrepareAsyncGetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>>(PrepareAsyncGetInvitationUserRaw(context, request, cq));
-    }
-    ::grpc::Status AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>> AsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>>(AsyncAgreeInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>> PrepareAsyncAgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>>(PrepareAsyncAgreeInvitationUserRaw(context, request, cq));
-    }
-    ::grpc::Status ListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>> AsyncListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>>(AsyncListInvitationUserRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>> PrepareAsyncListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>>(PrepareAsyncListInvitationUserRaw(context, request, cq));
-    }
     ::grpc::Status CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::accounts::v1alpha1::users::v1::CheckUserResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::CheckUserResponse>> AsyncCheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::CheckUserResponse>>(AsyncCheckUserRaw(context, request, cq));
@@ -339,10 +269,6 @@ class UserService final {
       void UpdateUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::UpdateUserRequest* request, ::accounts::v1alpha1::users::v1::UpdateUserResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::DeleteUserRequest* request, ::accounts::v1alpha1::users::v1::DeleteUserResponse* response, std::function<void(::grpc::Status)>) override;
       void ListUserPagination(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest* request, ::accounts::v1alpha1::users::v1::ListUserPaginationResponse* response, std::function<void(::grpc::Status)>) override;
-      void SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
-      void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
       void CheckUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest* request, ::accounts::v1alpha1::users::v1::CheckUserResponse* response, std::function<void(::grpc::Status)>) override;
       void SendVerificationEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse* response, std::function<void(::grpc::Status)>) override;
       void VerifyEmail(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::VerifyEmailRequest* request, ::accounts::v1alpha1::users::v1::VerifyEmailResponse* response, std::function<void(::grpc::Status)>) override;
@@ -372,14 +298,6 @@ class UserService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::DeleteUserResponse>* PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>* AsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListUserPaginationResponse>* PrepareAsyncListUserPaginationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* AsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* PrepareAsyncSendInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* AsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* PrepareAsyncGetInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* AsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* PrepareAsyncAgreeInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* AsyncListInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* PrepareAsyncListInvitationUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::CheckUserResponse>* AsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::CheckUserResponse>* PrepareAsyncCheckUserRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse>* AsyncSendVerificationEmailRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -398,10 +316,6 @@ class UserService final {
     const ::grpc::internal::RpcMethod rpcmethod_UpdateUser_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListUserPagination_;
-    const ::grpc::internal::RpcMethod rpcmethod_SendInvitationUser_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetInvitationUser_;
-    const ::grpc::internal::RpcMethod rpcmethod_AgreeInvitationUser_;
-    const ::grpc::internal::RpcMethod rpcmethod_ListInvitationUser_;
     const ::grpc::internal::RpcMethod rpcmethod_CheckUser_;
     const ::grpc::internal::RpcMethod rpcmethod_SendVerificationEmail_;
     const ::grpc::internal::RpcMethod rpcmethod_VerifyEmail_;
@@ -422,11 +336,6 @@ class UserService final {
     virtual ::grpc::Status UpdateUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::UpdateUserRequest* request, ::accounts::v1alpha1::users::v1::UpdateUserResponse* response);
     virtual ::grpc::Status DeleteUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::DeleteUserRequest* request, ::accounts::v1alpha1::users::v1::DeleteUserResponse* response);
     virtual ::grpc::Status ListUserPagination(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListUserPaginationRequest* request, ::accounts::v1alpha1::users::v1::ListUserPaginationResponse* response);
-    // invitation
-    virtual ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response);
-    virtual ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response);
-    virtual ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response);
-    virtual ::grpc::Status ListInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response);
     // CHECK USER
     virtual ::grpc::Status CheckUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::CheckUserRequest* request, ::accounts::v1alpha1::users::v1::CheckUserResponse* response);
     virtual ::grpc::Status SendVerificationEmail(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest* request, ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse* response);
@@ -558,92 +467,12 @@ class UserService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_SendInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_SendInvitationUser() {
-      ::grpc::Service::MarkMethodAsync(6);
-    }
-    ~WithAsyncMethod_SendInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestSendInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_GetInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_GetInvitationUser() {
-      ::grpc::Service::MarkMethodAsync(7);
-    }
-    ~WithAsyncMethod_GetInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestGetInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_AgreeInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_AgreeInvitationUser() {
-      ::grpc::Service::MarkMethodAsync(8);
-    }
-    ~WithAsyncMethod_AgreeInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestAgreeInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_ListInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_ListInvitationUser() {
-      ::grpc::Service::MarkMethodAsync(9);
-    }
-    ~WithAsyncMethod_ListInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestListInvitationUser(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_CheckUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CheckUser() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_CheckUser() override {
       BaseClassMustBeDerivedFromService(this);
@@ -654,7 +483,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCheckUser(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::CheckUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::CheckUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -663,7 +492,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_SendVerificationEmail() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_SendVerificationEmail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -674,7 +503,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSendVerificationEmail(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -683,7 +512,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_VerifyEmail() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_VerifyEmail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -694,7 +523,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestVerifyEmail(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::VerifyEmailRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::VerifyEmailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -703,7 +532,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetUsersEmailFilter() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_GetUsersEmailFilter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -714,7 +543,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetUsersEmailFilter(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -723,7 +552,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_GetListUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -734,7 +563,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetListUserDex(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::GetListUserDexRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::GetListUserDexResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -743,7 +572,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_GetOneUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -754,10 +583,10 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneUserDex(::grpc::ServerContext* context, ::accounts::v1alpha1::users::v1::GetOneUserDexRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::users::v1::GetOneUserDexResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationUser<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_GetUsersEmailFilter<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<Service > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateUser<WithAsyncMethod_ListUser<WithAsyncMethod_GetOneUser<WithAsyncMethod_UpdateUser<WithAsyncMethod_DeleteUser<WithAsyncMethod_ListUserPagination<WithAsyncMethod_CheckUser<WithAsyncMethod_SendVerificationEmail<WithAsyncMethod_VerifyEmail<WithAsyncMethod_GetUsersEmailFilter<WithAsyncMethod_GetListUserDex<WithAsyncMethod_GetOneUserDex<Service > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateUser : public BaseClass {
    private:
@@ -861,80 +690,12 @@ class UserService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_SendInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_SendInvitationUser() {
-      ::grpc::Service::MarkMethodGeneric(6);
-    }
-    ~WithGenericMethod_SendInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_GetInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_GetInvitationUser() {
-      ::grpc::Service::MarkMethodGeneric(7);
-    }
-    ~WithGenericMethod_GetInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_AgreeInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_AgreeInvitationUser() {
-      ::grpc::Service::MarkMethodGeneric(8);
-    }
-    ~WithGenericMethod_AgreeInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_ListInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_ListInvitationUser() {
-      ::grpc::Service::MarkMethodGeneric(9);
-    }
-    ~WithGenericMethod_ListInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_CheckUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CheckUser() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_CheckUser() override {
       BaseClassMustBeDerivedFromService(this);
@@ -951,7 +712,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_SendVerificationEmail() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_SendVerificationEmail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -968,7 +729,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_VerifyEmail() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_VerifyEmail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -985,7 +746,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetUsersEmailFilter() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_GetUsersEmailFilter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1002,7 +763,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_GetListUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1019,7 +780,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_GetOneUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1151,92 +912,12 @@ class UserService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_SendInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_SendInvitationUser() {
-      ::grpc::Service::MarkMethodRaw(6);
-    }
-    ~WithRawMethod_SendInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestSendInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_GetInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_GetInvitationUser() {
-      ::grpc::Service::MarkMethodRaw(7);
-    }
-    ~WithRawMethod_GetInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestGetInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_AgreeInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_AgreeInvitationUser() {
-      ::grpc::Service::MarkMethodRaw(8);
-    }
-    ~WithRawMethod_AgreeInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestAgreeInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_ListInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_ListInvitationUser() {
-      ::grpc::Service::MarkMethodRaw(9);
-    }
-    ~WithRawMethod_ListInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ListInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestListInvitationUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_CheckUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CheckUser() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_CheckUser() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1247,7 +928,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCheckUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1256,7 +937,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_SendVerificationEmail() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_SendVerificationEmail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1267,7 +948,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSendVerificationEmail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1276,7 +957,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_VerifyEmail() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_VerifyEmail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1287,7 +968,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestVerifyEmail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1296,7 +977,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetUsersEmailFilter() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_GetUsersEmailFilter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1307,7 +988,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetUsersEmailFilter(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1316,7 +997,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_GetListUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1327,7 +1008,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetListUserDex(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1336,7 +1017,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_GetOneUserDex() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1347,7 +1028,7 @@ class UserService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOneUserDex(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1471,92 +1152,12 @@ class UserService final {
     virtual ::grpc::Status StreamedListUserPagination(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::users::v1::ListUserPaginationRequest,::accounts::v1alpha1::users::v1::ListUserPaginationResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_SendInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_SendInvitationUser() {
-      ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::SendInvitationUserRequest, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_SendInvitationUser<BaseClass>::StreamedSendInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_SendInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status SendInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::SendInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::SendInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedSendInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::users::v1::SendInvitationUserRequest,::accounts::v1alpha1::users::v1::SendInvitationUserResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_GetInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_GetInvitationUser() {
-      ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::GetInvitationUserRequest, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_GetInvitationUser<BaseClass>::StreamedGetInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_GetInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status GetInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::GetInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::GetInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::users::v1::GetInvitationUserRequest,::accounts::v1alpha1::users::v1::GetInvitationUserResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_AgreeInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_AgreeInvitationUser() {
-      ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_AgreeInvitationUser<BaseClass>::StreamedAgreeInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_AgreeInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAgreeInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::users::v1::AgreeInvitationUserRequest,::accounts::v1alpha1::users::v1::AgreeInvitationUserResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_ListInvitationUser : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_ListInvitationUser() {
-      ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::ListInvitationUserRequest, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse>(std::bind(&WithStreamedUnaryMethod_ListInvitationUser<BaseClass>::StreamedListInvitationUser, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_ListInvitationUser() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status ListInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::users::v1::ListInvitationUserRequest* request, ::accounts::v1alpha1::users::v1::ListInvitationUserResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedListInvitationUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::users::v1::ListInvitationUserRequest,::accounts::v1alpha1::users::v1::ListInvitationUserResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_CheckUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CheckUser() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::CheckUserRequest, ::accounts::v1alpha1::users::v1::CheckUserResponse>(std::bind(&WithStreamedUnaryMethod_CheckUser<BaseClass>::StreamedCheckUser, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CheckUser() override {
@@ -1576,7 +1177,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_SendVerificationEmail() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest, ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse>(std::bind(&WithStreamedUnaryMethod_SendVerificationEmail<BaseClass>::StreamedSendVerificationEmail, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_SendVerificationEmail() override {
@@ -1596,7 +1197,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_VerifyEmail() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::VerifyEmailRequest, ::accounts::v1alpha1::users::v1::VerifyEmailResponse>(std::bind(&WithStreamedUnaryMethod_VerifyEmail<BaseClass>::StreamedVerifyEmail, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_VerifyEmail() override {
@@ -1616,7 +1217,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetUsersEmailFilter() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest, ::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse>(std::bind(&WithStreamedUnaryMethod_GetUsersEmailFilter<BaseClass>::StreamedGetUsersEmailFilter, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetUsersEmailFilter() override {
@@ -1636,7 +1237,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetListUserDex() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::GetListUserDexRequest, ::accounts::v1alpha1::users::v1::GetListUserDexResponse>(std::bind(&WithStreamedUnaryMethod_GetListUserDex<BaseClass>::StreamedGetListUserDex, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetListUserDex() override {
@@ -1656,7 +1257,7 @@ class UserService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOneUserDex() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::users::v1::GetOneUserDexRequest, ::accounts::v1alpha1::users::v1::GetOneUserDexResponse>(std::bind(&WithStreamedUnaryMethod_GetOneUserDex<BaseClass>::StreamedGetOneUserDex, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOneUserDex() override {
@@ -1670,9 +1271,9 @@ class UserService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetOneUserDex(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::users::v1::GetOneUserDexRequest,::accounts::v1alpha1::users::v1::GetOneUserDexResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<Service > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<Service > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationUser<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<Service > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateUser<WithStreamedUnaryMethod_ListUser<WithStreamedUnaryMethod_GetOneUser<WithStreamedUnaryMethod_UpdateUser<WithStreamedUnaryMethod_DeleteUser<WithStreamedUnaryMethod_ListUserPagination<WithStreamedUnaryMethod_CheckUser<WithStreamedUnaryMethod_SendVerificationEmail<WithStreamedUnaryMethod_VerifyEmail<WithStreamedUnaryMethod_GetUsersEmailFilter<WithStreamedUnaryMethod_GetListUserDex<WithStreamedUnaryMethod_GetOneUserDex<Service > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

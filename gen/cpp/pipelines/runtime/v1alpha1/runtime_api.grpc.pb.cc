@@ -23,6 +23,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntime",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/CreateRuntime",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateRuntime",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateResponseMessageRuntime",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntime",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes",
 };
@@ -37,8 +38,9 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   : channel_(channel), rpcmethod_GetRuntime_(RuntimeAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateRuntime_(RuntimeAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateRuntime_(RuntimeAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteRuntime_(RuntimeAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRuntimes_(RuntimeAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateResponseMessageRuntime_(RuntimeAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRuntime_(RuntimeAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRuntimes_(RuntimeAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -87,6 +89,22 @@ void RuntimeAPIService::Stub::experimental_async::UpdateRuntime(::grpc::ClientCo
 
 ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse>* RuntimeAPIService::Stub::PrepareAsyncUpdateRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_UpdateRuntime_, context, request, false);
+}
+
+::grpc::Status RuntimeAPIService::Stub::UpdateResponseMessageRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest& request, ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateResponseMessageRuntime_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::UpdateResponseMessageRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest* request, ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateResponseMessageRuntime_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse>* RuntimeAPIService::Stub::AsyncUpdateResponseMessageRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_UpdateResponseMessageRuntime_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse>* RuntimeAPIService::Stub::PrepareAsyncUpdateResponseMessageRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_UpdateResponseMessageRuntime_, context, request, false);
 }
 
 ::grpc::Status RuntimeAPIService::Stub::DeleteRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest& request, ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* response) {
@@ -140,10 +158,15 @@ RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest, ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::UpdateResponseMessageRuntime), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest, ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>(
           std::mem_fn(&RuntimeAPIService::Service::DeleteRuntime), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      RuntimeAPIService_method_names[4],
+      RuntimeAPIService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::ListRuntimesRequest, ::pipelines::runtime::v1alpha1::ListRuntimesResponse>(
           std::mem_fn(&RuntimeAPIService::Service::ListRuntimes), this)));
@@ -167,6 +190,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::UpdateRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest* request, ::pipelines::runtime::v1alpha1::UpdateRuntimeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::UpdateResponseMessageRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest* request, ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse* response) {
   (void) context;
   (void) request;
   (void) response;
