@@ -3148,27 +3148,27 @@ public final class ApplicationApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
-    java.util.List<application.v1alpha1.ApplicationOuterClass.Application> 
+    java.util.List<application.v1alpha1.ApplicationOuterClass.ListApplication> 
         getApplicationsList();
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
-    application.v1alpha1.ApplicationOuterClass.Application getApplications(int index);
+    application.v1alpha1.ApplicationOuterClass.ListApplication getApplications(int index);
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
     int getApplicationsCount();
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
-    java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+    java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder> 
         getApplicationsOrBuilderList();
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
-    application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
+    application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder getApplicationsOrBuilder(
         int index);
   }
   /**
@@ -3220,11 +3220,11 @@ public final class ApplicationApi {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                applications_ = new java.util.ArrayList<application.v1alpha1.ApplicationOuterClass.Application>();
+                applications_ = new java.util.ArrayList<application.v1alpha1.ApplicationOuterClass.ListApplication>();
                 mutable_bitField0_ |= 0x00000001;
               }
               applications_.add(
-                  input.readMessage(application.v1alpha1.ApplicationOuterClass.Application.parser(), extensionRegistry));
+                  input.readMessage(application.v1alpha1.ApplicationOuterClass.ListApplication.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -3263,41 +3263,41 @@ public final class ApplicationApi {
     }
 
     public static final int APPLICATIONS_FIELD_NUMBER = 1;
-    private java.util.List<application.v1alpha1.ApplicationOuterClass.Application> applications_;
+    private java.util.List<application.v1alpha1.ApplicationOuterClass.ListApplication> applications_;
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
     @java.lang.Override
-    public java.util.List<application.v1alpha1.ApplicationOuterClass.Application> getApplicationsList() {
+    public java.util.List<application.v1alpha1.ApplicationOuterClass.ListApplication> getApplicationsList() {
       return applications_;
     }
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+    public java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder> 
         getApplicationsOrBuilderList() {
       return applications_;
     }
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
     @java.lang.Override
     public int getApplicationsCount() {
       return applications_.size();
     }
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
     @java.lang.Override
-    public application.v1alpha1.ApplicationOuterClass.Application getApplications(int index) {
+    public application.v1alpha1.ApplicationOuterClass.ListApplication getApplications(int index) {
       return applications_.get(index);
     }
     /**
-     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
      */
     @java.lang.Override
-    public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
+    public application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder getApplicationsOrBuilder(
         int index) {
       return applications_.get(index);
     }
@@ -3644,22 +3644,22 @@ public final class ApplicationApi {
       }
       private int bitField0_;
 
-      private java.util.List<application.v1alpha1.ApplicationOuterClass.Application> applications_ =
+      private java.util.List<application.v1alpha1.ApplicationOuterClass.ListApplication> applications_ =
         java.util.Collections.emptyList();
       private void ensureApplicationsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          applications_ = new java.util.ArrayList<application.v1alpha1.ApplicationOuterClass.Application>(applications_);
+          applications_ = new java.util.ArrayList<application.v1alpha1.ApplicationOuterClass.ListApplication>(applications_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> applicationsBuilder_;
+          application.v1alpha1.ApplicationOuterClass.ListApplication, application.v1alpha1.ApplicationOuterClass.ListApplication.Builder, application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder> applicationsBuilder_;
 
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public java.util.List<application.v1alpha1.ApplicationOuterClass.Application> getApplicationsList() {
+      public java.util.List<application.v1alpha1.ApplicationOuterClass.ListApplication> getApplicationsList() {
         if (applicationsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(applications_);
         } else {
@@ -3667,7 +3667,7 @@ public final class ApplicationApi {
         }
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public int getApplicationsCount() {
         if (applicationsBuilder_ == null) {
@@ -3677,9 +3677,9 @@ public final class ApplicationApi {
         }
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public application.v1alpha1.ApplicationOuterClass.Application getApplications(int index) {
+      public application.v1alpha1.ApplicationOuterClass.ListApplication getApplications(int index) {
         if (applicationsBuilder_ == null) {
           return applications_.get(index);
         } else {
@@ -3687,10 +3687,10 @@ public final class ApplicationApi {
         }
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder setApplications(
-          int index, application.v1alpha1.ApplicationOuterClass.Application value) {
+          int index, application.v1alpha1.ApplicationOuterClass.ListApplication value) {
         if (applicationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3704,10 +3704,10 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder setApplications(
-          int index, application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+          int index, application.v1alpha1.ApplicationOuterClass.ListApplication.Builder builderForValue) {
         if (applicationsBuilder_ == null) {
           ensureApplicationsIsMutable();
           applications_.set(index, builderForValue.build());
@@ -3718,9 +3718,9 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public Builder addApplications(application.v1alpha1.ApplicationOuterClass.Application value) {
+      public Builder addApplications(application.v1alpha1.ApplicationOuterClass.ListApplication value) {
         if (applicationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3734,10 +3734,10 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder addApplications(
-          int index, application.v1alpha1.ApplicationOuterClass.Application value) {
+          int index, application.v1alpha1.ApplicationOuterClass.ListApplication value) {
         if (applicationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3751,10 +3751,10 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder addApplications(
-          application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+          application.v1alpha1.ApplicationOuterClass.ListApplication.Builder builderForValue) {
         if (applicationsBuilder_ == null) {
           ensureApplicationsIsMutable();
           applications_.add(builderForValue.build());
@@ -3765,10 +3765,10 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder addApplications(
-          int index, application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+          int index, application.v1alpha1.ApplicationOuterClass.ListApplication.Builder builderForValue) {
         if (applicationsBuilder_ == null) {
           ensureApplicationsIsMutable();
           applications_.add(index, builderForValue.build());
@@ -3779,10 +3779,10 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder addAllApplications(
-          java.lang.Iterable<? extends application.v1alpha1.ApplicationOuterClass.Application> values) {
+          java.lang.Iterable<? extends application.v1alpha1.ApplicationOuterClass.ListApplication> values) {
         if (applicationsBuilder_ == null) {
           ensureApplicationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3794,7 +3794,7 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder clearApplications() {
         if (applicationsBuilder_ == null) {
@@ -3807,7 +3807,7 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
       public Builder removeApplications(int index) {
         if (applicationsBuilder_ == null) {
@@ -3820,16 +3820,16 @@ public final class ApplicationApi {
         return this;
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public application.v1alpha1.ApplicationOuterClass.Application.Builder getApplicationsBuilder(
+      public application.v1alpha1.ApplicationOuterClass.ListApplication.Builder getApplicationsBuilder(
           int index) {
         return getApplicationsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
+      public application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder getApplicationsOrBuilder(
           int index) {
         if (applicationsBuilder_ == null) {
           return applications_.get(index);  } else {
@@ -3837,9 +3837,9 @@ public final class ApplicationApi {
         }
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+      public java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder> 
            getApplicationsOrBuilderList() {
         if (applicationsBuilder_ != null) {
           return applicationsBuilder_.getMessageOrBuilderList();
@@ -3848,33 +3848,33 @@ public final class ApplicationApi {
         }
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public application.v1alpha1.ApplicationOuterClass.Application.Builder addApplicationsBuilder() {
+      public application.v1alpha1.ApplicationOuterClass.ListApplication.Builder addApplicationsBuilder() {
         return getApplicationsFieldBuilder().addBuilder(
-            application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance());
+            application.v1alpha1.ApplicationOuterClass.ListApplication.getDefaultInstance());
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public application.v1alpha1.ApplicationOuterClass.Application.Builder addApplicationsBuilder(
+      public application.v1alpha1.ApplicationOuterClass.ListApplication.Builder addApplicationsBuilder(
           int index) {
         return getApplicationsFieldBuilder().addBuilder(
-            index, application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance());
+            index, application.v1alpha1.ApplicationOuterClass.ListApplication.getDefaultInstance());
       }
       /**
-       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       * <code>repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];</code>
        */
-      public java.util.List<application.v1alpha1.ApplicationOuterClass.Application.Builder> 
+      public java.util.List<application.v1alpha1.ApplicationOuterClass.ListApplication.Builder> 
            getApplicationsBuilderList() {
         return getApplicationsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+          application.v1alpha1.ApplicationOuterClass.ListApplication, application.v1alpha1.ApplicationOuterClass.ListApplication.Builder, application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder> 
           getApplicationsFieldBuilder() {
         if (applicationsBuilder_ == null) {
           applicationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder>(
+              application.v1alpha1.ApplicationOuterClass.ListApplication, application.v1alpha1.ApplicationOuterClass.ListApplication.Builder, application.v1alpha1.ApplicationOuterClass.ListApplicationOrBuilder>(
                   applications_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -9454,50 +9454,50 @@ public final class ApplicationApi {
       "cationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro" +
       "r\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\tR\002id\"7\n\026ListAp" +
       "plicationRequest\022\035\n\nproject_id\030\001 \001(\rR\tpr" +
-      "ojectId\"`\n\027ListApplicationResponse\022E\n\014ap" +
-      "plications\030\001 \003(\0132!.application.v1alpha1." +
-      "ApplicationR\014applications\"\'\n\025GetApplicat" +
-      "ionRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApplica" +
-      "tionResponse\022C\n\013application\030\001 \001(\0132!.appl" +
-      "ication.v1alpha1.ApplicationR\013applicatio" +
-      "n\"*\n\030DeleteApplicationRequest\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\"C\n\031DeleteApplicationResponse\022\020\n\003ms" +
-      "g\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n\030Up" +
-      "dateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id\022P" +
-      "\n\013application\030\002 \001(\0132..application.v1alph" +
-      "a1.CreateApplicationRequestR\013application" +
-      "\"C\n\031UpdateApplicationResponse\022\020\n\003msg\030\001 \001" +
-      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"P\n%ListApp" +
-      "licationsByOrganizationRequest\022\'\n\017organi" +
-      "zation_id\030\001 \001(\rR\016organizationId\"\205\001\n&List" +
-      "ApplicationsByOrganizationResponse\022E\n\014ap" +
-      "plications\030\001 \003(\0132!.application.v1alpha1." +
-      "ApplicationR\014applications\022\024\n\005error\030\002 \001(\t" +
-      "R\005error2\222\007\n\022ApplicationService\022t\n\021Create" +
-      "Application\022..application.v1alpha1.Creat" +
-      "eApplicationRequest\032/.application.v1alph" +
-      "a1.CreateApplicationResponse\022n\n\017ListAppl" +
-      "ication\022,.application.v1alpha1.ListAppli" +
-      "cationRequest\032-.application.v1alpha1.Lis" +
-      "tApplicationResponse\022k\n\016GetApplication\022+" +
-      ".application.v1alpha1.GetApplicationRequ" +
-      "est\032,.application.v1alpha1.GetApplicatio" +
-      "nResponse\022t\n\021DeleteApplication\022..applica" +
-      "tion.v1alpha1.DeleteApplicationRequest\032/" +
-      ".application.v1alpha1.DeleteApplicationR" +
-      "esponse\022t\n\021UpdateApplication\022..applicati" +
-      "on.v1alpha1.UpdateApplicationRequest\032/.a" +
-      "pplication.v1alpha1.UpdateApplicationRes" +
-      "ponse\022\236\001\n\037DeleteApplicationsByIntegratio" +
-      "n\022<.application.v1alpha1.DeleteApplicati" +
-      "onsByIntegrationRequest\032=.application.v1" +
-      "alpha1.DeleteApplicationsByIntegrationRe" +
-      "sponse\022\233\001\n\036ListApplicationsByOrganizatio" +
-      "n\022;.application.v1alpha1.ListApplication" +
-      "sByOrganizationRequest\032<.application.v1a" +
-      "lpha1.ListApplicationsByOrganizationResp" +
-      "onseB7Z5github.com/cuemby/ccp-sdk/gen/go" +
-      "/application/v1alpha1b\006proto3"
+      "ojectId\"d\n\027ListApplicationResponse\022I\n\014ap" +
+      "plications\030\001 \003(\0132%.application.v1alpha1." +
+      "ListApplicationR\014applications\"\'\n\025GetAppl" +
+      "icationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApp" +
+      "licationResponse\022C\n\013application\030\001 \001(\0132!." +
+      "application.v1alpha1.ApplicationR\013applic" +
+      "ation\"*\n\030DeleteApplicationRequest\022\016\n\002id\030" +
+      "\001 \001(\tR\002id\"C\n\031DeleteApplicationResponse\022\020" +
+      "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|" +
+      "\n\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022P\n\013application\030\002 \001(\0132..application.v1" +
+      "alpha1.CreateApplicationRequestR\013applica" +
+      "tion\"C\n\031UpdateApplicationResponse\022\020\n\003msg" +
+      "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"P\n%Lis" +
+      "tApplicationsByOrganizationRequest\022\'\n\017or" +
+      "ganization_id\030\001 \001(\rR\016organizationId\"\205\001\n&" +
+      "ListApplicationsByOrganizationResponse\022E" +
+      "\n\014applications\030\001 \003(\0132!.application.v1alp" +
+      "ha1.ApplicationR\014applications\022\024\n\005error\030\002" +
+      " \001(\tR\005error2\222\007\n\022ApplicationService\022t\n\021Cr" +
+      "eateApplication\022..application.v1alpha1.C" +
+      "reateApplicationRequest\032/.application.v1" +
+      "alpha1.CreateApplicationResponse\022n\n\017List" +
+      "Application\022,.application.v1alpha1.ListA" +
+      "pplicationRequest\032-.application.v1alpha1" +
+      ".ListApplicationResponse\022k\n\016GetApplicati" +
+      "on\022+.application.v1alpha1.GetApplication" +
+      "Request\032,.application.v1alpha1.GetApplic" +
+      "ationResponse\022t\n\021DeleteApplication\022..app" +
+      "lication.v1alpha1.DeleteApplicationReque" +
+      "st\032/.application.v1alpha1.DeleteApplicat" +
+      "ionResponse\022t\n\021UpdateApplication\022..appli" +
+      "cation.v1alpha1.UpdateApplicationRequest" +
+      "\032/.application.v1alpha1.UpdateApplicatio" +
+      "nResponse\022\236\001\n\037DeleteApplicationsByIntegr" +
+      "ation\022<.application.v1alpha1.DeleteAppli" +
+      "cationsByIntegrationRequest\032=.applicatio" +
+      "n.v1alpha1.DeleteApplicationsByIntegrati" +
+      "onResponse\022\233\001\n\036ListApplicationsByOrganiz" +
+      "ation\022;.application.v1alpha1.ListApplica" +
+      "tionsByOrganizationRequest\032<.application" +
+      ".v1alpha1.ListApplicationsByOrganization" +
+      "ResponseB7Z5github.com/cuemby/ccp-sdk/ge" +
+      "n/go/application/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

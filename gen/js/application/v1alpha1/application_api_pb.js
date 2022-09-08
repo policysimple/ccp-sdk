@@ -1096,7 +1096,7 @@ proto.application.v1alpha1.ListApplicationResponse.prototype.toObject = function
 proto.application.v1alpha1.ListApplicationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     applicationsList: jspb.Message.toObjectList(msg.getApplicationsList(),
-    application_v1alpha1_application_pb.Application.toObject, includeInstance)
+    application_v1alpha1_application_pb.ListApplication.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1134,8 +1134,8 @@ proto.application.v1alpha1.ListApplicationResponse.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new application_v1alpha1_application_pb.Application;
-      reader.readMessage(value,application_v1alpha1_application_pb.Application.deserializeBinaryFromReader);
+      var value = new application_v1alpha1_application_pb.ListApplication;
+      reader.readMessage(value,application_v1alpha1_application_pb.ListApplication.deserializeBinaryFromReader);
       msg.addApplications(value);
       break;
     default:
@@ -1172,24 +1172,24 @@ proto.application.v1alpha1.ListApplicationResponse.serializeBinaryToWriter = fun
     writer.writeRepeatedMessage(
       1,
       f,
-      application_v1alpha1_application_pb.Application.serializeBinaryToWriter
+      application_v1alpha1_application_pb.ListApplication.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated Application applications = 1;
- * @return {!Array<!proto.application.v1alpha1.Application>}
+ * repeated ListApplication applications = 1;
+ * @return {!Array<!proto.application.v1alpha1.ListApplication>}
  */
 proto.application.v1alpha1.ListApplicationResponse.prototype.getApplicationsList = function() {
-  return /** @type{!Array<!proto.application.v1alpha1.Application>} */ (
-    jspb.Message.getRepeatedWrapperField(this, application_v1alpha1_application_pb.Application, 1));
+  return /** @type{!Array<!proto.application.v1alpha1.ListApplication>} */ (
+    jspb.Message.getRepeatedWrapperField(this, application_v1alpha1_application_pb.ListApplication, 1));
 };
 
 
 /**
- * @param {!Array<!proto.application.v1alpha1.Application>} value
+ * @param {!Array<!proto.application.v1alpha1.ListApplication>} value
  * @return {!proto.application.v1alpha1.ListApplicationResponse} returns this
 */
 proto.application.v1alpha1.ListApplicationResponse.prototype.setApplicationsList = function(value) {
@@ -1198,12 +1198,12 @@ proto.application.v1alpha1.ListApplicationResponse.prototype.setApplicationsList
 
 
 /**
- * @param {!proto.application.v1alpha1.Application=} opt_value
+ * @param {!proto.application.v1alpha1.ListApplication=} opt_value
  * @param {number=} opt_index
- * @return {!proto.application.v1alpha1.Application}
+ * @return {!proto.application.v1alpha1.ListApplication}
  */
 proto.application.v1alpha1.ListApplicationResponse.prototype.addApplications = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.application.v1alpha1.Application, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.application.v1alpha1.ListApplication, opt_index);
 };
 
 
