@@ -137,8 +137,8 @@ proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.toObject 
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    registerOrganization: (f = msg.getRegisterOrganization()) && blockchain_members_v1alpha1_member_pb.Organization.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 2, "")
+    status: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    message: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -175,14 +175,13 @@ proto.blockchain.members.v1alpha1.CreateOrganizationResponse.deserializeBinaryFr
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new blockchain_members_v1alpha1_member_pb.Organization;
-      reader.readMessage(value,blockchain_members_v1alpha1_member_pb.Organization.deserializeBinaryFromReader);
-      msg.setRegisterOrganization(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessage(value);
       break;
     default:
       reader.skipField();
@@ -213,14 +212,6 @@ proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.serialize
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRegisterOrganization();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      blockchain_members_v1alpha1_member_pb.Organization.serializeBinaryToWriter
-    );
-  }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
@@ -228,43 +219,13 @@ proto.blockchain.members.v1alpha1.CreateOrganizationResponse.serializeBinaryToWr
       f
     );
   }
-};
-
-
-/**
- * optional Organization register_organization = 1;
- * @return {?proto.blockchain.members.v1alpha1.Organization}
- */
-proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.getRegisterOrganization = function() {
-  return /** @type{?proto.blockchain.members.v1alpha1.Organization} */ (
-    jspb.Message.getWrapperField(this, blockchain_members_v1alpha1_member_pb.Organization, 1));
-};
-
-
-/**
- * @param {?proto.blockchain.members.v1alpha1.Organization|undefined} value
- * @return {!proto.blockchain.members.v1alpha1.CreateOrganizationResponse} returns this
-*/
-proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.setRegisterOrganization = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.blockchain.members.v1alpha1.CreateOrganizationResponse} returns this
- */
-proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.clearRegisterOrganization = function() {
-  return this.setRegisterOrganization(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.hasRegisterOrganization = function() {
-  return jspb.Message.getField(this, 1) != null;
+  f = message.getMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -283,6 +244,24 @@ proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.getStatus
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string message = 3;
+ * @return {string}
+ */
+proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.members.v1alpha1.CreateOrganizationResponse} returns this
+ */
+proto.blockchain.members.v1alpha1.CreateOrganizationResponse.prototype.setMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

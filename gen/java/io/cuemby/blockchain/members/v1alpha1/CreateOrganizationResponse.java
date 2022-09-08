@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateOrganizationResponse() {
     status_ = "";
+    message_ = "";
   }
 
   @java.lang.Override
@@ -49,23 +50,16 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            io.cuemby.blockchain.members.v1alpha1.Organization.Builder subBuilder = null;
-            if (registerOrganization_ != null) {
-              subBuilder = registerOrganization_.toBuilder();
-            }
-            registerOrganization_ = input.readMessage(io.cuemby.blockchain.members.v1alpha1.Organization.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(registerOrganization_);
-              registerOrganization_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             status_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            message_ = s;
             break;
           }
           default: {
@@ -98,32 +92,6 @@ private static final long serialVersionUID = 0L;
     return io.cuemby.blockchain.members.v1alpha1.MembersInvitationProtoApi.internal_static_blockchain_members_v1alpha1_CreateOrganizationResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse.class, io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse.Builder.class);
-  }
-
-  public static final int REGISTER_ORGANIZATION_FIELD_NUMBER = 1;
-  private io.cuemby.blockchain.members.v1alpha1.Organization registerOrganization_;
-  /**
-   * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-   * @return Whether the registerOrganization field is set.
-   */
-  @java.lang.Override
-  public boolean hasRegisterOrganization() {
-    return registerOrganization_ != null;
-  }
-  /**
-   * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-   * @return The registerOrganization.
-   */
-  @java.lang.Override
-  public io.cuemby.blockchain.members.v1alpha1.Organization getRegisterOrganization() {
-    return registerOrganization_ == null ? io.cuemby.blockchain.members.v1alpha1.Organization.getDefaultInstance() : registerOrganization_;
-  }
-  /**
-   * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.blockchain.members.v1alpha1.OrganizationOrBuilder getRegisterOrganizationOrBuilder() {
-    return getRegisterOrganization();
   }
 
   public static final int STATUS_FIELD_NUMBER = 2;
@@ -164,6 +132,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MESSAGE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object message_;
+  /**
+   * <code>string message = 3 [json_name = "message"];</code>
+   * @return The message.
+   */
+  @java.lang.Override
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      message_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string message = 3 [json_name = "message"];</code>
+   * @return The bytes for message.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMessageBytes() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      message_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,11 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (registerOrganization_ != null) {
-      output.writeMessage(1, getRegisterOrganization());
-    }
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+    }
+    if (!getMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -193,12 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (registerOrganization_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getRegisterOrganization());
-    }
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+    }
+    if (!getMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,13 +220,10 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse other = (io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse) obj;
 
-    if (hasRegisterOrganization() != other.hasRegisterOrganization()) return false;
-    if (hasRegisterOrganization()) {
-      if (!getRegisterOrganization()
-          .equals(other.getRegisterOrganization())) return false;
-    }
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -233,12 +235,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasRegisterOrganization()) {
-      hash = (37 * hash) + REGISTER_ORGANIZATION_FIELD_NUMBER;
-      hash = (53 * hash) + getRegisterOrganization().hashCode();
-    }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,13 +372,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (registerOrganizationBuilder_ == null) {
-        registerOrganization_ = null;
-      } else {
-        registerOrganization_ = null;
-        registerOrganizationBuilder_ = null;
-      }
       status_ = "";
+
+      message_ = "";
 
       return this;
     }
@@ -406,12 +402,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse buildPartial() {
       io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse result = new io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse(this);
-      if (registerOrganizationBuilder_ == null) {
-        result.registerOrganization_ = registerOrganization_;
-      } else {
-        result.registerOrganization_ = registerOrganizationBuilder_.build();
-      }
       result.status_ = status_;
+      result.message_ = message_;
       onBuilt();
       return result;
     }
@@ -460,11 +452,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse other) {
       if (other == io.cuemby.blockchain.members.v1alpha1.CreateOrganizationResponse.getDefaultInstance()) return this;
-      if (other.hasRegisterOrganization()) {
-        mergeRegisterOrganization(other.getRegisterOrganization());
-      }
       if (!other.getStatus().isEmpty()) {
         status_ = other.status_;
+        onChanged();
+      }
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -494,125 +487,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       return this;
-    }
-
-    private io.cuemby.blockchain.members.v1alpha1.Organization registerOrganization_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.blockchain.members.v1alpha1.Organization, io.cuemby.blockchain.members.v1alpha1.Organization.Builder, io.cuemby.blockchain.members.v1alpha1.OrganizationOrBuilder> registerOrganizationBuilder_;
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     * @return Whether the registerOrganization field is set.
-     */
-    public boolean hasRegisterOrganization() {
-      return registerOrganizationBuilder_ != null || registerOrganization_ != null;
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     * @return The registerOrganization.
-     */
-    public io.cuemby.blockchain.members.v1alpha1.Organization getRegisterOrganization() {
-      if (registerOrganizationBuilder_ == null) {
-        return registerOrganization_ == null ? io.cuemby.blockchain.members.v1alpha1.Organization.getDefaultInstance() : registerOrganization_;
-      } else {
-        return registerOrganizationBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    public Builder setRegisterOrganization(io.cuemby.blockchain.members.v1alpha1.Organization value) {
-      if (registerOrganizationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        registerOrganization_ = value;
-        onChanged();
-      } else {
-        registerOrganizationBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    public Builder setRegisterOrganization(
-        io.cuemby.blockchain.members.v1alpha1.Organization.Builder builderForValue) {
-      if (registerOrganizationBuilder_ == null) {
-        registerOrganization_ = builderForValue.build();
-        onChanged();
-      } else {
-        registerOrganizationBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    public Builder mergeRegisterOrganization(io.cuemby.blockchain.members.v1alpha1.Organization value) {
-      if (registerOrganizationBuilder_ == null) {
-        if (registerOrganization_ != null) {
-          registerOrganization_ =
-            io.cuemby.blockchain.members.v1alpha1.Organization.newBuilder(registerOrganization_).mergeFrom(value).buildPartial();
-        } else {
-          registerOrganization_ = value;
-        }
-        onChanged();
-      } else {
-        registerOrganizationBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    public Builder clearRegisterOrganization() {
-      if (registerOrganizationBuilder_ == null) {
-        registerOrganization_ = null;
-        onChanged();
-      } else {
-        registerOrganization_ = null;
-        registerOrganizationBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    public io.cuemby.blockchain.members.v1alpha1.Organization.Builder getRegisterOrganizationBuilder() {
-      
-      onChanged();
-      return getRegisterOrganizationFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    public io.cuemby.blockchain.members.v1alpha1.OrganizationOrBuilder getRegisterOrganizationOrBuilder() {
-      if (registerOrganizationBuilder_ != null) {
-        return registerOrganizationBuilder_.getMessageOrBuilder();
-      } else {
-        return registerOrganization_ == null ?
-            io.cuemby.blockchain.members.v1alpha1.Organization.getDefaultInstance() : registerOrganization_;
-      }
-    }
-    /**
-     * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.blockchain.members.v1alpha1.Organization, io.cuemby.blockchain.members.v1alpha1.Organization.Builder, io.cuemby.blockchain.members.v1alpha1.OrganizationOrBuilder> 
-        getRegisterOrganizationFieldBuilder() {
-      if (registerOrganizationBuilder_ == null) {
-        registerOrganizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.blockchain.members.v1alpha1.Organization, io.cuemby.blockchain.members.v1alpha1.Organization.Builder, io.cuemby.blockchain.members.v1alpha1.OrganizationOrBuilder>(
-                getRegisterOrganization(),
-                getParentForChildren(),
-                isClean());
-        registerOrganization_ = null;
-      }
-      return registerOrganizationBuilder_;
     }
 
     private java.lang.Object status_ = "";
@@ -687,6 +561,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object message_ = "";
+    /**
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return The message.
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      message_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      message_ = value;
       onChanged();
       return this;
     }

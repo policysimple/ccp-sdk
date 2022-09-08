@@ -8,21 +8,6 @@ public interface CreateOrganizationResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-   * @return Whether the registerOrganization field is set.
-   */
-  boolean hasRegisterOrganization();
-  /**
-   * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-   * @return The registerOrganization.
-   */
-  io.cuemby.blockchain.members.v1alpha1.Organization getRegisterOrganization();
-  /**
-   * <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-   */
-  io.cuemby.blockchain.members.v1alpha1.OrganizationOrBuilder getRegisterOrganizationOrBuilder();
-
-  /**
    * <code>string status = 2 [json_name = "status"];</code>
    * @return The status.
    */
@@ -33,4 +18,16 @@ public interface CreateOrganizationResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStatusBytes();
+
+  /**
+   * <code>string message = 3 [json_name = "message"];</code>
+   * @return The message.
+   */
+  java.lang.String getMessage();
+  /**
+   * <code>string message = 3 [json_name = "message"];</code>
+   * @return The bytes for message.
+   */
+  com.google.protobuf.ByteString
+      getMessageBytes();
 }

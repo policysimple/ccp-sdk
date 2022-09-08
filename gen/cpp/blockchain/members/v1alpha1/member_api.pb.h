@@ -200,7 +200,7 @@ class CreateOrganizationResponse final :
 
   enum : int {
     kStatusFieldNumber = 2,
-    kRegisterOrganizationFieldNumber = 1,
+    kMessageFieldNumber = 3,
   };
   // string status = 2 [json_name = "status"];
   void clear_status();
@@ -216,23 +216,19 @@ class CreateOrganizationResponse final :
   std::string* _internal_mutable_status();
   public:
 
-  // .blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];
-  bool has_register_organization() const;
+  // string message = 3 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
   private:
-  bool _internal_has_register_organization() const;
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
   public:
-  void clear_register_organization();
-  const ::blockchain::members::v1alpha1::Organization& register_organization() const;
-  PROTOBUF_MUST_USE_RESULT ::blockchain::members::v1alpha1::Organization* release_register_organization();
-  ::blockchain::members::v1alpha1::Organization* mutable_register_organization();
-  void set_allocated_register_organization(::blockchain::members::v1alpha1::Organization* register_organization);
-  private:
-  const ::blockchain::members::v1alpha1::Organization& _internal_register_organization() const;
-  ::blockchain::members::v1alpha1::Organization* _internal_mutable_register_organization();
-  public:
-  void unsafe_arena_set_allocated_register_organization(
-      ::blockchain::members::v1alpha1::Organization* register_organization);
-  ::blockchain::members::v1alpha1::Organization* unsafe_arena_release_register_organization();
 
   // @@protoc_insertion_point(class_scope:blockchain.members.v1alpha1.CreateOrganizationResponse)
  private:
@@ -242,7 +238,7 @@ class CreateOrganizationResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::blockchain::members::v1alpha1::Organization* register_organization_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto;
 };
@@ -736,92 +732,6 @@ class CreateInvitationRequest final :
 #endif  // __GNUC__
 // CreateOrganizationResponse
 
-// .blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];
-inline bool CreateOrganizationResponse::_internal_has_register_organization() const {
-  return this != internal_default_instance() && register_organization_ != nullptr;
-}
-inline bool CreateOrganizationResponse::has_register_organization() const {
-  return _internal_has_register_organization();
-}
-inline const ::blockchain::members::v1alpha1::Organization& CreateOrganizationResponse::_internal_register_organization() const {
-  const ::blockchain::members::v1alpha1::Organization* p = register_organization_;
-  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::members::v1alpha1::Organization&>(
-      ::blockchain::members::v1alpha1::_Organization_default_instance_);
-}
-inline const ::blockchain::members::v1alpha1::Organization& CreateOrganizationResponse::register_organization() const {
-  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateOrganizationResponse.register_organization)
-  return _internal_register_organization();
-}
-inline void CreateOrganizationResponse::unsafe_arena_set_allocated_register_organization(
-    ::blockchain::members::v1alpha1::Organization* register_organization) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_organization_);
-  }
-  register_organization_ = register_organization;
-  if (register_organization) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.members.v1alpha1.CreateOrganizationResponse.register_organization)
-}
-inline ::blockchain::members::v1alpha1::Organization* CreateOrganizationResponse::release_register_organization() {
-  
-  ::blockchain::members::v1alpha1::Organization* temp = register_organization_;
-  register_organization_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::blockchain::members::v1alpha1::Organization* CreateOrganizationResponse::unsafe_arena_release_register_organization() {
-  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateOrganizationResponse.register_organization)
-  
-  ::blockchain::members::v1alpha1::Organization* temp = register_organization_;
-  register_organization_ = nullptr;
-  return temp;
-}
-inline ::blockchain::members::v1alpha1::Organization* CreateOrganizationResponse::_internal_mutable_register_organization() {
-  
-  if (register_organization_ == nullptr) {
-    auto* p = CreateMaybeMessage<::blockchain::members::v1alpha1::Organization>(GetArenaForAllocation());
-    register_organization_ = p;
-  }
-  return register_organization_;
-}
-inline ::blockchain::members::v1alpha1::Organization* CreateOrganizationResponse::mutable_register_organization() {
-  ::blockchain::members::v1alpha1::Organization* _msg = _internal_mutable_register_organization();
-  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateOrganizationResponse.register_organization)
-  return _msg;
-}
-inline void CreateOrganizationResponse::set_allocated_register_organization(::blockchain::members::v1alpha1::Organization* register_organization) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_organization_);
-  }
-  if (register_organization) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_organization));
-    if (message_arena != submessage_arena) {
-      register_organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_organization, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  register_organization_ = register_organization;
-  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationResponse.register_organization)
-}
-
 // string status = 2 [json_name = "status"];
 inline void CreateOrganizationResponse::clear_status() {
   status_.ClearToEmpty();
@@ -866,6 +776,52 @@ inline void CreateOrganizationResponse::set_allocated_status(std::string* status
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationResponse.status)
+}
+
+// string message = 3 [json_name = "message"];
+inline void CreateOrganizationResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& CreateOrganizationResponse::message() const {
+  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateOrganizationResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.CreateOrganizationResponse.message)
+}
+inline std::string* CreateOrganizationResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateOrganizationResponse.message)
+  return _s;
+}
+inline const std::string& CreateOrganizationResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void CreateOrganizationResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationResponse::release_message() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateOrganizationResponse.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationResponse.message)
 }
 
 // -------------------------------------------------------------------

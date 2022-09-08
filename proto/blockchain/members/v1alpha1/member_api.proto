@@ -19,8 +19,8 @@ service BlockchainInvitationAPIService {
 
 
 message CreateOrganizationResponse {
-    blockchain.members.v1alpha1.Organization register_organization = 1;
     string status = 2;
+    string message = 3;
 }
 
 message CreateInvitationResponse {

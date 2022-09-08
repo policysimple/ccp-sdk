@@ -17,11 +17,11 @@ class MemberApi
         \GPBMetadata\Blockchain\Members\V1Alpha1\Member::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¦
-,blockchain/members/v1alpha1/member_api.protoblockchain.members.v1alpha1"”
-CreateOrganizationResponse^
-register_organization (2).blockchain.members.v1alpha1.OrganizationRregisterOrganization
-status (	Rstatus"4
+ß
+,blockchain/members/v1alpha1/member_api.protoblockchain.members.v1alpha1"N
+CreateOrganizationResponse
+status (	Rstatus
+message (	Rmessage"4
 CreateInvitationResponse
 message (	Rmessage"­
 CreateOrganizationRequest+

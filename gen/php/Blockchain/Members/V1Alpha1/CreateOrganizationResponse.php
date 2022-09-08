@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     */
-    protected $register_organization = null;
-    /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
     protected $status = '';
+    /**
+     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
+     */
+    protected $message = '';
 
     /**
      * Constructor.
@@ -28,45 +28,13 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Blockchain\Members\V1Alpha1\Organization $register_organization
      *     @type string $status
+     *     @type string $message
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Blockchain\Members\V1Alpha1\MemberApi::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     * @return \Blockchain\Members\V1Alpha1\Organization|null
-     */
-    public function getRegisterOrganization()
-    {
-        return $this->register_organization;
-    }
-
-    public function hasRegisterOrganization()
-    {
-        return isset($this->register_organization);
-    }
-
-    public function clearRegisterOrganization()
-    {
-        unset($this->register_organization);
-    }
-
-    /**
-     * Generated from protobuf field <code>.blockchain.members.v1alpha1.Organization register_organization = 1 [json_name = "registerOrganization"];</code>
-     * @param \Blockchain\Members\V1Alpha1\Organization $var
-     * @return $this
-     */
-    public function setRegisterOrganization($var)
-    {
-        GPBUtil::checkMessage($var, \Blockchain\Members\V1Alpha1\Organization::class);
-        $this->register_organization = $var;
-
-        return $this;
     }
 
     /**
@@ -87,6 +55,28 @@ class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->message = $var;
 
         return $this;
     }
