@@ -17,15 +17,28 @@ class NetworkApi
         \GPBMetadata\Blockchain\Network\V1Alpha1\Network::initOnce();
         $pool->internalAddGeneratedFile(
             '
-È
+ô
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1"V
 CreateNetworkRequest>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork"I
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork"Å
+AddPeerToOrganizationRequest
+
+org_domain (	R	orgDomain%
+admin_password (	RadminPassword
+
+admin_user (	R	adminUser!
+network_name (	RnetworkName
+
+network_id (	R	networkId"I
 CreateNetworkResponse
 status (	Rstatus
-message (	Rmessage2Ž
+message (	Rmessage"Q
+AddPeerToOrganizationResponse
+status (	Rstatus
+message (	Rmessage2Ÿ
 BlockchainAPIServicev
-CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseŽ
+AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

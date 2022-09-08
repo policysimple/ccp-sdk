@@ -16,7 +16,7 @@ class Network
         }
         $pool->internalAddGeneratedFile(
             '
-ï
+“
 )blockchain/network/v1alpha1/network.protoblockchain.network.v1alpha1"Ü
 Network!
 network_name (	RnetworkName
@@ -27,7 +27,15 @@ org_domain (	R	orgDomain
 user_id (	RuserId%
 admin_password (	RadminPassword
 
-admin_user (	R	adminUserB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+admin_user (	R	adminUser"¡
+Organization
+user_id (	RuserId
+
+domain_org (	R	domainOrg%
+admin_password (	RadminPassword
+
+admin_user (	R	adminUser
+bc_id (	RbcIdB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -44,15 +44,25 @@ class BlockchainAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::CreateNetworkResponse>> PrepareAsyncCreateNetwork(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::CreateNetworkResponse>>(PrepareAsyncCreateNetworkRaw(context, request, cq));
     }
+    virtual ::grpc::Status AddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>> AsyncAddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>>(AsyncAddPeerToOrganizationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>> PrepareAsyncAddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>>(PrepareAsyncAddPeerToOrganizationRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       virtual void CreateNetwork(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest* request, ::blockchain::network::v1alpha1::CreateNetworkResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::CreateNetworkResponse>* AsyncCreateNetworkRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::CreateNetworkResponse>* PrepareAsyncCreateNetworkRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>* AsyncAddPeerToOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>* PrepareAsyncAddPeerToOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -64,10 +74,18 @@ class BlockchainAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateNetworkResponse>> PrepareAsyncCreateNetwork(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateNetworkResponse>>(PrepareAsyncCreateNetworkRaw(context, request, cq));
     }
+    ::grpc::Status AddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>> AsyncAddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>>(AsyncAddPeerToOrganizationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>> PrepareAsyncAddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>>(PrepareAsyncAddPeerToOrganizationRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void CreateNetwork(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest* request, ::blockchain::network::v1alpha1::CreateNetworkResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddPeerToOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -81,7 +99,10 @@ class BlockchainAPIService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateNetworkResponse>* AsyncCreateNetworkRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateNetworkResponse>* PrepareAsyncCreateNetworkRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>* AsyncAddPeerToOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>* PrepareAsyncAddPeerToOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateNetwork_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddPeerToOrganization_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -90,6 +111,7 @@ class BlockchainAPIService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status CreateNetwork(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest* request, ::blockchain::network::v1alpha1::CreateNetworkResponse* response);
+    virtual ::grpc::Status AddPeerToOrganization(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateNetwork : public BaseClass {
@@ -111,7 +133,27 @@ class BlockchainAPIService final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateNetwork<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_AddPeerToOrganization : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_AddPeerToOrganization() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_AddPeerToOrganization() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddPeerToOrganization(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddPeerToOrganization(::grpc::ServerContext* context, ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateNetwork<WithAsyncMethod_AddPeerToOrganization<Service > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateNetwork : public BaseClass {
    private:
@@ -125,6 +167,23 @@ class BlockchainAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status CreateNetwork(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest* request, ::blockchain::network::v1alpha1::CreateNetworkResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddPeerToOrganization : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_AddPeerToOrganization() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_AddPeerToOrganization() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddPeerToOrganization(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -150,6 +209,26 @@ class BlockchainAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_AddPeerToOrganization : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_AddPeerToOrganization() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_AddPeerToOrganization() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddPeerToOrganization(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddPeerToOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateNetwork : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -169,9 +248,29 @@ class BlockchainAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCreateNetwork(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::blockchain::network::v1alpha1::CreateNetworkRequest,::blockchain::network::v1alpha1::CreateNetworkResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateNetwork<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddPeerToOrganization : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AddPeerToOrganization() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_AddPeerToOrganization<BaseClass>::StreamedAddPeerToOrganization, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AddPeerToOrganization() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddPeerToOrganization(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* request, ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddPeerToOrganization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest,::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateNetwork<WithStreamedUnaryMethod_AddPeerToOrganization<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateNetwork<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateNetwork<WithStreamedUnaryMethod_AddPeerToOrganization<Service > > StreamedService;
 };
 
 }  // namespace v1alpha1

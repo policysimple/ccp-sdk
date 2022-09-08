@@ -29,4 +29,17 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Blockchain\Network\V1alpha1\AddPeerToOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function AddPeerToOrganization(\Blockchain\Network\V1alpha1\AddPeerToOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\AddPeerToOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

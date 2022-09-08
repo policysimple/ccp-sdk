@@ -13,3 +13,11 @@ message Network {
     string admin_password = 6;
     string admin_user = 7;
 }
+
+message Organization {
+    string user_id = 1;
+    string domain_org = 2;
+    string admin_password = 3;
+    string admin_user = 4;
+    string bc_id = 5;
+}

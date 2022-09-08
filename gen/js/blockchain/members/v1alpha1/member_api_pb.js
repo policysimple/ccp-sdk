@@ -427,10 +427,12 @@ proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.toObject =
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userIdNewMember: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    userIdNewMember: jspb.Message.getFieldWithDefault(msg, 1, ""),
     orgDomain: jspb.Message.getFieldWithDefault(msg, 2, ""),
     adminPassword: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    adminUser: jspb.Message.getFieldWithDefault(msg, 4, "")
+    adminUser: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    networkName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    networkId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -468,7 +470,7 @@ proto.blockchain.members.v1alpha1.CreateOrganizationRequest.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setUserIdNewMember(value);
       break;
     case 2:
@@ -482,6 +484,14 @@ proto.blockchain.members.v1alpha1.CreateOrganizationRequest.deserializeBinaryFro
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setAdminUser(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNetworkName(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNetworkId(value);
       break;
     default:
       reader.skipField();
@@ -513,8 +523,8 @@ proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.serializeB
 proto.blockchain.members.v1alpha1.CreateOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUserIdNewMember();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -540,24 +550,38 @@ proto.blockchain.members.v1alpha1.CreateOrganizationRequest.serializeBinaryToWri
       f
     );
   }
+  f = message.getNetworkName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getNetworkId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
 };
 
 
 /**
- * optional uint32 user_id_new_member = 1;
- * @return {number}
+ * optional string user_id_new_member = 1;
+ * @return {string}
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.getUserIdNewMember = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.blockchain.members.v1alpha1.CreateOrganizationRequest} returns this
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.setUserIdNewMember = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -612,6 +636,42 @@ proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.getAdminUs
  */
 proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.setAdminUser = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string network_name = 5;
+ * @return {string}
+ */
+proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.getNetworkName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.members.v1alpha1.CreateOrganizationRequest} returns this
+ */
+proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.setNetworkName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string network_id = 6;
+ * @return {string}
+ */
+proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.getNetworkId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.members.v1alpha1.CreateOrganizationRequest} returns this
+ */
+proto.blockchain.members.v1alpha1.CreateOrganizationRequest.prototype.setNetworkId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

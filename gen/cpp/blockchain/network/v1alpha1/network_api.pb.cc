@@ -31,6 +31,22 @@ struct CreateNetworkRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNetworkRequestDefaultTypeInternal _CreateNetworkRequest_default_instance_;
+constexpr AddPeerToOrganizationRequest::AddPeerToOrganizationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : org_domain_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , admin_password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , admin_user_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , network_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , network_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AddPeerToOrganizationRequestDefaultTypeInternal {
+  constexpr AddPeerToOrganizationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddPeerToOrganizationRequestDefaultTypeInternal() {}
+  union {
+    AddPeerToOrganizationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddPeerToOrganizationRequestDefaultTypeInternal _AddPeerToOrganizationRequest_default_instance_;
 constexpr CreateNetworkResponse::CreateNetworkResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -44,10 +60,23 @@ struct CreateNetworkResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNetworkResponseDefaultTypeInternal _CreateNetworkResponse_default_instance_;
+constexpr AddPeerToOrganizationResponse::AddPeerToOrganizationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AddPeerToOrganizationResponseDefaultTypeInternal {
+  constexpr AddPeerToOrganizationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddPeerToOrganizationResponseDefaultTypeInternal() {}
+  union {
+    AddPeerToOrganizationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddPeerToOrganizationResponseDefaultTypeInternal _AddPeerToOrganizationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace network
 }  // namespace blockchain
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto = nullptr;
 
@@ -59,21 +88,42 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::CreateNetworkRequest, network_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, org_domain_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, admin_password_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, admin_user_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, network_name_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest, network_id_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::CreateNetworkResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::CreateNetworkResponse, status_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::CreateNetworkResponse, message_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToOrganizationResponse, message_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::network::v1alpha1::CreateNetworkRequest)},
-  { 6, -1, sizeof(::blockchain::network::v1alpha1::CreateNetworkResponse)},
+  { 6, -1, sizeof(::blockchain::network::v1alpha1::AddPeerToOrganizationRequest)},
+  { 16, -1, sizeof(::blockchain::network::v1alpha1::CreateNetworkResponse)},
+  { 23, -1, sizeof(::blockchain::network::v1alpha1::AddPeerToOrganizationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::blockchain::network::v1alpha1::_CreateNetworkRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::blockchain::network::v1alpha1::_AddPeerToOrganizationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::blockchain::network::v1alpha1::_CreateNetworkResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::blockchain::network::v1alpha1::_AddPeerToOrganizationResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -82,22 +132,33 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5
   "ockchain/network/v1alpha1/network.proto\""
   "V\n\024CreateNetworkRequest\022>\n\007network\030\001 \001(\013"
   "2$.blockchain.network.v1alpha1.NetworkR\007"
-  "network\"I\n\025CreateNetworkResponse\022\026\n\006stat"
+  "network\"\305\001\n\034AddPeerToOrganizationRequest"
+  "\022\035\n\norg_domain\030\001 \001(\tR\torgDomain\022%\n\016admin"
+  "_password\030\002 \001(\tR\radminPassword\022\035\n\nadmin_"
+  "user\030\003 \001(\tR\tadminUser\022!\n\014network_name\030\004 "
+  "\001(\tR\013networkName\022\035\n\nnetwork_id\030\005 \001(\tR\tne"
+  "tworkId\"I\n\025CreateNetworkResponse\022\026\n\006stat"
   "us\030\001 \001(\tR\006status\022\030\n\007message\030\002 \001(\tR\007messa"
-  "ge2\216\001\n\024BlockchainAPIService\022v\n\rCreateNet"
-  "work\0221.blockchain.network.v1alpha1.Creat"
-  "eNetworkRequest\0322.blockchain.network.v1a"
-  "lpha1.CreateNetworkResponseB>Z<github.co"
-  "m/cuemby/ccp-sdk/gen/go/blockchain/netwo"
-  "rk/v1alpha1b\006proto3"
+  "ge\"Q\n\035AddPeerToOrganizationResponse\022\026\n\006s"
+  "tatus\030\001 \001(\tR\006status\022\030\n\007message\030\002 \001(\tR\007me"
+  "ssage2\237\002\n\024BlockchainAPIService\022v\n\rCreate"
+  "Network\0221.blockchain.network.v1alpha1.Cr"
+  "eateNetworkRequest\0322.blockchain.network."
+  "v1alpha1.CreateNetworkResponse\022\216\001\n\025AddPe"
+  "erToOrganization\0229.blockchain.network.v1"
+  "alpha1.AddPeerToOrganizationRequest\032:.bl"
+  "ockchain.network.v1alpha1.AddPeerToOrgan"
+  "izationResponseB>Z<github.com/cuemby/ccp"
+  "-sdk/gen/go/blockchain/network/v1alpha1b"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_deps[1] = {
   &::descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto = {
-  false, false, 499, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, "blockchain/network/v1alpha1/network_api.proto", 
-  &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once, descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_deps, 1, 2,
+  false, false, 927, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, "blockchain/network/v1alpha1/network_api.proto", 
+  &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once, descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto::offsets,
   file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, file_level_enum_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, file_level_service_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto,
 };
@@ -315,6 +376,374 @@ void CreateNetworkRequest::InternalSwap(CreateNetworkRequest* other) {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_getter, &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once,
       file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[0]);
+}
+
+// ===================================================================
+
+class AddPeerToOrganizationRequest::_Internal {
+ public:
+};
+
+AddPeerToOrganizationRequest::AddPeerToOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+}
+AddPeerToOrganizationRequest::AddPeerToOrganizationRequest(const AddPeerToOrganizationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  org_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_org_domain().empty()) {
+    org_domain_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_org_domain(), 
+      GetArenaForAllocation());
+  }
+  admin_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_admin_password().empty()) {
+    admin_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_admin_password(), 
+      GetArenaForAllocation());
+  }
+  admin_user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_admin_user().empty()) {
+    admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_admin_user(), 
+      GetArenaForAllocation());
+  }
+  network_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_network_name().empty()) {
+    network_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_network_name(), 
+      GetArenaForAllocation());
+  }
+  network_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_network_id().empty()) {
+    network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_network_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+}
+
+inline void AddPeerToOrganizationRequest::SharedCtor() {
+org_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+admin_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+admin_user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+network_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+network_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AddPeerToOrganizationRequest::~AddPeerToOrganizationRequest() {
+  // @@protoc_insertion_point(destructor:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void AddPeerToOrganizationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  org_domain_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  admin_password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  admin_user_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  network_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  network_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AddPeerToOrganizationRequest::ArenaDtor(void* object) {
+  AddPeerToOrganizationRequest* _this = reinterpret_cast< AddPeerToOrganizationRequest* >(object);
+  (void)_this;
+}
+void AddPeerToOrganizationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddPeerToOrganizationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AddPeerToOrganizationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  org_domain_.ClearToEmpty();
+  admin_password_.ClearToEmpty();
+  admin_user_.ClearToEmpty();
+  network_name_.ClearToEmpty();
+  network_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddPeerToOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string org_domain = 1 [json_name = "orgDomain"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_org_domain();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string admin_password = 2 [json_name = "adminPassword"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_admin_password();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string admin_user = 3 [json_name = "adminUser"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_admin_user();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string network_name = 4 [json_name = "networkName"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_network_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string network_id = 5 [json_name = "networkId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_network_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddPeerToOrganizationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string org_domain = 1 [json_name = "orgDomain"];
+  if (!this->_internal_org_domain().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_org_domain().data(), static_cast<int>(this->_internal_org_domain().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_org_domain(), target);
+  }
+
+  // string admin_password = 2 [json_name = "adminPassword"];
+  if (!this->_internal_admin_password().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_admin_password().data(), static_cast<int>(this->_internal_admin_password().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_admin_password(), target);
+  }
+
+  // string admin_user = 3 [json_name = "adminUser"];
+  if (!this->_internal_admin_user().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_admin_user().data(), static_cast<int>(this->_internal_admin_user().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_admin_user(), target);
+  }
+
+  // string network_name = 4 [json_name = "networkName"];
+  if (!this->_internal_network_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_network_name().data(), static_cast<int>(this->_internal_network_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_network_name(), target);
+  }
+
+  // string network_id = 5 [json_name = "networkId"];
+  if (!this->_internal_network_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_network_id().data(), static_cast<int>(this->_internal_network_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_network_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  return target;
+}
+
+size_t AddPeerToOrganizationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string org_domain = 1 [json_name = "orgDomain"];
+  if (!this->_internal_org_domain().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_org_domain());
+  }
+
+  // string admin_password = 2 [json_name = "adminPassword"];
+  if (!this->_internal_admin_password().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_admin_password());
+  }
+
+  // string admin_user = 3 [json_name = "adminUser"];
+  if (!this->_internal_admin_user().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_admin_user());
+  }
+
+  // string network_name = 4 [json_name = "networkName"];
+  if (!this->_internal_network_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_network_name());
+  }
+
+  // string network_id = 5 [json_name = "networkId"];
+  if (!this->_internal_network_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_network_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddPeerToOrganizationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AddPeerToOrganizationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddPeerToOrganizationRequest::GetClassData() const { return &_class_data_; }
+
+void AddPeerToOrganizationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<AddPeerToOrganizationRequest *>(to)->MergeFrom(
+      static_cast<const AddPeerToOrganizationRequest &>(from));
+}
+
+
+void AddPeerToOrganizationRequest::MergeFrom(const AddPeerToOrganizationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_org_domain().empty()) {
+    _internal_set_org_domain(from._internal_org_domain());
+  }
+  if (!from._internal_admin_password().empty()) {
+    _internal_set_admin_password(from._internal_admin_password());
+  }
+  if (!from._internal_admin_user().empty()) {
+    _internal_set_admin_user(from._internal_admin_user());
+  }
+  if (!from._internal_network_name().empty()) {
+    _internal_set_network_name(from._internal_network_name());
+  }
+  if (!from._internal_network_id().empty()) {
+    _internal_set_network_id(from._internal_network_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddPeerToOrganizationRequest::CopyFrom(const AddPeerToOrganizationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddPeerToOrganizationRequest::IsInitialized() const {
+  return true;
+}
+
+void AddPeerToOrganizationRequest::InternalSwap(AddPeerToOrganizationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &org_domain_, GetArenaForAllocation(),
+      &other->org_domain_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &admin_password_, GetArenaForAllocation(),
+      &other->admin_password_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &admin_user_, GetArenaForAllocation(),
+      &other->admin_user_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &network_name_, GetArenaForAllocation(),
+      &other->network_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &network_id_, GetArenaForAllocation(),
+      &other->network_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddPeerToOrganizationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_getter, &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once,
+      file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[1]);
 }
 
 // ===================================================================
@@ -556,7 +985,249 @@ void CreateNetworkResponse::InternalSwap(CreateNetworkResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateNetworkResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_getter, &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once,
-      file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[1]);
+      file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[2]);
+}
+
+// ===================================================================
+
+class AddPeerToOrganizationResponse::_Internal {
+ public:
+};
+
+AddPeerToOrganizationResponse::AddPeerToOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+}
+AddPeerToOrganizationResponse::AddPeerToOrganizationResponse(const AddPeerToOrganizationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_message().empty()) {
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+}
+
+inline void AddPeerToOrganizationResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AddPeerToOrganizationResponse::~AddPeerToOrganizationResponse() {
+  // @@protoc_insertion_point(destructor:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void AddPeerToOrganizationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AddPeerToOrganizationResponse::ArenaDtor(void* object) {
+  AddPeerToOrganizationResponse* _this = reinterpret_cast< AddPeerToOrganizationResponse* >(object);
+  (void)_this;
+}
+void AddPeerToOrganizationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddPeerToOrganizationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AddPeerToOrganizationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_.ClearToEmpty();
+  message_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddPeerToOrganizationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string status = 1 [json_name = "status"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string message = 2 [json_name = "message"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToOrganizationResponse.message"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddPeerToOrganizationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string status = 1 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_status(), target);
+  }
+
+  // string message = 2 [json_name = "message"];
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToOrganizationResponse.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  return target;
+}
+
+size_t AddPeerToOrganizationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 1 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // string message = 2 [json_name = "message"];
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddPeerToOrganizationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AddPeerToOrganizationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddPeerToOrganizationResponse::GetClassData() const { return &_class_data_; }
+
+void AddPeerToOrganizationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<AddPeerToOrganizationResponse *>(to)->MergeFrom(
+      static_cast<const AddPeerToOrganizationResponse &>(from));
+}
+
+
+void AddPeerToOrganizationResponse::MergeFrom(const AddPeerToOrganizationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddPeerToOrganizationResponse::CopyFrom(const AddPeerToOrganizationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddPeerToOrganizationResponse::IsInitialized() const {
+  return true;
+}
+
+void AddPeerToOrganizationResponse::InternalSwap(AddPeerToOrganizationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &message_, GetArenaForAllocation(),
+      &other->message_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddPeerToOrganizationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_getter, &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once,
+      file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto[3]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -567,8 +1238,14 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::blockchain::network::v1alpha1::CreateNetworkRequest* Arena::CreateMaybeMessage< ::blockchain::network::v1alpha1::CreateNetworkRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::blockchain::network::v1alpha1::CreateNetworkRequest >(arena);
 }
+template<> PROTOBUF_NOINLINE ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* Arena::CreateMaybeMessage< ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::blockchain::network::v1alpha1::CreateNetworkResponse* Arena::CreateMaybeMessage< ::blockchain::network::v1alpha1::CreateNetworkResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::blockchain::network::v1alpha1::CreateNetworkResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* Arena::CreateMaybeMessage< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

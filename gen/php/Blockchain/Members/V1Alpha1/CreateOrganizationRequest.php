@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * Generated from protobuf field <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
      */
-    protected $user_id_new_member = 0;
+    protected $user_id_new_member = '';
     /**
      * Generated from protobuf field <code>string org_domain = 2 [json_name = "orgDomain"];</code>
      */
@@ -29,6 +29,14 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string admin_user = 4 [json_name = "adminUser"];</code>
      */
     protected $admin_user = '';
+    /**
+     * Generated from protobuf field <code>string network_name = 5 [json_name = "networkName"];</code>
+     */
+    protected $network_name = '';
+    /**
+     * Generated from protobuf field <code>string network_id = 6 [json_name = "networkId"];</code>
+     */
+    protected $network_id = '';
 
     /**
      * Constructor.
@@ -36,10 +44,12 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $user_id_new_member
+     *     @type string $user_id_new_member
      *     @type string $org_domain
      *     @type string $admin_password
      *     @type string $admin_user
+     *     @type string $network_name
+     *     @type string $network_id
      * }
      */
     public function __construct($data = NULL) {
@@ -48,8 +58,8 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
-     * @return int
+     * Generated from protobuf field <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * @return string
      */
     public function getUserIdNewMember()
     {
@@ -57,13 +67,13 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * @param string $var
      * @return $this
      */
     public function setUserIdNewMember($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->user_id_new_member = $var;
 
         return $this;
@@ -131,6 +141,50 @@ class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->admin_user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @return string
+     */
+    public function getNetworkName()
+    {
+        return $this->network_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNetworkName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->network_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @return string
+     */
+    public function getNetworkId()
+    {
+        return $this->network_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNetworkId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->network_id = $var;
 
         return $this;
     }

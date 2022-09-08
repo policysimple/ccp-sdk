@@ -28,10 +28,12 @@ message CreateInvitationResponse {
 }
 
 message CreateOrganizationRequest {
-    uint32 user_id_new_member = 1;
+    string user_id_new_member = 1;
     string org_domain = 2;
     string admin_password = 3;
     string admin_user = 4;
+    string network_name = 5;
+    string network_id = 6;
 }
 
 message CreateInvitationRequest {

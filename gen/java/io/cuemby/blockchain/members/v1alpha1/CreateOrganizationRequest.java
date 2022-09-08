@@ -16,9 +16,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateOrganizationRequest() {
+    userIdNewMember_ = "";
     orgDomain_ = "";
     adminPassword_ = "";
     adminUser_ = "";
+    networkName_ = "";
+    networkId_ = "";
   }
 
   @java.lang.Override
@@ -51,9 +54,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            userIdNewMember_ = input.readUInt32();
+            userIdNewMember_ = s;
             break;
           }
           case 18: {
@@ -72,6 +76,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             adminUser_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            networkName_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            networkId_ = s;
             break;
           }
           default: {
@@ -107,14 +123,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_ID_NEW_MEMBER_FIELD_NUMBER = 1;
-  private int userIdNewMember_;
+  private volatile java.lang.Object userIdNewMember_;
   /**
-   * <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+   * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
    * @return The userIdNewMember.
    */
   @java.lang.Override
-  public int getUserIdNewMember() {
-    return userIdNewMember_;
+  public java.lang.String getUserIdNewMember() {
+    java.lang.Object ref = userIdNewMember_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userIdNewMember_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+   * @return The bytes for userIdNewMember.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdNewMemberBytes() {
+    java.lang.Object ref = userIdNewMember_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userIdNewMember_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ORG_DOMAIN_FIELD_NUMBER = 2;
@@ -231,6 +274,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int NETWORK_NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object networkName_;
+  /**
+   * <code>string network_name = 5 [json_name = "networkName"];</code>
+   * @return The networkName.
+   */
+  @java.lang.Override
+  public java.lang.String getNetworkName() {
+    java.lang.Object ref = networkName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string network_name = 5 [json_name = "networkName"];</code>
+   * @return The bytes for networkName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkNameBytes() {
+    java.lang.Object ref = networkName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object networkId_;
+  /**
+   * <code>string network_id = 6 [json_name = "networkId"];</code>
+   * @return The networkId.
+   */
+  @java.lang.Override
+  public java.lang.String getNetworkId() {
+    java.lang.Object ref = networkId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string network_id = 6 [json_name = "networkId"];</code>
+   * @return The bytes for networkId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkIdBytes() {
+    java.lang.Object ref = networkId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -245,8 +364,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (userIdNewMember_ != 0) {
-      output.writeUInt32(1, userIdNewMember_);
+    if (!getUserIdNewMemberBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userIdNewMember_);
     }
     if (!getOrgDomainBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orgDomain_);
@@ -257,6 +376,12 @@ private static final long serialVersionUID = 0L;
     if (!getAdminUserBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, adminUser_);
     }
+    if (!getNetworkNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, networkName_);
+    }
+    if (!getNetworkIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, networkId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -266,9 +391,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (userIdNewMember_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, userIdNewMember_);
+    if (!getUserIdNewMemberBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userIdNewMember_);
     }
     if (!getOrgDomainBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orgDomain_);
@@ -278,6 +402,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAdminUserBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, adminUser_);
+    }
+    if (!getNetworkNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, networkName_);
+    }
+    if (!getNetworkIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, networkId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -294,14 +424,18 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.blockchain.members.v1alpha1.CreateOrganizationRequest other = (io.cuemby.blockchain.members.v1alpha1.CreateOrganizationRequest) obj;
 
-    if (getUserIdNewMember()
-        != other.getUserIdNewMember()) return false;
+    if (!getUserIdNewMember()
+        .equals(other.getUserIdNewMember())) return false;
     if (!getOrgDomain()
         .equals(other.getOrgDomain())) return false;
     if (!getAdminPassword()
         .equals(other.getAdminPassword())) return false;
     if (!getAdminUser()
         .equals(other.getAdminUser())) return false;
+    if (!getNetworkName()
+        .equals(other.getNetworkName())) return false;
+    if (!getNetworkId()
+        .equals(other.getNetworkId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -314,13 +448,17 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USER_ID_NEW_MEMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getUserIdNewMember();
+    hash = (53 * hash) + getUserIdNewMember().hashCode();
     hash = (37 * hash) + ORG_DOMAIN_FIELD_NUMBER;
     hash = (53 * hash) + getOrgDomain().hashCode();
     hash = (37 * hash) + ADMIN_PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getAdminPassword().hashCode();
     hash = (37 * hash) + ADMIN_USER_FIELD_NUMBER;
     hash = (53 * hash) + getAdminUser().hashCode();
+    hash = (37 * hash) + NETWORK_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getNetworkName().hashCode();
+    hash = (37 * hash) + NETWORK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNetworkId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -454,13 +592,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userIdNewMember_ = 0;
+      userIdNewMember_ = "";
 
       orgDomain_ = "";
 
       adminPassword_ = "";
 
       adminUser_ = "";
+
+      networkName_ = "";
+
+      networkId_ = "";
 
       return this;
     }
@@ -492,6 +634,8 @@ private static final long serialVersionUID = 0L;
       result.orgDomain_ = orgDomain_;
       result.adminPassword_ = adminPassword_;
       result.adminUser_ = adminUser_;
+      result.networkName_ = networkName_;
+      result.networkId_ = networkId_;
       onBuilt();
       return result;
     }
@@ -540,8 +684,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.blockchain.members.v1alpha1.CreateOrganizationRequest other) {
       if (other == io.cuemby.blockchain.members.v1alpha1.CreateOrganizationRequest.getDefaultInstance()) return this;
-      if (other.getUserIdNewMember() != 0) {
-        setUserIdNewMember(other.getUserIdNewMember());
+      if (!other.getUserIdNewMember().isEmpty()) {
+        userIdNewMember_ = other.userIdNewMember_;
+        onChanged();
       }
       if (!other.getOrgDomain().isEmpty()) {
         orgDomain_ = other.orgDomain_;
@@ -553,6 +698,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getAdminUser().isEmpty()) {
         adminUser_ = other.adminUser_;
+        onChanged();
+      }
+      if (!other.getNetworkName().isEmpty()) {
+        networkName_ = other.networkName_;
+        onChanged();
+      }
+      if (!other.getNetworkId().isEmpty()) {
+        networkId_ = other.networkId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -584,33 +737,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int userIdNewMember_ ;
+    private java.lang.Object userIdNewMember_ = "";
     /**
-     * <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
      * @return The userIdNewMember.
      */
-    @java.lang.Override
-    public int getUserIdNewMember() {
-      return userIdNewMember_;
+    public java.lang.String getUserIdNewMember() {
+      java.lang.Object ref = userIdNewMember_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userIdNewMember_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * @return The bytes for userIdNewMember.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdNewMemberBytes() {
+      java.lang.Object ref = userIdNewMember_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userIdNewMember_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
      * @param value The userIdNewMember to set.
      * @return This builder for chaining.
      */
-    public Builder setUserIdNewMember(int value) {
-      
+    public Builder setUserIdNewMember(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       userIdNewMember_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUserIdNewMember() {
       
-      userIdNewMember_ = 0;
+      userIdNewMember_ = getDefaultInstance().getUserIdNewMember();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+     * @param value The bytes for userIdNewMember to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdNewMemberBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userIdNewMember_ = value;
       onChanged();
       return this;
     }
@@ -839,6 +1037,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       adminUser_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object networkName_ = "";
+    /**
+     * <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @return The networkName.
+     */
+    public java.lang.String getNetworkName() {
+      java.lang.Object ref = networkName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @return The bytes for networkName.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkNameBytes() {
+      java.lang.Object ref = networkName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @param value The networkName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      networkName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkName() {
+      
+      networkName_ = getDefaultInstance().getNetworkName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string network_name = 5 [json_name = "networkName"];</code>
+     * @param value The bytes for networkName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      networkName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object networkId_ = "";
+    /**
+     * <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @return The networkId.
+     */
+    public java.lang.String getNetworkId() {
+      java.lang.Object ref = networkId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @return The bytes for networkId.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkIdBytes() {
+      java.lang.Object ref = networkId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @param value The networkId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      networkId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkId() {
+      
+      networkId_ = getDefaultInstance().getNetworkId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string network_id = 6 [json_name = "networkId"];</code>
+     * @param value The bytes for networkId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      networkId_ = value;
       onChanged();
       return this;
     }

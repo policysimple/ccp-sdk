@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%io.cuemby.blockchain.members.v1alpha1B\031MembersInvitationProtoApiP\001Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\242\002\003PPX\252\002\032Blockchain.Member.V1Alpha1\312\002\033Blockchain\\Members\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,blockchain/members/v1alpha1/member_api.proto\x12\x1b\x62lockchain.members.v1alpha1\x1a(blockchain/members/v1alpha1/member.proto\"N\n\x1a\x43reateOrganizationResponse\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\"4\n\x18\x43reateInvitationResponse\x12\x18\n\x07message\x18\x01 \x01(\tR\x07message\"\xad\x01\n\x19\x43reateOrganizationRequest\x12+\n\x12user_id_new_member\x18\x01 \x01(\rR\x0fuserIdNewMember\x12\x1d\n\norg_domain\x18\x02 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\"b\n\x17\x43reateInvitationRequest\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.members.v1alpha1.InvitationR\ninvitation2\xa9\x02\n\x1e\x42lockchainInvitationAPIService\x12\x85\x01\n\x12\x43reateOrganization\x12\x36.blockchain.members.v1alpha1.CreateOrganizationRequest\x1a\x37.blockchain.members.v1alpha1.CreateOrganizationResponse\x12\x7f\n\x10\x43reateInvitation\x12\x34.blockchain.members.v1alpha1.CreateInvitationRequest\x1a\x35.blockchain.members.v1alpha1.CreateInvitationResponseB\xc3\x01\n%io.cuemby.blockchain.members.v1alpha1B\x19MembersInvitationProtoApiP\x01Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1a\x42lockchain.Member.V1Alpha1\xca\x02\x1b\x42lockchain\\Members\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n,blockchain/members/v1alpha1/member_api.proto\x12\x1b\x62lockchain.members.v1alpha1\x1a(blockchain/members/v1alpha1/member.proto\"N\n\x1a\x43reateOrganizationResponse\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\"4\n\x18\x43reateInvitationResponse\x12\x18\n\x07message\x18\x01 \x01(\tR\x07message\"\xef\x01\n\x19\x43reateOrganizationRequest\x12+\n\x12user_id_new_member\x18\x01 \x01(\tR\x0fuserIdNewMember\x12\x1d\n\norg_domain\x18\x02 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\x12!\n\x0cnetwork_name\x18\x05 \x01(\tR\x0bnetworkName\x12\x1d\n\nnetwork_id\x18\x06 \x01(\tR\tnetworkId\"b\n\x17\x43reateInvitationRequest\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.members.v1alpha1.InvitationR\ninvitation2\xa9\x02\n\x1e\x42lockchainInvitationAPIService\x12\x85\x01\n\x12\x43reateOrganization\x12\x36.blockchain.members.v1alpha1.CreateOrganizationRequest\x1a\x37.blockchain.members.v1alpha1.CreateOrganizationResponse\x12\x7f\n\x10\x43reateInvitation\x12\x34.blockchain.members.v1alpha1.CreateInvitationRequest\x1a\x35.blockchain.members.v1alpha1.CreateInvitationResponseB\xc3\x01\n%io.cuemby.blockchain.members.v1alpha1B\x19MembersInvitationProtoApiP\x01Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1a\x42lockchain.Member.V1Alpha1\xca\x02\x1b\x42lockchain\\Members\\V1Alpha1b\x06proto3'
   ,
   dependencies=[blockchain_dot_members_dot_v1alpha1_dot_member__pb2.DESCRIPTOR,])
 
@@ -108,8 +108,8 @@ _CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='user_id_new_member', full_name='blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userIdNewMember', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -134,6 +134,20 @@ _CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='adminUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network_name', full_name='blockchain.members.v1alpha1.CreateOrganizationRequest.network_name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='networkName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network_id', full_name='blockchain.members.v1alpha1.CreateOrganizationRequest.network_id', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='networkId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -147,7 +161,7 @@ _CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=254,
-  serialized_end=427,
+  serialized_end=493,
 )
 
 
@@ -178,8 +192,8 @@ _CREATEINVITATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=429,
-  serialized_end=527,
+  serialized_start=495,
+  serialized_end=593,
 )
 
 _CREATEINVITATIONREQUEST.fields_by_name['invitation'].message_type = blockchain_dot_members_dot_v1alpha1_dot_member__pb2._INVITATION
@@ -227,8 +241,8 @@ _BLOCKCHAININVITATIONAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=530,
-  serialized_end=827,
+  serialized_start=596,
+  serialized_end=893,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateOrganization',

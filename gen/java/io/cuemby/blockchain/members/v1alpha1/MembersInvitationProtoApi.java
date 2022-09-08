@@ -49,26 +49,28 @@ public final class MembersInvitationProtoApi {
       "\032CreateOrganizationResponse\022\026\n\006status\030\002 " +
       "\001(\tR\006status\022\030\n\007message\030\003 \001(\tR\007message\"4\n" +
       "\030CreateInvitationResponse\022\030\n\007message\030\001 \001" +
-      "(\tR\007message\"\255\001\n\031CreateOrganizationReques" +
-      "t\022+\n\022user_id_new_member\030\001 \001(\rR\017userIdNew" +
+      "(\tR\007message\"\357\001\n\031CreateOrganizationReques" +
+      "t\022+\n\022user_id_new_member\030\001 \001(\tR\017userIdNew" +
       "Member\022\035\n\norg_domain\030\002 \001(\tR\torgDomain\022%\n" +
       "\016admin_password\030\003 \001(\tR\radminPassword\022\035\n\n" +
-      "admin_user\030\004 \001(\tR\tadminUser\"b\n\027CreateInv" +
-      "itationRequest\022G\n\ninvitation\030\001 \001(\0132\'.blo" +
-      "ckchain.members.v1alpha1.InvitationR\ninv" +
-      "itation2\251\002\n\036BlockchainInvitationAPIServi" +
-      "ce\022\205\001\n\022CreateOrganization\0226.blockchain.m" +
-      "embers.v1alpha1.CreateOrganizationReques" +
-      "t\0327.blockchain.members.v1alpha1.CreateOr" +
-      "ganizationResponse\022\177\n\020CreateInvitation\0224" +
+      "admin_user\030\004 \001(\tR\tadminUser\022!\n\014network_n" +
+      "ame\030\005 \001(\tR\013networkName\022\035\n\nnetwork_id\030\006 \001" +
+      "(\tR\tnetworkId\"b\n\027CreateInvitationRequest" +
+      "\022G\n\ninvitation\030\001 \001(\0132\'.blockchain.member" +
+      "s.v1alpha1.InvitationR\ninvitation2\251\002\n\036Bl" +
+      "ockchainInvitationAPIService\022\205\001\n\022CreateO" +
+      "rganization\0226.blockchain.members.v1alpha" +
+      "1.CreateOrganizationRequest\0327.blockchain" +
+      ".members.v1alpha1.CreateOrganizationResp" +
+      "onse\022\177\n\020CreateInvitation\0224.blockchain.me" +
+      "mbers.v1alpha1.CreateInvitationRequest\0325" +
       ".blockchain.members.v1alpha1.CreateInvit" +
-      "ationRequest\0325.blockchain.members.v1alph" +
-      "a1.CreateInvitationResponseB\303\001\n%io.cuemb" +
-      "y.blockchain.members.v1alpha1B\031MembersIn" +
-      "vitationProtoApiP\001Z<github.com/cuemby/cc" +
-      "p-sdk/gen/go/blockchain/members/v1alpha1" +
-      "\242\002\003PPX\252\002\032Blockchain.Member.V1Alpha1\312\002\033Bl" +
-      "ockchain\\Members\\V1Alpha1b\006proto3"
+      "ationResponseB\303\001\n%io.cuemby.blockchain.m" +
+      "embers.v1alpha1B\031MembersInvitationProtoA" +
+      "piP\001Z<github.com/cuemby/ccp-sdk/gen/go/b" +
+      "lockchain/members/v1alpha1\242\002\003PPX\252\002\032Block" +
+      "chain.Member.V1Alpha1\312\002\033Blockchain\\Membe" +
+      "rs\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -92,7 +94,7 @@ public final class MembersInvitationProtoApi {
     internal_static_blockchain_members_v1alpha1_CreateOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_members_v1alpha1_CreateOrganizationRequest_descriptor,
-        new java.lang.String[] { "UserIdNewMember", "OrgDomain", "AdminPassword", "AdminUser", });
+        new java.lang.String[] { "UserIdNewMember", "OrgDomain", "AdminPassword", "AdminUser", "NetworkName", "NetworkId", });
     internal_static_blockchain_members_v1alpha1_CreateInvitationRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_blockchain_members_v1alpha1_CreateInvitationRequest_fieldAccessorTable = new

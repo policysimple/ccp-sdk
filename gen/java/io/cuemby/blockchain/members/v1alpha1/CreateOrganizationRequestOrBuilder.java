@@ -8,10 +8,16 @@ public interface CreateOrganizationRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+   * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
    * @return The userIdNewMember.
    */
-  int getUserIdNewMember();
+  java.lang.String getUserIdNewMember();
+  /**
+   * <code>string user_id_new_member = 1 [json_name = "userIdNewMember"];</code>
+   * @return The bytes for userIdNewMember.
+   */
+  com.google.protobuf.ByteString
+      getUserIdNewMemberBytes();
 
   /**
    * <code>string org_domain = 2 [json_name = "orgDomain"];</code>
@@ -48,4 +54,28 @@ public interface CreateOrganizationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdminUserBytes();
+
+  /**
+   * <code>string network_name = 5 [json_name = "networkName"];</code>
+   * @return The networkName.
+   */
+  java.lang.String getNetworkName();
+  /**
+   * <code>string network_name = 5 [json_name = "networkName"];</code>
+   * @return The bytes for networkName.
+   */
+  com.google.protobuf.ByteString
+      getNetworkNameBytes();
+
+  /**
+   * <code>string network_id = 6 [json_name = "networkId"];</code>
+   * @return The networkId.
+   */
+  java.lang.String getNetworkId();
+  /**
+   * <code>string network_id = 6 [json_name = "networkId"];</code>
+   * @return The bytes for networkId.
+   */
+  com.google.protobuf.ByteString
+      getNetworkIdBytes();
 }

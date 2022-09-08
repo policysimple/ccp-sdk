@@ -46,7 +46,7 @@ struct TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,11 +59,15 @@ namespace v1alpha1 {
 class Network;
 struct NetworkDefaultTypeInternal;
 extern NetworkDefaultTypeInternal _Network_default_instance_;
+class Organization;
+struct OrganizationDefaultTypeInternal;
+extern OrganizationDefaultTypeInternal _Organization_default_instance_;
 }  // namespace v1alpha1
 }  // namespace network
 }  // namespace blockchain
 PROTOBUF_NAMESPACE_OPEN
 template<> ::blockchain::network::v1alpha1::Network* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Network>(Arena*);
+template<> ::blockchain::network::v1alpha1::Organization* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace blockchain {
 namespace network {
@@ -306,6 +310,214 @@ class Network final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_password_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_user_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Organization final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.Organization) */ {
+ public:
+  inline Organization() : Organization(nullptr) {}
+  ~Organization() override;
+  explicit constexpr Organization(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Organization(const Organization& from);
+  Organization(Organization&& from) noexcept
+    : Organization() {
+    *this = ::std::move(from);
+  }
+
+  inline Organization& operator=(const Organization& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Organization& operator=(Organization&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Organization& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Organization* internal_default_instance() {
+    return reinterpret_cast<const Organization*>(
+               &_Organization_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Organization& a, Organization& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Organization* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Organization* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Organization* New() const final {
+    return new Organization();
+  }
+
+  Organization* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Organization>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Organization& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Organization& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Organization* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.Organization";
+  }
+  protected:
+  explicit Organization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUserIdFieldNumber = 1,
+    kDomainOrgFieldNumber = 2,
+    kAdminPasswordFieldNumber = 3,
+    kAdminUserFieldNumber = 4,
+    kBcIdFieldNumber = 5,
+  };
+  // string user_id = 1 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string domain_org = 2 [json_name = "domainOrg"];
+  void clear_domain_org();
+  const std::string& domain_org() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_domain_org(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_domain_org();
+  PROTOBUF_MUST_USE_RESULT std::string* release_domain_org();
+  void set_allocated_domain_org(std::string* domain_org);
+  private:
+  const std::string& _internal_domain_org() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_domain_org(const std::string& value);
+  std::string* _internal_mutable_domain_org();
+  public:
+
+  // string admin_password = 3 [json_name = "adminPassword"];
+  void clear_admin_password();
+  const std::string& admin_password() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_admin_password(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_admin_password();
+  PROTOBUF_MUST_USE_RESULT std::string* release_admin_password();
+  void set_allocated_admin_password(std::string* admin_password);
+  private:
+  const std::string& _internal_admin_password() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_password(const std::string& value);
+  std::string* _internal_mutable_admin_password();
+  public:
+
+  // string admin_user = 4 [json_name = "adminUser"];
+  void clear_admin_user();
+  const std::string& admin_user() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_admin_user(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_admin_user();
+  PROTOBUF_MUST_USE_RESULT std::string* release_admin_user();
+  void set_allocated_admin_user(std::string* admin_user);
+  private:
+  const std::string& _internal_admin_user() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_user(const std::string& value);
+  std::string* _internal_mutable_admin_user();
+  public:
+
+  // string bc_id = 5 [json_name = "bcId"];
+  void clear_bc_id();
+  const std::string& bc_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_bc_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_bc_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_bc_id();
+  void set_allocated_bc_id(std::string* bc_id);
+  private:
+  const std::string& _internal_bc_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_bc_id(const std::string& value);
+  std::string* _internal_mutable_bc_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Organization)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr domain_org_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_password_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_user_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bc_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -642,9 +854,245 @@ inline void Network::set_allocated_admin_user(std::string* admin_user) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Network.admin_user)
 }
 
+// -------------------------------------------------------------------
+
+// Organization
+
+// string user_id = 1 [json_name = "userId"];
+inline void Organization::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& Organization::user_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Organization.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Organization.user_id)
+}
+inline std::string* Organization::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Organization.user_id)
+  return _s;
+}
+inline const std::string& Organization::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void Organization::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_user_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Organization.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Organization.user_id)
+}
+
+// string domain_org = 2 [json_name = "domainOrg"];
+inline void Organization::clear_domain_org() {
+  domain_org_.ClearToEmpty();
+}
+inline const std::string& Organization::domain_org() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Organization.domain_org)
+  return _internal_domain_org();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_domain_org(ArgT0&& arg0, ArgT... args) {
+ 
+ domain_org_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Organization.domain_org)
+}
+inline std::string* Organization::mutable_domain_org() {
+  std::string* _s = _internal_mutable_domain_org();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Organization.domain_org)
+  return _s;
+}
+inline const std::string& Organization::_internal_domain_org() const {
+  return domain_org_.Get();
+}
+inline void Organization::_internal_set_domain_org(const std::string& value) {
+  
+  domain_org_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_domain_org() {
+  
+  return domain_org_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_domain_org() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Organization.domain_org)
+  return domain_org_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_domain_org(std::string* domain_org) {
+  if (domain_org != nullptr) {
+    
+  } else {
+    
+  }
+  domain_org_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), domain_org,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Organization.domain_org)
+}
+
+// string admin_password = 3 [json_name = "adminPassword"];
+inline void Organization::clear_admin_password() {
+  admin_password_.ClearToEmpty();
+}
+inline const std::string& Organization::admin_password() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Organization.admin_password)
+  return _internal_admin_password();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_admin_password(ArgT0&& arg0, ArgT... args) {
+ 
+ admin_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Organization.admin_password)
+}
+inline std::string* Organization::mutable_admin_password() {
+  std::string* _s = _internal_mutable_admin_password();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Organization.admin_password)
+  return _s;
+}
+inline const std::string& Organization::_internal_admin_password() const {
+  return admin_password_.Get();
+}
+inline void Organization::_internal_set_admin_password(const std::string& value) {
+  
+  admin_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_admin_password() {
+  
+  return admin_password_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_admin_password() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Organization.admin_password)
+  return admin_password_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_admin_password(std::string* admin_password) {
+  if (admin_password != nullptr) {
+    
+  } else {
+    
+  }
+  admin_password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), admin_password,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Organization.admin_password)
+}
+
+// string admin_user = 4 [json_name = "adminUser"];
+inline void Organization::clear_admin_user() {
+  admin_user_.ClearToEmpty();
+}
+inline const std::string& Organization::admin_user() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Organization.admin_user)
+  return _internal_admin_user();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_admin_user(ArgT0&& arg0, ArgT... args) {
+ 
+ admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Organization.admin_user)
+}
+inline std::string* Organization::mutable_admin_user() {
+  std::string* _s = _internal_mutable_admin_user();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Organization.admin_user)
+  return _s;
+}
+inline const std::string& Organization::_internal_admin_user() const {
+  return admin_user_.Get();
+}
+inline void Organization::_internal_set_admin_user(const std::string& value) {
+  
+  admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_admin_user() {
+  
+  return admin_user_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_admin_user() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Organization.admin_user)
+  return admin_user_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_admin_user(std::string* admin_user) {
+  if (admin_user != nullptr) {
+    
+  } else {
+    
+  }
+  admin_user_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), admin_user,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Organization.admin_user)
+}
+
+// string bc_id = 5 [json_name = "bcId"];
+inline void Organization::clear_bc_id() {
+  bc_id_.ClearToEmpty();
+}
+inline const std::string& Organization::bc_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Organization.bc_id)
+  return _internal_bc_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Organization::set_bc_id(ArgT0&& arg0, ArgT... args) {
+ 
+ bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Organization.bc_id)
+}
+inline std::string* Organization::mutable_bc_id() {
+  std::string* _s = _internal_mutable_bc_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Organization.bc_id)
+  return _s;
+}
+inline const std::string& Organization::_internal_bc_id() const {
+  return bc_id_.Get();
+}
+inline void Organization::_internal_set_bc_id(const std::string& value) {
+  
+  bc_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Organization::_internal_mutable_bc_id() {
+  
+  return bc_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Organization::release_bc_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Organization.bc_id)
+  return bc_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Organization::set_allocated_bc_id(std::string* bc_id) {
+  if (bc_id != nullptr) {
+    
+  } else {
+    
+  }
+  bc_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bc_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Organization.bc_id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -19,6 +19,11 @@ class BlockchainAPIServiceStub(object):
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkResponse.FromString,
         )
+    self.AddPeerToOrganization = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationResponse.FromString,
+        )
 
 
 class BlockchainAPIServiceServicer(object):
@@ -32,6 +37,13 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def AddPeerToOrganization(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_BlockchainAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -39,6 +51,11 @@ def add_BlockchainAPIServiceServicer_to_server(servicer, server):
           servicer.CreateNetwork,
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkResponse.SerializeToString,
+      ),
+      'AddPeerToOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.AddPeerToOrganization,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

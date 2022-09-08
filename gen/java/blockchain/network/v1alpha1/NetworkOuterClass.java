@@ -1482,11 +1482,1184 @@ public final class NetworkOuterClass {
 
   }
 
+  public interface OrganizationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.Organization)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * @return The domainOrg.
+     */
+    java.lang.String getDomainOrg();
+    /**
+     * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * @return The bytes for domainOrg.
+     */
+    com.google.protobuf.ByteString
+        getDomainOrgBytes();
+
+    /**
+     * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * @return The adminPassword.
+     */
+    java.lang.String getAdminPassword();
+    /**
+     * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * @return The bytes for adminPassword.
+     */
+    com.google.protobuf.ByteString
+        getAdminPasswordBytes();
+
+    /**
+     * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * @return The adminUser.
+     */
+    java.lang.String getAdminUser();
+    /**
+     * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * @return The bytes for adminUser.
+     */
+    com.google.protobuf.ByteString
+        getAdminUserBytes();
+
+    /**
+     * <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * @return The bcId.
+     */
+    java.lang.String getBcId();
+    /**
+     * <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * @return The bytes for bcId.
+     */
+    com.google.protobuf.ByteString
+        getBcIdBytes();
+  }
+  /**
+   * Protobuf type {@code blockchain.network.v1alpha1.Organization}
+   */
+  public static final class Organization extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.Organization)
+      OrganizationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Organization.newBuilder() to construct.
+    private Organization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Organization() {
+      userId_ = "";
+      domainOrg_ = "";
+      adminPassword_ = "";
+      adminUser_ = "";
+      bcId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Organization();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Organization(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domainOrg_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              adminPassword_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              adminUser_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bcId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Organization_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              blockchain.network.v1alpha1.NetworkOuterClass.Organization.class, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOMAIN_ORG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object domainOrg_;
+    /**
+     * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * @return The domainOrg.
+     */
+    @java.lang.Override
+    public java.lang.String getDomainOrg() {
+      java.lang.Object ref = domainOrg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domainOrg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * @return The bytes for domainOrg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDomainOrgBytes() {
+      java.lang.Object ref = domainOrg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domainOrg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADMIN_PASSWORD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object adminPassword_;
+    /**
+     * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * @return The adminPassword.
+     */
+    @java.lang.Override
+    public java.lang.String getAdminPassword() {
+      java.lang.Object ref = adminPassword_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adminPassword_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * @return The bytes for adminPassword.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAdminPasswordBytes() {
+      java.lang.Object ref = adminPassword_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        adminPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADMIN_USER_FIELD_NUMBER = 4;
+    private volatile java.lang.Object adminUser_;
+    /**
+     * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * @return The adminUser.
+     */
+    @java.lang.Override
+    public java.lang.String getAdminUser() {
+      java.lang.Object ref = adminUser_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adminUser_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * @return The bytes for adminUser.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAdminUserBytes() {
+      java.lang.Object ref = adminUser_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        adminUser_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BC_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object bcId_;
+    /**
+     * <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * @return The bcId.
+     */
+    @java.lang.Override
+    public java.lang.String getBcId() {
+      java.lang.Object ref = bcId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bcId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * @return The bytes for bcId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBcIdBytes() {
+      java.lang.Object ref = bcId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bcId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (!getDomainOrgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domainOrg_);
+      }
+      if (!getAdminPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, adminPassword_);
+      }
+      if (!getAdminUserBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, adminUser_);
+      }
+      if (!getBcIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, bcId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (!getDomainOrgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domainOrg_);
+      }
+      if (!getAdminPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, adminPassword_);
+      }
+      if (!getAdminUserBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, adminUser_);
+      }
+      if (!getBcIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, bcId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkOuterClass.Organization)) {
+        return super.equals(obj);
+      }
+      blockchain.network.v1alpha1.NetworkOuterClass.Organization other = (blockchain.network.v1alpha1.NetworkOuterClass.Organization) obj;
+
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getDomainOrg()
+          .equals(other.getDomainOrg())) return false;
+      if (!getAdminPassword()
+          .equals(other.getAdminPassword())) return false;
+      if (!getAdminUser()
+          .equals(other.getAdminUser())) return false;
+      if (!getBcId()
+          .equals(other.getBcId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + DOMAIN_ORG_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainOrg().hashCode();
+      hash = (37 * hash) + ADMIN_PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getAdminPassword().hashCode();
+      hash = (37 * hash) + ADMIN_USER_FIELD_NUMBER;
+      hash = (53 * hash) + getAdminUser().hashCode();
+      hash = (37 * hash) + BC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBcId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkOuterClass.Organization prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code blockchain.network.v1alpha1.Organization}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.Organization)
+        blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Organization_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                blockchain.network.v1alpha1.NetworkOuterClass.Organization.class, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder.class);
+      }
+
+      // Construct using blockchain.network.v1alpha1.NetworkOuterClass.Organization.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+
+        domainOrg_ = "";
+
+        adminPassword_ = "";
+
+        adminUser_ = "";
+
+        bcId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Organization_descriptor;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization build() {
+        blockchain.network.v1alpha1.NetworkOuterClass.Organization result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization buildPartial() {
+        blockchain.network.v1alpha1.NetworkOuterClass.Organization result = new blockchain.network.v1alpha1.NetworkOuterClass.Organization(this);
+        result.userId_ = userId_;
+        result.domainOrg_ = domainOrg_;
+        result.adminPassword_ = adminPassword_;
+        result.adminUser_ = adminUser_;
+        result.bcId_ = bcId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof blockchain.network.v1alpha1.NetworkOuterClass.Organization) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkOuterClass.Organization)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkOuterClass.Organization other) {
+        if (other == blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getDomainOrg().isEmpty()) {
+          domainOrg_ = other.domainOrg_;
+          onChanged();
+        }
+        if (!other.getAdminPassword().isEmpty()) {
+          adminPassword_ = other.adminPassword_;
+          onChanged();
+        }
+        if (!other.getAdminUser().isEmpty()) {
+          adminUser_ = other.adminUser_;
+          onChanged();
+        }
+        if (!other.getBcId().isEmpty()) {
+          bcId_ = other.bcId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        blockchain.network.v1alpha1.NetworkOuterClass.Organization parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (blockchain.network.v1alpha1.NetworkOuterClass.Organization) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 1 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 1 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 1 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 1 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 1 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object domainOrg_ = "";
+      /**
+       * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+       * @return The domainOrg.
+       */
+      public java.lang.String getDomainOrg() {
+        java.lang.Object ref = domainOrg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domainOrg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+       * @return The bytes for domainOrg.
+       */
+      public com.google.protobuf.ByteString
+          getDomainOrgBytes() {
+        java.lang.Object ref = domainOrg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domainOrg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+       * @param value The domainOrg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainOrg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domainOrg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDomainOrg() {
+        
+        domainOrg_ = getDefaultInstance().getDomainOrg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+       * @param value The bytes for domainOrg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainOrgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domainOrg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object adminPassword_ = "";
+      /**
+       * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+       * @return The adminPassword.
+       */
+      public java.lang.String getAdminPassword() {
+        java.lang.Object ref = adminPassword_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          adminPassword_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+       * @return The bytes for adminPassword.
+       */
+      public com.google.protobuf.ByteString
+          getAdminPasswordBytes() {
+        java.lang.Object ref = adminPassword_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          adminPassword_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+       * @param value The adminPassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        adminPassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdminPassword() {
+        
+        adminPassword_ = getDefaultInstance().getAdminPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+       * @param value The bytes for adminPassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        adminPassword_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object adminUser_ = "";
+      /**
+       * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+       * @return The adminUser.
+       */
+      public java.lang.String getAdminUser() {
+        java.lang.Object ref = adminUser_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          adminUser_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+       * @return The bytes for adminUser.
+       */
+      public com.google.protobuf.ByteString
+          getAdminUserBytes() {
+        java.lang.Object ref = adminUser_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          adminUser_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+       * @param value The adminUser to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        adminUser_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdminUser() {
+        
+        adminUser_ = getDefaultInstance().getAdminUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string admin_user = 4 [json_name = "adminUser"];</code>
+       * @param value The bytes for adminUser to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdminUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        adminUser_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bcId_ = "";
+      /**
+       * <code>string bc_id = 5 [json_name = "bcId"];</code>
+       * @return The bcId.
+       */
+      public java.lang.String getBcId() {
+        java.lang.Object ref = bcId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bcId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string bc_id = 5 [json_name = "bcId"];</code>
+       * @return The bytes for bcId.
+       */
+      public com.google.protobuf.ByteString
+          getBcIdBytes() {
+        java.lang.Object ref = bcId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bcId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string bc_id = 5 [json_name = "bcId"];</code>
+       * @param value The bcId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBcId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bcId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bc_id = 5 [json_name = "bcId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBcId() {
+        
+        bcId_ = getDefaultInstance().getBcId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bc_id = 5 [json_name = "bcId"];</code>
+       * @param value The bytes for bcId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBcIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bcId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.Organization)
+    }
+
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Organization)
+    private static final blockchain.network.v1alpha1.NetworkOuterClass.Organization DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkOuterClass.Organization();
+    }
+
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Organization getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Organization>
+        PARSER = new com.google.protobuf.AbstractParser<Organization>() {
+      @java.lang.Override
+      public Organization parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Organization(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Organization> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Organization> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_Network_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_Network_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blockchain_network_v1alpha1_Organization_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1503,9 +2676,13 @@ public final class NetworkOuterClass {
       "\001(\tR\004type\022\035\n\norg_domain\030\004 \001(\tR\torgDomain" +
       "\022\027\n\007user_id\030\005 \001(\tR\006userId\022%\n\016admin_passw" +
       "ord\030\006 \001(\tR\radminPassword\022\035\n\nadmin_user\030\007" +
-      " \001(\tR\tadminUserB>Z<github.com/cuemby/ccp" +
-      "-sdk/gen/go/blockchain/network/v1alpha1b" +
-      "\006proto3"
+      " \001(\tR\tadminUser\"\241\001\n\014Organization\022\027\n\007user" +
+      "_id\030\001 \001(\tR\006userId\022\035\n\ndomain_org\030\002 \001(\tR\td" +
+      "omainOrg\022%\n\016admin_password\030\003 \001(\tR\radminP" +
+      "assword\022\035\n\nadmin_user\030\004 \001(\tR\tadminUser\022\023" +
+      "\n\005bc_id\030\005 \001(\tR\004bcIdB>Z<github.com/cuemby" +
+      "/ccp-sdk/gen/go/blockchain/network/v1alp" +
+      "ha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1517,6 +2694,12 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Network_descriptor,
         new java.lang.String[] { "NetworkName", "Framework", "Type", "OrgDomain", "UserId", "AdminPassword", "AdminUser", });
+    internal_static_blockchain_network_v1alpha1_Organization_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blockchain_network_v1alpha1_Organization_descriptor,
+        new java.lang.String[] { "UserId", "DomainOrg", "AdminPassword", "AdminUser", "BcId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

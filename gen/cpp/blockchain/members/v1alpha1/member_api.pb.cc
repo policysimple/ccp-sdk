@@ -46,10 +46,12 @@ struct CreateInvitationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateInvitationResponseDefaultTypeInternal _CreateInvitationResponse_default_instance_;
 constexpr CreateOrganizationRequest::CreateOrganizationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : org_domain_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : user_id_new_member_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , org_domain_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , admin_password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , admin_user_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , user_id_new_member_(0u){}
+  , network_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , network_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct CreateOrganizationRequestDefaultTypeInternal {
   constexpr CreateOrganizationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -101,6 +103,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fmembers_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateOrganizationRequest, org_domain_),
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateOrganizationRequest, admin_password_),
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateOrganizationRequest, admin_user_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateOrganizationRequest, network_name_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateOrganizationRequest, network_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::members::v1alpha1::CreateInvitationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -112,7 +116,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::blockchain::members::v1alpha1::CreateOrganizationResponse)},
   { 7, -1, sizeof(::blockchain::members::v1alpha1::CreateInvitationResponse)},
   { 13, -1, sizeof(::blockchain::members::v1alpha1::CreateOrganizationRequest)},
-  { 22, -1, sizeof(::blockchain::members::v1alpha1::CreateInvitationRequest)},
+  { 24, -1, sizeof(::blockchain::members::v1alpha1::CreateInvitationRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -129,33 +133,35 @@ const char descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_5f
   "\032CreateOrganizationResponse\022\026\n\006status\030\002 "
   "\001(\tR\006status\022\030\n\007message\030\003 \001(\tR\007message\"4\n"
   "\030CreateInvitationResponse\022\030\n\007message\030\001 \001"
-  "(\tR\007message\"\255\001\n\031CreateOrganizationReques"
-  "t\022+\n\022user_id_new_member\030\001 \001(\rR\017userIdNew"
+  "(\tR\007message\"\357\001\n\031CreateOrganizationReques"
+  "t\022+\n\022user_id_new_member\030\001 \001(\tR\017userIdNew"
   "Member\022\035\n\norg_domain\030\002 \001(\tR\torgDomain\022%\n"
   "\016admin_password\030\003 \001(\tR\radminPassword\022\035\n\n"
-  "admin_user\030\004 \001(\tR\tadminUser\"b\n\027CreateInv"
-  "itationRequest\022G\n\ninvitation\030\001 \001(\0132\'.blo"
-  "ckchain.members.v1alpha1.InvitationR\ninv"
-  "itation2\251\002\n\036BlockchainInvitationAPIServi"
-  "ce\022\205\001\n\022CreateOrganization\0226.blockchain.m"
-  "embers.v1alpha1.CreateOrganizationReques"
-  "t\0327.blockchain.members.v1alpha1.CreateOr"
-  "ganizationResponse\022\177\n\020CreateInvitation\0224"
+  "admin_user\030\004 \001(\tR\tadminUser\022!\n\014network_n"
+  "ame\030\005 \001(\tR\013networkName\022\035\n\nnetwork_id\030\006 \001"
+  "(\tR\tnetworkId\"b\n\027CreateInvitationRequest"
+  "\022G\n\ninvitation\030\001 \001(\0132\'.blockchain.member"
+  "s.v1alpha1.InvitationR\ninvitation2\251\002\n\036Bl"
+  "ockchainInvitationAPIService\022\205\001\n\022CreateO"
+  "rganization\0226.blockchain.members.v1alpha"
+  "1.CreateOrganizationRequest\0327.blockchain"
+  ".members.v1alpha1.CreateOrganizationResp"
+  "onse\022\177\n\020CreateInvitation\0224.blockchain.me"
+  "mbers.v1alpha1.CreateInvitationRequest\0325"
   ".blockchain.members.v1alpha1.CreateInvit"
-  "ationRequest\0325.blockchain.members.v1alph"
-  "a1.CreateInvitationResponseB\303\001\n%io.cuemb"
-  "y.blockchain.members.v1alpha1B\031MembersIn"
-  "vitationProtoApiP\001Z<github.com/cuemby/cc"
-  "p-sdk/gen/go/blockchain/members/v1alpha1"
-  "\242\002\003PPX\252\002\032Blockchain.Member.V1Alpha1\312\002\033Bl"
-  "ockchain\\Members\\V1Alpha1b\006proto3"
+  "ationResponseB\303\001\n%io.cuemby.blockchain.m"
+  "embers.v1alpha1B\031MembersInvitationProtoA"
+  "piP\001Z<github.com/cuemby/ccp-sdk/gen/go/b"
+  "lockchain/members/v1alpha1\242\002\003PPX\252\002\032Block"
+  "chain.Member.V1Alpha1\312\002\033Blockchain\\Membe"
+  "rs\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_deps[1] = {
   &::descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto = {
-  false, false, 1033, descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, "blockchain/members/v1alpha1/member_api.proto", 
+  false, false, 1099, descriptor_table_protodef_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, "blockchain/members/v1alpha1/member_api.proto", 
   &descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_once, descriptor_table_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto::offsets,
   file_level_metadata_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, file_level_enum_descriptors_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto, file_level_service_descriptors_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto,
@@ -630,6 +636,11 @@ CreateOrganizationRequest::CreateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Ar
 CreateOrganizationRequest::CreateOrganizationRequest(const CreateOrganizationRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_new_member_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id_new_member().empty()) {
+    user_id_new_member_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id_new_member(), 
+      GetArenaForAllocation());
+  }
   org_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_org_domain().empty()) {
     org_domain_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_org_domain(), 
@@ -645,15 +656,26 @@ CreateOrganizationRequest::CreateOrganizationRequest(const CreateOrganizationReq
     admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_admin_user(), 
       GetArenaForAllocation());
   }
-  user_id_new_member_ = from.user_id_new_member_;
+  network_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_network_name().empty()) {
+    network_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_network_name(), 
+      GetArenaForAllocation());
+  }
+  network_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_network_id().empty()) {
+    network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_network_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.members.v1alpha1.CreateOrganizationRequest)
 }
 
 inline void CreateOrganizationRequest::SharedCtor() {
+user_id_new_member_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 org_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 admin_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 admin_user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-user_id_new_member_ = 0u;
+network_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+network_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 CreateOrganizationRequest::~CreateOrganizationRequest() {
@@ -665,9 +687,12 @@ CreateOrganizationRequest::~CreateOrganizationRequest() {
 
 inline void CreateOrganizationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  user_id_new_member_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   org_domain_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   admin_password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   admin_user_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  network_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  network_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateOrganizationRequest::ArenaDtor(void* object) {
@@ -686,10 +711,12 @@ void CreateOrganizationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  user_id_new_member_.ClearToEmpty();
   org_domain_.ClearToEmpty();
   admin_password_.ClearToEmpty();
   admin_user_.ClearToEmpty();
-  user_id_new_member_ = 0u;
+  network_name_.ClearToEmpty();
+  network_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -699,10 +726,12 @@ const char* CreateOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];
+      // string user_id_new_member = 1 [json_name = "userIdNewMember"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          user_id_new_member_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_user_id_new_member();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -730,6 +759,24 @@ const char* CreateOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBU
           auto str = _internal_mutable_admin_user();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.CreateOrganizationRequest.admin_user"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string network_name = 5 [json_name = "networkName"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_network_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.CreateOrganizationRequest.network_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string network_id = 6 [json_name = "networkId"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_network_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.members.v1alpha1.CreateOrganizationRequest.network_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -762,10 +809,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];
-  if (this->_internal_user_id_new_member() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_user_id_new_member(), target);
+  // string user_id_new_member = 1 [json_name = "userIdNewMember"];
+  if (!this->_internal_user_id_new_member().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id_new_member().data(), static_cast<int>(this->_internal_user_id_new_member().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_user_id_new_member(), target);
   }
 
   // string org_domain = 2 [json_name = "orgDomain"];
@@ -798,6 +849,26 @@ failure:
         4, this->_internal_admin_user(), target);
   }
 
+  // string network_name = 5 [json_name = "networkName"];
+  if (!this->_internal_network_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_network_name().data(), static_cast<int>(this->_internal_network_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.members.v1alpha1.CreateOrganizationRequest.network_name");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_network_name(), target);
+  }
+
+  // string network_id = 6 [json_name = "networkId"];
+  if (!this->_internal_network_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_network_id().data(), static_cast<int>(this->_internal_network_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.members.v1alpha1.CreateOrganizationRequest.network_id");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_network_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -813,6 +884,13 @@ size_t CreateOrganizationRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string user_id_new_member = 1 [json_name = "userIdNewMember"];
+  if (!this->_internal_user_id_new_member().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id_new_member());
+  }
 
   // string org_domain = 2 [json_name = "orgDomain"];
   if (!this->_internal_org_domain().empty()) {
@@ -835,11 +913,18 @@ size_t CreateOrganizationRequest::ByteSizeLong() const {
         this->_internal_admin_user());
   }
 
-  // uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];
-  if (this->_internal_user_id_new_member() != 0) {
+  // string network_name = 5 [json_name = "networkName"];
+  if (!this->_internal_network_name().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_user_id_new_member());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_network_name());
+  }
+
+  // string network_id = 6 [json_name = "networkId"];
+  if (!this->_internal_network_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_network_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -870,6 +955,9 @@ void CreateOrganizationRequest::MergeFrom(const CreateOrganizationRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_user_id_new_member().empty()) {
+    _internal_set_user_id_new_member(from._internal_user_id_new_member());
+  }
   if (!from._internal_org_domain().empty()) {
     _internal_set_org_domain(from._internal_org_domain());
   }
@@ -879,8 +967,11 @@ void CreateOrganizationRequest::MergeFrom(const CreateOrganizationRequest& from)
   if (!from._internal_admin_user().empty()) {
     _internal_set_admin_user(from._internal_admin_user());
   }
-  if (from._internal_user_id_new_member() != 0) {
-    _internal_set_user_id_new_member(from._internal_user_id_new_member());
+  if (!from._internal_network_name().empty()) {
+    _internal_set_network_name(from._internal_network_name());
+  }
+  if (!from._internal_network_id().empty()) {
+    _internal_set_network_id(from._internal_network_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -901,6 +992,11 @@ void CreateOrganizationRequest::InternalSwap(CreateOrganizationRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_new_member_, GetArenaForAllocation(),
+      &other->user_id_new_member_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &org_domain_, GetArenaForAllocation(),
       &other->org_domain_, other->GetArenaForAllocation()
   );
@@ -914,7 +1010,16 @@ void CreateOrganizationRequest::InternalSwap(CreateOrganizationRequest* other) {
       &admin_user_, GetArenaForAllocation(),
       &other->admin_user_, other->GetArenaForAllocation()
   );
-  swap(user_id_new_member_, other->user_id_new_member_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &network_name_, GetArenaForAllocation(),
+      &other->network_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &network_id_, GetArenaForAllocation(),
+      &other->network_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateOrganizationRequest::GetMetadata() const {

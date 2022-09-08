@@ -9,13 +9,27 @@ import "blockchain/network/v1alpha1/network.proto";
 
 service BlockchainAPIService {
     rpc CreateNetwork(CreateNetworkRequest) returns (CreateNetworkResponse);
+    rpc AddPeerToOrganization(AddPeerToOrganizationRequest) returns (AddPeerToOrganizationResponse);
 }
 
 message CreateNetworkRequest {
     blockchain.network.v1alpha1.Network network = 1;
 }
 
+message AddPeerToOrganizationRequest {
+    string org_domain = 1;
+    string admin_password = 2;
+    string admin_user = 3;
+    string network_name = 4;
+    string network_id = 5;
+}
+
 message CreateNetworkResponse {
+    string status = 1;
+    string message = 2;
+}
+
+message AddPeerToOrganizationResponse {
     string status = 1;
     string message = 2;
 }

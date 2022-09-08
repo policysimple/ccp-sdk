@@ -503,11 +503,27 @@ class CreateOrganizationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kUserIdNewMemberFieldNumber = 1,
     kOrgDomainFieldNumber = 2,
     kAdminPasswordFieldNumber = 3,
     kAdminUserFieldNumber = 4,
-    kUserIdNewMemberFieldNumber = 1,
+    kNetworkNameFieldNumber = 5,
+    kNetworkIdFieldNumber = 6,
   };
+  // string user_id_new_member = 1 [json_name = "userIdNewMember"];
+  void clear_user_id_new_member();
+  const std::string& user_id_new_member() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id_new_member(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id_new_member();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id_new_member();
+  void set_allocated_user_id_new_member(std::string* user_id_new_member);
+  private:
+  const std::string& _internal_user_id_new_member() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id_new_member(const std::string& value);
+  std::string* _internal_mutable_user_id_new_member();
+  public:
+
   // string org_domain = 2 [json_name = "orgDomain"];
   void clear_org_domain();
   const std::string& org_domain() const;
@@ -550,13 +566,32 @@ class CreateOrganizationRequest final :
   std::string* _internal_mutable_admin_user();
   public:
 
-  // uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];
-  void clear_user_id_new_member();
-  ::PROTOBUF_NAMESPACE_ID::uint32 user_id_new_member() const;
-  void set_user_id_new_member(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // string network_name = 5 [json_name = "networkName"];
+  void clear_network_name();
+  const std::string& network_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_network_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_network_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_network_name();
+  void set_allocated_network_name(std::string* network_name);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_user_id_new_member() const;
-  void _internal_set_user_id_new_member(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const std::string& _internal_network_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_network_name(const std::string& value);
+  std::string* _internal_mutable_network_name();
+  public:
+
+  // string network_id = 6 [json_name = "networkId"];
+  void clear_network_id();
+  const std::string& network_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_network_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_network_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_network_id();
+  void set_allocated_network_id(std::string* network_id);
+  private:
+  const std::string& _internal_network_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_network_id(const std::string& value);
+  std::string* _internal_mutable_network_id();
   public:
 
   // @@protoc_insertion_point(class_scope:blockchain.members.v1alpha1.CreateOrganizationRequest)
@@ -566,10 +601,12 @@ class CreateOrganizationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_new_member_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr org_domain_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_password_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_user_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 user_id_new_member_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fmembers_2fv1alpha1_2fmember_5fapi_2eproto;
 };
@@ -878,24 +915,50 @@ inline void CreateInvitationResponse::set_allocated_message(std::string* message
 
 // CreateOrganizationRequest
 
-// uint32 user_id_new_member = 1 [json_name = "userIdNewMember"];
+// string user_id_new_member = 1 [json_name = "userIdNewMember"];
 inline void CreateOrganizationRequest::clear_user_id_new_member() {
-  user_id_new_member_ = 0u;
+  user_id_new_member_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateOrganizationRequest::_internal_user_id_new_member() const {
-  return user_id_new_member_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateOrganizationRequest::user_id_new_member() const {
+inline const std::string& CreateOrganizationRequest::user_id_new_member() const {
   // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member)
   return _internal_user_id_new_member();
 }
-inline void CreateOrganizationRequest::_internal_set_user_id_new_member(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  user_id_new_member_ = value;
-}
-inline void CreateOrganizationRequest::set_user_id_new_member(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_user_id_new_member(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationRequest::set_user_id_new_member(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_new_member_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member)
+}
+inline std::string* CreateOrganizationRequest::mutable_user_id_new_member() {
+  std::string* _s = _internal_mutable_user_id_new_member();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member)
+  return _s;
+}
+inline const std::string& CreateOrganizationRequest::_internal_user_id_new_member() const {
+  return user_id_new_member_.Get();
+}
+inline void CreateOrganizationRequest::_internal_set_user_id_new_member(const std::string& value) {
+  
+  user_id_new_member_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::_internal_mutable_user_id_new_member() {
+  
+  return user_id_new_member_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::release_user_id_new_member() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member)
+  return user_id_new_member_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationRequest::set_allocated_user_id_new_member(std::string* user_id_new_member) {
+  if (user_id_new_member != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_new_member_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id_new_member,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationRequest.user_id_new_member)
 }
 
 // string org_domain = 2 [json_name = "orgDomain"];
@@ -1034,6 +1097,98 @@ inline void CreateOrganizationRequest::set_allocated_admin_user(std::string* adm
   admin_user_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), admin_user,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationRequest.admin_user)
+}
+
+// string network_name = 5 [json_name = "networkName"];
+inline void CreateOrganizationRequest::clear_network_name() {
+  network_name_.ClearToEmpty();
+}
+inline const std::string& CreateOrganizationRequest::network_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateOrganizationRequest.network_name)
+  return _internal_network_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationRequest::set_network_name(ArgT0&& arg0, ArgT... args) {
+ 
+ network_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.CreateOrganizationRequest.network_name)
+}
+inline std::string* CreateOrganizationRequest::mutable_network_name() {
+  std::string* _s = _internal_mutable_network_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateOrganizationRequest.network_name)
+  return _s;
+}
+inline const std::string& CreateOrganizationRequest::_internal_network_name() const {
+  return network_name_.Get();
+}
+inline void CreateOrganizationRequest::_internal_set_network_name(const std::string& value) {
+  
+  network_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::_internal_mutable_network_name() {
+  
+  return network_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::release_network_name() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateOrganizationRequest.network_name)
+  return network_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationRequest::set_allocated_network_name(std::string* network_name) {
+  if (network_name != nullptr) {
+    
+  } else {
+    
+  }
+  network_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationRequest.network_name)
+}
+
+// string network_id = 6 [json_name = "networkId"];
+inline void CreateOrganizationRequest::clear_network_id() {
+  network_id_.ClearToEmpty();
+}
+inline const std::string& CreateOrganizationRequest::network_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.members.v1alpha1.CreateOrganizationRequest.network_id)
+  return _internal_network_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationRequest::set_network_id(ArgT0&& arg0, ArgT... args) {
+ 
+ network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.members.v1alpha1.CreateOrganizationRequest.network_id)
+}
+inline std::string* CreateOrganizationRequest::mutable_network_id() {
+  std::string* _s = _internal_mutable_network_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.members.v1alpha1.CreateOrganizationRequest.network_id)
+  return _s;
+}
+inline const std::string& CreateOrganizationRequest::_internal_network_id() const {
+  return network_id_.Get();
+}
+inline void CreateOrganizationRequest::_internal_set_network_id(const std::string& value) {
+  
+  network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::_internal_mutable_network_id() {
+  
+  return network_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::release_network_id() {
+  // @@protoc_insertion_point(field_release:blockchain.members.v1alpha1.CreateOrganizationRequest.network_id)
+  return network_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationRequest::set_allocated_network_id(std::string* network_id) {
+  if (network_id != nullptr) {
+    
+  } else {
+    
+  }
+  network_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.members.v1alpha1.CreateOrganizationRequest.network_id)
 }
 
 // -------------------------------------------------------------------

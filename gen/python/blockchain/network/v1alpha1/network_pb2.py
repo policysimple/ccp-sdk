@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)blockchain/network/v1alpha1/network.proto\x12\x1b\x62lockchain.network.v1alpha1\"\xdc\x01\n\x07Network\x12!\n\x0cnetwork_name\x18\x01 \x01(\tR\x0bnetworkName\x12\x1c\n\tframework\x18\x02 \x01(\tR\tframework\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\x12\x1d\n\norg_domain\x18\x04 \x01(\tR\torgDomain\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12%\n\x0e\x61\x64min_password\x18\x06 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x07 \x01(\tR\tadminUserB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
+  serialized_pb=b'\n)blockchain/network/v1alpha1/network.proto\x12\x1b\x62lockchain.network.v1alpha1\"\xdc\x01\n\x07Network\x12!\n\x0cnetwork_name\x18\x01 \x01(\tR\x0bnetworkName\x12\x1c\n\tframework\x18\x02 \x01(\tR\tframework\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\x12\x1d\n\norg_domain\x18\x04 \x01(\tR\torgDomain\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12%\n\x0e\x61\x64min_password\x18\x06 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x07 \x01(\tR\tadminUser\"\xa1\x01\n\x0cOrganization\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\ndomain_org\x18\x02 \x01(\tR\tdomainOrg\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\x12\x13\n\x05\x62\x63_id\x18\x05 \x01(\tR\x04\x62\x63IdB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
 )
 
 
@@ -98,7 +98,68 @@ _NETWORK = _descriptor.Descriptor(
   serialized_end=295,
 )
 
+
+_ORGANIZATION = _descriptor.Descriptor(
+  name='Organization',
+  full_name='blockchain.network.v1alpha1.Organization',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='blockchain.network.v1alpha1.Organization.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='domain_org', full_name='blockchain.network.v1alpha1.Organization.domain_org', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='domainOrg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='admin_password', full_name='blockchain.network.v1alpha1.Organization.admin_password', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='adminPassword', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='admin_user', full_name='blockchain.network.v1alpha1.Organization.admin_user', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='adminUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bc_id', full_name='blockchain.network.v1alpha1.Organization.bc_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='bcId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=298,
+  serialized_end=459,
+)
+
 DESCRIPTOR.message_types_by_name['Network'] = _NETWORK
+DESCRIPTOR.message_types_by_name['Organization'] = _ORGANIZATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Network = _reflection.GeneratedProtocolMessageType('Network', (_message.Message,), {
@@ -107,6 +168,13 @@ Network = _reflection.GeneratedProtocolMessageType('Network', (_message.Message,
   # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Network)
   })
 _sym_db.RegisterMessage(Network)
+
+Organization = _reflection.GeneratedProtocolMessageType('Organization', (_message.Message,), {
+  'DESCRIPTOR' : _ORGANIZATION,
+  '__module__' : 'blockchain.network.v1alpha1.network_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Organization)
+  })
+_sym_db.RegisterMessage(Organization)
 
 
 DESCRIPTOR._options = None
