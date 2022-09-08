@@ -41,7 +41,7 @@ message ListApplicationRequest {
 }
 
 message ListApplicationResponse {
-    repeated Application applications = 1;
+    repeated ListApplication applications = 1;
 }
 
 /* GET */

@@ -989,22 +989,22 @@ class ListApplicationResponse final :
   enum : int {
     kApplicationsFieldNumber = 1,
   };
-  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+  // repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];
   int applications_size() const;
   private:
   int _internal_applications_size() const;
   public:
   void clear_applications();
-  ::application::v1alpha1::Application* mutable_applications(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >*
+  ::application::v1alpha1::ListApplication* mutable_applications(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::ListApplication >*
       mutable_applications();
   private:
-  const ::application::v1alpha1::Application& _internal_applications(int index) const;
-  ::application::v1alpha1::Application* _internal_add_applications();
+  const ::application::v1alpha1::ListApplication& _internal_applications(int index) const;
+  ::application::v1alpha1::ListApplication* _internal_add_applications();
   public:
-  const ::application::v1alpha1::Application& applications(int index) const;
-  ::application::v1alpha1::Application* add_applications();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >&
+  const ::application::v1alpha1::ListApplication& applications(int index) const;
+  ::application::v1alpha1::ListApplication* add_applications();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::ListApplication >&
       applications() const;
 
   // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationResponse)
@@ -1014,7 +1014,7 @@ class ListApplicationResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application > applications_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::ListApplication > applications_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto;
 };
@@ -2608,38 +2608,38 @@ inline void ListApplicationRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint
 
 // ListApplicationResponse
 
-// repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+// repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];
 inline int ListApplicationResponse::_internal_applications_size() const {
   return applications_.size();
 }
 inline int ListApplicationResponse::applications_size() const {
   return _internal_applications_size();
 }
-inline ::application::v1alpha1::Application* ListApplicationResponse::mutable_applications(int index) {
+inline ::application::v1alpha1::ListApplication* ListApplicationResponse::mutable_applications(int index) {
   // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplicationResponse.applications)
   return applications_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::ListApplication >*
 ListApplicationResponse::mutable_applications() {
   // @@protoc_insertion_point(field_mutable_list:application.v1alpha1.ListApplicationResponse.applications)
   return &applications_;
 }
-inline const ::application::v1alpha1::Application& ListApplicationResponse::_internal_applications(int index) const {
+inline const ::application::v1alpha1::ListApplication& ListApplicationResponse::_internal_applications(int index) const {
   return applications_.Get(index);
 }
-inline const ::application::v1alpha1::Application& ListApplicationResponse::applications(int index) const {
+inline const ::application::v1alpha1::ListApplication& ListApplicationResponse::applications(int index) const {
   // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplicationResponse.applications)
   return _internal_applications(index);
 }
-inline ::application::v1alpha1::Application* ListApplicationResponse::_internal_add_applications() {
+inline ::application::v1alpha1::ListApplication* ListApplicationResponse::_internal_add_applications() {
   return applications_.Add();
 }
-inline ::application::v1alpha1::Application* ListApplicationResponse::add_applications() {
-  ::application::v1alpha1::Application* _add = _internal_add_applications();
+inline ::application::v1alpha1::ListApplication* ListApplicationResponse::add_applications() {
+  ::application::v1alpha1::ListApplication* _add = _internal_add_applications();
   // @@protoc_insertion_point(field_add:application.v1alpha1.ListApplicationResponse.applications)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::ListApplication >&
 ListApplicationResponse::applications() const {
   // @@protoc_insertion_point(field_list:application.v1alpha1.ListApplicationResponse.applications)
   return applications_;
