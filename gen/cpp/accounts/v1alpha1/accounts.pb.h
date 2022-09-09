@@ -46,7 +46,7 @@ struct TableStruct_accounts_2fv1alpha1_2faccounts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -70,6 +70,9 @@ extern ProjectDefaultTypeInternal _Project_default_instance_;
 class Role;
 struct RoleDefaultTypeInternal;
 extern RoleDefaultTypeInternal _Role_default_instance_;
+class UserDetail;
+struct UserDetailDefaultTypeInternal;
+extern UserDetailDefaultTypeInternal _UserDetail_default_instance_;
 class UserList;
 struct UserListDefaultTypeInternal;
 extern UserListDefaultTypeInternal _UserList_default_instance_;
@@ -81,6 +84,7 @@ template<> ::accounts::v1alpha1::Organization* Arena::CreateMaybeMessage<::accou
 template<> ::accounts::v1alpha1::Permission* Arena::CreateMaybeMessage<::accounts::v1alpha1::Permission>(Arena*);
 template<> ::accounts::v1alpha1::Project* Arena::CreateMaybeMessage<::accounts::v1alpha1::Project>(Arena*);
 template<> ::accounts::v1alpha1::Role* Arena::CreateMaybeMessage<::accounts::v1alpha1::Role>(Arena*);
+template<> ::accounts::v1alpha1::UserDetail* Arena::CreateMaybeMessage<::accounts::v1alpha1::UserDetail>(Arena*);
 template<> ::accounts::v1alpha1::UserList* Arena::CreateMaybeMessage<::accounts::v1alpha1::UserList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace accounts {
@@ -1398,6 +1402,629 @@ class Organization final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr slug_;
   ::accounts::v1alpha1::UserList* owner_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UserDetail final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.UserDetail) */ {
+ public:
+  inline UserDetail() : UserDetail(nullptr) {}
+  ~UserDetail() override;
+  explicit constexpr UserDetail(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UserDetail(const UserDetail& from);
+  UserDetail(UserDetail&& from) noexcept
+    : UserDetail() {
+    *this = ::std::move(from);
+  }
+
+  inline UserDetail& operator=(const UserDetail& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UserDetail& operator=(UserDetail&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UserDetail& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UserDetail* internal_default_instance() {
+    return reinterpret_cast<const UserDetail*>(
+               &_UserDetail_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(UserDetail& a, UserDetail& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UserDetail* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UserDetail* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UserDetail* New() const final {
+    return new UserDetail();
+  }
+
+  UserDetail* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UserDetail>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UserDetail& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UserDetail& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UserDetail* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.UserDetail";
+  }
+  protected:
+  explicit UserDetail(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRolesFieldNumber = 9,
+    kPermissionsFieldNumber = 10,
+    kOrganizationsFieldNumber = 12,
+    kProjectsFieldNumber = 14,
+    kUserIdFieldNumber = 2,
+    kFirstNameFieldNumber = 3,
+    kLastNameFieldNumber = 4,
+    kEmailFieldNumber = 5,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
+    kPhoneNumberFieldNumber = 15,
+    kCountryFieldNumber = 16,
+    kCityFieldNumber = 17,
+    kZipCodeFieldNumber = 18,
+    kAddressFieldNumber = 19,
+    kStateFieldNumber = 20,
+    kEmojiCountryFieldNumber = 21,
+    kTokenCcpFieldNumber = 23,
+    kLanguageFieldNumber = 26,
+    kPhoneCodeFieldNumber = 35,
+    kOptionalAddressFieldNumber = 36,
+    kIdFieldNumber = 1,
+    kIsActiveFieldNumber = 6,
+    kIsSuperUserFieldNumber = 11,
+    kIsMfaEnabledFieldNumber = 22,
+    kEmailVerifiedFieldNumber = 24,
+    kPushNotificationFieldNumber = 27,
+    kEmailNotificationFieldNumber = 28,
+    kNewLoginNotificationFieldNumber = 29,
+    kCreateNotificationFieldNumber = 30,
+    kUpdateNotificationFieldNumber = 31,
+    kDeleteNotificationFieldNumber = 32,
+    kApplicationNotificationFieldNumber = 33,
+    kReadNotificationFieldNumber = 34,
+  };
+  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
+  int roles_size() const;
+  private:
+  int _internal_roles_size() const;
+  public:
+  void clear_roles();
+  ::accounts::v1alpha1::Role* mutable_roles(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >*
+      mutable_roles();
+  private:
+  const ::accounts::v1alpha1::Role& _internal_roles(int index) const;
+  ::accounts::v1alpha1::Role* _internal_add_roles();
+  public:
+  const ::accounts::v1alpha1::Role& roles(int index) const;
+  ::accounts::v1alpha1::Role* add_roles();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >&
+      roles() const;
+
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+  int permissions_size() const;
+  private:
+  int _internal_permissions_size() const;
+  public:
+  void clear_permissions();
+  ::accounts::v1alpha1::Permission* mutable_permissions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >*
+      mutable_permissions();
+  private:
+  const ::accounts::v1alpha1::Permission& _internal_permissions(int index) const;
+  ::accounts::v1alpha1::Permission* _internal_add_permissions();
+  public:
+  const ::accounts::v1alpha1::Permission& permissions(int index) const;
+  ::accounts::v1alpha1::Permission* add_permissions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
+      permissions() const;
+
+  // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
+  int organizations_size() const;
+  private:
+  int _internal_organizations_size() const;
+  public:
+  void clear_organizations();
+  ::accounts::v1alpha1::Organization* mutable_organizations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >*
+      mutable_organizations();
+  private:
+  const ::accounts::v1alpha1::Organization& _internal_organizations(int index) const;
+  ::accounts::v1alpha1::Organization* _internal_add_organizations();
+  public:
+  const ::accounts::v1alpha1::Organization& organizations(int index) const;
+  ::accounts::v1alpha1::Organization* add_organizations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >&
+      organizations() const;
+
+  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
+  int projects_size() const;
+  private:
+  int _internal_projects_size() const;
+  public:
+  void clear_projects();
+  ::accounts::v1alpha1::Project* mutable_projects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+      mutable_projects();
+  private:
+  const ::accounts::v1alpha1::Project& _internal_projects(int index) const;
+  ::accounts::v1alpha1::Project* _internal_add_projects();
+  public:
+  const ::accounts::v1alpha1::Project& projects(int index) const;
+  ::accounts::v1alpha1::Project* add_projects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+      projects() const;
+
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string first_name = 3 [json_name = "firstName"];
+  void clear_first_name();
+  const std::string& first_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_first_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_first_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string last_name = 4 [json_name = "lastName"];
+  void clear_last_name();
+  const std::string& last_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
+  void set_allocated_last_name(std::string* last_name);
+  private:
+  const std::string& _internal_last_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
+  std::string* _internal_mutable_last_name();
+  public:
+
+  // string email = 5 [json_name = "email"];
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // string created_at = 7 [json_name = "createdAt"];
+  void clear_created_at();
+  const std::string& created_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_created_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_created_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_created_at();
+  void set_allocated_created_at(std::string* created_at);
+  private:
+  const std::string& _internal_created_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_created_at(const std::string& value);
+  std::string* _internal_mutable_created_at();
+  public:
+
+  // string updated_at = 8 [json_name = "updatedAt"];
+  void clear_updated_at();
+  const std::string& updated_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_updated_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_updated_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_updated_at();
+  void set_allocated_updated_at(std::string* updated_at);
+  private:
+  const std::string& _internal_updated_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_updated_at(const std::string& value);
+  std::string* _internal_mutable_updated_at();
+  public:
+
+  // string phone_number = 15 [json_name = "phoneNumber"];
+  void clear_phone_number();
+  const std::string& phone_number() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_phone_number(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_phone_number();
+  PROTOBUF_MUST_USE_RESULT std::string* release_phone_number();
+  void set_allocated_phone_number(std::string* phone_number);
+  private:
+  const std::string& _internal_phone_number() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_phone_number(const std::string& value);
+  std::string* _internal_mutable_phone_number();
+  public:
+
+  // string country = 16 [json_name = "country"];
+  void clear_country();
+  const std::string& country() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_country(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_country();
+  PROTOBUF_MUST_USE_RESULT std::string* release_country();
+  void set_allocated_country(std::string* country);
+  private:
+  const std::string& _internal_country() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_country(const std::string& value);
+  std::string* _internal_mutable_country();
+  public:
+
+  // string city = 17 [json_name = "city"];
+  void clear_city();
+  const std::string& city() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_city(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_city();
+  PROTOBUF_MUST_USE_RESULT std::string* release_city();
+  void set_allocated_city(std::string* city);
+  private:
+  const std::string& _internal_city() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_city(const std::string& value);
+  std::string* _internal_mutable_city();
+  public:
+
+  // string zip_code = 18 [json_name = "zipCode"];
+  void clear_zip_code();
+  const std::string& zip_code() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_zip_code(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_zip_code();
+  PROTOBUF_MUST_USE_RESULT std::string* release_zip_code();
+  void set_allocated_zip_code(std::string* zip_code);
+  private:
+  const std::string& _internal_zip_code() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_zip_code(const std::string& value);
+  std::string* _internal_mutable_zip_code();
+  public:
+
+  // string address = 19 [json_name = "address"];
+  void clear_address();
+  const std::string& address() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_address(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_address();
+  PROTOBUF_MUST_USE_RESULT std::string* release_address();
+  void set_allocated_address(std::string* address);
+  private:
+  const std::string& _internal_address() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_address(const std::string& value);
+  std::string* _internal_mutable_address();
+  public:
+
+  // string state = 20 [json_name = "state"];
+  void clear_state();
+  const std::string& state() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_state(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_state();
+  PROTOBUF_MUST_USE_RESULT std::string* release_state();
+  void set_allocated_state(std::string* state);
+  private:
+  const std::string& _internal_state() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_state(const std::string& value);
+  std::string* _internal_mutable_state();
+  public:
+
+  // string emoji_country = 21 [json_name = "emojiCountry"];
+  void clear_emoji_country();
+  const std::string& emoji_country() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_emoji_country(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_emoji_country();
+  PROTOBUF_MUST_USE_RESULT std::string* release_emoji_country();
+  void set_allocated_emoji_country(std::string* emoji_country);
+  private:
+  const std::string& _internal_emoji_country() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_emoji_country(const std::string& value);
+  std::string* _internal_mutable_emoji_country();
+  public:
+
+  // string token_ccp = 23 [json_name = "tokenCcp"];
+  void clear_token_ccp();
+  const std::string& token_ccp() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token_ccp(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token_ccp();
+  PROTOBUF_MUST_USE_RESULT std::string* release_token_ccp();
+  void set_allocated_token_ccp(std::string* token_ccp);
+  private:
+  const std::string& _internal_token_ccp() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token_ccp(const std::string& value);
+  std::string* _internal_mutable_token_ccp();
+  public:
+
+  // string language = 26 [json_name = "language"];
+  void clear_language();
+  const std::string& language() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_language(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_language();
+  PROTOBUF_MUST_USE_RESULT std::string* release_language();
+  void set_allocated_language(std::string* language);
+  private:
+  const std::string& _internal_language() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_language(const std::string& value);
+  std::string* _internal_mutable_language();
+  public:
+
+  // string phone_code = 35 [json_name = "phoneCode"];
+  void clear_phone_code();
+  const std::string& phone_code() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_phone_code(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_phone_code();
+  PROTOBUF_MUST_USE_RESULT std::string* release_phone_code();
+  void set_allocated_phone_code(std::string* phone_code);
+  private:
+  const std::string& _internal_phone_code() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_phone_code(const std::string& value);
+  std::string* _internal_mutable_phone_code();
+  public:
+
+  // string optional_address = 36 [json_name = "optionalAddress"];
+  void clear_optional_address();
+  const std::string& optional_address() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_optional_address(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_optional_address();
+  PROTOBUF_MUST_USE_RESULT std::string* release_optional_address();
+  void set_allocated_optional_address(std::string* optional_address);
+  private:
+  const std::string& _internal_optional_address() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_optional_address(const std::string& value);
+  std::string* _internal_mutable_optional_address();
+  public:
+
+  // uint32 id = 1 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // bool is_active = 6 [json_name = "isActive"];
+  void clear_is_active();
+  bool is_active() const;
+  void set_is_active(bool value);
+  private:
+  bool _internal_is_active() const;
+  void _internal_set_is_active(bool value);
+  public:
+
+  // bool is_super_user = 11 [json_name = "isSuperUser"];
+  void clear_is_super_user();
+  bool is_super_user() const;
+  void set_is_super_user(bool value);
+  private:
+  bool _internal_is_super_user() const;
+  void _internal_set_is_super_user(bool value);
+  public:
+
+  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
+  void clear_is_mfa_enabled();
+  bool is_mfa_enabled() const;
+  void set_is_mfa_enabled(bool value);
+  private:
+  bool _internal_is_mfa_enabled() const;
+  void _internal_set_is_mfa_enabled(bool value);
+  public:
+
+  // bool email_verified = 24 [json_name = "emailVerified"];
+  void clear_email_verified();
+  bool email_verified() const;
+  void set_email_verified(bool value);
+  private:
+  bool _internal_email_verified() const;
+  void _internal_set_email_verified(bool value);
+  public:
+
+  // bool push_notification = 27 [json_name = "pushNotification"];
+  void clear_push_notification();
+  bool push_notification() const;
+  void set_push_notification(bool value);
+  private:
+  bool _internal_push_notification() const;
+  void _internal_set_push_notification(bool value);
+  public:
+
+  // bool email_notification = 28 [json_name = "emailNotification"];
+  void clear_email_notification();
+  bool email_notification() const;
+  void set_email_notification(bool value);
+  private:
+  bool _internal_email_notification() const;
+  void _internal_set_email_notification(bool value);
+  public:
+
+  // bool new_login_notification = 29 [json_name = "newLoginNotification"];
+  void clear_new_login_notification();
+  bool new_login_notification() const;
+  void set_new_login_notification(bool value);
+  private:
+  bool _internal_new_login_notification() const;
+  void _internal_set_new_login_notification(bool value);
+  public:
+
+  // bool create_notification = 30 [json_name = "createNotification"];
+  void clear_create_notification();
+  bool create_notification() const;
+  void set_create_notification(bool value);
+  private:
+  bool _internal_create_notification() const;
+  void _internal_set_create_notification(bool value);
+  public:
+
+  // bool update_notification = 31 [json_name = "updateNotification"];
+  void clear_update_notification();
+  bool update_notification() const;
+  void set_update_notification(bool value);
+  private:
+  bool _internal_update_notification() const;
+  void _internal_set_update_notification(bool value);
+  public:
+
+  // bool delete_notification = 32 [json_name = "deleteNotification"];
+  void clear_delete_notification();
+  bool delete_notification() const;
+  void set_delete_notification(bool value);
+  private:
+  bool _internal_delete_notification() const;
+  void _internal_set_delete_notification(bool value);
+  public:
+
+  // bool application_notification = 33 [json_name = "applicationNotification"];
+  void clear_application_notification();
+  bool application_notification() const;
+  void set_application_notification(bool value);
+  private:
+  bool _internal_application_notification() const;
+  void _internal_set_application_notification(bool value);
+  public:
+
+  // bool read_notification = 34 [json_name = "readNotification"];
+  void clear_read_notification();
+  bool read_notification() const;
+  void set_read_notification(bool value);
+  private:
+  bool _internal_read_notification() const;
+  void _internal_set_read_notification(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.UserDetail)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role > roles_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization > organizations_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project > projects_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_number_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr country_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr city_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr zip_code_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr emoji_country_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_ccp_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_code_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr optional_address_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  bool is_active_;
+  bool is_super_user_;
+  bool is_mfa_enabled_;
+  bool email_verified_;
+  bool push_notification_;
+  bool email_notification_;
+  bool new_login_notification_;
+  bool create_notification_;
+  bool update_notification_;
+  bool delete_notification_;
+  bool application_notification_;
+  bool read_notification_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -2816,9 +3443,1217 @@ inline void Organization::set_allocated_slug(std::string* slug) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Organization.slug)
 }
 
+// -------------------------------------------------------------------
+
+// UserDetail
+
+// uint32 id = 1 [json_name = "id"];
+inline void UserDetail::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 UserDetail::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 UserDetail::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.id)
+  return _internal_id();
+}
+inline void UserDetail::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void UserDetail::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.id)
+}
+
+// string user_id = 2 [json_name = "userId"];
+inline void UserDetail::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& UserDetail::user_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.user_id)
+}
+inline std::string* UserDetail::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.user_id)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void UserDetail::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_user_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.user_id)
+}
+
+// string first_name = 3 [json_name = "firstName"];
+inline void UserDetail::clear_first_name() {
+  first_name_.ClearToEmpty();
+}
+inline const std::string& UserDetail::first_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.first_name)
+  return _internal_first_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_first_name(ArgT0&& arg0, ArgT... args) {
+ 
+ first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.first_name)
+}
+inline std::string* UserDetail::mutable_first_name() {
+  std::string* _s = _internal_mutable_first_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.first_name)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_first_name() const {
+  return first_name_.Get();
+}
+inline void UserDetail::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_first_name() {
+  
+  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_first_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.first_name)
+  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.first_name)
+}
+
+// string last_name = 4 [json_name = "lastName"];
+inline void UserDetail::clear_last_name() {
+  last_name_.ClearToEmpty();
+}
+inline const std::string& UserDetail::last_name() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.last_name)
+  return _internal_last_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_last_name(ArgT0&& arg0, ArgT... args) {
+ 
+ last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.last_name)
+}
+inline std::string* UserDetail::mutable_last_name() {
+  std::string* _s = _internal_mutable_last_name();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.last_name)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_last_name() const {
+  return last_name_.Get();
+}
+inline void UserDetail::_internal_set_last_name(const std::string& value) {
+  
+  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_last_name() {
+  
+  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_last_name() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.last_name)
+  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_last_name(std::string* last_name) {
+  if (last_name != nullptr) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.last_name)
+}
+
+// string email = 5 [json_name = "email"];
+inline void UserDetail::clear_email() {
+  email_.ClearToEmpty();
+}
+inline const std::string& UserDetail::email() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.email)
+}
+inline std::string* UserDetail::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.email)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_email() const {
+  return email_.Get();
+}
+inline void UserDetail::_internal_set_email(const std::string& value) {
+  
+  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_email() {
+  
+  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_email() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.email)
+  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.email)
+}
+
+// bool is_active = 6 [json_name = "isActive"];
+inline void UserDetail::clear_is_active() {
+  is_active_ = false;
+}
+inline bool UserDetail::_internal_is_active() const {
+  return is_active_;
+}
+inline bool UserDetail::is_active() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.is_active)
+  return _internal_is_active();
+}
+inline void UserDetail::_internal_set_is_active(bool value) {
+  
+  is_active_ = value;
+}
+inline void UserDetail::set_is_active(bool value) {
+  _internal_set_is_active(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.is_active)
+}
+
+// string created_at = 7 [json_name = "createdAt"];
+inline void UserDetail::clear_created_at() {
+  created_at_.ClearToEmpty();
+}
+inline const std::string& UserDetail::created_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.created_at)
+  return _internal_created_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_created_at(ArgT0&& arg0, ArgT... args) {
+ 
+ created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.created_at)
+}
+inline std::string* UserDetail::mutable_created_at() {
+  std::string* _s = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.created_at)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_created_at() const {
+  return created_at_.Get();
+}
+inline void UserDetail::_internal_set_created_at(const std::string& value) {
+  
+  created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_created_at() {
+  
+  return created_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_created_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.created_at)
+  return created_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_created_at(std::string* created_at) {
+  if (created_at != nullptr) {
+    
+  } else {
+    
+  }
+  created_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), created_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.created_at)
+}
+
+// string updated_at = 8 [json_name = "updatedAt"];
+inline void UserDetail::clear_updated_at() {
+  updated_at_.ClearToEmpty();
+}
+inline const std::string& UserDetail::updated_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.updated_at)
+  return _internal_updated_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_updated_at(ArgT0&& arg0, ArgT... args) {
+ 
+ updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.updated_at)
+}
+inline std::string* UserDetail::mutable_updated_at() {
+  std::string* _s = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.updated_at)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_updated_at() const {
+  return updated_at_.Get();
+}
+inline void UserDetail::_internal_set_updated_at(const std::string& value) {
+  
+  updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_updated_at() {
+  
+  return updated_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_updated_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.updated_at)
+  return updated_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_updated_at(std::string* updated_at) {
+  if (updated_at != nullptr) {
+    
+  } else {
+    
+  }
+  updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.updated_at)
+}
+
+// repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
+inline int UserDetail::_internal_roles_size() const {
+  return roles_.size();
+}
+inline int UserDetail::roles_size() const {
+  return _internal_roles_size();
+}
+inline void UserDetail::clear_roles() {
+  roles_.Clear();
+}
+inline ::accounts::v1alpha1::Role* UserDetail::mutable_roles(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.roles)
+  return roles_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >*
+UserDetail::mutable_roles() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.UserDetail.roles)
+  return &roles_;
+}
+inline const ::accounts::v1alpha1::Role& UserDetail::_internal_roles(int index) const {
+  return roles_.Get(index);
+}
+inline const ::accounts::v1alpha1::Role& UserDetail::roles(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.roles)
+  return _internal_roles(index);
+}
+inline ::accounts::v1alpha1::Role* UserDetail::_internal_add_roles() {
+  return roles_.Add();
+}
+inline ::accounts::v1alpha1::Role* UserDetail::add_roles() {
+  ::accounts::v1alpha1::Role* _add = _internal_add_roles();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.UserDetail.roles)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >&
+UserDetail::roles() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.UserDetail.roles)
+  return roles_;
+}
+
+// repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+inline int UserDetail::_internal_permissions_size() const {
+  return permissions_.size();
+}
+inline int UserDetail::permissions_size() const {
+  return _internal_permissions_size();
+}
+inline void UserDetail::clear_permissions() {
+  permissions_.Clear();
+}
+inline ::accounts::v1alpha1::Permission* UserDetail::mutable_permissions(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.permissions)
+  return permissions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >*
+UserDetail::mutable_permissions() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.UserDetail.permissions)
+  return &permissions_;
+}
+inline const ::accounts::v1alpha1::Permission& UserDetail::_internal_permissions(int index) const {
+  return permissions_.Get(index);
+}
+inline const ::accounts::v1alpha1::Permission& UserDetail::permissions(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.permissions)
+  return _internal_permissions(index);
+}
+inline ::accounts::v1alpha1::Permission* UserDetail::_internal_add_permissions() {
+  return permissions_.Add();
+}
+inline ::accounts::v1alpha1::Permission* UserDetail::add_permissions() {
+  ::accounts::v1alpha1::Permission* _add = _internal_add_permissions();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.UserDetail.permissions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
+UserDetail::permissions() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.UserDetail.permissions)
+  return permissions_;
+}
+
+// bool is_super_user = 11 [json_name = "isSuperUser"];
+inline void UserDetail::clear_is_super_user() {
+  is_super_user_ = false;
+}
+inline bool UserDetail::_internal_is_super_user() const {
+  return is_super_user_;
+}
+inline bool UserDetail::is_super_user() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.is_super_user)
+  return _internal_is_super_user();
+}
+inline void UserDetail::_internal_set_is_super_user(bool value) {
+  
+  is_super_user_ = value;
+}
+inline void UserDetail::set_is_super_user(bool value) {
+  _internal_set_is_super_user(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.is_super_user)
+}
+
+// repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
+inline int UserDetail::_internal_organizations_size() const {
+  return organizations_.size();
+}
+inline int UserDetail::organizations_size() const {
+  return _internal_organizations_size();
+}
+inline void UserDetail::clear_organizations() {
+  organizations_.Clear();
+}
+inline ::accounts::v1alpha1::Organization* UserDetail::mutable_organizations(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.organizations)
+  return organizations_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >*
+UserDetail::mutable_organizations() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.UserDetail.organizations)
+  return &organizations_;
+}
+inline const ::accounts::v1alpha1::Organization& UserDetail::_internal_organizations(int index) const {
+  return organizations_.Get(index);
+}
+inline const ::accounts::v1alpha1::Organization& UserDetail::organizations(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.organizations)
+  return _internal_organizations(index);
+}
+inline ::accounts::v1alpha1::Organization* UserDetail::_internal_add_organizations() {
+  return organizations_.Add();
+}
+inline ::accounts::v1alpha1::Organization* UserDetail::add_organizations() {
+  ::accounts::v1alpha1::Organization* _add = _internal_add_organizations();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.UserDetail.organizations)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >&
+UserDetail::organizations() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.UserDetail.organizations)
+  return organizations_;
+}
+
+// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
+inline int UserDetail::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int UserDetail::projects_size() const {
+  return _internal_projects_size();
+}
+inline void UserDetail::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::Project* UserDetail::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+UserDetail::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.UserDetail.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::Project& UserDetail::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::Project& UserDetail::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::Project* UserDetail::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::Project* UserDetail::add_projects() {
+  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.UserDetail.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+UserDetail::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.UserDetail.projects)
+  return projects_;
+}
+
+// string phone_number = 15 [json_name = "phoneNumber"];
+inline void UserDetail::clear_phone_number() {
+  phone_number_.ClearToEmpty();
+}
+inline const std::string& UserDetail::phone_number() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.phone_number)
+  return _internal_phone_number();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_phone_number(ArgT0&& arg0, ArgT... args) {
+ 
+ phone_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.phone_number)
+}
+inline std::string* UserDetail::mutable_phone_number() {
+  std::string* _s = _internal_mutable_phone_number();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.phone_number)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_phone_number() const {
+  return phone_number_.Get();
+}
+inline void UserDetail::_internal_set_phone_number(const std::string& value) {
+  
+  phone_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_phone_number() {
+  
+  return phone_number_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_phone_number() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.phone_number)
+  return phone_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_phone_number(std::string* phone_number) {
+  if (phone_number != nullptr) {
+    
+  } else {
+    
+  }
+  phone_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), phone_number,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.phone_number)
+}
+
+// string country = 16 [json_name = "country"];
+inline void UserDetail::clear_country() {
+  country_.ClearToEmpty();
+}
+inline const std::string& UserDetail::country() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.country)
+  return _internal_country();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_country(ArgT0&& arg0, ArgT... args) {
+ 
+ country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.country)
+}
+inline std::string* UserDetail::mutable_country() {
+  std::string* _s = _internal_mutable_country();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.country)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_country() const {
+  return country_.Get();
+}
+inline void UserDetail::_internal_set_country(const std::string& value) {
+  
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_country() {
+  
+  return country_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_country() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.country)
+  return country_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_country(std::string* country) {
+  if (country != nullptr) {
+    
+  } else {
+    
+  }
+  country_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), country,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.country)
+}
+
+// string city = 17 [json_name = "city"];
+inline void UserDetail::clear_city() {
+  city_.ClearToEmpty();
+}
+inline const std::string& UserDetail::city() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.city)
+  return _internal_city();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_city(ArgT0&& arg0, ArgT... args) {
+ 
+ city_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.city)
+}
+inline std::string* UserDetail::mutable_city() {
+  std::string* _s = _internal_mutable_city();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.city)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_city() const {
+  return city_.Get();
+}
+inline void UserDetail::_internal_set_city(const std::string& value) {
+  
+  city_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_city() {
+  
+  return city_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_city() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.city)
+  return city_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_city(std::string* city) {
+  if (city != nullptr) {
+    
+  } else {
+    
+  }
+  city_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), city,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.city)
+}
+
+// string zip_code = 18 [json_name = "zipCode"];
+inline void UserDetail::clear_zip_code() {
+  zip_code_.ClearToEmpty();
+}
+inline const std::string& UserDetail::zip_code() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.zip_code)
+  return _internal_zip_code();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_zip_code(ArgT0&& arg0, ArgT... args) {
+ 
+ zip_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.zip_code)
+}
+inline std::string* UserDetail::mutable_zip_code() {
+  std::string* _s = _internal_mutable_zip_code();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.zip_code)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_zip_code() const {
+  return zip_code_.Get();
+}
+inline void UserDetail::_internal_set_zip_code(const std::string& value) {
+  
+  zip_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_zip_code() {
+  
+  return zip_code_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_zip_code() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.zip_code)
+  return zip_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_zip_code(std::string* zip_code) {
+  if (zip_code != nullptr) {
+    
+  } else {
+    
+  }
+  zip_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), zip_code,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.zip_code)
+}
+
+// string address = 19 [json_name = "address"];
+inline void UserDetail::clear_address() {
+  address_.ClearToEmpty();
+}
+inline const std::string& UserDetail::address() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.address)
+  return _internal_address();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_address(ArgT0&& arg0, ArgT... args) {
+ 
+ address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.address)
+}
+inline std::string* UserDetail::mutable_address() {
+  std::string* _s = _internal_mutable_address();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.address)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_address() const {
+  return address_.Get();
+}
+inline void UserDetail::_internal_set_address(const std::string& value) {
+  
+  address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_address() {
+  
+  return address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_address() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.address)
+  return address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_address(std::string* address) {
+  if (address != nullptr) {
+    
+  } else {
+    
+  }
+  address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), address,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.address)
+}
+
+// string state = 20 [json_name = "state"];
+inline void UserDetail::clear_state() {
+  state_.ClearToEmpty();
+}
+inline const std::string& UserDetail::state() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.state)
+  return _internal_state();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_state(ArgT0&& arg0, ArgT... args) {
+ 
+ state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.state)
+}
+inline std::string* UserDetail::mutable_state() {
+  std::string* _s = _internal_mutable_state();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.state)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_state() const {
+  return state_.Get();
+}
+inline void UserDetail::_internal_set_state(const std::string& value) {
+  
+  state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_state() {
+  
+  return state_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_state() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.state)
+  return state_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_state(std::string* state) {
+  if (state != nullptr) {
+    
+  } else {
+    
+  }
+  state_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), state,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.state)
+}
+
+// string emoji_country = 21 [json_name = "emojiCountry"];
+inline void UserDetail::clear_emoji_country() {
+  emoji_country_.ClearToEmpty();
+}
+inline const std::string& UserDetail::emoji_country() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.emoji_country)
+  return _internal_emoji_country();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_emoji_country(ArgT0&& arg0, ArgT... args) {
+ 
+ emoji_country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.emoji_country)
+}
+inline std::string* UserDetail::mutable_emoji_country() {
+  std::string* _s = _internal_mutable_emoji_country();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.emoji_country)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_emoji_country() const {
+  return emoji_country_.Get();
+}
+inline void UserDetail::_internal_set_emoji_country(const std::string& value) {
+  
+  emoji_country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_emoji_country() {
+  
+  return emoji_country_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_emoji_country() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.emoji_country)
+  return emoji_country_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_emoji_country(std::string* emoji_country) {
+  if (emoji_country != nullptr) {
+    
+  } else {
+    
+  }
+  emoji_country_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), emoji_country,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.emoji_country)
+}
+
+// bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
+inline void UserDetail::clear_is_mfa_enabled() {
+  is_mfa_enabled_ = false;
+}
+inline bool UserDetail::_internal_is_mfa_enabled() const {
+  return is_mfa_enabled_;
+}
+inline bool UserDetail::is_mfa_enabled() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.is_mfa_enabled)
+  return _internal_is_mfa_enabled();
+}
+inline void UserDetail::_internal_set_is_mfa_enabled(bool value) {
+  
+  is_mfa_enabled_ = value;
+}
+inline void UserDetail::set_is_mfa_enabled(bool value) {
+  _internal_set_is_mfa_enabled(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.is_mfa_enabled)
+}
+
+// string token_ccp = 23 [json_name = "tokenCcp"];
+inline void UserDetail::clear_token_ccp() {
+  token_ccp_.ClearToEmpty();
+}
+inline const std::string& UserDetail::token_ccp() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.token_ccp)
+  return _internal_token_ccp();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_token_ccp(ArgT0&& arg0, ArgT... args) {
+ 
+ token_ccp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.token_ccp)
+}
+inline std::string* UserDetail::mutable_token_ccp() {
+  std::string* _s = _internal_mutable_token_ccp();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.token_ccp)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_token_ccp() const {
+  return token_ccp_.Get();
+}
+inline void UserDetail::_internal_set_token_ccp(const std::string& value) {
+  
+  token_ccp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_token_ccp() {
+  
+  return token_ccp_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_token_ccp() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.token_ccp)
+  return token_ccp_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_token_ccp(std::string* token_ccp) {
+  if (token_ccp != nullptr) {
+    
+  } else {
+    
+  }
+  token_ccp_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token_ccp,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.token_ccp)
+}
+
+// bool email_verified = 24 [json_name = "emailVerified"];
+inline void UserDetail::clear_email_verified() {
+  email_verified_ = false;
+}
+inline bool UserDetail::_internal_email_verified() const {
+  return email_verified_;
+}
+inline bool UserDetail::email_verified() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.email_verified)
+  return _internal_email_verified();
+}
+inline void UserDetail::_internal_set_email_verified(bool value) {
+  
+  email_verified_ = value;
+}
+inline void UserDetail::set_email_verified(bool value) {
+  _internal_set_email_verified(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.email_verified)
+}
+
+// string language = 26 [json_name = "language"];
+inline void UserDetail::clear_language() {
+  language_.ClearToEmpty();
+}
+inline const std::string& UserDetail::language() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.language)
+  return _internal_language();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_language(ArgT0&& arg0, ArgT... args) {
+ 
+ language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.language)
+}
+inline std::string* UserDetail::mutable_language() {
+  std::string* _s = _internal_mutable_language();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.language)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_language() const {
+  return language_.Get();
+}
+inline void UserDetail::_internal_set_language(const std::string& value) {
+  
+  language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_language() {
+  
+  return language_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_language() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.language)
+  return language_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_language(std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), language,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.language)
+}
+
+// bool push_notification = 27 [json_name = "pushNotification"];
+inline void UserDetail::clear_push_notification() {
+  push_notification_ = false;
+}
+inline bool UserDetail::_internal_push_notification() const {
+  return push_notification_;
+}
+inline bool UserDetail::push_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.push_notification)
+  return _internal_push_notification();
+}
+inline void UserDetail::_internal_set_push_notification(bool value) {
+  
+  push_notification_ = value;
+}
+inline void UserDetail::set_push_notification(bool value) {
+  _internal_set_push_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.push_notification)
+}
+
+// bool email_notification = 28 [json_name = "emailNotification"];
+inline void UserDetail::clear_email_notification() {
+  email_notification_ = false;
+}
+inline bool UserDetail::_internal_email_notification() const {
+  return email_notification_;
+}
+inline bool UserDetail::email_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.email_notification)
+  return _internal_email_notification();
+}
+inline void UserDetail::_internal_set_email_notification(bool value) {
+  
+  email_notification_ = value;
+}
+inline void UserDetail::set_email_notification(bool value) {
+  _internal_set_email_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.email_notification)
+}
+
+// bool new_login_notification = 29 [json_name = "newLoginNotification"];
+inline void UserDetail::clear_new_login_notification() {
+  new_login_notification_ = false;
+}
+inline bool UserDetail::_internal_new_login_notification() const {
+  return new_login_notification_;
+}
+inline bool UserDetail::new_login_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.new_login_notification)
+  return _internal_new_login_notification();
+}
+inline void UserDetail::_internal_set_new_login_notification(bool value) {
+  
+  new_login_notification_ = value;
+}
+inline void UserDetail::set_new_login_notification(bool value) {
+  _internal_set_new_login_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.new_login_notification)
+}
+
+// bool create_notification = 30 [json_name = "createNotification"];
+inline void UserDetail::clear_create_notification() {
+  create_notification_ = false;
+}
+inline bool UserDetail::_internal_create_notification() const {
+  return create_notification_;
+}
+inline bool UserDetail::create_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.create_notification)
+  return _internal_create_notification();
+}
+inline void UserDetail::_internal_set_create_notification(bool value) {
+  
+  create_notification_ = value;
+}
+inline void UserDetail::set_create_notification(bool value) {
+  _internal_set_create_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.create_notification)
+}
+
+// bool update_notification = 31 [json_name = "updateNotification"];
+inline void UserDetail::clear_update_notification() {
+  update_notification_ = false;
+}
+inline bool UserDetail::_internal_update_notification() const {
+  return update_notification_;
+}
+inline bool UserDetail::update_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.update_notification)
+  return _internal_update_notification();
+}
+inline void UserDetail::_internal_set_update_notification(bool value) {
+  
+  update_notification_ = value;
+}
+inline void UserDetail::set_update_notification(bool value) {
+  _internal_set_update_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.update_notification)
+}
+
+// bool delete_notification = 32 [json_name = "deleteNotification"];
+inline void UserDetail::clear_delete_notification() {
+  delete_notification_ = false;
+}
+inline bool UserDetail::_internal_delete_notification() const {
+  return delete_notification_;
+}
+inline bool UserDetail::delete_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.delete_notification)
+  return _internal_delete_notification();
+}
+inline void UserDetail::_internal_set_delete_notification(bool value) {
+  
+  delete_notification_ = value;
+}
+inline void UserDetail::set_delete_notification(bool value) {
+  _internal_set_delete_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.delete_notification)
+}
+
+// bool application_notification = 33 [json_name = "applicationNotification"];
+inline void UserDetail::clear_application_notification() {
+  application_notification_ = false;
+}
+inline bool UserDetail::_internal_application_notification() const {
+  return application_notification_;
+}
+inline bool UserDetail::application_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.application_notification)
+  return _internal_application_notification();
+}
+inline void UserDetail::_internal_set_application_notification(bool value) {
+  
+  application_notification_ = value;
+}
+inline void UserDetail::set_application_notification(bool value) {
+  _internal_set_application_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.application_notification)
+}
+
+// bool read_notification = 34 [json_name = "readNotification"];
+inline void UserDetail::clear_read_notification() {
+  read_notification_ = false;
+}
+inline bool UserDetail::_internal_read_notification() const {
+  return read_notification_;
+}
+inline bool UserDetail::read_notification() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.read_notification)
+  return _internal_read_notification();
+}
+inline void UserDetail::_internal_set_read_notification(bool value) {
+  
+  read_notification_ = value;
+}
+inline void UserDetail::set_read_notification(bool value) {
+  _internal_set_read_notification(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.read_notification)
+}
+
+// string phone_code = 35 [json_name = "phoneCode"];
+inline void UserDetail::clear_phone_code() {
+  phone_code_.ClearToEmpty();
+}
+inline const std::string& UserDetail::phone_code() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.phone_code)
+  return _internal_phone_code();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_phone_code(ArgT0&& arg0, ArgT... args) {
+ 
+ phone_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.phone_code)
+}
+inline std::string* UserDetail::mutable_phone_code() {
+  std::string* _s = _internal_mutable_phone_code();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.phone_code)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_phone_code() const {
+  return phone_code_.Get();
+}
+inline void UserDetail::_internal_set_phone_code(const std::string& value) {
+  
+  phone_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_phone_code() {
+  
+  return phone_code_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_phone_code() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.phone_code)
+  return phone_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_phone_code(std::string* phone_code) {
+  if (phone_code != nullptr) {
+    
+  } else {
+    
+  }
+  phone_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), phone_code,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.phone_code)
+}
+
+// string optional_address = 36 [json_name = "optionalAddress"];
+inline void UserDetail::clear_optional_address() {
+  optional_address_.ClearToEmpty();
+}
+inline const std::string& UserDetail::optional_address() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.optional_address)
+  return _internal_optional_address();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_optional_address(ArgT0&& arg0, ArgT... args) {
+ 
+ optional_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.optional_address)
+}
+inline std::string* UserDetail::mutable_optional_address() {
+  std::string* _s = _internal_mutable_optional_address();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.optional_address)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_optional_address() const {
+  return optional_address_.Get();
+}
+inline void UserDetail::_internal_set_optional_address(const std::string& value) {
+  
+  optional_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_optional_address() {
+  
+  return optional_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_optional_address() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.optional_address)
+  return optional_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_optional_address(std::string* optional_address) {
+  if (optional_address != nullptr) {
+    
+  } else {
+    
+  }
+  optional_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), optional_address,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.optional_address)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -17,7 +17,7 @@ class Users
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‰/
+¥
 #accounts/v1alpha1/users/users.protoaccounts.v1alpha1.users.v1"<
 CreateUserResponse
 msg (	Rmsg
@@ -31,7 +31,7 @@ class Users
 ListUserRequest\'
 organization_id (RorganizationId
 
-project_id (R	projectId"æ
+project_id (R	projectId"‘
 CreateUserRequest
 user_id (	RuserId
 
@@ -62,7 +62,8 @@ first_name (	R	firstName
 application_notification (RapplicationNotification+
 read_notification (RreadNotification
 
-phone_code (	R	phoneCode"o
+phone_code (	R	phoneCode)
+optional_address (	RoptionalAddress"o
 UpdateUserRequest
 auth_id (RauthIdA
 auth (2-.accounts.v1alpha1.users.v1.CreateUserRequestRauth"U
@@ -80,45 +81,11 @@ first_name (	R	firstName
 is_super_user (RisSuperUser"L
 GetOneUserRequest
 id (Rid\'
-organization_id (RorganizationId"Ó	
-GetOneUserResponse
-id (Rid
-user_id (	RuserId
-
-first_name (	R	firstName
-	last_name (	RlastName
-email (	Remail
-	is_active (RisActive
-
-created_at (	R	createdAt
-
-updated_at (	R	updatedAt-
-roles	 (2.accounts.v1alpha1.RoleRroles?
-permissions
- (2.accounts.v1alpha1.PermissionRpermissions"
-is_super_user (RisSuperUserE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations6
-projects (2.accounts.v1alpha1.ProjectRprojects!
-phone_number (	RphoneNumber
-country (	Rcountry
-city (	Rcity
-zip_code (	RzipCode
-address (	Raddress
-state (	Rstate#
-emoji_country (	RemojiCountry%
-email_verified (RemailVerified$
-is_mfa_enabled (RisMfaEnabled
-language (	Rlanguage+
-push_notification (RpushNotification-
-email_notification (RemailNotification4
-new_login_notification (RnewLoginNotification/
-create_notification (RcreateNotification/
-update_notification (RupdateNotification/
-delete_notification (RdeleteNotification9
-application_notification (RapplicationNotification+
-read_notification (RreadNotification
-
-phone_code  (	R	phoneCode"N
+organization_id (RorganizationId"o
+GetOneUserResponse1
+user (2.accounts.v1alpha1.UserDetailRuser
+msg (	Rmsg
+error (	Rerror"N
 ListUserResponse:
 users (2$.accounts.v1alpha1.users.v1.UserListRusers"I
 ListUserPaginationRequest
@@ -132,49 +99,11 @@ phone_code  (	R	phoneCode"N
 	users_dex (2$.accounts.v1alpha1.users.v1.UsersDexRusersDex"r
 GetOneUserDexRequest
 user_id (	RuserIdA
-user (2-.accounts.v1alpha1.users.v1.CreateUserRequestRuser"›
-
-GetOneUserDexResponse
-id (Rid
-user_id (	RuserId
-
-first_name (	R	firstName
-	last_name (	RlastName
-email (	Remail
-	is_active (RisActive
-
-created_at (	R	createdAt
-
-updated_at (	R	updatedAt-
-roles	 (2.accounts.v1alpha1.RoleRroles?
-permissions
- (2.accounts.v1alpha1.PermissionRpermissions"
-is_super_user (RisSuperUserE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations
-msg (	Rmsg6
-projects (2.accounts.v1alpha1.ProjectRprojects!
-phone_number (	RphoneNumber
-country (	Rcountry
-city (	Rcity
-zip_code (	RzipCode
-address (	Raddress
-state (	Rstate#
-emoji_country (	RemojiCountry$
-is_mfa_enabled (RisMfaEnabled
-	token_ccp (	RtokenCcp%
-email_verified (RemailVerified
-error (	Rerror
-language (	Rlanguage+
-push_notification (RpushNotification-
-email_notification (RemailNotification4
-new_login_notification (RnewLoginNotification/
-create_notification (RcreateNotification/
-update_notification (RupdateNotification/
-delete_notification  (RdeleteNotification9
-application_notification! (RapplicationNotification+
-read_notification" (RreadNotification
-
-phone_code# (	R	phoneCode"Z
+user (2-.accounts.v1alpha1.users.v1.CreateUserRequestRuser"r
+GetOneUserDexResponse1
+user (2.accounts.v1alpha1.UserDetailRuser
+msg (	Rmsg
+error (	Rerror"Z
 SendVerificationEmailRequest
 email (	Remail
 name (	Rname

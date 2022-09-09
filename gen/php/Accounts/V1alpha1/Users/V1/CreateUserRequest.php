@@ -127,6 +127,10 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string phone_code = 27 [json_name = "phoneCode"];</code>
      */
     protected $phone_code = '';
+    /**
+     * Generated from protobuf field <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     */
+    protected $optional_address = '';
 
     /**
      * Constructor.
@@ -163,6 +167,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $application_notification
      *     @type bool $read_notification
      *     @type string $phone_code
+     *     @type string $optional_address
      * }
      */
     public function __construct($data = NULL) {
@@ -768,6 +773,28 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->phone_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     * @return string
+     */
+    public function getOptionalAddress()
+    {
+        return $this->optional_address;
+    }
+
+    /**
+     * Generated from protobuf field <code>string optional_address = 28 [json_name = "optionalAddress"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOptionalAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->optional_address = $var;
 
         return $this;
     }

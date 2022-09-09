@@ -49,6 +49,7 @@ message CreateUserRequest {
     string city = 11;
     string zip_code = 12;
     string address = 13;
+
     string state = 14;
     string emoji_country = 15;
     string invitation_code  = 16;
@@ -68,6 +69,8 @@ message CreateUserRequest {
 
 
     string phone_code = 27;
+    string optional_address = 28;
+
 }
 
 //Update
@@ -103,42 +106,9 @@ message GetOneUserRequest {
 }
 
 message GetOneUserResponse {
-    uint32 id = 1;
-    string user_id = 2;
-    string first_name = 3;
-    string last_name = 4;
-    string email = 5;
-    bool is_active = 6;
-    string created_at = 7;
-    string updated_at = 8;
-    repeated Role roles = 9;
-    repeated Permission permissions = 10;
-    bool is_super_user = 11;
-    repeated Organization organizations = 12;
-    repeated Project projects = 13;
-    // details
-    string phone_number = 14;
-    string country = 15;
-    string city = 16;
-    string zip_code = 17;
-    string address = 18;
-    string state = 19;
-    string emoji_country = 20;
-    bool email_verified = 21;
-
-    // preferences
-    bool is_mfa_enabled = 22;
-    string language = 23;
-    bool push_notification  = 24;
-    bool email_notification = 25;
-    bool new_login_notification = 26;
-    bool create_notification = 27;
-    bool update_notification = 28;
-    bool delete_notification = 29;
-    bool application_notification = 30;
-    bool read_notification = 31;
-
-    string phone_code = 32;
+    UserDetail user = 1;
+    string msg = 2;
+    string error = 3;
 }
 
 
@@ -184,50 +154,10 @@ message GetOneUserDexRequest {
 }
 
 message GetOneUserDexResponse {
-    uint32 id = 1;
-    string user_id = 2;
-    string first_name = 3;
-    string last_name = 4;
-    string email = 5;
-    bool is_active = 6;
-    string created_at = 7;
-    string updated_at = 8;
-    repeated Role roles = 9;
-    repeated Permission permissions = 10;
-    bool is_super_user = 11;
-    repeated Organization organizations = 12;
-    string msg = 13;
-    repeated Project projects = 14;
+    UserDetail user = 1;
+    string msg = 2;
+    string error = 3;
 
-
-    // details
-    string phone_number = 15;
-    string country = 16;
-    string city = 17;
-    string zip_code = 18;
-    string address = 19;
-    string state = 20;
-    string emoji_country = 21;
-    //multi-factor
-    bool is_mfa_enabled = 22;
-    string token_ccp = 23;
-    bool email_verified = 24;
-    string error = 25;
-
-
-    //preferences
-    string language = 26;
-    bool push_notification  = 27;
-    bool email_notification = 28;
-    bool new_login_notification = 29;
-    bool create_notification = 30;
-    bool update_notification = 31;
-    bool delete_notification = 32;
-    bool application_notification = 33;
-    bool read_notification = 34;
-
-
-    string phone_code = 35;
 }
 
 
