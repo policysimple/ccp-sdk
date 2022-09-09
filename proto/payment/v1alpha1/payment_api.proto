@@ -40,8 +40,21 @@ service PaymentAPIService{
 
         //Filter service
         rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
+
+           //Pause Project Consumption
+    rpc StopProject(StopProjectRequest) returns (StopProjectResponse){};
     }
-    
+
+    message StopProjectRequest{
+        string organization_id = 1;
+        payment.v1alpha1.Project project = 2;
+      }
+
+      message StopProjectResponse{
+        payment.v1alpha1.Project project = 1;
+      }
+      
+
     message InvoiceFilterRequest {
         uint32  organization_id = 1;
         string invoice_id = 2;

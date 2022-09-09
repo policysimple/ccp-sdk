@@ -47,7 +47,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[44]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[46]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -182,6 +182,12 @@ extern ListSubscriptionItemsRequestDefaultTypeInternal _ListSubscriptionItemsReq
 class ListSubscriptionItemsResponse;
 struct ListSubscriptionItemsResponseDefaultTypeInternal;
 extern ListSubscriptionItemsResponseDefaultTypeInternal _ListSubscriptionItemsResponse_default_instance_;
+class StopProjectRequest;
+struct StopProjectRequestDefaultTypeInternal;
+extern StopProjectRequestDefaultTypeInternal _StopProjectRequest_default_instance_;
+class StopProjectResponse;
+struct StopProjectResponseDefaultTypeInternal;
+extern StopProjectResponseDefaultTypeInternal _StopProjectResponse_default_instance_;
 class UpdateSubscriptionRequest;
 struct UpdateSubscriptionRequestDefaultTypeInternal;
 extern UpdateSubscriptionRequestDefaultTypeInternal _UpdateSubscriptionRequest_default_instance_;
@@ -233,6 +239,8 @@ template<> ::payment::v1alpha1::ListProjectsRequest* Arena::CreateMaybeMessage<:
 template<> ::payment::v1alpha1::ListProjectsResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::ListProjectsResponse>(Arena*);
 template<> ::payment::v1alpha1::ListSubscriptionItemsRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::ListSubscriptionItemsRequest>(Arena*);
 template<> ::payment::v1alpha1::ListSubscriptionItemsResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::ListSubscriptionItemsResponse>(Arena*);
+template<> ::payment::v1alpha1::StopProjectRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::StopProjectRequest>(Arena*);
+template<> ::payment::v1alpha1::StopProjectResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::StopProjectResponse>(Arena*);
 template<> ::payment::v1alpha1::UpdateSubscriptionRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateSubscriptionRequest>(Arena*);
 template<> ::payment::v1alpha1::UpdateSubscriptionResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateSubscriptionResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -240,6 +248,318 @@ namespace payment {
 namespace v1alpha1 {
 
 // ===================================================================
+
+class StopProjectRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.StopProjectRequest) */ {
+ public:
+  inline StopProjectRequest() : StopProjectRequest(nullptr) {}
+  ~StopProjectRequest() override;
+  explicit constexpr StopProjectRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StopProjectRequest(const StopProjectRequest& from);
+  StopProjectRequest(StopProjectRequest&& from) noexcept
+    : StopProjectRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline StopProjectRequest& operator=(const StopProjectRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StopProjectRequest& operator=(StopProjectRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StopProjectRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StopProjectRequest* internal_default_instance() {
+    return reinterpret_cast<const StopProjectRequest*>(
+               &_StopProjectRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(StopProjectRequest& a, StopProjectRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StopProjectRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StopProjectRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StopProjectRequest* New() const final {
+    return new StopProjectRequest();
+  }
+
+  StopProjectRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StopProjectRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StopProjectRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const StopProjectRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StopProjectRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.StopProjectRequest";
+  }
+  protected:
+  explicit StopProjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+    kProjectFieldNumber = 2,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // .payment.v1alpha1.Project project = 2 [json_name = "project"];
+  bool has_project() const;
+  private:
+  bool _internal_has_project() const;
+  public:
+  void clear_project();
+  const ::payment::v1alpha1::Project& project() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Project* release_project();
+  ::payment::v1alpha1::Project* mutable_project();
+  void set_allocated_project(::payment::v1alpha1::Project* project);
+  private:
+  const ::payment::v1alpha1::Project& _internal_project() const;
+  ::payment::v1alpha1::Project* _internal_mutable_project();
+  public:
+  void unsafe_arena_set_allocated_project(
+      ::payment::v1alpha1::Project* project);
+  ::payment::v1alpha1::Project* unsafe_arena_release_project();
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.StopProjectRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::payment::v1alpha1::Project* project_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StopProjectResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.StopProjectResponse) */ {
+ public:
+  inline StopProjectResponse() : StopProjectResponse(nullptr) {}
+  ~StopProjectResponse() override;
+  explicit constexpr StopProjectResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StopProjectResponse(const StopProjectResponse& from);
+  StopProjectResponse(StopProjectResponse&& from) noexcept
+    : StopProjectResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline StopProjectResponse& operator=(const StopProjectResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StopProjectResponse& operator=(StopProjectResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StopProjectResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StopProjectResponse* internal_default_instance() {
+    return reinterpret_cast<const StopProjectResponse*>(
+               &_StopProjectResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(StopProjectResponse& a, StopProjectResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StopProjectResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StopProjectResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StopProjectResponse* New() const final {
+    return new StopProjectResponse();
+  }
+
+  StopProjectResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StopProjectResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StopProjectResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const StopProjectResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StopProjectResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.StopProjectResponse";
+  }
+  protected:
+  explicit StopProjectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kProjectFieldNumber = 1,
+  };
+  // .payment.v1alpha1.Project project = 1 [json_name = "project"];
+  bool has_project() const;
+  private:
+  bool _internal_has_project() const;
+  public:
+  void clear_project();
+  const ::payment::v1alpha1::Project& project() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Project* release_project();
+  ::payment::v1alpha1::Project* mutable_project();
+  void set_allocated_project(::payment::v1alpha1::Project* project);
+  private:
+  const ::payment::v1alpha1::Project& _internal_project() const;
+  ::payment::v1alpha1::Project* _internal_mutable_project();
+  public:
+  void unsafe_arena_set_allocated_project(
+      ::payment::v1alpha1::Project* project);
+  ::payment::v1alpha1::Project* unsafe_arena_release_project();
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.StopProjectResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::payment::v1alpha1::Project* project_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
 
 class InvoiceFilterRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.InvoiceFilterRequest) */ {
@@ -285,7 +605,7 @@ class InvoiceFilterRequest final :
                &_InvoiceFilterRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(InvoiceFilterRequest& a, InvoiceFilterRequest& b) {
     a.Swap(&b);
@@ -546,7 +866,7 @@ class InvoiceFilterResponse final :
                &_InvoiceFilterResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(InvoiceFilterResponse& a, InvoiceFilterResponse& b) {
     a.Swap(&b);
@@ -730,7 +1050,7 @@ class DeleteCustomerRequest final :
                &_DeleteCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(DeleteCustomerRequest& a, DeleteCustomerRequest& b) {
     a.Swap(&b);
@@ -885,7 +1205,7 @@ class DeleteCustomerResponse final :
                &_DeleteCustomerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(DeleteCustomerResponse& a, DeleteCustomerResponse& b) {
     a.Swap(&b);
@@ -1049,7 +1369,7 @@ class GetSubscriptionRequest final :
                &_GetSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(GetSubscriptionRequest& a, GetSubscriptionRequest& b) {
     a.Swap(&b);
@@ -1204,7 +1524,7 @@ class GetSubscriptionResponse final :
                &_GetSubscriptionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(GetSubscriptionResponse& a, GetSubscriptionResponse& b) {
     a.Swap(&b);
@@ -1368,7 +1688,7 @@ class GetOrganizationRequest final :
                &_GetOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(GetOrganizationRequest& a, GetOrganizationRequest& b) {
     a.Swap(&b);
@@ -1507,7 +1827,7 @@ class GetOrganizationResponse final :
                &_GetOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(GetOrganizationResponse& a, GetOrganizationResponse& b) {
     a.Swap(&b);
@@ -1671,7 +1991,7 @@ class GetCustomerRequest final :
                &_GetCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(GetCustomerRequest& a, GetCustomerRequest& b) {
     a.Swap(&b);
@@ -1826,7 +2146,7 @@ class GetCustomerResponse final :
                &_GetCustomerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(GetCustomerResponse& a, GetCustomerResponse& b) {
     a.Swap(&b);
@@ -1990,7 +2310,7 @@ class GetBilingMonthRequest final :
                &_GetBilingMonthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(GetBilingMonthRequest& a, GetBilingMonthRequest& b) {
     a.Swap(&b);
@@ -2145,7 +2465,7 @@ class GetBilingMonthResponse final :
                &_GetBilingMonthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(GetBilingMonthResponse& a, GetBilingMonthResponse& b) {
     a.Swap(&b);
@@ -2309,7 +2629,7 @@ class GetPaymentsRequest final :
                &_GetPaymentsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(GetPaymentsRequest& a, GetPaymentsRequest& b) {
     a.Swap(&b);
@@ -2464,7 +2784,7 @@ class GetPaymentsResponse final :
                &_GetPaymentsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(GetPaymentsResponse& a, GetPaymentsResponse& b) {
     a.Swap(&b);
@@ -2628,7 +2948,7 @@ class CreateSubscriptionRequest final :
                &_CreateSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(CreateSubscriptionRequest& a, CreateSubscriptionRequest& b) {
     a.Swap(&b);
@@ -2803,7 +3123,7 @@ class CreateSubscriptionResponse final :
                &_CreateSubscriptionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(CreateSubscriptionResponse& a, CreateSubscriptionResponse& b) {
     a.Swap(&b);
@@ -2967,7 +3287,7 @@ class UpdateSubscriptionRequest final :
                &_UpdateSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(UpdateSubscriptionRequest& a, UpdateSubscriptionRequest& b) {
     a.Swap(&b);
@@ -3122,7 +3442,7 @@ class UpdateSubscriptionResponse final :
                &_UpdateSubscriptionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(UpdateSubscriptionResponse& a, UpdateSubscriptionResponse& b) {
     a.Swap(&b);
@@ -3286,7 +3606,7 @@ class CreateProjectRequest final :
                &_CreateProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(CreateProjectRequest& a, CreateProjectRequest& b) {
     a.Swap(&b);
@@ -3445,7 +3765,7 @@ class CreateProjectResponse final :
                &_CreateProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(CreateProjectResponse& a, CreateProjectResponse& b) {
     a.Swap(&b);
@@ -3589,7 +3909,7 @@ class CreateInvoiceRequest final :
                &_CreateInvoiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(CreateInvoiceRequest& a, CreateInvoiceRequest& b) {
     a.Swap(&b);
@@ -3824,7 +4144,7 @@ class CreateInvoiceResponse final :
                &_CreateInvoiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(CreateInvoiceResponse& a, CreateInvoiceResponse& b) {
     a.Swap(&b);
@@ -3988,7 +4308,7 @@ class CreateCardRequest final :
                &_CreateCardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(CreateCardRequest& a, CreateCardRequest& b) {
     a.Swap(&b);
@@ -4163,7 +4483,7 @@ class CreateCardResponse final :
                &_CreateCardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(CreateCardResponse& a, CreateCardResponse& b) {
     a.Swap(&b);
@@ -4323,7 +4643,7 @@ class CancelSubscriptionRequest final :
                &_CancelSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(CancelSubscriptionRequest& a, CancelSubscriptionRequest& b) {
     a.Swap(&b);
@@ -4494,7 +4814,7 @@ class CancelSubscriptionResponse final :
                &_CancelSubscriptionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(CancelSubscriptionResponse& a, CancelSubscriptionResponse& b) {
     a.Swap(&b);
@@ -4638,7 +4958,7 @@ class CreateCustomerRequest final :
                &_CreateCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(CreateCustomerRequest& a, CreateCustomerRequest& b) {
     a.Swap(&b);
@@ -4786,7 +5106,7 @@ class CreateCustomerResponse final :
                &_CreateCustomerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(CreateCustomerResponse& a, CreateCustomerResponse& b) {
     a.Swap(&b);
@@ -4946,7 +5266,7 @@ class CreatePaymentRequest final :
                &_CreatePaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(CreatePaymentRequest& a, CreatePaymentRequest& b) {
     a.Swap(&b);
@@ -5121,7 +5441,7 @@ class CreatePaymentResponse final :
                &_CreatePaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(CreatePaymentResponse& a, CreatePaymentResponse& b) {
     a.Swap(&b);
@@ -5281,7 +5601,7 @@ class DeletePaymentRequest final :
                &_DeletePaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(DeletePaymentRequest& a, DeletePaymentRequest& b) {
     a.Swap(&b);
@@ -5452,7 +5772,7 @@ class DeletePaymentResponse final :
                &_DeletePaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(DeletePaymentResponse& a, DeletePaymentResponse& b) {
     a.Swap(&b);
@@ -5596,7 +5916,7 @@ class GetPaymentRequest final :
                &_GetPaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(GetPaymentRequest& a, GetPaymentRequest& b) {
     a.Swap(&b);
@@ -5767,7 +6087,7 @@ class GetPaymentResponse final :
                &_GetPaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(GetPaymentResponse& a, GetPaymentResponse& b) {
     a.Swap(&b);
@@ -5931,7 +6251,7 @@ class ListPaymentRequest final :
                &_ListPaymentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(ListPaymentRequest& a, ListPaymentRequest& b) {
     a.Swap(&b);
@@ -6086,7 +6406,7 @@ class ListPaymentResponse final :
                &_ListPaymentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(ListPaymentResponse& a, ListPaymentResponse& b) {
     a.Swap(&b);
@@ -6250,7 +6570,7 @@ class ListSubscriptionItemsRequest final :
                &_ListSubscriptionItemsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(ListSubscriptionItemsRequest& a, ListSubscriptionItemsRequest& b) {
     a.Swap(&b);
@@ -6405,7 +6725,7 @@ class ListSubscriptionItemsResponse final :
                &_ListSubscriptionItemsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(ListSubscriptionItemsResponse& a, ListSubscriptionItemsResponse& b) {
     a.Swap(&b);
@@ -6589,7 +6909,7 @@ class ListProjectsRequest final :
                &_ListProjectsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(ListProjectsRequest& a, ListProjectsRequest& b) {
     a.Swap(&b);
@@ -6728,7 +7048,7 @@ class ListProjectsResponse final :
                &_ListProjectsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(ListProjectsResponse& a, ListProjectsResponse& b) {
     a.Swap(&b);
@@ -6892,7 +7212,7 @@ class GetProjectRequest final :
                &_GetProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(GetProjectRequest& a, GetProjectRequest& b) {
     a.Swap(&b);
@@ -7052,7 +7372,7 @@ class GetProjectResponse final :
                &_GetProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(GetProjectResponse& a, GetProjectResponse& b) {
     a.Swap(&b);
@@ -7216,7 +7536,7 @@ class DeleteProjectRequest final :
                &_DeleteProjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(DeleteProjectRequest& a, DeleteProjectRequest& b) {
     a.Swap(&b);
@@ -7391,7 +7711,7 @@ class DeleteProjectResponse final :
                &_DeleteProjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(DeleteProjectResponse& a, DeleteProjectResponse& b) {
     a.Swap(&b);
@@ -7498,6 +7818,232 @@ class DeleteProjectResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// StopProjectRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void StopProjectRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& StopProjectRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.StopProjectRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopProjectRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.StopProjectRequest.organization_id)
+}
+inline std::string* StopProjectRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.StopProjectRequest.organization_id)
+  return _s;
+}
+inline const std::string& StopProjectRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void StopProjectRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* StopProjectRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* StopProjectRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.StopProjectRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void StopProjectRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.StopProjectRequest.organization_id)
+}
+
+// .payment.v1alpha1.Project project = 2 [json_name = "project"];
+inline bool StopProjectRequest::_internal_has_project() const {
+  return this != internal_default_instance() && project_ != nullptr;
+}
+inline bool StopProjectRequest::has_project() const {
+  return _internal_has_project();
+}
+inline const ::payment::v1alpha1::Project& StopProjectRequest::_internal_project() const {
+  const ::payment::v1alpha1::Project* p = project_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Project&>(
+      ::payment::v1alpha1::_Project_default_instance_);
+}
+inline const ::payment::v1alpha1::Project& StopProjectRequest::project() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.StopProjectRequest.project)
+  return _internal_project();
+}
+inline void StopProjectRequest::unsafe_arena_set_allocated_project(
+    ::payment::v1alpha1::Project* project) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  project_ = project;
+  if (project) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.StopProjectRequest.project)
+}
+inline ::payment::v1alpha1::Project* StopProjectRequest::release_project() {
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::Project* StopProjectRequest::unsafe_arena_release_project() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.StopProjectRequest.project)
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::Project* StopProjectRequest::_internal_mutable_project() {
+  
+  if (project_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Project>(GetArenaForAllocation());
+    project_ = p;
+  }
+  return project_;
+}
+inline ::payment::v1alpha1::Project* StopProjectRequest::mutable_project() {
+  ::payment::v1alpha1::Project* _msg = _internal_mutable_project();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.StopProjectRequest.project)
+  return _msg;
+}
+inline void StopProjectRequest::set_allocated_project(::payment::v1alpha1::Project* project) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  if (project) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project));
+    if (message_arena != submessage_arena) {
+      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, project, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  project_ = project;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.StopProjectRequest.project)
+}
+
+// -------------------------------------------------------------------
+
+// StopProjectResponse
+
+// .payment.v1alpha1.Project project = 1 [json_name = "project"];
+inline bool StopProjectResponse::_internal_has_project() const {
+  return this != internal_default_instance() && project_ != nullptr;
+}
+inline bool StopProjectResponse::has_project() const {
+  return _internal_has_project();
+}
+inline const ::payment::v1alpha1::Project& StopProjectResponse::_internal_project() const {
+  const ::payment::v1alpha1::Project* p = project_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Project&>(
+      ::payment::v1alpha1::_Project_default_instance_);
+}
+inline const ::payment::v1alpha1::Project& StopProjectResponse::project() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.StopProjectResponse.project)
+  return _internal_project();
+}
+inline void StopProjectResponse::unsafe_arena_set_allocated_project(
+    ::payment::v1alpha1::Project* project) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  project_ = project;
+  if (project) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.StopProjectResponse.project)
+}
+inline ::payment::v1alpha1::Project* StopProjectResponse::release_project() {
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::Project* StopProjectResponse::unsafe_arena_release_project() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.StopProjectResponse.project)
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::Project* StopProjectResponse::_internal_mutable_project() {
+  
+  if (project_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Project>(GetArenaForAllocation());
+    project_ = p;
+  }
+  return project_;
+}
+inline ::payment::v1alpha1::Project* StopProjectResponse::mutable_project() {
+  ::payment::v1alpha1::Project* _msg = _internal_mutable_project();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.StopProjectResponse.project)
+  return _msg;
+}
+inline void StopProjectResponse::set_allocated_project(::payment::v1alpha1::Project* project) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  if (project) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project));
+    if (message_arena != submessage_arena) {
+      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, project, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  project_ = project;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.StopProjectResponse.project)
+}
+
+// -------------------------------------------------------------------
+
 // InvoiceFilterRequest
 
 // uint32 organization_id = 1 [json_name = "organizationId"];
@@ -12755,6 +13301,10 @@ inline void DeleteProjectResponse::set_allocated_status(std::string* status) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
