@@ -45,6 +45,10 @@ class Project extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool status = 8 [json_name = "status"];</code>
      */
     protected $status = false;
+    /**
+     * Generated from protobuf field <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     */
+    protected $is_suspended = false;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $created_at
      *     @type string $updated_at
      *     @type bool $status
+     *     @type bool $is_suspended
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     * @return bool
+     */
+    public function getIsSuspended()
+    {
+        return $this->is_suspended;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsSuspended($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_suspended = $var;
 
         return $this;
     }
