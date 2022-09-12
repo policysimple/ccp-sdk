@@ -26,6 +26,7 @@ message Project {
   string created_at = 6;
   string updated_at = 7;
   bool status = 8;
+  bool is_suspended = 9;
 }
 
 message Subscription {
