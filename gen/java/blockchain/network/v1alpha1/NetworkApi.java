@@ -1803,6 +1803,1094 @@ public final class NetworkApi {
 
   }
 
+  public interface CreateChannelRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateChannelRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+     * @return The creatorOrgId.
+     */
+    java.lang.String getCreatorOrgId();
+    /**
+     * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+     * @return The bytes for creatorOrgId.
+     */
+    com.google.protobuf.ByteString
+        getCreatorOrgIdBytes();
+
+    /**
+     * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * @return The blockchainId.
+     */
+    java.lang.String getBlockchainId();
+    /**
+     * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * @return The bytes for blockchainId.
+     */
+    com.google.protobuf.ByteString
+        getBlockchainIdBytes();
+
+    /**
+     * <code>string channel_name = 3 [json_name = "channelName"];</code>
+     * @return The channelName.
+     */
+    java.lang.String getChannelName();
+    /**
+     * <code>string channel_name = 3 [json_name = "channelName"];</code>
+     * @return The bytes for channelName.
+     */
+    com.google.protobuf.ByteString
+        getChannelNameBytes();
+
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @return A list containing the channelOrgIds.
+     */
+    java.util.List<java.lang.String>
+        getChannelOrgIdsList();
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @return The count of channelOrgIds.
+     */
+    int getChannelOrgIdsCount();
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @param index The index of the element to return.
+     * @return The channelOrgIds at the given index.
+     */
+    java.lang.String getChannelOrgIds(int index);
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the channelOrgIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getChannelOrgIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code blockchain.network.v1alpha1.CreateChannelRequest}
+   */
+  public static final class CreateChannelRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.CreateChannelRequest)
+      CreateChannelRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateChannelRequest.newBuilder() to construct.
+    private CreateChannelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateChannelRequest() {
+      creatorOrgId_ = "";
+      blockchainId_ = "";
+      channelName_ = "";
+      channelOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateChannelRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateChannelRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              creatorOrgId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              blockchainId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channelName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                channelOrgIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              channelOrgIds_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          channelOrgIds_ = channelOrgIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.class, blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.Builder.class);
+    }
+
+    public static final int CREATOR_ORG_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object creatorOrgId_;
+    /**
+     * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+     * @return The creatorOrgId.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatorOrgId() {
+      java.lang.Object ref = creatorOrgId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creatorOrgId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+     * @return The bytes for creatorOrgId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatorOrgIdBytes() {
+      java.lang.Object ref = creatorOrgId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        creatorOrgId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BLOCKCHAIN_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object blockchainId_;
+    /**
+     * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * @return The blockchainId.
+     */
+    @java.lang.Override
+    public java.lang.String getBlockchainId() {
+      java.lang.Object ref = blockchainId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        blockchainId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * @return The bytes for blockchainId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBlockchainIdBytes() {
+      java.lang.Object ref = blockchainId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        blockchainId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHANNEL_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object channelName_;
+    /**
+     * <code>string channel_name = 3 [json_name = "channelName"];</code>
+     * @return The channelName.
+     */
+    @java.lang.Override
+    public java.lang.String getChannelName() {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channelName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string channel_name = 3 [json_name = "channelName"];</code>
+     * @return The bytes for channelName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChannelNameBytes() {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        channelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHANNEL_ORG_IDS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList channelOrgIds_;
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @return A list containing the channelOrgIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getChannelOrgIdsList() {
+      return channelOrgIds_;
+    }
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @return The count of channelOrgIds.
+     */
+    public int getChannelOrgIdsCount() {
+      return channelOrgIds_.size();
+    }
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @param index The index of the element to return.
+     * @return The channelOrgIds at the given index.
+     */
+    public java.lang.String getChannelOrgIds(int index) {
+      return channelOrgIds_.get(index);
+    }
+    /**
+     * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the channelOrgIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getChannelOrgIdsBytes(int index) {
+      return channelOrgIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCreatorOrgIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, creatorOrgId_);
+      }
+      if (!getBlockchainIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, blockchainId_);
+      }
+      if (!getChannelNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, channelName_);
+      }
+      for (int i = 0; i < channelOrgIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, channelOrgIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCreatorOrgIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, creatorOrgId_);
+      }
+      if (!getBlockchainIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, blockchainId_);
+      }
+      if (!getChannelNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, channelName_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < channelOrgIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(channelOrgIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getChannelOrgIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest)) {
+        return super.equals(obj);
+      }
+      blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest other = (blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest) obj;
+
+      if (!getCreatorOrgId()
+          .equals(other.getCreatorOrgId())) return false;
+      if (!getBlockchainId()
+          .equals(other.getBlockchainId())) return false;
+      if (!getChannelName()
+          .equals(other.getChannelName())) return false;
+      if (!getChannelOrgIdsList()
+          .equals(other.getChannelOrgIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CREATOR_ORG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatorOrgId().hashCode();
+      hash = (37 * hash) + BLOCKCHAIN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockchainId().hashCode();
+      hash = (37 * hash) + CHANNEL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelName().hashCode();
+      if (getChannelOrgIdsCount() > 0) {
+        hash = (37 * hash) + CHANNEL_ORG_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getChannelOrgIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code blockchain.network.v1alpha1.CreateChannelRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.CreateChannelRequest)
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.class, blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.Builder.class);
+      }
+
+      // Construct using blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        creatorOrgId_ = "";
+
+        blockchainId_ = "";
+
+        channelName_ = "";
+
+        channelOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest build() {
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest result = new blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest(this);
+        int from_bitField0_ = bitField0_;
+        result.creatorOrgId_ = creatorOrgId_;
+        result.blockchainId_ = blockchainId_;
+        result.channelName_ = channelName_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          channelOrgIds_ = channelOrgIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.channelOrgIds_ = channelOrgIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest.getDefaultInstance()) return this;
+        if (!other.getCreatorOrgId().isEmpty()) {
+          creatorOrgId_ = other.creatorOrgId_;
+          onChanged();
+        }
+        if (!other.getBlockchainId().isEmpty()) {
+          blockchainId_ = other.blockchainId_;
+          onChanged();
+        }
+        if (!other.getChannelName().isEmpty()) {
+          channelName_ = other.channelName_;
+          onChanged();
+        }
+        if (!other.channelOrgIds_.isEmpty()) {
+          if (channelOrgIds_.isEmpty()) {
+            channelOrgIds_ = other.channelOrgIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureChannelOrgIdsIsMutable();
+            channelOrgIds_.addAll(other.channelOrgIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object creatorOrgId_ = "";
+      /**
+       * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+       * @return The creatorOrgId.
+       */
+      public java.lang.String getCreatorOrgId() {
+        java.lang.Object ref = creatorOrgId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          creatorOrgId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+       * @return The bytes for creatorOrgId.
+       */
+      public com.google.protobuf.ByteString
+          getCreatorOrgIdBytes() {
+        java.lang.Object ref = creatorOrgId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          creatorOrgId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+       * @param value The creatorOrgId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatorOrgId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        creatorOrgId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatorOrgId() {
+        
+        creatorOrgId_ = getDefaultInstance().getCreatorOrgId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+       * @param value The bytes for creatorOrgId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatorOrgIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        creatorOrgId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object blockchainId_ = "";
+      /**
+       * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+       * @return The blockchainId.
+       */
+      public java.lang.String getBlockchainId() {
+        java.lang.Object ref = blockchainId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          blockchainId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+       * @return The bytes for blockchainId.
+       */
+      public com.google.protobuf.ByteString
+          getBlockchainIdBytes() {
+        java.lang.Object ref = blockchainId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          blockchainId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+       * @param value The blockchainId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockchainId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        blockchainId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBlockchainId() {
+        
+        blockchainId_ = getDefaultInstance().getBlockchainId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+       * @param value The bytes for blockchainId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockchainIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        blockchainId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object channelName_ = "";
+      /**
+       * <code>string channel_name = 3 [json_name = "channelName"];</code>
+       * @return The channelName.
+       */
+      public java.lang.String getChannelName() {
+        java.lang.Object ref = channelName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          channelName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string channel_name = 3 [json_name = "channelName"];</code>
+       * @return The bytes for channelName.
+       */
+      public com.google.protobuf.ByteString
+          getChannelNameBytes() {
+        java.lang.Object ref = channelName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          channelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string channel_name = 3 [json_name = "channelName"];</code>
+       * @param value The channelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannelName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        channelName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string channel_name = 3 [json_name = "channelName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChannelName() {
+        
+        channelName_ = getDefaultInstance().getChannelName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string channel_name = 3 [json_name = "channelName"];</code>
+       * @param value The bytes for channelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannelNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        channelName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList channelOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureChannelOrgIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          channelOrgIds_ = new com.google.protobuf.LazyStringArrayList(channelOrgIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @return A list containing the channelOrgIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getChannelOrgIdsList() {
+        return channelOrgIds_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @return The count of channelOrgIds.
+       */
+      public int getChannelOrgIdsCount() {
+        return channelOrgIds_.size();
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @param index The index of the element to return.
+       * @return The channelOrgIds at the given index.
+       */
+      public java.lang.String getChannelOrgIds(int index) {
+        return channelOrgIds_.get(index);
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the channelOrgIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getChannelOrgIdsBytes(int index) {
+        return channelOrgIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @param index The index to set the value at.
+       * @param value The channelOrgIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannelOrgIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureChannelOrgIdsIsMutable();
+        channelOrgIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @param value The channelOrgIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addChannelOrgIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureChannelOrgIdsIsMutable();
+        channelOrgIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @param values The channelOrgIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllChannelOrgIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureChannelOrgIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, channelOrgIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChannelOrgIds() {
+        channelOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
+       * @param value The bytes of the channelOrgIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addChannelOrgIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureChannelOrgIdsIsMutable();
+        channelOrgIds_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.CreateChannelRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelRequest)
+    private static final blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest();
+    }
+
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateChannelRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateChannelRequest>() {
+      @java.lang.Override
+      public CreateChannelRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateChannelRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateChannelRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateChannelRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkApi.CreateChannelRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CreateNetworkResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateNetworkResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -3239,6 +4327,724 @@ public final class NetworkApi {
 
   }
 
+  public interface CreateChannelResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateChannelResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>string message = 2 [json_name = "message"];</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 2 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code blockchain.network.v1alpha1.CreateChannelResponse}
+   */
+  public static final class CreateChannelResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.CreateChannelResponse)
+      CreateChannelResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateChannelResponse.newBuilder() to construct.
+    private CreateChannelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateChannelResponse() {
+      status_ = "";
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateChannelResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateChannelResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.class, blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>string message = 2 [json_name = "message"];</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 2 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, status_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, status_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse)) {
+        return super.equals(obj);
+      }
+      blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse other = (blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse) obj;
+
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code blockchain.network.v1alpha1.CreateChannelResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.CreateChannelResponse)
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.class, blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.Builder.class);
+      }
+
+      // Construct using blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        status_ = "";
+
+        message_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateChannelResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse build() {
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse result = new blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse(this);
+        result.status_ = status_;
+        result.message_ = message_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse.getDefaultInstance()) return this;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 2 [json_name = "message"];</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 2 [json_name = "message"];</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 2 [json_name = "message"];</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2 [json_name = "message"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2 [json_name = "message"];</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.CreateChannelResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelResponse)
+    private static final blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse();
+    }
+
+    public static blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateChannelResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateChannelResponse>() {
+      @java.lang.Override
+      public CreateChannelResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateChannelResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateChannelResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateChannelResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkApi.CreateChannelResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_CreateNetworkRequest_descriptor;
   private static final 
@@ -3250,6 +5056,11 @@ public final class NetworkApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blockchain_network_v1alpha1_CreateChannelRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3259,6 +5070,11 @@ public final class NetworkApi {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blockchain_network_v1alpha1_CreateChannelResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blockchain_network_v1alpha1_CreateChannelResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3278,20 +5094,29 @@ public final class NetworkApi {
       "_password\030\002 \001(\tR\radminPassword\022\035\n\nadmin_" +
       "user\030\003 \001(\tR\tadminUser\022!\n\014network_name\030\004 " +
       "\001(\tR\013networkName\022\035\n\nnetwork_id\030\005 \001(\tR\tne" +
-      "tworkId\"I\n\025CreateNetworkResponse\022\026\n\006stat" +
-      "us\030\001 \001(\tR\006status\022\030\n\007message\030\002 \001(\tR\007messa" +
-      "ge\"Q\n\035AddPeerToOrganizationResponse\022\026\n\006s" +
-      "tatus\030\001 \001(\tR\006status\022\030\n\007message\030\002 \001(\tR\007me" +
-      "ssage2\237\002\n\024BlockchainAPIService\022v\n\rCreate" +
-      "Network\0221.blockchain.network.v1alpha1.Cr" +
-      "eateNetworkRequest\0322.blockchain.network." +
-      "v1alpha1.CreateNetworkResponse\022\216\001\n\025AddPe" +
-      "erToOrganization\0229.blockchain.network.v1" +
-      "alpha1.AddPeerToOrganizationRequest\032:.bl" +
-      "ockchain.network.v1alpha1.AddPeerToOrgan" +
-      "izationResponseB>Z<github.com/cuemby/ccp" +
-      "-sdk/gen/go/blockchain/network/v1alpha1b" +
-      "\006proto3"
+      "tworkId\"\254\001\n\024CreateChannelRequest\022$\n\016crea" +
+      "tor_org_id\030\001 \001(\tR\014creatorOrgId\022#\n\rblockc" +
+      "hain_id\030\002 \001(\tR\014blockchainId\022!\n\014channel_n" +
+      "ame\030\003 \001(\tR\013channelName\022&\n\017channel_org_id" +
+      "s\030\004 \003(\tR\rchannelOrgIds\"I\n\025CreateNetworkR" +
+      "esponse\022\026\n\006status\030\001 \001(\tR\006status\022\030\n\007messa" +
+      "ge\030\002 \001(\tR\007message\"Q\n\035AddPeerToOrganizati" +
+      "onResponse\022\026\n\006status\030\001 \001(\tR\006status\022\030\n\007me" +
+      "ssage\030\002 \001(\tR\007message\"I\n\025CreateChannelRes" +
+      "ponse\022\026\n\006status\030\001 \001(\tR\006status\022\030\n\007message" +
+      "\030\002 \001(\tR\007message2\227\003\n\024BlockchainAPIService" +
+      "\022v\n\rCreateNetwork\0221.blockchain.network.v" +
+      "1alpha1.CreateNetworkRequest\0322.blockchai" +
+      "n.network.v1alpha1.CreateNetworkResponse" +
+      "\022\216\001\n\025AddPeerToOrganization\0229.blockchain." +
+      "network.v1alpha1.AddPeerToOrganizationRe" +
+      "quest\032:.blockchain.network.v1alpha1.AddP" +
+      "eerToOrganizationResponse\022v\n\rCreateChann" +
+      "el\0221.blockchain.network.v1alpha1.CreateC" +
+      "hannelRequest\0322.blockchain.network.v1alp" +
+      "ha1.CreateChannelResponseB>Z<github.com/" +
+      "cuemby/ccp-sdk/gen/go/blockchain/network" +
+      "/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3310,17 +5135,29 @@ public final class NetworkApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor,
         new java.lang.String[] { "OrgDomain", "AdminPassword", "AdminUser", "NetworkName", "NetworkId", });
-    internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_descriptor =
+    internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_blockchain_network_v1alpha1_CreateChannelRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor,
+        new java.lang.String[] { "CreatorOrgId", "BlockchainId", "ChannelName", "ChannelOrgIds", });
+    internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_descriptor,
         new java.lang.String[] { "Status", "Message", });
     internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor,
+        new java.lang.String[] { "Status", "Message", });
+    internal_static_blockchain_network_v1alpha1_CreateChannelResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_blockchain_network_v1alpha1_CreateChannelResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blockchain_network_v1alpha1_CreateChannelResponse_descriptor,
         new java.lang.String[] { "Status", "Message", });
     blockchain.network.v1alpha1.NetworkOuterClass.getDescriptor();
   }

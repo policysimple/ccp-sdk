@@ -24,6 +24,11 @@ class BlockchainAPIServiceStub(object):
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationResponse.FromString,
         )
+    self.CreateChannel = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelResponse.FromString,
+        )
 
 
 class BlockchainAPIServiceServicer(object):
@@ -44,6 +49,13 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateChannel(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_BlockchainAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -56,6 +68,11 @@ def add_BlockchainAPIServiceServicer_to_server(servicer, server):
           servicer.AddPeerToOrganization,
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationResponse.SerializeToString,
+      ),
+      'CreateChannel': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateChannel,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

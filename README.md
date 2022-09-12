@@ -43,10 +43,10 @@ Some languajes required extra dependencies and binaries. you can build the proto
 docker run --rm -v `pwd`:/temp/buf-gen netsaj/buf-generate
 ```
 
-- check `gen` folder your protos was be compiled. 
+- Check the `gen` folder, your protos will be compiled there.
 
 
-**Note1:** docker image repository : https://github.com/netsaj/buf-generate
+**Note1:** Docker image repository : https://github.com/netsaj/buf-generate
 
-**Note2:** If you have all depdencies you can build running in your terminal `buf generate`
+**Note2:** If you have all dependencies you can build running in your terminal `buf generate`
 

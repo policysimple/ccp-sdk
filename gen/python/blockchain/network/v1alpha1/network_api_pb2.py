@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-blockchain/network/v1alpha1/network_api.proto\x12\x1b\x62lockchain.network.v1alpha1\x1a)blockchain/network/v1alpha1/network.proto\"V\n\x14\x43reateNetworkRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\"\xc5\x01\n\x1c\x41\x64\x64PeerToOrganizationRequest\x12\x1d\n\norg_domain\x18\x01 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x02 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x03 \x01(\tR\tadminUser\x12!\n\x0cnetwork_name\x18\x04 \x01(\tR\x0bnetworkName\x12\x1d\n\nnetwork_id\x18\x05 \x01(\tR\tnetworkId\"I\n\x15\x43reateNetworkResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"Q\n\x1d\x41\x64\x64PeerToOrganizationResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2\x9f\x02\n\x14\x42lockchainAPIService\x12v\n\rCreateNetwork\x12\x31.blockchain.network.v1alpha1.CreateNetworkRequest\x1a\x32.blockchain.network.v1alpha1.CreateNetworkResponse\x12\x8e\x01\n\x15\x41\x64\x64PeerToOrganization\x12\x39.blockchain.network.v1alpha1.AddPeerToOrganizationRequest\x1a:.blockchain.network.v1alpha1.AddPeerToOrganizationResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
+  serialized_pb=b'\n-blockchain/network/v1alpha1/network_api.proto\x12\x1b\x62lockchain.network.v1alpha1\x1a)blockchain/network/v1alpha1/network.proto\"V\n\x14\x43reateNetworkRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\"\xc5\x01\n\x1c\x41\x64\x64PeerToOrganizationRequest\x12\x1d\n\norg_domain\x18\x01 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x02 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x03 \x01(\tR\tadminUser\x12!\n\x0cnetwork_name\x18\x04 \x01(\tR\x0bnetworkName\x12\x1d\n\nnetwork_id\x18\x05 \x01(\tR\tnetworkId\"\xac\x01\n\x14\x43reateChannelRequest\x12$\n\x0e\x63reator_org_id\x18\x01 \x01(\tR\x0c\x63reatorOrgId\x12#\n\rblockchain_id\x18\x02 \x01(\tR\x0c\x62lockchainId\x12!\n\x0c\x63hannel_name\x18\x03 \x01(\tR\x0b\x63hannelName\x12&\n\x0f\x63hannel_org_ids\x18\x04 \x03(\tR\rchannelOrgIds\"I\n\x15\x43reateNetworkResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"Q\n\x1d\x41\x64\x64PeerToOrganizationResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"I\n\x15\x43reateChannelResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2\x97\x03\n\x14\x42lockchainAPIService\x12v\n\rCreateNetwork\x12\x31.blockchain.network.v1alpha1.CreateNetworkRequest\x1a\x32.blockchain.network.v1alpha1.CreateNetworkResponse\x12\x8e\x01\n\x15\x41\x64\x64PeerToOrganization\x12\x39.blockchain.network.v1alpha1.AddPeerToOrganizationRequest\x1a:.blockchain.network.v1alpha1.AddPeerToOrganizationResponse\x12v\n\rCreateChannel\x12\x31.blockchain.network.v1alpha1.CreateChannelRequest\x1a\x32.blockchain.network.v1alpha1.CreateChannelResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
   ,
   dependencies=[blockchain_dot_network_dot_v1alpha1_dot_network__pb2.DESCRIPTOR,])
 
@@ -119,6 +119,59 @@ _ADDPEERTOORGANIZATIONREQUEST = _descriptor.Descriptor(
 )
 
 
+_CREATECHANNELREQUEST = _descriptor.Descriptor(
+  name='CreateChannelRequest',
+  full_name='blockchain.network.v1alpha1.CreateChannelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='creator_org_id', full_name='blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='creatorOrgId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='blockchain_id', full_name='blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blockchainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='channel_name', full_name='blockchain.network.v1alpha1.CreateChannelRequest.channel_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='channelName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='channel_org_ids', full_name='blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='channelOrgIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=410,
+  serialized_end=582,
+)
+
+
 _CREATENETWORKRESPONSE = _descriptor.Descriptor(
   name='CreateNetworkResponse',
   full_name='blockchain.network.v1alpha1.CreateNetworkResponse',
@@ -153,8 +206,8 @@ _CREATENETWORKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=409,
-  serialized_end=482,
+  serialized_start=584,
+  serialized_end=657,
 )
 
 
@@ -192,15 +245,56 @@ _ADDPEERTOORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=565,
+  serialized_start=659,
+  serialized_end=740,
+)
+
+
+_CREATECHANNELRESPONSE = _descriptor.Descriptor(
+  name='CreateChannelResponse',
+  full_name='blockchain.network.v1alpha1.CreateChannelResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='blockchain.network.v1alpha1.CreateChannelResponse.status', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='blockchain.network.v1alpha1.CreateChannelResponse.message', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='message', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=742,
+  serialized_end=815,
 )
 
 _CREATENETWORKREQUEST.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
 DESCRIPTOR.message_types_by_name['CreateNetworkRequest'] = _CREATENETWORKREQUEST
 DESCRIPTOR.message_types_by_name['AddPeerToOrganizationRequest'] = _ADDPEERTOORGANIZATIONREQUEST
+DESCRIPTOR.message_types_by_name['CreateChannelRequest'] = _CREATECHANNELREQUEST
 DESCRIPTOR.message_types_by_name['CreateNetworkResponse'] = _CREATENETWORKRESPONSE
 DESCRIPTOR.message_types_by_name['AddPeerToOrganizationResponse'] = _ADDPEERTOORGANIZATIONRESPONSE
+DESCRIPTOR.message_types_by_name['CreateChannelResponse'] = _CREATECHANNELRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateNetworkRequest = _reflection.GeneratedProtocolMessageType('CreateNetworkRequest', (_message.Message,), {
@@ -217,6 +311,13 @@ AddPeerToOrganizationRequest = _reflection.GeneratedProtocolMessageType('AddPeer
   })
 _sym_db.RegisterMessage(AddPeerToOrganizationRequest)
 
+CreateChannelRequest = _reflection.GeneratedProtocolMessageType('CreateChannelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATECHANNELREQUEST,
+  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelRequest)
+  })
+_sym_db.RegisterMessage(CreateChannelRequest)
+
 CreateNetworkResponse = _reflection.GeneratedProtocolMessageType('CreateNetworkResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATENETWORKRESPONSE,
   '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
@@ -231,6 +332,13 @@ AddPeerToOrganizationResponse = _reflection.GeneratedProtocolMessageType('AddPee
   })
 _sym_db.RegisterMessage(AddPeerToOrganizationResponse)
 
+CreateChannelResponse = _reflection.GeneratedProtocolMessageType('CreateChannelResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CREATECHANNELRESPONSE,
+  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelResponse)
+  })
+_sym_db.RegisterMessage(CreateChannelResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -241,8 +349,8 @@ _BLOCKCHAINAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=568,
-  serialized_end=855,
+  serialized_start=818,
+  serialized_end=1225,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateNetwork',
@@ -261,6 +369,16 @@ _BLOCKCHAINAPISERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ADDPEERTOORGANIZATIONREQUEST,
     output_type=_ADDPEERTOORGANIZATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateChannel',
+    full_name='blockchain.network.v1alpha1.BlockchainAPIService.CreateChannel',
+    index=2,
+    containing_service=None,
+    input_type=_CREATECHANNELREQUEST,
+    output_type=_CREATECHANNELRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -17,7 +17,7 @@ class NetworkApi
         \GPBMetadata\Blockchain\Network\V1Alpha1\Network::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ô
+æ	
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1"V
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetwork"Å
@@ -29,16 +29,25 @@ org_domain (	R	orgDomain%
 admin_user (	R	adminUser!
 network_name (	RnetworkName
 
-network_id (	R	networkId"I
+network_id (	R	networkId"¬
+CreateChannelRequest$
+creator_org_id (	RcreatorOrgId#
+blockchain_id (	RblockchainId!
+channel_name (	RchannelName&
+channel_org_ids (	RchannelOrgIds"I
 CreateNetworkResponse
 status (	Rstatus
 message (	Rmessage"Q
 AddPeerToOrganizationResponse
 status (	Rstatus
-message (	Rmessage2Ÿ
+message (	Rmessage"I
+CreateChannelResponse
+status (	Rstatus
+message (	Rmessage2—
 BlockchainAPIServicev
 CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseŽ
-AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsev
+CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

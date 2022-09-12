@@ -42,4 +42,17 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Blockchain\Network\V1alpha1\CreateChannelRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateChannel(\Blockchain\Network\V1alpha1\CreateChannelRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\CreateChannelResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

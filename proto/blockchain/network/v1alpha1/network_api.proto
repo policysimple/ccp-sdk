@@ -4,12 +4,12 @@ package blockchain.network.v1alpha1;
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1";
 
 import "blockchain/network/v1alpha1/network.proto";
-//import "network.proto";
 
 
 service BlockchainAPIService {
     rpc CreateNetwork(CreateNetworkRequest) returns (CreateNetworkResponse);
     rpc AddPeerToOrganization(AddPeerToOrganizationRequest) returns (AddPeerToOrganizationResponse);
+    rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
 }
 
 message CreateNetworkRequest {
@@ -24,12 +24,24 @@ message AddPeerToOrganizationRequest {
     string network_id = 5;
 }
 
+message CreateChannelRequest {
+    string creator_org_id = 1;
+    string blockchain_id = 2;
+    string channel_name = 3;
+    repeated string channel_org_ids = 4;
+}
+
 message CreateNetworkResponse {
     string status = 1;
     string message = 2;
 }
 
 message AddPeerToOrganizationResponse {
+    string status = 1;
+    string message = 2;
+}
+
+message CreateChannelResponse {
     string status = 1;
     string message = 2;
 }

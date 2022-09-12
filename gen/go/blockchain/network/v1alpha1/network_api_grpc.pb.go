@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 type BlockchainAPIServiceClient interface {
 	CreateNetwork(ctx context.Context, in *CreateNetworkRequest, opts ...grpc.CallOption) (*CreateNetworkResponse, error)
 	AddPeerToOrganization(ctx context.Context, in *AddPeerToOrganizationRequest, opts ...grpc.CallOption) (*AddPeerToOrganizationResponse, error)
+	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
 }
 
 type blockchainAPIServiceClient struct {
@@ -48,12 +49,22 @@ func (c *blockchainAPIServiceClient) AddPeerToOrganization(ctx context.Context, 
 	return out, nil
 }
 
+func (c *blockchainAPIServiceClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
+	out := new(CreateChannelResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BlockchainAPIServiceServer is the server API for BlockchainAPIService service.
 // All implementations should embed UnimplementedBlockchainAPIServiceServer
 // for forward compatibility
 type BlockchainAPIServiceServer interface {
 	CreateNetwork(context.Context, *CreateNetworkRequest) (*CreateNetworkResponse, error)
 	AddPeerToOrganization(context.Context, *AddPeerToOrganizationRequest) (*AddPeerToOrganizationResponse, error)
+	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
 }
 
 // UnimplementedBlockchainAPIServiceServer should be embedded to have forward compatible implementations.
@@ -65,6 +76,9 @@ func (UnimplementedBlockchainAPIServiceServer) CreateNetwork(context.Context, *C
 }
 func (UnimplementedBlockchainAPIServiceServer) AddPeerToOrganization(context.Context, *AddPeerToOrganizationRequest) (*AddPeerToOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddPeerToOrganization not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
 }
 
 // UnsafeBlockchainAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -114,6 +128,24 @@ func _BlockchainAPIService_AddPeerToOrganization_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BlockchainAPIService_CreateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateChannelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).CreateChannel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).CreateChannel(ctx, req.(*CreateChannelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BlockchainAPIService_ServiceDesc is the grpc.ServiceDesc for BlockchainAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -128,6 +160,10 @@ var BlockchainAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AddPeerToOrganization",
 			Handler:    _BlockchainAPIService_AddPeerToOrganization_Handler,
+		},
+		{
+			MethodName: "CreateChannel",
+			Handler:    _BlockchainAPIService_CreateChannel_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
