@@ -2382,6 +2382,12 @@ public final class PaymentOuterClass {
      * @return The status.
      */
     boolean getStatus();
+
+    /**
+     * <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     * @return The isSuspended.
+     */
+    boolean getIsSuspended();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Project}
@@ -2480,6 +2486,11 @@ public final class PaymentOuterClass {
             case 64: {
 
               status_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              isSuspended_ = input.readBool();
               break;
             }
             default: {
@@ -2791,6 +2802,17 @@ public final class PaymentOuterClass {
       return status_;
     }
 
+    public static final int IS_SUSPENDED_FIELD_NUMBER = 9;
+    private boolean isSuspended_;
+    /**
+     * <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     * @return The isSuspended.
+     */
+    @java.lang.Override
+    public boolean getIsSuspended() {
+      return isSuspended_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2829,6 +2851,9 @@ public final class PaymentOuterClass {
       if (status_ != false) {
         output.writeBool(8, status_);
       }
+      if (isSuspended_ != false) {
+        output.writeBool(9, isSuspended_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2863,6 +2888,10 @@ public final class PaymentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, status_);
       }
+      if (isSuspended_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isSuspended_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2894,6 +2923,8 @@ public final class PaymentOuterClass {
           .equals(other.getUpdatedAt())) return false;
       if (getStatus()
           != other.getStatus()) return false;
+      if (getIsSuspended()
+          != other.getIsSuspended()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2922,6 +2953,9 @@ public final class PaymentOuterClass {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getStatus());
+      hash = (37 * hash) + IS_SUSPENDED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsSuspended());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3071,6 +3105,8 @@ public final class PaymentOuterClass {
 
         status_ = false;
 
+        isSuspended_ = false;
+
         return this;
       }
 
@@ -3105,6 +3141,7 @@ public final class PaymentOuterClass {
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
         result.status_ = status_;
+        result.isSuspended_ = isSuspended_;
         onBuilt();
         return result;
       }
@@ -3183,6 +3220,9 @@ public final class PaymentOuterClass {
         }
         if (other.getStatus() != false) {
           setStatus(other.getStatus());
+        }
+        if (other.getIsSuspended() != false) {
+          setIsSuspended(other.getIsSuspended());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3772,6 +3812,37 @@ public final class PaymentOuterClass {
       public Builder clearStatus() {
         
         status_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isSuspended_ ;
+      /**
+       * <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+       * @return The isSuspended.
+       */
+      @java.lang.Override
+      public boolean getIsSuspended() {
+        return isSuspended_;
+      }
+      /**
+       * <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+       * @param value The isSuspended to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSuspended(boolean value) {
+        
+        isSuspended_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSuspended() {
+        
+        isSuspended_ = false;
         onChanged();
         return this;
       }
@@ -18733,58 +18804,58 @@ public final class PaymentOuterClass {
       "nvoiceR\007invoice\0220\n\006biling\030\t \001(\0132\030.paymen" +
       "t.v1alpha1.BilingR\006biling\0225\n\010projects\030\n " +
       "\003(\0132\031.payment.v1alpha1.ProjectR\010projects" +
-      "\"\332\001\n\007Project\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_" +
+      "\"\375\001\n\007Project\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_" +
       "id\030\002 \001(\tR\tprojectId\022\022\n\004name\030\003 \001(\tR\004name\022" +
       "\024\n\005image\030\004 \001(\tR\005image\022 \n\013description\030\005 \001" +
       "(\tR\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcre" +
       "atedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022\026\n" +
-      "\006status\030\010 \001(\010R\006status\"\244\002\n\014Subscription\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022\'\n\017subscription_id\030\002 \001(\tR" +
-      "\016subscriptionId\0220\n\024subscription_item_id\030" +
-      "\003 \001(\tR\022subscriptionItemId\022\035\n\ninvoice_id\030" +
-      "\004 \001(\tR\tinvoiceId\022\024\n\005price\030\005 \001(\tR\005price\022\033" +
-      "\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013price_byt" +
-      "es\030\007 \001(\tR\npriceBytes\022\032\n\010currency\030\010 \001(\tR\010" +
-      "currency\022\032\n\010interval\030\t \001(\tR\010interval\"\217\001\n" +
-      "\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(" +
-      "\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005" +
-      "alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payme" +
-      "nt.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037\n\013card_" +
-      "holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmonth\030\004 \001" +
-      "(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007expyear\022\020" +
-      "\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003" +
-      " \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\tstatusp" +
-      "ay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR" +
-      "\007product\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ni" +
-      "nvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014account_na" +
-      "me\030\003 \001(\tR\013accountName\022\036\n\ntotalusage\030\004 \001(" +
-      "\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006" +
-      " \001(\001R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030" +
-      "\010 \001(\tR\004year\022\026\n\006amount\030\t \001(\003R\006amount\022\026\n\006p" +
-      "eriod\030\n \001(\tR\006period\022\034\n\tstatuspay\030\013 \001(\tR\t" +
-      "statuspay\022\022\n\004date\030\014 \001(\tR\004date\022\030\n\007product" +
-      "\030\r \001(\tR\007product\"\217\001\n\021SubscriptionItems\022\016\n" +
-      "\002id\030\001 \001(\tR\002id\0220\n\024subscription_item_id\030\002 " +
-      "\001(\tR\022subscriptionItemId\022\031\n\010price_id\030\003 \001(" +
-      "\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tproductI" +
-      "d\"R\n\025SubscriptionItemsList\0229\n\005items\030\001 \003(" +
-      "\0132#.payment.v1alpha1.SubscriptionItemsR\005" +
-      "items\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031.pa" +
-      "yment.v1alpha1.InvoiceR\005items\"@\n\014Custome" +
-      "rList\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha1." +
-      "CustomerR\005items\"<\n\nBilingList\022.\n\005items\030\001" +
-      " \003(\0132\030.payment.v1alpha1.BilingR\005items\"H\n" +
-      "\020SubscriptionList\0224\n\005items\030\001 \003(\0132\036.payme" +
-      "nt.v1alpha1.SubscriptionR\005items\"8\n\010CardL" +
-      "ist\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha1.Ca" +
-      "rdR\005items\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132" +
-      "\031.payment.v1alpha1.PaymentR\005items\">\n\013Pro" +
-      "jectList\022/\n\005items\030\001 \003(\0132\031.payment.v1alph" +
-      "a1.ProjectR\005itemsB8Z6github.com/cuemby/c" +
-      "cp-payment-service/payment/v1alpha1b\006pro" +
-      "to3"
+      "\006status\030\010 \001(\010R\006status\022!\n\014is_suspended\030\t " +
+      "\001(\010R\013isSuspended\"\244\002\n\014Subscription\022\016\n\002id\030" +
+      "\001 \001(\tR\002id\022\'\n\017subscription_id\030\002 \001(\tR\016subs" +
+      "criptionId\0220\n\024subscription_item_id\030\003 \001(\t" +
+      "R\022subscriptionItemId\022\035\n\ninvoice_id\030\004 \001(\t" +
+      "R\tinvoiceId\022\024\n\005price\030\005 \001(\tR\005price\022\033\n\tpri" +
+      "ce_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013price_bytes\030\007 " +
+      "\001(\tR\npriceBytes\022\032\n\010currency\030\010 \001(\tR\010curre" +
+      "ncy\022\032\n\010interval\030\t \001(\tR\010interval\"\217\001\n\007Paym" +
+      "ent\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007default\030\002 \001(\010R\007de" +
+      "fault\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias" +
+      "\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\0132\026.payment.v1" +
+      "alpha1.CardR\004card\"\227\001\n\004Card\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022\026\n\006number\030\002 \001(\tR\006number\022\037\n\013card_holde" +
+      "r\030\003 \001(\tR\ncardHolder\022\032\n\010expmonth\030\004 \001(\tR\010e" +
+      "xpmonth\022\030\n\007expyear\030\005 \001(\tR\007expyear\022\020\n\003cvc" +
+      "\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR" +
+      "\006period\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n" +
+      "\004date\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007prod" +
+      "uct\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoic" +
+      "e_id\030\002 \001(\tR\tinvoiceId\022!\n\014account_name\030\003 " +
+      "\001(\tR\013accountName\022\036\n\ntotalusage\030\004 \001(\003R\nto" +
+      "talusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R" +
+      "\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022\n\004year\030\010 \001(\t" +
+      "R\004year\022\026\n\006amount\030\t \001(\003R\006amount\022\026\n\006period" +
+      "\030\n \001(\tR\006period\022\034\n\tstatuspay\030\013 \001(\tR\tstatu" +
+      "spay\022\022\n\004date\030\014 \001(\tR\004date\022\030\n\007product\030\r \001(" +
+      "\tR\007product\"\217\001\n\021SubscriptionItems\022\016\n\002id\030\001" +
+      " \001(\tR\002id\0220\n\024subscription_item_id\030\002 \001(\tR\022" +
+      "subscriptionItemId\022\031\n\010price_id\030\003 \001(\tR\007pr" +
+      "iceId\022\035\n\nproduct_id\030\004 \001(\tR\tproductId\"R\n\025" +
+      "SubscriptionItemsList\0229\n\005items\030\001 \003(\0132#.p" +
+      "ayment.v1alpha1.SubscriptionItemsR\005items" +
+      "\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031.payment" +
+      ".v1alpha1.InvoiceR\005items\"@\n\014CustomerList" +
+      "\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha1.Custo" +
+      "merR\005items\"<\n\nBilingList\022.\n\005items\030\001 \003(\0132" +
+      "\030.payment.v1alpha1.BilingR\005items\"H\n\020Subs" +
+      "criptionList\0224\n\005items\030\001 \003(\0132\036.payment.v1" +
+      "alpha1.SubscriptionR\005items\"8\n\010CardList\022," +
+      "\n\005items\030\001 \003(\0132\026.payment.v1alpha1.CardR\005i" +
+      "tems\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.pay" +
+      "ment.v1alpha1.PaymentR\005items\">\n\013ProjectL" +
+      "ist\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Pr" +
+      "ojectR\005itemsB8Z6github.com/cuemby/ccp-pa" +
+      "yment-service/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18801,7 +18872,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Project_descriptor,
-        new java.lang.String[] { "Id", "ProjectId", "Name", "Image", "Description", "CreatedAt", "UpdatedAt", "Status", });
+        new java.lang.String[] { "Id", "ProjectId", "Name", "Image", "Description", "CreatedAt", "UpdatedAt", "Status", "IsSuspended", });
     internal_static_payment_v1alpha1_Subscription_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_payment_v1alpha1_Subscription_fieldAccessorTable = new

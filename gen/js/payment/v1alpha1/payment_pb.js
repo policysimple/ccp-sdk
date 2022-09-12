@@ -920,7 +920,8 @@ proto.payment.v1alpha1.Project.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    status: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    status: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    isSuspended: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -988,6 +989,10 @@ proto.payment.v1alpha1.Project.deserializeBinaryFromReader = function(msg, reade
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStatus(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsSuspended(value);
       break;
     default:
       reader.skipField();
@@ -1071,6 +1076,13 @@ proto.payment.v1alpha1.Project.serializeBinaryToWriter = function(message, write
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getIsSuspended();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -1218,6 +1230,24 @@ proto.payment.v1alpha1.Project.prototype.getStatus = function() {
  */
 proto.payment.v1alpha1.Project.prototype.setStatus = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional bool is_suspended = 9;
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.Project.prototype.getIsSuspended = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.payment.v1alpha1.Project} returns this
+ */
+proto.payment.v1alpha1.Project.prototype.setIsSuspended = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 

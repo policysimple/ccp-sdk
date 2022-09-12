@@ -554,6 +554,7 @@ class Project final :
     kCreatedAtFieldNumber = 6,
     kUpdatedAtFieldNumber = 7,
     kStatusFieldNumber = 8,
+    kIsSuspendedFieldNumber = 9,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -662,6 +663,15 @@ class Project final :
   void _internal_set_status(bool value);
   public:
 
+  // bool is_suspended = 9 [json_name = "isSuspended"];
+  void clear_is_suspended();
+  bool is_suspended() const;
+  void set_is_suspended(bool value);
+  private:
+  bool _internal_is_suspended() const;
+  void _internal_set_is_suspended(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.Project)
  private:
   class _Internal;
@@ -677,6 +687,7 @@ class Project final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   bool status_;
+  bool is_suspended_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
 };
@@ -4248,6 +4259,26 @@ inline void Project::_internal_set_status(bool value) {
 inline void Project::set_status(bool value) {
   _internal_set_status(value);
   // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.status)
+}
+
+// bool is_suspended = 9 [json_name = "isSuspended"];
+inline void Project::clear_is_suspended() {
+  is_suspended_ = false;
+}
+inline bool Project::_internal_is_suspended() const {
+  return is_suspended_;
+}
+inline bool Project::is_suspended() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Project.is_suspended)
+  return _internal_is_suspended();
+}
+inline void Project::_internal_set_is_suspended(bool value) {
+  
+  is_suspended_ = value;
+}
+inline void Project::set_is_suspended(bool value) {
+  _internal_set_is_suspended(value);
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.is_suspended)
 }
 
 // -------------------------------------------------------------------
