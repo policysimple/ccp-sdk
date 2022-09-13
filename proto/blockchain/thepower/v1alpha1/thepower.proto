@@ -1,0 +1,19 @@
+syntax = "proto3";
+package blockchain.thepower.v1alpha1;
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1";
+
+message TpChain {
+    int32 chain_number = 1;
+    string user_id = 2;
+    repeated TpNode chain_nodes = 3;
+}
+
+message TpNode {
+    string nodename = 1;
+    string tpic_port = 2;
+    string api_port = 3;
+    string apis_port = 4;
+    string cc_port = 5;
+    repeated string crosschain_external = 6;
+}
