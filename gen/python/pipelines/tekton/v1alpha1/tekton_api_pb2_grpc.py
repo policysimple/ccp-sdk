@@ -19,25 +19,10 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateTektonPipelineRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateTektonPipelineResponse.FromString,
         )
-    self.GetOneTektonPipeline = channel.unary_unary(
-        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetOneTektonPipeline',
-        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetOneTektonPipelineRequest.SerializeToString,
-        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetOneTektonPipelineResponse.FromString,
-        )
-    self.ListTektonPipeline = channel.unary_unary(
-        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonPipeline',
-        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonPipelineRequest.SerializeToString,
-        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonPipelineResponse.FromString,
-        )
     self.DeleteTektonPipeline = channel.unary_unary(
         '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteTektonPipeline',
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteTektonPipelineRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteTektonPipelineResponse.FromString,
-        )
-    self.ListTektonTask = channel.unary_unary(
-        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTask',
-        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskRequest.SerializeToString,
-        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskResponse.FromString,
         )
 
 
@@ -52,28 +37,7 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetOneTektonPipeline(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ListTektonPipeline(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def DeleteTektonPipeline(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ListTektonTask(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -88,25 +52,10 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateTektonPipelineRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateTektonPipelineResponse.SerializeToString,
       ),
-      'GetOneTektonPipeline': grpc.unary_unary_rpc_method_handler(
-          servicer.GetOneTektonPipeline,
-          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetOneTektonPipelineRequest.FromString,
-          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetOneTektonPipelineResponse.SerializeToString,
-      ),
-      'ListTektonPipeline': grpc.unary_unary_rpc_method_handler(
-          servicer.ListTektonPipeline,
-          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonPipelineRequest.FromString,
-          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonPipelineResponse.SerializeToString,
-      ),
       'DeleteTektonPipeline': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteTektonPipeline,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteTektonPipelineRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteTektonPipelineResponse.SerializeToString,
-      ),
-      'ListTektonTask': grpc.unary_unary_rpc_method_handler(
-          servicer.ListTektonTask,
-          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskRequest.FromString,
-          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

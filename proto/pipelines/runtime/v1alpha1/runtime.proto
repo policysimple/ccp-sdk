@@ -20,7 +20,7 @@ enum TrafficType {
 message Runtime {
   string id = 1;
   string name = 2;
-  string instance_type = 4;
+  repeated IntanceType instance_types= 4;
   uint32 organization_id = 5;
   uint32 project_id = 6;
   string application_id = 7;
@@ -36,8 +36,42 @@ message Runtime {
   map<string, string> extra_args = 17;
   map<string, string> autoscaling = 18;
   TrafficType traffic_type = 19;
+  string response_message = 20;
+  string environment_name=21;
+  string environment_internal_name=22;
+  string application_name = 23;
+  uint32 storage_used = 24;
+	uint32 storage_limit = 25;
 }
 
 message RuntimeList {
   repeated Runtime items = 1;
 }
+
+message IntanceType {
+  string id = 1;
+  string name = 2;
+  repeated ResourcesRules resources_rules= 3;
+ 
+}
+
+message ResourcesRules {
+  repeated Limit limit= 3;
+  repeated Request request= 4;
+ 
+}
+
+message Limit {
+  string cpu = 1;
+  string ram = 2;
+ 
+}
+
+message Request {
+  string cpu = 1;
+  string ram = 2;
+ 
+}
+
+
+

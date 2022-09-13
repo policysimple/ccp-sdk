@@ -337,57 +337,57 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_
   "cationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro"
   "r\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\tR\002id\"7\n\026ListAp"
   "plicationRequest\022\035\n\nproject_id\030\001 \001(\rR\tpr"
-  "ojectId\"`\n\027ListApplicationResponse\022E\n\014ap"
-  "plications\030\001 \003(\0132!.application.v1alpha1."
-  "ApplicationR\014applications\"\'\n\025GetApplicat"
-  "ionRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApplica"
-  "tionResponse\022C\n\013application\030\001 \001(\0132!.appl"
-  "ication.v1alpha1.ApplicationR\013applicatio"
-  "n\"*\n\030DeleteApplicationRequest\022\016\n\002id\030\001 \001("
-  "\tR\002id\"C\n\031DeleteApplicationResponse\022\020\n\003ms"
-  "g\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|\n\030Up"
-  "dateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002id\022P"
-  "\n\013application\030\002 \001(\0132..application.v1alph"
-  "a1.CreateApplicationRequestR\013application"
-  "\"C\n\031UpdateApplicationResponse\022\020\n\003msg\030\001 \001"
-  "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"P\n%ListApp"
-  "licationsByOrganizationRequest\022\'\n\017organi"
-  "zation_id\030\001 \001(\rR\016organizationId\"\205\001\n&List"
-  "ApplicationsByOrganizationResponse\022E\n\014ap"
-  "plications\030\001 \003(\0132!.application.v1alpha1."
-  "ApplicationR\014applications\022\024\n\005error\030\002 \001(\t"
-  "R\005error2\222\007\n\022ApplicationService\022t\n\021Create"
-  "Application\022..application.v1alpha1.Creat"
-  "eApplicationRequest\032/.application.v1alph"
-  "a1.CreateApplicationResponse\022n\n\017ListAppl"
-  "ication\022,.application.v1alpha1.ListAppli"
-  "cationRequest\032-.application.v1alpha1.Lis"
-  "tApplicationResponse\022k\n\016GetApplication\022+"
-  ".application.v1alpha1.GetApplicationRequ"
-  "est\032,.application.v1alpha1.GetApplicatio"
-  "nResponse\022t\n\021DeleteApplication\022..applica"
-  "tion.v1alpha1.DeleteApplicationRequest\032/"
-  ".application.v1alpha1.DeleteApplicationR"
-  "esponse\022t\n\021UpdateApplication\022..applicati"
-  "on.v1alpha1.UpdateApplicationRequest\032/.a"
-  "pplication.v1alpha1.UpdateApplicationRes"
-  "ponse\022\236\001\n\037DeleteApplicationsByIntegratio"
-  "n\022<.application.v1alpha1.DeleteApplicati"
-  "onsByIntegrationRequest\032=.application.v1"
-  "alpha1.DeleteApplicationsByIntegrationRe"
-  "sponse\022\233\001\n\036ListApplicationsByOrganizatio"
-  "n\022;.application.v1alpha1.ListApplication"
-  "sByOrganizationRequest\032<.application.v1a"
-  "lpha1.ListApplicationsByOrganizationResp"
-  "onseB7Z5github.com/cuemby/ccp-sdk/gen/go"
-  "/application/v1alpha1b\006proto3"
+  "ojectId\"d\n\027ListApplicationResponse\022I\n\014ap"
+  "plications\030\001 \003(\0132%.application.v1alpha1."
+  "ListApplicationR\014applications\"\'\n\025GetAppl"
+  "icationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApp"
+  "licationResponse\022C\n\013application\030\001 \001(\0132!."
+  "application.v1alpha1.ApplicationR\013applic"
+  "ation\"*\n\030DeleteApplicationRequest\022\016\n\002id\030"
+  "\001 \001(\tR\002id\"C\n\031DeleteApplicationResponse\022\020"
+  "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"|"
+  "\n\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(\tR\002"
+  "id\022P\n\013application\030\002 \001(\0132..application.v1"
+  "alpha1.CreateApplicationRequestR\013applica"
+  "tion\"C\n\031UpdateApplicationResponse\022\020\n\003msg"
+  "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"P\n%Lis"
+  "tApplicationsByOrganizationRequest\022\'\n\017or"
+  "ganization_id\030\001 \001(\rR\016organizationId\"\205\001\n&"
+  "ListApplicationsByOrganizationResponse\022E"
+  "\n\014applications\030\001 \003(\0132!.application.v1alp"
+  "ha1.ApplicationR\014applications\022\024\n\005error\030\002"
+  " \001(\tR\005error2\222\007\n\022ApplicationService\022t\n\021Cr"
+  "eateApplication\022..application.v1alpha1.C"
+  "reateApplicationRequest\032/.application.v1"
+  "alpha1.CreateApplicationResponse\022n\n\017List"
+  "Application\022,.application.v1alpha1.ListA"
+  "pplicationRequest\032-.application.v1alpha1"
+  ".ListApplicationResponse\022k\n\016GetApplicati"
+  "on\022+.application.v1alpha1.GetApplication"
+  "Request\032,.application.v1alpha1.GetApplic"
+  "ationResponse\022t\n\021DeleteApplication\022..app"
+  "lication.v1alpha1.DeleteApplicationReque"
+  "st\032/.application.v1alpha1.DeleteApplicat"
+  "ionResponse\022t\n\021UpdateApplication\022..appli"
+  "cation.v1alpha1.UpdateApplicationRequest"
+  "\032/.application.v1alpha1.UpdateApplicatio"
+  "nResponse\022\236\001\n\037DeleteApplicationsByIntegr"
+  "ation\022<.application.v1alpha1.DeleteAppli"
+  "cationsByIntegrationRequest\032=.applicatio"
+  "n.v1alpha1.DeleteApplicationsByIntegrati"
+  "onResponse\022\233\001\n\036ListApplicationsByOrganiz"
+  "ation\022;.application.v1alpha1.ListApplica"
+  "tionsByOrganizationRequest\032<.application"
+  ".v1alpha1.ListApplicationsByOrganization"
+  "ResponseB7Z5github.com/cuemby/ccp-sdk/ge"
+  "n/go/application/v1alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_deps[1] = {
   &::descriptor_table_application_2fv1alpha1_2fapplication_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto = {
-  false, false, 2229, descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_2eproto, "application/v1alpha1/application_api.proto", 
+  false, false, 2233, descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_2eproto, "application/v1alpha1/application_api.proto", 
   &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once, descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_5fapi_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_5fapi_2eproto,
@@ -1542,7 +1542,7 @@ const char* ListApplicationResponse::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+      // repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1583,7 +1583,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+  // repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_applications_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1607,7 +1607,7 @@ size_t ListApplicationResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+  // repeated .application.v1alpha1.ListApplication applications = 1 [json_name = "applications"];
   total_size += 1UL * this->_internal_applications_size();
   for (const auto& msg : this->applications_) {
     total_size +=

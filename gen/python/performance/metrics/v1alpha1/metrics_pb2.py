@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&io.cuemby.performance.metrics.v1alpha1B\014MetricsProtoP\001Z/github.com/performance-grpc-sdk/metricsv1alpha1\242\002\003PFX\252\002\034Performance.Metrics.V1Alpha1\312\002\034Performance\\Metrics\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*performance/metrics/v1alpha1/metrics.proto\x12\x1cperformance.metrics.v1alpha1\"p\n\nMetricItem\x12\x12\n\x04\x64\x61te\x18\x01 \x01(\tR\x04\x64\x61te\x12\x1c\n\tcontainer\x18\x02 \x01(\tR\tcontainer\x12\x1a\n\x08resource\x18\x03 \x01(\tR\x08resource\x12\x14\n\x05value\x18\x04 \x01(\x01R\x05valueB\xad\x01\n&io.cuemby.performance.metrics.v1alpha1B\x0cMetricsProtoP\x01Z/github.com/performance-grpc-sdk/metricsv1alpha1\xa2\x02\x03PFX\xaa\x02\x1cPerformance.Metrics.V1Alpha1\xca\x02\x1cPerformance\\Metrics\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n*performance/metrics/v1alpha1/metrics.proto\x12\x1cperformance.metrics.v1alpha1\"p\n\nMetricItem\x12\x12\n\x04\x64\x61te\x18\x01 \x01(\tR\x04\x64\x61te\x12\x1c\n\tcontainer\x18\x02 \x01(\tR\tcontainer\x12\x1a\n\x08resource\x18\x03 \x01(\tR\x08resource\x12\x14\n\x05value\x18\x04 \x01(\x01R\x05value\"\xce\x03\n\x10TektonMetricItem\x12\x12\n\x04\x64\x61te\x18\x01 \x01(\tR\x04\x64\x61te\x12\x1c\n\tcontainer\x18\x02 \x01(\tR\tcontainer\x12\x1a\n\x08instance\x18\x03 \x01(\tR\x08instance\x12\x10\n\x03pod\x18\x04 \x01(\tR\x03pod\x12\x1d\n\ncreated_at\x18\x05 \x01(\tR\tcreatedAt\x12\x1a\n\x08pipeline\x18\x06 \x01(\tR\x08pipeline\x12\x1a\n\x08\x65ndpoint\x18\x07 \x01(\tR\x08\x65ndpoint\x12\x12\n\x04task\x18\x08 \x01(\tR\x04task\x12\x18\n\x07service\x18\t \x01(\tR\x07service\x12\x1c\n\tnamespace\x18\n \x01(\tR\tnamespace\x12-\n\x12\x65xported_namespace\x18\x0b \x01(\tR\x11\x65xportedNamespace\x12*\n\x11tekton_query_name\x18\x0c \x01(\tR\x0ftektonQueryName\x12\x10\n\x03job\x18\r \x01(\tR\x03job\x12\x14\n\x05value\x18\x0e \x01(\x01R\x05value\x12\x1c\n\ttimestamp\x18\x0f \x01(\tR\ttimestamp\x12\x16\n\x06status\x18\x10 \x01(\tR\x06statusB\xad\x01\n&io.cuemby.performance.metrics.v1alpha1B\x0cMetricsProtoP\x01Z/github.com/performance-grpc-sdk/metricsv1alpha1\xa2\x02\x03PFX\xaa\x02\x1cPerformance.Metrics.V1Alpha1\xca\x02\x1cPerformance\\Metrics\\V1Alpha1b\x06proto3'
 )
 
 
@@ -77,7 +77,145 @@ _METRICITEM = _descriptor.Descriptor(
   serialized_end=188,
 )
 
+
+_TEKTONMETRICITEM = _descriptor.Descriptor(
+  name='TektonMetricItem',
+  full_name='performance.metrics.v1alpha1.TektonMetricItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='date', full_name='performance.metrics.v1alpha1.TektonMetricItem.date', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='date', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='container', full_name='performance.metrics.v1alpha1.TektonMetricItem.container', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='container', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='instance', full_name='performance.metrics.v1alpha1.TektonMetricItem.instance', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='instance', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pod', full_name='performance.metrics.v1alpha1.TektonMetricItem.pod', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='performance.metrics.v1alpha1.TektonMetricItem.created_at', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='createdAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pipeline', full_name='performance.metrics.v1alpha1.TektonMetricItem.pipeline', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pipeline', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='endpoint', full_name='performance.metrics.v1alpha1.TektonMetricItem.endpoint', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='endpoint', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='task', full_name='performance.metrics.v1alpha1.TektonMetricItem.task', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='task', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='service', full_name='performance.metrics.v1alpha1.TektonMetricItem.service', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='service', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='performance.metrics.v1alpha1.TektonMetricItem.namespace', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='namespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='exported_namespace', full_name='performance.metrics.v1alpha1.TektonMetricItem.exported_namespace', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='exportedNamespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tekton_query_name', full_name='performance.metrics.v1alpha1.TektonMetricItem.tekton_query_name', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tektonQueryName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job', full_name='performance.metrics.v1alpha1.TektonMetricItem.job', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='job', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='performance.metrics.v1alpha1.TektonMetricItem.value', index=13,
+      number=14, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='performance.metrics.v1alpha1.TektonMetricItem.timestamp', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='timestamp', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='performance.metrics.v1alpha1.TektonMetricItem.status', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=191,
+  serialized_end=653,
+)
+
 DESCRIPTOR.message_types_by_name['MetricItem'] = _METRICITEM
+DESCRIPTOR.message_types_by_name['TektonMetricItem'] = _TEKTONMETRICITEM
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 MetricItem = _reflection.GeneratedProtocolMessageType('MetricItem', (_message.Message,), {
@@ -86,6 +224,13 @@ MetricItem = _reflection.GeneratedProtocolMessageType('MetricItem', (_message.Me
   # @@protoc_insertion_point(class_scope:performance.metrics.v1alpha1.MetricItem)
   })
 _sym_db.RegisterMessage(MetricItem)
+
+TektonMetricItem = _reflection.GeneratedProtocolMessageType('TektonMetricItem', (_message.Message,), {
+  'DESCRIPTOR' : _TEKTONMETRICITEM,
+  '__module__' : 'performance.metrics.v1alpha1.metrics_pb2'
+  # @@protoc_insertion_point(class_scope:performance.metrics.v1alpha1.TektonMetricItem)
+  })
+_sym_db.RegisterMessage(TektonMetricItem)
 
 
 DESCRIPTOR._options = None

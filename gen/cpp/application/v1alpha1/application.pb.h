@@ -47,7 +47,7 @@ struct TableStruct_application_2fv1alpha1_2fapplication_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,6 +68,9 @@ extern ConfigurationDefaultTypeInternal _Configuration_default_instance_;
 class Env;
 struct EnvDefaultTypeInternal;
 extern EnvDefaultTypeInternal _Env_default_instance_;
+class ListApplication;
+struct ListApplicationDefaultTypeInternal;
+extern ListApplicationDefaultTypeInternal _ListApplication_default_instance_;
 class Repository;
 struct RepositoryDefaultTypeInternal;
 extern RepositoryDefaultTypeInternal _Repository_default_instance_;
@@ -81,6 +84,7 @@ template<> ::application::v1alpha1::Application* Arena::CreateMaybeMessage<::app
 template<> ::application::v1alpha1::Command* Arena::CreateMaybeMessage<::application::v1alpha1::Command>(Arena*);
 template<> ::application::v1alpha1::Configuration* Arena::CreateMaybeMessage<::application::v1alpha1::Configuration>(Arena*);
 template<> ::application::v1alpha1::Env* Arena::CreateMaybeMessage<::application::v1alpha1::Env>(Arena*);
+template<> ::application::v1alpha1::ListApplication* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplication>(Arena*);
 template<> ::application::v1alpha1::Repository* Arena::CreateMaybeMessage<::application::v1alpha1::Repository>(Arena*);
 template<> ::application::v1alpha1::Scaling* Arena::CreateMaybeMessage<::application::v1alpha1::Scaling>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -1343,6 +1347,208 @@ class Application final :
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   int traffic_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListApplication final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.ListApplication) */ {
+ public:
+  inline ListApplication() : ListApplication(nullptr) {}
+  ~ListApplication() override;
+  explicit constexpr ListApplication(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListApplication(const ListApplication& from);
+  ListApplication(ListApplication&& from) noexcept
+    : ListApplication() {
+    *this = ::std::move(from);
+  }
+
+  inline ListApplication& operator=(const ListApplication& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListApplication& operator=(ListApplication&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListApplication& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListApplication* internal_default_instance() {
+    return reinterpret_cast<const ListApplication*>(
+               &_ListApplication_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(ListApplication& a, ListApplication& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListApplication* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListApplication* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListApplication* New() const final {
+    return new ListApplication();
+  }
+
+  ListApplication* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListApplication>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListApplication& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListApplication& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListApplication* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "application.v1alpha1.ListApplication";
+  }
+  protected:
+  explicit ListApplication(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kRepositoryFieldNumber = 3,
+    kProjectIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .application.v1alpha1.Repository repository = 3 [json_name = "repository"];
+  bool has_repository() const;
+  private:
+  bool _internal_has_repository() const;
+  public:
+  void clear_repository();
+  const ::application::v1alpha1::Repository& repository() const;
+  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Repository* release_repository();
+  ::application::v1alpha1::Repository* mutable_repository();
+  void set_allocated_repository(::application::v1alpha1::Repository* repository);
+  private:
+  const ::application::v1alpha1::Repository& _internal_repository() const;
+  ::application::v1alpha1::Repository* _internal_mutable_repository();
+  public:
+  void unsafe_arena_set_allocated_repository(
+      ::application::v1alpha1::Repository* repository);
+  ::application::v1alpha1::Repository* unsafe_arena_release_repository();
+
+  // uint32 project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplication)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::application::v1alpha1::Repository* repository_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -2695,9 +2901,237 @@ inline void Application::set_traffic_type(::application::v1alpha1::TrafficType v
   // @@protoc_insertion_point(field_set:application.v1alpha1.Application.traffic_type)
 }
 
+// -------------------------------------------------------------------
+
+// ListApplication
+
+// string id = 1 [json_name = "id"];
+inline void ListApplication::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& ListApplication::id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplication.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListApplication::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplication.id)
+}
+inline std::string* ListApplication::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplication.id)
+  return _s;
+}
+inline const std::string& ListApplication::_internal_id() const {
+  return id_.Get();
+}
+inline void ListApplication::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListApplication::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListApplication::release_id() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ListApplication.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListApplication::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ListApplication.id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void ListApplication::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& ListApplication::name() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplication.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListApplication::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplication.name)
+}
+inline std::string* ListApplication::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplication.name)
+  return _s;
+}
+inline const std::string& ListApplication::_internal_name() const {
+  return name_.Get();
+}
+inline void ListApplication::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListApplication::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListApplication::release_name() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ListApplication.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListApplication::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ListApplication.name)
+}
+
+// .application.v1alpha1.Repository repository = 3 [json_name = "repository"];
+inline bool ListApplication::_internal_has_repository() const {
+  return this != internal_default_instance() && repository_ != nullptr;
+}
+inline bool ListApplication::has_repository() const {
+  return _internal_has_repository();
+}
+inline void ListApplication::clear_repository() {
+  if (GetArenaForAllocation() == nullptr && repository_ != nullptr) {
+    delete repository_;
+  }
+  repository_ = nullptr;
+}
+inline const ::application::v1alpha1::Repository& ListApplication::_internal_repository() const {
+  const ::application::v1alpha1::Repository* p = repository_;
+  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Repository&>(
+      ::application::v1alpha1::_Repository_default_instance_);
+}
+inline const ::application::v1alpha1::Repository& ListApplication::repository() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplication.repository)
+  return _internal_repository();
+}
+inline void ListApplication::unsafe_arena_set_allocated_repository(
+    ::application::v1alpha1::Repository* repository) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(repository_);
+  }
+  repository_ = repository;
+  if (repository) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.ListApplication.repository)
+}
+inline ::application::v1alpha1::Repository* ListApplication::release_repository() {
+  
+  ::application::v1alpha1::Repository* temp = repository_;
+  repository_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::application::v1alpha1::Repository* ListApplication::unsafe_arena_release_repository() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ListApplication.repository)
+  
+  ::application::v1alpha1::Repository* temp = repository_;
+  repository_ = nullptr;
+  return temp;
+}
+inline ::application::v1alpha1::Repository* ListApplication::_internal_mutable_repository() {
+  
+  if (repository_ == nullptr) {
+    auto* p = CreateMaybeMessage<::application::v1alpha1::Repository>(GetArenaForAllocation());
+    repository_ = p;
+  }
+  return repository_;
+}
+inline ::application::v1alpha1::Repository* ListApplication::mutable_repository() {
+  ::application::v1alpha1::Repository* _msg = _internal_mutable_repository();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplication.repository)
+  return _msg;
+}
+inline void ListApplication::set_allocated_repository(::application::v1alpha1::Repository* repository) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete repository_;
+  }
+  if (repository) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::Repository>::GetOwningArena(repository);
+    if (message_arena != submessage_arena) {
+      repository = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, repository, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  repository_ = repository;
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ListApplication.repository)
+}
+
+// uint32 project_id = 4 [json_name = "projectId"];
+inline void ListApplication::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListApplication::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListApplication::project_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplication.project_id)
+  return _internal_project_id();
+}
+inline void ListApplication::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void ListApplication::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplication.project_id)
+}
+
+// uint32 organization_id = 5 [json_name = "organizationId"];
+inline void ListApplication::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListApplication::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ListApplication::organization_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplication.organization_id)
+  return _internal_organization_id();
+}
+inline void ListApplication::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void ListApplication::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplication.organization_id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

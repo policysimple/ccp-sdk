@@ -44,47 +44,59 @@ public interface SecretOrBuilder extends
       getNamespaceBytes();
 
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];</code>
+   * <code>string name = 5 [json_name = "name"];</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 5 [json_name = "name"];</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>.vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   io.cuemby.vault.v1alpha1.Metadata getMetadata();
   /**
-   * <code>.vault.v1alpha1.Metadata metadata = 5 [json_name = "metadata"];</code>
+   * <code>.vault.v1alpha1.Metadata metadata = 6 [json_name = "metadata"];</code>
    */
   io.cuemby.vault.v1alpha1.MetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>.vault.v1alpha1.SecretData data = 6 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.SecretData data = 7 [json_name = "data"];</code>
    * @return Whether the data field is set.
    */
   boolean hasData();
   /**
-   * <code>.vault.v1alpha1.SecretData data = 6 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.SecretData data = 7 [json_name = "data"];</code>
    * @return The data.
    */
   io.cuemby.vault.v1alpha1.SecretData getData();
   /**
-   * <code>.vault.v1alpha1.SecretData data = 6 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.SecretData data = 7 [json_name = "data"];</code>
    */
   io.cuemby.vault.v1alpha1.SecretDataOrBuilder getDataOrBuilder();
 
   /**
-   * <code>.vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];</code>
+   * <code>.vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];</code>
    * @return Whether the warnings field is set.
    */
   boolean hasWarnings();
   /**
-   * <code>.vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];</code>
+   * <code>.vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];</code>
    * @return The warnings.
    */
   io.cuemby.vault.v1alpha1.SecretWarnings getWarnings();
   /**
-   * <code>.vault.v1alpha1.SecretWarnings warnings = 7 [json_name = "warnings"];</code>
+   * <code>.vault.v1alpha1.SecretWarnings warnings = 8 [json_name = "warnings"];</code>
    */
   io.cuemby.vault.v1alpha1.SecretWarningsOrBuilder getWarningsOrBuilder();
 }

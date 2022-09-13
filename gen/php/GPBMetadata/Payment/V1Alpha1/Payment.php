@@ -16,21 +16,21 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-ª
-payment/v1alpha1/payment.protopayment.v1alpha1"®
+˛
+payment/v1alpha1/payment.protopayment.v1alpha1"´
 Customer
 id (	Rid
 customer_id (	R
 customerId\'
 organization_id (RorganizationId
 name (	Rname
-email (	Remail?
-suscription (2.payment.v1alpha1.SuscriptionRsuscription9
+email (	RemailB
+subscription (2.payment.v1alpha1.SubscriptionRsubscription9
 payments (2.payment.v1alpha1.PaymentListRpayments3
 invoice (2.payment.v1alpha1.InvoiceRinvoice0
 biling	 (2.payment.v1alpha1.BilingRbiling5
 projects
- (2.payment.v1alpha1.ProjectRprojects"¬
+ (2.payment.v1alpha1.ProjectRprojects"˝
 Project
 id (	Rid
 
@@ -41,11 +41,13 @@ project_id (	R	projectId
 
 created_at (	R	createdAt
 
-updated_at (	R	updatedAt"ü
-Suscription
-id (	Rid%
-suscription_id (	RsuscriptionId.
-suscription_item_id (	RsuscriptionItemId
+updated_at (	R	updatedAt
+status (Rstatus!
+is_suspended	 (RisSuspended"§
+Subscription
+id (	Rid\'
+subscription_id (	RsubscriptionId0
+subscription_item_id (	RsubscriptionItemId
 
 invoice_id (	R	invoiceId
 price (	Rprice
@@ -74,7 +76,7 @@ cardHolder
 period (	Rperiod
 	statuspay (	R	statuspay
 date (	Rdate
-product (	Rproduct"»
+product (	Rproduct"ƒ
 Biling
 id (	Rid
 
@@ -83,13 +85,19 @@ invoice_id (	R	invoiceId!
 
 totalusage (R
 totalusage
-cpu (Rcpu
-ram (Rram
+cpu (Rcpu
+ram (Rram
 month (	Rmonth
-year (	Ryear"ç
+year (	Ryear
+amount	 (Ramount
+period
+ (	Rperiod
+	statuspay (	R	statuspay
+date (	Rdate
+product (	Rproduct"è
 SubscriptionItems
-id (	Rid.
-suscription_item_id (	RsuscriptionItemId
+id (	Rid0
+subscription_item_id (	RsubscriptionItemId
 price_id (	RpriceId
 
 product_id (	R	productId"R
@@ -101,9 +109,9 @@ product_id (	R	productId"R
 items (2.payment.v1alpha1.CustomerRitems"<
 
 BilingList.
-items (2.payment.v1alpha1.BilingRitems"F
-SuscriptionList3
-items (2.payment.v1alpha1.SuscriptionRitems"8
+items (2.payment.v1alpha1.BilingRitems"H
+SubscriptionList4
+items (2.payment.v1alpha1.SubscriptionRitems"8
 CardList,
 items (2.payment.v1alpha1.CardRitems">
 PaymentList/

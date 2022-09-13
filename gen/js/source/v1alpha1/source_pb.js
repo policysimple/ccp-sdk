@@ -2085,7 +2085,8 @@ proto.source.v1alpha1.GetOneProviderByNameResponse.prototype.toObject = function
  */
 proto.source.v1alpha1.GetOneProviderByNameResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f)
+    provider: (f = msg.getProvider()) && proto.source.v1alpha1.Provider.toObject(includeInstance, f),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2127,6 +2128,10 @@ proto.source.v1alpha1.GetOneProviderByNameResponse.deserializeBinaryFromReader =
       reader.readMessage(value,proto.source.v1alpha1.Provider.deserializeBinaryFromReader);
       msg.setProvider(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2162,6 +2167,13 @@ proto.source.v1alpha1.GetOneProviderByNameResponse.serializeBinaryToWriter = fun
       1,
       f,
       proto.source.v1alpha1.Provider.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -2201,6 +2213,24 @@ proto.source.v1alpha1.GetOneProviderByNameResponse.prototype.clearProvider = fun
  */
 proto.source.v1alpha1.GetOneProviderByNameResponse.prototype.hasProvider = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.source.v1alpha1.GetOneProviderByNameResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.GetOneProviderByNameResponse} returns this
+ */
+proto.source.v1alpha1.GetOneProviderByNameResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2596,7 +2626,8 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.toObject = function(inclu
     repositoriesList: jspb.Message.toObjectList(msg.getRepositoriesList(),
     proto.source.v1alpha1.Repository.toObject, includeInstance),
     totalPages: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    count: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    count: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    error: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2646,6 +2677,10 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.deserializeBinaryFromRead
       var value = /** @type {number} */ (reader.readUint32());
       msg.setCount(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2694,6 +2729,13 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.serializeBinaryToWriter =
   if (f !== 0) {
     writer.writeUint32(
       3,
+      f
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -2771,6 +2813,24 @@ proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.getCount = func
  */
 proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.setCount = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string error = 4;
+ * @return {string}
+ */
+proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.ListRepositoriesProviderResponse} returns this
+ */
+proto.source.v1alpha1.ListRepositoriesProviderResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2974,7 +3034,8 @@ proto.source.v1alpha1.GetRepositoryProviderResponse.prototype.toObject = functio
 proto.source.v1alpha1.GetRepositoryProviderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     branchsList: jspb.Message.toObjectList(msg.getBranchsList(),
-    proto.source.v1alpha1.Branch.toObject, includeInstance)
+    proto.source.v1alpha1.Branch.toObject, includeInstance),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3016,6 +3077,10 @@ proto.source.v1alpha1.GetRepositoryProviderResponse.deserializeBinaryFromReader 
       reader.readMessage(value,proto.source.v1alpha1.Branch.deserializeBinaryFromReader);
       msg.addBranchs(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3051,6 +3116,13 @@ proto.source.v1alpha1.GetRepositoryProviderResponse.serializeBinaryToWriter = fu
       1,
       f,
       proto.source.v1alpha1.Branch.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -3091,6 +3163,24 @@ proto.source.v1alpha1.GetRepositoryProviderResponse.prototype.addBranchs = funct
  */
 proto.source.v1alpha1.GetRepositoryProviderResponse.prototype.clearBranchsList = function() {
   return this.setBranchsList([]);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.source.v1alpha1.GetRepositoryProviderResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.GetRepositoryProviderResponse} returns this
+ */
+proto.source.v1alpha1.GetRepositoryProviderResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5143,7 +5233,8 @@ proto.source.v1alpha1.GetRepositoryResponse.prototype.toObject = function(opt_in
  */
 proto.source.v1alpha1.GetRepositoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    repository: (f = msg.getRepository()) && proto.source.v1alpha1.DetailRepository.toObject(includeInstance, f)
+    repository: (f = msg.getRepository()) && proto.source.v1alpha1.DetailRepository.toObject(includeInstance, f),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5185,6 +5276,10 @@ proto.source.v1alpha1.GetRepositoryResponse.deserializeBinaryFromReader = functi
       reader.readMessage(value,proto.source.v1alpha1.DetailRepository.deserializeBinaryFromReader);
       msg.setRepository(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5220,6 +5315,13 @@ proto.source.v1alpha1.GetRepositoryResponse.serializeBinaryToWriter = function(m
       1,
       f,
       proto.source.v1alpha1.DetailRepository.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -5259,6 +5361,24 @@ proto.source.v1alpha1.GetRepositoryResponse.prototype.clearRepository = function
  */
 proto.source.v1alpha1.GetRepositoryResponse.prototype.hasRepository = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.source.v1alpha1.GetRepositoryResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.GetRepositoryResponse} returns this
+ */
+proto.source.v1alpha1.GetRepositoryResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5585,7 +5705,8 @@ proto.source.v1alpha1.UpdateRepositoryRequest.prototype.toObject = function(opt_
 proto.source.v1alpha1.UpdateRepositoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     repositoryId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    repository: (f = msg.getRepository()) && proto.source.v1alpha1.DetailRepository.toObject(includeInstance, f)
+    repository: (f = msg.getRepository()) && proto.source.v1alpha1.DetailRepository.toObject(includeInstance, f),
+    error: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5631,6 +5752,10 @@ proto.source.v1alpha1.UpdateRepositoryRequest.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.source.v1alpha1.DetailRepository.deserializeBinaryFromReader);
       msg.setRepository(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5673,6 +5798,13 @@ proto.source.v1alpha1.UpdateRepositoryRequest.serializeBinaryToWriter = function
       2,
       f,
       proto.source.v1alpha1.DetailRepository.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -5730,6 +5862,24 @@ proto.source.v1alpha1.UpdateRepositoryRequest.prototype.clearRepository = functi
  */
 proto.source.v1alpha1.UpdateRepositoryRequest.prototype.hasRepository = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string error = 3;
+ * @return {string}
+ */
+proto.source.v1alpha1.UpdateRepositoryRequest.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.UpdateRepositoryRequest} returns this
+ */
+proto.source.v1alpha1.UpdateRepositoryRequest.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7478,7 +7628,8 @@ proto.source.v1alpha1.ListIntegrationsResponse.prototype.toObject = function(opt
 proto.source.v1alpha1.ListIntegrationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     integrationsList: jspb.Message.toObjectList(msg.getIntegrationsList(),
-    proto.source.v1alpha1.Integration.toObject, includeInstance)
+    proto.source.v1alpha1.Integration.toObject, includeInstance),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -7520,6 +7671,10 @@ proto.source.v1alpha1.ListIntegrationsResponse.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.source.v1alpha1.Integration.deserializeBinaryFromReader);
       msg.addIntegrations(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7555,6 +7710,13 @@ proto.source.v1alpha1.ListIntegrationsResponse.serializeBinaryToWriter = functio
       1,
       f,
       proto.source.v1alpha1.Integration.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -7595,6 +7757,24 @@ proto.source.v1alpha1.ListIntegrationsResponse.prototype.addIntegrations = funct
  */
 proto.source.v1alpha1.ListIntegrationsResponse.prototype.clearIntegrationsList = function() {
   return this.setIntegrationsList([]);
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.source.v1alpha1.ListIntegrationsResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.ListIntegrationsResponse} returns this
+ */
+proto.source.v1alpha1.ListIntegrationsResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -7760,7 +7940,8 @@ proto.source.v1alpha1.GetIntegrationResponse.prototype.toObject = function(opt_i
  */
 proto.source.v1alpha1.GetIntegrationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    integration: (f = msg.getIntegration()) && proto.source.v1alpha1.Integration.toObject(includeInstance, f)
+    integration: (f = msg.getIntegration()) && proto.source.v1alpha1.Integration.toObject(includeInstance, f),
+    error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -7802,6 +7983,10 @@ proto.source.v1alpha1.GetIntegrationResponse.deserializeBinaryFromReader = funct
       reader.readMessage(value,proto.source.v1alpha1.Integration.deserializeBinaryFromReader);
       msg.setIntegration(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7837,6 +8022,13 @@ proto.source.v1alpha1.GetIntegrationResponse.serializeBinaryToWriter = function(
       1,
       f,
       proto.source.v1alpha1.Integration.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -7876,6 +8068,24 @@ proto.source.v1alpha1.GetIntegrationResponse.prototype.clearIntegration = functi
  */
 proto.source.v1alpha1.GetIntegrationResponse.prototype.hasIntegration = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string error = 2;
+ * @return {string}
+ */
+proto.source.v1alpha1.GetIntegrationResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.source.v1alpha1.GetIntegrationResponse} returns this
+ */
+proto.source.v1alpha1.GetIntegrationResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

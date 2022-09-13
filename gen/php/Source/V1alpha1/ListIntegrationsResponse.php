@@ -17,6 +17,10 @@ class ListIntegrationsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .source.v1alpha1.Integration integrations = 1 [json_name = "integrations"];</code>
      */
     private $integrations;
+    /**
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     */
+    protected $error = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class ListIntegrationsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Source\V1alpha1\Integration[]|\Google\Protobuf\Internal\RepeatedField $integrations
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class ListIntegrationsResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\Integration::class);
         $this->integrations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * @return string
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error = $var;
 
         return $this;
     }

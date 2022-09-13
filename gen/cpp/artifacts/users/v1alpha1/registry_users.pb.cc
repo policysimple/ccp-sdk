@@ -69,6 +69,7 @@ constexpr UsersRegistry::UsersRegistry(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , environment_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_internal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , harbor_(nullptr)
   , organization_id_(0u)
   , project_id_(0u)
@@ -127,6 +128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fusers_2fv1alpha1_2
   PROTOBUF_FIELD_OFFSET(::artifacts::users::v1alpha1::UsersRegistry, organization_id_),
   PROTOBUF_FIELD_OFFSET(::artifacts::users::v1alpha1::UsersRegistry, project_id_),
   PROTOBUF_FIELD_OFFSET(::artifacts::users::v1alpha1::UsersRegistry, environment_id_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::users::v1alpha1::UsersRegistry, environment_internal_name_),
   PROTOBUF_FIELD_OFFSET(::artifacts::users::v1alpha1::UsersRegistry, active_),
   PROTOBUF_FIELD_OFFSET(::artifacts::users::v1alpha1::UsersRegistry, harbor_),
 };
@@ -158,22 +160,23 @@ const char descriptor_table_protodef_artifacts_2fusers_2fv1alpha1_2fregistry_5fu
   "evel\022\032\n\010duration\030\005 \001(\rR\010duration\022 \n\013desc"
   "ription\030\006 \001(\tR\013description\022Z\n\022permission"
   "s_harbor\030\007 \003(\0132+.artifacts.users.v1alpha"
-  "1.PermissionsHarborR\021permissionsHarbor\"\340"
-  "\001\n\rUsersRegistry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017orga"
+  "1.PermissionsHarborR\021permissionsHarbor\"\234"
+  "\002\n\rUsersRegistry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017orga"
   "nization_id\030\002 \001(\rR\016organizationId\022\035\n\npro"
   "ject_id\030\003 \001(\rR\tprojectId\022%\n\016environment_"
-  "id\030\004 \001(\tR\renvironmentId\022\026\n\006active\030\006 \001(\010R"
-  "\006active\0228\n\006harbor\030\007 \001(\0132 .artifacts.user"
-  "s.v1alpha1.HarborR\006harborB\261\001\n\"io.cuemby."
-  "artifacts.users.v1alpha1B\022RegistryUsersP"
-  "rotoP\001Z9github.com/cuemby/ccp-sdk/gen/go"
-  "/artifacts/users/v1alpha1\242\002\003PPX\252\002\030Artifa"
-  "cts.Users.V1Alpha1\312\002\030Artifacts\\Users\\V1A"
-  "lpha1b\006proto3"
+  "id\030\004 \001(\tR\renvironmentId\022:\n\031environment_i"
+  "nternal_name\030\005 \001(\tR\027environmentInternalN"
+  "ame\022\026\n\006active\030\006 \001(\010R\006active\0228\n\006harbor\030\007 "
+  "\001(\0132 .artifacts.users.v1alpha1.HarborR\006h"
+  "arborB\261\001\n\"io.cuemby.artifacts.users.v1al"
+  "pha1B\022RegistryUsersProtoP\001Z9github.com/c"
+  "uemby/ccp-sdk/gen/go/artifacts/users/v1a"
+  "lpha1\242\002\003PPX\252\002\030Artifacts.Users.V1Alpha1\312\002"
+  "\030Artifacts\\Users\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto = {
-  false, false, 973, descriptor_table_protodef_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto, "artifacts/users/v1alpha1/registry_users.proto", 
+  false, false, 1033, descriptor_table_protodef_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto, "artifacts/users/v1alpha1/registry_users.proto", 
   &descriptor_table_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto::offsets,
   file_level_metadata_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto, file_level_enum_descriptors_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto, file_level_service_descriptors_artifacts_2fusers_2fv1alpha1_2fregistry_5fusers_2eproto,
@@ -1197,6 +1200,11 @@ UsersRegistry::UsersRegistry(const UsersRegistry& from)
     environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_id(), 
       GetArenaForAllocation());
   }
+  environment_internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_environment_internal_name().empty()) {
+    environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_harbor()) {
     harbor_ = new ::artifacts::users::v1alpha1::Harbor(*from.harbor_);
   } else {
@@ -1211,6 +1219,7 @@ UsersRegistry::UsersRegistry(const UsersRegistry& from)
 inline void UsersRegistry::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 environment_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&harbor_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
@@ -1228,6 +1237,7 @@ inline void UsersRegistry::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   environment_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  environment_internal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete harbor_;
 }
 
@@ -1249,6 +1259,7 @@ void UsersRegistry::Clear() {
 
   id_.ClearToEmpty();
   environment_id_.ClearToEmpty();
+  environment_internal_name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && harbor_ != nullptr) {
     delete harbor_;
   }
@@ -1294,6 +1305,15 @@ const char* UsersRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           auto str = _internal_mutable_environment_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.users.v1alpha1.UsersRegistry.environment_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_environment_internal_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.users.v1alpha1.UsersRegistry.environment_internal_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1372,6 +1392,16 @@ failure:
         4, this->_internal_environment_id(), target);
   }
 
+  // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+  if (!this->_internal_environment_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_environment_internal_name().data(), static_cast<int>(this->_internal_environment_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.users.v1alpha1.UsersRegistry.environment_internal_name");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_environment_internal_name(), target);
+  }
+
   // bool active = 6 [json_name = "active"];
   if (this->_internal_active() != 0) {
     target = stream->EnsureSpace(target);
@@ -1414,6 +1444,13 @@ size_t UsersRegistry::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_environment_id());
+  }
+
+  // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+  if (!this->_internal_environment_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_environment_internal_name());
   }
 
   // .artifacts.users.v1alpha1.Harbor harbor = 7 [json_name = "harbor"];
@@ -1476,6 +1513,9 @@ void UsersRegistry::MergeFrom(const UsersRegistry& from) {
   if (!from._internal_environment_id().empty()) {
     _internal_set_environment_id(from._internal_environment_id());
   }
+  if (!from._internal_environment_internal_name().empty()) {
+    _internal_set_environment_internal_name(from._internal_environment_internal_name());
+  }
   if (from._internal_has_harbor()) {
     _internal_mutable_harbor()->::artifacts::users::v1alpha1::Harbor::MergeFrom(from._internal_harbor());
   }
@@ -1514,6 +1554,11 @@ void UsersRegistry::InternalSwap(UsersRegistry* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &environment_id_, GetArenaForAllocation(),
       &other->environment_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &environment_internal_name_, GetArenaForAllocation(),
+      &other->environment_internal_name_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UsersRegistry, active_)

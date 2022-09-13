@@ -1338,8 +1338,23 @@ class GetOneProviderByNameResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kErrorFieldNumber = 2,
     kProviderFieldNumber = 1,
   };
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // .source.v1alpha1.Provider provider = 1 [json_name = "provider"];
   bool has_provider() const;
   private:
@@ -1365,6 +1380,7 @@ class GetOneProviderByNameResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::source::v1alpha1::Provider* provider_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
@@ -1818,6 +1834,7 @@ class ListRepositoriesProviderResponse final :
 
   enum : int {
     kRepositoriesFieldNumber = 1,
+    kErrorFieldNumber = 4,
     kTotalPagesFieldNumber = 2,
     kCountFieldNumber = 3,
   };
@@ -1838,6 +1855,20 @@ class ListRepositoriesProviderResponse final :
   ::source::v1alpha1::Repository* add_repositories();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Repository >&
       repositories() const;
+
+  // string error = 4 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
 
   // uint32 total_pages = 2 [json_name = "totalPages"];
   void clear_total_pages();
@@ -1865,6 +1896,7 @@ class ListRepositoriesProviderResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Repository > repositories_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::PROTOBUF_NAMESPACE_ID::uint32 total_pages_;
   ::PROTOBUF_NAMESPACE_ID::uint32 count_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2148,6 +2180,7 @@ class GetRepositoryProviderResponse final :
 
   enum : int {
     kBranchsFieldNumber = 1,
+    kErrorFieldNumber = 2,
   };
   // repeated .source.v1alpha1.Branch branchs = 1 [json_name = "branchs"];
   int branchs_size() const;
@@ -2167,6 +2200,20 @@ class GetRepositoryProviderResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Branch >&
       branchs() const;
 
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.GetRepositoryProviderResponse)
  private:
   class _Internal;
@@ -2175,6 +2222,7 @@ class GetRepositoryProviderResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Branch > branchs_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -3870,8 +3918,23 @@ class GetRepositoryResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kErrorFieldNumber = 2,
     kRepositoryFieldNumber = 1,
   };
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // .source.v1alpha1.DetailRepository repository = 1 [json_name = "repository"];
   bool has_repository() const;
   private:
@@ -3897,6 +3960,7 @@ class GetRepositoryResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::source::v1alpha1::DetailRepository* repository_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
@@ -4323,6 +4387,7 @@ class UpdateRepositoryRequest final :
 
   enum : int {
     kRepositoryIdFieldNumber = 1,
+    kErrorFieldNumber = 3,
     kRepositoryFieldNumber = 2,
   };
   // string repository_id = 1 [json_name = "repositoryId"];
@@ -4337,6 +4402,20 @@ class UpdateRepositoryRequest final :
   const std::string& _internal_repository_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_id(const std::string& value);
   std::string* _internal_mutable_repository_id();
+  public:
+
+  // string error = 3 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
   public:
 
   // .source.v1alpha1.DetailRepository repository = 2 [json_name = "repository"];
@@ -4365,6 +4444,7 @@ class UpdateRepositoryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::source::v1alpha1::DetailRepository* repository_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
@@ -6004,6 +6084,7 @@ class ListIntegrationsResponse final :
 
   enum : int {
     kIntegrationsFieldNumber = 1,
+    kErrorFieldNumber = 2,
   };
   // repeated .source.v1alpha1.Integration integrations = 1 [json_name = "integrations"];
   int integrations_size() const;
@@ -6023,6 +6104,20 @@ class ListIntegrationsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Integration >&
       integrations() const;
 
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.ListIntegrationsResponse)
  private:
   class _Internal;
@@ -6031,6 +6126,7 @@ class ListIntegrationsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Integration > integrations_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -6295,8 +6391,23 @@ class GetIntegrationResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kErrorFieldNumber = 2,
     kIntegrationFieldNumber = 1,
   };
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
   // .source.v1alpha1.Integration integration = 1 [json_name = "integration"];
   bool has_integration() const;
   private:
@@ -6322,6 +6433,7 @@ class GetIntegrationResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::source::v1alpha1::Integration* integration_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
@@ -9421,6 +9533,52 @@ inline void GetOneProviderByNameResponse::set_allocated_provider(::source::v1alp
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetOneProviderByNameResponse.provider)
 }
 
+// string error = 2 [json_name = "error"];
+inline void GetOneProviderByNameResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetOneProviderByNameResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.GetOneProviderByNameResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneProviderByNameResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.GetOneProviderByNameResponse.error)
+}
+inline std::string* GetOneProviderByNameResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.GetOneProviderByNameResponse.error)
+  return _s;
+}
+inline const std::string& GetOneProviderByNameResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetOneProviderByNameResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOneProviderByNameResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneProviderByNameResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.GetOneProviderByNameResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneProviderByNameResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetOneProviderByNameResponse.error)
+}
+
 // -------------------------------------------------------------------
 
 // Branch
@@ -9717,6 +9875,52 @@ inline void ListRepositoriesProviderResponse::set_count(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesProviderResponse.count)
 }
 
+// string error = 4 [json_name = "error"];
+inline void ListRepositoriesProviderResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& ListRepositoriesProviderResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListRepositoriesProviderResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListRepositoriesProviderResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListRepositoriesProviderResponse.error)
+}
+inline std::string* ListRepositoriesProviderResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.ListRepositoriesProviderResponse.error)
+  return _s;
+}
+inline const std::string& ListRepositoriesProviderResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void ListRepositoriesProviderResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListRepositoriesProviderResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListRepositoriesProviderResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.ListRepositoriesProviderResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListRepositoriesProviderResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.ListRepositoriesProviderResponse.error)
+}
+
 // -------------------------------------------------------------------
 
 // GetRepositoryProviderRequest
@@ -9855,6 +10059,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::source::v1alpha1::Bran
 GetRepositoryProviderResponse::branchs() const {
   // @@protoc_insertion_point(field_list:source.v1alpha1.GetRepositoryProviderResponse.branchs)
   return branchs_;
+}
+
+// string error = 2 [json_name = "error"];
+inline void GetRepositoryProviderResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetRepositoryProviderResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.GetRepositoryProviderResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetRepositoryProviderResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.GetRepositoryProviderResponse.error)
+}
+inline std::string* GetRepositoryProviderResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.GetRepositoryProviderResponse.error)
+  return _s;
+}
+inline const std::string& GetRepositoryProviderResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetRepositoryProviderResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetRepositoryProviderResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetRepositoryProviderResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.GetRepositoryProviderResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetRepositoryProviderResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetRepositoryProviderResponse.error)
 }
 
 // -------------------------------------------------------------------
@@ -11408,6 +11658,52 @@ inline void GetRepositoryResponse::set_allocated_repository(::source::v1alpha1::
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetRepositoryResponse.repository)
 }
 
+// string error = 2 [json_name = "error"];
+inline void GetRepositoryResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetRepositoryResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.GetRepositoryResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetRepositoryResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.GetRepositoryResponse.error)
+}
+inline std::string* GetRepositoryResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.GetRepositoryResponse.error)
+  return _s;
+}
+inline const std::string& GetRepositoryResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetRepositoryResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetRepositoryResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetRepositoryResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.GetRepositoryResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetRepositoryResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetRepositoryResponse.error)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteRepositoryRequest
@@ -11692,6 +11988,52 @@ inline void UpdateRepositoryRequest::set_allocated_repository(::source::v1alpha1
   }
   repository_ = repository;
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateRepositoryRequest.repository)
+}
+
+// string error = 3 [json_name = "error"];
+inline void UpdateRepositoryRequest::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& UpdateRepositoryRequest::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.UpdateRepositoryRequest.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateRepositoryRequest::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.UpdateRepositoryRequest.error)
+}
+inline std::string* UpdateRepositoryRequest::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.UpdateRepositoryRequest.error)
+  return _s;
+}
+inline const std::string& UpdateRepositoryRequest::_internal_error() const {
+  return error_.Get();
+}
+inline void UpdateRepositoryRequest::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryRequest::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateRepositoryRequest::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.UpdateRepositoryRequest.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateRepositoryRequest::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.UpdateRepositoryRequest.error)
 }
 
 // -------------------------------------------------------------------
@@ -13134,6 +13476,52 @@ ListIntegrationsResponse::integrations() const {
   return integrations_;
 }
 
+// string error = 2 [json_name = "error"];
+inline void ListIntegrationsResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& ListIntegrationsResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.ListIntegrationsResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListIntegrationsResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.ListIntegrationsResponse.error)
+}
+inline std::string* ListIntegrationsResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.ListIntegrationsResponse.error)
+  return _s;
+}
+inline const std::string& ListIntegrationsResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void ListIntegrationsResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListIntegrationsResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListIntegrationsResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.ListIntegrationsResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListIntegrationsResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.ListIntegrationsResponse.error)
+}
+
 // -------------------------------------------------------------------
 
 // GetIntegrationRequest
@@ -13276,6 +13664,52 @@ inline void GetIntegrationResponse::set_allocated_integration(::source::v1alpha1
   }
   integration_ = integration;
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetIntegrationResponse.integration)
+}
+
+// string error = 2 [json_name = "error"];
+inline void GetIntegrationResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetIntegrationResponse::error() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.GetIntegrationResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetIntegrationResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.GetIntegrationResponse.error)
+}
+inline std::string* GetIntegrationResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.GetIntegrationResponse.error)
+  return _s;
+}
+inline const std::string& GetIntegrationResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetIntegrationResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetIntegrationResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetIntegrationResponse::release_error() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.GetIntegrationResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetIntegrationResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.GetIntegrationResponse.error)
 }
 
 // -------------------------------------------------------------------

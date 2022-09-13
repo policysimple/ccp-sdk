@@ -21,6 +21,7 @@ namespace v1alpha1 {
 
 static const char* MetricsAPIService_method_names[] = {
   "/performance.metrics.v1alpha1.MetricsAPIService/GetMetrics",
+  "/performance.metrics.v1alpha1.MetricsAPIService/GetTektonMetrics",
 };
 
 std::unique_ptr< MetricsAPIService::Stub> MetricsAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -31,6 +32,7 @@ std::unique_ptr< MetricsAPIService::Stub> MetricsAPIService::NewStub(const std::
 
 MetricsAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_GetMetrics_(MetricsAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTektonMetrics_(MetricsAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MetricsAPIService::Stub::GetMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest& request, ::performance::metrics::v1alpha1::GetMetricsResponse* response) {
@@ -49,18 +51,46 @@ void MetricsAPIService::Stub::experimental_async::GetMetrics(::grpc::ClientConte
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::performance::metrics::v1alpha1::GetMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetMetrics_, context, request, false);
 }
 
+::grpc::Status MetricsAPIService::Stub::GetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTektonMetrics_, context, request, response);
+}
+
+void MetricsAPIService::Stub::experimental_async::GetTektonMetrics(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTektonMetrics_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* MetricsAPIService::Stub::AsyncGetTektonMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetTektonMetrics_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>* MetricsAPIService::Stub::PrepareAsyncGetTektonMetricsRaw(::grpc::ClientContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::performance::metrics::v1alpha1::GetTektonMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetTektonMetrics_, context, request, false);
+}
+
 MetricsAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MetricsAPIService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MetricsAPIService::Service, ::performance::metrics::v1alpha1::GetMetricsRequest, ::performance::metrics::v1alpha1::GetMetricsResponse>(
           std::mem_fn(&MetricsAPIService::Service::GetMetrics), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MetricsAPIService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MetricsAPIService::Service, ::performance::metrics::v1alpha1::GetTektonMetricsRequest, ::performance::metrics::v1alpha1::GetTektonMetricsResponse>(
+          std::mem_fn(&MetricsAPIService::Service::GetTektonMetrics), this)));
 }
 
 MetricsAPIService::Service::~Service() {
 }
 
 ::grpc::Status MetricsAPIService::Service::GetMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetMetricsRequest* request, ::performance::metrics::v1alpha1::GetMetricsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MetricsAPIService::Service::GetTektonMetrics(::grpc::ServerContext* context, const ::performance::metrics::v1alpha1::GetTektonMetricsRequest* request, ::performance::metrics::v1alpha1::GetTektonMetricsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -50,6 +50,7 @@ message DeleteSecretRequest {
     uint32 project_id = 2;
     string application_id = 3;
     string namespace = 4;
+    string name = 5;
 }
 
 message DeleteSecretResponse {
@@ -62,6 +63,7 @@ message GetSecretRequest {
     uint32 project_id = 2;
     string application_id = 3;
     string namespace = 4;
+    string name = 5;
 }
 
 message GetSecretResponse {

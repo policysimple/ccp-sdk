@@ -10,7 +10,7 @@ message Customer {
   uint32 organization_id = 3;
   string name = 4;
   string email = 5;  
-  Suscription suscription = 6;
+  Subscription subscription = 6;
   PaymentList payments = 7;
   Invoice invoice = 8;
   Biling biling = 9;
@@ -25,12 +25,14 @@ message Project {
   string description = 5;
   string created_at = 6;
   string updated_at = 7;
+  bool status = 8;
+  bool is_suspended = 9;
 }
 
-message Suscription {
+message Subscription {
   string id =1;
-  string suscription_id =2;
-  string suscription_item_id =3;
+  string subscription_id =2;
+  string subscription_item_id =3;
   string invoice_id = 4; 
   string price= 5;
   string price_cpu =6;
@@ -71,15 +73,20 @@ message Biling {
   string invoice_id =2;
   string account_name = 3;  
   int64 totalusage = 4;
-  int64 cpu = 5;
-  int64 ram = 6;
+  double cpu = 5;
+  double ram = 6;
   string month = 7;
   string year = 8;
+  int64 amount = 9;
+  string period = 10;
+  string statuspay = 11;
+  string date = 12;
+  string product = 13;
 }
 
 message SubscriptionItems {
   string id =1;
-  string suscription_item_id =2;
+  string subscription_item_id =2;
   string price_id = 3;  
   string  product_id = 4;
  
@@ -102,8 +109,8 @@ message BilingList{
   repeated Biling items = 1;
 } 
 
-message SuscriptionList {
-  repeated Suscription items = 1;
+message SubscriptionList {
+  repeated Subscription items = 1;
 } 
 
 message CardList {

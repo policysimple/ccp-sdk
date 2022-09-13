@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.artifacts.quotas.v1alpha1B\023RegistryQuotasProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alpha1\312\002\031Artifacts\\Quotas\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/artifacts/quotas/v1alpha1/registry_quotas.proto\x12\x19\x61rtifacts.quotas.v1alpha1\"V\n\x0cHarborQuotas\x12!\n\x0cstorage_used\x18\x01 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x02 \x01(\rR\x0cstorageLimit\"\xe8\x01\n\x0eQuotasRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x65nvironment_id\x18\x04 \x01(\tR\renvironmentId\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12?\n\x06harbor\x18\x07 \x01(\x0b\x32\'.artifacts.quotas.v1alpha1.HarborQuotasR\x06harborB\xb6\x01\n#io.cuemby.artifacts.quotas.v1alpha1B\x13RegistryQuotasProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19\x41rtifacts.Quotas.V1Alpha1\xca\x02\x19\x41rtifacts\\Quotas\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n/artifacts/quotas/v1alpha1/registry_quotas.proto\x12\x19\x61rtifacts.quotas.v1alpha1\"V\n\x0cHarborQuotas\x12!\n\x0cstorage_used\x18\x01 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x02 \x01(\rR\x0cstorageLimit\"\xa4\x02\n\x0eQuotasRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x65nvironment_id\x18\x04 \x01(\tR\renvironmentId\x12:\n\x19\x65nvironment_internal_name\x18\x05 \x01(\tR\x17\x65nvironmentInternalName\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12?\n\x06harbor\x18\x07 \x01(\x0b\x32\'.artifacts.quotas.v1alpha1.HarborQuotasR\x06harborB\xb6\x01\n#io.cuemby.artifacts.quotas.v1alpha1B\x13RegistryQuotasProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19\x41rtifacts.Quotas.V1Alpha1\xca\x02\x19\x41rtifacts\\Quotas\\V1Alpha1b\x06proto3'
 )
 
 
@@ -101,14 +101,21 @@ _QUOTASREGISTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='environmentId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='active', full_name='artifacts.quotas.v1alpha1.QuotasRegistry.active', index=4,
+      name='environment_internal_name', full_name='artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='environmentInternalName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='active', full_name='artifacts.quotas.v1alpha1.QuotasRegistry.active', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='active', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='harbor', full_name='artifacts.quotas.v1alpha1.QuotasRegistry.harbor', index=5,
+      name='harbor', full_name='artifacts.quotas.v1alpha1.QuotasRegistry.harbor', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -127,7 +134,7 @@ _QUOTASREGISTRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=167,
-  serialized_end=399,
+  serialized_end=459,
 )
 
 _QUOTASREGISTRY.fields_by_name['harbor'].message_type = _HARBORQUOTAS

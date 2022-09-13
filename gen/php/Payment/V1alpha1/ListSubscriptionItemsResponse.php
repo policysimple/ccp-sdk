@@ -18,9 +18,9 @@ class ListSubscriptionItemsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $customer = null;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.SubscriptionItemsList suscription_items_list = 2 [json_name = "suscriptionItemsList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.SubscriptionItemsList subscription_items_list = 2 [json_name = "subscriptionItemsList"];</code>
      */
-    protected $suscription_items_list = null;
+    protected $subscription_items_list = null;
     /**
      * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      */
@@ -33,7 +33,7 @@ class ListSubscriptionItemsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Payment\V1alpha1\Customer $customer
-     *     @type \Payment\V1alpha1\SubscriptionItemsList $suscription_items_list
+     *     @type \Payment\V1alpha1\SubscriptionItemsList $subscription_items_list
      *     @type string $status
      * }
      */
@@ -75,33 +75,33 @@ class ListSubscriptionItemsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.SubscriptionItemsList suscription_items_list = 2 [json_name = "suscriptionItemsList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.SubscriptionItemsList subscription_items_list = 2 [json_name = "subscriptionItemsList"];</code>
      * @return \Payment\V1alpha1\SubscriptionItemsList|null
      */
-    public function getSuscriptionItemsList()
+    public function getSubscriptionItemsList()
     {
-        return $this->suscription_items_list;
+        return $this->subscription_items_list;
     }
 
-    public function hasSuscriptionItemsList()
+    public function hasSubscriptionItemsList()
     {
-        return isset($this->suscription_items_list);
+        return isset($this->subscription_items_list);
     }
 
-    public function clearSuscriptionItemsList()
+    public function clearSubscriptionItemsList()
     {
-        unset($this->suscription_items_list);
+        unset($this->subscription_items_list);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.SubscriptionItemsList suscription_items_list = 2 [json_name = "suscriptionItemsList"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.SubscriptionItemsList subscription_items_list = 2 [json_name = "subscriptionItemsList"];</code>
      * @param \Payment\V1alpha1\SubscriptionItemsList $var
      * @return $this
      */
-    public function setSuscriptionItemsList($var)
+    public function setSubscriptionItemsList($var)
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\SubscriptionItemsList::class);
-        $this->suscription_items_list = $var;
+        $this->subscription_items_list = $var;
 
         return $this;
     }

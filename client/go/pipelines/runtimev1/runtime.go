@@ -97,6 +97,26 @@ func UpdateRuntime(in *runtimepkgv1.UpdateRuntimeRequest) (response *runtimepkgv
 	return response, nil
 }
 
+func UpdateResponseMessageRuntime(in *runtimepkgv1.UpdateResponseMessageRuntimeRequest) (response *runtimepkgv1.UpdateResponseMessageRuntimeResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdateResponseMessageRuntime(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "error update runtime", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "error update runtime", err),
+		)
+	}
+	return response, nil
+}
+
 func DeleteRuntime(in *runtimepkgv1.DeleteRuntimeRequest) (response *runtimepkgv1.DeleteRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {

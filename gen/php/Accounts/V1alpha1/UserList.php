@@ -9,8 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *Authentication without group and permission
- *
  * Generated from protobuf message <code>accounts.v1alpha1.UserList</code>
  */
 class UserList extends \Google\Protobuf\Internal\Message

@@ -44,12 +44,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCustomerResponse>> PrepareAsyncCreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCustomerResponse>>(PrepareAsyncCreateCustomerRaw(context, request, cq));
     }
-    virtual ::grpc::Status CreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::payment::v1alpha1::CreateSuscriptionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSuscriptionResponse>> AsyncCreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSuscriptionResponse>>(AsyncCreateSuscriptionRaw(context, request, cq));
+    virtual ::grpc::Status CreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::payment::v1alpha1::CreateSubscriptionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSubscriptionResponse>> AsyncCreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSubscriptionResponse>>(AsyncCreateSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSuscriptionResponse>> PrepareAsyncCreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSuscriptionResponse>>(PrepareAsyncCreateSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSubscriptionResponse>> PrepareAsyncCreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSubscriptionResponse>>(PrepareAsyncCreateSubscriptionRaw(context, request, cq));
     }
     virtual ::grpc::Status CreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::payment::v1alpha1::CreatePaymentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreatePaymentResponse>> AsyncCreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -87,12 +87,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetOrganizationResponse>> PrepareAsyncGetOrganization(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetOrganizationResponse>>(PrepareAsyncGetOrganizationRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::payment::v1alpha1::GetSuscriptionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSuscriptionResponse>> AsyncGetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSuscriptionResponse>>(AsyncGetSuscriptionRaw(context, request, cq));
+    virtual ::grpc::Status GetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::payment::v1alpha1::GetSubscriptionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionResponse>> AsyncGetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionResponse>>(AsyncGetSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSuscriptionResponse>> PrepareAsyncGetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSuscriptionResponse>>(PrepareAsyncGetSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionResponse>> PrepareAsyncGetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionResponse>>(PrepareAsyncGetSubscriptionRaw(context, request, cq));
     }
     virtual ::grpc::Status GetPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::payment::v1alpha1::GetPaymentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetPaymentResponse>> AsyncGetPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -145,12 +145,12 @@ class PaymentAPIService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ListSubscriptionItemsResponse>>(PrepareAsyncListSubscriptionItemsRaw(context, request, cq));
     }
     // Update service
-    virtual ::grpc::Status UpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSuscriptionResponse>> AsyncUpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSuscriptionResponse>>(AsyncUpdateSuscriptionRaw(context, request, cq));
+    virtual ::grpc::Status UpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::payment::v1alpha1::UpdateSubscriptionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSubscriptionResponse>> AsyncUpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSubscriptionResponse>>(AsyncUpdateSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSuscriptionResponse>> PrepareAsyncUpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSuscriptionResponse>>(PrepareAsyncUpdateSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSubscriptionResponse>> PrepareAsyncUpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSubscriptionResponse>>(PrepareAsyncUpdateSubscriptionRaw(context, request, cq));
     }
     // Delete service
     virtual ::grpc::Status DeleteProject(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::payment::v1alpha1::DeleteProjectResponse* response) = 0;
@@ -167,12 +167,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeletePaymentResponse>> PrepareAsyncDeletePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeletePaymentResponse>>(PrepareAsyncDeletePaymentRaw(context, request, cq));
     }
-    virtual ::grpc::Status CancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::payment::v1alpha1::CancelSuscriptionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSuscriptionResponse>> AsyncCancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSuscriptionResponse>>(AsyncCancelSuscriptionRaw(context, request, cq));
+    virtual ::grpc::Status CancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::payment::v1alpha1::CancelSubscriptionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSubscriptionResponse>> AsyncCancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSubscriptionResponse>>(AsyncCancelSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSuscriptionResponse>> PrepareAsyncCancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSuscriptionResponse>>(PrepareAsyncCancelSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSubscriptionResponse>> PrepareAsyncCancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSubscriptionResponse>>(PrepareAsyncCancelSubscriptionRaw(context, request, cq));
     }
     virtual ::grpc::Status DeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::payment::v1alpha1::DeleteCustomerResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeleteCustomerResponse>> AsyncDeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::grpc::CompletionQueue* cq) {
@@ -189,19 +189,27 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::InvoiceFilterResponse>> PrepareAsyncInvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::InvoiceFilterResponse>>(PrepareAsyncInvoiceFilterRaw(context, request, cq));
     }
+    // Pause Project Consumption
+    virtual ::grpc::Status StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::payment::v1alpha1::StopProjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>> AsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>>(AsyncStopProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>> PrepareAsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>>(PrepareAsyncStopProjectRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       // Create a new service 
       virtual void CreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest* request, ::payment::v1alpha1::CreateCustomerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest* request, ::payment::v1alpha1::CreatePaymentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest* request, ::payment::v1alpha1::CreateInvoiceResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Get the service
       virtual void GetOrganization(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest* request, ::payment::v1alpha1::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest* request, ::payment::v1alpha1::GetPaymentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::GetCustomerRequest* request, ::payment::v1alpha1::GetCustomerResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetBilingMonth(::grpc::ClientContext* context, const ::payment::v1alpha1::GetBilingMonthRequest* request, ::payment::v1alpha1::GetBilingMonthResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -211,21 +219,23 @@ class PaymentAPIService final {
       virtual void ListPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::ListPaymentRequest* request, ::payment::v1alpha1::ListPaymentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListSubscriptionItems(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest* request, ::payment::v1alpha1::ListSubscriptionItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Update service
-      virtual void UpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Delete service
       virtual void DeleteProject(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest* request, ::payment::v1alpha1::DeleteProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeletePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest* request, ::payment::v1alpha1::DeletePaymentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest* request, ::payment::v1alpha1::DeleteCustomerResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Filter service
       virtual void InvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Pause Project Consumption
+      virtual void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCustomerResponse>* AsyncCreateCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCustomerResponse>* PrepareAsyncCreateCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSuscriptionResponse>* AsyncCreateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSuscriptionResponse>* PrepareAsyncCreateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSubscriptionResponse>* AsyncCreateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateSubscriptionResponse>* PrepareAsyncCreateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreatePaymentResponse>* AsyncCreatePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreatePaymentResponse>* PrepareAsyncCreatePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCardResponse>* AsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -236,8 +246,8 @@ class PaymentAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateInvoiceResponse>* PrepareAsyncCreateInvoiceRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetOrganizationResponse>* AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetOrganizationResponse>* PrepareAsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSuscriptionResponse>* AsyncGetSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSuscriptionResponse>* PrepareAsyncGetSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionResponse>* AsyncGetSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionResponse>* PrepareAsyncGetSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetPaymentResponse>* AsyncGetPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetPaymentResponse>* PrepareAsyncGetPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetCustomerResponse>* AsyncGetCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetCustomerRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -252,18 +262,20 @@ class PaymentAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ListPaymentResponse>* PrepareAsyncListPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListPaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ListSubscriptionItemsResponse>* AsyncListSubscriptionItemsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ListSubscriptionItemsResponse>* PrepareAsyncListSubscriptionItemsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSuscriptionResponse>* AsyncUpdateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSuscriptionResponse>* PrepareAsyncUpdateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSubscriptionResponse>* AsyncUpdateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateSubscriptionResponse>* PrepareAsyncUpdateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeleteProjectResponse>* AsyncDeleteProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeleteProjectResponse>* PrepareAsyncDeleteProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeletePaymentResponse>* AsyncDeletePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeletePaymentResponse>* PrepareAsyncDeletePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSuscriptionResponse>* AsyncCancelSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSuscriptionResponse>* PrepareAsyncCancelSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSubscriptionResponse>* AsyncCancelSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CancelSubscriptionResponse>* PrepareAsyncCancelSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeleteCustomerResponse>* AsyncDeleteCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::DeleteCustomerResponse>* PrepareAsyncDeleteCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::InvoiceFilterResponse>* AsyncInvoiceFilterRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::InvoiceFilterResponse>* PrepareAsyncInvoiceFilterRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>* AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>* PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -275,12 +287,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCustomerResponse>> PrepareAsyncCreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCustomerResponse>>(PrepareAsyncCreateCustomerRaw(context, request, cq));
     }
-    ::grpc::Status CreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::payment::v1alpha1::CreateSuscriptionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>> AsyncCreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>>(AsyncCreateSuscriptionRaw(context, request, cq));
+    ::grpc::Status CreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::payment::v1alpha1::CreateSubscriptionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSubscriptionResponse>> AsyncCreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSubscriptionResponse>>(AsyncCreateSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>> PrepareAsyncCreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>>(PrepareAsyncCreateSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSubscriptionResponse>> PrepareAsyncCreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSubscriptionResponse>>(PrepareAsyncCreateSubscriptionRaw(context, request, cq));
     }
     ::grpc::Status CreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::payment::v1alpha1::CreatePaymentResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreatePaymentResponse>> AsyncCreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -317,12 +329,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetOrganizationResponse>> PrepareAsyncGetOrganization(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetOrganizationResponse>>(PrepareAsyncGetOrganizationRaw(context, request, cq));
     }
-    ::grpc::Status GetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::payment::v1alpha1::GetSuscriptionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSuscriptionResponse>> AsyncGetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSuscriptionResponse>>(AsyncGetSuscriptionRaw(context, request, cq));
+    ::grpc::Status GetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::payment::v1alpha1::GetSubscriptionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionResponse>> AsyncGetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionResponse>>(AsyncGetSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSuscriptionResponse>> PrepareAsyncGetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSuscriptionResponse>>(PrepareAsyncGetSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionResponse>> PrepareAsyncGetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionResponse>>(PrepareAsyncGetSubscriptionRaw(context, request, cq));
     }
     ::grpc::Status GetPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::payment::v1alpha1::GetPaymentResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetPaymentResponse>> AsyncGetPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -373,12 +385,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListSubscriptionItemsResponse>> PrepareAsyncListSubscriptionItems(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListSubscriptionItemsResponse>>(PrepareAsyncListSubscriptionItemsRaw(context, request, cq));
     }
-    ::grpc::Status UpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSuscriptionResponse>> AsyncUpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSuscriptionResponse>>(AsyncUpdateSuscriptionRaw(context, request, cq));
+    ::grpc::Status UpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::payment::v1alpha1::UpdateSubscriptionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSubscriptionResponse>> AsyncUpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSubscriptionResponse>>(AsyncUpdateSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSuscriptionResponse>> PrepareAsyncUpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSuscriptionResponse>>(PrepareAsyncUpdateSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSubscriptionResponse>> PrepareAsyncUpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSubscriptionResponse>>(PrepareAsyncUpdateSubscriptionRaw(context, request, cq));
     }
     ::grpc::Status DeleteProject(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::payment::v1alpha1::DeleteProjectResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeleteProjectResponse>> AsyncDeleteProject(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::grpc::CompletionQueue* cq) {
@@ -394,12 +406,12 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeletePaymentResponse>> PrepareAsyncDeletePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeletePaymentResponse>>(PrepareAsyncDeletePaymentRaw(context, request, cq));
     }
-    ::grpc::Status CancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::payment::v1alpha1::CancelSuscriptionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSuscriptionResponse>> AsyncCancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSuscriptionResponse>>(AsyncCancelSuscriptionRaw(context, request, cq));
+    ::grpc::Status CancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::payment::v1alpha1::CancelSubscriptionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSubscriptionResponse>> AsyncCancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSubscriptionResponse>>(AsyncCancelSubscriptionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSuscriptionResponse>> PrepareAsyncCancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSuscriptionResponse>>(PrepareAsyncCancelSuscriptionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSubscriptionResponse>> PrepareAsyncCancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSubscriptionResponse>>(PrepareAsyncCancelSubscriptionRaw(context, request, cq));
     }
     ::grpc::Status DeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::payment::v1alpha1::DeleteCustomerResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeleteCustomerResponse>> AsyncDeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::grpc::CompletionQueue* cq) {
@@ -415,17 +427,24 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::InvoiceFilterResponse>> PrepareAsyncInvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::InvoiceFilterResponse>>(PrepareAsyncInvoiceFilterRaw(context, request, cq));
     }
+    ::grpc::Status StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::payment::v1alpha1::StopProjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>> AsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>>(AsyncStopProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>> PrepareAsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>>(PrepareAsyncStopProjectRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void CreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest* request, ::payment::v1alpha1::CreateCustomerResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
       void CreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest* request, ::payment::v1alpha1::CreatePaymentResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest* request, ::payment::v1alpha1::CreateInvoiceResponse* response, std::function<void(::grpc::Status)>) override;
       void GetOrganization(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest* request, ::payment::v1alpha1::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
       void GetPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest* request, ::payment::v1alpha1::GetPaymentResponse* response, std::function<void(::grpc::Status)>) override;
       void GetCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::GetCustomerRequest* request, ::payment::v1alpha1::GetCustomerResponse* response, std::function<void(::grpc::Status)>) override;
       void GetBilingMonth(::grpc::ClientContext* context, const ::payment::v1alpha1::GetBilingMonthRequest* request, ::payment::v1alpha1::GetBilingMonthResponse* response, std::function<void(::grpc::Status)>) override;
@@ -433,12 +452,13 @@ class PaymentAPIService final {
       void ListProjects(::grpc::ClientContext* context, const ::payment::v1alpha1::ListProjectsRequest* request, ::payment::v1alpha1::ListProjectsResponse* response, std::function<void(::grpc::Status)>) override;
       void ListPayment(::grpc::ClientContext* context, const ::payment::v1alpha1::ListPaymentRequest* request, ::payment::v1alpha1::ListPaymentResponse* response, std::function<void(::grpc::Status)>) override;
       void ListSubscriptionItems(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest* request, ::payment::v1alpha1::ListSubscriptionItemsResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteProject(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest* request, ::payment::v1alpha1::DeleteProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void DeletePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest* request, ::payment::v1alpha1::DeletePaymentResponse* response, std::function<void(::grpc::Status)>) override;
-      void CancelSuscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response, std::function<void(::grpc::Status)>) override;
+      void CancelSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest* request, ::payment::v1alpha1::DeleteCustomerResponse* response, std::function<void(::grpc::Status)>) override;
       void InvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response, std::function<void(::grpc::Status)>) override;
+      void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -452,8 +472,8 @@ class PaymentAPIService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCustomerResponse>* AsyncCreateCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCustomerResponse>* PrepareAsyncCreateCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>* AsyncCreateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSuscriptionResponse>* PrepareAsyncCreateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSubscriptionResponse>* AsyncCreateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateSubscriptionResponse>* PrepareAsyncCreateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreatePaymentResponse>* AsyncCreatePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreatePaymentResponse>* PrepareAsyncCreatePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>* AsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -464,8 +484,8 @@ class PaymentAPIService final {
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateInvoiceResponse>* PrepareAsyncCreateInvoiceRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetOrganizationResponse>* AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetOrganizationResponse>* PrepareAsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSuscriptionResponse>* AsyncGetSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSuscriptionResponse>* PrepareAsyncGetSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionResponse>* AsyncGetSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionResponse>* PrepareAsyncGetSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetPaymentResponse>* AsyncGetPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetPaymentResponse>* PrepareAsyncGetPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetPaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetCustomerResponse>* AsyncGetCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetCustomerRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -480,26 +500,28 @@ class PaymentAPIService final {
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListPaymentResponse>* PrepareAsyncListPaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListPaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListSubscriptionItemsResponse>* AsyncListSubscriptionItemsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ListSubscriptionItemsResponse>* PrepareAsyncListSubscriptionItemsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSuscriptionResponse>* AsyncUpdateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSuscriptionResponse>* PrepareAsyncUpdateSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSubscriptionResponse>* AsyncUpdateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateSubscriptionResponse>* PrepareAsyncUpdateSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeleteProjectResponse>* AsyncDeleteProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeleteProjectResponse>* PrepareAsyncDeleteProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeletePaymentResponse>* AsyncDeletePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeletePaymentResponse>* PrepareAsyncDeletePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeletePaymentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSuscriptionResponse>* AsyncCancelSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSuscriptionResponse>* PrepareAsyncCancelSuscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSubscriptionResponse>* AsyncCancelSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CancelSubscriptionResponse>* PrepareAsyncCancelSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeleteCustomerResponse>* AsyncDeleteCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::DeleteCustomerResponse>* PrepareAsyncDeleteCustomerRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::InvoiceFilterResponse>* AsyncInvoiceFilterRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::InvoiceFilterResponse>* PrepareAsyncInvoiceFilterRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateCustomer_;
-    const ::grpc::internal::RpcMethod rpcmethod_CreateSuscription_;
+    const ::grpc::internal::RpcMethod rpcmethod_CreateSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePayment_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateCard_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateProject_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateInvoice_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOrganization_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetSuscription_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_GetPayment_;
     const ::grpc::internal::RpcMethod rpcmethod_GetCustomer_;
     const ::grpc::internal::RpcMethod rpcmethod_GetBilingMonth_;
@@ -507,12 +529,13 @@ class PaymentAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_ListProjects_;
     const ::grpc::internal::RpcMethod rpcmethod_ListPayment_;
     const ::grpc::internal::RpcMethod rpcmethod_ListSubscriptionItems_;
-    const ::grpc::internal::RpcMethod rpcmethod_UpdateSuscription_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteProject_;
     const ::grpc::internal::RpcMethod rpcmethod_DeletePayment_;
-    const ::grpc::internal::RpcMethod rpcmethod_CancelSuscription_;
+    const ::grpc::internal::RpcMethod rpcmethod_CancelSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteCustomer_;
     const ::grpc::internal::RpcMethod rpcmethod_InvoiceFilter_;
+    const ::grpc::internal::RpcMethod rpcmethod_StopProject_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -522,14 +545,14 @@ class PaymentAPIService final {
     virtual ~Service();
     // Create a new service 
     virtual ::grpc::Status CreateCustomer(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateCustomerRequest* request, ::payment::v1alpha1::CreateCustomerResponse* response);
-    virtual ::grpc::Status CreateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response);
+    virtual ::grpc::Status CreateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response);
     virtual ::grpc::Status CreatePayment(::grpc::ServerContext* context, const ::payment::v1alpha1::CreatePaymentRequest* request, ::payment::v1alpha1::CreatePaymentResponse* response);
     virtual ::grpc::Status CreateCard(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response);
     virtual ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response);
     virtual ::grpc::Status CreateInvoice(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateInvoiceRequest* request, ::payment::v1alpha1::CreateInvoiceResponse* response);
     // Get the service
     virtual ::grpc::Status GetOrganization(::grpc::ServerContext* context, const ::payment::v1alpha1::GetOrganizationRequest* request, ::payment::v1alpha1::GetOrganizationResponse* response);
-    virtual ::grpc::Status GetSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response);
+    virtual ::grpc::Status GetSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response);
     virtual ::grpc::Status GetPayment(::grpc::ServerContext* context, const ::payment::v1alpha1::GetPaymentRequest* request, ::payment::v1alpha1::GetPaymentResponse* response);
     virtual ::grpc::Status GetCustomer(::grpc::ServerContext* context, const ::payment::v1alpha1::GetCustomerRequest* request, ::payment::v1alpha1::GetCustomerResponse* response);
     virtual ::grpc::Status GetBilingMonth(::grpc::ServerContext* context, const ::payment::v1alpha1::GetBilingMonthRequest* request, ::payment::v1alpha1::GetBilingMonthResponse* response);
@@ -539,14 +562,16 @@ class PaymentAPIService final {
     virtual ::grpc::Status ListPayment(::grpc::ServerContext* context, const ::payment::v1alpha1::ListPaymentRequest* request, ::payment::v1alpha1::ListPaymentResponse* response);
     virtual ::grpc::Status ListSubscriptionItems(::grpc::ServerContext* context, const ::payment::v1alpha1::ListSubscriptionItemsRequest* request, ::payment::v1alpha1::ListSubscriptionItemsResponse* response);
     // Update service
-    virtual ::grpc::Status UpdateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response);
+    virtual ::grpc::Status UpdateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response);
     // Delete service
     virtual ::grpc::Status DeleteProject(::grpc::ServerContext* context, const ::payment::v1alpha1::DeleteProjectRequest* request, ::payment::v1alpha1::DeleteProjectResponse* response);
     virtual ::grpc::Status DeletePayment(::grpc::ServerContext* context, const ::payment::v1alpha1::DeletePaymentRequest* request, ::payment::v1alpha1::DeletePaymentResponse* response);
-    virtual ::grpc::Status CancelSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response);
+    virtual ::grpc::Status CancelSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response);
     virtual ::grpc::Status DeleteCustomer(::grpc::ServerContext* context, const ::payment::v1alpha1::DeleteCustomerRequest* request, ::payment::v1alpha1::DeleteCustomerResponse* response);
     // Filter service
     virtual ::grpc::Status InvoiceFilter(::grpc::ServerContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response);
+    // Pause Project Consumption
+    virtual ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateCustomer : public BaseClass {
@@ -569,22 +594,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_CreateSuscription : public BaseClass {
+  class WithAsyncMethod_CreateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_CreateSuscription() {
+    WithAsyncMethod_CreateSubscription() {
       ::grpc::Service::MarkMethodAsync(1);
     }
-    ~WithAsyncMethod_CreateSuscription() override {
+    ~WithAsyncMethod_CreateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response) override {
+    ::grpc::Status CreateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateSuscription(::grpc::ServerContext* context, ::payment::v1alpha1::CreateSuscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CreateSuscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCreateSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::CreateSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CreateSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -689,22 +714,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_GetSuscription : public BaseClass {
+  class WithAsyncMethod_GetSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_GetSuscription() {
+    WithAsyncMethod_GetSubscription() {
       ::grpc::Service::MarkMethodAsync(7);
     }
-    ~WithAsyncMethod_GetSuscription() override {
+    ~WithAsyncMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response) override {
+    ::grpc::Status GetSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetSuscription(::grpc::ServerContext* context, ::payment::v1alpha1::GetSuscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetSuscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::GetSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -849,22 +874,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_UpdateSuscription : public BaseClass {
+  class WithAsyncMethod_UpdateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_UpdateSuscription() {
+    WithAsyncMethod_UpdateSubscription() {
       ::grpc::Service::MarkMethodAsync(15);
     }
-    ~WithAsyncMethod_UpdateSuscription() override {
+    ~WithAsyncMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) override {
+    ::grpc::Status UpdateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateSuscription(::grpc::ServerContext* context, ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::UpdateSuscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::UpdateSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -909,22 +934,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_CancelSuscription : public BaseClass {
+  class WithAsyncMethod_CancelSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_CancelSuscription() {
+    WithAsyncMethod_CancelSubscription() {
       ::grpc::Service::MarkMethodAsync(18);
     }
-    ~WithAsyncMethod_CancelSuscription() override {
+    ~WithAsyncMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CancelSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response) override {
+    ::grpc::Status CancelSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCancelSuscription(::grpc::ServerContext* context, ::payment::v1alpha1::CancelSuscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CancelSuscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCancelSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::CancelSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CancelSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -968,7 +993,27 @@ class PaymentAPIService final {
       ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSuscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateProject<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSuscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_UpdateSuscription<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSuscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<Service > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_StopProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_StopProject() {
+      ::grpc::Service::MarkMethodAsync(21);
+    }
+    ~WithAsyncMethod_StopProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStopProject(::grpc::ServerContext* context, ::payment::v1alpha1::StopProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::StopProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateProject<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_StopProject<Service > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateCustomer : public BaseClass {
    private:
@@ -987,18 +1032,18 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_CreateSuscription : public BaseClass {
+  class WithGenericMethod_CreateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_CreateSuscription() {
+    WithGenericMethod_CreateSubscription() {
       ::grpc::Service::MarkMethodGeneric(1);
     }
-    ~WithGenericMethod_CreateSuscription() override {
+    ~WithGenericMethod_CreateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response) override {
+    ::grpc::Status CreateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1089,18 +1134,18 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_GetSuscription : public BaseClass {
+  class WithGenericMethod_GetSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_GetSuscription() {
+    WithGenericMethod_GetSubscription() {
       ::grpc::Service::MarkMethodGeneric(7);
     }
-    ~WithGenericMethod_GetSuscription() override {
+    ~WithGenericMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response) override {
+    ::grpc::Status GetSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1225,18 +1270,18 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_UpdateSuscription : public BaseClass {
+  class WithGenericMethod_UpdateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_UpdateSuscription() {
+    WithGenericMethod_UpdateSubscription() {
       ::grpc::Service::MarkMethodGeneric(15);
     }
-    ~WithGenericMethod_UpdateSuscription() override {
+    ~WithGenericMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) override {
+    ::grpc::Status UpdateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1276,18 +1321,18 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_CancelSuscription : public BaseClass {
+  class WithGenericMethod_CancelSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_CancelSuscription() {
+    WithGenericMethod_CancelSubscription() {
       ::grpc::Service::MarkMethodGeneric(18);
     }
-    ~WithGenericMethod_CancelSuscription() override {
+    ~WithGenericMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CancelSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response) override {
+    ::grpc::Status CancelSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1327,6 +1372,23 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_StopProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_StopProject() {
+      ::grpc::Service::MarkMethodGeneric(21);
+    }
+    ~WithGenericMethod_StopProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_CreateCustomer : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1347,22 +1409,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_CreateSuscription : public BaseClass {
+  class WithRawMethod_CreateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_CreateSuscription() {
+    WithRawMethod_CreateSubscription() {
       ::grpc::Service::MarkMethodRaw(1);
     }
-    ~WithRawMethod_CreateSuscription() override {
+    ~WithRawMethod_CreateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response) override {
+    ::grpc::Status CreateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateSuscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCreateSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1467,22 +1529,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_GetSuscription : public BaseClass {
+  class WithRawMethod_GetSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_GetSuscription() {
+    WithRawMethod_GetSubscription() {
       ::grpc::Service::MarkMethodRaw(7);
     }
-    ~WithRawMethod_GetSuscription() override {
+    ~WithRawMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response) override {
+    ::grpc::Status GetSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetSuscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1627,22 +1689,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_UpdateSuscription : public BaseClass {
+  class WithRawMethod_UpdateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_UpdateSuscription() {
+    WithRawMethod_UpdateSubscription() {
       ::grpc::Service::MarkMethodRaw(15);
     }
-    ~WithRawMethod_UpdateSuscription() override {
+    ~WithRawMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) override {
+    ::grpc::Status UpdateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateSuscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1687,22 +1749,22 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_CancelSuscription : public BaseClass {
+  class WithRawMethod_CancelSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_CancelSuscription() {
+    WithRawMethod_CancelSubscription() {
       ::grpc::Service::MarkMethodRaw(18);
     }
-    ~WithRawMethod_CancelSuscription() override {
+    ~WithRawMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CancelSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response) override {
+    ::grpc::Status CancelSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCancelSuscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCancelSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1747,6 +1809,26 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_StopProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_StopProject() {
+      ::grpc::Service::MarkMethodRaw(21);
+    }
+    ~WithRawMethod_StopProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStopProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateCustomer : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1767,24 +1849,24 @@ class PaymentAPIService final {
     virtual ::grpc::Status StreamedCreateCustomer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CreateCustomerRequest,::payment::v1alpha1::CreateCustomerResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_CreateSuscription : public BaseClass {
+  class WithStreamedUnaryMethod_CreateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_CreateSuscription() {
+    WithStreamedUnaryMethod_CreateSubscription() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CreateSuscriptionRequest, ::payment::v1alpha1::CreateSuscriptionResponse>(std::bind(&WithStreamedUnaryMethod_CreateSuscription<BaseClass>::StreamedCreateSuscription, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CreateSubscriptionRequest, ::payment::v1alpha1::CreateSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_CreateSubscription<BaseClass>::StreamedCreateSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_CreateSuscription() override {
+    ~WithStreamedUnaryMethod_CreateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CreateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSuscriptionRequest* request, ::payment::v1alpha1::CreateSuscriptionResponse* response) override {
+    ::grpc::Status CreateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateSuscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CreateSuscriptionRequest,::payment::v1alpha1::CreateSuscriptionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedCreateSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CreateSubscriptionRequest,::payment::v1alpha1::CreateSubscriptionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreatePayment : public BaseClass {
@@ -1887,24 +1969,24 @@ class PaymentAPIService final {
     virtual ::grpc::Status StreamedGetOrganization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::GetOrganizationRequest,::payment::v1alpha1::GetOrganizationResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_GetSuscription : public BaseClass {
+  class WithStreamedUnaryMethod_GetSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_GetSuscription() {
+    WithStreamedUnaryMethod_GetSubscription() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetSuscriptionRequest, ::payment::v1alpha1::GetSuscriptionResponse>(std::bind(&WithStreamedUnaryMethod_GetSuscription<BaseClass>::StreamedGetSuscription, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetSubscriptionRequest, ::payment::v1alpha1::GetSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_GetSubscription<BaseClass>::StreamedGetSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_GetSuscription() override {
+    ~WithStreamedUnaryMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSuscriptionRequest* request, ::payment::v1alpha1::GetSuscriptionResponse* response) override {
+    ::grpc::Status GetSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetSuscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::GetSuscriptionRequest,::payment::v1alpha1::GetSuscriptionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::GetSubscriptionRequest,::payment::v1alpha1::GetSubscriptionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetPayment : public BaseClass {
@@ -2047,24 +2129,24 @@ class PaymentAPIService final {
     virtual ::grpc::Status StreamedListSubscriptionItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::ListSubscriptionItemsRequest,::payment::v1alpha1::ListSubscriptionItemsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_UpdateSuscription : public BaseClass {
+  class WithStreamedUnaryMethod_UpdateSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_UpdateSuscription() {
+    WithStreamedUnaryMethod_UpdateSubscription() {
       ::grpc::Service::MarkMethodStreamed(15,
-        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::UpdateSuscriptionRequest, ::payment::v1alpha1::UpdateSuscriptionResponse>(std::bind(&WithStreamedUnaryMethod_UpdateSuscription<BaseClass>::StreamedUpdateSuscription, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::UpdateSubscriptionRequest, ::payment::v1alpha1::UpdateSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_UpdateSubscription<BaseClass>::StreamedUpdateSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_UpdateSuscription() override {
+    ~WithStreamedUnaryMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSuscriptionRequest* request, ::payment::v1alpha1::UpdateSuscriptionResponse* response) override {
+    ::grpc::Status UpdateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::payment::v1alpha1::UpdateSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateSuscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::UpdateSuscriptionRequest,::payment::v1alpha1::UpdateSuscriptionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUpdateSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::UpdateSubscriptionRequest,::payment::v1alpha1::UpdateSubscriptionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteProject : public BaseClass {
@@ -2107,24 +2189,24 @@ class PaymentAPIService final {
     virtual ::grpc::Status StreamedDeletePayment(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::DeletePaymentRequest,::payment::v1alpha1::DeletePaymentResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_CancelSuscription : public BaseClass {
+  class WithStreamedUnaryMethod_CancelSubscription : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_CancelSuscription() {
+    WithStreamedUnaryMethod_CancelSubscription() {
       ::grpc::Service::MarkMethodStreamed(18,
-        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CancelSuscriptionRequest, ::payment::v1alpha1::CancelSuscriptionResponse>(std::bind(&WithStreamedUnaryMethod_CancelSuscription<BaseClass>::StreamedCancelSuscription, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CancelSubscriptionRequest, ::payment::v1alpha1::CancelSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_CancelSubscription<BaseClass>::StreamedCancelSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_CancelSuscription() override {
+    ~WithStreamedUnaryMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CancelSuscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSuscriptionRequest* request, ::payment::v1alpha1::CancelSuscriptionResponse* response) override {
+    ::grpc::Status CancelSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CancelSubscriptionRequest* request, ::payment::v1alpha1::CancelSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCancelSuscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CancelSuscriptionRequest,::payment::v1alpha1::CancelSuscriptionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedCancelSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CancelSubscriptionRequest,::payment::v1alpha1::CancelSubscriptionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteCustomer : public BaseClass {
@@ -2166,9 +2248,29 @@ class PaymentAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedInvoiceFilter(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::InvoiceFilterRequest,::payment::v1alpha1::InvoiceFilterResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSuscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSuscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSuscription<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSuscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<Service > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_StopProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_StopProject() {
+      ::grpc::Service::MarkMethodStreamed(21,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::StopProjectRequest, ::payment::v1alpha1::StopProjectResponse>(std::bind(&WithStreamedUnaryMethod_StopProject<BaseClass>::StreamedStopProject, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_StopProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedStopProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::StopProjectRequest,::payment::v1alpha1::StopProjectResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_StopProject<Service > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSuscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSuscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSuscription<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSuscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<Service > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_StopProject<Service > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

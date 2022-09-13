@@ -56,18 +56,19 @@ public final class RegistryUsersProto {
       "evel\022\032\n\010duration\030\005 \001(\rR\010duration\022 \n\013desc" +
       "ription\030\006 \001(\tR\013description\022Z\n\022permission" +
       "s_harbor\030\007 \003(\0132+.artifacts.users.v1alpha" +
-      "1.PermissionsHarborR\021permissionsHarbor\"\340" +
-      "\001\n\rUsersRegistry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017orga" +
+      "1.PermissionsHarborR\021permissionsHarbor\"\234" +
+      "\002\n\rUsersRegistry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017orga" +
       "nization_id\030\002 \001(\rR\016organizationId\022\035\n\npro" +
       "ject_id\030\003 \001(\rR\tprojectId\022%\n\016environment_" +
-      "id\030\004 \001(\tR\renvironmentId\022\026\n\006active\030\006 \001(\010R" +
-      "\006active\0228\n\006harbor\030\007 \001(\0132 .artifacts.user" +
-      "s.v1alpha1.HarborR\006harborB\261\001\n\"io.cuemby." +
-      "artifacts.users.v1alpha1B\022RegistryUsersP" +
-      "rotoP\001Z9github.com/cuemby/ccp-sdk/gen/go" +
-      "/artifacts/users/v1alpha1\242\002\003PPX\252\002\030Artifa" +
-      "cts.Users.V1Alpha1\312\002\030Artifacts\\Users\\V1A" +
-      "lpha1b\006proto3"
+      "id\030\004 \001(\tR\renvironmentId\022:\n\031environment_i" +
+      "nternal_name\030\005 \001(\tR\027environmentInternalN" +
+      "ame\022\026\n\006active\030\006 \001(\010R\006active\0228\n\006harbor\030\007 " +
+      "\001(\0132 .artifacts.users.v1alpha1.HarborR\006h" +
+      "arborB\261\001\n\"io.cuemby.artifacts.users.v1al" +
+      "pha1B\022RegistryUsersProtoP\001Z9github.com/c" +
+      "uemby/ccp-sdk/gen/go/artifacts/users/v1a" +
+      "lpha1\242\002\003PPX\252\002\030Artifacts.Users.V1Alpha1\312\002" +
+      "\030Artifacts\\Users\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -96,7 +97,7 @@ public final class RegistryUsersProto {
     internal_static_artifacts_users_v1alpha1_UsersRegistry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_users_v1alpha1_UsersRegistry_descriptor,
-        new java.lang.String[] { "Id", "OrganizationId", "ProjectId", "EnvironmentId", "Active", "Harbor", });
+        new java.lang.String[] { "Id", "OrganizationId", "ProjectId", "EnvironmentId", "EnvironmentInternalName", "Active", "Harbor", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

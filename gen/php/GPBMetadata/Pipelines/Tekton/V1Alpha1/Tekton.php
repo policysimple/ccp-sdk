@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-Å
+¤
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -49,34 +49,34 @@ workspaces (2%.pipelines.tekton.v1alpha1.WorkspacesR
 workspacesF
 task_params (2%.pipelines.tekton.v1alpha1.TaskParamsR
 taskParams 
-description (	Rdescription"ˆ
+description (	Rdescription"ç
+
 Pipeline
 id (	Rid
-name (	Rname#
-instance_type (	RinstanceType!
-traffic_type (RtrafficType\'
-organization_id (RorganizationId
+name (	Rname!
+traffic_type (RtrafficType\'
+organization_id (RorganizationId
 
-project_id (R	projectId%
-environment_id (	RenvironmentId%
-application_id (	RapplicationId
+project_id (R	projectId%
+environment_id (	RenvironmentId%
+application_id (	RapplicationId
 
-runtime_id	 (	R	runtimeId9
-params
- (2!.pipelines.tekton.v1alpha1.ParamsRparams5
-tasks (2.pipelines.tekton.v1alpha1.TaskRtasks
-status_type (	R
+runtime_id (	R	runtimeId9
+params	 (2!.pipelines.tekton.v1alpha1.ParamsRparams5
+tasks
+ (2.pipelines.tekton.v1alpha1.TaskRtasks
+status_type (	R
 statusTypeV
-integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
-environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
-commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
-secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecretsQ
+integration (24.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryRintegrationr
+environment_variables (2=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryRenvironmentVariablesM
+commands (21.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryRcommandsJ
+secrets (20.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryRsecretsQ
 
-extra_args (22.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR	extraArgsW
-auto_scaling (24.pipelines.tekton.v1alpha1.Pipeline.AutoScalingEntryRautoScaling
+extra_args (22.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR	extraArgsZ
+instance_type (25.pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntryRinstanceType
 
-is_default (R	isDefault
-active (Ractive>
+is_default (R	isDefault
+active (Ractive>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G
@@ -91,8 +91,8 @@ is_default (R	isDefault
 value (	Rvalue:8<
 ExtraArgsEntry
 key (	Rkey
-value (	Rvalue:8>
-AutoScalingEntry
+value (	Rvalue:8?
+InstanceTypeEntry
 key (	Rkey
 value (	Rvalue:8B®
 #io.cuemby.pipelines.tekton.v1alpha1BTektonProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPXªPipelines.Tekton.V1Alpha1ÊPipelines\\Tekton\\V1Alpha1bproto3'

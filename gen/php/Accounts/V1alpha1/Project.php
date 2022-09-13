@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *
- * PROJECTS
- *
  * Generated from protobuf message <code>accounts.v1alpha1.Project</code>
  */
 class Project extends \Google\Protobuf\Internal\Message
@@ -45,9 +42,13 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];</code>
      */
     private $roles;
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.UserList users = 9 [json_name = "users"];</code>
+     */
+    private $users;
 
     /**
      * Constructor.
@@ -62,7 +63,8 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type string $created_at
      *     @type string $updated_at
-     *     @type \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $roles
+     *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
+     *     @type \Accounts\V1alpha1\UserList[]|\Google\Protobuf\Internal\RepeatedField $users
      * }
      */
     public function __construct($data = NULL) {
@@ -225,7 +227,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRoles()
@@ -234,14 +236,36 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Rol roles = 8 [json_name = "roles"];</code>
-     * @param \Accounts\V1alpha1\Rol[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];</code>
+     * @param \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRoles($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Rol::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Role::class);
         $this->roles = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.UserList users = 9 [json_name = "users"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.UserList users = 9 [json_name = "users"];</code>
+     * @param \Accounts\V1alpha1\UserList[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\UserList::class);
+        $this->users = $arr;
 
         return $this;
     }

@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-»B
+ÕC
 source/v1alpha1/source.protosource.v1alpha1"9
 AccountProvider
 name (	Rname
@@ -35,26 +35,29 @@ totalPages"R
 msg (	Rmsg
 error (	Rerror"1
 GetOneProviderByNameRequest
-name (	Rname"U
+name (	Rname"k
 GetOneProviderByNameResponse5
-provider (2.source.v1alpha1.ProviderRprovider"@
+provider (2.source.v1alpha1.ProviderRprovider
+error (	Rerror"@
 Branch
 name (	Rname
 sha (	Rsha
 url (	Rurl"\\
 ListRepositoriesProviderRequest%
 integration_id (	RintegrationId
-page (Rpage"š
+page (Rpage"°
  ListRepositoriesProviderResponse?
 repositories (2.source.v1alpha1.RepositoryRrepositories
 total_pages (R
 totalPages
-count (Rcount"Y
+count (Rcount
+error (	Rerror"Y
 GetRepositoryProviderRequest%
 integration_id (	RintegrationId
-name (	Rname"R
+name (	Rname"h
 GetRepositoryProviderResponse1
-branchs (2.source.v1alpha1.BranchRbranchs"È
+branchs (2.source.v1alpha1.BranchRbranchs
+error (	Rerror"È
 DetailRepository
 id (	Rid
 name (	Rname
@@ -108,21 +111,23 @@ project_id (R	projectId\'
 ListRepositoriesResponseC
 repositories (2.source.v1alpha1.ListRepositoryRrepositories";
 GetRepositoryRequest#
-repository_id (	RrepositoryId"Z
+repository_id (	RrepositoryId"p
 GetRepositoryResponseA
 
 repository (2!.source.v1alpha1.DetailRepositoryR
-repository">
+repository
+error (	Rerror">
 DeleteRepositoryRequest#
 repository_id (	RrepositoryId"B
 DeleteRepositoryResponse
 msg (	Rmsg
-error (	Rerror"
+error (	Rerror"—
 UpdateRepositoryRequest#
 repository_id (	RrepositoryIdA
 
 repository (2!.source.v1alpha1.DetailRepositoryR
-repository"B
+repository
+error (	Rerror"B
 UpdateRepositoryResponse
 msg (	Rmsg
 error (	Rerror"ã
@@ -174,13 +179,15 @@ providerId=
 integration_id (	RintegrationId"[
 ListIntegrationsRequest\'
 organization_id (RorganizationId
-user_id (	RuserId"\\
+user_id (	RuserId"r
 ListIntegrationsResponse@
-integrations (2.source.v1alpha1.IntegrationRintegrations"\'
+integrations (2.source.v1alpha1.IntegrationRintegrations
+error (	Rerror"\'
 GetIntegrationRequest
-id (	Rid"X
+id (	Rid"n
 GetIntegrationResponse>
-integration (2.source.v1alpha1.IntegrationRintegration"y
+integration (2.source.v1alpha1.IntegrationRintegration
+error (	Rerror"y
 UpdateIntegrationRequest
 id (	RidM
 integrations (2).source.v1alpha1.CreateIntegrationRequestRintegrations"C

@@ -58,3 +58,11 @@ message Application {
     Scaling scaling = 8;
     TrafficType traffic_type = 9;
 }
+
+message ListApplication {
+    string id = 1;
+    string name = 2;
+    Repository repository = 3;
+    uint32 project_id = 4;
+    uint32 organization_id = 5;
+}

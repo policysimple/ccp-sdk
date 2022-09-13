@@ -20,14 +20,14 @@ const _ = grpc.SupportPackageIsVersion7
 type PaymentAPIServiceClient interface {
 	//Create a new service
 	CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error)
-	CreateSuscription(ctx context.Context, in *CreateSuscriptionRequest, opts ...grpc.CallOption) (*CreateSuscriptionResponse, error)
+	CreateSubscription(ctx context.Context, in *CreateSubscriptionRequest, opts ...grpc.CallOption) (*CreateSubscriptionResponse, error)
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	CreateCard(ctx context.Context, in *CreateCardRequest, opts ...grpc.CallOption) (*CreateCardResponse, error)
 	CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error)
 	CreateInvoice(ctx context.Context, in *CreateInvoiceRequest, opts ...grpc.CallOption) (*CreateInvoiceResponse, error)
 	//Get the service
 	GetOrganization(ctx context.Context, in *GetOrganizationRequest, opts ...grpc.CallOption) (*GetOrganizationResponse, error)
-	GetSuscription(ctx context.Context, in *GetSuscriptionRequest, opts ...grpc.CallOption) (*GetSuscriptionResponse, error)
+	GetSubscription(ctx context.Context, in *GetSubscriptionRequest, opts ...grpc.CallOption) (*GetSubscriptionResponse, error)
 	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 	GetCustomer(ctx context.Context, in *GetCustomerRequest, opts ...grpc.CallOption) (*GetCustomerResponse, error)
 	GetBilingMonth(ctx context.Context, in *GetBilingMonthRequest, opts ...grpc.CallOption) (*GetBilingMonthResponse, error)
@@ -37,14 +37,16 @@ type PaymentAPIServiceClient interface {
 	ListPayment(ctx context.Context, in *ListPaymentRequest, opts ...grpc.CallOption) (*ListPaymentResponse, error)
 	ListSubscriptionItems(ctx context.Context, in *ListSubscriptionItemsRequest, opts ...grpc.CallOption) (*ListSubscriptionItemsResponse, error)
 	//Update service
-	UpdateSuscription(ctx context.Context, in *UpdateSuscriptionRequest, opts ...grpc.CallOption) (*UpdateSuscriptionResponse, error)
+	UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error)
 	//Delete service
 	DeleteProject(ctx context.Context, in *DeleteProjectRequest, opts ...grpc.CallOption) (*DeleteProjectResponse, error)
 	DeletePayment(ctx context.Context, in *DeletePaymentRequest, opts ...grpc.CallOption) (*DeletePaymentResponse, error)
-	CancelSuscription(ctx context.Context, in *CancelSuscriptionRequest, opts ...grpc.CallOption) (*CancelSuscriptionResponse, error)
+	CancelSubscription(ctx context.Context, in *CancelSubscriptionRequest, opts ...grpc.CallOption) (*CancelSubscriptionResponse, error)
 	DeleteCustomer(ctx context.Context, in *DeleteCustomerRequest, opts ...grpc.CallOption) (*DeleteCustomerResponse, error)
 	//Filter service
 	InvoiceFilter(ctx context.Context, in *InvoiceFilterRequest, opts ...grpc.CallOption) (*InvoiceFilterResponse, error)
+	//Pause Project Consumption
+	StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error)
 }
 
 type paymentAPIServiceClient struct {
@@ -64,9 +66,9 @@ func (c *paymentAPIServiceClient) CreateCustomer(ctx context.Context, in *Create
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) CreateSuscription(ctx context.Context, in *CreateSuscriptionRequest, opts ...grpc.CallOption) (*CreateSuscriptionResponse, error) {
-	out := new(CreateSuscriptionResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateSuscription", in, out, opts...)
+func (c *paymentAPIServiceClient) CreateSubscription(ctx context.Context, in *CreateSubscriptionRequest, opts ...grpc.CallOption) (*CreateSubscriptionResponse, error) {
+	out := new(CreateSubscriptionResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateSubscription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -118,9 +120,9 @@ func (c *paymentAPIServiceClient) GetOrganization(ctx context.Context, in *GetOr
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) GetSuscription(ctx context.Context, in *GetSuscriptionRequest, opts ...grpc.CallOption) (*GetSuscriptionResponse, error) {
-	out := new(GetSuscriptionResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetSuscription", in, out, opts...)
+func (c *paymentAPIServiceClient) GetSubscription(ctx context.Context, in *GetSubscriptionRequest, opts ...grpc.CallOption) (*GetSubscriptionResponse, error) {
+	out := new(GetSubscriptionResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetSubscription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -190,9 +192,9 @@ func (c *paymentAPIServiceClient) ListSubscriptionItems(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) UpdateSuscription(ctx context.Context, in *UpdateSuscriptionRequest, opts ...grpc.CallOption) (*UpdateSuscriptionResponse, error) {
-	out := new(UpdateSuscriptionResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/UpdateSuscription", in, out, opts...)
+func (c *paymentAPIServiceClient) UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error) {
+	out := new(UpdateSubscriptionResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/UpdateSubscription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -217,9 +219,9 @@ func (c *paymentAPIServiceClient) DeletePayment(ctx context.Context, in *DeleteP
 	return out, nil
 }
 
-func (c *paymentAPIServiceClient) CancelSuscription(ctx context.Context, in *CancelSuscriptionRequest, opts ...grpc.CallOption) (*CancelSuscriptionResponse, error) {
-	out := new(CancelSuscriptionResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CancelSuscription", in, out, opts...)
+func (c *paymentAPIServiceClient) CancelSubscription(ctx context.Context, in *CancelSubscriptionRequest, opts ...grpc.CallOption) (*CancelSubscriptionResponse, error) {
+	out := new(CancelSubscriptionResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CancelSubscription", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -244,20 +246,29 @@ func (c *paymentAPIServiceClient) InvoiceFilter(ctx context.Context, in *Invoice
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error) {
+	out := new(StopProjectResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/StopProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PaymentAPIServiceServer is the server API for PaymentAPIService service.
 // All implementations should embed UnimplementedPaymentAPIServiceServer
 // for forward compatibility
 type PaymentAPIServiceServer interface {
 	//Create a new service
 	CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error)
-	CreateSuscription(context.Context, *CreateSuscriptionRequest) (*CreateSuscriptionResponse, error)
+	CreateSubscription(context.Context, *CreateSubscriptionRequest) (*CreateSubscriptionResponse, error)
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error)
 	CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error)
 	CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error)
 	//Get the service
 	GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error)
-	GetSuscription(context.Context, *GetSuscriptionRequest) (*GetSuscriptionResponse, error)
+	GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error)
 	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
 	GetCustomer(context.Context, *GetCustomerRequest) (*GetCustomerResponse, error)
 	GetBilingMonth(context.Context, *GetBilingMonthRequest) (*GetBilingMonthResponse, error)
@@ -267,14 +278,16 @@ type PaymentAPIServiceServer interface {
 	ListPayment(context.Context, *ListPaymentRequest) (*ListPaymentResponse, error)
 	ListSubscriptionItems(context.Context, *ListSubscriptionItemsRequest) (*ListSubscriptionItemsResponse, error)
 	//Update service
-	UpdateSuscription(context.Context, *UpdateSuscriptionRequest) (*UpdateSuscriptionResponse, error)
+	UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error)
 	//Delete service
 	DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error)
 	DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error)
-	CancelSuscription(context.Context, *CancelSuscriptionRequest) (*CancelSuscriptionResponse, error)
+	CancelSubscription(context.Context, *CancelSubscriptionRequest) (*CancelSubscriptionResponse, error)
 	DeleteCustomer(context.Context, *DeleteCustomerRequest) (*DeleteCustomerResponse, error)
 	//Filter service
 	InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error)
+	//Pause Project Consumption
+	StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error)
 }
 
 // UnimplementedPaymentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -284,8 +297,8 @@ type UnimplementedPaymentAPIServiceServer struct {
 func (UnimplementedPaymentAPIServiceServer) CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCustomer not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) CreateSuscription(context.Context, *CreateSuscriptionRequest) (*CreateSuscriptionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateSuscription not implemented")
+func (UnimplementedPaymentAPIServiceServer) CreateSubscription(context.Context, *CreateSubscriptionRequest) (*CreateSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscription not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePayment not implemented")
@@ -302,8 +315,8 @@ func (UnimplementedPaymentAPIServiceServer) CreateInvoice(context.Context, *Crea
 func (UnimplementedPaymentAPIServiceServer) GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrganization not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) GetSuscription(context.Context, *GetSuscriptionRequest) (*GetSuscriptionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSuscription not implemented")
+func (UnimplementedPaymentAPIServiceServer) GetSubscription(context.Context, *GetSubscriptionRequest) (*GetSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubscription not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayment not implemented")
@@ -326,8 +339,8 @@ func (UnimplementedPaymentAPIServiceServer) ListPayment(context.Context, *ListPa
 func (UnimplementedPaymentAPIServiceServer) ListSubscriptionItems(context.Context, *ListSubscriptionItemsRequest) (*ListSubscriptionItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListSubscriptionItems not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) UpdateSuscription(context.Context, *UpdateSuscriptionRequest) (*UpdateSuscriptionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateSuscription not implemented")
+func (UnimplementedPaymentAPIServiceServer) UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSubscription not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProject not implemented")
@@ -335,14 +348,17 @@ func (UnimplementedPaymentAPIServiceServer) DeleteProject(context.Context, *Dele
 func (UnimplementedPaymentAPIServiceServer) DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePayment not implemented")
 }
-func (UnimplementedPaymentAPIServiceServer) CancelSuscription(context.Context, *CancelSuscriptionRequest) (*CancelSuscriptionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CancelSuscription not implemented")
+func (UnimplementedPaymentAPIServiceServer) CancelSubscription(context.Context, *CancelSubscriptionRequest) (*CancelSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelSubscription not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) DeleteCustomer(context.Context, *DeleteCustomerRequest) (*DeleteCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCustomer not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InvoiceFilter not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopProject not implemented")
 }
 
 // UnsafePaymentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -374,20 +390,20 @@ func _PaymentAPIService_CreateCustomer_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_CreateSuscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateSuscriptionRequest)
+func _PaymentAPIService_CreateSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).CreateSuscription(ctx, in)
+		return srv.(PaymentAPIServiceServer).CreateSubscription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/CreateSuscription",
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/CreateSubscription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).CreateSuscription(ctx, req.(*CreateSuscriptionRequest))
+		return srv.(PaymentAPIServiceServer).CreateSubscription(ctx, req.(*CreateSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -482,20 +498,20 @@ func _PaymentAPIService_GetOrganization_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_GetSuscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSuscriptionRequest)
+func _PaymentAPIService_GetSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).GetSuscription(ctx, in)
+		return srv.(PaymentAPIServiceServer).GetSubscription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetSuscription",
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetSubscription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).GetSuscription(ctx, req.(*GetSuscriptionRequest))
+		return srv.(PaymentAPIServiceServer).GetSubscription(ctx, req.(*GetSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -626,20 +642,20 @@ func _PaymentAPIService_ListSubscriptionItems_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_UpdateSuscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateSuscriptionRequest)
+func _PaymentAPIService_UpdateSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).UpdateSuscription(ctx, in)
+		return srv.(PaymentAPIServiceServer).UpdateSubscription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/UpdateSuscription",
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/UpdateSubscription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).UpdateSuscription(ctx, req.(*UpdateSuscriptionRequest))
+		return srv.(PaymentAPIServiceServer).UpdateSubscription(ctx, req.(*UpdateSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -680,20 +696,20 @@ func _PaymentAPIService_DeletePayment_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _PaymentAPIService_CancelSuscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CancelSuscriptionRequest)
+func _PaymentAPIService_CancelSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).CancelSuscription(ctx, in)
+		return srv.(PaymentAPIServiceServer).CancelSubscription(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/CancelSuscription",
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/CancelSubscription",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).CancelSuscription(ctx, req.(*CancelSuscriptionRequest))
+		return srv.(PaymentAPIServiceServer).CancelSubscription(ctx, req.(*CancelSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -734,6 +750,24 @@ func _PaymentAPIService_InvoiceFilter_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_StopProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StopProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).StopProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/StopProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).StopProject(ctx, req.(*StopProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PaymentAPIService_ServiceDesc is the grpc.ServiceDesc for PaymentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -746,8 +780,8 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_CreateCustomer_Handler,
 		},
 		{
-			MethodName: "CreateSuscription",
-			Handler:    _PaymentAPIService_CreateSuscription_Handler,
+			MethodName: "CreateSubscription",
+			Handler:    _PaymentAPIService_CreateSubscription_Handler,
 		},
 		{
 			MethodName: "CreatePayment",
@@ -770,8 +804,8 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_GetOrganization_Handler,
 		},
 		{
-			MethodName: "GetSuscription",
-			Handler:    _PaymentAPIService_GetSuscription_Handler,
+			MethodName: "GetSubscription",
+			Handler:    _PaymentAPIService_GetSubscription_Handler,
 		},
 		{
 			MethodName: "GetPayment",
@@ -802,8 +836,8 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_ListSubscriptionItems_Handler,
 		},
 		{
-			MethodName: "UpdateSuscription",
-			Handler:    _PaymentAPIService_UpdateSuscription_Handler,
+			MethodName: "UpdateSubscription",
+			Handler:    _PaymentAPIService_UpdateSubscription_Handler,
 		},
 		{
 			MethodName: "DeleteProject",
@@ -814,8 +848,8 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PaymentAPIService_DeletePayment_Handler,
 		},
 		{
-			MethodName: "CancelSuscription",
-			Handler:    _PaymentAPIService_CancelSuscription_Handler,
+			MethodName: "CancelSubscription",
+			Handler:    _PaymentAPIService_CancelSubscription_Handler,
 		},
 		{
 			MethodName: "DeleteCustomer",
@@ -824,6 +858,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "InvoiceFilter",
 			Handler:    _PaymentAPIService_InvoiceFilter_Handler,
+		},
+		{
+			MethodName: "StopProject",
+			Handler:    _PaymentAPIService_StopProject_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

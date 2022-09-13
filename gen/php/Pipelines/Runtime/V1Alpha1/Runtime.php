@@ -24,9 +24,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
      */
-    protected $instance_type = '';
+    private $instance_types;
     /**
      * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
      */
@@ -87,6 +87,30 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];</code>
      */
     protected $traffic_type = 0;
+    /**
+     * Generated from protobuf field <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     */
+    protected $response_message = '';
+    /**
+     * Generated from protobuf field <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     */
+    protected $environment_name = '';
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+     */
+    protected $environment_internal_name = '';
+    /**
+     * Generated from protobuf field <code>string application_name = 23 [json_name = "applicationName"];</code>
+     */
+    protected $application_name = '';
+    /**
+     * Generated from protobuf field <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     */
+    protected $storage_used = 0;
+    /**
+     * Generated from protobuf field <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     */
+    protected $storage_limit = 0;
 
     /**
      * Constructor.
@@ -96,7 +120,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *     @type string $instance_type
+     *     @type \Pipelines\Runtime\V1Alpha1\IntanceType[]|\Google\Protobuf\Internal\RepeatedField $instance_types
      *     @type int $organization_id
      *     @type int $project_id
      *     @type string $application_id
@@ -112,6 +136,12 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $extra_args
      *     @type array|\Google\Protobuf\Internal\MapField $autoscaling
      *     @type int $traffic_type
+     *     @type string $response_message
+     *     @type string $environment_name
+     *     @type string $environment_internal_name
+     *     @type string $application_name
+     *     @type int $storage_used
+     *     @type int $storage_limit
      * }
      */
     public function __construct($data = NULL) {
@@ -164,23 +194,23 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getInstanceType()
+    public function getInstanceTypes()
     {
-        return $this->instance_type;
+        return $this->instance_types;
     }
 
     /**
-     * Generated from protobuf field <code>string instance_type = 4 [json_name = "instanceType"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\IntanceType[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setInstanceType($var)
+    public function setInstanceTypes($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->instance_type = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Runtime\V1Alpha1\IntanceType::class);
+        $this->instance_types = $arr;
 
         return $this;
     }
@@ -511,6 +541,138 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Pipelines\Runtime\V1Alpha1\TrafficType::class);
         $this->traffic_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @return string
+     */
+    public function getResponseMessage()
+    {
+        return $this->response_message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string response_message = 20 [json_name = "responseMessage"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResponseMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->response_message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @return string
+     */
+    public function getEnvironmentName()
+    {
+        return $this->environment_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_name = 21 [json_name = "environmentName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+     * @return string
+     */
+    public function getEnvironmentInternalName()
+    {
+        return $this->environment_internal_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_internal_name = 22 [json_name = "environmentInternalName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentInternalName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_internal_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_name = 23 [json_name = "applicationName"];</code>
+     * @return string
+     */
+    public function getApplicationName()
+    {
+        return $this->application_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_name = 23 [json_name = "applicationName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @return int
+     */
+    public function getStorageUsed()
+    {
+        return $this->storage_used;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_used = 24 [json_name = "storageUsed"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStorageUsed($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->storage_used = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @return int
+     */
+    public function getStorageLimit()
+    {
+        return $this->storage_limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 storage_limit = 25 [json_name = "storageLimit"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStorageLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->storage_limit = $var;
 
         return $this;
     }

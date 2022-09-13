@@ -36,6 +36,7 @@ constexpr QuotasRegistry::QuotasRegistry(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , environment_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_internal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , harbor_(nullptr)
   , organization_id_(0u)
   , project_id_(0u)
@@ -73,6 +74,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fquotas_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, organization_id_),
   PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, project_id_),
   PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, environment_id_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, environment_internal_name_),
   PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, active_),
   PROTOBUF_FIELD_OFFSET(::artifacts::quotas::v1alpha1::QuotasRegistry, harbor_),
 };
@@ -91,21 +93,23 @@ const char descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5f
   "tas.proto\022\031artifacts.quotas.v1alpha1\"V\n\014"
   "HarborQuotas\022!\n\014storage_used\030\001 \001(\rR\013stor"
   "ageUsed\022#\n\rstorage_limit\030\002 \001(\rR\014storageL"
-  "imit\"\350\001\n\016QuotasRegistry\022\016\n\002id\030\001 \001(\tR\002id\022"
+  "imit\"\244\002\n\016QuotasRegistry\022\016\n\002id\030\001 \001(\tR\002id\022"
   "\'\n\017organization_id\030\002 \001(\rR\016organizationId"
   "\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022%\n\016envir"
-  "onment_id\030\004 \001(\tR\renvironmentId\022\026\n\006active"
-  "\030\006 \001(\010R\006active\022\?\n\006harbor\030\007 \001(\0132\'.artifac"
-  "ts.quotas.v1alpha1.HarborQuotasR\006harborB"
-  "\266\001\n#io.cuemby.artifacts.quotas.v1alpha1B"
-  "\023RegistryQuotasProtoP\001Z:github.com/cuemb"
-  "y/ccp-sdk/gen/go/artifacts/quotas/v1alph"
-  "a1\242\002\003PPX\252\002\031Artifacts.Quotas.V1Alpha1\312\002\031A"
-  "rtifacts\\Quotas\\V1Alpha1b\006proto3"
+  "onment_id\030\004 \001(\tR\renvironmentId\022:\n\031enviro"
+  "nment_internal_name\030\005 \001(\tR\027environmentIn"
+  "ternalName\022\026\n\006active\030\006 \001(\010R\006active\022\?\n\006ha"
+  "rbor\030\007 \001(\0132\'.artifacts.quotas.v1alpha1.H"
+  "arborQuotasR\006harborB\266\001\n#io.cuemby.artifa"
+  "cts.quotas.v1alpha1B\023RegistryQuotasProto"
+  "P\001Z:github.com/cuemby/ccp-sdk/gen/go/art"
+  "ifacts/quotas/v1alpha1\242\002\003PPX\252\002\031Artifacts"
+  ".Quotas.V1Alpha1\312\002\031Artifacts\\Quotas\\V1Al"
+  "pha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto = {
-  false, false, 592, descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, "artifacts/quotas/v1alpha1/registry_quotas.proto", 
+  false, false, 652, descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, "artifacts/quotas/v1alpha1/registry_quotas.proto", 
   &descriptor_table_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto::offsets,
   file_level_metadata_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, file_level_enum_descriptors_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto, file_level_service_descriptors_artifacts_2fquotas_2fv1alpha1_2fregistry_5fquotas_2eproto,
@@ -373,6 +377,11 @@ QuotasRegistry::QuotasRegistry(const QuotasRegistry& from)
     environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_id(), 
       GetArenaForAllocation());
   }
+  environment_internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_environment_internal_name().empty()) {
+    environment_internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_harbor()) {
     harbor_ = new ::artifacts::quotas::v1alpha1::HarborQuotas(*from.harbor_);
   } else {
@@ -387,6 +396,7 @@ QuotasRegistry::QuotasRegistry(const QuotasRegistry& from)
 inline void QuotasRegistry::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 environment_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&harbor_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
@@ -404,6 +414,7 @@ inline void QuotasRegistry::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   environment_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  environment_internal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete harbor_;
 }
 
@@ -425,6 +436,7 @@ void QuotasRegistry::Clear() {
 
   id_.ClearToEmpty();
   environment_id_.ClearToEmpty();
+  environment_internal_name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && harbor_ != nullptr) {
     delete harbor_;
   }
@@ -470,6 +482,15 @@ const char* QuotasRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           auto str = _internal_mutable_environment_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.quotas.v1alpha1.QuotasRegistry.environment_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_environment_internal_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -548,6 +569,16 @@ failure:
         4, this->_internal_environment_id(), target);
   }
 
+  // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+  if (!this->_internal_environment_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_environment_internal_name().data(), static_cast<int>(this->_internal_environment_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.quotas.v1alpha1.QuotasRegistry.environment_internal_name");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_environment_internal_name(), target);
+  }
+
   // bool active = 6 [json_name = "active"];
   if (this->_internal_active() != 0) {
     target = stream->EnsureSpace(target);
@@ -590,6 +621,13 @@ size_t QuotasRegistry::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_environment_id());
+  }
+
+  // string environment_internal_name = 5 [json_name = "environmentInternalName"];
+  if (!this->_internal_environment_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_environment_internal_name());
   }
 
   // .artifacts.quotas.v1alpha1.HarborQuotas harbor = 7 [json_name = "harbor"];
@@ -652,6 +690,9 @@ void QuotasRegistry::MergeFrom(const QuotasRegistry& from) {
   if (!from._internal_environment_id().empty()) {
     _internal_set_environment_id(from._internal_environment_id());
   }
+  if (!from._internal_environment_internal_name().empty()) {
+    _internal_set_environment_internal_name(from._internal_environment_internal_name());
+  }
   if (from._internal_has_harbor()) {
     _internal_mutable_harbor()->::artifacts::quotas::v1alpha1::HarborQuotas::MergeFrom(from._internal_harbor());
   }
@@ -690,6 +731,11 @@ void QuotasRegistry::InternalSwap(QuotasRegistry* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &environment_id_, GetArenaForAllocation(),
       &other->environment_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &environment_internal_name_, GetArenaForAllocation(),
+      &other->environment_internal_name_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(QuotasRegistry, active_)

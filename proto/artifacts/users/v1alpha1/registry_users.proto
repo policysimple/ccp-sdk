@@ -38,6 +38,7 @@ message UsersRegistry {
     uint32 organization_id = 2;
     uint32 project_id = 3;
     string environment_id = 4;
+    string environment_internal_name = 5;
     bool active = 6;
     Harbor harbor = 7;
 }
