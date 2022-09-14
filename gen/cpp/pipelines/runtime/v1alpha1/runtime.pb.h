@@ -50,7 +50,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -78,9 +78,6 @@ extern RuntimeDefaultTypeInternal _Runtime_default_instance_;
 class RuntimeList;
 struct RuntimeListDefaultTypeInternal;
 extern RuntimeListDefaultTypeInternal _RuntimeList_default_instance_;
-class Runtime_AutoscalingEntry_DoNotUse;
-struct Runtime_AutoscalingEntry_DoNotUseDefaultTypeInternal;
-extern Runtime_AutoscalingEntry_DoNotUseDefaultTypeInternal _Runtime_AutoscalingEntry_DoNotUse_default_instance_;
 class Runtime_CommandsEntry_DoNotUse;
 struct Runtime_CommandsEntry_DoNotUseDefaultTypeInternal;
 extern Runtime_CommandsEntry_DoNotUseDefaultTypeInternal _Runtime_CommandsEntry_DoNotUse_default_instance_;
@@ -106,7 +103,6 @@ template<> ::pipelines::runtime::v1alpha1::Request* Arena::CreateMaybeMessage<::
 template<> ::pipelines::runtime::v1alpha1::ResourcesRules* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ResourcesRules>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::RuntimeList* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::RuntimeList>(Arena*);
-template<> ::pipelines::runtime::v1alpha1::Runtime_AutoscalingEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_AutoscalingEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_CommandsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_EnvironmentVariablesEntry_DoNotUse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse>(Arena*);
@@ -280,33 +276,6 @@ public:
 
 // -------------------------------------------------------------------
 
-class Runtime_AutoscalingEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_AutoscalingEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Runtime_AutoscalingEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  Runtime_AutoscalingEntry_DoNotUse();
-  explicit constexpr Runtime_AutoscalingEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit Runtime_AutoscalingEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const Runtime_AutoscalingEntry_DoNotUse& other);
-  static const Runtime_AutoscalingEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Runtime_AutoscalingEntry_DoNotUse*>(&_Runtime_AutoscalingEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.AutoscalingEntry.key");
- }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.Runtime.AutoscalingEntry.value");
- }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
 class Runtime final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.Runtime) */ {
  public:
@@ -351,7 +320,7 @@ class Runtime final :
                &_Runtime_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   friend void swap(Runtime& a, Runtime& b) {
     a.Swap(&b);
@@ -423,32 +392,31 @@ class Runtime final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInstanceTypesFieldNumber = 4,
-    kIntegrationFieldNumber = 13,
-    kEnvironmentVariablesFieldNumber = 14,
-    kCommandsFieldNumber = 15,
-    kSecretsFieldNumber = 16,
-    kExtraArgsFieldNumber = 17,
-    kAutoscalingFieldNumber = 18,
+    kInstanceTypesFieldNumber = 3,
+    kIntegrationFieldNumber = 12,
+    kEnvironmentVariablesFieldNumber = 13,
+    kCommandsFieldNumber = 14,
+    kSecretsFieldNumber = 15,
+    kExtraArgsFieldNumber = 16,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
-    kApplicationIdFieldNumber = 7,
-    kWorkspaceIdFieldNumber = 8,
-    kEnvironmentIdFieldNumber = 9,
-    kScalerFieldNumber = 10,
-    kPodStatusFieldNumber = 11,
-    kPodStatusMsgFieldNumber = 12,
-    kResponseMessageFieldNumber = 20,
-    kEnvironmentNameFieldNumber = 21,
-    kEnvironmentInternalNameFieldNumber = 22,
-    kApplicationNameFieldNumber = 23,
-    kOrganizationIdFieldNumber = 5,
-    kProjectIdFieldNumber = 6,
-    kTrafficTypeFieldNumber = 19,
-    kStorageUsedFieldNumber = 24,
-    kStorageLimitFieldNumber = 25,
+    kApplicationIdFieldNumber = 6,
+    kWorkspaceIdFieldNumber = 7,
+    kEnvironmentIdFieldNumber = 8,
+    kScalerFieldNumber = 9,
+    kPodStatusFieldNumber = 10,
+    kPodStatusMsgFieldNumber = 11,
+    kResponseMessageFieldNumber = 18,
+    kEnvironmentNameFieldNumber = 19,
+    kEnvironmentInternalNameFieldNumber = 20,
+    kApplicationNameFieldNumber = 21,
+    kOrganizationIdFieldNumber = 4,
+    kProjectIdFieldNumber = 5,
+    kTrafficTypeFieldNumber = 17,
+    kStorageUsedFieldNumber = 22,
+    kStorageLimitFieldNumber = 23,
   };
-  // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];
+  // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 3 [json_name = "instanceTypes"];
   int instance_types_size() const;
   private:
   int _internal_instance_types_size() const;
@@ -466,7 +434,7 @@ class Runtime final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::IntanceType >&
       instance_types() const;
 
-  // map<string, string> integration = 13 [json_name = "integration"];
+  // map<string, string> integration = 12 [json_name = "integration"];
   int integration_size() const;
   private:
   int _internal_integration_size() const;
@@ -483,7 +451,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_integration();
 
-  // map<string, string> environment_variables = 14 [json_name = "environmentVariables"];
+  // map<string, string> environment_variables = 13 [json_name = "environmentVariables"];
   int environment_variables_size() const;
   private:
   int _internal_environment_variables_size() const;
@@ -500,7 +468,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_environment_variables();
 
-  // map<string, string> commands = 15 [json_name = "commands"];
+  // map<string, string> commands = 14 [json_name = "commands"];
   int commands_size() const;
   private:
   int _internal_commands_size() const;
@@ -517,7 +485,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_commands();
 
-  // map<string, string> secrets = 16 [json_name = "secrets"];
+  // map<string, string> secrets = 15 [json_name = "secrets"];
   int secrets_size() const;
   private:
   int _internal_secrets_size() const;
@@ -534,7 +502,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_secrets();
 
-  // map<string, string> extra_args = 17 [json_name = "extraArgs"];
+  // map<string, string> extra_args = 16 [json_name = "extraArgs"];
   int extra_args_size() const;
   private:
   int _internal_extra_args_size() const;
@@ -550,23 +518,6 @@ class Runtime final :
       extra_args() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_extra_args();
-
-  // map<string, string> autoscaling = 18 [json_name = "autoscaling"];
-  int autoscaling_size() const;
-  private:
-  int _internal_autoscaling_size() const;
-  public:
-  void clear_autoscaling();
-  private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_autoscaling() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_autoscaling();
-  public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      autoscaling() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_autoscaling();
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -596,7 +547,7 @@ class Runtime final :
   std::string* _internal_mutable_name();
   public:
 
-  // string application_id = 7 [json_name = "applicationId"];
+  // string application_id = 6 [json_name = "applicationId"];
   void clear_application_id();
   const std::string& application_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -610,7 +561,7 @@ class Runtime final :
   std::string* _internal_mutable_application_id();
   public:
 
-  // string workspace_id = 8 [json_name = "workspaceId"];
+  // string workspace_id = 7 [json_name = "workspaceId"];
   void clear_workspace_id();
   const std::string& workspace_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -624,7 +575,7 @@ class Runtime final :
   std::string* _internal_mutable_workspace_id();
   public:
 
-  // string environment_id = 9 [json_name = "environmentId"];
+  // string environment_id = 8 [json_name = "environmentId"];
   void clear_environment_id();
   const std::string& environment_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -638,7 +589,7 @@ class Runtime final :
   std::string* _internal_mutable_environment_id();
   public:
 
-  // string scaler = 10 [json_name = "scaler"];
+  // string scaler = 9 [json_name = "scaler"];
   void clear_scaler();
   const std::string& scaler() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -652,7 +603,7 @@ class Runtime final :
   std::string* _internal_mutable_scaler();
   public:
 
-  // string pod_status = 11 [json_name = "podStatus"];
+  // string pod_status = 10 [json_name = "podStatus"];
   void clear_pod_status();
   const std::string& pod_status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -666,7 +617,7 @@ class Runtime final :
   std::string* _internal_mutable_pod_status();
   public:
 
-  // string pod_status_msg = 12 [json_name = "podStatusMsg"];
+  // string pod_status_msg = 11 [json_name = "podStatusMsg"];
   void clear_pod_status_msg();
   const std::string& pod_status_msg() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -680,7 +631,7 @@ class Runtime final :
   std::string* _internal_mutable_pod_status_msg();
   public:
 
-  // string response_message = 20 [json_name = "responseMessage"];
+  // string response_message = 18 [json_name = "responseMessage"];
   void clear_response_message();
   const std::string& response_message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -694,7 +645,7 @@ class Runtime final :
   std::string* _internal_mutable_response_message();
   public:
 
-  // string environment_name = 21 [json_name = "environmentName"];
+  // string environment_name = 19 [json_name = "environmentName"];
   void clear_environment_name();
   const std::string& environment_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -708,7 +659,7 @@ class Runtime final :
   std::string* _internal_mutable_environment_name();
   public:
 
-  // string environment_internal_name = 22 [json_name = "environmentInternalName"];
+  // string environment_internal_name = 20 [json_name = "environmentInternalName"];
   void clear_environment_internal_name();
   const std::string& environment_internal_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -722,7 +673,7 @@ class Runtime final :
   std::string* _internal_mutable_environment_internal_name();
   public:
 
-  // string application_name = 23 [json_name = "applicationName"];
+  // string application_name = 21 [json_name = "applicationName"];
   void clear_application_name();
   const std::string& application_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -736,7 +687,7 @@ class Runtime final :
   std::string* _internal_mutable_application_name();
   public:
 
-  // uint32 organization_id = 5 [json_name = "organizationId"];
+  // uint32 organization_id = 4 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
   void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -745,7 +696,7 @@ class Runtime final :
   void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 project_id = 6 [json_name = "projectId"];
+  // uint32 project_id = 5 [json_name = "projectId"];
   void clear_project_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
   void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -754,7 +705,7 @@ class Runtime final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];
+  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];
   void clear_traffic_type();
   ::pipelines::runtime::v1alpha1::TrafficType traffic_type() const;
   void set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
@@ -763,7 +714,7 @@ class Runtime final :
   void _internal_set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
   public:
 
-  // uint32 storage_used = 24 [json_name = "storageUsed"];
+  // uint32 storage_used = 22 [json_name = "storageUsed"];
   void clear_storage_used();
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used() const;
   void set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -772,7 +723,7 @@ class Runtime final :
   void _internal_set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 storage_limit = 25 [json_name = "storageLimit"];
+  // uint32 storage_limit = 23 [json_name = "storageLimit"];
   void clear_storage_limit();
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit() const;
   void set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -814,11 +765,6 @@ class Runtime final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      Runtime_AutoscalingEntry_DoNotUse,
-      std::string, std::string,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> autoscaling_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
@@ -885,7 +831,7 @@ class RuntimeList final :
                &_RuntimeList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(RuntimeList& a, RuntimeList& b) {
     a.Swap(&b);
@@ -1033,7 +979,7 @@ class IntanceType final :
                &_IntanceType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(IntanceType& a, IntanceType& b) {
     a.Swap(&b);
@@ -1213,7 +1159,7 @@ class ResourcesRules final :
                &_ResourcesRules_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   friend void swap(ResourcesRules& a, ResourcesRules& b) {
     a.Swap(&b);
@@ -1284,10 +1230,10 @@ class ResourcesRules final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLimitFieldNumber = 3,
-    kRequestFieldNumber = 4,
+    kLimitFieldNumber = 1,
+    kRequestFieldNumber = 2,
   };
-  // repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];
+  // repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];
   int limit_size() const;
   private:
   int _internal_limit_size() const;
@@ -1305,7 +1251,7 @@ class ResourcesRules final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::Limit >&
       limit() const;
 
-  // repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];
+  // repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];
   int request_size() const;
   private:
   int _internal_request_size() const;
@@ -1381,7 +1327,7 @@ class Limit final :
                &_Limit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   friend void swap(Limit& a, Limit& b) {
     a.Swap(&b);
@@ -1541,7 +1487,7 @@ class Request final :
                &_Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   friend void swap(Request& a, Request& b) {
     a.Swap(&b);
@@ -1674,8 +1620,6 @@ class Request final :
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // Runtime
 
 // string id = 1 [json_name = "id"];
@@ -1770,7 +1714,7 @@ inline void Runtime::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.name)
 }
 
-// repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 4 [json_name = "instanceTypes"];
+// repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 3 [json_name = "instanceTypes"];
 inline int Runtime::_internal_instance_types_size() const {
   return instance_types_.size();
 }
@@ -1810,7 +1754,7 @@ Runtime::instance_types() const {
   return instance_types_;
 }
 
-// uint32 organization_id = 5 [json_name = "organizationId"];
+// uint32 organization_id = 4 [json_name = "organizationId"];
 inline void Runtime::clear_organization_id() {
   organization_id_ = 0u;
 }
@@ -1830,7 +1774,7 @@ inline void Runtime::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.organization_id)
 }
 
-// uint32 project_id = 6 [json_name = "projectId"];
+// uint32 project_id = 5 [json_name = "projectId"];
 inline void Runtime::clear_project_id() {
   project_id_ = 0u;
 }
@@ -1850,7 +1794,7 @@ inline void Runtime::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.project_id)
 }
 
-// string application_id = 7 [json_name = "applicationId"];
+// string application_id = 6 [json_name = "applicationId"];
 inline void Runtime::clear_application_id() {
   application_id_.ClearToEmpty();
 }
@@ -1896,7 +1840,7 @@ inline void Runtime::set_allocated_application_id(std::string* application_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_id)
 }
 
-// string workspace_id = 8 [json_name = "workspaceId"];
+// string workspace_id = 7 [json_name = "workspaceId"];
 inline void Runtime::clear_workspace_id() {
   workspace_id_.ClearToEmpty();
 }
@@ -1942,7 +1886,7 @@ inline void Runtime::set_allocated_workspace_id(std::string* workspace_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.workspace_id)
 }
 
-// string environment_id = 9 [json_name = "environmentId"];
+// string environment_id = 8 [json_name = "environmentId"];
 inline void Runtime::clear_environment_id() {
   environment_id_.ClearToEmpty();
 }
@@ -1988,7 +1932,7 @@ inline void Runtime::set_allocated_environment_id(std::string* environment_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_id)
 }
 
-// string scaler = 10 [json_name = "scaler"];
+// string scaler = 9 [json_name = "scaler"];
 inline void Runtime::clear_scaler() {
   scaler_.ClearToEmpty();
 }
@@ -2034,7 +1978,7 @@ inline void Runtime::set_allocated_scaler(std::string* scaler) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.scaler)
 }
 
-// string pod_status = 11 [json_name = "podStatus"];
+// string pod_status = 10 [json_name = "podStatus"];
 inline void Runtime::clear_pod_status() {
   pod_status_.ClearToEmpty();
 }
@@ -2080,7 +2024,7 @@ inline void Runtime::set_allocated_pod_status(std::string* pod_status) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pod_status)
 }
 
-// string pod_status_msg = 12 [json_name = "podStatusMsg"];
+// string pod_status_msg = 11 [json_name = "podStatusMsg"];
 inline void Runtime::clear_pod_status_msg() {
   pod_status_msg_.ClearToEmpty();
 }
@@ -2126,7 +2070,7 @@ inline void Runtime::set_allocated_pod_status_msg(std::string* pod_status_msg) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pod_status_msg)
 }
 
-// map<string, string> integration = 13 [json_name = "integration"];
+// map<string, string> integration = 12 [json_name = "integration"];
 inline int Runtime::_internal_integration_size() const {
   return integration_.size();
 }
@@ -2155,7 +2099,7 @@ Runtime::mutable_integration() {
   return _internal_mutable_integration();
 }
 
-// map<string, string> environment_variables = 14 [json_name = "environmentVariables"];
+// map<string, string> environment_variables = 13 [json_name = "environmentVariables"];
 inline int Runtime::_internal_environment_variables_size() const {
   return environment_variables_.size();
 }
@@ -2184,7 +2128,7 @@ Runtime::mutable_environment_variables() {
   return _internal_mutable_environment_variables();
 }
 
-// map<string, string> commands = 15 [json_name = "commands"];
+// map<string, string> commands = 14 [json_name = "commands"];
 inline int Runtime::_internal_commands_size() const {
   return commands_.size();
 }
@@ -2213,7 +2157,7 @@ Runtime::mutable_commands() {
   return _internal_mutable_commands();
 }
 
-// map<string, string> secrets = 16 [json_name = "secrets"];
+// map<string, string> secrets = 15 [json_name = "secrets"];
 inline int Runtime::_internal_secrets_size() const {
   return secrets_.size();
 }
@@ -2242,7 +2186,7 @@ Runtime::mutable_secrets() {
   return _internal_mutable_secrets();
 }
 
-// map<string, string> extra_args = 17 [json_name = "extraArgs"];
+// map<string, string> extra_args = 16 [json_name = "extraArgs"];
 inline int Runtime::_internal_extra_args_size() const {
   return extra_args_.size();
 }
@@ -2271,36 +2215,7 @@ Runtime::mutable_extra_args() {
   return _internal_mutable_extra_args();
 }
 
-// map<string, string> autoscaling = 18 [json_name = "autoscaling"];
-inline int Runtime::_internal_autoscaling_size() const {
-  return autoscaling_.size();
-}
-inline int Runtime::autoscaling_size() const {
-  return _internal_autoscaling_size();
-}
-inline void Runtime::clear_autoscaling() {
-  autoscaling_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-Runtime::_internal_autoscaling() const {
-  return autoscaling_.GetMap();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-Runtime::autoscaling() const {
-  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.Runtime.autoscaling)
-  return _internal_autoscaling();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-Runtime::_internal_mutable_autoscaling() {
-  return autoscaling_.MutableMap();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-Runtime::mutable_autoscaling() {
-  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.Runtime.autoscaling)
-  return _internal_mutable_autoscaling();
-}
-
-// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 19 [json_name = "trafficType"];
+// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];
 inline void Runtime::clear_traffic_type() {
   traffic_type_ = 0;
 }
@@ -2320,7 +2235,7 @@ inline void Runtime::set_traffic_type(::pipelines::runtime::v1alpha1::TrafficTyp
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.traffic_type)
 }
 
-// string response_message = 20 [json_name = "responseMessage"];
+// string response_message = 18 [json_name = "responseMessage"];
 inline void Runtime::clear_response_message() {
   response_message_.ClearToEmpty();
 }
@@ -2366,7 +2281,7 @@ inline void Runtime::set_allocated_response_message(std::string* response_messag
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.response_message)
 }
 
-// string environment_name = 21 [json_name = "environmentName"];
+// string environment_name = 19 [json_name = "environmentName"];
 inline void Runtime::clear_environment_name() {
   environment_name_.ClearToEmpty();
 }
@@ -2412,7 +2327,7 @@ inline void Runtime::set_allocated_environment_name(std::string* environment_nam
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_name)
 }
 
-// string environment_internal_name = 22 [json_name = "environmentInternalName"];
+// string environment_internal_name = 20 [json_name = "environmentInternalName"];
 inline void Runtime::clear_environment_internal_name() {
   environment_internal_name_.ClearToEmpty();
 }
@@ -2458,7 +2373,7 @@ inline void Runtime::set_allocated_environment_internal_name(std::string* enviro
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
 }
 
-// string application_name = 23 [json_name = "applicationName"];
+// string application_name = 21 [json_name = "applicationName"];
 inline void Runtime::clear_application_name() {
   application_name_.ClearToEmpty();
 }
@@ -2504,7 +2419,7 @@ inline void Runtime::set_allocated_application_name(std::string* application_nam
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_name)
 }
 
-// uint32 storage_used = 24 [json_name = "storageUsed"];
+// uint32 storage_used = 22 [json_name = "storageUsed"];
 inline void Runtime::clear_storage_used() {
   storage_used_ = 0u;
 }
@@ -2524,7 +2439,7 @@ inline void Runtime::set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.storage_used)
 }
 
-// uint32 storage_limit = 25 [json_name = "storageLimit"];
+// uint32 storage_limit = 23 [json_name = "storageLimit"];
 inline void Runtime::clear_storage_limit() {
   storage_limit_ = 0u;
 }
@@ -2728,7 +2643,7 @@ IntanceType::resources_rules() const {
 
 // ResourcesRules
 
-// repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];
+// repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];
 inline int ResourcesRules::_internal_limit_size() const {
   return limit_.size();
 }
@@ -2768,7 +2683,7 @@ ResourcesRules::limit() const {
   return limit_;
 }
 
-// repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];
+// repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];
 inline int ResourcesRules::_internal_request_size() const {
   return request_.size();
 }
@@ -3003,8 +2918,6 @@ inline void Request::set_allocated_ram(std::string* ram) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

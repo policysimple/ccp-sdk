@@ -8,49 +8,49 @@ public interface ResourcesRulesOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
    */
   java.util.List<io.cuemby.pipelines.runtime.v1alpha1.Limit> 
       getLimitList();
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.Limit getLimit(int index);
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
    */
   int getLimitCount();
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.runtime.v1alpha1.LimitOrBuilder> 
       getLimitOrBuilderList();
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.LimitOrBuilder getLimitOrBuilder(
       int index);
 
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
    */
   java.util.List<io.cuemby.pipelines.runtime.v1alpha1.Request> 
       getRequestList();
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.Request getRequest(int index);
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
    */
   int getRequestCount();
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.runtime.v1alpha1.RequestOrBuilder> 
       getRequestOrBuilderList();
   /**
-   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+   * <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.RequestOrBuilder getRequestOrBuilder(
       int index);
