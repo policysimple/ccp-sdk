@@ -67,3 +67,21 @@ func DeleteIntegrationsByOrganization(OrganizationId uint32) (*sourcepkgv1.Delet
 
 	return response, nil
 }
+
+func GetRepositoryProvider(integrationId string, name string) (*sourcepkgv1.GetRepositoryProviderResponse, error) {
+	log.Println("GetRepositoryProvider")
+
+	d, err := time.ParseDuration(sourceServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetRepositoryProvider(ctx, &sourcepkgv1.GetRepositoryProviderRequest{IntegrationId: integrationId, Name: name})
+	if err != nil {
+		return nil, err
+	}
+
+	return response, nil
+}

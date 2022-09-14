@@ -18,12 +18,27 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace application {
 namespace v1alpha1 {
+constexpr Branch::Branch(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , sha_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct BranchDefaultTypeInternal {
+  constexpr BranchDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BranchDefaultTypeInternal() {}
+  union {
+    Branch _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BranchDefaultTypeInternal _Branch_default_instance_;
 constexpr Repository::Repository(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , full_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , clone_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , branch_(nullptr)
   , fork_(false)
   , private__(false){}
 struct RepositoryDefaultTypeInternal {
@@ -133,11 +148,19 @@ struct ListApplicationDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListApplicationDefaultTypeInternal _ListApplication_default_instance_;
 }  // namespace v1alpha1
 }  // namespace application
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Branch, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Branch, name_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Branch, sha_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Branch, url_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Repository, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -149,6 +172,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Repository, fork_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Repository, clone_url_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Repository, private__),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Repository, branch_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Command, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -210,16 +234,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplication, organization_id_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::application::v1alpha1::Repository)},
-  { 11, -1, sizeof(::application::v1alpha1::Command)},
-  { 18, -1, sizeof(::application::v1alpha1::Env)},
-  { 26, -1, sizeof(::application::v1alpha1::Configuration)},
-  { 35, -1, sizeof(::application::v1alpha1::Scaling)},
-  { 46, -1, sizeof(::application::v1alpha1::Application)},
-  { 60, -1, sizeof(::application::v1alpha1::ListApplication)},
+  { 0, -1, sizeof(::application::v1alpha1::Branch)},
+  { 8, -1, sizeof(::application::v1alpha1::Repository)},
+  { 20, -1, sizeof(::application::v1alpha1::Command)},
+  { 27, -1, sizeof(::application::v1alpha1::Env)},
+  { 35, -1, sizeof(::application::v1alpha1::Configuration)},
+  { 44, -1, sizeof(::application::v1alpha1::Scaling)},
+  { 55, -1, sizeof(::application::v1alpha1::Application)},
+  { 69, -1, sizeof(::application::v1alpha1::ListApplication)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Branch_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Repository_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Command_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Env_default_instance_),
@@ -231,11 +257,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n&application/v1alpha1/application.proto"
-  "\022\024application.v1alpha1\"\252\001\n\nRepository\022\022\n"
-  "\004name\030\001 \001(\tR\004name\022\033\n\tfull_name\030\002 \001(\tR\010fu"
-  "llName\022 \n\013description\030\003 \001(\tR\013description"
-  "\022\022\n\004fork\030\004 \001(\010R\004fork\022\033\n\tclone_url\030\005 \001(\tR"
-  "\010cloneUrl\022\030\n\007private\030\006 \001(\010R\007private\"1\n\007C"
+  "\022\024application.v1alpha1\"@\n\006Branch\022\022\n\004name"
+  "\030\001 \001(\tR\004name\022\020\n\003sha\030\002 \001(\tR\003sha\022\020\n\003url\030\003 "
+  "\001(\tR\003url\"\340\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004n"
+  "ame\022\033\n\tfull_name\030\002 \001(\tR\010fullName\022 \n\013desc"
+  "ription\030\003 \001(\tR\013description\022\022\n\004fork\030\004 \001(\010"
+  "R\004fork\022\033\n\tclone_url\030\005 \001(\tR\010cloneUrl\022\030\n\007p"
+  "rivate\030\006 \001(\010R\007private\0224\n\006branch\030\007 \001(\0132\034."
+  "application.v1alpha1.BranchR\006branch\"1\n\007C"
   "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001("
   "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k"
   "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp"
@@ -272,8 +301,8 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 1549, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
-  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 7,
+  false, false, 1669, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 8,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
 };
@@ -303,10 +332,299 @@ bool TrafficType_IsValid(int value) {
 
 // ===================================================================
 
-class Repository::_Internal {
+class Branch::_Internal {
  public:
 };
 
+Branch::Branch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.Branch)
+}
+Branch::Branch(const Branch& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  sha_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_sha().empty()) {
+    sha_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sha(), 
+      GetArenaForAllocation());
+  }
+  url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_url().empty()) {
+    url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_url(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.Branch)
+}
+
+inline void Branch::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+sha_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+Branch::~Branch() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.Branch)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void Branch::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  sha_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Branch::ArenaDtor(void* object) {
+  Branch* _this = reinterpret_cast< Branch* >(object);
+  (void)_this;
+}
+void Branch::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Branch::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Branch::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.Branch)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  sha_.ClearToEmpty();
+  url_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Branch::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1 [json_name = "name"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Branch.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string sha = 2 [json_name = "sha"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_sha();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Branch.sha"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string url = 3 [json_name = "url"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Branch.url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Branch::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.Branch)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Branch.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // string sha = 2 [json_name = "sha"];
+  if (!this->_internal_sha().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_sha().data(), static_cast<int>(this->_internal_sha().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Branch.sha");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_sha(), target);
+  }
+
+  // string url = 3 [json_name = "url"];
+  if (!this->_internal_url().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Branch.url");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_url(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.Branch)
+  return target;
+}
+
+size_t Branch::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.Branch)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string sha = 2 [json_name = "sha"];
+  if (!this->_internal_sha().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sha());
+  }
+
+  // string url = 3 [json_name = "url"];
+  if (!this->_internal_url().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_url());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Branch::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Branch::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Branch::GetClassData() const { return &_class_data_; }
+
+void Branch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<Branch *>(to)->MergeFrom(
+      static_cast<const Branch &>(from));
+}
+
+
+void Branch::MergeFrom(const Branch& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.Branch)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_sha().empty()) {
+    _internal_set_sha(from._internal_sha());
+  }
+  if (!from._internal_url().empty()) {
+    _internal_set_url(from._internal_url());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Branch::CopyFrom(const Branch& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.Branch)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Branch::IsInitialized() const {
+  return true;
+}
+
+void Branch::InternalSwap(Branch* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, GetArenaForAllocation(),
+      &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &sha_, GetArenaForAllocation(),
+      &other->sha_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &url_, GetArenaForAllocation(),
+      &other->url_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Branch::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[0]);
+}
+
+// ===================================================================
+
+class Repository::_Internal {
+ public:
+  static const ::application::v1alpha1::Branch& branch(const Repository* msg);
+};
+
+const ::application::v1alpha1::Branch&
+Repository::_Internal::branch(const Repository* msg) {
+  return *msg->branch_;
+}
 Repository::Repository(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -339,6 +657,11 @@ Repository::Repository(const Repository& from)
     clone_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_clone_url(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_branch()) {
+    branch_ = new ::application::v1alpha1::Branch(*from.branch_);
+  } else {
+    branch_ = nullptr;
+  }
   ::memcpy(&fork_, &from.fork_,
     static_cast<size_t>(reinterpret_cast<char*>(&private__) -
     reinterpret_cast<char*>(&fork_)) + sizeof(private__));
@@ -351,9 +674,9 @@ full_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 clone_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&fork_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&branch_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&private__) -
-    reinterpret_cast<char*>(&fork_)) + sizeof(private__));
+    reinterpret_cast<char*>(&branch_)) + sizeof(private__));
 }
 
 Repository::~Repository() {
@@ -369,6 +692,7 @@ inline void Repository::SharedDtor() {
   full_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   clone_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete branch_;
 }
 
 void Repository::ArenaDtor(void* object) {
@@ -391,6 +715,10 @@ void Repository::Clear() {
   full_name_.ClearToEmpty();
   description_.ClearToEmpty();
   clone_url_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && branch_ != nullptr) {
+    delete branch_;
+  }
+  branch_ = nullptr;
   ::memset(&fork_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&private__) -
       reinterpret_cast<char*>(&fork_)) + sizeof(private__));
@@ -450,6 +778,13 @@ const char* Repository::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           private__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .application.v1alpha1.Branch branch = 7 [json_name = "branch"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_branch(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -534,6 +869,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_private_(), target);
   }
 
+  // .application.v1alpha1.Branch branch = 7 [json_name = "branch"];
+  if (this->_internal_has_branch()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::branch(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -576,6 +919,13 @@ size_t Repository::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_clone_url());
+  }
+
+  // .application.v1alpha1.Branch branch = 7 [json_name = "branch"];
+  if (this->_internal_has_branch()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *branch_);
   }
 
   // bool fork = 4 [json_name = "fork"];
@@ -628,6 +978,9 @@ void Repository::MergeFrom(const Repository& from) {
   if (!from._internal_clone_url().empty()) {
     _internal_set_clone_url(from._internal_clone_url());
   }
+  if (from._internal_has_branch()) {
+    _internal_mutable_branch()->::application::v1alpha1::Branch::MergeFrom(from._internal_branch());
+  }
   if (from._internal_fork() != 0) {
     _internal_set_fork(from._internal_fork());
   }
@@ -674,15 +1027,15 @@ void Repository::InternalSwap(Repository* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Repository, private__)
       + sizeof(Repository::private__)
-      - PROTOBUF_FIELD_OFFSET(Repository, fork_)>(
-          reinterpret_cast<char*>(&fork_),
-          reinterpret_cast<char*>(&other->fork_));
+      - PROTOBUF_FIELD_OFFSET(Repository, branch_)>(
+          reinterpret_cast<char*>(&branch_),
+          reinterpret_cast<char*>(&other->branch_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Repository::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[0]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[1]);
 }
 
 // ===================================================================
@@ -924,7 +1277,7 @@ void Command::InternalSwap(Command* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Command::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[1]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[2]);
 }
 
 // ===================================================================
@@ -1191,7 +1544,7 @@ void Env::InternalSwap(Env* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Env::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[2]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[3]);
 }
 
 // ===================================================================
@@ -1482,7 +1835,7 @@ void Configuration::InternalSwap(Configuration* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Configuration::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[3]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[4]);
 }
 
 // ===================================================================
@@ -1892,7 +2245,7 @@ void Scaling::InternalSwap(Scaling* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Scaling::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[4]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[5]);
 }
 
 // ===================================================================
@@ -2382,7 +2735,7 @@ void Application::InternalSwap(Application* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Application::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[5]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
 }
 
 // ===================================================================
@@ -2726,13 +3079,16 @@ void ListApplication::InternalSwap(ListApplication* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListApplication::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace application
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::Branch* Arena::CreateMaybeMessage< ::application::v1alpha1::Branch >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::Branch >(arena);
+}
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::Repository* Arena::CreateMaybeMessage< ::application::v1alpha1::Repository >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::Repository >(arena);
 }

@@ -37,6 +37,10 @@ class Repository extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool private = 6 [json_name = "private"];</code>
      */
     protected $private = false;
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     */
+    protected $branch = null;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Repository extends \Google\Protobuf\Internal\Message
      *     @type bool $fork
      *     @type string $clone_url
      *     @type bool $private
+     *     @type \Application\V1alpha1\Branch $branch
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,38 @@ class Repository extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->private = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     * @return \Application\V1alpha1\Branch|null
+     */
+    public function getBranch()
+    {
+        return $this->branch;
+    }
+
+    public function hasBranch()
+    {
+        return isset($this->branch);
+    }
+
+    public function clearBranch()
+    {
+        unset($this->branch);
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     * @param \Application\V1alpha1\Branch $var
+     * @return $this
+     */
+    public function setBranch($var)
+    {
+        GPBUtil::checkMessage($var, \Application\V1alpha1\Branch::class);
+        $this->branch = $var;
 
         return $this;
     }

@@ -131,6 +131,874 @@ public final class ApplicationOuterClass {
     // @@protoc_insertion_point(enum_scope:application.v1alpha1.TrafficType)
   }
 
+  public interface BranchOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.Branch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string sha = 2 [json_name = "sha"];</code>
+     * @return The sha.
+     */
+    java.lang.String getSha();
+    /**
+     * <code>string sha = 2 [json_name = "sha"];</code>
+     * @return The bytes for sha.
+     */
+    com.google.protobuf.ByteString
+        getShaBytes();
+
+    /**
+     * <code>string url = 3 [json_name = "url"];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 3 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.Branch}
+   */
+  public static final class Branch extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.Branch)
+      BranchOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Branch.newBuilder() to construct.
+    private Branch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Branch() {
+      name_ = "";
+      sha_ = "";
+      url_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Branch();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Branch(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sha_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Branch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Branch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationOuterClass.Branch.class, application.v1alpha1.ApplicationOuterClass.Branch.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHA_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sha_;
+    /**
+     * <code>string sha = 2 [json_name = "sha"];</code>
+     * @return The sha.
+     */
+    @java.lang.Override
+    public java.lang.String getSha() {
+      java.lang.Object ref = sha_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sha_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sha = 2 [json_name = "sha"];</code>
+     * @return The bytes for sha.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getShaBytes() {
+      java.lang.Object ref = sha_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sha_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object url_;
+    /**
+     * <code>string url = 3 [json_name = "url"];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 3 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getShaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sha_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, url_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getShaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sha_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, url_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationOuterClass.Branch)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationOuterClass.Branch other = (application.v1alpha1.ApplicationOuterClass.Branch) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSha()
+          .equals(other.getSha())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SHA_FIELD_NUMBER;
+      hash = (53 * hash) + getSha().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.Branch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationOuterClass.Branch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.Branch}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.Branch)
+        application.v1alpha1.ApplicationOuterClass.BranchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Branch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Branch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationOuterClass.Branch.class, application.v1alpha1.ApplicationOuterClass.Branch.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationOuterClass.Branch.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        sha_ = "";
+
+        url_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_Branch_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.Branch getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationOuterClass.Branch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.Branch build() {
+        application.v1alpha1.ApplicationOuterClass.Branch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.Branch buildPartial() {
+        application.v1alpha1.ApplicationOuterClass.Branch result = new application.v1alpha1.ApplicationOuterClass.Branch(this);
+        result.name_ = name_;
+        result.sha_ = sha_;
+        result.url_ = url_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationOuterClass.Branch) {
+          return mergeFrom((application.v1alpha1.ApplicationOuterClass.Branch)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.Branch other) {
+        if (other == application.v1alpha1.ApplicationOuterClass.Branch.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getSha().isEmpty()) {
+          sha_ = other.sha_;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationOuterClass.Branch parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationOuterClass.Branch) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sha_ = "";
+      /**
+       * <code>string sha = 2 [json_name = "sha"];</code>
+       * @return The sha.
+       */
+      public java.lang.String getSha() {
+        java.lang.Object ref = sha_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sha_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sha = 2 [json_name = "sha"];</code>
+       * @return The bytes for sha.
+       */
+      public com.google.protobuf.ByteString
+          getShaBytes() {
+        java.lang.Object ref = sha_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sha_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sha = 2 [json_name = "sha"];</code>
+       * @param value The sha to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSha(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sha_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sha = 2 [json_name = "sha"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSha() {
+        
+        sha_ = getDefaultInstance().getSha();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sha = 2 [json_name = "sha"];</code>
+       * @param value The bytes for sha to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sha_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 3 [json_name = "url"];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 3 [json_name = "url"];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 3 [json_name = "url"];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 3 [json_name = "url"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 3 [json_name = "url"];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.Branch)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.Branch)
+    private static final application.v1alpha1.ApplicationOuterClass.Branch DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationOuterClass.Branch();
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.Branch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Branch>
+        PARSER = new com.google.protobuf.AbstractParser<Branch>() {
+      @java.lang.Override
+      public Branch parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Branch(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Branch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Branch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.Branch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RepositoryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:application.v1alpha1.Repository)
       com.google.protobuf.MessageOrBuilder {
@@ -194,6 +1062,21 @@ public final class ApplicationOuterClass {
      * @return The private.
      */
     boolean getPrivate();
+
+    /**
+     * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     * @return Whether the branch field is set.
+     */
+    boolean hasBranch();
+    /**
+     * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     * @return The branch.
+     */
+    application.v1alpha1.ApplicationOuterClass.Branch getBranch();
+    /**
+     * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     */
+    application.v1alpha1.ApplicationOuterClass.BranchOrBuilder getBranchOrBuilder();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Repository}
@@ -276,6 +1159,19 @@ public final class ApplicationOuterClass {
             case 48: {
 
               private_ = input.readBool();
+              break;
+            }
+            case 58: {
+              application.v1alpha1.ApplicationOuterClass.Branch.Builder subBuilder = null;
+              if (branch_ != null) {
+                subBuilder = branch_.toBuilder();
+              }
+              branch_ = input.readMessage(application.v1alpha1.ApplicationOuterClass.Branch.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(branch_);
+                branch_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -484,6 +1380,32 @@ public final class ApplicationOuterClass {
       return private_;
     }
 
+    public static final int BRANCH_FIELD_NUMBER = 7;
+    private application.v1alpha1.ApplicationOuterClass.Branch branch_;
+    /**
+     * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     * @return Whether the branch field is set.
+     */
+    @java.lang.Override
+    public boolean hasBranch() {
+      return branch_ != null;
+    }
+    /**
+     * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     * @return The branch.
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.Branch getBranch() {
+      return branch_ == null ? application.v1alpha1.ApplicationOuterClass.Branch.getDefaultInstance() : branch_;
+    }
+    /**
+     * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.BranchOrBuilder getBranchOrBuilder() {
+      return getBranch();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -516,6 +1438,9 @@ public final class ApplicationOuterClass {
       if (private_ != false) {
         output.writeBool(6, private_);
       }
+      if (branch_ != null) {
+        output.writeMessage(7, getBranch());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -545,6 +1470,10 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, private_);
       }
+      if (branch_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getBranch());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -572,6 +1501,11 @@ public final class ApplicationOuterClass {
           .equals(other.getCloneUrl())) return false;
       if (getPrivate()
           != other.getPrivate()) return false;
+      if (hasBranch() != other.hasBranch()) return false;
+      if (hasBranch()) {
+        if (!getBranch()
+            .equals(other.getBranch())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -597,6 +1531,10 @@ public final class ApplicationOuterClass {
       hash = (37 * hash) + PRIVATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getPrivate());
+      if (hasBranch()) {
+        hash = (37 * hash) + BRANCH_FIELD_NUMBER;
+        hash = (53 * hash) + getBranch().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -742,6 +1680,12 @@ public final class ApplicationOuterClass {
 
         private_ = false;
 
+        if (branchBuilder_ == null) {
+          branch_ = null;
+        } else {
+          branch_ = null;
+          branchBuilder_ = null;
+        }
         return this;
       }
 
@@ -774,6 +1718,11 @@ public final class ApplicationOuterClass {
         result.fork_ = fork_;
         result.cloneUrl_ = cloneUrl_;
         result.private_ = private_;
+        if (branchBuilder_ == null) {
+          result.branch_ = branch_;
+        } else {
+          result.branch_ = branchBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -843,6 +1792,9 @@ public final class ApplicationOuterClass {
         }
         if (other.getPrivate() != false) {
           setPrivate(other.getPrivate());
+        }
+        if (other.hasBranch()) {
+          mergeBranch(other.getBranch());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1237,6 +2189,125 @@ public final class ApplicationOuterClass {
         private_ = false;
         onChanged();
         return this;
+      }
+
+      private application.v1alpha1.ApplicationOuterClass.Branch branch_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Branch, application.v1alpha1.ApplicationOuterClass.Branch.Builder, application.v1alpha1.ApplicationOuterClass.BranchOrBuilder> branchBuilder_;
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       * @return Whether the branch field is set.
+       */
+      public boolean hasBranch() {
+        return branchBuilder_ != null || branch_ != null;
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       * @return The branch.
+       */
+      public application.v1alpha1.ApplicationOuterClass.Branch getBranch() {
+        if (branchBuilder_ == null) {
+          return branch_ == null ? application.v1alpha1.ApplicationOuterClass.Branch.getDefaultInstance() : branch_;
+        } else {
+          return branchBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      public Builder setBranch(application.v1alpha1.ApplicationOuterClass.Branch value) {
+        if (branchBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          branch_ = value;
+          onChanged();
+        } else {
+          branchBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      public Builder setBranch(
+          application.v1alpha1.ApplicationOuterClass.Branch.Builder builderForValue) {
+        if (branchBuilder_ == null) {
+          branch_ = builderForValue.build();
+          onChanged();
+        } else {
+          branchBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      public Builder mergeBranch(application.v1alpha1.ApplicationOuterClass.Branch value) {
+        if (branchBuilder_ == null) {
+          if (branch_ != null) {
+            branch_ =
+              application.v1alpha1.ApplicationOuterClass.Branch.newBuilder(branch_).mergeFrom(value).buildPartial();
+          } else {
+            branch_ = value;
+          }
+          onChanged();
+        } else {
+          branchBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      public Builder clearBranch() {
+        if (branchBuilder_ == null) {
+          branch_ = null;
+          onChanged();
+        } else {
+          branch_ = null;
+          branchBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Branch.Builder getBranchBuilder() {
+        
+        onChanged();
+        return getBranchFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.BranchOrBuilder getBranchOrBuilder() {
+        if (branchBuilder_ != null) {
+          return branchBuilder_.getMessageOrBuilder();
+        } else {
+          return branch_ == null ?
+              application.v1alpha1.ApplicationOuterClass.Branch.getDefaultInstance() : branch_;
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Branch, application.v1alpha1.ApplicationOuterClass.Branch.Builder, application.v1alpha1.ApplicationOuterClass.BranchOrBuilder> 
+          getBranchFieldBuilder() {
+        if (branchBuilder_ == null) {
+          branchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              application.v1alpha1.ApplicationOuterClass.Branch, application.v1alpha1.ApplicationOuterClass.Branch.Builder, application.v1alpha1.ApplicationOuterClass.BranchOrBuilder>(
+                  getBranch(),
+                  getParentForChildren(),
+                  isClean());
+          branch_ = null;
+        }
+        return branchBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8287,6 +9358,11 @@ public final class ApplicationOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_Branch_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_Branch_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_application_v1alpha1_Repository_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8331,11 +9407,14 @@ public final class ApplicationOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&application/v1alpha1/application.proto" +
-      "\022\024application.v1alpha1\"\252\001\n\nRepository\022\022\n" +
-      "\004name\030\001 \001(\tR\004name\022\033\n\tfull_name\030\002 \001(\tR\010fu" +
-      "llName\022 \n\013description\030\003 \001(\tR\013description" +
-      "\022\022\n\004fork\030\004 \001(\010R\004fork\022\033\n\tclone_url\030\005 \001(\tR" +
-      "\010cloneUrl\022\030\n\007private\030\006 \001(\010R\007private\"1\n\007C" +
+      "\022\024application.v1alpha1\"@\n\006Branch\022\022\n\004name" +
+      "\030\001 \001(\tR\004name\022\020\n\003sha\030\002 \001(\tR\003sha\022\020\n\003url\030\003 " +
+      "\001(\tR\003url\"\340\001\n\nRepository\022\022\n\004name\030\001 \001(\tR\004n" +
+      "ame\022\033\n\tfull_name\030\002 \001(\tR\010fullName\022 \n\013desc" +
+      "ription\030\003 \001(\tR\013description\022\022\n\004fork\030\004 \001(\010" +
+      "R\004fork\022\033\n\tclone_url\030\005 \001(\tR\010cloneUrl\022\030\n\007p" +
+      "rivate\030\006 \001(\010R\007private\0224\n\006branch\030\007 \001(\0132\034." +
+      "application.v1alpha1.BranchR\006branch\"1\n\007C" +
       "ommand\022\024\n\005build\030\001 \001(\tR\005build\022\020\n\003run\030\002 \001(" +
       "\tR\003run\"K\n\003Env\022\024\n\005value\030\001 \001(\tR\005value\022\020\n\003k" +
       "ey\030\002 \001(\tR\003key\022\034\n\tencrypted\030\003 \001(\010R\tencryp" +
@@ -8374,44 +9453,50 @@ public final class ApplicationOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_application_v1alpha1_Repository_descriptor =
+    internal_static_application_v1alpha1_Branch_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_application_v1alpha1_Branch_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_Branch_descriptor,
+        new java.lang.String[] { "Name", "Sha", "Url", });
+    internal_static_application_v1alpha1_Repository_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_application_v1alpha1_Repository_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Repository_descriptor,
-        new java.lang.String[] { "Name", "FullName", "Description", "Fork", "CloneUrl", "Private", });
+        new java.lang.String[] { "Name", "FullName", "Description", "Fork", "CloneUrl", "Private", "Branch", });
     internal_static_application_v1alpha1_Command_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_application_v1alpha1_Command_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Command_descriptor,
         new java.lang.String[] { "Build", "Run", });
     internal_static_application_v1alpha1_Env_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_application_v1alpha1_Env_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Env_descriptor,
         new java.lang.String[] { "Value", "Key", "Encrypted", });
     internal_static_application_v1alpha1_Configuration_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_application_v1alpha1_Configuration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Configuration_descriptor,
         new java.lang.String[] { "Envs", "Commands", "Port", "RuntimeType", });
     internal_static_application_v1alpha1_Scaling_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_application_v1alpha1_Scaling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Scaling_descriptor,
         new java.lang.String[] { "CpuRule", "CoolDownPeriod", "PollingInterval", "MinReplica", "MaxReplica", "MemoryRule", });
     internal_static_application_v1alpha1_Application_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
         new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "OrganizationId", "Scaling", "TrafficType", });
     internal_static_application_v1alpha1_ListApplication_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_application_v1alpha1_ListApplication_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplication_descriptor,
