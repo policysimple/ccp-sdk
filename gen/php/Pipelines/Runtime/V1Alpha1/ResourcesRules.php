@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class ResourcesRules extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
      */
     private $limit;
     /**
-     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
      */
     private $request;
 
@@ -38,7 +38,7 @@ class ResourcesRules extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLimit()
@@ -47,7 +47,7 @@ class ResourcesRules extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 3 [json_name = "limit"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Limit limit = 1 [json_name = "limit"];</code>
      * @param \Pipelines\Runtime\V1Alpha1\Limit[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -60,7 +60,7 @@ class ResourcesRules extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRequest()
@@ -69,7 +69,7 @@ class ResourcesRules extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Request request = 4 [json_name = "request"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.runtime.v1alpha1.Request request = 2 [json_name = "request"];</code>
      * @param \Pipelines\Runtime\V1Alpha1\Request[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
