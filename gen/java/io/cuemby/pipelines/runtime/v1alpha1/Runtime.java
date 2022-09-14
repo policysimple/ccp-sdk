@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     environmentName_ = "";
     environmentInternalName_ = "";
     applicationName_ = "";
+    integrationId_ = "";
   }
 
   @java.lang.Override
@@ -237,6 +238,12 @@ private static final long serialVersionUID = 0L;
           case 184: {
 
             storageLimit_ = input.readUInt32();
+            break;
+          }
+          case 194: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            integrationId_ = s;
             break;
           }
           default: {
@@ -1258,6 +1265,44 @@ private static final long serialVersionUID = 0L;
     return storageLimit_;
   }
 
+  public static final int INTEGRATION_ID_FIELD_NUMBER = 24;
+  private volatile java.lang.Object integrationId_;
+  /**
+   * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+   * @return The integrationId.
+   */
+  @java.lang.Override
+  public java.lang.String getIntegrationId() {
+    java.lang.Object ref = integrationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      integrationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+   * @return The bytes for integrationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIntegrationIdBytes() {
+    java.lang.Object ref = integrationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      integrationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1355,6 +1400,9 @@ private static final long serialVersionUID = 0L;
     }
     if (storageLimit_ != 0) {
       output.writeUInt32(23, storageLimit_);
+    }
+    if (!getIntegrationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, integrationId_);
     }
     unknownFields.writeTo(output);
   }
@@ -1475,6 +1523,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(23, storageLimit_);
     }
+    if (!getIntegrationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, integrationId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1535,6 +1586,8 @@ private static final long serialVersionUID = 0L;
         != other.getStorageUsed()) return false;
     if (getStorageLimit()
         != other.getStorageLimit()) return false;
+    if (!getIntegrationId()
+        .equals(other.getIntegrationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1604,6 +1657,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getStorageUsed();
     hash = (37 * hash) + STORAGE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + getStorageLimit();
+    hash = (37 * hash) + INTEGRATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getIntegrationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1825,6 +1880,8 @@ private static final long serialVersionUID = 0L;
 
       storageLimit_ = 0;
 
+      integrationId_ = "";
+
       return this;
     }
 
@@ -1888,6 +1945,7 @@ private static final long serialVersionUID = 0L;
       result.applicationName_ = applicationName_;
       result.storageUsed_ = storageUsed_;
       result.storageLimit_ = storageLimit_;
+      result.integrationId_ = integrationId_;
       onBuilt();
       return result;
     }
@@ -2034,6 +2092,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStorageLimit() != 0) {
         setStorageLimit(other.getStorageLimit());
+      }
+      if (!other.getIntegrationId().isEmpty()) {
+        integrationId_ = other.integrationId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4031,6 +4093,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearStorageLimit() {
       
       storageLimit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object integrationId_ = "";
+    /**
+     * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @return The integrationId.
+     */
+    public java.lang.String getIntegrationId() {
+      java.lang.Object ref = integrationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        integrationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @return The bytes for integrationId.
+     */
+    public com.google.protobuf.ByteString
+        getIntegrationIdBytes() {
+      java.lang.Object ref = integrationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        integrationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @param value The integrationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegrationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      integrationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIntegrationId() {
+      
+      integrationId_ = getDefaultInstance().getIntegrationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @param value The bytes for integrationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegrationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      integrationId_ = value;
       onChanged();
       return this;
     }

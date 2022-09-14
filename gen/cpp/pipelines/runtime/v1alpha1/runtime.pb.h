@@ -410,6 +410,7 @@ class Runtime final :
     kEnvironmentNameFieldNumber = 19,
     kEnvironmentInternalNameFieldNumber = 20,
     kApplicationNameFieldNumber = 21,
+    kIntegrationIdFieldNumber = 24,
     kOrganizationIdFieldNumber = 4,
     kProjectIdFieldNumber = 5,
     kTrafficTypeFieldNumber = 17,
@@ -687,6 +688,20 @@ class Runtime final :
   std::string* _internal_mutable_application_name();
   public:
 
+  // string integration_id = 24 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
   // uint32 organization_id = 4 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -777,6 +792,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_internal_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   int traffic_type_;
@@ -2457,6 +2473,52 @@ inline void Runtime::_internal_set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32
 inline void Runtime::set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_storage_limit(value);
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.storage_limit)
+}
+
+// string integration_id = 24 [json_name = "integrationId"];
+inline void Runtime::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& Runtime::integration_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.integration_id)
+}
+inline std::string* Runtime::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.integration_id)
+  return _s;
+}
+inline const std::string& Runtime::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void Runtime::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_integration_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.integration_id)
 }
 
 // -------------------------------------------------------------------

@@ -107,6 +107,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 storage_limit = 23 [json_name = "storageLimit"];</code>
      */
     protected $storage_limit = 0;
+    /**
+     * Generated from protobuf field <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     */
+    protected $integration_id = '';
 
     /**
      * Constructor.
@@ -137,6 +141,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $application_name
      *     @type int $storage_used
      *     @type int $storage_limit
+     *     @type string $integration_id
      * }
      */
     public function __construct($data = NULL) {
@@ -646,6 +651,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->storage_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @return string
+     */
+    public function getIntegrationId()
+    {
+        return $this->integration_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration_id = 24 [json_name = "integrationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIntegrationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->integration_id = $var;
 
         return $this;
     }
