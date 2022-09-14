@@ -379,4 +379,16 @@ public interface RuntimeOrBuilder extends
    * @return The storageLimit.
    */
   int getStorageLimit();
+
+  /**
+   * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+   * @return The integrationId.
+   */
+  java.lang.String getIntegrationId();
+  /**
+   * <code>string integration_id = 24 [json_name = "integrationId"];</code>
+   * @return The bytes for integrationId.
+   */
+  com.google.protobuf.ByteString
+      getIntegrationIdBytes();
 }

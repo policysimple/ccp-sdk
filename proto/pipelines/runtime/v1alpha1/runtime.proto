@@ -41,6 +41,7 @@ message Runtime {
   string application_name = 21;
   uint32 storage_used = 22;
 	uint32 storage_limit = 23;
+  string integration_id = 24;
 }
 
 message RuntimeList {

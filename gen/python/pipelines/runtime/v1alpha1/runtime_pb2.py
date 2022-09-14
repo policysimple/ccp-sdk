@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"\xde\x0b\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12N\n\x0einstance_types\x18\x03 \x03(\x0b\x32\'.pipelines.runtime.v1alpha1.IntanceTypeR\rinstanceTypes\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x06 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x07 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\x08 \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\t \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\n \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0b \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\x0c \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\r \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0e \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x0f \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x10 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x11 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12)\n\x10response_message\x18\x12 \x01(\tR\x0fresponseMessage\x12)\n\x10\x65nvironment_name\x18\x13 \x01(\tR\x0f\x65nvironmentName\x12:\n\x19\x65nvironment_internal_name\x18\x14 \x01(\tR\x17\x65nvironmentInternalName\x12)\n\x10\x61pplication_name\x18\x15 \x01(\tR\x0f\x61pplicationName\x12!\n\x0cstorage_used\x18\x16 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x17 \x01(\rR\x0cstorageLimit\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items\"\x86\x01\n\x0bIntanceType\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12S\n\x0fresources_rules\x18\x03 \x03(\x0b\x32*.pipelines.runtime.v1alpha1.ResourcesRulesR\x0eresourcesRules\"\x88\x01\n\x0eResourcesRules\x12\x37\n\x05limit\x18\x01 \x03(\x0b\x32!.pipelines.runtime.v1alpha1.LimitR\x05limit\x12=\n\x07request\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RequestR\x07request\"+\n\x05Limit\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"-\n\x07Request\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\"\x85\x0c\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12N\n\x0einstance_types\x18\x03 \x03(\x0b\x32\'.pipelines.runtime.v1alpha1.IntanceTypeR\rinstanceTypes\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x06 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x07 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\x08 \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\t \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\n \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0b \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\x0c \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\r \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0e \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x0f \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x10 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x11 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12)\n\x10response_message\x18\x12 \x01(\tR\x0fresponseMessage\x12)\n\x10\x65nvironment_name\x18\x13 \x01(\tR\x0f\x65nvironmentName\x12:\n\x19\x65nvironment_internal_name\x18\x14 \x01(\tR\x17\x65nvironmentInternalName\x12)\n\x10\x61pplication_name\x18\x15 \x01(\tR\x0f\x61pplicationName\x12!\n\x0cstorage_used\x18\x16 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x17 \x01(\rR\x0cstorageLimit\x12%\n\x0eintegration_id\x18\x18 \x01(\tR\rintegrationId\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items\"\x86\x01\n\x0bIntanceType\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12S\n\x0fresources_rules\x18\x03 \x03(\x0b\x32*.pipelines.runtime.v1alpha1.ResourcesRulesR\x0eresourcesRules\"\x88\x01\n\x0eResourcesRules\x12\x37\n\x05limit\x18\x01 \x03(\x0b\x32!.pipelines.runtime.v1alpha1.LimitR\x05limit\x12=\n\x07request\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RequestR\x07request\"+\n\x05Limit\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"-\n\x07Request\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
 )
 
 _TRAFFICTYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _TRAFFICTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2019,
-  serialized_end=2116,
+  serialized_start=2058,
+  serialized_end=2155,
 )
 _sym_db.RegisterEnumDescriptor(_TRAFFICTYPE)
 
@@ -94,8 +94,8 @@ _RUNTIME_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1257,
-  serialized_end=1319,
+  serialized_start=1296,
+  serialized_end=1358,
 )
 
 _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
@@ -132,8 +132,8 @@ _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1321,
-  serialized_end=1392,
+  serialized_start=1360,
+  serialized_end=1431,
 )
 
 _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
@@ -170,8 +170,8 @@ _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1394,
-  serialized_end=1453,
+  serialized_start=1433,
+  serialized_end=1492,
 )
 
 _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
@@ -208,8 +208,8 @@ _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1455,
-  serialized_end=1513,
+  serialized_start=1494,
+  serialized_end=1552,
 )
 
 _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
@@ -246,8 +246,8 @@ _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1515,
-  serialized_end=1575,
+  serialized_start=1554,
+  serialized_end=1614,
 )
 
 _RUNTIME = _descriptor.Descriptor(
@@ -419,6 +419,13 @@ _RUNTIME = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='storageLimit', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='integration_id', full_name='pipelines.runtime.v1alpha1.Runtime.integration_id', index=23,
+      number=24, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='integrationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -432,7 +439,7 @@ _RUNTIME = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=73,
-  serialized_end=1575,
+  serialized_end=1614,
 )
 
 
@@ -463,8 +470,8 @@ _RUNTIMELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1577,
-  serialized_end=1649,
+  serialized_start=1616,
+  serialized_end=1688,
 )
 
 
@@ -509,8 +516,8 @@ _INTANCETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1652,
-  serialized_end=1786,
+  serialized_start=1691,
+  serialized_end=1825,
 )
 
 
@@ -548,8 +555,8 @@ _RESOURCESRULES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1789,
-  serialized_end=1925,
+  serialized_start=1828,
+  serialized_end=1964,
 )
 
 
@@ -587,8 +594,8 @@ _LIMIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1927,
-  serialized_end=1970,
+  serialized_start=1966,
+  serialized_end=2009,
 )
 
 
@@ -626,8 +633,8 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1972,
-  serialized_end=2017,
+  serialized_start=2011,
+  serialized_end=2056,
 )
 
 _RUNTIME_INTEGRATIONENTRY.containing_type = _RUNTIME
