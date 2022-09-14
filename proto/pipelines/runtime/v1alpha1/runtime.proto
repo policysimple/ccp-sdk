@@ -20,28 +20,28 @@ enum TrafficType {
 message Runtime {
   string id = 1;
   string name = 2;
-  repeated IntanceType instance_types= 4;
-  uint32 organization_id = 5;
-  uint32 project_id = 6;
-  string application_id = 7;
-  string workspace_id = 8;
-  string environment_id = 9;
-  string scaler = 10;
-  string pod_status = 11;
-  string pod_status_msg = 12;
-  map<string, string> integration = 13;
-  map<string, string> environment_variables = 14;
-  map<string, string> commands = 15;
-  map<string, string> secrets = 16;
-  map<string, string> extra_args = 17;
-  map<string, string> autoscaling = 18;
-  TrafficType traffic_type = 19;
-  string response_message = 20;
-  string environment_name=21;
-  string environment_internal_name=22;
-  string application_name = 23;
-  uint32 storage_used = 24;
-	uint32 storage_limit = 25;
+  repeated IntanceType instance_types= 3;
+  uint32 organization_id = 4;
+  uint32 project_id = 5;
+  string application_id = 6;
+  string workspace_id = 7;
+  string environment_id = 8;
+  string scaler = 9;
+  string pod_status = 10;
+  string pod_status_msg = 11;
+  map<string, string> integration = 12;
+  map<string, string> environment_variables = 13;
+  map<string, string> commands = 14;
+  map<string, string> secrets = 15;
+  map<string, string> extra_args = 16;
+  TrafficType traffic_type = 17;
+  string response_message = 18;
+  string environment_name=19;
+  string environment_internal_name=20;
+  string application_name = 21;
+  uint32 storage_used = 22;
+	uint32 storage_limit = 23;
+  string integration_id = 24;
 }
 
 message RuntimeList {
@@ -52,26 +52,19 @@ message IntanceType {
   string id = 1;
   string name = 2;
   repeated ResourcesRules resources_rules= 3;
- 
 }
 
 message ResourcesRules {
-  repeated Limit limit= 3;
-  repeated Request request= 4;
- 
+  repeated Limit limit= 1;
+  repeated Request request= 2; 
 }
 
 message Limit {
   string cpu = 1;
-  string ram = 2;
- 
+  string ram = 2; 
 }
 
 message Request {
   string cpu = 1;
-  string ram = 2;
- 
+  string ram = 2; 
 }
-
-
-
