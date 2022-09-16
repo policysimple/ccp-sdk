@@ -21,6 +21,8 @@ service VaultAPIService{
     rpc DeleteSecret(DeleteSecretRequest) returns (DeleteSecretResponse) {};
     rpc GetSecret(GetSecretRequest) returns (GetSecretResponse) {};
     rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse) {};
+    rpc SaveTokenIntegrations(SaveTokenIntegrationsRequest) returns (SaveTokenIntegrationsResponse) {};
+    rpc GetTokenIntegrations(GetTokenIntegrationsRequest) returns (GetTokenIntegrationsResponse) {};
 }
 
 message CreateSecretRequest {
@@ -77,5 +79,24 @@ message DeleteOrganizationRequest {
 
 message DeleteOrganizationResponse {
     string msg = 1;
+    string error = 2;
+}
+
+message SaveTokenIntegrationsRequest {
+    string integration_id = 1;
+    string token = 2;
+}
+
+message SaveTokenIntegrationsResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message GetTokenIntegrationsRequest {
+    string integration_id = 1;
+}
+
+message GetTokenIntegrationsResponse {
+    string token = 1;
     string error = 2;
 }

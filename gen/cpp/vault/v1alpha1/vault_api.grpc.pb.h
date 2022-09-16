@@ -71,6 +71,20 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
+    virtual ::grpc::Status SaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>> AsyncSaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>>(AsyncSaveTokenIntegrationsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>> PrepareAsyncSaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>>(PrepareAsyncSaveTokenIntegrationsRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>> AsyncGetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>>(AsyncGetTokenIntegrationsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>> PrepareAsyncGetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>>(PrepareAsyncGetTokenIntegrationsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -79,6 +93,8 @@ class VaultAPIService final {
       virtual void DeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest* request, ::vault::v1alpha1::GetSecretResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -92,6 +108,10 @@ class VaultAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretResponse>* PrepareAsyncGetSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>* AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::DeleteOrganizationResponse>* PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* AsyncSaveTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* PrepareAsyncSaveTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>* AsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>* PrepareAsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -131,6 +151,20 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
+    ::grpc::Status SaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>> AsyncSaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>>(AsyncSaveTokenIntegrationsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>> PrepareAsyncSaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>>(PrepareAsyncSaveTokenIntegrationsRaw(context, request, cq));
+    }
+    ::grpc::Status GetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>> AsyncGetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>>(AsyncGetTokenIntegrationsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>> PrepareAsyncGetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>>(PrepareAsyncGetTokenIntegrationsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -139,6 +173,8 @@ class VaultAPIService final {
       void DeleteSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response, std::function<void(::grpc::Status)>) override;
       void GetSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest* request, ::vault::v1alpha1::GetSecretResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
+      void SaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -160,11 +196,17 @@ class VaultAPIService final {
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretResponse>* PrepareAsyncGetSecretRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>* AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::DeleteOrganizationResponse>* PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* AsyncSaveTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* PrepareAsyncSaveTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>* AsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>* PrepareAsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_GetSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteOrganization_;
+    const ::grpc::internal::RpcMethod rpcmethod_SaveTokenIntegrations_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTokenIntegrations_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -177,6 +219,8 @@ class VaultAPIService final {
     virtual ::grpc::Status DeleteSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteSecretRequest* request, ::vault::v1alpha1::DeleteSecretResponse* response);
     virtual ::grpc::Status GetSecret(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretRequest* request, ::vault::v1alpha1::GetSecretResponse* response);
     virtual ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response);
+    virtual ::grpc::Status SaveTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response);
+    virtual ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateSecret : public BaseClass {
@@ -278,7 +322,47 @@ class VaultAPIService final {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SaveTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_SaveTokenIntegrations() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_SaveTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSaveTokenIntegrations(::grpc::ServerContext* context, ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetTokenIntegrations() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_GetTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTokenIntegrations(::grpc::ServerContext* context, ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::GetTokenIntegrationsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_SaveTokenIntegrations<WithAsyncMethod_GetTokenIntegrations<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateSecret : public BaseClass {
    private:
@@ -360,6 +444,40 @@ class VaultAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SaveTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_SaveTokenIntegrations() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_SaveTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetTokenIntegrations() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_GetTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -465,6 +583,46 @@ class VaultAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SaveTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_SaveTokenIntegrations() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_SaveTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSaveTokenIntegrations(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetTokenIntegrations() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_GetTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTokenIntegrations(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateSecret : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -564,9 +722,49 @@ class VaultAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteOrganization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::DeleteOrganizationRequest,::vault::v1alpha1::DeleteOrganizationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<Service > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SaveTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_SaveTokenIntegrations() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::SaveTokenIntegrationsRequest, ::vault::v1alpha1::SaveTokenIntegrationsResponse>(std::bind(&WithStreamedUnaryMethod_SaveTokenIntegrations<BaseClass>::StreamedSaveTokenIntegrations, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_SaveTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SaveTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSaveTokenIntegrations(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::SaveTokenIntegrationsRequest,::vault::v1alpha1::SaveTokenIntegrationsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetTokenIntegrations : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetTokenIntegrations() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::GetTokenIntegrationsRequest, ::vault::v1alpha1::GetTokenIntegrationsResponse>(std::bind(&WithStreamedUnaryMethod_GetTokenIntegrations<BaseClass>::StreamedGetTokenIntegrations, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetTokenIntegrations() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetTokenIntegrations(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::GetTokenIntegrationsRequest,::vault::v1alpha1::GetTokenIntegrationsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<Service > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<Service > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

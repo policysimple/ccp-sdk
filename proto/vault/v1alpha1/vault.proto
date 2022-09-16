@@ -38,3 +38,8 @@ message Secret {
     SecretData data = 7;
     SecretWarnings warnings = 8;
 }
+
+message TokenIntegration {
+    string integration_id = 1;
+    string token = 2;
+}

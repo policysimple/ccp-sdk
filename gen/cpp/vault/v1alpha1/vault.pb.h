@@ -49,7 +49,7 @@ struct TableStruct_vault_2fv1alpha1_2fvault_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -73,6 +73,9 @@ extern SecretData_DataEntry_DoNotUseDefaultTypeInternal _SecretData_DataEntry_Do
 class SecretWarnings;
 struct SecretWarningsDefaultTypeInternal;
 extern SecretWarningsDefaultTypeInternal _SecretWarnings_default_instance_;
+class TokenIntegration;
+struct TokenIntegrationDefaultTypeInternal;
+extern TokenIntegrationDefaultTypeInternal _TokenIntegration_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
 PROTOBUF_NAMESPACE_OPEN
@@ -81,6 +84,7 @@ template<> ::vault::v1alpha1::Secret* Arena::CreateMaybeMessage<::vault::v1alpha
 template<> ::vault::v1alpha1::SecretData* Arena::CreateMaybeMessage<::vault::v1alpha1::SecretData>(Arena*);
 template<> ::vault::v1alpha1::SecretData_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::vault::v1alpha1::SecretData_DataEntry_DoNotUse>(Arena*);
 template<> ::vault::v1alpha1::SecretWarnings* Arena::CreateMaybeMessage<::vault::v1alpha1::SecretWarnings>(Arena*);
+template<> ::vault::v1alpha1::TokenIntegration* Arena::CreateMaybeMessage<::vault::v1alpha1::TokenIntegration>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace vault {
 namespace v1alpha1 {
@@ -890,6 +894,166 @@ class Secret final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_2eproto;
 };
+// -------------------------------------------------------------------
+
+class TokenIntegration final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.TokenIntegration) */ {
+ public:
+  inline TokenIntegration() : TokenIntegration(nullptr) {}
+  ~TokenIntegration() override;
+  explicit constexpr TokenIntegration(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TokenIntegration(const TokenIntegration& from);
+  TokenIntegration(TokenIntegration&& from) noexcept
+    : TokenIntegration() {
+    *this = ::std::move(from);
+  }
+
+  inline TokenIntegration& operator=(const TokenIntegration& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TokenIntegration& operator=(TokenIntegration&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TokenIntegration& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TokenIntegration* internal_default_instance() {
+    return reinterpret_cast<const TokenIntegration*>(
+               &_TokenIntegration_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(TokenIntegration& a, TokenIntegration& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TokenIntegration* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TokenIntegration* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TokenIntegration* New() const final {
+    return new TokenIntegration();
+  }
+
+  TokenIntegration* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TokenIntegration>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TokenIntegration& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TokenIntegration& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TokenIntegration* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.TokenIntegration";
+  }
+  protected:
+  explicit TokenIntegration(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIntegrationIdFieldNumber = 1,
+    kTokenFieldNumber = 2,
+  };
+  // string integration_id = 1 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
+  // string token = 2 [json_name = "token"];
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_MUST_USE_RESULT std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.TokenIntegration)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_2eproto;
+};
 // ===================================================================
 
 
@@ -1691,9 +1855,107 @@ inline void Secret::set_allocated_warnings(::vault::v1alpha1::SecretWarnings* wa
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.warnings)
 }
 
+// -------------------------------------------------------------------
+
+// TokenIntegration
+
+// string integration_id = 1 [json_name = "integrationId"];
+inline void TokenIntegration::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& TokenIntegration::integration_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.TokenIntegration.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TokenIntegration::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.TokenIntegration.integration_id)
+}
+inline std::string* TokenIntegration::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.TokenIntegration.integration_id)
+  return _s;
+}
+inline const std::string& TokenIntegration::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void TokenIntegration::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TokenIntegration::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TokenIntegration::release_integration_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.TokenIntegration.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TokenIntegration::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.TokenIntegration.integration_id)
+}
+
+// string token = 2 [json_name = "token"];
+inline void TokenIntegration::clear_token() {
+  token_.ClearToEmpty();
+}
+inline const std::string& TokenIntegration::token() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.TokenIntegration.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TokenIntegration::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.TokenIntegration.token)
+}
+inline std::string* TokenIntegration::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.TokenIntegration.token)
+  return _s;
+}
+inline const std::string& TokenIntegration::_internal_token() const {
+  return token_.Get();
+}
+inline void TokenIntegration::_internal_set_token(const std::string& value) {
+  
+  token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TokenIntegration::_internal_mutable_token() {
+  
+  return token_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TokenIntegration::release_token() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.TokenIntegration.token)
+  return token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TokenIntegration::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.TokenIntegration.token)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
