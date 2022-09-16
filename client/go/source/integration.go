@@ -3,14 +3,18 @@ package source
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log"
 	"os"
 	"sync"
 	"time"
 
+	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	sourcepkgv1 "github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
+	"google.golang.org/grpc/status"
 )
 
 var client sourcepkgv1.SourceServiceClient
@@ -81,6 +85,32 @@ func GetRepositoryProvider(integrationId string, name string) (*sourcepkgv1.GetR
 	response, err := client.GetRepositoryProvider(ctx, &sourcepkgv1.GetRepositoryProviderRequest{IntegrationId: integrationId, Name: name})
 	if err != nil {
 		return nil, err
+	}
+
+	return response, nil
+}
+
+func GetIntegration(req *sourcepkgv1.GetIntegrationRequest) (*sourcepkgv1.GetIntegrationResponse, error) {
+	bylogs.LogInfo("client get integration")
+
+	d, err := time.ParseDuration(sourceServiceTimeout)
+	if err != nil {
+		bylogs.LogErr("client: get integration failed", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "error get integration", err),
+		)
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetIntegration(ctx, req)
+	if err != nil {
+		bylogs.LogErr("client: get integration failed", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "error get integration", err),
+		)
 	}
 
 	return response, nil
