@@ -211,3 +211,29 @@ func SaveTokenIntegrations(in *vaultpkgv1.SaveTokenIntegrationsRequest) (*vaultp
 
 	return response, nil
 }
+
+func GetTokenIntegrationsRequest(in *vaultpkgv1.GetTokenIntegrationsRequest) (*vaultpkgv1.GetTokenIntegrationsResponse, error) {
+	bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetTokenIntegrations(ctx, &vaultpkgv1.GetTokenIntegrationsRequest{
+		IntegrationId: in.IntegrationId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("GetTokenIntegrationsRequest Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error get token integrations: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk", "Success")
+	}
+
+	return response, nil
+}
