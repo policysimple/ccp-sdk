@@ -39,6 +39,16 @@ class VaultAPIServiceStub(object):
         request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationRequest.SerializeToString,
         response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationResponse.FromString,
         )
+    self.SaveTokenIntegrations = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/SaveTokenIntegrations',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenIntegrationsRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenIntegrationsResponse.FromString,
+        )
+    self.GetTokenIntegrations = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/GetTokenIntegrations',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenIntegrationsRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenIntegrationsResponse.FromString,
+        )
 
 
 class VaultAPIServiceServicer(object):
@@ -80,6 +90,20 @@ class VaultAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SaveTokenIntegrations(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetTokenIntegrations(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_VaultAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -107,6 +131,16 @@ def add_VaultAPIServiceServicer_to_server(servicer, server):
           servicer.DeleteOrganization,
           request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationRequest.FromString,
           response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.DeleteOrganizationResponse.SerializeToString,
+      ),
+      'SaveTokenIntegrations': grpc.unary_unary_rpc_method_handler(
+          servicer.SaveTokenIntegrations,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenIntegrationsRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenIntegrationsResponse.SerializeToString,
+      ),
+      'GetTokenIntegrations': grpc.unary_unary_rpc_method_handler(
+          servicer.GetTokenIntegrations,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenIntegrationsRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenIntegrationsResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

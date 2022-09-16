@@ -89,9 +89,22 @@ struct SecretDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretDefaultTypeInternal _Secret_default_instance_;
+constexpr TokenIntegration::TokenIntegration(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TokenIntegrationDefaultTypeInternal {
+  constexpr TokenIntegrationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TokenIntegrationDefaultTypeInternal() {}
+  union {
+    TokenIntegration _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TokenIntegrationDefaultTypeInternal _TokenIntegration_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[5];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto = nullptr;
 
@@ -141,6 +154,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_2epro
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, metadata_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, data_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::Secret, warnings_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, integration_id_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, token_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vault::v1alpha1::Metadata)},
@@ -148,6 +168,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 20, -1, sizeof(::vault::v1alpha1::SecretData)},
   { 26, -1, sizeof(::vault::v1alpha1::SecretWarnings)},
   { 32, -1, sizeof(::vault::v1alpha1::Secret)},
+  { 45, -1, sizeof(::vault::v1alpha1::TokenIntegration)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -156,6 +177,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SecretData_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SecretWarnings_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_Secret_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_TokenIntegration_default_instance_),
 };
 
 const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -177,16 +199,18 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF
   "ata\030\006 \001(\0132\030.vault.v1alpha1.MetadataR\010met"
   "adata\022.\n\004data\030\007 \001(\0132\032.vault.v1alpha1.Sec"
   "retDataR\004data\022:\n\010warnings\030\010 \001(\0132\036.vault."
-  "v1alpha1.SecretWarningsR\010warningsB\203\001\n\030io"
-  ".cuemby.vault.v1alpha1B\nVaultProtoP\001Z1gi"
-  "thub.com/cuemby/ccp-vault-service/vaultv"
-  "1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V"
-  "1Alpha1b\006proto3"
+  "v1alpha1.SecretWarningsR\010warnings\"O\n\020Tok"
+  "enIntegration\022%\n\016integration_id\030\001 \001(\tR\ri"
+  "ntegrationId\022\024\n\005token\030\002 \001(\tR\005tokenB\203\001\n\030i"
+  "o.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1g"
+  "ithub.com/cuemby/ccp-vault-service/vault"
+  "v1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\"
+  "V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_2eproto = {
-  false, false, 895, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
-  &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 5,
+  false, false, 976, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
+  &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto,
 };
@@ -1494,6 +1518,248 @@ void Secret::InternalSwap(Secret* other) {
       file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[4]);
 }
 
+// ===================================================================
+
+class TokenIntegration::_Internal {
+ public:
+};
+
+TokenIntegration::TokenIntegration(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.TokenIntegration)
+}
+TokenIntegration::TokenIntegration(const TokenIntegration& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_integration_id().empty()) {
+    integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
+      GetArenaForAllocation());
+  }
+  token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_token().empty()) {
+    token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.TokenIntegration)
+}
+
+inline void TokenIntegration::SharedCtor() {
+integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+TokenIntegration::~TokenIntegration() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.TokenIntegration)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TokenIntegration::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void TokenIntegration::ArenaDtor(void* object) {
+  TokenIntegration* _this = reinterpret_cast< TokenIntegration* >(object);
+  (void)_this;
+}
+void TokenIntegration::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TokenIntegration::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TokenIntegration::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.TokenIntegration)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  integration_id_.ClearToEmpty();
+  token_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TokenIntegration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string integration_id = 1 [json_name = "integrationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_integration_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.TokenIntegration.integration_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string token = 2 [json_name = "token"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.TokenIntegration.token"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TokenIntegration::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.TokenIntegration)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string integration_id = 1 [json_name = "integrationId"];
+  if (!this->_internal_integration_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_integration_id().data(), static_cast<int>(this->_internal_integration_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.TokenIntegration.integration_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_integration_id(), target);
+  }
+
+  // string token = 2 [json_name = "token"];
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.TokenIntegration.token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_token(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.TokenIntegration)
+  return target;
+}
+
+size_t TokenIntegration::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.TokenIntegration)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string integration_id = 1 [json_name = "integrationId"];
+  if (!this->_internal_integration_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_integration_id());
+  }
+
+  // string token = 2 [json_name = "token"];
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TokenIntegration::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TokenIntegration::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TokenIntegration::GetClassData() const { return &_class_data_; }
+
+void TokenIntegration::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<TokenIntegration *>(to)->MergeFrom(
+      static_cast<const TokenIntegration &>(from));
+}
+
+
+void TokenIntegration::MergeFrom(const TokenIntegration& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.TokenIntegration)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_integration_id().empty()) {
+    _internal_set_integration_id(from._internal_integration_id());
+  }
+  if (!from._internal_token().empty()) {
+    _internal_set_token(from._internal_token());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TokenIntegration::CopyFrom(const TokenIntegration& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.TokenIntegration)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TokenIntegration::IsInitialized() const {
+  return true;
+}
+
+void TokenIntegration::InternalSwap(TokenIntegration* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &integration_id_, GetArenaForAllocation(),
+      &other->integration_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &token_, GetArenaForAllocation(),
+      &other->token_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TokenIntegration::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[5]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace vault
@@ -1512,6 +1778,9 @@ template<> PROTOBUF_NOINLINE ::vault::v1alpha1::SecretWarnings* Arena::CreateMay
 }
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::Secret* Arena::CreateMaybeMessage< ::vault::v1alpha1::Secret >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::Secret >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::TokenIntegration* Arena::CreateMaybeMessage< ::vault::v1alpha1::TokenIntegration >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::TokenIntegration >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

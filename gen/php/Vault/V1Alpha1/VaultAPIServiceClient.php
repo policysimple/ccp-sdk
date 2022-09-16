@@ -81,4 +81,30 @@ class VaultAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Vault\V1Alpha1\SaveTokenIntegrationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SaveTokenIntegrations(\Vault\V1Alpha1\SaveTokenIntegrationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/SaveTokenIntegrations',
+        $argument,
+        ['\Vault\V1Alpha1\SaveTokenIntegrationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Vault\V1Alpha1\GetTokenIntegrationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTokenIntegrations(\Vault\V1Alpha1\GetTokenIntegrationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/GetTokenIntegrations',
+        $argument,
+        ['\Vault\V1Alpha1\GetTokenIntegrationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

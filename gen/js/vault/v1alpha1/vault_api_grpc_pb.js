@@ -93,6 +93,50 @@ function deserialize_vault_v1alpha1_GetSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_GetTokenIntegrationsRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenIntegrationsRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetTokenIntegrationsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetTokenIntegrationsRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetTokenIntegrationsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_GetTokenIntegrationsResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenIntegrationsResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetTokenIntegrationsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetTokenIntegrationsResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetTokenIntegrationsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_SaveTokenIntegrationsRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.SaveTokenIntegrationsRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.SaveTokenIntegrationsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_SaveTokenIntegrationsRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.SaveTokenIntegrationsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_SaveTokenIntegrationsResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.SaveTokenIntegrationsResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.SaveTokenIntegrationsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_SaveTokenIntegrationsResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.SaveTokenIntegrationsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_UpdateSecretRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.UpdateSecretRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.UpdateSecretRequest');
@@ -171,6 +215,28 @@ var VaultAPIServiceService = exports.VaultAPIServiceService = {
     requestDeserialize: deserialize_vault_v1alpha1_DeleteOrganizationRequest,
     responseSerialize: serialize_vault_v1alpha1_DeleteOrganizationResponse,
     responseDeserialize: deserialize_vault_v1alpha1_DeleteOrganizationResponse,
+  },
+  saveTokenIntegrations: {
+    path: '/vault.v1alpha1.VaultAPIService/SaveTokenIntegrations',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.SaveTokenIntegrationsRequest,
+    responseType: vault_v1alpha1_vault_api_pb.SaveTokenIntegrationsResponse,
+    requestSerialize: serialize_vault_v1alpha1_SaveTokenIntegrationsRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_SaveTokenIntegrationsRequest,
+    responseSerialize: serialize_vault_v1alpha1_SaveTokenIntegrationsResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_SaveTokenIntegrationsResponse,
+  },
+  getTokenIntegrations: {
+    path: '/vault.v1alpha1.VaultAPIService/GetTokenIntegrations',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.GetTokenIntegrationsRequest,
+    responseType: vault_v1alpha1_vault_api_pb.GetTokenIntegrationsResponse,
+    requestSerialize: serialize_vault_v1alpha1_GetTokenIntegrationsRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_GetTokenIntegrationsRequest,
+    responseSerialize: serialize_vault_v1alpha1_GetTokenIntegrationsResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_GetTokenIntegrationsResponse,
   },
 };
 
