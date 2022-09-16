@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class StopProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = '';
+    protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     */
+    protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      */
     protected $project = null;
 
@@ -28,7 +32,8 @@ class StopProjectRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $organization_id
+     *     @type int $organization_id
+     *     @type string $project_id
      *     @type \Payment\V1alpha1\Project $project
      * }
      */
@@ -38,8 +43,8 @@ class StopProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
      */
     public function getOrganizationId()
     {
@@ -47,20 +52,42 @@ class StopProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->organization_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @return \Payment\V1alpha1\Project|null
      */
     public function getProject()
@@ -79,7 +106,7 @@ class StopProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @param \Payment\V1alpha1\Project $var
      * @return $this
      */
