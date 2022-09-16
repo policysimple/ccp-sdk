@@ -1061,7 +1061,8 @@ proto.payment.v1alpha1.StopProjectRequest.prototype.toObject = function(opt_incl
  */
 proto.payment.v1alpha1.StopProjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     project: (f = msg.getProject()) && payment_v1alpha1_payment_pb.Project.toObject(includeInstance, f)
   };
 
@@ -1100,10 +1101,14 @@ proto.payment.v1alpha1.StopProjectRequest.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectId(value);
+      break;
+    case 3:
       var value = new payment_v1alpha1_payment_pb.Project;
       reader.readMessage(value,payment_v1alpha1_payment_pb.Project.deserializeBinaryFromReader);
       msg.setProject(value);
@@ -1138,16 +1143,23 @@ proto.payment.v1alpha1.StopProjectRequest.prototype.serializeBinary = function()
 proto.payment.v1alpha1.StopProjectRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
+      1,
+      f
+    );
+  }
+  f = message.getProjectId();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
   f = message.getProject();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       payment_v1alpha1_payment_pb.Project.serializeBinaryToWriter
     );
@@ -1156,11 +1168,29 @@ proto.payment.v1alpha1.StopProjectRequest.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional string organization_id = 1;
- * @return {string}
+ * optional uint32 organization_id = 1;
+ * @return {number}
  */
 proto.payment.v1alpha1.StopProjectRequest.prototype.getOrganizationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.payment.v1alpha1.StopProjectRequest} returns this
+ */
+proto.payment.v1alpha1.StopProjectRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string project_id = 2;
+ * @return {string}
+ */
+proto.payment.v1alpha1.StopProjectRequest.prototype.getProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1168,18 +1198,18 @@ proto.payment.v1alpha1.StopProjectRequest.prototype.getOrganizationId = function
  * @param {string} value
  * @return {!proto.payment.v1alpha1.StopProjectRequest} returns this
  */
-proto.payment.v1alpha1.StopProjectRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.payment.v1alpha1.StopProjectRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional Project project = 2;
+ * optional Project project = 3;
  * @return {?proto.payment.v1alpha1.Project}
  */
 proto.payment.v1alpha1.StopProjectRequest.prototype.getProject = function() {
   return /** @type{?proto.payment.v1alpha1.Project} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 2));
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 3));
 };
 
 
@@ -1188,7 +1218,7 @@ proto.payment.v1alpha1.StopProjectRequest.prototype.getProject = function() {
  * @return {!proto.payment.v1alpha1.StopProjectRequest} returns this
 */
 proto.payment.v1alpha1.StopProjectRequest.prototype.setProject = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -1206,7 +1236,7 @@ proto.payment.v1alpha1.StopProjectRequest.prototype.clearProject = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.StopProjectRequest.prototype.hasProject = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -1242,7 +1272,7 @@ proto.payment.v1alpha1.StopProjectResponse.prototype.toObject = function(opt_inc
  */
 proto.payment.v1alpha1.StopProjectResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    project: (f = msg.getProject()) && payment_v1alpha1_payment_pb.Project.toObject(includeInstance, f)
+    status: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1280,9 +1310,8 @@ proto.payment.v1alpha1.StopProjectResponse.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new payment_v1alpha1_payment_pb.Project;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.Project.deserializeBinaryFromReader);
-      msg.setProject(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -1313,51 +1342,31 @@ proto.payment.v1alpha1.StopProjectResponse.prototype.serializeBinary = function(
  */
 proto.payment.v1alpha1.StopProjectResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProject();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      payment_v1alpha1_payment_pb.Project.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional Project project = 1;
- * @return {?proto.payment.v1alpha1.Project}
+ * optional string status = 1;
+ * @return {string}
  */
-proto.payment.v1alpha1.StopProjectResponse.prototype.getProject = function() {
-  return /** @type{?proto.payment.v1alpha1.Project} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 1));
+proto.payment.v1alpha1.StopProjectResponse.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.Project|undefined} value
- * @return {!proto.payment.v1alpha1.StopProjectResponse} returns this
-*/
-proto.payment.v1alpha1.StopProjectResponse.prototype.setProject = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.StopProjectResponse} returns this
  */
-proto.payment.v1alpha1.StopProjectResponse.prototype.clearProject = function() {
-  return this.setProject(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.payment.v1alpha1.StopProjectResponse.prototype.hasProject = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.payment.v1alpha1.StopProjectResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

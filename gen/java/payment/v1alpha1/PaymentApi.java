@@ -19,29 +19,35 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    java.lang.String getOrganizationId();
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
-     */
-    com.google.protobuf.ByteString
-        getOrganizationIdBytes();
+    int getOrganizationId();
 
     /**
-     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
+
+    /**
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @return Whether the project field is set.
      */
     boolean hasProject();
     /**
-     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @return The project.
      */
     payment.v1alpha1.PaymentOuterClass.Project getProject();
     /**
-     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder();
   }
@@ -58,7 +64,7 @@ public final class PaymentApi {
       super(builder);
     }
     private StopProjectRequest() {
-      organizationId_ = "";
+      projectId_ = "";
     }
 
     @java.lang.Override
@@ -91,13 +97,18 @@ public final class PaymentApi {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              organizationId_ = s;
+              organizationId_ = input.readUInt32();
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+            case 26: {
               payment.v1alpha1.PaymentOuterClass.Project.Builder subBuilder = null;
               if (project_ != null) {
                 subBuilder = project_.toBuilder();
@@ -143,47 +154,58 @@ public final class PaymentApi {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object organizationId_;
+    private int organizationId_;
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public java.lang.String getOrganizationId() {
-      java.lang.Object ref = organizationId_;
+    public int getOrganizationId() {
+      return organizationId_;
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        organizationId_ = s;
+        projectId_ = s;
         return s;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOrganizationIdBytes() {
-      java.lang.Object ref = organizationId_;
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        organizationId_ = b;
+        projectId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PROJECT_FIELD_NUMBER = 2;
+    public static final int PROJECT_FIELD_NUMBER = 3;
     private payment.v1alpha1.PaymentOuterClass.Project project_;
     /**
-     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @return Whether the project field is set.
      */
     @java.lang.Override
@@ -191,7 +213,7 @@ public final class PaymentApi {
       return project_ != null;
     }
     /**
-     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      * @return The project.
      */
     @java.lang.Override
@@ -199,7 +221,7 @@ public final class PaymentApi {
       return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
     }
     /**
-     * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+     * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
      */
     @java.lang.Override
     public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
@@ -220,11 +242,14 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getOrganizationIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      if (organizationId_ != 0) {
+        output.writeUInt32(1, organizationId_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
       if (project_ != null) {
-        output.writeMessage(2, getProject());
+        output.writeMessage(3, getProject());
       }
       unknownFields.writeTo(output);
     }
@@ -235,12 +260,16 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getOrganizationIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      if (organizationId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, organizationId_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
       if (project_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getProject());
+          .computeMessageSize(3, getProject());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -257,8 +286,10 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.StopProjectRequest other = (payment.v1alpha1.PaymentApi.StopProjectRequest) obj;
 
-      if (!getOrganizationId()
-          .equals(other.getOrganizationId())) return false;
+      if (getOrganizationId()
+          != other.getOrganizationId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (hasProject() != other.hasProject()) return false;
       if (hasProject()) {
         if (!getProject()
@@ -276,7 +307,9 @@ public final class PaymentApi {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
       if (hasProject()) {
         hash = (37 * hash) + PROJECT_FIELD_NUMBER;
         hash = (53 * hash) + getProject().hashCode();
@@ -414,7 +447,9 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = "";
+        organizationId_ = 0;
+
+        projectId_ = "";
 
         if (projectBuilder_ == null) {
           project_ = null;
@@ -449,6 +484,7 @@ public final class PaymentApi {
       public payment.v1alpha1.PaymentApi.StopProjectRequest buildPartial() {
         payment.v1alpha1.PaymentApi.StopProjectRequest result = new payment.v1alpha1.PaymentApi.StopProjectRequest(this);
         result.organizationId_ = organizationId_;
+        result.projectId_ = projectId_;
         if (projectBuilder_ == null) {
           result.project_ = project_;
         } else {
@@ -502,8 +538,11 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.StopProjectRequest other) {
         if (other == payment.v1alpha1.PaymentApi.StopProjectRequest.getDefaultInstance()) return this;
-        if (!other.getOrganizationId().isEmpty()) {
-          organizationId_ = other.organizationId_;
+        if (other.getOrganizationId() != 0) {
+          setOrganizationId(other.getOrganizationId());
+        }
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
           onChanged();
         }
         if (other.hasProject()) {
@@ -538,78 +577,109 @@ public final class PaymentApi {
         return this;
       }
 
-      private java.lang.Object organizationId_ = "";
+      private int organizationId_ ;
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      public java.lang.String getOrganizationId() {
-        java.lang.Object ref = organizationId_;
+      @java.lang.Override
+      public int getOrganizationId() {
+        return organizationId_;
+      }
+      /**
+       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(int value) {
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          organizationId_ = s;
+          projectId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @return The bytes for organizationId.
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
        */
       public com.google.protobuf.ByteString
-          getOrganizationIdBytes() {
-        java.lang.Object ref = organizationId_;
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          organizationId_ = b;
+          projectId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(
+      public Builder setProjectId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        organizationId_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationId() {
+      public Builder clearProjectId() {
         
-        organizationId_ = getDefaultInstance().getOrganizationId();
+        projectId_ = getDefaultInstance().getProjectId();
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @param value The bytes for organizationId to set.
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationIdBytes(
+      public Builder setProjectIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        organizationId_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -618,14 +688,14 @@ public final class PaymentApi {
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectBuilder_;
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        * @return Whether the project field is set.
        */
       public boolean hasProject() {
         return projectBuilder_ != null || project_ != null;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        * @return The project.
        */
       public payment.v1alpha1.PaymentOuterClass.Project getProject() {
@@ -636,7 +706,7 @@ public final class PaymentApi {
         }
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       public Builder setProject(payment.v1alpha1.PaymentOuterClass.Project value) {
         if (projectBuilder_ == null) {
@@ -652,7 +722,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       public Builder setProject(
           payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
@@ -666,7 +736,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.Project value) {
         if (projectBuilder_ == null) {
@@ -684,7 +754,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       public Builder clearProject() {
         if (projectBuilder_ == null) {
@@ -698,7 +768,7 @@ public final class PaymentApi {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectBuilder() {
         
@@ -706,7 +776,7 @@ public final class PaymentApi {
         return getProjectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
         if (projectBuilder_ != null) {
@@ -717,7 +787,7 @@ public final class PaymentApi {
         }
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
+       * <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
@@ -790,19 +860,16 @@ public final class PaymentApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The status.
      */
-    boolean hasProject();
+    java.lang.String getStatus();
     /**
-     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-     * @return The project.
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
-    payment.v1alpha1.PaymentOuterClass.Project getProject();
-    /**
-     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-     */
-    payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder();
+    com.google.protobuf.ByteString
+        getStatusBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.StopProjectResponse}
@@ -817,6 +884,7 @@ public final class PaymentApi {
       super(builder);
     }
     private StopProjectResponse() {
+      status_ = "";
     }
 
     @java.lang.Override
@@ -850,16 +918,9 @@ public final class PaymentApi {
               done = true;
               break;
             case 10: {
-              payment.v1alpha1.PaymentOuterClass.Project.Builder subBuilder = null;
-              if (project_ != null) {
-                subBuilder = project_.toBuilder();
-              }
-              project_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Project.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(project_);
-                project_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              status_ = s;
               break;
             }
             default: {
@@ -894,30 +955,42 @@ public final class PaymentApi {
               payment.v1alpha1.PaymentApi.StopProjectResponse.class, payment.v1alpha1.PaymentApi.StopProjectResponse.Builder.class);
     }
 
-    public static final int PROJECT_FIELD_NUMBER = 1;
-    private payment.v1alpha1.PaymentOuterClass.Project project_;
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object status_;
     /**
-     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-     * @return Whether the project field is set.
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The status.
      */
     @java.lang.Override
-    public boolean hasProject() {
-      return project_ != null;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-     * @return The project.
+     * <code>string status = 1 [json_name = "status"];</code>
+     * @return The bytes for status.
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.Project getProject() {
-      return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
-    }
-    /**
-     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-     */
-    @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
-      return getProject();
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -934,8 +1007,8 @@ public final class PaymentApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (project_ != null) {
-        output.writeMessage(1, getProject());
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -946,9 +1019,8 @@ public final class PaymentApi {
       if (size != -1) return size;
 
       size = 0;
-      if (project_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getProject());
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -965,11 +1037,8 @@ public final class PaymentApi {
       }
       payment.v1alpha1.PaymentApi.StopProjectResponse other = (payment.v1alpha1.PaymentApi.StopProjectResponse) obj;
 
-      if (hasProject() != other.hasProject()) return false;
-      if (hasProject()) {
-        if (!getProject()
-            .equals(other.getProject())) return false;
-      }
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -981,10 +1050,8 @@ public final class PaymentApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasProject()) {
-        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
-        hash = (53 * hash) + getProject().hashCode();
-      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1118,12 +1185,8 @@ public final class PaymentApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (projectBuilder_ == null) {
-          project_ = null;
-        } else {
-          project_ = null;
-          projectBuilder_ = null;
-        }
+        status_ = "";
+
         return this;
       }
 
@@ -1150,11 +1213,7 @@ public final class PaymentApi {
       @java.lang.Override
       public payment.v1alpha1.PaymentApi.StopProjectResponse buildPartial() {
         payment.v1alpha1.PaymentApi.StopProjectResponse result = new payment.v1alpha1.PaymentApi.StopProjectResponse(this);
-        if (projectBuilder_ == null) {
-          result.project_ = project_;
-        } else {
-          result.project_ = projectBuilder_.build();
-        }
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -1203,8 +1262,9 @@ public final class PaymentApi {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentApi.StopProjectResponse other) {
         if (other == payment.v1alpha1.PaymentApi.StopProjectResponse.getDefaultInstance()) return this;
-        if (other.hasProject()) {
-          mergeProject(other.getProject());
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1235,123 +1295,80 @@ public final class PaymentApi {
         return this;
       }
 
-      private payment.v1alpha1.PaymentOuterClass.Project project_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectBuilder_;
+      private java.lang.Object status_ = "";
       /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-       * @return Whether the project field is set.
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @return The status.
        */
-      public boolean hasProject() {
-        return projectBuilder_ != null || project_ != null;
-      }
-      /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-       * @return The project.
-       */
-      public payment.v1alpha1.PaymentOuterClass.Project getProject() {
-        if (projectBuilder_ == null) {
-          return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
         } else {
-          return projectBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @return The bytes for status.
        */
-      public Builder setProject(payment.v1alpha1.PaymentOuterClass.Project value) {
-        if (projectBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          project_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
         } else {
-          projectBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
        */
-      public Builder setProject(
-          payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
-        if (projectBuilder_ == null) {
-          project_ = builderForValue.build();
-          onChanged();
-        } else {
-          projectBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-       */
-      public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.Project value) {
-        if (projectBuilder_ == null) {
-          if (project_ != null) {
-            project_ =
-              payment.v1alpha1.PaymentOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
-          } else {
-            project_ = value;
-          }
-          onChanged();
-        } else {
-          projectBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-       */
-      public Builder clearProject() {
-        if (projectBuilder_ == null) {
-          project_ = null;
-          onChanged();
-        } else {
-          project_ = null;
-          projectBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
-       */
-      public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectBuilder() {
-        
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
         onChanged();
-        return getProjectFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @return This builder for chaining.
        */
-      public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
-        if (projectBuilder_ != null) {
-          return projectBuilder_.getMessageOrBuilder();
-        } else {
-          return project_ == null ?
-              payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
-        }
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
       }
       /**
-       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * <code>string status = 1 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
-          getProjectFieldBuilder() {
-        if (projectBuilder_ == null) {
-          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder>(
-                  getProject(),
-                  getParentForChildren(),
-                  isClean());
-          project_ = null;
-        }
-        return projectBuilder_;
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -34855,194 +34872,194 @@ public final class PaymentApi {
     java.lang.String[] descriptorData = {
       "\n\"payment/v1alpha1/payment_api.proto\022\020pa" +
       "yment.v1alpha1\032\036payment/v1alpha1/payment" +
-      ".proto\"r\n\022StopProjectRequest\022\'\n\017organiza" +
-      "tion_id\030\001 \001(\tR\016organizationId\0223\n\007project" +
-      "\030\002 \001(\0132\031.payment.v1alpha1.ProjectR\007proje" +
-      "ct\"J\n\023StopProjectResponse\0223\n\007project\030\001 \001" +
-      "(\0132\031.payment.v1alpha1.ProjectR\007project\"\261" +
-      "\002\n\024InvoiceFilterRequest\022\'\n\017organization_" +
-      "id\030\001 \001(\rR\016organizationId\022\035\n\ninvoice_id\030\002" +
-      " \001(\tR\tinvoiceId\022\022\n\004year\030\003 \001(\tR\004year\022\024\n\005m" +
-      "onth\030\004 \001(\tR\005month\022\037\n\013customer_id\030\005 \001(\tR\n" +
-      "customerId\022\035\n\nproject_id\030\006 \001(\tR\tprojectI" +
-      "d\022\020\n\003cpu\030\007 \001(\001R\003cpu\022\020\n\003ram\030\010 \001(\001R\003ram\022C\n" +
-      "\rcustomer_list\030\t \001(\0132\036.payment.v1alpha1." +
-      "CustomerListR\014customerList\"\246\001\n\025InvoiceFi" +
-      "lterResponse\0226\n\010customer\030\001 \001(\0132\032.payment" +
-      ".v1alpha1.CustomerR\010customer\022=\n\013biling_l" +
-      "ist\030\002 \001(\0132\034.payment.v1alpha1.BilingListR" +
-      "\nbilingList\022\026\n\006status\030\003 \001(\tR\006status\"a\n\025D" +
-      "eleteCustomerRequest\022\'\n\017organization_id\030" +
-      "\001 \001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001" +
-      "(\tR\ncustomerId\"h\n\026DeleteCustomerResponse" +
-      "\022\026\n\006status\030\001 \001(\tR\006status\0226\n\010customer\030\002 \001" +
-      "(\0132\032.payment.v1alpha1.CustomerR\010customer" +
-      "\"j\n\026GetSubscriptionRequest\022\'\n\017organizati" +
-      "on_id\030\001 \001(\rR\016organizationId\022\'\n\017subscript" +
-      "ion_id\030\002 \001(\tR\016subscriptionId\"u\n\027GetSubsc" +
-      "riptionResponse\022B\n\014subscription\030\001 \001(\0132\036." +
-      "payment.v1alpha1.SubscriptionR\014subscript" +
-      "ion\022\026\n\006status\030\002 \001(\tR\006status\"A\n\026GetOrgani" +
-      "zationRequest\022\'\n\017organization_id\030\001 \001(\rR\016" +
-      "organizationId\"i\n\027GetOrganizationRespons" +
-      "e\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.C" +
-      "ustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006statu" +
-      "s\"^\n\022GetCustomerRequest\022\'\n\017organization_" +
+      ".proto\"\221\001\n\022StopProjectRequest\022\'\n\017organiz" +
+      "ation_id\030\001 \001(\rR\016organizationId\022\035\n\nprojec" +
+      "t_id\030\002 \001(\tR\tprojectId\0223\n\007project\030\003 \001(\0132\031" +
+      ".payment.v1alpha1.ProjectR\007project\"-\n\023St" +
+      "opProjectResponse\022\026\n\006status\030\001 \001(\tR\006statu" +
+      "s\"\261\002\n\024InvoiceFilterRequest\022\'\n\017organizati" +
+      "on_id\030\001 \001(\rR\016organizationId\022\035\n\ninvoice_i" +
+      "d\030\002 \001(\tR\tinvoiceId\022\022\n\004year\030\003 \001(\tR\004year\022\024" +
+      "\n\005month\030\004 \001(\tR\005month\022\037\n\013customer_id\030\005 \001(" +
+      "\tR\ncustomerId\022\035\n\nproject_id\030\006 \001(\tR\tproje" +
+      "ctId\022\020\n\003cpu\030\007 \001(\001R\003cpu\022\020\n\003ram\030\010 \001(\001R\003ram" +
+      "\022C\n\rcustomer_list\030\t \001(\0132\036.payment.v1alph" +
+      "a1.CustomerListR\014customerList\"\246\001\n\025Invoic" +
+      "eFilterResponse\0226\n\010customer\030\001 \001(\0132\032.paym" +
+      "ent.v1alpha1.CustomerR\010customer\022=\n\013bilin" +
+      "g_list\030\002 \001(\0132\034.payment.v1alpha1.BilingLi" +
+      "stR\nbilingList\022\026\n\006status\030\003 \001(\tR\006status\"a" +
+      "\n\025DeleteCustomerRequest\022\'\n\017organization_" +
       "id\030\001 \001(\rR\016organizationId\022\037\n\013customer_id\030" +
-      "\002 \001(\tR\ncustomerId\"e\n\023GetCustomerResponse" +
-      "\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cu" +
-      "stomerR\010customer\022\026\n\006status\030\002 \001(\tR\006status" +
-      "\"_\n\025GetBilingMonthRequest\022\'\n\017organizatio" +
-      "n_id\030\001 \001(\rR\016organizationId\022\035\n\ninvoice_id" +
-      "\030\002 \001(\tR\tinvoiceId\"b\n\026GetBilingMonthRespo" +
-      "nse\0220\n\006biling\030\001 \001(\0132\030.payment.v1alpha1.B" +
-      "ilingR\006biling\022\026\n\006status\030\002 \001(\tR\006status\"^\n" +
-      "\022GetPaymentsRequest\022\'\n\017organization_id\030\001" +
-      " \001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001(" +
-      "\tR\ncustomerId\"]\n\023GetPaymentsResponse\022.\n\004" +
-      "card\030\001 \001(\0132\032.payment.v1alpha1.CardListR\004" +
-      "card\022\026\n\006status\030\002 \001(\tR\006status\"\251\001\n\031CreateS" +
-      "ubscriptionRequest\022\'\n\017organization_id\030\001 " +
-      "\001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001(\t" +
-      "R\ncustomerId\022B\n\014subscription\030\003 \001(\0132\036.pay" +
-      "ment.v1alpha1.SubscriptionR\014subscription" +
-      "\"x\n\032CreateSubscriptionResponse\022B\n\014subscr" +
-      "iption\030\001 \001(\0132\036.payment.v1alpha1.Subscrip" +
-      "tionR\014subscription\022\026\n\006status\030\002 \001(\tR\006stat" +
-      "us\"m\n\031UpdateSubscriptionRequest\022\'\n\017subsc" +
-      "ription_id\030\001 \001(\tR\016subscriptionId\022\'\n\017orga" +
-      "nization_id\030\002 \001(\rR\016organizationId\"l\n\032Upd" +
-      "ateSubscriptionResponse\0226\n\010customer\030\001 \001(" +
-      "\0132\032.payment.v1alpha1.CustomerR\010customer\022" +
-      "\026\n\006status\030\002 \001(\tR\006status\"t\n\024CreateProject" +
-      "Request\022\'\n\017organization_id\030\001 \001(\rR\016organi" +
-      "zationId\0223\n\007project\030\002 \001(\0132\031.payment.v1al" +
-      "pha1.ProjectR\007project\"/\n\025CreateProjectRe" +
-      "sponse\022\026\n\006status\030\001 \001(\tR\006status\"\340\001\n\024Creat" +
-      "eInvoiceRequest\022\'\n\017organization_id\030\001 \001(\r" +
-      "R\016organizationId\022\035\n\ninvoice_id\030\002 \001(\tR\tin" +
-      "voiceId\022\022\n\004year\030\003 \001(\tR\004year\022\024\n\005month\030\004 \001" +
-      "(\tR\005month\022\037\n\013customer_id\030\005 \001(\tR\ncustomer" +
-      "Id\022\035\n\nproject_id\030\006 \001(\tR\tprojectId\022\026\n\006sta" +
-      "tus\030\007 \001(\tR\006status\"g\n\025CreateInvoiceRespon" +
-      "se\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1." +
-      "CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006stat" +
-      "us\"\211\001\n\021CreateCardRequest\022\'\n\017organization" +
-      "_id\030\001 \001(\rR\016organizationId\022\037\n\013customer_id" +
-      "\030\002 \001(\tR\ncustomerId\022*\n\004card\030\003 \001(\0132\026.payme" +
-      "nt.v1alpha1.CardR\004card\"G\n\022CreateCardResp" +
-      "onse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026\n\006statu" +
-      "s\030\002 \001(\tR\006status\"\216\001\n\031CancelSubscriptionRe" +
-      "quest\022\'\n\017organization_id\030\001 \001(\rR\016organiza" +
-      "tionId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\022" +
-      "\'\n\017subscription_id\030\003 \001(\tR\016subscriptionId" +
-      "\"4\n\032CancelSubscriptionResponse\022\026\n\006status" +
-      "\030\001 \001(\tR\006status\"O\n\025CreateCustomerRequest\022" +
-      "6\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cus" +
-      "tomerR\010customer\"Q\n\026CreateCustomerRespons" +
-      "e\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\026\n\006st" +
-      "atus\030\002 \001(\tR\006status\"\225\001\n\024CreatePaymentRequ" +
-      "est\022\'\n\017organization_id\030\001 \001(\rR\016organizati" +
-      "onId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\0223\n" +
-      "\007payment\030\003 \001(\0132\031.payment.v1alpha1.Paymen" +
-      "tR\007payment\"H\n\025CreatePaymentResponse\022\027\n\007c" +
-      "ard_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR\006st" +
-      "atus\"y\n\024DeletePaymentRequest\022\'\n\017organiza" +
-      "tion_id\030\001 \001(\rR\016organizationId\022\037\n\013custome" +
-      "r_id\030\002 \001(\tR\ncustomerId\022\027\n\007card_id\030\003 \001(\tR" +
-      "\006cardId\"/\n\025DeletePaymentResponse\022\026\n\006stat" +
-      "us\030\001 \001(\tR\006status\"v\n\021GetPaymentRequest\022\'\n" +
-      "\017organization_id\030\001 \001(\rR\016organizationId\022\037" +
-      "\n\013customer_id\030\002 \001(\tR\ncustomerId\022\027\n\007card_" +
-      "id\030\003 \001(\tR\006cardId\"a\n\022GetPaymentResponse\0223" +
-      "\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Payme" +
-      "ntR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"^\n\022L" +
-      "istPaymentRequest\022\'\n\017organization_id\030\001 \001" +
-      "(\rR\016organizationId\022\037\n\013customer_id\030\002 \001(\tR" +
-      "\ncustomerId\"o\n\023ListPaymentResponse\022@\n\014pa" +
-      "yment_list\030\001 \001(\0132\035.payment.v1alpha1.Paym" +
-      "entListR\013paymentList\022\026\n\006status\030\002 \001(\tR\006st" +
-      "atus\"p\n\034ListSubscriptionItemsRequest\022\'\n\017" +
-      "organization_id\030\001 \001(\rR\016organizationId\022\'\n" +
-      "\017subscription_id\030\002 \001(\tR\016subscriptionId\"\320" +
-      "\001\n\035ListSubscriptionItemsResponse\0226\n\010cust" +
-      "omer\030\001 \001(\0132\032.payment.v1alpha1.CustomerR\010" +
-      "customer\022_\n\027subscription_items_list\030\002 \001(" +
-      "\0132\'.payment.v1alpha1.SubscriptionItemsLi" +
-      "stR\025subscriptionItemsList\022\026\n\006status\030\003 \001(" +
-      "\tR\006status\">\n\023ListProjectsRequest\022\'\n\017orga" +
-      "nization_id\030\001 \001(\rR\016organizationId\"f\n\024Lis" +
-      "tProjectsResponse\0226\n\010customer\030\001 \001(\0132\032.pa" +
-      "yment.v1alpha1.CustomerR\010customer\022\026\n\006sta" +
-      "tus\030\002 \001(\tR\006status\"[\n\021GetProjectRequest\022\'" +
-      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
-      "\035\n\nproject_id\030\002 \001(\tR\tprojectId\"d\n\022GetPro" +
-      "jectResponse\0226\n\010customer\030\001 \001(\0132\032.payment" +
-      ".v1alpha1.CustomerR\010customer\022\026\n\006status\030\002" +
-      " \001(\tR\006status\"\223\001\n\024DeleteProjectRequest\022\'\n" +
-      "\017organization_id\030\001 \001(\rR\016organizationId\022\035" +
-      "\n\nproject_id\030\002 \001(\tR\tprojectId\0223\n\007project" +
-      "\030\003 \001(\0132\031.payment.v1alpha1.ProjectR\007proje" +
-      "ct\"/\n\025DeleteProjectResponse\022\026\n\006status\030\001 " +
-      "\001(\tR\006status2\330\021\n\021PaymentAPIService\022e\n\016Cre" +
-      "ateCustomer\022\'.payment.v1alpha1.CreateCus" +
-      "tomerRequest\032(.payment.v1alpha1.CreateCu" +
-      "stomerResponse\"\000\022q\n\022CreateSubscription\022+" +
-      ".payment.v1alpha1.CreateSubscriptionRequ" +
-      "est\032,.payment.v1alpha1.CreateSubscriptio" +
-      "nResponse\"\000\022b\n\rCreatePayment\022&.payment.v" +
-      "1alpha1.CreatePaymentRequest\032\'.payment.v" +
-      "1alpha1.CreatePaymentResponse\"\000\022Y\n\nCreat" +
-      "eCard\022#.payment.v1alpha1.CreateCardReque" +
-      "st\032$.payment.v1alpha1.CreateCardResponse" +
-      "\"\000\022b\n\rCreateProject\022&.payment.v1alpha1.C" +
-      "reateProjectRequest\032\'.payment.v1alpha1.C" +
-      "reateProjectResponse\"\000\022b\n\rCreateInvoice\022" +
-      "&.payment.v1alpha1.CreateInvoiceRequest\032" +
-      "\'.payment.v1alpha1.CreateInvoiceResponse" +
-      "\"\000\022h\n\017GetOrganization\022(.payment.v1alpha1" +
-      ".GetOrganizationRequest\032).payment.v1alph" +
-      "a1.GetOrganizationResponse\"\000\022h\n\017GetSubsc" +
-      "ription\022(.payment.v1alpha1.GetSubscripti" +
-      "onRequest\032).payment.v1alpha1.GetSubscrip" +
-      "tionResponse\"\000\022Y\n\nGetPayment\022#.payment.v" +
-      "1alpha1.GetPaymentRequest\032$.payment.v1al" +
-      "pha1.GetPaymentResponse\"\000\022\\\n\013GetCustomer" +
-      "\022$.payment.v1alpha1.GetCustomerRequest\032%" +
-      ".payment.v1alpha1.GetCustomerResponse\"\000\022" +
-      "e\n\016GetBilingMonth\022\'.payment.v1alpha1.Get" +
-      "BilingMonthRequest\032(.payment.v1alpha1.Ge" +
-      "tBilingMonthResponse\"\000\022\\\n\013GetPayments\022$." +
-      "payment.v1alpha1.GetPaymentsRequest\032%.pa" +
-      "yment.v1alpha1.GetPaymentsResponse\"\000\022_\n\014" +
-      "ListProjects\022%.payment.v1alpha1.ListProj" +
-      "ectsRequest\032&.payment.v1alpha1.ListProje" +
-      "ctsResponse\"\000\022\\\n\013ListPayment\022$.payment.v" +
-      "1alpha1.ListPaymentRequest\032%.payment.v1a" +
-      "lpha1.ListPaymentResponse\"\000\022z\n\025ListSubsc" +
-      "riptionItems\022..payment.v1alpha1.ListSubs" +
-      "criptionItemsRequest\032/.payment.v1alpha1." +
-      "ListSubscriptionItemsResponse\"\000\022q\n\022Updat" +
-      "eSubscription\022+.payment.v1alpha1.UpdateS" +
-      "ubscriptionRequest\032,.payment.v1alpha1.Up" +
-      "dateSubscriptionResponse\"\000\022b\n\rDeleteProj" +
-      "ect\022&.payment.v1alpha1.DeleteProjectRequ" +
-      "est\032\'.payment.v1alpha1.DeleteProjectResp" +
-      "onse\"\000\022b\n\rDeletePayment\022&.payment.v1alph" +
-      "a1.DeletePaymentRequest\032\'.payment.v1alph" +
-      "a1.DeletePaymentResponse\"\000\022q\n\022CancelSubs" +
-      "cription\022+.payment.v1alpha1.CancelSubscr" +
-      "iptionRequest\032,.payment.v1alpha1.CancelS" +
-      "ubscriptionResponse\"\000\022e\n\016DeleteCustomer\022" +
-      "\'.payment.v1alpha1.DeleteCustomerRequest" +
-      "\032(.payment.v1alpha1.DeleteCustomerRespon" +
-      "se\"\000\022b\n\rInvoiceFilter\022&.payment.v1alpha1" +
-      ".InvoiceFilterRequest\032\'.payment.v1alpha1" +
-      ".InvoiceFilterResponse\"\000\022\\\n\013StopProject\022" +
-      "$.payment.v1alpha1.StopProjectRequest\032%." +
-      "payment.v1alpha1.StopProjectResponse\"\000B8" +
-      "Z6github.com/cuemby/ccp-payment-service/" +
-      "payment/v1alpha1b\006proto3"
+      "\002 \001(\tR\ncustomerId\"h\n\026DeleteCustomerRespo" +
+      "nse\022\026\n\006status\030\001 \001(\tR\006status\0226\n\010customer\030" +
+      "\002 \001(\0132\032.payment.v1alpha1.CustomerR\010custo" +
+      "mer\"j\n\026GetSubscriptionRequest\022\'\n\017organiz" +
+      "ation_id\030\001 \001(\rR\016organizationId\022\'\n\017subscr" +
+      "iption_id\030\002 \001(\tR\016subscriptionId\"u\n\027GetSu" +
+      "bscriptionResponse\022B\n\014subscription\030\001 \001(\013" +
+      "2\036.payment.v1alpha1.SubscriptionR\014subscr" +
+      "iption\022\026\n\006status\030\002 \001(\tR\006status\"A\n\026GetOrg" +
+      "anizationRequest\022\'\n\017organization_id\030\001 \001(" +
+      "\rR\016organizationId\"i\n\027GetOrganizationResp" +
+      "onse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha" +
+      "1.CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus\"^\n\022GetCustomerRequest\022\'\n\017organizati" +
+      "on_id\030\001 \001(\rR\016organizationId\022\037\n\013customer_" +
+      "id\030\002 \001(\tR\ncustomerId\"e\n\023GetCustomerRespo" +
+      "nse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1" +
+      ".CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006sta" +
+      "tus\"_\n\025GetBilingMonthRequest\022\'\n\017organiza" +
+      "tion_id\030\001 \001(\rR\016organizationId\022\035\n\ninvoice" +
+      "_id\030\002 \001(\tR\tinvoiceId\"b\n\026GetBilingMonthRe" +
+      "sponse\0220\n\006biling\030\001 \001(\0132\030.payment.v1alpha" +
+      "1.BilingR\006biling\022\026\n\006status\030\002 \001(\tR\006status" +
+      "\"^\n\022GetPaymentsRequest\022\'\n\017organization_i" +
+      "d\030\001 \001(\rR\016organizationId\022\037\n\013customer_id\030\002" +
+      " \001(\tR\ncustomerId\"]\n\023GetPaymentsResponse\022" +
+      ".\n\004card\030\001 \001(\0132\032.payment.v1alpha1.CardLis" +
+      "tR\004card\022\026\n\006status\030\002 \001(\tR\006status\"\251\001\n\031Crea" +
+      "teSubscriptionRequest\022\'\n\017organization_id" +
+      "\030\001 \001(\rR\016organizationId\022\037\n\013customer_id\030\002 " +
+      "\001(\tR\ncustomerId\022B\n\014subscription\030\003 \001(\0132\036." +
+      "payment.v1alpha1.SubscriptionR\014subscript" +
+      "ion\"x\n\032CreateSubscriptionResponse\022B\n\014sub" +
+      "scription\030\001 \001(\0132\036.payment.v1alpha1.Subsc" +
+      "riptionR\014subscription\022\026\n\006status\030\002 \001(\tR\006s" +
+      "tatus\"m\n\031UpdateSubscriptionRequest\022\'\n\017su" +
+      "bscription_id\030\001 \001(\tR\016subscriptionId\022\'\n\017o" +
+      "rganization_id\030\002 \001(\rR\016organizationId\"l\n\032" +
+      "UpdateSubscriptionResponse\0226\n\010customer\030\001" +
+      " \001(\0132\032.payment.v1alpha1.CustomerR\010custom" +
+      "er\022\026\n\006status\030\002 \001(\tR\006status\"t\n\024CreateProj" +
+      "ectRequest\022\'\n\017organization_id\030\001 \001(\rR\016org" +
+      "anizationId\0223\n\007project\030\002 \001(\0132\031.payment.v" +
+      "1alpha1.ProjectR\007project\"/\n\025CreateProjec" +
+      "tResponse\022\026\n\006status\030\001 \001(\tR\006status\"\340\001\n\024Cr" +
+      "eateInvoiceRequest\022\'\n\017organization_id\030\001 " +
+      "\001(\rR\016organizationId\022\035\n\ninvoice_id\030\002 \001(\tR" +
+      "\tinvoiceId\022\022\n\004year\030\003 \001(\tR\004year\022\024\n\005month\030" +
+      "\004 \001(\tR\005month\022\037\n\013customer_id\030\005 \001(\tR\ncusto" +
+      "merId\022\035\n\nproject_id\030\006 \001(\tR\tprojectId\022\026\n\006" +
+      "status\030\007 \001(\tR\006status\"g\n\025CreateInvoiceRes" +
+      "ponse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alph" +
+      "a1.CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006s" +
+      "tatus\"\211\001\n\021CreateCardRequest\022\'\n\017organizat" +
+      "ion_id\030\001 \001(\rR\016organizationId\022\037\n\013customer" +
+      "_id\030\002 \001(\tR\ncustomerId\022*\n\004card\030\003 \001(\0132\026.pa" +
+      "yment.v1alpha1.CardR\004card\"G\n\022CreateCardR" +
+      "esponse\022\031\n\010token_id\030\001 \001(\tR\007tokenId\022\026\n\006st" +
+      "atus\030\002 \001(\tR\006status\"\216\001\n\031CancelSubscriptio" +
+      "nRequest\022\'\n\017organization_id\030\001 \001(\rR\016organ" +
+      "izationId\022\037\n\013customer_id\030\002 \001(\tR\ncustomer" +
+      "Id\022\'\n\017subscription_id\030\003 \001(\tR\016subscriptio" +
+      "nId\"4\n\032CancelSubscriptionResponse\022\026\n\006sta" +
+      "tus\030\001 \001(\tR\006status\"O\n\025CreateCustomerReque" +
+      "st\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1." +
+      "CustomerR\010customer\"Q\n\026CreateCustomerResp" +
+      "onse\022\037\n\013customer_id\030\001 \001(\tR\ncustomerId\022\026\n" +
+      "\006status\030\002 \001(\tR\006status\"\225\001\n\024CreatePaymentR" +
+      "equest\022\'\n\017organization_id\030\001 \001(\rR\016organiz" +
+      "ationId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId" +
+      "\0223\n\007payment\030\003 \001(\0132\031.payment.v1alpha1.Pay" +
+      "mentR\007payment\"H\n\025CreatePaymentResponse\022\027" +
+      "\n\007card_id\030\001 \001(\tR\006cardId\022\026\n\006status\030\002 \001(\tR" +
+      "\006status\"y\n\024DeletePaymentRequest\022\'\n\017organ" +
+      "ization_id\030\001 \001(\rR\016organizationId\022\037\n\013cust" +
+      "omer_id\030\002 \001(\tR\ncustomerId\022\027\n\007card_id\030\003 \001" +
+      "(\tR\006cardId\"/\n\025DeletePaymentResponse\022\026\n\006s" +
+      "tatus\030\001 \001(\tR\006status\"v\n\021GetPaymentRequest" +
+      "\022\'\n\017organization_id\030\001 \001(\rR\016organizationI" +
+      "d\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId\022\027\n\007ca" +
+      "rd_id\030\003 \001(\tR\006cardId\"a\n\022GetPaymentRespons" +
+      "e\0223\n\007payment\030\001 \001(\0132\031.payment.v1alpha1.Pa" +
+      "ymentR\007payment\022\026\n\006status\030\002 \001(\tR\006status\"^" +
+      "\n\022ListPaymentRequest\022\'\n\017organization_id\030" +
+      "\001 \001(\rR\016organizationId\022\037\n\013customer_id\030\002 \001" +
+      "(\tR\ncustomerId\"o\n\023ListPaymentResponse\022@\n" +
+      "\014payment_list\030\001 \001(\0132\035.payment.v1alpha1.P" +
+      "aymentListR\013paymentList\022\026\n\006status\030\002 \001(\tR" +
+      "\006status\"p\n\034ListSubscriptionItemsRequest\022" +
+      "\'\n\017organization_id\030\001 \001(\rR\016organizationId" +
+      "\022\'\n\017subscription_id\030\002 \001(\tR\016subscriptionI" +
+      "d\"\320\001\n\035ListSubscriptionItemsResponse\0226\n\010c" +
+      "ustomer\030\001 \001(\0132\032.payment.v1alpha1.Custome" +
+      "rR\010customer\022_\n\027subscription_items_list\030\002" +
+      " \001(\0132\'.payment.v1alpha1.SubscriptionItem" +
+      "sListR\025subscriptionItemsList\022\026\n\006status\030\003" +
+      " \001(\tR\006status\">\n\023ListProjectsRequest\022\'\n\017o" +
+      "rganization_id\030\001 \001(\rR\016organizationId\"f\n\024" +
+      "ListProjectsResponse\0226\n\010customer\030\001 \001(\0132\032" +
+      ".payment.v1alpha1.CustomerR\010customer\022\026\n\006" +
+      "status\030\002 \001(\tR\006status\"[\n\021GetProjectReques" +
+      "t\022\'\n\017organization_id\030\001 \001(\tR\016organization" +
+      "Id\022\035\n\nproject_id\030\002 \001(\tR\tprojectId\"d\n\022Get" +
+      "ProjectResponse\0226\n\010customer\030\001 \001(\0132\032.paym" +
+      "ent.v1alpha1.CustomerR\010customer\022\026\n\006statu" +
+      "s\030\002 \001(\tR\006status\"\223\001\n\024DeleteProjectRequest" +
+      "\022\'\n\017organization_id\030\001 \001(\rR\016organizationI" +
+      "d\022\035\n\nproject_id\030\002 \001(\tR\tprojectId\0223\n\007proj" +
+      "ect\030\003 \001(\0132\031.payment.v1alpha1.ProjectR\007pr" +
+      "oject\"/\n\025DeleteProjectResponse\022\026\n\006status" +
+      "\030\001 \001(\tR\006status2\330\021\n\021PaymentAPIService\022e\n\016" +
+      "CreateCustomer\022\'.payment.v1alpha1.Create" +
+      "CustomerRequest\032(.payment.v1alpha1.Creat" +
+      "eCustomerResponse\"\000\022q\n\022CreateSubscriptio" +
+      "n\022+.payment.v1alpha1.CreateSubscriptionR" +
+      "equest\032,.payment.v1alpha1.CreateSubscrip" +
+      "tionResponse\"\000\022b\n\rCreatePayment\022&.paymen" +
+      "t.v1alpha1.CreatePaymentRequest\032\'.paymen" +
+      "t.v1alpha1.CreatePaymentResponse\"\000\022Y\n\nCr" +
+      "eateCard\022#.payment.v1alpha1.CreateCardRe" +
+      "quest\032$.payment.v1alpha1.CreateCardRespo" +
+      "nse\"\000\022b\n\rCreateProject\022&.payment.v1alpha" +
+      "1.CreateProjectRequest\032\'.payment.v1alpha" +
+      "1.CreateProjectResponse\"\000\022b\n\rCreateInvoi" +
+      "ce\022&.payment.v1alpha1.CreateInvoiceReque" +
+      "st\032\'.payment.v1alpha1.CreateInvoiceRespo" +
+      "nse\"\000\022h\n\017GetOrganization\022(.payment.v1alp" +
+      "ha1.GetOrganizationRequest\032).payment.v1a" +
+      "lpha1.GetOrganizationResponse\"\000\022h\n\017GetSu" +
+      "bscription\022(.payment.v1alpha1.GetSubscri" +
+      "ptionRequest\032).payment.v1alpha1.GetSubsc" +
+      "riptionResponse\"\000\022Y\n\nGetPayment\022#.paymen" +
+      "t.v1alpha1.GetPaymentRequest\032$.payment.v" +
+      "1alpha1.GetPaymentResponse\"\000\022\\\n\013GetCusto" +
+      "mer\022$.payment.v1alpha1.GetCustomerReques" +
+      "t\032%.payment.v1alpha1.GetCustomerResponse" +
+      "\"\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha1." +
+      "GetBilingMonthRequest\032(.payment.v1alpha1" +
+      ".GetBilingMonthResponse\"\000\022\\\n\013GetPayments" +
+      "\022$.payment.v1alpha1.GetPaymentsRequest\032%" +
+      ".payment.v1alpha1.GetPaymentsResponse\"\000\022" +
+      "_\n\014ListProjects\022%.payment.v1alpha1.ListP" +
+      "rojectsRequest\032&.payment.v1alpha1.ListPr" +
+      "ojectsResponse\"\000\022\\\n\013ListPayment\022$.paymen" +
+      "t.v1alpha1.ListPaymentRequest\032%.payment." +
+      "v1alpha1.ListPaymentResponse\"\000\022z\n\025ListSu" +
+      "bscriptionItems\022..payment.v1alpha1.ListS" +
+      "ubscriptionItemsRequest\032/.payment.v1alph" +
+      "a1.ListSubscriptionItemsResponse\"\000\022q\n\022Up" +
+      "dateSubscription\022+.payment.v1alpha1.Upda" +
+      "teSubscriptionRequest\032,.payment.v1alpha1" +
+      ".UpdateSubscriptionResponse\"\000\022b\n\rDeleteP" +
+      "roject\022&.payment.v1alpha1.DeleteProjectR" +
+      "equest\032\'.payment.v1alpha1.DeleteProjectR" +
+      "esponse\"\000\022b\n\rDeletePayment\022&.payment.v1a" +
+      "lpha1.DeletePaymentRequest\032\'.payment.v1a" +
+      "lpha1.DeletePaymentResponse\"\000\022q\n\022CancelS" +
+      "ubscription\022+.payment.v1alpha1.CancelSub" +
+      "scriptionRequest\032,.payment.v1alpha1.Canc" +
+      "elSubscriptionResponse\"\000\022e\n\016DeleteCustom" +
+      "er\022\'.payment.v1alpha1.DeleteCustomerRequ" +
+      "est\032(.payment.v1alpha1.DeleteCustomerRes" +
+      "ponse\"\000\022b\n\rInvoiceFilter\022&.payment.v1alp" +
+      "ha1.InvoiceFilterRequest\032\'.payment.v1alp" +
+      "ha1.InvoiceFilterResponse\"\000\022\\\n\013StopProje" +
+      "ct\022$.payment.v1alpha1.StopProjectRequest" +
+      "\032%.payment.v1alpha1.StopProjectResponse\"" +
+      "\000B8Z6github.com/cuemby/ccp-payment-servi" +
+      "ce/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -35054,13 +35071,13 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_StopProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_StopProjectRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "Project", });
+        new java.lang.String[] { "OrganizationId", "ProjectId", "Project", });
     internal_static_payment_v1alpha1_StopProjectResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_payment_v1alpha1_StopProjectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_StopProjectResponse_descriptor,
-        new java.lang.String[] { "Project", });
+        new java.lang.String[] { "Status", });
     internal_static_payment_v1alpha1_InvoiceFilterRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_payment_v1alpha1_InvoiceFilterRequest_fieldAccessorTable = new
