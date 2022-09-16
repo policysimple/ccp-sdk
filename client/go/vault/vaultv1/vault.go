@@ -212,7 +212,7 @@ func SaveTokenIntegrations(in *vaultpkgv1.SaveTokenIntegrationsRequest) (*vaultp
 	return response, nil
 }
 
-func GetTokenIntegrationsRequest(in *vaultpkgv1.GetTokenIntegrationsRequest) (*vaultpkgv1.GetTokenIntegrationsResponse, error) {
+func GetTokenIntegrations(in *vaultpkgv1.GetTokenIntegrationsRequest) (*vaultpkgv1.GetTokenIntegrationsResponse, error) {
 	bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
