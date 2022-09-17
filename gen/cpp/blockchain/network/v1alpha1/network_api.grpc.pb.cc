@@ -23,6 +23,8 @@ static const char* BlockchainAPIService_method_names[] = {
   "/blockchain.network.v1alpha1.BlockchainAPIService/CreateNetwork",
   "/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization",
   "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/CreateNetworkDefault",
 };
 
 std::unique_ptr< BlockchainAPIService::Stub> BlockchainAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -35,6 +37,8 @@ BlockchainAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   : channel_(channel), rpcmethod_CreateNetwork_(BlockchainAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddPeerToOrganization_(BlockchainAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateChannel_(BlockchainAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBlockchains_(BlockchainAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateNetworkDefault_(BlockchainAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status BlockchainAPIService::Stub::CreateNetwork(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::blockchain::network::v1alpha1::CreateNetworkResponse* response) {
@@ -85,6 +89,38 @@ void BlockchainAPIService::Stub::experimental_async::CreateChannel(::grpc::Clien
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateChannelResponse>::Create(channel_.get(), cq, rpcmethod_CreateChannel_, context, request, false);
 }
 
+::grpc::Status BlockchainAPIService::Stub::GetBlockchains(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest& request, ::blockchain::network::v1alpha1::GetBlockchainsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBlockchains_, context, request, response);
+}
+
+void BlockchainAPIService::Stub::experimental_async::GetBlockchains(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest* request, ::blockchain::network::v1alpha1::GetBlockchainsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBlockchains_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetBlockchainsResponse>* BlockchainAPIService::Stub::AsyncGetBlockchainsRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainsResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchains_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetBlockchainsResponse>* BlockchainAPIService::Stub::PrepareAsyncGetBlockchainsRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainsResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchains_, context, request, false);
+}
+
+::grpc::Status BlockchainAPIService::Stub::CreateNetworkDefault(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest& request, ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateNetworkDefault_, context, request, response);
+}
+
+void BlockchainAPIService::Stub::experimental_async::CreateNetworkDefault(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest* request, ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateNetworkDefault_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse>* BlockchainAPIService::Stub::AsyncCreateNetworkDefaultRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse>::Create(channel_.get(), cq, rpcmethod_CreateNetworkDefault_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse>* BlockchainAPIService::Stub::PrepareAsyncCreateNetworkDefaultRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse>::Create(channel_.get(), cq, rpcmethod_CreateNetworkDefault_, context, request, false);
+}
+
 BlockchainAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainAPIService_method_names[0],
@@ -101,6 +137,16 @@ BlockchainAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::CreateChannelRequest, ::blockchain::network::v1alpha1::CreateChannelResponse>(
           std::mem_fn(&BlockchainAPIService::Service::CreateChannel), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainAPIService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetBlockchainsRequest, ::blockchain::network::v1alpha1::GetBlockchainsResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::GetBlockchains), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainAPIService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest, ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::CreateNetworkDefault), this)));
 }
 
 BlockchainAPIService::Service::~Service() {
@@ -121,6 +167,20 @@ BlockchainAPIService::Service::~Service() {
 }
 
 ::grpc::Status BlockchainAPIService::Service::CreateChannel(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest* request, ::blockchain::network::v1alpha1::CreateChannelResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainAPIService::Service::GetBlockchains(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest* request, ::blockchain::network::v1alpha1::GetBlockchainsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainAPIService::Service::CreateNetworkDefault(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest* request, ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse* response) {
   (void) context;
   (void) request;
   (void) response;

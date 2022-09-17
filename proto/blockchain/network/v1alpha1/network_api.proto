@@ -10,10 +10,22 @@ service BlockchainAPIService {
     rpc CreateNetwork(CreateNetworkRequest) returns (CreateNetworkResponse);
     rpc AddPeerToOrganization(AddPeerToOrganizationRequest) returns (AddPeerToOrganizationResponse);
     rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
+    rpc GetBlockchains(GetBlockchainsRequest) returns (GetBlockchainsResponse);
+    rpc CreateNetworkDefault(CreateNetworkDefaultRequest) returns (CreateNetworkDefaultResponse);
 }
 
 message CreateNetworkRequest {
     blockchain.network.v1alpha1.Network network = 1;
+}
+
+message CreateNetworkDefaultResponse {
+    blockchain.network.v1alpha1.Network network = 1;
+    string status = 2;
+}
+
+message CreateNetworkDefaultRequest {
+    blockchain.network.v1alpha1.Network network = 1;
+    string status = 2;
 }
 
 message AddPeerToOrganizationRequest {
@@ -45,3 +57,13 @@ message CreateChannelResponse {
     string status = 1;
     string message = 2;
 }
+
+message GetBlockchainsResponse {
+    repeated blockchain.network.v1alpha1.Network network = 1;
+    string status = 2;
+}
+
+message GetBlockchainsRequest {
+    string status = 2;
+}
+

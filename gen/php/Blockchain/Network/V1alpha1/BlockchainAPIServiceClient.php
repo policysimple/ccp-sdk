@@ -55,4 +55,30 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Blockchain\Network\V1alpha1\GetBlockchainsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetBlockchains(\Blockchain\Network\V1alpha1\GetBlockchainsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\GetBlockchainsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Network\V1alpha1\CreateNetworkDefaultRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateNetworkDefault(\Blockchain\Network\V1alpha1\CreateNetworkDefaultRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateNetworkDefault',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\CreateNetworkDefaultResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

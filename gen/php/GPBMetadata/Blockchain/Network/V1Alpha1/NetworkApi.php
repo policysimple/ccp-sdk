@@ -17,10 +17,16 @@ class NetworkApi
         \GPBMetadata\Blockchain\Network\V1Alpha1\Network::initOnce();
         $pool->internalAddGeneratedFile(
             '
-æ	
+
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1"V
 CreateNetworkRequest>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork"Å
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork"v
+CreateNetworkDefaultResponse>
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork
+status (	Rstatus"u
+CreateNetworkDefaultRequest>
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork
+status (	Rstatus"Å
 AddPeerToOrganizationRequest
 
 org_domain (	R	orgDomain%
@@ -43,11 +49,18 @@ network_id (	R	networkId"¬
 message (	Rmessage"I
 CreateChannelResponse
 status (	Rstatus
-message (	Rmessage2—
+message (	Rmessage"p
+GetBlockchainsResponse>
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork
+status (	Rstatus"/
+GetBlockchainsRequest
+status (	Rstatus2 
 BlockchainAPIServicev
 CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseŽ
 AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsev
-CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponsey
+GetBlockchains2.blockchain.network.v1alpha1.GetBlockchainsRequest3.blockchain.network.v1alpha1.GetBlockchainsResponse‹
+CreateNetworkDefault8.blockchain.network.v1alpha1.CreateNetworkDefaultRequest9.blockchain.network.v1alpha1.CreateNetworkDefaultResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
