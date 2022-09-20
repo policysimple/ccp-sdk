@@ -1044,77 +1044,52 @@ public final class Thepower {
         getNodenameBytes();
 
     /**
-     * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
+     * <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
      * @return The tpicPort.
      */
-    java.lang.String getTpicPort();
-    /**
-     * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
-     * @return The bytes for tpicPort.
-     */
-    com.google.protobuf.ByteString
-        getTpicPortBytes();
+    long getTpicPort();
 
     /**
-     * <code>string api_port = 3 [json_name = "apiPort"];</code>
+     * <code>int64 api_port = 3 [json_name = "apiPort"];</code>
      * @return The apiPort.
      */
-    java.lang.String getApiPort();
-    /**
-     * <code>string api_port = 3 [json_name = "apiPort"];</code>
-     * @return The bytes for apiPort.
-     */
-    com.google.protobuf.ByteString
-        getApiPortBytes();
+    long getApiPort();
 
     /**
-     * <code>string apis_port = 4 [json_name = "apisPort"];</code>
+     * <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
      * @return The apisPort.
      */
-    java.lang.String getApisPort();
-    /**
-     * <code>string apis_port = 4 [json_name = "apisPort"];</code>
-     * @return The bytes for apisPort.
-     */
-    com.google.protobuf.ByteString
-        getApisPortBytes();
+    long getApisPort();
 
     /**
-     * <code>string cc_port = 5 [json_name = "ccPort"];</code>
+     * <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
      * @return The ccPort.
      */
-    java.lang.String getCcPort();
-    /**
-     * <code>string cc_port = 5 [json_name = "ccPort"];</code>
-     * @return The bytes for ccPort.
-     */
-    com.google.protobuf.ByteString
-        getCcPortBytes();
+    long getCcPort();
 
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @return A list containing the crosschainExternal.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal> 
         getCrosschainExternalList();
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @return The count of crosschainExternal.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+     */
+    blockchain.thepower.v1alpha1.Thepower.CrosschainExternal getCrosschainExternal(int index);
+    /**
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
     int getCrosschainExternalCount();
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @param index The index of the element to return.
-     * @return The crosschainExternal at the given index.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
-    java.lang.String getCrosschainExternal(int index);
+    java.util.List<? extends blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder> 
+        getCrosschainExternalOrBuilderList();
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the crosschainExternal at the given index.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
-    com.google.protobuf.ByteString
-        getCrosschainExternalBytes(int index);
+    blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder getCrosschainExternalOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.TpNode}
@@ -1130,11 +1105,7 @@ public final class Thepower {
     }
     private TpNode() {
       nodename_ = "";
-      tpicPort_ = "";
-      apiPort_ = "";
-      apisPort_ = "";
-      ccPort_ = "";
-      crosschainExternal_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      crosschainExternal_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1174,37 +1145,33 @@ public final class Thepower {
               nodename_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              tpicPort_ = s;
+              tpicPort_ = input.readInt64();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              apiPort_ = s;
+              apiPort_ = input.readInt64();
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
 
-              apisPort_ = s;
+              apisPort_ = input.readInt64();
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
 
-              ccPort_ = s;
+              ccPort_ = input.readInt64();
               break;
             }
             case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                crosschainExternal_ = new com.google.protobuf.LazyStringArrayList();
+                crosschainExternal_ = new java.util.ArrayList<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              crosschainExternal_.add(s);
+              crosschainExternal_.add(
+                  input.readMessage(blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1223,7 +1190,7 @@ public final class Thepower {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          crosschainExternal_ = crosschainExternal_.getUnmodifiableView();
+          crosschainExternal_ = java.util.Collections.unmodifiableList(crosschainExternal_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1281,190 +1248,87 @@ public final class Thepower {
     }
 
     public static final int TPIC_PORT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tpicPort_;
+    private long tpicPort_;
     /**
-     * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
+     * <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
      * @return The tpicPort.
      */
     @java.lang.Override
-    public java.lang.String getTpicPort() {
-      java.lang.Object ref = tpicPort_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tpicPort_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
-     * @return The bytes for tpicPort.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTpicPortBytes() {
-      java.lang.Object ref = tpicPort_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tpicPort_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTpicPort() {
+      return tpicPort_;
     }
 
     public static final int API_PORT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object apiPort_;
+    private long apiPort_;
     /**
-     * <code>string api_port = 3 [json_name = "apiPort"];</code>
+     * <code>int64 api_port = 3 [json_name = "apiPort"];</code>
      * @return The apiPort.
      */
     @java.lang.Override
-    public java.lang.String getApiPort() {
-      java.lang.Object ref = apiPort_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apiPort_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string api_port = 3 [json_name = "apiPort"];</code>
-     * @return The bytes for apiPort.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getApiPortBytes() {
-      java.lang.Object ref = apiPort_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apiPort_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getApiPort() {
+      return apiPort_;
     }
 
     public static final int APIS_PORT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object apisPort_;
+    private long apisPort_;
     /**
-     * <code>string apis_port = 4 [json_name = "apisPort"];</code>
+     * <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
      * @return The apisPort.
      */
     @java.lang.Override
-    public java.lang.String getApisPort() {
-      java.lang.Object ref = apisPort_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apisPort_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string apis_port = 4 [json_name = "apisPort"];</code>
-     * @return The bytes for apisPort.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getApisPortBytes() {
-      java.lang.Object ref = apisPort_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apisPort_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getApisPort() {
+      return apisPort_;
     }
 
     public static final int CC_PORT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object ccPort_;
+    private long ccPort_;
     /**
-     * <code>string cc_port = 5 [json_name = "ccPort"];</code>
+     * <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
      * @return The ccPort.
      */
     @java.lang.Override
-    public java.lang.String getCcPort() {
-      java.lang.Object ref = ccPort_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ccPort_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string cc_port = 5 [json_name = "ccPort"];</code>
-     * @return The bytes for ccPort.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCcPortBytes() {
-      java.lang.Object ref = ccPort_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ccPort_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getCcPort() {
+      return ccPort_;
     }
 
     public static final int CROSSCHAIN_EXTERNAL_FIELD_NUMBER = 6;
-    private com.google.protobuf.LazyStringList crosschainExternal_;
+    private java.util.List<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal> crosschainExternal_;
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @return A list containing the crosschainExternal.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getCrosschainExternalList() {
+    @java.lang.Override
+    public java.util.List<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal> getCrosschainExternalList() {
       return crosschainExternal_;
     }
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @return The count of crosschainExternal.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder> 
+        getCrosschainExternalOrBuilderList() {
+      return crosschainExternal_;
+    }
+    /**
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+     */
+    @java.lang.Override
     public int getCrosschainExternalCount() {
       return crosschainExternal_.size();
     }
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @param index The index of the element to return.
-     * @return The crosschainExternal at the given index.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
-    public java.lang.String getCrosschainExternal(int index) {
+    @java.lang.Override
+    public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal getCrosschainExternal(int index) {
       return crosschainExternal_.get(index);
     }
     /**
-     * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the crosschainExternal at the given index.
+     * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
-    public com.google.protobuf.ByteString
-        getCrosschainExternalBytes(int index) {
-      return crosschainExternal_.getByteString(index);
+    @java.lang.Override
+    public blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder getCrosschainExternalOrBuilder(
+        int index) {
+      return crosschainExternal_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1484,20 +1348,20 @@ public final class Thepower {
       if (!getNodenameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodename_);
       }
-      if (!getTpicPortBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tpicPort_);
+      if (tpicPort_ != 0L) {
+        output.writeInt64(2, tpicPort_);
       }
-      if (!getApiPortBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, apiPort_);
+      if (apiPort_ != 0L) {
+        output.writeInt64(3, apiPort_);
       }
-      if (!getApisPortBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, apisPort_);
+      if (apisPort_ != 0L) {
+        output.writeInt64(4, apisPort_);
       }
-      if (!getCcPortBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ccPort_);
+      if (ccPort_ != 0L) {
+        output.writeInt64(5, ccPort_);
       }
       for (int i = 0; i < crosschainExternal_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, crosschainExternal_.getRaw(i));
+        output.writeMessage(6, crosschainExternal_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1511,25 +1375,25 @@ public final class Thepower {
       if (!getNodenameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodename_);
       }
-      if (!getTpicPortBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tpicPort_);
+      if (tpicPort_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, tpicPort_);
       }
-      if (!getApiPortBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, apiPort_);
+      if (apiPort_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, apiPort_);
       }
-      if (!getApisPortBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, apisPort_);
+      if (apisPort_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, apisPort_);
       }
-      if (!getCcPortBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ccPort_);
+      if (ccPort_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, ccPort_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < crosschainExternal_.size(); i++) {
-          dataSize += computeStringSizeNoTag(crosschainExternal_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getCrosschainExternalList().size();
+      for (int i = 0; i < crosschainExternal_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, crosschainExternal_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1548,14 +1412,14 @@ public final class Thepower {
 
       if (!getNodename()
           .equals(other.getNodename())) return false;
-      if (!getTpicPort()
-          .equals(other.getTpicPort())) return false;
-      if (!getApiPort()
-          .equals(other.getApiPort())) return false;
-      if (!getApisPort()
-          .equals(other.getApisPort())) return false;
-      if (!getCcPort()
-          .equals(other.getCcPort())) return false;
+      if (getTpicPort()
+          != other.getTpicPort()) return false;
+      if (getApiPort()
+          != other.getApiPort()) return false;
+      if (getApisPort()
+          != other.getApisPort()) return false;
+      if (getCcPort()
+          != other.getCcPort()) return false;
       if (!getCrosschainExternalList()
           .equals(other.getCrosschainExternalList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1572,13 +1436,17 @@ public final class Thepower {
       hash = (37 * hash) + NODENAME_FIELD_NUMBER;
       hash = (53 * hash) + getNodename().hashCode();
       hash = (37 * hash) + TPIC_PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getTpicPort().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTpicPort());
       hash = (37 * hash) + API_PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getApiPort().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getApiPort());
       hash = (37 * hash) + APIS_PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getApisPort().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getApisPort());
       hash = (37 * hash) + CC_PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getCcPort().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCcPort());
       if (getCrosschainExternalCount() > 0) {
         hash = (37 * hash) + CROSSCHAIN_EXTERNAL_FIELD_NUMBER;
         hash = (53 * hash) + getCrosschainExternalList().hashCode();
@@ -1711,6 +1579,7 @@ public final class Thepower {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getCrosschainExternalFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1718,16 +1587,20 @@ public final class Thepower {
         super.clear();
         nodename_ = "";
 
-        tpicPort_ = "";
+        tpicPort_ = 0L;
 
-        apiPort_ = "";
+        apiPort_ = 0L;
 
-        apisPort_ = "";
+        apisPort_ = 0L;
 
-        ccPort_ = "";
+        ccPort_ = 0L;
 
-        crosschainExternal_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (crosschainExternalBuilder_ == null) {
+          crosschainExternal_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          crosschainExternalBuilder_.clear();
+        }
         return this;
       }
 
@@ -1760,11 +1633,15 @@ public final class Thepower {
         result.apiPort_ = apiPort_;
         result.apisPort_ = apisPort_;
         result.ccPort_ = ccPort_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          crosschainExternal_ = crosschainExternal_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (crosschainExternalBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            crosschainExternal_ = java.util.Collections.unmodifiableList(crosschainExternal_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.crosschainExternal_ = crosschainExternal_;
+        } else {
+          result.crosschainExternal_ = crosschainExternalBuilder_.build();
         }
-        result.crosschainExternal_ = crosschainExternal_;
         onBuilt();
         return result;
       }
@@ -1817,31 +1694,43 @@ public final class Thepower {
           nodename_ = other.nodename_;
           onChanged();
         }
-        if (!other.getTpicPort().isEmpty()) {
-          tpicPort_ = other.tpicPort_;
-          onChanged();
+        if (other.getTpicPort() != 0L) {
+          setTpicPort(other.getTpicPort());
         }
-        if (!other.getApiPort().isEmpty()) {
-          apiPort_ = other.apiPort_;
-          onChanged();
+        if (other.getApiPort() != 0L) {
+          setApiPort(other.getApiPort());
         }
-        if (!other.getApisPort().isEmpty()) {
-          apisPort_ = other.apisPort_;
-          onChanged();
+        if (other.getApisPort() != 0L) {
+          setApisPort(other.getApisPort());
         }
-        if (!other.getCcPort().isEmpty()) {
-          ccPort_ = other.ccPort_;
-          onChanged();
+        if (other.getCcPort() != 0L) {
+          setCcPort(other.getCcPort());
         }
-        if (!other.crosschainExternal_.isEmpty()) {
-          if (crosschainExternal_.isEmpty()) {
-            crosschainExternal_ = other.crosschainExternal_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureCrosschainExternalIsMutable();
-            crosschainExternal_.addAll(other.crosschainExternal_);
+        if (crosschainExternalBuilder_ == null) {
+          if (!other.crosschainExternal_.isEmpty()) {
+            if (crosschainExternal_.isEmpty()) {
+              crosschainExternal_ = other.crosschainExternal_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCrosschainExternalIsMutable();
+              crosschainExternal_.addAll(other.crosschainExternal_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.crosschainExternal_.isEmpty()) {
+            if (crosschainExternalBuilder_.isEmpty()) {
+              crosschainExternalBuilder_.dispose();
+              crosschainExternalBuilder_ = null;
+              crosschainExternal_ = other.crosschainExternal_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              crosschainExternalBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCrosschainExternalFieldBuilder() : null;
+            } else {
+              crosschainExternalBuilder_.addAllMessages(other.crosschainExternal_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1949,418 +1838,368 @@ public final class Thepower {
         return this;
       }
 
-      private java.lang.Object tpicPort_ = "";
+      private long tpicPort_ ;
       /**
-       * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
+       * <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
        * @return The tpicPort.
        */
-      public java.lang.String getTpicPort() {
-        java.lang.Object ref = tpicPort_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tpicPort_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getTpicPort() {
+        return tpicPort_;
       }
       /**
-       * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
-       * @return The bytes for tpicPort.
-       */
-      public com.google.protobuf.ByteString
-          getTpicPortBytes() {
-        java.lang.Object ref = tpicPort_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tpicPort_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
+       * <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
        * @param value The tpicPort to set.
        * @return This builder for chaining.
        */
-      public Builder setTpicPort(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTpicPort(long value) {
+        
         tpicPort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
+       * <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTpicPort() {
         
-        tpicPort_ = getDefaultInstance().getTpicPort();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
-       * @param value The bytes for tpicPort to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTpicPortBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tpicPort_ = value;
+        tpicPort_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object apiPort_ = "";
+      private long apiPort_ ;
       /**
-       * <code>string api_port = 3 [json_name = "apiPort"];</code>
+       * <code>int64 api_port = 3 [json_name = "apiPort"];</code>
        * @return The apiPort.
        */
-      public java.lang.String getApiPort() {
-        java.lang.Object ref = apiPort_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apiPort_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getApiPort() {
+        return apiPort_;
       }
       /**
-       * <code>string api_port = 3 [json_name = "apiPort"];</code>
-       * @return The bytes for apiPort.
-       */
-      public com.google.protobuf.ByteString
-          getApiPortBytes() {
-        java.lang.Object ref = apiPort_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apiPort_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string api_port = 3 [json_name = "apiPort"];</code>
+       * <code>int64 api_port = 3 [json_name = "apiPort"];</code>
        * @param value The apiPort to set.
        * @return This builder for chaining.
        */
-      public Builder setApiPort(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setApiPort(long value) {
+        
         apiPort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string api_port = 3 [json_name = "apiPort"];</code>
+       * <code>int64 api_port = 3 [json_name = "apiPort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearApiPort() {
         
-        apiPort_ = getDefaultInstance().getApiPort();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string api_port = 3 [json_name = "apiPort"];</code>
-       * @param value The bytes for apiPort to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApiPortBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        apiPort_ = value;
+        apiPort_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object apisPort_ = "";
+      private long apisPort_ ;
       /**
-       * <code>string apis_port = 4 [json_name = "apisPort"];</code>
+       * <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
        * @return The apisPort.
        */
-      public java.lang.String getApisPort() {
-        java.lang.Object ref = apisPort_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apisPort_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getApisPort() {
+        return apisPort_;
       }
       /**
-       * <code>string apis_port = 4 [json_name = "apisPort"];</code>
-       * @return The bytes for apisPort.
-       */
-      public com.google.protobuf.ByteString
-          getApisPortBytes() {
-        java.lang.Object ref = apisPort_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apisPort_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string apis_port = 4 [json_name = "apisPort"];</code>
+       * <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
        * @param value The apisPort to set.
        * @return This builder for chaining.
        */
-      public Builder setApisPort(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setApisPort(long value) {
+        
         apisPort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string apis_port = 4 [json_name = "apisPort"];</code>
+       * <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearApisPort() {
         
-        apisPort_ = getDefaultInstance().getApisPort();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string apis_port = 4 [json_name = "apisPort"];</code>
-       * @param value The bytes for apisPort to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApisPortBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        apisPort_ = value;
+        apisPort_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object ccPort_ = "";
+      private long ccPort_ ;
       /**
-       * <code>string cc_port = 5 [json_name = "ccPort"];</code>
+       * <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
        * @return The ccPort.
        */
-      public java.lang.String getCcPort() {
-        java.lang.Object ref = ccPort_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ccPort_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getCcPort() {
+        return ccPort_;
       }
       /**
-       * <code>string cc_port = 5 [json_name = "ccPort"];</code>
-       * @return The bytes for ccPort.
-       */
-      public com.google.protobuf.ByteString
-          getCcPortBytes() {
-        java.lang.Object ref = ccPort_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ccPort_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string cc_port = 5 [json_name = "ccPort"];</code>
+       * <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
        * @param value The ccPort to set.
        * @return This builder for chaining.
        */
-      public Builder setCcPort(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setCcPort(long value) {
+        
         ccPort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string cc_port = 5 [json_name = "ccPort"];</code>
+       * <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCcPort() {
         
-        ccPort_ = getDefaultInstance().getCcPort();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cc_port = 5 [json_name = "ccPort"];</code>
-       * @param value The bytes for ccPort to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCcPortBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ccPort_ = value;
+        ccPort_ = 0L;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList crosschainExternal_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal> crosschainExternal_ =
+        java.util.Collections.emptyList();
       private void ensureCrosschainExternalIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          crosschainExternal_ = new com.google.protobuf.LazyStringArrayList(crosschainExternal_);
+          crosschainExternal_ = new java.util.ArrayList<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal>(crosschainExternal_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.thepower.v1alpha1.Thepower.CrosschainExternal, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder, blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder> crosschainExternalBuilder_;
+
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @return A list containing the crosschainExternal.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getCrosschainExternalList() {
-        return crosschainExternal_.getUnmodifiableView();
+      public java.util.List<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal> getCrosschainExternalList() {
+        if (crosschainExternalBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(crosschainExternal_);
+        } else {
+          return crosschainExternalBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @return The count of crosschainExternal.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
       public int getCrosschainExternalCount() {
-        return crosschainExternal_.size();
+        if (crosschainExternalBuilder_ == null) {
+          return crosschainExternal_.size();
+        } else {
+          return crosschainExternalBuilder_.getCount();
+        }
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @param index The index of the element to return.
-       * @return The crosschainExternal at the given index.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
-      public java.lang.String getCrosschainExternal(int index) {
-        return crosschainExternal_.get(index);
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal getCrosschainExternal(int index) {
+        if (crosschainExternalBuilder_ == null) {
+          return crosschainExternal_.get(index);
+        } else {
+          return crosschainExternalBuilder_.getMessage(index);
+        }
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the crosschainExternal at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getCrosschainExternalBytes(int index) {
-        return crosschainExternal_.getByteString(index);
-      }
-      /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @param index The index to set the value at.
-       * @param value The crosschainExternal to set.
-       * @return This builder for chaining.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
       public Builder setCrosschainExternal(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureCrosschainExternalIsMutable();
-        crosschainExternal_.set(index, value);
-        onChanged();
+          int index, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal value) {
+        if (crosschainExternalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.set(index, value);
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @param value The crosschainExternal to add.
-       * @return This builder for chaining.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public Builder setCrosschainExternal(
+          int index, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder builderForValue) {
+        if (crosschainExternalBuilder_ == null) {
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public Builder addCrosschainExternal(blockchain.thepower.v1alpha1.Thepower.CrosschainExternal value) {
+        if (crosschainExternalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.add(value);
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
       public Builder addCrosschainExternal(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureCrosschainExternalIsMutable();
-        crosschainExternal_.add(value);
-        onChanged();
+          int index, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal value) {
+        if (crosschainExternalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.add(index, value);
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @param values The crosschainExternal to add.
-       * @return This builder for chaining.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public Builder addCrosschainExternal(
+          blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder builderForValue) {
+        if (crosschainExternalBuilder_ == null) {
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.add(builderForValue.build());
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public Builder addCrosschainExternal(
+          int index, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder builderForValue) {
+        if (crosschainExternalBuilder_ == null) {
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
       public Builder addAllCrosschainExternal(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureCrosschainExternalIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, crosschainExternal_);
-        onChanged();
+          java.lang.Iterable<? extends blockchain.thepower.v1alpha1.Thepower.CrosschainExternal> values) {
+        if (crosschainExternalBuilder_ == null) {
+          ensureCrosschainExternalIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, crosschainExternal_);
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @return This builder for chaining.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
       public Builder clearCrosschainExternal() {
-        crosschainExternal_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (crosschainExternalBuilder_ == null) {
+          crosschainExternal_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.clear();
+        }
         return this;
       }
       /**
-       * <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-       * @param value The bytes of the crosschainExternal to add.
-       * @return This builder for chaining.
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
        */
-      public Builder addCrosschainExternalBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureCrosschainExternalIsMutable();
-        crosschainExternal_.add(value);
-        onChanged();
+      public Builder removeCrosschainExternal(int index) {
+        if (crosschainExternalBuilder_ == null) {
+          ensureCrosschainExternalIsMutable();
+          crosschainExternal_.remove(index);
+          onChanged();
+        } else {
+          crosschainExternalBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder getCrosschainExternalBuilder(
+          int index) {
+        return getCrosschainExternalFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder getCrosschainExternalOrBuilder(
+          int index) {
+        if (crosschainExternalBuilder_ == null) {
+          return crosschainExternal_.get(index);  } else {
+          return crosschainExternalBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public java.util.List<? extends blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder> 
+           getCrosschainExternalOrBuilderList() {
+        if (crosschainExternalBuilder_ != null) {
+          return crosschainExternalBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(crosschainExternal_);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder addCrosschainExternalBuilder() {
+        return getCrosschainExternalFieldBuilder().addBuilder(
+            blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder addCrosschainExternalBuilder(
+          int index) {
+        return getCrosschainExternalFieldBuilder().addBuilder(
+            index, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+       */
+      public java.util.List<blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder> 
+           getCrosschainExternalBuilderList() {
+        return getCrosschainExternalFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.thepower.v1alpha1.Thepower.CrosschainExternal, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder, blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder> 
+          getCrosschainExternalFieldBuilder() {
+        if (crosschainExternalBuilder_ == null) {
+          crosschainExternalBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              blockchain.thepower.v1alpha1.Thepower.CrosschainExternal, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder, blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder>(
+                  crosschainExternal_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          crosschainExternal_ = null;
+        }
+        return crosschainExternalBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2415,6 +2254,645 @@ public final class Thepower {
 
   }
 
+  public interface CrosschainExternalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.thepower.v1alpha1.CrosschainExternal)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString
+        getHostBytes();
+
+    /**
+     * <code>int64 port = 2 [json_name = "port"];</code>
+     * @return The port.
+     */
+    long getPort();
+  }
+  /**
+   * Protobuf type {@code blockchain.thepower.v1alpha1.CrosschainExternal}
+   */
+  public static final class CrosschainExternal extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:blockchain.thepower.v1alpha1.CrosschainExternal)
+      CrosschainExternalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CrosschainExternal.newBuilder() to construct.
+    private CrosschainExternal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CrosschainExternal() {
+      host_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CrosschainExternal();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CrosschainExternal(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              host_ = s;
+              break;
+            }
+            case 16: {
+
+              port_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.class, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder.class);
+    }
+
+    public static final int HOST_FIELD_NUMBER = 1;
+    private volatile java.lang.Object host_;
+    /**
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private long port_;
+    /**
+     * <code>int64 port = 2 [json_name = "port"];</code>
+     * @return The port.
+     */
+    @java.lang.Override
+    public long getPort() {
+      return port_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getHostBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
+      }
+      if (port_ != 0L) {
+        output.writeInt64(2, port_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getHostBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
+      }
+      if (port_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, port_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof blockchain.thepower.v1alpha1.Thepower.CrosschainExternal)) {
+        return super.equals(obj);
+      }
+      blockchain.thepower.v1alpha1.Thepower.CrosschainExternal other = (blockchain.thepower.v1alpha1.Thepower.CrosschainExternal) obj;
+
+      if (!getHost()
+          .equals(other.getHost())) return false;
+      if (getPort()
+          != other.getPort()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPort());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(blockchain.thepower.v1alpha1.Thepower.CrosschainExternal prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code blockchain.thepower.v1alpha1.CrosschainExternal}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:blockchain.thepower.v1alpha1.CrosschainExternal)
+        blockchain.thepower.v1alpha1.Thepower.CrosschainExternalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.class, blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.Builder.class);
+      }
+
+      // Construct using blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        host_ = "";
+
+        port_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor;
+      }
+
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal getDefaultInstanceForType() {
+        return blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal build() {
+        blockchain.thepower.v1alpha1.Thepower.CrosschainExternal result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal buildPartial() {
+        blockchain.thepower.v1alpha1.Thepower.CrosschainExternal result = new blockchain.thepower.v1alpha1.Thepower.CrosschainExternal(this);
+        result.host_ = host_;
+        result.port_ = port_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof blockchain.thepower.v1alpha1.Thepower.CrosschainExternal) {
+          return mergeFrom((blockchain.thepower.v1alpha1.Thepower.CrosschainExternal)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(blockchain.thepower.v1alpha1.Thepower.CrosschainExternal other) {
+        if (other == blockchain.thepower.v1alpha1.Thepower.CrosschainExternal.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (other.getPort() != 0L) {
+          setPort(other.getPort());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        blockchain.thepower.v1alpha1.Thepower.CrosschainExternal parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (blockchain.thepower.v1alpha1.Thepower.CrosschainExternal) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object host_ = "";
+      /**
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        host_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        
+        host_ = getDefaultInstance().getHost();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        host_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long port_ ;
+      /**
+       * <code>int64 port = 2 [json_name = "port"];</code>
+       * @return The port.
+       */
+      @java.lang.Override
+      public long getPort() {
+        return port_;
+      }
+      /**
+       * <code>int64 port = 2 [json_name = "port"];</code>
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(long value) {
+        
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 port = 2 [json_name = "port"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        
+        port_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:blockchain.thepower.v1alpha1.CrosschainExternal)
+    }
+
+    // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.CrosschainExternal)
+    private static final blockchain.thepower.v1alpha1.Thepower.CrosschainExternal DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new blockchain.thepower.v1alpha1.Thepower.CrosschainExternal();
+    }
+
+    public static blockchain.thepower.v1alpha1.Thepower.CrosschainExternal getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CrosschainExternal>
+        PARSER = new com.google.protobuf.AbstractParser<CrosschainExternal>() {
+      @java.lang.Override
+      public CrosschainExternal parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CrosschainExternal(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CrosschainExternal> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CrosschainExternal> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public blockchain.thepower.v1alpha1.Thepower.CrosschainExternal getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_thepower_v1alpha1_TpChain_descriptor;
   private static final 
@@ -2425,6 +2903,11 @@ public final class Thepower {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_thepower_v1alpha1_TpNode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2439,14 +2922,17 @@ public final class Thepower {
       "TpChain\022!\n\014chain_number\030\001 \001(\005R\013chainNumb" +
       "er\022\027\n\007user_id\030\002 \001(\tR\006userId\022E\n\013chain_nod" +
       "es\030\003 \003(\0132$.blockchain.thepower.v1alpha1." +
-      "TpNodeR\nchainNodes\"\303\001\n\006TpNode\022\032\n\010nodenam" +
-      "e\030\001 \001(\tR\010nodename\022\033\n\ttpic_port\030\002 \001(\tR\010tp" +
-      "icPort\022\031\n\010api_port\030\003 \001(\tR\007apiPort\022\033\n\tapi" +
-      "s_port\030\004 \001(\tR\010apisPort\022\027\n\007cc_port\030\005 \001(\tR" +
-      "\006ccPort\022/\n\023crosschain_external\030\006 \003(\tR\022cr" +
-      "osschainExternalB?Z=github.com/cuemby/cc" +
-      "p-sdk/gen/go/blockchain/thepower/v1alpha" +
-      "1b\006proto3"
+      "TpNodeR\nchainNodes\"\365\001\n\006TpNode\022\032\n\010nodenam" +
+      "e\030\001 \001(\tR\010nodename\022\033\n\ttpic_port\030\002 \001(\003R\010tp" +
+      "icPort\022\031\n\010api_port\030\003 \001(\003R\007apiPort\022\033\n\tapi" +
+      "s_port\030\004 \001(\003R\010apisPort\022\027\n\007cc_port\030\005 \001(\003R" +
+      "\006ccPort\022a\n\023crosschain_external\030\006 \003(\01320.b" +
+      "lockchain.thepower.v1alpha1.CrosschainEx" +
+      "ternalR\022crosschainExternal\"<\n\022Crosschain" +
+      "External\022\022\n\004host\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001" +
+      "(\003R\004portB?Z=github.com/cuemby/ccp-sdk/ge" +
+      "n/go/blockchain/thepower/v1alpha1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2464,6 +2950,12 @@ public final class Thepower {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_TpNode_descriptor,
         new java.lang.String[] { "Nodename", "TpicPort", "ApiPort", "ApisPort", "CcPort", "CrosschainExternal", });
+    internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor,
+        new java.lang.String[] { "Host", "Port", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -46,7 +46,7 @@ struct TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,6 +56,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace blockchain {
 namespace thepower {
 namespace v1alpha1 {
+class CrosschainExternal;
+struct CrosschainExternalDefaultTypeInternal;
+extern CrosschainExternalDefaultTypeInternal _CrosschainExternal_default_instance_;
 class TpChain;
 struct TpChainDefaultTypeInternal;
 extern TpChainDefaultTypeInternal _TpChain_default_instance_;
@@ -66,6 +69,7 @@ extern TpNodeDefaultTypeInternal _TpNode_default_instance_;
 }  // namespace thepower
 }  // namespace blockchain
 PROTOBUF_NAMESPACE_OPEN
+template<> ::blockchain::thepower::v1alpha1::CrosschainExternal* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::CrosschainExternal>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::TpChain* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpChain>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::TpNode* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpNode>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -372,29 +376,23 @@ class TpNode final :
     kApisPortFieldNumber = 4,
     kCcPortFieldNumber = 5,
   };
-  // repeated string crosschain_external = 6 [json_name = "crosschainExternal"];
+  // repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];
   int crosschain_external_size() const;
   private:
   int _internal_crosschain_external_size() const;
   public:
   void clear_crosschain_external();
-  const std::string& crosschain_external(int index) const;
-  std::string* mutable_crosschain_external(int index);
-  void set_crosschain_external(int index, const std::string& value);
-  void set_crosschain_external(int index, std::string&& value);
-  void set_crosschain_external(int index, const char* value);
-  void set_crosschain_external(int index, const char* value, size_t size);
-  std::string* add_crosschain_external();
-  void add_crosschain_external(const std::string& value);
-  void add_crosschain_external(std::string&& value);
-  void add_crosschain_external(const char* value);
-  void add_crosschain_external(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& crosschain_external() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_crosschain_external();
+  ::blockchain::thepower::v1alpha1::CrosschainExternal* mutable_crosschain_external(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::CrosschainExternal >*
+      mutable_crosschain_external();
   private:
-  const std::string& _internal_crosschain_external(int index) const;
-  std::string* _internal_add_crosschain_external();
+  const ::blockchain::thepower::v1alpha1::CrosschainExternal& _internal_crosschain_external(int index) const;
+  ::blockchain::thepower::v1alpha1::CrosschainExternal* _internal_add_crosschain_external();
   public:
+  const ::blockchain::thepower::v1alpha1::CrosschainExternal& crosschain_external(int index) const;
+  ::blockchain::thepower::v1alpha1::CrosschainExternal* add_crosschain_external();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::CrosschainExternal >&
+      crosschain_external() const;
 
   // string nodename = 1 [json_name = "nodename"];
   void clear_nodename();
@@ -410,60 +408,40 @@ class TpNode final :
   std::string* _internal_mutable_nodename();
   public:
 
-  // string tpic_port = 2 [json_name = "tpicPort"];
+  // int64 tpic_port = 2 [json_name = "tpicPort"];
   void clear_tpic_port();
-  const std::string& tpic_port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_tpic_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_tpic_port();
-  PROTOBUF_MUST_USE_RESULT std::string* release_tpic_port();
-  void set_allocated_tpic_port(std::string* tpic_port);
+  ::PROTOBUF_NAMESPACE_ID::int64 tpic_port() const;
+  void set_tpic_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  const std::string& _internal_tpic_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_tpic_port(const std::string& value);
-  std::string* _internal_mutable_tpic_port();
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_tpic_port() const;
+  void _internal_set_tpic_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // string api_port = 3 [json_name = "apiPort"];
+  // int64 api_port = 3 [json_name = "apiPort"];
   void clear_api_port();
-  const std::string& api_port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_api_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_api_port();
-  PROTOBUF_MUST_USE_RESULT std::string* release_api_port();
-  void set_allocated_api_port(std::string* api_port);
+  ::PROTOBUF_NAMESPACE_ID::int64 api_port() const;
+  void set_api_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  const std::string& _internal_api_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_api_port(const std::string& value);
-  std::string* _internal_mutable_api_port();
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_api_port() const;
+  void _internal_set_api_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // string apis_port = 4 [json_name = "apisPort"];
+  // int64 apis_port = 4 [json_name = "apisPort"];
   void clear_apis_port();
-  const std::string& apis_port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_apis_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_apis_port();
-  PROTOBUF_MUST_USE_RESULT std::string* release_apis_port();
-  void set_allocated_apis_port(std::string* apis_port);
+  ::PROTOBUF_NAMESPACE_ID::int64 apis_port() const;
+  void set_apis_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  const std::string& _internal_apis_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_apis_port(const std::string& value);
-  std::string* _internal_mutable_apis_port();
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_apis_port() const;
+  void _internal_set_apis_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // string cc_port = 5 [json_name = "ccPort"];
+  // int64 cc_port = 5 [json_name = "ccPort"];
   void clear_cc_port();
-  const std::string& cc_port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_cc_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_cc_port();
-  PROTOBUF_MUST_USE_RESULT std::string* release_cc_port();
-  void set_allocated_cc_port(std::string* cc_port);
+  ::PROTOBUF_NAMESPACE_ID::int64 cc_port() const;
+  void set_cc_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  const std::string& _internal_cc_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_cc_port(const std::string& value);
-  std::string* _internal_mutable_cc_port();
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_cc_port() const;
+  void _internal_set_cc_port(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.TpNode)
@@ -473,12 +451,167 @@ class TpNode final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> crosschain_external_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::CrosschainExternal > crosschain_external_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nodename_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tpic_port_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr api_port_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr apis_port_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cc_port_;
+  ::PROTOBUF_NAMESPACE_ID::int64 tpic_port_;
+  ::PROTOBUF_NAMESPACE_ID::int64 api_port_;
+  ::PROTOBUF_NAMESPACE_ID::int64 apis_port_;
+  ::PROTOBUF_NAMESPACE_ID::int64 cc_port_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CrosschainExternal final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.CrosschainExternal) */ {
+ public:
+  inline CrosschainExternal() : CrosschainExternal(nullptr) {}
+  ~CrosschainExternal() override;
+  explicit constexpr CrosschainExternal(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CrosschainExternal(const CrosschainExternal& from);
+  CrosschainExternal(CrosschainExternal&& from) noexcept
+    : CrosschainExternal() {
+    *this = ::std::move(from);
+  }
+
+  inline CrosschainExternal& operator=(const CrosschainExternal& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CrosschainExternal& operator=(CrosschainExternal&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CrosschainExternal& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CrosschainExternal* internal_default_instance() {
+    return reinterpret_cast<const CrosschainExternal*>(
+               &_CrosschainExternal_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(CrosschainExternal& a, CrosschainExternal& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CrosschainExternal* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CrosschainExternal* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CrosschainExternal* New() const final {
+    return new CrosschainExternal();
+  }
+
+  CrosschainExternal* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CrosschainExternal>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CrosschainExternal& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CrosschainExternal& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CrosschainExternal* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.CrosschainExternal";
+  }
+  protected:
+  explicit CrosschainExternal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHostFieldNumber = 1,
+    kPortFieldNumber = 2,
+  };
+  // string host = 1 [json_name = "host"];
+  void clear_host();
+  const std::string& host() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_host(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_host();
+  PROTOBUF_MUST_USE_RESULT std::string* release_host();
+  void set_allocated_host(std::string* host);
+  private:
+  const std::string& _internal_host() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_host(const std::string& value);
+  std::string* _internal_mutable_host();
+  public:
+
+  // int64 port = 2 [json_name = "port"];
+  void clear_port();
+  ::PROTOBUF_NAMESPACE_ID::int64 port() const;
+  void set_port(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_port() const;
+  void _internal_set_port(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.CrosschainExternal)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_;
+  ::PROTOBUF_NAMESPACE_ID::int64 port_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
 };
@@ -649,191 +782,87 @@ inline void TpNode::set_allocated_nodename(std::string* nodename) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpNode.nodename)
 }
 
-// string tpic_port = 2 [json_name = "tpicPort"];
+// int64 tpic_port = 2 [json_name = "tpicPort"];
 inline void TpNode::clear_tpic_port() {
-  tpic_port_.ClearToEmpty();
+  tpic_port_ = int64_t{0};
 }
-inline const std::string& TpNode::tpic_port() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::_internal_tpic_port() const {
+  return tpic_port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::tpic_port() const {
   // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpNode.tpic_port)
   return _internal_tpic_port();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void TpNode::set_tpic_port(ArgT0&& arg0, ArgT... args) {
- 
- tpic_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void TpNode::_internal_set_tpic_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  tpic_port_ = value;
+}
+inline void TpNode::set_tpic_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_tpic_port(value);
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpNode.tpic_port)
 }
-inline std::string* TpNode::mutable_tpic_port() {
-  std::string* _s = _internal_mutable_tpic_port();
-  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpNode.tpic_port)
-  return _s;
-}
-inline const std::string& TpNode::_internal_tpic_port() const {
-  return tpic_port_.Get();
-}
-inline void TpNode::_internal_set_tpic_port(const std::string& value) {
-  
-  tpic_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* TpNode::_internal_mutable_tpic_port() {
-  
-  return tpic_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* TpNode::release_tpic_port() {
-  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpNode.tpic_port)
-  return tpic_port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void TpNode::set_allocated_tpic_port(std::string* tpic_port) {
-  if (tpic_port != nullptr) {
-    
-  } else {
-    
-  }
-  tpic_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tpic_port,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpNode.tpic_port)
-}
 
-// string api_port = 3 [json_name = "apiPort"];
+// int64 api_port = 3 [json_name = "apiPort"];
 inline void TpNode::clear_api_port() {
-  api_port_.ClearToEmpty();
+  api_port_ = int64_t{0};
 }
-inline const std::string& TpNode::api_port() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::_internal_api_port() const {
+  return api_port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::api_port() const {
   // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpNode.api_port)
   return _internal_api_port();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void TpNode::set_api_port(ArgT0&& arg0, ArgT... args) {
- 
- api_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void TpNode::_internal_set_api_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  api_port_ = value;
+}
+inline void TpNode::set_api_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_api_port(value);
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpNode.api_port)
 }
-inline std::string* TpNode::mutable_api_port() {
-  std::string* _s = _internal_mutable_api_port();
-  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpNode.api_port)
-  return _s;
-}
-inline const std::string& TpNode::_internal_api_port() const {
-  return api_port_.Get();
-}
-inline void TpNode::_internal_set_api_port(const std::string& value) {
-  
-  api_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* TpNode::_internal_mutable_api_port() {
-  
-  return api_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* TpNode::release_api_port() {
-  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpNode.api_port)
-  return api_port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void TpNode::set_allocated_api_port(std::string* api_port) {
-  if (api_port != nullptr) {
-    
-  } else {
-    
-  }
-  api_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), api_port,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpNode.api_port)
-}
 
-// string apis_port = 4 [json_name = "apisPort"];
+// int64 apis_port = 4 [json_name = "apisPort"];
 inline void TpNode::clear_apis_port() {
-  apis_port_.ClearToEmpty();
+  apis_port_ = int64_t{0};
 }
-inline const std::string& TpNode::apis_port() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::_internal_apis_port() const {
+  return apis_port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::apis_port() const {
   // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpNode.apis_port)
   return _internal_apis_port();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void TpNode::set_apis_port(ArgT0&& arg0, ArgT... args) {
- 
- apis_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void TpNode::_internal_set_apis_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  apis_port_ = value;
+}
+inline void TpNode::set_apis_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_apis_port(value);
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpNode.apis_port)
 }
-inline std::string* TpNode::mutable_apis_port() {
-  std::string* _s = _internal_mutable_apis_port();
-  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpNode.apis_port)
-  return _s;
-}
-inline const std::string& TpNode::_internal_apis_port() const {
-  return apis_port_.Get();
-}
-inline void TpNode::_internal_set_apis_port(const std::string& value) {
-  
-  apis_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* TpNode::_internal_mutable_apis_port() {
-  
-  return apis_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* TpNode::release_apis_port() {
-  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpNode.apis_port)
-  return apis_port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void TpNode::set_allocated_apis_port(std::string* apis_port) {
-  if (apis_port != nullptr) {
-    
-  } else {
-    
-  }
-  apis_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), apis_port,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpNode.apis_port)
-}
 
-// string cc_port = 5 [json_name = "ccPort"];
+// int64 cc_port = 5 [json_name = "ccPort"];
 inline void TpNode::clear_cc_port() {
-  cc_port_.ClearToEmpty();
+  cc_port_ = int64_t{0};
 }
-inline const std::string& TpNode::cc_port() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::_internal_cc_port() const {
+  return cc_port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TpNode::cc_port() const {
   // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpNode.cc_port)
   return _internal_cc_port();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void TpNode::set_cc_port(ArgT0&& arg0, ArgT... args) {
- 
- cc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void TpNode::_internal_set_cc_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  cc_port_ = value;
+}
+inline void TpNode::set_cc_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_cc_port(value);
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpNode.cc_port)
 }
-inline std::string* TpNode::mutable_cc_port() {
-  std::string* _s = _internal_mutable_cc_port();
-  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpNode.cc_port)
-  return _s;
-}
-inline const std::string& TpNode::_internal_cc_port() const {
-  return cc_port_.Get();
-}
-inline void TpNode::_internal_set_cc_port(const std::string& value) {
-  
-  cc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* TpNode::_internal_mutable_cc_port() {
-  
-  return cc_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* TpNode::release_cc_port() {
-  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpNode.cc_port)
-  return cc_port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void TpNode::set_allocated_cc_port(std::string* cc_port) {
-  if (cc_port != nullptr) {
-    
-  } else {
-    
-  }
-  cc_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cc_port,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpNode.cc_port)
-}
 
-// repeated string crosschain_external = 6 [json_name = "crosschainExternal"];
+// repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];
 inline int TpNode::_internal_crosschain_external_size() const {
   return crosschain_external_.size();
 }
@@ -843,74 +872,111 @@ inline int TpNode::crosschain_external_size() const {
 inline void TpNode::clear_crosschain_external() {
   crosschain_external_.Clear();
 }
-inline std::string* TpNode::add_crosschain_external() {
-  std::string* _s = _internal_add_crosschain_external();
-  // @@protoc_insertion_point(field_add_mutable:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-  return _s;
-}
-inline const std::string& TpNode::_internal_crosschain_external(int index) const {
-  return crosschain_external_.Get(index);
-}
-inline const std::string& TpNode::crosschain_external(int index) const {
-  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-  return _internal_crosschain_external(index);
-}
-inline std::string* TpNode::mutable_crosschain_external(int index) {
+inline ::blockchain::thepower::v1alpha1::CrosschainExternal* TpNode::mutable_crosschain_external(int index) {
   // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
   return crosschain_external_.Mutable(index);
 }
-inline void TpNode::set_crosschain_external(int index, const std::string& value) {
-  crosschain_external_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::CrosschainExternal >*
+TpNode::mutable_crosschain_external() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
+  return &crosschain_external_;
 }
-inline void TpNode::set_crosschain_external(int index, std::string&& value) {
-  crosschain_external_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
+inline const ::blockchain::thepower::v1alpha1::CrosschainExternal& TpNode::_internal_crosschain_external(int index) const {
+  return crosschain_external_.Get(index);
 }
-inline void TpNode::set_crosschain_external(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  crosschain_external_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
+inline const ::blockchain::thepower::v1alpha1::CrosschainExternal& TpNode::crosschain_external(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
+  return _internal_crosschain_external(index);
 }
-inline void TpNode::set_crosschain_external(int index, const char* value, size_t size) {
-  crosschain_external_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-}
-inline std::string* TpNode::_internal_add_crosschain_external() {
+inline ::blockchain::thepower::v1alpha1::CrosschainExternal* TpNode::_internal_add_crosschain_external() {
   return crosschain_external_.Add();
 }
-inline void TpNode::add_crosschain_external(const std::string& value) {
-  crosschain_external_.Add()->assign(value);
+inline ::blockchain::thepower::v1alpha1::CrosschainExternal* TpNode::add_crosschain_external() {
+  ::blockchain::thepower::v1alpha1::CrosschainExternal* _add = _internal_add_crosschain_external();
   // @@protoc_insertion_point(field_add:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
+  return _add;
 }
-inline void TpNode::add_crosschain_external(std::string&& value) {
-  crosschain_external_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-}
-inline void TpNode::add_crosschain_external(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  crosschain_external_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-}
-inline void TpNode::add_crosschain_external(const char* value, size_t size) {
-  crosschain_external_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::CrosschainExternal >&
 TpNode::crosschain_external() const {
   // @@protoc_insertion_point(field_list:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
   return crosschain_external_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-TpNode::mutable_crosschain_external() {
-  // @@protoc_insertion_point(field_mutable_list:blockchain.thepower.v1alpha1.TpNode.crosschain_external)
-  return &crosschain_external_;
+
+// -------------------------------------------------------------------
+
+// CrosschainExternal
+
+// string host = 1 [json_name = "host"];
+inline void CrosschainExternal::clear_host() {
+  host_.ClearToEmpty();
+}
+inline const std::string& CrosschainExternal::host() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.CrosschainExternal.host)
+  return _internal_host();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CrosschainExternal::set_host(ArgT0&& arg0, ArgT... args) {
+ 
+ host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.CrosschainExternal.host)
+}
+inline std::string* CrosschainExternal::mutable_host() {
+  std::string* _s = _internal_mutable_host();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.CrosschainExternal.host)
+  return _s;
+}
+inline const std::string& CrosschainExternal::_internal_host() const {
+  return host_.Get();
+}
+inline void CrosschainExternal::_internal_set_host(const std::string& value) {
+  
+  host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CrosschainExternal::_internal_mutable_host() {
+  
+  return host_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CrosschainExternal::release_host() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.CrosschainExternal.host)
+  return host_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CrosschainExternal::set_allocated_host(std::string* host) {
+  if (host != nullptr) {
+    
+  } else {
+    
+  }
+  host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), host,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.CrosschainExternal.host)
+}
+
+// int64 port = 2 [json_name = "port"];
+inline void CrosschainExternal::clear_port() {
+  port_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 CrosschainExternal::_internal_port() const {
+  return port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 CrosschainExternal::port() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.CrosschainExternal.port)
+  return _internal_port();
+}
+inline void CrosschainExternal::_internal_set_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  port_ = value;
+}
+inline void CrosschainExternal::set_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_port(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.CrosschainExternal.port)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

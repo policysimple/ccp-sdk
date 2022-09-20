@@ -18,23 +18,23 @@ class TpNode extends \Google\Protobuf\Internal\Message
      */
     protected $nodename = '';
     /**
-     * Generated from protobuf field <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
+     * Generated from protobuf field <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
      */
-    protected $tpic_port = '';
+    protected $tpic_port = 0;
     /**
-     * Generated from protobuf field <code>string api_port = 3 [json_name = "apiPort"];</code>
+     * Generated from protobuf field <code>int64 api_port = 3 [json_name = "apiPort"];</code>
      */
-    protected $api_port = '';
+    protected $api_port = 0;
     /**
-     * Generated from protobuf field <code>string apis_port = 4 [json_name = "apisPort"];</code>
+     * Generated from protobuf field <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
      */
-    protected $apis_port = '';
+    protected $apis_port = 0;
     /**
-     * Generated from protobuf field <code>string cc_port = 5 [json_name = "ccPort"];</code>
+     * Generated from protobuf field <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
      */
-    protected $cc_port = '';
+    protected $cc_port = 0;
     /**
-     * Generated from protobuf field <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+     * Generated from protobuf field <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      */
     private $crosschain_external;
 
@@ -45,11 +45,11 @@ class TpNode extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $nodename
-     *     @type string $tpic_port
-     *     @type string $api_port
-     *     @type string $apis_port
-     *     @type string $cc_port
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $crosschain_external
+     *     @type int|string $tpic_port
+     *     @type int|string $api_port
+     *     @type int|string $apis_port
+     *     @type int|string $cc_port
+     *     @type \Blockchain\Thepower\V1alpha1\CrosschainExternal[]|\Google\Protobuf\Internal\RepeatedField $crosschain_external
      * }
      */
     public function __construct($data = NULL) {
@@ -80,8 +80,8 @@ class TpNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
+     * @return int|string
      */
     public function getTpicPort()
     {
@@ -89,21 +89,21 @@ class TpNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tpic_port = 2 [json_name = "tpicPort"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 tpic_port = 2 [json_name = "tpicPort"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setTpicPort($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->tpic_port = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string api_port = 3 [json_name = "apiPort"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 api_port = 3 [json_name = "apiPort"];</code>
+     * @return int|string
      */
     public function getApiPort()
     {
@@ -111,21 +111,21 @@ class TpNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string api_port = 3 [json_name = "apiPort"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 api_port = 3 [json_name = "apiPort"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setApiPort($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->api_port = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string apis_port = 4 [json_name = "apisPort"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
+     * @return int|string
      */
     public function getApisPort()
     {
@@ -133,21 +133,21 @@ class TpNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string apis_port = 4 [json_name = "apisPort"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 apis_port = 4 [json_name = "apisPort"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setApisPort($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->apis_port = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string cc_port = 5 [json_name = "ccPort"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
+     * @return int|string
      */
     public function getCcPort()
     {
@@ -155,20 +155,20 @@ class TpNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cc_port = 5 [json_name = "ccPort"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 cc_port = 5 [json_name = "ccPort"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setCcPort($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->cc_port = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+     * Generated from protobuf field <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getCrosschainExternal()
@@ -177,13 +177,13 @@ class TpNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string crosschain_external = 6 [json_name = "crosschainExternal"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .blockchain.thepower.v1alpha1.CrosschainExternal crosschain_external = 6 [json_name = "crosschainExternal"];</code>
+     * @param \Blockchain\Thepower\V1alpha1\CrosschainExternal[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCrosschainExternal($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Thepower\V1alpha1\CrosschainExternal::class);
         $this->crosschain_external = $arr;
 
         return $this;

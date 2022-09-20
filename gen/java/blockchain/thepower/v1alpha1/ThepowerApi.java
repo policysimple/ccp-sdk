@@ -640,19 +640,19 @@ public final class ThepowerApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-     * @return Whether the response field is set.
+     * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+     * @return Whether the tpChain field is set.
      */
-    boolean hasResponse();
+    boolean hasTpChain();
     /**
-     * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-     * @return The response.
+     * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+     * @return The tpChain.
      */
-    blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse getResponse();
+    blockchain.thepower.v1alpha1.Thepower.TpChain getTpChain();
     /**
-     * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+     * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
      */
-    blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder getResponseOrBuilder();
+    blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder getTpChainOrBuilder();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.CreateTpChainResponse}
@@ -700,14 +700,14 @@ public final class ThepowerApi {
               done = true;
               break;
             case 10: {
-              blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder subBuilder = null;
-              if (response_ != null) {
-                subBuilder = response_.toBuilder();
+              blockchain.thepower.v1alpha1.Thepower.TpChain.Builder subBuilder = null;
+              if (tpChain_ != null) {
+                subBuilder = tpChain_.toBuilder();
               }
-              response_ = input.readMessage(blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.parser(), extensionRegistry);
+              tpChain_ = input.readMessage(blockchain.thepower.v1alpha1.Thepower.TpChain.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(response_);
-                response_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(tpChain_);
+                tpChain_ = subBuilder.buildPartial();
               }
 
               break;
@@ -744,30 +744,30 @@ public final class ThepowerApi {
               blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse.class, blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse.Builder.class);
     }
 
-    public static final int RESPONSE_FIELD_NUMBER = 1;
-    private blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse response_;
+    public static final int TP_CHAIN_FIELD_NUMBER = 1;
+    private blockchain.thepower.v1alpha1.Thepower.TpChain tpChain_;
     /**
-     * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-     * @return Whether the response field is set.
+     * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+     * @return Whether the tpChain field is set.
      */
     @java.lang.Override
-    public boolean hasResponse() {
-      return response_ != null;
+    public boolean hasTpChain() {
+      return tpChain_ != null;
     }
     /**
-     * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-     * @return The response.
+     * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+     * @return The tpChain.
      */
     @java.lang.Override
-    public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse getResponse() {
-      return response_ == null ? blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.getDefaultInstance() : response_;
+    public blockchain.thepower.v1alpha1.Thepower.TpChain getTpChain() {
+      return tpChain_ == null ? blockchain.thepower.v1alpha1.Thepower.TpChain.getDefaultInstance() : tpChain_;
     }
     /**
-     * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+     * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
      */
     @java.lang.Override
-    public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder getResponseOrBuilder() {
-      return getResponse();
+    public blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder getTpChainOrBuilder() {
+      return getTpChain();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -784,8 +784,8 @@ public final class ThepowerApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (response_ != null) {
-        output.writeMessage(1, getResponse());
+      if (tpChain_ != null) {
+        output.writeMessage(1, getTpChain());
       }
       unknownFields.writeTo(output);
     }
@@ -796,9 +796,9 @@ public final class ThepowerApi {
       if (size != -1) return size;
 
       size = 0;
-      if (response_ != null) {
+      if (tpChain_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getResponse());
+          .computeMessageSize(1, getTpChain());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -815,10 +815,10 @@ public final class ThepowerApi {
       }
       blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse other = (blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse) obj;
 
-      if (hasResponse() != other.hasResponse()) return false;
-      if (hasResponse()) {
-        if (!getResponse()
-            .equals(other.getResponse())) return false;
+      if (hasTpChain() != other.hasTpChain()) return false;
+      if (hasTpChain()) {
+        if (!getTpChain()
+            .equals(other.getTpChain())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -831,9 +831,9 @@ public final class ThepowerApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasResponse()) {
-        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-        hash = (53 * hash) + getResponse().hashCode();
+      if (hasTpChain()) {
+        hash = (37 * hash) + TP_CHAIN_FIELD_NUMBER;
+        hash = (53 * hash) + getTpChain().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -968,11 +968,11 @@ public final class ThepowerApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (responseBuilder_ == null) {
-          response_ = null;
+        if (tpChainBuilder_ == null) {
+          tpChain_ = null;
         } else {
-          response_ = null;
-          responseBuilder_ = null;
+          tpChain_ = null;
+          tpChainBuilder_ = null;
         }
         return this;
       }
@@ -1000,10 +1000,10 @@ public final class ThepowerApi {
       @java.lang.Override
       public blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse buildPartial() {
         blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse result = new blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse(this);
-        if (responseBuilder_ == null) {
-          result.response_ = response_;
+        if (tpChainBuilder_ == null) {
+          result.tpChain_ = tpChain_;
         } else {
-          result.response_ = responseBuilder_.build();
+          result.tpChain_ = tpChainBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1053,8 +1053,8 @@ public final class ThepowerApi {
 
       public Builder mergeFrom(blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse other) {
         if (other == blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainResponse.getDefaultInstance()) return this;
-        if (other.hasResponse()) {
-          mergeResponse(other.getResponse());
+        if (other.hasTpChain()) {
+          mergeTpChain(other.getTpChain());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1085,123 +1085,123 @@ public final class ThepowerApi {
         return this;
       }
 
-      private blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse response_;
+      private blockchain.thepower.v1alpha1.Thepower.TpChain tpChain_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder> responseBuilder_;
+          blockchain.thepower.v1alpha1.Thepower.TpChain, blockchain.thepower.v1alpha1.Thepower.TpChain.Builder, blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder> tpChainBuilder_;
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-       * @return Whether the response field is set.
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+       * @return Whether the tpChain field is set.
        */
-      public boolean hasResponse() {
-        return responseBuilder_ != null || response_ != null;
+      public boolean hasTpChain() {
+        return tpChainBuilder_ != null || tpChain_ != null;
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-       * @return The response.
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+       * @return The tpChain.
        */
-      public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse getResponse() {
-        if (responseBuilder_ == null) {
-          return response_ == null ? blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.getDefaultInstance() : response_;
+      public blockchain.thepower.v1alpha1.Thepower.TpChain getTpChain() {
+        if (tpChainBuilder_ == null) {
+          return tpChain_ == null ? blockchain.thepower.v1alpha1.Thepower.TpChain.getDefaultInstance() : tpChain_;
         } else {
-          return responseBuilder_.getMessage();
+          return tpChainBuilder_.getMessage();
         }
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
-      public Builder setResponse(blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse value) {
-        if (responseBuilder_ == null) {
+      public Builder setTpChain(blockchain.thepower.v1alpha1.Thepower.TpChain value) {
+        if (tpChainBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          response_ = value;
+          tpChain_ = value;
           onChanged();
         } else {
-          responseBuilder_.setMessage(value);
+          tpChainBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
-      public Builder setResponse(
-          blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder builderForValue) {
-        if (responseBuilder_ == null) {
-          response_ = builderForValue.build();
+      public Builder setTpChain(
+          blockchain.thepower.v1alpha1.Thepower.TpChain.Builder builderForValue) {
+        if (tpChainBuilder_ == null) {
+          tpChain_ = builderForValue.build();
           onChanged();
         } else {
-          responseBuilder_.setMessage(builderForValue.build());
+          tpChainBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
-      public Builder mergeResponse(blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse value) {
-        if (responseBuilder_ == null) {
-          if (response_ != null) {
-            response_ =
-              blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.newBuilder(response_).mergeFrom(value).buildPartial();
+      public Builder mergeTpChain(blockchain.thepower.v1alpha1.Thepower.TpChain value) {
+        if (tpChainBuilder_ == null) {
+          if (tpChain_ != null) {
+            tpChain_ =
+              blockchain.thepower.v1alpha1.Thepower.TpChain.newBuilder(tpChain_).mergeFrom(value).buildPartial();
           } else {
-            response_ = value;
+            tpChain_ = value;
           }
           onChanged();
         } else {
-          responseBuilder_.mergeFrom(value);
+          tpChainBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
-      public Builder clearResponse() {
-        if (responseBuilder_ == null) {
-          response_ = null;
+      public Builder clearTpChain() {
+        if (tpChainBuilder_ == null) {
+          tpChain_ = null;
           onChanged();
         } else {
-          response_ = null;
-          responseBuilder_ = null;
+          tpChain_ = null;
+          tpChainBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
-      public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder getResponseBuilder() {
+      public blockchain.thepower.v1alpha1.Thepower.TpChain.Builder getTpChainBuilder() {
         
         onChanged();
-        return getResponseFieldBuilder().getBuilder();
+        return getTpChainFieldBuilder().getBuilder();
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
-      public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder getResponseOrBuilder() {
-        if (responseBuilder_ != null) {
-          return responseBuilder_.getMessageOrBuilder();
+      public blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder getTpChainOrBuilder() {
+        if (tpChainBuilder_ != null) {
+          return tpChainBuilder_.getMessageOrBuilder();
         } else {
-          return response_ == null ?
-              blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.getDefaultInstance() : response_;
+          return tpChain_ == null ?
+              blockchain.thepower.v1alpha1.Thepower.TpChain.getDefaultInstance() : tpChain_;
         }
       }
       /**
-       * <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+       * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder> 
-          getResponseFieldBuilder() {
-        if (responseBuilder_ == null) {
-          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder>(
-                  getResponse(),
+          blockchain.thepower.v1alpha1.Thepower.TpChain, blockchain.thepower.v1alpha1.Thepower.TpChain.Builder, blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder> 
+          getTpChainFieldBuilder() {
+        if (tpChainBuilder_ == null) {
+          tpChainBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              blockchain.thepower.v1alpha1.Thepower.TpChain, blockchain.thepower.v1alpha1.Thepower.TpChain.Builder, blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder>(
+                  getTpChain(),
                   getParentForChildren(),
                   isClean());
-          response_ = null;
+          tpChain_ = null;
         }
-        return responseBuilder_;
+        return tpChainBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1256,716 +1256,6 @@ public final class ThepowerApi {
 
   }
 
-  public interface DefaultResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.thepower.v1alpha1.DefaultResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>bool error = 1 [json_name = "error"];</code>
-     * @return The error.
-     */
-    boolean getError();
-
-    /**
-     * <code>bool success = 2 [json_name = "success"];</code>
-     * @return The success.
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>string message = 3 [json_name = "message"];</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <code>string message = 3 [json_name = "message"];</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-  }
-  /**
-   * Protobuf type {@code blockchain.thepower.v1alpha1.DefaultResponse}
-   */
-  public static final class DefaultResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.thepower.v1alpha1.DefaultResponse)
-      DefaultResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DefaultResponse.newBuilder() to construct.
-    private DefaultResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DefaultResponse() {
-      message_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DefaultResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DefaultResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              error_ = input.readBool();
-              break;
-            }
-            case 16: {
-
-              success_ = input.readBool();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return blockchain.thepower.v1alpha1.ThepowerApi.internal_static_blockchain_thepower_v1alpha1_DefaultResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return blockchain.thepower.v1alpha1.ThepowerApi.internal_static_blockchain_thepower_v1alpha1_DefaultResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.class, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder.class);
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 1;
-    private boolean error_;
-    /**
-     * <code>bool error = 1 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public boolean getError() {
-      return error_;
-    }
-
-    public static final int SUCCESS_FIELD_NUMBER = 2;
-    private boolean success_;
-    /**
-     * <code>bool success = 2 [json_name = "success"];</code>
-     * @return The success.
-     */
-    @java.lang.Override
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object message_;
-    /**
-     * <code>string message = 3 [json_name = "message"];</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string message = 3 [json_name = "message"];</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (error_ != false) {
-        output.writeBool(1, error_);
-      }
-      if (success_ != false) {
-        output.writeBool(2, success_);
-      }
-      if (!getMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (error_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, error_);
-      }
-      if (success_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, success_);
-      }
-      if (!getMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse)) {
-        return super.equals(obj);
-      }
-      blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse other = (blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse) obj;
-
-      if (getError()
-          != other.getError()) return false;
-      if (getSuccess()
-          != other.getSuccess()) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getError());
-      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getSuccess());
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code blockchain.thepower.v1alpha1.DefaultResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.thepower.v1alpha1.DefaultResponse)
-        blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return blockchain.thepower.v1alpha1.ThepowerApi.internal_static_blockchain_thepower_v1alpha1_DefaultResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return blockchain.thepower.v1alpha1.ThepowerApi.internal_static_blockchain_thepower_v1alpha1_DefaultResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.class, blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.Builder.class);
-      }
-
-      // Construct using blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        error_ = false;
-
-        success_ = false;
-
-        message_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return blockchain.thepower.v1alpha1.ThepowerApi.internal_static_blockchain_thepower_v1alpha1_DefaultResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse getDefaultInstanceForType() {
-        return blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse build() {
-        blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse buildPartial() {
-        blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse result = new blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse(this);
-        result.error_ = error_;
-        result.success_ = success_;
-        result.message_ = message_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse) {
-          return mergeFrom((blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse other) {
-        if (other == blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse.getDefaultInstance()) return this;
-        if (other.getError() != false) {
-          setError(other.getError());
-        }
-        if (other.getSuccess() != false) {
-          setSuccess(other.getSuccess());
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private boolean error_ ;
-      /**
-       * <code>bool error = 1 [json_name = "error"];</code>
-       * @return The error.
-       */
-      @java.lang.Override
-      public boolean getError() {
-        return error_;
-      }
-      /**
-       * <code>bool error = 1 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(boolean value) {
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool error = 1 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean success_ ;
-      /**
-       * <code>bool success = 2 [json_name = "success"];</code>
-       * @return The success.
-       */
-      @java.lang.Override
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>bool success = 2 [json_name = "success"];</code>
-       * @param value The success to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSuccess(boolean value) {
-        
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool success = 2 [json_name = "success"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSuccess() {
-        
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <code>string message = 3 [json_name = "message"];</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string message = 3 [json_name = "message"];</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string message = 3 [json_name = "message"];</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 3 [json_name = "message"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        
-        message_ = getDefaultInstance().getMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 3 [json_name = "message"];</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:blockchain.thepower.v1alpha1.DefaultResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.DefaultResponse)
-    private static final blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse();
-    }
-
-    public static blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DefaultResponse>
-        PARSER = new com.google.protobuf.AbstractParser<DefaultResponse>() {
-      @java.lang.Override
-      public DefaultResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DefaultResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DefaultResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DefaultResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public blockchain.thepower.v1alpha1.ThepowerApi.DefaultResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_thepower_v1alpha1_CreateTpChainRequest_descriptor;
   private static final 
@@ -1976,11 +1266,6 @@ public final class ThepowerApi {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_thepower_v1alpha1_CreateTpChainResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_thepower_v1alpha1_DefaultResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_thepower_v1alpha1_DefaultResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1995,17 +1280,15 @@ public final class ThepowerApi {
       "+blockchain/thepower/v1alpha1/thepower.p" +
       "roto\"X\n\024CreateTpChainRequest\022@\n\010tp_chain" +
       "\030\001 \001(\0132%.blockchain.thepower.v1alpha1.Tp" +
-      "ChainR\007tpChain\"b\n\025CreateTpChainResponse\022" +
-      "I\n\010response\030\001 \001(\0132-.blockchain.thepower." +
-      "v1alpha1.DefaultResponseR\010response\"[\n\017De" +
-      "faultResponse\022\024\n\005error\030\001 \001(\010R\005error\022\030\n\007s" +
-      "uccess\030\002 \001(\010R\007success\022\030\n\007message\030\003 \001(\tR\007" +
-      "message2\225\001\n\031BlockchainThePowerService\022x\n" +
-      "\rCreateTpChain\0222.blockchain.thepower.v1a" +
-      "lpha1.CreateTpChainRequest\0323.blockchain." +
-      "thepower.v1alpha1.CreateTpChainResponseB" +
-      "?Z=github.com/cuemby/ccp-sdk/gen/go/bloc" +
-      "kchain/thepower/v1alpha1b\006proto3"
+      "ChainR\007tpChain\"Y\n\025CreateTpChainResponse\022" +
+      "@\n\010tp_chain\030\001 \001(\0132%.blockchain.thepower." +
+      "v1alpha1.TpChainR\007tpChain2\225\001\n\031Blockchain" +
+      "ThePowerService\022x\n\rCreateTpChain\0222.block" +
+      "chain.thepower.v1alpha1.CreateTpChainReq" +
+      "uest\0323.blockchain.thepower.v1alpha1.Crea" +
+      "teTpChainResponseB?Z=github.com/cuemby/c" +
+      "cp-sdk/gen/go/blockchain/thepower/v1alph" +
+      "a1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2023,13 +1306,7 @@ public final class ThepowerApi {
     internal_static_blockchain_thepower_v1alpha1_CreateTpChainResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_CreateTpChainResponse_descriptor,
-        new java.lang.String[] { "Response", });
-    internal_static_blockchain_thepower_v1alpha1_DefaultResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_blockchain_thepower_v1alpha1_DefaultResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_thepower_v1alpha1_DefaultResponse_descriptor,
-        new java.lang.String[] { "Error", "Success", "Message", });
+        new java.lang.String[] { "TpChain", });
     blockchain.thepower.v1alpha1.Thepower.getDescriptor();
   }
 

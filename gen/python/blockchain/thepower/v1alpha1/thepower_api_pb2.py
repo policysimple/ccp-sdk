@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/blockchain/thepower/v1alpha1/thepower_api.proto\x12\x1c\x62lockchain.thepower.v1alpha1\x1a+blockchain/thepower/v1alpha1/thepower.proto\"X\n\x14\x43reateTpChainRequest\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain\"b\n\x15\x43reateTpChainResponse\x12I\n\x08response\x18\x01 \x01(\x0b\x32-.blockchain.thepower.v1alpha1.DefaultResponseR\x08response\"[\n\x0f\x44\x65\x66\x61ultResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\x08R\x05\x65rror\x12\x18\n\x07success\x18\x02 \x01(\x08R\x07success\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message2\x95\x01\n\x19\x42lockchainThePowerService\x12x\n\rCreateTpChain\x12\x32.blockchain.thepower.v1alpha1.CreateTpChainRequest\x1a\x33.blockchain.thepower.v1alpha1.CreateTpChainResponseB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
+  serialized_pb=b'\n/blockchain/thepower/v1alpha1/thepower_api.proto\x12\x1c\x62lockchain.thepower.v1alpha1\x1a+blockchain/thepower/v1alpha1/thepower.proto\"X\n\x14\x43reateTpChainRequest\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain\"Y\n\x15\x43reateTpChainResponse\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain2\x95\x01\n\x19\x42lockchainThePowerService\x12x\n\rCreateTpChain\x12\x32.blockchain.thepower.v1alpha1.CreateTpChainRequest\x1a\x33.blockchain.thepower.v1alpha1.CreateTpChainResponseB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
   ,
   dependencies=[blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2.DESCRIPTOR,])
 
@@ -68,12 +68,12 @@ _CREATETPCHAINRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='response', full_name='blockchain.thepower.v1alpha1.CreateTpChainResponse.response', index=0,
+      name='tp_chain', full_name='blockchain.thepower.v1alpha1.CreateTpChainResponse.tp_chain', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='response', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='tpChain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -87,60 +87,13 @@ _CREATETPCHAINRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=216,
-  serialized_end=314,
-)
-
-
-_DEFAULTRESPONSE = _descriptor.Descriptor(
-  name='DefaultResponse',
-  full_name='blockchain.thepower.v1alpha1.DefaultResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='error', full_name='blockchain.thepower.v1alpha1.DefaultResponse.error', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='success', full_name='blockchain.thepower.v1alpha1.DefaultResponse.success', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='success', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='blockchain.thepower.v1alpha1.DefaultResponse.message', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='message', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=316,
-  serialized_end=407,
+  serialized_end=305,
 )
 
 _CREATETPCHAINREQUEST.fields_by_name['tp_chain'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
-_CREATETPCHAINRESPONSE.fields_by_name['response'].message_type = _DEFAULTRESPONSE
+_CREATETPCHAINRESPONSE.fields_by_name['tp_chain'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
 DESCRIPTOR.message_types_by_name['CreateTpChainRequest'] = _CREATETPCHAINREQUEST
 DESCRIPTOR.message_types_by_name['CreateTpChainResponse'] = _CREATETPCHAINRESPONSE
-DESCRIPTOR.message_types_by_name['DefaultResponse'] = _DEFAULTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateTpChainRequest = _reflection.GeneratedProtocolMessageType('CreateTpChainRequest', (_message.Message,), {
@@ -157,13 +110,6 @@ CreateTpChainResponse = _reflection.GeneratedProtocolMessageType('CreateTpChainR
   })
 _sym_db.RegisterMessage(CreateTpChainResponse)
 
-DefaultResponse = _reflection.GeneratedProtocolMessageType('DefaultResponse', (_message.Message,), {
-  'DESCRIPTOR' : _DEFAULTRESPONSE,
-  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
-  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.DefaultResponse)
-  })
-_sym_db.RegisterMessage(DefaultResponse)
-
 
 DESCRIPTOR._options = None
 
@@ -174,8 +120,8 @@ _BLOCKCHAINTHEPOWERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=410,
-  serialized_end=559,
+  serialized_start=308,
+  serialized_end=457,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTpChain',

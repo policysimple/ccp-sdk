@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateTpChainResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
      */
-    protected $response = null;
+    protected $tp_chain = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class CreateTpChainResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Blockchain\Thepower\V1alpha1\DefaultResponse $response
+     *     @type \Blockchain\Thepower\V1alpha1\TpChain $tp_chain
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +33,33 @@ class CreateTpChainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-     * @return \Blockchain\Thepower\V1alpha1\DefaultResponse|null
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+     * @return \Blockchain\Thepower\V1alpha1\TpChain|null
      */
-    public function getResponse()
+    public function getTpChain()
     {
-        return $this->response;
+        return $this->tp_chain;
     }
 
-    public function hasResponse()
+    public function hasTpChain()
     {
-        return isset($this->response);
+        return isset($this->tp_chain);
     }
 
-    public function clearResponse()
+    public function clearTpChain()
     {
-        unset($this->response);
+        unset($this->tp_chain);
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.DefaultResponse response = 1 [json_name = "response"];</code>
-     * @param \Blockchain\Thepower\V1alpha1\DefaultResponse $var
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
+     * @param \Blockchain\Thepower\V1alpha1\TpChain $var
      * @return $this
      */
-    public function setResponse($var)
+    public function setTpChain($var)
     {
-        GPBUtil::checkMessage($var, \Blockchain\Thepower\V1alpha1\DefaultResponse::class);
-        $this->response = $var;
+        GPBUtil::checkMessage($var, \Blockchain\Thepower\V1alpha1\TpChain::class);
+        $this->tp_chain = $var;
 
         return $this;
     }

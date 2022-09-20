@@ -14,11 +14,11 @@ message CreateTpChainRequest {
 }
 
 message CreateTpChainResponse {
-    DefaultResponse response = 1;
+    blockchain.thepower.v1alpha1.TpChain tp_chain = 1; 
 }
 
-message DefaultResponse {
+/* message DefaultResponse {
     bool error = 1;
     bool success = 2;
     string message = 3;
-}
+} */

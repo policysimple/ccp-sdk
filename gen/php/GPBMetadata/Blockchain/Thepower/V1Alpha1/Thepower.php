@@ -16,20 +16,23 @@ class Thepower
         }
         $pool->internalAddGeneratedFile(
             '
-é
+Ù
 +blockchain/thepower/v1alpha1/thepower.protoblockchain.thepower.v1alpha1"Œ
 TpChain!
 chain_number (RchainNumber
 user_id (	RuserIdE
 chain_nodes (2$.blockchain.thepower.v1alpha1.TpNodeR
-chainNodes"Ã
+chainNodes"õ
 TpNode
 nodename (	Rnodename
-	tpic_port (	RtpicPort
-api_port (	RapiPort
-	apis_port (	RapisPort
-cc_port (	RccPort/
-crosschain_external (	RcrosschainExternalB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1bproto3'
+	tpic_port (RtpicPort
+api_port (RapiPort
+	apis_port (RapisPort
+cc_port (RccPorta
+crosschain_external (20.blockchain.thepower.v1alpha1.CrosschainExternalRcrosschainExternal"<
+CrosschainExternal
+host (	Rhost
+port (RportB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -17,16 +17,12 @@ class ThepowerApi
         \GPBMetadata\Blockchain\Thepower\V1Alpha1\Thepower::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ë
+å
 /blockchain/thepower/v1alpha1/thepower_api.protoblockchain.thepower.v1alpha1"X
 CreateTpChainRequest@
-tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"b
-CreateTpChainResponseI
-response (2-.blockchain.thepower.v1alpha1.DefaultResponseRresponse"[
-DefaultResponse
-error (Rerror
-success (Rsuccess
-message (	Rmessage2•
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"Y
+CreateTpChainResponse@
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain2•
 BlockchainThePowerServicex
 CreateTpChain2.blockchain.thepower.v1alpha1.CreateTpChainRequest3.blockchain.thepower.v1alpha1.CreateTpChainResponseB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1bproto3'
         , true);

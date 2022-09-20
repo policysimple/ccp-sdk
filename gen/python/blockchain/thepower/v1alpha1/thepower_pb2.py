@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+blockchain/thepower/v1alpha1/thepower.proto\x12\x1c\x62lockchain.thepower.v1alpha1\"\x8c\x01\n\x07TpChain\x12!\n\x0c\x63hain_number\x18\x01 \x01(\x05R\x0b\x63hainNumber\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x45\n\x0b\x63hain_nodes\x18\x03 \x03(\x0b\x32$.blockchain.thepower.v1alpha1.TpNodeR\nchainNodes\"\xc3\x01\n\x06TpNode\x12\x1a\n\x08nodename\x18\x01 \x01(\tR\x08nodename\x12\x1b\n\ttpic_port\x18\x02 \x01(\tR\x08tpicPort\x12\x19\n\x08\x61pi_port\x18\x03 \x01(\tR\x07\x61piPort\x12\x1b\n\tapis_port\x18\x04 \x01(\tR\x08\x61pisPort\x12\x17\n\x07\x63\x63_port\x18\x05 \x01(\tR\x06\x63\x63Port\x12/\n\x13\x63rosschain_external\x18\x06 \x03(\tR\x12\x63rosschainExternalB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
+  serialized_pb=b'\n+blockchain/thepower/v1alpha1/thepower.proto\x12\x1c\x62lockchain.thepower.v1alpha1\"\x8c\x01\n\x07TpChain\x12!\n\x0c\x63hain_number\x18\x01 \x01(\x05R\x0b\x63hainNumber\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x45\n\x0b\x63hain_nodes\x18\x03 \x03(\x0b\x32$.blockchain.thepower.v1alpha1.TpNodeR\nchainNodes\"\xf5\x01\n\x06TpNode\x12\x1a\n\x08nodename\x18\x01 \x01(\tR\x08nodename\x12\x1b\n\ttpic_port\x18\x02 \x01(\x03R\x08tpicPort\x12\x19\n\x08\x61pi_port\x18\x03 \x01(\x03R\x07\x61piPort\x12\x1b\n\tapis_port\x18\x04 \x01(\x03R\x08\x61pisPort\x12\x17\n\x07\x63\x63_port\x18\x05 \x01(\x03R\x06\x63\x63Port\x12\x61\n\x13\x63rosschain_external\x18\x06 \x03(\x0b\x32\x30.blockchain.thepower.v1alpha1.CrosschainExternalR\x12\x63rosschainExternal\"<\n\x12\x43rosschainExternal\x12\x12\n\x04host\x18\x01 \x01(\tR\x04host\x12\x12\n\x04port\x18\x02 \x01(\x03R\x04portB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
 )
 
 
@@ -88,35 +88,35 @@ _TPNODE = _descriptor.Descriptor(
       serialized_options=None, json_name='nodename', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tpic_port', full_name='blockchain.thepower.v1alpha1.TpNode.tpic_port', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='tpicPort', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='api_port', full_name='blockchain.thepower.v1alpha1.TpNode.api_port', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='apiPort', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='apis_port', full_name='blockchain.thepower.v1alpha1.TpNode.apis_port', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='apisPort', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='cc_port', full_name='blockchain.thepower.v1alpha1.TpNode.cc_port', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='ccPort', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='crosschain_external', full_name='blockchain.thepower.v1alpha1.TpNode.crosschain_external', index=5,
-      number=6, type=9, cpp_type=9, label=3,
+      number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -134,12 +134,53 @@ _TPNODE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=221,
-  serialized_end=416,
+  serialized_end=466,
+)
+
+
+_CROSSCHAINEXTERNAL = _descriptor.Descriptor(
+  name='CrosschainExternal',
+  full_name='blockchain.thepower.v1alpha1.CrosschainExternal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='blockchain.thepower.v1alpha1.CrosschainExternal.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='host', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='blockchain.thepower.v1alpha1.CrosschainExternal.port', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='port', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=468,
+  serialized_end=528,
 )
 
 _TPCHAIN.fields_by_name['chain_nodes'].message_type = _TPNODE
+_TPNODE.fields_by_name['crosschain_external'].message_type = _CROSSCHAINEXTERNAL
 DESCRIPTOR.message_types_by_name['TpChain'] = _TPCHAIN
 DESCRIPTOR.message_types_by_name['TpNode'] = _TPNODE
+DESCRIPTOR.message_types_by_name['CrosschainExternal'] = _CROSSCHAINEXTERNAL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TpChain = _reflection.GeneratedProtocolMessageType('TpChain', (_message.Message,), {
@@ -155,6 +196,13 @@ TpNode = _reflection.GeneratedProtocolMessageType('TpNode', (_message.Message,),
   # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.TpNode)
   })
 _sym_db.RegisterMessage(TpNode)
+
+CrosschainExternal = _reflection.GeneratedProtocolMessageType('CrosschainExternal', (_message.Message,), {
+  'DESCRIPTOR' : _CROSSCHAINEXTERNAL,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.CrosschainExternal)
+  })
+_sym_db.RegisterMessage(CrosschainExternal)
 
 
 DESCRIPTOR._options = None
