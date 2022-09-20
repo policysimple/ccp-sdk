@@ -49,7 +49,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
+          case 8: {
+
+            organizationId_ = input.readUInt32();
+            break;
+          }
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             integrationId_ = s;
@@ -87,10 +92,21 @@ private static final long serialVersionUID = 0L;
             io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest.class, io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest.Builder.class);
   }
 
-  public static final int INTEGRATION_ID_FIELD_NUMBER = 1;
+  public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+  private int organizationId_;
+  /**
+   * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  @java.lang.Override
+  public int getOrganizationId() {
+    return organizationId_;
+  }
+
+  public static final int INTEGRATION_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object integrationId_;
   /**
-   * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+   * <code>string integration_id = 2 [json_name = "integrationId"];</code>
    * @return The integrationId.
    */
   @java.lang.Override
@@ -107,7 +123,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+   * <code>string integration_id = 2 [json_name = "integrationId"];</code>
    * @return The bytes for integrationId.
    */
   @java.lang.Override
@@ -139,8 +155,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (organizationId_ != 0) {
+      output.writeUInt32(1, organizationId_);
+    }
     if (!getIntegrationIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, integrationId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, integrationId_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +170,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (organizationId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(1, organizationId_);
+    }
     if (!getIntegrationIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, integrationId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, integrationId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +192,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest other = (io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest) obj;
 
+    if (getOrganizationId()
+        != other.getOrganizationId()) return false;
     if (!getIntegrationId()
         .equals(other.getIntegrationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -182,6 +207,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganizationId();
     hash = (37 * hash) + INTEGRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getIntegrationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -317,6 +344,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      organizationId_ = 0;
+
       integrationId_ = "";
 
       return this;
@@ -345,6 +374,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest buildPartial() {
       io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest result = new io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest(this);
+      result.organizationId_ = organizationId_;
       result.integrationId_ = integrationId_;
       onBuilt();
       return result;
@@ -394,6 +424,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest other) {
       if (other == io.cuemby.vault.v1alpha1.GetTokenIntegrationsRequest.getDefaultInstance()) return this;
+      if (other.getOrganizationId() != 0) {
+        setOrganizationId(other.getOrganizationId());
+      }
       if (!other.getIntegrationId().isEmpty()) {
         integrationId_ = other.integrationId_;
         onChanged();
@@ -427,9 +460,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int organizationId_ ;
+    /**
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public int getOrganizationId() {
+      return organizationId_;
+    }
+    /**
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param value The organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationId(int value) {
+      
+      organizationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationId() {
+      
+      organizationId_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object integrationId_ = "";
     /**
-     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @return The integrationId.
      */
     public java.lang.String getIntegrationId() {
@@ -445,7 +509,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @return The bytes for integrationId.
      */
     public com.google.protobuf.ByteString
@@ -462,7 +526,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @param value The integrationId to set.
      * @return This builder for chaining.
      */
@@ -477,7 +541,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIntegrationId() {
@@ -487,7 +551,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @param value The bytes for integrationId to set.
      * @return This builder for chaining.
      */

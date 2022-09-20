@@ -83,8 +83,9 @@ message DeleteOrganizationResponse {
 }
 
 message SaveTokenIntegrationsRequest {
-    string integration_id = 1;
-    string token = 2;
+    uint32 organization_id = 1;
+    string integration_id = 2;
+    string token = 3;
 }
 
 message SaveTokenIntegrationsResponse {
@@ -93,7 +94,8 @@ message SaveTokenIntegrationsResponse {
 }
 
 message GetTokenIntegrationsRequest {
-    string integration_id = 1;
+    uint32 organization_id = 1;
+    string integration_id = 2;
 }
 
 message GetTokenIntegrationsResponse {

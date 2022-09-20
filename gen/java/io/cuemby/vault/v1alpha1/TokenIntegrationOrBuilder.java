@@ -8,24 +8,36 @@ public interface TokenIntegrationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  java.lang.String getOrganizationId();
+  /**
+   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationIdBytes();
+
+  /**
+   * <code>string integration_id = 2 [json_name = "integrationId"];</code>
    * @return The integrationId.
    */
   java.lang.String getIntegrationId();
   /**
-   * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+   * <code>string integration_id = 2 [json_name = "integrationId"];</code>
    * @return The bytes for integrationId.
    */
   com.google.protobuf.ByteString
       getIntegrationIdBytes();
 
   /**
-   * <code>string token = 2 [json_name = "token"];</code>
+   * <code>string token = 3 [json_name = "token"];</code>
    * @return The token.
    */
   java.lang.String getToken();
   /**
-   * <code>string token = 2 [json_name = "token"];</code>
+   * <code>string token = 3 [json_name = "token"];</code>
    * @return The bytes for token.
    */
   com.google.protobuf.ByteString

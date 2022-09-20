@@ -1930,10 +1930,11 @@ class SaveTokenIntegrationsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntegrationIdFieldNumber = 1,
-    kTokenFieldNumber = 2,
+    kIntegrationIdFieldNumber = 2,
+    kTokenFieldNumber = 3,
+    kOrganizationIdFieldNumber = 1,
   };
-  // string integration_id = 1 [json_name = "integrationId"];
+  // string integration_id = 2 [json_name = "integrationId"];
   void clear_integration_id();
   const std::string& integration_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1947,7 +1948,7 @@ class SaveTokenIntegrationsRequest final :
   std::string* _internal_mutable_integration_id();
   public:
 
-  // string token = 2 [json_name = "token"];
+  // string token = 3 [json_name = "token"];
   void clear_token();
   const std::string& token() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1961,6 +1962,15 @@ class SaveTokenIntegrationsRequest final :
   std::string* _internal_mutable_token();
   public:
 
+  // uint32 organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vault.v1alpha1.SaveTokenIntegrationsRequest)
  private:
   class _Internal;
@@ -1970,6 +1980,7 @@ class SaveTokenIntegrationsRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
 };
@@ -2250,9 +2261,10 @@ class GetTokenIntegrationsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntegrationIdFieldNumber = 1,
+    kIntegrationIdFieldNumber = 2,
+    kOrganizationIdFieldNumber = 1,
   };
-  // string integration_id = 1 [json_name = "integrationId"];
+  // string integration_id = 2 [json_name = "integrationId"];
   void clear_integration_id();
   const std::string& integration_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2266,6 +2278,15 @@ class GetTokenIntegrationsRequest final :
   std::string* _internal_mutable_integration_id();
   public:
 
+  // uint32 organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetTokenIntegrationsRequest)
  private:
   class _Internal;
@@ -2274,6 +2295,7 @@ class GetTokenIntegrationsRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
 };
@@ -3694,7 +3716,27 @@ inline void DeleteOrganizationResponse::set_allocated_error(std::string* error) 
 
 // SaveTokenIntegrationsRequest
 
-// string integration_id = 1 [json_name = "integrationId"];
+// uint32 organization_id = 1 [json_name = "organizationId"];
+inline void SaveTokenIntegrationsRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 SaveTokenIntegrationsRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 SaveTokenIntegrationsRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenIntegrationsRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void SaveTokenIntegrationsRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void SaveTokenIntegrationsRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenIntegrationsRequest.organization_id)
+}
+
+// string integration_id = 2 [json_name = "integrationId"];
 inline void SaveTokenIntegrationsRequest::clear_integration_id() {
   integration_id_.ClearToEmpty();
 }
@@ -3740,7 +3782,7 @@ inline void SaveTokenIntegrationsRequest::set_allocated_integration_id(std::stri
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenIntegrationsRequest.integration_id)
 }
 
-// string token = 2 [json_name = "token"];
+// string token = 3 [json_name = "token"];
 inline void SaveTokenIntegrationsRequest::clear_token() {
   token_.ClearToEmpty();
 }
@@ -3886,7 +3928,27 @@ inline void SaveTokenIntegrationsResponse::set_allocated_error(std::string* erro
 
 // GetTokenIntegrationsRequest
 
-// string integration_id = 1 [json_name = "integrationId"];
+// uint32 organization_id = 1 [json_name = "organizationId"];
+inline void GetTokenIntegrationsRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetTokenIntegrationsRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetTokenIntegrationsRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenIntegrationsRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void GetTokenIntegrationsRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void GetTokenIntegrationsRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenIntegrationsRequest.organization_id)
+}
+
+// string integration_id = 2 [json_name = "integrationId"];
 inline void GetTokenIntegrationsRequest::clear_integration_id() {
   integration_id_.ClearToEmpty();
 }

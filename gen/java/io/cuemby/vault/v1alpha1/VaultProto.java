@@ -71,13 +71,14 @@ public final class VaultProto {
       "ata\030\006 \001(\0132\030.vault.v1alpha1.MetadataR\010met" +
       "adata\022.\n\004data\030\007 \001(\0132\032.vault.v1alpha1.Sec" +
       "retDataR\004data\022:\n\010warnings\030\010 \001(\0132\036.vault." +
-      "v1alpha1.SecretWarningsR\010warnings\"O\n\020Tok" +
-      "enIntegration\022%\n\016integration_id\030\001 \001(\tR\ri" +
-      "ntegrationId\022\024\n\005token\030\002 \001(\tR\005tokenB\203\001\n\030i" +
-      "o.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1g" +
-      "ithub.com/cuemby/ccp-vault-service/vault" +
-      "v1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\" +
-      "V1Alpha1b\006proto3"
+      "v1alpha1.SecretWarningsR\010warnings\"x\n\020Tok" +
+      "enIntegration\022\'\n\017organization_id\030\001 \001(\tR\016" +
+      "organizationId\022%\n\016integration_id\030\002 \001(\tR\r" +
+      "integrationId\022\024\n\005token\030\003 \001(\tR\005tokenB\203\001\n\030" +
+      "io.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1" +
+      "github.com/cuemby/ccp-vault-service/vaul" +
+      "tv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault" +
+      "\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -118,7 +119,7 @@ public final class VaultProto {
     internal_static_vault_v1alpha1_TokenIntegration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_TokenIntegration_descriptor,
-        new java.lang.String[] { "IntegrationId", "Token", });
+        new java.lang.String[] { "OrganizationId", "IntegrationId", "Token", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
