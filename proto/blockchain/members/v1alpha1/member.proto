@@ -1,0 +1,25 @@
+syntax = "proto3";
+package blockchain.members.v1alpha1;
+
+option csharp_namespace = "Blockchain.Member.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/members/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "MembersInvitationProto";
+option java_package = "io.cuemby.blockchain.members.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Blockchain\\Members\\V1Alpha1";
+
+
+message Organization {
+    string user_id = 1;
+    string domain_org = 2;
+    string admin_password = 3;
+    string admin_user = 4;
+    string bc_id = 5;
+}
+
+
+message Invitation {
+    string email = 1;
+    string bc_id = 2;
+}
