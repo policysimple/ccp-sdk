@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetTokenIntegrationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string integration_id = 2 [json_name = "integrationId"];</code>
      */
     protected $integration_id = '';
 
@@ -24,6 +28,7 @@ class GetTokenIntegrationsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $organization_id
      *     @type string $integration_id
      * }
      */
@@ -33,7 +38,29 @@ class GetTokenIntegrationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @return string
      */
     public function getIntegrationId()
@@ -42,7 +69,7 @@ class GetTokenIntegrationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * Generated from protobuf field <code>string integration_id = 2 [json_name = "integrationId"];</code>
      * @param string $var
      * @return $this
      */

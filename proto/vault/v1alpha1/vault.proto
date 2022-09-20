@@ -40,6 +40,7 @@ message Secret {
 }
 
 message TokenIntegration {
-    string integration_id = 1;
-    string token = 2;
+    string organization_id = 1;
+    string integration_id = 2;
+    string token = 3;
 }

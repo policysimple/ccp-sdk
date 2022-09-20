@@ -2230,8 +2230,9 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.toObject = function(
  */
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    integrationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    integrationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    token: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2269,10 +2270,14 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOrganizationId(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationId(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setToken(value);
       break;
@@ -2305,46 +2310,53 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.serializeBinary = fu
  */
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIntegrationId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
       1,
       f
     );
   }
-  f = message.getToken();
+  f = message.getIntegrationId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string integration_id = 1;
+ * optional uint32 organization_id = 1;
+ * @return {number}
+ */
+proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.vault.v1alpha1.SaveTokenIntegrationsRequest} returns this
+ */
+proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string integration_id = 2;
  * @return {string}
  */
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.getIntegrationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vault.v1alpha1.SaveTokenIntegrationsRequest} returns this
- */
-proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.setIntegrationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string token = 2;
- * @return {string}
- */
-proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.getToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2353,8 +2365,26 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.getToken = function(
  * @param {string} value
  * @return {!proto.vault.v1alpha1.SaveTokenIntegrationsRequest} returns this
  */
-proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.setToken = function(value) {
+proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.setIntegrationId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string token = 3;
+ * @return {string}
+ */
+proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.SaveTokenIntegrationsRequest} returns this
+ */
+proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.setToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2550,7 +2580,8 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.toObject = function(o
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    integrationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    integrationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2588,6 +2619,10 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOrganizationId(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationId(value);
       break;
@@ -2620,10 +2655,17 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.serializeBinary = fun
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
+      1,
+      f
+    );
+  }
   f = message.getIntegrationId();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
@@ -2631,11 +2673,29 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.serializeBinaryToWriter = funct
 
 
 /**
- * optional string integration_id = 1;
+ * optional uint32 organization_id = 1;
+ * @return {number}
+ */
+proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.vault.v1alpha1.GetTokenIntegrationsRequest} returns this
+ */
+proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string integration_id = 2;
  * @return {string}
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.getIntegrationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2644,7 +2704,7 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.getIntegrationId = fu
  * @return {!proto.vault.v1alpha1.GetTokenIntegrationsRequest} returns this
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.setIntegrationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

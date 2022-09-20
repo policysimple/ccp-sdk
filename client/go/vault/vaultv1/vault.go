@@ -196,6 +196,7 @@ func SaveTokenIntegrations(in *vaultpkgv1.SaveTokenIntegrationsRequest) (*vaultp
 
 	response, err := client.SaveTokenIntegrations(ctx, &vaultpkgv1.SaveTokenIntegrationsRequest{
 		IntegrationId: in.IntegrationId,
+		OrganizationId: in.OrganizationId,
 		Token:          in.Token,
 	})
 

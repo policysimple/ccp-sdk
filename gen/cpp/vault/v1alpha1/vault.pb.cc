@@ -91,7 +91,8 @@ struct SecretDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretDefaultTypeInternal _Secret_default_instance_;
 constexpr TokenIntegration::TokenIntegration(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct TokenIntegrationDefaultTypeInternal {
   constexpr TokenIntegrationDefaultTypeInternal()
@@ -159,6 +160,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_2epro
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, organization_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, integration_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, token_),
 };
@@ -199,17 +201,18 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF
   "ata\030\006 \001(\0132\030.vault.v1alpha1.MetadataR\010met"
   "adata\022.\n\004data\030\007 \001(\0132\032.vault.v1alpha1.Sec"
   "retDataR\004data\022:\n\010warnings\030\010 \001(\0132\036.vault."
-  "v1alpha1.SecretWarningsR\010warnings\"O\n\020Tok"
-  "enIntegration\022%\n\016integration_id\030\001 \001(\tR\ri"
-  "ntegrationId\022\024\n\005token\030\002 \001(\tR\005tokenB\203\001\n\030i"
-  "o.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1g"
-  "ithub.com/cuemby/ccp-vault-service/vault"
-  "v1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\"
-  "V1Alpha1b\006proto3"
+  "v1alpha1.SecretWarningsR\010warnings\"x\n\020Tok"
+  "enIntegration\022\'\n\017organization_id\030\001 \001(\tR\016"
+  "organizationId\022%\n\016integration_id\030\002 \001(\tR\r"
+  "integrationId\022\024\n\005token\030\003 \001(\tR\005tokenB\203\001\n\030"
+  "io.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1"
+  "github.com/cuemby/ccp-vault-service/vaul"
+  "tv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault"
+  "\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_2eproto = {
-  false, false, 976, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
+  false, false, 1017, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
   &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto,
@@ -1536,6 +1539,11 @@ TokenIntegration::TokenIntegration(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TokenIntegration::TokenIntegration(const TokenIntegration& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_integration_id().empty()) {
     integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
@@ -1550,6 +1558,7 @@ TokenIntegration::TokenIntegration(const TokenIntegration& from)
 }
 
 inline void TokenIntegration::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1563,6 +1572,7 @@ TokenIntegration::~TokenIntegration() {
 
 inline void TokenIntegration::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1583,6 +1593,7 @@ void TokenIntegration::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
   integration_id_.ClearToEmpty();
   token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1594,18 +1605,27 @@ const char* TokenIntegration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string integration_id = 1 [json_name = "integrationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.TokenIntegration.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string integration_id = 2 [json_name = "integrationId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_integration_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.TokenIntegration.integration_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string token = 2 [json_name = "token"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string token = 3 [json_name = "token"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.TokenIntegration.token"));
@@ -1641,24 +1661,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string integration_id = 1 [json_name = "integrationId"];
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.TokenIntegration.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
+  }
+
+  // string integration_id = 2 [json_name = "integrationId"];
   if (!this->_internal_integration_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_integration_id().data(), static_cast<int>(this->_internal_integration_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vault.v1alpha1.TokenIntegration.integration_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_integration_id(), target);
+        2, this->_internal_integration_id(), target);
   }
 
-  // string token = 2 [json_name = "token"];
+  // string token = 3 [json_name = "token"];
   if (!this->_internal_token().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vault.v1alpha1.TokenIntegration.token");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_token(), target);
+        3, this->_internal_token(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1677,14 +1707,21 @@ size_t TokenIntegration::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string integration_id = 1 [json_name = "integrationId"];
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string integration_id = 2 [json_name = "integrationId"];
   if (!this->_internal_integration_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_integration_id());
   }
 
-  // string token = 2 [json_name = "token"];
+  // string token = 3 [json_name = "token"];
   if (!this->_internal_token().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1719,6 +1756,9 @@ void TokenIntegration::MergeFrom(const TokenIntegration& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
   if (!from._internal_integration_id().empty()) {
     _internal_set_integration_id(from._internal_integration_id());
   }
@@ -1742,6 +1782,11 @@ bool TokenIntegration::IsInitialized() const {
 void TokenIntegration::InternalSwap(TokenIntegration* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &integration_id_, GetArenaForAllocation(),
