@@ -184,3 +184,56 @@ func DeleteOrganization(orgId uint32) (*vaultpkgv1.DeleteOrganizationResponse, e
 
 	return response, nil
 }
+
+func SaveTokenIntegrations(in *vaultpkgv1.SaveTokenIntegrationsRequest) (*vaultpkgv1.SaveTokenIntegrationsResponse, error) {
+	bylogs.LogInfo("SaveTokenIntegrations Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.SaveTokenIntegrations(ctx, &vaultpkgv1.SaveTokenIntegrationsRequest{
+		IntegrationId: in.IntegrationId,
+		Token:          in.Token,
+	})
+
+	if err != nil {
+		bylogs.LogErr("SaveTokenIntegrations Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error save token integrations: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("SaveTokenIntegrations Client Sdk", "Success")
+	}
+
+	return response, nil
+}
+
+func GetTokenIntegrations(in *vaultpkgv1.GetTokenIntegrationsRequest) (*vaultpkgv1.GetTokenIntegrationsResponse, error) {
+	bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetTokenIntegrations(ctx, &vaultpkgv1.GetTokenIntegrationsRequest{
+		IntegrationId: in.IntegrationId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("GetTokenIntegrationsRequest Client Sdk", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("Error get token integrations: %v", err),
+		)
+	} else {
+		bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk", "Success")
+	}
+
+	return response, nil
+}
