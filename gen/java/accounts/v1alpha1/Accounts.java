@@ -1307,6 +1307,18 @@ public final class Accounts {
      * @return The isSuperUser.
      */
     boolean getIsSuperUser();
+
+    /**
+     * <code>string image = 8 [json_name = "image"];</code>
+     * @return The image.
+     */
+    java.lang.String getImage();
+    /**
+     * <code>string image = 8 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.UserList}
@@ -1325,6 +1337,7 @@ public final class Accounts {
       lastName_ = "";
       email_ = "";
       userId_ = "";
+      image_ = "";
     }
 
     @java.lang.Override
@@ -1394,6 +1407,12 @@ public final class Accounts {
             case 56: {
 
               isSuperUser_ = input.readBool();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              image_ = s;
               break;
             }
             default: {
@@ -1613,6 +1632,44 @@ public final class Accounts {
       return isSuperUser_;
     }
 
+    public static final int IMAGE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object image_;
+    /**
+     * <code>string image = 8 [json_name = "image"];</code>
+     * @return The image.
+     */
+    @java.lang.Override
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string image = 8 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1648,6 +1705,9 @@ public final class Accounts {
       if (isSuperUser_ != false) {
         output.writeBool(7, isSuperUser_);
       }
+      if (!getImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, image_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1681,6 +1741,9 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isSuperUser_);
       }
+      if (!getImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, image_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1710,6 +1773,8 @@ public final class Accounts {
           != other.getIsActive()) return false;
       if (getIsSuperUser()
           != other.getIsSuperUser()) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1737,6 +1802,8 @@ public final class Accounts {
       hash = (37 * hash) + IS_SUPER_USER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSuperUser());
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1884,6 +1951,8 @@ public final class Accounts {
 
         isSuperUser_ = false;
 
+        image_ = "";
+
         return this;
       }
 
@@ -1917,6 +1986,7 @@ public final class Accounts {
         result.userId_ = userId_;
         result.isActive_ = isActive_;
         result.isSuperUser_ = isSuperUser_;
+        result.image_ = image_;
         onBuilt();
         return result;
       }
@@ -1989,6 +2059,10 @@ public final class Accounts {
         }
         if (other.getIsSuperUser() != false) {
           setIsSuperUser(other.getIsSuperUser());
+        }
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2412,6 +2486,82 @@ public final class Accounts {
       public Builder clearIsSuperUser() {
         
         isSuperUser_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object image_ = "";
+      /**
+       * <code>string image = 8 [json_name = "image"];</code>
+       * @return The image.
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string image = 8 [json_name = "image"];</code>
+       * @return The bytes for image.
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string image = 8 [json_name = "image"];</code>
+       * @param value The image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 8 [json_name = "image"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImage() {
+        
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 8 [json_name = "image"];</code>
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        image_ = value;
         onChanged();
         return this;
       }
@@ -8387,6 +8537,18 @@ public final class Accounts {
      */
     com.google.protobuf.ByteString
         getOptionalAddressBytes();
+
+    /**
+     * <code>string image = 37 [json_name = "image"];</code>
+     * @return The image.
+     */
+    java.lang.String getImage();
+    /**
+     * <code>string image = 37 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.UserDetail}
@@ -8422,6 +8584,7 @@ public final class Accounts {
       language_ = "";
       phoneCode_ = "";
       optionalAddress_ = "";
+      image_ = "";
     }
 
     @java.lang.Override
@@ -8656,6 +8819,12 @@ public final class Accounts {
               java.lang.String s = input.readStringRequireUtf8();
 
               optionalAddress_ = s;
+              break;
+            }
+            case 298: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              image_ = s;
               break;
             }
             default: {
@@ -9671,6 +9840,44 @@ public final class Accounts {
       }
     }
 
+    public static final int IMAGE_FIELD_NUMBER = 37;
+    private volatile java.lang.Object image_;
+    /**
+     * <code>string image = 37 [json_name = "image"];</code>
+     * @return The image.
+     */
+    @java.lang.Override
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string image = 37 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9786,6 +9993,9 @@ public final class Accounts {
       }
       if (!getOptionalAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 36, optionalAddress_);
+      }
+      if (!getImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 37, image_);
       }
       unknownFields.writeTo(output);
     }
@@ -9915,6 +10125,9 @@ public final class Accounts {
       if (!getOptionalAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, optionalAddress_);
       }
+      if (!getImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, image_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9998,6 +10211,8 @@ public final class Accounts {
           .equals(other.getPhoneCode())) return false;
       if (!getOptionalAddress()
           .equals(other.getOptionalAddress())) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10097,6 +10312,8 @@ public final class Accounts {
       hash = (53 * hash) + getPhoneCode().hashCode();
       hash = (37 * hash) + OPTIONAL_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getOptionalAddress().hashCode();
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10318,6 +10535,8 @@ public final class Accounts {
 
         optionalAddress_ = "";
 
+        image_ = "";
+
         return this;
       }
 
@@ -10411,6 +10630,7 @@ public final class Accounts {
         result.readNotification_ = readNotification_;
         result.phoneCode_ = phoneCode_;
         result.optionalAddress_ = optionalAddress_;
+        result.image_ = image_;
         onBuilt();
         return result;
       }
@@ -10668,6 +10888,10 @@ public final class Accounts {
         }
         if (!other.getOptionalAddress().isEmpty()) {
           optionalAddress_ = other.optionalAddress_;
+          onChanged();
+        }
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -13406,6 +13630,82 @@ public final class Accounts {
         onChanged();
         return this;
       }
+
+      private java.lang.Object image_ = "";
+      /**
+       * <code>string image = 37 [json_name = "image"];</code>
+       * @return The image.
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string image = 37 [json_name = "image"];</code>
+       * @return The bytes for image.
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string image = 37 [json_name = "image"];</code>
+       * @param value The image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 37 [json_name = "image"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImage() {
+        
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 37 [json_name = "image"];</code>
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        image_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13509,64 +13809,66 @@ public final class Accounts {
       "projectId\022\'\n\017organization_id\030\004 \001(\rR\016orga" +
       "nizationId\022?\n\013permissions\030\005 \003(\0132\035.accoun" +
       "ts.v1alpha1.PermissionR\013permissions\022\031\n\010i" +
-      "s_admin\030\006 \001(\010R\007isAdmin\"\306\001\n\010UserList\022\016\n\002i" +
+      "s_admin\030\006 \001(\010R\007isAdmin\"\334\001\n\010UserList\022\016\n\002i" +
       "d\030\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstNa" +
       "me\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email" +
       "\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033" +
       "\n\tis_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_" +
-      "user\030\007 \001(\010R\013isSuperUser\"J\n\tMemberRol\022\016\n\002" +
-      "id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_a" +
-      "dmin\030\003 \001(\010R\007isAdmin\"y\n\nPermission\022\016\n\002id\030" +
-      "\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action\030" +
-      "\003 \001(\tR\006action\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tful" +
-      "l_name\030\005 \001(\tR\010fullName\"\256\002\n\007Project\022\016\n\002id" +
-      "\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030" +
-      "\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016o" +
-      "rganizationId\022 \n\013description\030\005 \001(\tR\013desc" +
-      "ription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035" +
-      "\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022-\n\005roles\030\010" +
-      " \003(\0132\027.accounts.v1alpha1.RoleR\005roles\0221\n\005" +
-      "users\030\t \003(\0132\033.accounts.v1alpha1.UserList" +
-      "R\005users\"\340\001\n\014Organization\022\016\n\002id\030\001 \001(\rR\002id" +
-      "\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005ima" +
-      "ge\022 \n\013description\030\004 \001(\tR\013description\0221\n\005" +
-      "owner\030\007 \001(\0132\033.accounts.v1alpha1.UserList" +
-      "R\005owner\022-\n\005roles\030\010 \003(\0132\027.accounts.v1alph" +
-      "a1.RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004slug\"\223\n\n\nU" +
-      "serDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001" +
-      "(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstNam" +
-      "e\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030" +
-      "\005 \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActiv" +
-      "e\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027" +
-      ".accounts.v1alpha1.RoleR\005roles\022?\n\013permis" +
-      "sions\030\n \003(\0132\035.accounts.v1alpha1.Permissi" +
-      "onR\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013" +
-      "isSuperUser\022E\n\rorganizations\030\014 \003(\0132\037.acc" +
-      "ounts.v1alpha1.OrganizationR\rorganizatio" +
-      "ns\0226\n\010projects\030\016 \003(\0132\032.accounts.v1alpha1" +
-      ".ProjectR\010projects\022!\n\014phone_number\030\017 \001(\t" +
-      "R\013phoneNumber\022\030\n\007country\030\020 \001(\tR\007country\022" +
-      "\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007z" +
-      "ipCode\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005stat" +
-      "e\030\024 \001(\tR\005state\022#\n\remoji_country\030\025 \001(\tR\014e" +
-      "mojiCountry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isM" +
-      "faEnabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%" +
-      "\n\016email_verified\030\030 \001(\010R\remailVerified\022\032\n" +
-      "\010language\030\032 \001(\tR\010language\022+\n\021push_notifi" +
-      "cation\030\033 \001(\010R\020pushNotification\022-\n\022email_" +
-      "notification\030\034 \001(\010R\021emailNotification\0224\n" +
-      "\026new_login_notification\030\035 \001(\010R\024newLoginN" +
-      "otification\022/\n\023create_notification\030\036 \001(\010" +
-      "R\022createNotification\022/\n\023update_notificat" +
-      "ion\030\037 \001(\010R\022updateNotification\022/\n\023delete_" +
-      "notification\030  \001(\010R\022deleteNotification\0229" +
-      "\n\030application_notification\030! \001(\010R\027applic" +
-      "ationNotification\022+\n\021read_notification\030\"" +
-      " \001(\010R\020readNotification\022\035\n\nphone_code\030# \001" +
-      "(\tR\tphoneCode\022)\n\020optional_address\030$ \001(\tR" +
-      "\017optionalAddressB4Z2github.com/cuemby/cc" +
-      "p-sdk/gen/go/accounts/v1alpha1b\006proto3"
+      "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005" +
+      "image\"J\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004na" +
+      "me\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmi" +
+      "n\"y\n\nPermission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030" +
+      "\002 \001(\tR\004name\022\026\n\006action\030\003 \001(\tR\006action\022\022\n\004t" +
+      "ype\030\004 \001(\tR\004type\022\033\n\tfull_name\030\005 \001(\tR\010full" +
+      "Name\"\256\002\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name" +
+      "\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017or" +
+      "ganization_id\030\004 \001(\rR\016organizationId\022 \n\013d" +
+      "escription\030\005 \001(\tR\013description\022\035\n\ncreated" +
+      "_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\t" +
+      "R\tupdatedAt\022-\n\005roles\030\010 \003(\0132\027.accounts.v1" +
+      "alpha1.RoleR\005roles\0221\n\005users\030\t \003(\0132\033.acco" +
+      "unts.v1alpha1.UserListR\005users\"\340\001\n\014Organi" +
+      "zation\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
+      "me\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030" +
+      "\004 \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.acco" +
+      "unts.v1alpha1.UserListR\005owner\022-\n\005roles\030\010" +
+      " \003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\022\n\004" +
+      "slug\030\t \001(\tR\004slug\"\251\n\n\nUserDetail\022\016\n\002id\030\001 " +
+      "\001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirs" +
+      "t_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001" +
+      "(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis" +
+      "_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 " +
+      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupda" +
+      "tedAt\022-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1" +
+      ".RoleR\005roles\022?\n\013permissions\030\n \003(\0132\035.acco" +
+      "unts.v1alpha1.PermissionR\013permissions\022\"\n" +
+      "\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n\rorg" +
+      "anizations\030\014 \003(\0132\037.accounts.v1alpha1.Org" +
+      "anizationR\rorganizations\0226\n\010projects\030\016 \003" +
+      "(\0132\032.accounts.v1alpha1.ProjectR\010projects" +
+      "\022!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007c" +
+      "ountry\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004cit" +
+      "y\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030" +
+      "\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n\r" +
+      "emoji_country\030\025 \001(\tR\014emojiCountry\022$\n\016is_" +
+      "mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken" +
+      "_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016email_verified\030\030" +
+      " \001(\010R\remailVerified\022\032\n\010language\030\032 \001(\tR\010l" +
+      "anguage\022+\n\021push_notification\030\033 \001(\010R\020push" +
+      "Notification\022-\n\022email_notification\030\034 \001(\010" +
+      "R\021emailNotification\0224\n\026new_login_notific" +
+      "ation\030\035 \001(\010R\024newLoginNotification\022/\n\023cre" +
+      "ate_notification\030\036 \001(\010R\022createNotificati" +
+      "on\022/\n\023update_notification\030\037 \001(\010R\022updateN" +
+      "otification\022/\n\023delete_notification\030  \001(\010" +
+      "R\022deleteNotification\0229\n\030application_noti" +
+      "fication\030! \001(\010R\027applicationNotification\022" +
+      "+\n\021read_notification\030\" \001(\010R\020readNotifica" +
+      "tion\022\035\n\nphone_code\030# \001(\tR\tphoneCode\022)\n\020o" +
+      "ptional_address\030$ \001(\tR\017optionalAddress\022\024" +
+      "\n\005image\030% \001(\tR\005imageB4Z2github.com/cuemb" +
+      "y/ccp-sdk/gen/go/accounts/v1alpha1b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13583,7 +13885,7 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_UserList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UserList_descriptor,
-        new java.lang.String[] { "Id", "FirstName", "LastName", "Email", "UserId", "IsActive", "IsSuperUser", });
+        new java.lang.String[] { "Id", "FirstName", "LastName", "Email", "UserId", "IsActive", "IsSuperUser", "Image", });
     internal_static_accounts_v1alpha1_MemberRol_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_accounts_v1alpha1_MemberRol_fieldAccessorTable = new
@@ -13613,7 +13915,7 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UserDetail_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Projects", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "IsMfaEnabled", "TokenCcp", "EmailVerified", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", "OptionalAddress", });
+        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Projects", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "IsMfaEnabled", "TokenCcp", "EmailVerified", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", "OptionalAddress", "Image", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

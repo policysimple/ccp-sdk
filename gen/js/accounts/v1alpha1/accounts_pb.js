@@ -517,7 +517,8 @@ proto.accounts.v1alpha1.UserList.toObject = function(includeInstance, msg) {
     email: jspb.Message.getFieldWithDefault(msg, 4, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+    isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    image: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -581,6 +582,10 @@ proto.accounts.v1alpha1.UserList.deserializeBinaryFromReader = function(msg, rea
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsSuperUser(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImage(value);
       break;
     default:
       reader.skipField();
@@ -657,6 +662,13 @@ proto.accounts.v1alpha1.UserList.serializeBinaryToWriter = function(message, wri
   if (f) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = message.getImage();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -786,6 +798,24 @@ proto.accounts.v1alpha1.UserList.prototype.getIsSuperUser = function() {
  */
 proto.accounts.v1alpha1.UserList.prototype.setIsSuperUser = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional string image = 8;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.UserList.prototype.getImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.UserList} returns this
+ */
+proto.accounts.v1alpha1.UserList.prototype.setImage = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -2089,7 +2119,8 @@ proto.accounts.v1alpha1.UserDetail.toObject = function(includeInstance, msg) {
     applicationNotification: jspb.Message.getBooleanFieldWithDefault(msg, 33, false),
     readNotification: jspb.Message.getBooleanFieldWithDefault(msg, 34, false),
     phoneCode: jspb.Message.getFieldWithDefault(msg, 35, ""),
-    optionalAddress: jspb.Message.getFieldWithDefault(msg, 36, "")
+    optionalAddress: jspb.Message.getFieldWithDefault(msg, 36, ""),
+    image: jspb.Message.getFieldWithDefault(msg, 37, "")
   };
 
   if (includeInstance) {
@@ -2265,6 +2296,10 @@ proto.accounts.v1alpha1.UserDetail.deserializeBinaryFromReader = function(msg, r
     case 36:
       var value = /** @type {string} */ (reader.readString());
       msg.setOptionalAddress(value);
+      break;
+    case 37:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImage(value);
       break;
     default:
       reader.skipField();
@@ -2534,6 +2569,13 @@ proto.accounts.v1alpha1.UserDetail.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       36,
+      f
+    );
+  }
+  f = message.getImage();
+  if (f.length > 0) {
+    writer.writeString(
+      37,
       f
     );
   }
@@ -3229,6 +3271,24 @@ proto.accounts.v1alpha1.UserDetail.prototype.getOptionalAddress = function() {
  */
 proto.accounts.v1alpha1.UserDetail.prototype.setOptionalAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 36, value);
+};
+
+
+/**
+ * optional string image = 37;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.UserDetail.prototype.getImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.UserDetail} returns this
+ */
+proto.accounts.v1alpha1.UserDetail.prototype.setImage = function(value) {
+  return jspb.Message.setProto3StringField(this, 37, value);
 };
 
 

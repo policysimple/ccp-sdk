@@ -155,6 +155,10 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string optional_address = 36 [json_name = "optionalAddress"];</code>
      */
     protected $optional_address = '';
+    /**
+     * Generated from protobuf field <code>string image = 37 [json_name = "image"];</code>
+     */
+    protected $image = '';
 
     /**
      * Constructor.
@@ -199,6 +203,7 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type bool $read_notification
      *     @type string $phone_code
      *     @type string $optional_address
+     *     @type string $image
      * }
      */
     public function __construct($data = NULL) {
@@ -962,6 +967,28 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->optional_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 37 [json_name = "image"];</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 37 [json_name = "image"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
 
         return $this;
     }

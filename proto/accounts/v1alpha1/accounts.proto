@@ -27,7 +27,7 @@ message UserList {
     string user_id = 5;
     bool is_active = 6;
     bool is_super_user = 7;
-
+    string image = 8;
 }
 
 message MemberRol {
@@ -82,7 +82,6 @@ message UserDetail {
     repeated Organization organizations = 12;
     repeated Project projects = 14;
 
-
     // details
     string phone_number = 15;
     string country = 16;
@@ -111,5 +110,5 @@ message UserDetail {
 
     string phone_code = 35;
     string optional_address = 36;
-
+    string image = 37;
 }
