@@ -41,6 +41,10 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_super_user = 7 [json_name = "isSuperUser"];</code>
      */
     protected $is_super_user = false;
+    /**
+     * Generated from protobuf field <code>string image = 8 [json_name = "image"];</code>
+     */
+    protected $image = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      *     @type string $user_id
      *     @type bool $is_active
      *     @type bool $is_super_user
+     *     @type string $image
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class UserList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_super_user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 8 [json_name = "image"];</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 8 [json_name = "image"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
 
         return $this;
     }

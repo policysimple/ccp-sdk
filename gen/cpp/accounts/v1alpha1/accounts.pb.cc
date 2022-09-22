@@ -41,6 +41,7 @@ constexpr UserList::UserList(
   , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(0u)
   , is_active_(false)
   , is_super_user_(false){}
@@ -144,6 +145,7 @@ constexpr UserDetail::UserDetail(
   , language_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , phone_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , optional_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(0u)
   , is_active_(false)
   , is_super_user_(false)
@@ -196,6 +198,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserList, user_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserList, is_active_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserList, is_super_user_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserList, image_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::MemberRol, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -279,15 +282,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, read_notification_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, phone_code_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, optional_address_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, image_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::accounts::v1alpha1::Role)},
   { 11, -1, sizeof(::accounts::v1alpha1::UserList)},
-  { 23, -1, sizeof(::accounts::v1alpha1::MemberRol)},
-  { 31, -1, sizeof(::accounts::v1alpha1::Permission)},
-  { 41, -1, sizeof(::accounts::v1alpha1::Project)},
-  { 55, -1, sizeof(::accounts::v1alpha1::Organization)},
-  { 67, -1, sizeof(::accounts::v1alpha1::UserDetail)},
+  { 24, -1, sizeof(::accounts::v1alpha1::MemberRol)},
+  { 32, -1, sizeof(::accounts::v1alpha1::Permission)},
+  { 42, -1, sizeof(::accounts::v1alpha1::Project)},
+  { 56, -1, sizeof(::accounts::v1alpha1::Organization)},
+  { 68, -1, sizeof(::accounts::v1alpha1::UserDetail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -307,68 +311,70 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "projectId\022\'\n\017organization_id\030\004 \001(\rR\016orga"
   "nizationId\022\?\n\013permissions\030\005 \003(\0132\035.accoun"
   "ts.v1alpha1.PermissionR\013permissions\022\031\n\010i"
-  "s_admin\030\006 \001(\010R\007isAdmin\"\306\001\n\010UserList\022\016\n\002i"
+  "s_admin\030\006 \001(\010R\007isAdmin\"\334\001\n\010UserList\022\016\n\002i"
   "d\030\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstNa"
   "me\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email"
   "\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033"
   "\n\tis_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_"
-  "user\030\007 \001(\010R\013isSuperUser\"J\n\tMemberRol\022\016\n\002"
-  "id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_a"
-  "dmin\030\003 \001(\010R\007isAdmin\"y\n\nPermission\022\016\n\002id\030"
-  "\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action\030"
-  "\003 \001(\tR\006action\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tful"
-  "l_name\030\005 \001(\tR\010fullName\"\256\002\n\007Project\022\016\n\002id"
-  "\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030"
-  "\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016o"
-  "rganizationId\022 \n\013description\030\005 \001(\tR\013desc"
-  "ription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035"
-  "\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022-\n\005roles\030\010"
-  " \003(\0132\027.accounts.v1alpha1.RoleR\005roles\0221\n\005"
-  "users\030\t \003(\0132\033.accounts.v1alpha1.UserList"
-  "R\005users\"\340\001\n\014Organization\022\016\n\002id\030\001 \001(\rR\002id"
-  "\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005ima"
-  "ge\022 \n\013description\030\004 \001(\tR\013description\0221\n\005"
-  "owner\030\007 \001(\0132\033.accounts.v1alpha1.UserList"
-  "R\005owner\022-\n\005roles\030\010 \003(\0132\027.accounts.v1alph"
-  "a1.RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004slug\"\223\n\n\nU"
-  "serDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001"
-  "(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstNam"
-  "e\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030"
-  "\005 \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActiv"
-  "e\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupda"
-  "ted_at\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027"
-  ".accounts.v1alpha1.RoleR\005roles\022\?\n\013permis"
-  "sions\030\n \003(\0132\035.accounts.v1alpha1.Permissi"
-  "onR\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013"
-  "isSuperUser\022E\n\rorganizations\030\014 \003(\0132\037.acc"
-  "ounts.v1alpha1.OrganizationR\rorganizatio"
-  "ns\0226\n\010projects\030\016 \003(\0132\032.accounts.v1alpha1"
-  ".ProjectR\010projects\022!\n\014phone_number\030\017 \001(\t"
-  "R\013phoneNumber\022\030\n\007country\030\020 \001(\tR\007country\022"
-  "\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007z"
-  "ipCode\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005stat"
-  "e\030\024 \001(\tR\005state\022#\n\remoji_country\030\025 \001(\tR\014e"
-  "mojiCountry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isM"
-  "faEnabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%"
-  "\n\016email_verified\030\030 \001(\010R\remailVerified\022\032\n"
-  "\010language\030\032 \001(\tR\010language\022+\n\021push_notifi"
-  "cation\030\033 \001(\010R\020pushNotification\022-\n\022email_"
-  "notification\030\034 \001(\010R\021emailNotification\0224\n"
-  "\026new_login_notification\030\035 \001(\010R\024newLoginN"
-  "otification\022/\n\023create_notification\030\036 \001(\010"
-  "R\022createNotification\022/\n\023update_notificat"
-  "ion\030\037 \001(\010R\022updateNotification\022/\n\023delete_"
-  "notification\030  \001(\010R\022deleteNotification\0229"
-  "\n\030application_notification\030! \001(\010R\027applic"
-  "ationNotification\022+\n\021read_notification\030\""
-  " \001(\010R\020readNotification\022\035\n\nphone_code\030# \001"
-  "(\tR\tphoneCode\022)\n\020optional_address\030$ \001(\tR"
-  "\017optionalAddressB4Z2github.com/cuemby/cc"
-  "p-sdk/gen/go/accounts/v1alpha1b\006proto3"
+  "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005"
+  "image\"J\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004na"
+  "me\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmi"
+  "n\"y\n\nPermission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030"
+  "\002 \001(\tR\004name\022\026\n\006action\030\003 \001(\tR\006action\022\022\n\004t"
+  "ype\030\004 \001(\tR\004type\022\033\n\tfull_name\030\005 \001(\tR\010full"
+  "Name\"\256\002\n\007Project\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name"
+  "\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017or"
+  "ganization_id\030\004 \001(\rR\016organizationId\022 \n\013d"
+  "escription\030\005 \001(\tR\013description\022\035\n\ncreated"
+  "_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\t"
+  "R\tupdatedAt\022-\n\005roles\030\010 \003(\0132\027.accounts.v1"
+  "alpha1.RoleR\005roles\0221\n\005users\030\t \003(\0132\033.acco"
+  "unts.v1alpha1.UserListR\005users\"\340\001\n\014Organi"
+  "zation\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004na"
+  "me\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030"
+  "\004 \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.acco"
+  "unts.v1alpha1.UserListR\005owner\022-\n\005roles\030\010"
+  " \003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\022\n\004"
+  "slug\030\t \001(\tR\004slug\"\251\n\n\nUserDetail\022\016\n\002id\030\001 "
+  "\001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirs"
+  "t_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001"
+  "(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis"
+  "_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 "
+  "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupda"
+  "tedAt\022-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1"
+  ".RoleR\005roles\022\?\n\013permissions\030\n \003(\0132\035.acco"
+  "unts.v1alpha1.PermissionR\013permissions\022\"\n"
+  "\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n\rorg"
+  "anizations\030\014 \003(\0132\037.accounts.v1alpha1.Org"
+  "anizationR\rorganizations\0226\n\010projects\030\016 \003"
+  "(\0132\032.accounts.v1alpha1.ProjectR\010projects"
+  "\022!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007c"
+  "ountry\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004cit"
+  "y\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030"
+  "\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n\r"
+  "emoji_country\030\025 \001(\tR\014emojiCountry\022$\n\016is_"
+  "mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken"
+  "_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016email_verified\030\030"
+  " \001(\010R\remailVerified\022\032\n\010language\030\032 \001(\tR\010l"
+  "anguage\022+\n\021push_notification\030\033 \001(\010R\020push"
+  "Notification\022-\n\022email_notification\030\034 \001(\010"
+  "R\021emailNotification\0224\n\026new_login_notific"
+  "ation\030\035 \001(\010R\024newLoginNotification\022/\n\023cre"
+  "ate_notification\030\036 \001(\010R\022createNotificati"
+  "on\022/\n\023update_notification\030\037 \001(\010R\022updateN"
+  "otification\022/\n\023delete_notification\030  \001(\010"
+  "R\022deleteNotification\0229\n\030application_noti"
+  "fication\030! \001(\010R\027applicationNotification\022"
+  "+\n\021read_notification\030\" \001(\010R\020readNotifica"
+  "tion\022\035\n\nphone_code\030# \001(\tR\tphoneCode\022)\n\020o"
+  "ptional_address\030$ \001(\tR\017optionalAddress\022\024"
+  "\n\005image\030% \001(\tR\005imageB4Z2github.com/cuemb"
+  "y/ccp-sdk/gen/go/accounts/v1alpha1b\006prot"
+  "o3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto = {
-  false, false, 2558, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
+  false, false, 2602, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
   &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once, nullptr, 0, 7,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2faccounts_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2faccounts_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2faccounts_2eproto,
@@ -758,6 +764,11 @@ UserList::UserList(const UserList& from)
     user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
       GetArenaForAllocation());
   }
+  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image().empty()) {
+    image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_super_user_) -
     reinterpret_cast<char*>(&id_)) + sizeof(is_super_user_));
@@ -769,6 +780,7 @@ first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&is_super_user_) -
@@ -788,6 +800,7 @@ inline void UserList::SharedDtor() {
   last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UserList::ArenaDtor(void* object) {
@@ -810,6 +823,7 @@ void UserList::Clear() {
   last_name_.ClearToEmpty();
   email_.ClearToEmpty();
   user_id_.ClearToEmpty();
+  image_.ClearToEmpty();
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_super_user_) -
       reinterpret_cast<char*>(&id_)) + sizeof(is_super_user_));
@@ -876,6 +890,15 @@ const char* UserList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           is_super_user_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string image = 8 [json_name = "image"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_image();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserList.image"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -966,6 +989,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_is_super_user(), target);
   }
 
+  // string image = 8 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image().data(), static_cast<int>(this->_internal_image().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserList.image");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_image(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1008,6 +1041,13 @@ size_t UserList::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_user_id());
+  }
+
+  // string image = 8 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image());
   }
 
   // uint32 id = 1 [json_name = "id"];
@@ -1067,6 +1107,9 @@ void UserList::MergeFrom(const UserList& from) {
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
+  if (!from._internal_image().empty()) {
+    _internal_set_image(from._internal_image());
+  }
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -1112,6 +1155,11 @@ void UserList::InternalSwap(UserList* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &user_id_, GetArenaForAllocation(),
       &other->user_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &image_, GetArenaForAllocation(),
+      &other->image_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UserList, is_super_user_)
@@ -2778,6 +2826,11 @@ UserDetail::UserDetail(const UserDetail& from)
     optional_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_optional_address(), 
       GetArenaForAllocation());
   }
+  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image().empty()) {
+    image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
     reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
@@ -2802,6 +2855,7 @@ token_ccp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 optional_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
@@ -2834,6 +2888,7 @@ inline void UserDetail::SharedDtor() {
   language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   phone_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   optional_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UserDetail::ArenaDtor(void* object) {
@@ -2873,6 +2928,7 @@ void UserDetail::Clear() {
   language_.ClearToEmpty();
   phone_code_.ClearToEmpty();
   optional_address_.ClearToEmpty();
+  image_.ClearToEmpty();
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&read_notification_) -
       reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
@@ -3174,6 +3230,15 @@ const char* UserDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           auto str = _internal_mutable_optional_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetail.optional_address"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string image = 37 [json_name = "image"];
+      case 37:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_image();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetail.image"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3486,6 +3551,16 @@ failure:
         36, this->_internal_optional_address(), target);
   }
 
+  // string image = 37 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image().data(), static_cast<int>(this->_internal_image().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetail.image");
+    target = stream->WriteStringMaybeAliased(
+        37, this->_internal_image(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3649,6 +3724,13 @@ size_t UserDetail::ByteSizeLong() const {
         this->_internal_optional_address());
   }
 
+  // string image = 37 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image());
+  }
+
   // uint32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
     total_size += 1 +
@@ -3799,6 +3881,9 @@ void UserDetail::MergeFrom(const UserDetail& from) {
   if (!from._internal_optional_address().empty()) {
     _internal_set_optional_address(from._internal_optional_address());
   }
+  if (!from._internal_image().empty()) {
+    _internal_set_image(from._internal_image());
+  }
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -3943,6 +4028,11 @@ void UserDetail::InternalSwap(UserDetail* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &optional_address_, GetArenaForAllocation(),
       &other->optional_address_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &image_, GetArenaForAllocation(),
+      &other->image_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UserDetail, read_notification_)

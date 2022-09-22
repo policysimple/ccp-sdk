@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-þ
+ª
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"Î
 Role
 id (Rid
@@ -25,7 +25,7 @@ class Accounts
 project_id (R	projectId\'
 organization_id (RorganizationId?
 permissions (2.accounts.v1alpha1.PermissionRpermissions
-is_admin (RisAdmin"Æ
+is_admin (RisAdmin"Ü
 UserList
 id (Rid
 
@@ -34,7 +34,8 @@ first_name (	R	firstName
 email (	Remail
 user_id (	RuserId
 	is_active (RisActive"
-is_super_user (RisSuperUser"J
+is_super_user (RisSuperUser
+image (	Rimage"J
 	MemberRol
 id (Rid
 name (	Rname
@@ -65,7 +66,7 @@ updated_at (	R	updatedAt-
 description (	Rdescription1
 owner (2.accounts.v1alpha1.UserListRowner-
 roles (2.accounts.v1alpha1.RoleRroles
-slug	 (	Rslug"“
+slug	 (	Rslug"©
 
 
 UserDetail
@@ -107,7 +108,8 @@ updated_at (	R	updatedAt-
 read_notification" (RreadNotification
 
 phone_code# (	R	phoneCode)
-optional_address$ (	RoptionalAddressB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
+optional_address$ (	RoptionalAddress
+image% (	RimageB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

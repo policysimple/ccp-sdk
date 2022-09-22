@@ -419,6 +419,7 @@ class UserList final :
     kLastNameFieldNumber = 3,
     kEmailFieldNumber = 4,
     kUserIdFieldNumber = 5,
+    kImageFieldNumber = 8,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 6,
     kIsSuperUserFieldNumber = 7,
@@ -479,6 +480,20 @@ class UserList final :
   std::string* _internal_mutable_user_id();
   public:
 
+  // string image = 8 [json_name = "image"];
+  void clear_image();
+  const std::string& image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_image();
+  void set_allocated_image(std::string* image);
+  private:
+  const std::string& _internal_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_image(const std::string& value);
+  std::string* _internal_mutable_image();
+  public:
+
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
@@ -517,6 +532,7 @@ class UserList final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   bool is_super_user_;
@@ -1543,6 +1559,7 @@ class UserDetail final :
     kLanguageFieldNumber = 26,
     kPhoneCodeFieldNumber = 35,
     kOptionalAddressFieldNumber = 36,
+    kImageFieldNumber = 37,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 6,
     kIsSuperUserFieldNumber = 11,
@@ -1867,6 +1884,20 @@ class UserDetail final :
   std::string* _internal_mutable_optional_address();
   public:
 
+  // string image = 37 [json_name = "image"];
+  void clear_image();
+  const std::string& image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_image();
+  void set_allocated_image(std::string* image);
+  private:
+  const std::string& _internal_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_image(const std::string& value);
+  std::string* _internal_mutable_image();
+  public:
+
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
@@ -2012,6 +2043,7 @@ class UserDetail final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr optional_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   bool is_super_user_;
@@ -2451,6 +2483,52 @@ inline void UserList::_internal_set_is_super_user(bool value) {
 inline void UserList::set_is_super_user(bool value) {
   _internal_set_is_super_user(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserList.is_super_user)
+}
+
+// string image = 8 [json_name = "image"];
+inline void UserList::clear_image() {
+  image_.ClearToEmpty();
+}
+inline const std::string& UserList::image() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserList.image)
+  return _internal_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserList::set_image(ArgT0&& arg0, ArgT... args) {
+ 
+ image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserList.image)
+}
+inline std::string* UserList::mutable_image() {
+  std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserList.image)
+  return _s;
+}
+inline const std::string& UserList::_internal_image() const {
+  return image_.Get();
+}
+inline void UserList::_internal_set_image(const std::string& value) {
+  
+  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserList::_internal_mutable_image() {
+  
+  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserList::release_image() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserList.image)
+  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserList::set_allocated_image(std::string* image) {
+  if (image != nullptr) {
+    
+  } else {
+    
+  }
+  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserList.image)
 }
 
 // -------------------------------------------------------------------
@@ -4647,6 +4725,52 @@ inline void UserDetail::set_allocated_optional_address(std::string* optional_add
   optional_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), optional_address,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.optional_address)
+}
+
+// string image = 37 [json_name = "image"];
+inline void UserDetail::clear_image() {
+  image_.ClearToEmpty();
+}
+inline const std::string& UserDetail::image() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.image)
+  return _internal_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserDetail::set_image(ArgT0&& arg0, ArgT... args) {
+ 
+ image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetail.image)
+}
+inline std::string* UserDetail::mutable_image() {
+  std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.image)
+  return _s;
+}
+inline const std::string& UserDetail::_internal_image() const {
+  return image_.Get();
+}
+inline void UserDetail::_internal_set_image(const std::string& value) {
+  
+  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UserDetail::_internal_mutable_image() {
+  
+  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UserDetail::release_image() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetail.image)
+  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UserDetail::set_allocated_image(std::string* image) {
+  if (image != nullptr) {
+    
+  } else {
+    
+  }
+  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetail.image)
 }
 
 #ifdef __GNUC__
