@@ -71,6 +71,8 @@ message CreateUserRequest {
     string phone_code = 27;
     string optional_address = 28;
 
+    //image
+    string image = 29;
 }
 
 //Update
@@ -83,19 +85,6 @@ message UpdateUserRequest {
 message DeleteUserRequest {
     uint32 user_id = 1;
     uint32 organization_id = 2;
-}
-
-//Authentication without group and permission
-message UserList {
-    uint32 id = 1;
-
-    string first_name = 2;
-    string last_name = 3;
-    string email = 4;
-
-    string user_id = 5;
-    bool is_active = 6;
-    bool is_super_user = 7;
 }
 
 
