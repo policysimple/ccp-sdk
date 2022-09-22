@@ -22,7 +22,7 @@ var doOnce sync.Once
 var accountServiceUri string
 var accountServiceTimeout string
 
-func Init() {
+func init() {
 	doOnce.Do(func() {
 		accountServiceTimeout = os.Getenv("ACCOUNT_SERVICE_TIMEOUT")
 		if accountServiceTimeout == "" {
