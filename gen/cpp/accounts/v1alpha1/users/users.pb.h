@@ -47,7 +47,7 @@ struct TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[25]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -124,9 +124,6 @@ extern UpdateUserRequestDefaultTypeInternal _UpdateUserRequest_default_instance_
 class UpdateUserResponse;
 struct UpdateUserResponseDefaultTypeInternal;
 extern UpdateUserResponseDefaultTypeInternal _UpdateUserResponse_default_instance_;
-class UserList;
-struct UserListDefaultTypeInternal;
-extern UserListDefaultTypeInternal _UserList_default_instance_;
 class UsersDex;
 struct UsersDexDefaultTypeInternal;
 extern UsersDexDefaultTypeInternal _UsersDex_default_instance_;
@@ -163,7 +160,6 @@ template<> ::accounts::v1alpha1::users::v1::SendVerificationEmailRequest* Arena:
 template<> ::accounts::v1alpha1::users::v1::SendVerificationEmailResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::SendVerificationEmailResponse>(Arena*);
 template<> ::accounts::v1alpha1::users::v1::UpdateUserRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::UpdateUserRequest>(Arena*);
 template<> ::accounts::v1alpha1::users::v1::UpdateUserResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::UpdateUserResponse>(Arena*);
-template<> ::accounts::v1alpha1::users::v1::UserList* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::UserList>(Arena*);
 template<> ::accounts::v1alpha1::users::v1::UsersDex* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::UsersDex>(Arena*);
 template<> ::accounts::v1alpha1::users::v1::VerifyEmailRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::VerifyEmailRequest>(Arena*);
 template<> ::accounts::v1alpha1::users::v1::VerifyEmailResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::users::v1::VerifyEmailResponse>(Arena*);
@@ -938,6 +934,7 @@ class CreateUserRequest final :
     kLanguageFieldNumber = 18,
     kPhoneCodeFieldNumber = 27,
     kOptionalAddressFieldNumber = 28,
+    kImageFieldNumber = 29,
     kIsActiveFieldNumber = 5,
     kIsMfaEnabledFieldNumber = 17,
     kPushNotificationFieldNumber = 19,
@@ -1225,6 +1222,20 @@ class CreateUserRequest final :
   std::string* _internal_mutable_optional_address();
   public:
 
+  // string image = 29 [json_name = "image"];
+  void clear_image();
+  const std::string& image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_image();
+  void set_allocated_image(std::string* image);
+  private:
+  const std::string& _internal_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_image(const std::string& value);
+  std::string* _internal_mutable_image();
+  public:
+
   // bool is_active = 5 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
@@ -1343,6 +1354,7 @@ class CreateUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr optional_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   bool is_active_;
   bool is_mfa_enabled_;
   bool push_notification_;
@@ -1667,231 +1679,6 @@ class DeleteUserRequest final :
 };
 // -------------------------------------------------------------------
 
-class UserList final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.users.v1.UserList) */ {
- public:
-  inline UserList() : UserList(nullptr) {}
-  ~UserList() override;
-  explicit constexpr UserList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  UserList(const UserList& from);
-  UserList(UserList&& from) noexcept
-    : UserList() {
-    *this = ::std::move(from);
-  }
-
-  inline UserList& operator=(const UserList& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UserList& operator=(UserList&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UserList& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UserList* internal_default_instance() {
-    return reinterpret_cast<const UserList*>(
-               &_UserList_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  friend void swap(UserList& a, UserList& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(UserList* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UserList* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UserList* New() const final {
-    return new UserList();
-  }
-
-  UserList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UserList>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const UserList& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const UserList& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UserList* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "accounts.v1alpha1.users.v1.UserList";
-  }
-  protected:
-  explicit UserList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kFirstNameFieldNumber = 2,
-    kLastNameFieldNumber = 3,
-    kEmailFieldNumber = 4,
-    kUserIdFieldNumber = 5,
-    kIdFieldNumber = 1,
-    kIsActiveFieldNumber = 6,
-    kIsSuperUserFieldNumber = 7,
-  };
-  // string first_name = 2 [json_name = "firstName"];
-  void clear_first_name();
-  const std::string& first_name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_first_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_first_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_first_name();
-  void set_allocated_first_name(std::string* first_name);
-  private:
-  const std::string& _internal_first_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_first_name(const std::string& value);
-  std::string* _internal_mutable_first_name();
-  public:
-
-  // string last_name = 3 [json_name = "lastName"];
-  void clear_last_name();
-  const std::string& last_name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_last_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_last_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_last_name();
-  void set_allocated_last_name(std::string* last_name);
-  private:
-  const std::string& _internal_last_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_name(const std::string& value);
-  std::string* _internal_mutable_last_name();
-  public:
-
-  // string email = 4 [json_name = "email"];
-  void clear_email();
-  const std::string& email() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_email(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_email();
-  PROTOBUF_MUST_USE_RESULT std::string* release_email();
-  void set_allocated_email(std::string* email);
-  private:
-  const std::string& _internal_email() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
-  std::string* _internal_mutable_email();
-  public:
-
-  // string user_id = 5 [json_name = "userId"];
-  void clear_user_id();
-  const std::string& user_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_user_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_user_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
-  void set_allocated_user_id(std::string* user_id);
-  private:
-  const std::string& _internal_user_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
-  std::string* _internal_mutable_user_id();
-  public:
-
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // bool is_active = 6 [json_name = "isActive"];
-  void clear_is_active();
-  bool is_active() const;
-  void set_is_active(bool value);
-  private:
-  bool _internal_is_active() const;
-  void _internal_set_is_active(bool value);
-  public:
-
-  // bool is_super_user = 7 [json_name = "isSuperUser"];
-  void clear_is_super_user();
-  bool is_super_user() const;
-  void set_is_super_user(bool value);
-  private:
-  bool _internal_is_super_user() const;
-  void _internal_set_is_super_user(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.users.v1.UserList)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
-  bool is_active_;
-  bool is_super_user_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto;
-};
-// -------------------------------------------------------------------
-
 class GetOneUserRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.users.v1.GetOneUserRequest) */ {
  public:
@@ -1936,7 +1723,7 @@ class GetOneUserRequest final :
                &_GetOneUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(GetOneUserRequest& a, GetOneUserRequest& b) {
     a.Swap(&b);
@@ -2086,7 +1873,7 @@ class GetOneUserResponse final :
                &_GetOneUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   friend void swap(GetOneUserResponse& a, GetOneUserResponse& b) {
     a.Swap(&b);
@@ -2266,7 +2053,7 @@ class ListUserResponse final :
                &_ListUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   friend void swap(ListUserResponse& a, ListUserResponse& b) {
     a.Swap(&b);
@@ -2339,22 +2126,22 @@ class ListUserResponse final :
   enum : int {
     kUsersFieldNumber = 1,
   };
-  // repeated .accounts.v1alpha1.users.v1.UserList users = 1 [json_name = "users"];
+  // repeated .accounts.v1alpha1.UserList users = 1 [json_name = "users"];
   int users_size() const;
   private:
   int _internal_users_size() const;
   public:
   void clear_users();
-  ::accounts::v1alpha1::users::v1::UserList* mutable_users(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >*
+  ::accounts::v1alpha1::UserList* mutable_users(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >*
       mutable_users();
   private:
-  const ::accounts::v1alpha1::users::v1::UserList& _internal_users(int index) const;
-  ::accounts::v1alpha1::users::v1::UserList* _internal_add_users();
+  const ::accounts::v1alpha1::UserList& _internal_users(int index) const;
+  ::accounts::v1alpha1::UserList* _internal_add_users();
   public:
-  const ::accounts::v1alpha1::users::v1::UserList& users(int index) const;
-  ::accounts::v1alpha1::users::v1::UserList* add_users();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >&
+  const ::accounts::v1alpha1::UserList& users(int index) const;
+  ::accounts::v1alpha1::UserList* add_users();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >&
       users() const;
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.users.v1.ListUserResponse)
@@ -2364,7 +2151,7 @@ class ListUserResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList > users_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList > users_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto;
 };
@@ -2414,7 +2201,7 @@ class ListUserPaginationRequest final :
                &_ListUserPaginationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   friend void swap(ListUserPaginationRequest& a, ListUserPaginationRequest& b) {
     a.Swap(&b);
@@ -2564,7 +2351,7 @@ class ListUserPaginationResponse final :
                &_ListUserPaginationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   friend void swap(ListUserPaginationResponse& a, ListUserPaginationResponse& b) {
     a.Swap(&b);
@@ -2638,22 +2425,22 @@ class ListUserPaginationResponse final :
     kUsersFieldNumber = 2,
     kCountFieldNumber = 1,
   };
-  // repeated .accounts.v1alpha1.users.v1.UserList users = 2 [json_name = "users"];
+  // repeated .accounts.v1alpha1.UserList users = 2 [json_name = "users"];
   int users_size() const;
   private:
   int _internal_users_size() const;
   public:
   void clear_users();
-  ::accounts::v1alpha1::users::v1::UserList* mutable_users(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >*
+  ::accounts::v1alpha1::UserList* mutable_users(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >*
       mutable_users();
   private:
-  const ::accounts::v1alpha1::users::v1::UserList& _internal_users(int index) const;
-  ::accounts::v1alpha1::users::v1::UserList* _internal_add_users();
+  const ::accounts::v1alpha1::UserList& _internal_users(int index) const;
+  ::accounts::v1alpha1::UserList* _internal_add_users();
   public:
-  const ::accounts::v1alpha1::users::v1::UserList& users(int index) const;
-  ::accounts::v1alpha1::users::v1::UserList* add_users();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >&
+  const ::accounts::v1alpha1::UserList& users(int index) const;
+  ::accounts::v1alpha1::UserList* add_users();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >&
       users() const;
 
   // int64 count = 1 [json_name = "count"];
@@ -2672,7 +2459,7 @@ class ListUserPaginationResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList > users_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList > users_;
   ::PROTOBUF_NAMESPACE_ID::int64 count_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto;
@@ -2723,7 +2510,7 @@ class GetListUserDexRequest final :
                &_GetListUserDexRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   friend void swap(GetListUserDexRequest& a, GetListUserDexRequest& b) {
     a.Swap(&b);
@@ -2849,7 +2636,7 @@ class GetListUserDexResponse final :
                &_GetListUserDexResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   friend void swap(GetListUserDexResponse& a, GetListUserDexResponse& b) {
     a.Swap(&b);
@@ -2997,7 +2784,7 @@ class GetOneUserDexRequest final :
                &_GetOneUserDexRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   friend void swap(GetOneUserDexRequest& a, GetOneUserDexRequest& b) {
     a.Swap(&b);
@@ -3161,7 +2948,7 @@ class GetOneUserDexResponse final :
                &_GetOneUserDexResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   friend void swap(GetOneUserDexResponse& a, GetOneUserDexResponse& b) {
     a.Swap(&b);
@@ -3341,7 +3128,7 @@ class SendVerificationEmailRequest final :
                &_SendVerificationEmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   friend void swap(SendVerificationEmailRequest& a, SendVerificationEmailRequest& b) {
     a.Swap(&b);
@@ -3517,7 +3304,7 @@ class SendVerificationEmailResponse final :
                &_SendVerificationEmailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   friend void swap(SendVerificationEmailResponse& a, SendVerificationEmailResponse& b) {
     a.Swap(&b);
@@ -3677,7 +3464,7 @@ class VerifyEmailRequest final :
                &_VerifyEmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   friend void swap(VerifyEmailRequest& a, VerifyEmailRequest& b) {
     a.Swap(&b);
@@ -3821,7 +3608,7 @@ class VerifyEmailResponse final :
                &_VerifyEmailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   friend void swap(VerifyEmailResponse& a, VerifyEmailResponse& b) {
     a.Swap(&b);
@@ -3981,7 +3768,7 @@ class CheckUserRequest final :
                &_CheckUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   friend void swap(CheckUserRequest& a, CheckUserRequest& b) {
     a.Swap(&b);
@@ -4290,7 +4077,7 @@ class CheckUserResponse final :
                &_CheckUserResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    21;
 
   friend void swap(CheckUserResponse& a, CheckUserResponse& b) {
     a.Swap(&b);
@@ -4472,7 +4259,7 @@ class UsersDex final :
                &_UsersDex_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   friend void swap(UsersDex& a, UsersDex& b) {
     a.Swap(&b);
@@ -4632,7 +4419,7 @@ class GetUsersEmailFilterRequest final :
                &_GetUsersEmailFilterRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   friend void swap(GetUsersEmailFilterRequest& a, GetUsersEmailFilterRequest& b) {
     a.Swap(&b);
@@ -4776,7 +4563,7 @@ class GetUsersEmailFilterResponse final :
                &_GetUsersEmailFilterResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   friend void swap(GetUsersEmailFilterResponse& a, GetUsersEmailFilterResponse& b) {
     a.Swap(&b);
@@ -4849,22 +4636,22 @@ class GetUsersEmailFilterResponse final :
   enum : int {
     kUsersFieldNumber = 1,
   };
-  // repeated .accounts.v1alpha1.users.v1.UserList users = 1 [json_name = "users"];
+  // repeated .accounts.v1alpha1.UserList users = 1 [json_name = "users"];
   int users_size() const;
   private:
   int _internal_users_size() const;
   public:
   void clear_users();
-  ::accounts::v1alpha1::users::v1::UserList* mutable_users(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >*
+  ::accounts::v1alpha1::UserList* mutable_users(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >*
       mutable_users();
   private:
-  const ::accounts::v1alpha1::users::v1::UserList& _internal_users(int index) const;
-  ::accounts::v1alpha1::users::v1::UserList* _internal_add_users();
+  const ::accounts::v1alpha1::UserList& _internal_users(int index) const;
+  ::accounts::v1alpha1::UserList* _internal_add_users();
   public:
-  const ::accounts::v1alpha1::users::v1::UserList& users(int index) const;
-  ::accounts::v1alpha1::users::v1::UserList* add_users();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >&
+  const ::accounts::v1alpha1::UserList& users(int index) const;
+  ::accounts::v1alpha1::UserList* add_users();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >&
       users() const;
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse)
@@ -4874,7 +4661,7 @@ class GetUsersEmailFilterResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList > users_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList > users_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto;
 };
@@ -6252,6 +6039,52 @@ inline void CreateUserRequest::set_allocated_optional_address(std::string* optio
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.CreateUserRequest.optional_address)
 }
 
+// string image = 29 [json_name = "image"];
+inline void CreateUserRequest::clear_image() {
+  image_.ClearToEmpty();
+}
+inline const std::string& CreateUserRequest::image() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.CreateUserRequest.image)
+  return _internal_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateUserRequest::set_image(ArgT0&& arg0, ArgT... args) {
+ 
+ image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.CreateUserRequest.image)
+}
+inline std::string* CreateUserRequest::mutable_image() {
+  std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.CreateUserRequest.image)
+  return _s;
+}
+inline const std::string& CreateUserRequest::_internal_image() const {
+  return image_.Get();
+}
+inline void CreateUserRequest::_internal_set_image(const std::string& value) {
+  
+  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::_internal_mutable_image() {
+  
+  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateUserRequest::release_image() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.CreateUserRequest.image)
+  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateUserRequest::set_allocated_image(std::string* image) {
+  if (image != nullptr) {
+    
+  } else {
+    
+  }
+  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.CreateUserRequest.image)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateUserRequest
@@ -6408,254 +6241,6 @@ inline void DeleteUserRequest::_internal_set_organization_id(::PROTOBUF_NAMESPAC
 inline void DeleteUserRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_organization_id(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.DeleteUserRequest.organization_id)
-}
-
-// -------------------------------------------------------------------
-
-// UserList
-
-// uint32 id = 1 [json_name = "id"];
-inline void UserList::clear_id() {
-  id_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 UserList::_internal_id() const {
-  return id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 UserList::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.id)
-  return _internal_id();
-}
-inline void UserList::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  id_ = value;
-}
-inline void UserList::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.id)
-}
-
-// string first_name = 2 [json_name = "firstName"];
-inline void UserList::clear_first_name() {
-  first_name_.ClearToEmpty();
-}
-inline const std::string& UserList::first_name() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.first_name)
-  return _internal_first_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UserList::set_first_name(ArgT0&& arg0, ArgT... args) {
- 
- first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.first_name)
-}
-inline std::string* UserList::mutable_first_name() {
-  std::string* _s = _internal_mutable_first_name();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.UserList.first_name)
-  return _s;
-}
-inline const std::string& UserList::_internal_first_name() const {
-  return first_name_.Get();
-}
-inline void UserList::_internal_set_first_name(const std::string& value) {
-  
-  first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UserList::_internal_mutable_first_name() {
-  
-  return first_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UserList::release_first_name() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.UserList.first_name)
-  return first_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UserList::set_allocated_first_name(std::string* first_name) {
-  if (first_name != nullptr) {
-    
-  } else {
-    
-  }
-  first_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.UserList.first_name)
-}
-
-// string last_name = 3 [json_name = "lastName"];
-inline void UserList::clear_last_name() {
-  last_name_.ClearToEmpty();
-}
-inline const std::string& UserList::last_name() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.last_name)
-  return _internal_last_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UserList::set_last_name(ArgT0&& arg0, ArgT... args) {
- 
- last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.last_name)
-}
-inline std::string* UserList::mutable_last_name() {
-  std::string* _s = _internal_mutable_last_name();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.UserList.last_name)
-  return _s;
-}
-inline const std::string& UserList::_internal_last_name() const {
-  return last_name_.Get();
-}
-inline void UserList::_internal_set_last_name(const std::string& value) {
-  
-  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UserList::_internal_mutable_last_name() {
-  
-  return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UserList::release_last_name() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.UserList.last_name)
-  return last_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UserList::set_allocated_last_name(std::string* last_name) {
-  if (last_name != nullptr) {
-    
-  } else {
-    
-  }
-  last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.UserList.last_name)
-}
-
-// string email = 4 [json_name = "email"];
-inline void UserList::clear_email() {
-  email_.ClearToEmpty();
-}
-inline const std::string& UserList::email() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.email)
-  return _internal_email();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UserList::set_email(ArgT0&& arg0, ArgT... args) {
- 
- email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.email)
-}
-inline std::string* UserList::mutable_email() {
-  std::string* _s = _internal_mutable_email();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.UserList.email)
-  return _s;
-}
-inline const std::string& UserList::_internal_email() const {
-  return email_.Get();
-}
-inline void UserList::_internal_set_email(const std::string& value) {
-  
-  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UserList::_internal_mutable_email() {
-  
-  return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UserList::release_email() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.UserList.email)
-  return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UserList::set_allocated_email(std::string* email) {
-  if (email != nullptr) {
-    
-  } else {
-    
-  }
-  email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.UserList.email)
-}
-
-// string user_id = 5 [json_name = "userId"];
-inline void UserList::clear_user_id() {
-  user_id_.ClearToEmpty();
-}
-inline const std::string& UserList::user_id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.user_id)
-  return _internal_user_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UserList::set_user_id(ArgT0&& arg0, ArgT... args) {
- 
- user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.user_id)
-}
-inline std::string* UserList::mutable_user_id() {
-  std::string* _s = _internal_mutable_user_id();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.UserList.user_id)
-  return _s;
-}
-inline const std::string& UserList::_internal_user_id() const {
-  return user_id_.Get();
-}
-inline void UserList::_internal_set_user_id(const std::string& value) {
-  
-  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UserList::_internal_mutable_user_id() {
-  
-  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UserList::release_user_id() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.UserList.user_id)
-  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UserList::set_allocated_user_id(std::string* user_id) {
-  if (user_id != nullptr) {
-    
-  } else {
-    
-  }
-  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.UserList.user_id)
-}
-
-// bool is_active = 6 [json_name = "isActive"];
-inline void UserList::clear_is_active() {
-  is_active_ = false;
-}
-inline bool UserList::_internal_is_active() const {
-  return is_active_;
-}
-inline bool UserList::is_active() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.is_active)
-  return _internal_is_active();
-}
-inline void UserList::_internal_set_is_active(bool value) {
-  
-  is_active_ = value;
-}
-inline void UserList::set_is_active(bool value) {
-  _internal_set_is_active(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.is_active)
-}
-
-// bool is_super_user = 7 [json_name = "isSuperUser"];
-inline void UserList::clear_is_super_user() {
-  is_super_user_ = false;
-}
-inline bool UserList::_internal_is_super_user() const {
-  return is_super_user_;
-}
-inline bool UserList::is_super_user() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.UserList.is_super_user)
-  return _internal_is_super_user();
-}
-inline void UserList::_internal_set_is_super_user(bool value) {
-  
-  is_super_user_ = value;
-}
-inline void UserList::set_is_super_user(bool value) {
-  _internal_set_is_super_user(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.UserList.is_super_user)
 }
 
 // -------------------------------------------------------------------
@@ -6888,41 +6473,38 @@ inline void GetOneUserResponse::set_allocated_error(std::string* error) {
 
 // ListUserResponse
 
-// repeated .accounts.v1alpha1.users.v1.UserList users = 1 [json_name = "users"];
+// repeated .accounts.v1alpha1.UserList users = 1 [json_name = "users"];
 inline int ListUserResponse::_internal_users_size() const {
   return users_.size();
 }
 inline int ListUserResponse::users_size() const {
   return _internal_users_size();
 }
-inline void ListUserResponse::clear_users() {
-  users_.Clear();
-}
-inline ::accounts::v1alpha1::users::v1::UserList* ListUserResponse::mutable_users(int index) {
+inline ::accounts::v1alpha1::UserList* ListUserResponse::mutable_users(int index) {
   // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.ListUserResponse.users)
   return users_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >*
 ListUserResponse::mutable_users() {
   // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.users.v1.ListUserResponse.users)
   return &users_;
 }
-inline const ::accounts::v1alpha1::users::v1::UserList& ListUserResponse::_internal_users(int index) const {
+inline const ::accounts::v1alpha1::UserList& ListUserResponse::_internal_users(int index) const {
   return users_.Get(index);
 }
-inline const ::accounts::v1alpha1::users::v1::UserList& ListUserResponse::users(int index) const {
+inline const ::accounts::v1alpha1::UserList& ListUserResponse::users(int index) const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.ListUserResponse.users)
   return _internal_users(index);
 }
-inline ::accounts::v1alpha1::users::v1::UserList* ListUserResponse::_internal_add_users() {
+inline ::accounts::v1alpha1::UserList* ListUserResponse::_internal_add_users() {
   return users_.Add();
 }
-inline ::accounts::v1alpha1::users::v1::UserList* ListUserResponse::add_users() {
-  ::accounts::v1alpha1::users::v1::UserList* _add = _internal_add_users();
+inline ::accounts::v1alpha1::UserList* ListUserResponse::add_users() {
+  ::accounts::v1alpha1::UserList* _add = _internal_add_users();
   // @@protoc_insertion_point(field_add:accounts.v1alpha1.users.v1.ListUserResponse.users)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >&
 ListUserResponse::users() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.users.v1.ListUserResponse.users)
   return users_;
@@ -6996,41 +6578,38 @@ inline void ListUserPaginationResponse::set_count(::PROTOBUF_NAMESPACE_ID::int64
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.ListUserPaginationResponse.count)
 }
 
-// repeated .accounts.v1alpha1.users.v1.UserList users = 2 [json_name = "users"];
+// repeated .accounts.v1alpha1.UserList users = 2 [json_name = "users"];
 inline int ListUserPaginationResponse::_internal_users_size() const {
   return users_.size();
 }
 inline int ListUserPaginationResponse::users_size() const {
   return _internal_users_size();
 }
-inline void ListUserPaginationResponse::clear_users() {
-  users_.Clear();
-}
-inline ::accounts::v1alpha1::users::v1::UserList* ListUserPaginationResponse::mutable_users(int index) {
+inline ::accounts::v1alpha1::UserList* ListUserPaginationResponse::mutable_users(int index) {
   // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.ListUserPaginationResponse.users)
   return users_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >*
 ListUserPaginationResponse::mutable_users() {
   // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.users.v1.ListUserPaginationResponse.users)
   return &users_;
 }
-inline const ::accounts::v1alpha1::users::v1::UserList& ListUserPaginationResponse::_internal_users(int index) const {
+inline const ::accounts::v1alpha1::UserList& ListUserPaginationResponse::_internal_users(int index) const {
   return users_.Get(index);
 }
-inline const ::accounts::v1alpha1::users::v1::UserList& ListUserPaginationResponse::users(int index) const {
+inline const ::accounts::v1alpha1::UserList& ListUserPaginationResponse::users(int index) const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.ListUserPaginationResponse.users)
   return _internal_users(index);
 }
-inline ::accounts::v1alpha1::users::v1::UserList* ListUserPaginationResponse::_internal_add_users() {
+inline ::accounts::v1alpha1::UserList* ListUserPaginationResponse::_internal_add_users() {
   return users_.Add();
 }
-inline ::accounts::v1alpha1::users::v1::UserList* ListUserPaginationResponse::add_users() {
-  ::accounts::v1alpha1::users::v1::UserList* _add = _internal_add_users();
+inline ::accounts::v1alpha1::UserList* ListUserPaginationResponse::add_users() {
+  ::accounts::v1alpha1::UserList* _add = _internal_add_users();
   // @@protoc_insertion_point(field_add:accounts.v1alpha1.users.v1.ListUserPaginationResponse.users)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >&
 ListUserPaginationResponse::users() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.users.v1.ListUserPaginationResponse.users)
   return users_;
@@ -8529,41 +8108,38 @@ inline void GetUsersEmailFilterRequest::set_allocated_value(std::string* value) 
 
 // GetUsersEmailFilterResponse
 
-// repeated .accounts.v1alpha1.users.v1.UserList users = 1 [json_name = "users"];
+// repeated .accounts.v1alpha1.UserList users = 1 [json_name = "users"];
 inline int GetUsersEmailFilterResponse::_internal_users_size() const {
   return users_.size();
 }
 inline int GetUsersEmailFilterResponse::users_size() const {
   return _internal_users_size();
 }
-inline void GetUsersEmailFilterResponse::clear_users() {
-  users_.Clear();
-}
-inline ::accounts::v1alpha1::users::v1::UserList* GetUsersEmailFilterResponse::mutable_users(int index) {
+inline ::accounts::v1alpha1::UserList* GetUsersEmailFilterResponse::mutable_users(int index) {
   // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse.users)
   return users_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >*
 GetUsersEmailFilterResponse::mutable_users() {
   // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse.users)
   return &users_;
 }
-inline const ::accounts::v1alpha1::users::v1::UserList& GetUsersEmailFilterResponse::_internal_users(int index) const {
+inline const ::accounts::v1alpha1::UserList& GetUsersEmailFilterResponse::_internal_users(int index) const {
   return users_.Get(index);
 }
-inline const ::accounts::v1alpha1::users::v1::UserList& GetUsersEmailFilterResponse::users(int index) const {
+inline const ::accounts::v1alpha1::UserList& GetUsersEmailFilterResponse::users(int index) const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse.users)
   return _internal_users(index);
 }
-inline ::accounts::v1alpha1::users::v1::UserList* GetUsersEmailFilterResponse::_internal_add_users() {
+inline ::accounts::v1alpha1::UserList* GetUsersEmailFilterResponse::_internal_add_users() {
   return users_.Add();
 }
-inline ::accounts::v1alpha1::users::v1::UserList* GetUsersEmailFilterResponse::add_users() {
-  ::accounts::v1alpha1::users::v1::UserList* _add = _internal_add_users();
+inline ::accounts::v1alpha1::UserList* GetUsersEmailFilterResponse::add_users() {
+  ::accounts::v1alpha1::UserList* _add = _internal_add_users();
   // @@protoc_insertion_point(field_add:accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse.users)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::users::v1::UserList >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::UserList >&
 GetUsersEmailFilterResponse::users() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.users.v1.GetUsersEmailFilterResponse.users)
   return users_;
@@ -8572,8 +8148,6 @@ GetUsersEmailFilterResponse::users() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
