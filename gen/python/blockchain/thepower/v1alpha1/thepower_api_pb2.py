@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from blockchain.thepower.v1alpha1 import thepower_pb2 as blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/blockchain/thepower/v1alpha1/thepower_api.proto\x12\x1c\x62lockchain.thepower.v1alpha1\x1a+blockchain/thepower/v1alpha1/thepower.proto\"X\n\x14\x43reateTpChainRequest\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain\"Y\n\x15\x43reateTpChainResponse\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain2\x95\x01\n\x19\x42lockchainThePowerService\x12x\n\rCreateTpChain\x12\x32.blockchain.thepower.v1alpha1.CreateTpChainRequest\x1a\x33.blockchain.thepower.v1alpha1.CreateTpChainResponseB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
+  serialized_pb=b'\n/blockchain/thepower/v1alpha1/thepower_api.proto\x12\x1c\x62lockchain.thepower.v1alpha1\x1a+blockchain/thepower/v1alpha1/thepower.proto\x1a\x1bgoogle/protobuf/empty.proto\"X\n\x14\x43reateTpChainRequest\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain\"\x14\n\x12GetTpChainsRequest\"5\n\x1aGetTpChainsByUserIdRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"\'\n\x15GetTpChainByIdRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"Y\n\x15\x43reateTpChainResponse\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain\"Y\n\x13GetTpChainsResponse\x12\x42\n\ttp_chains\x18\x01 \x03(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x08tpChains\"a\n\x1bGetTpChainsByUserIdResponse\x12\x42\n\ttp_chains\x18\x01 \x03(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x08tpChains\"Z\n\x16GetTpChainByIdResponse\x12@\n\x08tp_chain\x18\x01 \x01(\x0b\x32%.blockchain.thepower.v1alpha1.TpChainR\x07tpChain2\x93\x04\n\x19\x42lockchainThePowerService\x12x\n\rCreateTpChain\x12\x32.blockchain.thepower.v1alpha1.CreateTpChainRequest\x1a\x33.blockchain.thepower.v1alpha1.CreateTpChainResponse\x12r\n\x0bGetTpChains\x12\x30.blockchain.thepower.v1alpha1.GetTpChainsRequest\x1a\x31.blockchain.thepower.v1alpha1.GetTpChainsResponse\x12\x8a\x01\n\x13GetTpChainsByUserId\x12\x38.blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest\x1a\x39.blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse\x12{\n\x0eGetTpChainById\x12\x33.blockchain.thepower.v1alpha1.GetTpChainByIdRequest\x1a\x34.blockchain.thepower.v1alpha1.GetTpChainByIdResponseB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
   ,
-  dependencies=[blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2.DESCRIPTOR,])
+  dependencies=[blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
 
 
@@ -54,8 +55,97 @@ _CREATETPCHAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=126,
-  serialized_end=214,
+  serialized_start=155,
+  serialized_end=243,
+)
+
+
+_GETTPCHAINSREQUEST = _descriptor.Descriptor(
+  name='GetTpChainsRequest',
+  full_name='blockchain.thepower.v1alpha1.GetTpChainsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=245,
+  serialized_end=265,
+)
+
+
+_GETTPCHAINSBYUSERIDREQUEST = _descriptor.Descriptor(
+  name='GetTpChainsByUserIdRequest',
+  full_name='blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=267,
+  serialized_end=320,
+)
+
+
+_GETTPCHAINBYIDREQUEST = _descriptor.Descriptor(
+  name='GetTpChainByIdRequest',
+  full_name='blockchain.thepower.v1alpha1.GetTpChainByIdRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blockchain.thepower.v1alpha1.GetTpChainByIdRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=322,
+  serialized_end=361,
 )
 
 
@@ -86,14 +176,119 @@ _CREATETPCHAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=305,
+  serialized_start=363,
+  serialized_end=452,
+)
+
+
+_GETTPCHAINSRESPONSE = _descriptor.Descriptor(
+  name='GetTpChainsResponse',
+  full_name='blockchain.thepower.v1alpha1.GetTpChainsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tp_chains', full_name='blockchain.thepower.v1alpha1.GetTpChainsResponse.tp_chains', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tpChains', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=454,
+  serialized_end=543,
+)
+
+
+_GETTPCHAINSBYUSERIDRESPONSE = _descriptor.Descriptor(
+  name='GetTpChainsByUserIdResponse',
+  full_name='blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tp_chains', full_name='blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse.tp_chains', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tpChains', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=545,
+  serialized_end=642,
+)
+
+
+_GETTPCHAINBYIDRESPONSE = _descriptor.Descriptor(
+  name='GetTpChainByIdResponse',
+  full_name='blockchain.thepower.v1alpha1.GetTpChainByIdResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tp_chain', full_name='blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tpChain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=644,
+  serialized_end=734,
 )
 
 _CREATETPCHAINREQUEST.fields_by_name['tp_chain'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
 _CREATETPCHAINRESPONSE.fields_by_name['tp_chain'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
+_GETTPCHAINSRESPONSE.fields_by_name['tp_chains'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
+_GETTPCHAINSBYUSERIDRESPONSE.fields_by_name['tp_chains'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
+_GETTPCHAINBYIDRESPONSE.fields_by_name['tp_chain'].message_type = blockchain_dot_thepower_dot_v1alpha1_dot_thepower__pb2._TPCHAIN
 DESCRIPTOR.message_types_by_name['CreateTpChainRequest'] = _CREATETPCHAINREQUEST
+DESCRIPTOR.message_types_by_name['GetTpChainsRequest'] = _GETTPCHAINSREQUEST
+DESCRIPTOR.message_types_by_name['GetTpChainsByUserIdRequest'] = _GETTPCHAINSBYUSERIDREQUEST
+DESCRIPTOR.message_types_by_name['GetTpChainByIdRequest'] = _GETTPCHAINBYIDREQUEST
 DESCRIPTOR.message_types_by_name['CreateTpChainResponse'] = _CREATETPCHAINRESPONSE
+DESCRIPTOR.message_types_by_name['GetTpChainsResponse'] = _GETTPCHAINSRESPONSE
+DESCRIPTOR.message_types_by_name['GetTpChainsByUserIdResponse'] = _GETTPCHAINSBYUSERIDRESPONSE
+DESCRIPTOR.message_types_by_name['GetTpChainByIdResponse'] = _GETTPCHAINBYIDRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateTpChainRequest = _reflection.GeneratedProtocolMessageType('CreateTpChainRequest', (_message.Message,), {
@@ -103,12 +298,54 @@ CreateTpChainRequest = _reflection.GeneratedProtocolMessageType('CreateTpChainRe
   })
 _sym_db.RegisterMessage(CreateTpChainRequest)
 
+GetTpChainsRequest = _reflection.GeneratedProtocolMessageType('GetTpChainsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETTPCHAINSREQUEST,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsRequest)
+  })
+_sym_db.RegisterMessage(GetTpChainsRequest)
+
+GetTpChainsByUserIdRequest = _reflection.GeneratedProtocolMessageType('GetTpChainsByUserIdRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETTPCHAINSBYUSERIDREQUEST,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest)
+  })
+_sym_db.RegisterMessage(GetTpChainsByUserIdRequest)
+
+GetTpChainByIdRequest = _reflection.GeneratedProtocolMessageType('GetTpChainByIdRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETTPCHAINBYIDREQUEST,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainByIdRequest)
+  })
+_sym_db.RegisterMessage(GetTpChainByIdRequest)
+
 CreateTpChainResponse = _reflection.GeneratedProtocolMessageType('CreateTpChainResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATETPCHAINRESPONSE,
   '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
   # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.CreateTpChainResponse)
   })
 _sym_db.RegisterMessage(CreateTpChainResponse)
+
+GetTpChainsResponse = _reflection.GeneratedProtocolMessageType('GetTpChainsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETTPCHAINSRESPONSE,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsResponse)
+  })
+_sym_db.RegisterMessage(GetTpChainsResponse)
+
+GetTpChainsByUserIdResponse = _reflection.GeneratedProtocolMessageType('GetTpChainsByUserIdResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETTPCHAINSBYUSERIDRESPONSE,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse)
+  })
+_sym_db.RegisterMessage(GetTpChainsByUserIdResponse)
+
+GetTpChainByIdResponse = _reflection.GeneratedProtocolMessageType('GetTpChainByIdResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETTPCHAINBYIDRESPONSE,
+  '__module__' : 'blockchain.thepower.v1alpha1.thepower_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainByIdResponse)
+  })
+_sym_db.RegisterMessage(GetTpChainByIdResponse)
 
 
 DESCRIPTOR._options = None
@@ -120,8 +357,8 @@ _BLOCKCHAINTHEPOWERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=308,
-  serialized_end=457,
+  serialized_start=737,
+  serialized_end=1268,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTpChain',
@@ -130,6 +367,36 @@ _BLOCKCHAINTHEPOWERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATETPCHAINREQUEST,
     output_type=_CREATETPCHAINRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetTpChains',
+    full_name='blockchain.thepower.v1alpha1.BlockchainThePowerService.GetTpChains',
+    index=1,
+    containing_service=None,
+    input_type=_GETTPCHAINSREQUEST,
+    output_type=_GETTPCHAINSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetTpChainsByUserId',
+    full_name='blockchain.thepower.v1alpha1.BlockchainThePowerService.GetTpChainsByUserId',
+    index=2,
+    containing_service=None,
+    input_type=_GETTPCHAINSBYUSERIDREQUEST,
+    output_type=_GETTPCHAINSBYUSERIDRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetTpChainById',
+    full_name='blockchain.thepower.v1alpha1.BlockchainThePowerService.GetTpChainById',
+    index=3,
+    containing_service=None,
+    input_type=_GETTPCHAINBYIDREQUEST,
+    output_type=_GETTPCHAINBYIDRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Response messages
- *
- * Generated from protobuf message <code>blockchain.thepower.v1alpha1.CreateTpChainResponse</code>
+ * Generated from protobuf message <code>blockchain.thepower.v1alpha1.GetTpChainByIdResponse</code>
  */
-class CreateTpChainResponse extends \Google\Protobuf\Internal\Message
+class GetTpChainByIdResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>

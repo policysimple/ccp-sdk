@@ -4,9 +4,11 @@ package blockchain.thepower.v1alpha1;
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1";
 
 message TpChain {
-    int32 chain_number = 1;
-    string user_id = 2;
-    repeated TpNode chain_nodes = 3;
+    string id = 1;
+    int32 chain_number = 2;
+    string user_id = 3;
+    repeated TpNode chain_nodes = 4;
+    string status = 5;
 }
 
 message TpNode {

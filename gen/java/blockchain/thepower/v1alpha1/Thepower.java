@@ -19,46 +19,70 @@ public final class Thepower {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 chain_number = 1 [json_name = "chainNumber"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>int32 chain_number = 2 [json_name = "chainNumber"];</code>
      * @return The chainNumber.
      */
     int getChainNumber();
 
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 3 [json_name = "userId"];</code>
      * @return The userId.
      */
     java.lang.String getUserId();
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 3 [json_name = "userId"];</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
 
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     java.util.List<blockchain.thepower.v1alpha1.Thepower.TpNode> 
         getChainNodesList();
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     blockchain.thepower.v1alpha1.Thepower.TpNode getChainNodes(int index);
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     int getChainNodesCount();
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     java.util.List<? extends blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder> 
         getChainNodesOrBuilderList();
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder getChainNodesOrBuilder(
         int index);
+
+    /**
+     * <code>string status = 5 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 5 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.TpChain}
@@ -73,8 +97,10 @@ public final class Thepower {
       super(builder);
     }
     private TpChain() {
+      id_ = "";
       userId_ = "";
       chainNodes_ = java.util.Collections.emptyList();
+      status_ = "";
     }
 
     @java.lang.Override
@@ -108,24 +134,36 @@ public final class Thepower {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
 
               chainNumber_ = input.readInt32();
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
-            case 26: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chainNodes_ = new java.util.ArrayList<blockchain.thepower.v1alpha1.Thepower.TpNode>();
                 mutable_bitField0_ |= 0x00000001;
               }
               chainNodes_.add(
                   input.readMessage(blockchain.thepower.v1alpha1.Thepower.TpNode.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
               break;
             }
             default: {
@@ -163,10 +201,48 @@ public final class Thepower {
               blockchain.thepower.v1alpha1.Thepower.TpChain.class, blockchain.thepower.v1alpha1.Thepower.TpChain.Builder.class);
     }
 
-    public static final int CHAIN_NUMBER_FIELD_NUMBER = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHAIN_NUMBER_FIELD_NUMBER = 2;
     private int chainNumber_;
     /**
-     * <code>int32 chain_number = 1 [json_name = "chainNumber"];</code>
+     * <code>int32 chain_number = 2 [json_name = "chainNumber"];</code>
      * @return The chainNumber.
      */
     @java.lang.Override
@@ -174,10 +250,10 @@ public final class Thepower {
       return chainNumber_;
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 2;
+    public static final int USER_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object userId_;
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 3 [json_name = "userId"];</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -194,7 +270,7 @@ public final class Thepower {
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 3 [json_name = "userId"];</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -212,17 +288,17 @@ public final class Thepower {
       }
     }
 
-    public static final int CHAIN_NODES_FIELD_NUMBER = 3;
+    public static final int CHAIN_NODES_FIELD_NUMBER = 4;
     private java.util.List<blockchain.thepower.v1alpha1.Thepower.TpNode> chainNodes_;
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     @java.lang.Override
     public java.util.List<blockchain.thepower.v1alpha1.Thepower.TpNode> getChainNodesList() {
       return chainNodes_;
     }
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder> 
@@ -230,26 +306,64 @@ public final class Thepower {
       return chainNodes_;
     }
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     @java.lang.Override
     public int getChainNodesCount() {
       return chainNodes_.size();
     }
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     @java.lang.Override
     public blockchain.thepower.v1alpha1.Thepower.TpNode getChainNodes(int index) {
       return chainNodes_.get(index);
     }
     /**
-     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+     * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
      */
     @java.lang.Override
     public blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder getChainNodesOrBuilder(
         int index) {
       return chainNodes_.get(index);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 5;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 5 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 5 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -266,14 +380,20 @@ public final class Thepower {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
       if (chainNumber_ != 0) {
-        output.writeInt32(1, chainNumber_);
+        output.writeInt32(2, chainNumber_);
       }
       if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
       }
       for (int i = 0; i < chainNodes_.size(); i++) {
-        output.writeMessage(3, chainNodes_.get(i));
+        output.writeMessage(4, chainNodes_.get(i));
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -284,16 +404,22 @@ public final class Thepower {
       if (size != -1) return size;
 
       size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
       if (chainNumber_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, chainNumber_);
+          .computeInt32Size(2, chainNumber_);
       }
       if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
       }
       for (int i = 0; i < chainNodes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, chainNodes_.get(i));
+          .computeMessageSize(4, chainNodes_.get(i));
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -310,12 +436,16 @@ public final class Thepower {
       }
       blockchain.thepower.v1alpha1.Thepower.TpChain other = (blockchain.thepower.v1alpha1.Thepower.TpChain) obj;
 
+      if (!getId()
+          .equals(other.getId())) return false;
       if (getChainNumber()
           != other.getChainNumber()) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
       if (!getChainNodesList()
           .equals(other.getChainNodesList())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -327,6 +457,8 @@ public final class Thepower {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + CHAIN_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getChainNumber();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
@@ -335,6 +467,8 @@ public final class Thepower {
         hash = (37 * hash) + CHAIN_NODES_FIELD_NUMBER;
         hash = (53 * hash) + getChainNodesList().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -469,6 +603,8 @@ public final class Thepower {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        id_ = "";
+
         chainNumber_ = 0;
 
         userId_ = "";
@@ -479,6 +615,8 @@ public final class Thepower {
         } else {
           chainNodesBuilder_.clear();
         }
+        status_ = "";
+
         return this;
       }
 
@@ -506,6 +644,7 @@ public final class Thepower {
       public blockchain.thepower.v1alpha1.Thepower.TpChain buildPartial() {
         blockchain.thepower.v1alpha1.Thepower.TpChain result = new blockchain.thepower.v1alpha1.Thepower.TpChain(this);
         int from_bitField0_ = bitField0_;
+        result.id_ = id_;
         result.chainNumber_ = chainNumber_;
         result.userId_ = userId_;
         if (chainNodesBuilder_ == null) {
@@ -517,6 +656,7 @@ public final class Thepower {
         } else {
           result.chainNodes_ = chainNodesBuilder_.build();
         }
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -565,6 +705,10 @@ public final class Thepower {
 
       public Builder mergeFrom(blockchain.thepower.v1alpha1.Thepower.TpChain other) {
         if (other == blockchain.thepower.v1alpha1.Thepower.TpChain.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
         if (other.getChainNumber() != 0) {
           setChainNumber(other.getChainNumber());
         }
@@ -598,6 +742,10 @@ public final class Thepower {
             }
           }
         }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -628,9 +776,85 @@ public final class Thepower {
       }
       private int bitField0_;
 
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
       private int chainNumber_ ;
       /**
-       * <code>int32 chain_number = 1 [json_name = "chainNumber"];</code>
+       * <code>int32 chain_number = 2 [json_name = "chainNumber"];</code>
        * @return The chainNumber.
        */
       @java.lang.Override
@@ -638,7 +862,7 @@ public final class Thepower {
         return chainNumber_;
       }
       /**
-       * <code>int32 chain_number = 1 [json_name = "chainNumber"];</code>
+       * <code>int32 chain_number = 2 [json_name = "chainNumber"];</code>
        * @param value The chainNumber to set.
        * @return This builder for chaining.
        */
@@ -649,7 +873,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>int32 chain_number = 1 [json_name = "chainNumber"];</code>
+       * <code>int32 chain_number = 2 [json_name = "chainNumber"];</code>
        * @return This builder for chaining.
        */
       public Builder clearChainNumber() {
@@ -661,7 +885,7 @@ public final class Thepower {
 
       private java.lang.Object userId_ = "";
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * <code>string user_id = 3 [json_name = "userId"];</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -677,7 +901,7 @@ public final class Thepower {
         }
       }
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * <code>string user_id = 3 [json_name = "userId"];</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -694,7 +918,7 @@ public final class Thepower {
         }
       }
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * <code>string user_id = 3 [json_name = "userId"];</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -709,7 +933,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * <code>string user_id = 3 [json_name = "userId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -719,7 +943,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * <code>string user_id = 3 [json_name = "userId"];</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -748,7 +972,7 @@ public final class Thepower {
           blockchain.thepower.v1alpha1.Thepower.TpNode, blockchain.thepower.v1alpha1.Thepower.TpNode.Builder, blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder> chainNodesBuilder_;
 
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public java.util.List<blockchain.thepower.v1alpha1.Thepower.TpNode> getChainNodesList() {
         if (chainNodesBuilder_ == null) {
@@ -758,7 +982,7 @@ public final class Thepower {
         }
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public int getChainNodesCount() {
         if (chainNodesBuilder_ == null) {
@@ -768,7 +992,7 @@ public final class Thepower {
         }
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public blockchain.thepower.v1alpha1.Thepower.TpNode getChainNodes(int index) {
         if (chainNodesBuilder_ == null) {
@@ -778,7 +1002,7 @@ public final class Thepower {
         }
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder setChainNodes(
           int index, blockchain.thepower.v1alpha1.Thepower.TpNode value) {
@@ -795,7 +1019,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder setChainNodes(
           int index, blockchain.thepower.v1alpha1.Thepower.TpNode.Builder builderForValue) {
@@ -809,7 +1033,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder addChainNodes(blockchain.thepower.v1alpha1.Thepower.TpNode value) {
         if (chainNodesBuilder_ == null) {
@@ -825,7 +1049,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder addChainNodes(
           int index, blockchain.thepower.v1alpha1.Thepower.TpNode value) {
@@ -842,7 +1066,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder addChainNodes(
           blockchain.thepower.v1alpha1.Thepower.TpNode.Builder builderForValue) {
@@ -856,7 +1080,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder addChainNodes(
           int index, blockchain.thepower.v1alpha1.Thepower.TpNode.Builder builderForValue) {
@@ -870,7 +1094,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder addAllChainNodes(
           java.lang.Iterable<? extends blockchain.thepower.v1alpha1.Thepower.TpNode> values) {
@@ -885,7 +1109,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder clearChainNodes() {
         if (chainNodesBuilder_ == null) {
@@ -898,7 +1122,7 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public Builder removeChainNodes(int index) {
         if (chainNodesBuilder_ == null) {
@@ -911,14 +1135,14 @@ public final class Thepower {
         return this;
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public blockchain.thepower.v1alpha1.Thepower.TpNode.Builder getChainNodesBuilder(
           int index) {
         return getChainNodesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder getChainNodesOrBuilder(
           int index) {
@@ -928,7 +1152,7 @@ public final class Thepower {
         }
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public java.util.List<? extends blockchain.thepower.v1alpha1.Thepower.TpNodeOrBuilder> 
            getChainNodesOrBuilderList() {
@@ -939,14 +1163,14 @@ public final class Thepower {
         }
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public blockchain.thepower.v1alpha1.Thepower.TpNode.Builder addChainNodesBuilder() {
         return getChainNodesFieldBuilder().addBuilder(
             blockchain.thepower.v1alpha1.Thepower.TpNode.getDefaultInstance());
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public blockchain.thepower.v1alpha1.Thepower.TpNode.Builder addChainNodesBuilder(
           int index) {
@@ -954,7 +1178,7 @@ public final class Thepower {
             index, blockchain.thepower.v1alpha1.Thepower.TpNode.getDefaultInstance());
       }
       /**
-       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];</code>
+       * <code>repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];</code>
        */
       public java.util.List<blockchain.thepower.v1alpha1.Thepower.TpNode.Builder> 
            getChainNodesBuilderList() {
@@ -973,6 +1197,82 @@ public final class Thepower {
           chainNodes_ = null;
         }
         return chainNodesBuilder_;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 5 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 5 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 5 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 5 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 5 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2918,11 +3218,12 @@ public final class Thepower {
   static {
     java.lang.String[] descriptorData = {
       "\n+blockchain/thepower/v1alpha1/thepower." +
-      "proto\022\034blockchain.thepower.v1alpha1\"\214\001\n\007" +
-      "TpChain\022!\n\014chain_number\030\001 \001(\005R\013chainNumb" +
-      "er\022\027\n\007user_id\030\002 \001(\tR\006userId\022E\n\013chain_nod" +
-      "es\030\003 \003(\0132$.blockchain.thepower.v1alpha1." +
-      "TpNodeR\nchainNodes\"\365\001\n\006TpNode\022\032\n\010nodenam" +
+      "proto\022\034blockchain.thepower.v1alpha1\"\264\001\n\007" +
+      "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030" +
+      "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use" +
+      "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th" +
+      "epower.v1alpha1.TpNodeR\nchainNodes\022\026\n\006st" +
+      "atus\030\005 \001(\tR\006status\"\365\001\n\006TpNode\022\032\n\010nodenam" +
       "e\030\001 \001(\tR\010nodename\022\033\n\ttpic_port\030\002 \001(\003R\010tp" +
       "icPort\022\031\n\010api_port\030\003 \001(\003R\007apiPort\022\033\n\tapi" +
       "s_port\030\004 \001(\003R\010apisPort\022\027\n\007cc_port\030\005 \001(\003R" +
@@ -2943,7 +3244,7 @@ public final class Thepower {
     internal_static_blockchain_thepower_v1alpha1_TpChain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_TpChain_descriptor,
-        new java.lang.String[] { "ChainNumber", "UserId", "ChainNodes", });
+        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", });
     internal_static_blockchain_thepower_v1alpha1_TpNode_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_thepower_v1alpha1_TpNode_fieldAccessorTable = new
