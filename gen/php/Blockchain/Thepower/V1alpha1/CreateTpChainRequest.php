@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Request messages
+ *
  * Generated from protobuf message <code>blockchain.thepower.v1alpha1.CreateTpChainRequest</code>
  */
 class CreateTpChainRequest extends \Google\Protobuf\Internal\Message

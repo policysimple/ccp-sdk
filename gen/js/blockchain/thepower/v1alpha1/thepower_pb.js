@@ -87,7 +87,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.blockchain.thepower.v1alpha1.TpChain.repeatedFields_ = [3];
+proto.blockchain.thepower.v1alpha1.TpChain.repeatedFields_ = [4];
 
 
 
@@ -120,10 +120,12 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.toObject = function(opt_inc
  */
 proto.blockchain.thepower.v1alpha1.TpChain.toObject = function(includeInstance, msg) {
   var f, obj = {
-    chainNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    chainNumber: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     chainNodesList: jspb.Message.toObjectList(msg.getChainNodesList(),
-    proto.blockchain.thepower.v1alpha1.TpNode.toObject, includeInstance)
+    proto.blockchain.thepower.v1alpha1.TpNode.toObject, includeInstance),
+    status: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -161,17 +163,25 @@ proto.blockchain.thepower.v1alpha1.TpChain.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setChainNumber(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.blockchain.thepower.v1alpha1.TpNode;
       reader.readMessage(value,proto.blockchain.thepower.v1alpha1.TpNode.deserializeBinaryFromReader);
       msg.addChainNodes(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -202,37 +212,69 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.serializeBinary = function(
  */
 proto.blockchain.thepower.v1alpha1.TpChain.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getChainNumber();
   if (f !== 0) {
     writer.writeInt32(
-      1,
+      2,
       f
     );
   }
   f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      3,
       f
     );
   }
   f = message.getChainNodesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.blockchain.thepower.v1alpha1.TpNode.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
 
 
 /**
- * optional int32 chain_number = 1;
+ * optional string id = 1;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 chain_number = 2;
  * @return {number}
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.getChainNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -241,16 +283,16 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.getChainNumber = function()
  * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.setChainNumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional string user_id = 2;
+ * optional string user_id = 3;
  * @return {string}
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -259,17 +301,17 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.getUserId = function() {
  * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * repeated TpNode chain_nodes = 3;
+ * repeated TpNode chain_nodes = 4;
  * @return {!Array<!proto.blockchain.thepower.v1alpha1.TpNode>}
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.getChainNodesList = function() {
   return /** @type{!Array<!proto.blockchain.thepower.v1alpha1.TpNode>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.blockchain.thepower.v1alpha1.TpNode, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.blockchain.thepower.v1alpha1.TpNode, 4));
 };
 
 
@@ -278,7 +320,7 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.getChainNodesList = functio
  * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
 */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.setChainNodesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -288,7 +330,7 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.setChainNodesList = functio
  * @return {!proto.blockchain.thepower.v1alpha1.TpNode}
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.addChainNodes = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.blockchain.thepower.v1alpha1.TpNode, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.blockchain.thepower.v1alpha1.TpNode, opt_index);
 };
 
 
@@ -298,6 +340,24 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.addChainNodes = function(op
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.clearChainNodesList = function() {
   return this.setChainNodesList([]);
+};
+
+
+/**
+ * optional string status = 5;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
