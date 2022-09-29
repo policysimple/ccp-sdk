@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-blockchain/network/v1alpha1/network_api.proto\x12\x1b\x62lockchain.network.v1alpha1\x1a)blockchain/network/v1alpha1/network.proto\"V\n\x14\x43reateNetworkRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\"v\n\x1c\x43reateNetworkDefaultResponse\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"u\n\x1b\x43reateNetworkDefaultRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xc5\x01\n\x1c\x41\x64\x64PeerToOrganizationRequest\x12\x1d\n\norg_domain\x18\x01 \x01(\tR\torgDomain\x12%\n\x0e\x61\x64min_password\x18\x02 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x03 \x01(\tR\tadminUser\x12!\n\x0cnetwork_name\x18\x04 \x01(\tR\x0bnetworkName\x12\x1d\n\nnetwork_id\x18\x05 \x01(\tR\tnetworkId\"\xac\x01\n\x14\x43reateChannelRequest\x12$\n\x0e\x63reator_org_id\x18\x01 \x01(\tR\x0c\x63reatorOrgId\x12#\n\rblockchain_id\x18\x02 \x01(\tR\x0c\x62lockchainId\x12!\n\x0c\x63hannel_name\x18\x03 \x01(\tR\x0b\x63hannelName\x12&\n\x0f\x63hannel_org_ids\x18\x04 \x03(\tR\rchannelOrgIds\"I\n\x15\x43reateNetworkResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"Q\n\x1d\x41\x64\x64PeerToOrganizationResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"I\n\x15\x43reateChannelResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"p\n\x16GetBlockchainsResponse\x12>\n\x07network\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"/\n\x15GetBlockchainsRequest\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xa0\x05\n\x14\x42lockchainAPIService\x12v\n\rCreateNetwork\x12\x31.blockchain.network.v1alpha1.CreateNetworkRequest\x1a\x32.blockchain.network.v1alpha1.CreateNetworkResponse\x12\x8e\x01\n\x15\x41\x64\x64PeerToOrganization\x12\x39.blockchain.network.v1alpha1.AddPeerToOrganizationRequest\x1a:.blockchain.network.v1alpha1.AddPeerToOrganizationResponse\x12v\n\rCreateChannel\x12\x31.blockchain.network.v1alpha1.CreateChannelRequest\x1a\x32.blockchain.network.v1alpha1.CreateChannelResponse\x12y\n\x0eGetBlockchains\x12\x32.blockchain.network.v1alpha1.GetBlockchainsRequest\x1a\x33.blockchain.network.v1alpha1.GetBlockchainsResponse\x12\x8b\x01\n\x14\x43reateNetworkDefault\x12\x38.blockchain.network.v1alpha1.CreateNetworkDefaultRequest\x1a\x39.blockchain.network.v1alpha1.CreateNetworkDefaultResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
+  serialized_pb=b'\n-blockchain/network/v1alpha1/network_api.proto\x12\x1b\x62lockchain.network.v1alpha1\x1a)blockchain/network/v1alpha1/network.proto\"\xa5\x01\n\x14\x43reateNetworkRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12M\n\x0corganization\x18\x02 \x01(\x0b\x32).blockchain.network.v1alpha1.OrganizationR\x0corganization\"\x92\x01\n\x1c\x41\x64\x64PeerToOrganizationRequest\x12M\n\x0corganization\x18\x01 \x01(\x0b\x32).blockchain.network.v1alpha1.OrganizationR\x0corganization\x12#\n\rblockchain_id\x18\x02 \x01(\tR\x0c\x62lockchainId\"V\n\x14\x43reateChannelRequest\x12>\n\x07\x63hannel\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x07\x63hannel\"\'\n\x15GetBlockchainsRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"j\n\x19\x43reateOrganizationRequest\x12M\n\x0corganization\x18\x01 \x01(\x0b\x32).blockchain.network.v1alpha1.OrganizationR\x0corganization\"`\n\x15SendInvitationRequest\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.network.v1alpha1.InvitationR\ninvitation\"q\n\x15\x43reateNetworkResponse\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\x88\x01\n\x1d\x41\x64\x64PeerToOrganizationResponse\x12M\n\x0corganization\x18\x01 \x01(\x0b\x32).blockchain.network.v1alpha1.OrganizationR\x0corganization\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\"q\n\x15\x43reateChannelResponse\x12>\n\x07\x63hannel\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x07\x63hannel\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"r\n\x16GetBlockchainsResponse\x12>\n\x07network\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\x85\x01\n\x1a\x43reateOrganizationResponse\x12M\n\x0corganization\x18\x01 \x01(\x0b\x32).blockchain.network.v1alpha1.OrganizationR\x0corganization\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"{\n\x16SendInvitationResponse\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.network.v1alpha1.InvitationR\ninvitation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2\x95\x06\n\x14\x42lockchainAPIService\x12v\n\rCreateNetwork\x12\x31.blockchain.network.v1alpha1.CreateNetworkRequest\x1a\x32.blockchain.network.v1alpha1.CreateNetworkResponse\x12\x8e\x01\n\x15\x41\x64\x64PeerToOrganization\x12\x39.blockchain.network.v1alpha1.AddPeerToOrganizationRequest\x1a:.blockchain.network.v1alpha1.AddPeerToOrganizationResponse\x12v\n\rCreateChannel\x12\x31.blockchain.network.v1alpha1.CreateChannelRequest\x1a\x32.blockchain.network.v1alpha1.CreateChannelResponse\x12y\n\x0eGetBlockchains\x12\x32.blockchain.network.v1alpha1.GetBlockchainsRequest\x1a\x33.blockchain.network.v1alpha1.GetBlockchainsResponse\x12\x85\x01\n\x12\x43reateOrganization\x12\x36.blockchain.network.v1alpha1.CreateOrganizationRequest\x1a\x37.blockchain.network.v1alpha1.CreateOrganizationResponse\x12y\n\x0eSendInvitation\x12\x32.blockchain.network.v1alpha1.SendInvitationRequest\x1a\x33.blockchain.network.v1alpha1.SendInvitationResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
   ,
   dependencies=[blockchain_dot_network_dot_v1alpha1_dot_network__pb2.DESCRIPTOR,])
 
@@ -42,45 +42,13 @@ _CREATENETWORKREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='network', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=121,
-  serialized_end=207,
-)
-
-
-_CREATENETWORKDEFAULTRESPONSE = _descriptor.Descriptor(
-  name='CreateNetworkDefaultResponse',
-  full_name='blockchain.network.v1alpha1.CreateNetworkDefaultResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='network', full_name='blockchain.network.v1alpha1.CreateNetworkDefaultResponse.network', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='organization', full_name='blockchain.network.v1alpha1.CreateNetworkRequest.organization', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='network', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.CreateNetworkDefaultResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -93,47 +61,8 @@ _CREATENETWORKDEFAULTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=209,
-  serialized_end=327,
-)
-
-
-_CREATENETWORKDEFAULTREQUEST = _descriptor.Descriptor(
-  name='CreateNetworkDefaultRequest',
-  full_name='blockchain.network.v1alpha1.CreateNetworkDefaultRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='network', full_name='blockchain.network.v1alpha1.CreateNetworkDefaultRequest.network', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='network', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.CreateNetworkDefaultRequest.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=329,
-  serialized_end=446,
+  serialized_start=122,
+  serialized_end=287,
 )
 
 
@@ -146,40 +75,19 @@ _ADDPEERTOORGANIZATIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='org_domain', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='organization', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.organization', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='orgDomain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='admin_password', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password', index=1,
+      name='blockchain_id', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.blockchain_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='adminPassword', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='admin_user', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='adminUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='network_name', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='networkName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='network_id', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='networkId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='blockchainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -192,8 +100,8 @@ _ADDPEERTOORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=449,
-  serialized_end=646,
+  serialized_start=290,
+  serialized_end=436,
 )
 
 
@@ -206,33 +114,12 @@ _CREATECHANNELREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='creator_org_id', full_name='blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='channel', full_name='blockchain.network.v1alpha1.CreateChannelRequest.channel', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='creatorOrgId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='blockchain_id', full_name='blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='blockchainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='channel_name', full_name='blockchain.network.v1alpha1.CreateChannelRequest.channel_name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='channelName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='channel_org_ids', full_name='blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids', index=3,
-      number=4, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='channelOrgIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='channel', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -245,8 +132,104 @@ _CREATECHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=649,
-  serialized_end=821,
+  serialized_start=438,
+  serialized_end=524,
+)
+
+
+_GETBLOCKCHAINSREQUEST = _descriptor.Descriptor(
+  name='GetBlockchainsRequest',
+  full_name='blockchain.network.v1alpha1.GetBlockchainsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blockchain.network.v1alpha1.GetBlockchainsRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=526,
+  serialized_end=565,
+)
+
+
+_CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
+  name='CreateOrganizationRequest',
+  full_name='blockchain.network.v1alpha1.CreateOrganizationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='organization', full_name='blockchain.network.v1alpha1.CreateOrganizationRequest.organization', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=567,
+  serialized_end=673,
+)
+
+
+_SENDINVITATIONREQUEST = _descriptor.Descriptor(
+  name='SendInvitationRequest',
+  full_name='blockchain.network.v1alpha1.SendInvitationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='invitation', full_name='blockchain.network.v1alpha1.SendInvitationRequest.invitation', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='invitation', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=675,
+  serialized_end=771,
 )
 
 
@@ -259,12 +242,12 @@ _CREATENETWORKRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.CreateNetworkResponse.status', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='network', full_name='blockchain.network.v1alpha1.CreateNetworkResponse.network', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='network', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='message', full_name='blockchain.network.v1alpha1.CreateNetworkResponse.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -284,8 +267,8 @@ _CREATENETWORKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=823,
-  serialized_end=896,
+  serialized_start=773,
+  serialized_end=886,
 )
 
 
@@ -298,15 +281,15 @@ _ADDPEERTOORGANIZATIONRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='organization', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationResponse.organization', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='message', full_name='blockchain.network.v1alpha1.AddPeerToOrganizationResponse.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -323,8 +306,8 @@ _ADDPEERTOORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=898,
-  serialized_end=979,
+  serialized_start=889,
+  serialized_end=1025,
 )
 
 
@@ -337,12 +320,12 @@ _CREATECHANNELRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.CreateChannelResponse.status', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='channel', full_name='blockchain.network.v1alpha1.CreateChannelResponse.channel', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='channel', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='message', full_name='blockchain.network.v1alpha1.CreateChannelResponse.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -362,8 +345,8 @@ _CREATECHANNELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=981,
-  serialized_end=1054,
+  serialized_start=1027,
+  serialized_end=1140,
 )
 
 
@@ -383,12 +366,12 @@ _GETBLOCKCHAINSRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='network', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.GetBlockchainsResponse.status', index=1,
+      name='message', full_name='blockchain.network.v1alpha1.GetBlockchainsResponse.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='message', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -401,26 +384,33 @@ _GETBLOCKCHAINSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1056,
-  serialized_end=1168,
+  serialized_start=1142,
+  serialized_end=1256,
 )
 
 
-_GETBLOCKCHAINSREQUEST = _descriptor.Descriptor(
-  name='GetBlockchainsRequest',
-  full_name='blockchain.network.v1alpha1.GetBlockchainsRequest',
+_CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
+  name='CreateOrganizationResponse',
+  full_name='blockchain.network.v1alpha1.CreateOrganizationResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='blockchain.network.v1alpha1.GetBlockchainsRequest.status', index=0,
+      name='organization', full_name='blockchain.network.v1alpha1.CreateOrganizationResponse.organization', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='blockchain.network.v1alpha1.CreateOrganizationResponse.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='message', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -433,24 +423,73 @@ _GETBLOCKCHAINSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1170,
-  serialized_end=1217,
+  serialized_start=1259,
+  serialized_end=1392,
+)
+
+
+_SENDINVITATIONRESPONSE = _descriptor.Descriptor(
+  name='SendInvitationResponse',
+  full_name='blockchain.network.v1alpha1.SendInvitationResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='invitation', full_name='blockchain.network.v1alpha1.SendInvitationResponse.invitation', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='invitation', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='blockchain.network.v1alpha1.SendInvitationResponse.message', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='message', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1394,
+  serialized_end=1517,
 )
 
 _CREATENETWORKREQUEST.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
-_CREATENETWORKDEFAULTRESPONSE.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
-_CREATENETWORKDEFAULTREQUEST.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
+_CREATENETWORKREQUEST.fields_by_name['organization'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._ORGANIZATION
+_ADDPEERTOORGANIZATIONREQUEST.fields_by_name['organization'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._ORGANIZATION
+_CREATECHANNELREQUEST.fields_by_name['channel'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._CHANNEL
+_CREATEORGANIZATIONREQUEST.fields_by_name['organization'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._ORGANIZATION
+_SENDINVITATIONREQUEST.fields_by_name['invitation'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._INVITATION
+_CREATENETWORKRESPONSE.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
+_ADDPEERTOORGANIZATIONRESPONSE.fields_by_name['organization'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._ORGANIZATION
+_CREATECHANNELRESPONSE.fields_by_name['channel'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._CHANNEL
 _GETBLOCKCHAINSRESPONSE.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
+_CREATEORGANIZATIONRESPONSE.fields_by_name['organization'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._ORGANIZATION
+_SENDINVITATIONRESPONSE.fields_by_name['invitation'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._INVITATION
 DESCRIPTOR.message_types_by_name['CreateNetworkRequest'] = _CREATENETWORKREQUEST
-DESCRIPTOR.message_types_by_name['CreateNetworkDefaultResponse'] = _CREATENETWORKDEFAULTRESPONSE
-DESCRIPTOR.message_types_by_name['CreateNetworkDefaultRequest'] = _CREATENETWORKDEFAULTREQUEST
 DESCRIPTOR.message_types_by_name['AddPeerToOrganizationRequest'] = _ADDPEERTOORGANIZATIONREQUEST
 DESCRIPTOR.message_types_by_name['CreateChannelRequest'] = _CREATECHANNELREQUEST
+DESCRIPTOR.message_types_by_name['GetBlockchainsRequest'] = _GETBLOCKCHAINSREQUEST
+DESCRIPTOR.message_types_by_name['CreateOrganizationRequest'] = _CREATEORGANIZATIONREQUEST
+DESCRIPTOR.message_types_by_name['SendInvitationRequest'] = _SENDINVITATIONREQUEST
 DESCRIPTOR.message_types_by_name['CreateNetworkResponse'] = _CREATENETWORKRESPONSE
 DESCRIPTOR.message_types_by_name['AddPeerToOrganizationResponse'] = _ADDPEERTOORGANIZATIONRESPONSE
 DESCRIPTOR.message_types_by_name['CreateChannelResponse'] = _CREATECHANNELRESPONSE
 DESCRIPTOR.message_types_by_name['GetBlockchainsResponse'] = _GETBLOCKCHAINSRESPONSE
-DESCRIPTOR.message_types_by_name['GetBlockchainsRequest'] = _GETBLOCKCHAINSREQUEST
+DESCRIPTOR.message_types_by_name['CreateOrganizationResponse'] = _CREATEORGANIZATIONRESPONSE
+DESCRIPTOR.message_types_by_name['SendInvitationResponse'] = _SENDINVITATIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateNetworkRequest = _reflection.GeneratedProtocolMessageType('CreateNetworkRequest', (_message.Message,), {
@@ -459,20 +498,6 @@ CreateNetworkRequest = _reflection.GeneratedProtocolMessageType('CreateNetworkRe
   # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkRequest)
   })
 _sym_db.RegisterMessage(CreateNetworkRequest)
-
-CreateNetworkDefaultResponse = _reflection.GeneratedProtocolMessageType('CreateNetworkDefaultResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATENETWORKDEFAULTRESPONSE,
-  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
-  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkDefaultResponse)
-  })
-_sym_db.RegisterMessage(CreateNetworkDefaultResponse)
-
-CreateNetworkDefaultRequest = _reflection.GeneratedProtocolMessageType('CreateNetworkDefaultRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATENETWORKDEFAULTREQUEST,
-  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
-  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkDefaultRequest)
-  })
-_sym_db.RegisterMessage(CreateNetworkDefaultRequest)
 
 AddPeerToOrganizationRequest = _reflection.GeneratedProtocolMessageType('AddPeerToOrganizationRequest', (_message.Message,), {
   'DESCRIPTOR' : _ADDPEERTOORGANIZATIONREQUEST,
@@ -487,6 +512,27 @@ CreateChannelRequest = _reflection.GeneratedProtocolMessageType('CreateChannelRe
   # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelRequest)
   })
 _sym_db.RegisterMessage(CreateChannelRequest)
+
+GetBlockchainsRequest = _reflection.GeneratedProtocolMessageType('GetBlockchainsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETBLOCKCHAINSREQUEST,
+  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetBlockchainsRequest)
+  })
+_sym_db.RegisterMessage(GetBlockchainsRequest)
+
+CreateOrganizationRequest = _reflection.GeneratedProtocolMessageType('CreateOrganizationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEORGANIZATIONREQUEST,
+  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateOrganizationRequest)
+  })
+_sym_db.RegisterMessage(CreateOrganizationRequest)
+
+SendInvitationRequest = _reflection.GeneratedProtocolMessageType('SendInvitationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SENDINVITATIONREQUEST,
+  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.SendInvitationRequest)
+  })
+_sym_db.RegisterMessage(SendInvitationRequest)
 
 CreateNetworkResponse = _reflection.GeneratedProtocolMessageType('CreateNetworkResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATENETWORKRESPONSE,
@@ -516,12 +562,19 @@ GetBlockchainsResponse = _reflection.GeneratedProtocolMessageType('GetBlockchain
   })
 _sym_db.RegisterMessage(GetBlockchainsResponse)
 
-GetBlockchainsRequest = _reflection.GeneratedProtocolMessageType('GetBlockchainsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETBLOCKCHAINSREQUEST,
+CreateOrganizationResponse = _reflection.GeneratedProtocolMessageType('CreateOrganizationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEORGANIZATIONRESPONSE,
   '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
-  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetBlockchainsRequest)
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateOrganizationResponse)
   })
-_sym_db.RegisterMessage(GetBlockchainsRequest)
+_sym_db.RegisterMessage(CreateOrganizationResponse)
+
+SendInvitationResponse = _reflection.GeneratedProtocolMessageType('SendInvitationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _SENDINVITATIONRESPONSE,
+  '__module__' : 'blockchain.network.v1alpha1.network_api_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.SendInvitationResponse)
+  })
+_sym_db.RegisterMessage(SendInvitationResponse)
 
 
 DESCRIPTOR._options = None
@@ -533,8 +586,8 @@ _BLOCKCHAINAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1220,
-  serialized_end=1892,
+  serialized_start=1520,
+  serialized_end=2309,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateNetwork',
@@ -577,12 +630,22 @@ _BLOCKCHAINAPISERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='CreateNetworkDefault',
-    full_name='blockchain.network.v1alpha1.BlockchainAPIService.CreateNetworkDefault',
+    name='CreateOrganization',
+    full_name='blockchain.network.v1alpha1.BlockchainAPIService.CreateOrganization',
     index=4,
     containing_service=None,
-    input_type=_CREATENETWORKDEFAULTREQUEST,
-    output_type=_CREATENETWORKDEFAULTRESPONSE,
+    input_type=_CREATEORGANIZATIONREQUEST,
+    output_type=_CREATEORGANIZATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SendInvitation',
+    full_name='blockchain.network.v1alpha1.BlockchainAPIService.SendInvitation',
+    index=5,
+    containing_service=None,
+    input_type=_SENDINVITATIONREQUEST,
+    output_type=_SENDINVITATIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

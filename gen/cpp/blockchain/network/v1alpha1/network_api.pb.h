@@ -47,7 +47,7 @@ struct TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -69,24 +69,30 @@ extern CreateChannelRequestDefaultTypeInternal _CreateChannelRequest_default_ins
 class CreateChannelResponse;
 struct CreateChannelResponseDefaultTypeInternal;
 extern CreateChannelResponseDefaultTypeInternal _CreateChannelResponse_default_instance_;
-class CreateNetworkDefaultRequest;
-struct CreateNetworkDefaultRequestDefaultTypeInternal;
-extern CreateNetworkDefaultRequestDefaultTypeInternal _CreateNetworkDefaultRequest_default_instance_;
-class CreateNetworkDefaultResponse;
-struct CreateNetworkDefaultResponseDefaultTypeInternal;
-extern CreateNetworkDefaultResponseDefaultTypeInternal _CreateNetworkDefaultResponse_default_instance_;
 class CreateNetworkRequest;
 struct CreateNetworkRequestDefaultTypeInternal;
 extern CreateNetworkRequestDefaultTypeInternal _CreateNetworkRequest_default_instance_;
 class CreateNetworkResponse;
 struct CreateNetworkResponseDefaultTypeInternal;
 extern CreateNetworkResponseDefaultTypeInternal _CreateNetworkResponse_default_instance_;
+class CreateOrganizationRequest;
+struct CreateOrganizationRequestDefaultTypeInternal;
+extern CreateOrganizationRequestDefaultTypeInternal _CreateOrganizationRequest_default_instance_;
+class CreateOrganizationResponse;
+struct CreateOrganizationResponseDefaultTypeInternal;
+extern CreateOrganizationResponseDefaultTypeInternal _CreateOrganizationResponse_default_instance_;
 class GetBlockchainsRequest;
 struct GetBlockchainsRequestDefaultTypeInternal;
 extern GetBlockchainsRequestDefaultTypeInternal _GetBlockchainsRequest_default_instance_;
 class GetBlockchainsResponse;
 struct GetBlockchainsResponseDefaultTypeInternal;
 extern GetBlockchainsResponseDefaultTypeInternal _GetBlockchainsResponse_default_instance_;
+class SendInvitationRequest;
+struct SendInvitationRequestDefaultTypeInternal;
+extern SendInvitationRequestDefaultTypeInternal _SendInvitationRequest_default_instance_;
+class SendInvitationResponse;
+struct SendInvitationResponseDefaultTypeInternal;
+extern SendInvitationResponseDefaultTypeInternal _SendInvitationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace network
 }  // namespace blockchain
@@ -95,12 +101,14 @@ template<> ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* Arena:
 template<> ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::CreateChannelRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateChannelRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::CreateChannelResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateChannelResponse>(Arena*);
-template<> ::blockchain::network::v1alpha1::CreateNetworkDefaultRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateNetworkDefaultRequest>(Arena*);
-template<> ::blockchain::network::v1alpha1::CreateNetworkDefaultResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateNetworkDefaultResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::CreateNetworkRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateNetworkRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::CreateNetworkResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateNetworkResponse>(Arena*);
+template<> ::blockchain::network::v1alpha1::CreateOrganizationRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateOrganizationRequest>(Arena*);
+template<> ::blockchain::network::v1alpha1::CreateOrganizationResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateOrganizationResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetBlockchainsRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetBlockchainsRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetBlockchainsResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetBlockchainsResponse>(Arena*);
+template<> ::blockchain::network::v1alpha1::SendInvitationRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::SendInvitationRequest>(Arena*);
+template<> ::blockchain::network::v1alpha1::SendInvitationResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::SendInvitationResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace blockchain {
 namespace network {
@@ -224,6 +232,7 @@ class CreateNetworkRequest final :
 
   enum : int {
     kNetworkFieldNumber = 1,
+    kOrganizationFieldNumber = 2,
   };
   // .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
   bool has_network() const;
@@ -242,6 +251,24 @@ class CreateNetworkRequest final :
   void unsafe_arena_set_allocated_network(
       ::blockchain::network::v1alpha1::Network* network);
   ::blockchain::network::v1alpha1::Network* unsafe_arena_release_network();
+
+  // .blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];
+  bool has_organization() const;
+  private:
+  bool _internal_has_organization() const;
+  public:
+  void clear_organization();
+  const ::blockchain::network::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Organization* release_organization();
+  ::blockchain::network::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization);
+  private:
+  const ::blockchain::network::v1alpha1::Organization& _internal_organization() const;
+  ::blockchain::network::v1alpha1::Organization* _internal_mutable_organization();
+  public:
+  void unsafe_arena_set_allocated_organization(
+      ::blockchain::network::v1alpha1::Organization* organization);
+  ::blockchain::network::v1alpha1::Organization* unsafe_arena_release_organization();
 
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkRequest)
  private:
@@ -251,334 +278,7 @@ class CreateNetworkRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::blockchain::network::v1alpha1::Network* network_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CreateNetworkDefaultResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.CreateNetworkDefaultResponse) */ {
- public:
-  inline CreateNetworkDefaultResponse() : CreateNetworkDefaultResponse(nullptr) {}
-  ~CreateNetworkDefaultResponse() override;
-  explicit constexpr CreateNetworkDefaultResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CreateNetworkDefaultResponse(const CreateNetworkDefaultResponse& from);
-  CreateNetworkDefaultResponse(CreateNetworkDefaultResponse&& from) noexcept
-    : CreateNetworkDefaultResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline CreateNetworkDefaultResponse& operator=(const CreateNetworkDefaultResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreateNetworkDefaultResponse& operator=(CreateNetworkDefaultResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CreateNetworkDefaultResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CreateNetworkDefaultResponse* internal_default_instance() {
-    return reinterpret_cast<const CreateNetworkDefaultResponse*>(
-               &_CreateNetworkDefaultResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(CreateNetworkDefaultResponse& a, CreateNetworkDefaultResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CreateNetworkDefaultResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreateNetworkDefaultResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline CreateNetworkDefaultResponse* New() const final {
-    return new CreateNetworkDefaultResponse();
-  }
-
-  CreateNetworkDefaultResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateNetworkDefaultResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateNetworkDefaultResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateNetworkDefaultResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CreateNetworkDefaultResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "blockchain.network.v1alpha1.CreateNetworkDefaultResponse";
-  }
-  protected:
-  explicit CreateNetworkDefaultResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStatusFieldNumber = 2,
-    kNetworkFieldNumber = 1,
-  };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
-  // .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
-  bool has_network() const;
-  private:
-  bool _internal_has_network() const;
-  public:
-  void clear_network();
-  const ::blockchain::network::v1alpha1::Network& network() const;
-  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Network* release_network();
-  ::blockchain::network::v1alpha1::Network* mutable_network();
-  void set_allocated_network(::blockchain::network::v1alpha1::Network* network);
-  private:
-  const ::blockchain::network::v1alpha1::Network& _internal_network() const;
-  ::blockchain::network::v1alpha1::Network* _internal_mutable_network();
-  public:
-  void unsafe_arena_set_allocated_network(
-      ::blockchain::network::v1alpha1::Network* network);
-  ::blockchain::network::v1alpha1::Network* unsafe_arena_release_network();
-
-  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkDefaultResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::blockchain::network::v1alpha1::Network* network_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CreateNetworkDefaultRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.CreateNetworkDefaultRequest) */ {
- public:
-  inline CreateNetworkDefaultRequest() : CreateNetworkDefaultRequest(nullptr) {}
-  ~CreateNetworkDefaultRequest() override;
-  explicit constexpr CreateNetworkDefaultRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CreateNetworkDefaultRequest(const CreateNetworkDefaultRequest& from);
-  CreateNetworkDefaultRequest(CreateNetworkDefaultRequest&& from) noexcept
-    : CreateNetworkDefaultRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline CreateNetworkDefaultRequest& operator=(const CreateNetworkDefaultRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreateNetworkDefaultRequest& operator=(CreateNetworkDefaultRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CreateNetworkDefaultRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CreateNetworkDefaultRequest* internal_default_instance() {
-    return reinterpret_cast<const CreateNetworkDefaultRequest*>(
-               &_CreateNetworkDefaultRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(CreateNetworkDefaultRequest& a, CreateNetworkDefaultRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CreateNetworkDefaultRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreateNetworkDefaultRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline CreateNetworkDefaultRequest* New() const final {
-    return new CreateNetworkDefaultRequest();
-  }
-
-  CreateNetworkDefaultRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CreateNetworkDefaultRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateNetworkDefaultRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateNetworkDefaultRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CreateNetworkDefaultRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "blockchain.network.v1alpha1.CreateNetworkDefaultRequest";
-  }
-  protected:
-  explicit CreateNetworkDefaultRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStatusFieldNumber = 2,
-    kNetworkFieldNumber = 1,
-  };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
-  // .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
-  bool has_network() const;
-  private:
-  bool _internal_has_network() const;
-  public:
-  void clear_network();
-  const ::blockchain::network::v1alpha1::Network& network() const;
-  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Network* release_network();
-  ::blockchain::network::v1alpha1::Network* mutable_network();
-  void set_allocated_network(::blockchain::network::v1alpha1::Network* network);
-  private:
-  const ::blockchain::network::v1alpha1::Network& _internal_network() const;
-  ::blockchain::network::v1alpha1::Network* _internal_mutable_network();
-  public:
-  void unsafe_arena_set_allocated_network(
-      ::blockchain::network::v1alpha1::Network* network);
-  ::blockchain::network::v1alpha1::Network* unsafe_arena_release_network();
-
-  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkDefaultRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::blockchain::network::v1alpha1::Network* network_;
+  ::blockchain::network::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -628,7 +328,7 @@ class AddPeerToOrganizationRequest final :
                &_AddPeerToOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    1;
 
   friend void swap(AddPeerToOrganizationRequest& a, AddPeerToOrganizationRequest& b) {
     a.Swap(&b);
@@ -699,81 +399,40 @@ class AddPeerToOrganizationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrgDomainFieldNumber = 1,
-    kAdminPasswordFieldNumber = 2,
-    kAdminUserFieldNumber = 3,
-    kNetworkNameFieldNumber = 4,
-    kNetworkIdFieldNumber = 5,
+    kBlockchainIdFieldNumber = 2,
+    kOrganizationFieldNumber = 1,
   };
-  // string org_domain = 1 [json_name = "orgDomain"];
-  void clear_org_domain();
-  const std::string& org_domain() const;
+  // string blockchain_id = 2 [json_name = "blockchainId"];
+  void clear_blockchain_id();
+  const std::string& blockchain_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_org_domain(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_org_domain();
-  PROTOBUF_MUST_USE_RESULT std::string* release_org_domain();
-  void set_allocated_org_domain(std::string* org_domain);
+  void set_blockchain_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockchain_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_id();
+  void set_allocated_blockchain_id(std::string* blockchain_id);
   private:
-  const std::string& _internal_org_domain() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_org_domain(const std::string& value);
-  std::string* _internal_mutable_org_domain();
+  const std::string& _internal_blockchain_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_id(const std::string& value);
+  std::string* _internal_mutable_blockchain_id();
   public:
 
-  // string admin_password = 2 [json_name = "adminPassword"];
-  void clear_admin_password();
-  const std::string& admin_password() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_admin_password(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_admin_password();
-  PROTOBUF_MUST_USE_RESULT std::string* release_admin_password();
-  void set_allocated_admin_password(std::string* admin_password);
+  // .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
   private:
-  const std::string& _internal_admin_password() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_password(const std::string& value);
-  std::string* _internal_mutable_admin_password();
+  bool _internal_has_organization() const;
   public:
-
-  // string admin_user = 3 [json_name = "adminUser"];
-  void clear_admin_user();
-  const std::string& admin_user() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_admin_user(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_admin_user();
-  PROTOBUF_MUST_USE_RESULT std::string* release_admin_user();
-  void set_allocated_admin_user(std::string* admin_user);
+  void clear_organization();
+  const ::blockchain::network::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Organization* release_organization();
+  ::blockchain::network::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization);
   private:
-  const std::string& _internal_admin_user() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_user(const std::string& value);
-  std::string* _internal_mutable_admin_user();
+  const ::blockchain::network::v1alpha1::Organization& _internal_organization() const;
+  ::blockchain::network::v1alpha1::Organization* _internal_mutable_organization();
   public:
-
-  // string network_name = 4 [json_name = "networkName"];
-  void clear_network_name();
-  const std::string& network_name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_network_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_network_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_network_name();
-  void set_allocated_network_name(std::string* network_name);
-  private:
-  const std::string& _internal_network_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_network_name(const std::string& value);
-  std::string* _internal_mutable_network_name();
-  public:
-
-  // string network_id = 5 [json_name = "networkId"];
-  void clear_network_id();
-  const std::string& network_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_network_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_network_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_network_id();
-  void set_allocated_network_id(std::string* network_id);
-  private:
-  const std::string& _internal_network_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_network_id(const std::string& value);
-  std::string* _internal_mutable_network_id();
-  public:
+  void unsafe_arena_set_allocated_organization(
+      ::blockchain::network::v1alpha1::Organization* organization);
+  ::blockchain::network::v1alpha1::Organization* unsafe_arena_release_organization();
 
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
  private:
@@ -782,11 +441,8 @@ class AddPeerToOrganizationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr org_domain_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_password_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_user_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
+  ::blockchain::network::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -836,7 +492,7 @@ class CreateChannelRequest final :
                &_CreateChannelRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    2;
 
   friend void swap(CreateChannelRequest& a, CreateChannelRequest& b) {
     a.Swap(&b);
@@ -907,76 +563,25 @@ class CreateChannelRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kChannelOrgIdsFieldNumber = 4,
-    kCreatorOrgIdFieldNumber = 1,
-    kBlockchainIdFieldNumber = 2,
-    kChannelNameFieldNumber = 3,
+    kChannelFieldNumber = 1,
   };
-  // repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];
-  int channel_org_ids_size() const;
+  // .blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];
+  bool has_channel() const;
   private:
-  int _internal_channel_org_ids_size() const;
+  bool _internal_has_channel() const;
   public:
-  void clear_channel_org_ids();
-  const std::string& channel_org_ids(int index) const;
-  std::string* mutable_channel_org_ids(int index);
-  void set_channel_org_ids(int index, const std::string& value);
-  void set_channel_org_ids(int index, std::string&& value);
-  void set_channel_org_ids(int index, const char* value);
-  void set_channel_org_ids(int index, const char* value, size_t size);
-  std::string* add_channel_org_ids();
-  void add_channel_org_ids(const std::string& value);
-  void add_channel_org_ids(std::string&& value);
-  void add_channel_org_ids(const char* value);
-  void add_channel_org_ids(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& channel_org_ids() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_channel_org_ids();
+  void clear_channel();
+  const ::blockchain::network::v1alpha1::Channel& channel() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Channel* release_channel();
+  ::blockchain::network::v1alpha1::Channel* mutable_channel();
+  void set_allocated_channel(::blockchain::network::v1alpha1::Channel* channel);
   private:
-  const std::string& _internal_channel_org_ids(int index) const;
-  std::string* _internal_add_channel_org_ids();
+  const ::blockchain::network::v1alpha1::Channel& _internal_channel() const;
+  ::blockchain::network::v1alpha1::Channel* _internal_mutable_channel();
   public:
-
-  // string creator_org_id = 1 [json_name = "creatorOrgId"];
-  void clear_creator_org_id();
-  const std::string& creator_org_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_creator_org_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_creator_org_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_creator_org_id();
-  void set_allocated_creator_org_id(std::string* creator_org_id);
-  private:
-  const std::string& _internal_creator_org_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_creator_org_id(const std::string& value);
-  std::string* _internal_mutable_creator_org_id();
-  public:
-
-  // string blockchain_id = 2 [json_name = "blockchainId"];
-  void clear_blockchain_id();
-  const std::string& blockchain_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_blockchain_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_blockchain_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_id();
-  void set_allocated_blockchain_id(std::string* blockchain_id);
-  private:
-  const std::string& _internal_blockchain_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_id(const std::string& value);
-  std::string* _internal_mutable_blockchain_id();
-  public:
-
-  // string channel_name = 3 [json_name = "channelName"];
-  void clear_channel_name();
-  const std::string& channel_name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_channel_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_channel_name();
-  PROTOBUF_MUST_USE_RESULT std::string* release_channel_name();
-  void set_allocated_channel_name(std::string* channel_name);
-  private:
-  const std::string& _internal_channel_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_channel_name(const std::string& value);
-  std::string* _internal_mutable_channel_name();
-  public:
+  void unsafe_arena_set_allocated_channel(
+      ::blockchain::network::v1alpha1::Channel* channel);
+  ::blockchain::network::v1alpha1::Channel* unsafe_arena_release_channel();
 
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelRequest)
  private:
@@ -985,10 +590,447 @@ class CreateChannelRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> channel_org_ids_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr creator_org_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr channel_name_;
+  ::blockchain::network::v1alpha1::Channel* channel_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetBlockchainsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetBlockchainsRequest) */ {
+ public:
+  inline GetBlockchainsRequest() : GetBlockchainsRequest(nullptr) {}
+  ~GetBlockchainsRequest() override;
+  explicit constexpr GetBlockchainsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetBlockchainsRequest(const GetBlockchainsRequest& from);
+  GetBlockchainsRequest(GetBlockchainsRequest&& from) noexcept
+    : GetBlockchainsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetBlockchainsRequest& operator=(const GetBlockchainsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetBlockchainsRequest& operator=(GetBlockchainsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetBlockchainsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetBlockchainsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetBlockchainsRequest*>(
+               &_GetBlockchainsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(GetBlockchainsRequest& a, GetBlockchainsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetBlockchainsRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetBlockchainsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetBlockchainsRequest* New() const final {
+    return new GetBlockchainsRequest();
+  }
+
+  GetBlockchainsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetBlockchainsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetBlockchainsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetBlockchainsRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetBlockchainsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.GetBlockchainsRequest";
+  }
+  protected:
+  explicit GetBlockchainsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetBlockchainsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateOrganizationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.CreateOrganizationRequest) */ {
+ public:
+  inline CreateOrganizationRequest() : CreateOrganizationRequest(nullptr) {}
+  ~CreateOrganizationRequest() override;
+  explicit constexpr CreateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateOrganizationRequest(const CreateOrganizationRequest& from);
+  CreateOrganizationRequest(CreateOrganizationRequest&& from) noexcept
+    : CreateOrganizationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateOrganizationRequest& operator=(const CreateOrganizationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateOrganizationRequest& operator=(CreateOrganizationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateOrganizationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateOrganizationRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateOrganizationRequest*>(
+               &_CreateOrganizationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(CreateOrganizationRequest& a, CreateOrganizationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateOrganizationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateOrganizationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateOrganizationRequest* New() const final {
+    return new CreateOrganizationRequest();
+  }
+
+  CreateOrganizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateOrganizationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateOrganizationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateOrganizationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateOrganizationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.CreateOrganizationRequest";
+  }
+  protected:
+  explicit CreateOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationFieldNumber = 1,
+  };
+  // .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
+  private:
+  bool _internal_has_organization() const;
+  public:
+  void clear_organization();
+  const ::blockchain::network::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Organization* release_organization();
+  ::blockchain::network::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization);
+  private:
+  const ::blockchain::network::v1alpha1::Organization& _internal_organization() const;
+  ::blockchain::network::v1alpha1::Organization* _internal_mutable_organization();
+  public:
+  void unsafe_arena_set_allocated_organization(
+      ::blockchain::network::v1alpha1::Organization* organization);
+  ::blockchain::network::v1alpha1::Organization* unsafe_arena_release_organization();
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateOrganizationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::blockchain::network::v1alpha1::Organization* organization_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SendInvitationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.SendInvitationRequest) */ {
+ public:
+  inline SendInvitationRequest() : SendInvitationRequest(nullptr) {}
+  ~SendInvitationRequest() override;
+  explicit constexpr SendInvitationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SendInvitationRequest(const SendInvitationRequest& from);
+  SendInvitationRequest(SendInvitationRequest&& from) noexcept
+    : SendInvitationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SendInvitationRequest& operator=(const SendInvitationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SendInvitationRequest& operator=(SendInvitationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SendInvitationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SendInvitationRequest* internal_default_instance() {
+    return reinterpret_cast<const SendInvitationRequest*>(
+               &_SendInvitationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(SendInvitationRequest& a, SendInvitationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SendInvitationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SendInvitationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SendInvitationRequest* New() const final {
+    return new SendInvitationRequest();
+  }
+
+  SendInvitationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SendInvitationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SendInvitationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SendInvitationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SendInvitationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.SendInvitationRequest";
+  }
+  protected:
+  explicit SendInvitationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInvitationFieldNumber = 1,
+  };
+  // .blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+  bool has_invitation() const;
+  private:
+  bool _internal_has_invitation() const;
+  public:
+  void clear_invitation();
+  const ::blockchain::network::v1alpha1::Invitation& invitation() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Invitation* release_invitation();
+  ::blockchain::network::v1alpha1::Invitation* mutable_invitation();
+  void set_allocated_invitation(::blockchain::network::v1alpha1::Invitation* invitation);
+  private:
+  const ::blockchain::network::v1alpha1::Invitation& _internal_invitation() const;
+  ::blockchain::network::v1alpha1::Invitation* _internal_mutable_invitation();
+  public:
+  void unsafe_arena_set_allocated_invitation(
+      ::blockchain::network::v1alpha1::Invitation* invitation);
+  ::blockchain::network::v1alpha1::Invitation* unsafe_arena_release_invitation();
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.SendInvitationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::blockchain::network::v1alpha1::Invitation* invitation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -1038,7 +1080,7 @@ class CreateNetworkResponse final :
                &_CreateNetworkResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(CreateNetworkResponse& a, CreateNetworkResponse& b) {
     a.Swap(&b);
@@ -1109,23 +1151,9 @@ class CreateNetworkResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 1,
     kMessageFieldNumber = 2,
+    kNetworkFieldNumber = 1,
   };
-  // string status = 1 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // string message = 2 [json_name = "message"];
   void clear_message();
   const std::string& message() const;
@@ -1140,6 +1168,24 @@ class CreateNetworkResponse final :
   std::string* _internal_mutable_message();
   public:
 
+  // .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
+  bool has_network() const;
+  private:
+  bool _internal_has_network() const;
+  public:
+  void clear_network();
+  const ::blockchain::network::v1alpha1::Network& network() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Network* release_network();
+  ::blockchain::network::v1alpha1::Network* mutable_network();
+  void set_allocated_network(::blockchain::network::v1alpha1::Network* network);
+  private:
+  const ::blockchain::network::v1alpha1::Network& _internal_network() const;
+  ::blockchain::network::v1alpha1::Network* _internal_mutable_network();
+  public:
+  void unsafe_arena_set_allocated_network(
+      ::blockchain::network::v1alpha1::Network* network);
+  ::blockchain::network::v1alpha1::Network* unsafe_arena_release_network();
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateNetworkResponse)
  private:
   class _Internal;
@@ -1147,8 +1193,8 @@ class CreateNetworkResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::blockchain::network::v1alpha1::Network* network_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -1198,7 +1244,7 @@ class AddPeerToOrganizationResponse final :
                &_AddPeerToOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(AddPeerToOrganizationResponse& a, AddPeerToOrganizationResponse& b) {
     a.Swap(&b);
@@ -1269,24 +1315,10 @@ class AddPeerToOrganizationResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 1,
-    kMessageFieldNumber = 2,
+    kMessageFieldNumber = 3,
+    kOrganizationFieldNumber = 1,
   };
-  // string status = 1 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
-  // string message = 2 [json_name = "message"];
+  // string message = 3 [json_name = "message"];
   void clear_message();
   const std::string& message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1300,6 +1332,24 @@ class AddPeerToOrganizationResponse final :
   std::string* _internal_mutable_message();
   public:
 
+  // .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
+  private:
+  bool _internal_has_organization() const;
+  public:
+  void clear_organization();
+  const ::blockchain::network::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Organization* release_organization();
+  ::blockchain::network::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization);
+  private:
+  const ::blockchain::network::v1alpha1::Organization& _internal_organization() const;
+  ::blockchain::network::v1alpha1::Organization* _internal_mutable_organization();
+  public:
+  void unsafe_arena_set_allocated_organization(
+      ::blockchain::network::v1alpha1::Organization* organization);
+  ::blockchain::network::v1alpha1::Organization* unsafe_arena_release_organization();
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
  private:
   class _Internal;
@@ -1307,8 +1357,8 @@ class AddPeerToOrganizationResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::blockchain::network::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -1358,7 +1408,7 @@ class CreateChannelResponse final :
                &_CreateChannelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(CreateChannelResponse& a, CreateChannelResponse& b) {
     a.Swap(&b);
@@ -1429,23 +1479,9 @@ class CreateChannelResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 1,
     kMessageFieldNumber = 2,
+    kChannelFieldNumber = 1,
   };
-  // string status = 1 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // string message = 2 [json_name = "message"];
   void clear_message();
   const std::string& message() const;
@@ -1460,6 +1496,24 @@ class CreateChannelResponse final :
   std::string* _internal_mutable_message();
   public:
 
+  // .blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];
+  bool has_channel() const;
+  private:
+  bool _internal_has_channel() const;
+  public:
+  void clear_channel();
+  const ::blockchain::network::v1alpha1::Channel& channel() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Channel* release_channel();
+  ::blockchain::network::v1alpha1::Channel* mutable_channel();
+  void set_allocated_channel(::blockchain::network::v1alpha1::Channel* channel);
+  private:
+  const ::blockchain::network::v1alpha1::Channel& _internal_channel() const;
+  ::blockchain::network::v1alpha1::Channel* _internal_mutable_channel();
+  public:
+  void unsafe_arena_set_allocated_channel(
+      ::blockchain::network::v1alpha1::Channel* channel);
+  ::blockchain::network::v1alpha1::Channel* unsafe_arena_release_channel();
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateChannelResponse)
  private:
   class _Internal;
@@ -1467,8 +1521,8 @@ class CreateChannelResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::blockchain::network::v1alpha1::Channel* channel_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -1518,7 +1572,7 @@ class GetBlockchainsResponse final :
                &_GetBlockchainsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(GetBlockchainsResponse& a, GetBlockchainsResponse& b) {
     a.Swap(&b);
@@ -1590,7 +1644,7 @@ class GetBlockchainsResponse final :
 
   enum : int {
     kNetworkFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kMessageFieldNumber = 2,
   };
   // repeated .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
   int network_size() const;
@@ -1610,18 +1664,18 @@ class GetBlockchainsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Network >&
       network() const;
 
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
+  // string message = 2 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
   public:
 
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetBlockchainsResponse)
@@ -1632,30 +1686,30 @@ class GetBlockchainsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Network > network_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
 // -------------------------------------------------------------------
 
-class GetBlockchainsRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetBlockchainsRequest) */ {
+class CreateOrganizationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.CreateOrganizationResponse) */ {
  public:
-  inline GetBlockchainsRequest() : GetBlockchainsRequest(nullptr) {}
-  ~GetBlockchainsRequest() override;
-  explicit constexpr GetBlockchainsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline CreateOrganizationResponse() : CreateOrganizationResponse(nullptr) {}
+  ~CreateOrganizationResponse() override;
+  explicit constexpr CreateOrganizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetBlockchainsRequest(const GetBlockchainsRequest& from);
-  GetBlockchainsRequest(GetBlockchainsRequest&& from) noexcept
-    : GetBlockchainsRequest() {
+  CreateOrganizationResponse(const CreateOrganizationResponse& from);
+  CreateOrganizationResponse(CreateOrganizationResponse&& from) noexcept
+    : CreateOrganizationResponse() {
     *this = ::std::move(from);
   }
 
-  inline GetBlockchainsRequest& operator=(const GetBlockchainsRequest& from) {
+  inline CreateOrganizationResponse& operator=(const CreateOrganizationResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetBlockchainsRequest& operator=(GetBlockchainsRequest&& from) noexcept {
+  inline CreateOrganizationResponse& operator=(CreateOrganizationResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -1674,20 +1728,20 @@ class GetBlockchainsRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetBlockchainsRequest& default_instance() {
+  static const CreateOrganizationResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetBlockchainsRequest* internal_default_instance() {
-    return reinterpret_cast<const GetBlockchainsRequest*>(
-               &_GetBlockchainsRequest_default_instance_);
+  static inline const CreateOrganizationResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateOrganizationResponse*>(
+               &_CreateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
-  friend void swap(GetBlockchainsRequest& a, GetBlockchainsRequest& b) {
+  friend void swap(CreateOrganizationResponse& a, CreateOrganizationResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetBlockchainsRequest* other) {
+  inline void Swap(CreateOrganizationResponse* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -1695,7 +1749,7 @@ class GetBlockchainsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetBlockchainsRequest* other) {
+  void UnsafeArenaSwap(CreateOrganizationResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1703,17 +1757,17 @@ class GetBlockchainsRequest final :
 
   // implements Message ----------------------------------------------
 
-  inline GetBlockchainsRequest* New() const final {
-    return new GetBlockchainsRequest();
+  inline CreateOrganizationResponse* New() const final {
+    return new CreateOrganizationResponse();
   }
 
-  GetBlockchainsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetBlockchainsRequest>(arena);
+  CreateOrganizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateOrganizationResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetBlockchainsRequest& from);
+  void CopyFrom(const CreateOrganizationResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const GetBlockchainsRequest& from);
+  void MergeFrom(const CreateOrganizationResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -1730,13 +1784,13 @@ class GetBlockchainsRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetBlockchainsRequest* other);
+  void InternalSwap(CreateOrganizationResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "blockchain.network.v1alpha1.GetBlockchainsRequest";
+    return "blockchain.network.v1alpha1.CreateOrganizationResponse";
   }
   protected:
-  explicit GetBlockchainsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit CreateOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1753,30 +1807,214 @@ class GetBlockchainsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
+    kMessageFieldNumber = 2,
+    kOrganizationFieldNumber = 1,
   };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
+  // string message = 2 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
   public:
 
-  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetBlockchainsRequest)
+  // .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+  bool has_organization() const;
+  private:
+  bool _internal_has_organization() const;
+  public:
+  void clear_organization();
+  const ::blockchain::network::v1alpha1::Organization& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Organization* release_organization();
+  ::blockchain::network::v1alpha1::Organization* mutable_organization();
+  void set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization);
+  private:
+  const ::blockchain::network::v1alpha1::Organization& _internal_organization() const;
+  ::blockchain::network::v1alpha1::Organization* _internal_mutable_organization();
+  public:
+  void unsafe_arena_set_allocated_organization(
+      ::blockchain::network::v1alpha1::Organization* organization);
+  ::blockchain::network::v1alpha1::Organization* unsafe_arena_release_organization();
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateOrganizationResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::blockchain::network::v1alpha1::Organization* organization_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SendInvitationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.SendInvitationResponse) */ {
+ public:
+  inline SendInvitationResponse() : SendInvitationResponse(nullptr) {}
+  ~SendInvitationResponse() override;
+  explicit constexpr SendInvitationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SendInvitationResponse(const SendInvitationResponse& from);
+  SendInvitationResponse(SendInvitationResponse&& from) noexcept
+    : SendInvitationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SendInvitationResponse& operator=(const SendInvitationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SendInvitationResponse& operator=(SendInvitationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SendInvitationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SendInvitationResponse* internal_default_instance() {
+    return reinterpret_cast<const SendInvitationResponse*>(
+               &_SendInvitationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(SendInvitationResponse& a, SendInvitationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SendInvitationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SendInvitationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SendInvitationResponse* New() const final {
+    return new SendInvitationResponse();
+  }
+
+  SendInvitationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SendInvitationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SendInvitationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SendInvitationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SendInvitationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.SendInvitationResponse";
+  }
+  protected:
+  explicit SendInvitationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 2,
+    kInvitationFieldNumber = 1,
+  };
+  // string message = 2 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // .blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+  bool has_invitation() const;
+  private:
+  bool _internal_has_invitation() const;
+  public:
+  void clear_invitation();
+  const ::blockchain::network::v1alpha1::Invitation& invitation() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Invitation* release_invitation();
+  ::blockchain::network::v1alpha1::Invitation* mutable_invitation();
+  void set_allocated_invitation(::blockchain::network::v1alpha1::Invitation* invitation);
+  private:
+  const ::blockchain::network::v1alpha1::Invitation& _internal_invitation() const;
+  ::blockchain::network::v1alpha1::Invitation* _internal_mutable_invitation();
+  public:
+  void unsafe_arena_set_allocated_invitation(
+      ::blockchain::network::v1alpha1::Invitation* invitation);
+  ::blockchain::network::v1alpha1::Invitation* unsafe_arena_release_invitation();
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.SendInvitationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::blockchain::network::v1alpha1::Invitation* invitation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -1877,43 +2115,39 @@ inline void CreateNetworkRequest::set_allocated_network(::blockchain::network::v
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkRequest.network)
 }
 
-// -------------------------------------------------------------------
-
-// CreateNetworkDefaultResponse
-
-// .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
-inline bool CreateNetworkDefaultResponse::_internal_has_network() const {
-  return this != internal_default_instance() && network_ != nullptr;
+// .blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];
+inline bool CreateNetworkRequest::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline bool CreateNetworkDefaultResponse::has_network() const {
-  return _internal_has_network();
+inline bool CreateNetworkRequest::has_organization() const {
+  return _internal_has_organization();
 }
-inline const ::blockchain::network::v1alpha1::Network& CreateNetworkDefaultResponse::_internal_network() const {
-  const ::blockchain::network::v1alpha1::Network* p = network_;
-  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Network&>(
-      ::blockchain::network::v1alpha1::_Network_default_instance_);
+inline const ::blockchain::network::v1alpha1::Organization& CreateNetworkRequest::_internal_organization() const {
+  const ::blockchain::network::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Organization&>(
+      ::blockchain::network::v1alpha1::_Organization_default_instance_);
 }
-inline const ::blockchain::network::v1alpha1::Network& CreateNetworkDefaultResponse::network() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.network)
-  return _internal_network();
+inline const ::blockchain::network::v1alpha1::Organization& CreateNetworkRequest::organization() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkRequest.organization)
+  return _internal_organization();
 }
-inline void CreateNetworkDefaultResponse::unsafe_arena_set_allocated_network(
-    ::blockchain::network::v1alpha1::Network* network) {
+inline void CreateNetworkRequest::unsafe_arena_set_allocated_organization(
+    ::blockchain::network::v1alpha1::Organization* organization) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(network_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  network_ = network;
-  if (network) {
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.network)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateNetworkRequest.organization)
 }
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultResponse::release_network() {
+inline ::blockchain::network::v1alpha1::Organization* CreateNetworkRequest::release_organization() {
   
-  ::blockchain::network::v1alpha1::Network* temp = network_;
-  network_ = nullptr;
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1925,550 +2159,174 @@ inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultResponse::r
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultResponse::unsafe_arena_release_network() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.network)
+inline ::blockchain::network::v1alpha1::Organization* CreateNetworkRequest::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkRequest.organization)
   
-  ::blockchain::network::v1alpha1::Network* temp = network_;
-  network_ = nullptr;
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
   return temp;
 }
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultResponse::_internal_mutable_network() {
+inline ::blockchain::network::v1alpha1::Organization* CreateNetworkRequest::_internal_mutable_organization() {
   
-  if (network_ == nullptr) {
-    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Network>(GetArenaForAllocation());
-    network_ = p;
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
   }
-  return network_;
+  return organization_;
 }
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultResponse::mutable_network() {
-  ::blockchain::network::v1alpha1::Network* _msg = _internal_mutable_network();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.network)
+inline ::blockchain::network::v1alpha1::Organization* CreateNetworkRequest::mutable_organization() {
+  ::blockchain::network::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkRequest.organization)
   return _msg;
 }
-inline void CreateNetworkDefaultResponse::set_allocated_network(::blockchain::network::v1alpha1::Network* network) {
+inline void CreateNetworkRequest::set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(network_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  if (network) {
+  if (organization) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(network));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
     if (message_arena != submessage_arena) {
-      network = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, network, submessage_arena);
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
     }
     
   } else {
     
   }
-  network_ = network;
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.network)
-}
-
-// string status = 2 [json_name = "status"];
-inline void CreateNetworkDefaultResponse::clear_status() {
-  status_.ClearToEmpty();
-}
-inline const std::string& CreateNetworkDefaultResponse::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.status)
-  return _internal_status();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateNetworkDefaultResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.status)
-}
-inline std::string* CreateNetworkDefaultResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.status)
-  return _s;
-}
-inline const std::string& CreateNetworkDefaultResponse::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateNetworkDefaultResponse::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateNetworkDefaultResponse::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateNetworkDefaultResponse::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateNetworkDefaultResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkDefaultResponse.status)
-}
-
-// -------------------------------------------------------------------
-
-// CreateNetworkDefaultRequest
-
-// .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
-inline bool CreateNetworkDefaultRequest::_internal_has_network() const {
-  return this != internal_default_instance() && network_ != nullptr;
-}
-inline bool CreateNetworkDefaultRequest::has_network() const {
-  return _internal_has_network();
-}
-inline const ::blockchain::network::v1alpha1::Network& CreateNetworkDefaultRequest::_internal_network() const {
-  const ::blockchain::network::v1alpha1::Network* p = network_;
-  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Network&>(
-      ::blockchain::network::v1alpha1::_Network_default_instance_);
-}
-inline const ::blockchain::network::v1alpha1::Network& CreateNetworkDefaultRequest::network() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.network)
-  return _internal_network();
-}
-inline void CreateNetworkDefaultRequest::unsafe_arena_set_allocated_network(
-    ::blockchain::network::v1alpha1::Network* network) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(network_);
-  }
-  network_ = network;
-  if (network) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.network)
-}
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultRequest::release_network() {
-  
-  ::blockchain::network::v1alpha1::Network* temp = network_;
-  network_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultRequest::unsafe_arena_release_network() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.network)
-  
-  ::blockchain::network::v1alpha1::Network* temp = network_;
-  network_ = nullptr;
-  return temp;
-}
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultRequest::_internal_mutable_network() {
-  
-  if (network_ == nullptr) {
-    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Network>(GetArenaForAllocation());
-    network_ = p;
-  }
-  return network_;
-}
-inline ::blockchain::network::v1alpha1::Network* CreateNetworkDefaultRequest::mutable_network() {
-  ::blockchain::network::v1alpha1::Network* _msg = _internal_mutable_network();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.network)
-  return _msg;
-}
-inline void CreateNetworkDefaultRequest::set_allocated_network(::blockchain::network::v1alpha1::Network* network) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(network_);
-  }
-  if (network) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(network));
-    if (message_arena != submessage_arena) {
-      network = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, network, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  network_ = network;
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.network)
-}
-
-// string status = 2 [json_name = "status"];
-inline void CreateNetworkDefaultRequest::clear_status() {
-  status_.ClearToEmpty();
-}
-inline const std::string& CreateNetworkDefaultRequest::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.status)
-  return _internal_status();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateNetworkDefaultRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.status)
-}
-inline std::string* CreateNetworkDefaultRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.status)
-  return _s;
-}
-inline const std::string& CreateNetworkDefaultRequest::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateNetworkDefaultRequest::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateNetworkDefaultRequest::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateNetworkDefaultRequest::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateNetworkDefaultRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkDefaultRequest.status)
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkRequest.organization)
 }
 
 // -------------------------------------------------------------------
 
 // AddPeerToOrganizationRequest
 
-// string org_domain = 1 [json_name = "orgDomain"];
-inline void AddPeerToOrganizationRequest::clear_org_domain() {
-  org_domain_.ClearToEmpty();
+// .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool AddPeerToOrganizationRequest::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline const std::string& AddPeerToOrganizationRequest::org_domain() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain)
-  return _internal_org_domain();
+inline bool AddPeerToOrganizationRequest::has_organization() const {
+  return _internal_has_organization();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AddPeerToOrganizationRequest::set_org_domain(ArgT0&& arg0, ArgT... args) {
- 
- org_domain_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain)
+inline const ::blockchain::network::v1alpha1::Organization& AddPeerToOrganizationRequest::_internal_organization() const {
+  const ::blockchain::network::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Organization&>(
+      ::blockchain::network::v1alpha1::_Organization_default_instance_);
 }
-inline std::string* AddPeerToOrganizationRequest::mutable_org_domain() {
-  std::string* _s = _internal_mutable_org_domain();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain)
-  return _s;
+inline const ::blockchain::network::v1alpha1::Organization& AddPeerToOrganizationRequest::organization() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.organization)
+  return _internal_organization();
 }
-inline const std::string& AddPeerToOrganizationRequest::_internal_org_domain() const {
-  return org_domain_.Get();
-}
-inline void AddPeerToOrganizationRequest::_internal_set_org_domain(const std::string& value) {
-  
-  org_domain_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::_internal_mutable_org_domain() {
-  
-  return org_domain_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::release_org_domain() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain)
-  return org_domain_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void AddPeerToOrganizationRequest::set_allocated_org_domain(std::string* org_domain) {
-  if (org_domain != nullptr) {
+inline void AddPeerToOrganizationRequest::unsafe_arena_set_allocated_organization(
+    ::blockchain::network::v1alpha1::Organization* organization) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  org_domain_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), org_domain,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.org_domain)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.organization)
 }
-
-// string admin_password = 2 [json_name = "adminPassword"];
-inline void AddPeerToOrganizationRequest::clear_admin_password() {
-  admin_password_.ClearToEmpty();
-}
-inline const std::string& AddPeerToOrganizationRequest::admin_password() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password)
-  return _internal_admin_password();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AddPeerToOrganizationRequest::set_admin_password(ArgT0&& arg0, ArgT... args) {
- 
- admin_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password)
-}
-inline std::string* AddPeerToOrganizationRequest::mutable_admin_password() {
-  std::string* _s = _internal_mutable_admin_password();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password)
-  return _s;
-}
-inline const std::string& AddPeerToOrganizationRequest::_internal_admin_password() const {
-  return admin_password_.Get();
-}
-inline void AddPeerToOrganizationRequest::_internal_set_admin_password(const std::string& value) {
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationRequest::release_organization() {
   
-  admin_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline std::string* AddPeerToOrganizationRequest::_internal_mutable_admin_password() {
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationRequest::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.organization)
   
-  return admin_password_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+  return temp;
 }
-inline std::string* AddPeerToOrganizationRequest::release_admin_password() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password)
-  return admin_password_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationRequest::_internal_mutable_organization() {
+  
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
+  }
+  return organization_;
 }
-inline void AddPeerToOrganizationRequest::set_allocated_admin_password(std::string* admin_password) {
-  if (admin_password != nullptr) {
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationRequest::mutable_organization() {
+  ::blockchain::network::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.organization)
+  return _msg;
+}
+inline void AddPeerToOrganizationRequest::set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  if (organization) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
+    if (message_arena != submessage_arena) {
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
+    }
     
   } else {
     
   }
-  admin_password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), admin_password,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_password)
-}
-
-// string admin_user = 3 [json_name = "adminUser"];
-inline void AddPeerToOrganizationRequest::clear_admin_user() {
-  admin_user_.ClearToEmpty();
-}
-inline const std::string& AddPeerToOrganizationRequest::admin_user() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user)
-  return _internal_admin_user();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AddPeerToOrganizationRequest::set_admin_user(ArgT0&& arg0, ArgT... args) {
- 
- admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user)
-}
-inline std::string* AddPeerToOrganizationRequest::mutable_admin_user() {
-  std::string* _s = _internal_mutable_admin_user();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user)
-  return _s;
-}
-inline const std::string& AddPeerToOrganizationRequest::_internal_admin_user() const {
-  return admin_user_.Get();
-}
-inline void AddPeerToOrganizationRequest::_internal_set_admin_user(const std::string& value) {
-  
-  admin_user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::_internal_mutable_admin_user() {
-  
-  return admin_user_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::release_admin_user() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user)
-  return admin_user_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void AddPeerToOrganizationRequest::set_allocated_admin_user(std::string* admin_user) {
-  if (admin_user != nullptr) {
-    
-  } else {
-    
-  }
-  admin_user_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), admin_user,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.admin_user)
-}
-
-// string network_name = 4 [json_name = "networkName"];
-inline void AddPeerToOrganizationRequest::clear_network_name() {
-  network_name_.ClearToEmpty();
-}
-inline const std::string& AddPeerToOrganizationRequest::network_name() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name)
-  return _internal_network_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AddPeerToOrganizationRequest::set_network_name(ArgT0&& arg0, ArgT... args) {
- 
- network_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name)
-}
-inline std::string* AddPeerToOrganizationRequest::mutable_network_name() {
-  std::string* _s = _internal_mutable_network_name();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name)
-  return _s;
-}
-inline const std::string& AddPeerToOrganizationRequest::_internal_network_name() const {
-  return network_name_.Get();
-}
-inline void AddPeerToOrganizationRequest::_internal_set_network_name(const std::string& value) {
-  
-  network_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::_internal_mutable_network_name() {
-  
-  return network_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::release_network_name() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name)
-  return network_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void AddPeerToOrganizationRequest::set_allocated_network_name(std::string* network_name) {
-  if (network_name != nullptr) {
-    
-  } else {
-    
-  }
-  network_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_name)
-}
-
-// string network_id = 5 [json_name = "networkId"];
-inline void AddPeerToOrganizationRequest::clear_network_id() {
-  network_id_.ClearToEmpty();
-}
-inline const std::string& AddPeerToOrganizationRequest::network_id() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id)
-  return _internal_network_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AddPeerToOrganizationRequest::set_network_id(ArgT0&& arg0, ArgT... args) {
- 
- network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id)
-}
-inline std::string* AddPeerToOrganizationRequest::mutable_network_id() {
-  std::string* _s = _internal_mutable_network_id();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id)
-  return _s;
-}
-inline const std::string& AddPeerToOrganizationRequest::_internal_network_id() const {
-  return network_id_.Get();
-}
-inline void AddPeerToOrganizationRequest::_internal_set_network_id(const std::string& value) {
-  
-  network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::_internal_mutable_network_id() {
-  
-  return network_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationRequest::release_network_id() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id)
-  return network_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void AddPeerToOrganizationRequest::set_allocated_network_id(std::string* network_id) {
-  if (network_id != nullptr) {
-    
-  } else {
-    
-  }
-  network_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.network_id)
-}
-
-// -------------------------------------------------------------------
-
-// CreateChannelRequest
-
-// string creator_org_id = 1 [json_name = "creatorOrgId"];
-inline void CreateChannelRequest::clear_creator_org_id() {
-  creator_org_id_.ClearToEmpty();
-}
-inline const std::string& CreateChannelRequest::creator_org_id() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id)
-  return _internal_creator_org_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateChannelRequest::set_creator_org_id(ArgT0&& arg0, ArgT... args) {
- 
- creator_org_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id)
-}
-inline std::string* CreateChannelRequest::mutable_creator_org_id() {
-  std::string* _s = _internal_mutable_creator_org_id();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id)
-  return _s;
-}
-inline const std::string& CreateChannelRequest::_internal_creator_org_id() const {
-  return creator_org_id_.Get();
-}
-inline void CreateChannelRequest::_internal_set_creator_org_id(const std::string& value) {
-  
-  creator_org_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateChannelRequest::_internal_mutable_creator_org_id() {
-  
-  return creator_org_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateChannelRequest::release_creator_org_id() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id)
-  return creator_org_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateChannelRequest::set_allocated_creator_org_id(std::string* creator_org_id) {
-  if (creator_org_id != nullptr) {
-    
-  } else {
-    
-  }
-  creator_org_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), creator_org_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateChannelRequest.creator_org_id)
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.organization)
 }
 
 // string blockchain_id = 2 [json_name = "blockchainId"];
-inline void CreateChannelRequest::clear_blockchain_id() {
+inline void AddPeerToOrganizationRequest::clear_blockchain_id() {
   blockchain_id_.ClearToEmpty();
 }
-inline const std::string& CreateChannelRequest::blockchain_id() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id)
+inline const std::string& AddPeerToOrganizationRequest::blockchain_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.blockchain_id)
   return _internal_blockchain_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void CreateChannelRequest::set_blockchain_id(ArgT0&& arg0, ArgT... args) {
+void AddPeerToOrganizationRequest::set_blockchain_id(ArgT0&& arg0, ArgT... args) {
  
  blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id)
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.blockchain_id)
 }
-inline std::string* CreateChannelRequest::mutable_blockchain_id() {
+inline std::string* AddPeerToOrganizationRequest::mutable_blockchain_id() {
   std::string* _s = _internal_mutable_blockchain_id();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id)
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.blockchain_id)
   return _s;
 }
-inline const std::string& CreateChannelRequest::_internal_blockchain_id() const {
+inline const std::string& AddPeerToOrganizationRequest::_internal_blockchain_id() const {
   return blockchain_id_.Get();
 }
-inline void CreateChannelRequest::_internal_set_blockchain_id(const std::string& value) {
+inline void AddPeerToOrganizationRequest::_internal_set_blockchain_id(const std::string& value) {
   
   blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* CreateChannelRequest::_internal_mutable_blockchain_id() {
+inline std::string* AddPeerToOrganizationRequest::_internal_mutable_blockchain_id() {
   
   return blockchain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* CreateChannelRequest::release_blockchain_id() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id)
+inline std::string* AddPeerToOrganizationRequest::release_blockchain_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.blockchain_id)
   return blockchain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void CreateChannelRequest::set_allocated_blockchain_id(std::string* blockchain_id) {
+inline void AddPeerToOrganizationRequest::set_allocated_blockchain_id(std::string* blockchain_id) {
   if (blockchain_id != nullptr) {
     
   } else {
@@ -2476,178 +2334,417 @@ inline void CreateChannelRequest::set_allocated_blockchain_id(std::string* block
   }
   blockchain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateChannelRequest.blockchain_id)
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.blockchain_id)
 }
 
-// string channel_name = 3 [json_name = "channelName"];
-inline void CreateChannelRequest::clear_channel_name() {
-  channel_name_.ClearToEmpty();
+// -------------------------------------------------------------------
+
+// CreateChannelRequest
+
+// .blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];
+inline bool CreateChannelRequest::_internal_has_channel() const {
+  return this != internal_default_instance() && channel_ != nullptr;
 }
-inline const std::string& CreateChannelRequest::channel_name() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelRequest.channel_name)
-  return _internal_channel_name();
+inline bool CreateChannelRequest::has_channel() const {
+  return _internal_has_channel();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateChannelRequest::set_channel_name(ArgT0&& arg0, ArgT... args) {
- 
- channel_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateChannelRequest.channel_name)
+inline const ::blockchain::network::v1alpha1::Channel& CreateChannelRequest::_internal_channel() const {
+  const ::blockchain::network::v1alpha1::Channel* p = channel_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Channel&>(
+      ::blockchain::network::v1alpha1::_Channel_default_instance_);
 }
-inline std::string* CreateChannelRequest::mutable_channel_name() {
-  std::string* _s = _internal_mutable_channel_name();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelRequest.channel_name)
-  return _s;
+inline const ::blockchain::network::v1alpha1::Channel& CreateChannelRequest::channel() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelRequest.channel)
+  return _internal_channel();
 }
-inline const std::string& CreateChannelRequest::_internal_channel_name() const {
-  return channel_name_.Get();
-}
-inline void CreateChannelRequest::_internal_set_channel_name(const std::string& value) {
-  
-  channel_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateChannelRequest::_internal_mutable_channel_name() {
-  
-  return channel_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateChannelRequest::release_channel_name() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateChannelRequest.channel_name)
-  return channel_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateChannelRequest::set_allocated_channel_name(std::string* channel_name) {
-  if (channel_name != nullptr) {
+inline void CreateChannelRequest::unsafe_arena_set_allocated_channel(
+    ::blockchain::network::v1alpha1::Channel* channel) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(channel_);
+  }
+  channel_ = channel;
+  if (channel) {
     
   } else {
     
   }
-  channel_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), channel_name,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateChannelRequest.channel_name)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateChannelRequest.channel)
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelRequest::release_channel() {
+  
+  ::blockchain::network::v1alpha1::Channel* temp = channel_;
+  channel_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelRequest::unsafe_arena_release_channel() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateChannelRequest.channel)
+  
+  ::blockchain::network::v1alpha1::Channel* temp = channel_;
+  channel_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelRequest::_internal_mutable_channel() {
+  
+  if (channel_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Channel>(GetArenaForAllocation());
+    channel_ = p;
+  }
+  return channel_;
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelRequest::mutable_channel() {
+  ::blockchain::network::v1alpha1::Channel* _msg = _internal_mutable_channel();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelRequest.channel)
+  return _msg;
+}
+inline void CreateChannelRequest::set_allocated_channel(::blockchain::network::v1alpha1::Channel* channel) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(channel_);
+  }
+  if (channel) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(channel));
+    if (message_arena != submessage_arena) {
+      channel = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, channel, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  channel_ = channel;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateChannelRequest.channel)
 }
 
-// repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];
-inline int CreateChannelRequest::_internal_channel_org_ids_size() const {
-  return channel_org_ids_.size();
+// -------------------------------------------------------------------
+
+// GetBlockchainsRequest
+
+// string id = 1 [json_name = "id"];
+inline void GetBlockchainsRequest::clear_id() {
+  id_.ClearToEmpty();
 }
-inline int CreateChannelRequest::channel_org_ids_size() const {
-  return _internal_channel_org_ids_size();
+inline const std::string& GetBlockchainsRequest::id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetBlockchainsRequest.id)
+  return _internal_id();
 }
-inline void CreateChannelRequest::clear_channel_org_ids() {
-  channel_org_ids_.Clear();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetBlockchainsRequest::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsRequest.id)
 }
-inline std::string* CreateChannelRequest::add_channel_org_ids() {
-  std::string* _s = _internal_add_channel_org_ids();
-  // @@protoc_insertion_point(field_add_mutable:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline std::string* GetBlockchainsRequest::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetBlockchainsRequest.id)
   return _s;
 }
-inline const std::string& CreateChannelRequest::_internal_channel_org_ids(int index) const {
-  return channel_org_ids_.Get(index);
+inline const std::string& GetBlockchainsRequest::_internal_id() const {
+  return id_.Get();
 }
-inline const std::string& CreateChannelRequest::channel_org_ids(int index) const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
-  return _internal_channel_org_ids(index);
+inline void GetBlockchainsRequest::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* CreateChannelRequest::mutable_channel_org_ids(int index) {
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
-  return channel_org_ids_.Mutable(index);
+inline std::string* GetBlockchainsRequest::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline void CreateChannelRequest::set_channel_org_ids(int index, const std::string& value) {
-  channel_org_ids_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline std::string* GetBlockchainsRequest::release_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetBlockchainsRequest.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void CreateChannelRequest::set_channel_org_ids(int index, std::string&& value) {
-  channel_org_ids_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline void GetBlockchainsRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetBlockchainsRequest.id)
 }
-inline void CreateChannelRequest::set_channel_org_ids(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  channel_org_ids_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+
+// -------------------------------------------------------------------
+
+// CreateOrganizationRequest
+
+// .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool CreateOrganizationRequest::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline void CreateChannelRequest::set_channel_org_ids(int index, const char* value, size_t size) {
-  channel_org_ids_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline bool CreateOrganizationRequest::has_organization() const {
+  return _internal_has_organization();
 }
-inline std::string* CreateChannelRequest::_internal_add_channel_org_ids() {
-  return channel_org_ids_.Add();
+inline const ::blockchain::network::v1alpha1::Organization& CreateOrganizationRequest::_internal_organization() const {
+  const ::blockchain::network::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Organization&>(
+      ::blockchain::network::v1alpha1::_Organization_default_instance_);
 }
-inline void CreateChannelRequest::add_channel_org_ids(const std::string& value) {
-  channel_org_ids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline const ::blockchain::network::v1alpha1::Organization& CreateOrganizationRequest::organization() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateOrganizationRequest.organization)
+  return _internal_organization();
 }
-inline void CreateChannelRequest::add_channel_org_ids(std::string&& value) {
-  channel_org_ids_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline void CreateOrganizationRequest::unsafe_arena_set_allocated_organization(
+    ::blockchain::network::v1alpha1::Organization* organization) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  organization_ = organization;
+  if (organization) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateOrganizationRequest.organization)
 }
-inline void CreateChannelRequest::add_channel_org_ids(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  channel_org_ids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationRequest::release_organization() {
+  
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline void CreateChannelRequest::add_channel_org_ids(const char* value, size_t size) {
-  channel_org_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationRequest::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateOrganizationRequest.organization)
+  
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+  return temp;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-CreateChannelRequest::channel_org_ids() const {
-  // @@protoc_insertion_point(field_list:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
-  return channel_org_ids_;
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationRequest::_internal_mutable_organization() {
+  
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
+  }
+  return organization_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-CreateChannelRequest::mutable_channel_org_ids() {
-  // @@protoc_insertion_point(field_mutable_list:blockchain.network.v1alpha1.CreateChannelRequest.channel_org_ids)
-  return &channel_org_ids_;
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationRequest::mutable_organization() {
+  ::blockchain::network::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateOrganizationRequest.organization)
+  return _msg;
+}
+inline void CreateOrganizationRequest::set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  if (organization) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
+    if (message_arena != submessage_arena) {
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateOrganizationRequest.organization)
+}
+
+// -------------------------------------------------------------------
+
+// SendInvitationRequest
+
+// .blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+inline bool SendInvitationRequest::_internal_has_invitation() const {
+  return this != internal_default_instance() && invitation_ != nullptr;
+}
+inline bool SendInvitationRequest::has_invitation() const {
+  return _internal_has_invitation();
+}
+inline const ::blockchain::network::v1alpha1::Invitation& SendInvitationRequest::_internal_invitation() const {
+  const ::blockchain::network::v1alpha1::Invitation* p = invitation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Invitation&>(
+      ::blockchain::network::v1alpha1::_Invitation_default_instance_);
+}
+inline const ::blockchain::network::v1alpha1::Invitation& SendInvitationRequest::invitation() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.SendInvitationRequest.invitation)
+  return _internal_invitation();
+}
+inline void SendInvitationRequest::unsafe_arena_set_allocated_invitation(
+    ::blockchain::network::v1alpha1::Invitation* invitation) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation_);
+  }
+  invitation_ = invitation;
+  if (invitation) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.SendInvitationRequest.invitation)
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationRequest::release_invitation() {
+  
+  ::blockchain::network::v1alpha1::Invitation* temp = invitation_;
+  invitation_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationRequest::unsafe_arena_release_invitation() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.SendInvitationRequest.invitation)
+  
+  ::blockchain::network::v1alpha1::Invitation* temp = invitation_;
+  invitation_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationRequest::_internal_mutable_invitation() {
+  
+  if (invitation_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Invitation>(GetArenaForAllocation());
+    invitation_ = p;
+  }
+  return invitation_;
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationRequest::mutable_invitation() {
+  ::blockchain::network::v1alpha1::Invitation* _msg = _internal_mutable_invitation();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.SendInvitationRequest.invitation)
+  return _msg;
+}
+inline void SendInvitationRequest::set_allocated_invitation(::blockchain::network::v1alpha1::Invitation* invitation) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation_);
+  }
+  if (invitation) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation));
+    if (message_arena != submessage_arena) {
+      invitation = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, invitation, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  invitation_ = invitation;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.SendInvitationRequest.invitation)
 }
 
 // -------------------------------------------------------------------
 
 // CreateNetworkResponse
 
-// string status = 1 [json_name = "status"];
-inline void CreateNetworkResponse::clear_status() {
-  status_.ClearToEmpty();
+// .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
+inline bool CreateNetworkResponse::_internal_has_network() const {
+  return this != internal_default_instance() && network_ != nullptr;
 }
-inline const std::string& CreateNetworkResponse::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkResponse.status)
-  return _internal_status();
+inline bool CreateNetworkResponse::has_network() const {
+  return _internal_has_network();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateNetworkResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateNetworkResponse.status)
+inline const ::blockchain::network::v1alpha1::Network& CreateNetworkResponse::_internal_network() const {
+  const ::blockchain::network::v1alpha1::Network* p = network_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Network&>(
+      ::blockchain::network::v1alpha1::_Network_default_instance_);
 }
-inline std::string* CreateNetworkResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkResponse.status)
-  return _s;
+inline const ::blockchain::network::v1alpha1::Network& CreateNetworkResponse::network() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkResponse.network)
+  return _internal_network();
 }
-inline const std::string& CreateNetworkResponse::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateNetworkResponse::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateNetworkResponse::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateNetworkResponse::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateNetworkResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void CreateNetworkResponse::unsafe_arena_set_allocated_network(
+    ::blockchain::network::v1alpha1::Network* network) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(network_);
+  }
+  network_ = network;
+  if (network) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkResponse.status)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateNetworkResponse.network)
+}
+inline ::blockchain::network::v1alpha1::Network* CreateNetworkResponse::release_network() {
+  
+  ::blockchain::network::v1alpha1::Network* temp = network_;
+  network_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Network* CreateNetworkResponse::unsafe_arena_release_network() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkResponse.network)
+  
+  ::blockchain::network::v1alpha1::Network* temp = network_;
+  network_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Network* CreateNetworkResponse::_internal_mutable_network() {
+  
+  if (network_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Network>(GetArenaForAllocation());
+    network_ = p;
+  }
+  return network_;
+}
+inline ::blockchain::network::v1alpha1::Network* CreateNetworkResponse::mutable_network() {
+  ::blockchain::network::v1alpha1::Network* _msg = _internal_mutable_network();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkResponse.network)
+  return _msg;
+}
+inline void CreateNetworkResponse::set_allocated_network(::blockchain::network::v1alpha1::Network* network) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(network_);
+  }
+  if (network) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(network));
+    if (message_arena != submessage_arena) {
+      network = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, network, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  network_ = network;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkResponse.network)
 }
 
 // string message = 2 [json_name = "message"];
@@ -2700,53 +2797,93 @@ inline void CreateNetworkResponse::set_allocated_message(std::string* message) {
 
 // AddPeerToOrganizationResponse
 
-// string status = 1 [json_name = "status"];
-inline void AddPeerToOrganizationResponse::clear_status() {
-  status_.ClearToEmpty();
+// .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool AddPeerToOrganizationResponse::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline const std::string& AddPeerToOrganizationResponse::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status)
-  return _internal_status();
+inline bool AddPeerToOrganizationResponse::has_organization() const {
+  return _internal_has_organization();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AddPeerToOrganizationResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status)
+inline const ::blockchain::network::v1alpha1::Organization& AddPeerToOrganizationResponse::_internal_organization() const {
+  const ::blockchain::network::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Organization&>(
+      ::blockchain::network::v1alpha1::_Organization_default_instance_);
 }
-inline std::string* AddPeerToOrganizationResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status)
-  return _s;
+inline const ::blockchain::network::v1alpha1::Organization& AddPeerToOrganizationResponse::organization() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.organization)
+  return _internal_organization();
 }
-inline const std::string& AddPeerToOrganizationResponse::_internal_status() const {
-  return status_.Get();
-}
-inline void AddPeerToOrganizationResponse::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationResponse::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* AddPeerToOrganizationResponse::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void AddPeerToOrganizationResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void AddPeerToOrganizationResponse::unsafe_arena_set_allocated_organization(
+    ::blockchain::network::v1alpha1::Organization* organization) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.status)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.organization)
+}
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationResponse::release_organization() {
+  
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationResponse::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.organization)
+  
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationResponse::_internal_mutable_organization() {
+  
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
+  }
+  return organization_;
+}
+inline ::blockchain::network::v1alpha1::Organization* AddPeerToOrganizationResponse::mutable_organization() {
+  ::blockchain::network::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.organization)
+  return _msg;
+}
+inline void AddPeerToOrganizationResponse::set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  if (organization) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
+    if (message_arena != submessage_arena) {
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationResponse.organization)
 }
 
-// string message = 2 [json_name = "message"];
+// string message = 3 [json_name = "message"];
 inline void AddPeerToOrganizationResponse::clear_message() {
   message_.ClearToEmpty();
 }
@@ -2796,50 +2933,90 @@ inline void AddPeerToOrganizationResponse::set_allocated_message(std::string* me
 
 // CreateChannelResponse
 
-// string status = 1 [json_name = "status"];
-inline void CreateChannelResponse::clear_status() {
-  status_.ClearToEmpty();
+// .blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];
+inline bool CreateChannelResponse::_internal_has_channel() const {
+  return this != internal_default_instance() && channel_ != nullptr;
 }
-inline const std::string& CreateChannelResponse::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelResponse.status)
-  return _internal_status();
+inline bool CreateChannelResponse::has_channel() const {
+  return _internal_has_channel();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateChannelResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateChannelResponse.status)
+inline const ::blockchain::network::v1alpha1::Channel& CreateChannelResponse::_internal_channel() const {
+  const ::blockchain::network::v1alpha1::Channel* p = channel_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Channel&>(
+      ::blockchain::network::v1alpha1::_Channel_default_instance_);
 }
-inline std::string* CreateChannelResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelResponse.status)
-  return _s;
+inline const ::blockchain::network::v1alpha1::Channel& CreateChannelResponse::channel() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateChannelResponse.channel)
+  return _internal_channel();
 }
-inline const std::string& CreateChannelResponse::_internal_status() const {
-  return status_.Get();
-}
-inline void CreateChannelResponse::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateChannelResponse::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateChannelResponse::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateChannelResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateChannelResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void CreateChannelResponse::unsafe_arena_set_allocated_channel(
+    ::blockchain::network::v1alpha1::Channel* channel) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(channel_);
+  }
+  channel_ = channel;
+  if (channel) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateChannelResponse.status)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateChannelResponse.channel)
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelResponse::release_channel() {
+  
+  ::blockchain::network::v1alpha1::Channel* temp = channel_;
+  channel_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelResponse::unsafe_arena_release_channel() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateChannelResponse.channel)
+  
+  ::blockchain::network::v1alpha1::Channel* temp = channel_;
+  channel_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelResponse::_internal_mutable_channel() {
+  
+  if (channel_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Channel>(GetArenaForAllocation());
+    channel_ = p;
+  }
+  return channel_;
+}
+inline ::blockchain::network::v1alpha1::Channel* CreateChannelResponse::mutable_channel() {
+  ::blockchain::network::v1alpha1::Channel* _msg = _internal_mutable_channel();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateChannelResponse.channel)
+  return _msg;
+}
+inline void CreateChannelResponse::set_allocated_channel(::blockchain::network::v1alpha1::Channel* channel) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(channel_);
+  }
+  if (channel) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(channel));
+    if (message_arena != submessage_arena) {
+      channel = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, channel, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  channel_ = channel;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateChannelResponse.channel)
 }
 
 // string message = 2 [json_name = "message"];
@@ -2929,105 +3106,331 @@ GetBlockchainsResponse::network() const {
   return network_;
 }
 
-// string status = 2 [json_name = "status"];
-inline void GetBlockchainsResponse::clear_status() {
-  status_.ClearToEmpty();
+// string message = 2 [json_name = "message"];
+inline void GetBlockchainsResponse::clear_message() {
+  message_.ClearToEmpty();
 }
-inline const std::string& GetBlockchainsResponse::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetBlockchainsResponse.status)
-  return _internal_status();
+inline const std::string& GetBlockchainsResponse::message() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetBlockchainsResponse.message)
+  return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetBlockchainsResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void GetBlockchainsResponse::set_message(ArgT0&& arg0, ArgT... args) {
  
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsResponse.status)
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsResponse.message)
 }
-inline std::string* GetBlockchainsResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetBlockchainsResponse.status)
+inline std::string* GetBlockchainsResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetBlockchainsResponse.message)
   return _s;
 }
-inline const std::string& GetBlockchainsResponse::_internal_status() const {
-  return status_.Get();
+inline const std::string& GetBlockchainsResponse::_internal_message() const {
+  return message_.Get();
 }
-inline void GetBlockchainsResponse::_internal_set_status(const std::string& value) {
+inline void GetBlockchainsResponse::_internal_set_message(const std::string& value) {
   
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetBlockchainsResponse::_internal_mutable_status() {
+inline std::string* GetBlockchainsResponse::_internal_mutable_message() {
   
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetBlockchainsResponse::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetBlockchainsResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetBlockchainsResponse::release_message() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetBlockchainsResponse.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetBlockchainsResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void GetBlockchainsResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetBlockchainsResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetBlockchainsResponse.message)
 }
 
 // -------------------------------------------------------------------
 
-// GetBlockchainsRequest
+// CreateOrganizationResponse
 
-// string status = 2 [json_name = "status"];
-inline void GetBlockchainsRequest::clear_status() {
-  status_.ClearToEmpty();
+// .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
+inline bool CreateOrganizationResponse::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline const std::string& GetBlockchainsRequest::status() const {
-  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetBlockchainsRequest.status)
-  return _internal_status();
+inline bool CreateOrganizationResponse::has_organization() const {
+  return _internal_has_organization();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void GetBlockchainsRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsRequest.status)
+inline const ::blockchain::network::v1alpha1::Organization& CreateOrganizationResponse::_internal_organization() const {
+  const ::blockchain::network::v1alpha1::Organization* p = organization_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Organization&>(
+      ::blockchain::network::v1alpha1::_Organization_default_instance_);
 }
-inline std::string* GetBlockchainsRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetBlockchainsRequest.status)
-  return _s;
+inline const ::blockchain::network::v1alpha1::Organization& CreateOrganizationResponse::organization() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateOrganizationResponse.organization)
+  return _internal_organization();
 }
-inline const std::string& GetBlockchainsRequest::_internal_status() const {
-  return status_.Get();
-}
-inline void GetBlockchainsRequest::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* GetBlockchainsRequest::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* GetBlockchainsRequest::release_status() {
-  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetBlockchainsRequest.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void GetBlockchainsRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void CreateOrganizationResponse::unsafe_arena_set_allocated_organization(
+    ::blockchain::network::v1alpha1::Organization* organization) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.CreateOrganizationResponse.organization)
+}
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationResponse::release_organization() {
+  
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationResponse::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateOrganizationResponse.organization)
+  
+  ::blockchain::network::v1alpha1::Organization* temp = organization_;
+  organization_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationResponse::_internal_mutable_organization() {
+  
+  if (organization_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(GetArenaForAllocation());
+    organization_ = p;
+  }
+  return organization_;
+}
+inline ::blockchain::network::v1alpha1::Organization* CreateOrganizationResponse::mutable_organization() {
+  ::blockchain::network::v1alpha1::Organization* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateOrganizationResponse.organization)
+  return _msg;
+}
+inline void CreateOrganizationResponse::set_allocated_organization(::blockchain::network::v1alpha1::Organization* organization) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
+  }
+  if (organization) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization));
+    if (message_arena != submessage_arena) {
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateOrganizationResponse.organization)
+}
+
+// string message = 2 [json_name = "message"];
+inline void CreateOrganizationResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& CreateOrganizationResponse::message() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateOrganizationResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateOrganizationResponse.message)
+}
+inline std::string* CreateOrganizationResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateOrganizationResponse.message)
+  return _s;
+}
+inline const std::string& CreateOrganizationResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void CreateOrganizationResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationResponse::release_message() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateOrganizationResponse.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetBlockchainsRequest.status)
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateOrganizationResponse.message)
+}
+
+// -------------------------------------------------------------------
+
+// SendInvitationResponse
+
+// .blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];
+inline bool SendInvitationResponse::_internal_has_invitation() const {
+  return this != internal_default_instance() && invitation_ != nullptr;
+}
+inline bool SendInvitationResponse::has_invitation() const {
+  return _internal_has_invitation();
+}
+inline const ::blockchain::network::v1alpha1::Invitation& SendInvitationResponse::_internal_invitation() const {
+  const ::blockchain::network::v1alpha1::Invitation* p = invitation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Invitation&>(
+      ::blockchain::network::v1alpha1::_Invitation_default_instance_);
+}
+inline const ::blockchain::network::v1alpha1::Invitation& SendInvitationResponse::invitation() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.SendInvitationResponse.invitation)
+  return _internal_invitation();
+}
+inline void SendInvitationResponse::unsafe_arena_set_allocated_invitation(
+    ::blockchain::network::v1alpha1::Invitation* invitation) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation_);
+  }
+  invitation_ = invitation;
+  if (invitation) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.SendInvitationResponse.invitation)
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationResponse::release_invitation() {
+  
+  ::blockchain::network::v1alpha1::Invitation* temp = invitation_;
+  invitation_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationResponse::unsafe_arena_release_invitation() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.SendInvitationResponse.invitation)
+  
+  ::blockchain::network::v1alpha1::Invitation* temp = invitation_;
+  invitation_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationResponse::_internal_mutable_invitation() {
+  
+  if (invitation_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Invitation>(GetArenaForAllocation());
+    invitation_ = p;
+  }
+  return invitation_;
+}
+inline ::blockchain::network::v1alpha1::Invitation* SendInvitationResponse::mutable_invitation() {
+  ::blockchain::network::v1alpha1::Invitation* _msg = _internal_mutable_invitation();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.SendInvitationResponse.invitation)
+  return _msg;
+}
+inline void SendInvitationResponse::set_allocated_invitation(::blockchain::network::v1alpha1::Invitation* invitation) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation_);
+  }
+  if (invitation) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(invitation));
+    if (message_arena != submessage_arena) {
+      invitation = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, invitation, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  invitation_ = invitation;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.SendInvitationResponse.invitation)
+}
+
+// string message = 2 [json_name = "message"];
+inline void SendInvitationResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& SendInvitationResponse::message() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.SendInvitationResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SendInvitationResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.SendInvitationResponse.message)
+}
+inline std::string* SendInvitationResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.SendInvitationResponse.message)
+  return _s;
+}
+inline const std::string& SendInvitationResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void SendInvitationResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SendInvitationResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SendInvitationResponse::release_message() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.SendInvitationResponse.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SendInvitationResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.SendInvitationResponse.message)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

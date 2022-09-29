@@ -18,9 +18,9 @@ class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
      */
     private $network;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      */
-    protected $status = '';
+    protected $message = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Blockchain\Network\V1alpha1\Network[]|\Google\Protobuf\Internal\RepeatedField $network
-     *     @type string $status
+     *     @type string $message
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getMessage()
     {
-        return $this->status;
+        return $this->message;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setMessage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->message = $var;
 
         return $this;
     }

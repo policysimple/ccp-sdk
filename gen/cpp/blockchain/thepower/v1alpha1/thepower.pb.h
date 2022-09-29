@@ -194,11 +194,13 @@ class TpChain final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kChainNodesFieldNumber = 3,
-    kUserIdFieldNumber = 2,
-    kChainNumberFieldNumber = 1,
+    kChainNodesFieldNumber = 4,
+    kIdFieldNumber = 1,
+    kUserIdFieldNumber = 3,
+    kStatusFieldNumber = 5,
+    kChainNumberFieldNumber = 2,
   };
-  // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];
+  // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
   int chain_nodes_size() const;
   private:
   int _internal_chain_nodes_size() const;
@@ -216,7 +218,21 @@ class TpChain final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpNode >&
       chain_nodes() const;
 
-  // string user_id = 2 [json_name = "userId"];
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string user_id = 3 [json_name = "userId"];
   void clear_user_id();
   const std::string& user_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -230,7 +246,21 @@ class TpChain final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // int32 chain_number = 1 [json_name = "chainNumber"];
+  // string status = 5 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // int32 chain_number = 2 [json_name = "chainNumber"];
   void clear_chain_number();
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number() const;
   void set_chain_number(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -247,7 +277,9 @@ class TpChain final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpNode > chain_nodes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
@@ -626,7 +658,53 @@ class CrosschainExternal final :
 #endif  // __GNUC__
 // TpChain
 
-// int32 chain_number = 1 [json_name = "chainNumber"];
+// string id = 1 [json_name = "id"];
+inline void TpChain::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& TpChain::id() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TpChain::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.id)
+}
+inline std::string* TpChain::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpChain.id)
+  return _s;
+}
+inline const std::string& TpChain::_internal_id() const {
+  return id_.Get();
+}
+inline void TpChain::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TpChain::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TpChain::release_id() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpChain.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TpChain::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.id)
+}
+
+// int32 chain_number = 2 [json_name = "chainNumber"];
 inline void TpChain::clear_chain_number() {
   chain_number_ = 0;
 }
@@ -646,7 +724,7 @@ inline void TpChain::set_chain_number(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.chain_number)
 }
 
-// string user_id = 2 [json_name = "userId"];
+// string user_id = 3 [json_name = "userId"];
 inline void TpChain::clear_user_id() {
   user_id_.ClearToEmpty();
 }
@@ -692,7 +770,7 @@ inline void TpChain::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.user_id)
 }
 
-// repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];
+// repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
 inline int TpChain::_internal_chain_nodes_size() const {
   return chain_nodes_.size();
 }
@@ -730,6 +808,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::
 TpChain::chain_nodes() const {
   // @@protoc_insertion_point(field_list:blockchain.thepower.v1alpha1.TpChain.chain_nodes)
   return chain_nodes_;
+}
+
+// string status = 5 [json_name = "status"];
+inline void TpChain::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& TpChain::status() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TpChain::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.status)
+}
+inline std::string* TpChain::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpChain.status)
+  return _s;
+}
+inline const std::string& TpChain::_internal_status() const {
+  return status_.Get();
+}
+inline void TpChain::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TpChain::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TpChain::release_status() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpChain.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TpChain::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.status)
 }
 
 // -------------------------------------------------------------------

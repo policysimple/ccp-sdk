@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.AddPeerToOrganizationRequest</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.CreateOrganizationResponse</code>
  */
-class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
+class CreateOrganizationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
      */
     protected $organization = null;
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      */
-    protected $blockchain_id = '';
+    protected $message = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Blockchain\Network\V1alpha1\Organization $organization
-     *     @type string $blockchain_id
+     *     @type string $message
      * }
      */
     public function __construct($data = NULL) {
@@ -70,23 +70,23 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      * @return string
      */
-    public function getBlockchainId()
+    public function getMessage()
     {
-        return $this->blockchain_id;
+        return $this->message;
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      * @param string $var
      * @return $this
      */
-    public function setBlockchainId($var)
+    public function setMessage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->blockchain_id = $var;
+        $this->message = $var;
 
         return $this;
     }

@@ -18,16 +18,17 @@ class ThepowerApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
+æ
 
 /blockchain/thepower/v1alpha1/thepower_api.protoblockchain.thepower.v1alpha1google/protobuf/empty.proto"X
 CreateTpChainRequest@
-tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"
-GetTpChainsRequest"5
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"5
 GetTpChainsByUserIdRequest
 user_id (	RuserId"\'
 GetTpChainByIdRequest
-id (	Rid"Y
+id (	Rid"B
+GetTpChainsRequest,
+emtpy (2.google.protobuf.EmptyRemtpy"Y
 CreateTpChainResponse@
 tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"Y
 GetTpChainsResponseB

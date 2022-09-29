@@ -34,10 +34,15 @@ class BlockchainAPIServiceStub(object):
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainsRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainsResponse.FromString,
         )
-    self.CreateNetworkDefault = channel.unary_unary(
-        '/blockchain.network.v1alpha1.BlockchainAPIService/CreateNetworkDefault',
-        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkDefaultRequest.SerializeToString,
-        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkDefaultResponse.FromString,
+    self.CreateOrganization = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationResponse.FromString,
+        )
+    self.SendInvitation = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationResponse.FromString,
         )
 
 
@@ -73,7 +78,14 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CreateNetworkDefault(self, request, context):
+  def CreateOrganization(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SendInvitation(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -103,10 +115,15 @@ def add_BlockchainAPIServiceServicer_to_server(servicer, server):
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainsRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainsResponse.SerializeToString,
       ),
-      'CreateNetworkDefault': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateNetworkDefault,
-          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkDefaultRequest.FromString,
-          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkDefaultResponse.SerializeToString,
+      'CreateOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateOrganization,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationResponse.SerializeToString,
+      ),
+      'SendInvitation': grpc.unary_unary_rpc_method_handler(
+          servicer.SendInvitation,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
