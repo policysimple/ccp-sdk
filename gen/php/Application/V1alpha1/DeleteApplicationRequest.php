@@ -19,6 +19,24 @@ class DeleteApplicationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
     protected $id = '';
+    /**
+     *requiered for delete in the runtime, vault and pipelines
+     *
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string integration = 3 [json_name = "integration"];</code>
+     */
+    protected $integration = '';
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     */
+    protected $project_id = 0;
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -27,6 +45,11 @@ class DeleteApplicationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $name
+     *          requiered for delete in the runtime, vault and pipelines
+     *     @type string $integration
+     *     @type int $project_id
+     *     @type int $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -52,6 +75,98 @@ class DeleteApplicationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     *requiered for delete in the runtime, vault and pipelines
+     *
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     *requiered for delete in the runtime, vault and pipelines
+     *
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration = 3 [json_name = "integration"];</code>
+     * @return string
+     */
+    public function getIntegration()
+    {
+        return $this->integration;
+    }
+
+    /**
+     * Generated from protobuf field <code>string integration = 3 [json_name = "integration"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIntegration($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->integration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * @return int
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @return int
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->organization_id = $var;
 
         return $this;
     }

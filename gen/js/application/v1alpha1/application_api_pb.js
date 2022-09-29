@@ -1529,7 +1529,11 @@ proto.application.v1alpha1.DeleteApplicationRequest.prototype.toObject = functio
  */
 proto.application.v1alpha1.DeleteApplicationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    integration: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1570,6 +1574,22 @@ proto.application.v1alpha1.DeleteApplicationRequest.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIntegration(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setProjectId(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOrganizationId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1606,6 +1626,34 @@ proto.application.v1alpha1.DeleteApplicationRequest.serializeBinaryToWriter = fu
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getIntegration();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (f !== 0) {
+    writer.writeUint32(
+      4,
+      f
+    );
+  }
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeUint32(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -1624,6 +1672,78 @@ proto.application.v1alpha1.DeleteApplicationRequest.prototype.getId = function()
  */
 proto.application.v1alpha1.DeleteApplicationRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.application.v1alpha1.DeleteApplicationRequest} returns this
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string integration = 3;
+ * @return {string}
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.getIntegration = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.application.v1alpha1.DeleteApplicationRequest} returns this
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.setIntegration = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional uint32 project_id = 4;
+ * @return {number}
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.getProjectId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.application.v1alpha1.DeleteApplicationRequest} returns this
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 organization_id = 5;
+ * @return {number}
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.application.v1alpha1.DeleteApplicationRequest} returns this
+ */
+proto.application.v1alpha1.DeleteApplicationRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

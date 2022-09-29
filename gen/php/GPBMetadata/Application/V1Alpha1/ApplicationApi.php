@@ -17,7 +17,7 @@ class ApplicationApi
         \GPBMetadata\Application\V1Alpha1\Application::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ë
+ê
 *application/v1alpha1/application_api.protoapplication.v1alpha1"O
 &DeleteApplicationsByIntegrationRequest%
 integration_id (	RintegrationId";
@@ -37,9 +37,14 @@ project_id (R	projectId"d
 GetApplicationRequest
 id (	Rid"]
 GetApplicationResponseC
-application (2!.application.v1alpha1.ApplicationRapplication"*
+application (2!.application.v1alpha1.ApplicationRapplication"®
 DeleteApplicationRequest
-id (	Rid"C
+id (	Rid
+name (	Rname 
+integration (	Rintegration
+
+project_id (R	projectId\'
+organization_id (RorganizationId"C
 DeleteApplicationResponse
 msg (	Rmsg
 error (	Rerror"|

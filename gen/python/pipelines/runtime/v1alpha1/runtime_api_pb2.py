@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\017RuntimeAPIProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,pipelines/runtime/v1alpha1/runtime_api.proto\x12\x1apipelines.runtime.v1alpha1\x1a(pipelines/runtime/v1alpha1/runtime.proto\"m\n\x14\x43reateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15\x43reateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"m\n\x14UpdateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15UpdateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n#UpdateResponseMessageRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"}\n$UpdateResponseMessageRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"5\n\x14\x44\x65leteRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"/\n\x15\x44\x65leteRuntimeResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"2\n\x11GetRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"k\n\x12GetRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"4\n\x13ListRuntimesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"z\n\x14ListRuntimesResponse\x12J\n\x0cruntime_list\x18\x01 \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.RuntimeListR\x0bruntimeList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\x85\x06\n\x11RuntimeAPIService\x12m\n\nGetRuntime\x12-.pipelines.runtime.v1alpha1.GetRuntimeRequest\x1a..pipelines.runtime.v1alpha1.GetRuntimeResponse\"\x00\x12v\n\rCreateRuntime\x12\x30.pipelines.runtime.v1alpha1.CreateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.CreateRuntimeResponse\"\x00\x12v\n\rUpdateRuntime\x12\x30.pipelines.runtime.v1alpha1.UpdateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.UpdateRuntimeResponse\"\x00\x12\xa3\x01\n\x1cUpdateResponseMessageRuntime\x12?.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest\x1a@.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse\"\x00\x12v\n\rDeleteRuntime\x12\x30.pipelines.runtime.v1alpha1.DeleteRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.DeleteRuntimeResponse\"\x00\x12s\n\x0cListRuntimes\x12/.pipelines.runtime.v1alpha1.ListRuntimesRequest\x1a\x30.pipelines.runtime.v1alpha1.ListRuntimesResponse\"\x00\x42\xb0\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0fRuntimeAPIProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n,pipelines/runtime/v1alpha1/runtime_api.proto\x12\x1apipelines.runtime.v1alpha1\x1a(pipelines/runtime/v1alpha1/runtime.proto\"m\n\x14\x43reateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15\x43reateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"m\n\x14UpdateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15UpdateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n#UpdateResponseMessageRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"}\n$UpdateResponseMessageRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xb3\x01\n\x14\x44\x65leteRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"?\n\x15\x44\x65leteRuntimeResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"2\n\x11GetRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"k\n\x12GetRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"4\n\x13ListRuntimesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"z\n\x14ListRuntimesResponse\x12J\n\x0cruntime_list\x18\x01 \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.RuntimeListR\x0bruntimeList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\x85\x06\n\x11RuntimeAPIService\x12m\n\nGetRuntime\x12-.pipelines.runtime.v1alpha1.GetRuntimeRequest\x1a..pipelines.runtime.v1alpha1.GetRuntimeResponse\"\x00\x12v\n\rCreateRuntime\x12\x30.pipelines.runtime.v1alpha1.CreateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.CreateRuntimeResponse\"\x00\x12v\n\rUpdateRuntime\x12\x30.pipelines.runtime.v1alpha1.UpdateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.UpdateRuntimeResponse\"\x00\x12\xa3\x01\n\x1cUpdateResponseMessageRuntime\x12?.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest\x1a@.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse\"\x00\x12v\n\rDeleteRuntime\x12\x30.pipelines.runtime.v1alpha1.DeleteRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.DeleteRuntimeResponse\"\x00\x12s\n\x0cListRuntimes\x12/.pipelines.runtime.v1alpha1.ListRuntimesRequest\x1a\x30.pipelines.runtime.v1alpha1.ListRuntimesResponse\"\x00\x42\xb0\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0fRuntimeAPIProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2.DESCRIPTOR,])
 
@@ -276,6 +276,34 @@ _DELETERUNTIMEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='runtimeId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='integration', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeRequest.integration', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='integration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeRequest.project_id', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeRequest.organization_id', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -288,8 +316,8 @@ _DELETERUNTIMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=870,
+  serialized_start=818,
+  serialized_end=997,
 )
 
 
@@ -302,12 +330,19 @@ _DELETERUNTIMERESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeResponse.status', index=0,
+      name='msg', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeResponse.msg', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='pipelines.runtime.v1alpha1.DeleteRuntimeResponse.error', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -320,8 +355,8 @@ _DELETERUNTIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=872,
-  serialized_end=919,
+  serialized_start=999,
+  serialized_end=1062,
 )
 
 
@@ -352,8 +387,8 @@ _GETRUNTIMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=921,
-  serialized_end=971,
+  serialized_start=1064,
+  serialized_end=1114,
 )
 
 
@@ -391,8 +426,8 @@ _GETRUNTIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=973,
-  serialized_end=1080,
+  serialized_start=1116,
+  serialized_end=1223,
 )
 
 
@@ -423,8 +458,8 @@ _LISTRUNTIMESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1082,
-  serialized_end=1134,
+  serialized_start=1225,
+  serialized_end=1277,
 )
 
 
@@ -462,8 +497,8 @@ _LISTRUNTIMESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1136,
-  serialized_end=1258,
+  serialized_start=1279,
+  serialized_end=1401,
 )
 
 _CREATERUNTIMEREQUEST.fields_by_name['runtime'].message_type = pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2._RUNTIME
@@ -582,8 +617,8 @@ _RUNTIMEAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1261,
-  serialized_end=2034,
+  serialized_start=1404,
+  serialized_end=2177,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetRuntime',
