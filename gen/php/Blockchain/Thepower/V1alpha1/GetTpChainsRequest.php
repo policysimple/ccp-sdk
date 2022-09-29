@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class GetTpChainsRequest extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
+     */
+    protected $emtpy = null;
 
     /**
      * Constructor.
@@ -20,11 +24,44 @@ class GetTpChainsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Protobuf\GPBEmpty $emtpy
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Blockchain\Thepower\V1Alpha1\ThepowerApi::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
+     * @return \Google\Protobuf\GPBEmpty|null
+     */
+    public function getEmtpy()
+    {
+        return $this->emtpy;
+    }
+
+    public function hasEmtpy()
+    {
+        return isset($this->emtpy);
+    }
+
+    public function clearEmtpy()
+    {
+        unset($this->emtpy);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
+     * @param \Google\Protobuf\GPBEmpty $var
+     * @return $this
+     */
+    public function setEmtpy($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
+        $this->emtpy = $var;
+
+        return $this;
     }
 
 }

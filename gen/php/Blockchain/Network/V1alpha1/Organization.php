@@ -14,25 +14,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class Organization extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * Generated from protobuf field <code>string domain = 3 [json_name = "domain"];</code>
      */
-    protected $domain_org = '';
+    protected $domain = '';
     /**
-     * Generated from protobuf field <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * Generated from protobuf field <code>string admin_password = 4 [json_name = "adminPassword"];</code>
      */
     protected $admin_password = '';
     /**
-     * Generated from protobuf field <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * Generated from protobuf field <code>string admin_user = 5 [json_name = "adminUser"];</code>
      */
     protected $admin_user = '';
     /**
-     * Generated from protobuf field <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * Generated from protobuf field <code>string blockchain_id = 6 [json_name = "blockchainId"];</code>
      */
-    protected $bc_id = '';
+    protected $blockchain_id = '';
 
     /**
      * Constructor.
@@ -40,11 +44,12 @@ class Organization extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $user_id
-     *     @type string $domain_org
+     *     @type string $domain
      *     @type string $admin_password
      *     @type string $admin_user
-     *     @type string $bc_id
+     *     @type string $blockchain_id
      * }
      */
     public function __construct($data = NULL) {
@@ -53,7 +58,29 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
      * @return string
      */
     public function getUserId()
@@ -62,7 +89,7 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
      * @param string $var
      * @return $this
      */
@@ -75,29 +102,29 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * Generated from protobuf field <code>string domain = 3 [json_name = "domain"];</code>
      * @return string
      */
-    public function getDomainOrg()
+    public function getDomain()
     {
-        return $this->domain_org;
+        return $this->domain;
     }
 
     /**
-     * Generated from protobuf field <code>string domain_org = 2 [json_name = "domainOrg"];</code>
+     * Generated from protobuf field <code>string domain = 3 [json_name = "domain"];</code>
      * @param string $var
      * @return $this
      */
-    public function setDomainOrg($var)
+    public function setDomain($var)
     {
         GPBUtil::checkString($var, True);
-        $this->domain_org = $var;
+        $this->domain = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * Generated from protobuf field <code>string admin_password = 4 [json_name = "adminPassword"];</code>
      * @return string
      */
     public function getAdminPassword()
@@ -106,7 +133,7 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string admin_password = 3 [json_name = "adminPassword"];</code>
+     * Generated from protobuf field <code>string admin_password = 4 [json_name = "adminPassword"];</code>
      * @param string $var
      * @return $this
      */
@@ -119,7 +146,7 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * Generated from protobuf field <code>string admin_user = 5 [json_name = "adminUser"];</code>
      * @return string
      */
     public function getAdminUser()
@@ -128,7 +155,7 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string admin_user = 4 [json_name = "adminUser"];</code>
+     * Generated from protobuf field <code>string admin_user = 5 [json_name = "adminUser"];</code>
      * @param string $var
      * @return $this
      */
@@ -141,23 +168,23 @@ class Organization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * Generated from protobuf field <code>string blockchain_id = 6 [json_name = "blockchainId"];</code>
      * @return string
      */
-    public function getBcId()
+    public function getBlockchainId()
     {
-        return $this->bc_id;
+        return $this->blockchain_id;
     }
 
     /**
-     * Generated from protobuf field <code>string bc_id = 5 [json_name = "bcId"];</code>
+     * Generated from protobuf field <code>string blockchain_id = 6 [json_name = "blockchainId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setBcId($var)
+    public function setBlockchainId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->bc_id = $var;
+        $this->blockchain_id = $var;
 
         return $this;
     }

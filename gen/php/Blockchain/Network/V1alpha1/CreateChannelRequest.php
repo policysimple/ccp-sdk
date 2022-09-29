@@ -14,21 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateChannelRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];</code>
      */
-    protected $creator_org_id = '';
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     */
-    protected $blockchain_id = '';
-    /**
-     * Generated from protobuf field <code>string channel_name = 3 [json_name = "channelName"];</code>
-     */
-    protected $channel_name = '';
-    /**
-     * Generated from protobuf field <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
-     */
-    private $channel_org_ids;
+    protected $channel = null;
 
     /**
      * Constructor.
@@ -36,10 +24,7 @@ class CreateChannelRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $creator_org_id
-     *     @type string $blockchain_id
-     *     @type string $channel_name
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $channel_org_ids
+     *     @type \Blockchain\Network\V1alpha1\Channel $channel
      * }
      */
     public function __construct($data = NULL) {
@@ -48,89 +33,33 @@ class CreateChannelRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
-     * @return string
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];</code>
+     * @return \Blockchain\Network\V1alpha1\Channel|null
      */
-    public function getCreatorOrgId()
+    public function getChannel()
     {
-        return $this->creator_org_id;
+        return $this->channel;
+    }
+
+    public function hasChannel()
+    {
+        return isset($this->channel);
+    }
+
+    public function clearChannel()
+    {
+        unset($this->channel);
     }
 
     /**
-     * Generated from protobuf field <code>string creator_org_id = 1 [json_name = "creatorOrgId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];</code>
+     * @param \Blockchain\Network\V1alpha1\Channel $var
      * @return $this
      */
-    public function setCreatorOrgId($var)
+    public function setChannel($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->creator_org_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     * @return string
-     */
-    public function getBlockchainId()
-    {
-        return $this->blockchain_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBlockchainId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->blockchain_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string channel_name = 3 [json_name = "channelName"];</code>
-     * @return string
-     */
-    public function getChannelName()
-    {
-        return $this->channel_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string channel_name = 3 [json_name = "channelName"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setChannelName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->channel_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getChannelOrgIds()
-    {
-        return $this->channel_org_ids;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string channel_org_ids = 4 [json_name = "channelOrgIds"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setChannelOrgIds($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->channel_org_ids = $arr;
+        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Channel::class);
+        $this->channel = $var;
 
         return $this;
     }

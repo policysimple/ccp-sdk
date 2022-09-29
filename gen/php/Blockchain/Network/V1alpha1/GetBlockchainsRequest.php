@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
-    protected $status = '';
+    protected $id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $status
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getId()
     {
-        return $this->status;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->id = $var;
 
         return $this;
     }

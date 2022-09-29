@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
      */
-    protected $status = '';
+    protected $organization = null;
     /**
-     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
+     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
      */
     protected $message = '';
 
@@ -28,7 +28,7 @@ class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $status
+     *     @type \Blockchain\Network\V1alpha1\Organization $organization
      *     @type string $message
      * }
      */
@@ -38,29 +38,39 @@ class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
-     * @return string
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @return \Blockchain\Network\V1alpha1\Organization|null
      */
-    public function getStatus()
+    public function getOrganization()
     {
-        return $this->status;
+        return $this->organization;
+    }
+
+    public function hasOrganization()
+    {
+        return isset($this->organization);
+    }
+
+    public function clearOrganization()
+    {
+        unset($this->organization);
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * @param \Blockchain\Network\V1alpha1\Organization $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setOrganization($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->status = $var;
+        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Organization::class);
+        $this->organization = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
+     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
      * @return string
      */
     public function getMessage()
@@ -69,7 +79,7 @@ class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
+     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
      * @param string $var
      * @return $this
      */

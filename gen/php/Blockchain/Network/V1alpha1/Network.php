@@ -14,33 +14,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class Network extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string network_name = 1 [json_name = "networkName"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>string network_name = 2 [json_name = "networkName"];</code>
      */
     protected $network_name = '';
     /**
-     * Generated from protobuf field <code>string framework = 2 [json_name = "framework"];</code>
+     * Generated from protobuf field <code>string framework = 3 [json_name = "framework"];</code>
      */
     protected $framework = '';
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string type = 4 [json_name = "type"];</code>
      */
     protected $type = '';
-    /**
-     * Generated from protobuf field <code>string org_domain = 4 [json_name = "orgDomain"];</code>
-     */
-    protected $org_domain = '';
     /**
      * Generated from protobuf field <code>string user_id = 5 [json_name = "userId"];</code>
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>string admin_password = 6 [json_name = "adminPassword"];</code>
+     * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
      */
-    protected $admin_password = '';
-    /**
-     * Generated from protobuf field <code>string admin_user = 7 [json_name = "adminUser"];</code>
-     */
-    protected $admin_user = '';
+    protected $status = '';
 
     /**
      * Constructor.
@@ -48,13 +44,12 @@ class Network extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $network_name
      *     @type string $framework
      *     @type string $type
-     *     @type string $org_domain
      *     @type string $user_id
-     *     @type string $admin_password
-     *     @type string $admin_user
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -63,7 +58,29 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string network_name = 1 [json_name = "networkName"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string network_name = 2 [json_name = "networkName"];</code>
      * @return string
      */
     public function getNetworkName()
@@ -72,7 +89,7 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string network_name = 1 [json_name = "networkName"];</code>
+     * Generated from protobuf field <code>string network_name = 2 [json_name = "networkName"];</code>
      * @param string $var
      * @return $this
      */
@@ -85,7 +102,7 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string framework = 2 [json_name = "framework"];</code>
+     * Generated from protobuf field <code>string framework = 3 [json_name = "framework"];</code>
      * @return string
      */
     public function getFramework()
@@ -94,7 +111,7 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string framework = 2 [json_name = "framework"];</code>
+     * Generated from protobuf field <code>string framework = 3 [json_name = "framework"];</code>
      * @param string $var
      * @return $this
      */
@@ -107,7 +124,7 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string type = 4 [json_name = "type"];</code>
      * @return string
      */
     public function getType()
@@ -116,7 +133,7 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
+     * Generated from protobuf field <code>string type = 4 [json_name = "type"];</code>
      * @param string $var
      * @return $this
      */
@@ -124,28 +141,6 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string org_domain = 4 [json_name = "orgDomain"];</code>
-     * @return string
-     */
-    public function getOrgDomain()
-    {
-        return $this->org_domain;
-    }
-
-    /**
-     * Generated from protobuf field <code>string org_domain = 4 [json_name = "orgDomain"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setOrgDomain($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->org_domain = $var;
 
         return $this;
     }
@@ -173,45 +168,23 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string admin_password = 6 [json_name = "adminPassword"];</code>
+     * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
      * @return string
      */
-    public function getAdminPassword()
+    public function getStatus()
     {
-        return $this->admin_password;
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>string admin_password = 6 [json_name = "adminPassword"];</code>
+     * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
-    public function setAdminPassword($var)
+    public function setStatus($var)
     {
         GPBUtil::checkString($var, True);
-        $this->admin_password = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string admin_user = 7 [json_name = "adminUser"];</code>
-     * @return string
-     */
-    public function getAdminUser()
-    {
-        return $this->admin_user;
-    }
-
-    /**
-     * Generated from protobuf field <code>string admin_user = 7 [json_name = "adminUser"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAdminUser($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->admin_user = $var;
+        $this->status = $var;
 
         return $this;
     }

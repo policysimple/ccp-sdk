@@ -17,50 +17,51 @@ class NetworkApi
         \GPBMetadata\Blockchain\Network\V1Alpha1\Network::initOnce();
         $pool->internalAddGeneratedFile(
             '
-
--blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1"V
+¢
+-blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1"¥
 CreateNetworkRequest>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork"v
-CreateNetworkDefaultResponse>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork
-status (	Rstatus"u
-CreateNetworkDefaultRequest>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork
-status (	Rstatus"Å
-AddPeerToOrganizationRequest
+network (2$.blockchain.network.v1alpha1.NetworkRnetworkM
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization"’
+AddPeerToOrganizationRequestM
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization#
+blockchain_id (	RblockchainId"V
+CreateChannelRequest>
+channel (2$.blockchain.network.v1alpha1.ChannelRchannel"\'
+GetBlockchainsRequest
+id (	Rid"j
+CreateOrganizationRequestM
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization"`
+SendInvitationRequestG
 
-org_domain (	R	orgDomain%
-admin_password (	RadminPassword
-
-admin_user (	R	adminUser!
-network_name (	RnetworkName
-
-network_id (	R	networkId"¬
-CreateChannelRequest$
-creator_org_id (	RcreatorOrgId#
-blockchain_id (	RblockchainId!
-channel_name (	RchannelName&
-channel_org_ids (	RchannelOrgIds"I
-CreateNetworkResponse
-status (	Rstatus
-message (	Rmessage"Q
-AddPeerToOrganizationResponse
-status (	Rstatus
-message (	Rmessage"I
-CreateChannelResponse
-status (	Rstatus
-message (	Rmessage"p
+invitation (2\'.blockchain.network.v1alpha1.InvitationR
+invitation"q
+CreateNetworkResponse>
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork
+message (	Rmessage"ˆ
+AddPeerToOrganizationResponseM
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization
+message (	Rmessage"q
+CreateChannelResponse>
+channel (2$.blockchain.network.v1alpha1.ChannelRchannel
+message (	Rmessage"r
 GetBlockchainsResponse>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork
-status (	Rstatus"/
-GetBlockchainsRequest
-status (	Rstatus2 
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork
+message (	Rmessage"…
+CreateOrganizationResponseM
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization
+message (	Rmessage"{
+SendInvitationResponseG
+
+invitation (2\'.blockchain.network.v1alpha1.InvitationR
+invitation
+message (	Rmessage2•
 BlockchainAPIServicev
 CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseŽ
 AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsev
 CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponsey
-GetBlockchains2.blockchain.network.v1alpha1.GetBlockchainsRequest3.blockchain.network.v1alpha1.GetBlockchainsResponse‹
-CreateNetworkDefault8.blockchain.network.v1alpha1.CreateNetworkDefaultRequest9.blockchain.network.v1alpha1.CreateNetworkDefaultResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+GetBlockchains2.blockchain.network.v1alpha1.GetBlockchainsRequest3.blockchain.network.v1alpha1.GetBlockchainsResponse…
+CreateOrganization6.blockchain.network.v1alpha1.CreateOrganizationRequest7.blockchain.network.v1alpha1.CreateOrganizationResponsey
+SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

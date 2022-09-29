@@ -8,7 +8,7 @@ import  "google/protobuf/empty.proto";
 
 service BlockchainThePowerService {
     rpc CreateTpChain (CreateTpChainRequest) returns (CreateTpChainResponse);
-    rpc GetTpChains (google.protobuf.Empty) returns (GetTpChainsResponse);
+    rpc GetTpChains (GetTpChainsRequest) returns (GetTpChainsResponse);
     rpc GetTpChainsByUserId (GetTpChainsByUserIdRequest) returns (GetTpChainsByUserIdResponse);
     rpc GetTpChainById (GetTpChainByIdRequest) returns (GetTpChainByIdResponse);
 }
@@ -24,6 +24,10 @@ message GetTpChainsByUserIdRequest {
 
 message GetTpChainByIdRequest {
     string id = 1;
+}
+
+message GetTpChainsRequest {
+    google.protobuf.Empty emtpy = 1;
 }
 
 // Response messages

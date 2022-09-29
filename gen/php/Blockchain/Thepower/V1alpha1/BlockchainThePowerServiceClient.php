@@ -29,4 +29,43 @@ class BlockchainThePowerServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Blockchain\Thepower\V1alpha1\GetTpChainsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTpChains(\Blockchain\Thepower\V1alpha1\GetTpChainsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChains',
+        $argument,
+        ['\Blockchain\Thepower\V1alpha1\GetTpChainsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Thepower\V1alpha1\GetTpChainsByUserIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTpChainsByUserId(\Blockchain\Thepower\V1alpha1\GetTpChainsByUserIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainsByUserId',
+        $argument,
+        ['\Blockchain\Thepower\V1alpha1\GetTpChainsByUserIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Thepower\V1alpha1\GetTpChainByIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTpChainById(\Blockchain\Thepower\V1alpha1\GetTpChainByIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainById',
+        $argument,
+        ['\Blockchain\Thepower\V1alpha1\GetTpChainByIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
