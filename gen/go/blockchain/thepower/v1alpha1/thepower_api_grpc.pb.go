@@ -19,6 +19,9 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BlockchainThePowerServiceClient interface {
 	CreateTpChain(ctx context.Context, in *CreateTpChainRequest, opts ...grpc.CallOption) (*CreateTpChainResponse, error)
+	//rpc GetTpChains (google.protobuf.Empty) returns (GetTpChainsResponse);
+	GetTpChainsByUserId(ctx context.Context, in *GetTpChainsByUserIdRequest, opts ...grpc.CallOption) (*GetTpChainsByUserIdResponse, error)
+	GetTpChainById(ctx context.Context, in *GetTpChainByIdRequest, opts ...grpc.CallOption) (*GetTpChainByIdResponse, error)
 }
 
 type blockchainThePowerServiceClient struct {
@@ -38,11 +41,32 @@ func (c *blockchainThePowerServiceClient) CreateTpChain(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *blockchainThePowerServiceClient) GetTpChainsByUserId(ctx context.Context, in *GetTpChainsByUserIdRequest, opts ...grpc.CallOption) (*GetTpChainsByUserIdResponse, error) {
+	out := new(GetTpChainsByUserIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainsByUserId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blockchainThePowerServiceClient) GetTpChainById(ctx context.Context, in *GetTpChainByIdRequest, opts ...grpc.CallOption) (*GetTpChainByIdResponse, error) {
+	out := new(GetTpChainByIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainById", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BlockchainThePowerServiceServer is the server API for BlockchainThePowerService service.
 // All implementations should embed UnimplementedBlockchainThePowerServiceServer
 // for forward compatibility
 type BlockchainThePowerServiceServer interface {
 	CreateTpChain(context.Context, *CreateTpChainRequest) (*CreateTpChainResponse, error)
+	//rpc GetTpChains (google.protobuf.Empty) returns (GetTpChainsResponse);
+	GetTpChainsByUserId(context.Context, *GetTpChainsByUserIdRequest) (*GetTpChainsByUserIdResponse, error)
+	GetTpChainById(context.Context, *GetTpChainByIdRequest) (*GetTpChainByIdResponse, error)
 }
 
 // UnimplementedBlockchainThePowerServiceServer should be embedded to have forward compatible implementations.
@@ -51,6 +75,12 @@ type UnimplementedBlockchainThePowerServiceServer struct {
 
 func (UnimplementedBlockchainThePowerServiceServer) CreateTpChain(context.Context, *CreateTpChainRequest) (*CreateTpChainResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTpChain not implemented")
+}
+func (UnimplementedBlockchainThePowerServiceServer) GetTpChainsByUserId(context.Context, *GetTpChainsByUserIdRequest) (*GetTpChainsByUserIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTpChainsByUserId not implemented")
+}
+func (UnimplementedBlockchainThePowerServiceServer) GetTpChainById(context.Context, *GetTpChainByIdRequest) (*GetTpChainByIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTpChainById not implemented")
 }
 
 // UnsafeBlockchainThePowerServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -82,6 +112,42 @@ func _BlockchainThePowerService_CreateTpChain_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BlockchainThePowerService_GetTpChainsByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTpChainsByUserIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainThePowerServiceServer).GetTpChainsByUserId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainsByUserId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainThePowerServiceServer).GetTpChainsByUserId(ctx, req.(*GetTpChainsByUserIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlockchainThePowerService_GetTpChainById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTpChainByIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainThePowerServiceServer).GetTpChainById(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainById",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainThePowerServiceServer).GetTpChainById(ctx, req.(*GetTpChainByIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BlockchainThePowerService_ServiceDesc is the grpc.ServiceDesc for BlockchainThePowerService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -92,6 +158,14 @@ var BlockchainThePowerService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateTpChain",
 			Handler:    _BlockchainThePowerService_CreateTpChain_Handler,
+		},
+		{
+			MethodName: "GetTpChainsByUserId",
+			Handler:    _BlockchainThePowerService_GetTpChainsByUserId_Handler,
+		},
+		{
+			MethodName: "GetTpChainById",
+			Handler:    _BlockchainThePowerService_GetTpChainById_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

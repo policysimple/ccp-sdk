@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteRuntimeResponse() {
-    status_ = "";
+    msg_ = "";
+    error_ = "";
   }
 
   @java.lang.Override
@@ -52,7 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            status_ = s;
+            msg_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            error_ = s;
             break;
           }
           default: {
@@ -87,38 +94,76 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse.class, io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse.Builder.class);
   }
 
-  public static final int STATUS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object status_;
+  public static final int MSG_FIELD_NUMBER = 1;
+  private volatile java.lang.Object msg_;
   /**
-   * <code>string status = 1 [json_name = "status"];</code>
-   * @return The status.
+   * <code>string msg = 1 [json_name = "msg"];</code>
+   * @return The msg.
    */
   @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
+  public java.lang.String getMsg() {
+    java.lang.Object ref = msg_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      status_ = s;
+      msg_ = s;
       return s;
     }
   }
   /**
-   * <code>string status = 1 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>string msg = 1 [json_name = "msg"];</code>
+   * @return The bytes for msg.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
+      getMsgBytes() {
+    java.lang.Object ref = msg_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      status_ = b;
+      msg_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ERROR_FIELD_NUMBER = 2;
+  private volatile java.lang.Object error_;
+  /**
+   * <code>string error = 2 [json_name = "error"];</code>
+   * @return The error.
+   */
+  @java.lang.Override
+  public java.lang.String getError() {
+    java.lang.Object ref = error_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      error_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string error = 2 [json_name = "error"];</code>
+   * @return The bytes for error.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getErrorBytes() {
+    java.lang.Object ref = error_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      error_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, status_);
+    if (!getMsgBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
+    }
+    if (!getErrorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, status_);
+    if (!getMsgBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+    }
+    if (!getErrorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +220,10 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse other = (io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse) obj;
 
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
+    if (!getMsg()
+        .equals(other.getMsg())) return false;
+    if (!getError()
+        .equals(other.getError())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +235,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + MSG_FIELD_NUMBER;
+    hash = (53 * hash) + getMsg().hashCode();
+    hash = (37 * hash) + ERROR_FIELD_NUMBER;
+    hash = (53 * hash) + getError().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,7 +372,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      status_ = "";
+      msg_ = "";
+
+      error_ = "";
 
       return this;
     }
@@ -345,7 +402,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse buildPartial() {
       io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse result = new io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse(this);
-      result.status_ = status_;
+      result.msg_ = msg_;
+      result.error_ = error_;
       onBuilt();
       return result;
     }
@@ -394,8 +452,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse other) {
       if (other == io.cuemby.pipelines.runtime.v1alpha1.DeleteRuntimeResponse.getDefaultInstance()) return this;
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
+      if (!other.getMsg().isEmpty()) {
+        msg_ = other.msg_;
+        onChanged();
+      }
+      if (!other.getError().isEmpty()) {
+        error_ = other.error_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -427,78 +489,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object status_ = "";
+    private java.lang.Object msg_ = "";
     /**
-     * <code>string status = 1 [json_name = "status"];</code>
-     * @return The status.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
      */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        status_ = s;
+        msg_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string status = 1 [json_name = "status"];</code>
-     * @return The bytes for status.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
      */
     public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        status_ = b;
+        msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string status = 1 [json_name = "status"];</code>
-     * @param value The status to set.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @param value The msg to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(
+    public Builder setMsg(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      status_ = value;
+      msg_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 1 [json_name = "status"];</code>
+     * <code>string msg = 1 [json_name = "msg"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
+    public Builder clearMsg() {
       
-      status_ = getDefaultInstance().getStatus();
+      msg_ = getDefaultInstance().getMsg();
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 1 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @param value The bytes for msg to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusBytes(
+    public Builder setMsgBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      status_ = value;
+      msg_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object error_ = "";
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @param value The error to set.
+     * @return This builder for chaining.
+     */
+    public Builder setError(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      error_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearError() {
+      
+      error_ = getDefaultInstance().getError();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @param value The bytes for error to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      error_ = value;
       onChanged();
       return this;
     }

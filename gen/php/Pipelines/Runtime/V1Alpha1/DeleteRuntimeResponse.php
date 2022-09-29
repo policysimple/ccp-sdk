@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteRuntimeResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      */
-    protected $status = '';
+    protected $msg = '';
+    /**
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     */
+    protected $error = '';
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class DeleteRuntimeResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $status
+     *     @type string $msg
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +38,45 @@ class DeleteRuntimeResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getMsg()
     {
-        return $this->status;
+        return $this->msg;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setMsg($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->msg = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * @return string
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error = $var;
 
         return $this;
     }

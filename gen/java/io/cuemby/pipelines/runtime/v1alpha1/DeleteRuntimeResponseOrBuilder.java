@@ -8,14 +8,26 @@ public interface DeleteRuntimeResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string status = 1 [json_name = "status"];</code>
-   * @return The status.
+   * <code>string msg = 1 [json_name = "msg"];</code>
+   * @return The msg.
    */
-  java.lang.String getStatus();
+  java.lang.String getMsg();
   /**
-   * <code>string status = 1 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>string msg = 1 [json_name = "msg"];</code>
+   * @return The bytes for msg.
    */
   com.google.protobuf.ByteString
-      getStatusBytes();
+      getMsgBytes();
+
+  /**
+   * <code>string error = 2 [json_name = "error"];</code>
+   * @return The error.
+   */
+  java.lang.String getError();
+  /**
+   * <code>string error = 2 [json_name = "error"];</code>
+   * @return The bytes for error.
+   */
+  com.google.protobuf.ByteString
+      getErrorBytes();
 }

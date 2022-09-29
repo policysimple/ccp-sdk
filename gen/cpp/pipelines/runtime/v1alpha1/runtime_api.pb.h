@@ -1216,6 +1216,10 @@ class DeleteRuntimeRequest final :
 
   enum : int {
     kRuntimeIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kIntegrationFieldNumber = 3,
+    kProjectIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
   };
   // string runtime_id = 1 [json_name = "runtimeId"];
   void clear_runtime_id();
@@ -1231,6 +1235,52 @@ class DeleteRuntimeRequest final :
   std::string* _internal_mutable_runtime_id();
   public:
 
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string integration = 3 [json_name = "integration"];
+  void clear_integration();
+  const std::string& integration() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration();
+  void set_allocated_integration(std::string* integration);
+  private:
+  const std::string& _internal_integration() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration(const std::string& value);
+  std::string* _internal_mutable_integration();
+  public:
+
+  // uint32 project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimeRequest)
  private:
   class _Internal;
@@ -1239,6 +1289,10 @@ class DeleteRuntimeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -1359,20 +1413,35 @@ class DeleteRuntimeResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 1,
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
   };
-  // string status = 1 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
   public:
 
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimeResponse)
@@ -1382,7 +1451,8 @@ class DeleteRuntimeResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -2870,54 +2940,232 @@ inline void DeleteRuntimeRequest::set_allocated_runtime_id(std::string* runtime_
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.runtime_id)
 }
 
-// -------------------------------------------------------------------
-
-// DeleteRuntimeResponse
-
-// string status = 1 [json_name = "status"];
-inline void DeleteRuntimeResponse::clear_status() {
-  status_.ClearToEmpty();
+// string name = 2 [json_name = "name"];
+inline void DeleteRuntimeRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& DeleteRuntimeResponse::status() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.status)
-  return _internal_status();
+inline const std::string& DeleteRuntimeRequest::name() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name)
+  return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void DeleteRuntimeResponse::set_status(ArgT0&& arg0, ArgT... args) {
+void DeleteRuntimeRequest::set_name(ArgT0&& arg0, ArgT... args) {
  
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.status)
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name)
 }
-inline std::string* DeleteRuntimeResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.status)
+inline std::string* DeleteRuntimeRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name)
   return _s;
 }
-inline const std::string& DeleteRuntimeResponse::_internal_status() const {
-  return status_.Get();
+inline const std::string& DeleteRuntimeRequest::_internal_name() const {
+  return name_.Get();
 }
-inline void DeleteRuntimeResponse::_internal_set_status(const std::string& value) {
+inline void DeleteRuntimeRequest::_internal_set_name(const std::string& value) {
   
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* DeleteRuntimeResponse::_internal_mutable_status() {
+inline std::string* DeleteRuntimeRequest::_internal_mutable_name() {
   
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* DeleteRuntimeResponse::release_status() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* DeleteRuntimeRequest::release_name() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void DeleteRuntimeResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
+inline void DeleteRuntimeRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.name)
+}
+
+// string integration = 3 [json_name = "integration"];
+inline void DeleteRuntimeRequest::clear_integration() {
+  integration_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimeRequest::integration() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.integration)
+  return _internal_integration();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimeRequest::set_integration(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.integration)
+}
+inline std::string* DeleteRuntimeRequest::mutable_integration() {
+  std::string* _s = _internal_mutable_integration();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.integration)
+  return _s;
+}
+inline const std::string& DeleteRuntimeRequest::_internal_integration() const {
+  return integration_.Get();
+}
+inline void DeleteRuntimeRequest::_internal_set_integration(const std::string& value) {
+  
+  integration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeRequest::_internal_mutable_integration() {
+  
+  return integration_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeRequest::release_integration() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.integration)
+  return integration_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimeRequest::set_allocated_integration(std::string* integration) {
+  if (integration != nullptr) {
+    
+  } else {
+    
+  }
+  integration_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.integration)
+}
+
+// uint32 project_id = 4 [json_name = "projectId"];
+inline void DeleteRuntimeRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimeRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimeRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.project_id)
+  return _internal_project_id();
+}
+inline void DeleteRuntimeRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void DeleteRuntimeRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.project_id)
+}
+
+// uint32 organization_id = 5 [json_name = "organizationId"];
+inline void DeleteRuntimeRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimeRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimeRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void DeleteRuntimeRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void DeleteRuntimeRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteRuntimeResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void DeleteRuntimeResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimeResponse::msg() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimeResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.msg)
+}
+inline std::string* DeleteRuntimeResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.msg)
+  return _s;
+}
+inline const std::string& DeleteRuntimeResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void DeleteRuntimeResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimeResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void DeleteRuntimeResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimeResponse::error() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimeResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.error)
+}
+inline std::string* DeleteRuntimeResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.error)
+  return _s;
+}
+inline const std::string& DeleteRuntimeResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void DeleteRuntimeResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimeResponse::release_error() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimeResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimeResponse.error)
 }
 
 // -------------------------------------------------------------------

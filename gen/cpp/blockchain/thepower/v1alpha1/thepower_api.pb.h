@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "blockchain/thepower/v1alpha1/thepower.pb.h"
+#include <google/protobuf/empty.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto
@@ -47,7 +48,7 @@ struct TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -63,12 +64,32 @@ extern CreateTpChainRequestDefaultTypeInternal _CreateTpChainRequest_default_ins
 class CreateTpChainResponse;
 struct CreateTpChainResponseDefaultTypeInternal;
 extern CreateTpChainResponseDefaultTypeInternal _CreateTpChainResponse_default_instance_;
+class GetTpChainByIdRequest;
+struct GetTpChainByIdRequestDefaultTypeInternal;
+extern GetTpChainByIdRequestDefaultTypeInternal _GetTpChainByIdRequest_default_instance_;
+class GetTpChainByIdResponse;
+struct GetTpChainByIdResponseDefaultTypeInternal;
+extern GetTpChainByIdResponseDefaultTypeInternal _GetTpChainByIdResponse_default_instance_;
+class GetTpChainsByUserIdRequest;
+struct GetTpChainsByUserIdRequestDefaultTypeInternal;
+extern GetTpChainsByUserIdRequestDefaultTypeInternal _GetTpChainsByUserIdRequest_default_instance_;
+class GetTpChainsByUserIdResponse;
+struct GetTpChainsByUserIdResponseDefaultTypeInternal;
+extern GetTpChainsByUserIdResponseDefaultTypeInternal _GetTpChainsByUserIdResponse_default_instance_;
+class GetTpChainsResponse;
+struct GetTpChainsResponseDefaultTypeInternal;
+extern GetTpChainsResponseDefaultTypeInternal _GetTpChainsResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace thepower
 }  // namespace blockchain
 PROTOBUF_NAMESPACE_OPEN
 template<> ::blockchain::thepower::v1alpha1::CreateTpChainRequest* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::CreateTpChainRequest>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::CreateTpChainResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::CreateTpChainResponse>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainByIdRequest>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::GetTpChainsResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainsResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace blockchain {
 namespace thepower {
@@ -224,6 +245,294 @@ class CreateTpChainRequest final :
 };
 // -------------------------------------------------------------------
 
+class GetTpChainsByUserIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest) */ {
+ public:
+  inline GetTpChainsByUserIdRequest() : GetTpChainsByUserIdRequest(nullptr) {}
+  ~GetTpChainsByUserIdRequest() override;
+  explicit constexpr GetTpChainsByUserIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTpChainsByUserIdRequest(const GetTpChainsByUserIdRequest& from);
+  GetTpChainsByUserIdRequest(GetTpChainsByUserIdRequest&& from) noexcept
+    : GetTpChainsByUserIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTpChainsByUserIdRequest& operator=(const GetTpChainsByUserIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTpChainsByUserIdRequest& operator=(GetTpChainsByUserIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTpChainsByUserIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTpChainsByUserIdRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTpChainsByUserIdRequest*>(
+               &_GetTpChainsByUserIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(GetTpChainsByUserIdRequest& a, GetTpChainsByUserIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTpChainsByUserIdRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTpChainsByUserIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTpChainsByUserIdRequest* New() const final {
+    return new GetTpChainsByUserIdRequest();
+  }
+
+  GetTpChainsByUserIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTpChainsByUserIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTpChainsByUserIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTpChainsByUserIdRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTpChainsByUserIdRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest";
+  }
+  protected:
+  explicit GetTpChainsByUserIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUserIdFieldNumber = 1,
+  };
+  // string user_id = 1 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTpChainByIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.GetTpChainByIdRequest) */ {
+ public:
+  inline GetTpChainByIdRequest() : GetTpChainByIdRequest(nullptr) {}
+  ~GetTpChainByIdRequest() override;
+  explicit constexpr GetTpChainByIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTpChainByIdRequest(const GetTpChainByIdRequest& from);
+  GetTpChainByIdRequest(GetTpChainByIdRequest&& from) noexcept
+    : GetTpChainByIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTpChainByIdRequest& operator=(const GetTpChainByIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTpChainByIdRequest& operator=(GetTpChainByIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTpChainByIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTpChainByIdRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTpChainByIdRequest*>(
+               &_GetTpChainByIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(GetTpChainByIdRequest& a, GetTpChainByIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTpChainByIdRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTpChainByIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTpChainByIdRequest* New() const final {
+    return new GetTpChainByIdRequest();
+  }
+
+  GetTpChainByIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTpChainByIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTpChainByIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTpChainByIdRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTpChainByIdRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.GetTpChainByIdRequest";
+  }
+  protected:
+  explicit GetTpChainByIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainByIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateTpChainResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.CreateTpChainResponse) */ {
  public:
@@ -268,7 +577,7 @@ class CreateTpChainResponse final :
                &_CreateTpChainResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(CreateTpChainResponse& a, CreateTpChainResponse& b) {
     a.Swap(&b);
@@ -360,6 +669,450 @@ class CreateTpChainResponse final :
   ::blockchain::thepower::v1alpha1::TpChain* unsafe_arena_release_tp_chain();
 
   // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.CreateTpChainResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::blockchain::thepower::v1alpha1::TpChain* tp_chain_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTpChainsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.GetTpChainsResponse) */ {
+ public:
+  inline GetTpChainsResponse() : GetTpChainsResponse(nullptr) {}
+  ~GetTpChainsResponse() override;
+  explicit constexpr GetTpChainsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTpChainsResponse(const GetTpChainsResponse& from);
+  GetTpChainsResponse(GetTpChainsResponse&& from) noexcept
+    : GetTpChainsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTpChainsResponse& operator=(const GetTpChainsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTpChainsResponse& operator=(GetTpChainsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTpChainsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTpChainsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTpChainsResponse*>(
+               &_GetTpChainsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(GetTpChainsResponse& a, GetTpChainsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTpChainsResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTpChainsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTpChainsResponse* New() const final {
+    return new GetTpChainsResponse();
+  }
+
+  GetTpChainsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTpChainsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTpChainsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTpChainsResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTpChainsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.GetTpChainsResponse";
+  }
+  protected:
+  explicit GetTpChainsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTpChainsFieldNumber = 1,
+  };
+  // repeated .blockchain.thepower.v1alpha1.TpChain tp_chains = 1 [json_name = "tpChains"];
+  int tp_chains_size() const;
+  private:
+  int _internal_tp_chains_size() const;
+  public:
+  void clear_tp_chains();
+  ::blockchain::thepower::v1alpha1::TpChain* mutable_tp_chains(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >*
+      mutable_tp_chains();
+  private:
+  const ::blockchain::thepower::v1alpha1::TpChain& _internal_tp_chains(int index) const;
+  ::blockchain::thepower::v1alpha1::TpChain* _internal_add_tp_chains();
+  public:
+  const ::blockchain::thepower::v1alpha1::TpChain& tp_chains(int index) const;
+  ::blockchain::thepower::v1alpha1::TpChain* add_tp_chains();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >&
+      tp_chains() const;
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain > tp_chains_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTpChainsByUserIdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse) */ {
+ public:
+  inline GetTpChainsByUserIdResponse() : GetTpChainsByUserIdResponse(nullptr) {}
+  ~GetTpChainsByUserIdResponse() override;
+  explicit constexpr GetTpChainsByUserIdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTpChainsByUserIdResponse(const GetTpChainsByUserIdResponse& from);
+  GetTpChainsByUserIdResponse(GetTpChainsByUserIdResponse&& from) noexcept
+    : GetTpChainsByUserIdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTpChainsByUserIdResponse& operator=(const GetTpChainsByUserIdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTpChainsByUserIdResponse& operator=(GetTpChainsByUserIdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTpChainsByUserIdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTpChainsByUserIdResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTpChainsByUserIdResponse*>(
+               &_GetTpChainsByUserIdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(GetTpChainsByUserIdResponse& a, GetTpChainsByUserIdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTpChainsByUserIdResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTpChainsByUserIdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTpChainsByUserIdResponse* New() const final {
+    return new GetTpChainsByUserIdResponse();
+  }
+
+  GetTpChainsByUserIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTpChainsByUserIdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTpChainsByUserIdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTpChainsByUserIdResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTpChainsByUserIdResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse";
+  }
+  protected:
+  explicit GetTpChainsByUserIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTpChainsFieldNumber = 1,
+  };
+  // repeated .blockchain.thepower.v1alpha1.TpChain tp_chains = 1 [json_name = "tpChains"];
+  int tp_chains_size() const;
+  private:
+  int _internal_tp_chains_size() const;
+  public:
+  void clear_tp_chains();
+  ::blockchain::thepower::v1alpha1::TpChain* mutable_tp_chains(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >*
+      mutable_tp_chains();
+  private:
+  const ::blockchain::thepower::v1alpha1::TpChain& _internal_tp_chains(int index) const;
+  ::blockchain::thepower::v1alpha1::TpChain* _internal_add_tp_chains();
+  public:
+  const ::blockchain::thepower::v1alpha1::TpChain& tp_chains(int index) const;
+  ::blockchain::thepower::v1alpha1::TpChain* add_tp_chains();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >&
+      tp_chains() const;
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain > tp_chains_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTpChainByIdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.GetTpChainByIdResponse) */ {
+ public:
+  inline GetTpChainByIdResponse() : GetTpChainByIdResponse(nullptr) {}
+  ~GetTpChainByIdResponse() override;
+  explicit constexpr GetTpChainByIdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTpChainByIdResponse(const GetTpChainByIdResponse& from);
+  GetTpChainByIdResponse(GetTpChainByIdResponse&& from) noexcept
+    : GetTpChainByIdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTpChainByIdResponse& operator=(const GetTpChainByIdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTpChainByIdResponse& operator=(GetTpChainByIdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTpChainByIdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTpChainByIdResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTpChainByIdResponse*>(
+               &_GetTpChainByIdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(GetTpChainByIdResponse& a, GetTpChainByIdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTpChainByIdResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTpChainByIdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTpChainByIdResponse* New() const final {
+    return new GetTpChainByIdResponse();
+  }
+
+  GetTpChainByIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTpChainByIdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTpChainByIdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTpChainByIdResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTpChainByIdResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.GetTpChainByIdResponse";
+  }
+  protected:
+  explicit GetTpChainByIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTpChainFieldNumber = 1,
+  };
+  // .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
+  bool has_tp_chain() const;
+  private:
+  bool _internal_has_tp_chain() const;
+  public:
+  void clear_tp_chain();
+  const ::blockchain::thepower::v1alpha1::TpChain& tp_chain() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::thepower::v1alpha1::TpChain* release_tp_chain();
+  ::blockchain::thepower::v1alpha1::TpChain* mutable_tp_chain();
+  void set_allocated_tp_chain(::blockchain::thepower::v1alpha1::TpChain* tp_chain);
+  private:
+  const ::blockchain::thepower::v1alpha1::TpChain& _internal_tp_chain() const;
+  ::blockchain::thepower::v1alpha1::TpChain* _internal_mutable_tp_chain();
+  public:
+  void unsafe_arena_set_allocated_tp_chain(
+      ::blockchain::thepower::v1alpha1::TpChain* tp_chain);
+  ::blockchain::thepower::v1alpha1::TpChain* unsafe_arena_release_tp_chain();
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainByIdResponse)
  private:
   class _Internal;
 
@@ -469,6 +1222,106 @@ inline void CreateTpChainRequest::set_allocated_tp_chain(::blockchain::thepower:
 
 // -------------------------------------------------------------------
 
+// GetTpChainsByUserIdRequest
+
+// string user_id = 1 [json_name = "userId"];
+inline void GetTpChainsByUserIdRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& GetTpChainsByUserIdRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTpChainsByUserIdRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest.user_id)
+}
+inline std::string* GetTpChainsByUserIdRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest.user_id)
+  return _s;
+}
+inline const std::string& GetTpChainsByUserIdRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void GetTpChainsByUserIdRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTpChainsByUserIdRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTpChainsByUserIdRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTpChainsByUserIdRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest.user_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetTpChainByIdRequest
+
+// string id = 1 [json_name = "id"];
+inline void GetTpChainByIdRequest::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& GetTpChainByIdRequest::id() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.GetTpChainByIdRequest.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTpChainByIdRequest::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.GetTpChainByIdRequest.id)
+}
+inline std::string* GetTpChainByIdRequest::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.GetTpChainByIdRequest.id)
+  return _s;
+}
+inline const std::string& GetTpChainByIdRequest::_internal_id() const {
+  return id_.Get();
+}
+inline void GetTpChainByIdRequest::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTpChainByIdRequest::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTpChainByIdRequest::release_id() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.GetTpChainByIdRequest.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTpChainByIdRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.GetTpChainByIdRequest.id)
+}
+
+// -------------------------------------------------------------------
+
 // CreateTpChainResponse
 
 // .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
@@ -557,9 +1410,191 @@ inline void CreateTpChainResponse::set_allocated_tp_chain(::blockchain::thepower
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.CreateTpChainResponse.tp_chain)
 }
 
+// -------------------------------------------------------------------
+
+// GetTpChainsResponse
+
+// repeated .blockchain.thepower.v1alpha1.TpChain tp_chains = 1 [json_name = "tpChains"];
+inline int GetTpChainsResponse::_internal_tp_chains_size() const {
+  return tp_chains_.size();
+}
+inline int GetTpChainsResponse::tp_chains_size() const {
+  return _internal_tp_chains_size();
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainsResponse::mutable_tp_chains(int index) {
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.GetTpChainsResponse.tp_chains)
+  return tp_chains_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >*
+GetTpChainsResponse::mutable_tp_chains() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.thepower.v1alpha1.GetTpChainsResponse.tp_chains)
+  return &tp_chains_;
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& GetTpChainsResponse::_internal_tp_chains(int index) const {
+  return tp_chains_.Get(index);
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& GetTpChainsResponse::tp_chains(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.GetTpChainsResponse.tp_chains)
+  return _internal_tp_chains(index);
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainsResponse::_internal_add_tp_chains() {
+  return tp_chains_.Add();
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainsResponse::add_tp_chains() {
+  ::blockchain::thepower::v1alpha1::TpChain* _add = _internal_add_tp_chains();
+  // @@protoc_insertion_point(field_add:blockchain.thepower.v1alpha1.GetTpChainsResponse.tp_chains)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >&
+GetTpChainsResponse::tp_chains() const {
+  // @@protoc_insertion_point(field_list:blockchain.thepower.v1alpha1.GetTpChainsResponse.tp_chains)
+  return tp_chains_;
+}
+
+// -------------------------------------------------------------------
+
+// GetTpChainsByUserIdResponse
+
+// repeated .blockchain.thepower.v1alpha1.TpChain tp_chains = 1 [json_name = "tpChains"];
+inline int GetTpChainsByUserIdResponse::_internal_tp_chains_size() const {
+  return tp_chains_.size();
+}
+inline int GetTpChainsByUserIdResponse::tp_chains_size() const {
+  return _internal_tp_chains_size();
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainsByUserIdResponse::mutable_tp_chains(int index) {
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse.tp_chains)
+  return tp_chains_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >*
+GetTpChainsByUserIdResponse::mutable_tp_chains() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse.tp_chains)
+  return &tp_chains_;
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& GetTpChainsByUserIdResponse::_internal_tp_chains(int index) const {
+  return tp_chains_.Get(index);
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& GetTpChainsByUserIdResponse::tp_chains(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse.tp_chains)
+  return _internal_tp_chains(index);
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainsByUserIdResponse::_internal_add_tp_chains() {
+  return tp_chains_.Add();
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainsByUserIdResponse::add_tp_chains() {
+  ::blockchain::thepower::v1alpha1::TpChain* _add = _internal_add_tp_chains();
+  // @@protoc_insertion_point(field_add:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse.tp_chains)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::thepower::v1alpha1::TpChain >&
+GetTpChainsByUserIdResponse::tp_chains() const {
+  // @@protoc_insertion_point(field_list:blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse.tp_chains)
+  return tp_chains_;
+}
+
+// -------------------------------------------------------------------
+
+// GetTpChainByIdResponse
+
+// .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
+inline bool GetTpChainByIdResponse::_internal_has_tp_chain() const {
+  return this != internal_default_instance() && tp_chain_ != nullptr;
+}
+inline bool GetTpChainByIdResponse::has_tp_chain() const {
+  return _internal_has_tp_chain();
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& GetTpChainByIdResponse::_internal_tp_chain() const {
+  const ::blockchain::thepower::v1alpha1::TpChain* p = tp_chain_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::thepower::v1alpha1::TpChain&>(
+      ::blockchain::thepower::v1alpha1::_TpChain_default_instance_);
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& GetTpChainByIdResponse::tp_chain() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain)
+  return _internal_tp_chain();
+}
+inline void GetTpChainByIdResponse::unsafe_arena_set_allocated_tp_chain(
+    ::blockchain::thepower::v1alpha1::TpChain* tp_chain) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain_);
+  }
+  tp_chain_ = tp_chain;
+  if (tp_chain) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain)
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainByIdResponse::release_tp_chain() {
+  
+  ::blockchain::thepower::v1alpha1::TpChain* temp = tp_chain_;
+  tp_chain_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainByIdResponse::unsafe_arena_release_tp_chain() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain)
+  
+  ::blockchain::thepower::v1alpha1::TpChain* temp = tp_chain_;
+  tp_chain_ = nullptr;
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainByIdResponse::_internal_mutable_tp_chain() {
+  
+  if (tp_chain_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpChain>(GetArenaForAllocation());
+    tp_chain_ = p;
+  }
+  return tp_chain_;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* GetTpChainByIdResponse::mutable_tp_chain() {
+  ::blockchain::thepower::v1alpha1::TpChain* _msg = _internal_mutable_tp_chain();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain)
+  return _msg;
+}
+inline void GetTpChainByIdResponse::set_allocated_tp_chain(::blockchain::thepower::v1alpha1::TpChain* tp_chain) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain_);
+  }
+  if (tp_chain) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain));
+    if (message_arena != submessage_arena) {
+      tp_chain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tp_chain, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  tp_chain_ = tp_chain;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

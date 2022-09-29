@@ -18,12 +18,10 @@ class ThepowerApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
-
+Ü	
 /blockchain/thepower/v1alpha1/thepower_api.protoblockchain.thepower.v1alpha1google/protobuf/empty.proto"X
 CreateTpChainRequest@
-tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"
-GetTpChainsRequest"5
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"5
 GetTpChainsByUserIdRequest
 user_id (	RuserId"\'
 GetTpChainByIdRequest
@@ -35,10 +33,9 @@ class ThepowerApi
 GetTpChainsByUserIdResponseB
 	tp_chains (2%.blockchain.thepower.v1alpha1.TpChainRtpChains"Z
 GetTpChainByIdResponse@
-tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain2ì
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain2ü
 BlockchainThePowerServicex
-CreateTpChain2.blockchain.thepower.v1alpha1.CreateTpChainRequest3.blockchain.thepower.v1alpha1.CreateTpChainResponser
-GetTpChains0.blockchain.thepower.v1alpha1.GetTpChainsRequest1.blockchain.thepower.v1alpha1.GetTpChainsResponseä
+CreateTpChain2.blockchain.thepower.v1alpha1.CreateTpChainRequest3.blockchain.thepower.v1alpha1.CreateTpChainResponseä
 GetTpChainsByUserId8.blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest9.blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse{
 GetTpChainById3.blockchain.thepower.v1alpha1.GetTpChainByIdRequest4.blockchain.thepower.v1alpha1.GetTpChainByIdResponseB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1bproto3'
         , true);

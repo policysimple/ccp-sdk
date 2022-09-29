@@ -1428,6 +1428,10 @@ class DeleteApplicationRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kIntegrationFieldNumber = 3,
+    kProjectIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1443,6 +1447,52 @@ class DeleteApplicationRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string integration = 3 [json_name = "integration"];
+  void clear_integration();
+  const std::string& integration() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration();
+  void set_allocated_integration(std::string* integration);
+  private:
+  const std::string& _internal_integration() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration(const std::string& value);
+  std::string* _internal_mutable_integration();
+  public:
+
+  // uint32 project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:application.v1alpha1.DeleteApplicationRequest)
  private:
   class _Internal;
@@ -1451,6 +1501,10 @@ class DeleteApplicationRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto;
 };
@@ -2833,6 +2887,138 @@ inline void DeleteApplicationRequest::set_allocated_id(std::string* id) {
   id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationRequest.id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void DeleteApplicationRequest::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& DeleteApplicationRequest::name() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationRequest.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteApplicationRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationRequest.name)
+}
+inline std::string* DeleteApplicationRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationRequest.name)
+  return _s;
+}
+inline const std::string& DeleteApplicationRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void DeleteApplicationRequest::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteApplicationRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteApplicationRequest::release_name() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteApplicationRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationRequest.name)
+}
+
+// string integration = 3 [json_name = "integration"];
+inline void DeleteApplicationRequest::clear_integration() {
+  integration_.ClearToEmpty();
+}
+inline const std::string& DeleteApplicationRequest::integration() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationRequest.integration)
+  return _internal_integration();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteApplicationRequest::set_integration(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationRequest.integration)
+}
+inline std::string* DeleteApplicationRequest::mutable_integration() {
+  std::string* _s = _internal_mutable_integration();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.DeleteApplicationRequest.integration)
+  return _s;
+}
+inline const std::string& DeleteApplicationRequest::_internal_integration() const {
+  return integration_.Get();
+}
+inline void DeleteApplicationRequest::_internal_set_integration(const std::string& value) {
+  
+  integration_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteApplicationRequest::_internal_mutable_integration() {
+  
+  return integration_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteApplicationRequest::release_integration() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.DeleteApplicationRequest.integration)
+  return integration_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteApplicationRequest::set_allocated_integration(std::string* integration) {
+  if (integration != nullptr) {
+    
+  } else {
+    
+  }
+  integration_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.DeleteApplicationRequest.integration)
+}
+
+// uint32 project_id = 4 [json_name = "projectId"];
+inline void DeleteApplicationRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteApplicationRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteApplicationRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationRequest.project_id)
+  return _internal_project_id();
+}
+inline void DeleteApplicationRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void DeleteApplicationRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationRequest.project_id)
+}
+
+// uint32 organization_id = 5 [json_name = "organizationId"];
+inline void DeleteApplicationRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteApplicationRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteApplicationRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.DeleteApplicationRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void DeleteApplicationRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void DeleteApplicationRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.DeleteApplicationRequest.organization_id)
 }
 
 // -------------------------------------------------------------------

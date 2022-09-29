@@ -21,6 +21,8 @@ namespace v1alpha1 {
 
 static const char* BlockchainThePowerService_method_names[] = {
   "/blockchain.thepower.v1alpha1.BlockchainThePowerService/CreateTpChain",
+  "/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainsByUserId",
+  "/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainById",
 };
 
 std::unique_ptr< BlockchainThePowerService::Stub> BlockchainThePowerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -31,6 +33,8 @@ std::unique_ptr< BlockchainThePowerService::Stub> BlockchainThePowerService::New
 
 BlockchainThePowerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateTpChain_(BlockchainThePowerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTpChainsByUserId_(BlockchainThePowerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTpChainById_(BlockchainThePowerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status BlockchainThePowerService::Stub::CreateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::CreateTpChainRequest& request, ::blockchain::thepower::v1alpha1::CreateTpChainResponse* response) {
@@ -49,18 +53,74 @@ void BlockchainThePowerService::Stub::experimental_async::CreateTpChain(::grpc::
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::thepower::v1alpha1::CreateTpChainResponse>::Create(channel_.get(), cq, rpcmethod_CreateTpChain_, context, request, false);
 }
 
+::grpc::Status BlockchainThePowerService::Stub::GetTpChainsByUserId(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest& request, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTpChainsByUserId_, context, request, response);
+}
+
+void BlockchainThePowerService::Stub::experimental_async::GetTpChainsByUserId(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTpChainsByUserId_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>* BlockchainThePowerService::Stub::AsyncGetTpChainsByUserIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>::Create(channel_.get(), cq, rpcmethod_GetTpChainsByUserId_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>* BlockchainThePowerService::Stub::PrepareAsyncGetTpChainsByUserIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>::Create(channel_.get(), cq, rpcmethod_GetTpChainsByUserId_, context, request, false);
+}
+
+::grpc::Status BlockchainThePowerService::Stub::GetTpChainById(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTpChainById_, context, request, response);
+}
+
+void BlockchainThePowerService::Stub::experimental_async::GetTpChainById(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTpChainById_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* BlockchainThePowerService::Stub::AsyncGetTpChainByIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>::Create(channel_.get(), cq, rpcmethod_GetTpChainById_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* BlockchainThePowerService::Stub::PrepareAsyncGetTpChainByIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>::Create(channel_.get(), cq, rpcmethod_GetTpChainById_, context, request, false);
+}
+
 BlockchainThePowerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainThePowerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< BlockchainThePowerService::Service, ::blockchain::thepower::v1alpha1::CreateTpChainRequest, ::blockchain::thepower::v1alpha1::CreateTpChainResponse>(
           std::mem_fn(&BlockchainThePowerService::Service::CreateTpChain), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainThePowerService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainThePowerService::Service, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>(
+          std::mem_fn(&BlockchainThePowerService::Service::GetTpChainsByUserId), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainThePowerService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainThePowerService::Service, ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>(
+          std::mem_fn(&BlockchainThePowerService::Service::GetTpChainById), this)));
 }
 
 BlockchainThePowerService::Service::~Service() {
 }
 
 ::grpc::Status BlockchainThePowerService::Service::CreateTpChain(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::CreateTpChainRequest* request, ::blockchain::thepower::v1alpha1::CreateTpChainResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainThePowerService::Service::GetTpChainsByUserId(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainThePowerService::Service::GetTpChainById(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response) {
   (void) context;
   (void) request;
   (void) response;

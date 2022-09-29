@@ -18,4 +18,40 @@ public interface DeleteRuntimeRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRuntimeIdBytes();
+
+  /**
+   * <code>string name = 2 [json_name = "name"];</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 2 [json_name = "name"];</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>string integration = 3 [json_name = "integration"];</code>
+   * @return The integration.
+   */
+  java.lang.String getIntegration();
+  /**
+   * <code>string integration = 3 [json_name = "integration"];</code>
+   * @return The bytes for integration.
+   */
+  com.google.protobuf.ByteString
+      getIntegrationBytes();
+
+  /**
+   * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+   * @return The projectId.
+   */
+  int getProjectId();
+
+  /**
+   * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  int getOrganizationId();
 }

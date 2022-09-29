@@ -22,7 +22,9 @@ namespace v1alpha1 {
 constexpr TpChain::TpChain(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : chain_nodes_()
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , chain_number_(0){}
 struct TpChainDefaultTypeInternal {
   constexpr TpChainDefaultTypeInternal()
@@ -76,9 +78,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, id_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, chain_number_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, user_id_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, chain_nodes_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpNode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -100,8 +104,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::thepower::v1alpha1::TpChain)},
-  { 8, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
-  { 19, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
+  { 10, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
+  { 21, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -112,11 +116,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+blockchain/thepower/v1alpha1/thepower."
-  "proto\022\034blockchain.thepower.v1alpha1\"\214\001\n\007"
-  "TpChain\022!\n\014chain_number\030\001 \001(\005R\013chainNumb"
-  "er\022\027\n\007user_id\030\002 \001(\tR\006userId\022E\n\013chain_nod"
-  "es\030\003 \003(\0132$.blockchain.thepower.v1alpha1."
-  "TpNodeR\nchainNodes\"\365\001\n\006TpNode\022\032\n\010nodenam"
+  "proto\022\034blockchain.thepower.v1alpha1\"\264\001\n\007"
+  "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030"
+  "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use"
+  "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th"
+  "epower.v1alpha1.TpNodeR\nchainNodes\022\026\n\006st"
+  "atus\030\005 \001(\tR\006status\"\365\001\n\006TpNode\022\032\n\010nodenam"
   "e\030\001 \001(\tR\010nodename\022\033\n\ttpic_port\030\002 \001(\003R\010tp"
   "icPort\022\031\n\010api_port\030\003 \001(\003R\007apiPort\022\033\n\tapi"
   "s_port\030\004 \001(\003R\010apisPort\022\027\n\007cc_port\030\005 \001(\003R"
@@ -130,7 +135,7 @@ const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto = {
-  false, false, 601, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
+  false, false, 641, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
   &descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once, nullptr, 0, 3,
   schemas, file_default_instances, TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto::offsets,
   file_level_metadata_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_service_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto,
@@ -165,9 +170,19 @@ TpChain::TpChain(const TpChain& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       chain_nodes_(from.chain_nodes_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
   user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_user_id().empty()) {
     user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
   chain_number_ = from.chain_number_;
@@ -175,7 +190,9 @@ TpChain::TpChain(const TpChain& from)
 }
 
 inline void TpChain::SharedCtor() {
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 chain_number_ = 0;
 }
 
@@ -188,7 +205,9 @@ TpChain::~TpChain() {
 
 inline void TpChain::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TpChain::ArenaDtor(void* object) {
@@ -208,7 +227,9 @@ void TpChain::Clear() {
   (void) cached_has_bits;
 
   chain_nodes_.Clear();
+  id_.ClearToEmpty();
   user_id_.ClearToEmpty();
+  status_.ClearToEmpty();
   chain_number_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -219,32 +240,50 @@ const char* TpChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 chain_number = 1 [json_name = "chainNumber"];
+      // string id = 1 [json_name = "id"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 chain_number = 2 [json_name = "chainNumber"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           chain_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string user_id = 2 [json_name = "userId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string user_id = 3 [json_name = "userId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_user_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.user_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_chain_nodes(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string status = 5 [json_name = "status"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.status"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -276,28 +315,48 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 chain_number = 1 [json_name = "chainNumber"];
-  if (this->_internal_chain_number() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_chain_number(), target);
+  // string id = 1 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.TpChain.id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_id(), target);
   }
 
-  // string user_id = 2 [json_name = "userId"];
+  // int32 chain_number = 2 [json_name = "chainNumber"];
+  if (this->_internal_chain_number() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_chain_number(), target);
+  }
+
+  // string user_id = 3 [json_name = "userId"];
   if (!this->_internal_user_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "blockchain.thepower.v1alpha1.TpChain.user_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_user_id(), target);
+        3, this->_internal_user_id(), target);
   }
 
-  // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];
+  // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_chain_nodes_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_chain_nodes(i), target, stream);
+      InternalWriteMessage(4, this->_internal_chain_nodes(i), target, stream);
+  }
+
+  // string status = 5 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.TpChain.status");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -316,21 +375,35 @@ size_t TpChain::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 3 [json_name = "chainNodes"];
+  // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
   total_size += 1UL * this->_internal_chain_nodes_size();
   for (const auto& msg : this->chain_nodes_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // string user_id = 2 [json_name = "userId"];
+  // string id = 1 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  // string user_id = 3 [json_name = "userId"];
   if (!this->_internal_user_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_user_id());
   }
 
-  // int32 chain_number = 1 [json_name = "chainNumber"];
+  // string status = 5 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // int32 chain_number = 2 [json_name = "chainNumber"];
   if (this->_internal_chain_number() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
@@ -366,8 +439,14 @@ void TpChain::MergeFrom(const TpChain& from) {
   (void) cached_has_bits;
 
   chain_nodes_.MergeFrom(from.chain_nodes_);
+  if (!from._internal_id().empty()) {
+    _internal_set_id(from._internal_id());
+  }
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
+  }
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
   }
   if (from._internal_chain_number() != 0) {
     _internal_set_chain_number(from._internal_chain_number());
@@ -392,8 +471,18 @@ void TpChain::InternalSwap(TpChain* other) {
   chain_nodes_.InternalSwap(&other->chain_nodes_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &user_id_, GetArenaForAllocation(),
       &other->user_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
   );
   swap(chain_number_, other->chain_number_);
 }
