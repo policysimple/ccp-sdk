@@ -11,59 +11,65 @@ service BlockchainAPIService {
     rpc AddPeerToOrganization(AddPeerToOrganizationRequest) returns (AddPeerToOrganizationResponse);
     rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
     rpc GetBlockchains(GetBlockchainsRequest) returns (GetBlockchainsResponse);
-    rpc CreateNetworkDefault(CreateNetworkDefaultRequest) returns (CreateNetworkDefaultResponse);
+    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc SendInvitation(SendInvitationRequest) returns (SendInvitationResponse);
 }
 
+
+// Requests messages
 message CreateNetworkRequest {
     blockchain.network.v1alpha1.Network network = 1;
-}
-
-message CreateNetworkDefaultResponse {
-    blockchain.network.v1alpha1.Network network = 1;
-    string status = 2;
-}
-
-message CreateNetworkDefaultRequest {
-    blockchain.network.v1alpha1.Network network = 1;
-    string status = 2;
+    blockchain.network.v1alpha1.Organization organization = 2;
 }
 
 message AddPeerToOrganizationRequest {
-    string org_domain = 1;
-    string admin_password = 2;
-    string admin_user = 3;
-    string network_name = 4;
-    string network_id = 5;
+    blockchain.network.v1alpha1.Organization organization = 1;
+    string blockchain_id = 2;
 }
 
 message CreateChannelRequest {
-    string creator_org_id = 1;
-    string blockchain_id = 2;
-    string channel_name = 3;
-    repeated string channel_org_ids = 4;
+    blockchain.network.v1alpha1.Channel channel = 1;
 }
 
+message GetBlockchainsRequest {
+    string id = 1;
+}
+
+message CreateOrganizationRequest {
+    blockchain.network.v1alpha1.Organization organization = 1;
+}
+
+message SendInvitationRequest {
+    blockchain.network.v1alpha1.Invitation invitation = 1;
+}
+
+// Response messages
 message CreateNetworkResponse {
-    string status = 1;
+    blockchain.network.v1alpha1.Network network = 1;
     string message = 2;
 }
 
 message AddPeerToOrganizationResponse {
-    string status = 1;
-    string message = 2;
+    blockchain.network.v1alpha1.Organization organization = 1;
+    string message = 3;
 }
 
 message CreateChannelResponse {
-    string status = 1;
+    blockchain.network.v1alpha1.Channel channel = 1;
     string message = 2;
 }
 
 message GetBlockchainsResponse {
     repeated blockchain.network.v1alpha1.Network network = 1;
-    string status = 2;
+    string message = 2;
 }
 
-message GetBlockchainsRequest {
-    string status = 2;
+message CreateOrganizationResponse {
+    blockchain.network.v1alpha1.Organization organization = 1;
+    string message = 2;
 }
 
+message SendInvitationResponse {
+    blockchain.network.v1alpha1.Invitation invitation = 1;
+    string message = 2;
+}

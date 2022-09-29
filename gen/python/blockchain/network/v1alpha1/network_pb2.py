@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)blockchain/network/v1alpha1/network.proto\x12\x1b\x62lockchain.network.v1alpha1\"\xdc\x01\n\x07Network\x12!\n\x0cnetwork_name\x18\x01 \x01(\tR\x0bnetworkName\x12\x1c\n\tframework\x18\x02 \x01(\tR\tframework\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\x12\x1d\n\norg_domain\x18\x04 \x01(\tR\torgDomain\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12%\n\x0e\x61\x64min_password\x18\x06 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x07 \x01(\tR\tadminUser\"\xa1\x01\n\x0cOrganization\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\ndomain_org\x18\x02 \x01(\tR\tdomainOrg\x12%\n\x0e\x61\x64min_password\x18\x03 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x04 \x01(\tR\tadminUser\x12\x13\n\x05\x62\x63_id\x18\x05 \x01(\tR\x04\x62\x63IdB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
+  serialized_pb=b'\n)blockchain/network/v1alpha1/network.proto\x12\x1b\x62lockchain.network.v1alpha1\"\x9f\x01\n\x07Network\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cnetwork_name\x18\x02 \x01(\tR\x0bnetworkName\x12\x1c\n\tframework\x18\x03 \x01(\tR\tframework\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x16\n\x06status\x18\x06 \x01(\tR\x06status\"\xba\x01\n\x0cOrganization\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x16\n\x06\x64omain\x18\x03 \x01(\tR\x06\x64omain\x12%\n\x0e\x61\x64min_password\x18\x04 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x05 \x01(\tR\tadminUser\x12#\n\rblockchain_id\x18\x06 \x01(\tR\x0c\x62lockchainId\"\x94\x01\n\x07\x43hannel\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12#\n\rblockchain_id\x18\x03 \x01(\tR\x0c\x62lockchainId\x12\x12\n\x04name\x18\x04 \x01(\tR\x04name\x12\x17\n\x07org_ids\x18\x05 \x03(\tR\x06orgIds\"\x91\x01\n\nInvitation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12 \n\x0c\x66rom_user_id\x18\x02 \x01(\tR\nfromUserId\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\x12#\n\rblockchain_id\x18\x05 \x01(\tR\x0c\x62lockchainIdB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
 )
 
 
@@ -34,33 +34,33 @@ _NETWORK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='network_name', full_name='blockchain.network.v1alpha1.Network.network_name', index=0,
+      name='id', full_name='blockchain.network.v1alpha1.Network.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network_name', full_name='blockchain.network.v1alpha1.Network.network_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='networkName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='framework', full_name='blockchain.network.v1alpha1.Network.framework', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='framework', full_name='blockchain.network.v1alpha1.Network.framework', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='framework', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='blockchain.network.v1alpha1.Network.type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='org_domain', full_name='blockchain.network.v1alpha1.Network.org_domain', index=3,
+      name='type', full_name='blockchain.network.v1alpha1.Network.type', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='orgDomain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='blockchain.network.v1alpha1.Network.user_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
@@ -69,19 +69,12 @@ _NETWORK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='admin_password', full_name='blockchain.network.v1alpha1.Network.admin_password', index=5,
+      name='status', full_name='blockchain.network.v1alpha1.Network.status', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='adminPassword', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='admin_user', full_name='blockchain.network.v1alpha1.Network.admin_user', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='adminUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -95,7 +88,7 @@ _NETWORK = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=75,
-  serialized_end=295,
+  serialized_end=234,
 )
 
 
@@ -108,40 +101,47 @@ _ORGANIZATION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='blockchain.network.v1alpha1.Organization.user_id', index=0,
+      name='id', full_name='blockchain.network.v1alpha1.Organization.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='blockchain.network.v1alpha1.Organization.user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='domain_org', full_name='blockchain.network.v1alpha1.Organization.domain_org', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='domain', full_name='blockchain.network.v1alpha1.Organization.domain', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='domainOrg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='domain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='admin_password', full_name='blockchain.network.v1alpha1.Organization.admin_password', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='admin_password', full_name='blockchain.network.v1alpha1.Organization.admin_password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='adminPassword', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='admin_user', full_name='blockchain.network.v1alpha1.Organization.admin_user', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='admin_user', full_name='blockchain.network.v1alpha1.Organization.admin_user', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='adminUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bc_id', full_name='blockchain.network.v1alpha1.Organization.bc_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      name='blockchain_id', full_name='blockchain.network.v1alpha1.Organization.blockchain_id', index=5,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='bcId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='blockchainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -154,12 +154,134 @@ _ORGANIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=298,
-  serialized_end=459,
+  serialized_start=237,
+  serialized_end=423,
+)
+
+
+_CHANNEL = _descriptor.Descriptor(
+  name='Channel',
+  full_name='blockchain.network.v1alpha1.Channel',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blockchain.network.v1alpha1.Channel.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='blockchain.network.v1alpha1.Channel.organization_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='blockchain_id', full_name='blockchain.network.v1alpha1.Channel.blockchain_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blockchainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='blockchain.network.v1alpha1.Channel.name', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='org_ids', full_name='blockchain.network.v1alpha1.Channel.org_ids', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='orgIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=426,
+  serialized_end=574,
+)
+
+
+_INVITATION = _descriptor.Descriptor(
+  name='Invitation',
+  full_name='blockchain.network.v1alpha1.Invitation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blockchain.network.v1alpha1.Invitation.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='from_user_id', full_name='blockchain.network.v1alpha1.Invitation.from_user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='fromUserId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='blockchain.network.v1alpha1.Invitation.email', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='email', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='blockchain.network.v1alpha1.Invitation.status', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='blockchain_id', full_name='blockchain.network.v1alpha1.Invitation.blockchain_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='blockchainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=577,
+  serialized_end=722,
 )
 
 DESCRIPTOR.message_types_by_name['Network'] = _NETWORK
 DESCRIPTOR.message_types_by_name['Organization'] = _ORGANIZATION
+DESCRIPTOR.message_types_by_name['Channel'] = _CHANNEL
+DESCRIPTOR.message_types_by_name['Invitation'] = _INVITATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Network = _reflection.GeneratedProtocolMessageType('Network', (_message.Message,), {
@@ -175,6 +297,20 @@ Organization = _reflection.GeneratedProtocolMessageType('Organization', (_messag
   # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Organization)
   })
 _sym_db.RegisterMessage(Organization)
+
+Channel = _reflection.GeneratedProtocolMessageType('Channel', (_message.Message,), {
+  'DESCRIPTOR' : _CHANNEL,
+  '__module__' : 'blockchain.network.v1alpha1.network_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Channel)
+  })
+_sym_db.RegisterMessage(Channel)
+
+Invitation = _reflection.GeneratedProtocolMessageType('Invitation', (_message.Message,), {
+  'DESCRIPTOR' : _INVITATION,
+  '__module__' : 'blockchain.network.v1alpha1.network_pb2'
+  # @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Invitation)
+  })
+_sym_db.RegisterMessage(Invitation)
 
 
 DESCRIPTOR._options = None

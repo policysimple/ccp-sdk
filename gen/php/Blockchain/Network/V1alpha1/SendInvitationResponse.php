@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.CreateChannelResponse</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.SendInvitationResponse</code>
  */
-class CreateChannelResponse extends \Google\Protobuf\Internal\Message
+class SendInvitationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];</code>
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
      */
-    protected $channel = null;
+    protected $invitation = null;
     /**
      * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      */
@@ -28,7 +28,7 @@ class CreateChannelResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Blockchain\Network\V1alpha1\Channel $channel
+     *     @type \Blockchain\Network\V1alpha1\Invitation $invitation
      *     @type string $message
      * }
      */
@@ -38,33 +38,33 @@ class CreateChannelResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];</code>
-     * @return \Blockchain\Network\V1alpha1\Channel|null
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     * @return \Blockchain\Network\V1alpha1\Invitation|null
      */
-    public function getChannel()
+    public function getInvitation()
     {
-        return $this->channel;
+        return $this->invitation;
     }
 
-    public function hasChannel()
+    public function hasInvitation()
     {
-        return isset($this->channel);
+        return isset($this->invitation);
     }
 
-    public function clearChannel()
+    public function clearInvitation()
     {
-        unset($this->channel);
+        unset($this->invitation);
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];</code>
-     * @param \Blockchain\Network\V1alpha1\Channel $var
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Invitation invitation = 1 [json_name = "invitation"];</code>
+     * @param \Blockchain\Network\V1alpha1\Invitation $var
      * @return $this
      */
-    public function setChannel($var)
+    public function setInvitation($var)
     {
-        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Channel::class);
-        $this->channel = $var;
+        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Invitation::class);
+        $this->invitation = $var;
 
         return $this;
     }

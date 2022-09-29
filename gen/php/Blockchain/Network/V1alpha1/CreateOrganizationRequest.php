@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.AddPeerToOrganizationRequest</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.CreateOrganizationRequest</code>
  */
-class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
+class CreateOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
      */
     protected $organization = null;
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     */
-    protected $blockchain_id = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Blockchain\Network\V1alpha1\Organization $organization
-     *     @type string $blockchain_id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,28 +60,6 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Organization::class);
         $this->organization = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     * @return string
-     */
-    public function getBlockchainId()
-    {
-        return $this->blockchain_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBlockchainId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->blockchain_id = $var;
 
         return $this;
     }

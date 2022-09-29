@@ -72,6 +72,28 @@ function deserialize_blockchain_thepower_v1alpha1_GetTpChainsByUserIdResponse(bu
   return blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsByUserIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_blockchain_thepower_v1alpha1_GetTpChainsRequest(arg) {
+  if (!(arg instanceof blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsRequest)) {
+    throw new Error('Expected argument of type blockchain.thepower.v1alpha1.GetTpChainsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_thepower_v1alpha1_GetTpChainsRequest(buffer_arg) {
+  return blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_blockchain_thepower_v1alpha1_GetTpChainsResponse(arg) {
+  if (!(arg instanceof blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsResponse)) {
+    throw new Error('Expected argument of type blockchain.thepower.v1alpha1.GetTpChainsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_thepower_v1alpha1_GetTpChainsResponse(buffer_arg) {
+  return blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var BlockchainThePowerServiceService = exports.BlockchainThePowerServiceService = {
   createTpChain: {
@@ -85,7 +107,17 @@ var BlockchainThePowerServiceService = exports.BlockchainThePowerServiceService 
     responseSerialize: serialize_blockchain_thepower_v1alpha1_CreateTpChainResponse,
     responseDeserialize: deserialize_blockchain_thepower_v1alpha1_CreateTpChainResponse,
   },
-  // rpc GetTpChains (google.protobuf.Empty) returns (GetTpChainsResponse);
+  getTpChains: {
+    path: '/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChains',
+    requestStream: false,
+    responseStream: false,
+    requestType: blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsRequest,
+    responseType: blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsResponse,
+    requestSerialize: serialize_blockchain_thepower_v1alpha1_GetTpChainsRequest,
+    requestDeserialize: deserialize_blockchain_thepower_v1alpha1_GetTpChainsRequest,
+    responseSerialize: serialize_blockchain_thepower_v1alpha1_GetTpChainsResponse,
+    responseDeserialize: deserialize_blockchain_thepower_v1alpha1_GetTpChainsResponse,
+  },
   getTpChainsByUserId: {
     path: '/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainsByUserId',
     requestStream: false,

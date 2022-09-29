@@ -30,7 +30,19 @@ class BlockchainThePowerServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * rpc GetTpChains (google.protobuf.Empty) returns (GetTpChainsResponse);
+     * @param \Blockchain\Thepower\V1alpha1\GetTpChainsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTpChains(\Blockchain\Thepower\V1alpha1\GetTpChainsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChains',
+        $argument,
+        ['\Blockchain\Thepower\V1alpha1\GetTpChainsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Blockchain\Thepower\V1alpha1\GetTpChainsByUserIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

@@ -69,15 +69,28 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\CreateNetworkDefaultRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\CreateOrganizationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function CreateNetworkDefault(\Blockchain\Network\V1alpha1\CreateNetworkDefaultRequest $argument,
+    public function CreateOrganization(\Blockchain\Network\V1alpha1\CreateOrganizationRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateNetworkDefault',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization',
         $argument,
-        ['\Blockchain\Network\V1alpha1\CreateNetworkDefaultResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\CreateOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Network\V1alpha1\SendInvitationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SendInvitation(\Blockchain\Network\V1alpha1\SendInvitationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\SendInvitationResponse', 'decode'],
         $metadata, $options);
     }
 

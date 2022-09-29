@@ -19,6 +19,11 @@ class BlockchainThePowerServiceStub(object):
         request_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.CreateTpChainRequest.SerializeToString,
         response_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.CreateTpChainResponse.FromString,
         )
+    self.GetTpChains = channel.unary_unary(
+        '/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChains',
+        request_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainsRequest.SerializeToString,
+        response_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainsResponse.FromString,
+        )
     self.GetTpChainsByUserId = channel.unary_unary(
         '/blockchain.thepower.v1alpha1.BlockchainThePowerService/GetTpChainsByUserId',
         request_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainsByUserIdRequest.SerializeToString,
@@ -42,9 +47,16 @@ class BlockchainThePowerServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetTpChains(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetTpChainsByUserId(self, request, context):
-    """rpc GetTpChains (google.protobuf.Empty) returns (GetTpChainsResponse);
-    """
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -63,6 +75,11 @@ def add_BlockchainThePowerServiceServicer_to_server(servicer, server):
           servicer.CreateTpChain,
           request_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.CreateTpChainRequest.FromString,
           response_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.CreateTpChainResponse.SerializeToString,
+      ),
+      'GetTpChains': grpc.unary_unary_rpc_method_handler(
+          servicer.GetTpChains,
+          request_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainsRequest.FromString,
+          response_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainsResponse.SerializeToString,
       ),
       'GetTpChainsByUserId': grpc.unary_unary_rpc_method_handler(
           servicer.GetTpChainsByUserId,

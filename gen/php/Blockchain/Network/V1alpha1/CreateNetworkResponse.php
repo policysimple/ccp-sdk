@@ -9,14 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Response messages
+ *
  * Generated from protobuf message <code>blockchain.network.v1alpha1.CreateNetworkResponse</code>
  */
 class CreateNetworkResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];</code>
      */
-    protected $status = '';
+    protected $network = null;
     /**
      * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      */
@@ -28,7 +30,7 @@ class CreateNetworkResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $status
+     *     @type \Blockchain\Network\V1alpha1\Network $network
      *     @type string $message
      * }
      */
@@ -38,23 +40,33 @@ class CreateNetworkResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
-     * @return string
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];</code>
+     * @return \Blockchain\Network\V1alpha1\Network|null
      */
-    public function getStatus()
+    public function getNetwork()
     {
-        return $this->status;
+        return $this->network;
+    }
+
+    public function hasNetwork()
+    {
+        return isset($this->network);
+    }
+
+    public function clearNetwork()
+    {
+        unset($this->network);
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];</code>
+     * @param \Blockchain\Network\V1alpha1\Network $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setNetwork($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->status = $var;
+        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Network::class);
+        $this->network = $var;
 
         return $this;
     }
