@@ -373,7 +373,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.payment.v1alpha1.Customer.repeatedFields_ = [10];
+proto.payment.v1alpha1.Customer.repeatedFields_ = [11];
 
 
 
@@ -411,6 +411,7 @@ proto.payment.v1alpha1.Customer.toObject = function(includeInstance, msg) {
     organizationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     email: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    defaultpaymentmethod: jspb.Message.getFieldWithDefault(msg, 6, ""),
     subscription: (f = msg.getSubscription()) && proto.payment.v1alpha1.Subscription.toObject(includeInstance, f),
     payments: (f = msg.getPayments()) && proto.payment.v1alpha1.PaymentList.toObject(includeInstance, f),
     invoice: (f = msg.getInvoice()) && proto.payment.v1alpha1.Invoice.toObject(includeInstance, f),
@@ -474,26 +475,30 @@ proto.payment.v1alpha1.Customer.deserializeBinaryFromReader = function(msg, read
       msg.setEmail(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefaultpaymentmethod(value);
+      break;
+    case 7:
       var value = new proto.payment.v1alpha1.Subscription;
       reader.readMessage(value,proto.payment.v1alpha1.Subscription.deserializeBinaryFromReader);
       msg.setSubscription(value);
       break;
-    case 7:
+    case 8:
       var value = new proto.payment.v1alpha1.PaymentList;
       reader.readMessage(value,proto.payment.v1alpha1.PaymentList.deserializeBinaryFromReader);
       msg.setPayments(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.payment.v1alpha1.Invoice;
       reader.readMessage(value,proto.payment.v1alpha1.Invoice.deserializeBinaryFromReader);
       msg.setInvoice(value);
       break;
-    case 9:
+    case 10:
       var value = new proto.payment.v1alpha1.Biling;
       reader.readMessage(value,proto.payment.v1alpha1.Biling.deserializeBinaryFromReader);
       msg.setBiling(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.payment.v1alpha1.Project;
       reader.readMessage(value,proto.payment.v1alpha1.Project.deserializeBinaryFromReader);
       msg.addProjects(value);
@@ -562,10 +567,17 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
       f
     );
   }
+  f = message.getDefaultpaymentmethod();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getSubscription();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.payment.v1alpha1.Subscription.serializeBinaryToWriter
     );
@@ -573,7 +585,7 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
   f = message.getPayments();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       proto.payment.v1alpha1.PaymentList.serializeBinaryToWriter
     );
@@ -581,7 +593,7 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
   f = message.getInvoice();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       proto.payment.v1alpha1.Invoice.serializeBinaryToWriter
     );
@@ -589,7 +601,7 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
   f = message.getBiling();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       proto.payment.v1alpha1.Biling.serializeBinaryToWriter
     );
@@ -597,7 +609,7 @@ proto.payment.v1alpha1.Customer.serializeBinaryToWriter = function(message, writ
   f = message.getProjectsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      10,
+      11,
       f,
       proto.payment.v1alpha1.Project.serializeBinaryToWriter
     );
@@ -696,12 +708,30 @@ proto.payment.v1alpha1.Customer.prototype.setEmail = function(value) {
 
 
 /**
- * optional Subscription subscription = 6;
+ * optional string defaultpaymentmethod = 6;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Customer.prototype.getDefaultpaymentmethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Customer} returns this
+ */
+proto.payment.v1alpha1.Customer.prototype.setDefaultpaymentmethod = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional Subscription subscription = 7;
  * @return {?proto.payment.v1alpha1.Subscription}
  */
 proto.payment.v1alpha1.Customer.prototype.getSubscription = function() {
   return /** @type{?proto.payment.v1alpha1.Subscription} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Subscription, 6));
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Subscription, 7));
 };
 
 
@@ -710,7 +740,7 @@ proto.payment.v1alpha1.Customer.prototype.getSubscription = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
 proto.payment.v1alpha1.Customer.prototype.setSubscription = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -728,17 +758,17 @@ proto.payment.v1alpha1.Customer.prototype.clearSubscription = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.Customer.prototype.hasSubscription = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional PaymentList payments = 7;
+ * optional PaymentList payments = 8;
  * @return {?proto.payment.v1alpha1.PaymentList}
  */
 proto.payment.v1alpha1.Customer.prototype.getPayments = function() {
   return /** @type{?proto.payment.v1alpha1.PaymentList} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.PaymentList, 7));
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.PaymentList, 8));
 };
 
 
@@ -747,7 +777,7 @@ proto.payment.v1alpha1.Customer.prototype.getPayments = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
 proto.payment.v1alpha1.Customer.prototype.setPayments = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -765,17 +795,17 @@ proto.payment.v1alpha1.Customer.prototype.clearPayments = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.Customer.prototype.hasPayments = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional Invoice invoice = 8;
+ * optional Invoice invoice = 9;
  * @return {?proto.payment.v1alpha1.Invoice}
  */
 proto.payment.v1alpha1.Customer.prototype.getInvoice = function() {
   return /** @type{?proto.payment.v1alpha1.Invoice} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Invoice, 8));
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Invoice, 9));
 };
 
 
@@ -784,7 +814,7 @@ proto.payment.v1alpha1.Customer.prototype.getInvoice = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
 proto.payment.v1alpha1.Customer.prototype.setInvoice = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -802,17 +832,17 @@ proto.payment.v1alpha1.Customer.prototype.clearInvoice = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.Customer.prototype.hasInvoice = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional Biling biling = 9;
+ * optional Biling biling = 10;
  * @return {?proto.payment.v1alpha1.Biling}
  */
 proto.payment.v1alpha1.Customer.prototype.getBiling = function() {
   return /** @type{?proto.payment.v1alpha1.Biling} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Biling, 9));
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Biling, 10));
 };
 
 
@@ -821,7 +851,7 @@ proto.payment.v1alpha1.Customer.prototype.getBiling = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
 proto.payment.v1alpha1.Customer.prototype.setBiling = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -839,17 +869,17 @@ proto.payment.v1alpha1.Customer.prototype.clearBiling = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.Customer.prototype.hasBiling = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * repeated Project projects = 10;
+ * repeated Project projects = 11;
  * @return {!Array<!proto.payment.v1alpha1.Project>}
  */
 proto.payment.v1alpha1.Customer.prototype.getProjectsList = function() {
   return /** @type{!Array<!proto.payment.v1alpha1.Project>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.payment.v1alpha1.Project, 10));
+    jspb.Message.getRepeatedWrapperField(this, proto.payment.v1alpha1.Project, 11));
 };
 
 
@@ -858,7 +888,7 @@ proto.payment.v1alpha1.Customer.prototype.getProjectsList = function() {
  * @return {!proto.payment.v1alpha1.Customer} returns this
 */
 proto.payment.v1alpha1.Customer.prototype.setProjectsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -868,7 +898,7 @@ proto.payment.v1alpha1.Customer.prototype.setProjectsList = function(value) {
  * @return {!proto.payment.v1alpha1.Project}
  */
 proto.payment.v1alpha1.Customer.prototype.addProjects = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.payment.v1alpha1.Project, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.payment.v1alpha1.Project, opt_index);
 };
 
 

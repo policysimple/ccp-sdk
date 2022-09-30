@@ -465,3 +465,27 @@ func StopProject(in *paymentpkgv1.StopProjectRequest) (response *paymentpkgv1.St
 	}
 	return response, nil
 }
+
+func SetDefaultPaymentMethod (in *paymentpkgv1.SetDefaultPaymentMethodRequest) (response *paymentpkgv1.SetDefaultPaymentMethodResponse, err error) {
+	fmt.Println("SetDefaultPaymentMethod")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.SetDefaultPaymentMethod(ctx, &paymentpkgv1.SetDefaultPaymentMethodRequest{
+		OrganizationId: in.OrganizationId,
+		CardId:     in.CardId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error set default payment method", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error set default payment method", err),
+		)
+	}
+	return response, nil
+}

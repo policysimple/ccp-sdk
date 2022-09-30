@@ -31,6 +31,7 @@ service PaymentAPIService{
    
     //Update service
     rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse) {};
+    rpc SetDefaultPaymentMethod(SetDefaultPaymentMethodRequest) returns (SetDefaultPaymentMethodResponse) {};
   
     //Delete service
     rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse) {};
@@ -38,10 +39,10 @@ service PaymentAPIService{
     rpc CancelSubscription(CancelSubscriptionRequest) returns (CancelSubscriptionResponse) {}; 
     rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse) {}
 
-        //Filter service
-        rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
+    //Filter service
+    rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
 
-           //Pause Project Consumption
+    //Pause Project Consumption
     rpc StopProject(StopProjectRequest) returns (StopProjectResponse){};
     }
 
@@ -285,4 +286,14 @@ message DeleteProjectRequest {
 
 message DeleteProjectResponse {
     string status = 1;
+}
+
+message SetDefaultPaymentMethodRequest {
+    uint32 organization_id = 1;
+    string card_id = 2;
+}
+
+message SetDefaultPaymentMethodResponse {
+    string msg = 1;
+    string error = 2;
 }

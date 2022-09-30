@@ -38,6 +38,7 @@ type PaymentAPIServiceClient interface {
 	ListSubscriptionItems(ctx context.Context, in *ListSubscriptionItemsRequest, opts ...grpc.CallOption) (*ListSubscriptionItemsResponse, error)
 	//Update service
 	UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error)
+	SetDefaultPaymentMethod(ctx context.Context, in *SetDefaultPaymentMethodRequest, opts ...grpc.CallOption) (*SetDefaultPaymentMethodResponse, error)
 	//Delete service
 	DeleteProject(ctx context.Context, in *DeleteProjectRequest, opts ...grpc.CallOption) (*DeleteProjectResponse, error)
 	DeletePayment(ctx context.Context, in *DeletePaymentRequest, opts ...grpc.CallOption) (*DeletePaymentResponse, error)
@@ -201,6 +202,15 @@ func (c *paymentAPIServiceClient) UpdateSubscription(ctx context.Context, in *Up
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) SetDefaultPaymentMethod(ctx context.Context, in *SetDefaultPaymentMethodRequest, opts ...grpc.CallOption) (*SetDefaultPaymentMethodResponse, error) {
+	out := new(SetDefaultPaymentMethodResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/SetDefaultPaymentMethod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *paymentAPIServiceClient) DeleteProject(ctx context.Context, in *DeleteProjectRequest, opts ...grpc.CallOption) (*DeleteProjectResponse, error) {
 	out := new(DeleteProjectResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/DeleteProject", in, out, opts...)
@@ -279,6 +289,7 @@ type PaymentAPIServiceServer interface {
 	ListSubscriptionItems(context.Context, *ListSubscriptionItemsRequest) (*ListSubscriptionItemsResponse, error)
 	//Update service
 	UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error)
+	SetDefaultPaymentMethod(context.Context, *SetDefaultPaymentMethodRequest) (*SetDefaultPaymentMethodResponse, error)
 	//Delete service
 	DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error)
 	DeletePayment(context.Context, *DeletePaymentRequest) (*DeletePaymentResponse, error)
@@ -341,6 +352,9 @@ func (UnimplementedPaymentAPIServiceServer) ListSubscriptionItems(context.Contex
 }
 func (UnimplementedPaymentAPIServiceServer) UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSubscription not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) SetDefaultPaymentMethod(context.Context, *SetDefaultPaymentMethodRequest) (*SetDefaultPaymentMethodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetDefaultPaymentMethod not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) DeleteProject(context.Context, *DeleteProjectRequest) (*DeleteProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProject not implemented")
@@ -660,6 +674,24 @@ func _PaymentAPIService_UpdateSubscription_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_SetDefaultPaymentMethod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetDefaultPaymentMethodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).SetDefaultPaymentMethod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/SetDefaultPaymentMethod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).SetDefaultPaymentMethod(ctx, req.(*SetDefaultPaymentMethodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PaymentAPIService_DeleteProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteProjectRequest)
 	if err := dec(in); err != nil {
@@ -838,6 +870,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateSubscription",
 			Handler:    _PaymentAPIService_UpdateSubscription_Handler,
+		},
+		{
+			MethodName: "SetDefaultPaymentMethod",
+			Handler:    _PaymentAPIService_SetDefaultPaymentMethod_Handler,
 		},
 		{
 			MethodName: "DeleteProject",

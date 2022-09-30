@@ -94,6 +94,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSubscriptionRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSubscriptionResponse.FromString,
         )
+    self.SetDefaultPaymentMethod = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/SetDefaultPaymentMethod',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.SetDefaultPaymentMethodRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.SetDefaultPaymentMethodResponse.FromString,
+        )
     self.DeleteProject = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/DeleteProject',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.DeleteProjectRequest.SerializeToString,
@@ -242,6 +247,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SetDefaultPaymentMethod(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def DeleteProject(self, request, context):
     """Delete service
     """
@@ -366,6 +378,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.UpdateSubscription,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSubscriptionRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSubscriptionResponse.SerializeToString,
+      ),
+      'SetDefaultPaymentMethod': grpc.unary_unary_rpc_method_handler(
+          servicer.SetDefaultPaymentMethod,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.SetDefaultPaymentMethodRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.SetDefaultPaymentMethodResponse.SerializeToString,
       ),
       'DeleteProject': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteProject,

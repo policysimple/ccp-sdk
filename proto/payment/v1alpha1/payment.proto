@@ -9,12 +9,13 @@ message Customer {
   string customer_id = 2;
   uint32 organization_id = 3;
   string name = 4;
-  string email = 5;  
-  Subscription subscription = 6;
-  PaymentList payments = 7;
-  Invoice invoice = 8;
-  Biling biling = 9;
-  repeated Project projects= 10;
+  string email = 5; 
+  string defaultpaymentmethod = 6; 
+  Subscription subscription = 7;
+  PaymentList payments = 8;
+  Invoice invoice = 9;
+  Biling biling = 10;
+  repeated Project projects= 11;
 }
 
 message Project {
