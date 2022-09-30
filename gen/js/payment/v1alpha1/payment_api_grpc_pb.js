@@ -445,6 +445,28 @@ function deserialize_payment_v1alpha1_ListSubscriptionItemsResponse(buffer_arg) 
   return payment_v1alpha1_payment_api_pb.ListSubscriptionItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_SetDefaultPaymentMethodRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.SetDefaultPaymentMethodRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.SetDefaultPaymentMethodRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_SetDefaultPaymentMethodRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.SetDefaultPaymentMethodRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_SetDefaultPaymentMethodResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.SetDefaultPaymentMethodResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.SetDefaultPaymentMethodResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_SetDefaultPaymentMethodResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.SetDefaultPaymentMethodResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_StopProjectRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.StopProjectRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.StopProjectRequest');
@@ -670,6 +692,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_UpdateSubscriptionRequest,
     responseSerialize: serialize_payment_v1alpha1_UpdateSubscriptionResponse,
     responseDeserialize: deserialize_payment_v1alpha1_UpdateSubscriptionResponse,
+  },
+  setDefaultPaymentMethod: {
+    path: '/payment.v1alpha1.PaymentAPIService/SetDefaultPaymentMethod',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.SetDefaultPaymentMethodRequest,
+    responseType: payment_v1alpha1_payment_api_pb.SetDefaultPaymentMethodResponse,
+    requestSerialize: serialize_payment_v1alpha1_SetDefaultPaymentMethodRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_SetDefaultPaymentMethodRequest,
+    responseSerialize: serialize_payment_v1alpha1_SetDefaultPaymentMethodResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_SetDefaultPaymentMethodResponse,
   },
   // Delete service
   deleteProject: {

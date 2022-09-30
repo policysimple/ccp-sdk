@@ -243,18 +243,19 @@ class Customer final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kProjectsFieldNumber = 10,
+    kProjectsFieldNumber = 11,
     kIdFieldNumber = 1,
     kCustomerIdFieldNumber = 2,
     kNameFieldNumber = 4,
     kEmailFieldNumber = 5,
-    kSubscriptionFieldNumber = 6,
-    kPaymentsFieldNumber = 7,
-    kInvoiceFieldNumber = 8,
-    kBilingFieldNumber = 9,
+    kDefaultpaymentmethodFieldNumber = 6,
+    kSubscriptionFieldNumber = 7,
+    kPaymentsFieldNumber = 8,
+    kInvoiceFieldNumber = 9,
+    kBilingFieldNumber = 10,
     kOrganizationIdFieldNumber = 3,
   };
-  // repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];
+  // repeated .payment.v1alpha1.Project projects = 11 [json_name = "projects"];
   int projects_size() const;
   private:
   int _internal_projects_size() const;
@@ -328,7 +329,21 @@ class Customer final :
   std::string* _internal_mutable_email();
   public:
 
-  // .payment.v1alpha1.Subscription subscription = 6 [json_name = "subscription"];
+  // string defaultpaymentmethod = 6 [json_name = "defaultpaymentmethod"];
+  void clear_defaultpaymentmethod();
+  const std::string& defaultpaymentmethod() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_defaultpaymentmethod(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_defaultpaymentmethod();
+  PROTOBUF_MUST_USE_RESULT std::string* release_defaultpaymentmethod();
+  void set_allocated_defaultpaymentmethod(std::string* defaultpaymentmethod);
+  private:
+  const std::string& _internal_defaultpaymentmethod() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_defaultpaymentmethod(const std::string& value);
+  std::string* _internal_mutable_defaultpaymentmethod();
+  public:
+
+  // .payment.v1alpha1.Subscription subscription = 7 [json_name = "subscription"];
   bool has_subscription() const;
   private:
   bool _internal_has_subscription() const;
@@ -346,7 +361,7 @@ class Customer final :
       ::payment::v1alpha1::Subscription* subscription);
   ::payment::v1alpha1::Subscription* unsafe_arena_release_subscription();
 
-  // .payment.v1alpha1.PaymentList payments = 7 [json_name = "payments"];
+  // .payment.v1alpha1.PaymentList payments = 8 [json_name = "payments"];
   bool has_payments() const;
   private:
   bool _internal_has_payments() const;
@@ -364,7 +379,7 @@ class Customer final :
       ::payment::v1alpha1::PaymentList* payments);
   ::payment::v1alpha1::PaymentList* unsafe_arena_release_payments();
 
-  // .payment.v1alpha1.Invoice invoice = 8 [json_name = "invoice"];
+  // .payment.v1alpha1.Invoice invoice = 9 [json_name = "invoice"];
   bool has_invoice() const;
   private:
   bool _internal_has_invoice() const;
@@ -382,7 +397,7 @@ class Customer final :
       ::payment::v1alpha1::Invoice* invoice);
   ::payment::v1alpha1::Invoice* unsafe_arena_release_invoice();
 
-  // .payment.v1alpha1.Biling biling = 9 [json_name = "biling"];
+  // .payment.v1alpha1.Biling biling = 10 [json_name = "biling"];
   bool has_biling() const;
   private:
   bool _internal_has_biling() const;
@@ -421,6 +436,7 @@ class Customer final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr defaultpaymentmethod_;
   ::payment::v1alpha1::Subscription* subscription_;
   ::payment::v1alpha1::PaymentList* payments_;
   ::payment::v1alpha1::Invoice* invoice_;
@@ -3515,7 +3531,53 @@ inline void Customer::set_allocated_email(std::string* email) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.email)
 }
 
-// .payment.v1alpha1.Subscription subscription = 6 [json_name = "subscription"];
+// string defaultpaymentmethod = 6 [json_name = "defaultpaymentmethod"];
+inline void Customer::clear_defaultpaymentmethod() {
+  defaultpaymentmethod_.ClearToEmpty();
+}
+inline const std::string& Customer::defaultpaymentmethod() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Customer.defaultpaymentmethod)
+  return _internal_defaultpaymentmethod();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Customer::set_defaultpaymentmethod(ArgT0&& arg0, ArgT... args) {
+ 
+ defaultpaymentmethod_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Customer.defaultpaymentmethod)
+}
+inline std::string* Customer::mutable_defaultpaymentmethod() {
+  std::string* _s = _internal_mutable_defaultpaymentmethod();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Customer.defaultpaymentmethod)
+  return _s;
+}
+inline const std::string& Customer::_internal_defaultpaymentmethod() const {
+  return defaultpaymentmethod_.Get();
+}
+inline void Customer::_internal_set_defaultpaymentmethod(const std::string& value) {
+  
+  defaultpaymentmethod_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Customer::_internal_mutable_defaultpaymentmethod() {
+  
+  return defaultpaymentmethod_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Customer::release_defaultpaymentmethod() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Customer.defaultpaymentmethod)
+  return defaultpaymentmethod_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Customer::set_allocated_defaultpaymentmethod(std::string* defaultpaymentmethod) {
+  if (defaultpaymentmethod != nullptr) {
+    
+  } else {
+    
+  }
+  defaultpaymentmethod_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), defaultpaymentmethod,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.defaultpaymentmethod)
+}
+
+// .payment.v1alpha1.Subscription subscription = 7 [json_name = "subscription"];
 inline bool Customer::_internal_has_subscription() const {
   return this != internal_default_instance() && subscription_ != nullptr;
 }
@@ -3605,7 +3667,7 @@ inline void Customer::set_allocated_subscription(::payment::v1alpha1::Subscripti
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.subscription)
 }
 
-// .payment.v1alpha1.PaymentList payments = 7 [json_name = "payments"];
+// .payment.v1alpha1.PaymentList payments = 8 [json_name = "payments"];
 inline bool Customer::_internal_has_payments() const {
   return this != internal_default_instance() && payments_ != nullptr;
 }
@@ -3695,7 +3757,7 @@ inline void Customer::set_allocated_payments(::payment::v1alpha1::PaymentList* p
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.payments)
 }
 
-// .payment.v1alpha1.Invoice invoice = 8 [json_name = "invoice"];
+// .payment.v1alpha1.Invoice invoice = 9 [json_name = "invoice"];
 inline bool Customer::_internal_has_invoice() const {
   return this != internal_default_instance() && invoice_ != nullptr;
 }
@@ -3785,7 +3847,7 @@ inline void Customer::set_allocated_invoice(::payment::v1alpha1::Invoice* invoic
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.invoice)
 }
 
-// .payment.v1alpha1.Biling biling = 9 [json_name = "biling"];
+// .payment.v1alpha1.Biling biling = 10 [json_name = "biling"];
 inline bool Customer::_internal_has_biling() const {
   return this != internal_default_instance() && biling_ != nullptr;
 }
@@ -3875,7 +3937,7 @@ inline void Customer::set_allocated_biling(::payment::v1alpha1::Biling* biling) 
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Customer.biling)
 }
 
-// repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];
+// repeated .payment.v1alpha1.Project projects = 11 [json_name = "projects"];
 inline int Customer::_internal_projects_size() const {
   return projects_.size();
 }

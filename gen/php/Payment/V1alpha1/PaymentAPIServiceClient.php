@@ -229,6 +229,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Payment\V1alpha1\SetDefaultPaymentMethodRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SetDefaultPaymentMethod(\Payment\V1alpha1\SetDefaultPaymentMethodRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/SetDefaultPaymentMethod',
+        $argument,
+        ['\Payment\V1alpha1\SetDefaultPaymentMethodResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Delete service
      * @param \Payment\V1alpha1\DeleteProjectRequest $argument input argument
      * @param array $metadata metadata
