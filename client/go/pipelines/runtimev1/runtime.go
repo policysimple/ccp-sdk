@@ -177,22 +177,3 @@ func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.
 	return response, nil
 }
 
-func ResponseMessageDeleteRuntimeByAppId(in *runtimepkgv1.ResponseMessageDeleteRuntimeByAppIdRequest) (response *runtimepkgv1.ResponseMessageDeleteRuntimeByAppIdResponse, err error) {
-	d, err := time.ParseDuration(runtimeServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.ResponseMessageDeleteRuntimeByAppId(ctx, in)
-
-	if err != nil {
-		log.Printf("%s: %v", "Error list runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list runtime", err),
-		)
-	}
-	return response, nil
-}
