@@ -47,7 +47,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -69,6 +69,12 @@ extern DeleteRuntimeRequestDefaultTypeInternal _DeleteRuntimeRequest_default_ins
 class DeleteRuntimeResponse;
 struct DeleteRuntimeResponseDefaultTypeInternal;
 extern DeleteRuntimeResponseDefaultTypeInternal _DeleteRuntimeResponse_default_instance_;
+class DeleteRuntimesByApplicationRequest;
+struct DeleteRuntimesByApplicationRequestDefaultTypeInternal;
+extern DeleteRuntimesByApplicationRequestDefaultTypeInternal _DeleteRuntimesByApplicationRequest_default_instance_;
+class DeleteRuntimesByApplicationResponse;
+struct DeleteRuntimesByApplicationResponseDefaultTypeInternal;
+extern DeleteRuntimesByApplicationResponseDefaultTypeInternal _DeleteRuntimesByApplicationResponse_default_instance_;
 class GetRuntimeRequest;
 struct GetRuntimeRequestDefaultTypeInternal;
 extern GetRuntimeRequestDefaultTypeInternal _GetRuntimeRequest_default_instance_;
@@ -81,6 +87,12 @@ extern ListRuntimesRequestDefaultTypeInternal _ListRuntimesRequest_default_insta
 class ListRuntimesResponse;
 struct ListRuntimesResponseDefaultTypeInternal;
 extern ListRuntimesResponseDefaultTypeInternal _ListRuntimesResponse_default_instance_;
+class ResponseMessageDeleteRuntimeByAppIdRequest;
+struct ResponseMessageDeleteRuntimeByAppIdRequestDefaultTypeInternal;
+extern ResponseMessageDeleteRuntimeByAppIdRequestDefaultTypeInternal _ResponseMessageDeleteRuntimeByAppIdRequest_default_instance_;
+class ResponseMessageDeleteRuntimeByAppIdResponse;
+struct ResponseMessageDeleteRuntimeByAppIdResponseDefaultTypeInternal;
+extern ResponseMessageDeleteRuntimeByAppIdResponseDefaultTypeInternal _ResponseMessageDeleteRuntimeByAppIdResponse_default_instance_;
 class UpdateResponseMessageRuntimeRequest;
 struct UpdateResponseMessageRuntimeRequestDefaultTypeInternal;
 extern UpdateResponseMessageRuntimeRequestDefaultTypeInternal _UpdateResponseMessageRuntimeRequest_default_instance_;
@@ -101,10 +113,14 @@ template<> ::pipelines::runtime::v1alpha1::CreateRuntimeRequest* Arena::CreateMa
 template<> ::pipelines::runtime::v1alpha1::CreateRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::CreateRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimeRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationRequest>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::GetRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::GetRuntimeRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::GetRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::GetRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ListRuntimesRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ListRuntimesRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ListRuntimesResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ListRuntimesResponse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdRequest>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::UpdateRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::UpdateRuntimeRequest>(Arena*);
@@ -1458,6 +1474,364 @@ class DeleteRuntimeResponse final :
 };
 // -------------------------------------------------------------------
 
+class DeleteRuntimesByApplicationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest) */ {
+ public:
+  inline DeleteRuntimesByApplicationRequest() : DeleteRuntimesByApplicationRequest(nullptr) {}
+  ~DeleteRuntimesByApplicationRequest() override;
+  explicit constexpr DeleteRuntimesByApplicationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteRuntimesByApplicationRequest(const DeleteRuntimesByApplicationRequest& from);
+  DeleteRuntimesByApplicationRequest(DeleteRuntimesByApplicationRequest&& from) noexcept
+    : DeleteRuntimesByApplicationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteRuntimesByApplicationRequest& operator=(const DeleteRuntimesByApplicationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteRuntimesByApplicationRequest& operator=(DeleteRuntimesByApplicationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteRuntimesByApplicationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteRuntimesByApplicationRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteRuntimesByApplicationRequest*>(
+               &_DeleteRuntimesByApplicationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(DeleteRuntimesByApplicationRequest& a, DeleteRuntimesByApplicationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteRuntimesByApplicationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteRuntimesByApplicationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteRuntimesByApplicationRequest* New() const final {
+    return new DeleteRuntimesByApplicationRequest();
+  }
+
+  DeleteRuntimesByApplicationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteRuntimesByApplicationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteRuntimesByApplicationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteRuntimesByApplicationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteRuntimesByApplicationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest";
+  }
+  protected:
+  explicit DeleteRuntimesByApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApplicationIdFieldNumber = 1,
+    kNameApplicationFieldNumber = 2,
+    kIntegrationIdFieldNumber = 3,
+    kProjectIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
+  };
+  // string application_id = 1 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
+  private:
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
+  public:
+
+  // string name_application = 2 [json_name = "nameApplication"];
+  void clear_name_application();
+  const std::string& name_application() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name_application(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name_application();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name_application();
+  void set_allocated_name_application(std::string* name_application);
+  private:
+  const std::string& _internal_name_application() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_application(const std::string& value);
+  std::string* _internal_mutable_name_application();
+  public:
+
+  // string integration_id = 3 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
+  // uint32 project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_application_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteRuntimesByApplicationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse) */ {
+ public:
+  inline DeleteRuntimesByApplicationResponse() : DeleteRuntimesByApplicationResponse(nullptr) {}
+  ~DeleteRuntimesByApplicationResponse() override;
+  explicit constexpr DeleteRuntimesByApplicationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteRuntimesByApplicationResponse(const DeleteRuntimesByApplicationResponse& from);
+  DeleteRuntimesByApplicationResponse(DeleteRuntimesByApplicationResponse&& from) noexcept
+    : DeleteRuntimesByApplicationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteRuntimesByApplicationResponse& operator=(const DeleteRuntimesByApplicationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteRuntimesByApplicationResponse& operator=(DeleteRuntimesByApplicationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteRuntimesByApplicationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteRuntimesByApplicationResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteRuntimesByApplicationResponse*>(
+               &_DeleteRuntimesByApplicationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(DeleteRuntimesByApplicationResponse& a, DeleteRuntimesByApplicationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteRuntimesByApplicationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteRuntimesByApplicationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteRuntimesByApplicationResponse* New() const final {
+    return new DeleteRuntimesByApplicationResponse();
+  }
+
+  DeleteRuntimesByApplicationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteRuntimesByApplicationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteRuntimesByApplicationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteRuntimesByApplicationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteRuntimesByApplicationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse";
+  }
+  protected:
+  explicit DeleteRuntimesByApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetRuntimeRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.GetRuntimeRequest) */ {
  public:
@@ -1502,7 +1876,7 @@ class GetRuntimeRequest final :
                &_GetRuntimeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(GetRuntimeRequest& a, GetRuntimeRequest& b) {
     a.Swap(&b);
@@ -1646,7 +2020,7 @@ class GetRuntimeResponse final :
                &_GetRuntimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(GetRuntimeResponse& a, GetRuntimeResponse& b) {
     a.Swap(&b);
@@ -1810,7 +2184,7 @@ class ListRuntimesRequest final :
                &_ListRuntimesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(ListRuntimesRequest& a, ListRuntimesRequest& b) {
     a.Swap(&b);
@@ -1949,7 +2323,7 @@ class ListRuntimesResponse final :
                &_ListRuntimesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(ListRuntimesResponse& a, ListRuntimesResponse& b) {
     a.Swap(&b);
@@ -2064,6 +2438,364 @@ class ListRuntimesResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::pipelines::runtime::v1alpha1::RuntimeList* runtime_list_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResponseMessageDeleteRuntimeByAppIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest) */ {
+ public:
+  inline ResponseMessageDeleteRuntimeByAppIdRequest() : ResponseMessageDeleteRuntimeByAppIdRequest(nullptr) {}
+  ~ResponseMessageDeleteRuntimeByAppIdRequest() override;
+  explicit constexpr ResponseMessageDeleteRuntimeByAppIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResponseMessageDeleteRuntimeByAppIdRequest(const ResponseMessageDeleteRuntimeByAppIdRequest& from);
+  ResponseMessageDeleteRuntimeByAppIdRequest(ResponseMessageDeleteRuntimeByAppIdRequest&& from) noexcept
+    : ResponseMessageDeleteRuntimeByAppIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ResponseMessageDeleteRuntimeByAppIdRequest& operator=(const ResponseMessageDeleteRuntimeByAppIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResponseMessageDeleteRuntimeByAppIdRequest& operator=(ResponseMessageDeleteRuntimeByAppIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResponseMessageDeleteRuntimeByAppIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResponseMessageDeleteRuntimeByAppIdRequest* internal_default_instance() {
+    return reinterpret_cast<const ResponseMessageDeleteRuntimeByAppIdRequest*>(
+               &_ResponseMessageDeleteRuntimeByAppIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(ResponseMessageDeleteRuntimeByAppIdRequest& a, ResponseMessageDeleteRuntimeByAppIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResponseMessageDeleteRuntimeByAppIdRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResponseMessageDeleteRuntimeByAppIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResponseMessageDeleteRuntimeByAppIdRequest* New() const final {
+    return new ResponseMessageDeleteRuntimeByAppIdRequest();
+  }
+
+  ResponseMessageDeleteRuntimeByAppIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ResponseMessageDeleteRuntimeByAppIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ResponseMessageDeleteRuntimeByAppIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ResponseMessageDeleteRuntimeByAppIdRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResponseMessageDeleteRuntimeByAppIdRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest";
+  }
+  protected:
+  explicit ResponseMessageDeleteRuntimeByAppIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApplicationIdFieldNumber = 1,
+    kNameApplicationFieldNumber = 2,
+    kIntegrationIdFieldNumber = 3,
+    kProjectIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
+  };
+  // string application_id = 1 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
+  private:
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
+  public:
+
+  // string name_application = 2 [json_name = "nameApplication"];
+  void clear_name_application();
+  const std::string& name_application() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name_application(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name_application();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name_application();
+  void set_allocated_name_application(std::string* name_application);
+  private:
+  const std::string& _internal_name_application() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_application(const std::string& value);
+  std::string* _internal_mutable_name_application();
+  public:
+
+  // string integration_id = 3 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
+  // uint32 project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
+  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
+  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
+  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
+  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_application_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResponseMessageDeleteRuntimeByAppIdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse) */ {
+ public:
+  inline ResponseMessageDeleteRuntimeByAppIdResponse() : ResponseMessageDeleteRuntimeByAppIdResponse(nullptr) {}
+  ~ResponseMessageDeleteRuntimeByAppIdResponse() override;
+  explicit constexpr ResponseMessageDeleteRuntimeByAppIdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResponseMessageDeleteRuntimeByAppIdResponse(const ResponseMessageDeleteRuntimeByAppIdResponse& from);
+  ResponseMessageDeleteRuntimeByAppIdResponse(ResponseMessageDeleteRuntimeByAppIdResponse&& from) noexcept
+    : ResponseMessageDeleteRuntimeByAppIdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ResponseMessageDeleteRuntimeByAppIdResponse& operator=(const ResponseMessageDeleteRuntimeByAppIdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResponseMessageDeleteRuntimeByAppIdResponse& operator=(ResponseMessageDeleteRuntimeByAppIdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResponseMessageDeleteRuntimeByAppIdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResponseMessageDeleteRuntimeByAppIdResponse* internal_default_instance() {
+    return reinterpret_cast<const ResponseMessageDeleteRuntimeByAppIdResponse*>(
+               &_ResponseMessageDeleteRuntimeByAppIdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(ResponseMessageDeleteRuntimeByAppIdResponse& a, ResponseMessageDeleteRuntimeByAppIdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResponseMessageDeleteRuntimeByAppIdResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResponseMessageDeleteRuntimeByAppIdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResponseMessageDeleteRuntimeByAppIdResponse* New() const final {
+    return new ResponseMessageDeleteRuntimeByAppIdResponse();
+  }
+
+  ResponseMessageDeleteRuntimeByAppIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ResponseMessageDeleteRuntimeByAppIdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ResponseMessageDeleteRuntimeByAppIdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ResponseMessageDeleteRuntimeByAppIdResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResponseMessageDeleteRuntimeByAppIdResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse";
+  }
+  protected:
+  explicit ResponseMessageDeleteRuntimeByAppIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -3170,6 +3902,284 @@ inline void DeleteRuntimeResponse::set_allocated_error(std::string* error) {
 
 // -------------------------------------------------------------------
 
+// DeleteRuntimesByApplicationRequest
+
+// string application_id = 1 [json_name = "applicationId"];
+inline void DeleteRuntimesByApplicationRequest::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByApplicationRequest::application_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByApplicationRequest::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.application_id)
+}
+inline std::string* DeleteRuntimesByApplicationRequest::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.application_id)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByApplicationRequest::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void DeleteRuntimesByApplicationRequest::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationRequest::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationRequest::release_application_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByApplicationRequest::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.application_id)
+}
+
+// string name_application = 2 [json_name = "nameApplication"];
+inline void DeleteRuntimesByApplicationRequest::clear_name_application() {
+  name_application_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByApplicationRequest::name_application() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.name_application)
+  return _internal_name_application();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByApplicationRequest::set_name_application(ArgT0&& arg0, ArgT... args) {
+ 
+ name_application_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.name_application)
+}
+inline std::string* DeleteRuntimesByApplicationRequest::mutable_name_application() {
+  std::string* _s = _internal_mutable_name_application();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.name_application)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByApplicationRequest::_internal_name_application() const {
+  return name_application_.Get();
+}
+inline void DeleteRuntimesByApplicationRequest::_internal_set_name_application(const std::string& value) {
+  
+  name_application_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationRequest::_internal_mutable_name_application() {
+  
+  return name_application_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationRequest::release_name_application() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.name_application)
+  return name_application_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByApplicationRequest::set_allocated_name_application(std::string* name_application) {
+  if (name_application != nullptr) {
+    
+  } else {
+    
+  }
+  name_application_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_application,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.name_application)
+}
+
+// string integration_id = 3 [json_name = "integrationId"];
+inline void DeleteRuntimesByApplicationRequest::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByApplicationRequest::integration_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByApplicationRequest::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.integration_id)
+}
+inline std::string* DeleteRuntimesByApplicationRequest::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.integration_id)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByApplicationRequest::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void DeleteRuntimesByApplicationRequest::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationRequest::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationRequest::release_integration_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByApplicationRequest::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.integration_id)
+}
+
+// uint32 project_id = 4 [json_name = "projectId"];
+inline void DeleteRuntimesByApplicationRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimesByApplicationRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimesByApplicationRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.project_id)
+  return _internal_project_id();
+}
+inline void DeleteRuntimesByApplicationRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void DeleteRuntimesByApplicationRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.project_id)
+}
+
+// uint32 organization_id = 5 [json_name = "organizationId"];
+inline void DeleteRuntimesByApplicationRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimesByApplicationRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteRuntimesByApplicationRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void DeleteRuntimesByApplicationRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void DeleteRuntimesByApplicationRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteRuntimesByApplicationResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void DeleteRuntimesByApplicationResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByApplicationResponse::msg() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByApplicationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.msg)
+}
+inline std::string* DeleteRuntimesByApplicationResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.msg)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByApplicationResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void DeleteRuntimesByApplicationResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByApplicationResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void DeleteRuntimesByApplicationResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByApplicationResponse::error() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByApplicationResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.error)
+}
+inline std::string* DeleteRuntimesByApplicationResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.error)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByApplicationResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void DeleteRuntimesByApplicationResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByApplicationResponse::release_error() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByApplicationResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse.error)
+}
+
+// -------------------------------------------------------------------
+
 // GetRuntimeRequest
 
 // string runtime_id = 1 [json_name = "runtimeId"];
@@ -3514,9 +4524,295 @@ inline void ListRuntimesResponse::set_allocated_status(std::string* status) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ListRuntimesResponse.status)
 }
 
+// -------------------------------------------------------------------
+
+// ResponseMessageDeleteRuntimeByAppIdRequest
+
+// string application_id = 1 [json_name = "applicationId"];
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdRequest::application_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponseMessageDeleteRuntimeByAppIdRequest::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.application_id)
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.application_id)
+  return _s;
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdRequest::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::release_application_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.application_id)
+}
+
+// string name_application = 2 [json_name = "nameApplication"];
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::clear_name_application() {
+  name_application_.ClearToEmpty();
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdRequest::name_application() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.name_application)
+  return _internal_name_application();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponseMessageDeleteRuntimeByAppIdRequest::set_name_application(ArgT0&& arg0, ArgT... args) {
+ 
+ name_application_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.name_application)
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::mutable_name_application() {
+  std::string* _s = _internal_mutable_name_application();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.name_application)
+  return _s;
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdRequest::_internal_name_application() const {
+  return name_application_.Get();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::_internal_set_name_application(const std::string& value) {
+  
+  name_application_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::_internal_mutable_name_application() {
+  
+  return name_application_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::release_name_application() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.name_application)
+  return name_application_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::set_allocated_name_application(std::string* name_application) {
+  if (name_application != nullptr) {
+    
+  } else {
+    
+  }
+  name_application_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_application,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.name_application)
+}
+
+// string integration_id = 3 [json_name = "integrationId"];
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdRequest::integration_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponseMessageDeleteRuntimeByAppIdRequest::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.integration_id)
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.integration_id)
+  return _s;
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdRequest::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdRequest::release_integration_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.integration_id)
+}
+
+// uint32 project_id = 4 [json_name = "projectId"];
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::clear_project_id() {
+  project_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ResponseMessageDeleteRuntimeByAppIdRequest::_internal_project_id() const {
+  return project_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ResponseMessageDeleteRuntimeByAppIdRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.project_id)
+  return _internal_project_id();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  project_id_ = value;
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_project_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.project_id)
+}
+
+// uint32 organization_id = 5 [json_name = "organizationId"];
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::clear_organization_id() {
+  organization_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ResponseMessageDeleteRuntimeByAppIdRequest::_internal_organization_id() const {
+  return organization_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ResponseMessageDeleteRuntimeByAppIdRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.organization_id)
+  return _internal_organization_id();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  organization_id_ = value;
+}
+inline void ResponseMessageDeleteRuntimeByAppIdRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_organization_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// ResponseMessageDeleteRuntimeByAppIdResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void ResponseMessageDeleteRuntimeByAppIdResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdResponse::msg() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponseMessageDeleteRuntimeByAppIdResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.msg)
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.msg)
+  return _s;
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ResponseMessageDeleteRuntimeByAppIdResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void ResponseMessageDeleteRuntimeByAppIdResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdResponse::error() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponseMessageDeleteRuntimeByAppIdResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.error)
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.error)
+  return _s;
+}
+inline const std::string& ResponseMessageDeleteRuntimeByAppIdResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void ResponseMessageDeleteRuntimeByAppIdResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ResponseMessageDeleteRuntimeByAppIdResponse::release_error() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ResponseMessageDeleteRuntimeByAppIdResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.error)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

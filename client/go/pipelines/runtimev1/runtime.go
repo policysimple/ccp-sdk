@@ -137,6 +137,26 @@ func DeleteRuntime(in *runtimepkgv1.DeleteRuntimeRequest) (response *runtimepkgv
 	return response, nil
 }
 
+func DeleteRuntimesByApplication(in *runtimepkgv1.DeleteRuntimesByApplicationRequest) (response *runtimepkgv1.DeleteRuntimesByApplicationResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeleteRuntimesByApplication(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error delete runtime", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error delete runtime", err),
+		)
+	}
+	return response, nil
+}
+
 func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.ListRuntimesResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
@@ -156,3 +176,4 @@ func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.
 	}
 	return response, nil
 }
+

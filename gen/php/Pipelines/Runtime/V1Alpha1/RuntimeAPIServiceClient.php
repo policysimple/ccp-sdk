@@ -69,6 +69,19 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Pipelines\Runtime\V1Alpha1\ResponseMessageDeleteRuntimeByAppIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ResponseMessageDeleteRuntimeByAppId(\Pipelines\Runtime\V1Alpha1\ResponseMessageDeleteRuntimeByAppIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/ResponseMessageDeleteRuntimeByAppId',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\ResponseMessageDeleteRuntimeByAppIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Pipelines\Runtime\V1Alpha1\DeleteRuntimeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -78,6 +91,19 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntime',
         $argument,
         ['\Pipelines\Runtime\V1Alpha1\DeleteRuntimeResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\DeleteRuntimesByApplicationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteRuntimesByApplication(\Pipelines\Runtime\V1Alpha1\DeleteRuntimesByApplicationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByApplication',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\DeleteRuntimesByApplicationResponse', 'decode'],
         $metadata, $options);
     }
 
