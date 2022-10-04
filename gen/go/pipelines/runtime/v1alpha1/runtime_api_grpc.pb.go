@@ -22,7 +22,9 @@ type RuntimeAPIServiceClient interface {
 	CreateRuntime(ctx context.Context, in *CreateRuntimeRequest, opts ...grpc.CallOption) (*CreateRuntimeResponse, error)
 	UpdateRuntime(ctx context.Context, in *UpdateRuntimeRequest, opts ...grpc.CallOption) (*UpdateRuntimeResponse, error)
 	UpdateResponseMessageRuntime(ctx context.Context, in *UpdateResponseMessageRuntimeRequest, opts ...grpc.CallOption) (*UpdateResponseMessageRuntimeResponse, error)
+	ResponseMessageDeleteRuntimeByAppId(ctx context.Context, in *ResponseMessageDeleteRuntimeByAppIdRequest, opts ...grpc.CallOption) (*ResponseMessageDeleteRuntimeByAppIdResponse, error)
 	DeleteRuntime(ctx context.Context, in *DeleteRuntimeRequest, opts ...grpc.CallOption) (*DeleteRuntimeResponse, error)
+	DeleteRuntimesByApplication(ctx context.Context, in *DeleteRuntimesByApplicationRequest, opts ...grpc.CallOption) (*DeleteRuntimesByApplicationResponse, error)
 	ListRuntimes(ctx context.Context, in *ListRuntimesRequest, opts ...grpc.CallOption) (*ListRuntimesResponse, error)
 }
 
@@ -70,9 +72,27 @@ func (c *runtimeAPIServiceClient) UpdateResponseMessageRuntime(ctx context.Conte
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) ResponseMessageDeleteRuntimeByAppId(ctx context.Context, in *ResponseMessageDeleteRuntimeByAppIdRequest, opts ...grpc.CallOption) (*ResponseMessageDeleteRuntimeByAppIdResponse, error) {
+	out := new(ResponseMessageDeleteRuntimeByAppIdResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/ResponseMessageDeleteRuntimeByAppId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *runtimeAPIServiceClient) DeleteRuntime(ctx context.Context, in *DeleteRuntimeRequest, opts ...grpc.CallOption) (*DeleteRuntimeResponse, error) {
 	out := new(DeleteRuntimeResponse)
 	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntime", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *runtimeAPIServiceClient) DeleteRuntimesByApplication(ctx context.Context, in *DeleteRuntimesByApplicationRequest, opts ...grpc.CallOption) (*DeleteRuntimesByApplicationResponse, error) {
+	out := new(DeleteRuntimesByApplicationResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByApplication", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,7 +116,9 @@ type RuntimeAPIServiceServer interface {
 	CreateRuntime(context.Context, *CreateRuntimeRequest) (*CreateRuntimeResponse, error)
 	UpdateRuntime(context.Context, *UpdateRuntimeRequest) (*UpdateRuntimeResponse, error)
 	UpdateResponseMessageRuntime(context.Context, *UpdateResponseMessageRuntimeRequest) (*UpdateResponseMessageRuntimeResponse, error)
+	ResponseMessageDeleteRuntimeByAppId(context.Context, *ResponseMessageDeleteRuntimeByAppIdRequest) (*ResponseMessageDeleteRuntimeByAppIdResponse, error)
 	DeleteRuntime(context.Context, *DeleteRuntimeRequest) (*DeleteRuntimeResponse, error)
+	DeleteRuntimesByApplication(context.Context, *DeleteRuntimesByApplicationRequest) (*DeleteRuntimesByApplicationResponse, error)
 	ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error)
 }
 
@@ -116,8 +138,14 @@ func (UnimplementedRuntimeAPIServiceServer) UpdateRuntime(context.Context, *Upda
 func (UnimplementedRuntimeAPIServiceServer) UpdateResponseMessageRuntime(context.Context, *UpdateResponseMessageRuntimeRequest) (*UpdateResponseMessageRuntimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateResponseMessageRuntime not implemented")
 }
+func (UnimplementedRuntimeAPIServiceServer) ResponseMessageDeleteRuntimeByAppId(context.Context, *ResponseMessageDeleteRuntimeByAppIdRequest) (*ResponseMessageDeleteRuntimeByAppIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResponseMessageDeleteRuntimeByAppId not implemented")
+}
 func (UnimplementedRuntimeAPIServiceServer) DeleteRuntime(context.Context, *DeleteRuntimeRequest) (*DeleteRuntimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteRuntime not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) DeleteRuntimesByApplication(context.Context, *DeleteRuntimesByApplicationRequest) (*DeleteRuntimesByApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRuntimesByApplication not implemented")
 }
 func (UnimplementedRuntimeAPIServiceServer) ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListRuntimes not implemented")
@@ -206,6 +234,24 @@ func _RuntimeAPIService_UpdateResponseMessageRuntime_Handler(srv interface{}, ct
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_ResponseMessageDeleteRuntimeByAppId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResponseMessageDeleteRuntimeByAppIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).ResponseMessageDeleteRuntimeByAppId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/ResponseMessageDeleteRuntimeByAppId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).ResponseMessageDeleteRuntimeByAppId(ctx, req.(*ResponseMessageDeleteRuntimeByAppIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _RuntimeAPIService_DeleteRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteRuntimeRequest)
 	if err := dec(in); err != nil {
@@ -220,6 +266,24 @@ func _RuntimeAPIService_DeleteRuntime_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RuntimeAPIServiceServer).DeleteRuntime(ctx, req.(*DeleteRuntimeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RuntimeAPIService_DeleteRuntimesByApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRuntimesByApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).DeleteRuntimesByApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).DeleteRuntimesByApplication(ctx, req.(*DeleteRuntimesByApplicationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -266,8 +330,16 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _RuntimeAPIService_UpdateResponseMessageRuntime_Handler,
 		},
 		{
+			MethodName: "ResponseMessageDeleteRuntimeByAppId",
+			Handler:    _RuntimeAPIService_ResponseMessageDeleteRuntimeByAppId_Handler,
+		},
+		{
 			MethodName: "DeleteRuntime",
 			Handler:    _RuntimeAPIService_DeleteRuntime_Handler,
+		},
+		{
+			MethodName: "DeleteRuntimesByApplication",
+			Handler:    _RuntimeAPIService_DeleteRuntimesByApplication_Handler,
 		},
 		{
 			MethodName: "ListRuntimes",

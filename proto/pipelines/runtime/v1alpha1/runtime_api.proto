@@ -19,7 +19,9 @@ service RuntimeAPIService{
     rpc CreateRuntime(CreateRuntimeRequest) returns (CreateRuntimeResponse) {};
     rpc UpdateRuntime(UpdateRuntimeRequest) returns (UpdateRuntimeResponse) {};
     rpc UpdateResponseMessageRuntime(UpdateResponseMessageRuntimeRequest) returns (UpdateResponseMessageRuntimeResponse) {};
+    rpc ResponseMessageDeleteRuntimeByAppId(ResponseMessageDeleteRuntimeByAppIdRequest) returns (ResponseMessageDeleteRuntimeByAppIdResponse) {};
     rpc DeleteRuntime(DeleteRuntimeRequest) returns (DeleteRuntimeResponse) {};
+    rpc DeleteRuntimesByApplication(DeleteRuntimesByApplicationRequest) returns (DeleteRuntimesByApplicationResponse) {};
     rpc ListRuntimes(ListRuntimesRequest) returns (ListRuntimesResponse) {};
 }
 
@@ -66,6 +68,19 @@ message DeleteRuntimeResponse {
     string error = 2;
 }
 
+message DeleteRuntimesByApplicationRequest {
+    string application_id = 1;
+    string name_application = 2;
+    string integration_id = 3;
+    uint32 project_id = 4;
+    uint32 organization_id = 5;
+}
+
+message DeleteRuntimesByApplicationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
 message GetRuntimeRequest {
     string runtime_id = 1;
 }
@@ -84,3 +99,15 @@ message ListRuntimesResponse {
     string status = 2;
 }
 
+message ResponseMessageDeleteRuntimeByAppIdRequest {
+    string application_id = 1;
+    string name_application = 2;
+    string integration_id = 3;
+    uint32 project_id = 4;
+    uint32 organization_id = 5;
+}
+
+message ResponseMessageDeleteRuntimeByAppIdResponse {
+    string msg = 1;
+    string error = 2;
+}
