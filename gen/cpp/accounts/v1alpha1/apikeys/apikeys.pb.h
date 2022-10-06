@@ -230,7 +230,6 @@ class CreateApiKeyRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRolesIdsFieldNumber = 3,
     kPermissionsIdsFieldNumber = 4,
     kNameFieldNumber = 1,
     kUserIdFieldNumber = 2,
@@ -238,28 +237,6 @@ class CreateApiKeyRequest final :
     kIsActiveFieldNumber = 6,
     kProjectIdFieldNumber = 7,
   };
-  // repeated uint32 roles_ids = 3 [json_name = "rolesIds"];
-  int roles_ids_size() const;
-  private:
-  int _internal_roles_ids_size() const;
-  public:
-  void clear_roles_ids();
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_roles_ids(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-      _internal_roles_ids() const;
-  void _internal_add_roles_ids(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-      _internal_mutable_roles_ids();
-  public:
-  ::PROTOBUF_NAMESPACE_ID::uint32 roles_ids(int index) const;
-  void set_roles_ids(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value);
-  void add_roles_ids(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-      roles_ids() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-      mutable_roles_ids();
-
   // repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];
   int permissions_ids_size() const;
   private:
@@ -344,8 +321,6 @@ class CreateApiKeyRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 > roles_ids_;
-  mutable std::atomic<int> _roles_ids_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 > permissions_ids_;
   mutable std::atomic<int> _permissions_ids_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
@@ -475,8 +450,8 @@ class CreateApiKeyResponse final :
   enum : int {
     kMsgFieldNumber = 1,
     kApiKeyFieldNumber = 2,
+    kUuidFieldNumber = 4,
     kErrorFieldNumber = 5,
-    kAccessPointIdFieldNumber = 4,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -506,6 +481,20 @@ class CreateApiKeyResponse final :
   std::string* _internal_mutable_api_key();
   public:
 
+  // string uuid = 4 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
   // string error = 5 [json_name = "error"];
   void clear_error();
   const std::string& error() const;
@@ -520,15 +509,6 @@ class CreateApiKeyResponse final :
   std::string* _internal_mutable_error();
   public:
 
-  // uint32 access_point_id = 4 [json_name = "accessPointId"];
-  void clear_access_point_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 access_point_id() const;
-  void set_access_point_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_access_point_id() const;
-  void _internal_set_access_point_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse)
  private:
   class _Internal;
@@ -538,8 +518,8 @@ class CreateApiKeyResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr api_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 access_point_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
 };
@@ -660,30 +640,20 @@ class GetOneApiKeyRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kValueKeyFieldNumber = 2,
-    kIdFieldNumber = 1,
+    kUuidFieldNumber = 1,
   };
-  // string value_key = 2 [json_name = "valueKey"];
-  void clear_value_key();
-  const std::string& value_key() const;
+  // string uuid = 1 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_value_key(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_value_key();
-  PROTOBUF_MUST_USE_RESULT std::string* release_value_key();
-  void set_allocated_value_key(std::string* value_key);
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
   private:
-  const std::string& _internal_value_key() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value_key(const std::string& value);
-  std::string* _internal_mutable_value_key();
-  public:
-
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
   public:
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest)
@@ -693,8 +663,7 @@ class GetOneApiKeyRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_key_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
 };
@@ -815,34 +784,16 @@ class GetOneApiKeyResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRolesFieldNumber = 5,
     kPermissionsFieldNumber = 6,
+    kUuidFieldNumber = 1,
     kApiKeyFieldNumber = 2,
     kNameFieldNumber = 3,
     kUserIdFieldNumber = 4,
+    kRoleFieldNumber = 5,
     kProjectFieldNumber = 9,
     kOrganizationFieldNumber = 10,
-    kIdFieldNumber = 1,
     kIsActiveFieldNumber = 8,
   };
-  // repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];
-  int roles_size() const;
-  private:
-  int _internal_roles_size() const;
-  public:
-  void clear_roles();
-  ::accounts::v1alpha1::Role* mutable_roles(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >*
-      mutable_roles();
-  private:
-  const ::accounts::v1alpha1::Role& _internal_roles(int index) const;
-  ::accounts::v1alpha1::Role* _internal_add_roles();
-  public:
-  const ::accounts::v1alpha1::Role& roles(int index) const;
-  ::accounts::v1alpha1::Role* add_roles();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >&
-      roles() const;
-
   // repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];
   int permissions_size() const;
   private:
@@ -860,6 +811,20 @@ class GetOneApiKeyResponse final :
   ::accounts::v1alpha1::Permission* add_permissions();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
       permissions() const;
+
+  // string uuid = 1 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
 
   // string api_key = 2 [json_name = "apiKey"];
   void clear_api_key();
@@ -903,6 +868,24 @@ class GetOneApiKeyResponse final :
   std::string* _internal_mutable_user_id();
   public:
 
+  // .accounts.v1alpha1.Role role = 5 [json_name = "role"];
+  bool has_role() const;
+  private:
+  bool _internal_has_role() const;
+  public:
+  void clear_role();
+  const ::accounts::v1alpha1::Role& role() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::Role* release_role();
+  ::accounts::v1alpha1::Role* mutable_role();
+  void set_allocated_role(::accounts::v1alpha1::Role* role);
+  private:
+  const ::accounts::v1alpha1::Role& _internal_role() const;
+  ::accounts::v1alpha1::Role* _internal_mutable_role();
+  public:
+  void unsafe_arena_set_allocated_role(
+      ::accounts::v1alpha1::Role* role);
+  ::accounts::v1alpha1::Role* unsafe_arena_release_role();
+
   // .accounts.v1alpha1.Project project = 9 [json_name = "project"];
   bool has_project() const;
   private:
@@ -939,15 +922,6 @@ class GetOneApiKeyResponse final :
       ::accounts::v1alpha1::Organization* organization);
   ::accounts::v1alpha1::Organization* unsafe_arena_release_organization();
 
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // bool is_active = 8 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
@@ -964,14 +938,14 @@ class GetOneApiKeyResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role > roles_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr api_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::accounts::v1alpha1::Role* role_;
   ::accounts::v1alpha1::Project* project_;
   ::accounts::v1alpha1::Organization* organization_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
@@ -1248,14 +1222,28 @@ class ApiKeyList final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kUuidFieldNumber = 1,
     kApiKeyFieldNumber = 2,
     kNameFieldNumber = 3,
     kUserIdFieldNumber = 4,
     kProjectFieldNumber = 7,
     kOrganizationFieldNumber = 8,
-    kIdFieldNumber = 1,
     kIsActiveFieldNumber = 6,
   };
+  // string uuid = 1 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
   // string api_key = 2 [json_name = "apiKey"];
   void clear_api_key();
   const std::string& api_key() const;
@@ -1334,15 +1322,6 @@ class ApiKeyList final :
       ::accounts::v1alpha1::Organization* organization);
   ::accounts::v1alpha1::Organization* unsafe_arena_release_organization();
 
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // bool is_active = 6 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
@@ -1359,12 +1338,12 @@ class ApiKeyList final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr api_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::accounts::v1alpha1::Project* project_;
   ::accounts::v1alpha1::Organization* organization_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
@@ -1634,9 +1613,23 @@ class UpdateApiKeyRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kUuidFieldNumber = 1,
     kApiKeyFieldNumber = 6,
-    kIdFieldNumber = 1,
   };
+  // string uuid = 1 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
   // .accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest api_key = 6 [json_name = "apiKey"];
   bool has_api_key() const;
   private:
@@ -1655,15 +1648,6 @@ class UpdateApiKeyRequest final :
       ::accounts::v1alpha1::apikeys::v1::CreateApiKeyRequest* api_key);
   ::accounts::v1alpha1::apikeys::v1::CreateApiKeyRequest* unsafe_arena_release_api_key();
 
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest)
  private:
   class _Internal;
@@ -1671,8 +1655,8 @@ class UpdateApiKeyRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::accounts::v1alpha1::apikeys::v1::CreateApiKeyRequest* api_key_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
 };
@@ -1969,15 +1953,20 @@ class DeleteApiKeyRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kUuidFieldNumber = 1,
   };
-  // uint32 id = 1 [json_name = "id"];
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // string uuid = 1 [json_name = "uuid"];
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_MUST_USE_RESULT std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
   public:
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest)
@@ -1987,7 +1976,7 @@ class DeleteApiKeyRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
 };
@@ -2270,53 +2259,6 @@ inline void CreateApiKeyRequest::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.user_id)
 }
 
-// repeated uint32 roles_ids = 3 [json_name = "rolesIds"];
-inline int CreateApiKeyRequest::_internal_roles_ids_size() const {
-  return roles_ids_.size();
-}
-inline int CreateApiKeyRequest::roles_ids_size() const {
-  return _internal_roles_ids_size();
-}
-inline void CreateApiKeyRequest::clear_roles_ids() {
-  roles_ids_.Clear();
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApiKeyRequest::_internal_roles_ids(int index) const {
-  return roles_ids_.Get(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApiKeyRequest::roles_ids(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.roles_ids)
-  return _internal_roles_ids(index);
-}
-inline void CreateApiKeyRequest::set_roles_ids(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  roles_ids_.Set(index, value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.roles_ids)
-}
-inline void CreateApiKeyRequest::_internal_add_roles_ids(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  roles_ids_.Add(value);
-}
-inline void CreateApiKeyRequest::add_roles_ids(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_add_roles_ids(value);
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.roles_ids)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-CreateApiKeyRequest::_internal_roles_ids() const {
-  return roles_ids_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-CreateApiKeyRequest::roles_ids() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.roles_ids)
-  return _internal_roles_ids();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-CreateApiKeyRequest::_internal_mutable_roles_ids() {
-  return &roles_ids_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-CreateApiKeyRequest::mutable_roles_ids() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.roles_ids)
-  return _internal_mutable_roles_ids();
-}
-
 // repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];
 inline int CreateApiKeyRequest::_internal_permissions_ids_size() const {
   return permissions_ids_.size();
@@ -2520,24 +2462,50 @@ inline void CreateApiKeyResponse::set_allocated_api_key(std::string* api_key) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.api_key)
 }
 
-// uint32 access_point_id = 4 [json_name = "accessPointId"];
-inline void CreateApiKeyResponse::clear_access_point_id() {
-  access_point_id_ = 0u;
+// string uuid = 4 [json_name = "uuid"];
+inline void CreateApiKeyResponse::clear_uuid() {
+  uuid_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApiKeyResponse::_internal_access_point_id() const {
-  return access_point_id_;
+inline const std::string& CreateApiKeyResponse::uuid() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.uuid)
+  return _internal_uuid();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApiKeyResponse::access_point_id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.access_point_id)
-  return _internal_access_point_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateApiKeyResponse::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.uuid)
 }
-inline void CreateApiKeyResponse::_internal_set_access_point_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline std::string* CreateApiKeyResponse::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.uuid)
+  return _s;
+}
+inline const std::string& CreateApiKeyResponse::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void CreateApiKeyResponse::_internal_set_uuid(const std::string& value) {
   
-  access_point_id_ = value;
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void CreateApiKeyResponse::set_access_point_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_access_point_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.access_point_id)
+inline std::string* CreateApiKeyResponse::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateApiKeyResponse::release_uuid() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateApiKeyResponse::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.uuid)
 }
 
 // string error = 5 [json_name = "error"];
@@ -2590,94 +2558,100 @@ inline void CreateApiKeyResponse::set_allocated_error(std::string* error) {
 
 // GetOneApiKeyRequest
 
-// uint32 id = 1 [json_name = "id"];
-inline void GetOneApiKeyRequest::clear_id() {
-  id_ = 0u;
+// string uuid = 1 [json_name = "uuid"];
+inline void GetOneApiKeyRequest::clear_uuid() {
+  uuid_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetOneApiKeyRequest::_internal_id() const {
-  return id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetOneApiKeyRequest::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.id)
-  return _internal_id();
-}
-inline void GetOneApiKeyRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  id_ = value;
-}
-inline void GetOneApiKeyRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.id)
-}
-
-// string value_key = 2 [json_name = "valueKey"];
-inline void GetOneApiKeyRequest::clear_value_key() {
-  value_key_.ClearToEmpty();
-}
-inline const std::string& GetOneApiKeyRequest::value_key() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value_key)
-  return _internal_value_key();
+inline const std::string& GetOneApiKeyRequest::uuid() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid)
+  return _internal_uuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetOneApiKeyRequest::set_value_key(ArgT0&& arg0, ArgT... args) {
+void GetOneApiKeyRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
  
- value_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value_key)
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid)
 }
-inline std::string* GetOneApiKeyRequest::mutable_value_key() {
-  std::string* _s = _internal_mutable_value_key();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value_key)
+inline std::string* GetOneApiKeyRequest::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid)
   return _s;
 }
-inline const std::string& GetOneApiKeyRequest::_internal_value_key() const {
-  return value_key_.Get();
+inline const std::string& GetOneApiKeyRequest::_internal_uuid() const {
+  return uuid_.Get();
 }
-inline void GetOneApiKeyRequest::_internal_set_value_key(const std::string& value) {
+inline void GetOneApiKeyRequest::_internal_set_uuid(const std::string& value) {
   
-  value_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetOneApiKeyRequest::_internal_mutable_value_key() {
+inline std::string* GetOneApiKeyRequest::_internal_mutable_uuid() {
   
-  return value_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetOneApiKeyRequest::release_value_key() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value_key)
-  return value_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetOneApiKeyRequest::release_uuid() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetOneApiKeyRequest::set_allocated_value_key(std::string* value_key) {
-  if (value_key != nullptr) {
+inline void GetOneApiKeyRequest::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
     
   } else {
     
   }
-  value_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value_key,
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value_key)
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid)
 }
 
 // -------------------------------------------------------------------
 
 // GetOneApiKeyResponse
 
-// uint32 id = 1 [json_name = "id"];
-inline void GetOneApiKeyResponse::clear_id() {
-  id_ = 0u;
+// string uuid = 1 [json_name = "uuid"];
+inline void GetOneApiKeyResponse::clear_uuid() {
+  uuid_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetOneApiKeyResponse::_internal_id() const {
-  return id_;
+inline const std::string& GetOneApiKeyResponse::uuid() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.uuid)
+  return _internal_uuid();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetOneApiKeyResponse::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.id)
-  return _internal_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOneApiKeyResponse::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.uuid)
 }
-inline void GetOneApiKeyResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline std::string* GetOneApiKeyResponse::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.uuid)
+  return _s;
+}
+inline const std::string& GetOneApiKeyResponse::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void GetOneApiKeyResponse::_internal_set_uuid(const std::string& value) {
   
-  id_ = value;
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void GetOneApiKeyResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.id)
+inline std::string* GetOneApiKeyResponse::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOneApiKeyResponse::release_uuid() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOneApiKeyResponse::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.uuid)
 }
 
 // string api_key = 2 [json_name = "apiKey"];
@@ -2818,41 +2792,90 @@ inline void GetOneApiKeyResponse::set_allocated_user_id(std::string* user_id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.user_id)
 }
 
-// repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];
-inline int GetOneApiKeyResponse::_internal_roles_size() const {
-  return roles_.size();
+// .accounts.v1alpha1.Role role = 5 [json_name = "role"];
+inline bool GetOneApiKeyResponse::_internal_has_role() const {
+  return this != internal_default_instance() && role_ != nullptr;
 }
-inline int GetOneApiKeyResponse::roles_size() const {
-  return _internal_roles_size();
+inline bool GetOneApiKeyResponse::has_role() const {
+  return _internal_has_role();
 }
-inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::mutable_roles(int index) {
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.roles)
-  return roles_.Mutable(index);
+inline const ::accounts::v1alpha1::Role& GetOneApiKeyResponse::_internal_role() const {
+  const ::accounts::v1alpha1::Role* p = role_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::Role&>(
+      ::accounts::v1alpha1::_Role_default_instance_);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >*
-GetOneApiKeyResponse::mutable_roles() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.roles)
-  return &roles_;
+inline const ::accounts::v1alpha1::Role& GetOneApiKeyResponse::role() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.role)
+  return _internal_role();
 }
-inline const ::accounts::v1alpha1::Role& GetOneApiKeyResponse::_internal_roles(int index) const {
-  return roles_.Get(index);
+inline void GetOneApiKeyResponse::unsafe_arena_set_allocated_role(
+    ::accounts::v1alpha1::Role* role) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(role_);
+  }
+  role_ = role;
+  if (role) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.role)
 }
-inline const ::accounts::v1alpha1::Role& GetOneApiKeyResponse::roles(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.roles)
-  return _internal_roles(index);
+inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::release_role() {
+  
+  ::accounts::v1alpha1::Role* temp = role_;
+  role_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::_internal_add_roles() {
-  return roles_.Add();
+inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::unsafe_arena_release_role() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.role)
+  
+  ::accounts::v1alpha1::Role* temp = role_;
+  role_ = nullptr;
+  return temp;
 }
-inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::add_roles() {
-  ::accounts::v1alpha1::Role* _add = _internal_add_roles();
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.roles)
-  return _add;
+inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::_internal_mutable_role() {
+  
+  if (role_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::Role>(GetArenaForAllocation());
+    role_ = p;
+  }
+  return role_;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >&
-GetOneApiKeyResponse::roles() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.roles)
-  return roles_;
+inline ::accounts::v1alpha1::Role* GetOneApiKeyResponse::mutable_role() {
+  ::accounts::v1alpha1::Role* _msg = _internal_mutable_role();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.role)
+  return _msg;
+}
+inline void GetOneApiKeyResponse::set_allocated_role(::accounts::v1alpha1::Role* role) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(role_);
+  }
+  if (role) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(role));
+    if (message_arena != submessage_arena) {
+      role = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, role, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  role_ = role;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.role)
 }
 
 // repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];
@@ -3158,24 +3181,50 @@ inline void ListApiKeyRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint
 
 // ApiKeyList
 
-// uint32 id = 1 [json_name = "id"];
-inline void ApiKeyList::clear_id() {
-  id_ = 0u;
+// string uuid = 1 [json_name = "uuid"];
+inline void ApiKeyList::clear_uuid() {
+  uuid_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ApiKeyList::_internal_id() const {
-  return id_;
+inline const std::string& ApiKeyList::uuid() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.ApiKeyList.uuid)
+  return _internal_uuid();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ApiKeyList::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.ApiKeyList.id)
-  return _internal_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ApiKeyList::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.ApiKeyList.uuid)
 }
-inline void ApiKeyList::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline std::string* ApiKeyList::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.ApiKeyList.uuid)
+  return _s;
+}
+inline const std::string& ApiKeyList::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void ApiKeyList::_internal_set_uuid(const std::string& value) {
   
-  id_ = value;
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void ApiKeyList::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.ApiKeyList.id)
+inline std::string* ApiKeyList::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ApiKeyList::release_uuid() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.ApiKeyList.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ApiKeyList::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.ApiKeyList.uuid)
 }
 
 // string api_key = 2 [json_name = "apiKey"];
@@ -3556,24 +3605,50 @@ ListApiKeyResponse::api_keys() const {
 
 // UpdateApiKeyRequest
 
-// uint32 id = 1 [json_name = "id"];
-inline void UpdateApiKeyRequest::clear_id() {
-  id_ = 0u;
+// string uuid = 1 [json_name = "uuid"];
+inline void UpdateApiKeyRequest::clear_uuid() {
+  uuid_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 UpdateApiKeyRequest::_internal_id() const {
-  return id_;
+inline const std::string& UpdateApiKeyRequest::uuid() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.uuid)
+  return _internal_uuid();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 UpdateApiKeyRequest::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.id)
-  return _internal_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateApiKeyRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.uuid)
 }
-inline void UpdateApiKeyRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline std::string* UpdateApiKeyRequest::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.uuid)
+  return _s;
+}
+inline const std::string& UpdateApiKeyRequest::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void UpdateApiKeyRequest::_internal_set_uuid(const std::string& value) {
   
-  id_ = value;
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void UpdateApiKeyRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.id)
+inline std::string* UpdateApiKeyRequest::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateApiKeyRequest::release_uuid() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateApiKeyRequest::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.uuid)
 }
 
 // .accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest api_key = 6 [json_name = "apiKey"];
@@ -3812,24 +3887,50 @@ inline void UpdateApiKeyResponse::set_allocated_error(std::string* error) {
 
 // DeleteApiKeyRequest
 
-// uint32 id = 1 [json_name = "id"];
-inline void DeleteApiKeyRequest::clear_id() {
-  id_ = 0u;
+// string uuid = 1 [json_name = "uuid"];
+inline void DeleteApiKeyRequest::clear_uuid() {
+  uuid_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteApiKeyRequest::_internal_id() const {
-  return id_;
+inline const std::string& DeleteApiKeyRequest::uuid() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.uuid)
+  return _internal_uuid();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteApiKeyRequest::id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.id)
-  return _internal_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteApiKeyRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.uuid)
 }
-inline void DeleteApiKeyRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline std::string* DeleteApiKeyRequest::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.uuid)
+  return _s;
+}
+inline const std::string& DeleteApiKeyRequest::_internal_uuid() const {
+  return uuid_.Get();
+}
+inline void DeleteApiKeyRequest::_internal_set_uuid(const std::string& value) {
   
-  id_ = value;
+  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void DeleteApiKeyRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.id)
+inline std::string* DeleteApiKeyRequest::_internal_mutable_uuid() {
+  
+  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteApiKeyRequest::release_uuid() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.uuid)
+  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteApiKeyRequest::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.uuid)
 }
 
 // -------------------------------------------------------------------

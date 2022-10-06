@@ -38,6 +38,9 @@ message DeleteOrganizationRequest {
     uint32 organization_id = 1;
 }
 
+
+
+
 /*
     Responses
 */

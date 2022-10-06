@@ -22,10 +22,6 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     */
-    private $roles_ids;
-    /**
      * Generated from protobuf field <code>repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];</code>
      */
     private $permissions_ids;
@@ -50,7 +46,6 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $user_id
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
      *     @type int $organization_id
      *     @type bool $is_active
@@ -102,28 +97,6 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getRolesIds()
-    {
-        return $this->roles_ids;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setRolesIds($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
-        $this->roles_ids = $arr;
 
         return $this;
     }

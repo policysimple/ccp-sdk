@@ -13,7 +13,6 @@ import "accounts/v1alpha1/accounts.proto";
 message CreateApiKeyRequest {
     string name = 1;
     string user_id =2;
-    repeated uint32 roles_ids = 3;
     repeated uint32 permissions_ids = 4;
     uint32 organization_id = 5;
     bool is_active = 6;
@@ -26,7 +25,7 @@ message CreateApiKeyRequest {
 message CreateApiKeyResponse {
     string msg = 1;
     string api_key = 2;
-    uint32 access_point_id = 4;
+    string uuid = 4;
     string error = 5;
 }
 
@@ -35,16 +34,15 @@ message CreateApiKeyResponse {
 */
 
 message GetOneApiKeyRequest {
-    uint32 id = 1;
-    string value_key = 2;
+    string uuid = 1;
 }
 
 message GetOneApiKeyResponse {
-    uint32 id = 1;
+    string uuid = 1;
     string api_key = 2;
     string name = 3;
     string user_id =4;
-    repeated Role roles = 5;
+    Role role = 5;
     repeated Permission permissions = 6;
     bool is_active = 8;
     Project project = 9;
@@ -61,7 +59,7 @@ message ListApiKeyRequest {
 }
 
 message ApiKeyList {
-    uint32  id = 1;
+    string  uuid = 1;
     string api_key = 2;
     string name = 3;
     string user_id = 4;
@@ -79,7 +77,7 @@ message ListApiKeyResponse {
 */
 
 message UpdateApiKeyRequest {
-    uint32 id = 1;
+    string uuid = 1;
     CreateApiKeyRequest api_key = 6;
 }
 
@@ -94,7 +92,7 @@ message UpdateApiKeyResponse {
 */
 
 message DeleteApiKeyRequest {
-    uint32 id = 1;
+    string uuid = 1;
 }
 
 message DeleteApiKeyResponse {

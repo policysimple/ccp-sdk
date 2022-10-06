@@ -83,3 +83,25 @@ func ListApplicationByOrganization(organizationId uint32) (response *application
 	}
 	return response, nil
 }
+
+func ListApplicationByProject(projectId uint32) (response *applicationpkgv1.ListApplicationResponse, err error) {
+	bylogs.LogInfo("client list application")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListApplication(ctx, &applicationpkgv1.ListApplicationRequest{
+		ProjectId: projectId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("client list application", err)
+		return nil, err
+	}
+	bylogs.LogInfo("client list application", response)
+	return response, nil
+
+}

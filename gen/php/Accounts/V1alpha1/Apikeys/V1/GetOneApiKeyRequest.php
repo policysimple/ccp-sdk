@@ -14,13 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      */
-    protected $id = 0;
-    /**
-     * Generated from protobuf field <code>string value_key = 2 [json_name = "valueKey"];</code>
-     */
-    protected $value_key = '';
+    protected $uuid = '';
 
     /**
      * Constructor.
@@ -28,8 +24,7 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
-     *     @type string $value_key
+     *     @type string $uuid
      * }
      */
     public function __construct($data = NULL) {
@@ -38,45 +33,23 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string value_key = 2 [json_name = "valueKey"];</code>
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      * @return string
      */
-    public function getValueKey()
+    public function getUuid()
     {
-        return $this->value_key;
+        return $this->uuid;
     }
 
     /**
-     * Generated from protobuf field <code>string value_key = 2 [json_name = "valueKey"];</code>
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      * @param string $var
      * @return $this
      */
-    public function setValueKey($var)
+    public function setUuid($var)
     {
         GPBUtil::checkString($var, True);
-        $this->value_key = $var;
+        $this->uuid = $var;
 
         return $this;
     }
