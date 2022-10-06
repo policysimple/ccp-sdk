@@ -17,31 +17,29 @@ class Apikeys
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-´
-\'accounts/v1alpha1/apikeys/apikeys.protoaccounts.v1alpha1.apikeys.v1"í
+ø
+\'accounts/v1alpha1/apikeys/apikeys.protoaccounts.v1alpha1.apikeys.v1"Ð
 CreateApiKeyRequest
 name (	Rname
-user_id (	RuserId
-	roles_ids (RrolesIds\'
+user_id (	RuserId\'
 permissions_ids (RpermissionsIds\'
 organization_id (RorganizationId
 	is_active (RisActive
 
-project_id (R	projectId"
+project_id (R	projectId"k
 CreateApiKeyResponse
 msg (	Rmsg
-api_key (	RapiKey&
-access_point_id (RaccessPointId
-error (	Rerror"B
-GetOneApiKeyRequest
-id (Rid
-	value_key (	RvalueKey"ô
-GetOneApiKeyResponse
-id (Rid
+api_key (	RapiKey
+uuid (	Ruuid
+error (	Rerror")
+GetOneApiKeyRequest
+uuid (	Ruuid"ö
+GetOneApiKeyResponse
+uuid (	Ruuid
 api_key (	RapiKey
 name (	Rname
-user_id (	RuserId-
-roles (2.accounts.v1alpha1.RoleRroles?
+user_id (	RuserId+
+role (2.accounts.v1alpha1.RoleRrole?
 permissions (2.accounts.v1alpha1.PermissionRpermissions
 	is_active (RisActive4
 project	 (2.accounts.v1alpha1.ProjectRprojectC
@@ -49,10 +47,10 @@ project_id (R	projectId"
  (2.accounts.v1alpha1.OrganizationRorganization"U
 ListApiKeyRequest
 user_id (	RuserId\'
-organization_id (RorganizationId"ú
+organization_id (RorganizationId"þ
 
-ApiKeyList
-id (Rid
+ApiKeyList
+uuid (	Ruuid
 api_key (	RapiKey
 name (	Rname
 user_id (	RuserId
@@ -60,16 +58,16 @@ ApiKeyList
 project (2.accounts.v1alpha1.ProjectRprojectC
 organization (2.accounts.v1alpha1.OrganizationRorganization"Y
 ListApiKeyResponseC
-api_keys (2(.accounts.v1alpha1.apikeys.v1.ApiKeyListRapiKeys"q
-UpdateApiKeyRequest
-id (RidJ
+api_keys (2(.accounts.v1alpha1.apikeys.v1.ApiKeyListRapiKeys"u
+UpdateApiKeyRequest
+uuid (	RuuidJ
 api_key (21.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestRapiKey"W
 UpdateApiKeyResponse
 msg (	Rmsg
 api_key (	RapiKey
-error (	Rerror"%
-DeleteApiKeyRequest
-id (Rid"W
+error (	Rerror")
+DeleteApiKeyRequest
+uuid (	Ruuid"W
 DeleteApiKeyResponse
 msg (	Rmsg
 api_key (	RapiKey

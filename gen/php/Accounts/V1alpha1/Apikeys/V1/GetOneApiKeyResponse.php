@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetOneApiKeyResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      */
-    protected $id = 0;
+    protected $uuid = '';
     /**
      * Generated from protobuf field <code>string api_key = 2 [json_name = "apiKey"];</code>
      */
@@ -30,9 +30,9 @@ class GetOneApiKeyResponse extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
      */
-    private $roles;
+    protected $role = null;
     /**
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];</code>
      */
@@ -56,11 +56,11 @@ class GetOneApiKeyResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $uuid
      *     @type string $api_key
      *     @type string $name
      *     @type string $user_id
-     *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
+     *     @type \Accounts\V1alpha1\Role $role
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type bool $is_active
      *     @type \Accounts\V1alpha1\Project $project
@@ -73,23 +73,23 @@ class GetOneApiKeyResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return string
      */
-    public function getId()
+    public function getUuid()
     {
-        return $this->id;
+        return $this->uuid;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setUuid($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
+        GPBUtil::checkString($var, True);
+        $this->uuid = $var;
 
         return $this;
     }
@@ -161,23 +161,33 @@ class GetOneApiKeyResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+     * @return \Accounts\V1alpha1\Role|null
      */
-    public function getRoles()
+    public function getRole()
     {
-        return $this->roles;
+        return $this->role;
+    }
+
+    public function hasRole()
+    {
+        return isset($this->role);
+    }
+
+    public function clearRole()
+    {
+        unset($this->role);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-     * @param \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+     * @param \Accounts\V1alpha1\Role $var
      * @return $this
      */
-    public function setRoles($var)
+    public function setRole($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Role::class);
-        $this->roles = $arr;
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Role::class);
+        $this->role = $var;
 
         return $this;
     }

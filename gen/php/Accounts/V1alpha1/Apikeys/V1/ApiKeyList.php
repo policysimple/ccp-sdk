@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ApiKeyList extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      */
-    protected $id = 0;
+    protected $uuid = '';
     /**
      * Generated from protobuf field <code>string api_key = 2 [json_name = "apiKey"];</code>
      */
@@ -48,7 +48,7 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $uuid
      *     @type string $api_key
      *     @type string $name
      *     @type string $user_id
@@ -63,23 +63,23 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return string
      */
-    public function getId()
+    public function getUuid()
     {
-        return $this->id;
+        return $this->uuid;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setUuid($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
+        GPBUtil::checkString($var, True);
+        $this->uuid = $var;
 
         return $this;
     }

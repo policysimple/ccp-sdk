@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeys',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'accounts/v1alpha1/apikeys/apikeys.proto\x12\x1c\x61\x63\x63ounts.v1alpha1.apikeys.v1\x1a accounts/v1alpha1/accounts.proto\"\xed\x01\n\x13\x43reateApiKeyRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n\troles_ids\x18\x03 \x03(\rR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x04 \x03(\rR\x0epermissionsIds\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\nproject_id\x18\x07 \x01(\rR\tprojectId\"\x7f\n\x14\x43reateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12&\n\x0f\x61\x63\x63\x65ss_point_id\x18\x04 \x01(\rR\raccessPointId\x12\x14\n\x05\x65rror\x18\x05 \x01(\tR\x05\x65rror\"B\n\x13GetOneApiKeyRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1b\n\tvalue_key\x18\x02 \x01(\tR\x08valueKey\"\xf4\x02\n\x14GetOneApiKeyResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12-\n\x05roles\x18\x05 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\x06 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x1b\n\tis_active\x18\x08 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\t \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\n \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"U\n\x11ListApiKeyRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"\xfa\x01\n\nApiKeyList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\x07 \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\x08 \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"Y\n\x12ListApiKeyResponse\x12\x43\n\x08\x61pi_keys\x18\x01 \x03(\x0b\x32(.accounts.v1alpha1.apikeys.v1.ApiKeyListR\x07\x61piKeys\"q\n\x13UpdateApiKeyRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12J\n\x07\x61pi_key\x18\x06 \x01(\x0b\x32\x31.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestR\x06\x61piKey\"W\n\x14UpdateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\"%\n\x13\x44\x65leteApiKeyRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\"W\n\x14\x44\x65leteApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rrorB<Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeysb\x06proto3'
+  serialized_pb=b'\n\'accounts/v1alpha1/apikeys/apikeys.proto\x12\x1c\x61\x63\x63ounts.v1alpha1.apikeys.v1\x1a accounts/v1alpha1/accounts.proto\"\xd0\x01\n\x13\x43reateApiKeyRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\'\n\x0fpermissions_ids\x18\x04 \x03(\rR\x0epermissionsIds\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\nproject_id\x18\x07 \x01(\rR\tprojectId\"k\n\x14\x43reateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04uuid\x18\x04 \x01(\tR\x04uuid\x12\x14\n\x05\x65rror\x18\x05 \x01(\tR\x05\x65rror\")\n\x13GetOneApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\"\xf6\x02\n\x14GetOneApiKeyResponse\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12+\n\x04role\x18\x05 \x01(\x0b\x32\x17.accounts.v1alpha1.RoleR\x04role\x12?\n\x0bpermissions\x18\x06 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x1b\n\tis_active\x18\x08 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\t \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\n \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"U\n\x11ListApiKeyRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"\xfe\x01\n\nApiKeyList\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\x07 \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\x08 \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"Y\n\x12ListApiKeyResponse\x12\x43\n\x08\x61pi_keys\x18\x01 \x03(\x0b\x32(.accounts.v1alpha1.apikeys.v1.ApiKeyListR\x07\x61piKeys\"u\n\x13UpdateApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12J\n\x07\x61pi_key\x18\x06 \x01(\x0b\x32\x31.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestR\x06\x61piKey\"W\n\x14UpdateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\")\n\x13\x44\x65leteApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\"W\n\x14\x44\x65leteApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rrorB<Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeysb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -50,35 +50,28 @@ _CREATEAPIKEYREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='roles_ids', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.roles_ids', index=2,
-      number=3, type=13, cpp_type=3, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='rolesIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='permissions_ids', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.permissions_ids', index=3,
+      name='permissions_ids', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.permissions_ids', index=2,
       number=4, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='permissionsIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id', index=4,
+      name='organization_id', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id', index=3,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_active', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.is_active', index=5,
+      name='is_active', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.is_active', index=4,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isActive', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='project_id', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.project_id', index=6,
+      name='project_id', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.project_id', index=5,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -97,7 +90,7 @@ _CREATEAPIKEYREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=108,
-  serialized_end=345,
+  serialized_end=316,
 )
 
 
@@ -124,12 +117,12 @@ _CREATEAPIKEYRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='apiKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='access_point_id', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.access_point_id', index=2,
-      number=4, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='uuid', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.uuid', index=2,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='accessPointId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuid', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='error', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.error', index=3,
       number=5, type=9, cpp_type=9, label=1,
@@ -149,8 +142,8 @@ _CREATEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=347,
-  serialized_end=474,
+  serialized_start=318,
+  serialized_end=425,
 )
 
 
@@ -163,19 +156,12 @@ _GETONEAPIKEYREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value_key', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value_key', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='uuid', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='valueKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuid', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -188,8 +174,8 @@ _GETONEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=476,
-  serialized_end=542,
+  serialized_start=427,
+  serialized_end=468,
 )
 
 
@@ -202,12 +188,12 @@ _GETONEAPIKEYRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='uuid', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.uuid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuid', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.api_key', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -230,12 +216,12 @@ _GETONEAPIKEYRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='roles', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.roles', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='role', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.role', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='roles', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='role', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.permissions', index=5,
       number=6, type=11, cpp_type=10, label=3,
@@ -276,8 +262,8 @@ _GETONEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=545,
-  serialized_end=917,
+  serialized_start=471,
+  serialized_end=845,
 )
 
 
@@ -315,8 +301,8 @@ _LISTAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=919,
-  serialized_end=1004,
+  serialized_start=847,
+  serialized_end=932,
 )
 
 
@@ -329,12 +315,12 @@ _APIKEYLIST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.apikeys.v1.ApiKeyList.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='uuid', full_name='accounts.v1alpha1.apikeys.v1.ApiKeyList.uuid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuid', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='accounts.v1alpha1.apikeys.v1.ApiKeyList.api_key', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -389,8 +375,8 @@ _APIKEYLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1007,
-  serialized_end=1257,
+  serialized_start=935,
+  serialized_end=1189,
 )
 
 
@@ -421,8 +407,8 @@ _LISTAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1259,
-  serialized_end=1348,
+  serialized_start=1191,
+  serialized_end=1280,
 )
 
 
@@ -435,12 +421,12 @@ _UPDATEAPIKEYREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='uuid', full_name='accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.uuid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuid', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='api_key', full_name='accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.api_key', index=1,
       number=6, type=11, cpp_type=10, label=1,
@@ -460,8 +446,8 @@ _UPDATEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1350,
-  serialized_end=1463,
+  serialized_start=1282,
+  serialized_end=1399,
 )
 
 
@@ -506,8 +492,8 @@ _UPDATEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1465,
-  serialized_end=1552,
+  serialized_start=1401,
+  serialized_end=1488,
 )
 
 
@@ -520,12 +506,12 @@ _DELETEAPIKEYREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='uuid', full_name='accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.uuid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuid', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -538,8 +524,8 @@ _DELETEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1554,
-  serialized_end=1591,
+  serialized_start=1490,
+  serialized_end=1531,
 )
 
 
@@ -584,11 +570,11 @@ _DELETEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1593,
-  serialized_end=1680,
+  serialized_start=1533,
+  serialized_end=1620,
 )
 
-_GETONEAPIKEYRESPONSE.fields_by_name['roles'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._ROLE
+_GETONEAPIKEYRESPONSE.fields_by_name['role'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._ROLE
 _GETONEAPIKEYRESPONSE.fields_by_name['permissions'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._PERMISSION
 _GETONEAPIKEYRESPONSE.fields_by_name['project'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._PROJECT
 _GETONEAPIKEYRESPONSE.fields_by_name['organization'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._ORGANIZATION

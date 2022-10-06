@@ -243,10 +243,8 @@ func UpdateUser(req *accountpkgv1.UpdateUserRequest) (*accountpkgv1.UpdateUserRe
 	response, err := client.UpdateUser(ctx, req)
 	if err != nil {
 		bylogs.LogErr("UpdateUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error UpdateUser: %v", err),
-		)
+		return nil, fmt.Errorf("[UpdateUser] %w", err)
+
 	} else {
 		bylogs.LogInfo("UpdateUser Client Sdk", "Success")
 	}

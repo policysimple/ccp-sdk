@@ -22,9 +22,9 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      */
     protected $api_key = '';
     /**
-     * Generated from protobuf field <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
+     * Generated from protobuf field <code>string uuid = 4 [json_name = "uuid"];</code>
      */
-    protected $access_point_id = 0;
+    protected $uuid = '';
     /**
      * Generated from protobuf field <code>string error = 5 [json_name = "error"];</code>
      */
@@ -38,7 +38,7 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $msg
      *     @type string $api_key
-     *     @type int $access_point_id
+     *     @type string $uuid
      *     @type string $error
      * }
      */
@@ -92,23 +92,23 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string uuid = 4 [json_name = "uuid"];</code>
+     * @return string
      */
-    public function getAccessPointId()
+    public function getUuid()
     {
-        return $this->access_point_id;
+        return $this->uuid;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string uuid = 4 [json_name = "uuid"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setAccessPointId($var)
+    public function setUuid($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->access_point_id = $var;
+        GPBUtil::checkString($var, True);
+        $this->uuid = $var;
 
         return $this;
     }

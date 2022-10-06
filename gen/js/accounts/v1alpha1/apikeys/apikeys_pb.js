@@ -265,7 +265,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.repeatedFields_ = [3,4];
+proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.repeatedFields_ = [4];
 
 
 
@@ -300,7 +300,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.toObject = function(inclu
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    rolesIdsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
@@ -348,12 +347,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.deserializeBinaryFromRead
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
-      break;
-    case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addRolesIds(values[i]);
-      }
       break;
     case 4:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
@@ -413,13 +406,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.serializeBinaryToWriter =
   if (f.length > 0) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = message.getRolesIdsList();
-  if (f.length > 0) {
-    writer.writePackedUint32(
-      3,
       f
     );
   }
@@ -487,43 +473,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.getUserId = fun
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * repeated uint32 roles_ids = 3;
- * @return {!Array<number>}
- */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.getRolesIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setRolesIdsList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
-};
-
-
-/**
- * @param {number} value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.addRolesIds = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.clearRolesIdsList = function() {
-  return this.setRolesIdsList([]);
 };
 
 
@@ -652,7 +601,7 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.toObject = function(incl
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
     apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    accessPointId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
     error: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
@@ -699,8 +648,8 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.deserializeBinaryFromRea
       msg.setApiKey(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setAccessPointId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -749,9 +698,9 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getAccessPointId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -803,20 +752,20 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.setApiKey = fu
 
 
 /**
- * optional uint32 access_point_id = 4;
- * @return {number}
+ * optional string uuid = 4;
+ * @return {string}
  */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.getAccessPointId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.setAccessPointId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -870,8 +819,7 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.toObject = func
  */
 proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    valueKey: jspb.Message.getFieldWithDefault(msg, 2, "")
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -909,12 +857,8 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
-      break;
-    case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setValueKey(value);
+      msg.setUuid(value);
       break;
     default:
       reader.skipField();
@@ -945,47 +889,22 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.serializeBinary
  */
 proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getValueKey();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
- */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string value_key = 2;
+ * optional string uuid = 1;
  * @return {string}
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.getValueKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -993,8 +912,8 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.getValueKey = f
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.setValueKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1004,7 +923,7 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.setValueKey = f
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.repeatedFields_ = [5,6];
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.repeatedFields_ = [6];
 
 
 
@@ -1037,12 +956,11 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.toObject = fun
  */
 proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
-    accounts_v1alpha1_accounts_pb.Role.toObject, includeInstance),
+    role: (f = msg.getRole()) && accounts_v1alpha1_accounts_pb.Role.toObject(includeInstance, f),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
     accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
@@ -1085,8 +1003,8 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1103,7 +1021,7 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.deserializeBinaryFromRea
     case 5:
       var value = new accounts_v1alpha1_accounts_pb.Role;
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Role.deserializeBinaryFromReader);
-      msg.addRoles(value);
+      msg.setRole(value);
       break;
     case 6:
       var value = new accounts_v1alpha1_accounts_pb.Permission;
@@ -1153,9 +1071,9 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.serializeBinar
  */
 proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1181,9 +1099,9 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getRolesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getRole();
+  if (f != null) {
+    writer.writeMessage(
       5,
       f,
       accounts_v1alpha1_accounts_pb.Role.serializeBinaryToWriter
@@ -1224,20 +1142,20 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.serializeBinaryToWriter 
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string uuid = 1;
+ * @return {string}
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1296,40 +1214,39 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.setUserId = fu
 
 
 /**
- * repeated accounts.v1alpha1.Role roles = 5;
- * @return {!Array<!proto.accounts.v1alpha1.Role>}
+ * optional accounts.v1alpha1.Role role = 5;
+ * @return {?proto.accounts.v1alpha1.Role}
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.getRolesList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Role>} */ (
-    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Role, 5));
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.getRole = function() {
+  return /** @type{?proto.accounts.v1alpha1.Role} */ (
+    jspb.Message.getWrapperField(this, accounts_v1alpha1_accounts_pb.Role, 5));
 };
 
 
 /**
- * @param {!Array<!proto.accounts.v1alpha1.Role>} value
+ * @param {?proto.accounts.v1alpha1.Role|undefined} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse} returns this
 */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.setRolesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.setRole = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.accounts.v1alpha1.Role=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Role}
- */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.addRoles = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.accounts.v1alpha1.Role, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.clearRolesList = function() {
-  return this.setRolesList([]);
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.clearRole = function() {
+  return this.setRole(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -1655,7 +1572,7 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.toObject = function(opt_
  */
 proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1699,8 +1616,8 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1757,9 +1674,9 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.serializeBinary = functi
  */
 proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1812,20 +1729,20 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.serializeBinaryToWriter = function
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string uuid = 1;
+ * @return {string}
  */
-proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.ApiKeyList} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2167,7 +2084,7 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.prototype.toObject = func
  */
 proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     apiKey: (f = msg.getApiKey()) && proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.toObject(includeInstance, f)
   };
 
@@ -2206,8 +2123,8 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
       break;
     case 6:
       var value = new proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest;
@@ -2243,9 +2160,9 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.prototype.serializeBinary
  */
 proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2262,20 +2179,20 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.serializeBinaryToWriter =
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string uuid = 1;
+ * @return {string}
  */
-proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyRequest.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2538,7 +2455,7 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.prototype.toObject = func
  */
 proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2576,8 +2493,8 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
       break;
     default:
       reader.skipField();
@@ -2608,9 +2525,9 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.prototype.serializeBinary
  */
 proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2619,20 +2536,20 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.serializeBinaryToWriter =
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string uuid = 1;
+ * @return {string}
  */
-proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest} returns this
  */
-proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

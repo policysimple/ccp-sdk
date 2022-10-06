@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteApiKeyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      */
-    protected $id = 0;
+    protected $uuid = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $uuid
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DeleteApiKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return string
      */
-    public function getId()
+    public function getUuid()
     {
-        return $this->id;
+        return $this->uuid;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setUuid($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
+        GPBUtil::checkString($var, True);
+        $this->uuid = $var;
 
         return $this;
     }

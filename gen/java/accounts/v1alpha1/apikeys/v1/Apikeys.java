@@ -43,23 +43,6 @@ public final class Apikeys {
         getUserIdBytes();
 
     /**
-     * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @return A list containing the rolesIds.
-     */
-    java.util.List<java.lang.Integer> getRolesIdsList();
-    /**
-     * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @return The count of rolesIds.
-     */
-    int getRolesIdsCount();
-    /**
-     * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @param index The index of the element to return.
-     * @return The rolesIds at the given index.
-     */
-    int getRolesIds(int index);
-
-    /**
      * <code>repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];</code>
      * @return A list containing the permissionsIds.
      */
@@ -109,7 +92,6 @@ public final class Apikeys {
     private CreateApiKeyRequest() {
       name_ = "";
       userId_ = "";
-      rolesIds_ = emptyIntList();
       permissionsIds_ = emptyIntList();
     }
 
@@ -156,31 +138,10 @@ public final class Apikeys {
               userId_ = s;
               break;
             }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rolesIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              rolesIds_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                rolesIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                rolesIds_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
             case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 permissionsIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               permissionsIds_.addInt(input.readUInt32());
               break;
@@ -188,9 +149,9 @@ public final class Apikeys {
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 permissionsIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 permissionsIds_.addInt(input.readUInt32());
@@ -229,9 +190,6 @@ public final class Apikeys {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rolesIds_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           permissionsIds_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -327,34 +285,6 @@ public final class Apikeys {
       }
     }
 
-    public static final int ROLES_IDS_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.IntList rolesIds_;
-    /**
-     * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @return A list containing the rolesIds.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getRolesIdsList() {
-      return rolesIds_;
-    }
-    /**
-     * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @return The count of rolesIds.
-     */
-    public int getRolesIdsCount() {
-      return rolesIds_.size();
-    }
-    /**
-     * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-     * @param index The index of the element to return.
-     * @return The rolesIds at the given index.
-     */
-    public int getRolesIds(int index) {
-      return rolesIds_.getInt(index);
-    }
-    private int rolesIdsMemoizedSerializedSize = -1;
-
     public static final int PERMISSIONS_IDS_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList permissionsIds_;
     /**
@@ -437,13 +367,6 @@ public final class Apikeys {
       if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
-      if (getRolesIdsList().size() > 0) {
-        output.writeUInt32NoTag(26);
-        output.writeUInt32NoTag(rolesIdsMemoizedSerializedSize);
-      }
-      for (int i = 0; i < rolesIds_.size(); i++) {
-        output.writeUInt32NoTag(rolesIds_.getInt(i));
-      }
       if (getPermissionsIdsList().size() > 0) {
         output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(permissionsIdsMemoizedSerializedSize);
@@ -474,20 +397,6 @@ public final class Apikeys {
       }
       if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < rolesIds_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(rolesIds_.getInt(i));
-        }
-        size += dataSize;
-        if (!getRolesIdsList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        rolesIdsMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
@@ -534,8 +443,6 @@ public final class Apikeys {
           .equals(other.getName())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getRolesIdsList()
-          .equals(other.getRolesIdsList())) return false;
       if (!getPermissionsIdsList()
           .equals(other.getPermissionsIdsList())) return false;
       if (getOrganizationId()
@@ -559,10 +466,6 @@ public final class Apikeys {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      if (getRolesIdsCount() > 0) {
-        hash = (37 * hash) + ROLES_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getRolesIdsList().hashCode();
-      }
       if (getPermissionsIdsCount() > 0) {
         hash = (37 * hash) + PERMISSIONS_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getPermissionsIdsList().hashCode();
@@ -711,10 +614,8 @@ public final class Apikeys {
 
         userId_ = "";
 
-        rolesIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         permissionsIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         organizationId_ = 0;
 
         isActive_ = false;
@@ -751,13 +652,8 @@ public final class Apikeys {
         result.name_ = name_;
         result.userId_ = userId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          rolesIds_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.rolesIds_ = rolesIds_;
-        if (((bitField0_ & 0x00000002) != 0)) {
           permissionsIds_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.permissionsIds_ = permissionsIds_;
         result.organizationId_ = organizationId_;
@@ -819,20 +715,10 @@ public final class Apikeys {
           userId_ = other.userId_;
           onChanged();
         }
-        if (!other.rolesIds_.isEmpty()) {
-          if (rolesIds_.isEmpty()) {
-            rolesIds_ = other.rolesIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureRolesIdsIsMutable();
-            rolesIds_.addAll(other.rolesIds_);
-          }
-          onChanged();
-        }
         if (!other.permissionsIds_.isEmpty()) {
           if (permissionsIds_.isEmpty()) {
             permissionsIds_ = other.permissionsIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePermissionsIdsIsMutable();
             permissionsIds_.addAll(other.permissionsIds_);
@@ -1030,90 +916,11 @@ public final class Apikeys {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList rolesIds_ = emptyIntList();
-      private void ensureRolesIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          rolesIds_ = mutableCopy(rolesIds_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @return A list containing the rolesIds.
-       */
-      public java.util.List<java.lang.Integer>
-          getRolesIdsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(rolesIds_) : rolesIds_;
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @return The count of rolesIds.
-       */
-      public int getRolesIdsCount() {
-        return rolesIds_.size();
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @param index The index of the element to return.
-       * @return The rolesIds at the given index.
-       */
-      public int getRolesIds(int index) {
-        return rolesIds_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @param index The index to set the value at.
-       * @param value The rolesIds to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRolesIds(
-          int index, int value) {
-        ensureRolesIdsIsMutable();
-        rolesIds_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @param value The rolesIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addRolesIds(int value) {
-        ensureRolesIdsIsMutable();
-        rolesIds_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @param values The rolesIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllRolesIds(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureRolesIdsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, rolesIds_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 roles_ids = 3 [json_name = "rolesIds"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRolesIds() {
-        rolesIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList permissionsIds_ = emptyIntList();
       private void ensurePermissionsIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           permissionsIds_ = mutableCopy(permissionsIds_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -1122,7 +929,7 @@ public final class Apikeys {
        */
       public java.util.List<java.lang.Integer>
           getPermissionsIdsList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(permissionsIds_) : permissionsIds_;
       }
       /**
@@ -1183,7 +990,7 @@ public final class Apikeys {
        */
       public Builder clearPermissionsIds() {
         permissionsIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1362,10 +1169,16 @@ public final class Apikeys {
         getApiKeyBytes();
 
     /**
-     * <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
-     * @return The accessPointId.
+     * <code>string uuid = 4 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
-    int getAccessPointId();
+    java.lang.String getUuid();
+    /**
+     * <code>string uuid = 4 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
 
     /**
      * <code>string error = 5 [json_name = "error"];</code>
@@ -1394,6 +1207,7 @@ public final class Apikeys {
     private CreateApiKeyResponse() {
       msg_ = "";
       apiKey_ = "";
+      uuid_ = "";
       error_ = "";
     }
 
@@ -1439,9 +1253,10 @@ public final class Apikeys {
               apiKey_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              accessPointId_ = input.readUInt32();
+              uuid_ = s;
               break;
             }
             case 42: {
@@ -1558,15 +1373,42 @@ public final class Apikeys {
       }
     }
 
-    public static final int ACCESS_POINT_ID_FIELD_NUMBER = 4;
-    private int accessPointId_;
+    public static final int UUID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object uuid_;
     /**
-     * <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
-     * @return The accessPointId.
+     * <code>string uuid = 4 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
     @java.lang.Override
-    public int getAccessPointId() {
-      return accessPointId_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uuid = 4 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ERROR_FIELD_NUMBER = 5;
@@ -1627,8 +1469,8 @@ public final class Apikeys {
       if (!getApiKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
-      if (accessPointId_ != 0) {
-        output.writeUInt32(4, accessPointId_);
+      if (!getUuidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uuid_);
       }
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, error_);
@@ -1648,9 +1490,8 @@ public final class Apikeys {
       if (!getApiKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
       }
-      if (accessPointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, accessPointId_);
+      if (!getUuidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uuid_);
       }
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, error_);
@@ -1674,8 +1515,8 @@ public final class Apikeys {
           .equals(other.getMsg())) return false;
       if (!getApiKey()
           .equals(other.getApiKey())) return false;
-      if (getAccessPointId()
-          != other.getAccessPointId()) return false;
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
       if (!getError()
           .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1693,8 +1534,8 @@ public final class Apikeys {
       hash = (53 * hash) + getMsg().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
-      hash = (37 * hash) + ACCESS_POINT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAccessPointId();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1834,7 +1675,7 @@ public final class Apikeys {
 
         apiKey_ = "";
 
-        accessPointId_ = 0;
+        uuid_ = "";
 
         error_ = "";
 
@@ -1866,7 +1707,7 @@ public final class Apikeys {
         accounts.v1alpha1.apikeys.v1.Apikeys.CreateApiKeyResponse result = new accounts.v1alpha1.apikeys.v1.Apikeys.CreateApiKeyResponse(this);
         result.msg_ = msg_;
         result.apiKey_ = apiKey_;
-        result.accessPointId_ = accessPointId_;
+        result.uuid_ = uuid_;
         result.error_ = error_;
         onBuilt();
         return result;
@@ -1924,8 +1765,9 @@ public final class Apikeys {
           apiKey_ = other.apiKey_;
           onChanged();
         }
-        if (other.getAccessPointId() != 0) {
-          setAccessPointId(other.getAccessPointId());
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
         }
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
@@ -2112,33 +1954,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int accessPointId_ ;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
-       * @return The accessPointId.
+       * <code>string uuid = 4 [json_name = "uuid"];</code>
+       * @return The uuid.
        */
-      @java.lang.Override
-      public int getAccessPointId() {
-        return accessPointId_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
-       * @param value The accessPointId to set.
+       * <code>string uuid = 4 [json_name = "uuid"];</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uuid = 4 [json_name = "uuid"];</code>
+       * @param value The uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setAccessPointId(int value) {
-        
-        accessPointId_ = value;
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 access_point_id = 4 [json_name = "accessPointId"];</code>
+       * <code>string uuid = 4 [json_name = "uuid"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearAccessPointId() {
+      public Builder clearUuid() {
         
-        accessPointId_ = 0;
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uuid = 4 [json_name = "uuid"];</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
         onChanged();
         return this;
       }
@@ -2276,22 +2163,16 @@ public final class Apikeys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
-    int getId();
-
+    java.lang.String getUuid();
     /**
-     * <code>string value_key = 2 [json_name = "valueKey"];</code>
-     * @return The valueKey.
-     */
-    java.lang.String getValueKey();
-    /**
-     * <code>string value_key = 2 [json_name = "valueKey"];</code>
-     * @return The bytes for valueKey.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
      */
     com.google.protobuf.ByteString
-        getValueKeyBytes();
+        getUuidBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest}
@@ -2306,7 +2187,7 @@ public final class Apikeys {
       super(builder);
     }
     private GetOneApiKeyRequest() {
-      valueKey_ = "";
+      uuid_ = "";
     }
 
     @java.lang.Override
@@ -2339,15 +2220,10 @@ public final class Apikeys {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 18: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              valueKey_ = s;
+              uuid_ = s;
               break;
             }
             default: {
@@ -2382,49 +2258,38 @@ public final class Apikeys {
               accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest.class, accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
-    }
-
-    public static final int VALUE_KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object valueKey_;
-    /**
-     * <code>string value_key = 2 [json_name = "valueKey"];</code>
-     * @return The valueKey.
-     */
-    @java.lang.Override
-    public java.lang.String getValueKey() {
-      java.lang.Object ref = valueKey_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        valueKey_ = s;
+        uuid_ = s;
         return s;
       }
     }
     /**
-     * <code>string value_key = 2 [json_name = "valueKey"];</code>
-     * @return The bytes for valueKey.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getValueKeyBytes() {
-      java.lang.Object ref = valueKey_;
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        valueKey_ = b;
+        uuid_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2445,11 +2310,8 @@ public final class Apikeys {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
-      }
-      if (!getValueKeyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, valueKey_);
+      if (!getUuidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -2460,12 +2322,8 @@ public final class Apikeys {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
-      }
-      if (!getValueKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, valueKey_);
+      if (!getUuidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2482,10 +2340,8 @@ public final class Apikeys {
       }
       accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest other = (accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest) obj;
 
-      if (getId()
-          != other.getId()) return false;
-      if (!getValueKey()
-          .equals(other.getValueKey())) return false;
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2497,10 +2353,8 @@ public final class Apikeys {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + VALUE_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getValueKey().hashCode();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2634,9 +2488,7 @@ public final class Apikeys {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
-
-        valueKey_ = "";
+        uuid_ = "";
 
         return this;
       }
@@ -2664,8 +2516,7 @@ public final class Apikeys {
       @java.lang.Override
       public accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest buildPartial() {
         accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest result = new accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest(this);
-        result.id_ = id_;
-        result.valueKey_ = valueKey_;
+        result.uuid_ = uuid_;
         onBuilt();
         return result;
       }
@@ -2714,11 +2565,8 @@ public final class Apikeys {
 
       public Builder mergeFrom(accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest other) {
         if (other == accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
-        if (!other.getValueKey().isEmpty()) {
-          valueKey_ = other.valueKey_;
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2750,109 +2598,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int id_ ;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The uuid.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object valueKey_ = "";
-      /**
-       * <code>string value_key = 2 [json_name = "valueKey"];</code>
-       * @return The valueKey.
-       */
-      public java.lang.String getValueKey() {
-        java.lang.Object ref = valueKey_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          valueKey_ = s;
+          uuid_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string value_key = 2 [json_name = "valueKey"];</code>
-       * @return The bytes for valueKey.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The bytes for uuid.
        */
       public com.google.protobuf.ByteString
-          getValueKeyBytes() {
-        java.lang.Object ref = valueKey_;
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          valueKey_ = b;
+          uuid_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string value_key = 2 [json_name = "valueKey"];</code>
-       * @param value The valueKey to set.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setValueKey(
+      public Builder setUuid(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        valueKey_ = value;
+        uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string value_key = 2 [json_name = "valueKey"];</code>
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearValueKey() {
+      public Builder clearUuid() {
         
-        valueKey_ = getDefaultInstance().getValueKey();
+        uuid_ = getDefaultInstance().getUuid();
         onChanged();
         return this;
       }
       /**
-       * <code>string value_key = 2 [json_name = "valueKey"];</code>
-       * @param value The bytes for valueKey to set.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The bytes for uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setValueKeyBytes(
+      public Builder setUuidBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        valueKey_ = value;
+        uuid_ = value;
         onChanged();
         return this;
       }
@@ -2914,10 +2731,16 @@ public final class Apikeys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
-    int getId();
+    java.lang.String getUuid();
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
 
     /**
      * <code>string api_key = 2 [json_name = "apiKey"];</code>
@@ -2956,28 +2779,19 @@ public final class Apikeys {
         getUserIdBytes();
 
     /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+     * @return Whether the role field is set.
      */
-    java.util.List<accounts.v1alpha1.Accounts.Role> 
-        getRolesList();
+    boolean hasRole();
     /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+     * @return The role.
      */
-    accounts.v1alpha1.Accounts.Role getRoles(int index);
+    accounts.v1alpha1.Accounts.Role getRole();
     /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
      */
-    int getRolesCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-        getRolesOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-     */
-    accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-        int index);
+    accounts.v1alpha1.Accounts.RoleOrBuilder getRoleOrBuilder();
 
     /**
      * <code>repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];</code>
@@ -3052,10 +2866,10 @@ public final class Apikeys {
       super(builder);
     }
     private GetOneApiKeyResponse() {
+      uuid_ = "";
       apiKey_ = "";
       name_ = "";
       userId_ = "";
-      roles_ = java.util.Collections.emptyList();
       permissions_ = java.util.Collections.emptyList();
     }
 
@@ -3090,9 +2904,10 @@ public final class Apikeys {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readUInt32();
+              uuid_ = s;
               break;
             }
             case 18: {
@@ -3114,18 +2929,22 @@ public final class Apikeys {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Role>();
-                mutable_bitField0_ |= 0x00000001;
+              accounts.v1alpha1.Accounts.Role.Builder subBuilder = null;
+              if (role_ != null) {
+                subBuilder = role_.toBuilder();
               }
-              roles_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Role.parser(), extensionRegistry));
+              role_ = input.readMessage(accounts.v1alpha1.Accounts.Role.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(role_);
+                role_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               permissions_.add(
                   input.readMessage(accounts.v1alpha1.Accounts.Permission.parser(), extensionRegistry));
@@ -3178,9 +2997,6 @@ public final class Apikeys {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roles_ = java.util.Collections.unmodifiableList(roles_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           permissions_ = java.util.Collections.unmodifiableList(permissions_);
         }
         this.unknownFields = unknownFields.build();
@@ -3200,15 +3016,42 @@ public final class Apikeys {
               accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse.class, accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int API_KEY_FIELD_NUMBER = 2;
@@ -3325,44 +3168,30 @@ public final class Apikeys {
       }
     }
 
-    public static final int ROLES_FIELD_NUMBER = 5;
-    private java.util.List<accounts.v1alpha1.Accounts.Role> roles_;
+    public static final int ROLE_FIELD_NUMBER = 5;
+    private accounts.v1alpha1.Accounts.Role role_;
     /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+     * @return Whether the role field is set.
      */
     @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Role> getRolesList() {
-      return roles_;
+    public boolean hasRole() {
+      return role_ != null;
     }
     /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+     * @return The role.
      */
     @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-        getRolesOrBuilderList() {
-      return roles_;
+    public accounts.v1alpha1.Accounts.Role getRole() {
+      return role_ == null ? accounts.v1alpha1.Accounts.Role.getDefaultInstance() : role_;
     }
     /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+     * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
      */
     @java.lang.Override
-    public int getRolesCount() {
-      return roles_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Role getRoles(int index) {
-      return roles_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-        int index) {
-      return roles_.get(index);
+    public accounts.v1alpha1.Accounts.RoleOrBuilder getRoleOrBuilder() {
+      return getRole();
     }
 
     public static final int PERMISSIONS_FIELD_NUMBER = 6;
@@ -3482,8 +3311,8 @@ public final class Apikeys {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
       if (!getApiKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
@@ -3494,8 +3323,8 @@ public final class Apikeys {
       if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userId_);
       }
-      for (int i = 0; i < roles_.size(); i++) {
-        output.writeMessage(5, roles_.get(i));
+      if (role_ != null) {
+        output.writeMessage(5, getRole());
       }
       for (int i = 0; i < permissions_.size(); i++) {
         output.writeMessage(6, permissions_.get(i));
@@ -3518,9 +3347,8 @@ public final class Apikeys {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
       if (!getApiKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
@@ -3531,9 +3359,9 @@ public final class Apikeys {
       if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userId_);
       }
-      for (int i = 0; i < roles_.size(); i++) {
+      if (role_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, roles_.get(i));
+          .computeMessageSize(5, getRole());
       }
       for (int i = 0; i < permissions_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -3566,16 +3394,19 @@ public final class Apikeys {
       }
       accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse other = (accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
       if (!getApiKey()
           .equals(other.getApiKey())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getRolesList()
-          .equals(other.getRolesList())) return false;
+      if (hasRole() != other.hasRole()) return false;
+      if (hasRole()) {
+        if (!getRole()
+            .equals(other.getRole())) return false;
+      }
       if (!getPermissionsList()
           .equals(other.getPermissionsList())) return false;
       if (getIsActive()
@@ -3601,17 +3432,17 @@ public final class Apikeys {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      if (getRolesCount() > 0) {
-        hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + getRolesList().hashCode();
+      if (hasRole()) {
+        hash = (37 * hash) + ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getRole().hashCode();
       }
       if (getPermissionsCount() > 0) {
         hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
@@ -3756,14 +3587,13 @@ public final class Apikeys {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRolesFieldBuilder();
           getPermissionsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        uuid_ = "";
 
         apiKey_ = "";
 
@@ -3771,15 +3601,15 @@ public final class Apikeys {
 
         userId_ = "";
 
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (roleBuilder_ == null) {
+          role_ = null;
         } else {
-          rolesBuilder_.clear();
+          role_ = null;
+          roleBuilder_ = null;
         }
         if (permissionsBuilder_ == null) {
           permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           permissionsBuilder_.clear();
         }
@@ -3824,23 +3654,19 @@ public final class Apikeys {
       public accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse buildPartial() {
         accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse result = new accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse(this);
         int from_bitField0_ = bitField0_;
-        result.id_ = id_;
+        result.uuid_ = uuid_;
         result.apiKey_ = apiKey_;
         result.name_ = name_;
         result.userId_ = userId_;
-        if (rolesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            roles_ = java.util.Collections.unmodifiableList(roles_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.roles_ = roles_;
+        if (roleBuilder_ == null) {
+          result.role_ = role_;
         } else {
-          result.roles_ = rolesBuilder_.build();
+          result.role_ = roleBuilder_.build();
         }
         if (permissionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             permissions_ = java.util.Collections.unmodifiableList(permissions_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.permissions_ = permissions_;
         } else {
@@ -3905,8 +3731,9 @@ public final class Apikeys {
 
       public Builder mergeFrom(accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse other) {
         if (other == accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyResponse.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
         }
         if (!other.getApiKey().isEmpty()) {
           apiKey_ = other.apiKey_;
@@ -3920,37 +3747,14 @@ public final class Apikeys {
           userId_ = other.userId_;
           onChanged();
         }
-        if (rolesBuilder_ == null) {
-          if (!other.roles_.isEmpty()) {
-            if (roles_.isEmpty()) {
-              roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRolesIsMutable();
-              roles_.addAll(other.roles_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.roles_.isEmpty()) {
-            if (rolesBuilder_.isEmpty()) {
-              rolesBuilder_.dispose();
-              rolesBuilder_ = null;
-              roles_ = other.roles_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              rolesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRolesFieldBuilder() : null;
-            } else {
-              rolesBuilder_.addAllMessages(other.roles_);
-            }
-          }
+        if (other.hasRole()) {
+          mergeRole(other.getRole());
         }
         if (permissionsBuilder_ == null) {
           if (!other.permissions_.isEmpty()) {
             if (permissions_.isEmpty()) {
               permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensurePermissionsIsMutable();
               permissions_.addAll(other.permissions_);
@@ -3963,7 +3767,7 @@ public final class Apikeys {
               permissionsBuilder_.dispose();
               permissionsBuilder_ = null;
               permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               permissionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPermissionsFieldBuilder() : null;
@@ -4011,33 +3815,78 @@ public final class Apikeys {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The uuid.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearUuid() {
         
-        id_ = 0;
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
         onChanged();
         return this;
       }
@@ -4270,252 +4119,131 @@ public final class Apikeys {
         return this;
       }
 
-      private java.util.List<accounts.v1alpha1.Accounts.Role> roles_ =
-        java.util.Collections.emptyList();
-      private void ensureRolesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          roles_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Role>(roles_);
-          bitField0_ |= 0x00000001;
-         }
+      private accounts.v1alpha1.Accounts.Role role_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> roleBuilder_;
+      /**
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+       * @return Whether the role field is set.
+       */
+      public boolean hasRole() {
+        return roleBuilder_ != null || role_ != null;
       }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+       * @return The role.
+       */
+      public accounts.v1alpha1.Accounts.Role getRole() {
+        if (roleBuilder_ == null) {
+          return role_ == null ? accounts.v1alpha1.Accounts.Role.getDefaultInstance() : role_;
+        } else {
+          return roleBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+       */
+      public Builder setRole(accounts.v1alpha1.Accounts.Role value) {
+        if (roleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          role_ = value;
+          onChanged();
+        } else {
+          roleBuilder_.setMessage(value);
+        }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> rolesBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Role> getRolesList() {
-        if (rolesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(roles_);
-        } else {
-          return rolesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public int getRolesCount() {
-        if (rolesBuilder_ == null) {
-          return roles_.size();
-        } else {
-          return rolesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role getRoles(int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);
-        } else {
-          return rolesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public Builder setRoles(
-          int index, accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRolesIsMutable();
-          roles_.set(index, value);
-          onChanged();
-        } else {
-          rolesBuilder_.setMessage(index, value);
-        }
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
        */
-      public Builder setRoles(
-          int index, accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          rolesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public Builder addRoles(accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRolesIsMutable();
-          roles_.add(value);
-          onChanged();
-        } else {
-          rolesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public Builder addRoles(
-          int index, accounts.v1alpha1.Accounts.Role value) {
-        if (rolesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRolesIsMutable();
-          roles_.add(index, value);
-          onChanged();
-        } else {
-          rolesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public Builder addRoles(
+      public Builder setRole(
           accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(builderForValue.build());
+        if (roleBuilder_ == null) {
+          role_ = builderForValue.build();
           onChanged();
         } else {
-          rolesBuilder_.addMessage(builderForValue.build());
+          roleBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
        */
-      public Builder addRoles(
-          int index, accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(index, builderForValue.build());
+      public Builder mergeRole(accounts.v1alpha1.Accounts.Role value) {
+        if (roleBuilder_ == null) {
+          if (role_ != null) {
+            role_ =
+              accounts.v1alpha1.Accounts.Role.newBuilder(role_).mergeFrom(value).buildPartial();
+          } else {
+            role_ = value;
+          }
           onChanged();
         } else {
-          rolesBuilder_.addMessage(index, builderForValue.build());
+          roleBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
        */
-      public Builder addAllRoles(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Role> values) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, roles_);
+      public Builder clearRole() {
+        if (roleBuilder_ == null) {
+          role_ = null;
           onChanged();
         } else {
-          rolesBuilder_.addAllMessages(values);
+          role_ = null;
+          roleBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
        */
-      public Builder clearRoles() {
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
+      public accounts.v1alpha1.Accounts.Role.Builder getRoleBuilder() {
+        
+        onChanged();
+        return getRoleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
+       */
+      public accounts.v1alpha1.Accounts.RoleOrBuilder getRoleOrBuilder() {
+        if (roleBuilder_ != null) {
+          return roleBuilder_.getMessageOrBuilder();
         } else {
-          rolesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public Builder removeRoles(int index) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.remove(index);
-          onChanged();
-        } else {
-          rolesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder getRolesBuilder(
-          int index) {
-        return getRolesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.RoleOrBuilder getRolesOrBuilder(
-          int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);  } else {
-          return rolesBuilder_.getMessageOrBuilder(index);
+          return role_ == null ?
+              accounts.v1alpha1.Accounts.Role.getDefaultInstance() : role_;
         }
       }
       /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
+       * <code>.accounts.v1alpha1.Role role = 5 [json_name = "role"];</code>
        */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.RoleOrBuilder> 
-           getRolesOrBuilderList() {
-        if (rolesBuilder_ != null) {
-          return rolesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(roles_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder addRolesBuilder() {
-        return getRolesFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Role.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Role.Builder addRolesBuilder(
-          int index) {
-        return getRolesFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Role.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Role roles = 5 [json_name = "roles"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Role.Builder> 
-           getRolesBuilderList() {
-        return getRolesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> 
-          getRolesFieldBuilder() {
-        if (rolesBuilder_ == null) {
-          rolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getRoleFieldBuilder() {
+        if (roleBuilder_ == null) {
+          roleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder>(
-                  roles_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getRole(),
                   getParentForChildren(),
                   isClean());
-          roles_ = null;
+          role_ = null;
         }
-        return rolesBuilder_;
+        return roleBuilder_;
       }
 
       private java.util.List<accounts.v1alpha1.Accounts.Permission> permissions_ =
         java.util.Collections.emptyList();
       private void ensurePermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           permissions_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Permission>(permissions_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -4665,7 +4393,7 @@ public final class Apikeys {
       public Builder clearPermissions() {
         if (permissionsBuilder_ == null) {
           permissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           permissionsBuilder_.clear();
@@ -4742,7 +4470,7 @@ public final class Apikeys {
           permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               accounts.v1alpha1.Accounts.Permission, accounts.v1alpha1.Accounts.Permission.Builder, accounts.v1alpha1.Accounts.PermissionOrBuilder>(
                   permissions_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           permissions_ = null;
@@ -5722,10 +5450,16 @@ public final class Apikeys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
-    int getId();
+    java.lang.String getUuid();
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
 
     /**
      * <code>string api_key = 2 [json_name = "apiKey"];</code>
@@ -5812,6 +5546,7 @@ public final class Apikeys {
       super(builder);
     }
     private ApiKeyList() {
+      uuid_ = "";
       apiKey_ = "";
       name_ = "";
       userId_ = "";
@@ -5847,9 +5582,10 @@ public final class Apikeys {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readUInt32();
+              uuid_ = s;
               break;
             }
             case 18: {
@@ -5933,15 +5669,42 @@ public final class Apikeys {
               accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList.class, accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int API_KEY_FIELD_NUMBER = 2;
@@ -6135,8 +5898,8 @@ public final class Apikeys {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
       if (!getApiKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
@@ -6165,9 +5928,8 @@ public final class Apikeys {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
       if (!getApiKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
@@ -6205,8 +5967,8 @@ public final class Apikeys {
       }
       accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList other = (accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
       if (!getApiKey()
           .equals(other.getApiKey())) return false;
       if (!getName()
@@ -6236,8 +5998,8 @@ public final class Apikeys {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -6388,7 +6150,7 @@ public final class Apikeys {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        uuid_ = "";
 
         apiKey_ = "";
 
@@ -6436,7 +6198,7 @@ public final class Apikeys {
       @java.lang.Override
       public accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList buildPartial() {
         accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList result = new accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList(this);
-        result.id_ = id_;
+        result.uuid_ = uuid_;
         result.apiKey_ = apiKey_;
         result.name_ = name_;
         result.userId_ = userId_;
@@ -6499,8 +6261,9 @@ public final class Apikeys {
 
       public Builder mergeFrom(accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList other) {
         if (other == accounts.v1alpha1.apikeys.v1.Apikeys.ApiKeyList.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
         }
         if (!other.getApiKey().isEmpty()) {
           apiKey_ = other.apiKey_;
@@ -6552,33 +6315,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int id_ ;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The uuid.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearUuid() {
         
-        id_ = 0;
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
         onChanged();
         return this;
       }
@@ -7930,10 +7738,16 @@ public final class Apikeys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
-    int getId();
+    java.lang.String getUuid();
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
 
     /**
      * <code>.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest api_key = 6 [json_name = "apiKey"];</code>
@@ -7963,6 +7777,7 @@ public final class Apikeys {
       super(builder);
     }
     private UpdateApiKeyRequest() {
+      uuid_ = "";
     }
 
     @java.lang.Override
@@ -7995,9 +7810,10 @@ public final class Apikeys {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readUInt32();
+              uuid_ = s;
               break;
             }
             case 50: {
@@ -8045,15 +7861,42 @@ public final class Apikeys {
               accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest.class, accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int API_KEY_FIELD_NUMBER = 6;
@@ -8096,8 +7939,8 @@ public final class Apikeys {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
       if (apiKey_ != null) {
         output.writeMessage(6, getApiKey());
@@ -8111,9 +7954,8 @@ public final class Apikeys {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
       if (apiKey_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -8134,8 +7976,8 @@ public final class Apikeys {
       }
       accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest other = (accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
       if (hasApiKey() != other.hasApiKey()) return false;
       if (hasApiKey()) {
         if (!getApiKey()
@@ -8152,8 +7994,8 @@ public final class Apikeys {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
       if (hasApiKey()) {
         hash = (37 * hash) + API_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getApiKey().hashCode();
@@ -8291,7 +8133,7 @@ public final class Apikeys {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        uuid_ = "";
 
         if (apiKeyBuilder_ == null) {
           apiKey_ = null;
@@ -8325,7 +8167,7 @@ public final class Apikeys {
       @java.lang.Override
       public accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest buildPartial() {
         accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest result = new accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest(this);
-        result.id_ = id_;
+        result.uuid_ = uuid_;
         if (apiKeyBuilder_ == null) {
           result.apiKey_ = apiKey_;
         } else {
@@ -8379,8 +8221,9 @@ public final class Apikeys {
 
       public Builder mergeFrom(accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest other) {
         if (other == accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
         }
         if (other.hasApiKey()) {
           mergeApiKey(other.getApiKey());
@@ -8414,33 +8257,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int id_ ;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The uuid.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearUuid() {
         
-        id_ = 0;
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
         onChanged();
         return this;
       }
@@ -9489,10 +9377,16 @@ public final class Apikeys {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
-    int getId();
+    java.lang.String getUuid();
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.DeleteApiKeyRequest}
@@ -9507,6 +9401,7 @@ public final class Apikeys {
       super(builder);
     }
     private DeleteApiKeyRequest() {
+      uuid_ = "";
     }
 
     @java.lang.Override
@@ -9539,9 +9434,10 @@ public final class Apikeys {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readUInt32();
+              uuid_ = s;
               break;
             }
             default: {
@@ -9576,15 +9472,42 @@ public final class Apikeys {
               accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest.class, accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The uuid.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uuid = 1 [json_name = "uuid"];</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9601,8 +9524,8 @@ public final class Apikeys {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -9613,9 +9536,8 @@ public final class Apikeys {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+      if (!getUuidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9632,8 +9554,8 @@ public final class Apikeys {
       }
       accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest other = (accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9645,8 +9567,8 @@ public final class Apikeys {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9780,7 +9702,7 @@ public final class Apikeys {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        uuid_ = "";
 
         return this;
       }
@@ -9808,7 +9730,7 @@ public final class Apikeys {
       @java.lang.Override
       public accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest buildPartial() {
         accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest result = new accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest(this);
-        result.id_ = id_;
+        result.uuid_ = uuid_;
         onBuilt();
         return result;
       }
@@ -9857,8 +9779,9 @@ public final class Apikeys {
 
       public Builder mergeFrom(accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest other) {
         if (other == accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9889,33 +9812,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int id_ ;
+      private java.lang.Object uuid_ = "";
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The uuid.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The uuid to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearUuid() {
         
-        id_ = 0;
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uuid = 1 [json_name = "uuid"];</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
         onChanged();
         return this;
       }
@@ -10906,48 +10874,47 @@ public final class Apikeys {
     java.lang.String[] descriptorData = {
       "\n\'accounts/v1alpha1/apikeys/apikeys.prot" +
       "o\022\034accounts.v1alpha1.apikeys.v1\032 account" +
-      "s/v1alpha1/accounts.proto\"\355\001\n\023CreateApiK" +
+      "s/v1alpha1/accounts.proto\"\320\001\n\023CreateApiK" +
       "eyRequest\022\022\n\004name\030\001 \001(\tR\004name\022\027\n\007user_id" +
-      "\030\002 \001(\tR\006userId\022\033\n\troles_ids\030\003 \003(\rR\010roles" +
-      "Ids\022\'\n\017permissions_ids\030\004 \003(\rR\016permission" +
-      "sIds\022\'\n\017organization_id\030\005 \001(\rR\016organizat" +
-      "ionId\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\npr" +
-      "oject_id\030\007 \001(\rR\tprojectId\"\177\n\024CreateApiKe" +
-      "yResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002" +
-      " \001(\tR\006apiKey\022&\n\017access_point_id\030\004 \001(\rR\ra" +
-      "ccessPointId\022\024\n\005error\030\005 \001(\tR\005error\"B\n\023Ge" +
-      "tOneApiKeyRequest\022\016\n\002id\030\001 \001(\rR\002id\022\033\n\tval" +
-      "ue_key\030\002 \001(\tR\010valueKey\"\364\002\n\024GetOneApiKeyR" +
-      "esponse\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007api_key\030\002 \001(\t" +
-      "R\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id\030" +
-      "\004 \001(\tR\006userId\022-\n\005roles\030\005 \003(\0132\027.accounts." +
-      "v1alpha1.RoleR\005roles\022?\n\013permissions\030\006 \003(" +
-      "\0132\035.accounts.v1alpha1.PermissionR\013permis" +
-      "sions\022\033\n\tis_active\030\010 \001(\010R\010isActive\0224\n\007pr" +
-      "oject\030\t \001(\0132\032.accounts.v1alpha1.ProjectR" +
-      "\007project\022C\n\014organization\030\n \001(\0132\037.account" +
-      "s.v1alpha1.OrganizationR\014organization\"U\n" +
-      "\021ListApiKeyRequest\022\027\n\007user_id\030\001 \001(\tR\006use" +
-      "rId\022\'\n\017organization_id\030\002 \001(\rR\016organizati" +
-      "onId\"\372\001\n\nApiKeyList\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007a" +
-      "pi_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name" +
-      "\022\027\n\007user_id\030\004 \001(\tR\006userId\022\033\n\tis_active\030\006" +
-      " \001(\010R\010isActive\0224\n\007project\030\007 \001(\0132\032.accoun" +
-      "ts.v1alpha1.ProjectR\007project\022C\n\014organiza" +
-      "tion\030\010 \001(\0132\037.accounts.v1alpha1.Organizat" +
-      "ionR\014organization\"Y\n\022ListApiKeyResponse\022" +
-      "C\n\010api_keys\030\001 \003(\0132(.accounts.v1alpha1.ap" +
-      "ikeys.v1.ApiKeyListR\007apiKeys\"q\n\023UpdateAp" +
-      "iKeyRequest\022\016\n\002id\030\001 \001(\rR\002id\022J\n\007api_key\030\006" +
-      " \001(\01321.accounts.v1alpha1.apikeys.v1.Crea" +
-      "teApiKeyRequestR\006apiKey\"W\n\024UpdateApiKeyR" +
-      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001" +
-      "(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005error\"%\n\023Dele" +
-      "teApiKeyRequest\022\016\n\002id\030\001 \001(\rR\002id\"W\n\024Delet" +
-      "eApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api" +
-      "_key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005error" +
-      "B<Z:github.com/cuemby/ccp-sdk/gen/go/acc" +
-      "ounts/v1alpha1/apikeysb\006proto3"
+      "\030\002 \001(\tR\006userId\022\'\n\017permissions_ids\030\004 \003(\rR" +
+      "\016permissionsIds\022\'\n\017organization_id\030\005 \001(\r" +
+      "R\016organizationId\022\033\n\tis_active\030\006 \001(\010R\010isA" +
+      "ctive\022\035\n\nproject_id\030\007 \001(\rR\tprojectId\"k\n\024" +
+      "CreateApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027" +
+      "\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004uuid\030\004 \001(\tR\004u" +
+      "uid\022\024\n\005error\030\005 \001(\tR\005error\")\n\023GetOneApiKe" +
+      "yRequest\022\022\n\004uuid\030\001 \001(\tR\004uuid\"\366\002\n\024GetOneA" +
+      "piKeyResponse\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api" +
+      "_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027" +
+      "\n\007user_id\030\004 \001(\tR\006userId\022+\n\004role\030\005 \001(\0132\027." +
+      "accounts.v1alpha1.RoleR\004role\022?\n\013permissi" +
+      "ons\030\006 \003(\0132\035.accounts.v1alpha1.Permission" +
+      "R\013permissions\022\033\n\tis_active\030\010 \001(\010R\010isActi" +
+      "ve\0224\n\007project\030\t \001(\0132\032.accounts.v1alpha1." +
+      "ProjectR\007project\022C\n\014organization\030\n \001(\0132\037" +
+      ".accounts.v1alpha1.OrganizationR\014organiz" +
+      "ation\"U\n\021ListApiKeyRequest\022\027\n\007user_id\030\001 " +
+      "\001(\tR\006userId\022\'\n\017organization_id\030\002 \001(\rR\016or" +
+      "ganizationId\"\376\001\n\nApiKeyList\022\022\n\004uuid\030\001 \001(" +
+      "\tR\004uuid\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name" +
+      "\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001(\tR\006userId\022\033\n" +
+      "\tis_active\030\006 \001(\010R\010isActive\0224\n\007project\030\007 " +
+      "\001(\0132\032.accounts.v1alpha1.ProjectR\007project" +
+      "\022C\n\014organization\030\010 \001(\0132\037.accounts.v1alph" +
+      "a1.OrganizationR\014organization\"Y\n\022ListApi" +
+      "KeyResponse\022C\n\010api_keys\030\001 \003(\0132(.accounts" +
+      ".v1alpha1.apikeys.v1.ApiKeyListR\007apiKeys" +
+      "\"u\n\023UpdateApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004u" +
+      "uid\022J\n\007api_key\030\006 \001(\01321.accounts.v1alpha1" +
+      ".apikeys.v1.CreateApiKeyRequestR\006apiKey\"" +
+      "W\n\024UpdateApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003 \001(" +
+      "\tR\005error\")\n\023DeleteApiKeyRequest\022\022\n\004uuid\030" +
+      "\001 \001(\tR\004uuid\"W\n\024DeleteApiKeyResponse\022\020\n\003m" +
+      "sg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\024" +
+      "\n\005error\030\003 \001(\tR\005errorB<Z:github.com/cuemb" +
+      "y/ccp-sdk/gen/go/accounts/v1alpha1/apike" +
+      "ysb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10959,25 +10926,25 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyRequest_descriptor,
-        new java.lang.String[] { "Name", "UserId", "RolesIds", "PermissionsIds", "OrganizationId", "IsActive", "ProjectId", });
+        new java.lang.String[] { "Name", "UserId", "PermissionsIds", "OrganizationId", "IsActive", "ProjectId", });
     internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyResponse_descriptor,
-        new java.lang.String[] { "Msg", "ApiKey", "AccessPointId", "Error", });
+        new java.lang.String[] { "Msg", "ApiKey", "Uuid", "Error", });
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_descriptor,
-        new java.lang.String[] { "Id", "ValueKey", });
+        new java.lang.String[] { "Uuid", });
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_descriptor,
-        new java.lang.String[] { "Id", "ApiKey", "Name", "UserId", "Roles", "Permissions", "IsActive", "Project", "Organization", });
+        new java.lang.String[] { "Uuid", "ApiKey", "Name", "UserId", "Role", "Permissions", "IsActive", "Project", "Organization", });
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyRequest_fieldAccessorTable = new
@@ -10989,7 +10956,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_ApiKeyList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_ApiKeyList_descriptor,
-        new java.lang.String[] { "Id", "ApiKey", "Name", "UserId", "IsActive", "Project", "Organization", });
+        new java.lang.String[] { "Uuid", "ApiKey", "Name", "UserId", "IsActive", "Project", "Organization", });
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyResponse_fieldAccessorTable = new
@@ -11001,7 +10968,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_UpdateApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_UpdateApiKeyRequest_descriptor,
-        new java.lang.String[] { "Id", "ApiKey", });
+        new java.lang.String[] { "Uuid", "ApiKey", });
     internal_static_accounts_v1alpha1_apikeys_v1_UpdateApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_accounts_v1alpha1_apikeys_v1_UpdateApiKeyResponse_fieldAccessorTable = new
@@ -11013,7 +10980,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Uuid", });
     internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyResponse_fieldAccessorTable = new
