@@ -43,12 +43,12 @@ message Subscription {
 }
 
 message Payment {
-  string id = 1;
+  string card_id =1;
   bool default = 2;
   bool enabled = 3;
   string alias = 4;
-  Card card = 5;
-
+  string token_card = 5;
+  Card card = 6;
 }
 
 message Card {

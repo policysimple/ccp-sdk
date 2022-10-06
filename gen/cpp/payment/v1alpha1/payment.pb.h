@@ -1096,24 +1096,25 @@ class Payment final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kCardIdFieldNumber = 1,
     kAliasFieldNumber = 4,
-    kCardFieldNumber = 5,
+    kTokenCardFieldNumber = 5,
+    kCardFieldNumber = 6,
     kDefaultFieldNumber = 2,
     kEnabledFieldNumber = 3,
   };
-  // string id = 1 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
+  // string card_id = 1 [json_name = "cardId"];
+  void clear_card_id();
+  const std::string& card_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
+  void set_card_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_card_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_card_id();
+  void set_allocated_card_id(std::string* card_id);
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  const std::string& _internal_card_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_card_id(const std::string& value);
+  std::string* _internal_mutable_card_id();
   public:
 
   // string alias = 4 [json_name = "alias"];
@@ -1130,7 +1131,21 @@ class Payment final :
   std::string* _internal_mutable_alias();
   public:
 
-  // .payment.v1alpha1.Card card = 5 [json_name = "card"];
+  // string token_card = 5 [json_name = "tokenCard"];
+  void clear_token_card();
+  const std::string& token_card() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token_card(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token_card();
+  PROTOBUF_MUST_USE_RESULT std::string* release_token_card();
+  void set_allocated_token_card(std::string* token_card);
+  private:
+  const std::string& _internal_token_card() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token_card(const std::string& value);
+  std::string* _internal_mutable_token_card();
+  public:
+
+  // .payment.v1alpha1.Card card = 6 [json_name = "card"];
   bool has_card() const;
   private:
   bool _internal_has_card() const;
@@ -1173,8 +1188,9 @@ class Payment final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr card_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr alias_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_card_;
   ::payment::v1alpha1::Card* card_;
   bool default__;
   bool enabled_;
@@ -4765,50 +4781,50 @@ inline void Subscription::set_allocated_interval(std::string* interval) {
 
 // Payment
 
-// string id = 1 [json_name = "id"];
-inline void Payment::clear_id() {
-  id_.ClearToEmpty();
+// string card_id = 1 [json_name = "cardId"];
+inline void Payment::clear_card_id() {
+  card_id_.ClearToEmpty();
 }
-inline const std::string& Payment::id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Payment.id)
-  return _internal_id();
+inline const std::string& Payment::card_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Payment.card_id)
+  return _internal_card_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Payment::set_id(ArgT0&& arg0, ArgT... args) {
+void Payment::set_card_id(ArgT0&& arg0, ArgT... args) {
  
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Payment.id)
+ card_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Payment.card_id)
 }
-inline std::string* Payment::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Payment.id)
+inline std::string* Payment::mutable_card_id() {
+  std::string* _s = _internal_mutable_card_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Payment.card_id)
   return _s;
 }
-inline const std::string& Payment::_internal_id() const {
-  return id_.Get();
+inline const std::string& Payment::_internal_card_id() const {
+  return card_id_.Get();
 }
-inline void Payment::_internal_set_id(const std::string& value) {
+inline void Payment::_internal_set_card_id(const std::string& value) {
   
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  card_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Payment::_internal_mutable_id() {
+inline std::string* Payment::_internal_mutable_card_id() {
   
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return card_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Payment::release_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Payment.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Payment::release_card_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Payment.card_id)
+  return card_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Payment::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
+inline void Payment::set_allocated_card_id(std::string* card_id) {
+  if (card_id != nullptr) {
     
   } else {
     
   }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+  card_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), card_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.id)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.card_id)
 }
 
 // bool default = 2 [json_name = "default"];
@@ -4897,7 +4913,53 @@ inline void Payment::set_allocated_alias(std::string* alias) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.alias)
 }
 
-// .payment.v1alpha1.Card card = 5 [json_name = "card"];
+// string token_card = 5 [json_name = "tokenCard"];
+inline void Payment::clear_token_card() {
+  token_card_.ClearToEmpty();
+}
+inline const std::string& Payment::token_card() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Payment.token_card)
+  return _internal_token_card();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Payment::set_token_card(ArgT0&& arg0, ArgT... args) {
+ 
+ token_card_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Payment.token_card)
+}
+inline std::string* Payment::mutable_token_card() {
+  std::string* _s = _internal_mutable_token_card();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Payment.token_card)
+  return _s;
+}
+inline const std::string& Payment::_internal_token_card() const {
+  return token_card_.Get();
+}
+inline void Payment::_internal_set_token_card(const std::string& value) {
+  
+  token_card_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Payment::_internal_mutable_token_card() {
+  
+  return token_card_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Payment::release_token_card() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Payment.token_card)
+  return token_card_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Payment::set_allocated_token_card(std::string* token_card) {
+  if (token_card != nullptr) {
+    
+  } else {
+    
+  }
+  token_card_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token_card,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Payment.token_card)
+}
+
+// .payment.v1alpha1.Card card = 6 [json_name = "card"];
 inline bool Payment::_internal_has_card() const {
   return this != internal_default_instance() && card_ != nullptr;
 }

@@ -82,8 +82,9 @@ struct SubscriptionDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SubscriptionDefaultTypeInternal _Subscription_default_instance_;
 constexpr Payment::Payment(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : card_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , alias_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , token_card_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , card_(nullptr)
   , default__(false)
   , enabled_(false){}
@@ -321,10 +322,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, id_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, card_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, default__),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, enabled_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, alias_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, token_card_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, card_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Card, _internal_metadata_),
@@ -429,18 +431,18 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 16, -1, sizeof(::payment::v1alpha1::Project)},
   { 30, -1, sizeof(::payment::v1alpha1::Subscription)},
   { 44, -1, sizeof(::payment::v1alpha1::Payment)},
-  { 54, -1, sizeof(::payment::v1alpha1::Card)},
-  { 65, -1, sizeof(::payment::v1alpha1::Invoice)},
-  { 76, -1, sizeof(::payment::v1alpha1::Biling)},
-  { 94, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
-  { 103, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
-  { 109, -1, sizeof(::payment::v1alpha1::InvoiceList)},
-  { 115, -1, sizeof(::payment::v1alpha1::CustomerList)},
-  { 121, -1, sizeof(::payment::v1alpha1::BilingList)},
-  { 127, -1, sizeof(::payment::v1alpha1::SubscriptionList)},
-  { 133, -1, sizeof(::payment::v1alpha1::CardList)},
-  { 139, -1, sizeof(::payment::v1alpha1::PaymentList)},
-  { 145, -1, sizeof(::payment::v1alpha1::ProjectList)},
+  { 55, -1, sizeof(::payment::v1alpha1::Card)},
+  { 66, -1, sizeof(::payment::v1alpha1::Invoice)},
+  { 77, -1, sizeof(::payment::v1alpha1::Biling)},
+  { 95, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
+  { 104, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
+  { 110, -1, sizeof(::payment::v1alpha1::InvoiceList)},
+  { 116, -1, sizeof(::payment::v1alpha1::CustomerList)},
+  { 122, -1, sizeof(::payment::v1alpha1::BilingList)},
+  { 128, -1, sizeof(::payment::v1alpha1::SubscriptionList)},
+  { 134, -1, sizeof(::payment::v1alpha1::CardList)},
+  { 140, -1, sizeof(::payment::v1alpha1::PaymentList)},
+  { 146, -1, sizeof(::payment::v1alpha1::ProjectList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -490,9 +492,10 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "price\022\033\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013pr"
   "ice_bytes\030\007 \001(\tR\npriceBytes\022\032\n\010currency\030"
   "\010 \001(\tR\010currency\022\032\n\010interval\030\t \001(\tR\010inter"
-  "val\"\217\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007defau"
-  "lt\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007enab"
-  "led\022\024\n\005alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\0132"
+  "val\"\267\001\n\007Payment\022\027\n\007card_id\030\001 \001(\tR\006cardId"
+  "\022\030\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 "
+  "\001(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\nto"
+  "ken_card\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132"
   "\026.payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016"
   "\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037"
   "\n\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmo"
@@ -532,7 +535,7 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 2610, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 2650, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 16,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -2210,14 +2213,19 @@ Payment::Payment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Payment::Payment(const Payment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+  card_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_card_id().empty()) {
+    card_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_card_id(), 
       GetArenaForAllocation());
   }
   alias_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_alias().empty()) {
     alias_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_alias(), 
+      GetArenaForAllocation());
+  }
+  token_card_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_token_card().empty()) {
+    token_card_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token_card(), 
       GetArenaForAllocation());
   }
   if (from._internal_has_card()) {
@@ -2232,8 +2240,9 @@ Payment::Payment(const Payment& from)
 }
 
 inline void Payment::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+card_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 alias_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+token_card_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&card_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
@@ -2249,8 +2258,9 @@ Payment::~Payment() {
 
 inline void Payment::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  card_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   alias_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  token_card_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete card_;
 }
 
@@ -2270,8 +2280,9 @@ void Payment::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
+  card_id_.ClearToEmpty();
   alias_.ClearToEmpty();
+  token_card_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && card_ != nullptr) {
     delete card_;
   }
@@ -2288,12 +2299,12 @@ const char* Payment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [json_name = "id"];
+      // string card_id = 1 [json_name = "cardId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_id();
+          auto str = _internal_mutable_card_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Payment.id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Payment.card_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2320,9 +2331,18 @@ const char* Payment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .payment.v1alpha1.Card card = 5 [json_name = "card"];
+      // string token_card = 5 [json_name = "tokenCard"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_token_card();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Payment.token_card"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .payment.v1alpha1.Card card = 6 [json_name = "card"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_card(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2356,14 +2376,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [json_name = "id"];
-  if (!this->_internal_id().empty()) {
+  // string card_id = 1 [json_name = "cardId"];
+  if (!this->_internal_card_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      this->_internal_card_id().data(), static_cast<int>(this->_internal_card_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Payment.id");
+      "payment.v1alpha1.Payment.card_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+        1, this->_internal_card_id(), target);
   }
 
   // bool default = 2 [json_name = "default"];
@@ -2388,12 +2408,22 @@ failure:
         4, this->_internal_alias(), target);
   }
 
-  // .payment.v1alpha1.Card card = 5 [json_name = "card"];
+  // string token_card = 5 [json_name = "tokenCard"];
+  if (!this->_internal_token_card().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token_card().data(), static_cast<int>(this->_internal_token_card().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Payment.token_card");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_token_card(), target);
+  }
+
+  // .payment.v1alpha1.Card card = 6 [json_name = "card"];
   if (this->_internal_has_card()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::card(this), target, stream);
+        6, _Internal::card(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2412,11 +2442,11 @@ size_t Payment::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [json_name = "id"];
-  if (!this->_internal_id().empty()) {
+  // string card_id = 1 [json_name = "cardId"];
+  if (!this->_internal_card_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+        this->_internal_card_id());
   }
 
   // string alias = 4 [json_name = "alias"];
@@ -2426,7 +2456,14 @@ size_t Payment::ByteSizeLong() const {
         this->_internal_alias());
   }
 
-  // .payment.v1alpha1.Card card = 5 [json_name = "card"];
+  // string token_card = 5 [json_name = "tokenCard"];
+  if (!this->_internal_token_card().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token_card());
+  }
+
+  // .payment.v1alpha1.Card card = 6 [json_name = "card"];
   if (this->_internal_has_card()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2471,11 +2508,14 @@ void Payment::MergeFrom(const Payment& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+  if (!from._internal_card_id().empty()) {
+    _internal_set_card_id(from._internal_card_id());
   }
   if (!from._internal_alias().empty()) {
     _internal_set_alias(from._internal_alias());
+  }
+  if (!from._internal_token_card().empty()) {
+    _internal_set_token_card(from._internal_token_card());
   }
   if (from._internal_has_card()) {
     _internal_mutable_card()->::payment::v1alpha1::Card::MergeFrom(from._internal_card());
@@ -2505,13 +2545,18 @@ void Payment::InternalSwap(Payment* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, GetArenaForAllocation(),
-      &other->id_, other->GetArenaForAllocation()
+      &card_id_, GetArenaForAllocation(),
+      &other->card_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &alias_, GetArenaForAllocation(),
       &other->alias_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &token_card_, GetArenaForAllocation(),
+      &other->token_card_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Payment, enabled_)

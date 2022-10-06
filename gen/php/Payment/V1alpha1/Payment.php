@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Payment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      */
-    protected $id = '';
+    protected $card_id = '';
     /**
      * Generated from protobuf field <code>bool default = 2 [json_name = "default"];</code>
      */
@@ -30,7 +30,11 @@ class Payment extends \Google\Protobuf\Internal\Message
      */
     protected $alias = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * Generated from protobuf field <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     */
+    protected $token_card = '';
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      */
     protected $card = null;
 
@@ -40,10 +44,11 @@ class Payment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type string $card_id
      *     @type bool $default
      *     @type bool $enabled
      *     @type string $alias
+     *     @type string $token_card
      *     @type \Payment\V1alpha1\Card $card
      * }
      */
@@ -53,23 +58,23 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      * @return string
      */
-    public function getId()
+    public function getCardId()
     {
-        return $this->id;
+        return $this->card_id;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string card_id = 1 [json_name = "cardId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setCardId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->card_id = $var;
 
         return $this;
     }
@@ -141,7 +146,29 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * Generated from protobuf field <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     * @return string
+     */
+    public function getTokenCard()
+    {
+        return $this->token_card;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenCard($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_card = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      * @return \Payment\V1alpha1\Card|null
      */
     public function getCard()
@@ -160,7 +187,7 @@ class Payment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      * @param \Payment\V1alpha1\Card $var
      * @return $this
      */

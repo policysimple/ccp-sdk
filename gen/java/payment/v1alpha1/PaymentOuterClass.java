@@ -5822,16 +5822,16 @@ public final class PaymentOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string card_id = 1 [json_name = "cardId"];</code>
+     * @return The cardId.
      */
-    java.lang.String getId();
+    java.lang.String getCardId();
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string card_id = 1 [json_name = "cardId"];</code>
+     * @return The bytes for cardId.
      */
     com.google.protobuf.ByteString
-        getIdBytes();
+        getCardIdBytes();
 
     /**
      * <code>bool default = 2 [json_name = "default"];</code>
@@ -5858,17 +5858,29 @@ public final class PaymentOuterClass {
         getAliasBytes();
 
     /**
-     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     * @return The tokenCard.
+     */
+    java.lang.String getTokenCard();
+    /**
+     * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     * @return The bytes for tokenCard.
+     */
+    com.google.protobuf.ByteString
+        getTokenCardBytes();
+
+    /**
+     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      * @return Whether the card field is set.
      */
     boolean hasCard();
     /**
-     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      * @return The card.
      */
     payment.v1alpha1.PaymentOuterClass.Card getCard();
     /**
-     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      */
     payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder();
   }
@@ -5885,8 +5897,9 @@ public final class PaymentOuterClass {
       super(builder);
     }
     private Payment() {
-      id_ = "";
+      cardId_ = "";
       alias_ = "";
+      tokenCard_ = "";
     }
 
     @java.lang.Override
@@ -5922,7 +5935,7 @@ public final class PaymentOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              cardId_ = s;
               break;
             }
             case 16: {
@@ -5942,6 +5955,12 @@ public final class PaymentOuterClass {
               break;
             }
             case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tokenCard_ = s;
+              break;
+            }
+            case 50: {
               payment.v1alpha1.PaymentOuterClass.Card.Builder subBuilder = null;
               if (card_ != null) {
                 subBuilder = card_.toBuilder();
@@ -5986,38 +6005,38 @@ public final class PaymentOuterClass {
               payment.v1alpha1.PaymentOuterClass.Payment.class, payment.v1alpha1.PaymentOuterClass.Payment.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    public static final int CARD_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cardId_;
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string card_id = 1 [json_name = "cardId"];</code>
+     * @return The cardId.
      */
     @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getCardId() {
+      java.lang.Object ref = cardId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        cardId_ = s;
         return s;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string card_id = 1 [json_name = "cardId"];</code>
+     * @return The bytes for cardId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getCardIdBytes() {
+      java.lang.Object ref = cardId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        cardId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6084,10 +6103,48 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int CARD_FIELD_NUMBER = 5;
+    public static final int TOKEN_CARD_FIELD_NUMBER = 5;
+    private volatile java.lang.Object tokenCard_;
+    /**
+     * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     * @return The tokenCard.
+     */
+    @java.lang.Override
+    public java.lang.String getTokenCard() {
+      java.lang.Object ref = tokenCard_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tokenCard_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+     * @return The bytes for tokenCard.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenCardBytes() {
+      java.lang.Object ref = tokenCard_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tokenCard_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CARD_FIELD_NUMBER = 6;
     private payment.v1alpha1.PaymentOuterClass.Card card_;
     /**
-     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      * @return Whether the card field is set.
      */
     @java.lang.Override
@@ -6095,7 +6152,7 @@ public final class PaymentOuterClass {
       return card_ != null;
     }
     /**
-     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      * @return The card.
      */
     @java.lang.Override
@@ -6103,7 +6160,7 @@ public final class PaymentOuterClass {
       return card_ == null ? payment.v1alpha1.PaymentOuterClass.Card.getDefaultInstance() : card_;
     }
     /**
-     * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+     * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
      */
     @java.lang.Override
     public payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder() {
@@ -6124,8 +6181,8 @@ public final class PaymentOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (!getCardIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cardId_);
       }
       if (default_ != false) {
         output.writeBool(2, default_);
@@ -6136,8 +6193,11 @@ public final class PaymentOuterClass {
       if (!getAliasBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, alias_);
       }
+      if (!getTokenCardBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tokenCard_);
+      }
       if (card_ != null) {
-        output.writeMessage(5, getCard());
+        output.writeMessage(6, getCard());
       }
       unknownFields.writeTo(output);
     }
@@ -6148,8 +6208,8 @@ public final class PaymentOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      if (!getCardIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cardId_);
       }
       if (default_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -6162,9 +6222,12 @@ public final class PaymentOuterClass {
       if (!getAliasBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, alias_);
       }
+      if (!getTokenCardBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, tokenCard_);
+      }
       if (card_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getCard());
+          .computeMessageSize(6, getCard());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6181,14 +6244,16 @@ public final class PaymentOuterClass {
       }
       payment.v1alpha1.PaymentOuterClass.Payment other = (payment.v1alpha1.PaymentOuterClass.Payment) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
+      if (!getCardId()
+          .equals(other.getCardId())) return false;
       if (getDefault()
           != other.getDefault()) return false;
       if (getEnabled()
           != other.getEnabled()) return false;
       if (!getAlias()
           .equals(other.getAlias())) return false;
+      if (!getTokenCard()
+          .equals(other.getTokenCard())) return false;
       if (hasCard() != other.hasCard()) return false;
       if (hasCard()) {
         if (!getCard()
@@ -6205,8 +6270,8 @@ public final class PaymentOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId().hashCode();
       hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getDefault());
@@ -6215,6 +6280,8 @@ public final class PaymentOuterClass {
           getEnabled());
       hash = (37 * hash) + ALIAS_FIELD_NUMBER;
       hash = (53 * hash) + getAlias().hashCode();
+      hash = (37 * hash) + TOKEN_CARD_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenCard().hashCode();
       if (hasCard()) {
         hash = (37 * hash) + CARD_FIELD_NUMBER;
         hash = (53 * hash) + getCard().hashCode();
@@ -6352,13 +6419,15 @@ public final class PaymentOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
+        cardId_ = "";
 
         default_ = false;
 
         enabled_ = false;
 
         alias_ = "";
+
+        tokenCard_ = "";
 
         if (cardBuilder_ == null) {
           card_ = null;
@@ -6392,10 +6461,11 @@ public final class PaymentOuterClass {
       @java.lang.Override
       public payment.v1alpha1.PaymentOuterClass.Payment buildPartial() {
         payment.v1alpha1.PaymentOuterClass.Payment result = new payment.v1alpha1.PaymentOuterClass.Payment(this);
-        result.id_ = id_;
+        result.cardId_ = cardId_;
         result.default_ = default_;
         result.enabled_ = enabled_;
         result.alias_ = alias_;
+        result.tokenCard_ = tokenCard_;
         if (cardBuilder_ == null) {
           result.card_ = card_;
         } else {
@@ -6449,8 +6519,8 @@ public final class PaymentOuterClass {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentOuterClass.Payment other) {
         if (other == payment.v1alpha1.PaymentOuterClass.Payment.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
+        if (!other.getCardId().isEmpty()) {
+          cardId_ = other.cardId_;
           onChanged();
         }
         if (other.getDefault() != false) {
@@ -6461,6 +6531,10 @@ public final class PaymentOuterClass {
         }
         if (!other.getAlias().isEmpty()) {
           alias_ = other.alias_;
+          onChanged();
+        }
+        if (!other.getTokenCard().isEmpty()) {
+          tokenCard_ = other.tokenCard_;
           onChanged();
         }
         if (other.hasCard()) {
@@ -6495,78 +6569,78 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private java.lang.Object id_ = "";
+      private java.lang.Object cardId_ = "";
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The id.
+       * <code>string card_id = 1 [json_name = "cardId"];</code>
+       * @return The cardId.
        */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
+      public java.lang.String getCardId() {
+        java.lang.Object ref = cardId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          cardId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The bytes for id.
+       * <code>string card_id = 1 [json_name = "cardId"];</code>
+       * @return The bytes for cardId.
        */
       public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
+          getCardIdBytes() {
+        java.lang.Object ref = cardId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          id_ = b;
+          cardId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
+       * <code>string card_id = 1 [json_name = "cardId"];</code>
+       * @param value The cardId to set.
        * @return This builder for chaining.
        */
-      public Builder setId(
+      public Builder setCardId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        id_ = value;
+        cardId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
+       * <code>string card_id = 1 [json_name = "cardId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      public Builder clearCardId() {
         
-        id_ = getDefaultInstance().getId();
+        cardId_ = getDefaultInstance().getCardId();
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The bytes for id to set.
+       * <code>string card_id = 1 [json_name = "cardId"];</code>
+       * @param value The bytes for cardId to set.
        * @return This builder for chaining.
        */
-      public Builder setIdBytes(
+      public Builder setCardIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        id_ = value;
+        cardId_ = value;
         onChanged();
         return this;
       }
@@ -6709,18 +6783,94 @@ public final class PaymentOuterClass {
         return this;
       }
 
+      private java.lang.Object tokenCard_ = "";
+      /**
+       * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+       * @return The tokenCard.
+       */
+      public java.lang.String getTokenCard() {
+        java.lang.Object ref = tokenCard_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tokenCard_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+       * @return The bytes for tokenCard.
+       */
+      public com.google.protobuf.ByteString
+          getTokenCardBytes() {
+        java.lang.Object ref = tokenCard_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tokenCard_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+       * @param value The tokenCard to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenCard(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tokenCard_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenCard() {
+        
+        tokenCard_ = getDefaultInstance().getTokenCard();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token_card = 5 [json_name = "tokenCard"];</code>
+       * @param value The bytes for tokenCard to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenCardBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tokenCard_ = value;
+        onChanged();
+        return this;
+      }
+
       private payment.v1alpha1.PaymentOuterClass.Card card_;
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.Card, payment.v1alpha1.PaymentOuterClass.Card.Builder, payment.v1alpha1.PaymentOuterClass.CardOrBuilder> cardBuilder_;
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        * @return Whether the card field is set.
        */
       public boolean hasCard() {
         return cardBuilder_ != null || card_ != null;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        * @return The card.
        */
       public payment.v1alpha1.PaymentOuterClass.Card getCard() {
@@ -6731,7 +6881,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       public Builder setCard(payment.v1alpha1.PaymentOuterClass.Card value) {
         if (cardBuilder_ == null) {
@@ -6747,7 +6897,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       public Builder setCard(
           payment.v1alpha1.PaymentOuterClass.Card.Builder builderForValue) {
@@ -6761,7 +6911,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       public Builder mergeCard(payment.v1alpha1.PaymentOuterClass.Card value) {
         if (cardBuilder_ == null) {
@@ -6779,7 +6929,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       public Builder clearCard() {
         if (cardBuilder_ == null) {
@@ -6793,7 +6943,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       public payment.v1alpha1.PaymentOuterClass.Card.Builder getCardBuilder() {
         
@@ -6801,7 +6951,7 @@ public final class PaymentOuterClass {
         return getCardFieldBuilder().getBuilder();
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       public payment.v1alpha1.PaymentOuterClass.CardOrBuilder getCardOrBuilder() {
         if (cardBuilder_ != null) {
@@ -6812,7 +6962,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>.payment.v1alpha1.Card card = 5 [json_name = "card"];</code>
+       * <code>.payment.v1alpha1.Card card = 6 [json_name = "card"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.Card, payment.v1alpha1.PaymentOuterClass.Card.Builder, payment.v1alpha1.PaymentOuterClass.CardOrBuilder> 
@@ -18969,9 +19119,10 @@ public final class PaymentOuterClass {
       "price\022\033\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013pr" +
       "ice_bytes\030\007 \001(\tR\npriceBytes\022\032\n\010currency\030" +
       "\010 \001(\tR\010currency\022\032\n\010interval\030\t \001(\tR\010inter" +
-      "val\"\217\001\n\007Payment\022\016\n\002id\030\001 \001(\tR\002id\022\030\n\007defau" +
-      "lt\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007enab" +
-      "led\022\024\n\005alias\030\004 \001(\tR\005alias\022*\n\004card\030\005 \001(\0132" +
+      "val\"\267\001\n\007Payment\022\027\n\007card_id\030\001 \001(\tR\006cardId" +
+      "\022\030\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 " +
+      "\001(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\nto" +
+      "ken_card\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132" +
       "\026.payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016" +
       "\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037" +
       "\n\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmo" +
@@ -19036,7 +19187,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Payment_descriptor,
-        new java.lang.String[] { "Id", "Default", "Enabled", "Alias", "Card", });
+        new java.lang.String[] { "CardId", "Default", "Enabled", "Alias", "TokenCard", "Card", });
     internal_static_payment_v1alpha1_Card_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_payment_v1alpha1_Card_fieldAccessorTable = new
