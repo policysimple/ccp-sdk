@@ -359,6 +359,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
+		OrganizationId: in.OrganizationId,
 		CardId:     in.CardId,
 		CustomerId: in.CustomerId,
 	})
