@@ -365,10 +365,12 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete payment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete payment", err),
-		)
+		if err != nil {
+			log.Printf("%s: %v", "Error delete payment", err)
+			return &paymentpkgv1.DeletePaymentResponse{
+				MsgError: fmt.Sprintf("%s: %v", "Error delete payment", err),
+			}, nil
+		}
 	}
 	return response, nil
 }
@@ -477,7 +479,7 @@ func SetDefaultPaymentMethod(in *paymentpkgv1.SetDefaultPaymentMethodRequest) (r
 
 	response, err = client.SetDefaultPaymentMethod(ctx, &paymentpkgv1.SetDefaultPaymentMethodRequest{
 		OrganizationId: in.OrganizationId,
-		CardId:     in.CardId,
+		CardId:         in.CardId,
 	})
 
 	if err != nil {
