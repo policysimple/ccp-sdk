@@ -27828,16 +27828,16 @@ public final class PaymentApi {
     payment.v1alpha1.PaymentOuterClass.PaymentListOrBuilder getPaymentListOrBuilder();
 
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
      */
-    java.lang.String getStatus();
+    java.lang.String getError();
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
      */
     com.google.protobuf.ByteString
-        getStatusBytes();
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.ListPaymentResponse}
@@ -27852,7 +27852,7 @@ public final class PaymentApi {
       super(builder);
     }
     private ListPaymentResponse() {
-      status_ = "";
+      error_ = "";
     }
 
     @java.lang.Override
@@ -27901,7 +27901,7 @@ public final class PaymentApi {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              status_ = s;
+              error_ = s;
               break;
             }
             default: {
@@ -27962,38 +27962,38 @@ public final class PaymentApi {
       return getPaymentList();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
      */
     @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        status_ = s;
+        error_ = s;
         return s;
       }
     }
     /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
+        getErrorBytes() {
+      java.lang.Object ref = error_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        status_ = b;
+        error_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -28017,8 +28017,8 @@ public final class PaymentApi {
       if (paymentList_ != null) {
         output.writeMessage(1, getPaymentList());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -28033,8 +28033,8 @@ public final class PaymentApi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPaymentList());
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -28056,8 +28056,8 @@ public final class PaymentApi {
         if (!getPaymentList()
             .equals(other.getPaymentList())) return false;
       }
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -28073,8 +28073,8 @@ public final class PaymentApi {
         hash = (37 * hash) + PAYMENT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPaymentList().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -28214,7 +28214,7 @@ public final class PaymentApi {
           paymentList_ = null;
           paymentListBuilder_ = null;
         }
-        status_ = "";
+        error_ = "";
 
         return this;
       }
@@ -28247,7 +28247,7 @@ public final class PaymentApi {
         } else {
           result.paymentList_ = paymentListBuilder_.build();
         }
-        result.status_ = status_;
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -28299,8 +28299,8 @@ public final class PaymentApi {
         if (other.hasPaymentList()) {
           mergePaymentList(other.getPaymentList());
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -28451,78 +28451,78 @@ public final class PaymentApi {
         return paymentListBuilder_;
       }
 
-      private java.lang.Object status_ = "";
+      private java.lang.Object error_ = "";
       /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The status.
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
        */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          status_ = s;
+          error_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @return The bytes for status.
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
+          getErrorBytes() {
+        java.lang.Object ref = error_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          status_ = b;
+          error_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The status to set.
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(
+      public Builder setError(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        status_ = value;
+        error_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string status = 2 [json_name = "status"];</code>
+       * <code>string error = 2 [json_name = "error"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearStatus() {
+      public Builder clearError() {
         
-        status_ = getDefaultInstance().getStatus();
+        error_ = getDefaultInstance().getError();
         onChanged();
         return this;
       }
       /**
-       * <code>string status = 2 [json_name = "status"];</code>
-       * @param value The bytes for status to set.
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
-      public Builder setStatusBytes(
+      public Builder setErrorBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        status_ = value;
+        error_ = value;
         onChanged();
         return this;
       }
@@ -36058,97 +36058,97 @@ public final class PaymentApi {
       "\022\026\n\006status\030\002 \001(\tR\006status\"^\n\022ListPaymentR" +
       "equest\022\'\n\017organization_id\030\001 \001(\rR\016organiz" +
       "ationId\022\037\n\013customer_id\030\002 \001(\tR\ncustomerId" +
-      "\"o\n\023ListPaymentResponse\022@\n\014payment_list\030" +
+      "\"m\n\023ListPaymentResponse\022@\n\014payment_list\030" +
       "\001 \001(\0132\035.payment.v1alpha1.PaymentListR\013pa" +
-      "ymentList\022\026\n\006status\030\002 \001(\tR\006status\"p\n\034Lis" +
-      "tSubscriptionItemsRequest\022\'\n\017organizatio" +
-      "n_id\030\001 \001(\rR\016organizationId\022\'\n\017subscripti" +
-      "on_id\030\002 \001(\tR\016subscriptionId\"\320\001\n\035ListSubs" +
-      "criptionItemsResponse\0226\n\010customer\030\001 \001(\0132" +
-      "\032.payment.v1alpha1.CustomerR\010customer\022_\n" +
-      "\027subscription_items_list\030\002 \001(\0132\'.payment" +
-      ".v1alpha1.SubscriptionItemsListR\025subscri" +
-      "ptionItemsList\022\026\n\006status\030\003 \001(\tR\006status\">" +
-      "\n\023ListProjectsRequest\022\'\n\017organization_id" +
-      "\030\001 \001(\rR\016organizationId\"f\n\024ListProjectsRe" +
-      "sponse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alp" +
-      "ha1.CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006" +
-      "status\"[\n\021GetProjectRequest\022\'\n\017organizat" +
-      "ion_id\030\001 \001(\tR\016organizationId\022\035\n\nproject_" +
-      "id\030\002 \001(\tR\tprojectId\"d\n\022GetProjectRespons" +
-      "e\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.C" +
-      "ustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006statu" +
-      "s\"\223\001\n\024DeleteProjectRequest\022\'\n\017organizati" +
-      "on_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_i" +
-      "d\030\002 \001(\tR\tprojectId\0223\n\007project\030\003 \001(\0132\031.pa" +
-      "yment.v1alpha1.ProjectR\007project\"/\n\025Delet" +
-      "eProjectResponse\022\026\n\006status\030\001 \001(\tR\006status" +
-      "\"b\n\036SetDefaultPaymentMethodRequest\022\'\n\017or" +
-      "ganization_id\030\001 \001(\rR\016organizationId\022\027\n\007c" +
-      "ard_id\030\002 \001(\tR\006cardId\"I\n\037SetDefaultPaymen" +
-      "tMethodResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err" +
-      "or\030\002 \001(\tR\005error2\333\022\n\021PaymentAPIService\022e\n" +
-      "\016CreateCustomer\022\'.payment.v1alpha1.Creat" +
-      "eCustomerRequest\032(.payment.v1alpha1.Crea" +
-      "teCustomerResponse\"\000\022q\n\022CreateSubscripti" +
-      "on\022+.payment.v1alpha1.CreateSubscription" +
-      "Request\032,.payment.v1alpha1.CreateSubscri" +
-      "ptionResponse\"\000\022b\n\rCreatePayment\022&.payme" +
-      "nt.v1alpha1.CreatePaymentRequest\032\'.payme" +
-      "nt.v1alpha1.CreatePaymentResponse\"\000\022Y\n\nC" +
-      "reateCard\022#.payment.v1alpha1.CreateCardR" +
-      "equest\032$.payment.v1alpha1.CreateCardResp" +
-      "onse\"\000\022b\n\rCreateProject\022&.payment.v1alph" +
-      "a1.CreateProjectRequest\032\'.payment.v1alph" +
-      "a1.CreateProjectResponse\"\000\022b\n\rCreateInvo" +
-      "ice\022&.payment.v1alpha1.CreateInvoiceRequ" +
-      "est\032\'.payment.v1alpha1.CreateInvoiceResp" +
-      "onse\"\000\022h\n\017GetOrganization\022(.payment.v1al" +
-      "pha1.GetOrganizationRequest\032).payment.v1" +
-      "alpha1.GetOrganizationResponse\"\000\022h\n\017GetS" +
-      "ubscription\022(.payment.v1alpha1.GetSubscr" +
-      "iptionRequest\032).payment.v1alpha1.GetSubs" +
-      "criptionResponse\"\000\022Y\n\nGetPayment\022#.payme" +
-      "nt.v1alpha1.GetPaymentRequest\032$.payment." +
-      "v1alpha1.GetPaymentResponse\"\000\022\\\n\013GetCust" +
-      "omer\022$.payment.v1alpha1.GetCustomerReque" +
-      "st\032%.payment.v1alpha1.GetCustomerRespons" +
-      "e\"\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha1" +
-      ".GetBilingMonthRequest\032(.payment.v1alpha" +
-      "1.GetBilingMonthResponse\"\000\022\\\n\013GetPayment" +
-      "s\022$.payment.v1alpha1.GetPaymentsRequest\032" +
-      "%.payment.v1alpha1.GetPaymentsResponse\"\000" +
-      "\022_\n\014ListProjects\022%.payment.v1alpha1.List" +
-      "ProjectsRequest\032&.payment.v1alpha1.ListP" +
-      "rojectsResponse\"\000\022\\\n\013ListPayment\022$.payme" +
-      "nt.v1alpha1.ListPaymentRequest\032%.payment" +
-      ".v1alpha1.ListPaymentResponse\"\000\022z\n\025ListS" +
-      "ubscriptionItems\022..payment.v1alpha1.List" +
-      "SubscriptionItemsRequest\032/.payment.v1alp" +
-      "ha1.ListSubscriptionItemsResponse\"\000\022q\n\022U" +
-      "pdateSubscription\022+.payment.v1alpha1.Upd" +
-      "ateSubscriptionRequest\032,.payment.v1alpha" +
-      "1.UpdateSubscriptionResponse\"\000\022\200\001\n\027SetDe" +
-      "faultPaymentMethod\0220.payment.v1alpha1.Se" +
-      "tDefaultPaymentMethodRequest\0321.payment.v" +
-      "1alpha1.SetDefaultPaymentMethodResponse\"" +
-      "\000\022b\n\rDeleteProject\022&.payment.v1alpha1.De" +
-      "leteProjectRequest\032\'.payment.v1alpha1.De" +
-      "leteProjectResponse\"\000\022b\n\rDeletePayment\022&" +
-      ".payment.v1alpha1.DeletePaymentRequest\032\'" +
-      ".payment.v1alpha1.DeletePaymentResponse\"" +
-      "\000\022q\n\022CancelSubscription\022+.payment.v1alph" +
-      "a1.CancelSubscriptionRequest\032,.payment.v" +
-      "1alpha1.CancelSubscriptionResponse\"\000\022e\n\016" +
-      "DeleteCustomer\022\'.payment.v1alpha1.Delete" +
-      "CustomerRequest\032(.payment.v1alpha1.Delet" +
-      "eCustomerResponse\"\000\022b\n\rInvoiceFilter\022&.p" +
-      "ayment.v1alpha1.InvoiceFilterRequest\032\'.p" +
-      "ayment.v1alpha1.InvoiceFilterResponse\"\000\022" +
-      "\\\n\013StopProject\022$.payment.v1alpha1.StopPr" +
-      "ojectRequest\032%.payment.v1alpha1.StopProj" +
-      "ectResponse\"\000B8Z6github.com/cuemby/ccp-p" +
-      "ayment-service/payment/v1alpha1b\006proto3"
+      "ymentList\022\024\n\005error\030\002 \001(\tR\005error\"p\n\034ListS" +
+      "ubscriptionItemsRequest\022\'\n\017organization_" +
+      "id\030\001 \001(\rR\016organizationId\022\'\n\017subscription" +
+      "_id\030\002 \001(\tR\016subscriptionId\"\320\001\n\035ListSubscr" +
+      "iptionItemsResponse\0226\n\010customer\030\001 \001(\0132\032." +
+      "payment.v1alpha1.CustomerR\010customer\022_\n\027s" +
+      "ubscription_items_list\030\002 \001(\0132\'.payment.v" +
+      "1alpha1.SubscriptionItemsListR\025subscript" +
+      "ionItemsList\022\026\n\006status\030\003 \001(\tR\006status\">\n\023" +
+      "ListProjectsRequest\022\'\n\017organization_id\030\001" +
+      " \001(\rR\016organizationId\"f\n\024ListProjectsResp" +
+      "onse\0226\n\010customer\030\001 \001(\0132\032.payment.v1alpha" +
+      "1.CustomerR\010customer\022\026\n\006status\030\002 \001(\tR\006st" +
+      "atus\"[\n\021GetProjectRequest\022\'\n\017organizatio" +
+      "n_id\030\001 \001(\tR\016organizationId\022\035\n\nproject_id" +
+      "\030\002 \001(\tR\tprojectId\"d\n\022GetProjectResponse\022" +
+      "6\n\010customer\030\001 \001(\0132\032.payment.v1alpha1.Cus" +
+      "tomerR\010customer\022\026\n\006status\030\002 \001(\tR\006status\"" +
+      "\223\001\n\024DeleteProjectRequest\022\'\n\017organization" +
+      "_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_id\030" +
+      "\002 \001(\tR\tprojectId\0223\n\007project\030\003 \001(\0132\031.paym" +
+      "ent.v1alpha1.ProjectR\007project\"/\n\025DeleteP" +
+      "rojectResponse\022\026\n\006status\030\001 \001(\tR\006status\"b" +
+      "\n\036SetDefaultPaymentMethodRequest\022\'\n\017orga" +
+      "nization_id\030\001 \001(\rR\016organizationId\022\027\n\007car" +
+      "d_id\030\002 \001(\tR\006cardId\"I\n\037SetDefaultPaymentM" +
+      "ethodResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error2\333\022\n\021PaymentAPIService\022e\n\016C" +
+      "reateCustomer\022\'.payment.v1alpha1.CreateC" +
+      "ustomerRequest\032(.payment.v1alpha1.Create" +
+      "CustomerResponse\"\000\022q\n\022CreateSubscription" +
+      "\022+.payment.v1alpha1.CreateSubscriptionRe" +
+      "quest\032,.payment.v1alpha1.CreateSubscript" +
+      "ionResponse\"\000\022b\n\rCreatePayment\022&.payment" +
+      ".v1alpha1.CreatePaymentRequest\032\'.payment" +
+      ".v1alpha1.CreatePaymentResponse\"\000\022Y\n\nCre" +
+      "ateCard\022#.payment.v1alpha1.CreateCardReq" +
+      "uest\032$.payment.v1alpha1.CreateCardRespon" +
+      "se\"\000\022b\n\rCreateProject\022&.payment.v1alpha1" +
+      ".CreateProjectRequest\032\'.payment.v1alpha1" +
+      ".CreateProjectResponse\"\000\022b\n\rCreateInvoic" +
+      "e\022&.payment.v1alpha1.CreateInvoiceReques" +
+      "t\032\'.payment.v1alpha1.CreateInvoiceRespon" +
+      "se\"\000\022h\n\017GetOrganization\022(.payment.v1alph" +
+      "a1.GetOrganizationRequest\032).payment.v1al" +
+      "pha1.GetOrganizationResponse\"\000\022h\n\017GetSub" +
+      "scription\022(.payment.v1alpha1.GetSubscrip" +
+      "tionRequest\032).payment.v1alpha1.GetSubscr" +
+      "iptionResponse\"\000\022Y\n\nGetPayment\022#.payment" +
+      ".v1alpha1.GetPaymentRequest\032$.payment.v1" +
+      "alpha1.GetPaymentResponse\"\000\022\\\n\013GetCustom" +
+      "er\022$.payment.v1alpha1.GetCustomerRequest" +
+      "\032%.payment.v1alpha1.GetCustomerResponse\"" +
+      "\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha1.G" +
+      "etBilingMonthRequest\032(.payment.v1alpha1." +
+      "GetBilingMonthResponse\"\000\022\\\n\013GetPayments\022" +
+      "$.payment.v1alpha1.GetPaymentsRequest\032%." +
+      "payment.v1alpha1.GetPaymentsResponse\"\000\022_" +
+      "\n\014ListProjects\022%.payment.v1alpha1.ListPr" +
+      "ojectsRequest\032&.payment.v1alpha1.ListPro" +
+      "jectsResponse\"\000\022\\\n\013ListPayment\022$.payment" +
+      ".v1alpha1.ListPaymentRequest\032%.payment.v" +
+      "1alpha1.ListPaymentResponse\"\000\022z\n\025ListSub" +
+      "scriptionItems\022..payment.v1alpha1.ListSu" +
+      "bscriptionItemsRequest\032/.payment.v1alpha" +
+      "1.ListSubscriptionItemsResponse\"\000\022q\n\022Upd" +
+      "ateSubscription\022+.payment.v1alpha1.Updat" +
+      "eSubscriptionRequest\032,.payment.v1alpha1." +
+      "UpdateSubscriptionResponse\"\000\022\200\001\n\027SetDefa" +
+      "ultPaymentMethod\0220.payment.v1alpha1.SetD" +
+      "efaultPaymentMethodRequest\0321.payment.v1a" +
+      "lpha1.SetDefaultPaymentMethodResponse\"\000\022" +
+      "b\n\rDeleteProject\022&.payment.v1alpha1.Dele" +
+      "teProjectRequest\032\'.payment.v1alpha1.Dele" +
+      "teProjectResponse\"\000\022b\n\rDeletePayment\022&.p" +
+      "ayment.v1alpha1.DeletePaymentRequest\032\'.p" +
+      "ayment.v1alpha1.DeletePaymentResponse\"\000\022" +
+      "q\n\022CancelSubscription\022+.payment.v1alpha1" +
+      ".CancelSubscriptionRequest\032,.payment.v1a" +
+      "lpha1.CancelSubscriptionResponse\"\000\022e\n\016De" +
+      "leteCustomer\022\'.payment.v1alpha1.DeleteCu" +
+      "stomerRequest\032(.payment.v1alpha1.DeleteC" +
+      "ustomerResponse\"\000\022b\n\rInvoiceFilter\022&.pay" +
+      "ment.v1alpha1.InvoiceFilterRequest\032\'.pay" +
+      "ment.v1alpha1.InvoiceFilterResponse\"\000\022\\\n" +
+      "\013StopProject\022$.payment.v1alpha1.StopProj" +
+      "ectRequest\032%.payment.v1alpha1.StopProjec" +
+      "tResponse\"\000B8Z6github.com/cuemby/ccp-pay" +
+      "ment-service/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -36382,7 +36382,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_ListPaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListPaymentResponse_descriptor,
-        new java.lang.String[] { "PaymentList", "Status", });
+        new java.lang.String[] { "PaymentList", "Error", });
     internal_static_payment_v1alpha1_ListSubscriptionItemsRequest_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_payment_v1alpha1_ListSubscriptionItemsRequest_fieldAccessorTable = new

@@ -245,7 +245,7 @@ message ListPaymentRequest {
 
 message ListPaymentResponse {
     payment.v1alpha1.PaymentList payment_list = 1;
-    string status = 2;
+    string error = 2;
 }
 
 message ListSubscriptionItemsRequest {

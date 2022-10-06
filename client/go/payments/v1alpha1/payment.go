@@ -466,7 +466,7 @@ func StopProject(in *paymentpkgv1.StopProjectRequest) (response *paymentpkgv1.St
 	return response, nil
 }
 
-func SetDefaultPaymentMethod (in *paymentpkgv1.SetDefaultPaymentMethodRequest) (response *paymentpkgv1.SetDefaultPaymentMethodResponse, err error) {
+func SetDefaultPaymentMethod(in *paymentpkgv1.SetDefaultPaymentMethodRequest) (response *paymentpkgv1.SetDefaultPaymentMethodResponse, err error) {
 	fmt.Println("SetDefaultPaymentMethod")
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {

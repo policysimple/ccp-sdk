@@ -1683,10 +1683,11 @@ proto.payment.v1alpha1.Payment.prototype.toObject = function(opt_includeInstance
  */
 proto.payment.v1alpha1.Payment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    cardId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pb_default: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     enabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     alias: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    tokenCard: jspb.Message.getFieldWithDefault(msg, 5, ""),
     card: (f = msg.getCard()) && proto.payment.v1alpha1.Card.toObject(includeInstance, f)
   };
 
@@ -1726,7 +1727,7 @@ proto.payment.v1alpha1.Payment.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setCardId(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -1741,6 +1742,10 @@ proto.payment.v1alpha1.Payment.deserializeBinaryFromReader = function(msg, reade
       msg.setAlias(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTokenCard(value);
+      break;
+    case 6:
       var value = new proto.payment.v1alpha1.Card;
       reader.readMessage(value,proto.payment.v1alpha1.Card.deserializeBinaryFromReader);
       msg.setCard(value);
@@ -1774,7 +1779,7 @@ proto.payment.v1alpha1.Payment.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.Payment.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getCardId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1802,10 +1807,17 @@ proto.payment.v1alpha1.Payment.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getTokenCard();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getCard();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.payment.v1alpha1.Card.serializeBinaryToWriter
     );
@@ -1814,10 +1826,10 @@ proto.payment.v1alpha1.Payment.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional string id = 1;
+ * optional string card_id = 1;
  * @return {string}
  */
-proto.payment.v1alpha1.Payment.prototype.getId = function() {
+proto.payment.v1alpha1.Payment.prototype.getCardId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1826,7 +1838,7 @@ proto.payment.v1alpha1.Payment.prototype.getId = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Payment} returns this
  */
-proto.payment.v1alpha1.Payment.prototype.setId = function(value) {
+proto.payment.v1alpha1.Payment.prototype.setCardId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1886,12 +1898,30 @@ proto.payment.v1alpha1.Payment.prototype.setAlias = function(value) {
 
 
 /**
- * optional Card card = 5;
+ * optional string token_card = 5;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Payment.prototype.getTokenCard = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Payment} returns this
+ */
+proto.payment.v1alpha1.Payment.prototype.setTokenCard = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional Card card = 6;
  * @return {?proto.payment.v1alpha1.Card}
  */
 proto.payment.v1alpha1.Payment.prototype.getCard = function() {
   return /** @type{?proto.payment.v1alpha1.Card} */ (
-    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Card, 5));
+    jspb.Message.getWrapperField(this, proto.payment.v1alpha1.Card, 6));
 };
 
 
@@ -1900,7 +1930,7 @@ proto.payment.v1alpha1.Payment.prototype.getCard = function() {
  * @return {!proto.payment.v1alpha1.Payment} returns this
 */
 proto.payment.v1alpha1.Payment.prototype.setCard = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1918,7 +1948,7 @@ proto.payment.v1alpha1.Payment.prototype.clearCard = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.Payment.prototype.hasCard = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
