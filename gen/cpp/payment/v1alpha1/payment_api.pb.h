@@ -5834,6 +5834,7 @@ class DeletePaymentResponse final :
 
   enum : int {
     kStatusFieldNumber = 1,
+    kMsgErrorFieldNumber = 2,
   };
   // string status = 1 [json_name = "status"];
   void clear_status();
@@ -5849,6 +5850,20 @@ class DeletePaymentResponse final :
   std::string* _internal_mutable_status();
   public:
 
+  // string msg_error = 2 [json_name = "msgError"];
+  void clear_msg_error();
+  const std::string& msg_error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg_error();
+  void set_allocated_msg_error(std::string* msg_error);
+  private:
+  const std::string& _internal_msg_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg_error(const std::string& value);
+  std::string* _internal_mutable_msg_error();
+  public:
+
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.DeletePaymentResponse)
  private:
   class _Internal;
@@ -5857,6 +5872,7 @@ class DeletePaymentResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -12121,6 +12137,52 @@ inline void DeletePaymentResponse::set_allocated_status(std::string* status) {
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.DeletePaymentResponse.status)
+}
+
+// string msg_error = 2 [json_name = "msgError"];
+inline void DeletePaymentResponse::clear_msg_error() {
+  msg_error_.ClearToEmpty();
+}
+inline const std::string& DeletePaymentResponse::msg_error() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.DeletePaymentResponse.msg_error)
+  return _internal_msg_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeletePaymentResponse::set_msg_error(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.DeletePaymentResponse.msg_error)
+}
+inline std::string* DeletePaymentResponse::mutable_msg_error() {
+  std::string* _s = _internal_mutable_msg_error();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.DeletePaymentResponse.msg_error)
+  return _s;
+}
+inline const std::string& DeletePaymentResponse::_internal_msg_error() const {
+  return msg_error_.Get();
+}
+inline void DeletePaymentResponse::_internal_set_msg_error(const std::string& value) {
+  
+  msg_error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeletePaymentResponse::_internal_mutable_msg_error() {
+  
+  return msg_error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeletePaymentResponse::release_msg_error() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.DeletePaymentResponse.msg_error)
+  return msg_error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeletePaymentResponse::set_allocated_msg_error(std::string* msg_error) {
+  if (msg_error != nullptr) {
+    
+  } else {
+    
+  }
+  msg_error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg_error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.DeletePaymentResponse.msg_error)
 }
 
 // -------------------------------------------------------------------

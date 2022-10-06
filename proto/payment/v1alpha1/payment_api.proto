@@ -225,6 +225,7 @@ message DeletePaymentRequest {
 
 message DeletePaymentResponse {
     string status = 1;
+    string msg_error = 2;
 }
 
 message GetPaymentRequest {

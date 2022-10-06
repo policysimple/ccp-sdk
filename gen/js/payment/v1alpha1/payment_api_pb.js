@@ -7132,7 +7132,8 @@ proto.payment.v1alpha1.DeletePaymentResponse.prototype.toObject = function(opt_i
  */
 proto.payment.v1alpha1.DeletePaymentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, "")
+    status: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    msgError: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -7173,6 +7174,10 @@ proto.payment.v1alpha1.DeletePaymentResponse.deserializeBinaryFromReader = funct
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMsgError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7209,6 +7214,13 @@ proto.payment.v1alpha1.DeletePaymentResponse.serializeBinaryToWriter = function(
       f
     );
   }
+  f = message.getMsgError();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -7227,6 +7239,24 @@ proto.payment.v1alpha1.DeletePaymentResponse.prototype.getStatus = function() {
  */
 proto.payment.v1alpha1.DeletePaymentResponse.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string msg_error = 2;
+ * @return {string}
+ */
+proto.payment.v1alpha1.DeletePaymentResponse.prototype.getMsgError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.DeletePaymentResponse} returns this
+ */
+proto.payment.v1alpha1.DeletePaymentResponse.prototype.setMsgError = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
