@@ -54,6 +54,11 @@ class RuntimeAPIServiceStub(object):
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesRequest.SerializeToString,
         response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesResponse.FromString,
         )
+    self.RefreshRuntime = channel.unary_unary(
+        '/pipelines.runtime.v1alpha1.RuntimeAPIService/RefreshRuntime',
+        request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.RefreshRuntimeRequest.SerializeToString,
+        response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.RefreshRuntimeResponse.FromString,
+        )
 
 
 class RuntimeAPIServiceServicer(object):
@@ -116,6 +121,13 @@ class RuntimeAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RefreshRuntime(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RuntimeAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -158,6 +170,11 @@ def add_RuntimeAPIServiceServicer_to_server(servicer, server):
           servicer.ListRuntimes,
           request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesRequest.FromString,
           response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.ListRuntimesResponse.SerializeToString,
+      ),
+      'RefreshRuntime': grpc.unary_unary_rpc_method_handler(
+          servicer.RefreshRuntime,
+          request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.RefreshRuntimeRequest.FromString,
+          response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.RefreshRuntimeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

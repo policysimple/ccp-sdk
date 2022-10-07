@@ -177,3 +177,22 @@ func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.
 	return response, nil
 }
 
+func RefreshRuntime(in *runtimepkgv1.RefreshRuntimeRequest) (response *runtimepkgv1.RefreshRuntimeResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.RefreshRuntime(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "error refresh runtime", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "error refresh runtime", err),
+		)
+	}
+	return response, nil
+}

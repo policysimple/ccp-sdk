@@ -47,7 +47,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -87,6 +87,12 @@ extern ListRuntimesRequestDefaultTypeInternal _ListRuntimesRequest_default_insta
 class ListRuntimesResponse;
 struct ListRuntimesResponseDefaultTypeInternal;
 extern ListRuntimesResponseDefaultTypeInternal _ListRuntimesResponse_default_instance_;
+class RefreshRuntimeRequest;
+struct RefreshRuntimeRequestDefaultTypeInternal;
+extern RefreshRuntimeRequestDefaultTypeInternal _RefreshRuntimeRequest_default_instance_;
+class RefreshRuntimeResponse;
+struct RefreshRuntimeResponseDefaultTypeInternal;
+extern RefreshRuntimeResponseDefaultTypeInternal _RefreshRuntimeResponse_default_instance_;
 class ResponseMessageDeleteRuntimeByAppIdRequest;
 struct ResponseMessageDeleteRuntimeByAppIdRequestDefaultTypeInternal;
 extern ResponseMessageDeleteRuntimeByAppIdRequestDefaultTypeInternal _ResponseMessageDeleteRuntimeByAppIdRequest_default_instance_;
@@ -119,6 +125,8 @@ template<> ::pipelines::runtime::v1alpha1::GetRuntimeRequest* Arena::CreateMaybe
 template<> ::pipelines::runtime::v1alpha1::GetRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::GetRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ListRuntimesRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ListRuntimesRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ListRuntimesResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ListRuntimesResponse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::RefreshRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::RefreshRuntimeRequest>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::RefreshRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::RefreshRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ResponseMessageDeleteRuntimeByAppIdResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::UpdateResponseMessageRuntimeRequest>(Arena*);
@@ -2799,6 +2807,314 @@ class ResponseMessageDeleteRuntimeByAppIdResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class RefreshRuntimeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.RefreshRuntimeRequest) */ {
+ public:
+  inline RefreshRuntimeRequest() : RefreshRuntimeRequest(nullptr) {}
+  ~RefreshRuntimeRequest() override;
+  explicit constexpr RefreshRuntimeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RefreshRuntimeRequest(const RefreshRuntimeRequest& from);
+  RefreshRuntimeRequest(RefreshRuntimeRequest&& from) noexcept
+    : RefreshRuntimeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RefreshRuntimeRequest& operator=(const RefreshRuntimeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RefreshRuntimeRequest& operator=(RefreshRuntimeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RefreshRuntimeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RefreshRuntimeRequest* internal_default_instance() {
+    return reinterpret_cast<const RefreshRuntimeRequest*>(
+               &_RefreshRuntimeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(RefreshRuntimeRequest& a, RefreshRuntimeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RefreshRuntimeRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RefreshRuntimeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RefreshRuntimeRequest* New() const final {
+    return new RefreshRuntimeRequest();
+  }
+
+  RefreshRuntimeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RefreshRuntimeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RefreshRuntimeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const RefreshRuntimeRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RefreshRuntimeRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.RefreshRuntimeRequest";
+  }
+  protected:
+  explicit RefreshRuntimeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRuntimeIdFieldNumber = 1,
+  };
+  // string runtime_id = 1 [json_name = "runtimeId"];
+  void clear_runtime_id();
+  const std::string& runtime_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_runtime_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_runtime_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_runtime_id();
+  void set_allocated_runtime_id(std::string* runtime_id);
+  private:
+  const std::string& _internal_runtime_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_runtime_id(const std::string& value);
+  std::string* _internal_mutable_runtime_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RefreshRuntimeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RefreshRuntimeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.RefreshRuntimeResponse) */ {
+ public:
+  inline RefreshRuntimeResponse() : RefreshRuntimeResponse(nullptr) {}
+  ~RefreshRuntimeResponse() override;
+  explicit constexpr RefreshRuntimeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RefreshRuntimeResponse(const RefreshRuntimeResponse& from);
+  RefreshRuntimeResponse(RefreshRuntimeResponse&& from) noexcept
+    : RefreshRuntimeResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RefreshRuntimeResponse& operator=(const RefreshRuntimeResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RefreshRuntimeResponse& operator=(RefreshRuntimeResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RefreshRuntimeResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RefreshRuntimeResponse* internal_default_instance() {
+    return reinterpret_cast<const RefreshRuntimeResponse*>(
+               &_RefreshRuntimeResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(RefreshRuntimeResponse& a, RefreshRuntimeResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RefreshRuntimeResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RefreshRuntimeResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RefreshRuntimeResponse* New() const final {
+    return new RefreshRuntimeResponse();
+  }
+
+  RefreshRuntimeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RefreshRuntimeResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RefreshRuntimeResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const RefreshRuntimeResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RefreshRuntimeResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.RefreshRuntimeResponse";
+  }
+  protected:
+  explicit RefreshRuntimeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 2,
+    kRuntimeFieldNumber = 1,
+  };
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
+  bool has_runtime() const;
+  private:
+  bool _internal_has_runtime() const;
+  public:
+  void clear_runtime();
+  const ::pipelines::runtime::v1alpha1::Runtime& runtime() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::Runtime* release_runtime();
+  ::pipelines::runtime::v1alpha1::Runtime* mutable_runtime();
+  void set_allocated_runtime(::pipelines::runtime::v1alpha1::Runtime* runtime);
+  private:
+  const ::pipelines::runtime::v1alpha1::Runtime& _internal_runtime() const;
+  ::pipelines::runtime::v1alpha1::Runtime* _internal_mutable_runtime();
+  public:
+  void unsafe_arena_set_allocated_runtime(
+      ::pipelines::runtime::v1alpha1::Runtime* runtime);
+  ::pipelines::runtime::v1alpha1::Runtime* unsafe_arena_release_runtime();
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RefreshRuntimeResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::pipelines::runtime::v1alpha1::Runtime* runtime_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -4802,9 +5118,199 @@ inline void ResponseMessageDeleteRuntimeByAppIdResponse::set_allocated_error(std
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse.error)
 }
 
+// -------------------------------------------------------------------
+
+// RefreshRuntimeRequest
+
+// string runtime_id = 1 [json_name = "runtimeId"];
+inline void RefreshRuntimeRequest::clear_runtime_id() {
+  runtime_id_.ClearToEmpty();
+}
+inline const std::string& RefreshRuntimeRequest::runtime_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.RefreshRuntimeRequest.runtime_id)
+  return _internal_runtime_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RefreshRuntimeRequest::set_runtime_id(ArgT0&& arg0, ArgT... args) {
+ 
+ runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.RefreshRuntimeRequest.runtime_id)
+}
+inline std::string* RefreshRuntimeRequest::mutable_runtime_id() {
+  std::string* _s = _internal_mutable_runtime_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.RefreshRuntimeRequest.runtime_id)
+  return _s;
+}
+inline const std::string& RefreshRuntimeRequest::_internal_runtime_id() const {
+  return runtime_id_.Get();
+}
+inline void RefreshRuntimeRequest::_internal_set_runtime_id(const std::string& value) {
+  
+  runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RefreshRuntimeRequest::_internal_mutable_runtime_id() {
+  
+  return runtime_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RefreshRuntimeRequest::release_runtime_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.RefreshRuntimeRequest.runtime_id)
+  return runtime_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RefreshRuntimeRequest::set_allocated_runtime_id(std::string* runtime_id) {
+  if (runtime_id != nullptr) {
+    
+  } else {
+    
+  }
+  runtime_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.RefreshRuntimeRequest.runtime_id)
+}
+
+// -------------------------------------------------------------------
+
+// RefreshRuntimeResponse
+
+// .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
+inline bool RefreshRuntimeResponse::_internal_has_runtime() const {
+  return this != internal_default_instance() && runtime_ != nullptr;
+}
+inline bool RefreshRuntimeResponse::has_runtime() const {
+  return _internal_has_runtime();
+}
+inline const ::pipelines::runtime::v1alpha1::Runtime& RefreshRuntimeResponse::_internal_runtime() const {
+  const ::pipelines::runtime::v1alpha1::Runtime* p = runtime_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::Runtime&>(
+      ::pipelines::runtime::v1alpha1::_Runtime_default_instance_);
+}
+inline const ::pipelines::runtime::v1alpha1::Runtime& RefreshRuntimeResponse::runtime() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime)
+  return _internal_runtime();
+}
+inline void RefreshRuntimeResponse::unsafe_arena_set_allocated_runtime(
+    ::pipelines::runtime::v1alpha1::Runtime* runtime) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(runtime_);
+  }
+  runtime_ = runtime;
+  if (runtime) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime)
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RefreshRuntimeResponse::release_runtime() {
+  
+  ::pipelines::runtime::v1alpha1::Runtime* temp = runtime_;
+  runtime_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RefreshRuntimeResponse::unsafe_arena_release_runtime() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime)
+  
+  ::pipelines::runtime::v1alpha1::Runtime* temp = runtime_;
+  runtime_ = nullptr;
+  return temp;
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RefreshRuntimeResponse::_internal_mutable_runtime() {
+  
+  if (runtime_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(GetArenaForAllocation());
+    runtime_ = p;
+  }
+  return runtime_;
+}
+inline ::pipelines::runtime::v1alpha1::Runtime* RefreshRuntimeResponse::mutable_runtime() {
+  ::pipelines::runtime::v1alpha1::Runtime* _msg = _internal_mutable_runtime();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime)
+  return _msg;
+}
+inline void RefreshRuntimeResponse::set_allocated_runtime(::pipelines::runtime::v1alpha1::Runtime* runtime) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(runtime_);
+  }
+  if (runtime) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(runtime));
+    if (message_arena != submessage_arena) {
+      runtime = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, runtime, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  runtime_ = runtime;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime)
+}
+
+// string status = 2 [json_name = "status"];
+inline void RefreshRuntimeResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& RefreshRuntimeResponse::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RefreshRuntimeResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.status)
+}
+inline std::string* RefreshRuntimeResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.status)
+  return _s;
+}
+inline const std::string& RefreshRuntimeResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void RefreshRuntimeResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RefreshRuntimeResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RefreshRuntimeResponse::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RefreshRuntimeResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.RefreshRuntimeResponse.status)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
