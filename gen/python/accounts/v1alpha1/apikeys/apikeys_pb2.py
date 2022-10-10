@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeys',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'accounts/v1alpha1/apikeys/apikeys.proto\x12\x1c\x61\x63\x63ounts.v1alpha1.apikeys.v1\x1a accounts/v1alpha1/accounts.proto\"\xd0\x01\n\x13\x43reateApiKeyRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\'\n\x0fpermissions_ids\x18\x04 \x03(\rR\x0epermissionsIds\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\nproject_id\x18\x07 \x01(\rR\tprojectId\"k\n\x14\x43reateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04uuid\x18\x04 \x01(\tR\x04uuid\x12\x14\n\x05\x65rror\x18\x05 \x01(\tR\x05\x65rror\")\n\x13GetOneApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\"\xf6\x02\n\x14GetOneApiKeyResponse\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12+\n\x04role\x18\x05 \x01(\x0b\x32\x17.accounts.v1alpha1.RoleR\x04role\x12?\n\x0bpermissions\x18\x06 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x1b\n\tis_active\x18\x08 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\t \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\n \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"U\n\x11ListApiKeyRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"\xfe\x01\n\nApiKeyList\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\x07 \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\x08 \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"Y\n\x12ListApiKeyResponse\x12\x43\n\x08\x61pi_keys\x18\x01 \x03(\x0b\x32(.accounts.v1alpha1.apikeys.v1.ApiKeyListR\x07\x61piKeys\"u\n\x13UpdateApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12J\n\x07\x61pi_key\x18\x06 \x01(\x0b\x32\x31.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestR\x06\x61piKey\"W\n\x14UpdateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\")\n\x13\x44\x65leteApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\"W\n\x14\x44\x65leteApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rrorB<Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeysb\x06proto3'
+  serialized_pb=b'\n\'accounts/v1alpha1/apikeys/apikeys.proto\x12\x1c\x61\x63\x63ounts.v1alpha1.apikeys.v1\x1a accounts/v1alpha1/accounts.proto\"\xef\x01\n\x13\x43reateApiKeyRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\'\n\x0fpermissions_ids\x18\x04 \x03(\rR\x0epermissionsIds\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\nproject_id\x18\x07 \x01(\rR\tprojectId\x12\x1d\n\nexpired_at\x18\x08 \x01(\tR\texpiredAt\"k\n\x14\x43reateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04uuid\x18\x04 \x01(\tR\x04uuid\x12\x14\n\x05\x65rror\x18\x05 \x01(\tR\x05\x65rror\")\n\x13GetOneApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\"\xf6\x02\n\x14GetOneApiKeyResponse\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12+\n\x04role\x18\x05 \x01(\x0b\x32\x17.accounts.v1alpha1.RoleR\x04role\x12?\n\x0bpermissions\x18\x06 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x1b\n\tis_active\x18\x08 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\t \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\n \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"U\n\x11ListApiKeyRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"\xfe\x01\n\nApiKeyList\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x34\n\x07project\x18\x07 \x01(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x07project\x12\x43\n\x0corganization\x18\x08 \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\"Y\n\x12ListApiKeyResponse\x12\x43\n\x08\x61pi_keys\x18\x01 \x03(\x0b\x32(.accounts.v1alpha1.apikeys.v1.ApiKeyListR\x07\x61piKeys\"u\n\x13UpdateApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12J\n\x07\x61pi_key\x18\x06 \x01(\x0b\x32\x31.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestR\x06\x61piKey\"W\n\x14UpdateApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\")\n\x13\x44\x65leteApiKeyRequest\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\"W\n\x14\x44\x65leteApiKeyResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x17\n\x07\x61pi_key\x18\x02 \x01(\tR\x06\x61piKey\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rrorB<Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeysb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -77,6 +77,13 @@ _CREATEAPIKEYREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expired_at', full_name='accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.expired_at', index=6,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiredAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -90,7 +97,7 @@ _CREATEAPIKEYREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=108,
-  serialized_end=316,
+  serialized_end=347,
 )
 
 
@@ -142,8 +149,8 @@ _CREATEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=318,
-  serialized_end=425,
+  serialized_start=349,
+  serialized_end=456,
 )
 
 
@@ -174,8 +181,8 @@ _GETONEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=427,
-  serialized_end=468,
+  serialized_start=458,
+  serialized_end=499,
 )
 
 
@@ -262,8 +269,8 @@ _GETONEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=845,
+  serialized_start=502,
+  serialized_end=876,
 )
 
 
@@ -301,8 +308,8 @@ _LISTAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=847,
-  serialized_end=932,
+  serialized_start=878,
+  serialized_end=963,
 )
 
 
@@ -375,8 +382,8 @@ _APIKEYLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=935,
-  serialized_end=1189,
+  serialized_start=966,
+  serialized_end=1220,
 )
 
 
@@ -407,8 +414,8 @@ _LISTAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1191,
-  serialized_end=1280,
+  serialized_start=1222,
+  serialized_end=1311,
 )
 
 
@@ -446,8 +453,8 @@ _UPDATEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1282,
-  serialized_end=1399,
+  serialized_start=1313,
+  serialized_end=1430,
 )
 
 
@@ -492,8 +499,8 @@ _UPDATEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1401,
-  serialized_end=1488,
+  serialized_start=1432,
+  serialized_end=1519,
 )
 
 
@@ -524,8 +531,8 @@ _DELETEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1490,
-  serialized_end=1531,
+  serialized_start=1521,
+  serialized_end=1562,
 )
 
 
@@ -570,8 +577,8 @@ _DELETEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1533,
-  serialized_end=1620,
+  serialized_start=1564,
+  serialized_end=1651,
 )
 
 _GETONEAPIKEYRESPONSE.fields_by_name['role'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._ROLE

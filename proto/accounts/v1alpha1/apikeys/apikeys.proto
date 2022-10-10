@@ -17,6 +17,7 @@ message CreateApiKeyRequest {
     uint32 organization_id = 5;
     bool is_active = 6;
     uint32 project_id = 7;
+    string expired_at = 8;
 
 
 }
