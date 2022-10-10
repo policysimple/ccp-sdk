@@ -233,6 +233,7 @@ class CreateApiKeyRequest final :
     kPermissionsIdsFieldNumber = 4,
     kNameFieldNumber = 1,
     kUserIdFieldNumber = 2,
+    kExpiredAtFieldNumber = 8,
     kOrganizationIdFieldNumber = 5,
     kIsActiveFieldNumber = 6,
     kProjectIdFieldNumber = 7,
@@ -287,6 +288,20 @@ class CreateApiKeyRequest final :
   std::string* _internal_mutable_user_id();
   public:
 
+  // string expired_at = 8 [json_name = "expiredAt"];
+  void clear_expired_at();
+  const std::string& expired_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_expired_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_expired_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_expired_at();
+  void set_allocated_expired_at(std::string* expired_at);
+  private:
+  const std::string& _internal_expired_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_expired_at(const std::string& value);
+  std::string* _internal_mutable_expired_at();
+  public:
+
   // uint32 organization_id = 5 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -325,6 +340,7 @@ class CreateApiKeyRequest final :
   mutable std::atomic<int> _permissions_ids_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   bool is_active_;
   ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
@@ -2364,6 +2380,52 @@ inline void CreateApiKeyRequest::_internal_set_project_id(::PROTOBUF_NAMESPACE_I
 inline void CreateApiKeyRequest::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_project_id(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.project_id)
+}
+
+// string expired_at = 8 [json_name = "expiredAt"];
+inline void CreateApiKeyRequest::clear_expired_at() {
+  expired_at_.ClearToEmpty();
+}
+inline const std::string& CreateApiKeyRequest::expired_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.expired_at)
+  return _internal_expired_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateApiKeyRequest::set_expired_at(ArgT0&& arg0, ArgT... args) {
+ 
+ expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.expired_at)
+}
+inline std::string* CreateApiKeyRequest::mutable_expired_at() {
+  std::string* _s = _internal_mutable_expired_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.expired_at)
+  return _s;
+}
+inline const std::string& CreateApiKeyRequest::_internal_expired_at() const {
+  return expired_at_.Get();
+}
+inline void CreateApiKeyRequest::_internal_set_expired_at(const std::string& value) {
+  
+  expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateApiKeyRequest::_internal_mutable_expired_at() {
+  
+  return expired_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateApiKeyRequest::release_expired_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.expired_at)
+  return expired_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateApiKeyRequest::set_allocated_expired_at(std::string* expired_at) {
+  if (expired_at != nullptr) {
+    
+  } else {
+    
+  }
+  expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.expired_at)
 }
 
 // -------------------------------------------------------------------

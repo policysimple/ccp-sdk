@@ -303,7 +303,8 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.toObject = function(inclu
     permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    projectId: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    expiredAt: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -365,6 +366,10 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.deserializeBinaryFromRead
     case 7:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setProjectId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExpiredAt(value);
       break;
     default:
       reader.skipField();
@@ -434,6 +439,13 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.serializeBinaryToWriter =
   if (f !== 0) {
     writer.writeUint32(
       7,
+      f
+    );
+  }
+  f = message.getExpiredAt();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -564,6 +576,24 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.getProjectId = 
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional string expired_at = 8;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.getExpiredAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest} returns this
+ */
+proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setExpiredAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
