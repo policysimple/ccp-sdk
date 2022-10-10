@@ -90,7 +90,7 @@ message Member {
     string last_name = 4;
     bool is_active = 5;
     repeated MemberRol roles = 6;
-
+    string image = 7;
 }
 
 //Project Organization

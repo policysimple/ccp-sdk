@@ -37,6 +37,10 @@ class Member extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.organizations.v1.MemberRol roles = 6 [json_name = "roles"];</code>
      */
     private $roles;
+    /**
+     * Generated from protobuf field <code>string image = 7 [json_name = "image"];</code>
+     */
+    protected $image = '';
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $last_name
      *     @type bool $is_active
      *     @type \Accounts\V1alpha1\Organizations\V1\MemberRol[]|\Google\Protobuf\Internal\RepeatedField $roles
+     *     @type string $image
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Organizations\V1\MemberRol::class);
         $this->roles = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 7 [json_name = "image"];</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 7 [json_name = "image"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
 
         return $this;
     }

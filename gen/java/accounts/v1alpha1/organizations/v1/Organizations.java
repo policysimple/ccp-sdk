@@ -8872,6 +8872,18 @@ public final class Organizations {
      */
     accounts.v1alpha1.organizations.v1.Organizations.MemberRolOrBuilder getRolesOrBuilder(
         int index);
+
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The image.
+     */
+    java.lang.String getImage();
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.organizations.v1.Member}
@@ -8890,6 +8902,7 @@ public final class Organizations {
       firstName_ = "";
       lastName_ = "";
       roles_ = java.util.Collections.emptyList();
+      image_ = "";
     }
 
     @java.lang.Override
@@ -8958,6 +8971,12 @@ public final class Organizations {
               }
               roles_.add(
                   input.readMessage(accounts.v1alpha1.organizations.v1.Organizations.MemberRol.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              image_ = s;
               break;
             }
             default: {
@@ -9171,6 +9190,44 @@ public final class Organizations {
       return roles_.get(index);
     }
 
+    public static final int IMAGE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object image_;
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The image.
+     */
+    @java.lang.Override
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9203,6 +9260,9 @@ public final class Organizations {
       for (int i = 0; i < roles_.size(); i++) {
         output.writeMessage(6, roles_.get(i));
       }
+      if (!getImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, image_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9233,6 +9293,9 @@ public final class Organizations {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, roles_.get(i));
       }
+      if (!getImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, image_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9260,6 +9323,8 @@ public final class Organizations {
           != other.getIsActive()) return false;
       if (!getRolesList()
           .equals(other.getRolesList())) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9286,6 +9351,8 @@ public final class Organizations {
         hash = (37 * hash) + ROLES_FIELD_NUMBER;
         hash = (53 * hash) + getRolesList().hashCode();
       }
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9436,6 +9503,8 @@ public final class Organizations {
         } else {
           rolesBuilder_.clear();
         }
+        image_ = "";
+
         return this;
       }
 
@@ -9477,6 +9546,7 @@ public final class Organizations {
         } else {
           result.roles_ = rolesBuilder_.build();
         }
+        result.image_ = image_;
         onBuilt();
         return result;
       }
@@ -9568,6 +9638,10 @@ public final class Organizations {
               rolesBuilder_.addAllMessages(other.roles_);
             }
           }
+        }
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10127,6 +10201,82 @@ public final class Organizations {
           roles_ = null;
         }
         return rolesBuilder_;
+      }
+
+      private java.lang.Object image_ = "";
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @return The image.
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @return The bytes for image.
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @param value The image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImage() {
+        
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        image_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11943,19 +12093,19 @@ public final class Organizations {
       "\032UpdateOrganizationResponse\022\020\n\003msg\030\001 \001(\t" +
       "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"D\n\032DeleteOrg" +
       "anizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error\"\317\001\n\006Member\022\016\n\002id\030\001 \001(\r" +
+      "rror\030\002 \001(\tR\005error\"\345\001\n\006Member\022\016\n\002id\030\001 \001(\r" +
       "R\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_n" +
       "ame\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR" +
       "\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isActive\022C" +
       "\n\005roles\030\006 \003(\0132-.accounts.v1alpha1.organi" +
-      "zations.v1.MemberRolR\005roles\"q\n\023ProjectOr" +
-      "ganization\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\t" +
-      "R\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013descript" +
-      "ion\030\004 \001(\tR\013description\"J\n\tMemberRol\022\016\n\002i" +
-      "d\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_ad" +
-      "min\030\003 \001(\010R\007isAdminBBZ@github.com/cuemby/" +
-      "ccp-sdk/gen/go/accounts/v1alpha1/organiz" +
-      "ationsb\006proto3"
+      "zations.v1.MemberRolR\005roles\022\024\n\005image\030\007 \001" +
+      "(\tR\005image\"q\n\023ProjectOrganization\022\016\n\002id\030\001" +
+      " \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 " +
+      "\001(\tR\005image\022 \n\013description\030\004 \001(\tR\013descrip" +
+      "tion\"J\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004nam" +
+      "e\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin" +
+      "BBZ@github.com/cuemby/ccp-sdk/gen/go/acc" +
+      "ounts/v1alpha1/organizationsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12027,7 +12177,7 @@ public final class Organizations {
     internal_static_accounts_v1alpha1_organizations_v1_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_organizations_v1_Member_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Roles", });
+        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Roles", "Image", });
     internal_static_accounts_v1alpha1_organizations_v1_ProjectOrganization_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_accounts_v1alpha1_organizations_v1_ProjectOrganization_fieldAccessorTable = new

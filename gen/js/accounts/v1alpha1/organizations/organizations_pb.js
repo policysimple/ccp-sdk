@@ -2323,7 +2323,8 @@ proto.accounts.v1alpha1.organizations.v1.Member.toObject = function(includeInsta
     lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
-    proto.accounts.v1alpha1.organizations.v1.MemberRol.toObject, includeInstance)
+    proto.accounts.v1alpha1.organizations.v1.MemberRol.toObject, includeInstance),
+    image: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2384,6 +2385,10 @@ proto.accounts.v1alpha1.organizations.v1.Member.deserializeBinaryFromReader = fu
       var value = new proto.accounts.v1alpha1.organizations.v1.MemberRol;
       reader.readMessage(value,proto.accounts.v1alpha1.organizations.v1.MemberRol.deserializeBinaryFromReader);
       msg.addRoles(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImage(value);
       break;
     default:
       reader.skipField();
@@ -2455,6 +2460,13 @@ proto.accounts.v1alpha1.organizations.v1.Member.serializeBinaryToWriter = functi
       6,
       f,
       proto.accounts.v1alpha1.organizations.v1.MemberRol.serializeBinaryToWriter
+    );
+  }
+  f = message.getImage();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -2585,6 +2597,24 @@ proto.accounts.v1alpha1.organizations.v1.Member.prototype.addRoles = function(op
  */
 proto.accounts.v1alpha1.organizations.v1.Member.prototype.clearRolesList = function() {
   return this.setRolesList([]);
+};
+
+
+/**
+ * optional string image = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.organizations.v1.Member.prototype.getImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.organizations.v1.Member} returns this
+ */
+proto.accounts.v1alpha1.organizations.v1.Member.prototype.setImage = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

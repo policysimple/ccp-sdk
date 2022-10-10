@@ -2,6 +2,7 @@ package applicationsclientv1
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"sync"
 	"time"
@@ -9,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	applicationpkgv1 "github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client applicationpkgv1.ApplicationServiceClient
@@ -50,10 +49,8 @@ func GetOneApplicationById(applicationId string) (response *applicationpkgv1.Get
 
 	if err != nil {
 		bylogs.LogErr("error GetOneApplicationById: ", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			err.Error(),
-		)
+		return nil, fmt.Errorf("[GetOneApplicationById] %w", err)
+
 	}
 	bylogs.LogInfo("response GetOneApplicationById: ", response)
 	return response, nil
@@ -74,10 +71,7 @@ func ListApplicationByOrganization(organizationId uint32) (response *application
 
 	if err != nil {
 		bylogs.LogErr("client list application", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			err.Error(),
-		)
+		return nil, fmt.Errorf("[ListApplicationByOrganization] %w", err)
 	} else {
 		bylogs.LogInfo("client list application", response)
 	}
@@ -99,9 +93,30 @@ func ListApplicationByProject(projectId uint32) (response *applicationpkgv1.List
 
 	if err != nil {
 		bylogs.LogErr("client list application", err)
-		return nil, err
+		return nil, fmt.Errorf("[ListApplicationByProject] %w", err)
+
 	}
 	bylogs.LogInfo("client list application", response)
 	return response, nil
 
+}
+
+func DeleteApplicationRequest(req *applicationpkgv1.DeleteApplicationRequest) (*applicationpkgv1.DeleteApplicationResponse, error) {
+	bylogs.LogInfo("client list application")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.DeleteApplication(ctx, req)
+
+	if err != nil {
+		bylogs.LogErr("client list application", err)
+		return nil, fmt.Errorf("[DeleteApplicationRequest] %w", err)
+
+	}
+	bylogs.LogInfo("client list application", response)
+	return response, nil
 }
