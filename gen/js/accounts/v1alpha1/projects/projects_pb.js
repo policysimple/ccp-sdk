@@ -1673,7 +1673,7 @@ proto.accounts.v1alpha1.projects.v1.MemberProject.toObject = function(includeIns
     lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     image: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    role: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    role: (f = msg.getRole()) && accounts_v1alpha1_accounts_pb.Role.toObject(includeInstance, f),
     projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
     proto.accounts.v1alpha1.projects.v1.ProjectList.toObject, includeInstance)
   };
@@ -1737,7 +1737,8 @@ proto.accounts.v1alpha1.projects.v1.MemberProject.deserializeBinaryFromReader = 
       msg.setImage(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new accounts_v1alpha1_accounts_pb.Role;
+      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Role.deserializeBinaryFromReader);
       msg.setRole(value);
       break;
     case 8:
@@ -1817,10 +1818,11 @@ proto.accounts.v1alpha1.projects.v1.MemberProject.serializeBinaryToWriter = func
     );
   }
   f = message.getRole();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       7,
-      f
+      f,
+      accounts_v1alpha1_accounts_pb.Role.serializeBinaryToWriter
     );
   }
   f = message.getProjectsList();
@@ -1943,20 +1945,39 @@ proto.accounts.v1alpha1.projects.v1.MemberProject.prototype.setImage = function(
 
 
 /**
- * optional string role = 7;
- * @return {string}
+ * optional accounts.v1alpha1.Role role = 7;
+ * @return {?proto.accounts.v1alpha1.Role}
  */
 proto.accounts.v1alpha1.projects.v1.MemberProject.prototype.getRole = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type{?proto.accounts.v1alpha1.Role} */ (
+    jspb.Message.getWrapperField(this, accounts_v1alpha1_accounts_pb.Role, 7));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.accounts.v1alpha1.Role|undefined} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.MemberProject} returns this
+*/
+proto.accounts.v1alpha1.projects.v1.MemberProject.prototype.setRole = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.accounts.v1alpha1.projects.v1.MemberProject} returns this
  */
-proto.accounts.v1alpha1.projects.v1.MemberProject.prototype.setRole = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+proto.accounts.v1alpha1.projects.v1.MemberProject.prototype.clearRole = function() {
+  return this.setRole(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.projects.v1.MemberProject.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

@@ -1454,19 +1454,23 @@ class MemberProject final :
   std::string* _internal_mutable_image();
   public:
 
-  // string role = 7 [json_name = "role"];
-  void clear_role();
-  const std::string& role() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_role(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_role();
-  PROTOBUF_MUST_USE_RESULT std::string* release_role();
-  void set_allocated_role(std::string* role);
+  // .accounts.v1alpha1.Role role = 7 [json_name = "role"];
+  bool has_role() const;
   private:
-  const std::string& _internal_role() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_role(const std::string& value);
-  std::string* _internal_mutable_role();
+  bool _internal_has_role() const;
   public:
+  void clear_role();
+  const ::accounts::v1alpha1::Role& role() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::Role* release_role();
+  ::accounts::v1alpha1::Role* mutable_role();
+  void set_allocated_role(::accounts::v1alpha1::Role* role);
+  private:
+  const ::accounts::v1alpha1::Role& _internal_role() const;
+  ::accounts::v1alpha1::Role* _internal_mutable_role();
+  public:
+  void unsafe_arena_set_allocated_role(
+      ::accounts::v1alpha1::Role* role);
+  ::accounts::v1alpha1::Role* unsafe_arena_release_role();
 
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
@@ -1498,7 +1502,7 @@ class MemberProject final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr role_;
+  ::accounts::v1alpha1::Role* role_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4447,49 +4451,89 @@ inline void MemberProject::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.projects.v1.MemberProject.image)
 }
 
-// string role = 7 [json_name = "role"];
-inline void MemberProject::clear_role() {
-  role_.ClearToEmpty();
+// .accounts.v1alpha1.Role role = 7 [json_name = "role"];
+inline bool MemberProject::_internal_has_role() const {
+  return this != internal_default_instance() && role_ != nullptr;
 }
-inline const std::string& MemberProject::role() const {
+inline bool MemberProject::has_role() const {
+  return _internal_has_role();
+}
+inline const ::accounts::v1alpha1::Role& MemberProject::_internal_role() const {
+  const ::accounts::v1alpha1::Role* p = role_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::Role&>(
+      ::accounts::v1alpha1::_Role_default_instance_);
+}
+inline const ::accounts::v1alpha1::Role& MemberProject::role() const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.projects.v1.MemberProject.role)
   return _internal_role();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void MemberProject::set_role(ArgT0&& arg0, ArgT... args) {
- 
- role_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.projects.v1.MemberProject.role)
-}
-inline std::string* MemberProject::mutable_role() {
-  std::string* _s = _internal_mutable_role();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.projects.v1.MemberProject.role)
-  return _s;
-}
-inline const std::string& MemberProject::_internal_role() const {
-  return role_.Get();
-}
-inline void MemberProject::_internal_set_role(const std::string& value) {
-  
-  role_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* MemberProject::_internal_mutable_role() {
-  
-  return role_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* MemberProject::release_role() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.projects.v1.MemberProject.role)
-  return role_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void MemberProject::set_allocated_role(std::string* role) {
-  if (role != nullptr) {
+inline void MemberProject::unsafe_arena_set_allocated_role(
+    ::accounts::v1alpha1::Role* role) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(role_);
+  }
+  role_ = role;
+  if (role) {
     
   } else {
     
   }
-  role_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), role,
-      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.projects.v1.MemberProject.role)
+}
+inline ::accounts::v1alpha1::Role* MemberProject::release_role() {
+  
+  ::accounts::v1alpha1::Role* temp = role_;
+  role_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::accounts::v1alpha1::Role* MemberProject::unsafe_arena_release_role() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.projects.v1.MemberProject.role)
+  
+  ::accounts::v1alpha1::Role* temp = role_;
+  role_ = nullptr;
+  return temp;
+}
+inline ::accounts::v1alpha1::Role* MemberProject::_internal_mutable_role() {
+  
+  if (role_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::Role>(GetArenaForAllocation());
+    role_ = p;
+  }
+  return role_;
+}
+inline ::accounts::v1alpha1::Role* MemberProject::mutable_role() {
+  ::accounts::v1alpha1::Role* _msg = _internal_mutable_role();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.projects.v1.MemberProject.role)
+  return _msg;
+}
+inline void MemberProject::set_allocated_role(::accounts::v1alpha1::Role* role) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(role_);
+  }
+  if (role) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(role));
+    if (message_arena != submessage_arena) {
+      role = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, role, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  role_ = role;
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.projects.v1.MemberProject.role)
 }
 

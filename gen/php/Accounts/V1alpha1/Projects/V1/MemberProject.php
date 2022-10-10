@@ -38,9 +38,9 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
-     * Generated from protobuf field <code>string role = 7 [json_name = "role"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
      */
-    protected $role = '';
+    protected $role = null;
     /**
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.projects.v1.ProjectList projects = 8 [json_name = "projects"];</code>
      */
@@ -58,7 +58,7 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      *     @type string $last_name
      *     @type bool $is_active
      *     @type string $image
-     *     @type string $role
+     *     @type \Accounts\V1alpha1\Role $role
      *     @type \Accounts\V1alpha1\Projects\V1\ProjectList[]|\Google\Protobuf\Internal\RepeatedField $projects
      * }
      */
@@ -200,22 +200,32 @@ class MemberProject extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string role = 7 [json_name = "role"];</code>
-     * @return string
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+     * @return \Accounts\V1alpha1\Role|null
      */
     public function getRole()
     {
         return $this->role;
     }
 
+    public function hasRole()
+    {
+        return isset($this->role);
+    }
+
+    public function clearRole()
+    {
+        unset($this->role);
+    }
+
     /**
-     * Generated from protobuf field <code>string role = 7 [json_name = "role"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+     * @param \Accounts\V1alpha1\Role $var
      * @return $this
      */
     public function setRole($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Role::class);
         $this->role = $var;
 
         return $this;

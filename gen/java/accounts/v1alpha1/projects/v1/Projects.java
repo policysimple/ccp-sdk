@@ -4765,16 +4765,19 @@ public final class Projects {
         getImageBytes();
 
     /**
-     * <code>string role = 7 [json_name = "role"];</code>
+     * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+     * @return Whether the role field is set.
+     */
+    boolean hasRole();
+    /**
+     * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
      * @return The role.
      */
-    java.lang.String getRole();
+    accounts.v1alpha1.Accounts.Role getRole();
     /**
-     * <code>string role = 7 [json_name = "role"];</code>
-     * @return The bytes for role.
+     * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
      */
-    com.google.protobuf.ByteString
-        getRoleBytes();
+    accounts.v1alpha1.Accounts.RoleOrBuilder getRoleOrBuilder();
 
     /**
      * <code>repeated .accounts.v1alpha1.projects.v1.ProjectList projects = 8 [json_name = "projects"];</code>
@@ -4817,7 +4820,6 @@ public final class Projects {
       firstName_ = "";
       lastName_ = "";
       image_ = "";
-      role_ = "";
       projects_ = java.util.Collections.emptyList();
     }
 
@@ -4887,9 +4889,16 @@ public final class Projects {
               break;
             }
             case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+              accounts.v1alpha1.Accounts.Role.Builder subBuilder = null;
+              if (role_ != null) {
+                subBuilder = role_.toBuilder();
+              }
+              role_ = input.readMessage(accounts.v1alpha1.Accounts.Role.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(role_);
+                role_ = subBuilder.buildPartial();
+              }
 
-              role_ = s;
               break;
             }
             case 66: {
@@ -5111,41 +5120,29 @@ public final class Projects {
     }
 
     public static final int ROLE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object role_;
+    private accounts.v1alpha1.Accounts.Role role_;
     /**
-     * <code>string role = 7 [json_name = "role"];</code>
+     * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+     * @return Whether the role field is set.
+     */
+    @java.lang.Override
+    public boolean hasRole() {
+      return role_ != null;
+    }
+    /**
+     * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
      * @return The role.
      */
     @java.lang.Override
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        role_ = s;
-        return s;
-      }
+    public accounts.v1alpha1.Accounts.Role getRole() {
+      return role_ == null ? accounts.v1alpha1.Accounts.Role.getDefaultInstance() : role_;
     }
     /**
-     * <code>string role = 7 [json_name = "role"];</code>
-     * @return The bytes for role.
+     * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public accounts.v1alpha1.Accounts.RoleOrBuilder getRoleOrBuilder() {
+      return getRole();
     }
 
     public static final int PROJECTS_FIELD_NUMBER = 8;
@@ -5220,8 +5217,8 @@ public final class Projects {
       if (!getImageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, image_);
       }
-      if (!getRoleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, role_);
+      if (role_ != null) {
+        output.writeMessage(7, getRole());
       }
       for (int i = 0; i < projects_.size(); i++) {
         output.writeMessage(8, projects_.get(i));
@@ -5255,8 +5252,9 @@ public final class Projects {
       if (!getImageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, image_);
       }
-      if (!getRoleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, role_);
+      if (role_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getRole());
       }
       for (int i = 0; i < projects_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -5289,8 +5287,11 @@ public final class Projects {
           != other.getIsActive()) return false;
       if (!getImage()
           .equals(other.getImage())) return false;
-      if (!getRole()
-          .equals(other.getRole())) return false;
+      if (hasRole() != other.hasRole()) return false;
+      if (hasRole()) {
+        if (!getRole()
+            .equals(other.getRole())) return false;
+      }
       if (!getProjectsList()
           .equals(other.getProjectsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -5317,8 +5318,10 @@ public final class Projects {
           getIsActive());
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
-      hash = (37 * hash) + ROLE_FIELD_NUMBER;
-      hash = (53 * hash) + getRole().hashCode();
+      if (hasRole()) {
+        hash = (37 * hash) + ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getRole().hashCode();
+      }
       if (getProjectsCount() > 0) {
         hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
         hash = (53 * hash) + getProjectsList().hashCode();
@@ -5469,8 +5472,12 @@ public final class Projects {
 
         image_ = "";
 
-        role_ = "";
-
+        if (roleBuilder_ == null) {
+          role_ = null;
+        } else {
+          role_ = null;
+          roleBuilder_ = null;
+        }
         if (projectsBuilder_ == null) {
           projects_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -5510,7 +5517,11 @@ public final class Projects {
         result.lastName_ = lastName_;
         result.isActive_ = isActive_;
         result.image_ = image_;
-        result.role_ = role_;
+        if (roleBuilder_ == null) {
+          result.role_ = role_;
+        } else {
+          result.role_ = roleBuilder_.build();
+        }
         if (projectsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             projects_ = java.util.Collections.unmodifiableList(projects_);
@@ -5590,9 +5601,8 @@ public final class Projects {
           image_ = other.image_;
           onChanged();
         }
-        if (!other.getRole().isEmpty()) {
-          role_ = other.role_;
-          onChanged();
+        if (other.hasRole()) {
+          mergeRole(other.getRole());
         }
         if (projectsBuilder_ == null) {
           if (!other.projects_.isEmpty()) {
@@ -6016,80 +6026,123 @@ public final class Projects {
         return this;
       }
 
-      private java.lang.Object role_ = "";
+      private accounts.v1alpha1.Accounts.Role role_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> roleBuilder_;
       /**
-       * <code>string role = 7 [json_name = "role"];</code>
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+       * @return Whether the role field is set.
+       */
+      public boolean hasRole() {
+        return roleBuilder_ != null || role_ != null;
+      }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
        * @return The role.
        */
-      public java.lang.String getRole() {
-        java.lang.Object ref = role_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          role_ = s;
-          return s;
+      public accounts.v1alpha1.Accounts.Role getRole() {
+        if (roleBuilder_ == null) {
+          return role_ == null ? accounts.v1alpha1.Accounts.Role.getDefaultInstance() : role_;
         } else {
-          return (java.lang.String) ref;
+          return roleBuilder_.getMessage();
         }
       }
       /**
-       * <code>string role = 7 [json_name = "role"];</code>
-       * @return The bytes for role.
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
        */
-      public com.google.protobuf.ByteString
-          getRoleBytes() {
-        java.lang.Object ref = role_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          role_ = b;
-          return b;
+      public Builder setRole(accounts.v1alpha1.Accounts.Role value) {
+        if (roleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          role_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          roleBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
-       * <code>string role = 7 [json_name = "role"];</code>
-       * @param value The role to set.
-       * @return This builder for chaining.
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
        */
       public Builder setRole(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        role_ = value;
-        onChanged();
+          accounts.v1alpha1.Accounts.Role.Builder builderForValue) {
+        if (roleBuilder_ == null) {
+          role_ = builderForValue.build();
+          onChanged();
+        } else {
+          roleBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string role = 7 [json_name = "role"];</code>
-       * @return This builder for chaining.
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+       */
+      public Builder mergeRole(accounts.v1alpha1.Accounts.Role value) {
+        if (roleBuilder_ == null) {
+          if (role_ != null) {
+            role_ =
+              accounts.v1alpha1.Accounts.Role.newBuilder(role_).mergeFrom(value).buildPartial();
+          } else {
+            role_ = value;
+          }
+          onChanged();
+        } else {
+          roleBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
        */
       public Builder clearRole() {
-        
-        role_ = getDefaultInstance().getRole();
-        onChanged();
+        if (roleBuilder_ == null) {
+          role_ = null;
+          onChanged();
+        } else {
+          role_ = null;
+          roleBuilder_ = null;
+        }
+
         return this;
       }
       /**
-       * <code>string role = 7 [json_name = "role"];</code>
-       * @param value The bytes for role to set.
-       * @return This builder for chaining.
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
        */
-      public Builder setRoleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public accounts.v1alpha1.Accounts.Role.Builder getRoleBuilder() {
         
-        role_ = value;
         onChanged();
-        return this;
+        return getRoleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+       */
+      public accounts.v1alpha1.Accounts.RoleOrBuilder getRoleOrBuilder() {
+        if (roleBuilder_ != null) {
+          return roleBuilder_.getMessageOrBuilder();
+        } else {
+          return role_ == null ?
+              accounts.v1alpha1.Accounts.Role.getDefaultInstance() : role_;
+        }
+      }
+      /**
+       * <code>.accounts.v1alpha1.Role role = 7 [json_name = "role"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder> 
+          getRoleFieldBuilder() {
+        if (roleBuilder_ == null) {
+          roleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              accounts.v1alpha1.Accounts.Role, accounts.v1alpha1.Accounts.Role.Builder, accounts.v1alpha1.Accounts.RoleOrBuilder>(
+                  getRole(),
+                  getParentForChildren(),
+                  isClean());
+          role_ = null;
+        }
+        return roleBuilder_;
       }
 
       private java.util.List<accounts.v1alpha1.projects.v1.Projects.ProjectList> projects_ =
@@ -17133,52 +17186,53 @@ public final class Projects {
       "tRequestR\007project\"J\n\tMemberRol\022\016\n\002id\030\001 \001" +
       "(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003" +
       " \001(\010R\007isAdmin\"7\n\013ProjectList\022\022\n\004name\030\001 \001" +
-      "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"\203\002\n\rMembe" +
+      "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"\234\002\n\rMembe" +
       "rProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(" +
       "\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName" +
       "\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_acti" +
       "ve\030\005 \001(\010R\010isActive\022\024\n\005image\030\006 \001(\tR\005image" +
-      "\022\022\n\004role\030\007 \001(\tR\004role\022F\n\010projects\030\010 \003(\0132*" +
-      ".accounts.v1alpha1.projects.v1.ProjectLi" +
-      "stR\010projects\"O\n\025CreateProjectResponse\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n" +
-      "\002id\030\003 \001(\rR\002id\"?\n\025UpdateProjectResponse\022\020" +
-      "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?" +
-      "\n\025DeleteProjectResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
-      "g\022\024\n\005error\030\002 \001(\tR\005error\"\341\002\n\025GetOneProjec" +
-      "tResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR" +
-      "\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organizat" +
-      "ion_id\030\004 \001(\rR\016organizationId\022 \n\013descript" +
-      "ion\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006 \001" +
-      "(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdat" +
-      "edAt\022F\n\007members\030\010 \003(\0132,.accounts.v1alpha" +
-      "1.projects.v1.MemberProjectR\007members\022=\n\005" +
-      "owner\030\t \001(\0132\'.accounts.v1alpha1.projects" +
-      ".v1.UserListR\005owner\"c\n\023ListProjectRespon" +
-      "se\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1" +
-      ".ProjectR\010projects\022\024\n\005error\030\002 \001(\tR\005error" +
-      "\"L\n\034ListProjectPaginationRequest\022\026\n\006offs" +
-      "et\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"\234" +
-      "\001\n\035ListProjectPaginationResponse\0226\n\010proj" +
-      "ects\030\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010" +
-      "projects\022\024\n\005count\030\002 \001(\005R\005count\022\022\n\004page\030\003" +
-      " \001(\005R\004page\022\031\n\010max_page\030\004 \001(\005R\007maxPage\"\334\001" +
-      "\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\nfirst_name" +
-      "\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010la" +
-      "stName\022\024\n\005email\030\004 \001(\tR\005email\022\027\n\007user_id\030" +
-      "\005 \001(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isActi" +
-      "ve\022\"\n\ris_super_user\030\007 \001(\010R\013isSuperUser\022\024" +
-      "\n\005image\030\010 \001(\tR\005image\"T\n\032DeleteUserByProj" +
-      "ectRequest\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\np" +
-      "roject_id\030\002 \001(\rR\tprojectId\"E\n\033DeleteUser" +
-      "ByProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error\"o\n\034EditRoleUserByProje" +
-      "ctRequest\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\npr" +
-      "oject_id\030\002 \001(\rR\tprojectId\022\027\n\007role_id\030\003 \001" +
-      "(\rR\006roleId\"G\n\035EditRoleUserByProjectRespo" +
-      "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er" +
-      "rorB=Z;github.com/cuemby/ccp-sdk/gen/go/" +
-      "accounts/v1alpha1/projectsb\006proto3"
+      "\022+\n\004role\030\007 \001(\0132\027.accounts.v1alpha1.RoleR" +
+      "\004role\022F\n\010projects\030\010 \003(\0132*.accounts.v1alp" +
+      "ha1.projects.v1.ProjectListR\010projects\"O\n" +
+      "\025CreateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg" +
+      "\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"?" +
+      "\n\025UpdateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\022\024\n\005error\030\002 \001(\tR\005error\"?\n\025DeleteProject" +
+      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
+      "\tR\005error\"\341\002\n\025GetOneProjectResponse\022\016\n\002id" +
+      "\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030" +
+      "\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016o" +
+      "rganizationId\022 \n\013description\030\005 \001(\tR\013desc" +
+      "ription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035" +
+      "\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022F\n\007members" +
+      "\030\010 \003(\0132,.accounts.v1alpha1.projects.v1.M" +
+      "emberProjectR\007members\022=\n\005owner\030\t \001(\0132\'.a" +
+      "ccounts.v1alpha1.projects.v1.UserListR\005o" +
+      "wner\"c\n\023ListProjectResponse\0226\n\010projects\030" +
+      "\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010proje" +
+      "cts\022\024\n\005error\030\002 \001(\tR\005error\"L\n\034ListProject" +
+      "PaginationRequest\022\026\n\006offset\030\001 \001(\005R\006offse" +
+      "t\022\024\n\005limit\030\002 \001(\005R\005limit\"\234\001\n\035ListProjectP" +
+      "aginationResponse\0226\n\010projects\030\001 \003(\0132\032.ac" +
+      "counts.v1alpha1.ProjectR\010projects\022\024\n\005cou" +
+      "nt\030\002 \001(\005R\005count\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010m" +
+      "ax_page\030\004 \001(\005R\007maxPage\"\334\001\n\010UserList\022\016\n\002i" +
+      "d\030\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstNa" +
+      "me\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email" +
+      "\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033" +
+      "\n\tis_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_" +
+      "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005" +
+      "image\"T\n\032DeleteUserByProjectRequest\022\027\n\007u" +
+      "ser_id\030\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\r" +
+      "R\tprojectId\"E\n\033DeleteUserByProjectRespon" +
+      "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err" +
+      "or\"o\n\034EditRoleUserByProjectRequest\022\027\n\007us" +
+      "er_id\030\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\rR" +
+      "\tprojectId\022\027\n\007role_id\030\003 \001(\rR\006roleId\"G\n\035E" +
+      "ditRoleUserByProjectResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005errorB=Z;github.c" +
+      "om/cuemby/ccp-sdk/gen/go/accounts/v1alph" +
+      "a1/projectsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
