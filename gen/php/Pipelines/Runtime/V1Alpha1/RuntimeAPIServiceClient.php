@@ -121,15 +121,15 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Pipelines\Runtime\V1Alpha1\RefreshRuntimeRequest $argument input argument
+     * @param \Pipelines\Runtime\V1Alpha1\RebuildRuntimeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function RefreshRuntime(\Pipelines\Runtime\V1Alpha1\RefreshRuntimeRequest $argument,
+    public function RebuildRuntime(\Pipelines\Runtime\V1Alpha1\RebuildRuntimeRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/RefreshRuntime',
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime',
         $argument,
-        ['\Pipelines\Runtime\V1Alpha1\RefreshRuntimeResponse', 'decode'],
+        ['\Pipelines\Runtime\V1Alpha1\RebuildRuntimeResponse', 'decode'],
         $metadata, $options);
     }
 

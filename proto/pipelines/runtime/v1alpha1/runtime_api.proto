@@ -23,7 +23,7 @@ service RuntimeAPIService{
     rpc DeleteRuntime(DeleteRuntimeRequest) returns (DeleteRuntimeResponse) {};
     rpc DeleteRuntimesByApplication(DeleteRuntimesByApplicationRequest) returns (DeleteRuntimesByApplicationResponse) {};
     rpc ListRuntimes(ListRuntimesRequest) returns (ListRuntimesResponse) {};
-    rpc RefreshRuntime(RefreshRuntimeRequest) returns (RefreshRuntimeResponse) {};
+    rpc RebuildRuntime(RebuildRuntimeRequest) returns (RebuildRuntimeResponse) {};
 }
 
 message CreateRuntimeRequest {
@@ -113,11 +113,11 @@ message ResponseMessageDeleteRuntimeByAppIdResponse {
     string error = 2;
 }
 
-message RefreshRuntimeRequest {
+message RebuildRuntimeRequest {
     string runtime_id = 1;
 }
 
-message RefreshRuntimeResponse {
+message RebuildRuntimeResponse {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
     string status = 2;
 }

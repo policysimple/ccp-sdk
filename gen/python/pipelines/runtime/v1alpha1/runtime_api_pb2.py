@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\017RuntimeAPIProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,pipelines/runtime/v1alpha1/runtime_api.proto\x12\x1apipelines.runtime.v1alpha1\x1a(pipelines/runtime/v1alpha1/runtime.proto\"m\n\x14\x43reateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15\x43reateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"m\n\x14UpdateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15UpdateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n#UpdateResponseMessageRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"}\n$UpdateResponseMessageRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xb3\x01\n\x14\x44\x65leteRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"?\n\x15\x44\x65leteRuntimeResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe5\x01\n\"DeleteRuntimesByApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12)\n\x10name_application\x18\x02 \x01(\tR\x0fnameApplication\x12%\n\x0eintegration_id\x18\x03 \x01(\tR\rintegrationId\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"M\n#DeleteRuntimesByApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"2\n\x11GetRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"k\n\x12GetRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"4\n\x13ListRuntimesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"z\n\x14ListRuntimesResponse\x12J\n\x0cruntime_list\x18\x01 \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.RuntimeListR\x0bruntimeList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xed\x01\n*ResponseMessageDeleteRuntimeByAppIdRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12)\n\x10name_application\x18\x02 \x01(\tR\x0fnameApplication\x12%\n\x0eintegration_id\x18\x03 \x01(\tR\rintegrationId\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"U\n+ResponseMessageDeleteRuntimeByAppIdResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"6\n\x15RefreshRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"o\n\x16RefreshRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xde\t\n\x11RuntimeAPIService\x12m\n\nGetRuntime\x12-.pipelines.runtime.v1alpha1.GetRuntimeRequest\x1a..pipelines.runtime.v1alpha1.GetRuntimeResponse\"\x00\x12v\n\rCreateRuntime\x12\x30.pipelines.runtime.v1alpha1.CreateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.CreateRuntimeResponse\"\x00\x12v\n\rUpdateRuntime\x12\x30.pipelines.runtime.v1alpha1.UpdateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.UpdateRuntimeResponse\"\x00\x12\xa3\x01\n\x1cUpdateResponseMessageRuntime\x12?.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest\x1a@.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse\"\x00\x12\xb8\x01\n#ResponseMessageDeleteRuntimeByAppId\x12\x46.pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest\x1aG.pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse\"\x00\x12v\n\rDeleteRuntime\x12\x30.pipelines.runtime.v1alpha1.DeleteRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.DeleteRuntimeResponse\"\x00\x12\xa0\x01\n\x1b\x44\x65leteRuntimesByApplication\x12>.pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest\x1a?.pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse\"\x00\x12s\n\x0cListRuntimes\x12/.pipelines.runtime.v1alpha1.ListRuntimesRequest\x1a\x30.pipelines.runtime.v1alpha1.ListRuntimesResponse\"\x00\x12y\n\x0eRefreshRuntime\x12\x31.pipelines.runtime.v1alpha1.RefreshRuntimeRequest\x1a\x32.pipelines.runtime.v1alpha1.RefreshRuntimeResponse\"\x00\x42\xb0\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0fRuntimeAPIProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n,pipelines/runtime/v1alpha1/runtime_api.proto\x12\x1apipelines.runtime.v1alpha1\x1a(pipelines/runtime/v1alpha1/runtime.proto\"m\n\x14\x43reateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15\x43reateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"m\n\x14UpdateRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"n\n\x15UpdateRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"|\n#UpdateResponseMessageRuntimeRequest\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"}\n$UpdateResponseMessageRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xb3\x01\n\x14\x44\x65leteRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"?\n\x15\x44\x65leteRuntimeResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe5\x01\n\"DeleteRuntimesByApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12)\n\x10name_application\x18\x02 \x01(\tR\x0fnameApplication\x12%\n\x0eintegration_id\x18\x03 \x01(\tR\rintegrationId\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"M\n#DeleteRuntimesByApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"2\n\x11GetRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"k\n\x12GetRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"4\n\x13ListRuntimesRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\rR\tprojectId\"z\n\x14ListRuntimesResponse\x12J\n\x0cruntime_list\x18\x01 \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.RuntimeListR\x0bruntimeList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\xed\x01\n*ResponseMessageDeleteRuntimeByAppIdRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12)\n\x10name_application\x18\x02 \x01(\tR\x0fnameApplication\x12%\n\x0eintegration_id\x18\x03 \x01(\tR\rintegrationId\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId\"U\n+ResponseMessageDeleteRuntimeByAppIdResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"6\n\x15RebuildRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"o\n\x16RebuildRuntimeResponse\x12=\n\x07runtime\x18\x01 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x07runtime\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xde\t\n\x11RuntimeAPIService\x12m\n\nGetRuntime\x12-.pipelines.runtime.v1alpha1.GetRuntimeRequest\x1a..pipelines.runtime.v1alpha1.GetRuntimeResponse\"\x00\x12v\n\rCreateRuntime\x12\x30.pipelines.runtime.v1alpha1.CreateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.CreateRuntimeResponse\"\x00\x12v\n\rUpdateRuntime\x12\x30.pipelines.runtime.v1alpha1.UpdateRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.UpdateRuntimeResponse\"\x00\x12\xa3\x01\n\x1cUpdateResponseMessageRuntime\x12?.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest\x1a@.pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse\"\x00\x12\xb8\x01\n#ResponseMessageDeleteRuntimeByAppId\x12\x46.pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest\x1aG.pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse\"\x00\x12v\n\rDeleteRuntime\x12\x30.pipelines.runtime.v1alpha1.DeleteRuntimeRequest\x1a\x31.pipelines.runtime.v1alpha1.DeleteRuntimeResponse\"\x00\x12\xa0\x01\n\x1b\x44\x65leteRuntimesByApplication\x12>.pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest\x1a?.pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse\"\x00\x12s\n\x0cListRuntimes\x12/.pipelines.runtime.v1alpha1.ListRuntimesRequest\x1a\x30.pipelines.runtime.v1alpha1.ListRuntimesResponse\"\x00\x12y\n\x0eRebuildRuntime\x12\x31.pipelines.runtime.v1alpha1.RebuildRuntimeRequest\x1a\x32.pipelines.runtime.v1alpha1.RebuildRuntimeResponse\"\x00\x42\xb0\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0fRuntimeAPIProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2.DESCRIPTOR,])
 
@@ -700,16 +700,16 @@ _RESPONSEMESSAGEDELETERUNTIMEBYAPPIDRESPONSE = _descriptor.Descriptor(
 )
 
 
-_REFRESHRUNTIMEREQUEST = _descriptor.Descriptor(
-  name='RefreshRuntimeRequest',
-  full_name='pipelines.runtime.v1alpha1.RefreshRuntimeRequest',
+_REBUILDRUNTIMEREQUEST = _descriptor.Descriptor(
+  name='RebuildRuntimeRequest',
+  full_name='pipelines.runtime.v1alpha1.RebuildRuntimeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='runtime_id', full_name='pipelines.runtime.v1alpha1.RefreshRuntimeRequest.runtime_id', index=0,
+      name='runtime_id', full_name='pipelines.runtime.v1alpha1.RebuildRuntimeRequest.runtime_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -732,23 +732,23 @@ _REFRESHRUNTIMEREQUEST = _descriptor.Descriptor(
 )
 
 
-_REFRESHRUNTIMERESPONSE = _descriptor.Descriptor(
-  name='RefreshRuntimeResponse',
-  full_name='pipelines.runtime.v1alpha1.RefreshRuntimeResponse',
+_REBUILDRUNTIMERESPONSE = _descriptor.Descriptor(
+  name='RebuildRuntimeResponse',
+  full_name='pipelines.runtime.v1alpha1.RebuildRuntimeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='runtime', full_name='pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime', index=0,
+      name='runtime', full_name='pipelines.runtime.v1alpha1.RebuildRuntimeResponse.runtime', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='runtime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='pipelines.runtime.v1alpha1.RefreshRuntimeResponse.status', index=1,
+      name='status', full_name='pipelines.runtime.v1alpha1.RebuildRuntimeResponse.status', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -778,7 +778,7 @@ _UPDATERESPONSEMESSAGERUNTIMEREQUEST.fields_by_name['runtime'].message_type = pi
 _UPDATERESPONSEMESSAGERUNTIMERESPONSE.fields_by_name['runtime'].message_type = pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2._RUNTIME
 _GETRUNTIMERESPONSE.fields_by_name['runtime'].message_type = pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2._RUNTIME
 _LISTRUNTIMESRESPONSE.fields_by_name['runtime_list'].message_type = pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2._RUNTIMELIST
-_REFRESHRUNTIMERESPONSE.fields_by_name['runtime'].message_type = pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2._RUNTIME
+_REBUILDRUNTIMERESPONSE.fields_by_name['runtime'].message_type = pipelines_dot_runtime_dot_v1alpha1_dot_runtime__pb2._RUNTIME
 DESCRIPTOR.message_types_by_name['CreateRuntimeRequest'] = _CREATERUNTIMEREQUEST
 DESCRIPTOR.message_types_by_name['CreateRuntimeResponse'] = _CREATERUNTIMERESPONSE
 DESCRIPTOR.message_types_by_name['UpdateRuntimeRequest'] = _UPDATERUNTIMEREQUEST
@@ -795,8 +795,8 @@ DESCRIPTOR.message_types_by_name['ListRuntimesRequest'] = _LISTRUNTIMESREQUEST
 DESCRIPTOR.message_types_by_name['ListRuntimesResponse'] = _LISTRUNTIMESRESPONSE
 DESCRIPTOR.message_types_by_name['ResponseMessageDeleteRuntimeByAppIdRequest'] = _RESPONSEMESSAGEDELETERUNTIMEBYAPPIDREQUEST
 DESCRIPTOR.message_types_by_name['ResponseMessageDeleteRuntimeByAppIdResponse'] = _RESPONSEMESSAGEDELETERUNTIMEBYAPPIDRESPONSE
-DESCRIPTOR.message_types_by_name['RefreshRuntimeRequest'] = _REFRESHRUNTIMEREQUEST
-DESCRIPTOR.message_types_by_name['RefreshRuntimeResponse'] = _REFRESHRUNTIMERESPONSE
+DESCRIPTOR.message_types_by_name['RebuildRuntimeRequest'] = _REBUILDRUNTIMEREQUEST
+DESCRIPTOR.message_types_by_name['RebuildRuntimeResponse'] = _REBUILDRUNTIMERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateRuntimeRequest = _reflection.GeneratedProtocolMessageType('CreateRuntimeRequest', (_message.Message,), {
@@ -911,19 +911,19 @@ ResponseMessageDeleteRuntimeByAppIdResponse = _reflection.GeneratedProtocolMessa
   })
 _sym_db.RegisterMessage(ResponseMessageDeleteRuntimeByAppIdResponse)
 
-RefreshRuntimeRequest = _reflection.GeneratedProtocolMessageType('RefreshRuntimeRequest', (_message.Message,), {
-  'DESCRIPTOR' : _REFRESHRUNTIMEREQUEST,
+RebuildRuntimeRequest = _reflection.GeneratedProtocolMessageType('RebuildRuntimeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _REBUILDRUNTIMEREQUEST,
   '__module__' : 'pipelines.runtime.v1alpha1.runtime_api_pb2'
-  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RefreshRuntimeRequest)
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RebuildRuntimeRequest)
   })
-_sym_db.RegisterMessage(RefreshRuntimeRequest)
+_sym_db.RegisterMessage(RebuildRuntimeRequest)
 
-RefreshRuntimeResponse = _reflection.GeneratedProtocolMessageType('RefreshRuntimeResponse', (_message.Message,), {
-  'DESCRIPTOR' : _REFRESHRUNTIMERESPONSE,
+RebuildRuntimeResponse = _reflection.GeneratedProtocolMessageType('RebuildRuntimeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _REBUILDRUNTIMERESPONSE,
   '__module__' : 'pipelines.runtime.v1alpha1.runtime_api_pb2'
-  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RefreshRuntimeResponse)
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.RebuildRuntimeResponse)
   })
-_sym_db.RegisterMessage(RefreshRuntimeResponse)
+_sym_db.RegisterMessage(RebuildRuntimeResponse)
 
 
 DESCRIPTOR._options = None
@@ -1019,12 +1019,12 @@ _RUNTIMEAPISERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RefreshRuntime',
-    full_name='pipelines.runtime.v1alpha1.RuntimeAPIService.RefreshRuntime',
+    name='RebuildRuntime',
+    full_name='pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime',
     index=8,
     containing_service=None,
-    input_type=_REFRESHRUNTIMEREQUEST,
-    output_type=_REFRESHRUNTIMERESPONSE,
+    input_type=_REBUILDRUNTIMEREQUEST,
+    output_type=_REBUILDRUNTIMERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
