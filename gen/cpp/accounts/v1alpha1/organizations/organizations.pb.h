@@ -1970,6 +1970,7 @@ class Member final :
     kUserIdFieldNumber = 2,
     kFirstNameFieldNumber = 3,
     kLastNameFieldNumber = 4,
+    kImageFieldNumber = 7,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 5,
   };
@@ -2033,6 +2034,20 @@ class Member final :
   std::string* _internal_mutable_last_name();
   public:
 
+  // string image = 7 [json_name = "image"];
+  void clear_image();
+  const std::string& image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_image();
+  void set_allocated_image(std::string* image);
+  private:
+  const std::string& _internal_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_image(const std::string& value);
+  std::string* _internal_mutable_image();
+  public:
+
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
@@ -2062,6 +2077,7 @@ class Member final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3884,6 +3900,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::or
 Member::roles() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.organizations.v1.Member.roles)
   return roles_;
+}
+
+// string image = 7 [json_name = "image"];
+inline void Member::clear_image() {
+  image_.ClearToEmpty();
+}
+inline const std::string& Member::image() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.Member.image)
+  return _internal_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Member::set_image(ArgT0&& arg0, ArgT... args) {
+ 
+ image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.Member.image)
+}
+inline std::string* Member::mutable_image() {
+  std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.Member.image)
+  return _s;
+}
+inline const std::string& Member::_internal_image() const {
+  return image_.Get();
+}
+inline void Member::_internal_set_image(const std::string& value) {
+  
+  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Member::_internal_mutable_image() {
+  
+  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Member::release_image() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.organizations.v1.Member.image)
+  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Member::set_allocated_image(std::string* image) {
+  if (image != nullptr) {
+    
+  } else {
+    
+  }
+  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.Member.image)
 }
 
 // -------------------------------------------------------------------
