@@ -18,7 +18,7 @@ class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
      */
     protected $organization = null;
     /**
-     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      */
     protected $message = '';
 
@@ -70,7 +70,7 @@ class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      * @return string
      */
     public function getMessage()
@@ -79,7 +79,7 @@ class AddPeerToOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 3 [json_name = "message"];</code>
+     * Generated from protobuf field <code>string message = 2 [json_name = "message"];</code>
      * @param string $var
      * @return $this
      */

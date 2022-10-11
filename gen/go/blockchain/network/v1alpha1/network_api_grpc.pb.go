@@ -20,10 +20,13 @@ const _ = grpc.SupportPackageIsVersion7
 type BlockchainAPIServiceClient interface {
 	CreateNetwork(ctx context.Context, in *CreateNetworkRequest, opts ...grpc.CallOption) (*CreateNetworkResponse, error)
 	AddPeerToOrganization(ctx context.Context, in *AddPeerToOrganizationRequest, opts ...grpc.CallOption) (*AddPeerToOrganizationResponse, error)
-	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
 	GetBlockchains(ctx context.Context, in *GetBlockchainsRequest, opts ...grpc.CallOption) (*GetBlockchainsResponse, error)
-	CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error)
+	GetBlockchainsByUserId(ctx context.Context, in *GetBlockchainsByUserIdRequest, opts ...grpc.CallOption) (*GetBlockchainsByUserIdResponse, error)
+	GetBlockchainById(ctx context.Context, in *GetBlockchainByIdRequest, opts ...grpc.CallOption) (*GetBlockchainByIdResponse, error)
+	GetOrganizationsByBlockchainId(ctx context.Context, in *GetOrganizationsByBlockchainIdRequest, opts ...grpc.CallOption) (*GetOrganizationsByBlockchainIdResponse, error)
 	SendInvitation(ctx context.Context, in *SendInvitationRequest, opts ...grpc.CallOption) (*SendInvitationResponse, error)
+	CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error)
+	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
 }
 
 type blockchainAPIServiceClient struct {
@@ -52,15 +55,6 @@ func (c *blockchainAPIServiceClient) AddPeerToOrganization(ctx context.Context, 
 	return out, nil
 }
 
-func (c *blockchainAPIServiceClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
-	out := new(CreateChannelResponse)
-	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *blockchainAPIServiceClient) GetBlockchains(ctx context.Context, in *GetBlockchainsRequest, opts ...grpc.CallOption) (*GetBlockchainsResponse, error) {
 	out := new(GetBlockchainsResponse)
 	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains", in, out, opts...)
@@ -70,9 +64,27 @@ func (c *blockchainAPIServiceClient) GetBlockchains(ctx context.Context, in *Get
 	return out, nil
 }
 
-func (c *blockchainAPIServiceClient) CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error) {
-	out := new(CreateOrganizationResponse)
-	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization", in, out, opts...)
+func (c *blockchainAPIServiceClient) GetBlockchainsByUserId(ctx context.Context, in *GetBlockchainsByUserIdRequest, opts ...grpc.CallOption) (*GetBlockchainsByUserIdResponse, error) {
+	out := new(GetBlockchainsByUserIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainsByUserId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blockchainAPIServiceClient) GetBlockchainById(ctx context.Context, in *GetBlockchainByIdRequest, opts ...grpc.CallOption) (*GetBlockchainByIdResponse, error) {
+	out := new(GetBlockchainByIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainById", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blockchainAPIServiceClient) GetOrganizationsByBlockchainId(ctx context.Context, in *GetOrganizationsByBlockchainIdRequest, opts ...grpc.CallOption) (*GetOrganizationsByBlockchainIdResponse, error) {
+	out := new(GetOrganizationsByBlockchainIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,16 +100,37 @@ func (c *blockchainAPIServiceClient) SendInvitation(ctx context.Context, in *Sen
 	return out, nil
 }
 
+func (c *blockchainAPIServiceClient) CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error) {
+	out := new(CreateOrganizationResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blockchainAPIServiceClient) CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error) {
+	out := new(CreateChannelResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BlockchainAPIServiceServer is the server API for BlockchainAPIService service.
 // All implementations should embed UnimplementedBlockchainAPIServiceServer
 // for forward compatibility
 type BlockchainAPIServiceServer interface {
 	CreateNetwork(context.Context, *CreateNetworkRequest) (*CreateNetworkResponse, error)
 	AddPeerToOrganization(context.Context, *AddPeerToOrganizationRequest) (*AddPeerToOrganizationResponse, error)
-	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
 	GetBlockchains(context.Context, *GetBlockchainsRequest) (*GetBlockchainsResponse, error)
-	CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error)
+	GetBlockchainsByUserId(context.Context, *GetBlockchainsByUserIdRequest) (*GetBlockchainsByUserIdResponse, error)
+	GetBlockchainById(context.Context, *GetBlockchainByIdRequest) (*GetBlockchainByIdResponse, error)
+	GetOrganizationsByBlockchainId(context.Context, *GetOrganizationsByBlockchainIdRequest) (*GetOrganizationsByBlockchainIdResponse, error)
 	SendInvitation(context.Context, *SendInvitationRequest) (*SendInvitationResponse, error)
+	CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error)
+	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
 }
 
 // UnimplementedBlockchainAPIServiceServer should be embedded to have forward compatible implementations.
@@ -110,17 +143,26 @@ func (UnimplementedBlockchainAPIServiceServer) CreateNetwork(context.Context, *C
 func (UnimplementedBlockchainAPIServiceServer) AddPeerToOrganization(context.Context, *AddPeerToOrganizationRequest) (*AddPeerToOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddPeerToOrganization not implemented")
 }
-func (UnimplementedBlockchainAPIServiceServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
-}
 func (UnimplementedBlockchainAPIServiceServer) GetBlockchains(context.Context, *GetBlockchainsRequest) (*GetBlockchainsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBlockchains not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) GetBlockchainsByUserId(context.Context, *GetBlockchainsByUserIdRequest) (*GetBlockchainsByUserIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBlockchainsByUserId not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) GetBlockchainById(context.Context, *GetBlockchainByIdRequest) (*GetBlockchainByIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBlockchainById not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) GetOrganizationsByBlockchainId(context.Context, *GetOrganizationsByBlockchainIdRequest) (*GetOrganizationsByBlockchainIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrganizationsByBlockchainId not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) SendInvitation(context.Context, *SendInvitationRequest) (*SendInvitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendInvitation not implemented")
 }
 func (UnimplementedBlockchainAPIServiceServer) CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrganization not implemented")
 }
-func (UnimplementedBlockchainAPIServiceServer) SendInvitation(context.Context, *SendInvitationRequest) (*SendInvitationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendInvitation not implemented")
+func (UnimplementedBlockchainAPIServiceServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
 }
 
 // UnsafeBlockchainAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -170,24 +212,6 @@ func _BlockchainAPIService_AddPeerToOrganization_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BlockchainAPIService_CreateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateChannelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(BlockchainAPIServiceServer).CreateChannel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BlockchainAPIServiceServer).CreateChannel(ctx, req.(*CreateChannelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _BlockchainAPIService_GetBlockchains_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBlockchainsRequest)
 	if err := dec(in); err != nil {
@@ -206,20 +230,56 @@ func _BlockchainAPIService_GetBlockchains_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BlockchainAPIService_CreateOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateOrganizationRequest)
+func _BlockchainAPIService_GetBlockchainsByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBlockchainsByUserIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BlockchainAPIServiceServer).CreateOrganization(ctx, in)
+		return srv.(BlockchainAPIServiceServer).GetBlockchainsByUserId(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization",
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainsByUserId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BlockchainAPIServiceServer).CreateOrganization(ctx, req.(*CreateOrganizationRequest))
+		return srv.(BlockchainAPIServiceServer).GetBlockchainsByUserId(ctx, req.(*GetBlockchainsByUserIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlockchainAPIService_GetBlockchainById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBlockchainByIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).GetBlockchainById(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainById",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).GetBlockchainById(ctx, req.(*GetBlockchainByIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlockchainAPIService_GetOrganizationsByBlockchainId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrganizationsByBlockchainIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).GetOrganizationsByBlockchainId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).GetOrganizationsByBlockchainId(ctx, req.(*GetOrganizationsByBlockchainIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -242,6 +302,42 @@ func _BlockchainAPIService_SendInvitation_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BlockchainAPIService_CreateOrganization_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrganizationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).CreateOrganization(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).CreateOrganization(ctx, req.(*CreateOrganizationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlockchainAPIService_CreateChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateChannelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).CreateChannel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).CreateChannel(ctx, req.(*CreateChannelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BlockchainAPIService_ServiceDesc is the grpc.ServiceDesc for BlockchainAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -258,20 +354,32 @@ var BlockchainAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _BlockchainAPIService_AddPeerToOrganization_Handler,
 		},
 		{
-			MethodName: "CreateChannel",
-			Handler:    _BlockchainAPIService_CreateChannel_Handler,
-		},
-		{
 			MethodName: "GetBlockchains",
 			Handler:    _BlockchainAPIService_GetBlockchains_Handler,
+		},
+		{
+			MethodName: "GetBlockchainsByUserId",
+			Handler:    _BlockchainAPIService_GetBlockchainsByUserId_Handler,
+		},
+		{
+			MethodName: "GetBlockchainById",
+			Handler:    _BlockchainAPIService_GetBlockchainById_Handler,
+		},
+		{
+			MethodName: "GetOrganizationsByBlockchainId",
+			Handler:    _BlockchainAPIService_GetOrganizationsByBlockchainId_Handler,
+		},
+		{
+			MethodName: "SendInvitation",
+			Handler:    _BlockchainAPIService_SendInvitation_Handler,
 		},
 		{
 			MethodName: "CreateOrganization",
 			Handler:    _BlockchainAPIService_CreateOrganization_Handler,
 		},
 		{
-			MethodName: "SendInvitation",
-			Handler:    _BlockchainAPIService_SendInvitation_Handler,
+			MethodName: "CreateChannel",
+			Handler:    _BlockchainAPIService_CreateChannel_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

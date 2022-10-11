@@ -9,16 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.GetBlockchainsRequest</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.GetBlockchainsByUserIdRequest</code>
  */
-class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
+class GetBlockchainsByUserIdRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>int64 offset = 2 [json_name = "offset"];</code>
      */
     protected $offset = 0;
     /**
-     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * Generated from protobuf field <code>int64 limit = 3 [json_name = "limit"];</code>
      */
     protected $limit = 0;
 
@@ -28,6 +32,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $user_id
      *     @type int|string $offset
      *     @type int|string $limit
      * }
@@ -38,7 +43,29 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 offset = 2 [json_name = "offset"];</code>
      * @return int|string
      */
     public function getOffset()
@@ -47,7 +74,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * Generated from protobuf field <code>int64 offset = 2 [json_name = "offset"];</code>
      * @param int|string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * Generated from protobuf field <code>int64 limit = 3 [json_name = "limit"];</code>
      * @return int|string
      */
     public function getLimit()
@@ -69,7 +96,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * Generated from protobuf field <code>int64 limit = 3 [json_name = "limit"];</code>
      * @param int|string $var
      * @return $this
      */

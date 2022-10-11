@@ -9,36 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.Invitation</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.Peer</code>
  */
-class Invitation extends \Google\Protobuf\Internal\Message
+class Peer extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string from_user_id = 2 [json_name = "fromUserId"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
-    protected $from_user_id = '';
+    protected $name = '';
     /**
-     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
+     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
      */
-    protected $email = '';
+    protected $type = '';
     /**
      * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
      */
     protected $status = '';
     /**
-     * Generated from protobuf field <code>string blockchain_id = 5 [json_name = "blockchainId"];</code>
-     */
-    protected $blockchain_id = '';
-    /**
-     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 5 [json_name = "createdAt"];</code>
      */
     protected $created_at = '';
     /**
-     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 6 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
 
@@ -49,10 +45,9 @@ class Invitation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $from_user_id
-     *     @type string $email
+     *     @type string $name
+     *     @type string $type
      *     @type string $status
-     *     @type string $blockchain_id
      *     @type string $created_at
      *     @type string $updated_at
      * }
@@ -85,45 +80,45 @@ class Invitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string from_user_id = 2 [json_name = "fromUserId"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      * @return string
      */
-    public function getFromUserId()
+    public function getName()
     {
-        return $this->from_user_id;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>string from_user_id = 2 [json_name = "fromUserId"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      * @param string $var
      * @return $this
      */
-    public function setFromUserId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->from_user_id = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
+     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
      * @return string
      */
-    public function getEmail()
+    public function getType()
     {
-        return $this->email;
+        return $this->type;
     }
 
     /**
-     * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
+     * Generated from protobuf field <code>string type = 3 [json_name = "type"];</code>
      * @param string $var
      * @return $this
      */
-    public function setEmail($var)
+    public function setType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->email = $var;
+        $this->type = $var;
 
         return $this;
     }
@@ -151,29 +146,7 @@ class Invitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_id = 5 [json_name = "blockchainId"];</code>
-     * @return string
-     */
-    public function getBlockchainId()
-    {
-        return $this->blockchain_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 5 [json_name = "blockchainId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBlockchainId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->blockchain_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 5 [json_name = "createdAt"];</code>
      * @return string
      */
     public function getCreatedAt()
@@ -182,7 +155,7 @@ class Invitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 5 [json_name = "createdAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -195,7 +168,7 @@ class Invitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 6 [json_name = "updatedAt"];</code>
      * @return string
      */
     public function getUpdatedAt()
@@ -204,7 +177,7 @@ class Invitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 6 [json_name = "updatedAt"];</code>
      * @param string $var
      * @return $this
      */

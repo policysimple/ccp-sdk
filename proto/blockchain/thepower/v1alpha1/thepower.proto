@@ -9,6 +9,9 @@ message TpChain {
     string user_id = 3;
     repeated TpNode chain_nodes = 4;
     string status = 5;
+    string error_details = 6;
+    string created_at = 7;
+    string updated_at = 8;
 }
 
 message TpNode {

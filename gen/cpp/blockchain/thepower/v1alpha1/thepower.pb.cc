@@ -25,6 +25,9 @@ constexpr TpChain::TpChain(
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_details_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , chain_number_(0){}
 struct TpChainDefaultTypeInternal {
   constexpr TpChainDefaultTypeInternal()
@@ -83,6 +86,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, user_id_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, chain_nodes_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, status_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, error_details_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, created_at_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, updated_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpNode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -104,8 +110,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::thepower::v1alpha1::TpChain)},
-  { 10, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
-  { 21, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
+  { 13, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
+  { 24, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -116,26 +122,28 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+blockchain/thepower/v1alpha1/thepower."
-  "proto\022\034blockchain.thepower.v1alpha1\"\264\001\n\007"
+  "proto\022\034blockchain.thepower.v1alpha1\"\227\002\n\007"
   "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030"
   "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use"
   "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th"
   "epower.v1alpha1.TpNodeR\nchainNodes\022\026\n\006st"
-  "atus\030\005 \001(\tR\006status\"\365\001\n\006TpNode\022\032\n\010nodenam"
-  "e\030\001 \001(\tR\010nodename\022\033\n\ttpic_port\030\002 \001(\003R\010tp"
-  "icPort\022\031\n\010api_port\030\003 \001(\003R\007apiPort\022\033\n\tapi"
-  "s_port\030\004 \001(\003R\010apisPort\022\027\n\007cc_port\030\005 \001(\003R"
-  "\006ccPort\022a\n\023crosschain_external\030\006 \003(\01320.b"
-  "lockchain.thepower.v1alpha1.CrosschainEx"
-  "ternalR\022crosschainExternal\"<\n\022Crosschain"
-  "External\022\022\n\004host\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001"
-  "(\003R\004portB\?Z=github.com/cuemby/ccp-sdk/ge"
-  "n/go/blockchain/thepower/v1alpha1b\006proto"
-  "3"
+  "atus\030\005 \001(\tR\006status\022#\n\rerror_details\030\006 \001("
+  "\tR\014errorDetails\022\035\n\ncreated_at\030\007 \001(\tR\tcre"
+  "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\365\001"
+  "\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodename\022\033\n\t"
+  "tpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_port\030\003 "
+  "\001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010apisPor"
+  "t\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023crosschain"
+  "_external\030\006 \003(\01320.blockchain.thepower.v1"
+  "alpha1.CrosschainExternalR\022crosschainExt"
+  "ernal\"<\n\022CrosschainExternal\022\022\n\004host\030\001 \001("
+  "\tR\004host\022\022\n\004port\030\002 \001(\003R\004portB\?Z=github.co"
+  "m/cuemby/ccp-sdk/gen/go/blockchain/thepo"
+  "wer/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto = {
-  false, false, 641, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
+  false, false, 740, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
   &descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once, nullptr, 0, 3,
   schemas, file_default_instances, TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto::offsets,
   file_level_metadata_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_service_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto,
@@ -185,6 +193,21 @@ TpChain::TpChain(const TpChain& from)
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
+  error_details_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error_details().empty()) {
+    error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error_details(), 
+      GetArenaForAllocation());
+  }
+  created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_created_at().empty()) {
+    created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_at(), 
+      GetArenaForAllocation());
+  }
+  updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_updated_at().empty()) {
+    updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
+      GetArenaForAllocation());
+  }
   chain_number_ = from.chain_number_;
   // @@protoc_insertion_point(copy_constructor:blockchain.thepower.v1alpha1.TpChain)
 }
@@ -193,6 +216,9 @@ inline void TpChain::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+error_details_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 chain_number_ = 0;
 }
 
@@ -208,6 +234,9 @@ inline void TpChain::SharedDtor() {
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  error_details_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TpChain::ArenaDtor(void* object) {
@@ -230,6 +259,9 @@ void TpChain::Clear() {
   id_.ClearToEmpty();
   user_id_.ClearToEmpty();
   status_.ClearToEmpty();
+  error_details_.ClearToEmpty();
+  created_at_.ClearToEmpty();
+  updated_at_.ClearToEmpty();
   chain_number_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -283,6 +315,33 @@ const char* TpChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error_details = 6 [json_name = "errorDetails"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_error_details();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.error_details"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string created_at = 7 [json_name = "createdAt"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_created_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.created_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string updated_at = 8 [json_name = "updatedAt"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_updated_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.updated_at"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -359,6 +418,36 @@ failure:
         5, this->_internal_status(), target);
   }
 
+  // string error_details = 6 [json_name = "errorDetails"];
+  if (!this->_internal_error_details().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error_details().data(), static_cast<int>(this->_internal_error_details().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.TpChain.error_details");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_error_details(), target);
+  }
+
+  // string created_at = 7 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_created_at().data(), static_cast<int>(this->_internal_created_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.TpChain.created_at");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_created_at(), target);
+  }
+
+  // string updated_at = 8 [json_name = "updatedAt"];
+  if (!this->_internal_updated_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_updated_at().data(), static_cast<int>(this->_internal_updated_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.TpChain.updated_at");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_updated_at(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -401,6 +490,27 @@ size_t TpChain::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_status());
+  }
+
+  // string error_details = 6 [json_name = "errorDetails"];
+  if (!this->_internal_error_details().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error_details());
+  }
+
+  // string created_at = 7 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_created_at());
+  }
+
+  // string updated_at = 8 [json_name = "updatedAt"];
+  if (!this->_internal_updated_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_updated_at());
   }
 
   // int32 chain_number = 2 [json_name = "chainNumber"];
@@ -448,6 +558,15 @@ void TpChain::MergeFrom(const TpChain& from) {
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
+  if (!from._internal_error_details().empty()) {
+    _internal_set_error_details(from._internal_error_details());
+  }
+  if (!from._internal_created_at().empty()) {
+    _internal_set_created_at(from._internal_created_at());
+  }
+  if (!from._internal_updated_at().empty()) {
+    _internal_set_updated_at(from._internal_updated_at());
+  }
   if (from._internal_chain_number() != 0) {
     _internal_set_chain_number(from._internal_chain_number());
   }
@@ -483,6 +602,21 @@ void TpChain::InternalSwap(TpChain* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &status_, GetArenaForAllocation(),
       &other->status_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_details_, GetArenaForAllocation(),
+      &other->error_details_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &created_at_, GetArenaForAllocation(),
+      &other->created_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &updated_at_, GetArenaForAllocation(),
+      &other->updated_at_, other->GetArenaForAllocation()
   );
   swap(chain_number_, other->chain_number_);
 }

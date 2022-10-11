@@ -37,6 +37,22 @@ class Network extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
      */
     protected $status = '';
+    /**
+     * Generated from protobuf field <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     */
+    protected $error_details = '';
+    /**
+     * Generated from protobuf field <code>string created_at = 8 [json_name = "createdAt"];</code>
+     */
+    protected $created_at = '';
+    /**
+     * Generated from protobuf field <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     */
+    protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    private $organizations;
 
     /**
      * Constructor.
@@ -50,6 +66,10 @@ class Network extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type string $user_id
      *     @type string $status
+     *     @type string $error_details
+     *     @type string $created_at
+     *     @type string $updated_at
+     *     @type \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +205,94 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     * @return string
+     */
+    public function getErrorDetails()
+    {
+        return $this->error_details;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorDetails($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 8 [json_name = "createdAt"];</code>
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 8 [json_name = "createdAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOrganizations()
+    {
+        return $this->organizations;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     * @param \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOrganizations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Organization::class);
+        $this->organizations = $arr;
 
         return $this;
     }

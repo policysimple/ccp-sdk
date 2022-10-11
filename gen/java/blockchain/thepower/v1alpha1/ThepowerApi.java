@@ -658,6 +658,18 @@ public final class ThepowerApi {
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
+
+    /**
+     * <code>int64 offset = 2 [json_name = "offset"];</code>
+     * @return The offset.
+     */
+    long getOffset();
+
+    /**
+     * <code>int64 limit = 3 [json_name = "limit"];</code>
+     * @return The limit.
+     */
+    long getLimit();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.GetTpChainsByUserIdRequest}
@@ -709,6 +721,16 @@ public final class ThepowerApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
+              break;
+            }
+            case 16: {
+
+              offset_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              limit_ = input.readInt64();
               break;
             }
             default: {
@@ -781,6 +803,28 @@ public final class ThepowerApi {
       }
     }
 
+    public static final int OFFSET_FIELD_NUMBER = 2;
+    private long offset_;
+    /**
+     * <code>int64 offset = 2 [json_name = "offset"];</code>
+     * @return The offset.
+     */
+    @java.lang.Override
+    public long getOffset() {
+      return offset_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private long limit_;
+    /**
+     * <code>int64 limit = 3 [json_name = "limit"];</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -798,6 +842,12 @@ public final class ThepowerApi {
       if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
+      if (offset_ != 0L) {
+        output.writeInt64(2, offset_);
+      }
+      if (limit_ != 0L) {
+        output.writeInt64(3, limit_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -809,6 +859,14 @@ public final class ThepowerApi {
       size = 0;
       if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, offset_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -827,6 +885,10 @@ public final class ThepowerApi {
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
+      if (getOffset()
+          != other.getOffset()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -840,6 +902,12 @@ public final class ThepowerApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -975,6 +1043,10 @@ public final class ThepowerApi {
         super.clear();
         userId_ = "";
 
+        offset_ = 0L;
+
+        limit_ = 0L;
+
         return this;
       }
 
@@ -1002,6 +1074,8 @@ public final class ThepowerApi {
       public blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsByUserIdRequest buildPartial() {
         blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsByUserIdRequest result = new blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsByUserIdRequest(this);
         result.userId_ = userId_;
+        result.offset_ = offset_;
+        result.limit_ = limit_;
         onBuilt();
         return result;
       }
@@ -1053,6 +1127,12 @@ public final class ThepowerApi {
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
           onChanged();
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1155,6 +1235,68 @@ public final class ThepowerApi {
   checkByteStringIsUtf8(value);
         
         userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long offset_ ;
+      /**
+       * <code>int64 offset = 2 [json_name = "offset"];</code>
+       * @return The offset.
+       */
+      @java.lang.Override
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       * <code>int64 offset = 2 [json_name = "offset"];</code>
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(long value) {
+        
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 offset = 2 [json_name = "offset"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+        
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <code>int64 limit = 3 [json_name = "limit"];</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <code>int64 limit = 3 [json_name = "limit"];</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 limit = 3 [json_name = "limit"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
         onChanged();
         return this;
       }
@@ -1784,19 +1926,16 @@ public final class ThepowerApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     * @return Whether the emtpy field is set.
+     * <code>int64 offset = 1 [json_name = "offset"];</code>
+     * @return The offset.
      */
-    boolean hasEmtpy();
+    long getOffset();
+
     /**
-     * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     * @return The emtpy.
+     * <code>int64 limit = 2 [json_name = "limit"];</code>
+     * @return The limit.
      */
-    com.google.protobuf.Empty getEmtpy();
-    /**
-     * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     */
-    com.google.protobuf.EmptyOrBuilder getEmtpyOrBuilder();
+    long getLimit();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.GetTpChainsRequest}
@@ -1843,17 +1982,14 @@ public final class ThepowerApi {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.protobuf.Empty.Builder subBuilder = null;
-              if (emtpy_ != null) {
-                subBuilder = emtpy_.toBuilder();
-              }
-              emtpy_ = input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(emtpy_);
-                emtpy_ = subBuilder.buildPartial();
-              }
+            case 8: {
 
+              offset_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              limit_ = input.readInt64();
               break;
             }
             default: {
@@ -1888,30 +2024,26 @@ public final class ThepowerApi {
               blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest.class, blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest.Builder.class);
     }
 
-    public static final int EMTPY_FIELD_NUMBER = 1;
-    private com.google.protobuf.Empty emtpy_;
+    public static final int OFFSET_FIELD_NUMBER = 1;
+    private long offset_;
     /**
-     * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     * @return Whether the emtpy field is set.
+     * <code>int64 offset = 1 [json_name = "offset"];</code>
+     * @return The offset.
      */
     @java.lang.Override
-    public boolean hasEmtpy() {
-      return emtpy_ != null;
+    public long getOffset() {
+      return offset_;
     }
+
+    public static final int LIMIT_FIELD_NUMBER = 2;
+    private long limit_;
     /**
-     * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     * @return The emtpy.
+     * <code>int64 limit = 2 [json_name = "limit"];</code>
+     * @return The limit.
      */
     @java.lang.Override
-    public com.google.protobuf.Empty getEmtpy() {
-      return emtpy_ == null ? com.google.protobuf.Empty.getDefaultInstance() : emtpy_;
-    }
-    /**
-     * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.EmptyOrBuilder getEmtpyOrBuilder() {
-      return getEmtpy();
+    public long getLimit() {
+      return limit_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1928,8 +2060,11 @@ public final class ThepowerApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (emtpy_ != null) {
-        output.writeMessage(1, getEmtpy());
+      if (offset_ != 0L) {
+        output.writeInt64(1, offset_);
+      }
+      if (limit_ != 0L) {
+        output.writeInt64(2, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -1940,9 +2075,13 @@ public final class ThepowerApi {
       if (size != -1) return size;
 
       size = 0;
-      if (emtpy_ != null) {
+      if (offset_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getEmtpy());
+          .computeInt64Size(1, offset_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1959,11 +2098,10 @@ public final class ThepowerApi {
       }
       blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest other = (blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest) obj;
 
-      if (hasEmtpy() != other.hasEmtpy()) return false;
-      if (hasEmtpy()) {
-        if (!getEmtpy()
-            .equals(other.getEmtpy())) return false;
-      }
+      if (getOffset()
+          != other.getOffset()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1975,10 +2113,12 @@ public final class ThepowerApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasEmtpy()) {
-        hash = (37 * hash) + EMTPY_FIELD_NUMBER;
-        hash = (53 * hash) + getEmtpy().hashCode();
-      }
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2112,12 +2252,10 @@ public final class ThepowerApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (emtpyBuilder_ == null) {
-          emtpy_ = null;
-        } else {
-          emtpy_ = null;
-          emtpyBuilder_ = null;
-        }
+        offset_ = 0L;
+
+        limit_ = 0L;
+
         return this;
       }
 
@@ -2144,11 +2282,8 @@ public final class ThepowerApi {
       @java.lang.Override
       public blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest buildPartial() {
         blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest result = new blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest(this);
-        if (emtpyBuilder_ == null) {
-          result.emtpy_ = emtpy_;
-        } else {
-          result.emtpy_ = emtpyBuilder_.build();
-        }
+        result.offset_ = offset_;
+        result.limit_ = limit_;
         onBuilt();
         return result;
       }
@@ -2197,8 +2332,11 @@ public final class ThepowerApi {
 
       public Builder mergeFrom(blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest other) {
         if (other == blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest.getDefaultInstance()) return this;
-        if (other.hasEmtpy()) {
-          mergeEmtpy(other.getEmtpy());
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2229,123 +2367,66 @@ public final class ThepowerApi {
         return this;
       }
 
-      private com.google.protobuf.Empty emtpy_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> emtpyBuilder_;
+      private long offset_ ;
       /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       * @return Whether the emtpy field is set.
+       * <code>int64 offset = 1 [json_name = "offset"];</code>
+       * @return The offset.
        */
-      public boolean hasEmtpy() {
-        return emtpyBuilder_ != null || emtpy_ != null;
+      @java.lang.Override
+      public long getOffset() {
+        return offset_;
       }
       /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       * @return The emtpy.
+       * <code>int64 offset = 1 [json_name = "offset"];</code>
+       * @param value The offset to set.
+       * @return This builder for chaining.
        */
-      public com.google.protobuf.Empty getEmtpy() {
-        if (emtpyBuilder_ == null) {
-          return emtpy_ == null ? com.google.protobuf.Empty.getDefaultInstance() : emtpy_;
-        } else {
-          return emtpyBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       */
-      public Builder setEmtpy(com.google.protobuf.Empty value) {
-        if (emtpyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          emtpy_ = value;
-          onChanged();
-        } else {
-          emtpyBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       */
-      public Builder setEmtpy(
-          com.google.protobuf.Empty.Builder builderForValue) {
-        if (emtpyBuilder_ == null) {
-          emtpy_ = builderForValue.build();
-          onChanged();
-        } else {
-          emtpyBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       */
-      public Builder mergeEmtpy(com.google.protobuf.Empty value) {
-        if (emtpyBuilder_ == null) {
-          if (emtpy_ != null) {
-            emtpy_ =
-              com.google.protobuf.Empty.newBuilder(emtpy_).mergeFrom(value).buildPartial();
-          } else {
-            emtpy_ = value;
-          }
-          onChanged();
-        } else {
-          emtpyBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       */
-      public Builder clearEmtpy() {
-        if (emtpyBuilder_ == null) {
-          emtpy_ = null;
-          onChanged();
-        } else {
-          emtpy_ = null;
-          emtpyBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-       */
-      public com.google.protobuf.Empty.Builder getEmtpyBuilder() {
+      public Builder setOffset(long value) {
         
+        offset_ = value;
         onChanged();
-        return getEmtpyFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
+       * <code>int64 offset = 1 [json_name = "offset"];</code>
+       * @return This builder for chaining.
        */
-      public com.google.protobuf.EmptyOrBuilder getEmtpyOrBuilder() {
-        if (emtpyBuilder_ != null) {
-          return emtpyBuilder_.getMessageOrBuilder();
-        } else {
-          return emtpy_ == null ?
-              com.google.protobuf.Empty.getDefaultInstance() : emtpy_;
-        }
+      public Builder clearOffset() {
+        
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <code>int64 limit = 2 [json_name = "limit"];</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
       }
       /**
-       * <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
+       * <code>int64 limit = 2 [json_name = "limit"];</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
-          getEmtpyFieldBuilder() {
-        if (emtpyBuilder_ == null) {
-          emtpyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
-                  getEmtpy(),
-                  getParentForChildren(),
-                  isClean());
-          emtpy_ = null;
-        }
-        return emtpyBuilder_;
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 limit = 2 [json_name = "limit"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3056,6 +3137,36 @@ public final class ThepowerApi {
      */
     blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder getTpChainsOrBuilder(
         int index);
+
+    /**
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @return The total.
+     */
+    long getTotal();
+
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The nextUrl.
+     */
+    java.lang.String getNextUrl();
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The bytes for nextUrl.
+     */
+    com.google.protobuf.ByteString
+        getNextUrlBytes();
+
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The previousUrl.
+     */
+    java.lang.String getPreviousUrl();
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The bytes for previousUrl.
+     */
+    com.google.protobuf.ByteString
+        getPreviousUrlBytes();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.GetTpChainsResponse}
@@ -3071,6 +3182,8 @@ public final class ThepowerApi {
     }
     private GetTpChainsResponse() {
       tpChains_ = java.util.Collections.emptyList();
+      nextUrl_ = "";
+      previousUrl_ = "";
     }
 
     @java.lang.Override
@@ -3111,6 +3224,23 @@ public final class ThepowerApi {
               }
               tpChains_.add(
                   input.readMessage(blockchain.thepower.v1alpha1.Thepower.TpChain.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              total_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              previousUrl_ = s;
               break;
             }
             default: {
@@ -3188,6 +3318,93 @@ public final class ThepowerApi {
       return tpChains_.get(index);
     }
 
+    public static final int TOTAL_FIELD_NUMBER = 2;
+    private long total_;
+    /**
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
+    public static final int NEXT_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object nextUrl_;
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The nextUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getNextUrl() {
+      java.lang.Object ref = nextUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The bytes for nextUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNextUrlBytes() {
+      java.lang.Object ref = nextUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PREVIOUS_URL_FIELD_NUMBER = 4;
+    private volatile java.lang.Object previousUrl_;
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The previousUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getPreviousUrl() {
+      java.lang.Object ref = previousUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previousUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The bytes for previousUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPreviousUrlBytes() {
+      java.lang.Object ref = previousUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        previousUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3205,6 +3422,15 @@ public final class ThepowerApi {
       for (int i = 0; i < tpChains_.size(); i++) {
         output.writeMessage(1, tpChains_.get(i));
       }
+      if (total_ != 0L) {
+        output.writeInt64(2, total_);
+      }
+      if (!getNextUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextUrl_);
+      }
+      if (!getPreviousUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, previousUrl_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3217,6 +3443,16 @@ public final class ThepowerApi {
       for (int i = 0; i < tpChains_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, tpChains_.get(i));
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, total_);
+      }
+      if (!getNextUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextUrl_);
+      }
+      if (!getPreviousUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, previousUrl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3235,6 +3471,12 @@ public final class ThepowerApi {
 
       if (!getTpChainsList()
           .equals(other.getTpChainsList())) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (!getNextUrl()
+          .equals(other.getNextUrl())) return false;
+      if (!getPreviousUrl()
+          .equals(other.getPreviousUrl())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3250,6 +3492,13 @@ public final class ThepowerApi {
         hash = (37 * hash) + TP_CHAINS_FIELD_NUMBER;
         hash = (53 * hash) + getTpChainsList().hashCode();
       }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
+      hash = (37 * hash) + NEXT_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getNextUrl().hashCode();
+      hash = (37 * hash) + PREVIOUS_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getPreviousUrl().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3390,6 +3639,12 @@ public final class ThepowerApi {
         } else {
           tpChainsBuilder_.clear();
         }
+        total_ = 0L;
+
+        nextUrl_ = "";
+
+        previousUrl_ = "";
+
         return this;
       }
 
@@ -3426,6 +3681,9 @@ public final class ThepowerApi {
         } else {
           result.tpChains_ = tpChainsBuilder_.build();
         }
+        result.total_ = total_;
+        result.nextUrl_ = nextUrl_;
+        result.previousUrl_ = previousUrl_;
         onBuilt();
         return result;
       }
@@ -3499,6 +3757,17 @@ public final class ThepowerApi {
               tpChainsBuilder_.addAllMessages(other.tpChains_);
             }
           }
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
+        }
+        if (!other.getNextUrl().isEmpty()) {
+          nextUrl_ = other.nextUrl_;
+          onChanged();
+        }
+        if (!other.getPreviousUrl().isEmpty()) {
+          previousUrl_ = other.previousUrl_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3769,6 +4038,189 @@ public final class ThepowerApi {
         }
         return tpChainsBuilder_;
       }
+
+      private long total_ ;
+      /**
+       * <code>int64 total = 2 [json_name = "total"];</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <code>int64 total = 2 [json_name = "total"];</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total = 2 [json_name = "total"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nextUrl_ = "";
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @return The nextUrl.
+       */
+      public java.lang.String getNextUrl() {
+        java.lang.Object ref = nextUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nextUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @return The bytes for nextUrl.
+       */
+      public com.google.protobuf.ByteString
+          getNextUrlBytes() {
+        java.lang.Object ref = nextUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nextUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @param value The nextUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nextUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNextUrl() {
+        
+        nextUrl_ = getDefaultInstance().getNextUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @param value The bytes for nextUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nextUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object previousUrl_ = "";
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @return The previousUrl.
+       */
+      public java.lang.String getPreviousUrl() {
+        java.lang.Object ref = previousUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          previousUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @return The bytes for previousUrl.
+       */
+      public com.google.protobuf.ByteString
+          getPreviousUrlBytes() {
+        java.lang.Object ref = previousUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          previousUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @param value The previousUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviousUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        previousUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPreviousUrl() {
+        
+        previousUrl_ = getDefaultInstance().getPreviousUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @param value The bytes for previousUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviousUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        previousUrl_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3849,6 +4301,36 @@ public final class ThepowerApi {
      */
     blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder getTpChainsOrBuilder(
         int index);
+
+    /**
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @return The total.
+     */
+    long getTotal();
+
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The nextUrl.
+     */
+    java.lang.String getNextUrl();
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The bytes for nextUrl.
+     */
+    com.google.protobuf.ByteString
+        getNextUrlBytes();
+
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The previousUrl.
+     */
+    java.lang.String getPreviousUrl();
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The bytes for previousUrl.
+     */
+    com.google.protobuf.ByteString
+        getPreviousUrlBytes();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.GetTpChainsByUserIdResponse}
@@ -3864,6 +4346,8 @@ public final class ThepowerApi {
     }
     private GetTpChainsByUserIdResponse() {
       tpChains_ = java.util.Collections.emptyList();
+      nextUrl_ = "";
+      previousUrl_ = "";
     }
 
     @java.lang.Override
@@ -3904,6 +4388,23 @@ public final class ThepowerApi {
               }
               tpChains_.add(
                   input.readMessage(blockchain.thepower.v1alpha1.Thepower.TpChain.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              total_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              previousUrl_ = s;
               break;
             }
             default: {
@@ -3981,6 +4482,93 @@ public final class ThepowerApi {
       return tpChains_.get(index);
     }
 
+    public static final int TOTAL_FIELD_NUMBER = 2;
+    private long total_;
+    /**
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
+    public static final int NEXT_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object nextUrl_;
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The nextUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getNextUrl() {
+      java.lang.Object ref = nextUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return The bytes for nextUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNextUrlBytes() {
+      java.lang.Object ref = nextUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PREVIOUS_URL_FIELD_NUMBER = 4;
+    private volatile java.lang.Object previousUrl_;
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The previousUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getPreviousUrl() {
+      java.lang.Object ref = previousUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previousUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return The bytes for previousUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPreviousUrlBytes() {
+      java.lang.Object ref = previousUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        previousUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3998,6 +4586,15 @@ public final class ThepowerApi {
       for (int i = 0; i < tpChains_.size(); i++) {
         output.writeMessage(1, tpChains_.get(i));
       }
+      if (total_ != 0L) {
+        output.writeInt64(2, total_);
+      }
+      if (!getNextUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextUrl_);
+      }
+      if (!getPreviousUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, previousUrl_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4010,6 +4607,16 @@ public final class ThepowerApi {
       for (int i = 0; i < tpChains_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, tpChains_.get(i));
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, total_);
+      }
+      if (!getNextUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextUrl_);
+      }
+      if (!getPreviousUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, previousUrl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4028,6 +4635,12 @@ public final class ThepowerApi {
 
       if (!getTpChainsList()
           .equals(other.getTpChainsList())) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (!getNextUrl()
+          .equals(other.getNextUrl())) return false;
+      if (!getPreviousUrl()
+          .equals(other.getPreviousUrl())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4043,6 +4656,13 @@ public final class ThepowerApi {
         hash = (37 * hash) + TP_CHAINS_FIELD_NUMBER;
         hash = (53 * hash) + getTpChainsList().hashCode();
       }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
+      hash = (37 * hash) + NEXT_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getNextUrl().hashCode();
+      hash = (37 * hash) + PREVIOUS_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getPreviousUrl().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4183,6 +4803,12 @@ public final class ThepowerApi {
         } else {
           tpChainsBuilder_.clear();
         }
+        total_ = 0L;
+
+        nextUrl_ = "";
+
+        previousUrl_ = "";
+
         return this;
       }
 
@@ -4219,6 +4845,9 @@ public final class ThepowerApi {
         } else {
           result.tpChains_ = tpChainsBuilder_.build();
         }
+        result.total_ = total_;
+        result.nextUrl_ = nextUrl_;
+        result.previousUrl_ = previousUrl_;
         onBuilt();
         return result;
       }
@@ -4292,6 +4921,17 @@ public final class ThepowerApi {
               tpChainsBuilder_.addAllMessages(other.tpChains_);
             }
           }
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
+        }
+        if (!other.getNextUrl().isEmpty()) {
+          nextUrl_ = other.nextUrl_;
+          onChanged();
+        }
+        if (!other.getPreviousUrl().isEmpty()) {
+          previousUrl_ = other.previousUrl_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4561,6 +5201,189 @@ public final class ThepowerApi {
           tpChains_ = null;
         }
         return tpChainsBuilder_;
+      }
+
+      private long total_ ;
+      /**
+       * <code>int64 total = 2 [json_name = "total"];</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <code>int64 total = 2 [json_name = "total"];</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total = 2 [json_name = "total"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nextUrl_ = "";
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @return The nextUrl.
+       */
+      public java.lang.String getNextUrl() {
+        java.lang.Object ref = nextUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nextUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @return The bytes for nextUrl.
+       */
+      public com.google.protobuf.ByteString
+          getNextUrlBytes() {
+        java.lang.Object ref = nextUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nextUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @param value The nextUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nextUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNextUrl() {
+        
+        nextUrl_ = getDefaultInstance().getNextUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string next_url = 3 [json_name = "nextUrl"];</code>
+       * @param value The bytes for nextUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nextUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object previousUrl_ = "";
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @return The previousUrl.
+       */
+      public java.lang.String getPreviousUrl() {
+        java.lang.Object ref = previousUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          previousUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @return The bytes for previousUrl.
+       */
+      public com.google.protobuf.ByteString
+          getPreviousUrlBytes() {
+        java.lang.Object ref = previousUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          previousUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @param value The previousUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviousUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        previousUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPreviousUrl() {
+        
+        previousUrl_ = getDefaultInstance().getPreviousUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+       * @param value The bytes for previousUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviousUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        previousUrl_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5291,35 +6114,41 @@ public final class ThepowerApi {
       "roto\032\033google/protobuf/empty.proto\"X\n\024Cre" +
       "ateTpChainRequest\022@\n\010tp_chain\030\001 \001(\0132%.bl" +
       "ockchain.thepower.v1alpha1.TpChainR\007tpCh" +
-      "ain\"5\n\032GetTpChainsByUserIdRequest\022\027\n\007use" +
-      "r_id\030\001 \001(\tR\006userId\"\'\n\025GetTpChainByIdRequ" +
-      "est\022\016\n\002id\030\001 \001(\tR\002id\"B\n\022GetTpChainsReques" +
-      "t\022,\n\005emtpy\030\001 \001(\0132\026.google.protobuf.Empty" +
-      "R\005emtpy\"Y\n\025CreateTpChainResponse\022@\n\010tp_c" +
-      "hain\030\001 \001(\0132%.blockchain.thepower.v1alpha" +
-      "1.TpChainR\007tpChain\"Y\n\023GetTpChainsRespons" +
-      "e\022B\n\ttp_chains\030\001 \003(\0132%.blockchain.thepow" +
-      "er.v1alpha1.TpChainR\010tpChains\"a\n\033GetTpCh" +
-      "ainsByUserIdResponse\022B\n\ttp_chains\030\001 \003(\0132" +
-      "%.blockchain.thepower.v1alpha1.TpChainR\010" +
-      "tpChains\"Z\n\026GetTpChainByIdResponse\022@\n\010tp" +
-      "_chain\030\001 \001(\0132%.blockchain.thepower.v1alp" +
-      "ha1.TpChainR\007tpChain2\223\004\n\031BlockchainThePo" +
-      "werService\022x\n\rCreateTpChain\0222.blockchain" +
-      ".thepower.v1alpha1.CreateTpChainRequest\032" +
-      "3.blockchain.thepower.v1alpha1.CreateTpC" +
-      "hainResponse\022r\n\013GetTpChains\0220.blockchain" +
-      ".thepower.v1alpha1.GetTpChainsRequest\0321." +
-      "blockchain.thepower.v1alpha1.GetTpChains" +
-      "Response\022\212\001\n\023GetTpChainsByUserId\0228.block" +
-      "chain.thepower.v1alpha1.GetTpChainsByUse" +
-      "rIdRequest\0329.blockchain.thepower.v1alpha" +
-      "1.GetTpChainsByUserIdResponse\022{\n\016GetTpCh" +
-      "ainById\0223.blockchain.thepower.v1alpha1.G" +
-      "etTpChainByIdRequest\0324.blockchain.thepow" +
-      "er.v1alpha1.GetTpChainByIdResponseB?Z=gi" +
-      "thub.com/cuemby/ccp-sdk/gen/go/blockchai" +
-      "n/thepower/v1alpha1b\006proto3"
+      "ain\"c\n\032GetTpChainsByUserIdRequest\022\027\n\007use" +
+      "r_id\030\001 \001(\tR\006userId\022\026\n\006offset\030\002 \001(\003R\006offs" +
+      "et\022\024\n\005limit\030\003 \001(\003R\005limit\"\'\n\025GetTpChainBy" +
+      "IdRequest\022\016\n\002id\030\001 \001(\tR\002id\"B\n\022GetTpChains" +
+      "Request\022\026\n\006offset\030\001 \001(\003R\006offset\022\024\n\005limit" +
+      "\030\002 \001(\003R\005limit\"Y\n\025CreateTpChainResponse\022@" +
+      "\n\010tp_chain\030\001 \001(\0132%.blockchain.thepower.v" +
+      "1alpha1.TpChainR\007tpChain\"\255\001\n\023GetTpChains" +
+      "Response\022B\n\ttp_chains\030\001 \003(\0132%.blockchain" +
+      ".thepower.v1alpha1.TpChainR\010tpChains\022\024\n\005" +
+      "total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007ne" +
+      "xtUrl\022!\n\014previous_url\030\004 \001(\tR\013previousUrl" +
+      "\"\265\001\n\033GetTpChainsByUserIdResponse\022B\n\ttp_c" +
+      "hains\030\001 \003(\0132%.blockchain.thepower.v1alph" +
+      "a1.TpChainR\010tpChains\022\024\n\005total\030\002 \001(\003R\005tot" +
+      "al\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014previou" +
+      "s_url\030\004 \001(\tR\013previousUrl\"Z\n\026GetTpChainBy" +
+      "IdResponse\022@\n\010tp_chain\030\001 \001(\0132%.blockchai" +
+      "n.thepower.v1alpha1.TpChainR\007tpChain2\223\004\n" +
+      "\031BlockchainThePowerService\022x\n\rCreateTpCh" +
+      "ain\0222.blockchain.thepower.v1alpha1.Creat" +
+      "eTpChainRequest\0323.blockchain.thepower.v1" +
+      "alpha1.CreateTpChainResponse\022r\n\013GetTpCha" +
+      "ins\0220.blockchain.thepower.v1alpha1.GetTp" +
+      "ChainsRequest\0321.blockchain.thepower.v1al" +
+      "pha1.GetTpChainsResponse\022\212\001\n\023GetTpChains" +
+      "ByUserId\0228.blockchain.thepower.v1alpha1." +
+      "GetTpChainsByUserIdRequest\0329.blockchain." +
+      "thepower.v1alpha1.GetTpChainsByUserIdRes" +
+      "ponse\022{\n\016GetTpChainById\0223.blockchain.the" +
+      "power.v1alpha1.GetTpChainByIdRequest\0324.b" +
+      "lockchain.thepower.v1alpha1.GetTpChainBy" +
+      "IdResponseB?Z=github.com/cuemby/ccp-sdk/" +
+      "gen/go/blockchain/thepower/v1alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5338,7 +6167,7 @@ public final class ThepowerApi {
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdRequest_descriptor,
-        new java.lang.String[] { "UserId", });
+        new java.lang.String[] { "UserId", "Offset", "Limit", });
     internal_static_blockchain_thepower_v1alpha1_GetTpChainByIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_blockchain_thepower_v1alpha1_GetTpChainByIdRequest_fieldAccessorTable = new
@@ -5350,7 +6179,7 @@ public final class ThepowerApi {
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_GetTpChainsRequest_descriptor,
-        new java.lang.String[] { "Emtpy", });
+        new java.lang.String[] { "Offset", "Limit", });
     internal_static_blockchain_thepower_v1alpha1_CreateTpChainResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_blockchain_thepower_v1alpha1_CreateTpChainResponse_fieldAccessorTable = new
@@ -5362,13 +6191,13 @@ public final class ThepowerApi {
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_GetTpChainsResponse_descriptor,
-        new java.lang.String[] { "TpChains", });
+        new java.lang.String[] { "TpChains", "Total", "NextUrl", "PreviousUrl", });
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdResponse_descriptor,
-        new java.lang.String[] { "TpChains", });
+        new java.lang.String[] { "TpChains", "Total", "NextUrl", "PreviousUrl", });
     internal_static_blockchain_thepower_v1alpha1_GetTpChainByIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_blockchain_thepower_v1alpha1_GetTpChainByIdResponse_fieldAccessorTable = new

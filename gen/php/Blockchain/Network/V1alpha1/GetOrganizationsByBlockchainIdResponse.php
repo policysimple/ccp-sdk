@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.GetBlockchainsResponse</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse</code>
  */
-class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
+class GetOrganizationsByBlockchainIdResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Network networks = 1 [json_name = "networks"];</code>
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
      */
-    private $networks;
+    private $organizations;
     /**
      * Generated from protobuf field <code>int64 total = 2 [json_name = "total"];</code>
      */
@@ -36,7 +36,7 @@ class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Blockchain\Network\V1alpha1\Network[]|\Google\Protobuf\Internal\RepeatedField $networks
+     *     @type \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
      *     @type int|string $total
      *     @type string $next_url
      *     @type string $previous_url
@@ -48,23 +48,23 @@ class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Network networks = 1 [json_name = "networks"];</code>
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getNetworks()
+    public function getOrganizations()
     {
-        return $this->networks;
+        return $this->organizations;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Network networks = 1 [json_name = "networks"];</code>
-     * @param \Blockchain\Network\V1alpha1\Network[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * @param \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setNetworks($var)
+    public function setOrganizations($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Network::class);
-        $this->networks = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Organization::class);
+        $this->organizations = $arr;
 
         return $this;
     }

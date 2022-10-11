@@ -43,19 +43,6 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\CreateChannelRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function CreateChannel(\Blockchain\Network\V1alpha1\CreateChannelRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel',
-        $argument,
-        ['\Blockchain\Network\V1alpha1\CreateChannelResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * @param \Blockchain\Network\V1alpha1\GetBlockchainsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -65,6 +52,58 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains',
         $argument,
         ['\Blockchain\Network\V1alpha1\GetBlockchainsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Network\V1alpha1\GetBlockchainsByUserIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetBlockchainsByUserId(\Blockchain\Network\V1alpha1\GetBlockchainsByUserIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainsByUserId',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\GetBlockchainsByUserIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Network\V1alpha1\GetBlockchainByIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetBlockchainById(\Blockchain\Network\V1alpha1\GetBlockchainByIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainById',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\GetBlockchainByIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Network\V1alpha1\GetOrganizationsByBlockchainIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetOrganizationsByBlockchainId(\Blockchain\Network\V1alpha1\GetOrganizationsByBlockchainIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\GetOrganizationsByBlockchainIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Blockchain\Network\V1alpha1\SendInvitationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SendInvitation(\Blockchain\Network\V1alpha1\SendInvitationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\SendInvitationResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -82,15 +121,15 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\SendInvitationRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\CreateChannelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function SendInvitation(\Blockchain\Network\V1alpha1\SendInvitationRequest $argument,
+    public function CreateChannel(\Blockchain\Network\V1alpha1\CreateChannelRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel',
         $argument,
-        ['\Blockchain\Network\V1alpha1\SendInvitationResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\CreateChannelResponse', 'decode'],
         $metadata, $options);
     }
 

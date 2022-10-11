@@ -16,15 +16,22 @@ class Network
         }
         $pool->internalAddGeneratedFile(
             '
-š
-)blockchain/network/v1alpha1/network.protoblockchain.network.v1alpha1"Ÿ
+­
+)blockchain/network/v1alpha1/network.protoblockchain.network.v1alpha1"Ó
 Network
 id (	Rid!
 network_name (	RnetworkName
 	framework (	R	framework
 type (	Rtype
 user_id (	RuserId
-status (	Rstatus"º
+status (	Rstatus#
+error_details (	RerrorDetails
+
+created_at (	R	createdAt
+
+updated_at	 (	R	updatedAtO
+organizations
+ (2).blockchain.network.v1alpha1.OrganizationRorganizations"î
 Organization
 id (	Rid
 user_id (	RuserId
@@ -32,13 +39,35 @@ class Network
 admin_password (	RadminPassword
 
 admin_user (	R	adminUser#
-blockchain_id (	RblockchainId"”
+blockchain_id (	RblockchainId7
+peers (2!.blockchain.network.v1alpha1.PeerRpeers
+status (	Rstatus#
+error_details	 (	RerrorDetails
+
+created_at
+ (	R	createdAt
+
+updated_at (	R	updatedAt"”
+Peer
+id (	Rid
+name (	Rname
+type (	Rtype
+status (	Rstatus
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt"ê
 Channel
 id (	Rid\'
 organization_id (	RorganizationId#
 blockchain_id (	RblockchainId
 name (	Rname
-org_ids (	RorgIds"‘
+org_ids (	RorgIds
+status (	Rstatus
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt"Ï
 
 Invitation
 id (	Rid 
@@ -46,7 +75,11 @@ Invitation
 fromUserId
 email (	Remail
 status (	Rstatus#
-blockchain_id (	RblockchainIdB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+blockchain_id (	RblockchainId
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAtB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
