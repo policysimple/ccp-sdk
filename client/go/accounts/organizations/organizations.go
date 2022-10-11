@@ -11,9 +11,7 @@ import (
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.OrganizationServiceClient
@@ -50,14 +48,9 @@ func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
 
 	if err != nil {
 		bylogs.LogErr("ListOrganization Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error list Organization: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListOrganization Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListOrganization] %w", err)
 	}
-
+	bylogs.LogInfo("ListOrganization Client Sdk", "Success")
 	return response, nil
 }
 
@@ -76,14 +69,10 @@ func DeleteOrganization(organizationId uint32) (*accountpkgv1.DeleteOrganization
 
 	if err != nil {
 		bylogs.LogErr("DeleteOrganization Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error delete Organization: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[DeleteOrganization] %w", err)
 
+	}
+	bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
 	return response, nil
 }
 
@@ -100,14 +89,10 @@ func GetOneOrganization(req *accountpkgv1.GetOneOrganizationRequest) (*accountpk
 
 	if err != nil {
 		bylogs.LogErr("GetOneOrganization Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error delete Organization: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOneOrganization Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[GetOneOrganization] %w", err)
 
+	}
+	bylogs.LogInfo("GetOneOrganization Client Sdk", "Success")
 	return response, nil
 }
 
@@ -124,14 +109,10 @@ func CreateOrganization(req *accountpkgv1.CreateOrganizationRequest) (*accountpk
 
 	if err != nil {
 		bylogs.LogErr("CreateOrganization Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error create Organization: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CreateOrganization Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[CreateOrganization] %w", err)
 
+	}
+	bylogs.LogInfo("CreateOrganization Client Sdk", "Success")
 	return response, nil
 }
 
@@ -148,13 +129,9 @@ func UpdateOrganization(req *accountpkgv1.UpdateOrganizationRequest) (*accountpk
 
 	if err != nil {
 		bylogs.LogErr("UpdateOrganization Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error UpdateOrganization: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("UpdateOrganization Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[UpdateOrganization] %w", err)
 
+	}
+	bylogs.LogInfo("UpdateOrganization Client Sdk", "Success")
 	return response, nil
 }

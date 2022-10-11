@@ -36,6 +36,7 @@ message CreateApiKeyResponse {
 
 message GetOneApiKeyRequest {
     string uuid = 1;
+    string value = 2;
 }
 
 message GetOneApiKeyResponse {
