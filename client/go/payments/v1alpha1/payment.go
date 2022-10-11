@@ -357,7 +357,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-
+	messageLastPayment := "You can’t remove this Payment Method until you are current with your payment or add another Payment Method."
 	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
 		OrganizationId: in.OrganizationId,
 		CardId:     in.CardId,
@@ -368,9 +368,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 		log.Printf("%s: %v", "Error delete payment", err)
 		if err != nil {
 			log.Printf("%s: %v", "Error delete payment", err)
-			return &paymentpkgv1.DeletePaymentResponse{
-				MsgError: fmt.Sprintf("%s: %v", "Error delete payment", err),
-			}, nil
+			return nil, fmt.Errorf("%s: %w", messageLastPayment, err)
 		}
 	}
 	return response, nil
