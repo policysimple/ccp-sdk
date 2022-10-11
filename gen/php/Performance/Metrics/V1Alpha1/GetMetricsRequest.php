@@ -14,29 +14,45 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>map<string, string> labels = 1 [json_name = "labels"];</code>
-     */
-    private $labels;
-    /**
-     * Generated from protobuf field <code>repeated string containers = 2 [json_name = "containers"];</code>
+     * Generated from protobuf field <code>repeated string containers = 1 [json_name = "containers"];</code>
      */
     private $containers;
     /**
-     * Generated from protobuf field <code>.performance.metrics.v1alpha1.MetricsInterval interval = 3 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>.performance.metrics.v1alpha1.MetricsInterval interval = 2 [json_name = "interval"];</code>
      */
     protected $interval = 0;
     /**
-     * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];</code>
+     * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 3 [json_name = "range"];</code>
      */
     protected $range = null;
     /**
-     * Generated from protobuf field <code>int32 page = 5 [json_name = "page"];</code>
+     * Generated from protobuf field <code>int32 page = 4 [json_name = "page"];</code>
      */
     protected $page = 0;
     /**
-     * Generated from protobuf field <code>int32 size = 6 [json_name = "size"];</code>
+     * Generated from protobuf field <code>int32 size = 5 [json_name = "size"];</code>
      */
     protected $size = 0;
+    /**
+     * Generated from protobuf field <code>string application_id = 6 [json_name = "applicationId"];</code>
+     */
+    protected $application_id = '';
+    /**
+     * Generated from protobuf field <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     */
+    protected $environment_id = '';
+    /**
+     * Generated from protobuf field <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = '';
+    /**
+     * Generated from protobuf field <code>string project_id = 9 [json_name = "projectId"];</code>
+     */
+    protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>string runtime_id = 10 [json_name = "runtimeId"];</code>
+     */
+    protected $runtime_id = '';
 
     /**
      * Constructor.
@@ -44,12 +60,16 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array|\Google\Protobuf\Internal\MapField $labels
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $containers
      *     @type int $interval
      *     @type \Performance\Metrics\V1Alpha1\Range $range
      *     @type int $page
      *     @type int $size
+     *     @type string $application_id
+     *     @type string $environment_id
+     *     @type string $organization_id
+     *     @type string $project_id
+     *     @type string $runtime_id
      * }
      */
     public function __construct($data = NULL) {
@@ -58,29 +78,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> labels = 1 [json_name = "labels"];</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getLabels()
-    {
-        return $this->labels;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> labels = 1 [json_name = "labels"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setLabels($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->labels = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string containers = 2 [json_name = "containers"];</code>
+     * Generated from protobuf field <code>repeated string containers = 1 [json_name = "containers"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getContainers()
@@ -89,7 +87,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string containers = 2 [json_name = "containers"];</code>
+     * Generated from protobuf field <code>repeated string containers = 1 [json_name = "containers"];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -102,7 +100,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.performance.metrics.v1alpha1.MetricsInterval interval = 3 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>.performance.metrics.v1alpha1.MetricsInterval interval = 2 [json_name = "interval"];</code>
      * @return int
      */
     public function getInterval()
@@ -111,7 +109,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.performance.metrics.v1alpha1.MetricsInterval interval = 3 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>.performance.metrics.v1alpha1.MetricsInterval interval = 2 [json_name = "interval"];</code>
      * @param int $var
      * @return $this
      */
@@ -124,7 +122,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];</code>
+     * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 3 [json_name = "range"];</code>
      * @return \Performance\Metrics\V1Alpha1\Range|null
      */
     public function getRange()
@@ -143,7 +141,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];</code>
+     * Generated from protobuf field <code>.performance.metrics.v1alpha1.Range range = 3 [json_name = "range"];</code>
      * @param \Performance\Metrics\V1Alpha1\Range $var
      * @return $this
      */
@@ -156,7 +154,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 page = 5 [json_name = "page"];</code>
+     * Generated from protobuf field <code>int32 page = 4 [json_name = "page"];</code>
      * @return int
      */
     public function getPage()
@@ -165,7 +163,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 page = 5 [json_name = "page"];</code>
+     * Generated from protobuf field <code>int32 page = 4 [json_name = "page"];</code>
      * @param int $var
      * @return $this
      */
@@ -178,7 +176,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 size = 6 [json_name = "size"];</code>
+     * Generated from protobuf field <code>int32 size = 5 [json_name = "size"];</code>
      * @return int
      */
     public function getSize()
@@ -187,7 +185,7 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 size = 6 [json_name = "size"];</code>
+     * Generated from protobuf field <code>int32 size = 5 [json_name = "size"];</code>
      * @param int $var
      * @return $this
      */
@@ -195,6 +193,116 @@ class GetMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 6 [json_name = "applicationId"];</code>
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->application_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_id = 6 [json_name = "applicationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     * @return string
+     */
+    public function getEnvironmentId()
+    {
+        return $this->environment_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_id = 7 [json_name = "environmentId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     * @return string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 9 [json_name = "projectId"];</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 9 [json_name = "projectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_id = 10 [json_name = "runtimeId"];</code>
+     * @return string
+     */
+    public function getRuntimeId()
+    {
+        return $this->runtime_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_id = 10 [json_name = "runtimeId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntimeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime_id = $var;
 
         return $this;
     }

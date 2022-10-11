@@ -44,13 +44,7 @@ func GetMetrics(getMetrics *metricsgpkgv1.GetMetricsRequest) (response *metricsg
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.GetMetrics(ctx, &metricsgpkgv1.GetMetricsRequest{
-		Labels:     getMetrics.Labels,
-		Containers: getMetrics.Containers,
-		Range:      getMetrics.Range,
-		Page:       getMetrics.Page,
-		Size:       getMetrics.Size,
-	})
+	response, err = client.GetMetrics(ctx, getMetrics)
 	if err != nil {
 		log.Printf("%s: %v", "Error get metrics", err)
 		return nil, status.Errorf(

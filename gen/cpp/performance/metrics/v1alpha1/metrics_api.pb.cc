@@ -33,21 +33,14 @@ struct RangeDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RangeDefaultTypeInternal _Range_default_instance_;
-constexpr GetMetricsRequest_LabelsEntry_DoNotUse::GetMetricsRequest_LabelsEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct GetMetricsRequest_LabelsEntry_DoNotUseDefaultTypeInternal {
-  constexpr GetMetricsRequest_LabelsEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~GetMetricsRequest_LabelsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    GetMetricsRequest_LabelsEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetMetricsRequest_LabelsEntry_DoNotUseDefaultTypeInternal _GetMetricsRequest_LabelsEntry_DoNotUse_default_instance_;
 constexpr GetMetricsRequest::GetMetricsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : labels_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
-  , containers_()
+  : containers_()
+  , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , range_(nullptr)
   , interval_(0)
 
@@ -105,7 +98,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTektonMetricsResponseDefault
 }  // namespace v1alpha1
 }  // namespace metrics
 }  // namespace performance
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[6];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[5];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto = nullptr;
 
@@ -118,26 +111,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2fmetrics_2fv1alph
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::Range, date_from_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::Range, date_to_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::Range, timezone_),
-  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, labels_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, containers_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, interval_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, range_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, page_),
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, size_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, application_id_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, environment_id_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsRequest, runtime_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::performance::metrics::v1alpha1::GetMetricsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -163,16 +151,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_performance_2fmetrics_2fv1alph
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::performance::metrics::v1alpha1::Range)},
-  { 8, 15, sizeof(::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse)},
-  { 17, -1, sizeof(::performance::metrics::v1alpha1::GetMetricsRequest)},
-  { 28, -1, sizeof(::performance::metrics::v1alpha1::GetMetricsResponse)},
-  { 35, -1, sizeof(::performance::metrics::v1alpha1::GetTektonMetricsRequest)},
-  { 44, -1, sizeof(::performance::metrics::v1alpha1::GetTektonMetricsResponse)},
+  { 8, -1, sizeof(::performance::metrics::v1alpha1::GetMetricsRequest)},
+  { 23, -1, sizeof(::performance::metrics::v1alpha1::GetMetricsResponse)},
+  { 30, -1, sizeof(::performance::metrics::v1alpha1::GetTektonMetricsRequest)},
+  { 39, -1, sizeof(::performance::metrics::v1alpha1::GetTektonMetricsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_Range_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_GetMetricsRequest_LabelsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_GetMetricsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_GetMetricsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::performance::metrics::v1alpha1::_GetTektonMetricsRequest_default_instance_),
@@ -185,54 +171,55 @@ const char descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_
   "performance/metrics/v1alpha1/metrics.pro"
   "to\"Y\n\005Range\022\033\n\tdate_from\030\001 \001(\tR\010dateFrom"
   "\022\027\n\007date_to\030\002 \001(\tR\006dateTo\022\032\n\010timezone\030\003 "
-  "\001(\tR\010timezone\"\361\002\n\021GetMetricsRequest\022S\n\006l"
-  "abels\030\001 \003(\0132;.performance.metrics.v1alph"
-  "a1.GetMetricsRequest.LabelsEntryR\006labels"
-  "\022\036\n\ncontainers\030\002 \003(\tR\ncontainers\022I\n\010inte"
-  "rval\030\003 \001(\0162-.performance.metrics.v1alpha"
-  "1.MetricsIntervalR\010interval\0229\n\005range\030\004 \001"
-  "(\0132#.performance.metrics.v1alpha1.RangeR"
-  "\005range\022\022\n\004page\030\005 \001(\005R\004page\022\022\n\004size\030\006 \001(\005"
-  "R\004size\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\222\001\n\022GetMetrics"
-  "Response\022@\n\006memory\030\001 \003(\0132(.performance.m"
-  "etrics.v1alpha1.MetricItemR\006memory\022:\n\003cp"
-  "u\030\002 \003(\0132(.performance.metrics.v1alpha1.M"
-  "etricItemR\003cpu\"\250\001\n\027GetTektonMetricsReque"
-  "st\022*\n\021name_pipeline_run\030\001 \001(\tR\017namePipel"
-  "ineRun\0229\n\005range\030\002 \001(\0132#.performance.metr"
-  "ics.v1alpha1.RangeR\005range\022\022\n\004page\030\003 \001(\005R"
-  "\004page\022\022\n\004size\030\004 \001(\005R\004size\"d\n\030GetTektonMe"
-  "tricsResponse\022H\n\007results\030\001 \003(\0132..perform"
-  "ance.metrics.v1alpha1.TektonMetricItemR\007"
-  "results*\251\002\n\017MetricsInterval\022 \n\034METRICS_I"
-  "NTERVAL_UNSPECIFIED\020\000\022\035\n\031METRICS_INTERVA"
-  "L_1_MUNITE\020\001\022\036\n\032METRICS_INTERVAL_5_MUNIT"
-  "ES\020\002\022\037\n\033METRICS_INTERVAL_15_MUNITES\020\003\022\037\n"
-  "\033METRICS_INTERVAL_30_MUNITES\020\004\022\033\n\027METRIC"
-  "S_INTERVAL_1_HOUR\020\005\022\035\n\031METRICS_INTERVAL_"
-  "12_HOURS\020\006\022\032\n\026METRICS_INTERVAL_1_DAY\020\007\022\033"
-  "\n\027METRICS_INTERVAL_1_WEEK\020\0102\214\002\n\021MetricsA"
-  "PIService\022q\n\nGetMetrics\022/.performance.me"
-  "trics.v1alpha1.GetMetricsRequest\0320.perfo"
-  "rmance.metrics.v1alpha1.GetMetricsRespon"
-  "se\"\000\022\203\001\n\020GetTektonMetrics\0225.performance."
-  "metrics.v1alpha1.GetTektonMetricsRequest"
-  "\0326.performance.metrics.v1alpha1.GetTekto"
-  "nMetricsResponse\"\000B\260\001\n&io.cuemby.perform"
-  "ance.metrics.v1alpha1B\017MetricsApiProtoP\001"
-  "Z/github.com/performance-grpc-sdk/metric"
-  "sv1alpha1\242\002\003PFX\252\002\034Performance.Metrics.V1"
-  "Alpha1\312\002\034Performance\\Metrics\\V1Alpha1b\006p"
-  "roto3"
+  "\001(\tR\010timezone\"\226\003\n\021GetMetricsRequest\022\036\n\nc"
+  "ontainers\030\001 \003(\tR\ncontainers\022I\n\010interval\030"
+  "\002 \001(\0162-.performance.metrics.v1alpha1.Met"
+  "ricsIntervalR\010interval\0229\n\005range\030\003 \001(\0132#."
+  "performance.metrics.v1alpha1.RangeR\005rang"
+  "e\022\022\n\004page\030\004 \001(\005R\004page\022\022\n\004size\030\005 \001(\005R\004siz"
+  "e\022%\n\016application_id\030\006 \001(\tR\rapplicationId"
+  "\022%\n\016environment_id\030\007 \001(\tR\renvironmentId\022"
+  "\'\n\017organization_id\030\010 \001(\tR\016organizationId"
+  "\022\035\n\nproject_id\030\t \001(\tR\tprojectId\022\035\n\nrunti"
+  "me_id\030\n \001(\tR\truntimeId\"\222\001\n\022GetMetricsRes"
+  "ponse\022@\n\006memory\030\001 \003(\0132(.performance.metr"
+  "ics.v1alpha1.MetricItemR\006memory\022:\n\003cpu\030\002"
+  " \003(\0132(.performance.metrics.v1alpha1.Metr"
+  "icItemR\003cpu\"\250\001\n\027GetTektonMetricsRequest\022"
+  "*\n\021name_pipeline_run\030\001 \001(\tR\017namePipeline"
+  "Run\0229\n\005range\030\002 \001(\0132#.performance.metrics"
+  ".v1alpha1.RangeR\005range\022\022\n\004page\030\003 \001(\005R\004pa"
+  "ge\022\022\n\004size\030\004 \001(\005R\004size\"d\n\030GetTektonMetri"
+  "csResponse\022H\n\007results\030\001 \003(\0132..performanc"
+  "e.metrics.v1alpha1.TektonMetricItemR\007res"
+  "ults*\251\002\n\017MetricsInterval\022 \n\034METRICS_INTE"
+  "RVAL_UNSPECIFIED\020\000\022\035\n\031METRICS_INTERVAL_1"
+  "_MUNITE\020\001\022\036\n\032METRICS_INTERVAL_5_MUNITES\020"
+  "\002\022\037\n\033METRICS_INTERVAL_15_MUNITES\020\003\022\037\n\033ME"
+  "TRICS_INTERVAL_30_MUNITES\020\004\022\033\n\027METRICS_I"
+  "NTERVAL_1_HOUR\020\005\022\035\n\031METRICS_INTERVAL_12_"
+  "HOURS\020\006\022\032\n\026METRICS_INTERVAL_1_DAY\020\007\022\033\n\027M"
+  "ETRICS_INTERVAL_1_WEEK\020\0102\214\002\n\021MetricsAPIS"
+  "ervice\022q\n\nGetMetrics\022/.performance.metri"
+  "cs.v1alpha1.GetMetricsRequest\0320.performa"
+  "nce.metrics.v1alpha1.GetMetricsResponse\""
+  "\000\022\203\001\n\020GetTektonMetrics\0225.performance.met"
+  "rics.v1alpha1.GetTektonMetricsRequest\0326."
+  "performance.metrics.v1alpha1.GetTektonMe"
+  "tricsResponse\"\000B\260\001\n&io.cuemby.performanc"
+  "e.metrics.v1alpha1B\017MetricsApiProtoP\001Z/g"
+  "ithub.com/performance-grpc-sdk/metricsv1"
+  "alpha1\242\002\003PFX\252\002\034Performance.Metrics.V1Alp"
+  "ha1\312\002\034Performance\\Metrics\\V1Alpha1b\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_deps[1] = {
   &::descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto = {
-  false, false, 1765, descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto, "performance/metrics/v1alpha1/metrics_api.proto", 
-  &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once, descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_deps, 1, 6,
+  false, false, 1802, descriptor_table_protodef_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto, "performance/metrics/v1alpha1/metrics_api.proto", 
+  &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once, descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto::offsets,
   file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto, file_level_enum_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto, file_level_service_descriptors_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto,
 };
@@ -553,20 +540,6 @@ void Range::InternalSwap(Range* other) {
 
 // ===================================================================
 
-GetMetricsRequest_LabelsEntry_DoNotUse::GetMetricsRequest_LabelsEntry_DoNotUse() {}
-GetMetricsRequest_LabelsEntry_DoNotUse::GetMetricsRequest_LabelsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void GetMetricsRequest_LabelsEntry_DoNotUse::MergeFrom(const GetMetricsRequest_LabelsEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata GetMetricsRequest_LabelsEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_getter, &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once,
-      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[1]);
-}
-
-// ===================================================================
-
 class GetMetricsRequest::_Internal {
  public:
   static const ::performance::metrics::v1alpha1::Range& range(const GetMetricsRequest* msg);
@@ -579,7 +552,6 @@ GetMetricsRequest::_Internal::range(const GetMetricsRequest* msg) {
 GetMetricsRequest::GetMetricsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  labels_(arena),
   containers_(arena) {
   SharedCtor();
   if (!is_message_owned) {
@@ -591,7 +563,31 @@ GetMetricsRequest::GetMetricsRequest(const GetMetricsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       containers_(from.containers_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  labels_.MergeFrom(from.labels_);
+  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_id().empty()) {
+    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
+      GetArenaForAllocation());
+  }
+  environment_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_environment_id().empty()) {
+    environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_id(), 
+      GetArenaForAllocation());
+  }
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
+  runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_runtime_id().empty()) {
+    runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_range()) {
     range_ = new ::performance::metrics::v1alpha1::Range(*from.range_);
   } else {
@@ -604,6 +600,11 @@ GetMetricsRequest::GetMetricsRequest(const GetMetricsRequest& from)
 }
 
 inline void GetMetricsRequest::SharedCtor() {
+application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&range_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&size_) -
@@ -619,18 +620,19 @@ GetMetricsRequest::~GetMetricsRequest() {
 
 inline void GetMetricsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  environment_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  runtime_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete range_;
 }
 
 void GetMetricsRequest::ArenaDtor(void* object) {
   GetMetricsRequest* _this = reinterpret_cast< GetMetricsRequest* >(object);
   (void)_this;
-  _this->labels_. ~MapField();
 }
-inline void GetMetricsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &GetMetricsRequest::ArenaDtor);
-  }
+void GetMetricsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
 void GetMetricsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
@@ -642,8 +644,12 @@ void GetMetricsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  labels_.Clear();
   containers_.Clear();
+  application_id_.ClearToEmpty();
+  environment_id_.ClearToEmpty();
+  organization_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
+  runtime_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && range_ != nullptr) {
     delete range_;
   }
@@ -660,21 +666,9 @@ const char* GetMetricsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // map<string, string> labels = 1 [json_name = "labels"];
+      // repeated string containers = 1 [json_name = "containers"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&labels_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated string containers = 2 [json_name = "containers"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -683,35 +677,80 @@ const char* GetMetricsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
             CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.GetMetricsRequest.containers"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
-      // .performance.metrics.v1alpha1.MetricsInterval interval = 3 [json_name = "interval"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // .performance.metrics.v1alpha1.MetricsInterval interval = 2 [json_name = "interval"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_interval(static_cast<::performance::metrics::v1alpha1::MetricsInterval>(val));
         } else goto handle_unusual;
         continue;
-      // .performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // .performance.metrics.v1alpha1.Range range = 3 [json_name = "range"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_range(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 page = 5 [json_name = "page"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // int32 page = 4 [json_name = "page"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           page_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 size = 6 [json_name = "size"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+      // int32 size = 5 [json_name = "size"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string application_id = 6 [json_name = "applicationId"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_application_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.GetMetricsRequest.application_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string environment_id = 7 [json_name = "environmentId"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_environment_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.GetMetricsRequest.environment_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string organization_id = 8 [json_name = "organizationId"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.GetMetricsRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string project_id = 9 [json_name = "projectId"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.GetMetricsRequest.project_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string runtime_id = 10 [json_name = "runtimeId"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_runtime_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "performance.metrics.v1alpha1.GetMetricsRequest.runtime_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -744,87 +783,91 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, string> labels = 1 [json_name = "labels"];
-  if (!this->_internal_labels().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "performance.metrics.v1alpha1.GetMetricsRequest.LabelsEntry.key");
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "performance.metrics.v1alpha1.GetMetricsRequest.LabelsEntry.value");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_labels().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_labels().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_labels().begin();
-          it != this->_internal_labels().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = GetMetricsRequest_LabelsEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_labels().begin();
-          it != this->_internal_labels().end(); ++it) {
-        target = GetMetricsRequest_LabelsEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // repeated string containers = 2 [json_name = "containers"];
+  // repeated string containers = 1 [json_name = "containers"];
   for (int i = 0, n = this->_internal_containers_size(); i < n; i++) {
     const auto& s = this->_internal_containers(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "performance.metrics.v1alpha1.GetMetricsRequest.containers");
-    target = stream->WriteString(2, s, target);
+    target = stream->WriteString(1, s, target);
   }
 
-  // .performance.metrics.v1alpha1.MetricsInterval interval = 3 [json_name = "interval"];
+  // .performance.metrics.v1alpha1.MetricsInterval interval = 2 [json_name = "interval"];
   if (this->_internal_interval() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_interval(), target);
+      2, this->_internal_interval(), target);
   }
 
-  // .performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];
+  // .performance.metrics.v1alpha1.Range range = 3 [json_name = "range"];
   if (this->_internal_has_range()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::range(this), target, stream);
+        3, _Internal::range(this), target, stream);
   }
 
-  // int32 page = 5 [json_name = "page"];
+  // int32 page = 4 [json_name = "page"];
   if (this->_internal_page() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_page(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_page(), target);
   }
 
-  // int32 size = 6 [json_name = "size"];
+  // int32 size = 5 [json_name = "size"];
   if (this->_internal_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_size(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_size(), target);
+  }
+
+  // string application_id = 6 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.GetMetricsRequest.application_id");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_application_id(), target);
+  }
+
+  // string environment_id = 7 [json_name = "environmentId"];
+  if (!this->_internal_environment_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_environment_id().data(), static_cast<int>(this->_internal_environment_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.GetMetricsRequest.environment_id");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_environment_id(), target);
+  }
+
+  // string organization_id = 8 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.GetMetricsRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_organization_id(), target);
+  }
+
+  // string project_id = 9 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.GetMetricsRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_project_id(), target);
+  }
+
+  // string runtime_id = 10 [json_name = "runtimeId"];
+  if (!this->_internal_runtime_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_runtime_id().data(), static_cast<int>(this->_internal_runtime_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "performance.metrics.v1alpha1.GetMetricsRequest.runtime_id");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_runtime_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -843,16 +886,7 @@ size_t GetMetricsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> labels = 1 [json_name = "labels"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_labels_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-      it = this->_internal_labels().begin();
-      it != this->_internal_labels().end(); ++it) {
-    total_size += GetMetricsRequest_LabelsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
-
-  // repeated string containers = 2 [json_name = "containers"];
+  // repeated string containers = 1 [json_name = "containers"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(containers_.size());
   for (int i = 0, n = containers_.size(); i < n; i++) {
@@ -860,27 +894,62 @@ size_t GetMetricsRequest::ByteSizeLong() const {
       containers_.Get(i));
   }
 
-  // .performance.metrics.v1alpha1.Range range = 4 [json_name = "range"];
+  // string application_id = 6 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_id());
+  }
+
+  // string environment_id = 7 [json_name = "environmentId"];
+  if (!this->_internal_environment_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_environment_id());
+  }
+
+  // string organization_id = 8 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string project_id = 9 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
+  // string runtime_id = 10 [json_name = "runtimeId"];
+  if (!this->_internal_runtime_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_runtime_id());
+  }
+
+  // .performance.metrics.v1alpha1.Range range = 3 [json_name = "range"];
   if (this->_internal_has_range()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *range_);
   }
 
-  // .performance.metrics.v1alpha1.MetricsInterval interval = 3 [json_name = "interval"];
+  // .performance.metrics.v1alpha1.MetricsInterval interval = 2 [json_name = "interval"];
   if (this->_internal_interval() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_interval());
   }
 
-  // int32 page = 5 [json_name = "page"];
+  // int32 page = 4 [json_name = "page"];
   if (this->_internal_page() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_page());
   }
 
-  // int32 size = 6 [json_name = "size"];
+  // int32 size = 5 [json_name = "size"];
   if (this->_internal_size() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
@@ -915,8 +984,22 @@ void GetMetricsRequest::MergeFrom(const GetMetricsRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  labels_.MergeFrom(from.labels_);
   containers_.MergeFrom(from.containers_);
+  if (!from._internal_application_id().empty()) {
+    _internal_set_application_id(from._internal_application_id());
+  }
+  if (!from._internal_environment_id().empty()) {
+    _internal_set_environment_id(from._internal_environment_id());
+  }
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
+  if (!from._internal_runtime_id().empty()) {
+    _internal_set_runtime_id(from._internal_runtime_id());
+  }
   if (from._internal_has_range()) {
     _internal_mutable_range()->::performance::metrics::v1alpha1::Range::MergeFrom(from._internal_range());
   }
@@ -946,8 +1029,32 @@ bool GetMetricsRequest::IsInitialized() const {
 void GetMetricsRequest::InternalSwap(GetMetricsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  labels_.InternalSwap(&other->labels_);
   containers_.InternalSwap(&other->containers_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_id_, GetArenaForAllocation(),
+      &other->application_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &environment_id_, GetArenaForAllocation(),
+      &other->environment_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &runtime_id_, GetArenaForAllocation(),
+      &other->runtime_id_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetMetricsRequest, size_)
       + sizeof(GetMetricsRequest::size_)
@@ -959,7 +1066,7 @@ void GetMetricsRequest::InternalSwap(GetMetricsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetMetricsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_getter, &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once,
-      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[2]);
+      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[1]);
 }
 
 // ===================================================================
@@ -1187,7 +1294,7 @@ void GetMetricsResponse::InternalSwap(GetMetricsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetMetricsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_getter, &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once,
-      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[3]);
+      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[2]);
 }
 
 // ===================================================================
@@ -1489,7 +1596,7 @@ void GetTektonMetricsRequest::InternalSwap(GetTektonMetricsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTektonMetricsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_getter, &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once,
-      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[4]);
+      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[3]);
 }
 
 // ===================================================================
@@ -1682,7 +1789,7 @@ void GetTektonMetricsResponse::InternalSwap(GetTektonMetricsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTektonMetricsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_getter, &descriptor_table_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto_once,
-      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[5]);
+      file_level_metadata_performance_2fmetrics_2fv1alpha1_2fmetrics_5fapi_2eproto[4]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1692,9 +1799,6 @@ void GetTektonMetricsResponse::InternalSwap(GetTektonMetricsResponse* other) {
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::performance::metrics::v1alpha1::Range* Arena::CreateMaybeMessage< ::performance::metrics::v1alpha1::Range >(Arena* arena) {
   return Arena::CreateMessageInternal< ::performance::metrics::v1alpha1::Range >(arena);
-}
-template<> PROTOBUF_NOINLINE ::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse* Arena::CreateMaybeMessage< ::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::performance::metrics::v1alpha1::GetMetricsRequest_LabelsEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::performance::metrics::v1alpha1::GetMetricsRequest* Arena::CreateMaybeMessage< ::performance::metrics::v1alpha1::GetMetricsRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::performance::metrics::v1alpha1::GetMetricsRequest >(arena);
