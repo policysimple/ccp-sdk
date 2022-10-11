@@ -29,6 +29,7 @@ service RuntimeAPIService{
 message CreateRuntimeRequest {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
     string status = 2;
+    string user_id = 3;
 }
 
 message CreateRuntimeResponse {
@@ -39,6 +40,7 @@ message CreateRuntimeResponse {
 message UpdateRuntimeRequest {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
     string status = 2;
+    string user_id = 3;
 }
 
 message UpdateRuntimeResponse {
@@ -62,6 +64,7 @@ message DeleteRuntimeRequest {
     string integration = 3;
     uint32 project_id = 4;
     uint32 organization_id = 5;
+    string user_id = 6;
 }
 
 message DeleteRuntimeResponse {
@@ -115,6 +118,7 @@ message ResponseMessageDeleteRuntimeByAppIdResponse {
 
 message RebuildRuntimeRequest {
     string runtime_id = 1;
+    string user_id = 2;
 }
 
 message RebuildRuntimeResponse {

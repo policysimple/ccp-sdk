@@ -21,6 +21,10 @@ class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
     protected $status = '';
+    /**
+     * Generated from protobuf field <code>string user_id = 3 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Pipelines\Runtime\V1Alpha1\Runtime $runtime
      *     @type string $status
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +92,28 @@ class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

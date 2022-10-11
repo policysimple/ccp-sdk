@@ -33,6 +33,10 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
+    /**
+     * Generated from protobuf field <code>string user_id = 6 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
      *     @type string $integration
      *     @type int $project_id
      *     @type int $organization_id
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class DeleteRuntimeRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 6 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 6 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

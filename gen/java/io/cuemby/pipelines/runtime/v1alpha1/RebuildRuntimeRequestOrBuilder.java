@@ -18,4 +18,16 @@ public interface RebuildRuntimeRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRuntimeIdBytes();
+
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

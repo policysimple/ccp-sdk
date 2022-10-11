@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     runtimeId_ = "";
     name_ = "";
     integration_ = "";
+    userId_ = "";
   }
 
   @java.lang.Override
@@ -77,6 +78,12 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             organizationId_ = input.readUInt32();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId_ = s;
             break;
           }
           default: {
@@ -247,6 +254,44 @@ private static final long serialVersionUID = 0L;
     return organizationId_;
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object userId_;
+  /**
+   * <code>string user_id = 6 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user_id = 6 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -276,6 +321,9 @@ private static final long serialVersionUID = 0L;
     if (organizationId_ != 0) {
       output.writeUInt32(5, organizationId_);
     }
+    if (!getUserIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -302,6 +350,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(5, organizationId_);
     }
+    if (!getUserIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -327,6 +378,8 @@ private static final long serialVersionUID = 0L;
         != other.getProjectId()) return false;
     if (getOrganizationId()
         != other.getOrganizationId()) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,6 +401,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProjectId();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -491,6 +546,8 @@ private static final long serialVersionUID = 0L;
 
       organizationId_ = 0;
 
+      userId_ = "";
+
       return this;
     }
 
@@ -522,6 +579,7 @@ private static final long serialVersionUID = 0L;
       result.integration_ = integration_;
       result.projectId_ = projectId_;
       result.organizationId_ = organizationId_;
+      result.userId_ = userId_;
       onBuilt();
       return result;
     }
@@ -587,6 +645,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getOrganizationId() != 0) {
         setOrganizationId(other.getOrganizationId());
+      }
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -903,6 +965,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearOrganizationId() {
       
       organizationId_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userId_ = "";
+    /**
+     * <code>string user_id = 6 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string user_id = 6 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user_id = 6 [json_name = "userId"];</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_id = 6 [json_name = "userId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId_ = getDefaultInstance().getUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_id = 6 [json_name = "userId"];</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userId_ = value;
       onChanged();
       return this;
     }
