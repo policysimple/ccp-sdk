@@ -368,7 +368,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 		log.Printf("%s: %v", "Error delete payment", err)
 		if err != nil {
 			log.Printf("%s: %v", "Error delete payment", err)
-			return nil, fmt.Errorf("%s: %v", messageLastPayment, err)
+			return nil, fmt.Errorf("%s: %w", messageLastPayment, err)
 		}
 	}
 	return response, nil
