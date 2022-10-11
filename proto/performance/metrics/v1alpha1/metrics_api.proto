@@ -37,12 +37,17 @@ message Range {
 }
 
 message GetMetricsRequest {
-    map<string, string> labels = 1;
     repeated string containers = 2;
     MetricsInterval interval = 3;
-    Range range =4;
+    Range range = 4;
     int32 page = 5;
     int32 size = 6;
+
+    string application_id = 7;
+    string environment_id = 8;
+    string organization_id = 9;
+    string project_id = 10;
+    string runtime_id = 11;
 }
 
 message GetMetricsResponse {

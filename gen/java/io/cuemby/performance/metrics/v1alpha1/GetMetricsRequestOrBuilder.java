@@ -8,40 +8,6 @@ public interface GetMetricsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>map&lt;string, string&gt; labels = 1 [json_name = "labels"];</code>
-   */
-  int getLabelsCount();
-  /**
-   * <code>map&lt;string, string&gt; labels = 1 [json_name = "labels"];</code>
-   */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
-  /**
-   * <code>map&lt;string, string&gt; labels = 1 [json_name = "labels"];</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
-  /**
-   * <code>map&lt;string, string&gt; labels = 1 [json_name = "labels"];</code>
-   */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
-  /**
-   * <code>map&lt;string, string&gt; labels = 1 [json_name = "labels"];</code>
-   */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
-
-  /**
    * <code>repeated string containers = 2 [json_name = "containers"];</code>
    * @return A list containing the containers.
    */
@@ -103,4 +69,64 @@ public interface GetMetricsRequestOrBuilder extends
    * @return The size.
    */
   int getSize();
+
+  /**
+   * <code>string application_id = 7 [json_name = "applicationId"];</code>
+   * @return The applicationId.
+   */
+  java.lang.String getApplicationId();
+  /**
+   * <code>string application_id = 7 [json_name = "applicationId"];</code>
+   * @return The bytes for applicationId.
+   */
+  com.google.protobuf.ByteString
+      getApplicationIdBytes();
+
+  /**
+   * <code>string environment_id = 8 [json_name = "environmentId"];</code>
+   * @return The environmentId.
+   */
+  java.lang.String getEnvironmentId();
+  /**
+   * <code>string environment_id = 8 [json_name = "environmentId"];</code>
+   * @return The bytes for environmentId.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentIdBytes();
+
+  /**
+   * <code>string organization_id = 9 [json_name = "organizationId"];</code>
+   * @return The organizationId.
+   */
+  java.lang.String getOrganizationId();
+  /**
+   * <code>string organization_id = 9 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationIdBytes();
+
+  /**
+   * <code>string project_id = 10 [json_name = "projectId"];</code>
+   * @return The projectId.
+   */
+  java.lang.String getProjectId();
+  /**
+   * <code>string project_id = 10 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
+   */
+  com.google.protobuf.ByteString
+      getProjectIdBytes();
+
+  /**
+   * <code>string runtime_id = 11 [json_name = "runtimeId"];</code>
+   * @return The runtimeId.
+   */
+  java.lang.String getRuntimeId();
+  /**
+   * <code>string runtime_id = 11 [json_name = "runtimeId"];</code>
+   * @return The bytes for runtimeId.
+   */
+  com.google.protobuf.ByteString
+      getRuntimeIdBytes();
 }

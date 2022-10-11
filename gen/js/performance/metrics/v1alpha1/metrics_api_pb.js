@@ -357,12 +357,16 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.toObject = functi
  */
 proto.performance.metrics.v1alpha1.GetMetricsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
     containersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     interval: jspb.Message.getFieldWithDefault(msg, 3, 0),
     range: (f = msg.getRange()) && proto.performance.metrics.v1alpha1.Range.toObject(includeInstance, f),
     page: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    size: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    size: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    environmentId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    runtimeId: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -399,12 +403,6 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.addContainers(value);
@@ -425,6 +423,26 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.deserializeBinaryFromReader
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSize(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEnvironmentId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrganizationId(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectId(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRuntimeId(value);
       break;
     default:
       reader.skipField();
@@ -455,10 +473,6 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.serializeBinary =
  */
 proto.performance.metrics.v1alpha1.GetMetricsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
   f = message.getContainersList();
   if (f.length > 0) {
     writer.writeRepeatedString(
@@ -495,29 +509,42 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.serializeBinaryToWriter = f
       f
     );
   }
+  f = message.getApplicationId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getEnvironmentId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getRuntimeId();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
 };
-
-
-/**
- * map<string, string> labels = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
- */
-proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
 
 
 /**
@@ -645,6 +672,96 @@ proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getSize = functio
  */
 proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setSize = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional string application_id = 7;
+ * @return {string}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setApplicationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string environment_id = 8;
+ * @return {string}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getEnvironmentId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setEnvironmentId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string organization_id = 9;
+ * @return {string}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string project_id = 10;
+ * @return {string}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string runtime_id = 11;
+ * @return {string}
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.getRuntimeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.performance.metrics.v1alpha1.GetMetricsRequest} returns this
+ */
+proto.performance.metrics.v1alpha1.GetMetricsRequest.prototype.setRuntimeId = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
