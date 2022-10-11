@@ -956,7 +956,7 @@ func (x *ResponseMessageDeleteRuntimeByAppIdResponse) GetError() string {
 	return ""
 }
 
-type RefreshRuntimeRequest struct {
+type RebuildRuntimeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -964,8 +964,8 @@ type RefreshRuntimeRequest struct {
 	RuntimeId string `protobuf:"bytes,1,opt,name=runtime_id,json=runtimeId,proto3" json:"runtime_id,omitempty"`
 }
 
-func (x *RefreshRuntimeRequest) Reset() {
-	*x = RefreshRuntimeRequest{}
+func (x *RebuildRuntimeRequest) Reset() {
+	*x = RebuildRuntimeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pipelines_runtime_v1alpha1_runtime_api_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -973,13 +973,13 @@ func (x *RefreshRuntimeRequest) Reset() {
 	}
 }
 
-func (x *RefreshRuntimeRequest) String() string {
+func (x *RebuildRuntimeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RefreshRuntimeRequest) ProtoMessage() {}
+func (*RebuildRuntimeRequest) ProtoMessage() {}
 
-func (x *RefreshRuntimeRequest) ProtoReflect() protoreflect.Message {
+func (x *RebuildRuntimeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_pipelines_runtime_v1alpha1_runtime_api_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -991,19 +991,19 @@ func (x *RefreshRuntimeRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RefreshRuntimeRequest.ProtoReflect.Descriptor instead.
-func (*RefreshRuntimeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use RebuildRuntimeRequest.ProtoReflect.Descriptor instead.
+func (*RebuildRuntimeRequest) Descriptor() ([]byte, []int) {
 	return file_pipelines_runtime_v1alpha1_runtime_api_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *RefreshRuntimeRequest) GetRuntimeId() string {
+func (x *RebuildRuntimeRequest) GetRuntimeId() string {
 	if x != nil {
 		return x.RuntimeId
 	}
 	return ""
 }
 
-type RefreshRuntimeResponse struct {
+type RebuildRuntimeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1012,8 +1012,8 @@ type RefreshRuntimeResponse struct {
 	Status  string   `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (x *RefreshRuntimeResponse) Reset() {
-	*x = RefreshRuntimeResponse{}
+func (x *RebuildRuntimeResponse) Reset() {
+	*x = RebuildRuntimeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pipelines_runtime_v1alpha1_runtime_api_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1021,13 +1021,13 @@ func (x *RefreshRuntimeResponse) Reset() {
 	}
 }
 
-func (x *RefreshRuntimeResponse) String() string {
+func (x *RebuildRuntimeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RefreshRuntimeResponse) ProtoMessage() {}
+func (*RebuildRuntimeResponse) ProtoMessage() {}
 
-func (x *RefreshRuntimeResponse) ProtoReflect() protoreflect.Message {
+func (x *RebuildRuntimeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_pipelines_runtime_v1alpha1_runtime_api_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1039,19 +1039,19 @@ func (x *RefreshRuntimeResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RefreshRuntimeResponse.ProtoReflect.Descriptor instead.
-func (*RefreshRuntimeResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use RebuildRuntimeResponse.ProtoReflect.Descriptor instead.
+func (*RebuildRuntimeResponse) Descriptor() ([]byte, []int) {
 	return file_pipelines_runtime_v1alpha1_runtime_api_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *RefreshRuntimeResponse) GetRuntime() *Runtime {
+func (x *RebuildRuntimeResponse) GetRuntime() *Runtime {
 	if x != nil {
 		return x.Runtime
 	}
 	return nil
 }
 
-func (x *RefreshRuntimeResponse) GetStatus() string {
+func (x *RebuildRuntimeResponse) GetStatus() string {
 	if x != nil {
 		return x.Status
 	}
@@ -1188,11 +1188,11 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_rawDesc = []byte{
 	0x42, 0x79, 0x41, 0x70, 0x70, 0x49, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73,
 	0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22, 0x36, 0x0a, 0x15, 0x52, 0x65, 0x66, 0x72, 0x65,
-	0x73, 0x68, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22, 0x36, 0x0a, 0x15, 0x52, 0x65, 0x62, 0x75, 0x69,
+	0x6c, 0x64, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x1d, 0x0a, 0x0a, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x49, 0x64, 0x22,
-	0x6f, 0x0a, 0x16, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d,
+	0x6f, 0x0a, 0x16, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d,
 	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x07, 0x72, 0x75, 0x6e,
 	0x74, 0x69, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70, 0x69, 0x70,
 	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x2e, 0x76,
@@ -1269,13 +1269,13 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_rawDesc = []byte{
 	0x73, 0x74, 0x1a, 0x30, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x72,
 	0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
 	0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x79, 0x0a, 0x0e, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73,
-	0x68, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x31, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x79, 0x0a, 0x0e, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c,
+	0x64, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x31, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c,
 	0x69, 0x6e, 0x65, 0x73, 0x2e, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x2e, 0x76, 0x31, 0x61,
-	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x52, 0x75, 0x6e,
+	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x52, 0x75, 0x6e,
 	0x74, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x70, 0x69,
 	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x2e,
-	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68,
+	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64,
 	0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
 	0x00, 0x42, 0xb0, 0x01, 0x0a, 0x24, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e,
 	0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d,
@@ -1321,8 +1321,8 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_goTypes = []interface{}{
 	(*ListRuntimesResponse)(nil),                        // 13: pipelines.runtime.v1alpha1.ListRuntimesResponse
 	(*ResponseMessageDeleteRuntimeByAppIdRequest)(nil),  // 14: pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest
 	(*ResponseMessageDeleteRuntimeByAppIdResponse)(nil), // 15: pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse
-	(*RefreshRuntimeRequest)(nil),                       // 16: pipelines.runtime.v1alpha1.RefreshRuntimeRequest
-	(*RefreshRuntimeResponse)(nil),                      // 17: pipelines.runtime.v1alpha1.RefreshRuntimeResponse
+	(*RebuildRuntimeRequest)(nil),                       // 16: pipelines.runtime.v1alpha1.RebuildRuntimeRequest
+	(*RebuildRuntimeResponse)(nil),                      // 17: pipelines.runtime.v1alpha1.RebuildRuntimeResponse
 	(*Runtime)(nil),                                     // 18: pipelines.runtime.v1alpha1.Runtime
 	(*RuntimeList)(nil),                                 // 19: pipelines.runtime.v1alpha1.RuntimeList
 }
@@ -1335,7 +1335,7 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_depIdxs = []int32{
 	18, // 5: pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
 	18, // 6: pipelines.runtime.v1alpha1.GetRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
 	19, // 7: pipelines.runtime.v1alpha1.ListRuntimesResponse.runtime_list:type_name -> pipelines.runtime.v1alpha1.RuntimeList
-	18, // 8: pipelines.runtime.v1alpha1.RefreshRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
+	18, // 8: pipelines.runtime.v1alpha1.RebuildRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
 	10, // 9: pipelines.runtime.v1alpha1.RuntimeAPIService.GetRuntime:input_type -> pipelines.runtime.v1alpha1.GetRuntimeRequest
 	0,  // 10: pipelines.runtime.v1alpha1.RuntimeAPIService.CreateRuntime:input_type -> pipelines.runtime.v1alpha1.CreateRuntimeRequest
 	2,  // 11: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateRuntime:input_type -> pipelines.runtime.v1alpha1.UpdateRuntimeRequest
@@ -1344,7 +1344,7 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_depIdxs = []int32{
 	6,  // 14: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntime:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimeRequest
 	8,  // 15: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByApplication:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest
 	12, // 16: pipelines.runtime.v1alpha1.RuntimeAPIService.ListRuntimes:input_type -> pipelines.runtime.v1alpha1.ListRuntimesRequest
-	16, // 17: pipelines.runtime.v1alpha1.RuntimeAPIService.RefreshRuntime:input_type -> pipelines.runtime.v1alpha1.RefreshRuntimeRequest
+	16, // 17: pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime:input_type -> pipelines.runtime.v1alpha1.RebuildRuntimeRequest
 	11, // 18: pipelines.runtime.v1alpha1.RuntimeAPIService.GetRuntime:output_type -> pipelines.runtime.v1alpha1.GetRuntimeResponse
 	1,  // 19: pipelines.runtime.v1alpha1.RuntimeAPIService.CreateRuntime:output_type -> pipelines.runtime.v1alpha1.CreateRuntimeResponse
 	3,  // 20: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateRuntime:output_type -> pipelines.runtime.v1alpha1.UpdateRuntimeResponse
@@ -1353,7 +1353,7 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_depIdxs = []int32{
 	7,  // 23: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntime:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimeResponse
 	9,  // 24: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByApplication:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse
 	13, // 25: pipelines.runtime.v1alpha1.RuntimeAPIService.ListRuntimes:output_type -> pipelines.runtime.v1alpha1.ListRuntimesResponse
-	17, // 26: pipelines.runtime.v1alpha1.RuntimeAPIService.RefreshRuntime:output_type -> pipelines.runtime.v1alpha1.RefreshRuntimeResponse
+	17, // 26: pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime:output_type -> pipelines.runtime.v1alpha1.RebuildRuntimeResponse
 	18, // [18:27] is the sub-list for method output_type
 	9,  // [9:18] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -1561,7 +1561,7 @@ func file_pipelines_runtime_v1alpha1_runtime_api_proto_init() {
 			}
 		}
 		file_pipelines_runtime_v1alpha1_runtime_api_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RefreshRuntimeRequest); i {
+			switch v := v.(*RebuildRuntimeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1573,7 +1573,7 @@ func file_pipelines_runtime_v1alpha1_runtime_api_proto_init() {
 			}
 		}
 		file_pipelines_runtime_v1alpha1_runtime_api_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RefreshRuntimeResponse); i {
+			switch v := v.(*RebuildRuntimeResponse); i {
 			case 0:
 				return &v.state
 			case 1:

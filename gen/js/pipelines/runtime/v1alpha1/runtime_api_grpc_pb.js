@@ -115,26 +115,26 @@ function deserialize_pipelines_runtime_v1alpha1_ListRuntimesResponse(buffer_arg)
   return pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_pipelines_runtime_v1alpha1_RefreshRuntimeRequest(arg) {
-  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.RefreshRuntimeRequest)) {
-    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.RefreshRuntimeRequest');
+function serialize_pipelines_runtime_v1alpha1_RebuildRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.RebuildRuntimeRequest');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_pipelines_runtime_v1alpha1_RefreshRuntimeRequest(buffer_arg) {
-  return pipelines_runtime_v1alpha1_runtime_api_pb.RefreshRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_pipelines_runtime_v1alpha1_RebuildRuntimeRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_pipelines_runtime_v1alpha1_RefreshRuntimeResponse(arg) {
-  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.RefreshRuntimeResponse)) {
-    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.RefreshRuntimeResponse');
+function serialize_pipelines_runtime_v1alpha1_RebuildRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.RebuildRuntimeResponse');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_pipelines_runtime_v1alpha1_RefreshRuntimeResponse(buffer_arg) {
-  return pipelines_runtime_v1alpha1_runtime_api_pb.RefreshRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_pipelines_runtime_v1alpha1_RebuildRuntimeResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_pipelines_runtime_v1alpha1_ResponseMessageDeleteRuntimeByAppIdRequest(arg) {
@@ -293,16 +293,16 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     responseSerialize: serialize_pipelines_runtime_v1alpha1_ListRuntimesResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_ListRuntimesResponse,
   },
-  refreshRuntime: {
-    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/RefreshRuntime',
+  rebuildRuntime: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime',
     requestStream: false,
     responseStream: false,
-    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.RefreshRuntimeRequest,
-    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.RefreshRuntimeResponse,
-    requestSerialize: serialize_pipelines_runtime_v1alpha1_RefreshRuntimeRequest,
-    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_RefreshRuntimeRequest,
-    responseSerialize: serialize_pipelines_runtime_v1alpha1_RefreshRuntimeResponse,
-    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_RefreshRuntimeResponse,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_RebuildRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_RebuildRuntimeRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_RebuildRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_RebuildRuntimeResponse,
   },
 };
 

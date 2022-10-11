@@ -177,7 +177,7 @@ func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.
 	return response, nil
 }
 
-func RefreshRuntime(in *runtimepkgv1.RefreshRuntimeRequest) (response *runtimepkgv1.RefreshRuntimeResponse, err error) {
+func RebuildRuntime(in *runtimepkgv1.RebuildRuntimeRequest) (response *runtimepkgv1.RebuildRuntimeResponse, err error) {
 	d, err := time.ParseDuration(runtimeServiceTimeout)
 	if err != nil {
 		return
@@ -185,13 +185,13 @@ func RefreshRuntime(in *runtimepkgv1.RefreshRuntimeRequest) (response *runtimepk
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err = client.RefreshRuntime(ctx, in)
+	response, err = client.RebuildRuntime(ctx, in)
 
 	if err != nil {
-		log.Printf("%s: %v", "error refresh runtime", err)
+		log.Printf("%s: %v", "error Rebuild runtime", err)
 		return nil, status.Errorf(
 			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error refresh runtime", err),
+			fmt.Sprintf("%s: %v", "error Rebuild runtime", err),
 		)
 	}
 	return response, nil
