@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetTpChainsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
+     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
      */
-    protected $emtpy = null;
+    protected $offset = 0;
+    /**
+     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     */
+    protected $limit = 0;
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class GetTpChainsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\GPBEmpty $emtpy
+     *     @type int|string $offset
+     *     @type int|string $limit
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +38,45 @@ class GetTpChainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     * @return \Google\Protobuf\GPBEmpty|null
+     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * @return int|string
      */
-    public function getEmtpy()
+    public function getOffset()
     {
-        return $this->emtpy;
-    }
-
-    public function hasEmtpy()
-    {
-        return isset($this->emtpy);
-    }
-
-    public function clearEmtpy()
-    {
-        unset($this->emtpy);
+        return $this->offset;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Empty emtpy = 1 [json_name = "emtpy"];</code>
-     * @param \Google\Protobuf\GPBEmpty $var
+     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setEmtpy($var)
+    public function setOffset($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
-        $this->emtpy = $var;
+        GPBUtil::checkInt64($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * @return int|string
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->limit = $var;
 
         return $this;
     }

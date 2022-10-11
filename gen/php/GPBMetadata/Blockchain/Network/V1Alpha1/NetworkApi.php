@@ -15,20 +15,31 @@ class NetworkApi
           return;
         }
         \GPBMetadata\Blockchain\Network\V1Alpha1\Network::initOnce();
+        \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¢
--blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1"¥
+‰
+-blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"¥
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetworkM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization"’
-AddPeerToOrganizationRequestM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization#
-blockchain_id (	RblockchainId"V
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization"G
+AddPeerToOrganizationRequest\'
+organization_id (	RorganizationId"V
 CreateChannelRequest>
-channel (2$.blockchain.network.v1alpha1.ChannelRchannel"\'
-GetBlockchainsRequest
-id (	Rid"j
+channel (2$.blockchain.network.v1alpha1.ChannelRchannel"E
+GetBlockchainsRequest
+offset (Roffset
+limit (Rlimit"f
+GetBlockchainsByUserIdRequest
+user_id (	RuserId
+offset (Roffset
+limit (Rlimit"*
+GetBlockchainByIdRequest
+id (	Rid"z
+%GetOrganizationsByBlockchainIdRequest#
+blockchain_id (	RblockchainId
+offset (Roffset
+limit (Rlimit"j
 CreateOrganizationRequestM
 organization (2).blockchain.network.v1alpha1.OrganizationRorganization"`
 SendInvitationRequestG
@@ -40,13 +51,27 @@ invitation"q
 message (	Rmessage"ˆ
 AddPeerToOrganizationResponseM
 organization (2).blockchain.network.v1alpha1.OrganizationRorganization
-message (	Rmessage"q
+message (	Rmessage"q
 CreateChannelResponse>
 channel (2$.blockchain.network.v1alpha1.ChannelRchannel
-message (	Rmessage"r
-GetBlockchainsResponse>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork
-message (	Rmessage"…
+message (	Rmessage"®
+GetBlockchainsResponse@
+networks (2$.blockchain.network.v1alpha1.NetworkRnetworks
+total (Rtotal
+next_url (	RnextUrl!
+previous_url (	RpreviousUrl"¶
+GetBlockchainsByUserIdResponse@
+networks (2$.blockchain.network.v1alpha1.NetworkRnetworks
+total (Rtotal
+next_url (	RnextUrl!
+previous_url (	RpreviousUrl"[
+GetBlockchainByIdResponse>
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork"Í
+&GetOrganizationsByBlockchainIdResponseO
+organizations (2).blockchain.network.v1alpha1.OrganizationRorganizations
+total (Rtotal
+next_url (	RnextUrl!
+previous_url (	RpreviousUrl"…
 CreateOrganizationResponseM
 organization (2).blockchain.network.v1alpha1.OrganizationRorganization
 message (	Rmessage"{
@@ -54,14 +79,17 @@ invitation"q
 
 invitation (2\'.blockchain.network.v1alpha1.InvitationR
 invitation
-message (	Rmessage2•
+message (	Rmessage2Ú	
 BlockchainAPIServicev
 CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseŽ
-AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsev
-CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponsey
-GetBlockchains2.blockchain.network.v1alpha1.GetBlockchainsRequest3.blockchain.network.v1alpha1.GetBlockchainsResponse…
-CreateOrganization6.blockchain.network.v1alpha1.CreateOrganizationRequest7.blockchain.network.v1alpha1.CreateOrganizationResponsey
-SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsey
+GetBlockchains2.blockchain.network.v1alpha1.GetBlockchainsRequest3.blockchain.network.v1alpha1.GetBlockchainsResponse‘
+GetBlockchainsByUserId:.blockchain.network.v1alpha1.GetBlockchainsByUserIdRequest;.blockchain.network.v1alpha1.GetBlockchainsByUserIdResponse‚
+GetBlockchainById5.blockchain.network.v1alpha1.GetBlockchainByIdRequest6.blockchain.network.v1alpha1.GetBlockchainByIdResponse©
+GetOrganizationsByBlockchainIdB.blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequestC.blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponsey
+SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponse…
+CreateOrganization6.blockchain.network.v1alpha1.CreateOrganizationRequest7.blockchain.network.v1alpha1.CreateOrganizationResponsev
+CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

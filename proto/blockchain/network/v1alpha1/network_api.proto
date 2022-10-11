@@ -4,15 +4,18 @@ package blockchain.network.v1alpha1;
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1";
 
 import "blockchain/network/v1alpha1/network.proto";
-
+import  "google/protobuf/empty.proto";
 
 service BlockchainAPIService {
     rpc CreateNetwork(CreateNetworkRequest) returns (CreateNetworkResponse);
     rpc AddPeerToOrganization(AddPeerToOrganizationRequest) returns (AddPeerToOrganizationResponse);
-    rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
     rpc GetBlockchains(GetBlockchainsRequest) returns (GetBlockchainsResponse);
-    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc GetBlockchainsByUserId(GetBlockchainsByUserIdRequest) returns (GetBlockchainsByUserIdResponse);
+    rpc GetBlockchainById(GetBlockchainByIdRequest) returns (GetBlockchainByIdResponse);
+    rpc GetOrganizationsByBlockchainId(GetOrganizationsByBlockchainIdRequest) returns (GetOrganizationsByBlockchainIdResponse);
     rpc SendInvitation(SendInvitationRequest) returns (SendInvitationResponse);
+    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
 }
 
 
@@ -23,8 +26,7 @@ message CreateNetworkRequest {
 }
 
 message AddPeerToOrganizationRequest {
-    blockchain.network.v1alpha1.Organization organization = 1;
-    string blockchain_id = 2;
+    string organization_id = 1;
 }
 
 message CreateChannelRequest {
@@ -32,7 +34,24 @@ message CreateChannelRequest {
 }
 
 message GetBlockchainsRequest {
+    int64 offset = 1;
+    int64 limit = 2;
+}
+
+message GetBlockchainsByUserIdRequest {
+    string user_id = 1;
+    int64 offset = 2;
+    int64 limit = 3;
+}
+
+message GetBlockchainByIdRequest {
     string id = 1;
+}
+
+message GetOrganizationsByBlockchainIdRequest {
+    string blockchain_id = 1;
+    int64 offset = 2;
+    int64 limit = 3;
 }
 
 message CreateOrganizationRequest {
@@ -51,7 +70,7 @@ message CreateNetworkResponse {
 
 message AddPeerToOrganizationResponse {
     blockchain.network.v1alpha1.Organization organization = 1;
-    string message = 3;
+    string message = 2;
 }
 
 message CreateChannelResponse {
@@ -60,8 +79,28 @@ message CreateChannelResponse {
 }
 
 message GetBlockchainsResponse {
-    repeated blockchain.network.v1alpha1.Network network = 1;
-    string message = 2;
+    repeated blockchain.network.v1alpha1.Network networks = 1;
+    int64 total = 2;
+    string next_url = 3;
+    string previous_url = 4; 
+}
+
+message GetBlockchainsByUserIdResponse {
+    repeated blockchain.network.v1alpha1.Network networks = 1;
+    int64 total = 2;
+    string next_url = 3;
+    string previous_url = 4; 
+}
+
+message GetBlockchainByIdResponse {
+    blockchain.network.v1alpha1.Network network = 1;
+}
+
+message GetOrganizationsByBlockchainIdResponse {
+    repeated blockchain.network.v1alpha1.Organization organizations = 1;
+    int64 total = 2;
+    string next_url = 3;
+    string previous_url = 4; 
 }
 
 message CreateOrganizationResponse {

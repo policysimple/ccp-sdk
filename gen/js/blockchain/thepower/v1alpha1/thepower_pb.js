@@ -125,7 +125,10 @@ proto.blockchain.thepower.v1alpha1.TpChain.toObject = function(includeInstance, 
     userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     chainNodesList: jspb.Message.toObjectList(msg.getChainNodesList(),
     proto.blockchain.thepower.v1alpha1.TpNode.toObject, includeInstance),
-    status: jspb.Message.getFieldWithDefault(msg, 5, "")
+    status: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    errorDetails: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -182,6 +185,18 @@ proto.blockchain.thepower.v1alpha1.TpChain.deserializeBinaryFromReader = functio
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setErrorDetails(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatedAt(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUpdatedAt(value);
       break;
     default:
       reader.skipField();
@@ -245,6 +260,27 @@ proto.blockchain.thepower.v1alpha1.TpChain.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getErrorDetails();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -358,6 +394,60 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.getStatus = function() {
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string error_details = 6;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getErrorDetails = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setErrorDetails = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string created_at = 7;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string updated_at = 8;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

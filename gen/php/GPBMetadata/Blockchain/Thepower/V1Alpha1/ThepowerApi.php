@@ -18,23 +18,31 @@ class ThepowerApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¾
-
+–
 /blockchain/thepower/v1alpha1/thepower_api.protoblockchain.thepower.v1alpha1google/protobuf/empty.proto"X
 CreateTpChainRequest@
-tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"5
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"c
 GetTpChainsByUserIdRequest
-user_id (	RuserId"\'
+user_id (	RuserId
+offset (Roffset
+limit (Rlimit"\'
 GetTpChainByIdRequest
 id (	Rid"B
-GetTpChainsRequest,
-emtpy (2.google.protobuf.EmptyRemtpy"Y
+GetTpChainsRequest
+offset (Roffset
+limit (Rlimit"Y
 CreateTpChainResponse@
-tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"Y
+tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"­
 GetTpChainsResponseB
-	tp_chains (2%.blockchain.thepower.v1alpha1.TpChainRtpChains"a
+	tp_chains (2%.blockchain.thepower.v1alpha1.TpChainRtpChains
+total (Rtotal
+next_url (	RnextUrl!
+previous_url (	RpreviousUrl"µ
 GetTpChainsByUserIdResponseB
-	tp_chains (2%.blockchain.thepower.v1alpha1.TpChainRtpChains"Z
+	tp_chains (2%.blockchain.thepower.v1alpha1.TpChainRtpChains
+total (Rtotal
+next_url (	RnextUrl!
+previous_url (	RpreviousUrl"Z
 GetTpChainByIdResponse@
 tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain2“
 BlockchainThePowerServicex

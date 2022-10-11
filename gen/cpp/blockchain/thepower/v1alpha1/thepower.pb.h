@@ -198,6 +198,9 @@ class TpChain final :
     kIdFieldNumber = 1,
     kUserIdFieldNumber = 3,
     kStatusFieldNumber = 5,
+    kErrorDetailsFieldNumber = 6,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
     kChainNumberFieldNumber = 2,
   };
   // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
@@ -260,6 +263,48 @@ class TpChain final :
   std::string* _internal_mutable_status();
   public:
 
+  // string error_details = 6 [json_name = "errorDetails"];
+  void clear_error_details();
+  const std::string& error_details() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_details(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_details();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error_details();
+  void set_allocated_error_details(std::string* error_details);
+  private:
+  const std::string& _internal_error_details() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_details(const std::string& value);
+  std::string* _internal_mutable_error_details();
+  public:
+
+  // string created_at = 7 [json_name = "createdAt"];
+  void clear_created_at();
+  const std::string& created_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_created_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_created_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_created_at();
+  void set_allocated_created_at(std::string* created_at);
+  private:
+  const std::string& _internal_created_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_created_at(const std::string& value);
+  std::string* _internal_mutable_created_at();
+  public:
+
+  // string updated_at = 8 [json_name = "updatedAt"];
+  void clear_updated_at();
+  const std::string& updated_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_updated_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_updated_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_updated_at();
+  void set_allocated_updated_at(std::string* updated_at);
+  private:
+  const std::string& _internal_updated_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_updated_at(const std::string& value);
+  std::string* _internal_mutable_updated_at();
+  public:
+
   // int32 chain_number = 2 [json_name = "chainNumber"];
   void clear_chain_number();
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number() const;
@@ -280,6 +325,9 @@ class TpChain final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_details_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
@@ -854,6 +902,144 @@ inline void TpChain::set_allocated_status(std::string* status) {
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.status)
+}
+
+// string error_details = 6 [json_name = "errorDetails"];
+inline void TpChain::clear_error_details() {
+  error_details_.ClearToEmpty();
+}
+inline const std::string& TpChain::error_details() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.error_details)
+  return _internal_error_details();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TpChain::set_error_details(ArgT0&& arg0, ArgT... args) {
+ 
+ error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.error_details)
+}
+inline std::string* TpChain::mutable_error_details() {
+  std::string* _s = _internal_mutable_error_details();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpChain.error_details)
+  return _s;
+}
+inline const std::string& TpChain::_internal_error_details() const {
+  return error_details_.Get();
+}
+inline void TpChain::_internal_set_error_details(const std::string& value) {
+  
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TpChain::_internal_mutable_error_details() {
+  
+  return error_details_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TpChain::release_error_details() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpChain.error_details)
+  return error_details_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TpChain::set_allocated_error_details(std::string* error_details) {
+  if (error_details != nullptr) {
+    
+  } else {
+    
+  }
+  error_details_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error_details,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.error_details)
+}
+
+// string created_at = 7 [json_name = "createdAt"];
+inline void TpChain::clear_created_at() {
+  created_at_.ClearToEmpty();
+}
+inline const std::string& TpChain::created_at() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.created_at)
+  return _internal_created_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TpChain::set_created_at(ArgT0&& arg0, ArgT... args) {
+ 
+ created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.created_at)
+}
+inline std::string* TpChain::mutable_created_at() {
+  std::string* _s = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpChain.created_at)
+  return _s;
+}
+inline const std::string& TpChain::_internal_created_at() const {
+  return created_at_.Get();
+}
+inline void TpChain::_internal_set_created_at(const std::string& value) {
+  
+  created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TpChain::_internal_mutable_created_at() {
+  
+  return created_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TpChain::release_created_at() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpChain.created_at)
+  return created_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TpChain::set_allocated_created_at(std::string* created_at) {
+  if (created_at != nullptr) {
+    
+  } else {
+    
+  }
+  created_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), created_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.created_at)
+}
+
+// string updated_at = 8 [json_name = "updatedAt"];
+inline void TpChain::clear_updated_at() {
+  updated_at_.ClearToEmpty();
+}
+inline const std::string& TpChain::updated_at() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.updated_at)
+  return _internal_updated_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TpChain::set_updated_at(ArgT0&& arg0, ArgT... args) {
+ 
+ updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.updated_at)
+}
+inline std::string* TpChain::mutable_updated_at() {
+  std::string* _s = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpChain.updated_at)
+  return _s;
+}
+inline const std::string& TpChain::_internal_updated_at() const {
+  return updated_at_.Get();
+}
+inline void TpChain::_internal_set_updated_at(const std::string& value) {
+  
+  updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TpChain::_internal_mutable_updated_at() {
+  
+  return updated_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TpChain::release_updated_at() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpChain.updated_at)
+  return updated_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TpChain::set_allocated_updated_at(std::string* updated_at) {
+  if (updated_at != nullptr) {
+    
+  } else {
+    
+  }
+  updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.updated_at)
 }
 
 // -------------------------------------------------------------------

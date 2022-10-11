@@ -17,6 +17,18 @@ class GetTpChainsByUserIdResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .blockchain.thepower.v1alpha1.TpChain tp_chains = 1 [json_name = "tpChains"];</code>
      */
     private $tp_chains;
+    /**
+     * Generated from protobuf field <code>int64 total = 2 [json_name = "total"];</code>
+     */
+    protected $total = 0;
+    /**
+     * Generated from protobuf field <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     */
+    protected $next_url = '';
+    /**
+     * Generated from protobuf field <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     */
+    protected $previous_url = '';
 
     /**
      * Constructor.
@@ -25,6 +37,9 @@ class GetTpChainsByUserIdResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Blockchain\Thepower\V1alpha1\TpChain[]|\Google\Protobuf\Internal\RepeatedField $tp_chains
+     *     @type int|string $total
+     *     @type string $next_url
+     *     @type string $previous_url
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +65,72 @@ class GetTpChainsByUserIdResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Thepower\V1alpha1\TpChain::class);
         $this->tp_chains = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 total = 2 [json_name = "total"];</code>
+     * @return int|string
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 total = 2 [json_name = "total"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @return string
+     */
+    public function getNextUrl()
+    {
+        return $this->next_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string next_url = 3 [json_name = "nextUrl"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNextUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->next_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @return string
+     */
+    public function getPreviousUrl()
+    {
+        return $this->previous_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string previous_url = 4 [json_name = "previousUrl"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPreviousUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->previous_url = $var;
 
         return $this;
     }

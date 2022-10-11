@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>blockchain.network.v1alpha1.GetBlockchainsResponse</code>
+ * Generated from protobuf message <code>blockchain.network.v1alpha1.GetBlockchainsByUserIdResponse</code>
  */
-class GetBlockchainsResponse extends \Google\Protobuf\Internal\Message
+class GetBlockchainsByUserIdResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Network networks = 1 [json_name = "networks"];</code>
