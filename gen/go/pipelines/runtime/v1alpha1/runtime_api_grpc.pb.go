@@ -26,7 +26,7 @@ type RuntimeAPIServiceClient interface {
 	DeleteRuntime(ctx context.Context, in *DeleteRuntimeRequest, opts ...grpc.CallOption) (*DeleteRuntimeResponse, error)
 	DeleteRuntimesByApplication(ctx context.Context, in *DeleteRuntimesByApplicationRequest, opts ...grpc.CallOption) (*DeleteRuntimesByApplicationResponse, error)
 	ListRuntimes(ctx context.Context, in *ListRuntimesRequest, opts ...grpc.CallOption) (*ListRuntimesResponse, error)
-	RefreshRuntime(ctx context.Context, in *RefreshRuntimeRequest, opts ...grpc.CallOption) (*RefreshRuntimeResponse, error)
+	RebuildRuntime(ctx context.Context, in *RebuildRuntimeRequest, opts ...grpc.CallOption) (*RebuildRuntimeResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -109,9 +109,9 @@ func (c *runtimeAPIServiceClient) ListRuntimes(ctx context.Context, in *ListRunt
 	return out, nil
 }
 
-func (c *runtimeAPIServiceClient) RefreshRuntime(ctx context.Context, in *RefreshRuntimeRequest, opts ...grpc.CallOption) (*RefreshRuntimeResponse, error) {
-	out := new(RefreshRuntimeResponse)
-	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/RefreshRuntime", in, out, opts...)
+func (c *runtimeAPIServiceClient) RebuildRuntime(ctx context.Context, in *RebuildRuntimeRequest, opts ...grpc.CallOption) (*RebuildRuntimeResponse, error) {
+	out := new(RebuildRuntimeResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -130,7 +130,7 @@ type RuntimeAPIServiceServer interface {
 	DeleteRuntime(context.Context, *DeleteRuntimeRequest) (*DeleteRuntimeResponse, error)
 	DeleteRuntimesByApplication(context.Context, *DeleteRuntimesByApplicationRequest) (*DeleteRuntimesByApplicationResponse, error)
 	ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error)
-	RefreshRuntime(context.Context, *RefreshRuntimeRequest) (*RefreshRuntimeResponse, error)
+	RebuildRuntime(context.Context, *RebuildRuntimeRequest) (*RebuildRuntimeResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -161,8 +161,8 @@ func (UnimplementedRuntimeAPIServiceServer) DeleteRuntimesByApplication(context.
 func (UnimplementedRuntimeAPIServiceServer) ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListRuntimes not implemented")
 }
-func (UnimplementedRuntimeAPIServiceServer) RefreshRuntime(context.Context, *RefreshRuntimeRequest) (*RefreshRuntimeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RefreshRuntime not implemented")
+func (UnimplementedRuntimeAPIServiceServer) RebuildRuntime(context.Context, *RebuildRuntimeRequest) (*RebuildRuntimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RebuildRuntime not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -320,20 +320,20 @@ func _RuntimeAPIService_ListRuntimes_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _RuntimeAPIService_RefreshRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RefreshRuntimeRequest)
+func _RuntimeAPIService_RebuildRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RebuildRuntimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RuntimeAPIServiceServer).RefreshRuntime(ctx, in)
+		return srv.(RuntimeAPIServiceServer).RebuildRuntime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/RefreshRuntime",
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeAPIServiceServer).RefreshRuntime(ctx, req.(*RefreshRuntimeRequest))
+		return srv.(RuntimeAPIServiceServer).RebuildRuntime(ctx, req.(*RebuildRuntimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -378,8 +378,8 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _RuntimeAPIService_ListRuntimes_Handler,
 		},
 		{
-			MethodName: "RefreshRuntime",
-			Handler:    _RuntimeAPIService_RefreshRuntime_Handler,
+			MethodName: "RebuildRuntime",
+			Handler:    _RuntimeAPIService_RebuildRuntime_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

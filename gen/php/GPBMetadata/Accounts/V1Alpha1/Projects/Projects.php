@@ -17,7 +17,7 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ˆ
+¡
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"¤
 CreateProjectRequest
 name (	Rname 
@@ -40,7 +40,7 @@ class Projects
 is_admin (RisAdmin"7
 ProjectList
 name (	Rname
-image (	Rimage"ƒ
+image (	Rimage"œ
 MemberProject
 id (Rid
 user_id (	RuserId
@@ -48,8 +48,8 @@ class Projects
 first_name (	R	firstName
 	last_name (	RlastName
 	is_active (RisActive
-image (	Rimage
-role (	RroleF
+image (	Rimage+
+role (2.accounts.v1alpha1.RoleRroleF
 projects (2*.accounts.v1alpha1.projects.v1.ProjectListRprojects"O
 CreateProjectResponse
 msg (	Rmsg

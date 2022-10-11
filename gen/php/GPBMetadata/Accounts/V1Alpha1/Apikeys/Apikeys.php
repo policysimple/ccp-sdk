@@ -17,8 +17,8 @@ class Apikeys
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ø
-\'accounts/v1alpha1/apikeys/apikeys.protoaccounts.v1alpha1.apikeys.v1"Ð
+—
+\'accounts/v1alpha1/apikeys/apikeys.protoaccounts.v1alpha1.apikeys.v1"ï
 CreateApiKeyRequest
 name (	Rname
 user_id (	RuserId\'
@@ -26,7 +26,9 @@ class Apikeys
 organization_id (RorganizationId
 	is_active (RisActive
 
-project_id (R	projectId"k
+project_id (R	projectId
+
+expired_at (	R	expiredAt"k
 CreateApiKeyResponse
 msg (	Rmsg
 api_key (	RapiKey

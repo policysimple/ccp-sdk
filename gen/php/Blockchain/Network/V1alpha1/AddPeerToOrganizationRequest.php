@@ -14,13 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $organization = null;
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
-     */
-    protected $blockchain_id = '';
+    protected $organization_id = '';
 
     /**
      * Constructor.
@@ -28,8 +24,7 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Blockchain\Network\V1alpha1\Organization $organization
-     *     @type string $blockchain_id
+     *     @type string $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -38,55 +33,23 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return \Blockchain\Network\V1alpha1\Organization|null
-     */
-    public function getOrganization()
-    {
-        return $this->organization;
-    }
-
-    public function hasOrganization()
-    {
-        return isset($this->organization);
-    }
-
-    public function clearOrganization()
-    {
-        unset($this->organization);
-    }
-
-    /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @param \Blockchain\Network\V1alpha1\Organization $var
-     * @return $this
-     */
-    public function setOrganization($var)
-    {
-        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Organization::class);
-        $this->organization = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return string
      */
-    public function getBlockchainId()
+    public function getOrganizationId()
     {
-        return $this->blockchain_id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setBlockchainId($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->blockchain_id = $var;
+        $this->organization_id = $var;
 
         return $this;
     }

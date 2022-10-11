@@ -89,6 +89,66 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getStatusBytes();
+
+    /**
+     * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     * @return The errorDetails.
+     */
+    java.lang.String getErrorDetails();
+    /**
+     * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     * @return The bytes for errorDetails.
+     */
+    com.google.protobuf.ByteString
+        getErrorDetailsBytes();
+
+    /**
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
+
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> 
+        getOrganizationsList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganizations(int index);
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    int getOrganizationsCount();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
+        getOrganizationsOrBuilderList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Network}
@@ -109,6 +169,10 @@ public final class NetworkOuterClass {
       type_ = "";
       userId_ = "";
       status_ = "";
+      errorDetails_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
+      organizations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -131,6 +195,7 @@ public final class NetworkOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -177,6 +242,33 @@ public final class NetworkOuterClass {
               status_ = s;
               break;
             }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errorDetails_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                organizations_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Organization>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              organizations_.add(
+                  input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -192,6 +284,9 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          organizations_ = java.util.Collections.unmodifiableList(organizations_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -437,6 +532,160 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int ERROR_DETAILS_FIELD_NUMBER = 7;
+    private volatile java.lang.Object errorDetails_;
+    /**
+     * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     * @return The errorDetails.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorDetails() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorDetails_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+     * @return The bytes for errorDetails.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorDetailsBytes() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 8;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 8 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 9;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORGANIZATIONS_FIELD_NUMBER = 10;
+    private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> organizations_;
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> getOrganizationsList() {
+      return organizations_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
+        getOrganizationsOrBuilderList() {
+      return organizations_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    @java.lang.Override
+    public int getOrganizationsCount() {
+      return organizations_.size();
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganizations(int index) {
+      return organizations_.get(index);
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
+        int index) {
+      return organizations_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -469,6 +718,18 @@ public final class NetworkOuterClass {
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status_);
       }
+      if (!getErrorDetailsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, errorDetails_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, updatedAt_);
+      }
+      for (int i = 0; i < organizations_.size(); i++) {
+        output.writeMessage(10, organizations_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -495,6 +756,19 @@ public final class NetworkOuterClass {
       }
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status_);
+      }
+      if (!getErrorDetailsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, errorDetails_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, updatedAt_);
+      }
+      for (int i = 0; i < organizations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, organizations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -523,6 +797,14 @@ public final class NetworkOuterClass {
           .equals(other.getUserId())) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
+      if (!getErrorDetails()
+          .equals(other.getErrorDetails())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+      if (!getOrganizationsList()
+          .equals(other.getOrganizationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -546,6 +828,16 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + ERROR_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorDetails().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+      if (getOrganizationsCount() > 0) {
+        hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOrganizationsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -674,6 +966,7 @@ public final class NetworkOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getOrganizationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -691,6 +984,18 @@ public final class NetworkOuterClass {
 
         status_ = "";
 
+        errorDetails_ = "";
+
+        createdAt_ = "";
+
+        updatedAt_ = "";
+
+        if (organizationsBuilder_ == null) {
+          organizations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          organizationsBuilder_.clear();
+        }
         return this;
       }
 
@@ -717,12 +1022,25 @@ public final class NetworkOuterClass {
       @java.lang.Override
       public blockchain.network.v1alpha1.NetworkOuterClass.Network buildPartial() {
         blockchain.network.v1alpha1.NetworkOuterClass.Network result = new blockchain.network.v1alpha1.NetworkOuterClass.Network(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.networkName_ = networkName_;
         result.framework_ = framework_;
         result.type_ = type_;
         result.userId_ = userId_;
         result.status_ = status_;
+        result.errorDetails_ = errorDetails_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
+        if (organizationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            organizations_ = java.util.Collections.unmodifiableList(organizations_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.organizations_ = organizations_;
+        } else {
+          result.organizations_ = organizationsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -795,6 +1113,44 @@ public final class NetworkOuterClass {
           status_ = other.status_;
           onChanged();
         }
+        if (!other.getErrorDetails().isEmpty()) {
+          errorDetails_ = other.errorDetails_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        if (organizationsBuilder_ == null) {
+          if (!other.organizations_.isEmpty()) {
+            if (organizations_.isEmpty()) {
+              organizations_ = other.organizations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureOrganizationsIsMutable();
+              organizations_.addAll(other.organizations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.organizations_.isEmpty()) {
+            if (organizationsBuilder_.isEmpty()) {
+              organizationsBuilder_.dispose();
+              organizationsBuilder_ = null;
+              organizations_ = other.organizations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              organizationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOrganizationsFieldBuilder() : null;
+            } else {
+              organizationsBuilder_.addAllMessages(other.organizations_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -823,6 +1179,7 @@ public final class NetworkOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -1279,6 +1636,474 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object errorDetails_ = "";
+      /**
+       * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+       * @return The errorDetails.
+       */
+      public java.lang.String getErrorDetails() {
+        java.lang.Object ref = errorDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorDetails_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+       * @return The bytes for errorDetails.
+       */
+      public com.google.protobuf.ByteString
+          getErrorDetailsBytes() {
+        java.lang.Object ref = errorDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+       * @param value The errorDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorDetails(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorDetails() {
+        
+        errorDetails_ = getDefaultInstance().getErrorDetails();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error_details = 7 [json_name = "errorDetails"];</code>
+       * @param value The bytes for errorDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorDetailsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 8 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 8 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 8 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 8 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 8 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 9 [json_name = "updatedAt"];</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> organizations_ =
+        java.util.Collections.emptyList();
+      private void ensureOrganizationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          organizations_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Organization>(organizations_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> organizationsBuilder_;
+
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> getOrganizationsList() {
+        if (organizationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(organizations_);
+        } else {
+          return organizationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public int getOrganizationsCount() {
+        if (organizationsBuilder_ == null) {
+          return organizations_.size();
+        } else {
+          return organizationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganizations(int index) {
+        if (organizationsBuilder_ == null) {
+          return organizations_.get(index);
+        } else {
+          return organizationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder setOrganizations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
+        if (organizationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrganizationsIsMutable();
+          organizations_.set(index, value);
+          onChanged();
+        } else {
+          organizationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder setOrganizations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
+        if (organizationsBuilder_ == null) {
+          ensureOrganizationsIsMutable();
+          organizations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          organizationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder addOrganizations(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
+        if (organizationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrganizationsIsMutable();
+          organizations_.add(value);
+          onChanged();
+        } else {
+          organizationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder addOrganizations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
+        if (organizationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrganizationsIsMutable();
+          organizations_.add(index, value);
+          onChanged();
+        } else {
+          organizationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder addOrganizations(
+          blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
+        if (organizationsBuilder_ == null) {
+          ensureOrganizationsIsMutable();
+          organizations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          organizationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder addOrganizations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
+        if (organizationsBuilder_ == null) {
+          ensureOrganizationsIsMutable();
+          organizations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          organizationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder addAllOrganizations(
+          java.lang.Iterable<? extends blockchain.network.v1alpha1.NetworkOuterClass.Organization> values) {
+        if (organizationsBuilder_ == null) {
+          ensureOrganizationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, organizations_);
+          onChanged();
+        } else {
+          organizationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder clearOrganizations() {
+        if (organizationsBuilder_ == null) {
+          organizations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          organizationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public Builder removeOrganizations(int index) {
+        if (organizationsBuilder_ == null) {
+          ensureOrganizationsIsMutable();
+          organizations_.remove(index);
+          onChanged();
+        } else {
+          organizationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder getOrganizationsBuilder(
+          int index) {
+        return getOrganizationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
+          int index) {
+        if (organizationsBuilder_ == null) {
+          return organizations_.get(index);  } else {
+          return organizationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
+           getOrganizationsOrBuilderList() {
+        if (organizationsBuilder_ != null) {
+          return organizationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(organizations_);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder addOrganizationsBuilder() {
+        return getOrganizationsFieldBuilder().addBuilder(
+            blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder addOrganizationsBuilder(
+          int index) {
+        return getOrganizationsFieldBuilder().addBuilder(
+            index, blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder> 
+           getOrganizationsBuilderList() {
+        return getOrganizationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
+          getOrganizationsFieldBuilder() {
+        if (organizationsBuilder_ == null) {
+          organizationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder>(
+                  organizations_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          organizations_ = null;
+        }
+        return organizationsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1407,6 +2232,78 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getBlockchainIdBytes();
+
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> 
+        getPeersList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.Peer getPeers(int index);
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    int getPeersCount();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+        getPeersOrBuilderList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder getPeersOrBuilder(
+        int index);
+
+    /**
+     * <code>string status = 8 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 8 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     * @return The errorDetails.
+     */
+    java.lang.String getErrorDetails();
+    /**
+     * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     * @return The bytes for errorDetails.
+     */
+    com.google.protobuf.ByteString
+        getErrorDetailsBytes();
+
+    /**
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Organization}
@@ -1427,6 +2324,11 @@ public final class NetworkOuterClass {
       adminPassword_ = "";
       adminUser_ = "";
       blockchainId_ = "";
+      peers_ = java.util.Collections.emptyList();
+      status_ = "";
+      errorDetails_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
     }
 
     @java.lang.Override
@@ -1449,6 +2351,7 @@ public final class NetworkOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1495,6 +2398,39 @@ public final class NetworkOuterClass {
               blockchainId_ = s;
               break;
             }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                peers_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Peer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              peers_.add(
+                  input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Peer.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errorDetails_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1510,6 +2446,9 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          peers_ = java.util.Collections.unmodifiableList(peers_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1755,6 +2694,198 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int PEERS_FIELD_NUMBER = 7;
+    private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> peers_;
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> getPeersList() {
+      return peers_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+        getPeersOrBuilderList() {
+      return peers_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public int getPeersCount() {
+      return peers_.size();
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.Peer getPeers(int index) {
+      return peers_.get(index);
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder getPeersOrBuilder(
+        int index) {
+      return peers_.get(index);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 8;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 8 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 8 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_DETAILS_FIELD_NUMBER = 9;
+    private volatile java.lang.Object errorDetails_;
+    /**
+     * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     * @return The errorDetails.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorDetails() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorDetails_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     * @return The bytes for errorDetails.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorDetailsBytes() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 10;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 10 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 11;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1787,6 +2918,21 @@ public final class NetworkOuterClass {
       if (!getBlockchainIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, blockchainId_);
       }
+      for (int i = 0; i < peers_.size(); i++) {
+        output.writeMessage(7, peers_.get(i));
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, status_);
+      }
+      if (!getErrorDetailsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, errorDetails_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, updatedAt_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1813,6 +2959,22 @@ public final class NetworkOuterClass {
       }
       if (!getBlockchainIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, blockchainId_);
+      }
+      for (int i = 0; i < peers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, peers_.get(i));
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, status_);
+      }
+      if (!getErrorDetailsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, errorDetails_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, updatedAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1841,6 +3003,16 @@ public final class NetworkOuterClass {
           .equals(other.getAdminUser())) return false;
       if (!getBlockchainId()
           .equals(other.getBlockchainId())) return false;
+      if (!getPeersList()
+          .equals(other.getPeersList())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getErrorDetails()
+          .equals(other.getErrorDetails())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1864,6 +3036,18 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getAdminUser().hashCode();
       hash = (37 * hash) + BLOCKCHAIN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBlockchainId().hashCode();
+      if (getPeersCount() > 0) {
+        hash = (37 * hash) + PEERS_FIELD_NUMBER;
+        hash = (53 * hash) + getPeersList().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + ERROR_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorDetails().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1992,6 +3176,7 @@ public final class NetworkOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPeersFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2008,6 +3193,20 @@ public final class NetworkOuterClass {
         adminUser_ = "";
 
         blockchainId_ = "";
+
+        if (peersBuilder_ == null) {
+          peers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          peersBuilder_.clear();
+        }
+        status_ = "";
+
+        errorDetails_ = "";
+
+        createdAt_ = "";
+
+        updatedAt_ = "";
 
         return this;
       }
@@ -2035,12 +3234,26 @@ public final class NetworkOuterClass {
       @java.lang.Override
       public blockchain.network.v1alpha1.NetworkOuterClass.Organization buildPartial() {
         blockchain.network.v1alpha1.NetworkOuterClass.Organization result = new blockchain.network.v1alpha1.NetworkOuterClass.Organization(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.userId_ = userId_;
         result.domain_ = domain_;
         result.adminPassword_ = adminPassword_;
         result.adminUser_ = adminUser_;
         result.blockchainId_ = blockchainId_;
+        if (peersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            peers_ = java.util.Collections.unmodifiableList(peers_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.peers_ = peers_;
+        } else {
+          result.peers_ = peersBuilder_.build();
+        }
+        result.status_ = status_;
+        result.errorDetails_ = errorDetails_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
         onBuilt();
         return result;
       }
@@ -2113,6 +3326,48 @@ public final class NetworkOuterClass {
           blockchainId_ = other.blockchainId_;
           onChanged();
         }
+        if (peersBuilder_ == null) {
+          if (!other.peers_.isEmpty()) {
+            if (peers_.isEmpty()) {
+              peers_ = other.peers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePeersIsMutable();
+              peers_.addAll(other.peers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.peers_.isEmpty()) {
+            if (peersBuilder_.isEmpty()) {
+              peersBuilder_.dispose();
+              peersBuilder_ = null;
+              peers_ = other.peers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              peersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPeersFieldBuilder() : null;
+            } else {
+              peersBuilder_.addAllMessages(other.peers_);
+            }
+          }
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (!other.getErrorDetails().isEmpty()) {
+          errorDetails_ = other.errorDetails_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2141,6 +3396,7 @@ public final class NetworkOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -2597,6 +3853,550 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> peers_ =
+        java.util.Collections.emptyList();
+      private void ensurePeersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          peers_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Peer>(peers_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Peer, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder, blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> peersBuilder_;
+
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> getPeersList() {
+        if (peersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(peers_);
+        } else {
+          return peersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public int getPeersCount() {
+        if (peersBuilder_ == null) {
+          return peers_.size();
+        } else {
+          return peersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer getPeers(int index) {
+        if (peersBuilder_ == null) {
+          return peers_.get(index);
+        } else {
+          return peersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder setPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer value) {
+        if (peersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePeersIsMutable();
+          peers_.set(index, value);
+          onChanged();
+        } else {
+          peersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder setPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder builderForValue) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          peersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(blockchain.network.v1alpha1.NetworkOuterClass.Peer value) {
+        if (peersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePeersIsMutable();
+          peers_.add(value);
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer value) {
+        if (peersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePeersIsMutable();
+          peers_.add(index, value);
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(
+          blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder builderForValue) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder builderForValue) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder addAllPeers(
+          java.lang.Iterable<? extends blockchain.network.v1alpha1.NetworkOuterClass.Peer> values) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, peers_);
+          onChanged();
+        } else {
+          peersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder clearPeers() {
+        if (peersBuilder_ == null) {
+          peers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          peersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public Builder removePeers(int index) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.remove(index);
+          onChanged();
+        } else {
+          peersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder getPeersBuilder(
+          int index) {
+        return getPeersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder getPeersOrBuilder(
+          int index) {
+        if (peersBuilder_ == null) {
+          return peers_.get(index);  } else {
+          return peersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+           getPeersOrBuilderList() {
+        if (peersBuilder_ != null) {
+          return peersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(peers_);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder addPeersBuilder() {
+        return getPeersFieldBuilder().addBuilder(
+            blockchain.network.v1alpha1.NetworkOuterClass.Peer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder addPeersBuilder(
+          int index) {
+        return getPeersFieldBuilder().addBuilder(
+            index, blockchain.network.v1alpha1.NetworkOuterClass.Peer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder> 
+           getPeersBuilderList() {
+        return getPeersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Peer, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder, blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+          getPeersFieldBuilder() {
+        if (peersBuilder_ == null) {
+          peersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Peer, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder, blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder>(
+                  peers_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          peers_ = null;
+        }
+        return peersBuilder_;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 8 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 8 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 8 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 8 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 8 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errorDetails_ = "";
+      /**
+       * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+       * @return The errorDetails.
+       */
+      public java.lang.String getErrorDetails() {
+        java.lang.Object ref = errorDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorDetails_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+       * @return The bytes for errorDetails.
+       */
+      public com.google.protobuf.ByteString
+          getErrorDetailsBytes() {
+        java.lang.Object ref = errorDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+       * @param value The errorDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorDetails(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorDetails() {
+        
+        errorDetails_ = getDefaultInstance().getErrorDetails();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error_details = 9 [json_name = "errorDetails"];</code>
+       * @param value The bytes for errorDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorDetailsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 10 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 10 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 10 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 10 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 10 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2645,6 +4445,1324 @@ public final class NetworkOuterClass {
 
     @java.lang.Override
     public blockchain.network.v1alpha1.NetworkOuterClass.Organization getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PeerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.Peer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
+  }
+  /**
+   * Protobuf type {@code blockchain.network.v1alpha1.Peer}
+   */
+  public static final class Peer extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.Peer)
+      PeerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Peer.newBuilder() to construct.
+    private Peer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Peer() {
+      id_ = "";
+      name_ = "";
+      type_ = "";
+      status_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Peer();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Peer(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Peer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Peer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              blockchain.network.v1alpha1.NetworkOuterClass.Peer.class, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object type_;
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 4 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 5 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedAt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedAt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkOuterClass.Peer)) {
+        return super.equals(obj);
+      }
+      blockchain.network.v1alpha1.NetworkOuterClass.Peer other = (blockchain.network.v1alpha1.NetworkOuterClass.Peer) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkOuterClass.Peer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code blockchain.network.v1alpha1.Peer}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.Peer)
+        blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Peer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Peer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                blockchain.network.v1alpha1.NetworkOuterClass.Peer.class, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder.class);
+      }
+
+      // Construct using blockchain.network.v1alpha1.NetworkOuterClass.Peer.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        name_ = "";
+
+        type_ = "";
+
+        status_ = "";
+
+        createdAt_ = "";
+
+        updatedAt_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.internal_static_blockchain_network_v1alpha1_Peer_descriptor;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkOuterClass.Peer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer build() {
+        blockchain.network.v1alpha1.NetworkOuterClass.Peer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer buildPartial() {
+        blockchain.network.v1alpha1.NetworkOuterClass.Peer result = new blockchain.network.v1alpha1.NetworkOuterClass.Peer(this);
+        result.id_ = id_;
+        result.name_ = name_;
+        result.type_ = type_;
+        result.status_ = status_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof blockchain.network.v1alpha1.NetworkOuterClass.Peer) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkOuterClass.Peer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkOuterClass.Peer other) {
+        if (other == blockchain.network.v1alpha1.NetworkOuterClass.Peer.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        blockchain.network.v1alpha1.NetworkOuterClass.Peer parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (blockchain.network.v1alpha1.NetworkOuterClass.Peer) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 4 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 4 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 4 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 4 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 4 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 5 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 6 [json_name = "updatedAt"];</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.Peer)
+    }
+
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Peer)
+    private static final blockchain.network.v1alpha1.NetworkOuterClass.Peer DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkOuterClass.Peer();
+    }
+
+    public static blockchain.network.v1alpha1.NetworkOuterClass.Peer getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Peer>
+        PARSER = new com.google.protobuf.AbstractParser<Peer>() {
+      @java.lang.Override
+      public Peer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Peer(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Peer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Peer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.Peer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2734,6 +5852,42 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getOrgIdsBytes(int index);
+
+    /**
+     * <code>string status = 6 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 6 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Channel}
@@ -2753,6 +5907,9 @@ public final class NetworkOuterClass {
       blockchainId_ = "";
       name_ = "";
       orgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      status_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
     }
 
     @java.lang.Override
@@ -2817,6 +5974,24 @@ public final class NetworkOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               orgIds_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
               break;
             }
             default: {
@@ -3049,6 +6224,120 @@ public final class NetworkOuterClass {
       return orgIds_.getByteString(index);
     }
 
+    public static final int STATUS_FIELD_NUMBER = 6;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 6 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 6 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 7;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 8;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3077,6 +6366,15 @@ public final class NetworkOuterClass {
       }
       for (int i = 0; i < orgIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orgIds_.getRaw(i));
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt_);
       }
       unknownFields.writeTo(output);
     }
@@ -3107,6 +6405,15 @@ public final class NetworkOuterClass {
         size += dataSize;
         size += 1 * getOrgIdsList().size();
       }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3132,6 +6439,12 @@ public final class NetworkOuterClass {
           .equals(other.getName())) return false;
       if (!getOrgIdsList()
           .equals(other.getOrgIdsList())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3155,6 +6468,12 @@ public final class NetworkOuterClass {
         hash = (37 * hash) + ORG_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getOrgIdsList().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3298,6 +6617,12 @@ public final class NetworkOuterClass {
 
         orgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = "";
+
+        createdAt_ = "";
+
+        updatedAt_ = "";
+
         return this;
       }
 
@@ -3334,6 +6659,9 @@ public final class NetworkOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.orgIds_ = orgIds_;
+        result.status_ = status_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
         onBuilt();
         return result;
       }
@@ -3406,6 +6734,18 @@ public final class NetworkOuterClass {
             ensureOrgIdsIsMutable();
             orgIds_.addAll(other.orgIds_);
           }
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3871,6 +7211,234 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 6 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 6 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 6 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 6 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 6 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3987,6 +7555,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getBlockchainIdBytes();
+
+    /**
+     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Invitation}
@@ -4006,6 +7598,8 @@ public final class NetworkOuterClass {
       email_ = "";
       status_ = "";
       blockchainId_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
     }
 
     @java.lang.Override
@@ -4066,6 +7660,18 @@ public final class NetworkOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               blockchainId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
               break;
             }
             default: {
@@ -4290,6 +7896,82 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int CREATED_AT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 7;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4319,6 +8001,12 @@ public final class NetworkOuterClass {
       if (!getBlockchainIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, blockchainId_);
       }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, updatedAt_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4342,6 +8030,12 @@ public final class NetworkOuterClass {
       }
       if (!getBlockchainIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, blockchainId_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, updatedAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4368,6 +8062,10 @@ public final class NetworkOuterClass {
           .equals(other.getStatus())) return false;
       if (!getBlockchainId()
           .equals(other.getBlockchainId())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4389,6 +8087,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + BLOCKCHAIN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBlockchainId().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4532,6 +8234,10 @@ public final class NetworkOuterClass {
 
         blockchainId_ = "";
 
+        createdAt_ = "";
+
+        updatedAt_ = "";
+
         return this;
       }
 
@@ -4563,6 +8269,8 @@ public final class NetworkOuterClass {
         result.email_ = email_;
         result.status_ = status_;
         result.blockchainId_ = blockchainId_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
         onBuilt();
         return result;
       }
@@ -4629,6 +8337,14 @@ public final class NetworkOuterClass {
         }
         if (!other.getBlockchainId().isEmpty()) {
           blockchainId_ = other.blockchainId_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5039,6 +8755,158 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 6 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 6 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 6 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 6 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 6 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5103,6 +8971,11 @@ public final class NetworkOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blockchain_network_v1alpha1_Peer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blockchain_network_v1alpha1_Peer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_Channel_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5122,25 +8995,42 @@ public final class NetworkOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)blockchain/network/v1alpha1/network.pr" +
-      "oto\022\033blockchain.network.v1alpha1\"\237\001\n\007Net" +
+      "oto\022\033blockchain.network.v1alpha1\"\323\002\n\007Net" +
       "work\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014network_name\030\002 \001" +
       "(\tR\013networkName\022\034\n\tframework\030\003 \001(\tR\tfram" +
       "ework\022\022\n\004type\030\004 \001(\tR\004type\022\027\n\007user_id\030\005 \001" +
-      "(\tR\006userId\022\026\n\006status\030\006 \001(\tR\006status\"\272\001\n\014O" +
-      "rganization\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002" +
-      " \001(\tR\006userId\022\026\n\006domain\030\003 \001(\tR\006domain\022%\n\016" +
-      "admin_password\030\004 \001(\tR\radminPassword\022\035\n\na" +
-      "dmin_user\030\005 \001(\tR\tadminUser\022#\n\rblockchain" +
-      "_id\030\006 \001(\tR\014blockchainId\"\224\001\n\007Channel\022\016\n\002i" +
-      "d\030\001 \001(\tR\002id\022\'\n\017organization_id\030\002 \001(\tR\016or" +
-      "ganizationId\022#\n\rblockchain_id\030\003 \001(\tR\014blo" +
-      "ckchainId\022\022\n\004name\030\004 \001(\tR\004name\022\027\n\007org_ids" +
-      "\030\005 \003(\tR\006orgIds\"\221\001\n\nInvitation\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022" +
-      "\024\n\005email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006s" +
-      "tatus\022#\n\rblockchain_id\030\005 \001(\tR\014blockchain" +
-      "IdB>Z<github.com/cuemby/ccp-sdk/gen/go/b" +
-      "lockchain/network/v1alpha1b\006proto3"
+      "(\tR\006userId\022\026\n\006status\030\006 \001(\tR\006status\022#\n\rer" +
+      "ror_details\030\007 \001(\tR\014errorDetails\022\035\n\ncreat" +
+      "ed_at\030\010 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\t \001" +
+      "(\tR\tupdatedAt\022O\n\rorganizations\030\n \003(\0132).b" +
+      "lockchain.network.v1alpha1.OrganizationR" +
+      "\rorganizations\"\356\002\n\014Organization\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006doma" +
+      "in\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004 \001(\t" +
+      "R\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR\tadm" +
+      "inUser\022#\n\rblockchain_id\030\006 \001(\tR\014blockchai" +
+      "nId\0227\n\005peers\030\007 \003(\0132!.blockchain.network." +
+      "v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\tR\006st" +
+      "atus\022#\n\rerror_details\030\t \001(\tR\014errorDetail" +
+      "s\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\nupda" +
+      "ted_at\030\013 \001(\tR\tupdatedAt\"\224\001\n\004Peer\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001" +
+      "(\tR\004type\022\026\n\006status\030\004 \001(\tR\006status\022\035\n\ncrea" +
+      "ted_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 " +
+      "\001(\tR\tupdatedAt\"\352\001\n\007Channel\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022\'\n\017organization_id\030\002 \001(\tR\016organizatio" +
+      "nId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchainId" +
+      "\022\022\n\004name\030\004 \001(\tR\004name\022\027\n\007org_ids\030\005 \003(\tR\006o" +
+      "rgIds\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncreated" +
+      "_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\t" +
+      "R\tupdatedAt\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024\n\005" +
+      "email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006stat" +
+      "us\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainId\022" +
+      "\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdate" +
+      "d_at\030\007 \001(\tR\tupdatedAtB>Z<github.com/cuem" +
+      "by/ccp-sdk/gen/go/blockchain/network/v1a" +
+      "lpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5151,25 +9041,31 @@ public final class NetworkOuterClass {
     internal_static_blockchain_network_v1alpha1_Network_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Network_descriptor,
-        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", });
+        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Organizations", });
     internal_static_blockchain_network_v1alpha1_Organization_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Organization_descriptor,
-        new java.lang.String[] { "Id", "UserId", "Domain", "AdminPassword", "AdminUser", "BlockchainId", });
-    internal_static_blockchain_network_v1alpha1_Channel_descriptor =
+        new java.lang.String[] { "Id", "UserId", "Domain", "AdminPassword", "AdminUser", "BlockchainId", "Peers", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", });
+    internal_static_blockchain_network_v1alpha1_Peer_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_blockchain_network_v1alpha1_Peer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blockchain_network_v1alpha1_Peer_descriptor,
+        new java.lang.String[] { "Id", "Name", "Type", "Status", "CreatedAt", "UpdatedAt", });
+    internal_static_blockchain_network_v1alpha1_Channel_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_blockchain_network_v1alpha1_Channel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Channel_descriptor,
-        new java.lang.String[] { "Id", "OrganizationId", "BlockchainId", "Name", "OrgIds", });
+        new java.lang.String[] { "Id", "OrganizationId", "BlockchainId", "Name", "OrgIds", "Status", "CreatedAt", "UpdatedAt", });
     internal_static_blockchain_network_v1alpha1_Invitation_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_blockchain_network_v1alpha1_Invitation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Invitation_descriptor,
-        new java.lang.String[] { "Id", "FromUserId", "Email", "Status", "BlockchainId", });
+        new java.lang.String[] { "Id", "FromUserId", "Email", "Status", "BlockchainId", "CreatedAt", "UpdatedAt", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

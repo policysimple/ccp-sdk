@@ -35,6 +35,18 @@ class Channel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string org_ids = 5 [json_name = "orgIds"];</code>
      */
     private $org_ids;
+    /**
+     * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
+     */
+    protected $status = '';
+    /**
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
+     */
+    protected $created_at = '';
+    /**
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     */
+    protected $updated_at = '';
 
     /**
      * Constructor.
@@ -48,6 +60,9 @@ class Channel extends \Google\Protobuf\Internal\Message
      *     @type string $blockchain_id
      *     @type string $name
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $org_ids
+     *     @type string $status
+     *     @type string $created_at
+     *     @type string $updated_at
      * }
      */
     public function __construct($data = NULL) {
@@ -165,6 +180,72 @@ class Channel extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->org_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_at = $var;
 
         return $this;
     }

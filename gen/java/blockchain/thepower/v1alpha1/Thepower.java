@@ -83,6 +83,42 @@ public final class Thepower {
      */
     com.google.protobuf.ByteString
         getStatusBytes();
+
+    /**
+     * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+     * @return The errorDetails.
+     */
+    java.lang.String getErrorDetails();
+    /**
+     * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+     * @return The bytes for errorDetails.
+     */
+    com.google.protobuf.ByteString
+        getErrorDetailsBytes();
+
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    java.lang.String getUpdatedAt();
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    com.google.protobuf.ByteString
+        getUpdatedAtBytes();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.TpChain}
@@ -101,6 +137,9 @@ public final class Thepower {
       userId_ = "";
       chainNodes_ = java.util.Collections.emptyList();
       status_ = "";
+      errorDetails_ = "";
+      createdAt_ = "";
+      updatedAt_ = "";
     }
 
     @java.lang.Override
@@ -164,6 +203,24 @@ public final class Thepower {
               java.lang.String s = input.readStringRequireUtf8();
 
               status_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errorDetails_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdAt_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              updatedAt_ = s;
               break;
             }
             default: {
@@ -366,6 +423,120 @@ public final class Thepower {
       }
     }
 
+    public static final int ERROR_DETAILS_FIELD_NUMBER = 6;
+    private volatile java.lang.Object errorDetails_;
+    /**
+     * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+     * @return The errorDetails.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorDetails() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorDetails_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+     * @return The bytes for errorDetails.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorDetailsBytes() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 7;
+    private volatile java.lang.Object createdAt_;
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 7 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATED_AT_FIELD_NUMBER = 8;
+    private volatile java.lang.Object updatedAt_;
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The updatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+     * @return The bytes for updatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -395,6 +566,15 @@ public final class Thepower {
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
       }
+      if (!getErrorDetailsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, errorDetails_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -421,6 +601,15 @@ public final class Thepower {
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
       }
+      if (!getErrorDetailsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, errorDetails_);
+      }
+      if (!getCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdAt_);
+      }
+      if (!getUpdatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -446,6 +635,12 @@ public final class Thepower {
           .equals(other.getChainNodesList())) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
+      if (!getErrorDetails()
+          .equals(other.getErrorDetails())) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -469,6 +664,12 @@ public final class Thepower {
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + ERROR_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorDetails().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -617,6 +818,12 @@ public final class Thepower {
         }
         status_ = "";
 
+        errorDetails_ = "";
+
+        createdAt_ = "";
+
+        updatedAt_ = "";
+
         return this;
       }
 
@@ -657,6 +864,9 @@ public final class Thepower {
           result.chainNodes_ = chainNodesBuilder_.build();
         }
         result.status_ = status_;
+        result.errorDetails_ = errorDetails_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
         onBuilt();
         return result;
       }
@@ -744,6 +954,18 @@ public final class Thepower {
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
+          onChanged();
+        }
+        if (!other.getErrorDetails().isEmpty()) {
+          errorDetails_ = other.errorDetails_;
+          onChanged();
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getUpdatedAt().isEmpty()) {
+          updatedAt_ = other.updatedAt_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1271,6 +1493,234 @@ public final class Thepower {
   checkByteStringIsUtf8(value);
         
         status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errorDetails_ = "";
+      /**
+       * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+       * @return The errorDetails.
+       */
+      public java.lang.String getErrorDetails() {
+        java.lang.Object ref = errorDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorDetails_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+       * @return The bytes for errorDetails.
+       */
+      public com.google.protobuf.ByteString
+          getErrorDetailsBytes() {
+        java.lang.Object ref = errorDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+       * @param value The errorDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorDetails(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorDetails() {
+        
+        errorDetails_ = getDefaultInstance().getErrorDetails();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error_details = 6 [json_name = "errorDetails"];</code>
+       * @param value The bytes for errorDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorDetailsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 7 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object updatedAt_ = "";
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @return The updatedAt.
+       */
+      public java.lang.String getUpdatedAt() {
+        java.lang.Object ref = updatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          updatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @return The bytes for updatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getUpdatedAtBytes() {
+        java.lang.Object ref = updatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          updatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @param value The updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdatedAt() {
+        
+        updatedAt_ = getDefaultInstance().getUpdatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string updated_at = 8 [json_name = "updatedAt"];</code>
+       * @param value The bytes for updatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        updatedAt_ = value;
         onChanged();
         return this;
       }
@@ -3218,22 +3668,24 @@ public final class Thepower {
   static {
     java.lang.String[] descriptorData = {
       "\n+blockchain/thepower/v1alpha1/thepower." +
-      "proto\022\034blockchain.thepower.v1alpha1\"\264\001\n\007" +
+      "proto\022\034blockchain.thepower.v1alpha1\"\227\002\n\007" +
       "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030" +
       "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use" +
       "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th" +
       "epower.v1alpha1.TpNodeR\nchainNodes\022\026\n\006st" +
-      "atus\030\005 \001(\tR\006status\"\365\001\n\006TpNode\022\032\n\010nodenam" +
-      "e\030\001 \001(\tR\010nodename\022\033\n\ttpic_port\030\002 \001(\003R\010tp" +
-      "icPort\022\031\n\010api_port\030\003 \001(\003R\007apiPort\022\033\n\tapi" +
-      "s_port\030\004 \001(\003R\010apisPort\022\027\n\007cc_port\030\005 \001(\003R" +
-      "\006ccPort\022a\n\023crosschain_external\030\006 \003(\01320.b" +
-      "lockchain.thepower.v1alpha1.CrosschainEx" +
-      "ternalR\022crosschainExternal\"<\n\022Crosschain" +
-      "External\022\022\n\004host\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001" +
-      "(\003R\004portB?Z=github.com/cuemby/ccp-sdk/ge" +
-      "n/go/blockchain/thepower/v1alpha1b\006proto" +
-      "3"
+      "atus\030\005 \001(\tR\006status\022#\n\rerror_details\030\006 \001(" +
+      "\tR\014errorDetails\022\035\n\ncreated_at\030\007 \001(\tR\tcre" +
+      "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\365\001" +
+      "\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodename\022\033\n\t" +
+      "tpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_port\030\003 " +
+      "\001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010apisPor" +
+      "t\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023crosschain" +
+      "_external\030\006 \003(\01320.blockchain.thepower.v1" +
+      "alpha1.CrosschainExternalR\022crosschainExt" +
+      "ernal\"<\n\022CrosschainExternal\022\022\n\004host\030\001 \001(" +
+      "\tR\004host\022\022\n\004port\030\002 \001(\003R\004portB?Z=github.co" +
+      "m/cuemby/ccp-sdk/gen/go/blockchain/thepo" +
+      "wer/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3244,7 +3696,7 @@ public final class Thepower {
     internal_static_blockchain_thepower_v1alpha1_TpChain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_TpChain_descriptor,
-        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", });
+        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", });
     internal_static_blockchain_thepower_v1alpha1_TpNode_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_thepower_v1alpha1_TpNode_fieldAccessorTable = new

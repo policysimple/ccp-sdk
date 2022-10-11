@@ -17,6 +17,14 @@ class GetTpChainsByUserIdRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 1 [json_name = "userId"];</code>
      */
     protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>int64 offset = 2 [json_name = "offset"];</code>
+     */
+    protected $offset = 0;
+    /**
+     * Generated from protobuf field <code>int64 limit = 3 [json_name = "limit"];</code>
+     */
+    protected $limit = 0;
 
     /**
      * Constructor.
@@ -25,6 +33,8 @@ class GetTpChainsByUserIdRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
+     *     @type int|string $offset
+     *     @type int|string $limit
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +60,50 @@ class GetTpChainsByUserIdRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 offset = 2 [json_name = "offset"];</code>
+     * @return int|string
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 offset = 2 [json_name = "offset"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 limit = 3 [json_name = "limit"];</code>
+     * @return int|string
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 limit = 3 [json_name = "limit"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->limit = $var;
 
         return $this;
     }

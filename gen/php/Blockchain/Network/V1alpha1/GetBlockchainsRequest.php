@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
      */
-    protected $id = '';
+    protected $offset = 0;
+    /**
+     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     */
+    protected $limit = 0;
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type int|string $offset
+     *     @type int|string $limit
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +38,45 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     * @return string
+     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * @return int|string
      */
-    public function getId()
+    public function getOffset()
     {
-        return $this->id;
+        return $this->offset;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 offset = 1 [json_name = "offset"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setId($var)
+    public function setOffset($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
+        GPBUtil::checkInt64($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * @return int|string
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->limit = $var;
 
         return $this;
     }

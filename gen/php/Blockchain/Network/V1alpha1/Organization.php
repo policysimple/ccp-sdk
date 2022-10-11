@@ -37,6 +37,26 @@ class Organization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string blockchain_id = 6 [json_name = "blockchainId"];</code>
      */
     protected $blockchain_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     */
+    private $peers;
+    /**
+     * Generated from protobuf field <code>string status = 8 [json_name = "status"];</code>
+     */
+    protected $status = '';
+    /**
+     * Generated from protobuf field <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     */
+    protected $error_details = '';
+    /**
+     * Generated from protobuf field <code>string created_at = 10 [json_name = "createdAt"];</code>
+     */
+    protected $created_at = '';
+    /**
+     * Generated from protobuf field <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     */
+    protected $updated_at = '';
 
     /**
      * Constructor.
@@ -50,6 +70,11 @@ class Organization extends \Google\Protobuf\Internal\Message
      *     @type string $admin_password
      *     @type string $admin_user
      *     @type string $blockchain_id
+     *     @type \Blockchain\Network\V1alpha1\Peer[]|\Google\Protobuf\Internal\RepeatedField $peers
+     *     @type string $status
+     *     @type string $error_details
+     *     @type string $created_at
+     *     @type string $updated_at
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +210,116 @@ class Organization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->blockchain_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPeers()
+    {
+        return $this->peers;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];</code>
+     * @param \Blockchain\Network\V1alpha1\Peer[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPeers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Peer::class);
+        $this->peers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 8 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 8 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     * @return string
+     */
+    public function getErrorDetails()
+    {
+        return $this->error_details;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_details = 9 [json_name = "errorDetails"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorDetails($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 10 [json_name = "createdAt"];</code>
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 10 [json_name = "createdAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 11 [json_name = "updatedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_at = $var;
 
         return $this;
     }

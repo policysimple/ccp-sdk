@@ -95,15 +95,15 @@ public final class RuntimeAPIProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_ResponseMessageDeleteRuntimeByAppIdResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeRequest_descriptor;
+    internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeRequest_fieldAccessorTable;
+      internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeResponse_descriptor;
+    internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeResponse_fieldAccessorTable;
+      internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -164,8 +164,8 @@ public final class RuntimeAPIProto {
       "ization_id\030\005 \001(\rR\016organizationId\"U\n+Resp" +
       "onseMessageDeleteRuntimeByAppIdResponse\022" +
       "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"" +
-      "6\n\025RefreshRuntimeRequest\022\035\n\nruntime_id\030\001" +
-      " \001(\tR\truntimeId\"o\n\026RefreshRuntimeRespons" +
+      "6\n\025RebuildRuntimeRequest\022\035\n\nruntime_id\030\001" +
+      " \001(\tR\truntimeId\"o\n\026RebuildRuntimeRespons" +
       "e\022=\n\007runtime\030\001 \001(\0132#.pipelines.runtime.v" +
       "1alpha1.RuntimeR\007runtime\022\026\n\006status\030\002 \001(\t" +
       "R\006status2\336\t\n\021RuntimeAPIService\022m\n\nGetRun" +
@@ -196,9 +196,9 @@ public final class RuntimeAPIProto {
       "icationResponse\"\000\022s\n\014ListRuntimes\022/.pipe" +
       "lines.runtime.v1alpha1.ListRuntimesReque" +
       "st\0320.pipelines.runtime.v1alpha1.ListRunt" +
-      "imesResponse\"\000\022y\n\016RefreshRuntime\0221.pipel" +
-      "ines.runtime.v1alpha1.RefreshRuntimeRequ" +
-      "est\0322.pipelines.runtime.v1alpha1.Refresh" +
+      "imesResponse\"\000\022y\n\016RebuildRuntime\0221.pipel" +
+      "ines.runtime.v1alpha1.RebuildRuntimeRequ" +
+      "est\0322.pipelines.runtime.v1alpha1.Rebuild" +
       "RuntimeResponse\"\000B\260\001\n$io.cuemby.pipeline" +
       "s.runtime.v1alpha1B\017RuntimeAPIProtoP\001Z5g" +
       "ithub.com/cuemby/ccp-runtime-service/run" +
@@ -307,17 +307,17 @@ public final class RuntimeAPIProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_ResponseMessageDeleteRuntimeByAppIdResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
-    internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeRequest_descriptor =
+    internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeRequest_descriptor =
       getDescriptor().getMessageTypes().get(16);
-    internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeRequest_fieldAccessorTable = new
+    internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeRequest_descriptor,
+        internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeRequest_descriptor,
         new java.lang.String[] { "RuntimeId", });
-    internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeResponse_descriptor =
+    internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
-    internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeResponse_fieldAccessorTable = new
+    internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_pipelines_runtime_v1alpha1_RefreshRuntimeResponse_descriptor,
+        internal_static_pipelines_runtime_v1alpha1_RebuildRuntimeResponse_descriptor,
         new java.lang.String[] { "Runtime", "Status", });
     io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.getDescriptor();
   }

@@ -22,10 +22,13 @@ namespace v1alpha1 {
 static const char* BlockchainAPIService_method_names[] = {
   "/blockchain.network.v1alpha1.BlockchainAPIService/CreateNetwork",
   "/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization",
-  "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
   "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains",
-  "/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainsByUserId",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchainById",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId",
   "/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
 };
 
 std::unique_ptr< BlockchainAPIService::Stub> BlockchainAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -37,10 +40,13 @@ std::unique_ptr< BlockchainAPIService::Stub> BlockchainAPIService::NewStub(const
 BlockchainAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateNetwork_(BlockchainAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddPeerToOrganization_(BlockchainAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateChannel_(BlockchainAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBlockchains_(BlockchainAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateOrganization_(BlockchainAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendInvitation_(BlockchainAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBlockchains_(BlockchainAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBlockchainsByUserId_(BlockchainAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBlockchainById_(BlockchainAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrganizationsByBlockchainId_(BlockchainAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendInvitation_(BlockchainAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateOrganization_(BlockchainAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateChannel_(BlockchainAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status BlockchainAPIService::Stub::CreateNetwork(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateNetworkRequest& request, ::blockchain::network::v1alpha1::CreateNetworkResponse* response) {
@@ -75,22 +81,6 @@ void BlockchainAPIService::Stub::experimental_async::AddPeerToOrganization(::grp
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_AddPeerToOrganization_, context, request, false);
 }
 
-::grpc::Status BlockchainAPIService::Stub::CreateChannel(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest& request, ::blockchain::network::v1alpha1::CreateChannelResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateChannel_, context, request, response);
-}
-
-void BlockchainAPIService::Stub::experimental_async::CreateChannel(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest* request, ::blockchain::network::v1alpha1::CreateChannelResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateChannel_, context, request, response, std::move(f));
-}
-
-::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateChannelResponse>* BlockchainAPIService::Stub::AsyncCreateChannelRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateChannelResponse>::Create(channel_.get(), cq, rpcmethod_CreateChannel_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateChannelResponse>* BlockchainAPIService::Stub::PrepareAsyncCreateChannelRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateChannelResponse>::Create(channel_.get(), cq, rpcmethod_CreateChannel_, context, request, false);
-}
-
 ::grpc::Status BlockchainAPIService::Stub::GetBlockchains(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest& request, ::blockchain::network::v1alpha1::GetBlockchainsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBlockchains_, context, request, response);
 }
@@ -107,20 +97,52 @@ void BlockchainAPIService::Stub::experimental_async::GetBlockchains(::grpc::Clie
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainsResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchains_, context, request, false);
 }
 
-::grpc::Status BlockchainAPIService::Stub::CreateOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest& request, ::blockchain::network::v1alpha1::CreateOrganizationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateOrganization_, context, request, response);
+::grpc::Status BlockchainAPIService::Stub::GetBlockchainsByUserId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest& request, ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBlockchainsByUserId_, context, request, response);
 }
 
-void BlockchainAPIService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest* request, ::blockchain::network::v1alpha1::CreateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, std::move(f));
+void BlockchainAPIService::Stub::experimental_async::GetBlockchainsByUserId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest* request, ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBlockchainsByUserId_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateOrganizationResponse>* BlockchainAPIService::Stub::AsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse>* BlockchainAPIService::Stub::AsyncGetBlockchainsByUserIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchainsByUserId_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateOrganizationResponse>* BlockchainAPIService::Stub::PrepareAsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse>* BlockchainAPIService::Stub::PrepareAsyncGetBlockchainsByUserIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchainsByUserId_, context, request, false);
+}
+
+::grpc::Status BlockchainAPIService::Stub::GetBlockchainById(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainByIdRequest& request, ::blockchain::network::v1alpha1::GetBlockchainByIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBlockchainById_, context, request, response);
+}
+
+void BlockchainAPIService::Stub::experimental_async::GetBlockchainById(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainByIdRequest* request, ::blockchain::network::v1alpha1::GetBlockchainByIdResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBlockchainById_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetBlockchainByIdResponse>* BlockchainAPIService::Stub::AsyncGetBlockchainByIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainByIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainByIdResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchainById_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetBlockchainByIdResponse>* BlockchainAPIService::Stub::PrepareAsyncGetBlockchainByIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetBlockchainByIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetBlockchainByIdResponse>::Create(channel_.get(), cq, rpcmethod_GetBlockchainById_, context, request, false);
+}
+
+::grpc::Status BlockchainAPIService::Stub::GetOrganizationsByBlockchainId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest& request, ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOrganizationsByBlockchainId_, context, request, response);
+}
+
+void BlockchainAPIService::Stub::experimental_async::GetOrganizationsByBlockchainId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest* request, ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrganizationsByBlockchainId_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>* BlockchainAPIService::Stub::AsyncGetOrganizationsByBlockchainIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganizationsByBlockchainId_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>* BlockchainAPIService::Stub::PrepareAsyncGetOrganizationsByBlockchainIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganizationsByBlockchainId_, context, request, false);
 }
 
 ::grpc::Status BlockchainAPIService::Stub::SendInvitation(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::SendInvitationRequest& request, ::blockchain::network::v1alpha1::SendInvitationResponse* response) {
@@ -139,6 +161,38 @@ void BlockchainAPIService::Stub::experimental_async::SendInvitation(::grpc::Clie
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::SendInvitationResponse>::Create(channel_.get(), cq, rpcmethod_SendInvitation_, context, request, false);
 }
 
+::grpc::Status BlockchainAPIService::Stub::CreateOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest& request, ::blockchain::network::v1alpha1::CreateOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateOrganization_, context, request, response);
+}
+
+void BlockchainAPIService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest* request, ::blockchain::network::v1alpha1::CreateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateOrganizationResponse>* BlockchainAPIService::Stub::AsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateOrganizationResponse>* BlockchainAPIService::Stub::PrepareAsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, false);
+}
+
+::grpc::Status BlockchainAPIService::Stub::CreateChannel(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest& request, ::blockchain::network::v1alpha1::CreateChannelResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateChannel_, context, request, response);
+}
+
+void BlockchainAPIService::Stub::experimental_async::CreateChannel(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest* request, ::blockchain::network::v1alpha1::CreateChannelResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateChannel_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateChannelResponse>* BlockchainAPIService::Stub::AsyncCreateChannelRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateChannelResponse>::Create(channel_.get(), cq, rpcmethod_CreateChannel_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::CreateChannelResponse>* BlockchainAPIService::Stub::PrepareAsyncCreateChannelRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::CreateChannelResponse>::Create(channel_.get(), cq, rpcmethod_CreateChannel_, context, request, false);
+}
+
 BlockchainAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainAPIService_method_names[0],
@@ -153,23 +207,38 @@ BlockchainAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainAPIService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::CreateChannelRequest, ::blockchain::network::v1alpha1::CreateChannelResponse>(
-          std::mem_fn(&BlockchainAPIService::Service::CreateChannel), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      BlockchainAPIService_method_names[3],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetBlockchainsRequest, ::blockchain::network::v1alpha1::GetBlockchainsResponse>(
           std::mem_fn(&BlockchainAPIService::Service::GetBlockchains), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainAPIService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest, ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::GetBlockchainsByUserId), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainAPIService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetBlockchainByIdRequest, ::blockchain::network::v1alpha1::GetBlockchainByIdResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::GetBlockchainById), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainAPIService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest, ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::GetOrganizationsByBlockchainId), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainAPIService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::SendInvitationRequest, ::blockchain::network::v1alpha1::SendInvitationResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::SendInvitation), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      BlockchainAPIService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::CreateOrganizationRequest, ::blockchain::network::v1alpha1::CreateOrganizationResponse>(
           std::mem_fn(&BlockchainAPIService::Service::CreateOrganization), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      BlockchainAPIService_method_names[5],
+      BlockchainAPIService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::SendInvitationRequest, ::blockchain::network::v1alpha1::SendInvitationResponse>(
-          std::mem_fn(&BlockchainAPIService::Service::SendInvitation), this)));
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::CreateChannelRequest, ::blockchain::network::v1alpha1::CreateChannelResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::CreateChannel), this)));
 }
 
 BlockchainAPIService::Service::~Service() {
@@ -189,14 +258,35 @@ BlockchainAPIService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BlockchainAPIService::Service::CreateChannel(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest* request, ::blockchain::network::v1alpha1::CreateChannelResponse* response) {
+::grpc::Status BlockchainAPIService::Service::GetBlockchains(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest* request, ::blockchain::network::v1alpha1::GetBlockchainsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BlockchainAPIService::Service::GetBlockchains(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsRequest* request, ::blockchain::network::v1alpha1::GetBlockchainsResponse* response) {
+::grpc::Status BlockchainAPIService::Service::GetBlockchainsByUserId(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest* request, ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainAPIService::Service::GetBlockchainById(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetBlockchainByIdRequest* request, ::blockchain::network::v1alpha1::GetBlockchainByIdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainAPIService::Service::GetOrganizationsByBlockchainId(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest* request, ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status BlockchainAPIService::Service::SendInvitation(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::SendInvitationRequest* request, ::blockchain::network::v1alpha1::SendInvitationResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -210,7 +300,7 @@ BlockchainAPIService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BlockchainAPIService::Service::SendInvitation(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::SendInvitationRequest* request, ::blockchain::network::v1alpha1::SendInvitationResponse* response) {
+::grpc::Status BlockchainAPIService::Service::CreateChannel(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::CreateChannelRequest* request, ::blockchain::network::v1alpha1::CreateChannelResponse* response) {
   (void) context;
   (void) request;
   (void) response;
