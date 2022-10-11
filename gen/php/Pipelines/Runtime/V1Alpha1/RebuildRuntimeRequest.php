@@ -17,6 +17,10 @@ class RebuildRuntimeRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      */
     protected $runtime_id = '';
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class RebuildRuntimeRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $runtime_id
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class RebuildRuntimeRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runtime_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }
