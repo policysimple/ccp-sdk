@@ -4138,24 +4138,36 @@ public final class PaymentOuterClass {
         getPriceBytesBytes();
 
     /**
-     * <code>string currency = 8 [json_name = "currency"];</code>
+     * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     * @return The pricePipeline.
+     */
+    java.lang.String getPricePipeline();
+    /**
+     * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     * @return The bytes for pricePipeline.
+     */
+    com.google.protobuf.ByteString
+        getPricePipelineBytes();
+
+    /**
+     * <code>string currency = 9 [json_name = "currency"];</code>
      * @return The currency.
      */
     java.lang.String getCurrency();
     /**
-     * <code>string currency = 8 [json_name = "currency"];</code>
+     * <code>string currency = 9 [json_name = "currency"];</code>
      * @return The bytes for currency.
      */
     com.google.protobuf.ByteString
         getCurrencyBytes();
 
     /**
-     * <code>string interval = 9 [json_name = "interval"];</code>
+     * <code>string interval = 10 [json_name = "interval"];</code>
      * @return The interval.
      */
     java.lang.String getInterval();
     /**
-     * <code>string interval = 9 [json_name = "interval"];</code>
+     * <code>string interval = 10 [json_name = "interval"];</code>
      * @return The bytes for interval.
      */
     com.google.protobuf.ByteString
@@ -4181,6 +4193,7 @@ public final class PaymentOuterClass {
       price_ = "";
       priceCpu_ = "";
       priceBytes_ = "";
+      pricePipeline_ = "";
       currency_ = "";
       interval_ = "";
     }
@@ -4260,10 +4273,16 @@ public final class PaymentOuterClass {
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              currency_ = s;
+              pricePipeline_ = s;
               break;
             }
             case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currency_ = s;
+              break;
+            }
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               interval_ = s;
@@ -4567,10 +4586,48 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int CURRENCY_FIELD_NUMBER = 8;
+    public static final int PRICE_PIPELINE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object pricePipeline_;
+    /**
+     * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     * @return The pricePipeline.
+     */
+    @java.lang.Override
+    public java.lang.String getPricePipeline() {
+      java.lang.Object ref = pricePipeline_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pricePipeline_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     * @return The bytes for pricePipeline.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPricePipelineBytes() {
+      java.lang.Object ref = pricePipeline_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pricePipeline_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURRENCY_FIELD_NUMBER = 9;
     private volatile java.lang.Object currency_;
     /**
-     * <code>string currency = 8 [json_name = "currency"];</code>
+     * <code>string currency = 9 [json_name = "currency"];</code>
      * @return The currency.
      */
     @java.lang.Override
@@ -4587,7 +4644,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string currency = 8 [json_name = "currency"];</code>
+     * <code>string currency = 9 [json_name = "currency"];</code>
      * @return The bytes for currency.
      */
     @java.lang.Override
@@ -4605,10 +4662,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int INTERVAL_FIELD_NUMBER = 9;
+    public static final int INTERVAL_FIELD_NUMBER = 10;
     private volatile java.lang.Object interval_;
     /**
-     * <code>string interval = 9 [json_name = "interval"];</code>
+     * <code>string interval = 10 [json_name = "interval"];</code>
      * @return The interval.
      */
     @java.lang.Override
@@ -4625,7 +4682,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string interval = 9 [json_name = "interval"];</code>
+     * <code>string interval = 10 [json_name = "interval"];</code>
      * @return The bytes for interval.
      */
     @java.lang.Override
@@ -4678,11 +4735,14 @@ public final class PaymentOuterClass {
       if (!getPriceBytesBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, priceBytes_);
       }
+      if (!getPricePipelineBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, pricePipeline_);
+      }
       if (!getCurrencyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, currency_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, currency_);
       }
       if (!getIntervalBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, interval_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, interval_);
       }
       unknownFields.writeTo(output);
     }
@@ -4714,11 +4774,14 @@ public final class PaymentOuterClass {
       if (!getPriceBytesBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, priceBytes_);
       }
+      if (!getPricePipelineBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, pricePipeline_);
+      }
       if (!getCurrencyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, currency_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, currency_);
       }
       if (!getIntervalBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, interval_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, interval_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4749,6 +4812,8 @@ public final class PaymentOuterClass {
           .equals(other.getPriceCpu())) return false;
       if (!getPriceBytes()
           .equals(other.getPriceBytes())) return false;
+      if (!getPricePipeline()
+          .equals(other.getPricePipeline())) return false;
       if (!getCurrency()
           .equals(other.getCurrency())) return false;
       if (!getInterval()
@@ -4778,6 +4843,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getPriceCpu().hashCode();
       hash = (37 * hash) + PRICE_BYTES_FIELD_NUMBER;
       hash = (53 * hash) + getPriceBytes().hashCode();
+      hash = (37 * hash) + PRICE_PIPELINE_FIELD_NUMBER;
+      hash = (53 * hash) + getPricePipeline().hashCode();
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
@@ -4929,6 +4996,8 @@ public final class PaymentOuterClass {
 
         priceBytes_ = "";
 
+        pricePipeline_ = "";
+
         currency_ = "";
 
         interval_ = "";
@@ -4966,6 +5035,7 @@ public final class PaymentOuterClass {
         result.price_ = price_;
         result.priceCpu_ = priceCpu_;
         result.priceBytes_ = priceBytes_;
+        result.pricePipeline_ = pricePipeline_;
         result.currency_ = currency_;
         result.interval_ = interval_;
         onBuilt();
@@ -5042,6 +5112,10 @@ public final class PaymentOuterClass {
         }
         if (!other.getPriceBytes().isEmpty()) {
           priceBytes_ = other.priceBytes_;
+          onChanged();
+        }
+        if (!other.getPricePipeline().isEmpty()) {
+          pricePipeline_ = other.pricePipeline_;
           onChanged();
         }
         if (!other.getCurrency().isEmpty()) {
@@ -5613,9 +5687,85 @@ public final class PaymentOuterClass {
         return this;
       }
 
+      private java.lang.Object pricePipeline_ = "";
+      /**
+       * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+       * @return The pricePipeline.
+       */
+      public java.lang.String getPricePipeline() {
+        java.lang.Object ref = pricePipeline_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pricePipeline_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+       * @return The bytes for pricePipeline.
+       */
+      public com.google.protobuf.ByteString
+          getPricePipelineBytes() {
+        java.lang.Object ref = pricePipeline_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pricePipeline_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+       * @param value The pricePipeline to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPricePipeline(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pricePipeline_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPricePipeline() {
+        
+        pricePipeline_ = getDefaultInstance().getPricePipeline();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+       * @param value The bytes for pricePipeline to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPricePipelineBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pricePipeline_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object currency_ = "";
       /**
-       * <code>string currency = 8 [json_name = "currency"];</code>
+       * <code>string currency = 9 [json_name = "currency"];</code>
        * @return The currency.
        */
       public java.lang.String getCurrency() {
@@ -5631,7 +5781,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string currency = 8 [json_name = "currency"];</code>
+       * <code>string currency = 9 [json_name = "currency"];</code>
        * @return The bytes for currency.
        */
       public com.google.protobuf.ByteString
@@ -5648,7 +5798,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string currency = 8 [json_name = "currency"];</code>
+       * <code>string currency = 9 [json_name = "currency"];</code>
        * @param value The currency to set.
        * @return This builder for chaining.
        */
@@ -5663,7 +5813,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string currency = 8 [json_name = "currency"];</code>
+       * <code>string currency = 9 [json_name = "currency"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrency() {
@@ -5673,7 +5823,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string currency = 8 [json_name = "currency"];</code>
+       * <code>string currency = 9 [json_name = "currency"];</code>
        * @param value The bytes for currency to set.
        * @return This builder for chaining.
        */
@@ -5691,7 +5841,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object interval_ = "";
       /**
-       * <code>string interval = 9 [json_name = "interval"];</code>
+       * <code>string interval = 10 [json_name = "interval"];</code>
        * @return The interval.
        */
       public java.lang.String getInterval() {
@@ -5707,7 +5857,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string interval = 9 [json_name = "interval"];</code>
+       * <code>string interval = 10 [json_name = "interval"];</code>
        * @return The bytes for interval.
        */
       public com.google.protobuf.ByteString
@@ -5724,7 +5874,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string interval = 9 [json_name = "interval"];</code>
+       * <code>string interval = 10 [json_name = "interval"];</code>
        * @param value The interval to set.
        * @return This builder for chaining.
        */
@@ -5739,7 +5889,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string interval = 9 [json_name = "interval"];</code>
+       * <code>string interval = 10 [json_name = "interval"];</code>
        * @return This builder for chaining.
        */
       public Builder clearInterval() {
@@ -5749,7 +5899,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string interval = 9 [json_name = "interval"];</code>
+       * <code>string interval = 10 [json_name = "interval"];</code>
        * @param value The bytes for interval to set.
        * @return This builder for chaining.
        */
@@ -9646,78 +9796,84 @@ public final class PaymentOuterClass {
     double getRam();
 
     /**
-     * <code>string month = 7 [json_name = "month"];</code>
+     * <code>double pipeline = 7 [json_name = "pipeline"];</code>
+     * @return The pipeline.
+     */
+    double getPipeline();
+
+    /**
+     * <code>string month = 8 [json_name = "month"];</code>
      * @return The month.
      */
     java.lang.String getMonth();
     /**
-     * <code>string month = 7 [json_name = "month"];</code>
+     * <code>string month = 8 [json_name = "month"];</code>
      * @return The bytes for month.
      */
     com.google.protobuf.ByteString
         getMonthBytes();
 
     /**
-     * <code>string year = 8 [json_name = "year"];</code>
+     * <code>string year = 9 [json_name = "year"];</code>
      * @return The year.
      */
     java.lang.String getYear();
     /**
-     * <code>string year = 8 [json_name = "year"];</code>
+     * <code>string year = 9 [json_name = "year"];</code>
      * @return The bytes for year.
      */
     com.google.protobuf.ByteString
         getYearBytes();
 
     /**
-     * <code>int64 amount = 9 [json_name = "amount"];</code>
+     * <code>int64 amount = 10 [json_name = "amount"];</code>
      * @return The amount.
      */
     long getAmount();
 
     /**
-     * <code>string period = 10 [json_name = "period"];</code>
+     * <code>string period = 11 [json_name = "period"];</code>
      * @return The period.
      */
     java.lang.String getPeriod();
     /**
-     * <code>string period = 10 [json_name = "period"];</code>
+     * <code>string period = 11 [json_name = "period"];</code>
      * @return The bytes for period.
      */
     com.google.protobuf.ByteString
         getPeriodBytes();
 
     /**
-     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * <code>string statuspay = 12 [json_name = "statuspay"];</code>
      * @return The statuspay.
      */
     java.lang.String getStatuspay();
     /**
-     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * <code>string statuspay = 12 [json_name = "statuspay"];</code>
      * @return The bytes for statuspay.
      */
     com.google.protobuf.ByteString
         getStatuspayBytes();
 
     /**
-     * <code>string date = 12 [json_name = "date"];</code>
+     * <code>string date = 13 [json_name = "date"];</code>
      * @return The date.
      */
     java.lang.String getDate();
     /**
-     * <code>string date = 12 [json_name = "date"];</code>
+     * <code>string date = 13 [json_name = "date"];</code>
      * @return The bytes for date.
      */
     com.google.protobuf.ByteString
         getDateBytes();
 
     /**
-     * <code>string product = 13 [json_name = "product"];</code>
+     * <code>string product = 14 [json_name = "product"];</code>
      * @return The product.
      */
     java.lang.String getProduct();
     /**
-     * <code>string product = 13 [json_name = "product"];</code>
+     * <code>string product = 14 [json_name = "product"];</code>
      * @return The bytes for product.
      */
     com.google.protobuf.ByteString
@@ -9810,42 +9966,47 @@ public final class PaymentOuterClass {
               ram_ = input.readDouble();
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 57: {
 
-              month_ = s;
+              pipeline_ = input.readDouble();
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              month_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               year_ = s;
               break;
             }
-            case 72: {
+            case 80: {
 
               amount_ = input.readInt64();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              period_ = s;
               break;
             }
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              statuspay_ = s;
+              period_ = s;
               break;
             }
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              date_ = s;
+              statuspay_ = s;
               break;
             }
             case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              date_ = s;
+              break;
+            }
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               product_ = s;
@@ -10030,10 +10191,21 @@ public final class PaymentOuterClass {
       return ram_;
     }
 
-    public static final int MONTH_FIELD_NUMBER = 7;
+    public static final int PIPELINE_FIELD_NUMBER = 7;
+    private double pipeline_;
+    /**
+     * <code>double pipeline = 7 [json_name = "pipeline"];</code>
+     * @return The pipeline.
+     */
+    @java.lang.Override
+    public double getPipeline() {
+      return pipeline_;
+    }
+
+    public static final int MONTH_FIELD_NUMBER = 8;
     private volatile java.lang.Object month_;
     /**
-     * <code>string month = 7 [json_name = "month"];</code>
+     * <code>string month = 8 [json_name = "month"];</code>
      * @return The month.
      */
     @java.lang.Override
@@ -10050,7 +10222,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string month = 7 [json_name = "month"];</code>
+     * <code>string month = 8 [json_name = "month"];</code>
      * @return The bytes for month.
      */
     @java.lang.Override
@@ -10068,10 +10240,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int YEAR_FIELD_NUMBER = 8;
+    public static final int YEAR_FIELD_NUMBER = 9;
     private volatile java.lang.Object year_;
     /**
-     * <code>string year = 8 [json_name = "year"];</code>
+     * <code>string year = 9 [json_name = "year"];</code>
      * @return The year.
      */
     @java.lang.Override
@@ -10088,7 +10260,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string year = 8 [json_name = "year"];</code>
+     * <code>string year = 9 [json_name = "year"];</code>
      * @return The bytes for year.
      */
     @java.lang.Override
@@ -10106,10 +10278,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int AMOUNT_FIELD_NUMBER = 9;
+    public static final int AMOUNT_FIELD_NUMBER = 10;
     private long amount_;
     /**
-     * <code>int64 amount = 9 [json_name = "amount"];</code>
+     * <code>int64 amount = 10 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -10117,10 +10289,10 @@ public final class PaymentOuterClass {
       return amount_;
     }
 
-    public static final int PERIOD_FIELD_NUMBER = 10;
+    public static final int PERIOD_FIELD_NUMBER = 11;
     private volatile java.lang.Object period_;
     /**
-     * <code>string period = 10 [json_name = "period"];</code>
+     * <code>string period = 11 [json_name = "period"];</code>
      * @return The period.
      */
     @java.lang.Override
@@ -10137,7 +10309,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string period = 10 [json_name = "period"];</code>
+     * <code>string period = 11 [json_name = "period"];</code>
      * @return The bytes for period.
      */
     @java.lang.Override
@@ -10155,10 +10327,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int STATUSPAY_FIELD_NUMBER = 11;
+    public static final int STATUSPAY_FIELD_NUMBER = 12;
     private volatile java.lang.Object statuspay_;
     /**
-     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * <code>string statuspay = 12 [json_name = "statuspay"];</code>
      * @return The statuspay.
      */
     @java.lang.Override
@@ -10175,7 +10347,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * <code>string statuspay = 12 [json_name = "statuspay"];</code>
      * @return The bytes for statuspay.
      */
     @java.lang.Override
@@ -10193,10 +10365,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int DATE_FIELD_NUMBER = 12;
+    public static final int DATE_FIELD_NUMBER = 13;
     private volatile java.lang.Object date_;
     /**
-     * <code>string date = 12 [json_name = "date"];</code>
+     * <code>string date = 13 [json_name = "date"];</code>
      * @return The date.
      */
     @java.lang.Override
@@ -10213,7 +10385,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string date = 12 [json_name = "date"];</code>
+     * <code>string date = 13 [json_name = "date"];</code>
      * @return The bytes for date.
      */
     @java.lang.Override
@@ -10231,10 +10403,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int PRODUCT_FIELD_NUMBER = 13;
+    public static final int PRODUCT_FIELD_NUMBER = 14;
     private volatile java.lang.Object product_;
     /**
-     * <code>string product = 13 [json_name = "product"];</code>
+     * <code>string product = 14 [json_name = "product"];</code>
      * @return The product.
      */
     @java.lang.Override
@@ -10251,7 +10423,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string product = 13 [json_name = "product"];</code>
+     * <code>string product = 14 [json_name = "product"];</code>
      * @return The bytes for product.
      */
     @java.lang.Override
@@ -10301,26 +10473,29 @@ public final class PaymentOuterClass {
       if (ram_ != 0D) {
         output.writeDouble(6, ram_);
       }
+      if (pipeline_ != 0D) {
+        output.writeDouble(7, pipeline_);
+      }
       if (!getMonthBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, month_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, month_);
       }
       if (!getYearBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, year_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, year_);
       }
       if (amount_ != 0L) {
-        output.writeInt64(9, amount_);
+        output.writeInt64(10, amount_);
       }
       if (!getPeriodBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, period_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, period_);
       }
       if (!getStatuspayBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, statuspay_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, statuspay_);
       }
       if (!getDateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, date_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, date_);
       }
       if (!getProductBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, product_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, product_);
       }
       unknownFields.writeTo(output);
     }
@@ -10352,27 +10527,31 @@ public final class PaymentOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(6, ram_);
       }
+      if (pipeline_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, pipeline_);
+      }
       if (!getMonthBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, month_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, month_);
       }
       if (!getYearBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, year_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, year_);
       }
       if (amount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, amount_);
+          .computeInt64Size(10, amount_);
       }
       if (!getPeriodBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, period_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, period_);
       }
       if (!getStatuspayBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, statuspay_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, statuspay_);
       }
       if (!getDateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, date_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, date_);
       }
       if (!getProductBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, product_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, product_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10403,6 +10582,9 @@ public final class PaymentOuterClass {
       if (java.lang.Double.doubleToLongBits(getRam())
           != java.lang.Double.doubleToLongBits(
               other.getRam())) return false;
+      if (java.lang.Double.doubleToLongBits(getPipeline())
+          != java.lang.Double.doubleToLongBits(
+              other.getPipeline())) return false;
       if (!getMonth()
           .equals(other.getMonth())) return false;
       if (!getYear()
@@ -10443,6 +10625,9 @@ public final class PaymentOuterClass {
       hash = (37 * hash) + RAM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getRam()));
+      hash = (37 * hash) + PIPELINE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPipeline()));
       hash = (37 * hash) + MONTH_FIELD_NUMBER;
       hash = (53 * hash) + getMonth().hashCode();
       hash = (37 * hash) + YEAR_FIELD_NUMBER;
@@ -10603,6 +10788,8 @@ public final class PaymentOuterClass {
 
         ram_ = 0D;
 
+        pipeline_ = 0D;
+
         month_ = "";
 
         year_ = "";
@@ -10649,6 +10836,7 @@ public final class PaymentOuterClass {
         result.totalusage_ = totalusage_;
         result.cpu_ = cpu_;
         result.ram_ = ram_;
+        result.pipeline_ = pipeline_;
         result.month_ = month_;
         result.year_ = year_;
         result.amount_ = amount_;
@@ -10724,6 +10912,9 @@ public final class PaymentOuterClass {
         }
         if (other.getRam() != 0D) {
           setRam(other.getRam());
+        }
+        if (other.getPipeline() != 0D) {
+          setPipeline(other.getPipeline());
         }
         if (!other.getMonth().isEmpty()) {
           month_ = other.month_;
@@ -11102,9 +11293,40 @@ public final class PaymentOuterClass {
         return this;
       }
 
+      private double pipeline_ ;
+      /**
+       * <code>double pipeline = 7 [json_name = "pipeline"];</code>
+       * @return The pipeline.
+       */
+      @java.lang.Override
+      public double getPipeline() {
+        return pipeline_;
+      }
+      /**
+       * <code>double pipeline = 7 [json_name = "pipeline"];</code>
+       * @param value The pipeline to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPipeline(double value) {
+        
+        pipeline_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double pipeline = 7 [json_name = "pipeline"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPipeline() {
+        
+        pipeline_ = 0D;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object month_ = "";
       /**
-       * <code>string month = 7 [json_name = "month"];</code>
+       * <code>string month = 8 [json_name = "month"];</code>
        * @return The month.
        */
       public java.lang.String getMonth() {
@@ -11120,7 +11342,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string month = 7 [json_name = "month"];</code>
+       * <code>string month = 8 [json_name = "month"];</code>
        * @return The bytes for month.
        */
       public com.google.protobuf.ByteString
@@ -11137,7 +11359,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string month = 7 [json_name = "month"];</code>
+       * <code>string month = 8 [json_name = "month"];</code>
        * @param value The month to set.
        * @return This builder for chaining.
        */
@@ -11152,7 +11374,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string month = 7 [json_name = "month"];</code>
+       * <code>string month = 8 [json_name = "month"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMonth() {
@@ -11162,7 +11384,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string month = 7 [json_name = "month"];</code>
+       * <code>string month = 8 [json_name = "month"];</code>
        * @param value The bytes for month to set.
        * @return This builder for chaining.
        */
@@ -11180,7 +11402,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object year_ = "";
       /**
-       * <code>string year = 8 [json_name = "year"];</code>
+       * <code>string year = 9 [json_name = "year"];</code>
        * @return The year.
        */
       public java.lang.String getYear() {
@@ -11196,7 +11418,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string year = 8 [json_name = "year"];</code>
+       * <code>string year = 9 [json_name = "year"];</code>
        * @return The bytes for year.
        */
       public com.google.protobuf.ByteString
@@ -11213,7 +11435,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string year = 8 [json_name = "year"];</code>
+       * <code>string year = 9 [json_name = "year"];</code>
        * @param value The year to set.
        * @return This builder for chaining.
        */
@@ -11228,7 +11450,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string year = 8 [json_name = "year"];</code>
+       * <code>string year = 9 [json_name = "year"];</code>
        * @return This builder for chaining.
        */
       public Builder clearYear() {
@@ -11238,7 +11460,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string year = 8 [json_name = "year"];</code>
+       * <code>string year = 9 [json_name = "year"];</code>
        * @param value The bytes for year to set.
        * @return This builder for chaining.
        */
@@ -11256,7 +11478,7 @@ public final class PaymentOuterClass {
 
       private long amount_ ;
       /**
-       * <code>int64 amount = 9 [json_name = "amount"];</code>
+       * <code>int64 amount = 10 [json_name = "amount"];</code>
        * @return The amount.
        */
       @java.lang.Override
@@ -11264,7 +11486,7 @@ public final class PaymentOuterClass {
         return amount_;
       }
       /**
-       * <code>int64 amount = 9 [json_name = "amount"];</code>
+       * <code>int64 amount = 10 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -11275,7 +11497,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>int64 amount = 9 [json_name = "amount"];</code>
+       * <code>int64 amount = 10 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -11287,7 +11509,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object period_ = "";
       /**
-       * <code>string period = 10 [json_name = "period"];</code>
+       * <code>string period = 11 [json_name = "period"];</code>
        * @return The period.
        */
       public java.lang.String getPeriod() {
@@ -11303,7 +11525,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string period = 10 [json_name = "period"];</code>
+       * <code>string period = 11 [json_name = "period"];</code>
        * @return The bytes for period.
        */
       public com.google.protobuf.ByteString
@@ -11320,7 +11542,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string period = 10 [json_name = "period"];</code>
+       * <code>string period = 11 [json_name = "period"];</code>
        * @param value The period to set.
        * @return This builder for chaining.
        */
@@ -11335,7 +11557,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string period = 10 [json_name = "period"];</code>
+       * <code>string period = 11 [json_name = "period"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPeriod() {
@@ -11345,7 +11567,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string period = 10 [json_name = "period"];</code>
+       * <code>string period = 11 [json_name = "period"];</code>
        * @param value The bytes for period to set.
        * @return This builder for chaining.
        */
@@ -11363,7 +11585,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object statuspay_ = "";
       /**
-       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * <code>string statuspay = 12 [json_name = "statuspay"];</code>
        * @return The statuspay.
        */
       public java.lang.String getStatuspay() {
@@ -11379,7 +11601,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * <code>string statuspay = 12 [json_name = "statuspay"];</code>
        * @return The bytes for statuspay.
        */
       public com.google.protobuf.ByteString
@@ -11396,7 +11618,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * <code>string statuspay = 12 [json_name = "statuspay"];</code>
        * @param value The statuspay to set.
        * @return This builder for chaining.
        */
@@ -11411,7 +11633,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * <code>string statuspay = 12 [json_name = "statuspay"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStatuspay() {
@@ -11421,7 +11643,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string statuspay = 11 [json_name = "statuspay"];</code>
+       * <code>string statuspay = 12 [json_name = "statuspay"];</code>
        * @param value The bytes for statuspay to set.
        * @return This builder for chaining.
        */
@@ -11439,7 +11661,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object date_ = "";
       /**
-       * <code>string date = 12 [json_name = "date"];</code>
+       * <code>string date = 13 [json_name = "date"];</code>
        * @return The date.
        */
       public java.lang.String getDate() {
@@ -11455,7 +11677,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string date = 12 [json_name = "date"];</code>
+       * <code>string date = 13 [json_name = "date"];</code>
        * @return The bytes for date.
        */
       public com.google.protobuf.ByteString
@@ -11472,7 +11694,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string date = 12 [json_name = "date"];</code>
+       * <code>string date = 13 [json_name = "date"];</code>
        * @param value The date to set.
        * @return This builder for chaining.
        */
@@ -11487,7 +11709,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string date = 12 [json_name = "date"];</code>
+       * <code>string date = 13 [json_name = "date"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDate() {
@@ -11497,7 +11719,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string date = 12 [json_name = "date"];</code>
+       * <code>string date = 13 [json_name = "date"];</code>
        * @param value The bytes for date to set.
        * @return This builder for chaining.
        */
@@ -11515,7 +11737,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object product_ = "";
       /**
-       * <code>string product = 13 [json_name = "product"];</code>
+       * <code>string product = 14 [json_name = "product"];</code>
        * @return The product.
        */
       public java.lang.String getProduct() {
@@ -11531,7 +11753,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string product = 13 [json_name = "product"];</code>
+       * <code>string product = 14 [json_name = "product"];</code>
        * @return The bytes for product.
        */
       public com.google.protobuf.ByteString
@@ -11548,7 +11770,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string product = 13 [json_name = "product"];</code>
+       * <code>string product = 14 [json_name = "product"];</code>
        * @param value The product to set.
        * @return This builder for chaining.
        */
@@ -11563,7 +11785,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string product = 13 [json_name = "product"];</code>
+       * <code>string product = 14 [json_name = "product"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProduct() {
@@ -11573,7 +11795,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string product = 13 [json_name = "product"];</code>
+       * <code>string product = 14 [json_name = "product"];</code>
        * @param value The bytes for product to set.
        * @return This builder for chaining.
        */
@@ -19111,54 +19333,55 @@ public final class PaymentOuterClass {
       "cription\030\005 \001(\tR\013description\022\035\n\ncreated_a" +
       "t\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\t" +
       "updatedAt\022\026\n\006status\030\010 \001(\010R\006status\022!\n\014is_" +
-      "suspended\030\t \001(\010R\013isSuspended\"\244\002\n\014Subscri" +
+      "suspended\030\t \001(\010R\013isSuspended\"\313\002\n\014Subscri" +
       "ption\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017subscription_id" +
       "\030\002 \001(\tR\016subscriptionId\0220\n\024subscription_i" +
       "tem_id\030\003 \001(\tR\022subscriptionItemId\022\035\n\ninvo" +
       "ice_id\030\004 \001(\tR\tinvoiceId\022\024\n\005price\030\005 \001(\tR\005" +
       "price\022\033\n\tprice_cpu\030\006 \001(\tR\010priceCpu\022\037\n\013pr" +
-      "ice_bytes\030\007 \001(\tR\npriceBytes\022\032\n\010currency\030" +
-      "\010 \001(\tR\010currency\022\032\n\010interval\030\t \001(\tR\010inter" +
-      "val\"\267\001\n\007Payment\022\027\n\007card_id\030\001 \001(\tR\006cardId" +
-      "\022\030\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 " +
-      "\001(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\nto" +
-      "ken_card\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132" +
-      "\026.payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037" +
-      "\n\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmo" +
-      "nth\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007ex" +
-      "pyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002i" +
-      "d\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006p" +
-      "eriod\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\t" +
-      "statuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product" +
-      "\030\006 \001(\tR\007product\"\304\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014acc" +
-      "ount_name\030\003 \001(\tR\013accountName\022\036\n\ntotalusa" +
-      "ge\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020" +
-      "\n\003ram\030\006 \001(\001R\003ram\022\024\n\005month\030\007 \001(\tR\005month\022\022" +
-      "\n\004year\030\010 \001(\tR\004year\022\026\n\006amount\030\t \001(\003R\006amou" +
-      "nt\022\026\n\006period\030\n \001(\tR\006period\022\034\n\tstatuspay\030" +
-      "\013 \001(\tR\tstatuspay\022\022\n\004date\030\014 \001(\tR\004date\022\030\n\007" +
-      "product\030\r \001(\tR\007product\"\217\001\n\021SubscriptionI" +
-      "tems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024subscription_ite" +
-      "m_id\030\002 \001(\tR\022subscriptionItemId\022\031\n\010price_" +
-      "id\030\003 \001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tp" +
-      "roductId\"R\n\025SubscriptionItemsList\0229\n\005ite" +
-      "ms\030\001 \003(\0132#.payment.v1alpha1.Subscription" +
-      "ItemsR\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003" +
-      "(\0132\031.payment.v1alpha1.InvoiceR\005items\"@\n\014" +
-      "CustomerList\0220\n\005items\030\001 \003(\0132\032.payment.v1" +
-      "alpha1.CustomerR\005items\"<\n\nBilingList\022.\n\005" +
-      "items\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005i" +
-      "tems\"H\n\020SubscriptionList\0224\n\005items\030\001 \003(\0132" +
-      "\036.payment.v1alpha1.SubscriptionR\005items\"8" +
-      "\n\010CardList\022,\n\005items\030\001 \003(\0132\026.payment.v1al" +
-      "pha1.CardR\005items\">\n\013PaymentList\022/\n\005items" +
-      "\030\001 \003(\0132\031.payment.v1alpha1.PaymentR\005items" +
-      "\">\n\013ProjectList\022/\n\005items\030\001 \003(\0132\031.payment" +
-      ".v1alpha1.ProjectR\005itemsB8Z6github.com/c" +
-      "uemby/ccp-payment-service/payment/v1alph" +
-      "a1b\006proto3"
+      "ice_bytes\030\007 \001(\tR\npriceBytes\022%\n\016price_pip" +
+      "eline\030\010 \001(\tR\rpricePipeline\022\032\n\010currency\030\t" +
+      " \001(\tR\010currency\022\032\n\010interval\030\n \001(\tR\010interv" +
+      "al\"\267\001\n\007Payment\022\027\n\007card_id\030\001 \001(\tR\006cardId\022" +
+      "\030\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001" +
+      "(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntok" +
+      "en_card\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132\026" +
+      ".payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037\n" +
+      "\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmon" +
+      "th\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007exp" +
+      "year\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id" +
+      "\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006pe" +
+      "riod\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\ts" +
+      "tatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030" +
+      "\006 \001(\tR\007product\"\340\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014acco" +
+      "unt_name\030\003 \001(\tR\013accountName\022\036\n\ntotalusag" +
+      "e\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n" +
+      "\003ram\030\006 \001(\001R\003ram\022\032\n\010pipeline\030\007 \001(\001R\010pipel" +
+      "ine\022\024\n\005month\030\010 \001(\tR\005month\022\022\n\004year\030\t \001(\tR" +
+      "\004year\022\026\n\006amount\030\n \001(\003R\006amount\022\026\n\006period\030" +
+      "\013 \001(\tR\006period\022\034\n\tstatuspay\030\014 \001(\tR\tstatus" +
+      "pay\022\022\n\004date\030\r \001(\tR\004date\022\030\n\007product\030\016 \001(\t" +
+      "R\007product\"\217\001\n\021SubscriptionItems\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\0220\n\024subscription_item_id\030\002 \001(\tR\022s" +
+      "ubscriptionItemId\022\031\n\010price_id\030\003 \001(\tR\007pri" +
+      "ceId\022\035\n\nproduct_id\030\004 \001(\tR\tproductId\"R\n\025S" +
+      "ubscriptionItemsList\0229\n\005items\030\001 \003(\0132#.pa" +
+      "yment.v1alpha1.SubscriptionItemsR\005items\"" +
+      ">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031.payment." +
+      "v1alpha1.InvoiceR\005items\"@\n\014CustomerList\022" +
+      "0\n\005items\030\001 \003(\0132\032.payment.v1alpha1.Custom" +
+      "erR\005items\"<\n\nBilingList\022.\n\005items\030\001 \003(\0132\030" +
+      ".payment.v1alpha1.BilingR\005items\"H\n\020Subsc" +
+      "riptionList\0224\n\005items\030\001 \003(\0132\036.payment.v1a" +
+      "lpha1.SubscriptionR\005items\"8\n\010CardList\022,\n" +
+      "\005items\030\001 \003(\0132\026.payment.v1alpha1.CardR\005it" +
+      "ems\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.paym" +
+      "ent.v1alpha1.PaymentR\005items\">\n\013ProjectLi" +
+      "st\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Pro" +
+      "jectR\005itemsB8Z6github.com/cuemby/ccp-pay" +
+      "ment-service/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19181,7 +19404,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Subscription_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Subscription_descriptor,
-        new java.lang.String[] { "Id", "SubscriptionId", "SubscriptionItemId", "InvoiceId", "Price", "PriceCpu", "PriceBytes", "Currency", "Interval", });
+        new java.lang.String[] { "Id", "SubscriptionId", "SubscriptionItemId", "InvoiceId", "Price", "PriceCpu", "PriceBytes", "PricePipeline", "Currency", "Interval", });
     internal_static_payment_v1alpha1_Payment_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new
@@ -19205,7 +19428,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Biling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Biling_descriptor,
-        new java.lang.String[] { "Id", "InvoiceId", "AccountName", "Totalusage", "Cpu", "Ram", "Month", "Year", "Amount", "Period", "Statuspay", "Date", "Product", });
+        new java.lang.String[] { "Id", "InvoiceId", "AccountName", "Totalusage", "Cpu", "Ram", "Pipeline", "Month", "Year", "Amount", "Period", "Statuspay", "Date", "Product", });
     internal_static_payment_v1alpha1_SubscriptionItems_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_payment_v1alpha1_SubscriptionItems_fieldAccessorTable = new

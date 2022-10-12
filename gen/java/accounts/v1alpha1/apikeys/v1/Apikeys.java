@@ -2323,6 +2323,18 @@ public final class Apikeys {
      */
     com.google.protobuf.ByteString
         getUuidBytes();
+
+    /**
+     * <code>string value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    java.lang.String getValue();
+    /**
+     * <code>string value = 2 [json_name = "value"];</code>
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest}
@@ -2338,6 +2350,7 @@ public final class Apikeys {
     }
     private GetOneApiKeyRequest() {
       uuid_ = "";
+      value_ = "";
     }
 
     @java.lang.Override
@@ -2374,6 +2387,12 @@ public final class Apikeys {
               java.lang.String s = input.readStringRequireUtf8();
 
               uuid_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
               break;
             }
             default: {
@@ -2446,6 +2465,44 @@ public final class Apikeys {
       }
     }
 
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>string value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string value = 2 [json_name = "value"];</code>
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2463,6 +2520,9 @@ public final class Apikeys {
       if (!getUuidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2474,6 +2534,9 @@ public final class Apikeys {
       size = 0;
       if (!getUuidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2492,6 +2555,8 @@ public final class Apikeys {
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2505,6 +2570,8 @@ public final class Apikeys {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + UUID_FIELD_NUMBER;
       hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2640,6 +2707,8 @@ public final class Apikeys {
         super.clear();
         uuid_ = "";
 
+        value_ = "";
+
         return this;
       }
 
@@ -2667,6 +2736,7 @@ public final class Apikeys {
       public accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest buildPartial() {
         accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest result = new accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest(this);
         result.uuid_ = uuid_;
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -2717,6 +2787,10 @@ public final class Apikeys {
         if (other == accounts.v1alpha1.apikeys.v1.Apikeys.GetOneApiKeyRequest.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2820,6 +2894,82 @@ public final class Apikeys {
   checkByteStringIsUtf8(value);
         
         uuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <code>string value = 2 [json_name = "value"];</code>
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string value = 2 [json_name = "value"];</code>
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string value = 2 [json_name = "value"];</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 2 [json_name = "value"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 2 [json_name = "value"];</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
         onChanged();
         return this;
       }
@@ -11033,39 +11183,39 @@ public final class Apikeys {
       "expired_at\030\010 \001(\tR\texpiredAt\"k\n\024CreateApi" +
       "KeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key" +
       "\030\002 \001(\tR\006apiKey\022\022\n\004uuid\030\004 \001(\tR\004uuid\022\024\n\005er" +
-      "ror\030\005 \001(\tR\005error\")\n\023GetOneApiKeyRequest\022" +
-      "\022\n\004uuid\030\001 \001(\tR\004uuid\"\366\002\n\024GetOneApiKeyResp" +
-      "onse\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key\030\002 \001(" +
-      "\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id" +
-      "\030\004 \001(\tR\006userId\022+\n\004role\030\005 \001(\0132\027.accounts." +
-      "v1alpha1.RoleR\004role\022?\n\013permissions\030\006 \003(\013" +
-      "2\035.accounts.v1alpha1.PermissionR\013permiss" +
-      "ions\022\033\n\tis_active\030\010 \001(\010R\010isActive\0224\n\007pro" +
-      "ject\030\t \001(\0132\032.accounts.v1alpha1.ProjectR\007" +
-      "project\022C\n\014organization\030\n \001(\0132\037.accounts" +
-      ".v1alpha1.OrganizationR\014organization\"U\n\021" +
-      "ListApiKeyRequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
-      "Id\022\'\n\017organization_id\030\002 \001(\rR\016organizatio" +
-      "nId\"\376\001\n\nApiKeyList\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027" +
-      "\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004n" +
-      "ame\022\027\n\007user_id\030\004 \001(\tR\006userId\022\033\n\tis_activ" +
-      "e\030\006 \001(\010R\010isActive\0224\n\007project\030\007 \001(\0132\032.acc" +
-      "ounts.v1alpha1.ProjectR\007project\022C\n\014organ" +
-      "ization\030\010 \001(\0132\037.accounts.v1alpha1.Organi" +
-      "zationR\014organization\"Y\n\022ListApiKeyRespon" +
-      "se\022C\n\010api_keys\030\001 \003(\0132(.accounts.v1alpha1" +
-      ".apikeys.v1.ApiKeyListR\007apiKeys\"u\n\023Updat" +
-      "eApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uuid\022J\n\007ap" +
-      "i_key\030\006 \001(\01321.accounts.v1alpha1.apikeys." +
-      "v1.CreateApiKeyRequestR\006apiKey\"W\n\024Update" +
-      "ApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_" +
-      "key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005error\"" +
-      ")\n\023DeleteApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uu" +
-      "id\"W\n\024DeleteApiKeyResponse\022\020\n\003msg\030\001 \001(\tR" +
-      "\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003" +
-      " \001(\tR\005errorB<Z:github.com/cuemby/ccp-sdk" +
-      "/gen/go/accounts/v1alpha1/apikeysb\006proto" +
-      "3"
+      "ror\030\005 \001(\tR\005error\"?\n\023GetOneApiKeyRequest\022" +
+      "\022\n\004uuid\030\001 \001(\tR\004uuid\022\024\n\005value\030\002 \001(\tR\005valu" +
+      "e\"\366\002\n\024GetOneApiKeyResponse\022\022\n\004uuid\030\001 \001(\t" +
+      "R\004uuid\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030" +
+      "\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001(\tR\006userId\022+\n\004" +
+      "role\030\005 \001(\0132\027.accounts.v1alpha1.RoleR\004rol" +
+      "e\022?\n\013permissions\030\006 \003(\0132\035.accounts.v1alph" +
+      "a1.PermissionR\013permissions\022\033\n\tis_active\030" +
+      "\010 \001(\010R\010isActive\0224\n\007project\030\t \001(\0132\032.accou" +
+      "nts.v1alpha1.ProjectR\007project\022C\n\014organiz" +
+      "ation\030\n \001(\0132\037.accounts.v1alpha1.Organiza" +
+      "tionR\014organization\"U\n\021ListApiKeyRequest\022" +
+      "\027\n\007user_id\030\001 \001(\tR\006userId\022\'\n\017organization" +
+      "_id\030\002 \001(\rR\016organizationId\"\376\001\n\nApiKeyList" +
+      "\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key\030\002 \001(\tR\006a" +
+      "piKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001" +
+      "(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isActive\022" +
+      "4\n\007project\030\007 \001(\0132\032.accounts.v1alpha1.Pro" +
+      "jectR\007project\022C\n\014organization\030\010 \001(\0132\037.ac" +
+      "counts.v1alpha1.OrganizationR\014organizati" +
+      "on\"Y\n\022ListApiKeyResponse\022C\n\010api_keys\030\001 \003" +
+      "(\0132(.accounts.v1alpha1.apikeys.v1.ApiKey" +
+      "ListR\007apiKeys\"u\n\023UpdateApiKeyRequest\022\022\n\004" +
+      "uuid\030\001 \001(\tR\004uuid\022J\n\007api_key\030\006 \001(\01321.acco" +
+      "unts.v1alpha1.apikeys.v1.CreateApiKeyReq" +
+      "uestR\006apiKey\"W\n\024UpdateApiKeyResponse\022\020\n\003" +
+      "msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022" +
+      "\024\n\005error\030\003 \001(\tR\005error\")\n\023DeleteApiKeyReq" +
+      "uest\022\022\n\004uuid\030\001 \001(\tR\004uuid\"W\n\024DeleteApiKey" +
+      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 " +
+      "\001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005errorB<Z:git" +
+      "hub.com/cuemby/ccp-sdk/gen/go/accounts/v" +
+      "1alpha1/apikeysb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11089,7 +11239,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_descriptor,
-        new java.lang.String[] { "Uuid", });
+        new java.lang.String[] { "Uuid", "Value", });
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_fieldAccessorTable = new

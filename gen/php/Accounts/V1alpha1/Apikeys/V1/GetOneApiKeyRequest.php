@@ -17,6 +17,10 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string uuid = 1 [json_name = "uuid"];</code>
      */
     protected $uuid = '';
+    /**
+     * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
+     */
+    protected $value = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $uuid
+     *     @type string $value
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class GetOneApiKeyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->uuid = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value = 2 [json_name = "value"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->value = $var;
 
         return $this;
     }

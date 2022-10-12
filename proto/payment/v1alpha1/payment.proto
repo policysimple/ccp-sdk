@@ -38,8 +38,9 @@ message Subscription {
   string price= 5;
   string price_cpu =6;
   string price_bytes =7;
-  string currency =8;
-  string interval =9;   
+  string price_pipeline =8;
+  string currency =9;
+  string interval =10;   
 }
 
 message Payment {
@@ -76,13 +77,14 @@ message Biling {
   int64 totalusage = 4;
   double cpu = 5;
   double ram = 6;
-  string month = 7;
-  string year = 8;
-  int64 amount = 9;
-  string period = 10;
-  string statuspay = 11;
-  string date = 12;
-  string product = 13;
+  double pipeline = 7;
+  string month = 8;
+  string year = 9;
+  int64 amount = 10;
+  string period = 11;
+  string statuspay = 12;
+  string date = 13;
+  string product = 14;
 }
 
 message SubscriptionItems {

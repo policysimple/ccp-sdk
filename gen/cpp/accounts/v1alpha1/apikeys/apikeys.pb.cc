@@ -56,7 +56,8 @@ struct CreateApiKeyResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateApiKeyResponseDefaultTypeInternal _CreateApiKeyResponse_default_instance_;
 constexpr GetOneApiKeyRequest::GetOneApiKeyRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetOneApiKeyRequestDefaultTypeInternal {
   constexpr GetOneApiKeyRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -218,6 +219,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fapikeys_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyRequest, uuid_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyRequest, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -291,14 +293,14 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::accounts::v1alpha1::apikeys::v1::CreateApiKeyRequest)},
   { 12, -1, sizeof(::accounts::v1alpha1::apikeys::v1::CreateApiKeyResponse)},
   { 21, -1, sizeof(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyRequest)},
-  { 27, -1, sizeof(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyResponse)},
-  { 41, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyRequest)},
-  { 48, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ApiKeyList)},
-  { 60, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyResponse)},
-  { 66, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyRequest)},
-  { 73, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyResponse)},
-  { 81, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyRequest)},
-  { 87, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyResponse)},
+  { 28, -1, sizeof(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyResponse)},
+  { 42, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyRequest)},
+  { 49, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ApiKeyList)},
+  { 61, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyResponse)},
+  { 67, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyRequest)},
+  { 74, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyResponse)},
+  { 82, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyRequest)},
+  { 88, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -327,46 +329,46 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fapikeys_2fapikeys_2ep
   "expired_at\030\010 \001(\tR\texpiredAt\"k\n\024CreateApi"
   "KeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key"
   "\030\002 \001(\tR\006apiKey\022\022\n\004uuid\030\004 \001(\tR\004uuid\022\024\n\005er"
-  "ror\030\005 \001(\tR\005error\")\n\023GetOneApiKeyRequest\022"
-  "\022\n\004uuid\030\001 \001(\tR\004uuid\"\366\002\n\024GetOneApiKeyResp"
-  "onse\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key\030\002 \001("
-  "\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id"
-  "\030\004 \001(\tR\006userId\022+\n\004role\030\005 \001(\0132\027.accounts."
-  "v1alpha1.RoleR\004role\022\?\n\013permissions\030\006 \003(\013"
-  "2\035.accounts.v1alpha1.PermissionR\013permiss"
-  "ions\022\033\n\tis_active\030\010 \001(\010R\010isActive\0224\n\007pro"
-  "ject\030\t \001(\0132\032.accounts.v1alpha1.ProjectR\007"
-  "project\022C\n\014organization\030\n \001(\0132\037.accounts"
-  ".v1alpha1.OrganizationR\014organization\"U\n\021"
-  "ListApiKeyRequest\022\027\n\007user_id\030\001 \001(\tR\006user"
-  "Id\022\'\n\017organization_id\030\002 \001(\rR\016organizatio"
-  "nId\"\376\001\n\nApiKeyList\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027"
-  "\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004n"
-  "ame\022\027\n\007user_id\030\004 \001(\tR\006userId\022\033\n\tis_activ"
-  "e\030\006 \001(\010R\010isActive\0224\n\007project\030\007 \001(\0132\032.acc"
-  "ounts.v1alpha1.ProjectR\007project\022C\n\014organ"
-  "ization\030\010 \001(\0132\037.accounts.v1alpha1.Organi"
-  "zationR\014organization\"Y\n\022ListApiKeyRespon"
-  "se\022C\n\010api_keys\030\001 \003(\0132(.accounts.v1alpha1"
-  ".apikeys.v1.ApiKeyListR\007apiKeys\"u\n\023Updat"
-  "eApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uuid\022J\n\007ap"
-  "i_key\030\006 \001(\01321.accounts.v1alpha1.apikeys."
-  "v1.CreateApiKeyRequestR\006apiKey\"W\n\024Update"
-  "ApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_"
-  "key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005error\""
-  ")\n\023DeleteApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uu"
-  "id\"W\n\024DeleteApiKeyResponse\022\020\n\003msg\030\001 \001(\tR"
-  "\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\024\n\005error\030\003"
-  " \001(\tR\005errorB<Z:github.com/cuemby/ccp-sdk"
-  "/gen/go/accounts/v1alpha1/apikeysb\006proto"
-  "3"
+  "ror\030\005 \001(\tR\005error\"\?\n\023GetOneApiKeyRequest\022"
+  "\022\n\004uuid\030\001 \001(\tR\004uuid\022\024\n\005value\030\002 \001(\tR\005valu"
+  "e\"\366\002\n\024GetOneApiKeyResponse\022\022\n\004uuid\030\001 \001(\t"
+  "R\004uuid\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030"
+  "\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001(\tR\006userId\022+\n\004"
+  "role\030\005 \001(\0132\027.accounts.v1alpha1.RoleR\004rol"
+  "e\022\?\n\013permissions\030\006 \003(\0132\035.accounts.v1alph"
+  "a1.PermissionR\013permissions\022\033\n\tis_active\030"
+  "\010 \001(\010R\010isActive\0224\n\007project\030\t \001(\0132\032.accou"
+  "nts.v1alpha1.ProjectR\007project\022C\n\014organiz"
+  "ation\030\n \001(\0132\037.accounts.v1alpha1.Organiza"
+  "tionR\014organization\"U\n\021ListApiKeyRequest\022"
+  "\027\n\007user_id\030\001 \001(\tR\006userId\022\'\n\017organization"
+  "_id\030\002 \001(\rR\016organizationId\"\376\001\n\nApiKeyList"
+  "\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key\030\002 \001(\tR\006a"
+  "piKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001"
+  "(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isActive\022"
+  "4\n\007project\030\007 \001(\0132\032.accounts.v1alpha1.Pro"
+  "jectR\007project\022C\n\014organization\030\010 \001(\0132\037.ac"
+  "counts.v1alpha1.OrganizationR\014organizati"
+  "on\"Y\n\022ListApiKeyResponse\022C\n\010api_keys\030\001 \003"
+  "(\0132(.accounts.v1alpha1.apikeys.v1.ApiKey"
+  "ListR\007apiKeys\"u\n\023UpdateApiKeyRequest\022\022\n\004"
+  "uuid\030\001 \001(\tR\004uuid\022J\n\007api_key\030\006 \001(\01321.acco"
+  "unts.v1alpha1.apikeys.v1.CreateApiKeyReq"
+  "uestR\006apiKey\"W\n\024UpdateApiKeyResponse\022\020\n\003"
+  "msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022"
+  "\024\n\005error\030\003 \001(\tR\005error\")\n\023DeleteApiKeyReq"
+  "uest\022\022\n\004uuid\030\001 \001(\tR\004uuid\"W\n\024DeleteApiKey"
+  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 "
+  "\001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005errorB<Z:git"
+  "hub.com/cuemby/ccp-sdk/gen/go/accounts/v"
+  "1alpha1/apikeysb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto = {
-  false, false, 1721, descriptor_table_protodef_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, "accounts/v1alpha1/apikeys/apikeys.proto", 
+  false, false, 1743, descriptor_table_protodef_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, "accounts/v1alpha1/apikeys/apikeys.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_deps, 1, 11,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto,
@@ -1137,11 +1139,17 @@ GetOneApiKeyRequest::GetOneApiKeyRequest(const GetOneApiKeyRequest& from)
     uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
       GetArenaForAllocation());
   }
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest)
 }
 
 inline void GetOneApiKeyRequest::SharedCtor() {
 uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetOneApiKeyRequest::~GetOneApiKeyRequest() {
@@ -1154,6 +1162,7 @@ GetOneApiKeyRequest::~GetOneApiKeyRequest() {
 inline void GetOneApiKeyRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetOneApiKeyRequest::ArenaDtor(void* object) {
@@ -1173,6 +1182,7 @@ void GetOneApiKeyRequest::Clear() {
   (void) cached_has_bits;
 
   uuid_.ClearToEmpty();
+  value_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1188,6 +1198,15 @@ const char* GetOneApiKeyRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           auto str = _internal_mutable_uuid();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.uuid"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string value = 2 [json_name = "value"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1230,6 +1249,16 @@ failure:
         1, this->_internal_uuid(), target);
   }
 
+  // string value = 2 [json_name = "value"];
+  if (!this->_internal_value().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.value");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_value(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1251,6 +1280,13 @@ size_t GetOneApiKeyRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_uuid());
+  }
+
+  // string value = 2 [json_name = "value"];
+  if (!this->_internal_value().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_value());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1284,6 +1320,9 @@ void GetOneApiKeyRequest::MergeFrom(const GetOneApiKeyRequest& from) {
   if (!from._internal_uuid().empty()) {
     _internal_set_uuid(from._internal_uuid());
   }
+  if (!from._internal_value().empty()) {
+    _internal_set_value(from._internal_value());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1305,6 +1344,11 @@ void GetOneApiKeyRequest::InternalSwap(GetOneApiKeyRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &uuid_, GetArenaForAllocation(),
       &other->uuid_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &value_, GetArenaForAllocation(),
+      &other->value_, other->GetArenaForAllocation()
   );
 }
 
