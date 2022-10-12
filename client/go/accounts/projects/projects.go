@@ -12,9 +12,7 @@ import (
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.ProjectServiceClient
@@ -53,10 +51,7 @@ func CreateProject(req *accountpkgv1.CreateProjectRequest) (*accountpkgv1.Create
 
 	if err != nil {
 		bylogs.LogErr("CreateProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error CreateProject: %v", err),
-		)
+		return nil, fmt.Errorf("[CreateProject] %w", err)
 	} else {
 		bylogs.LogInfo("CreateProject Client Sdk", "Success")
 	}
@@ -75,13 +70,10 @@ func DeleteProject(req *accountpkgv1.DeleteProjectRequest) (*accountpkgv1.Delete
 	response, err := client.DeleteProject(ctx, req)
 	if err != nil {
 		bylogs.LogErr("DeleteProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error DeleteProject: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteProject Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteProject] %w", err)
 	}
+
+	bylogs.LogInfo("DeleteProject Client Sdk", "Success")
 	return response, nil
 }
 
@@ -97,13 +89,10 @@ func DeleteUserByProject(req *accountpkgv1.DeleteUserByProjectRequest) (*account
 	response, err := client.DeleteUserByProject(ctx, req)
 	if err != nil {
 		bylogs.LogErr("DeleteUserByProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error DeleteUserByProject: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteUserByProject Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteUserByProject] %w", err)
 	}
+	bylogs.LogInfo("DeleteUserByProject Client Sdk", "Success")
+
 	return response, nil
 }
 
@@ -120,13 +109,11 @@ func EditRoleUserByProject(req *accountpkgv1.EditRoleUserByProjectRequest) (*acc
 	response, err := client.EditRoleUserByProject(ctx, req)
 	if err != nil {
 		bylogs.LogErr("EditRoleUserByProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error EditRoleUserByProject: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("EditRoleUserByProject Client Sdk", "Success")
+		return nil, fmt.Errorf("[EditRoleUserByProject] %w", err)
+
 	}
+	bylogs.LogInfo("EditRoleUserByProject Client Sdk", "Success")
+
 	return response, nil
 }
 
@@ -142,13 +129,10 @@ func ListProject(req *accountpkgv1.ListProjectRequest) (*accountpkgv1.ListProjec
 	response, err := client.ListProject(ctx, req)
 	if err != nil {
 		bylogs.LogErr("ListProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListProject: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListProject Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListProject] %w", err)
 	}
+	bylogs.LogInfo("ListProject Client Sdk", "Success")
+
 	return response, nil
 }
 
@@ -164,13 +148,11 @@ func UpdateProject(req *accountpkgv1.UpdateProjectRequest) (*accountpkgv1.Update
 	response, err := client.UpdateProject(ctx, req)
 	if err != nil {
 		bylogs.LogErr("ListProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error UpdateProject: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("UpdateProject Client Sdk", "Success")
+		return nil, fmt.Errorf("[UpdateProject] %w", err)
+
 	}
+	bylogs.LogInfo("UpdateProject Client Sdk", "Success")
+
 	return response, nil
 }
 
@@ -186,13 +168,11 @@ func ListProjectPagination(req *accountpkgv1.ListProjectPaginationRequest) (*acc
 	response, err := client.ListProjectPagination(ctx, req)
 	if err != nil {
 		bylogs.LogErr("ListProjectPagination Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListProjectPagination: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListProjectPagination Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListProjectPagination] %w", err)
+
 	}
+	bylogs.LogInfo("ListProjectPagination Client Sdk", "Success")
+
 	return response, nil
 }
 
@@ -208,12 +188,9 @@ func GetOneProject(req *accountpkgv1.GetOneProjectRequest) (*accountpkgv1.GetOne
 	response, err := client.GetOneProject(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetOneProject Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOneProject: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOneProject Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetOneProject] %w", err)
+
 	}
+	bylogs.LogInfo("GetOneProject Client Sdk", "Success")
 	return response, nil
 }

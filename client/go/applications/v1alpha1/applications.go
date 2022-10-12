@@ -101,7 +101,7 @@ func ListApplicationByProject(projectId uint32) (response *applicationpkgv1.List
 
 }
 
-func DeleteApplicationRequest(req *applicationpkgv1.DeleteApplicationRequest) (*applicationpkgv1.DeleteApplicationResponse, error) {
+func DeleteApplication(req *applicationpkgv1.DeleteApplicationRequest) (*applicationpkgv1.DeleteApplicationResponse, error) {
 	bylogs.LogInfo("client list application")
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {
