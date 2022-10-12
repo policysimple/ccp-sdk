@@ -38,31 +38,35 @@ class Biling extends \Google\Protobuf\Internal\Message
      */
     protected $ram = 0.0;
     /**
-     * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
+     * Generated from protobuf field <code>double pipeline = 7 [json_name = "pipeline"];</code>
+     */
+    protected $pipeline = 0.0;
+    /**
+     * Generated from protobuf field <code>string month = 8 [json_name = "month"];</code>
      */
     protected $month = '';
     /**
-     * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string year = 9 [json_name = "year"];</code>
      */
     protected $year = '';
     /**
-     * Generated from protobuf field <code>int64 amount = 9 [json_name = "amount"];</code>
+     * Generated from protobuf field <code>int64 amount = 10 [json_name = "amount"];</code>
      */
     protected $amount = 0;
     /**
-     * Generated from protobuf field <code>string period = 10 [json_name = "period"];</code>
+     * Generated from protobuf field <code>string period = 11 [json_name = "period"];</code>
      */
     protected $period = '';
     /**
-     * Generated from protobuf field <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * Generated from protobuf field <code>string statuspay = 12 [json_name = "statuspay"];</code>
      */
     protected $statuspay = '';
     /**
-     * Generated from protobuf field <code>string date = 12 [json_name = "date"];</code>
+     * Generated from protobuf field <code>string date = 13 [json_name = "date"];</code>
      */
     protected $date = '';
     /**
-     * Generated from protobuf field <code>string product = 13 [json_name = "product"];</code>
+     * Generated from protobuf field <code>string product = 14 [json_name = "product"];</code>
      */
     protected $product = '';
 
@@ -78,6 +82,7 @@ class Biling extends \Google\Protobuf\Internal\Message
      *     @type int|string $totalusage
      *     @type float $cpu
      *     @type float $ram
+     *     @type float $pipeline
      *     @type string $month
      *     @type string $year
      *     @type int|string $amount
@@ -225,7 +230,29 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
+     * Generated from protobuf field <code>double pipeline = 7 [json_name = "pipeline"];</code>
+     * @return float
+     */
+    public function getPipeline()
+    {
+        return $this->pipeline;
+    }
+
+    /**
+     * Generated from protobuf field <code>double pipeline = 7 [json_name = "pipeline"];</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPipeline($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->pipeline = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string month = 8 [json_name = "month"];</code>
      * @return string
      */
     public function getMonth()
@@ -234,7 +261,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string month = 7 [json_name = "month"];</code>
+     * Generated from protobuf field <code>string month = 8 [json_name = "month"];</code>
      * @param string $var
      * @return $this
      */
@@ -247,7 +274,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string year = 9 [json_name = "year"];</code>
      * @return string
      */
     public function getYear()
@@ -256,7 +283,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string year = 8 [json_name = "year"];</code>
+     * Generated from protobuf field <code>string year = 9 [json_name = "year"];</code>
      * @param string $var
      * @return $this
      */
@@ -269,7 +296,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 amount = 9 [json_name = "amount"];</code>
+     * Generated from protobuf field <code>int64 amount = 10 [json_name = "amount"];</code>
      * @return int|string
      */
     public function getAmount()
@@ -278,7 +305,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 amount = 9 [json_name = "amount"];</code>
+     * Generated from protobuf field <code>int64 amount = 10 [json_name = "amount"];</code>
      * @param int|string $var
      * @return $this
      */
@@ -291,7 +318,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string period = 10 [json_name = "period"];</code>
+     * Generated from protobuf field <code>string period = 11 [json_name = "period"];</code>
      * @return string
      */
     public function getPeriod()
@@ -300,7 +327,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string period = 10 [json_name = "period"];</code>
+     * Generated from protobuf field <code>string period = 11 [json_name = "period"];</code>
      * @param string $var
      * @return $this
      */
@@ -313,7 +340,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * Generated from protobuf field <code>string statuspay = 12 [json_name = "statuspay"];</code>
      * @return string
      */
     public function getStatuspay()
@@ -322,7 +349,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string statuspay = 11 [json_name = "statuspay"];</code>
+     * Generated from protobuf field <code>string statuspay = 12 [json_name = "statuspay"];</code>
      * @param string $var
      * @return $this
      */
@@ -335,7 +362,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string date = 12 [json_name = "date"];</code>
+     * Generated from protobuf field <code>string date = 13 [json_name = "date"];</code>
      * @return string
      */
     public function getDate()
@@ -344,7 +371,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string date = 12 [json_name = "date"];</code>
+     * Generated from protobuf field <code>string date = 13 [json_name = "date"];</code>
      * @param string $var
      * @return $this
      */
@@ -357,7 +384,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string product = 13 [json_name = "product"];</code>
+     * Generated from protobuf field <code>string product = 14 [json_name = "product"];</code>
      * @return string
      */
     public function getProduct()
@@ -366,7 +393,7 @@ class Biling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string product = 13 [json_name = "product"];</code>
+     * Generated from protobuf field <code>string product = 14 [json_name = "product"];</code>
      * @param string $var
      * @return $this
      */

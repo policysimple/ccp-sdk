@@ -42,11 +42,15 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $price_bytes = '';
     /**
-     * Generated from protobuf field <code>string currency = 8 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     */
+    protected $price_pipeline = '';
+    /**
+     * Generated from protobuf field <code>string currency = 9 [json_name = "currency"];</code>
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>string interval = 9 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
      */
     protected $interval = '';
 
@@ -63,6 +67,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type string $price
      *     @type string $price_cpu
      *     @type string $price_bytes
+     *     @type string $price_pipeline
      *     @type string $currency
      *     @type string $interval
      * }
@@ -227,7 +232,29 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 8 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     * @return string
+     */
+    public function getPricePipeline()
+    {
+        return $this->price_pipeline;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_pipeline = 8 [json_name = "pricePipeline"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPricePipeline($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_pipeline = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string currency = 9 [json_name = "currency"];</code>
      * @return string
      */
     public function getCurrency()
@@ -236,7 +263,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 8 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 9 [json_name = "currency"];</code>
      * @param string $var
      * @return $this
      */
@@ -249,7 +276,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string interval = 9 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
      * @return string
      */
     public function getInterval()
@@ -258,7 +285,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string interval = 9 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
      * @param string $var
      * @return $this
      */

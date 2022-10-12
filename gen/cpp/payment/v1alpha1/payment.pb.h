@@ -831,8 +831,9 @@ class Subscription final :
     kPriceFieldNumber = 5,
     kPriceCpuFieldNumber = 6,
     kPriceBytesFieldNumber = 7,
-    kCurrencyFieldNumber = 8,
-    kIntervalFieldNumber = 9,
+    kPricePipelineFieldNumber = 8,
+    kCurrencyFieldNumber = 9,
+    kIntervalFieldNumber = 10,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -932,7 +933,21 @@ class Subscription final :
   std::string* _internal_mutable_price_bytes();
   public:
 
-  // string currency = 8 [json_name = "currency"];
+  // string price_pipeline = 8 [json_name = "pricePipeline"];
+  void clear_price_pipeline();
+  const std::string& price_pipeline() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_price_pipeline(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_pipeline();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_pipeline();
+  void set_allocated_price_pipeline(std::string* price_pipeline);
+  private:
+  const std::string& _internal_price_pipeline() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_pipeline(const std::string& value);
+  std::string* _internal_mutable_price_pipeline();
+  public:
+
+  // string currency = 9 [json_name = "currency"];
   void clear_currency();
   const std::string& currency() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -946,7 +961,7 @@ class Subscription final :
   std::string* _internal_mutable_currency();
   public:
 
-  // string interval = 9 [json_name = "interval"];
+  // string interval = 10 [json_name = "interval"];
   void clear_interval();
   const std::string& interval() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -974,6 +989,7 @@ class Subscription final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_cpu_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_bytes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_pipeline_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currency_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr interval_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1760,16 +1776,17 @@ class Biling final :
     kIdFieldNumber = 1,
     kInvoiceIdFieldNumber = 2,
     kAccountNameFieldNumber = 3,
-    kMonthFieldNumber = 7,
-    kYearFieldNumber = 8,
-    kPeriodFieldNumber = 10,
-    kStatuspayFieldNumber = 11,
-    kDateFieldNumber = 12,
-    kProductFieldNumber = 13,
+    kMonthFieldNumber = 8,
+    kYearFieldNumber = 9,
+    kPeriodFieldNumber = 11,
+    kStatuspayFieldNumber = 12,
+    kDateFieldNumber = 13,
+    kProductFieldNumber = 14,
     kTotalusageFieldNumber = 4,
     kCpuFieldNumber = 5,
     kRamFieldNumber = 6,
-    kAmountFieldNumber = 9,
+    kPipelineFieldNumber = 7,
+    kAmountFieldNumber = 10,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1813,7 +1830,7 @@ class Biling final :
   std::string* _internal_mutable_account_name();
   public:
 
-  // string month = 7 [json_name = "month"];
+  // string month = 8 [json_name = "month"];
   void clear_month();
   const std::string& month() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1827,7 +1844,7 @@ class Biling final :
   std::string* _internal_mutable_month();
   public:
 
-  // string year = 8 [json_name = "year"];
+  // string year = 9 [json_name = "year"];
   void clear_year();
   const std::string& year() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1841,7 +1858,7 @@ class Biling final :
   std::string* _internal_mutable_year();
   public:
 
-  // string period = 10 [json_name = "period"];
+  // string period = 11 [json_name = "period"];
   void clear_period();
   const std::string& period() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1855,7 +1872,7 @@ class Biling final :
   std::string* _internal_mutable_period();
   public:
 
-  // string statuspay = 11 [json_name = "statuspay"];
+  // string statuspay = 12 [json_name = "statuspay"];
   void clear_statuspay();
   const std::string& statuspay() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1869,7 +1886,7 @@ class Biling final :
   std::string* _internal_mutable_statuspay();
   public:
 
-  // string date = 12 [json_name = "date"];
+  // string date = 13 [json_name = "date"];
   void clear_date();
   const std::string& date() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1883,7 +1900,7 @@ class Biling final :
   std::string* _internal_mutable_date();
   public:
 
-  // string product = 13 [json_name = "product"];
+  // string product = 14 [json_name = "product"];
   void clear_product();
   const std::string& product() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1924,7 +1941,16 @@ class Biling final :
   void _internal_set_ram(double value);
   public:
 
-  // int64 amount = 9 [json_name = "amount"];
+  // double pipeline = 7 [json_name = "pipeline"];
+  void clear_pipeline();
+  double pipeline() const;
+  void set_pipeline(double value);
+  private:
+  double _internal_pipeline() const;
+  void _internal_set_pipeline(double value);
+  public:
+
+  // int64 amount = 10 [json_name = "amount"];
   void clear_amount();
   ::PROTOBUF_NAMESPACE_ID::int64 amount() const;
   void set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
@@ -1952,6 +1978,7 @@ class Biling final :
   ::PROTOBUF_NAMESPACE_ID::int64 totalusage_;
   double cpu_;
   double ram_;
+  double pipeline_;
   ::PROTOBUF_NAMESPACE_ID::int64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
@@ -4685,7 +4712,53 @@ inline void Subscription::set_allocated_price_bytes(std::string* price_bytes) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_bytes)
 }
 
-// string currency = 8 [json_name = "currency"];
+// string price_pipeline = 8 [json_name = "pricePipeline"];
+inline void Subscription::clear_price_pipeline() {
+  price_pipeline_.ClearToEmpty();
+}
+inline const std::string& Subscription::price_pipeline() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_pipeline)
+  return _internal_price_pipeline();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Subscription::set_price_pipeline(ArgT0&& arg0, ArgT... args) {
+ 
+ price_pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_pipeline)
+}
+inline std::string* Subscription::mutable_price_pipeline() {
+  std::string* _s = _internal_mutable_price_pipeline();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_pipeline)
+  return _s;
+}
+inline const std::string& Subscription::_internal_price_pipeline() const {
+  return price_pipeline_.Get();
+}
+inline void Subscription::_internal_set_price_pipeline(const std::string& value) {
+  
+  price_pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Subscription::_internal_mutable_price_pipeline() {
+  
+  return price_pipeline_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Subscription::release_price_pipeline() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_pipeline)
+  return price_pipeline_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Subscription::set_allocated_price_pipeline(std::string* price_pipeline) {
+  if (price_pipeline != nullptr) {
+    
+  } else {
+    
+  }
+  price_pipeline_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_pipeline,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_pipeline)
+}
+
+// string currency = 9 [json_name = "currency"];
 inline void Subscription::clear_currency() {
   currency_.ClearToEmpty();
 }
@@ -4731,7 +4804,7 @@ inline void Subscription::set_allocated_currency(std::string* currency) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.currency)
 }
 
-// string interval = 9 [json_name = "interval"];
+// string interval = 10 [json_name = "interval"];
 inline void Subscription::clear_interval() {
   interval_.ClearToEmpty();
 }
@@ -5785,7 +5858,27 @@ inline void Biling::set_ram(double value) {
   // @@protoc_insertion_point(field_set:payment.v1alpha1.Biling.ram)
 }
 
-// string month = 7 [json_name = "month"];
+// double pipeline = 7 [json_name = "pipeline"];
+inline void Biling::clear_pipeline() {
+  pipeline_ = 0;
+}
+inline double Biling::_internal_pipeline() const {
+  return pipeline_;
+}
+inline double Biling::pipeline() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Biling.pipeline)
+  return _internal_pipeline();
+}
+inline void Biling::_internal_set_pipeline(double value) {
+  
+  pipeline_ = value;
+}
+inline void Biling::set_pipeline(double value) {
+  _internal_set_pipeline(value);
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Biling.pipeline)
+}
+
+// string month = 8 [json_name = "month"];
 inline void Biling::clear_month() {
   month_.ClearToEmpty();
 }
@@ -5831,7 +5924,7 @@ inline void Biling::set_allocated_month(std::string* month) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Biling.month)
 }
 
-// string year = 8 [json_name = "year"];
+// string year = 9 [json_name = "year"];
 inline void Biling::clear_year() {
   year_.ClearToEmpty();
 }
@@ -5877,7 +5970,7 @@ inline void Biling::set_allocated_year(std::string* year) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Biling.year)
 }
 
-// int64 amount = 9 [json_name = "amount"];
+// int64 amount = 10 [json_name = "amount"];
 inline void Biling::clear_amount() {
   amount_ = int64_t{0};
 }
@@ -5897,7 +5990,7 @@ inline void Biling::set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:payment.v1alpha1.Biling.amount)
 }
 
-// string period = 10 [json_name = "period"];
+// string period = 11 [json_name = "period"];
 inline void Biling::clear_period() {
   period_.ClearToEmpty();
 }
@@ -5943,7 +6036,7 @@ inline void Biling::set_allocated_period(std::string* period) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Biling.period)
 }
 
-// string statuspay = 11 [json_name = "statuspay"];
+// string statuspay = 12 [json_name = "statuspay"];
 inline void Biling::clear_statuspay() {
   statuspay_.ClearToEmpty();
 }
@@ -5989,7 +6082,7 @@ inline void Biling::set_allocated_statuspay(std::string* statuspay) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Biling.statuspay)
 }
 
-// string date = 12 [json_name = "date"];
+// string date = 13 [json_name = "date"];
 inline void Biling::clear_date() {
   date_.ClearToEmpty();
 }
@@ -6035,7 +6128,7 @@ inline void Biling::set_allocated_date(std::string* date) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Biling.date)
 }
 
-// string product = 13 [json_name = "product"];
+// string product = 14 [json_name = "product"];
 inline void Biling::clear_product() {
   product_.ClearToEmpty();
 }
