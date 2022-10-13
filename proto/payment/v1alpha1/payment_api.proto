@@ -65,7 +65,8 @@ service PaymentAPIService{
         string project_id = 6;
         double cpu = 7;
         double ram = 8;
-        payment.v1alpha1.CustomerList customer_list = 9;               
+        double pipeline = 9;
+        payment.v1alpha1.CustomerList customer_list = 10;               
     }
     
 message InvoiceFilterResponse {
