@@ -1403,6 +1403,7 @@ proto.payment.v1alpha1.InvoiceFilterRequest.toObject = function(includeInstance,
     projectId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     cpu: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     ram: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+    pipeline: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
     customerList: (f = msg.getCustomerList()) && payment_v1alpha1_payment_pb.CustomerList.toObject(includeInstance, f)
   };
 
@@ -1473,6 +1474,10 @@ proto.payment.v1alpha1.InvoiceFilterRequest.deserializeBinaryFromReader = functi
       msg.setRam(value);
       break;
     case 9:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setPipeline(value);
+      break;
+    case 10:
       var value = new payment_v1alpha1_payment_pb.CustomerList;
       reader.readMessage(value,payment_v1alpha1_payment_pb.CustomerList.deserializeBinaryFromReader);
       msg.setCustomerList(value);
@@ -1562,10 +1567,17 @@ proto.payment.v1alpha1.InvoiceFilterRequest.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getPipeline();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      9,
+      f
+    );
+  }
   f = message.getCustomerList();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       payment_v1alpha1_payment_pb.CustomerList.serializeBinaryToWriter
     );
@@ -1718,12 +1730,30 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setRam = function(value) {
 
 
 /**
- * optional CustomerList customer_list = 9;
+ * optional double pipeline = 9;
+ * @return {number}
+ */
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getPipeline = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
+ */
+proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setPipeline = function(value) {
+  return jspb.Message.setProto3FloatField(this, 9, value);
+};
+
+
+/**
+ * optional CustomerList customer_list = 10;
  * @return {?proto.payment.v1alpha1.CustomerList}
  */
 proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getCustomerList = function() {
   return /** @type{?proto.payment.v1alpha1.CustomerList} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.CustomerList, 9));
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.CustomerList, 10));
 };
 
 
@@ -1732,7 +1762,7 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.getCustomerList = function
  * @return {!proto.payment.v1alpha1.InvoiceFilterRequest} returns this
 */
 proto.payment.v1alpha1.InvoiceFilterRequest.prototype.setCustomerList = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -1750,7 +1780,7 @@ proto.payment.v1alpha1.InvoiceFilterRequest.prototype.clearCustomerList = functi
  * @return {boolean}
  */
 proto.payment.v1alpha1.InvoiceFilterRequest.prototype.hasCustomerList = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

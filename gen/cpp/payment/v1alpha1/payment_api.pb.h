@@ -671,9 +671,10 @@ class InvoiceFilterRequest final :
     kMonthFieldNumber = 4,
     kCustomerIdFieldNumber = 5,
     kProjectIdFieldNumber = 6,
-    kCustomerListFieldNumber = 9,
+    kCustomerListFieldNumber = 10,
     kCpuFieldNumber = 7,
     kRamFieldNumber = 8,
+    kPipelineFieldNumber = 9,
     kOrganizationIdFieldNumber = 1,
   };
   // string invoice_id = 2 [json_name = "invoiceId"];
@@ -746,7 +747,7 @@ class InvoiceFilterRequest final :
   std::string* _internal_mutable_project_id();
   public:
 
-  // .payment.v1alpha1.CustomerList customer_list = 9 [json_name = "customerList"];
+  // .payment.v1alpha1.CustomerList customer_list = 10 [json_name = "customerList"];
   bool has_customer_list() const;
   private:
   bool _internal_has_customer_list() const;
@@ -782,6 +783,15 @@ class InvoiceFilterRequest final :
   void _internal_set_ram(double value);
   public:
 
+  // double pipeline = 9 [json_name = "pipeline"];
+  void clear_pipeline();
+  double pipeline() const;
+  void set_pipeline(double value);
+  private:
+  double _internal_pipeline() const;
+  void _internal_set_pipeline(double value);
+  public:
+
   // uint32 organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
@@ -806,6 +816,7 @@ class InvoiceFilterRequest final :
   ::payment::v1alpha1::CustomerList* customer_list_;
   double cpu_;
   double ram_;
+  double pipeline_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -8525,7 +8536,27 @@ inline void InvoiceFilterRequest::set_ram(double value) {
   // @@protoc_insertion_point(field_set:payment.v1alpha1.InvoiceFilterRequest.ram)
 }
 
-// .payment.v1alpha1.CustomerList customer_list = 9 [json_name = "customerList"];
+// double pipeline = 9 [json_name = "pipeline"];
+inline void InvoiceFilterRequest::clear_pipeline() {
+  pipeline_ = 0;
+}
+inline double InvoiceFilterRequest::_internal_pipeline() const {
+  return pipeline_;
+}
+inline double InvoiceFilterRequest::pipeline() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.InvoiceFilterRequest.pipeline)
+  return _internal_pipeline();
+}
+inline void InvoiceFilterRequest::_internal_set_pipeline(double value) {
+  
+  pipeline_ = value;
+}
+inline void InvoiceFilterRequest::set_pipeline(double value) {
+  _internal_set_pipeline(value);
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.InvoiceFilterRequest.pipeline)
+}
+
+// .payment.v1alpha1.CustomerList customer_list = 10 [json_name = "customerList"];
 inline bool InvoiceFilterRequest::_internal_has_customer_list() const {
   return this != internal_default_instance() && customer_list_ != nullptr;
 }
