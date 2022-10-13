@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n accounts/v1alpha1/accounts.proto\x12\x11\x61\x63\x63ounts.v1alpha1\"\xce\x01\n\x04Role\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x19\n\x08is_admin\x18\x06 \x01(\x08R\x07isAdmin\"\xdc\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\x12\x14\n\x05image\x18\x08 \x01(\tR\x05image\"J\n\tMemberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\"y\n\nPermission\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06\x61\x63tion\x18\x03 \x01(\tR\x06\x61\x63tion\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x1b\n\tfull_name\x18\x05 \x01(\tR\x08\x66ullName\"\xae\x02\n\x07Project\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12-\n\x05roles\x18\x08 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12\x31\n\x05users\x18\t \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"\xe0\x01\n\x0cOrganization\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12-\n\x05roles\x18\x08 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\"\xa9\n\n\nUserDetail\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12-\n\x05roles\x18\t \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\n \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\"\n\ris_super_user\x18\x0b \x01(\x08R\x0bisSuperUser\x12\x45\n\rorganizations\x18\x0c \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\x12\x36\n\x08projects\x18\x0e \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12!\n\x0cphone_number\x18\x0f \x01(\tR\x0bphoneNumber\x12\x18\n\x07\x63ountry\x18\x10 \x01(\tR\x07\x63ountry\x12\x12\n\x04\x63ity\x18\x11 \x01(\tR\x04\x63ity\x12\x19\n\x08zip_code\x18\x12 \x01(\tR\x07zipCode\x12\x18\n\x07\x61\x64\x64ress\x18\x13 \x01(\tR\x07\x61\x64\x64ress\x12\x14\n\x05state\x18\x14 \x01(\tR\x05state\x12#\n\remoji_country\x18\x15 \x01(\tR\x0c\x65mojiCountry\x12$\n\x0eis_mfa_enabled\x18\x16 \x01(\x08R\x0cisMfaEnabled\x12\x1b\n\ttoken_ccp\x18\x17 \x01(\tR\x08tokenCcp\x12%\n\x0e\x65mail_verified\x18\x18 \x01(\x08R\remailVerified\x12\x1a\n\x08language\x18\x1a \x01(\tR\x08language\x12+\n\x11push_notification\x18\x1b \x01(\x08R\x10pushNotification\x12-\n\x12\x65mail_notification\x18\x1c \x01(\x08R\x11\x65mailNotification\x12\x34\n\x16new_login_notification\x18\x1d \x01(\x08R\x14newLoginNotification\x12/\n\x13\x63reate_notification\x18\x1e \x01(\x08R\x12\x63reateNotification\x12/\n\x13update_notification\x18\x1f \x01(\x08R\x12updateNotification\x12/\n\x13\x64\x65lete_notification\x18  \x01(\x08R\x12\x64\x65leteNotification\x12\x39\n\x18\x61pplication_notification\x18! \x01(\x08R\x17\x61pplicationNotification\x12+\n\x11read_notification\x18\" \x01(\x08R\x10readNotification\x12\x1d\n\nphone_code\x18# \x01(\tR\tphoneCode\x12)\n\x10optional_address\x18$ \x01(\tR\x0foptionalAddress\x12\x14\n\x05image\x18% \x01(\tR\x05imageB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1b\x06proto3'
+  serialized_pb=b'\n accounts/v1alpha1/accounts.proto\x12\x11\x61\x63\x63ounts.v1alpha1\"\xce\x01\n\x04Role\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x19\n\x08is_admin\x18\x06 \x01(\x08R\x07isAdmin\"\xdc\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\x12\x14\n\x05image\x18\x08 \x01(\tR\x05image\"J\n\tMemberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\"y\n\nPermission\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06\x61\x63tion\x18\x03 \x01(\tR\x06\x61\x63tion\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x1b\n\tfull_name\x18\x05 \x01(\tR\x08\x66ullName\"\xae\x02\n\x07Project\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x04 \x01(\rR\x0eorganizationId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12-\n\x05roles\x18\x08 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12\x31\n\x05users\x18\t \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"\x98\x02\n\x0cOrganization\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12-\n\x05roles\x18\x08 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\x12\x36\n\x08projects\x18\n \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"\xf1\t\n\nUserDetail\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12-\n\x05roles\x18\t \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\n \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\"\n\ris_super_user\x18\x0b \x01(\x08R\x0bisSuperUser\x12\x45\n\rorganizations\x18\x0c \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\x12!\n\x0cphone_number\x18\x0f \x01(\tR\x0bphoneNumber\x12\x18\n\x07\x63ountry\x18\x10 \x01(\tR\x07\x63ountry\x12\x12\n\x04\x63ity\x18\x11 \x01(\tR\x04\x63ity\x12\x19\n\x08zip_code\x18\x12 \x01(\tR\x07zipCode\x12\x18\n\x07\x61\x64\x64ress\x18\x13 \x01(\tR\x07\x61\x64\x64ress\x12\x14\n\x05state\x18\x14 \x01(\tR\x05state\x12#\n\remoji_country\x18\x15 \x01(\tR\x0c\x65mojiCountry\x12$\n\x0eis_mfa_enabled\x18\x16 \x01(\x08R\x0cisMfaEnabled\x12\x1b\n\ttoken_ccp\x18\x17 \x01(\tR\x08tokenCcp\x12%\n\x0e\x65mail_verified\x18\x18 \x01(\x08R\remailVerified\x12\x1a\n\x08language\x18\x1a \x01(\tR\x08language\x12+\n\x11push_notification\x18\x1b \x01(\x08R\x10pushNotification\x12-\n\x12\x65mail_notification\x18\x1c \x01(\x08R\x11\x65mailNotification\x12\x34\n\x16new_login_notification\x18\x1d \x01(\x08R\x14newLoginNotification\x12/\n\x13\x63reate_notification\x18\x1e \x01(\x08R\x12\x63reateNotification\x12/\n\x13update_notification\x18\x1f \x01(\x08R\x12updateNotification\x12/\n\x13\x64\x65lete_notification\x18  \x01(\x08R\x12\x64\x65leteNotification\x12\x39\n\x18\x61pplication_notification\x18! \x01(\x08R\x17\x61pplicationNotification\x12+\n\x11read_notification\x18\" \x01(\x08R\x10readNotification\x12\x1d\n\nphone_code\x18# \x01(\tR\tphoneCode\x12)\n\x10optional_address\x18$ \x01(\tR\x0foptionalAddress\x12\x14\n\x05image\x18% \x01(\tR\x05imageB4Z2github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1b\x06proto3'
 )
 
 
@@ -424,6 +424,13 @@ _ORGANIZATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='slug', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='projects', full_name='accounts.v1alpha1.Organization.projects', index=7,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projects', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -437,7 +444,7 @@ _ORGANIZATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=992,
-  serialized_end=1216,
+  serialized_end=1272,
 )
 
 
@@ -534,161 +541,154 @@ _USERDETAIL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizations', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='projects', full_name='accounts.v1alpha1.UserDetail.projects', index=12,
-      number=14, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='projects', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='phone_number', full_name='accounts.v1alpha1.UserDetail.phone_number', index=13,
+      name='phone_number', full_name='accounts.v1alpha1.UserDetail.phone_number', index=12,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='phoneNumber', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='country', full_name='accounts.v1alpha1.UserDetail.country', index=14,
+      name='country', full_name='accounts.v1alpha1.UserDetail.country', index=13,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='country', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='city', full_name='accounts.v1alpha1.UserDetail.city', index=15,
+      name='city', full_name='accounts.v1alpha1.UserDetail.city', index=14,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='city', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='zip_code', full_name='accounts.v1alpha1.UserDetail.zip_code', index=16,
+      name='zip_code', full_name='accounts.v1alpha1.UserDetail.zip_code', index=15,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='zipCode', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='address', full_name='accounts.v1alpha1.UserDetail.address', index=17,
+      name='address', full_name='accounts.v1alpha1.UserDetail.address', index=16,
       number=19, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='address', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='state', full_name='accounts.v1alpha1.UserDetail.state', index=18,
+      name='state', full_name='accounts.v1alpha1.UserDetail.state', index=17,
       number=20, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='state', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='emoji_country', full_name='accounts.v1alpha1.UserDetail.emoji_country', index=19,
+      name='emoji_country', full_name='accounts.v1alpha1.UserDetail.emoji_country', index=18,
       number=21, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='emojiCountry', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_mfa_enabled', full_name='accounts.v1alpha1.UserDetail.is_mfa_enabled', index=20,
+      name='is_mfa_enabled', full_name='accounts.v1alpha1.UserDetail.is_mfa_enabled', index=19,
       number=22, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isMfaEnabled', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='token_ccp', full_name='accounts.v1alpha1.UserDetail.token_ccp', index=21,
+      name='token_ccp', full_name='accounts.v1alpha1.UserDetail.token_ccp', index=20,
       number=23, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='tokenCcp', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email_verified', full_name='accounts.v1alpha1.UserDetail.email_verified', index=22,
+      name='email_verified', full_name='accounts.v1alpha1.UserDetail.email_verified', index=21,
       number=24, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='emailVerified', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='language', full_name='accounts.v1alpha1.UserDetail.language', index=23,
+      name='language', full_name='accounts.v1alpha1.UserDetail.language', index=22,
       number=26, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='language', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='push_notification', full_name='accounts.v1alpha1.UserDetail.push_notification', index=24,
+      name='push_notification', full_name='accounts.v1alpha1.UserDetail.push_notification', index=23,
       number=27, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pushNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email_notification', full_name='accounts.v1alpha1.UserDetail.email_notification', index=25,
+      name='email_notification', full_name='accounts.v1alpha1.UserDetail.email_notification', index=24,
       number=28, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='emailNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='new_login_notification', full_name='accounts.v1alpha1.UserDetail.new_login_notification', index=26,
+      name='new_login_notification', full_name='accounts.v1alpha1.UserDetail.new_login_notification', index=25,
       number=29, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='newLoginNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='create_notification', full_name='accounts.v1alpha1.UserDetail.create_notification', index=27,
+      name='create_notification', full_name='accounts.v1alpha1.UserDetail.create_notification', index=26,
       number=30, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='createNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update_notification', full_name='accounts.v1alpha1.UserDetail.update_notification', index=28,
+      name='update_notification', full_name='accounts.v1alpha1.UserDetail.update_notification', index=27,
       number=31, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='updateNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='delete_notification', full_name='accounts.v1alpha1.UserDetail.delete_notification', index=29,
+      name='delete_notification', full_name='accounts.v1alpha1.UserDetail.delete_notification', index=28,
       number=32, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='deleteNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='application_notification', full_name='accounts.v1alpha1.UserDetail.application_notification', index=30,
+      name='application_notification', full_name='accounts.v1alpha1.UserDetail.application_notification', index=29,
       number=33, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='applicationNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='read_notification', full_name='accounts.v1alpha1.UserDetail.read_notification', index=31,
+      name='read_notification', full_name='accounts.v1alpha1.UserDetail.read_notification', index=30,
       number=34, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='readNotification', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='phone_code', full_name='accounts.v1alpha1.UserDetail.phone_code', index=32,
+      name='phone_code', full_name='accounts.v1alpha1.UserDetail.phone_code', index=31,
       number=35, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='phoneCode', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='optional_address', full_name='accounts.v1alpha1.UserDetail.optional_address', index=33,
+      name='optional_address', full_name='accounts.v1alpha1.UserDetail.optional_address', index=32,
       number=36, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='optionalAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='image', full_name='accounts.v1alpha1.UserDetail.image', index=34,
+      name='image', full_name='accounts.v1alpha1.UserDetail.image', index=33,
       number=37, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -706,7 +706,7 @@ _USERDETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1219,
+  serialized_start=1275,
   serialized_end=2540,
 )
 
@@ -715,10 +715,10 @@ _PROJECT.fields_by_name['roles'].message_type = _ROLE
 _PROJECT.fields_by_name['users'].message_type = _USERLIST
 _ORGANIZATION.fields_by_name['owner'].message_type = _USERLIST
 _ORGANIZATION.fields_by_name['roles'].message_type = _ROLE
+_ORGANIZATION.fields_by_name['projects'].message_type = _PROJECT
 _USERDETAIL.fields_by_name['roles'].message_type = _ROLE
 _USERDETAIL.fields_by_name['permissions'].message_type = _PERMISSION
 _USERDETAIL.fields_by_name['organizations'].message_type = _ORGANIZATION
-_USERDETAIL.fields_by_name['projects'].message_type = _PROJECT
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
 DESCRIPTOR.message_types_by_name['UserList'] = _USERLIST
 DESCRIPTOR.message_types_by_name['MemberRol'] = _MEMBERROL

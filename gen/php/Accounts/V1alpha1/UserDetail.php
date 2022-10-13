@@ -62,10 +62,6 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      */
     private $organizations;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    private $projects;
-    /**
      * details
      *
      * Generated from protobuf field <code>string phone_number = 15 [json_name = "phoneNumber"];</code>
@@ -178,7 +174,6 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type bool $is_super_user
      *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
-     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $phone_number
      *           details
      *     @type string $country
@@ -471,28 +466,6 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Organization::class);
         $this->organizations = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getProjects()
-    {
-        return $this->projects;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setProjects($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
-        $this->projects = $arr;
 
         return $this;
     }

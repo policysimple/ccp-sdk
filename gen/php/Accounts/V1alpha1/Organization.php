@@ -41,6 +41,10 @@ class Organization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string slug = 9 [json_name = "slug"];</code>
      */
     protected $slug = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    private $projects;
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Organization extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\UserList $owner
      *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type string $slug
+     *     @type \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      * }
      */
     public function __construct($data = NULL) {
@@ -222,6 +227,28 @@ class Organization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->slug = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     * @param \Accounts\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProjects($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Project::class);
+        $this->projects = $arr;
 
         return $this;
     }

@@ -58,7 +58,7 @@ created_at (	R	createdAt
 
 updated_at (	R	updatedAt-
 roles (2.accounts.v1alpha1.RoleRroles1
-users	 (2.accounts.v1alpha1.UserListRusers"à
+users	 (2.accounts.v1alpha1.UserListRusers"˜
 Organization
 id (Rid
 name (	Rname
@@ -66,8 +66,9 @@ updated_at (	R	updatedAt-
 description (	Rdescription1
 owner (2.accounts.v1alpha1.UserListRowner-
 roles (2.accounts.v1alpha1.RoleRroles
-slug	 (	Rslug"©
-
+slug	 (	Rslug6
+projects
+ (2.accounts.v1alpha1.ProjectRprojects"ñ	
 
 UserDetail
 id (Rid
@@ -85,8 +86,7 @@ updated_at (	R	updatedAt-
 permissions
  (2.accounts.v1alpha1.PermissionRpermissions"
 is_super_user (RisSuperUserE
-organizations (2.accounts.v1alpha1.OrganizationRorganizations6
-projects (2.accounts.v1alpha1.ProjectRprojects!
+organizations (2.accounts.v1alpha1.OrganizationRorganizations!
 phone_number (	RphoneNumber
 country (	Rcountry
 city (	Rcity

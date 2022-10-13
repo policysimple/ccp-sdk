@@ -849,7 +849,8 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.toObject = func
  */
 proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uuid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -890,6 +891,10 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.deserializeBinaryFromRead
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValue(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -926,6 +931,13 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.serializeBinaryToWriter =
       f
     );
   }
+  f = message.getValue();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -944,6 +956,24 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.getUuid = funct
  */
 proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.setUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string value = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.getValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest} returns this
+ */
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyRequest.prototype.setValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

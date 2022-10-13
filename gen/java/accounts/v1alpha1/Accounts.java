@@ -6566,6 +6566,30 @@ public final class Accounts {
      */
     com.google.protobuf.ByteString
         getSlugBytes();
+
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    java.util.List<accounts.v1alpha1.Accounts.Project> 
+        getProjectsList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.Project getProjects(int index);
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    int getProjectsCount();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList();
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.Organization}
@@ -6585,6 +6609,7 @@ public final class Accounts {
       description_ = "";
       roles_ = java.util.Collections.emptyList();
       slug_ = "";
+      projects_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6669,6 +6694,15 @@ public final class Accounts {
               slug_ = s;
               break;
             }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              projects_.add(
+                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6686,6 +6720,9 @@ public final class Accounts {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           roles_ = java.util.Collections.unmodifiableList(roles_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          projects_ = java.util.Collections.unmodifiableList(projects_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6933,6 +6970,46 @@ public final class Accounts {
       }
     }
 
+    public static final int PROJECTS_FIELD_NUMBER = 10;
+    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+        getProjectsOrBuilderList() {
+      return projects_;
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public int getProjectsCount() {
+      return projects_.size();
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+      return projects_.get(index);
+    }
+    /**
+     * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+        int index) {
+      return projects_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6968,6 +7045,9 @@ public final class Accounts {
       if (!getSlugBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, slug_);
       }
+      for (int i = 0; i < projects_.size(); i++) {
+        output.writeMessage(10, projects_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7001,6 +7081,10 @@ public final class Accounts {
       if (!getSlugBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, slug_);
       }
+      for (int i = 0; i < projects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, projects_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7033,6 +7117,8 @@ public final class Accounts {
           .equals(other.getRolesList())) return false;
       if (!getSlug()
           .equals(other.getSlug())) return false;
+      if (!getProjectsList()
+          .equals(other.getProjectsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7062,6 +7148,10 @@ public final class Accounts {
       }
       hash = (37 * hash) + SLUG_FIELD_NUMBER;
       hash = (53 * hash) + getSlug().hashCode();
+      if (getProjectsCount() > 0) {
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7191,6 +7281,7 @@ public final class Accounts {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getRolesFieldBuilder();
+          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -7218,6 +7309,12 @@ public final class Accounts {
         }
         slug_ = "";
 
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          projectsBuilder_.clear();
+        }
         return this;
       }
 
@@ -7264,6 +7361,15 @@ public final class Accounts {
           result.roles_ = rolesBuilder_.build();
         }
         result.slug_ = slug_;
+        if (projectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            projects_ = java.util.Collections.unmodifiableList(projects_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.projects_ = projects_;
+        } else {
+          result.projects_ = projectsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -7359,6 +7465,32 @@ public final class Accounts {
         if (!other.getSlug().isEmpty()) {
           slug_ = other.slug_;
           onChanged();
+        }
+        if (projectsBuilder_ == null) {
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.projects_.isEmpty()) {
+            if (projectsBuilder_.isEmpty()) {
+              projectsBuilder_.dispose();
+              projectsBuilder_ = null;
+              projects_ = other.projects_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              projectsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectsFieldBuilder() : null;
+            } else {
+              projectsBuilder_.addAllMessages(other.projects_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8083,6 +8215,246 @@ public final class Accounts {
         onChanged();
         return this;
       }
+
+      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
+
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
+        if (projectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(projects_);
+        } else {
+          return projectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public int getProjectsCount() {
+        if (projectsBuilder_ == null) {
+          return projects_.size();
+        } else {
+          return projectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);
+        } else {
+          return projectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder setProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project value) {
+        if (projectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(index, value);
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder addProjects(
+          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder addAllProjects(
+          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, projects_);
+          onChanged();
+        } else {
+          projectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder clearProjects() {
+        if (projectsBuilder_ == null) {
+          projects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          projectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public Builder removeProjects(int index) {
+        if (projectsBuilder_ == null) {
+          ensureProjectsIsMutable();
+          projects_.remove(index);
+          onChanged();
+        } else {
+          projectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
+          int index) {
+        if (projectsBuilder_ == null) {
+          return projects_.get(index);  } else {
+          return projectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+           getProjectsOrBuilderList() {
+        if (projectsBuilder_ != null) {
+          return projectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(projects_);
+        }
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
+        return getProjectsFieldBuilder().addBuilder(
+            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
+          int index) {
+        return getProjectsFieldBuilder().addBuilder(
+            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
+       */
+      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
+           getProjectsBuilderList() {
+        return getProjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
+          getProjectsFieldBuilder() {
+        if (projectsBuilder_ == null) {
+          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
+                  projects_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          projects_ = null;
+        }
+        return projectsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8300,30 +8672,6 @@ public final class Accounts {
      * <code>repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];</code>
      */
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    java.util.List<accounts.v1alpha1.Accounts.Project> 
-        getProjectsList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    accounts.v1alpha1.Accounts.Project getProjects(int index);
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    int getProjectsCount();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-        getProjectsOrBuilderList();
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
         int index);
 
     /**
@@ -8572,7 +8920,6 @@ public final class Accounts {
       roles_ = java.util.Collections.emptyList();
       permissions_ = java.util.Collections.emptyList();
       organizations_ = java.util.Collections.emptyList();
-      projects_ = java.util.Collections.emptyList();
       phoneNumber_ = "";
       country_ = "";
       city_ = "";
@@ -8694,15 +9041,6 @@ public final class Accounts {
               }
               organizations_.add(
                   input.readMessage(accounts.v1alpha1.Accounts.Organization.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              projects_.add(
-                  input.readMessage(accounts.v1alpha1.Accounts.Project.parser(), extensionRegistry));
               break;
             }
             case 122: {
@@ -8850,9 +9188,6 @@ public final class Accounts {
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           organizations_ = java.util.Collections.unmodifiableList(organizations_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          projects_ = java.util.Collections.unmodifiableList(projects_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -9250,46 +9585,6 @@ public final class Accounts {
     public accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationsOrBuilder(
         int index) {
       return organizations_.get(index);
-    }
-
-    public static final int PROJECTS_FIELD_NUMBER = 14;
-    private java.util.List<accounts.v1alpha1.Accounts.Project> projects_;
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
-      return projects_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-        getProjectsOrBuilderList() {
-      return projects_;
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public int getProjectsCount() {
-      return projects_.size();
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.Project getProjects(int index) {
-      return projects_.get(index);
-    }
-    /**
-     * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-     */
-    @java.lang.Override
-    public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-        int index) {
-      return projects_.get(index);
     }
 
     public static final int PHONE_NUMBER_FIELD_NUMBER = 15;
@@ -9928,9 +10223,6 @@ public final class Accounts {
       for (int i = 0; i < organizations_.size(); i++) {
         output.writeMessage(12, organizations_.get(i));
       }
-      for (int i = 0; i < projects_.size(); i++) {
-        output.writeMessage(14, projects_.get(i));
-      }
       if (!getPhoneNumberBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, phoneNumber_);
       }
@@ -10048,10 +10340,6 @@ public final class Accounts {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, organizations_.get(i));
       }
-      for (int i = 0; i < projects_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, projects_.get(i));
-      }
       if (!getPhoneNumberBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, phoneNumber_);
       }
@@ -10167,8 +10455,6 @@ public final class Accounts {
           != other.getIsSuperUser()) return false;
       if (!getOrganizationsList()
           .equals(other.getOrganizationsList())) return false;
-      if (!getProjectsList()
-          .equals(other.getProjectsList())) return false;
       if (!getPhoneNumber()
           .equals(other.getPhoneNumber())) return false;
       if (!getCountry()
@@ -10255,10 +10541,6 @@ public final class Accounts {
       if (getOrganizationsCount() > 0) {
         hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getOrganizationsList().hashCode();
-      }
-      if (getProjectsCount() > 0) {
-        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
-        hash = (53 * hash) + getProjectsList().hashCode();
       }
       hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getPhoneNumber().hashCode();
@@ -10445,7 +10727,6 @@ public final class Accounts {
           getRolesFieldBuilder();
           getPermissionsFieldBuilder();
           getOrganizationsFieldBuilder();
-          getProjectsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -10486,12 +10767,6 @@ public final class Accounts {
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           organizationsBuilder_.clear();
-        }
-        if (projectsBuilder_ == null) {
-          projects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          projectsBuilder_.clear();
         }
         phoneNumber_ = "";
 
@@ -10599,15 +10874,6 @@ public final class Accounts {
           result.organizations_ = organizations_;
         } else {
           result.organizations_ = organizationsBuilder_.build();
-        }
-        if (projectsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            projects_ = java.util.Collections.unmodifiableList(projects_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.projects_ = projects_;
-        } else {
-          result.projects_ = projectsBuilder_.build();
         }
         result.phoneNumber_ = phoneNumber_;
         result.country_ = country_;
@@ -10787,32 +11053,6 @@ public final class Accounts {
                    getOrganizationsFieldBuilder() : null;
             } else {
               organizationsBuilder_.addAllMessages(other.organizations_);
-            }
-          }
-        }
-        if (projectsBuilder_ == null) {
-          if (!other.projects_.isEmpty()) {
-            if (projects_.isEmpty()) {
-              projects_ = other.projects_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureProjectsIsMutable();
-              projects_.addAll(other.projects_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.projects_.isEmpty()) {
-            if (projectsBuilder_.isEmpty()) {
-              projectsBuilder_.dispose();
-              projectsBuilder_ = null;
-              projects_ = other.projects_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              projectsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getProjectsFieldBuilder() : null;
-            } else {
-              projectsBuilder_.addAllMessages(other.projects_);
             }
           }
         }
@@ -12191,246 +12431,6 @@ public final class Accounts {
           organizations_ = null;
         }
         return organizationsBuilder_;
-      }
-
-      private java.util.List<accounts.v1alpha1.Accounts.Project> projects_ =
-        java.util.Collections.emptyList();
-      private void ensureProjectsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          projects_ = new java.util.ArrayList<accounts.v1alpha1.Accounts.Project>(projects_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> projectsBuilder_;
-
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Project> getProjectsList() {
-        if (projectsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(projects_);
-        } else {
-          return projectsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public int getProjectsCount() {
-        if (projectsBuilder_ == null) {
-          return projects_.size();
-        } else {
-          return projectsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project getProjects(int index) {
-        if (projectsBuilder_ == null) {
-          return projects_.get(index);
-        } else {
-          return projectsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder setProjects(
-          int index, accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.set(index, value);
-          onChanged();
-        } else {
-          projectsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder setProjects(
-          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.add(value);
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          int index, accounts.v1alpha1.Accounts.Project value) {
-        if (projectsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProjectsIsMutable();
-          projects_.add(index, value);
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.add(builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addProjects(
-          int index, accounts.v1alpha1.Accounts.Project.Builder builderForValue) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          projectsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder addAllProjects(
-          java.lang.Iterable<? extends accounts.v1alpha1.Accounts.Project> values) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, projects_);
-          onChanged();
-        } else {
-          projectsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder clearProjects() {
-        if (projectsBuilder_ == null) {
-          projects_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          projectsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public Builder removeProjects(int index) {
-        if (projectsBuilder_ == null) {
-          ensureProjectsIsMutable();
-          projects_.remove(index);
-          onChanged();
-        } else {
-          projectsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder getProjectsBuilder(
-          int index) {
-        return getProjectsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.ProjectOrBuilder getProjectsOrBuilder(
-          int index) {
-        if (projectsBuilder_ == null) {
-          return projects_.get(index);  } else {
-          return projectsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public java.util.List<? extends accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-           getProjectsOrBuilderList() {
-        if (projectsBuilder_ != null) {
-          return projectsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(projects_);
-        }
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder() {
-        return getProjectsFieldBuilder().addBuilder(
-            accounts.v1alpha1.Accounts.Project.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public accounts.v1alpha1.Accounts.Project.Builder addProjectsBuilder(
-          int index) {
-        return getProjectsFieldBuilder().addBuilder(
-            index, accounts.v1alpha1.Accounts.Project.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];</code>
-       */
-      public java.util.List<accounts.v1alpha1.Accounts.Project.Builder> 
-           getProjectsBuilderList() {
-        return getProjectsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder> 
-          getProjectsFieldBuilder() {
-        if (projectsBuilder_ == null) {
-          projectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              accounts.v1alpha1.Accounts.Project, accounts.v1alpha1.Accounts.Project.Builder, accounts.v1alpha1.Accounts.ProjectOrBuilder>(
-                  projects_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          projects_ = null;
-        }
-        return projectsBuilder_;
       }
 
       private java.lang.Object phoneNumber_ = "";
@@ -13827,25 +13827,25 @@ public final class Accounts {
       "_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\t" +
       "R\tupdatedAt\022-\n\005roles\030\010 \003(\0132\027.accounts.v1" +
       "alpha1.RoleR\005roles\0221\n\005users\030\t \003(\0132\033.acco" +
-      "unts.v1alpha1.UserListR\005users\"\340\001\n\014Organi" +
+      "unts.v1alpha1.UserListR\005users\"\230\002\n\014Organi" +
       "zation\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
       "me\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030" +
       "\004 \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.acco" +
       "unts.v1alpha1.UserListR\005owner\022-\n\005roles\030\010" +
       " \003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\022\n\004" +
-      "slug\030\t \001(\tR\004slug\"\251\n\n\nUserDetail\022\016\n\002id\030\001 " +
-      "\001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirs" +
-      "t_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001" +
-      "(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis" +
-      "_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 " +
-      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupda" +
-      "tedAt\022-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1" +
-      ".RoleR\005roles\022?\n\013permissions\030\n \003(\0132\035.acco" +
-      "unts.v1alpha1.PermissionR\013permissions\022\"\n" +
-      "\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n\rorg" +
-      "anizations\030\014 \003(\0132\037.accounts.v1alpha1.Org" +
-      "anizationR\rorganizations\0226\n\010projects\030\016 \003" +
-      "(\0132\032.accounts.v1alpha1.ProjectR\010projects" +
+      "slug\030\t \001(\tR\004slug\0226\n\010projects\030\n \003(\0132\032.acc" +
+      "ounts.v1alpha1.ProjectR\010projects\"\361\t\n\nUse" +
+      "rDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\t" +
+      "R\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022" +
+      "\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 " +
+      "\001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive\022" +
+      "\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdate" +
+      "d_at\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.a" +
+      "ccounts.v1alpha1.RoleR\005roles\022?\n\013permissi" +
+      "ons\030\n \003(\0132\035.accounts.v1alpha1.Permission" +
+      "R\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013is" +
+      "SuperUser\022E\n\rorganizations\030\014 \003(\0132\037.accou" +
+      "nts.v1alpha1.OrganizationR\rorganizations" +
       "\022!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007c" +
       "ountry\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004cit" +
       "y\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030" +
@@ -13909,13 +13909,13 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_Organization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_Organization_descriptor,
-        new java.lang.String[] { "Id", "Name", "Image", "Description", "Owner", "Roles", "Slug", });
+        new java.lang.String[] { "Id", "Name", "Image", "Description", "Owner", "Roles", "Slug", "Projects", });
     internal_static_accounts_v1alpha1_UserDetail_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_accounts_v1alpha1_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_UserDetail_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "Projects", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "IsMfaEnabled", "TokenCcp", "EmailVerified", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", "OptionalAddress", "Image", });
+        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "Email", "IsActive", "CreatedAt", "UpdatedAt", "Roles", "Permissions", "IsSuperUser", "Organizations", "PhoneNumber", "Country", "City", "ZipCode", "Address", "State", "EmojiCountry", "IsMfaEnabled", "TokenCcp", "EmailVerified", "Language", "PushNotification", "EmailNotification", "NewLoginNotification", "CreateNotification", "UpdateNotification", "DeleteNotification", "ApplicationNotification", "ReadNotification", "PhoneCode", "OptionalAddress", "Image", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

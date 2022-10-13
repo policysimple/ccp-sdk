@@ -51,13 +51,9 @@ func CreateTokenCCP(req *accountpkgv1.CreateTokenCCPRequest) (*accountpkgv1.Crea
 
 	if err != nil {
 		bylogs.LogErr("CreateTokenCCP Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error CreateTokenCCP: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CreateTokenCCP Client Sdk", "Success")
+		return nil, fmt.Errorf("[CreateTokenCCP] %w", err)
 	}
+	bylogs.LogInfo("CreateTokenCCP Client Sdk", "Success")
 	return response, nil
 
 }
@@ -72,9 +68,8 @@ func EnableOrDisableMFA(userId string) (*accountpkgv1.EnableOrDisableMFAResponse
 	defer cancel()
 
 	if userId == "" {
-		return &accountpkgv1.EnableOrDisableMFAResponse{
-			Error: "UserId is required",
-		}, nil
+		return nil, status.Error(codes.InvalidArgument, "UerId is required")
+
 	}
 
 	response, err := client.EnableOrDisableMFA(ctx, &accountpkgv1.EnableOrDisableMFARequest{
@@ -83,13 +78,9 @@ func EnableOrDisableMFA(userId string) (*accountpkgv1.EnableOrDisableMFAResponse
 
 	if err != nil {
 		bylogs.LogErr("EnableOrDisableMFA Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error EnableOrDisableMFA: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("EnableOrDisableMFA Client Sdk", "Success")
+		return nil, fmt.Errorf("[EnableOrDisableMFA] %w", err)
 	}
+	bylogs.LogInfo("EnableOrDisableMFA Client Sdk", "Success")
 	return response, nil
 }
 
@@ -103,22 +94,17 @@ func GetOneTokenCCP(token string) (*accountpkgv1.GetOneTokenCCPResponse, error) 
 	defer cancel()
 
 	if token == "" {
-		return &accountpkgv1.GetOneTokenCCPResponse{
-			Error: "Token is required",
-		}, nil
+		return nil, status.Error(codes.InvalidArgument, "Token is required")
 	}
 
 	response, err := client.GetOneTokenCCP(ctx, &accountpkgv1.GetOneTokenCCPRequest{Token: token})
 
 	if err != nil {
 		bylogs.LogErr("GetOneTokenCCP Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOneTokenCCP: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOneTokenCCP Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetOneTokenCCP] %w", err)
+
 	}
+	bylogs.LogInfo("GetOneTokenCCP Client Sdk", "Success")
 	return response, nil
 }
 
@@ -132,16 +118,12 @@ func MFA(req *accountpkgv1.MFARequest) (*accountpkgv1.MFAResponse, error) {
 	defer cancel()
 
 	response, err := client.MFA(ctx, req)
-
 	if err != nil {
 		bylogs.LogErr("MFA Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error MFA: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("MFA Client Sdk", "Success")
+		return nil, fmt.Errorf("[MFA] %w", err)
+
 	}
+	bylogs.LogInfo("MFA Client Sdk", "Success")
 	return response, nil
 }
 
@@ -155,22 +137,16 @@ func Logs(userId string) (*accountpkgv1.LogsResponse, error) {
 	defer cancel()
 
 	if userId == "" {
-		return &accountpkgv1.LogsResponse{
-			Error: "Token is required",
-		}, nil
+		return nil, status.Error(codes.InvalidArgument, "Token is required")
 	}
 
 	response, err := client.Logs(ctx, &accountpkgv1.LogsRequest{UserId: userId})
-
 	if err != nil {
 		bylogs.LogErr("Logs Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error Logs: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("Logs Client Sdk", "Success")
+		return nil, fmt.Errorf("[Logs] %w", err)
+
 	}
+	bylogs.LogInfo("Logs Client Sdk", "Success")
 	return response, nil
 }
 
@@ -187,12 +163,9 @@ func SaveLogs(log *accountpkgv1.Log) (*accountpkgv1.SaveLogsResponse, error) {
 
 	if err != nil {
 		bylogs.LogErr("SaveLogs Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error SaveLogs: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("SaveLogs Client Sdk", "Success")
+		return nil, fmt.Errorf("[SaveLogs] %w", err)
+
 	}
+	bylogs.LogInfo("SaveLogs Client Sdk", "Success")
 	return response, nil
 }

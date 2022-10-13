@@ -107,6 +107,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProjectDefaultTypeInternal _Pro
 constexpr Organization::Organization(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : roles_()
+  , projects_()
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -127,7 +128,6 @@ constexpr UserDetail::UserDetail(
   : roles_()
   , permissions_()
   , organizations_()
-  , projects_()
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -243,6 +243,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Organization, owner_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Organization, roles_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Organization, slug_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Organization, projects_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -260,7 +261,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, permissions_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, is_super_user_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, organizations_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, projects_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, phone_number_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, country_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, city_),
@@ -291,7 +291,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 32, -1, sizeof(::accounts::v1alpha1::Permission)},
   { 42, -1, sizeof(::accounts::v1alpha1::Project)},
   { 56, -1, sizeof(::accounts::v1alpha1::Organization)},
-  { 68, -1, sizeof(::accounts::v1alpha1::UserDetail)},
+  { 69, -1, sizeof(::accounts::v1alpha1::UserDetail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -329,25 +329,25 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\t"
   "R\tupdatedAt\022-\n\005roles\030\010 \003(\0132\027.accounts.v1"
   "alpha1.RoleR\005roles\0221\n\005users\030\t \003(\0132\033.acco"
-  "unts.v1alpha1.UserListR\005users\"\340\001\n\014Organi"
+  "unts.v1alpha1.UserListR\005users\"\230\002\n\014Organi"
   "zation\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004na"
   "me\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030"
   "\004 \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.acco"
   "unts.v1alpha1.UserListR\005owner\022-\n\005roles\030\010"
   " \003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\022\n\004"
-  "slug\030\t \001(\tR\004slug\"\251\n\n\nUserDetail\022\016\n\002id\030\001 "
-  "\001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirs"
-  "t_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001"
-  "(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis"
-  "_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 "
-  "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupda"
-  "tedAt\022-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1"
-  ".RoleR\005roles\022\?\n\013permissions\030\n \003(\0132\035.acco"
-  "unts.v1alpha1.PermissionR\013permissions\022\"\n"
-  "\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n\rorg"
-  "anizations\030\014 \003(\0132\037.accounts.v1alpha1.Org"
-  "anizationR\rorganizations\0226\n\010projects\030\016 \003"
-  "(\0132\032.accounts.v1alpha1.ProjectR\010projects"
+  "slug\030\t \001(\tR\004slug\0226\n\010projects\030\n \003(\0132\032.acc"
+  "ounts.v1alpha1.ProjectR\010projects\"\361\t\n\nUse"
+  "rDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\t"
+  "R\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022"
+  "\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 "
+  "\001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive\022"
+  "\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdate"
+  "d_at\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.a"
+  "ccounts.v1alpha1.RoleR\005roles\022\?\n\013permissi"
+  "ons\030\n \003(\0132\035.accounts.v1alpha1.Permission"
+  "R\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013is"
+  "SuperUser\022E\n\rorganizations\030\014 \003(\0132\037.accou"
+  "nts.v1alpha1.OrganizationR\rorganizations"
   "\022!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007c"
   "ountry\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004cit"
   "y\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030"
@@ -2296,7 +2296,8 @@ Organization::_Internal::owner(const Organization* msg) {
 Organization::Organization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  roles_(arena) {
+  roles_(arena),
+  projects_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2305,7 +2306,8 @@ Organization::Organization(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 Organization::Organization(const Organization& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      roles_(from.roles_) {
+      roles_(from.roles_),
+      projects_(from.projects_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
@@ -2380,6 +2382,7 @@ void Organization::Clear() {
   (void) cached_has_bits;
 
   roles_.Clear();
+  projects_.Clear();
   name_.ClearToEmpty();
   image_.ClearToEmpty();
   description_.ClearToEmpty();
@@ -2458,6 +2461,18 @@ const char* Organization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.Organization.slug"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_projects(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2551,6 +2566,14 @@ failure:
         9, this->_internal_slug(), target);
   }
 
+  // repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_projects_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(10, this->_internal_projects(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2570,6 +2593,13 @@ size_t Organization::ByteSizeLong() const {
   // repeated .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
   total_size += 1UL * this->_internal_roles_size();
   for (const auto& msg : this->roles_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];
+  total_size += 1UL * this->_internal_projects_size();
+  for (const auto& msg : this->projects_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -2645,6 +2675,7 @@ void Organization::MergeFrom(const Organization& from) {
   (void) cached_has_bits;
 
   roles_.MergeFrom(from.roles_);
+  projects_.MergeFrom(from.projects_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -2681,6 +2712,7 @@ void Organization::InternalSwap(Organization* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   roles_.InternalSwap(&other->roles_);
+  projects_.InternalSwap(&other->projects_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
@@ -2726,8 +2758,7 @@ UserDetail::UserDetail(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   roles_(arena),
   permissions_(arena),
-  organizations_(arena),
-  projects_(arena) {
+  organizations_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2738,8 +2769,7 @@ UserDetail::UserDetail(const UserDetail& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       roles_(from.roles_),
       permissions_(from.permissions_),
-      organizations_(from.organizations_),
-      projects_(from.projects_) {
+      organizations_(from.organizations_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_user_id().empty()) {
@@ -2910,7 +2940,6 @@ void UserDetail::Clear() {
   roles_.Clear();
   permissions_.Clear();
   organizations_.Clear();
-  projects_.Clear();
   user_id_.ClearToEmpty();
   first_name_.ClearToEmpty();
   last_name_.ClearToEmpty();
@@ -3050,18 +3079,6 @@ const char* UserDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_projects(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
         } else goto handle_unusual;
         continue;
       // string phone_number = 15 [json_name = "phoneNumber"];
@@ -3373,14 +3390,6 @@ failure:
       InternalWriteMessage(12, this->_internal_organizations(i), target, stream);
   }
 
-  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_projects_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(14, this->_internal_projects(i), target, stream);
-  }
-
   // string phone_number = 15 [json_name = "phoneNumber"];
   if (!this->_internal_phone_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -3594,13 +3603,6 @@ size_t UserDetail::ByteSizeLong() const {
   // repeated .accounts.v1alpha1.Organization organizations = 12 [json_name = "organizations"];
   total_size += 1UL * this->_internal_organizations_size();
   for (const auto& msg : this->organizations_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-  total_size += 1UL * this->_internal_projects_size();
-  for (const auto& msg : this->projects_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -3829,7 +3831,6 @@ void UserDetail::MergeFrom(const UserDetail& from) {
   roles_.MergeFrom(from.roles_);
   permissions_.MergeFrom(from.permissions_);
   organizations_.MergeFrom(from.organizations_);
-  projects_.MergeFrom(from.projects_);
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
@@ -3943,7 +3944,6 @@ void UserDetail::InternalSwap(UserDetail* other) {
   roles_.InternalSwap(&other->roles_);
   permissions_.InternalSwap(&other->permissions_);
   organizations_.InternalSwap(&other->organizations_);
-  projects_.InternalSwap(&other->projects_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &user_id_, GetArenaForAllocation(),

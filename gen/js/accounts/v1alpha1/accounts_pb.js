@@ -1688,7 +1688,7 @@ proto.accounts.v1alpha1.Project.prototype.clearUsersList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.Organization.repeatedFields_ = [8];
+proto.accounts.v1alpha1.Organization.repeatedFields_ = [8,10];
 
 
 
@@ -1728,7 +1728,9 @@ proto.accounts.v1alpha1.Organization.toObject = function(includeInstance, msg) {
     owner: (f = msg.getOwner()) && proto.accounts.v1alpha1.UserList.toObject(includeInstance, f),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     proto.accounts.v1alpha1.Role.toObject, includeInstance),
-    slug: jspb.Message.getFieldWithDefault(msg, 9, "")
+    slug: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
+    proto.accounts.v1alpha1.Project.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1794,6 +1796,11 @@ proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader = function(msg,
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setSlug(value);
+      break;
+    case 10:
+      var value = new proto.accounts.v1alpha1.Project;
+      reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
+      msg.addProjects(value);
       break;
     default:
       reader.skipField();
@@ -1873,6 +1880,14 @@ proto.accounts.v1alpha1.Organization.serializeBinaryToWriter = function(message,
     writer.writeString(
       9,
       f
+    );
+  }
+  f = message.getProjectsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      proto.accounts.v1alpha1.Project.serializeBinaryToWriter
     );
   }
 };
@@ -2043,13 +2058,51 @@ proto.accounts.v1alpha1.Organization.prototype.setSlug = function(value) {
 };
 
 
+/**
+ * repeated Project projects = 10;
+ * @return {!Array<!proto.accounts.v1alpha1.Project>}
+ */
+proto.accounts.v1alpha1.Organization.prototype.getProjectsList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.Project>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Project, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.accounts.v1alpha1.Project>} value
+ * @return {!proto.accounts.v1alpha1.Organization} returns this
+*/
+proto.accounts.v1alpha1.Organization.prototype.setProjectsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.accounts.v1alpha1.Project=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.accounts.v1alpha1.Project}
+ */
+proto.accounts.v1alpha1.Organization.prototype.addProjects = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.accounts.v1alpha1.Project, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.accounts.v1alpha1.Organization} returns this
+ */
+proto.accounts.v1alpha1.Organization.prototype.clearProjectsList = function() {
+  return this.setProjectsList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.accounts.v1alpha1.UserDetail.repeatedFields_ = [9,10,12,14];
+proto.accounts.v1alpha1.UserDetail.repeatedFields_ = [9,10,12];
 
 
 
@@ -2097,8 +2150,6 @@ proto.accounts.v1alpha1.UserDetail.toObject = function(includeInstance, msg) {
     isSuperUser: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
     proto.accounts.v1alpha1.Organization.toObject, includeInstance),
-    projectsList: jspb.Message.toObjectList(msg.getProjectsList(),
-    proto.accounts.v1alpha1.Project.toObject, includeInstance),
     phoneNumber: jspb.Message.getFieldWithDefault(msg, 15, ""),
     country: jspb.Message.getFieldWithDefault(msg, 16, ""),
     city: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -2207,11 +2258,6 @@ proto.accounts.v1alpha1.UserDetail.deserializeBinaryFromReader = function(msg, r
       var value = new proto.accounts.v1alpha1.Organization;
       reader.readMessage(value,proto.accounts.v1alpha1.Organization.deserializeBinaryFromReader);
       msg.addOrganizations(value);
-      break;
-    case 14:
-      var value = new proto.accounts.v1alpha1.Project;
-      reader.readMessage(value,proto.accounts.v1alpha1.Project.deserializeBinaryFromReader);
-      msg.addProjects(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -2415,14 +2461,6 @@ proto.accounts.v1alpha1.UserDetail.serializeBinaryToWriter = function(message, w
       12,
       f,
       proto.accounts.v1alpha1.Organization.serializeBinaryToWriter
-    );
-  }
-  f = message.getProjectsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      14,
-      f,
-      proto.accounts.v1alpha1.Project.serializeBinaryToWriter
     );
   }
   f = message.getPhoneNumber();
@@ -2855,44 +2893,6 @@ proto.accounts.v1alpha1.UserDetail.prototype.addOrganizations = function(opt_val
  */
 proto.accounts.v1alpha1.UserDetail.prototype.clearOrganizationsList = function() {
   return this.setOrganizationsList([]);
-};
-
-
-/**
- * repeated Project projects = 14;
- * @return {!Array<!proto.accounts.v1alpha1.Project>}
- */
-proto.accounts.v1alpha1.UserDetail.prototype.getProjectsList = function() {
-  return /** @type{!Array<!proto.accounts.v1alpha1.Project>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.accounts.v1alpha1.Project, 14));
-};
-
-
-/**
- * @param {!Array<!proto.accounts.v1alpha1.Project>} value
- * @return {!proto.accounts.v1alpha1.UserDetail} returns this
-*/
-proto.accounts.v1alpha1.UserDetail.prototype.setProjectsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 14, value);
-};
-
-
-/**
- * @param {!proto.accounts.v1alpha1.Project=} opt_value
- * @param {number=} opt_index
- * @return {!proto.accounts.v1alpha1.Project}
- */
-proto.accounts.v1alpha1.UserDetail.prototype.addProjects = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 14, opt_value, proto.accounts.v1alpha1.Project, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.accounts.v1alpha1.UserDetail} returns this
- */
-proto.accounts.v1alpha1.UserDetail.prototype.clearProjectsList = function() {
-  return this.setProjectsList([]);
 };
 
 

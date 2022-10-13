@@ -12,9 +12,7 @@ import (
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/permissions"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.PermissionServiceClient
@@ -48,17 +46,11 @@ func CreatePermission(req *accountpkgv1.CreatePermissionRequest) (*accountpkgv1.
 	defer cancel()
 
 	response, err := client.CreatePermission(ctx, req)
-
 	if err != nil {
 		bylogs.LogErr("CreatePermission Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error CreatePermission: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CreatePermission Client Sdk", "Success")
+		return nil, fmt.Errorf("[CreatePermission] %w", err)
 	}
-
+	bylogs.LogInfo("CreatePermission Client Sdk", "Success")
 	return response, nil
 }
 
@@ -75,14 +67,9 @@ func ListPermission(req *accountpkgv1.ListPermissionRequest) (*accountpkgv1.List
 
 	if err != nil {
 		bylogs.LogErr("ListPermission Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListPermission: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListPermission Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListPermission] %w", err)
 	}
-
+	bylogs.LogInfo("ListPermission Client Sdk", "Success")
 	return response, nil
 }
 
@@ -99,14 +86,10 @@ func GetOnePermission(req *accountpkgv1.GetOnePermissionRequest) (*accountpkgv1.
 
 	if err != nil {
 		bylogs.LogErr("GetOnePermission Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOnePermission: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOnePermission Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[GetOnePermission] %w", err)
 
+	}
+	bylogs.LogInfo("GetOnePermission Client Sdk", "Success")
 	return response, nil
 }
 
@@ -123,14 +106,10 @@ func UpdatePermission(req *accountpkgv1.UpdatePermissionRequest) (*accountpkgv1.
 
 	if err != nil {
 		bylogs.LogErr("UpdatePermission Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error UpdatePermission: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("UpdatePermission Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[UpdatePermission] %w", err)
 
+	}
+	bylogs.LogInfo("UpdatePermission Client Sdk", "Success")
 	return response, nil
 }
 
@@ -146,13 +125,9 @@ func DeletePermission(req *accountpkgv1.DeletePermissionRequest) (*accountpkgv1.
 	response, err := client.DeletePermission(ctx, req)
 	if err != nil {
 		bylogs.LogErr("DeletePermission Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error DeletePermission: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeletePermission Client Sdk", "Success")
-	}
+		return nil, fmt.Errorf("[DeletePermission] %w", err)
 
+	}
+	bylogs.LogInfo("DeletePermission Client Sdk", "Success")
 	return response, nil
 }
