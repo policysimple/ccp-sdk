@@ -27,6 +27,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ResponseMessageDeleteRuntimeByAppId",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntime",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByApplication",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByEnvironment",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime",
 };
@@ -45,8 +46,9 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_ResponseMessageDeleteRuntimeByAppId_(RuntimeAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteRuntime_(RuntimeAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteRuntimesByApplication_(RuntimeAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRuntimes_(RuntimeAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RebuildRuntime_(RuntimeAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRuntimesByEnvironment_(RuntimeAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRuntimes_(RuntimeAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RebuildRuntime_(RuntimeAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -161,6 +163,22 @@ void RuntimeAPIService::Stub::experimental_async::DeleteRuntimesByApplication(::
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRuntimesByApplication_, context, request, false);
 }
 
+::grpc::Status RuntimeAPIService::Stub::DeleteRuntimesByEnvironment(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest& request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteRuntimesByEnvironment_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::DeleteRuntimesByEnvironment(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteRuntimesByEnvironment_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse>* RuntimeAPIService::Stub::AsyncDeleteRuntimesByEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRuntimesByEnvironment_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse>* RuntimeAPIService::Stub::PrepareAsyncDeleteRuntimesByEnvironmentRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRuntimesByEnvironment_, context, request, false);
+}
+
 ::grpc::Status RuntimeAPIService::Stub::ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListRuntimes_, context, request, response);
 }
@@ -232,10 +250,15 @@ RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::DeleteRuntimesByEnvironment), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::ListRuntimesRequest, ::pipelines::runtime::v1alpha1::ListRuntimesResponse>(
           std::mem_fn(&RuntimeAPIService::Service::ListRuntimes), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      RuntimeAPIService_method_names[8],
+      RuntimeAPIService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>(
           std::mem_fn(&RuntimeAPIService::Service::RebuildRuntime), this)));
@@ -287,6 +310,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::DeleteRuntimesByApplication(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::DeleteRuntimesByEnvironment(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* response) {
   (void) context;
   (void) request;
   (void) response;

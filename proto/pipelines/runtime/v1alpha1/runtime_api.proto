@@ -22,6 +22,7 @@ service RuntimeAPIService{
     rpc ResponseMessageDeleteRuntimeByAppId(ResponseMessageDeleteRuntimeByAppIdRequest) returns (ResponseMessageDeleteRuntimeByAppIdResponse) {};
     rpc DeleteRuntime(DeleteRuntimeRequest) returns (DeleteRuntimeResponse) {};
     rpc DeleteRuntimesByApplication(DeleteRuntimesByApplicationRequest) returns (DeleteRuntimesByApplicationResponse) {};
+    rpc DeleteRuntimesByEnvironment(DeleteRuntimesByEnvironmentRequest) returns (DeleteRuntimesByEnvironmentResponse) {};
     rpc ListRuntimes(ListRuntimesRequest) returns (ListRuntimesResponse) {};
     rpc RebuildRuntime(RebuildRuntimeRequest) returns (RebuildRuntimeResponse) {};
 }
@@ -81,6 +82,16 @@ message DeleteRuntimesByApplicationRequest {
 }
 
 message DeleteRuntimesByApplicationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteRuntimesByEnvironmentRequest {
+    string environment_id = 1;
+    string user_id = 2;
+}
+
+message DeleteRuntimesByEnvironmentResponse {
     string msg = 1;
     string error = 2;
 }

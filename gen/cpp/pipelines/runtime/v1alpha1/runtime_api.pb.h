@@ -47,7 +47,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -75,6 +75,12 @@ extern DeleteRuntimesByApplicationRequestDefaultTypeInternal _DeleteRuntimesByAp
 class DeleteRuntimesByApplicationResponse;
 struct DeleteRuntimesByApplicationResponseDefaultTypeInternal;
 extern DeleteRuntimesByApplicationResponseDefaultTypeInternal _DeleteRuntimesByApplicationResponse_default_instance_;
+class DeleteRuntimesByEnvironmentRequest;
+struct DeleteRuntimesByEnvironmentRequestDefaultTypeInternal;
+extern DeleteRuntimesByEnvironmentRequestDefaultTypeInternal _DeleteRuntimesByEnvironmentRequest_default_instance_;
+class DeleteRuntimesByEnvironmentResponse;
+struct DeleteRuntimesByEnvironmentResponseDefaultTypeInternal;
+extern DeleteRuntimesByEnvironmentResponseDefaultTypeInternal _DeleteRuntimesByEnvironmentResponse_default_instance_;
 class GetRuntimeRequest;
 struct GetRuntimeRequestDefaultTypeInternal;
 extern GetRuntimeRequestDefaultTypeInternal _GetRuntimeRequest_default_instance_;
@@ -121,6 +127,8 @@ template<> ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* Arena::CreateMa
 template<> ::pipelines::runtime::v1alpha1::DeleteRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimesByApplicationResponse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::GetRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::GetRuntimeRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::GetRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::GetRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::ListRuntimesRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::ListRuntimesRequest>(Arena*);
@@ -1888,6 +1896,326 @@ class DeleteRuntimesByApplicationResponse final :
 };
 // -------------------------------------------------------------------
 
+class DeleteRuntimesByEnvironmentRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest) */ {
+ public:
+  inline DeleteRuntimesByEnvironmentRequest() : DeleteRuntimesByEnvironmentRequest(nullptr) {}
+  ~DeleteRuntimesByEnvironmentRequest() override;
+  explicit constexpr DeleteRuntimesByEnvironmentRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteRuntimesByEnvironmentRequest(const DeleteRuntimesByEnvironmentRequest& from);
+  DeleteRuntimesByEnvironmentRequest(DeleteRuntimesByEnvironmentRequest&& from) noexcept
+    : DeleteRuntimesByEnvironmentRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteRuntimesByEnvironmentRequest& operator=(const DeleteRuntimesByEnvironmentRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteRuntimesByEnvironmentRequest& operator=(DeleteRuntimesByEnvironmentRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteRuntimesByEnvironmentRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteRuntimesByEnvironmentRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteRuntimesByEnvironmentRequest*>(
+               &_DeleteRuntimesByEnvironmentRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(DeleteRuntimesByEnvironmentRequest& a, DeleteRuntimesByEnvironmentRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteRuntimesByEnvironmentRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteRuntimesByEnvironmentRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteRuntimesByEnvironmentRequest* New() const final {
+    return new DeleteRuntimesByEnvironmentRequest();
+  }
+
+  DeleteRuntimesByEnvironmentRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteRuntimesByEnvironmentRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteRuntimesByEnvironmentRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteRuntimesByEnvironmentRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteRuntimesByEnvironmentRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest";
+  }
+  protected:
+  explicit DeleteRuntimesByEnvironmentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEnvironmentIdFieldNumber = 1,
+    kUserIdFieldNumber = 2,
+  };
+  // string environment_id = 1 [json_name = "environmentId"];
+  void clear_environment_id();
+  const std::string& environment_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_id();
+  void set_allocated_environment_id(std::string* environment_id);
+  private:
+  const std::string& _internal_environment_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_id(const std::string& value);
+  std::string* _internal_mutable_environment_id();
+  public:
+
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteRuntimesByEnvironmentResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse) */ {
+ public:
+  inline DeleteRuntimesByEnvironmentResponse() : DeleteRuntimesByEnvironmentResponse(nullptr) {}
+  ~DeleteRuntimesByEnvironmentResponse() override;
+  explicit constexpr DeleteRuntimesByEnvironmentResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteRuntimesByEnvironmentResponse(const DeleteRuntimesByEnvironmentResponse& from);
+  DeleteRuntimesByEnvironmentResponse(DeleteRuntimesByEnvironmentResponse&& from) noexcept
+    : DeleteRuntimesByEnvironmentResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteRuntimesByEnvironmentResponse& operator=(const DeleteRuntimesByEnvironmentResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteRuntimesByEnvironmentResponse& operator=(DeleteRuntimesByEnvironmentResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteRuntimesByEnvironmentResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteRuntimesByEnvironmentResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteRuntimesByEnvironmentResponse*>(
+               &_DeleteRuntimesByEnvironmentResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(DeleteRuntimesByEnvironmentResponse& a, DeleteRuntimesByEnvironmentResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteRuntimesByEnvironmentResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteRuntimesByEnvironmentResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteRuntimesByEnvironmentResponse* New() const final {
+    return new DeleteRuntimesByEnvironmentResponse();
+  }
+
+  DeleteRuntimesByEnvironmentResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteRuntimesByEnvironmentResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteRuntimesByEnvironmentResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteRuntimesByEnvironmentResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteRuntimesByEnvironmentResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse";
+  }
+  protected:
+  explicit DeleteRuntimesByEnvironmentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetRuntimeRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.GetRuntimeRequest) */ {
  public:
@@ -1932,7 +2260,7 @@ class GetRuntimeRequest final :
                &_GetRuntimeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(GetRuntimeRequest& a, GetRuntimeRequest& b) {
     a.Swap(&b);
@@ -2076,7 +2404,7 @@ class GetRuntimeResponse final :
                &_GetRuntimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(GetRuntimeResponse& a, GetRuntimeResponse& b) {
     a.Swap(&b);
@@ -2240,7 +2568,7 @@ class ListRuntimesRequest final :
                &_ListRuntimesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(ListRuntimesRequest& a, ListRuntimesRequest& b) {
     a.Swap(&b);
@@ -2379,7 +2707,7 @@ class ListRuntimesResponse final :
                &_ListRuntimesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(ListRuntimesResponse& a, ListRuntimesResponse& b) {
     a.Swap(&b);
@@ -2543,7 +2871,7 @@ class ResponseMessageDeleteRuntimeByAppIdRequest final :
                &_ResponseMessageDeleteRuntimeByAppIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(ResponseMessageDeleteRuntimeByAppIdRequest& a, ResponseMessageDeleteRuntimeByAppIdRequest& b) {
     a.Swap(&b);
@@ -2741,7 +3069,7 @@ class ResponseMessageDeleteRuntimeByAppIdResponse final :
                &_ResponseMessageDeleteRuntimeByAppIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(ResponseMessageDeleteRuntimeByAppIdResponse& a, ResponseMessageDeleteRuntimeByAppIdResponse& b) {
     a.Swap(&b);
@@ -2901,7 +3229,7 @@ class RebuildRuntimeRequest final :
                &_RebuildRuntimeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(RebuildRuntimeRequest& a, RebuildRuntimeRequest& b) {
     a.Swap(&b);
@@ -3061,7 +3389,7 @@ class RebuildRuntimeResponse final :
                &_RebuildRuntimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(RebuildRuntimeResponse& a, RebuildRuntimeResponse& b) {
     a.Swap(&b);
@@ -4698,6 +5026,198 @@ inline void DeleteRuntimesByApplicationResponse::set_allocated_error(std::string
 
 // -------------------------------------------------------------------
 
+// DeleteRuntimesByEnvironmentRequest
+
+// string environment_id = 1 [json_name = "environmentId"];
+inline void DeleteRuntimesByEnvironmentRequest::clear_environment_id() {
+  environment_id_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByEnvironmentRequest::environment_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.environment_id)
+  return _internal_environment_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByEnvironmentRequest::set_environment_id(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.environment_id)
+}
+inline std::string* DeleteRuntimesByEnvironmentRequest::mutable_environment_id() {
+  std::string* _s = _internal_mutable_environment_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.environment_id)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByEnvironmentRequest::_internal_environment_id() const {
+  return environment_id_.Get();
+}
+inline void DeleteRuntimesByEnvironmentRequest::_internal_set_environment_id(const std::string& value) {
+  
+  environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentRequest::_internal_mutable_environment_id() {
+  
+  return environment_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentRequest::release_environment_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.environment_id)
+  return environment_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByEnvironmentRequest::set_allocated_environment_id(std::string* environment_id) {
+  if (environment_id != nullptr) {
+    
+  } else {
+    
+  }
+  environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.environment_id)
+}
+
+// string user_id = 2 [json_name = "userId"];
+inline void DeleteRuntimesByEnvironmentRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByEnvironmentRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByEnvironmentRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.user_id)
+}
+inline std::string* DeleteRuntimesByEnvironmentRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.user_id)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByEnvironmentRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void DeleteRuntimesByEnvironmentRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByEnvironmentRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest.user_id)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteRuntimesByEnvironmentResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void DeleteRuntimesByEnvironmentResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByEnvironmentResponse::msg() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByEnvironmentResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.msg)
+}
+inline std::string* DeleteRuntimesByEnvironmentResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.msg)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByEnvironmentResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void DeleteRuntimesByEnvironmentResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByEnvironmentResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void DeleteRuntimesByEnvironmentResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& DeleteRuntimesByEnvironmentResponse::error() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteRuntimesByEnvironmentResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.error)
+}
+inline std::string* DeleteRuntimesByEnvironmentResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.error)
+  return _s;
+}
+inline const std::string& DeleteRuntimesByEnvironmentResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void DeleteRuntimesByEnvironmentResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteRuntimesByEnvironmentResponse::release_error() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteRuntimesByEnvironmentResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse.error)
+}
+
+// -------------------------------------------------------------------
+
 // GetRuntimeRequest
 
 // string runtime_id = 1 [json_name = "runtimeId"];
@@ -5555,6 +6075,10 @@ inline void RebuildRuntimeResponse::set_allocated_status(std::string* status) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

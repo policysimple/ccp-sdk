@@ -108,6 +108,19 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Pipelines\Runtime\V1Alpha1\DeleteRuntimesByEnvironmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteRuntimesByEnvironment(\Pipelines\Runtime\V1Alpha1\DeleteRuntimesByEnvironmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByEnvironment',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\DeleteRuntimesByEnvironmentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Pipelines\Runtime\V1Alpha1\ListRuntimesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
