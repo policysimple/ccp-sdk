@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	runtimepkgv1 "github.com/cuemby/ccp-sdk/gen/go/pipelines/runtime/v1alpha1"
 
 	"google.golang.org/grpc"
@@ -152,6 +153,27 @@ func DeleteRuntimesByApplication(in *runtimepkgv1.DeleteRuntimesByApplicationReq
 		return nil, status.Errorf(
 			codes.InvalidArgument,
 			fmt.Sprintf("%s: %v", "Error delete runtime", err),
+		)
+	}
+	return response, nil
+}
+
+func DeleteRuntimesByEnvironment(in *runtimepkgv1.DeleteRuntimesByEnvironmentRequest) (response *runtimepkgv1.DeleteRuntimesByEnvironmentResponse, err error) {
+	bylogs.LogInfo("delete runtimes by environment client sdk")
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeleteRuntimesByEnvironment(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("error delete runtimes by environment: ", err)
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			fmt.Sprintf("%s: %v", "Error delete runtimes by environment", err),
 		)
 	}
 	return response, nil
