@@ -1296,6 +1296,7 @@ class Organization final :
 
   enum : int {
     kRolesFieldNumber = 8,
+    kProjectsFieldNumber = 10,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 4,
@@ -1320,6 +1321,24 @@ class Organization final :
   ::accounts::v1alpha1::Role* add_roles();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role >&
       roles() const;
+
+  // repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];
+  int projects_size() const;
+  private:
+  int _internal_projects_size() const;
+  public:
+  void clear_projects();
+  ::accounts::v1alpha1::Project* mutable_projects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+      mutable_projects();
+  private:
+  const ::accounts::v1alpha1::Project& _internal_projects(int index) const;
+  ::accounts::v1alpha1::Project* _internal_add_projects();
+  public:
+  const ::accounts::v1alpha1::Project& projects(int index) const;
+  ::accounts::v1alpha1::Project* add_projects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+      projects() const;
 
   // string name = 2 [json_name = "name"];
   void clear_name();
@@ -1412,6 +1431,7 @@ class Organization final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role > roles_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project > projects_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -1541,7 +1561,6 @@ class UserDetail final :
     kRolesFieldNumber = 9,
     kPermissionsFieldNumber = 10,
     kOrganizationsFieldNumber = 12,
-    kProjectsFieldNumber = 14,
     kUserIdFieldNumber = 2,
     kFirstNameFieldNumber = 3,
     kLastNameFieldNumber = 4,
@@ -1627,24 +1646,6 @@ class UserDetail final :
   ::accounts::v1alpha1::Organization* add_organizations();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization >&
       organizations() const;
-
-  // repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-  int projects_size() const;
-  private:
-  int _internal_projects_size() const;
-  public:
-  void clear_projects();
-  ::accounts::v1alpha1::Project* mutable_projects(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
-      mutable_projects();
-  private:
-  const ::accounts::v1alpha1::Project& _internal_projects(int index) const;
-  ::accounts::v1alpha1::Project* _internal_add_projects();
-  public:
-  const ::accounts::v1alpha1::Project& projects(int index) const;
-  ::accounts::v1alpha1::Project* add_projects();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
-      projects() const;
 
   // string user_id = 2 [json_name = "userId"];
   void clear_user_id();
@@ -2025,7 +2026,6 @@ class UserDetail final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Role > roles_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Organization > organizations_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project > projects_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
@@ -3521,6 +3521,46 @@ inline void Organization::set_allocated_slug(std::string* slug) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.Organization.slug)
 }
 
+// repeated .accounts.v1alpha1.Project projects = 10 [json_name = "projects"];
+inline int Organization::_internal_projects_size() const {
+  return projects_.size();
+}
+inline int Organization::projects_size() const {
+  return _internal_projects_size();
+}
+inline void Organization::clear_projects() {
+  projects_.Clear();
+}
+inline ::accounts::v1alpha1::Project* Organization::mutable_projects(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.Organization.projects)
+  return projects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
+Organization::mutable_projects() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.Organization.projects)
+  return &projects_;
+}
+inline const ::accounts::v1alpha1::Project& Organization::_internal_projects(int index) const {
+  return projects_.Get(index);
+}
+inline const ::accounts::v1alpha1::Project& Organization::projects(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.Organization.projects)
+  return _internal_projects(index);
+}
+inline ::accounts::v1alpha1::Project* Organization::_internal_add_projects() {
+  return projects_.Add();
+}
+inline ::accounts::v1alpha1::Project* Organization::add_projects() {
+  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.Organization.projects)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
+Organization::projects() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.Organization.projects)
+  return projects_;
+}
+
 // -------------------------------------------------------------------
 
 // UserDetail
@@ -3979,46 +4019,6 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Or
 UserDetail::organizations() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.UserDetail.organizations)
   return organizations_;
-}
-
-// repeated .accounts.v1alpha1.Project projects = 14 [json_name = "projects"];
-inline int UserDetail::_internal_projects_size() const {
-  return projects_.size();
-}
-inline int UserDetail::projects_size() const {
-  return _internal_projects_size();
-}
-inline void UserDetail::clear_projects() {
-  projects_.Clear();
-}
-inline ::accounts::v1alpha1::Project* UserDetail::mutable_projects(int index) {
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetail.projects)
-  return projects_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >*
-UserDetail::mutable_projects() {
-  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.UserDetail.projects)
-  return &projects_;
-}
-inline const ::accounts::v1alpha1::Project& UserDetail::_internal_projects(int index) const {
-  return projects_.Get(index);
-}
-inline const ::accounts::v1alpha1::Project& UserDetail::projects(int index) const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetail.projects)
-  return _internal_projects(index);
-}
-inline ::accounts::v1alpha1::Project* UserDetail::_internal_add_projects() {
-  return projects_.Add();
-}
-inline ::accounts::v1alpha1::Project* UserDetail::add_projects() {
-  ::accounts::v1alpha1::Project* _add = _internal_add_projects();
-  // @@protoc_insertion_point(field_add:accounts.v1alpha1.UserDetail.projects)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Project >&
-UserDetail::projects() const {
-  // @@protoc_insertion_point(field_list:accounts.v1alpha1.UserDetail.projects)
-  return projects_;
 }
 
 // string phone_number = 15 [json_name = "phoneNumber"];

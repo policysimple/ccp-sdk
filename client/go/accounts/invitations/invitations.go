@@ -11,9 +11,7 @@ import (
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitations"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.InvitationServiceClient
@@ -53,13 +51,9 @@ func SendInvitationUser(req *accountpkgv1.SendInvitationUserRequest) (*accountpk
 	response, err := client.SendInvitationUser(ctx, req)
 	if err != nil {
 		bylogs.LogErr("SendInvitationUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error SendInvitationUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("SendInvitationUser Client Sdk", "Success")
+		return nil, fmt.Errorf("[SendInvitationUser] %w", err)
 	}
+	bylogs.LogInfo("SendInvitationUser Client Sdk", "Success")
 	return response, nil
 }
 
@@ -75,13 +69,9 @@ func GetInvitationUser(req *accountpkgv1.GetInvitationUserRequest) (*accountpkgv
 	response, err := client.GetInvitationUser(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetInvitationUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetInvitationUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetInvitationUser Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetInvitationUser] %w", err)
 	}
+	bylogs.LogInfo("GetInvitationUser Client Sdk", "Success")
 	return response, nil
 }
 
@@ -97,18 +87,14 @@ func AgreeInvitationUser(req *accountpkgv1.AgreeInvitationUserRequest) (*account
 	response, err := client.AgreeInvitationUser(ctx, req)
 	if err != nil {
 		bylogs.LogErr("AgreeInvitationUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error AgreeInvitationUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("AgreeInvitationUser Client Sdk", "Success")
+		return nil, fmt.Errorf("[AgreeInvitationUser] %w", err)
 	}
+	bylogs.LogInfo("AgreeInvitationUser Client Sdk", "Success")
 	return response, nil
 }
 
 func ListInvitationSend(req *accountpkgv1.ListInvitationSendRequest) (*accountpkgv1.ListInvitationSendResponse, error) {
-	bylogs.LogInfo("ListInvitationUser Client Sdk")
+	bylogs.LogInfo("ListInvitationSend Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {
 		return nil, err
@@ -117,14 +103,10 @@ func ListInvitationSend(req *accountpkgv1.ListInvitationSendRequest) (*accountpk
 	defer cancel()
 	response, err := client.ListInvitationSend(ctx, req)
 	if err != nil {
-		bylogs.LogErr("ListInvitationUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListInvitationUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListInvitationUser Client Sdk", "Success")
+		bylogs.LogErr("ListInvitationSend Client Sdk", err)
+		return nil, fmt.Errorf("[ListInvitationSend] %w", err)
 	}
+	bylogs.LogInfo("ListInvitationSend Client Sdk", "Success")
 	return response, nil
 }
 
@@ -139,12 +121,9 @@ func DeleteInvitation(req *accountpkgv1.DeleteInvitationRequest) (*accountpkgv1.
 	response, err := client.DeleteInvitation(ctx, req)
 	if err != nil {
 		bylogs.LogErr("DeleteInvitation Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error DeleteInvitation: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteInvitation Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteInvitation] %w", err)
 	}
+	bylogs.LogInfo("DeleteInvitation Client Sdk", "Success")
+
 	return response, nil
 }

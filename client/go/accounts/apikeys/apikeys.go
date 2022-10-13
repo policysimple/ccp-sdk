@@ -11,9 +11,7 @@ import (
 
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeys"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.ApiKeyServiceClient
@@ -51,13 +49,10 @@ func CreateApiKey(req *accountpkgv1.CreateApiKeyRequest) (*accountpkgv1.CreateAp
 	response, err := client.CreateApiKey(ctx, req)
 	if err != nil {
 		bylogs.LogErr("CreateApiKey Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error CreateApiKey: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CreateApiKey Client Sdk", "Success")
+		return nil, fmt.Errorf("[CreateApiKey] %w", err)
+
 	}
+	bylogs.LogInfo("CreateApiKey Client Sdk", "Success")
 	return response, nil
 }
 
@@ -73,13 +68,10 @@ func GetOneApiKey(req *accountpkgv1.GetOneApiKeyRequest) (*accountpkgv1.GetOneAp
 	response, err := client.GetOneApiKey(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetOneApiKey Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOneApiKey: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOneApiKey Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetOneApiKey] %w", err)
+
 	}
+	bylogs.LogInfo("GetOneApiKey Client Sdk", "Success")
 	return response, nil
 }
 
@@ -95,13 +87,9 @@ func ListApiKey(req *accountpkgv1.ListApiKeyRequest) (*accountpkgv1.ListApiKeyRe
 	response, err := client.ListApiKey(ctx, req)
 	if err != nil {
 		bylogs.LogErr("ListApiKey Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListApiKey: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListApiKey Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListApiKey] %w", err)
 	}
+	bylogs.LogInfo("ListApiKey Client Sdk", "Success")
 	return response, nil
 }
 
@@ -117,13 +105,10 @@ func UpdateApiKey(req *accountpkgv1.UpdateApiKeyRequest) (*accountpkgv1.UpdateAp
 	response, err := client.UpdateApiKey(ctx, req)
 	if err != nil {
 		bylogs.LogErr("UpdateApiKey Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error UpdateApiKey: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("UpdateApiKey Client Sdk", "Success")
+		return nil, fmt.Errorf("[UpdateApiKey] %w", err)
+
 	}
+	bylogs.LogInfo("UpdateApiKey Client Sdk", "Success")
 	return response, nil
 }
 
@@ -139,12 +124,9 @@ func DeleteApiKey(req *accountpkgv1.DeleteApiKeyRequest) (*accountpkgv1.DeleteAp
 	response, err := client.DeleteApiKey(ctx, req)
 	if err != nil {
 		bylogs.LogErr("DeleteApiKey Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error DeleteApiKey: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteApiKey Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteApiKey] %w", err)
+
 	}
+	bylogs.LogInfo("DeleteApiKey Client Sdk", "Success")
 	return response, nil
 }

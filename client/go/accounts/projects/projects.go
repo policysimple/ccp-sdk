@@ -152,7 +152,6 @@ func UpdateProject(req *accountpkgv1.UpdateProjectRequest) (*accountpkgv1.Update
 
 	}
 	bylogs.LogInfo("UpdateProject Client Sdk", "Success")
-
 	return response, nil
 }
 

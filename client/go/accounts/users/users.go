@@ -245,9 +245,9 @@ func UpdateUser(req *accountpkgv1.UpdateUserRequest) (*accountpkgv1.UpdateUserRe
 		bylogs.LogErr("UpdateUser Client Sdk", err)
 		return nil, fmt.Errorf("[UpdateUser] %w", err)
 
-	} else {
-		bylogs.LogInfo("UpdateUser Client Sdk", "Success")
 	}
+	bylogs.LogInfo("UpdateUser Client Sdk", "Success")
+
 	return response, nil
 }
 

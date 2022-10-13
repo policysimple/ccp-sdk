@@ -2,7 +2,6 @@ package source
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -12,9 +11,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	sourcepkgv1 "github.com/cuemby/ccp-sdk/gen/go/source/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client sourcepkgv1.SourceServiceClient
@@ -48,7 +45,8 @@ func DeleteIntegration(req *sourcepkgv1.DeleteIntegrationRequest) (*sourcepkgv1.
 
 	response, err := client.DeleteIntegration(ctx, req)
 	if err != nil {
-		return nil, errors.New("error DeleteIntegration")
+		return nil, fmt.Errorf("[DeleteIntegration] %w", err)
+
 	}
 
 	return response, nil
@@ -66,7 +64,7 @@ func DeleteIntegrationsByOrganization(OrganizationId uint32) (*sourcepkgv1.Delet
 
 	response, err := client.DeleteIntegrationsByOrganization(ctx, &sourcepkgv1.DeleteIntegrationsByOrganizationRequest{OrganizationId: OrganizationId})
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("[DeleteIntegrationsByOrganization] %w", err)
 	}
 
 	return response, nil
@@ -84,7 +82,7 @@ func GetRepositoryProvider(integrationId string, name string) (*sourcepkgv1.GetR
 
 	response, err := client.GetRepositoryProvider(ctx, &sourcepkgv1.GetRepositoryProviderRequest{IntegrationId: integrationId, Name: name})
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("[GetRepositoryProvider] %w", err)
 	}
 
 	return response, nil
@@ -96,10 +94,7 @@ func GetIntegration(req *sourcepkgv1.GetIntegrationRequest) (*sourcepkgv1.GetInt
 	d, err := time.ParseDuration(sourceServiceTimeout)
 	if err != nil {
 		bylogs.LogErr("client: get integration failed", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error get integration", err),
-		)
+		return nil, fmt.Errorf("[GetIntegration] %w", err)
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
@@ -107,10 +102,8 @@ func GetIntegration(req *sourcepkgv1.GetIntegrationRequest) (*sourcepkgv1.GetInt
 	response, err := client.GetIntegration(ctx, req)
 	if err != nil {
 		bylogs.LogErr("client: get integration failed", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error get integration", err),
-		)
+		return nil, fmt.Errorf("[GetIntegration] %w", err)
+
 	}
 
 	return response, nil
