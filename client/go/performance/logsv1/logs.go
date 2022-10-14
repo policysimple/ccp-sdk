@@ -11,9 +11,7 @@ import (
 	logsgpkgv1 "github.com/cuemby/ccp-sdk/gen/go/performance/logs/v1alpha1"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client logsgpkgv1.LogsAPIServiceClient
@@ -54,10 +52,8 @@ func GetLogs(getLogs *logsgpkgv1.GetLogsRequest) (response *logsgpkgv1.GetLogsRe
 	})
 	if err != nil {
 		log.Printf("%s: %v", "Error get logs", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get Logs", err),
-		)
+		return nil, fmt.Errorf("[GetLogs] %w", err)
+
 	}
 	return response, nil
 }

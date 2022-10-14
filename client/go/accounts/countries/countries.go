@@ -11,9 +11,7 @@ import (
 
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/countries"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.CountriesServiceClient
@@ -50,13 +48,10 @@ func ListCountries(req *accountpkgv1.ListCountriesRequest) (*accountpkgv1.ListCo
 	response, err := client.ListCountries(ctx, req)
 	if err != nil {
 		bylogs.LogErr("ListCountries Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListCountries: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListCountries Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListCountries] %w", err)
+
 	}
+	bylogs.LogInfo("ListCountries Client Sdk", "Success")
 	return response, nil
 }
 
@@ -72,12 +67,9 @@ func GetOneCountry(req *accountpkgv1.GetOneCountryRequest) (*accountpkgv1.GetOne
 	response, err := client.GetOneCountry(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetOneCountry Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOneCountry: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOneCountry Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetOneCountry] %w", err)
+
 	}
+	bylogs.LogInfo("GetOneCountry Client Sdk", "Success")
 	return response, nil
 }

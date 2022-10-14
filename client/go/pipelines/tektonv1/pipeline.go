@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	tektonPipelinepkgv1 "github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client tektonPipelinepkgv1.TektonPipelineAPIServiceClient
@@ -49,10 +47,7 @@ func CreateTektonPipeline(in *tektonPipelinepkgv1.CreateTektonPipelineRequest) (
 
 	if err != nil {
 		bylogs.LogErr("client: create tekton pipeline failed", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error create tekton pipeline", err),
-		)
+		return nil, fmt.Errorf("[CreateTektonPipeline] %w", err)
 	}
 	return response, nil
 }
@@ -70,10 +65,7 @@ func DeleteTektonPipeline(in *tektonPipelinepkgv1.DeleteTektonPipelineRequest) (
 
 	if err != nil {
 		bylogs.LogErr("client: delete tekton pipeline failed", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error delete tekton pipeline", err),
-		)
+		return nil, fmt.Errorf("[DeleteTektonPipeline] %w", err)
 	}
 	return response, nil
 }

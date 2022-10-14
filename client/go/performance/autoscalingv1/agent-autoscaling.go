@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	agentautoscalingpkgv1 "github.com/cuemby/ccp-sdk/gen/go/performance/autoscaling/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var clientAgent agentautoscalingpkgv1.AutoscalingAgentAPIServiceClient
@@ -49,10 +47,7 @@ func AgentCreateAutoscaling(in *agentautoscalingpkgv1.AgentCreateAutoscalingRequ
 
 	if err != nil {
 		bylogs.LogErr("client: error agent create autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error agent create autoscaling", err),
-		)
+		return nil, fmt.Errorf("[AgentCreateAutoscaling] %w", err)
 	}
 	return response, nil
 }
@@ -70,10 +65,7 @@ func AgentUpdateAutoscaling(in *agentautoscalingpkgv1.AgentUpdateAutoscalingRequ
 
 	if err != nil {
 		bylogs.LogErr("client: error agent update autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error agent update autoscaling", err),
-		)
+		return nil, fmt.Errorf("[AgentUpdateAutoscaling] %w", err)
 	}
 	return response, nil
 }
@@ -91,10 +83,7 @@ func AgentDeleteAutoscaling(in *agentautoscalingpkgv1.AgentDeleteAutoscalingRequ
 
 	if err != nil {
 		bylogs.LogErr("client: error agent delete autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error agent delete autoscaling", err),
-		)
+		return nil, fmt.Errorf("[AgentDeleteAutoscaling] %w", err)
 	}
 	return response, nil
 }
@@ -112,10 +101,7 @@ func AgentGetAutoscaling(in *agentautoscalingpkgv1.AgentGetAutoscalingRequest) (
 
 	if err != nil {
 		bylogs.LogErr("client: error agent get autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error agent get autoscaling", err),
-		)
+		return nil, fmt.Errorf("[AgentGetAutoscaling] %w", err)
 	}
 	return response, nil
 }
@@ -133,10 +119,7 @@ func AgentListAutoscaling(in *agentautoscalingpkgv1.AgentListAutoscalingRequest)
 
 	if err != nil {
 		bylogs.LogErr("client: error agent list autoscaling", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error agent list autoscaling", err),
-		)
+		return nil, fmt.Errorf("[AgentListAutoscaling] %w", err)
 	}
 	return response, nil
 }

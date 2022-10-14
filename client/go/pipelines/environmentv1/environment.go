@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	environmentpkgv1 "github.com/cuemby/ccp-sdk/gen/go/pipelines/environment/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client environmentpkgv1.EnvironmentAPIServiceClient
@@ -49,10 +47,8 @@ func CreateEnvironment(in *environmentpkgv1.CreateEnvironmentRequest) (response 
 
 	if err != nil {
 		bylogs.LogErr("client: error create environment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error create environment", err),
-		)
+		return nil, fmt.Errorf("[CreateEnvironment] %w", err)
+
 	}
 	return response, nil
 }
@@ -70,10 +66,7 @@ func ListEnvironment(in *environmentpkgv1.ListEnvironmentRequest) (response *env
 
 	if err != nil {
 		bylogs.LogErr("client: error list environment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error list environment", err),
-		)
+		return nil, fmt.Errorf("[ListEnvironment] %w", err)
 	}
 	return response, nil
 }
@@ -91,10 +84,8 @@ func DeleteEnvironment(in *environmentpkgv1.DeleteEnvironmentRequest) (response 
 
 	if err != nil {
 		bylogs.LogErr("client: error delete environment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error delete environment", err),
-		)
+		return nil, fmt.Errorf("[DeleteEnvironment] %w", err)
+
 	}
 	return response, nil
 }
@@ -112,10 +103,8 @@ func GetOneEnvironment(in *environmentpkgv1.GetOneEnvironmentRequest) (response 
 
 	if err != nil {
 		bylogs.LogErr("client: error get one environment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error get one environment", err),
-		)
+		return nil, fmt.Errorf("[GetOneEnvironment] %w", err)
+
 	}
 	return response, nil
 }
@@ -133,10 +122,8 @@ func UpdateEnvironment(in *environmentpkgv1.UpdateEnvironmentRequest) (response 
 
 	if err != nil {
 		bylogs.LogErr("client: error update environment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error update environment", err),
-		)
+		return nil, fmt.Errorf("[UpdateEnvironment] %w", err)
+
 	}
 	return response, nil
 }
@@ -154,10 +141,8 @@ func GetByNameEnvironment(in *environmentpkgv1.GetByNameEnvironmentRequest) (res
 
 	if err != nil {
 		bylogs.LogErr("client: error get by name environment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error get by name environment", err),
-		)
+		return nil, fmt.Errorf("[GetByNameEnvironment] %w", err)
+
 	}
 	return response, nil
 }

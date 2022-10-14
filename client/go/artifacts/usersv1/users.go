@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	clientpkgv1 "github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client clientpkgv1.RegistryUsersAPIServiceClient
@@ -49,10 +47,7 @@ func CreateUserRegistry(in *clientpkgv1.CreateUserRegistryRequest) (response *cl
 
 	if err != nil {
 		bylogs.LogErr("Client: Error create user registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create user registry", err),
-		)
+		return nil, fmt.Errorf("[CreateUserRegistry] %w", err)
 	}
 	return response, nil
 }
@@ -70,10 +65,7 @@ func DeleteUserRegistry(in *clientpkgv1.DeleteUserRegistryRequest) (response *cl
 
 	if err != nil {
 		bylogs.LogErr("Client: Error delete user registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete user registry", err),
-		)
+		return nil, fmt.Errorf("[DeleteUserRegistry] %w", err)
 	}
 	return response, nil
 }
