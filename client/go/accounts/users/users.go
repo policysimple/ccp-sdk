@@ -65,6 +65,8 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
+	checkUser.Permission = req.Permission
+
 	if req.ApiKeyValue != "" {
 		checkUser.ApiKeyValue = req.ApiKeyValue
 	} else if req.UserIdAdmin != "" {
