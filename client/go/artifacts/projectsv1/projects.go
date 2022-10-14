@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	clientpkgv1 "github.com/cuemby/ccp-sdk/gen/go/artifacts/projects/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client clientpkgv1.RegistryProjectsAPIServiceClient
@@ -49,10 +47,7 @@ func CreateProjectRegistry(in *clientpkgv1.CreateProjectRegistryRequest) (respon
 
 	if err != nil {
 		bylogs.LogErr("Client: Error create project registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create project registry", err),
-		)
+		return nil, fmt.Errorf("[CreateProjectRegistry] %w", err)
 	}
 	return response, nil
 }
@@ -70,10 +65,7 @@ func ListProjectsRegistry(in *clientpkgv1.ListProjectsRegistryRequest) (response
 
 	if err != nil {
 		bylogs.LogErr("Client: Error list projects registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list projects registry", err),
-		)
+		return nil, fmt.Errorf("[ListProjectsRegistry] %w", err)
 	}
 	return response, nil
 }
@@ -91,10 +83,7 @@ func UpdateProjectRegistry(in *clientpkgv1.UpdateProjectRegistryRequest) (respon
 
 	if err != nil {
 		bylogs.LogErr("Client: Error Update project registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error Update project registry", err),
-		)
+		return nil, fmt.Errorf("[UpdateProjectRegistry] %w", err)
 	}
 	return response, nil
 }
@@ -112,10 +101,7 @@ func DeleteProjectRegistry(in *clientpkgv1.DeleteProjectRegistryRequest) (respon
 
 	if err != nil {
 		bylogs.LogErr("Client: Error Delete project registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error Delete project registry", err),
-		)
+		return nil, fmt.Errorf("[DeleteProjectRegistry] %w", err)
 	}
 	return response, nil
 }

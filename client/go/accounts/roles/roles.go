@@ -11,9 +11,7 @@ import (
 
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/roles"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client accountpkgv1.RoleServiceClient
@@ -50,13 +48,10 @@ func CreateRole(req *accountpkgv1.CreateRoleRequest) (*accountpkgv1.CreateRoleRe
 	response, err := client.CreateRole(ctx, req)
 	if err != nil {
 		bylogs.LogErr("CreateRole Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error CreateRole: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CreateRole Client Sdk", "Success")
+		return nil, fmt.Errorf("[CreateRole] %w", err)
+
 	}
+	bylogs.LogInfo("CreateRole Client Sdk", "Success")
 	return response, nil
 }
 
@@ -72,13 +67,9 @@ func ListRoles(req *accountpkgv1.ListRolesRequest) (*accountpkgv1.ListRolesRespo
 	response, err := client.ListRoles(ctx, req)
 	if err != nil {
 		bylogs.LogErr("CreateRole Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error ListRoles: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("ListRoles Client Sdk", "Success")
+		return nil, fmt.Errorf("[ListRoles] %w", err)
 	}
+	bylogs.LogInfo("ListRoles Client Sdk", "Success")
 	return response, nil
 }
 
@@ -94,10 +85,8 @@ func UpdateRole(req *accountpkgv1.UpdateRoleRequest) (*accountpkgv1.UpdateRoleRe
 	response, err := client.UpdateRole(ctx, req)
 	if err != nil {
 		bylogs.LogErr("UpdateRole Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error UpdateRole: %v", err),
-		)
+		return nil, fmt.Errorf("[UpdateRole] %w", err)
+
 	} else {
 		bylogs.LogInfo("UpdateRole Client Sdk", "Success")
 	}
@@ -116,13 +105,10 @@ func GetOneRole(req *accountpkgv1.GetOneRoleRequest) (*accountpkgv1.GetOneRoleRe
 	response, err := client.GetOneRole(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetOneRole Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOneRole: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetOneRole Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetOneRole] %w", err)
+
 	}
+	bylogs.LogInfo("GetOneRole Client Sdk", "Success")
 	return response, nil
 }
 
@@ -138,13 +124,10 @@ func DeleteRole(req *accountpkgv1.DeleteRoleRequest) (*accountpkgv1.DeleteRoleRe
 	response, err := client.DeleteRole(ctx, req)
 	if err != nil {
 		bylogs.LogErr("DeleteRole Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error DeleteRole: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteRole Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteRole] %w", err)
+
 	}
+	bylogs.LogInfo("DeleteRole Client Sdk", "Success")
 	return response, nil
 }
 
@@ -164,13 +147,10 @@ func GetRolesByUser(req *accountpkgv1.GetRolesByUserRequest) (*accountpkgv1.GetR
 	response, err := client.GetRolesByUser(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetRolesByUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetRolesByUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetRolesByUser Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetRolesByUser] %w", err)
+
 	}
+	bylogs.LogInfo("GetRolesByUser Client Sdk", "Success")
 	return response, nil
 }
 
@@ -186,12 +166,9 @@ func GetRolesByOrgUser(req *accountpkgv1.GetRolesByOrgUserRequest) (*accountpkgv
 	response, err := client.GetRolesByOrgUser(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetRolesByOrgUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetRolesByOrgUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetRolesByOrgUser Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetRolesByOrgUser] %w", err)
+
 	}
+	bylogs.LogInfo("GetRolesByOrgUser Client Sdk", "Success")
 	return response, nil
 }

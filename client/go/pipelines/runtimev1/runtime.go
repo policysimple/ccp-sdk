@@ -12,9 +12,7 @@ import (
 	runtimepkgv1 "github.com/cuemby/ccp-sdk/gen/go/pipelines/runtime/v1alpha1"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client runtimepkgv1.RuntimeAPIServiceClient
@@ -50,10 +48,7 @@ func CreateRuntime(in *runtimepkgv1.CreateRuntimeRequest) (response *runtimepkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "error create runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error create runtime", err),
-		)
+		return nil, fmt.Errorf("[CreateRuntime] %w", err)
 	}
 	return response, nil
 }
@@ -70,10 +65,7 @@ func GetRuntime(in *runtimepkgv1.GetRuntimeRequest) (response *runtimepkgv1.GetR
 
 	if err != nil {
 		log.Printf("%s: %v", "error get runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error get runtime", err),
-		)
+		return nil, fmt.Errorf("[GetRuntime] %w", err)
 	}
 	return response, nil
 }
@@ -90,10 +82,7 @@ func UpdateRuntime(in *runtimepkgv1.UpdateRuntimeRequest) (response *runtimepkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "error update runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error update runtime", err),
-		)
+		return nil, fmt.Errorf("[UpdateRuntime] %w", err)
 	}
 	return response, nil
 }
@@ -110,10 +99,7 @@ func UpdateResponseMessageRuntime(in *runtimepkgv1.UpdateResponseMessageRuntimeR
 
 	if err != nil {
 		log.Printf("%s: %v", "error update runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error update runtime", err),
-		)
+		return nil, fmt.Errorf("[UpdateResponseMessageRuntime] %w", err)
 	}
 	return response, nil
 }
@@ -130,10 +116,7 @@ func DeleteRuntime(in *runtimepkgv1.DeleteRuntimeRequest) (response *runtimepkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete runtime", err),
-		)
+		return nil, fmt.Errorf("[DeleteRuntime] %w", err)
 	}
 	return response, nil
 }
@@ -150,10 +133,8 @@ func DeleteRuntimesByApplication(in *runtimepkgv1.DeleteRuntimesByApplicationReq
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete runtime", err),
-		)
+		return nil, fmt.Errorf("[DeleteRuntimesByApplication] %w", err)
+
 	}
 	return response, nil
 }
@@ -171,10 +152,8 @@ func DeleteRuntimesByEnvironment(in *runtimepkgv1.DeleteRuntimesByEnvironmentReq
 
 	if err != nil {
 		bylogs.LogErr("error delete runtimes by environment: ", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete runtimes by environment", err),
-		)
+		return nil, fmt.Errorf("[DeleteRuntimesByEnvironment] %w", err)
+
 	}
 	return response, nil
 }
@@ -191,10 +170,7 @@ func ListRuntimes(in *runtimepkgv1.ListRuntimesRequest) (response *runtimepkgv1.
 
 	if err != nil {
 		log.Printf("%s: %v", "Error list runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list runtime", err),
-		)
+		return nil, fmt.Errorf("[ListRuntimes] %w", err)
 	}
 	return response, nil
 }
@@ -211,10 +187,7 @@ func RebuildRuntime(in *runtimepkgv1.RebuildRuntimeRequest) (response *runtimepk
 
 	if err != nil {
 		log.Printf("%s: %v", "error Rebuild runtime", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "error Rebuild runtime", err),
-		)
+		return nil, fmt.Errorf("[RebuildRuntime] %w", err)
 	}
 	return response, nil
 }

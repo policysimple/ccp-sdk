@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	vaultpkgv1 "github.com/cuemby/ccp-sdk/gen/go/vault/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client vaultpkgv1.VaultAPIServiceClient
@@ -67,13 +65,10 @@ func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretR
 
 	if err != nil {
 		bylogs.LogErr("CreateSecret-clientSdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error create secret: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CreateSecret Client Sdk", "Success")
+		return nil, fmt.Errorf("[CreateSecret] %w", err)
+
 	}
+	bylogs.LogInfo("CreateSecret Client Sdk", "Success")
 	return response, nil
 }
 
@@ -92,18 +87,15 @@ func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
 
 	if err != nil {
 		bylogs.LogErr("UpdateSecret Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error update secret: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("UpdateSecret Client Sdk", "Success")
+		return nil, fmt.Errorf("[UpdateSecret] %w", err)
+
 	}
+	bylogs.LogInfo("UpdateSecret Client Sdk", "Success")
 
 	return response, nil
 }
 
-func DeleteSecret(organizationId uint32, projectId uint32, name string) (*vaultpkgv1.DeleteSecretResponse, error){
+func DeleteSecret(organizationId uint32, projectId uint32, name string) (*vaultpkgv1.DeleteSecretResponse, error) {
 	bylogs.LogInfo("DeleteSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
@@ -114,20 +106,15 @@ func DeleteSecret(organizationId uint32, projectId uint32, name string) (*vaultp
 
 	response, err := client.DeleteSecret(ctx, &vaultpkgv1.DeleteSecretRequest{
 		OrganizationId: organizationId,
-		ProjectId:     projectId,
-		Name:          name,		
+		ProjectId:      projectId,
+		Name:           name,
 	})
 
 	if err != nil {
 		bylogs.LogErr("DeleteSecret Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error delete secret: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteSecret Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteSecret] %w", err)
 	}
-
+	bylogs.LogInfo("DeleteSecret Client Sdk", "Success")
 	return response, nil
 }
 
@@ -142,20 +129,15 @@ func GetSecret(organizationId uint32, projectId uint32, name string) (*vaultpkgv
 
 	response, err := client.GetSecret(ctx, &vaultpkgv1.GetSecretRequest{
 		OrganizationId: organizationId,
-		ProjectId:     projectId,
-		Name:          name,
+		ProjectId:      projectId,
+		Name:           name,
 	})
 
 	if err != nil {
 		bylogs.LogErr("GetSecret Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error get secret: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetSecret Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetSecret] %w", err)
 	}
-
+	bylogs.LogInfo("GetSecret Client Sdk", "Success")
 	return response, nil
 }
 
@@ -174,14 +156,9 @@ func DeleteOrganization(orgId uint32) (*vaultpkgv1.DeleteOrganizationResponse, e
 
 	if err != nil {
 		bylogs.LogErr("DeleteOrganization Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error delete organization: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
+		return nil, fmt.Errorf("[DeleteOrganization] %w", err)
 	}
-
+	bylogs.LogInfo("DeleteOrganization Client Sdk", "Success")
 	return response, nil
 }
 
@@ -195,21 +172,16 @@ func SaveTokenIntegrations(in *vaultpkgv1.SaveTokenIntegrationsRequest) (*vaultp
 	defer cancel()
 
 	response, err := client.SaveTokenIntegrations(ctx, &vaultpkgv1.SaveTokenIntegrationsRequest{
-		IntegrationId: in.IntegrationId,
+		IntegrationId:  in.IntegrationId,
 		OrganizationId: in.OrganizationId,
 		Token:          in.Token,
 	})
 
 	if err != nil {
 		bylogs.LogErr("SaveTokenIntegrations Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error save token integrations: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("SaveTokenIntegrations Client Sdk", "Success")
+		return nil, fmt.Errorf("[SaveTokenIntegrations] %w", err)
 	}
-
+	bylogs.LogInfo("SaveTokenIntegrations Client Sdk", "Success")
 	return response, nil
 }
 
@@ -228,13 +200,8 @@ func GetTokenIntegrations(in *vaultpkgv1.GetTokenIntegrationsRequest) (*vaultpkg
 
 	if err != nil {
 		bylogs.LogErr("GetTokenIntegrationsRequest Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error get token integrations: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk", "Success")
+		return nil, fmt.Errorf("[GetTokenIntegrations] %w", err)
 	}
-
+	bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk", "Success")
 	return response, nil
 }

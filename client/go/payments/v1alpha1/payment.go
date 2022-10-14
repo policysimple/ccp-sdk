@@ -11,9 +11,7 @@ import (
 	paymentpkgv1 "github.com/cuemby/ccp-sdk/gen/go/payment/v1alpha1"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client paymentpkgv1.PaymentAPIServiceClient
@@ -51,10 +49,7 @@ func CreateCustomer(in *paymentpkgv1.CreateCustomerRequest) (response *paymentpk
 
 	if err != nil {
 		log.Printf("%s: %v", "Error create customer", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create customer", err),
-		)
+		return nil, fmt.Errorf("[CreateCustomer] %w", err)
 	}
 	return response, nil
 }
@@ -74,10 +69,7 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete customer", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete customer", err),
-		)
+		return nil, fmt.Errorf("[DeleteCustomer] %w", err)
 	}
 	return response, nil
 }
@@ -97,10 +89,7 @@ func CreateSubscription(in *paymentpkgv1.CreateSubscriptionRequest) (response *p
 
 	if err != nil {
 		log.Printf("%s: %v", "Error create subscription", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create subscription", err),
-		)
+		return nil, fmt.Errorf("[CreateSubscription] %w", err)
 	}
 	return response, nil
 }
@@ -120,10 +109,7 @@ func CreateProject(in *paymentpkgv1.CreateProjectRequest) (response *paymentpkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error create Project", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create Project", err),
-		)
+		return nil, fmt.Errorf("[CreateProject] %w", err)
 	}
 	return response, nil
 }
@@ -142,10 +128,7 @@ func CreateInvoice(in *paymentpkgv1.CreateInvoiceRequest) (response *paymentpkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error create subscription", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create subscription", err),
-		)
+		return nil, fmt.Errorf("[CreateInvoice] %w", err)
 	}
 	return response, nil
 }
@@ -164,10 +147,7 @@ func CancelSubscription(in *paymentpkgv1.CancelSubscriptionRequest) (response *p
 
 	if err != nil {
 		log.Printf("%s: %v", "Error cancel subscription", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error cancel subscription", err),
-		)
+		return nil, fmt.Errorf("[CancelSubscription] %w", err)
 	}
 	return response, nil
 }
@@ -186,10 +166,7 @@ func GetSubscription(in *paymentpkgv1.GetSubscriptionRequest) (response *payment
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get susbcription", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get subscription", err),
-		)
+		return nil, fmt.Errorf("[GetSubscription] %w", err)
 	}
 	return response, nil
 }
@@ -208,10 +185,7 @@ func GetBilingMonth(in *paymentpkgv1.GetBilingMonthRequest) (response *paymentpk
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get GetBilingMonth", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get GetBilingMonth", err),
-		)
+		return nil, fmt.Errorf("[GetBilingMonth] %w", err)
 	}
 	return response, nil
 }
@@ -230,10 +204,7 @@ func GetCustomer(in *paymentpkgv1.GetCustomerRequest) (response *paymentpkgv1.Ge
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get Customer", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get Customer", err),
-		)
+		return nil, fmt.Errorf("[GetCustomer] %w", err)
 	}
 	return response, nil
 }
@@ -253,10 +224,7 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error create payment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error create payment", err),
-		)
+		return nil, fmt.Errorf("[CreatePayment] %w", err)
 	}
 	return response, nil
 }
@@ -275,10 +243,7 @@ func GetPayment(in *paymentpkgv1.GetPaymentRequest) (response *paymentpkgv1.GetP
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get payment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get payment", err),
-		)
+		return nil, fmt.Errorf("[GetPayment] %w", err)
 	}
 	return response, nil
 }
@@ -298,10 +263,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get payments", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get payments", err),
-		)
+		return nil, fmt.Errorf("[GetPayments] %w", err)
 	}
 	return response, nil
 }
@@ -320,10 +282,7 @@ func GetOrganization(organizationId uint32) (response *paymentpkgv1.GetOrganizat
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get payments", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get payments", err),
-		)
+		return nil, fmt.Errorf("[GetOrganization] %w", err)
 	}
 	return response, nil
 }
@@ -342,10 +301,7 @@ func ListProjects(organizationId uint32) (response *paymentpkgv1.ListProjectsRes
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get  ListProjects", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get  ListProjects", err),
-		)
+		return nil, fmt.Errorf("[ListProjects] %w", err)
 	}
 	return response, nil
 }
@@ -360,8 +316,8 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	messageLastPayment := "You can’t remove this Payment Method until you are current with your payment or add another Payment Method."
 	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
 		OrganizationId: in.OrganizationId,
-		CardId:     in.CardId,
-		CustomerId: in.CustomerId,
+		CardId:         in.CardId,
+		CustomerId:     in.CustomerId,
 	})
 
 	if err != nil {
@@ -389,10 +345,7 @@ func DeleteProject(in *paymentpkgv1.DeleteProjectRequest) (response *paymentpkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error delete payment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error delete payment", err),
-		)
+		return nil, fmt.Errorf("%s: %w", "Error delete payment", err)
 	}
 	return response, nil
 }
@@ -411,10 +364,8 @@ func ListPayment(in *paymentpkgv1.ListPaymentRequest) (response *paymentpkgv1.Li
 
 	if err != nil {
 		log.Printf("%s: %v", "Error list payment", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list payment", err),
-		)
+		return nil, fmt.Errorf("%s: %w", "Error list payment", err)
+
 	}
 	return response, nil
 }
@@ -436,10 +387,8 @@ func InvoiceFilter(in *paymentpkgv1.InvoiceFilterRequest) (response *paymentpkgv
 
 	if err != nil {
 		log.Printf("%s: %v", "Error get InvoiceFilter", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get InvoiceFilter", err),
-		)
+		return nil, fmt.Errorf("%s: %w", "Error get InvoiceFilter", err)
+
 	}
 	return response, nil
 }
@@ -459,10 +408,7 @@ func StopProject(in *paymentpkgv1.StopProjectRequest) (response *paymentpkgv1.St
 
 	if err != nil {
 		log.Printf("%s: %v", "Error stop project", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error stop project", err),
-		)
+		return nil, fmt.Errorf("%s: %w", "Error stop project", err)
 	}
 	return response, nil
 }
@@ -483,10 +429,7 @@ func SetDefaultPaymentMethod(in *paymentpkgv1.SetDefaultPaymentMethodRequest) (r
 
 	if err != nil {
 		log.Printf("%s: %v", "Error set default payment method", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error set default payment method", err),
-		)
+		return nil, fmt.Errorf("%s: %w", "Error set default payment method", err)
 	}
 	return response, nil
 }

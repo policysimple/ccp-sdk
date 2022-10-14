@@ -11,9 +11,7 @@ import (
 	metricsgpkgv1 "github.com/cuemby/ccp-sdk/gen/go/performance/metrics/v1alpha1"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client metricsgpkgv1.MetricsAPIServiceClient
@@ -47,10 +45,7 @@ func GetMetrics(getMetrics *metricsgpkgv1.GetMetricsRequest) (response *metricsg
 	response, err = client.GetMetrics(ctx, getMetrics)
 	if err != nil {
 		log.Printf("%s: %v", "Error get metrics", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get metrics", err),
-		)
+		return nil, fmt.Errorf("[GetMetrics] %w", err)
 	}
 	return response, nil
 }
@@ -71,10 +66,7 @@ func GetTektonMetrics(GetTektonMetrics *metricsgpkgv1.GetTektonMetricsRequest) (
 	})
 	if err != nil {
 		log.Printf("%s: %v", "Error get metrics", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error get metrics", err),
-		)
+		return nil, fmt.Errorf("[GetTektonMetrics] %w", err)
 	}
 	return response, nil
 }

@@ -2,6 +2,7 @@ package projectsclientv1
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 	"sync"
@@ -54,7 +55,7 @@ func ListProjects(orgId uint32) (response *projectspkgv1.ListProjectResponse, er
 
 	if err != nil {
 		log.Println("SDK Error", err)
-		return nil, err
+		return nil, fmt.Errorf("[ListProjects] %w", err)
 	}
 
 	return response, nil

@@ -10,9 +10,7 @@ import (
 	bylogs "github.com/cuemby/by-go-utils/pkg/bylogger"
 	clientpkgv1 "github.com/cuemby/ccp-sdk/gen/go/artifacts/quotas/v1alpha1"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
 )
 
 var client clientpkgv1.RegistryQuotasAPIServiceClient
@@ -53,10 +51,7 @@ func ListQuotasRegistry(in *clientpkgv1.ListQuotasRegistryRequest) (response *cl
 
 	if err != nil {
 		bylogs.LogErr("Client: Error list quotas registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list quotas registry", err),
-		)
+		return nil, fmt.Errorf("[ListQuotasRegistry] %w", err)
 	}
 	return response, nil
 }
@@ -74,10 +69,7 @@ func UpdateQuotaRegistry(in *clientpkgv1.UpdateQuotaRegistryRequest) (response *
 
 	if err != nil {
 		bylogs.LogErr("Client: Error update quotas registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error update quotas registry", err),
-		)
+		return nil, fmt.Errorf("[UpdateQuotaRegistry] %w", err)
 	}
 	return response, nil
 }
@@ -95,10 +87,7 @@ func ListQuotaArtifactRegistry(in *clientpkgv1.ListQuotaArtifactRegistryRequest)
 
 	if err != nil {
 		bylogs.LogErr("Client: Error list quotas artifact registry", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("%s: %v", "Error list quotas artifact registry", err),
-		)
+		return nil, fmt.Errorf("[ListQuotaArtifactRegistry] %w", err)
 	}
 	return response, nil
 }
