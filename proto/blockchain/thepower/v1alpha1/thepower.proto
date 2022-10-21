@@ -12,6 +12,7 @@ message TpChain {
     string error_details = 6;
     string created_at = 7;
     string updated_at = 8;
+    TeaCeremonySettings settings = 9;
 }
 
 message TpNode {
@@ -26,4 +27,16 @@ message TpNode {
 message CrosschainExternal {
     string host = 1;
     int64 port = 2;
+}
+
+message TeaCeremonySettings {
+    int64 chain_blocktime = 1;
+    int64 chain_minsig = 2;
+    int64 chain_allow_empty = 3;
+    int64 chain_patch_sigs = 4;
+    int64 allocblock_group = 5;
+    int64 allocblock_last = 6;
+    int64 freegas = 7;
+    int64 gas_sk = 8;
+    int64 nosk = 9;
 }

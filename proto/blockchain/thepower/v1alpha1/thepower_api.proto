@@ -11,6 +11,7 @@ service BlockchainThePowerService {
     rpc GetTpChains (GetTpChainsRequest) returns (GetTpChainsResponse);
     rpc GetTpChainsByUserId (GetTpChainsByUserIdRequest) returns (GetTpChainsByUserIdResponse);
     rpc GetTpChainById (GetTpChainByIdRequest) returns (GetTpChainByIdResponse);
+    rpc UpdateTpChain (UpdateTpChainRequest) returns (UpdateTpChainResponse);
 }
 
 // Request messages
@@ -33,6 +34,10 @@ message GetTpChainsRequest {
     int64 limit = 2;
 }
 
+message UpdateTpChainRequest {
+    blockchain.thepower.v1alpha1.TpChain tp_chain = 1; 
+}
+
 // Response messages
 message CreateTpChainResponse {
     blockchain.thepower.v1alpha1.TpChain tp_chain = 1; 
@@ -53,5 +58,9 @@ message GetTpChainsByUserIdResponse {
 }
 
 message GetTpChainByIdResponse {
+    blockchain.thepower.v1alpha1.TpChain tp_chain = 1; 
+}
+
+message UpdateTpChainResponse {
     blockchain.thepower.v1alpha1.TpChain tp_chain = 1; 
 }
