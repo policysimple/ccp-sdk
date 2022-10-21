@@ -119,6 +119,21 @@ public final class Thepower {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     * @return Whether the settings field is set.
+     */
+    boolean hasSettings();
+    /**
+     * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     * @return The settings.
+     */
+    blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings getSettings();
+    /**
+     * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     */
+    blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder getSettingsOrBuilder();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.TpChain}
@@ -221,6 +236,19 @@ public final class Thepower {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 74: {
+              blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder subBuilder = null;
+              if (settings_ != null) {
+                subBuilder = settings_.toBuilder();
+              }
+              settings_ = input.readMessage(blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(settings_);
+                settings_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -537,6 +565,32 @@ public final class Thepower {
       }
     }
 
+    public static final int SETTINGS_FIELD_NUMBER = 9;
+    private blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings settings_;
+    /**
+     * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     * @return Whether the settings field is set.
+     */
+    @java.lang.Override
+    public boolean hasSettings() {
+      return settings_ != null;
+    }
+    /**
+     * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     * @return The settings.
+     */
+    @java.lang.Override
+    public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings getSettings() {
+      return settings_ == null ? blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.getDefaultInstance() : settings_;
+    }
+    /**
+     * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     */
+    @java.lang.Override
+    public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder getSettingsOrBuilder() {
+      return getSettings();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -575,6 +629,9 @@ public final class Thepower {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt_);
       }
+      if (settings_ != null) {
+        output.writeMessage(9, getSettings());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -610,6 +667,10 @@ public final class Thepower {
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt_);
       }
+      if (settings_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getSettings());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -641,6 +702,11 @@ public final class Thepower {
           .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (hasSettings() != other.hasSettings()) return false;
+      if (hasSettings()) {
+        if (!getSettings()
+            .equals(other.getSettings())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -670,6 +736,10 @@ public final class Thepower {
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      if (hasSettings()) {
+        hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getSettings().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -824,6 +894,12 @@ public final class Thepower {
 
         updatedAt_ = "";
 
+        if (settingsBuilder_ == null) {
+          settings_ = null;
+        } else {
+          settings_ = null;
+          settingsBuilder_ = null;
+        }
         return this;
       }
 
@@ -867,6 +943,11 @@ public final class Thepower {
         result.errorDetails_ = errorDetails_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        if (settingsBuilder_ == null) {
+          result.settings_ = settings_;
+        } else {
+          result.settings_ = settingsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -967,6 +1048,9 @@ public final class Thepower {
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
           onChanged();
+        }
+        if (other.hasSettings()) {
+          mergeSettings(other.getSettings());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1723,6 +1807,125 @@ public final class Thepower {
         updatedAt_ = value;
         onChanged();
         return this;
+      }
+
+      private blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings settings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder> settingsBuilder_;
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       * @return Whether the settings field is set.
+       */
+      public boolean hasSettings() {
+        return settingsBuilder_ != null || settings_ != null;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       * @return The settings.
+       */
+      public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings getSettings() {
+        if (settingsBuilder_ == null) {
+          return settings_ == null ? blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.getDefaultInstance() : settings_;
+        } else {
+          return settingsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      public Builder setSettings(blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings value) {
+        if (settingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          settings_ = value;
+          onChanged();
+        } else {
+          settingsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      public Builder setSettings(
+          blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder builderForValue) {
+        if (settingsBuilder_ == null) {
+          settings_ = builderForValue.build();
+          onChanged();
+        } else {
+          settingsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      public Builder mergeSettings(blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings value) {
+        if (settingsBuilder_ == null) {
+          if (settings_ != null) {
+            settings_ =
+              blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.newBuilder(settings_).mergeFrom(value).buildPartial();
+          } else {
+            settings_ = value;
+          }
+          onChanged();
+        } else {
+          settingsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      public Builder clearSettings() {
+        if (settingsBuilder_ == null) {
+          settings_ = null;
+          onChanged();
+        } else {
+          settings_ = null;
+          settingsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder getSettingsBuilder() {
+        
+        onChanged();
+        return getSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder getSettingsOrBuilder() {
+        if (settingsBuilder_ != null) {
+          return settingsBuilder_.getMessageOrBuilder();
+        } else {
+          return settings_ == null ?
+              blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.getDefaultInstance() : settings_;
+        }
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder> 
+          getSettingsFieldBuilder() {
+        if (settingsBuilder_ == null) {
+          settingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder>(
+                  getSettings(),
+                  getParentForChildren(),
+                  isClean());
+          settings_ = null;
+        }
+        return settingsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3643,6 +3846,1063 @@ public final class Thepower {
 
   }
 
+  public interface TeaCeremonySettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.thepower.v1alpha1.TeaCeremonySettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 chain_blocktime = 1 [json_name = "chainBlocktime"];</code>
+     * @return The chainBlocktime.
+     */
+    long getChainBlocktime();
+
+    /**
+     * <code>int64 chain_minsig = 2 [json_name = "chainMinsig"];</code>
+     * @return The chainMinsig.
+     */
+    long getChainMinsig();
+
+    /**
+     * <code>int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];</code>
+     * @return The chainAllowEmpty.
+     */
+    long getChainAllowEmpty();
+
+    /**
+     * <code>int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];</code>
+     * @return The chainPatchSigs.
+     */
+    long getChainPatchSigs();
+
+    /**
+     * <code>int64 allocblock_group = 5 [json_name = "allocblockGroup"];</code>
+     * @return The allocblockGroup.
+     */
+    long getAllocblockGroup();
+
+    /**
+     * <code>int64 allocblock_last = 6 [json_name = "allocblockLast"];</code>
+     * @return The allocblockLast.
+     */
+    long getAllocblockLast();
+
+    /**
+     * <code>int64 freegas = 7 [json_name = "freegas"];</code>
+     * @return The freegas.
+     */
+    long getFreegas();
+
+    /**
+     * <code>int64 gas_sk = 8 [json_name = "gasSk"];</code>
+     * @return The gasSk.
+     */
+    long getGasSk();
+
+    /**
+     * <code>int64 nosk = 9 [json_name = "nosk"];</code>
+     * @return The nosk.
+     */
+    long getNosk();
+  }
+  /**
+   * Protobuf type {@code blockchain.thepower.v1alpha1.TeaCeremonySettings}
+   */
+  public static final class TeaCeremonySettings extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:blockchain.thepower.v1alpha1.TeaCeremonySettings)
+      TeaCeremonySettingsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TeaCeremonySettings.newBuilder() to construct.
+    private TeaCeremonySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TeaCeremonySettings() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TeaCeremonySettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TeaCeremonySettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              chainBlocktime_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              chainMinsig_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              chainAllowEmpty_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              chainPatchSigs_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              allocblockGroup_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              allocblockLast_ = input.readInt64();
+              break;
+            }
+            case 56: {
+
+              freegas_ = input.readInt64();
+              break;
+            }
+            case 64: {
+
+              gasSk_ = input.readInt64();
+              break;
+            }
+            case 72: {
+
+              nosk_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.class, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder.class);
+    }
+
+    public static final int CHAIN_BLOCKTIME_FIELD_NUMBER = 1;
+    private long chainBlocktime_;
+    /**
+     * <code>int64 chain_blocktime = 1 [json_name = "chainBlocktime"];</code>
+     * @return The chainBlocktime.
+     */
+    @java.lang.Override
+    public long getChainBlocktime() {
+      return chainBlocktime_;
+    }
+
+    public static final int CHAIN_MINSIG_FIELD_NUMBER = 2;
+    private long chainMinsig_;
+    /**
+     * <code>int64 chain_minsig = 2 [json_name = "chainMinsig"];</code>
+     * @return The chainMinsig.
+     */
+    @java.lang.Override
+    public long getChainMinsig() {
+      return chainMinsig_;
+    }
+
+    public static final int CHAIN_ALLOW_EMPTY_FIELD_NUMBER = 3;
+    private long chainAllowEmpty_;
+    /**
+     * <code>int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];</code>
+     * @return The chainAllowEmpty.
+     */
+    @java.lang.Override
+    public long getChainAllowEmpty() {
+      return chainAllowEmpty_;
+    }
+
+    public static final int CHAIN_PATCH_SIGS_FIELD_NUMBER = 4;
+    private long chainPatchSigs_;
+    /**
+     * <code>int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];</code>
+     * @return The chainPatchSigs.
+     */
+    @java.lang.Override
+    public long getChainPatchSigs() {
+      return chainPatchSigs_;
+    }
+
+    public static final int ALLOCBLOCK_GROUP_FIELD_NUMBER = 5;
+    private long allocblockGroup_;
+    /**
+     * <code>int64 allocblock_group = 5 [json_name = "allocblockGroup"];</code>
+     * @return The allocblockGroup.
+     */
+    @java.lang.Override
+    public long getAllocblockGroup() {
+      return allocblockGroup_;
+    }
+
+    public static final int ALLOCBLOCK_LAST_FIELD_NUMBER = 6;
+    private long allocblockLast_;
+    /**
+     * <code>int64 allocblock_last = 6 [json_name = "allocblockLast"];</code>
+     * @return The allocblockLast.
+     */
+    @java.lang.Override
+    public long getAllocblockLast() {
+      return allocblockLast_;
+    }
+
+    public static final int FREEGAS_FIELD_NUMBER = 7;
+    private long freegas_;
+    /**
+     * <code>int64 freegas = 7 [json_name = "freegas"];</code>
+     * @return The freegas.
+     */
+    @java.lang.Override
+    public long getFreegas() {
+      return freegas_;
+    }
+
+    public static final int GAS_SK_FIELD_NUMBER = 8;
+    private long gasSk_;
+    /**
+     * <code>int64 gas_sk = 8 [json_name = "gasSk"];</code>
+     * @return The gasSk.
+     */
+    @java.lang.Override
+    public long getGasSk() {
+      return gasSk_;
+    }
+
+    public static final int NOSK_FIELD_NUMBER = 9;
+    private long nosk_;
+    /**
+     * <code>int64 nosk = 9 [json_name = "nosk"];</code>
+     * @return The nosk.
+     */
+    @java.lang.Override
+    public long getNosk() {
+      return nosk_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (chainBlocktime_ != 0L) {
+        output.writeInt64(1, chainBlocktime_);
+      }
+      if (chainMinsig_ != 0L) {
+        output.writeInt64(2, chainMinsig_);
+      }
+      if (chainAllowEmpty_ != 0L) {
+        output.writeInt64(3, chainAllowEmpty_);
+      }
+      if (chainPatchSigs_ != 0L) {
+        output.writeInt64(4, chainPatchSigs_);
+      }
+      if (allocblockGroup_ != 0L) {
+        output.writeInt64(5, allocblockGroup_);
+      }
+      if (allocblockLast_ != 0L) {
+        output.writeInt64(6, allocblockLast_);
+      }
+      if (freegas_ != 0L) {
+        output.writeInt64(7, freegas_);
+      }
+      if (gasSk_ != 0L) {
+        output.writeInt64(8, gasSk_);
+      }
+      if (nosk_ != 0L) {
+        output.writeInt64(9, nosk_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (chainBlocktime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, chainBlocktime_);
+      }
+      if (chainMinsig_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, chainMinsig_);
+      }
+      if (chainAllowEmpty_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, chainAllowEmpty_);
+      }
+      if (chainPatchSigs_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, chainPatchSigs_);
+      }
+      if (allocblockGroup_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, allocblockGroup_);
+      }
+      if (allocblockLast_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, allocblockLast_);
+      }
+      if (freegas_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, freegas_);
+      }
+      if (gasSk_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, gasSk_);
+      }
+      if (nosk_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, nosk_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings)) {
+        return super.equals(obj);
+      }
+      blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings other = (blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings) obj;
+
+      if (getChainBlocktime()
+          != other.getChainBlocktime()) return false;
+      if (getChainMinsig()
+          != other.getChainMinsig()) return false;
+      if (getChainAllowEmpty()
+          != other.getChainAllowEmpty()) return false;
+      if (getChainPatchSigs()
+          != other.getChainPatchSigs()) return false;
+      if (getAllocblockGroup()
+          != other.getAllocblockGroup()) return false;
+      if (getAllocblockLast()
+          != other.getAllocblockLast()) return false;
+      if (getFreegas()
+          != other.getFreegas()) return false;
+      if (getGasSk()
+          != other.getGasSk()) return false;
+      if (getNosk()
+          != other.getNosk()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHAIN_BLOCKTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChainBlocktime());
+      hash = (37 * hash) + CHAIN_MINSIG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChainMinsig());
+      hash = (37 * hash) + CHAIN_ALLOW_EMPTY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChainAllowEmpty());
+      hash = (37 * hash) + CHAIN_PATCH_SIGS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChainPatchSigs());
+      hash = (37 * hash) + ALLOCBLOCK_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAllocblockGroup());
+      hash = (37 * hash) + ALLOCBLOCK_LAST_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAllocblockLast());
+      hash = (37 * hash) + FREEGAS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFreegas());
+      hash = (37 * hash) + GAS_SK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGasSk());
+      hash = (37 * hash) + NOSK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getNosk());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code blockchain.thepower.v1alpha1.TeaCeremonySettings}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:blockchain.thepower.v1alpha1.TeaCeremonySettings)
+        blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.class, blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.Builder.class);
+      }
+
+      // Construct using blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        chainBlocktime_ = 0L;
+
+        chainMinsig_ = 0L;
+
+        chainAllowEmpty_ = 0L;
+
+        chainPatchSigs_ = 0L;
+
+        allocblockGroup_ = 0L;
+
+        allocblockLast_ = 0L;
+
+        freegas_ = 0L;
+
+        gasSk_ = 0L;
+
+        nosk_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return blockchain.thepower.v1alpha1.Thepower.internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_descriptor;
+      }
+
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings getDefaultInstanceForType() {
+        return blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings build() {
+        blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings buildPartial() {
+        blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings result = new blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings(this);
+        result.chainBlocktime_ = chainBlocktime_;
+        result.chainMinsig_ = chainMinsig_;
+        result.chainAllowEmpty_ = chainAllowEmpty_;
+        result.chainPatchSigs_ = chainPatchSigs_;
+        result.allocblockGroup_ = allocblockGroup_;
+        result.allocblockLast_ = allocblockLast_;
+        result.freegas_ = freegas_;
+        result.gasSk_ = gasSk_;
+        result.nosk_ = nosk_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings) {
+          return mergeFrom((blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings other) {
+        if (other == blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings.getDefaultInstance()) return this;
+        if (other.getChainBlocktime() != 0L) {
+          setChainBlocktime(other.getChainBlocktime());
+        }
+        if (other.getChainMinsig() != 0L) {
+          setChainMinsig(other.getChainMinsig());
+        }
+        if (other.getChainAllowEmpty() != 0L) {
+          setChainAllowEmpty(other.getChainAllowEmpty());
+        }
+        if (other.getChainPatchSigs() != 0L) {
+          setChainPatchSigs(other.getChainPatchSigs());
+        }
+        if (other.getAllocblockGroup() != 0L) {
+          setAllocblockGroup(other.getAllocblockGroup());
+        }
+        if (other.getAllocblockLast() != 0L) {
+          setAllocblockLast(other.getAllocblockLast());
+        }
+        if (other.getFreegas() != 0L) {
+          setFreegas(other.getFreegas());
+        }
+        if (other.getGasSk() != 0L) {
+          setGasSk(other.getGasSk());
+        }
+        if (other.getNosk() != 0L) {
+          setNosk(other.getNosk());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long chainBlocktime_ ;
+      /**
+       * <code>int64 chain_blocktime = 1 [json_name = "chainBlocktime"];</code>
+       * @return The chainBlocktime.
+       */
+      @java.lang.Override
+      public long getChainBlocktime() {
+        return chainBlocktime_;
+      }
+      /**
+       * <code>int64 chain_blocktime = 1 [json_name = "chainBlocktime"];</code>
+       * @param value The chainBlocktime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainBlocktime(long value) {
+        
+        chainBlocktime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chain_blocktime = 1 [json_name = "chainBlocktime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChainBlocktime() {
+        
+        chainBlocktime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long chainMinsig_ ;
+      /**
+       * <code>int64 chain_minsig = 2 [json_name = "chainMinsig"];</code>
+       * @return The chainMinsig.
+       */
+      @java.lang.Override
+      public long getChainMinsig() {
+        return chainMinsig_;
+      }
+      /**
+       * <code>int64 chain_minsig = 2 [json_name = "chainMinsig"];</code>
+       * @param value The chainMinsig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainMinsig(long value) {
+        
+        chainMinsig_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chain_minsig = 2 [json_name = "chainMinsig"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChainMinsig() {
+        
+        chainMinsig_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long chainAllowEmpty_ ;
+      /**
+       * <code>int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];</code>
+       * @return The chainAllowEmpty.
+       */
+      @java.lang.Override
+      public long getChainAllowEmpty() {
+        return chainAllowEmpty_;
+      }
+      /**
+       * <code>int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];</code>
+       * @param value The chainAllowEmpty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainAllowEmpty(long value) {
+        
+        chainAllowEmpty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChainAllowEmpty() {
+        
+        chainAllowEmpty_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long chainPatchSigs_ ;
+      /**
+       * <code>int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];</code>
+       * @return The chainPatchSigs.
+       */
+      @java.lang.Override
+      public long getChainPatchSigs() {
+        return chainPatchSigs_;
+      }
+      /**
+       * <code>int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];</code>
+       * @param value The chainPatchSigs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainPatchSigs(long value) {
+        
+        chainPatchSigs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChainPatchSigs() {
+        
+        chainPatchSigs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long allocblockGroup_ ;
+      /**
+       * <code>int64 allocblock_group = 5 [json_name = "allocblockGroup"];</code>
+       * @return The allocblockGroup.
+       */
+      @java.lang.Override
+      public long getAllocblockGroup() {
+        return allocblockGroup_;
+      }
+      /**
+       * <code>int64 allocblock_group = 5 [json_name = "allocblockGroup"];</code>
+       * @param value The allocblockGroup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocblockGroup(long value) {
+        
+        allocblockGroup_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 allocblock_group = 5 [json_name = "allocblockGroup"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocblockGroup() {
+        
+        allocblockGroup_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long allocblockLast_ ;
+      /**
+       * <code>int64 allocblock_last = 6 [json_name = "allocblockLast"];</code>
+       * @return The allocblockLast.
+       */
+      @java.lang.Override
+      public long getAllocblockLast() {
+        return allocblockLast_;
+      }
+      /**
+       * <code>int64 allocblock_last = 6 [json_name = "allocblockLast"];</code>
+       * @param value The allocblockLast to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocblockLast(long value) {
+        
+        allocblockLast_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 allocblock_last = 6 [json_name = "allocblockLast"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocblockLast() {
+        
+        allocblockLast_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long freegas_ ;
+      /**
+       * <code>int64 freegas = 7 [json_name = "freegas"];</code>
+       * @return The freegas.
+       */
+      @java.lang.Override
+      public long getFreegas() {
+        return freegas_;
+      }
+      /**
+       * <code>int64 freegas = 7 [json_name = "freegas"];</code>
+       * @param value The freegas to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFreegas(long value) {
+        
+        freegas_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 freegas = 7 [json_name = "freegas"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFreegas() {
+        
+        freegas_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long gasSk_ ;
+      /**
+       * <code>int64 gas_sk = 8 [json_name = "gasSk"];</code>
+       * @return The gasSk.
+       */
+      @java.lang.Override
+      public long getGasSk() {
+        return gasSk_;
+      }
+      /**
+       * <code>int64 gas_sk = 8 [json_name = "gasSk"];</code>
+       * @param value The gasSk to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGasSk(long value) {
+        
+        gasSk_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 gas_sk = 8 [json_name = "gasSk"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGasSk() {
+        
+        gasSk_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long nosk_ ;
+      /**
+       * <code>int64 nosk = 9 [json_name = "nosk"];</code>
+       * @return The nosk.
+       */
+      @java.lang.Override
+      public long getNosk() {
+        return nosk_;
+      }
+      /**
+       * <code>int64 nosk = 9 [json_name = "nosk"];</code>
+       * @param value The nosk to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNosk(long value) {
+        
+        nosk_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 nosk = 9 [json_name = "nosk"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNosk() {
+        
+        nosk_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:blockchain.thepower.v1alpha1.TeaCeremonySettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.TeaCeremonySettings)
+    private static final blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings();
+    }
+
+    public static blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TeaCeremonySettings>
+        PARSER = new com.google.protobuf.AbstractParser<TeaCeremonySettings>() {
+      @java.lang.Override
+      public TeaCeremonySettings parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TeaCeremonySettings(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TeaCeremonySettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TeaCeremonySettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public blockchain.thepower.v1alpha1.Thepower.TeaCeremonySettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_thepower_v1alpha1_TpChain_descriptor;
   private static final 
@@ -3658,6 +4918,11 @@ public final class Thepower {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3668,24 +4933,34 @@ public final class Thepower {
   static {
     java.lang.String[] descriptorData = {
       "\n+blockchain/thepower/v1alpha1/thepower." +
-      "proto\022\034blockchain.thepower.v1alpha1\"\227\002\n\007" +
+      "proto\022\034blockchain.thepower.v1alpha1\"\346\002\n\007" +
       "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030" +
       "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use" +
       "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th" +
       "epower.v1alpha1.TpNodeR\nchainNodes\022\026\n\006st" +
       "atus\030\005 \001(\tR\006status\022#\n\rerror_details\030\006 \001(" +
       "\tR\014errorDetails\022\035\n\ncreated_at\030\007 \001(\tR\tcre" +
-      "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\365\001" +
-      "\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodename\022\033\n\t" +
-      "tpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_port\030\003 " +
-      "\001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010apisPor" +
-      "t\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023crosschain" +
-      "_external\030\006 \003(\01320.blockchain.thepower.v1" +
-      "alpha1.CrosschainExternalR\022crosschainExt" +
-      "ernal\"<\n\022CrosschainExternal\022\022\n\004host\030\001 \001(" +
-      "\tR\004host\022\022\n\004port\030\002 \001(\003R\004portB?Z=github.co" +
-      "m/cuemby/ccp-sdk/gen/go/blockchain/thepo" +
-      "wer/v1alpha1b\006proto3"
+      "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022M\n" +
+      "\010settings\030\t \001(\01321.blockchain.thepower.v1" +
+      "alpha1.TeaCeremonySettingsR\010settings\"\365\001\n" +
+      "\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodename\022\033\n\tt" +
+      "pic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_port\030\003 \001" +
+      "(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010apisPort" +
+      "\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023crosschain_" +
+      "external\030\006 \003(\01320.blockchain.thepower.v1a" +
+      "lpha1.CrosschainExternalR\022crosschainExte" +
+      "rnal\"<\n\022CrosschainExternal\022\022\n\004host\030\001 \001(\t" +
+      "R\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023TeaCeremo" +
+      "nySettings\022\'\n\017chain_blocktime\030\001 \001(\003R\016cha" +
+      "inBlocktime\022!\n\014chain_minsig\030\002 \001(\003R\013chain" +
+      "Minsig\022*\n\021chain_allow_empty\030\003 \001(\003R\017chain" +
+      "AllowEmpty\022(\n\020chain_patch_sigs\030\004 \001(\003R\016ch" +
+      "ainPatchSigs\022)\n\020allocblock_group\030\005 \001(\003R\017" +
+      "allocblockGroup\022\'\n\017allocblock_last\030\006 \001(\003" +
+      "R\016allocblockLast\022\030\n\007freegas\030\007 \001(\003R\007freeg" +
+      "as\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nosk\030\t \001(\003R" +
+      "\004noskB?Z=github.com/cuemby/ccp-sdk/gen/g" +
+      "o/blockchain/thepower/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3696,7 +4971,7 @@ public final class Thepower {
     internal_static_blockchain_thepower_v1alpha1_TpChain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_TpChain_descriptor,
-        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Settings", });
     internal_static_blockchain_thepower_v1alpha1_TpNode_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_thepower_v1alpha1_TpNode_fieldAccessorTable = new
@@ -3709,6 +4984,12 @@ public final class Thepower {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_CrosschainExternal_descriptor,
         new java.lang.String[] { "Host", "Port", });
+    internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_blockchain_thepower_v1alpha1_TeaCeremonySettings_descriptor,
+        new java.lang.String[] { "ChainBlocktime", "ChainMinsig", "ChainAllowEmpty", "ChainPatchSigs", "AllocblockGroup", "AllocblockLast", "Freegas", "GasSk", "Nosk", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
