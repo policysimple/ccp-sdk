@@ -94,6 +94,28 @@ function deserialize_blockchain_thepower_v1alpha1_GetTpChainsResponse(buffer_arg
   return blockchain_thepower_v1alpha1_thepower_api_pb.GetTpChainsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_blockchain_thepower_v1alpha1_UpdateTpChainRequest(arg) {
+  if (!(arg instanceof blockchain_thepower_v1alpha1_thepower_api_pb.UpdateTpChainRequest)) {
+    throw new Error('Expected argument of type blockchain.thepower.v1alpha1.UpdateTpChainRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_thepower_v1alpha1_UpdateTpChainRequest(buffer_arg) {
+  return blockchain_thepower_v1alpha1_thepower_api_pb.UpdateTpChainRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_blockchain_thepower_v1alpha1_UpdateTpChainResponse(arg) {
+  if (!(arg instanceof blockchain_thepower_v1alpha1_thepower_api_pb.UpdateTpChainResponse)) {
+    throw new Error('Expected argument of type blockchain.thepower.v1alpha1.UpdateTpChainResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_thepower_v1alpha1_UpdateTpChainResponse(buffer_arg) {
+  return blockchain_thepower_v1alpha1_thepower_api_pb.UpdateTpChainResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var BlockchainThePowerServiceService = exports.BlockchainThePowerServiceService = {
   createTpChain: {
@@ -139,6 +161,17 @@ var BlockchainThePowerServiceService = exports.BlockchainThePowerServiceService 
     requestDeserialize: deserialize_blockchain_thepower_v1alpha1_GetTpChainByIdRequest,
     responseSerialize: serialize_blockchain_thepower_v1alpha1_GetTpChainByIdResponse,
     responseDeserialize: deserialize_blockchain_thepower_v1alpha1_GetTpChainByIdResponse,
+  },
+  updateTpChain: {
+    path: '/blockchain.thepower.v1alpha1.BlockchainThePowerService/UpdateTpChain',
+    requestStream: false,
+    responseStream: false,
+    requestType: blockchain_thepower_v1alpha1_thepower_api_pb.UpdateTpChainRequest,
+    responseType: blockchain_thepower_v1alpha1_thepower_api_pb.UpdateTpChainResponse,
+    requestSerialize: serialize_blockchain_thepower_v1alpha1_UpdateTpChainRequest,
+    requestDeserialize: deserialize_blockchain_thepower_v1alpha1_UpdateTpChainRequest,
+    responseSerialize: serialize_blockchain_thepower_v1alpha1_UpdateTpChainResponse,
+    responseDeserialize: deserialize_blockchain_thepower_v1alpha1_UpdateTpChainResponse,
   },
 };
 

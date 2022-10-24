@@ -46,7 +46,7 @@ struct TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ namespace v1alpha1 {
 class CrosschainExternal;
 struct CrosschainExternalDefaultTypeInternal;
 extern CrosschainExternalDefaultTypeInternal _CrosschainExternal_default_instance_;
+class TeaCeremonySettings;
+struct TeaCeremonySettingsDefaultTypeInternal;
+extern TeaCeremonySettingsDefaultTypeInternal _TeaCeremonySettings_default_instance_;
 class TpChain;
 struct TpChainDefaultTypeInternal;
 extern TpChainDefaultTypeInternal _TpChain_default_instance_;
@@ -70,6 +73,7 @@ extern TpNodeDefaultTypeInternal _TpNode_default_instance_;
 }  // namespace blockchain
 PROTOBUF_NAMESPACE_OPEN
 template<> ::blockchain::thepower::v1alpha1::CrosschainExternal* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::CrosschainExternal>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::TeaCeremonySettings* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::TeaCeremonySettings>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::TpChain* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpChain>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::TpNode* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpNode>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -201,6 +205,7 @@ class TpChain final :
     kErrorDetailsFieldNumber = 6,
     kCreatedAtFieldNumber = 7,
     kUpdatedAtFieldNumber = 8,
+    kSettingsFieldNumber = 9,
     kChainNumberFieldNumber = 2,
   };
   // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
@@ -305,6 +310,24 @@ class TpChain final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // .blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];
+  bool has_settings() const;
+  private:
+  bool _internal_has_settings() const;
+  public:
+  void clear_settings();
+  const ::blockchain::thepower::v1alpha1::TeaCeremonySettings& settings() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::thepower::v1alpha1::TeaCeremonySettings* release_settings();
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* mutable_settings();
+  void set_allocated_settings(::blockchain::thepower::v1alpha1::TeaCeremonySettings* settings);
+  private:
+  const ::blockchain::thepower::v1alpha1::TeaCeremonySettings& _internal_settings() const;
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* _internal_mutable_settings();
+  public:
+  void unsafe_arena_set_allocated_settings(
+      ::blockchain::thepower::v1alpha1::TeaCeremonySettings* settings);
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* unsafe_arena_release_settings();
+
   // int32 chain_number = 2 [json_name = "chainNumber"];
   void clear_chain_number();
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number() const;
@@ -328,6 +351,7 @@ class TpChain final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_details_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* settings_;
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
@@ -695,6 +719,233 @@ class CrosschainExternal final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
 };
+// -------------------------------------------------------------------
+
+class TeaCeremonySettings final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.TeaCeremonySettings) */ {
+ public:
+  inline TeaCeremonySettings() : TeaCeremonySettings(nullptr) {}
+  ~TeaCeremonySettings() override;
+  explicit constexpr TeaCeremonySettings(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TeaCeremonySettings(const TeaCeremonySettings& from);
+  TeaCeremonySettings(TeaCeremonySettings&& from) noexcept
+    : TeaCeremonySettings() {
+    *this = ::std::move(from);
+  }
+
+  inline TeaCeremonySettings& operator=(const TeaCeremonySettings& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TeaCeremonySettings& operator=(TeaCeremonySettings&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TeaCeremonySettings& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TeaCeremonySettings* internal_default_instance() {
+    return reinterpret_cast<const TeaCeremonySettings*>(
+               &_TeaCeremonySettings_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(TeaCeremonySettings& a, TeaCeremonySettings& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TeaCeremonySettings* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TeaCeremonySettings* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TeaCeremonySettings* New() const final {
+    return new TeaCeremonySettings();
+  }
+
+  TeaCeremonySettings* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TeaCeremonySettings>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TeaCeremonySettings& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TeaCeremonySettings& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TeaCeremonySettings* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.TeaCeremonySettings";
+  }
+  protected:
+  explicit TeaCeremonySettings(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kChainBlocktimeFieldNumber = 1,
+    kChainMinsigFieldNumber = 2,
+    kChainAllowEmptyFieldNumber = 3,
+    kChainPatchSigsFieldNumber = 4,
+    kAllocblockGroupFieldNumber = 5,
+    kAllocblockLastFieldNumber = 6,
+    kFreegasFieldNumber = 7,
+    kGasSkFieldNumber = 8,
+    kNoskFieldNumber = 9,
+  };
+  // int64 chain_blocktime = 1 [json_name = "chainBlocktime"];
+  void clear_chain_blocktime();
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_blocktime() const;
+  void set_chain_blocktime(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_chain_blocktime() const;
+  void _internal_set_chain_blocktime(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 chain_minsig = 2 [json_name = "chainMinsig"];
+  void clear_chain_minsig();
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_minsig() const;
+  void set_chain_minsig(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_chain_minsig() const;
+  void _internal_set_chain_minsig(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];
+  void clear_chain_allow_empty();
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_allow_empty() const;
+  void set_chain_allow_empty(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_chain_allow_empty() const;
+  void _internal_set_chain_allow_empty(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];
+  void clear_chain_patch_sigs();
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_patch_sigs() const;
+  void set_chain_patch_sigs(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_chain_patch_sigs() const;
+  void _internal_set_chain_patch_sigs(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 allocblock_group = 5 [json_name = "allocblockGroup"];
+  void clear_allocblock_group();
+  ::PROTOBUF_NAMESPACE_ID::int64 allocblock_group() const;
+  void set_allocblock_group(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_allocblock_group() const;
+  void _internal_set_allocblock_group(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 allocblock_last = 6 [json_name = "allocblockLast"];
+  void clear_allocblock_last();
+  ::PROTOBUF_NAMESPACE_ID::int64 allocblock_last() const;
+  void set_allocblock_last(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_allocblock_last() const;
+  void _internal_set_allocblock_last(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 freegas = 7 [json_name = "freegas"];
+  void clear_freegas();
+  ::PROTOBUF_NAMESPACE_ID::int64 freegas() const;
+  void set_freegas(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_freegas() const;
+  void _internal_set_freegas(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 gas_sk = 8 [json_name = "gasSk"];
+  void clear_gas_sk();
+  ::PROTOBUF_NAMESPACE_ID::int64 gas_sk() const;
+  void set_gas_sk(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_gas_sk() const;
+  void _internal_set_gas_sk(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 nosk = 9 [json_name = "nosk"];
+  void clear_nosk();
+  ::PROTOBUF_NAMESPACE_ID::int64 nosk() const;
+  void set_nosk(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_nosk() const;
+  void _internal_set_nosk(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.TeaCeremonySettings)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_blocktime_;
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_minsig_;
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_allow_empty_;
+  ::PROTOBUF_NAMESPACE_ID::int64 chain_patch_sigs_;
+  ::PROTOBUF_NAMESPACE_ID::int64 allocblock_group_;
+  ::PROTOBUF_NAMESPACE_ID::int64 allocblock_last_;
+  ::PROTOBUF_NAMESPACE_ID::int64 freegas_;
+  ::PROTOBUF_NAMESPACE_ID::int64 gas_sk_;
+  ::PROTOBUF_NAMESPACE_ID::int64 nosk_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
+};
 // ===================================================================
 
 
@@ -1042,6 +1293,96 @@ inline void TpChain::set_allocated_updated_at(std::string* updated_at) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.updated_at)
 }
 
+// .blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];
+inline bool TpChain::_internal_has_settings() const {
+  return this != internal_default_instance() && settings_ != nullptr;
+}
+inline bool TpChain::has_settings() const {
+  return _internal_has_settings();
+}
+inline void TpChain::clear_settings() {
+  if (GetArenaForAllocation() == nullptr && settings_ != nullptr) {
+    delete settings_;
+  }
+  settings_ = nullptr;
+}
+inline const ::blockchain::thepower::v1alpha1::TeaCeremonySettings& TpChain::_internal_settings() const {
+  const ::blockchain::thepower::v1alpha1::TeaCeremonySettings* p = settings_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::thepower::v1alpha1::TeaCeremonySettings&>(
+      ::blockchain::thepower::v1alpha1::_TeaCeremonySettings_default_instance_);
+}
+inline const ::blockchain::thepower::v1alpha1::TeaCeremonySettings& TpChain::settings() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.settings)
+  return _internal_settings();
+}
+inline void TpChain::unsafe_arena_set_allocated_settings(
+    ::blockchain::thepower::v1alpha1::TeaCeremonySettings* settings) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(settings_);
+  }
+  settings_ = settings;
+  if (settings) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.thepower.v1alpha1.TpChain.settings)
+}
+inline ::blockchain::thepower::v1alpha1::TeaCeremonySettings* TpChain::release_settings() {
+  
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* temp = settings_;
+  settings_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TeaCeremonySettings* TpChain::unsafe_arena_release_settings() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.TpChain.settings)
+  
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* temp = settings_;
+  settings_ = nullptr;
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TeaCeremonySettings* TpChain::_internal_mutable_settings() {
+  
+  if (settings_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::thepower::v1alpha1::TeaCeremonySettings>(GetArenaForAllocation());
+    settings_ = p;
+  }
+  return settings_;
+}
+inline ::blockchain::thepower::v1alpha1::TeaCeremonySettings* TpChain::mutable_settings() {
+  ::blockchain::thepower::v1alpha1::TeaCeremonySettings* _msg = _internal_mutable_settings();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.TpChain.settings)
+  return _msg;
+}
+inline void TpChain::set_allocated_settings(::blockchain::thepower::v1alpha1::TeaCeremonySettings* settings) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete settings_;
+  }
+  if (settings) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::blockchain::thepower::v1alpha1::TeaCeremonySettings>::GetOwningArena(settings);
+    if (message_arena != submessage_arena) {
+      settings = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, settings, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  settings_ = settings;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.settings)
+}
+
 // -------------------------------------------------------------------
 
 // TpNode
@@ -1282,9 +1623,195 @@ inline void CrosschainExternal::set_port(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.CrosschainExternal.port)
 }
 
+// -------------------------------------------------------------------
+
+// TeaCeremonySettings
+
+// int64 chain_blocktime = 1 [json_name = "chainBlocktime"];
+inline void TeaCeremonySettings::clear_chain_blocktime() {
+  chain_blocktime_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_chain_blocktime() const {
+  return chain_blocktime_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::chain_blocktime() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_blocktime)
+  return _internal_chain_blocktime();
+}
+inline void TeaCeremonySettings::_internal_set_chain_blocktime(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  chain_blocktime_ = value;
+}
+inline void TeaCeremonySettings::set_chain_blocktime(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_chain_blocktime(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_blocktime)
+}
+
+// int64 chain_minsig = 2 [json_name = "chainMinsig"];
+inline void TeaCeremonySettings::clear_chain_minsig() {
+  chain_minsig_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_chain_minsig() const {
+  return chain_minsig_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::chain_minsig() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_minsig)
+  return _internal_chain_minsig();
+}
+inline void TeaCeremonySettings::_internal_set_chain_minsig(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  chain_minsig_ = value;
+}
+inline void TeaCeremonySettings::set_chain_minsig(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_chain_minsig(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_minsig)
+}
+
+// int64 chain_allow_empty = 3 [json_name = "chainAllowEmpty"];
+inline void TeaCeremonySettings::clear_chain_allow_empty() {
+  chain_allow_empty_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_chain_allow_empty() const {
+  return chain_allow_empty_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::chain_allow_empty() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_allow_empty)
+  return _internal_chain_allow_empty();
+}
+inline void TeaCeremonySettings::_internal_set_chain_allow_empty(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  chain_allow_empty_ = value;
+}
+inline void TeaCeremonySettings::set_chain_allow_empty(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_chain_allow_empty(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_allow_empty)
+}
+
+// int64 chain_patch_sigs = 4 [json_name = "chainPatchSigs"];
+inline void TeaCeremonySettings::clear_chain_patch_sigs() {
+  chain_patch_sigs_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_chain_patch_sigs() const {
+  return chain_patch_sigs_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::chain_patch_sigs() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_patch_sigs)
+  return _internal_chain_patch_sigs();
+}
+inline void TeaCeremonySettings::_internal_set_chain_patch_sigs(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  chain_patch_sigs_ = value;
+}
+inline void TeaCeremonySettings::set_chain_patch_sigs(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_chain_patch_sigs(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.chain_patch_sigs)
+}
+
+// int64 allocblock_group = 5 [json_name = "allocblockGroup"];
+inline void TeaCeremonySettings::clear_allocblock_group() {
+  allocblock_group_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_allocblock_group() const {
+  return allocblock_group_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::allocblock_group() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.allocblock_group)
+  return _internal_allocblock_group();
+}
+inline void TeaCeremonySettings::_internal_set_allocblock_group(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  allocblock_group_ = value;
+}
+inline void TeaCeremonySettings::set_allocblock_group(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_allocblock_group(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.allocblock_group)
+}
+
+// int64 allocblock_last = 6 [json_name = "allocblockLast"];
+inline void TeaCeremonySettings::clear_allocblock_last() {
+  allocblock_last_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_allocblock_last() const {
+  return allocblock_last_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::allocblock_last() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.allocblock_last)
+  return _internal_allocblock_last();
+}
+inline void TeaCeremonySettings::_internal_set_allocblock_last(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  allocblock_last_ = value;
+}
+inline void TeaCeremonySettings::set_allocblock_last(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_allocblock_last(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.allocblock_last)
+}
+
+// int64 freegas = 7 [json_name = "freegas"];
+inline void TeaCeremonySettings::clear_freegas() {
+  freegas_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_freegas() const {
+  return freegas_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::freegas() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.freegas)
+  return _internal_freegas();
+}
+inline void TeaCeremonySettings::_internal_set_freegas(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  freegas_ = value;
+}
+inline void TeaCeremonySettings::set_freegas(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_freegas(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.freegas)
+}
+
+// int64 gas_sk = 8 [json_name = "gasSk"];
+inline void TeaCeremonySettings::clear_gas_sk() {
+  gas_sk_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_gas_sk() const {
+  return gas_sk_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::gas_sk() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.gas_sk)
+  return _internal_gas_sk();
+}
+inline void TeaCeremonySettings::_internal_set_gas_sk(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  gas_sk_ = value;
+}
+inline void TeaCeremonySettings::set_gas_sk(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_gas_sk(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.gas_sk)
+}
+
+// int64 nosk = 9 [json_name = "nosk"];
+inline void TeaCeremonySettings::clear_nosk() {
+  nosk_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::_internal_nosk() const {
+  return nosk_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 TeaCeremonySettings::nosk() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TeaCeremonySettings.nosk)
+  return _internal_nosk();
+}
+inline void TeaCeremonySettings::_internal_set_nosk(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  nosk_ = value;
+}
+inline void TeaCeremonySettings::set_nosk(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_nosk(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TeaCeremonySettings.nosk)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -65,6 +65,13 @@ class BlockchainThePowerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>> PrepareAsyncGetTpChainById(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>>(PrepareAsyncGetTpChainByIdRaw(context, request, cq));
     }
+    virtual ::grpc::Status UpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>> AsyncUpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>>(AsyncUpdateTpChainRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>> PrepareAsyncUpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>>(PrepareAsyncUpdateTpChainRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -72,6 +79,7 @@ class BlockchainThePowerService final {
       virtual void GetTpChains(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTpChainsByUserId(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTpChainById(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -83,6 +91,8 @@ class BlockchainThePowerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>* PrepareAsyncGetTpChainsByUserIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* AsyncGetTpChainByIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* PrepareAsyncGetTpChainByIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>* AsyncUpdateTpChainRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>* PrepareAsyncUpdateTpChainRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -115,6 +125,13 @@ class BlockchainThePowerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>> PrepareAsyncGetTpChainById(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>>(PrepareAsyncGetTpChainByIdRaw(context, request, cq));
     }
+    ::grpc::Status UpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>> AsyncUpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>>(AsyncUpdateTpChainRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>> PrepareAsyncUpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>>(PrepareAsyncUpdateTpChainRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -122,6 +139,7 @@ class BlockchainThePowerService final {
       void GetTpChains(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetTpChainsByUserId(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* response, std::function<void(::grpc::Status)>) override;
       void GetTpChainById(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateTpChain(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -141,10 +159,13 @@ class BlockchainThePowerService final {
     ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>* PrepareAsyncGetTpChainsByUserIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* AsyncGetTpChainByIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* PrepareAsyncGetTpChainByIdRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>* AsyncUpdateTpChainRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>* PrepareAsyncUpdateTpChainRaw(::grpc::ClientContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTpChain_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTpChains_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTpChainsByUserId_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTpChainById_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateTpChain_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -156,6 +177,7 @@ class BlockchainThePowerService final {
     virtual ::grpc::Status GetTpChains(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsResponse* response);
     virtual ::grpc::Status GetTpChainsByUserId(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* response);
     virtual ::grpc::Status GetTpChainById(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response);
+    virtual ::grpc::Status UpdateTpChain(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateTpChain : public BaseClass {
@@ -237,7 +259,27 @@ class BlockchainThePowerService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateTpChain<WithAsyncMethod_GetTpChains<WithAsyncMethod_GetTpChainsByUserId<WithAsyncMethod_GetTpChainById<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateTpChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UpdateTpChain() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_UpdateTpChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateTpChain(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateTpChain(::grpc::ServerContext* context, ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::grpc::ServerAsyncResponseWriter< ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateTpChain<WithAsyncMethod_GetTpChains<WithAsyncMethod_GetTpChainsByUserId<WithAsyncMethod_GetTpChainById<WithAsyncMethod_UpdateTpChain<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateTpChain : public BaseClass {
    private:
@@ -302,6 +344,23 @@ class BlockchainThePowerService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetTpChainById(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest* request, ::blockchain::thepower::v1alpha1::GetTpChainByIdResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateTpChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UpdateTpChain() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_UpdateTpChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateTpChain(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -387,6 +446,26 @@ class BlockchainThePowerService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_UpdateTpChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UpdateTpChain() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_UpdateTpChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateTpChain(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateTpChain(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateTpChain : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -466,9 +545,29 @@ class BlockchainThePowerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetTpChainById(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::blockchain::thepower::v1alpha1::GetTpChainByIdRequest,::blockchain::thepower::v1alpha1::GetTpChainByIdResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateTpChain<WithStreamedUnaryMethod_GetTpChains<WithStreamedUnaryMethod_GetTpChainsByUserId<WithStreamedUnaryMethod_GetTpChainById<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateTpChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_UpdateTpChain() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler< ::blockchain::thepower::v1alpha1::UpdateTpChainRequest, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse>(std::bind(&WithStreamedUnaryMethod_UpdateTpChain<BaseClass>::StreamedUpdateTpChain, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateTpChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateTpChain(::grpc::ServerContext* context, const ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* request, ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateTpChain(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::blockchain::thepower::v1alpha1::UpdateTpChainRequest,::blockchain::thepower::v1alpha1::UpdateTpChainResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateTpChain<WithStreamedUnaryMethod_GetTpChains<WithStreamedUnaryMethod_GetTpChainsByUserId<WithStreamedUnaryMethod_GetTpChainById<WithStreamedUnaryMethod_UpdateTpChain<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateTpChain<WithStreamedUnaryMethod_GetTpChains<WithStreamedUnaryMethod_GetTpChainsByUserId<WithStreamedUnaryMethod_GetTpChainById<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateTpChain<WithStreamedUnaryMethod_GetTpChains<WithStreamedUnaryMethod_GetTpChainsByUserId<WithStreamedUnaryMethod_GetTpChainById<WithStreamedUnaryMethod_UpdateTpChain<Service > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
