@@ -216,7 +216,7 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-
+fmt.Println("CreatePayment---", in)
 	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
 		OrganizationId: in.OrganizationId,
 		CustomerId: in.CustomerId,
