@@ -34,6 +34,11 @@ class BlockchainThePowerServiceStub(object):
         request_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainByIdRequest.SerializeToString,
         response_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainByIdResponse.FromString,
         )
+    self.UpdateTpChain = channel.unary_unary(
+        '/blockchain.thepower.v1alpha1.BlockchainThePowerService/UpdateTpChain',
+        request_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.UpdateTpChainRequest.SerializeToString,
+        response_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.UpdateTpChainResponse.FromString,
+        )
 
 
 class BlockchainThePowerServiceServicer(object):
@@ -68,6 +73,13 @@ class BlockchainThePowerServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateTpChain(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_BlockchainThePowerServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -90,6 +102,11 @@ def add_BlockchainThePowerServiceServicer_to_server(servicer, server):
           servicer.GetTpChainById,
           request_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainByIdRequest.FromString,
           response_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.GetTpChainByIdResponse.SerializeToString,
+      ),
+      'UpdateTpChain': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateTpChain,
+          request_deserializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.UpdateTpChainRequest.FromString,
+          response_serializer=blockchain_dot_thepower_dot_v1alpha1_dot_thepower__api__pb2.UpdateTpChainResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
