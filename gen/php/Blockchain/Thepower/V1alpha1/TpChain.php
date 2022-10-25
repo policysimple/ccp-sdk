@@ -45,6 +45,10 @@ class TpChain extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     */
+    protected $settings = null;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class TpChain extends \Google\Protobuf\Internal\Message
      *     @type string $error_details
      *     @type string $created_at
      *     @type string $updated_at
+     *     @type \Blockchain\Thepower\V1alpha1\TeaCeremonySettings $settings
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,38 @@ class TpChain extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     * @return \Blockchain\Thepower\V1alpha1\TeaCeremonySettings|null
+     */
+    public function getSettings()
+    {
+        return $this->settings;
+    }
+
+    public function hasSettings()
+    {
+        return isset($this->settings);
+    }
+
+    public function clearSettings()
+    {
+        unset($this->settings);
+    }
+
+    /**
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
+     * @param \Blockchain\Thepower\V1alpha1\TeaCeremonySettings $var
+     * @return $this
+     */
+    public function setSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Blockchain\Thepower\V1alpha1\TeaCeremonySettings::class);
+        $this->settings = $var;
 
         return $this;
     }

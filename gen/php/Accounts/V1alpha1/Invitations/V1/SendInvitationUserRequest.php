@@ -28,6 +28,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_id_admin = '';
     /**
+     *roles projects
+     *
      * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
      */
     private $roles_ids;
@@ -51,6 +53,7 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $user_id_admin
      *          repeated ProjectDetail projects = 3;
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
+     *          roles projects
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
      *     @type int $organization_id
      * }
@@ -131,6 +134,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *roles projects
+     *
      * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -140,6 +145,8 @@ class SendInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *roles projects
+     *
      * Generated from protobuf field <code>repeated uint32 roles_ids = 5 [json_name = "rolesIds"];</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

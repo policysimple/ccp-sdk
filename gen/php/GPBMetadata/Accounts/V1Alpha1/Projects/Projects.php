@@ -17,7 +17,7 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¡
+º
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"¤
 CreateProjectRequest
 name (	Rname 
@@ -28,9 +28,10 @@ class Projects
 GetOneProjectRequest
 id (Rid"&
 DeleteProjectRequest
-id (Rid"=
+id (Rid"V
 ListProjectRequest\'
-organization_id (RorganizationId"u
+organization_id (RorganizationId
+user_id (	RuserId"u
 UpdateProjectRequest
 id (RidM
 project (23.accounts.v1alpha1.projects.v1.CreateProjectRequestRproject"J

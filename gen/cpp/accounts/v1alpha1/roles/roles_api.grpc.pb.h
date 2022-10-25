@@ -38,7 +38,6 @@ class RoleService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // CRUD Project
     virtual ::grpc::Status CreateRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::roles::v1::CreateRoleRequest& request, ::accounts::v1alpha1::roles::v1::CreateRoleResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::roles::v1::CreateRoleResponse>> AsyncCreateRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::roles::v1::CreateRoleRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::roles::v1::CreateRoleResponse>>(AsyncCreateRoleRaw(context, request, cq));
@@ -92,7 +91,6 @@ class RoleService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      // CRUD Project
       virtual void CreateRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::roles::v1::CreateRoleRequest* request, ::accounts::v1alpha1::roles::v1::CreateRoleResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListRoles(::grpc::ClientContext* context, const ::accounts::v1alpha1::roles::v1::ListRolesRequest* request, ::accounts::v1alpha1::roles::v1::ListRolesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::roles::v1::UpdateRoleRequest* request, ::accounts::v1alpha1::roles::v1::UpdateRoleResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -220,7 +218,6 @@ class RoleService final {
    public:
     Service();
     virtual ~Service();
-    // CRUD Project
     virtual ::grpc::Status CreateRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::roles::v1::CreateRoleRequest* request, ::accounts::v1alpha1::roles::v1::CreateRoleResponse* response);
     virtual ::grpc::Status ListRoles(::grpc::ServerContext* context, const ::accounts::v1alpha1::roles::v1::ListRolesRequest* request, ::accounts::v1alpha1::roles::v1::ListRolesResponse* response);
     virtual ::grpc::Status UpdateRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::roles::v1::UpdateRoleRequest* request, ::accounts::v1alpha1::roles::v1::UpdateRoleResponse* response);

@@ -68,4 +68,17 @@ class BlockchainThePowerServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Blockchain\Thepower\V1alpha1\UpdateTpChainRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateTpChain(\Blockchain\Thepower\V1alpha1\UpdateTpChainRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.thepower.v1alpha1.BlockchainThePowerService/UpdateTpChain',
+        $argument,
+        ['\Blockchain\Thepower\V1alpha1\UpdateTpChainResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -160,7 +160,6 @@ function deserialize_accounts_v1alpha1_roles_v1_UpdateRoleResponse(buffer_arg) {
 
 
 var RoleServiceService = exports.RoleServiceService = {
-  // CRUD Project
   createRole: {
     path: '/accounts.v1alpha1.roles.v1.RoleService/CreateRole',
     requestStream: false,

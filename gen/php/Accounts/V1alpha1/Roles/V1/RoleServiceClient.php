@@ -17,7 +17,6 @@ class RoleServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * CRUD Project
      * @param \Accounts\V1alpha1\Roles\V1\CreateRoleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

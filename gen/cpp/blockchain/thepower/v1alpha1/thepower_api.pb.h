@@ -48,7 +48,7 @@ struct TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -82,6 +82,12 @@ extern GetTpChainsRequestDefaultTypeInternal _GetTpChainsRequest_default_instanc
 class GetTpChainsResponse;
 struct GetTpChainsResponseDefaultTypeInternal;
 extern GetTpChainsResponseDefaultTypeInternal _GetTpChainsResponse_default_instance_;
+class UpdateTpChainRequest;
+struct UpdateTpChainRequestDefaultTypeInternal;
+extern UpdateTpChainRequestDefaultTypeInternal _UpdateTpChainRequest_default_instance_;
+class UpdateTpChainResponse;
+struct UpdateTpChainResponseDefaultTypeInternal;
+extern UpdateTpChainResponseDefaultTypeInternal _UpdateTpChainResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace thepower
 }  // namespace blockchain
@@ -94,6 +100,8 @@ template<> ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest* Arena::
 template<> ::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::GetTpChainsRequest* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainsRequest>(Arena*);
 template<> ::blockchain::thepower::v1alpha1::GetTpChainsResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::GetTpChainsResponse>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::UpdateTpChainRequest* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::UpdateTpChainRequest>(Arena*);
+template<> ::blockchain::thepower::v1alpha1::UpdateTpChainResponse* Arena::CreateMaybeMessage<::blockchain::thepower::v1alpha1::UpdateTpChainResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace blockchain {
 namespace thepower {
@@ -709,6 +717,154 @@ class GetTpChainsRequest final :
 };
 // -------------------------------------------------------------------
 
+class UpdateTpChainRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.UpdateTpChainRequest) */ {
+ public:
+  inline UpdateTpChainRequest() : UpdateTpChainRequest(nullptr) {}
+  ~UpdateTpChainRequest() override;
+  explicit constexpr UpdateTpChainRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateTpChainRequest(const UpdateTpChainRequest& from);
+  UpdateTpChainRequest(UpdateTpChainRequest&& from) noexcept
+    : UpdateTpChainRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateTpChainRequest& operator=(const UpdateTpChainRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateTpChainRequest& operator=(UpdateTpChainRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateTpChainRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateTpChainRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateTpChainRequest*>(
+               &_UpdateTpChainRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(UpdateTpChainRequest& a, UpdateTpChainRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateTpChainRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateTpChainRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateTpChainRequest* New() const final {
+    return new UpdateTpChainRequest();
+  }
+
+  UpdateTpChainRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateTpChainRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateTpChainRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateTpChainRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateTpChainRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.UpdateTpChainRequest";
+  }
+  protected:
+  explicit UpdateTpChainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTpChainFieldNumber = 1,
+  };
+  // .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
+  bool has_tp_chain() const;
+  private:
+  bool _internal_has_tp_chain() const;
+  public:
+  void clear_tp_chain();
+  const ::blockchain::thepower::v1alpha1::TpChain& tp_chain() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::thepower::v1alpha1::TpChain* release_tp_chain();
+  ::blockchain::thepower::v1alpha1::TpChain* mutable_tp_chain();
+  void set_allocated_tp_chain(::blockchain::thepower::v1alpha1::TpChain* tp_chain);
+  private:
+  const ::blockchain::thepower::v1alpha1::TpChain& _internal_tp_chain() const;
+  ::blockchain::thepower::v1alpha1::TpChain* _internal_mutable_tp_chain();
+  public:
+  void unsafe_arena_set_allocated_tp_chain(
+      ::blockchain::thepower::v1alpha1::TpChain* tp_chain);
+  ::blockchain::thepower::v1alpha1::TpChain* unsafe_arena_release_tp_chain();
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.UpdateTpChainRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::blockchain::thepower::v1alpha1::TpChain* tp_chain_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateTpChainResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.CreateTpChainResponse) */ {
  public:
@@ -753,7 +909,7 @@ class CreateTpChainResponse final :
                &_CreateTpChainResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(CreateTpChainResponse& a, CreateTpChainResponse& b) {
     a.Swap(&b);
@@ -901,7 +1057,7 @@ class GetTpChainsResponse final :
                &_GetTpChainsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(GetTpChainsResponse& a, GetTpChainsResponse& b) {
     a.Swap(&b);
@@ -1092,7 +1248,7 @@ class GetTpChainsByUserIdResponse final :
                &_GetTpChainsByUserIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(GetTpChainsByUserIdResponse& a, GetTpChainsByUserIdResponse& b) {
     a.Swap(&b);
@@ -1283,7 +1439,7 @@ class GetTpChainByIdResponse final :
                &_GetTpChainByIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(GetTpChainByIdResponse& a, GetTpChainByIdResponse& b) {
     a.Swap(&b);
@@ -1375,6 +1531,154 @@ class GetTpChainByIdResponse final :
   ::blockchain::thepower::v1alpha1::TpChain* unsafe_arena_release_tp_chain();
 
   // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.GetTpChainByIdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::blockchain::thepower::v1alpha1::TpChain* tp_chain_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateTpChainResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.thepower.v1alpha1.UpdateTpChainResponse) */ {
+ public:
+  inline UpdateTpChainResponse() : UpdateTpChainResponse(nullptr) {}
+  ~UpdateTpChainResponse() override;
+  explicit constexpr UpdateTpChainResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateTpChainResponse(const UpdateTpChainResponse& from);
+  UpdateTpChainResponse(UpdateTpChainResponse&& from) noexcept
+    : UpdateTpChainResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateTpChainResponse& operator=(const UpdateTpChainResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateTpChainResponse& operator=(UpdateTpChainResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateTpChainResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateTpChainResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateTpChainResponse*>(
+               &_UpdateTpChainResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(UpdateTpChainResponse& a, UpdateTpChainResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateTpChainResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateTpChainResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateTpChainResponse* New() const final {
+    return new UpdateTpChainResponse();
+  }
+
+  UpdateTpChainResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateTpChainResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateTpChainResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateTpChainResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateTpChainResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.thepower.v1alpha1.UpdateTpChainResponse";
+  }
+  protected:
+  explicit UpdateTpChainResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTpChainFieldNumber = 1,
+  };
+  // .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
+  bool has_tp_chain() const;
+  private:
+  bool _internal_has_tp_chain() const;
+  public:
+  void clear_tp_chain();
+  const ::blockchain::thepower::v1alpha1::TpChain& tp_chain() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::thepower::v1alpha1::TpChain* release_tp_chain();
+  ::blockchain::thepower::v1alpha1::TpChain* mutable_tp_chain();
+  void set_allocated_tp_chain(::blockchain::thepower::v1alpha1::TpChain* tp_chain);
+  private:
+  const ::blockchain::thepower::v1alpha1::TpChain& _internal_tp_chain() const;
+  ::blockchain::thepower::v1alpha1::TpChain* _internal_mutable_tp_chain();
+  public:
+  void unsafe_arena_set_allocated_tp_chain(
+      ::blockchain::thepower::v1alpha1::TpChain* tp_chain);
+  ::blockchain::thepower::v1alpha1::TpChain* unsafe_arena_release_tp_chain();
+
+  // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.UpdateTpChainResponse)
  private:
   class _Internal;
 
@@ -1664,6 +1968,96 @@ inline void GetTpChainsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::int
 inline void GetTpChainsRequest::set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_limit(value);
   // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.GetTpChainsRequest.limit)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateTpChainRequest
+
+// .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
+inline bool UpdateTpChainRequest::_internal_has_tp_chain() const {
+  return this != internal_default_instance() && tp_chain_ != nullptr;
+}
+inline bool UpdateTpChainRequest::has_tp_chain() const {
+  return _internal_has_tp_chain();
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& UpdateTpChainRequest::_internal_tp_chain() const {
+  const ::blockchain::thepower::v1alpha1::TpChain* p = tp_chain_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::thepower::v1alpha1::TpChain&>(
+      ::blockchain::thepower::v1alpha1::_TpChain_default_instance_);
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& UpdateTpChainRequest::tp_chain() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.UpdateTpChainRequest.tp_chain)
+  return _internal_tp_chain();
+}
+inline void UpdateTpChainRequest::unsafe_arena_set_allocated_tp_chain(
+    ::blockchain::thepower::v1alpha1::TpChain* tp_chain) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain_);
+  }
+  tp_chain_ = tp_chain;
+  if (tp_chain) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.thepower.v1alpha1.UpdateTpChainRequest.tp_chain)
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainRequest::release_tp_chain() {
+  
+  ::blockchain::thepower::v1alpha1::TpChain* temp = tp_chain_;
+  tp_chain_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainRequest::unsafe_arena_release_tp_chain() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.UpdateTpChainRequest.tp_chain)
+  
+  ::blockchain::thepower::v1alpha1::TpChain* temp = tp_chain_;
+  tp_chain_ = nullptr;
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainRequest::_internal_mutable_tp_chain() {
+  
+  if (tp_chain_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpChain>(GetArenaForAllocation());
+    tp_chain_ = p;
+  }
+  return tp_chain_;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainRequest::mutable_tp_chain() {
+  ::blockchain::thepower::v1alpha1::TpChain* _msg = _internal_mutable_tp_chain();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.UpdateTpChainRequest.tp_chain)
+  return _msg;
+}
+inline void UpdateTpChainRequest::set_allocated_tp_chain(::blockchain::thepower::v1alpha1::TpChain* tp_chain) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain_);
+  }
+  if (tp_chain) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain));
+    if (message_arena != submessage_arena) {
+      tp_chain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tp_chain, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  tp_chain_ = tp_chain;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.UpdateTpChainRequest.tp_chain)
 }
 
 // -------------------------------------------------------------------
@@ -2152,9 +2546,103 @@ inline void GetTpChainByIdResponse::set_allocated_tp_chain(::blockchain::thepowe
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.GetTpChainByIdResponse.tp_chain)
 }
 
+// -------------------------------------------------------------------
+
+// UpdateTpChainResponse
+
+// .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
+inline bool UpdateTpChainResponse::_internal_has_tp_chain() const {
+  return this != internal_default_instance() && tp_chain_ != nullptr;
+}
+inline bool UpdateTpChainResponse::has_tp_chain() const {
+  return _internal_has_tp_chain();
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& UpdateTpChainResponse::_internal_tp_chain() const {
+  const ::blockchain::thepower::v1alpha1::TpChain* p = tp_chain_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::thepower::v1alpha1::TpChain&>(
+      ::blockchain::thepower::v1alpha1::_TpChain_default_instance_);
+}
+inline const ::blockchain::thepower::v1alpha1::TpChain& UpdateTpChainResponse::tp_chain() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.UpdateTpChainResponse.tp_chain)
+  return _internal_tp_chain();
+}
+inline void UpdateTpChainResponse::unsafe_arena_set_allocated_tp_chain(
+    ::blockchain::thepower::v1alpha1::TpChain* tp_chain) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain_);
+  }
+  tp_chain_ = tp_chain;
+  if (tp_chain) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.thepower.v1alpha1.UpdateTpChainResponse.tp_chain)
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainResponse::release_tp_chain() {
+  
+  ::blockchain::thepower::v1alpha1::TpChain* temp = tp_chain_;
+  tp_chain_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainResponse::unsafe_arena_release_tp_chain() {
+  // @@protoc_insertion_point(field_release:blockchain.thepower.v1alpha1.UpdateTpChainResponse.tp_chain)
+  
+  ::blockchain::thepower::v1alpha1::TpChain* temp = tp_chain_;
+  tp_chain_ = nullptr;
+  return temp;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainResponse::_internal_mutable_tp_chain() {
+  
+  if (tp_chain_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::thepower::v1alpha1::TpChain>(GetArenaForAllocation());
+    tp_chain_ = p;
+  }
+  return tp_chain_;
+}
+inline ::blockchain::thepower::v1alpha1::TpChain* UpdateTpChainResponse::mutable_tp_chain() {
+  ::blockchain::thepower::v1alpha1::TpChain* _msg = _internal_mutable_tp_chain();
+  // @@protoc_insertion_point(field_mutable:blockchain.thepower.v1alpha1.UpdateTpChainResponse.tp_chain)
+  return _msg;
+}
+inline void UpdateTpChainResponse::set_allocated_tp_chain(::blockchain::thepower::v1alpha1::TpChain* tp_chain) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain_);
+  }
+  if (tp_chain) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tp_chain));
+    if (message_arena != submessage_arena) {
+      tp_chain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tp_chain, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  tp_chain_ = tp_chain;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.UpdateTpChainResponse.tp_chain)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

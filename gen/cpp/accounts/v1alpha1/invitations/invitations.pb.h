@@ -2089,9 +2089,24 @@ class DeleteInvitationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kUserIdFieldNumber = 3,
     kInvitationIdFieldNumber = 1,
     kOrganizationIdFieldNumber = 2,
   };
+  // string user_id = 3 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
   // uint32 invitation_id = 1 [json_name = "invitationId"];
   void clear_invitation_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 invitation_id() const;
@@ -2117,6 +2132,7 @@ class DeleteInvitationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 invitation_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3952,6 +3968,26 @@ ListInvitationSendResponse::invitation_user() const {
 
 // DeleteInvitationRequest
 
+// uint32 invitation_id = 1 [json_name = "invitationId"];
+inline void DeleteInvitationRequest::clear_invitation_id() {
+  invitation_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteInvitationRequest::_internal_invitation_id() const {
+  return invitation_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteInvitationRequest::invitation_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.invitation_id)
+  return _internal_invitation_id();
+}
+inline void DeleteInvitationRequest::_internal_set_invitation_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  invitation_id_ = value;
+}
+inline void DeleteInvitationRequest::set_invitation_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_invitation_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.invitation_id)
+}
+
 // uint32 organization_id = 2 [json_name = "organizationId"];
 inline void DeleteInvitationRequest::clear_organization_id() {
   organization_id_ = 0u;
@@ -3972,24 +4008,50 @@ inline void DeleteInvitationRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.organization_id)
 }
 
-// uint32 invitation_id = 1 [json_name = "invitationId"];
-inline void DeleteInvitationRequest::clear_invitation_id() {
-  invitation_id_ = 0u;
+// string user_id = 3 [json_name = "userId"];
+inline void DeleteInvitationRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteInvitationRequest::_internal_invitation_id() const {
-  return invitation_id_;
+inline const std::string& DeleteInvitationRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id)
+  return _internal_user_id();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteInvitationRequest::invitation_id() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.invitation_id)
-  return _internal_invitation_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteInvitationRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id)
 }
-inline void DeleteInvitationRequest::_internal_set_invitation_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline std::string* DeleteInvitationRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id)
+  return _s;
+}
+inline const std::string& DeleteInvitationRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void DeleteInvitationRequest::_internal_set_user_id(const std::string& value) {
   
-  invitation_id_ = value;
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void DeleteInvitationRequest::set_invitation_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_invitation_id(value);
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.invitation_id)
+inline std::string* DeleteInvitationRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteInvitationRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteInvitationRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id)
 }
 
 // -------------------------------------------------------------------

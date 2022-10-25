@@ -56,8 +56,8 @@ class RoleServiceServicer(object):
   pass
 
   def CreateRole(self, request, context):
-    """CRUD Project
-    """
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

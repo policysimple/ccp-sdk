@@ -62,7 +62,8 @@ struct DeleteProjectRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteProjectRequestDefaultTypeInternal _DeleteProjectRequest_default_instance_;
 constexpr ListProjectRequest::ListProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : organization_id_(0u){}
+  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(0u){}
 struct ListProjectRequestDefaultTypeInternal {
   constexpr ListProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -341,6 +342,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectRequest, user_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -483,22 +485,22 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 10, -1, sizeof(::accounts::v1alpha1::projects::v1::GetOneProjectRequest)},
   { 16, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteProjectRequest)},
   { 22, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectRequest)},
-  { 28, -1, sizeof(::accounts::v1alpha1::projects::v1::UpdateProjectRequest)},
-  { 35, -1, sizeof(::accounts::v1alpha1::projects::v1::MemberRol)},
-  { 43, -1, sizeof(::accounts::v1alpha1::projects::v1::ProjectList)},
-  { 50, -1, sizeof(::accounts::v1alpha1::projects::v1::MemberProject)},
-  { 63, -1, sizeof(::accounts::v1alpha1::projects::v1::CreateProjectResponse)},
-  { 71, -1, sizeof(::accounts::v1alpha1::projects::v1::UpdateProjectResponse)},
-  { 78, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteProjectResponse)},
-  { 85, -1, sizeof(::accounts::v1alpha1::projects::v1::GetOneProjectResponse)},
-  { 99, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectResponse)},
-  { 106, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest)},
-  { 113, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse)},
-  { 122, -1, sizeof(::accounts::v1alpha1::projects::v1::UserList)},
-  { 135, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest)},
-  { 142, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse)},
-  { 149, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest)},
-  { 157, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse)},
+  { 29, -1, sizeof(::accounts::v1alpha1::projects::v1::UpdateProjectRequest)},
+  { 36, -1, sizeof(::accounts::v1alpha1::projects::v1::MemberRol)},
+  { 44, -1, sizeof(::accounts::v1alpha1::projects::v1::ProjectList)},
+  { 51, -1, sizeof(::accounts::v1alpha1::projects::v1::MemberProject)},
+  { 64, -1, sizeof(::accounts::v1alpha1::projects::v1::CreateProjectResponse)},
+  { 72, -1, sizeof(::accounts::v1alpha1::projects::v1::UpdateProjectResponse)},
+  { 79, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteProjectResponse)},
+  { 86, -1, sizeof(::accounts::v1alpha1::projects::v1::GetOneProjectResponse)},
+  { 100, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectResponse)},
+  { 107, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest)},
+  { 114, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse)},
+  { 123, -1, sizeof(::accounts::v1alpha1::projects::v1::UserList)},
+  { 136, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest)},
+  { 143, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse)},
+  { 150, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest)},
+  { 158, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -533,68 +535,69 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_2
   "(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016orga"
   "nizationId\022\027\n\007user_id\030\005 \001(\tR\006userId\"&\n\024G"
   "etOneProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024D"
-  "eleteProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022L"
+  "eleteProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"V\n\022L"
   "istProjectRequest\022\'\n\017organization_id\030\001 \001"
-  "(\rR\016organizationId\"u\n\024UpdateProjectReque"
-  "st\022\016\n\002id\030\001 \001(\005R\002id\022M\n\007project\030\002 \001(\01323.ac"
-  "counts.v1alpha1.projects.v1.CreateProjec"
-  "tRequestR\007project\"J\n\tMemberRol\022\016\n\002id\030\001 \001"
-  "(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003"
-  " \001(\010R\007isAdmin\"7\n\013ProjectList\022\022\n\004name\030\001 \001"
-  "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"\234\002\n\rMembe"
-  "rProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001("
-  "\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName"
-  "\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_acti"
-  "ve\030\005 \001(\010R\010isActive\022\024\n\005image\030\006 \001(\tR\005image"
-  "\022+\n\004role\030\007 \001(\0132\027.accounts.v1alpha1.RoleR"
-  "\004role\022F\n\010projects\030\010 \003(\0132*.accounts.v1alp"
-  "ha1.projects.v1.ProjectListR\010projects\"O\n"
-  "\025CreateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg"
-  "\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"\?"
-  "\n\025UpdateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003ms"
-  "g\022\024\n\005error\030\002 \001(\tR\005error\"\?\n\025DeleteProject"
+  "(\rR\016organizationId\022\027\n\007user_id\030\002 \001(\tR\006use"
+  "rId\"u\n\024UpdateProjectRequest\022\016\n\002id\030\001 \001(\005R"
+  "\002id\022M\n\007project\030\002 \001(\01323.accounts.v1alpha1"
+  ".projects.v1.CreateProjectRequestR\007proje"
+  "ct\"J\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030"
+  "\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\"7"
+  "\n\013ProjectList\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005ima"
+  "ge\030\002 \001(\tR\005image\"\234\002\n\rMemberProject\022\016\n\002id\030"
+  "\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfi"
+  "rst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004"
+  " \001(\tR\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isAct"
+  "ive\022\024\n\005image\030\006 \001(\tR\005image\022+\n\004role\030\007 \001(\0132"
+  "\027.accounts.v1alpha1.RoleR\004role\022F\n\010projec"
+  "ts\030\010 \003(\0132*.accounts.v1alpha1.projects.v1"
+  ".ProjectListR\010projects\"O\n\025CreateProjectR"
+  "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t"
+  "R\005error\022\016\n\002id\030\003 \001(\rR\002id\"\?\n\025UpdateProject"
   "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
-  "\tR\005error\"\341\002\n\025GetOneProjectResponse\022\016\n\002id"
-  "\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030"
-  "\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016o"
-  "rganizationId\022 \n\013description\030\005 \001(\tR\013desc"
-  "ription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035"
-  "\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022F\n\007members"
-  "\030\010 \003(\0132,.accounts.v1alpha1.projects.v1.M"
-  "emberProjectR\007members\022=\n\005owner\030\t \001(\0132\'.a"
-  "ccounts.v1alpha1.projects.v1.UserListR\005o"
-  "wner\"c\n\023ListProjectResponse\0226\n\010projects\030"
-  "\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010proje"
-  "cts\022\024\n\005error\030\002 \001(\tR\005error\"L\n\034ListProject"
-  "PaginationRequest\022\026\n\006offset\030\001 \001(\005R\006offse"
-  "t\022\024\n\005limit\030\002 \001(\005R\005limit\"\234\001\n\035ListProjectP"
-  "aginationResponse\0226\n\010projects\030\001 \003(\0132\032.ac"
-  "counts.v1alpha1.ProjectR\010projects\022\024\n\005cou"
-  "nt\030\002 \001(\005R\005count\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010m"
-  "ax_page\030\004 \001(\005R\007maxPage\"\334\001\n\010UserList\022\016\n\002i"
-  "d\030\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstNa"
-  "me\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email"
-  "\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033"
-  "\n\tis_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_"
-  "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005"
-  "image\"T\n\032DeleteUserByProjectRequest\022\027\n\007u"
-  "ser_id\030\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\r"
-  "R\tprojectId\"E\n\033DeleteUserByProjectRespon"
-  "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err"
-  "or\"o\n\034EditRoleUserByProjectRequest\022\027\n\007us"
-  "er_id\030\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\rR"
-  "\tprojectId\022\027\n\007role_id\030\003 \001(\rR\006roleId\"G\n\035E"
-  "ditRoleUserByProjectResponse\022\020\n\003msg\030\001 \001("
-  "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005errorB=Z;github.c"
-  "om/cuemby/ccp-sdk/gen/go/accounts/v1alph"
-  "a1/projectsb\006proto3"
+  "\tR\005error\"\?\n\025DeleteProjectResponse\022\020\n\003msg"
+  "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\341\002\n\025Ge"
+  "tOneProjectResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004n"
+  "ame\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n"
+  "\017organization_id\030\004 \001(\rR\016organizationId\022 "
+  "\n\013description\030\005 \001(\tR\013description\022\035\n\ncrea"
+  "ted_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 "
+  "\001(\tR\tupdatedAt\022F\n\007members\030\010 \003(\0132,.accoun"
+  "ts.v1alpha1.projects.v1.MemberProjectR\007m"
+  "embers\022=\n\005owner\030\t \001(\0132\'.accounts.v1alpha"
+  "1.projects.v1.UserListR\005owner\"c\n\023ListPro"
+  "jectResponse\0226\n\010projects\030\001 \003(\0132\032.account"
+  "s.v1alpha1.ProjectR\010projects\022\024\n\005error\030\002 "
+  "\001(\tR\005error\"L\n\034ListProjectPaginationReque"
+  "st\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001("
+  "\005R\005limit\"\234\001\n\035ListProjectPaginationRespon"
+  "se\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1"
+  ".ProjectR\010projects\022\024\n\005count\030\002 \001(\005R\005count"
+  "\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010max_page\030\004 \001(\005R\007"
+  "maxPage\"\334\001\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\n"
+  "first_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_name"
+  "\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001(\tR\005email\022\027"
+  "\n\007user_id\030\005 \001(\tR\006userId\022\033\n\tis_active\030\006 \001"
+  "(\010R\010isActive\022\"\n\ris_super_user\030\007 \001(\010R\013isS"
+  "uperUser\022\024\n\005image\030\010 \001(\tR\005image\"T\n\032Delete"
+  "UserByProjectRequest\022\027\n\007user_id\030\001 \001(\rR\006u"
+  "serId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\"E\n\033"
+  "DeleteUserByProjectResponse\022\020\n\003msg\030\001 \001(\t"
+  "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"o\n\034EditRoleU"
+  "serByProjectRequest\022\027\n\007user_id\030\001 \001(\rR\006us"
+  "erId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\027\n\007r"
+  "ole_id\030\003 \001(\rR\006roleId\"G\n\035EditRoleUserByPr"
+  "ojectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
+  "\030\002 \001(\tR\005errorB=Z;github.com/cuemby/ccp-s"
+  "dk/gen/go/accounts/v1alpha1/projectsb\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto = {
-  false, false, 2499, descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, "accounts/v1alpha1/projects/projects.proto", 
+  false, false, 2524, descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, "accounts/v1alpha1/projects/projects.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_deps, 1, 20,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto,
@@ -1351,11 +1354,17 @@ ListProjectRequest::ListProjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 ListProjectRequest::ListProjectRequest(const ListProjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   organization_id_ = from.organization_id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.ListProjectRequest)
 }
 
 inline void ListProjectRequest::SharedCtor() {
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 organization_id_ = 0u;
 }
 
@@ -1368,6 +1377,7 @@ ListProjectRequest::~ListProjectRequest() {
 
 inline void ListProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListProjectRequest::ArenaDtor(void* object) {
@@ -1386,6 +1396,7 @@ void ListProjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  user_id_.ClearToEmpty();
   organization_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1400,6 +1411,15 @@ const char* ListProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 2 [json_name = "userId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.ListProjectRequest.user_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1438,6 +1458,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
   }
 
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.ListProjectRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1453,6 +1483,13 @@ size_t ListProjectRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
 
   // uint32 organization_id = 1 [json_name = "organizationId"];
   if (this->_internal_organization_id() != 0) {
@@ -1489,6 +1526,9 @@ void ListProjectRequest::MergeFrom(const ListProjectRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   if (from._internal_organization_id() != 0) {
     _internal_set_organization_id(from._internal_organization_id());
   }
@@ -1509,6 +1549,11 @@ bool ListProjectRequest::IsInitialized() const {
 void ListProjectRequest::InternalSwap(ListProjectRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
+  );
   swap(organization_id_, other->organization_id_);
 }
 
