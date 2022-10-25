@@ -79,64 +79,65 @@ public final class RuntimeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
-      "to\022\032pipelines.runtime.v1alpha1\"\205\014\n\007Runti" +
+      "to\022\032pipelines.runtime.v1alpha1\"\250\014\n\007Runti" +
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N" +
       "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti" +
       "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'" +
       "\n\017organization_id\030\004 \001(\rR\016organizationId\022" +
-      "\035\n\nproject_id\030\005 \001(\rR\tprojectId\022%\n\016applic" +
-      "ation_id\030\006 \001(\tR\rapplicationId\022!\n\014workspa" +
-      "ce_id\030\007 \001(\tR\013workspaceId\022%\n\016environment_" +
-      "id\030\010 \001(\tR\renvironmentId\022\026\n\006scaler\030\t \001(\tR" +
-      "\006scaler\022\035\n\npod_status\030\n \001(\tR\tpodStatus\022$" +
-      "\n\016pod_status_msg\030\013 \001(\tR\014podStatusMsg\022V\n\013" +
-      "integration\030\014 \003(\01324.pipelines.runtime.v1" +
-      "alpha1.Runtime.IntegrationEntryR\013integra" +
-      "tion\022r\n\025environment_variables\030\r \003(\0132=.pi" +
-      "pelines.runtime.v1alpha1.Runtime.Environ" +
-      "mentVariablesEntryR\024environmentVariables" +
-      "\022M\n\010commands\030\016 \003(\01321.pipelines.runtime.v" +
-      "1alpha1.Runtime.CommandsEntryR\010commands\022" +
-      "J\n\007secrets\030\017 \003(\01320.pipelines.runtime.v1a" +
-      "lpha1.Runtime.SecretsEntryR\007secrets\022Q\n\ne" +
-      "xtra_args\030\020 \003(\01322.pipelines.runtime.v1al" +
-      "pha1.Runtime.ExtraArgsEntryR\textraArgs\022J" +
-      "\n\014traffic_type\030\021 \001(\0162\'.pipelines.runtime" +
-      ".v1alpha1.TrafficTypeR\013trafficType\022)\n\020re" +
-      "sponse_message\030\022 \001(\tR\017responseMessage\022)\n" +
-      "\020environment_name\030\023 \001(\tR\017environmentName" +
-      "\022:\n\031environment_internal_name\030\024 \001(\tR\027env" +
-      "ironmentInternalName\022)\n\020application_name" +
-      "\030\025 \001(\tR\017applicationName\022!\n\014storage_used\030" +
-      "\026 \001(\rR\013storageUsed\022#\n\rstorage_limit\030\027 \001(" +
-      "\rR\014storageLimit\022%\n\016integration_id\030\030 \001(\tR" +
-      "\rintegrationId\032>\n\020IntegrationEntry\022\020\n\003ke" +
-      "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G" +
-      "\n\031EnvironmentVariablesEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rComma" +
-      "ndsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
-      "\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(" +
-      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016Extr" +
-      "aArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 " +
-      "\001(\tR\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001" +
-      " \003(\0132#.pipelines.runtime.v1alpha1.Runtim" +
-      "eR\005items\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id" +
-      "\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017resources_rules\030" +
-      "\003 \003(\0132*.pipelines.runtime.v1alpha1.Resou" +
-      "rcesRulesR\016resourcesRules\"\210\001\n\016ResourcesR" +
-      "ules\0227\n\005limit\030\001 \003(\0132!.pipelines.runtime." +
-      "v1alpha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#" +
-      ".pipelines.runtime.v1alpha1.RequestR\007req" +
-      "uest\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002" +
-      " \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020" +
-      "\n\003ram\030\002 \001(\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFF" +
-      "IC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EX" +
-      "TERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$" +
-      "io.cuemby.pipelines.runtime.v1alpha1B\014Ru" +
-      "ntimeProtoP\001Z5github.com/cuemby/ccp-runt" +
-      "ime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipe" +
-      "lines.Runtime.V1Alpha1\312\002\032Pipelines\\Runti" +
-      "me\\V1Alpha1b\006proto3"
+      "\035\n\nproject_id\030\005 \001(\rR\tprojectId\022!\n\014name_p" +
+      "roject\030\006 \001(\tR\013nameProject\022%\n\016application" +
+      "_id\030\007 \001(\tR\rapplicationId\022!\n\014workspace_id" +
+      "\030\010 \001(\tR\013workspaceId\022%\n\016environment_id\030\t " +
+      "\001(\tR\renvironmentId\022\026\n\006scaler\030\n \001(\tR\006scal" +
+      "er\022\035\n\npod_status\030\013 \001(\tR\tpodStatus\022$\n\016pod" +
+      "_status_msg\030\014 \001(\tR\014podStatusMsg\022V\n\013integ" +
+      "ration\030\r \003(\01324.pipelines.runtime.v1alpha" +
+      "1.Runtime.IntegrationEntryR\013integration\022" +
+      "r\n\025environment_variables\030\016 \003(\0132=.pipelin" +
+      "es.runtime.v1alpha1.Runtime.EnvironmentV" +
+      "ariablesEntryR\024environmentVariables\022M\n\010c" +
+      "ommands\030\017 \003(\01321.pipelines.runtime.v1alph" +
+      "a1.Runtime.CommandsEntryR\010commands\022J\n\007se" +
+      "crets\030\020 \003(\01320.pipelines.runtime.v1alpha1" +
+      ".Runtime.SecretsEntryR\007secrets\022Q\n\nextra_" +
+      "args\030\021 \003(\01322.pipelines.runtime.v1alpha1." +
+      "Runtime.ExtraArgsEntryR\textraArgs\022J\n\014tra" +
+      "ffic_type\030\022 \001(\0162\'.pipelines.runtime.v1al" +
+      "pha1.TrafficTypeR\013trafficType\022)\n\020respons" +
+      "e_message\030\023 \001(\tR\017responseMessage\022)\n\020envi" +
+      "ronment_name\030\024 \001(\tR\017environmentName\022:\n\031e" +
+      "nvironment_internal_name\030\025 \001(\tR\027environm" +
+      "entInternalName\022)\n\020application_name\030\026 \001(" +
+      "\tR\017applicationName\022!\n\014storage_used\030\027 \001(\r" +
+      "R\013storageUsed\022#\n\rstorage_limit\030\030 \001(\rR\014st" +
+      "orageLimit\022%\n\016integration_id\030\031 \001(\tR\rinte" +
+      "grationId\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031Env" +
+      "ironmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003key" +
+      "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
+      "lue:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgs" +
+      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005" +
+      "value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(\0132" +
+      "#.pipelines.runtime.v1alpha1.RuntimeR\005it" +
+      "ems\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n" +
+      "ame\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003(\013" +
+      "2*.pipelines.runtime.v1alpha1.ResourcesR" +
+      "ulesR\016resourcesRules\"\210\001\n\016ResourcesRules\022" +
+      "7\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1alp" +
+      "ha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pipe" +
+      "lines.runtime.v1alpha1.RequestR\007request\"" +
+      "+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR" +
+      "\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram" +
+      "\030\002 \001(\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFFIC_TY" +
+      "PE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNA" +
+      "L\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cu" +
+      "emby.pipelines.runtime.v1alpha1B\014Runtime" +
+      "ProtoP\001Z5github.com/cuemby/ccp-runtime-s" +
+      "ervice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines" +
+      ".Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1" +
+      "Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -147,7 +148,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "InstanceTypes", "OrganizationId", "ProjectId", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "PodStatusMsg", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", "ResponseMessage", "EnvironmentName", "EnvironmentInternalName", "ApplicationName", "StorageUsed", "StorageLimit", "IntegrationId", });
+        new java.lang.String[] { "Id", "Name", "InstanceTypes", "OrganizationId", "ProjectId", "NameProject", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "PodStatusMsg", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", "ResponseMessage", "EnvironmentName", "EnvironmentInternalName", "ApplicationName", "StorageUsed", "StorageLimit", "IntegrationId", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new
