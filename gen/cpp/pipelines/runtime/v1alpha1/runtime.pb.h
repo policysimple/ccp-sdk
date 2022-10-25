@@ -393,29 +393,30 @@ class Runtime final :
 
   enum : int {
     kInstanceTypesFieldNumber = 3,
-    kIntegrationFieldNumber = 12,
-    kEnvironmentVariablesFieldNumber = 13,
-    kCommandsFieldNumber = 14,
-    kSecretsFieldNumber = 15,
-    kExtraArgsFieldNumber = 16,
+    kIntegrationFieldNumber = 13,
+    kEnvironmentVariablesFieldNumber = 14,
+    kCommandsFieldNumber = 15,
+    kSecretsFieldNumber = 16,
+    kExtraArgsFieldNumber = 17,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
-    kApplicationIdFieldNumber = 6,
-    kWorkspaceIdFieldNumber = 7,
-    kEnvironmentIdFieldNumber = 8,
-    kScalerFieldNumber = 9,
-    kPodStatusFieldNumber = 10,
-    kPodStatusMsgFieldNumber = 11,
-    kResponseMessageFieldNumber = 18,
-    kEnvironmentNameFieldNumber = 19,
-    kEnvironmentInternalNameFieldNumber = 20,
-    kApplicationNameFieldNumber = 21,
-    kIntegrationIdFieldNumber = 24,
+    kNameProjectFieldNumber = 6,
+    kApplicationIdFieldNumber = 7,
+    kWorkspaceIdFieldNumber = 8,
+    kEnvironmentIdFieldNumber = 9,
+    kScalerFieldNumber = 10,
+    kPodStatusFieldNumber = 11,
+    kPodStatusMsgFieldNumber = 12,
+    kResponseMessageFieldNumber = 19,
+    kEnvironmentNameFieldNumber = 20,
+    kEnvironmentInternalNameFieldNumber = 21,
+    kApplicationNameFieldNumber = 22,
+    kIntegrationIdFieldNumber = 25,
     kOrganizationIdFieldNumber = 4,
     kProjectIdFieldNumber = 5,
-    kTrafficTypeFieldNumber = 17,
-    kStorageUsedFieldNumber = 22,
-    kStorageLimitFieldNumber = 23,
+    kTrafficTypeFieldNumber = 18,
+    kStorageUsedFieldNumber = 23,
+    kStorageLimitFieldNumber = 24,
   };
   // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 3 [json_name = "instanceTypes"];
   int instance_types_size() const;
@@ -435,7 +436,7 @@ class Runtime final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::runtime::v1alpha1::IntanceType >&
       instance_types() const;
 
-  // map<string, string> integration = 12 [json_name = "integration"];
+  // map<string, string> integration = 13 [json_name = "integration"];
   int integration_size() const;
   private:
   int _internal_integration_size() const;
@@ -452,7 +453,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_integration();
 
-  // map<string, string> environment_variables = 13 [json_name = "environmentVariables"];
+  // map<string, string> environment_variables = 14 [json_name = "environmentVariables"];
   int environment_variables_size() const;
   private:
   int _internal_environment_variables_size() const;
@@ -469,7 +470,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_environment_variables();
 
-  // map<string, string> commands = 14 [json_name = "commands"];
+  // map<string, string> commands = 15 [json_name = "commands"];
   int commands_size() const;
   private:
   int _internal_commands_size() const;
@@ -486,7 +487,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_commands();
 
-  // map<string, string> secrets = 15 [json_name = "secrets"];
+  // map<string, string> secrets = 16 [json_name = "secrets"];
   int secrets_size() const;
   private:
   int _internal_secrets_size() const;
@@ -503,7 +504,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_secrets();
 
-  // map<string, string> extra_args = 16 [json_name = "extraArgs"];
+  // map<string, string> extra_args = 17 [json_name = "extraArgs"];
   int extra_args_size() const;
   private:
   int _internal_extra_args_size() const;
@@ -548,7 +549,21 @@ class Runtime final :
   std::string* _internal_mutable_name();
   public:
 
-  // string application_id = 6 [json_name = "applicationId"];
+  // string name_project = 6 [json_name = "nameProject"];
+  void clear_name_project();
+  const std::string& name_project() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name_project(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name_project();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name_project();
+  void set_allocated_name_project(std::string* name_project);
+  private:
+  const std::string& _internal_name_project() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_project(const std::string& value);
+  std::string* _internal_mutable_name_project();
+  public:
+
+  // string application_id = 7 [json_name = "applicationId"];
   void clear_application_id();
   const std::string& application_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -562,7 +577,7 @@ class Runtime final :
   std::string* _internal_mutable_application_id();
   public:
 
-  // string workspace_id = 7 [json_name = "workspaceId"];
+  // string workspace_id = 8 [json_name = "workspaceId"];
   void clear_workspace_id();
   const std::string& workspace_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -576,7 +591,7 @@ class Runtime final :
   std::string* _internal_mutable_workspace_id();
   public:
 
-  // string environment_id = 8 [json_name = "environmentId"];
+  // string environment_id = 9 [json_name = "environmentId"];
   void clear_environment_id();
   const std::string& environment_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -590,7 +605,7 @@ class Runtime final :
   std::string* _internal_mutable_environment_id();
   public:
 
-  // string scaler = 9 [json_name = "scaler"];
+  // string scaler = 10 [json_name = "scaler"];
   void clear_scaler();
   const std::string& scaler() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -604,7 +619,7 @@ class Runtime final :
   std::string* _internal_mutable_scaler();
   public:
 
-  // string pod_status = 10 [json_name = "podStatus"];
+  // string pod_status = 11 [json_name = "podStatus"];
   void clear_pod_status();
   const std::string& pod_status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -618,7 +633,7 @@ class Runtime final :
   std::string* _internal_mutable_pod_status();
   public:
 
-  // string pod_status_msg = 11 [json_name = "podStatusMsg"];
+  // string pod_status_msg = 12 [json_name = "podStatusMsg"];
   void clear_pod_status_msg();
   const std::string& pod_status_msg() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -632,7 +647,7 @@ class Runtime final :
   std::string* _internal_mutable_pod_status_msg();
   public:
 
-  // string response_message = 18 [json_name = "responseMessage"];
+  // string response_message = 19 [json_name = "responseMessage"];
   void clear_response_message();
   const std::string& response_message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -646,7 +661,7 @@ class Runtime final :
   std::string* _internal_mutable_response_message();
   public:
 
-  // string environment_name = 19 [json_name = "environmentName"];
+  // string environment_name = 20 [json_name = "environmentName"];
   void clear_environment_name();
   const std::string& environment_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -660,7 +675,7 @@ class Runtime final :
   std::string* _internal_mutable_environment_name();
   public:
 
-  // string environment_internal_name = 20 [json_name = "environmentInternalName"];
+  // string environment_internal_name = 21 [json_name = "environmentInternalName"];
   void clear_environment_internal_name();
   const std::string& environment_internal_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -674,7 +689,7 @@ class Runtime final :
   std::string* _internal_mutable_environment_internal_name();
   public:
 
-  // string application_name = 21 [json_name = "applicationName"];
+  // string application_name = 22 [json_name = "applicationName"];
   void clear_application_name();
   const std::string& application_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -688,7 +703,7 @@ class Runtime final :
   std::string* _internal_mutable_application_name();
   public:
 
-  // string integration_id = 24 [json_name = "integrationId"];
+  // string integration_id = 25 [json_name = "integrationId"];
   void clear_integration_id();
   const std::string& integration_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -720,7 +735,7 @@ class Runtime final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];
+  // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
   void clear_traffic_type();
   ::pipelines::runtime::v1alpha1::TrafficType traffic_type() const;
   void set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
@@ -729,7 +744,7 @@ class Runtime final :
   void _internal_set_traffic_type(::pipelines::runtime::v1alpha1::TrafficType value);
   public:
 
-  // uint32 storage_used = 22 [json_name = "storageUsed"];
+  // uint32 storage_used = 23 [json_name = "storageUsed"];
   void clear_storage_used();
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used() const;
   void set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -738,7 +753,7 @@ class Runtime final :
   void _internal_set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 storage_limit = 23 [json_name = "storageLimit"];
+  // uint32 storage_limit = 24 [json_name = "storageLimit"];
   void clear_storage_limit();
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit() const;
   void set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -782,6 +797,7 @@ class Runtime final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_project_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workspace_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
@@ -1810,7 +1826,53 @@ inline void Runtime::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.project_id)
 }
 
-// string application_id = 6 [json_name = "applicationId"];
+// string name_project = 6 [json_name = "nameProject"];
+inline void Runtime::clear_name_project() {
+  name_project_.ClearToEmpty();
+}
+inline const std::string& Runtime::name_project() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.name_project)
+  return _internal_name_project();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_name_project(ArgT0&& arg0, ArgT... args) {
+ 
+ name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.name_project)
+}
+inline std::string* Runtime::mutable_name_project() {
+  std::string* _s = _internal_mutable_name_project();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.name_project)
+  return _s;
+}
+inline const std::string& Runtime::_internal_name_project() const {
+  return name_project_.Get();
+}
+inline void Runtime::_internal_set_name_project(const std::string& value) {
+  
+  name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_name_project() {
+  
+  return name_project_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_name_project() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.name_project)
+  return name_project_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_name_project(std::string* name_project) {
+  if (name_project != nullptr) {
+    
+  } else {
+    
+  }
+  name_project_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_project,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.name_project)
+}
+
+// string application_id = 7 [json_name = "applicationId"];
 inline void Runtime::clear_application_id() {
   application_id_.ClearToEmpty();
 }
@@ -1856,7 +1918,7 @@ inline void Runtime::set_allocated_application_id(std::string* application_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_id)
 }
 
-// string workspace_id = 7 [json_name = "workspaceId"];
+// string workspace_id = 8 [json_name = "workspaceId"];
 inline void Runtime::clear_workspace_id() {
   workspace_id_.ClearToEmpty();
 }
@@ -1902,7 +1964,7 @@ inline void Runtime::set_allocated_workspace_id(std::string* workspace_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.workspace_id)
 }
 
-// string environment_id = 8 [json_name = "environmentId"];
+// string environment_id = 9 [json_name = "environmentId"];
 inline void Runtime::clear_environment_id() {
   environment_id_.ClearToEmpty();
 }
@@ -1948,7 +2010,7 @@ inline void Runtime::set_allocated_environment_id(std::string* environment_id) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_id)
 }
 
-// string scaler = 9 [json_name = "scaler"];
+// string scaler = 10 [json_name = "scaler"];
 inline void Runtime::clear_scaler() {
   scaler_.ClearToEmpty();
 }
@@ -1994,7 +2056,7 @@ inline void Runtime::set_allocated_scaler(std::string* scaler) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.scaler)
 }
 
-// string pod_status = 10 [json_name = "podStatus"];
+// string pod_status = 11 [json_name = "podStatus"];
 inline void Runtime::clear_pod_status() {
   pod_status_.ClearToEmpty();
 }
@@ -2040,7 +2102,7 @@ inline void Runtime::set_allocated_pod_status(std::string* pod_status) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pod_status)
 }
 
-// string pod_status_msg = 11 [json_name = "podStatusMsg"];
+// string pod_status_msg = 12 [json_name = "podStatusMsg"];
 inline void Runtime::clear_pod_status_msg() {
   pod_status_msg_.ClearToEmpty();
 }
@@ -2086,7 +2148,7 @@ inline void Runtime::set_allocated_pod_status_msg(std::string* pod_status_msg) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pod_status_msg)
 }
 
-// map<string, string> integration = 12 [json_name = "integration"];
+// map<string, string> integration = 13 [json_name = "integration"];
 inline int Runtime::_internal_integration_size() const {
   return integration_.size();
 }
@@ -2115,7 +2177,7 @@ Runtime::mutable_integration() {
   return _internal_mutable_integration();
 }
 
-// map<string, string> environment_variables = 13 [json_name = "environmentVariables"];
+// map<string, string> environment_variables = 14 [json_name = "environmentVariables"];
 inline int Runtime::_internal_environment_variables_size() const {
   return environment_variables_.size();
 }
@@ -2144,7 +2206,7 @@ Runtime::mutable_environment_variables() {
   return _internal_mutable_environment_variables();
 }
 
-// map<string, string> commands = 14 [json_name = "commands"];
+// map<string, string> commands = 15 [json_name = "commands"];
 inline int Runtime::_internal_commands_size() const {
   return commands_.size();
 }
@@ -2173,7 +2235,7 @@ Runtime::mutable_commands() {
   return _internal_mutable_commands();
 }
 
-// map<string, string> secrets = 15 [json_name = "secrets"];
+// map<string, string> secrets = 16 [json_name = "secrets"];
 inline int Runtime::_internal_secrets_size() const {
   return secrets_.size();
 }
@@ -2202,7 +2264,7 @@ Runtime::mutable_secrets() {
   return _internal_mutable_secrets();
 }
 
-// map<string, string> extra_args = 16 [json_name = "extraArgs"];
+// map<string, string> extra_args = 17 [json_name = "extraArgs"];
 inline int Runtime::_internal_extra_args_size() const {
   return extra_args_.size();
 }
@@ -2231,7 +2293,7 @@ Runtime::mutable_extra_args() {
   return _internal_mutable_extra_args();
 }
 
-// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 17 [json_name = "trafficType"];
+// .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
 inline void Runtime::clear_traffic_type() {
   traffic_type_ = 0;
 }
@@ -2251,7 +2313,7 @@ inline void Runtime::set_traffic_type(::pipelines::runtime::v1alpha1::TrafficTyp
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.traffic_type)
 }
 
-// string response_message = 18 [json_name = "responseMessage"];
+// string response_message = 19 [json_name = "responseMessage"];
 inline void Runtime::clear_response_message() {
   response_message_.ClearToEmpty();
 }
@@ -2297,7 +2359,7 @@ inline void Runtime::set_allocated_response_message(std::string* response_messag
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.response_message)
 }
 
-// string environment_name = 19 [json_name = "environmentName"];
+// string environment_name = 20 [json_name = "environmentName"];
 inline void Runtime::clear_environment_name() {
   environment_name_.ClearToEmpty();
 }
@@ -2343,7 +2405,7 @@ inline void Runtime::set_allocated_environment_name(std::string* environment_nam
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_name)
 }
 
-// string environment_internal_name = 20 [json_name = "environmentInternalName"];
+// string environment_internal_name = 21 [json_name = "environmentInternalName"];
 inline void Runtime::clear_environment_internal_name() {
   environment_internal_name_.ClearToEmpty();
 }
@@ -2389,7 +2451,7 @@ inline void Runtime::set_allocated_environment_internal_name(std::string* enviro
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.environment_internal_name)
 }
 
-// string application_name = 21 [json_name = "applicationName"];
+// string application_name = 22 [json_name = "applicationName"];
 inline void Runtime::clear_application_name() {
   application_name_.ClearToEmpty();
 }
@@ -2435,7 +2497,7 @@ inline void Runtime::set_allocated_application_name(std::string* application_nam
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_name)
 }
 
-// uint32 storage_used = 22 [json_name = "storageUsed"];
+// uint32 storage_used = 23 [json_name = "storageUsed"];
 inline void Runtime::clear_storage_used() {
   storage_used_ = 0u;
 }
@@ -2455,7 +2517,7 @@ inline void Runtime::set_storage_used(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.storage_used)
 }
 
-// uint32 storage_limit = 23 [json_name = "storageLimit"];
+// uint32 storage_limit = 24 [json_name = "storageLimit"];
 inline void Runtime::clear_storage_limit() {
   storage_limit_ = 0u;
 }
@@ -2475,7 +2537,7 @@ inline void Runtime::set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.storage_limit)
 }
 
-// string integration_id = 24 [json_name = "integrationId"];
+// string integration_id = 25 [json_name = "integrationId"];
 inline void Runtime::clear_integration_id() {
   integration_id_.ClearToEmpty();
 }
