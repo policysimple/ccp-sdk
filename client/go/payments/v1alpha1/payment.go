@@ -216,8 +216,9 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-
+fmt.Println("CreatePayment---", in)
 	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
+		OrganizationId: in.OrganizationId,
 		CustomerId: in.CustomerId,
 		Payment:    in.Payment,
 	})
@@ -324,7 +325,7 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 		log.Printf("%s: %v", "Error delete payment", err)
 		if err != nil {
 			log.Printf("%s: %v", "Error delete payment", err)
-			return nil, fmt.Errorf("%s: %w", messageLastPayment, err)
+			return nil, fmt.Errorf("%s ", messageLastPayment)
 		}
 	}
 	return response, nil
