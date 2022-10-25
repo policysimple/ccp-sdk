@@ -6,7 +6,6 @@ import "accounts/v1alpha1/roles/roles.proto";
 package accounts.v1alpha1.roles.v1;
 
 service RoleService {
-    //CRUD Project
     rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse);
     rpc ListRoles(ListRolesRequest) returns (ListRolesResponse);
     rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse);

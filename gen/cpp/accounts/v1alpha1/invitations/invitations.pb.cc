@@ -174,7 +174,8 @@ struct ListInvitationSendResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListInvitationSendResponseDefaultTypeInternal _ListInvitationSendResponse_default_instance_;
 constexpr DeleteInvitationRequest::DeleteInvitationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : invitation_id_(0u)
+  : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , invitation_id_(0u)
   , organization_id_(0u){}
 struct DeleteInvitationRequestDefaultTypeInternal {
   constexpr DeleteInvitationRequestDefaultTypeInternal()
@@ -305,8 +306,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2finvitati
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest, organization_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest, invitation_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest, user_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -327,7 +329,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 78, -1, sizeof(::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest)},
   { 87, -1, sizeof(::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse)},
   { 93, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest)},
-  { 100, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse)},
+  { 101, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -397,23 +399,23 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2finvitations_2finvitat
   "mail\"\202\001\n\032ListInvitationSendResponse\022d\n\017i"
   "nvitation_user\030\001 \003(\0132;.accounts.v1alpha1"
   ".invitations.v1.GetInvitationUserRespons"
-  "eR\016invitationUser\"g\n\027DeleteInvitationReq"
-  "uest\022\'\n\017organization_id\030\002 \001(\rR\016organizat"
-  "ionId\022#\n\rinvitation_id\030\001 \001(\rR\014invitation"
-  "Id\"B\n\030DeleteInvitationResponse\022\020\n\003msg\030\001 "
-  "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error*d\n\022Invita"
-  "tionResponse\022,\n(INVITATION_RESPONSE_ACCE"
-  "PTED_UNSPECIFIED\020\000\022 \n\034INVITATION_RESPONS"
-  "E_REJECTED\020\001B@Z>github.com/cuemby/ccp-sd"
-  "k/gen/go/accounts/v1alpha1/invitationsb\006"
-  "proto3"
+  "eR\016invitationUser\"\200\001\n\027DeleteInvitationRe"
+  "quest\022#\n\rinvitation_id\030\001 \001(\rR\014invitation"
+  "Id\022\'\n\017organization_id\030\002 \001(\rR\016organizatio"
+  "nId\022\027\n\007user_id\030\003 \001(\tR\006userId\"B\n\030DeleteIn"
+  "vitationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er"
+  "ror\030\002 \001(\tR\005error*d\n\022InvitationResponse\022,"
+  "\n(INVITATION_RESPONSE_ACCEPTED_UNSPECIFI"
+  "ED\020\000\022 \n\034INVITATION_RESPONSE_REJECTED\020\001B@"
+  "Z>github.com/cuemby/ccp-sdk/gen/go/accou"
+  "nts/v1alpha1/invitationsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto = {
-  false, false, 2406, descriptor_table_protodef_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, "accounts/v1alpha1/invitations/invitations.proto", 
+  false, false, 2432, descriptor_table_protodef_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, "accounts/v1alpha1/invitations/invitations.proto", 
   &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once, descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_deps, 1, 12,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto,
@@ -3410,6 +3412,11 @@ DeleteInvitationRequest::DeleteInvitationRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 DeleteInvitationRequest::DeleteInvitationRequest(const DeleteInvitationRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&invitation_id_, &from.invitation_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
     reinterpret_cast<char*>(&invitation_id_)) + sizeof(organization_id_));
@@ -3417,6 +3424,7 @@ DeleteInvitationRequest::DeleteInvitationRequest(const DeleteInvitationRequest& 
 }
 
 inline void DeleteInvitationRequest::SharedCtor() {
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&invitation_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
@@ -3432,6 +3440,7 @@ DeleteInvitationRequest::~DeleteInvitationRequest() {
 
 inline void DeleteInvitationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteInvitationRequest::ArenaDtor(void* object) {
@@ -3450,6 +3459,7 @@ void DeleteInvitationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  user_id_.ClearToEmpty();
   ::memset(&invitation_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&organization_id_) -
       reinterpret_cast<char*>(&invitation_id_)) + sizeof(organization_id_));
@@ -3473,6 +3483,15 @@ const char* DeleteInvitationRequest::_InternalParse(const char* ptr, ::PROTOBUF_
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 3 [json_name = "userId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3517,6 +3536,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_organization_id(), target);
   }
 
+  // string user_id = 3 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_user_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3532,6 +3561,13 @@ size_t DeleteInvitationRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string user_id = 3 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
 
   // uint32 invitation_id = 1 [json_name = "invitationId"];
   if (this->_internal_invitation_id() != 0) {
@@ -3575,6 +3611,9 @@ void DeleteInvitationRequest::MergeFrom(const DeleteInvitationRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   if (from._internal_invitation_id() != 0) {
     _internal_set_invitation_id(from._internal_invitation_id());
   }
@@ -3598,6 +3637,11 @@ bool DeleteInvitationRequest::IsInitialized() const {
 void DeleteInvitationRequest::InternalSwap(DeleteInvitationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DeleteInvitationRequest, organization_id_)
       + sizeof(DeleteInvitationRequest::organization_id_)

@@ -999,7 +999,8 @@ proto.accounts.v1alpha1.projects.v1.ListProjectRequest.prototype.toObject = func
  */
 proto.accounts.v1alpha1.projects.v1.ListProjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1040,6 +1041,10 @@ proto.accounts.v1alpha1.projects.v1.ListProjectRequest.deserializeBinaryFromRead
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1076,6 +1081,13 @@ proto.accounts.v1alpha1.projects.v1.ListProjectRequest.serializeBinaryToWriter =
       f
     );
   }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1094,6 +1106,24 @@ proto.accounts.v1alpha1.projects.v1.ListProjectRequest.prototype.getOrganization
  */
 proto.accounts.v1alpha1.projects.v1.ListProjectRequest.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.projects.v1.ListProjectRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.ListProjectRequest} returns this
+ */
+proto.accounts.v1alpha1.projects.v1.ListProjectRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

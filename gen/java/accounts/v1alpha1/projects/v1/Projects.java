@@ -2095,6 +2095,18 @@ public final class Projects {
      * @return The organizationId.
      */
     int getOrganizationId();
+
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.projects.v1.ListProjectRequest}
@@ -2109,6 +2121,7 @@ public final class Projects {
       super(builder);
     }
     private ListProjectRequest() {
+      userId_ = "";
     }
 
     @java.lang.Override
@@ -2144,6 +2157,12 @@ public final class Projects {
             case 8: {
 
               organizationId_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
               break;
             }
             default: {
@@ -2189,6 +2208,44 @@ public final class Projects {
       return organizationId_;
     }
 
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2206,6 +2263,9 @@ public final class Projects {
       if (organizationId_ != 0) {
         output.writeUInt32(1, organizationId_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2218,6 +2278,9 @@ public final class Projects {
       if (organizationId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, organizationId_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2236,6 +2299,8 @@ public final class Projects {
 
       if (getOrganizationId()
           != other.getOrganizationId()) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2249,6 +2314,8 @@ public final class Projects {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2384,6 +2451,8 @@ public final class Projects {
         super.clear();
         organizationId_ = 0;
 
+        userId_ = "";
+
         return this;
       }
 
@@ -2411,6 +2480,7 @@ public final class Projects {
       public accounts.v1alpha1.projects.v1.Projects.ListProjectRequest buildPartial() {
         accounts.v1alpha1.projects.v1.Projects.ListProjectRequest result = new accounts.v1alpha1.projects.v1.Projects.ListProjectRequest(this);
         result.organizationId_ = organizationId_;
+        result.userId_ = userId_;
         onBuilt();
         return result;
       }
@@ -2461,6 +2531,10 @@ public final class Projects {
         if (other == accounts.v1alpha1.projects.v1.Projects.ListProjectRequest.getDefaultInstance()) return this;
         if (other.getOrganizationId() != 0) {
           setOrganizationId(other.getOrganizationId());
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2518,6 +2592,82 @@ public final class Projects {
       public Builder clearOrganizationId() {
         
         organizationId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -17178,61 +17328,62 @@ public final class Projects {
       "(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016orga" +
       "nizationId\022\027\n\007user_id\030\005 \001(\tR\006userId\"&\n\024G" +
       "etOneProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024D" +
-      "eleteProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"=\n\022L" +
+      "eleteProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"V\n\022L" +
       "istProjectRequest\022\'\n\017organization_id\030\001 \001" +
-      "(\rR\016organizationId\"u\n\024UpdateProjectReque" +
-      "st\022\016\n\002id\030\001 \001(\005R\002id\022M\n\007project\030\002 \001(\01323.ac" +
-      "counts.v1alpha1.projects.v1.CreateProjec" +
-      "tRequestR\007project\"J\n\tMemberRol\022\016\n\002id\030\001 \001" +
-      "(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\031\n\010is_admin\030\003" +
-      " \001(\010R\007isAdmin\"7\n\013ProjectList\022\022\n\004name\030\001 \001" +
-      "(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"\234\002\n\rMembe" +
-      "rProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(" +
-      "\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName" +
-      "\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\033\n\tis_acti" +
-      "ve\030\005 \001(\010R\010isActive\022\024\n\005image\030\006 \001(\tR\005image" +
-      "\022+\n\004role\030\007 \001(\0132\027.accounts.v1alpha1.RoleR" +
-      "\004role\022F\n\010projects\030\010 \003(\0132*.accounts.v1alp" +
-      "ha1.projects.v1.ProjectListR\010projects\"O\n" +
-      "\025CreateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg" +
-      "\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\rR\002id\"?" +
-      "\n\025UpdateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
-      "g\022\024\n\005error\030\002 \001(\tR\005error\"?\n\025DeleteProject" +
+      "(\rR\016organizationId\022\027\n\007user_id\030\002 \001(\tR\006use" +
+      "rId\"u\n\024UpdateProjectRequest\022\016\n\002id\030\001 \001(\005R" +
+      "\002id\022M\n\007project\030\002 \001(\01323.accounts.v1alpha1" +
+      ".projects.v1.CreateProjectRequestR\007proje" +
+      "ct\"J\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030" +
+      "\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\"7" +
+      "\n\013ProjectList\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005ima" +
+      "ge\030\002 \001(\tR\005image\"\234\002\n\rMemberProject\022\016\n\002id\030" +
+      "\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfi" +
+      "rst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004" +
+      " \001(\tR\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isAct" +
+      "ive\022\024\n\005image\030\006 \001(\tR\005image\022+\n\004role\030\007 \001(\0132" +
+      "\027.accounts.v1alpha1.RoleR\004role\022F\n\010projec" +
+      "ts\030\010 \003(\0132*.accounts.v1alpha1.projects.v1" +
+      ".ProjectListR\010projects\"O\n\025CreateProjectR" +
+      "esponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\t" +
+      "R\005error\022\016\n\002id\030\003 \001(\rR\002id\"?\n\025UpdateProject" +
       "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error\"\341\002\n\025GetOneProjectResponse\022\016\n\002id" +
-      "\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030" +
-      "\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016o" +
-      "rganizationId\022 \n\013description\030\005 \001(\tR\013desc" +
-      "ription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035" +
-      "\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022F\n\007members" +
-      "\030\010 \003(\0132,.accounts.v1alpha1.projects.v1.M" +
-      "emberProjectR\007members\022=\n\005owner\030\t \001(\0132\'.a" +
-      "ccounts.v1alpha1.projects.v1.UserListR\005o" +
-      "wner\"c\n\023ListProjectResponse\0226\n\010projects\030" +
-      "\001 \003(\0132\032.accounts.v1alpha1.ProjectR\010proje" +
-      "cts\022\024\n\005error\030\002 \001(\tR\005error\"L\n\034ListProject" +
-      "PaginationRequest\022\026\n\006offset\030\001 \001(\005R\006offse" +
-      "t\022\024\n\005limit\030\002 \001(\005R\005limit\"\234\001\n\035ListProjectP" +
-      "aginationResponse\0226\n\010projects\030\001 \003(\0132\032.ac" +
-      "counts.v1alpha1.ProjectR\010projects\022\024\n\005cou" +
-      "nt\030\002 \001(\005R\005count\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010m" +
-      "ax_page\030\004 \001(\005R\007maxPage\"\334\001\n\010UserList\022\016\n\002i" +
-      "d\030\001 \001(\rR\002id\022\035\n\nfirst_name\030\002 \001(\tR\tfirstNa" +
-      "me\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\024\n\005email" +
-      "\030\004 \001(\tR\005email\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033" +
-      "\n\tis_active\030\006 \001(\010R\010isActive\022\"\n\ris_super_" +
-      "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005" +
-      "image\"T\n\032DeleteUserByProjectRequest\022\027\n\007u" +
-      "ser_id\030\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\r" +
-      "R\tprojectId\"E\n\033DeleteUserByProjectRespon" +
-      "se\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005err" +
-      "or\"o\n\034EditRoleUserByProjectRequest\022\027\n\007us" +
-      "er_id\030\001 \001(\rR\006userId\022\035\n\nproject_id\030\002 \001(\rR" +
-      "\tprojectId\022\027\n\007role_id\030\003 \001(\rR\006roleId\"G\n\035E" +
-      "ditRoleUserByProjectResponse\022\020\n\003msg\030\001 \001(" +
-      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005errorB=Z;github.c" +
-      "om/cuemby/ccp-sdk/gen/go/accounts/v1alph" +
-      "a1/projectsb\006proto3"
+      "\tR\005error\"?\n\025DeleteProjectResponse\022\020\n\003msg" +
+      "\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\341\002\n\025Ge" +
+      "tOneProjectResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004n" +
+      "ame\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n" +
+      "\017organization_id\030\004 \001(\rR\016organizationId\022 " +
+      "\n\013description\030\005 \001(\tR\013description\022\035\n\ncrea" +
+      "ted_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 " +
+      "\001(\tR\tupdatedAt\022F\n\007members\030\010 \003(\0132,.accoun" +
+      "ts.v1alpha1.projects.v1.MemberProjectR\007m" +
+      "embers\022=\n\005owner\030\t \001(\0132\'.accounts.v1alpha" +
+      "1.projects.v1.UserListR\005owner\"c\n\023ListPro" +
+      "jectResponse\0226\n\010projects\030\001 \003(\0132\032.account" +
+      "s.v1alpha1.ProjectR\010projects\022\024\n\005error\030\002 " +
+      "\001(\tR\005error\"L\n\034ListProjectPaginationReque" +
+      "st\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(" +
+      "\005R\005limit\"\234\001\n\035ListProjectPaginationRespon" +
+      "se\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alpha1" +
+      ".ProjectR\010projects\022\024\n\005count\030\002 \001(\005R\005count" +
+      "\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010max_page\030\004 \001(\005R\007" +
+      "maxPage\"\334\001\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\n" +
+      "first_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_name" +
+      "\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001(\tR\005email\022\027" +
+      "\n\007user_id\030\005 \001(\tR\006userId\022\033\n\tis_active\030\006 \001" +
+      "(\010R\010isActive\022\"\n\ris_super_user\030\007 \001(\010R\013isS" +
+      "uperUser\022\024\n\005image\030\010 \001(\tR\005image\"T\n\032Delete" +
+      "UserByProjectRequest\022\027\n\007user_id\030\001 \001(\rR\006u" +
+      "serId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\"E\n\033" +
+      "DeleteUserByProjectResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"o\n\034EditRoleU" +
+      "serByProjectRequest\022\027\n\007user_id\030\001 \001(\rR\006us" +
+      "erId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\027\n\007r" +
+      "ole_id\030\003 \001(\rR\006roleId\"G\n\035EditRoleUserByPr" +
+      "ojectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005errorB=Z;github.com/cuemby/ccp-s" +
+      "dk/gen/go/accounts/v1alpha1/projectsb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17262,7 +17413,7 @@ public final class Projects {
     internal_static_accounts_v1alpha1_projects_v1_ListProjectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_projects_v1_ListProjectRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", });
+        new java.lang.String[] { "OrganizationId", "UserId", });
     internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRequest_fieldAccessorTable = new

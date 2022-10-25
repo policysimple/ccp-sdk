@@ -27,6 +27,7 @@ message DeleteProjectRequest {
 
 message ListProjectRequest{
     uint32 organization_id = 1;
+    string user_id = 2;
 }
 
 message UpdateProjectRequest {
