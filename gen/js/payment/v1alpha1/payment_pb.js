@@ -2019,7 +2019,8 @@ proto.payment.v1alpha1.Card.toObject = function(includeInstance, msg) {
     cardHolder: jspb.Message.getFieldWithDefault(msg, 3, ""),
     expmonth: jspb.Message.getFieldWithDefault(msg, 4, ""),
     expyear: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    cvc: jspb.Message.getFieldWithDefault(msg, 6, "")
+    cvc: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    brand: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2079,6 +2080,10 @@ proto.payment.v1alpha1.Card.deserializeBinaryFromReader = function(msg, reader) 
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setCvc(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBrand(value);
       break;
     default:
       reader.skipField();
@@ -2148,6 +2153,13 @@ proto.payment.v1alpha1.Card.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getBrand();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -2259,6 +2271,24 @@ proto.payment.v1alpha1.Card.prototype.getCvc = function() {
  */
 proto.payment.v1alpha1.Card.prototype.setCvc = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string brand = 7;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Card.prototype.getBrand = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Card} returns this
+ */
+proto.payment.v1alpha1.Card.prototype.setBrand = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

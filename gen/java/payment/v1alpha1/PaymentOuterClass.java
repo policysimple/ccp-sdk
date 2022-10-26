@@ -7255,6 +7255,18 @@ public final class PaymentOuterClass {
      */
     com.google.protobuf.ByteString
         getCvcBytes();
+
+    /**
+     * <code>string brand = 7 [json_name = "brand"];</code>
+     * @return The brand.
+     */
+    java.lang.String getBrand();
+    /**
+     * <code>string brand = 7 [json_name = "brand"];</code>
+     * @return The bytes for brand.
+     */
+    com.google.protobuf.ByteString
+        getBrandBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Card}
@@ -7275,6 +7287,7 @@ public final class PaymentOuterClass {
       expmonth_ = "";
       expyear_ = "";
       cvc_ = "";
+      brand_ = "";
     }
 
     @java.lang.Override
@@ -7341,6 +7354,12 @@ public final class PaymentOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               cvc_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              brand_ = s;
               break;
             }
             default: {
@@ -7603,6 +7622,44 @@ public final class PaymentOuterClass {
       }
     }
 
+    public static final int BRAND_FIELD_NUMBER = 7;
+    private volatile java.lang.Object brand_;
+    /**
+     * <code>string brand = 7 [json_name = "brand"];</code>
+     * @return The brand.
+     */
+    @java.lang.Override
+    public java.lang.String getBrand() {
+      java.lang.Object ref = brand_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        brand_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string brand = 7 [json_name = "brand"];</code>
+     * @return The bytes for brand.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBrandBytes() {
+      java.lang.Object ref = brand_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        brand_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7635,6 +7692,9 @@ public final class PaymentOuterClass {
       if (!getCvcBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cvc_);
       }
+      if (!getBrandBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, brand_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7661,6 +7721,9 @@ public final class PaymentOuterClass {
       }
       if (!getCvcBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cvc_);
+      }
+      if (!getBrandBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, brand_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7689,6 +7752,8 @@ public final class PaymentOuterClass {
           .equals(other.getExpyear())) return false;
       if (!getCvc()
           .equals(other.getCvc())) return false;
+      if (!getBrand()
+          .equals(other.getBrand())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7712,6 +7777,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getExpyear().hashCode();
       hash = (37 * hash) + CVC_FIELD_NUMBER;
       hash = (53 * hash) + getCvc().hashCode();
+      hash = (37 * hash) + BRAND_FIELD_NUMBER;
+      hash = (53 * hash) + getBrand().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7857,6 +7924,8 @@ public final class PaymentOuterClass {
 
         cvc_ = "";
 
+        brand_ = "";
+
         return this;
       }
 
@@ -7889,6 +7958,7 @@ public final class PaymentOuterClass {
         result.expmonth_ = expmonth_;
         result.expyear_ = expyear_;
         result.cvc_ = cvc_;
+        result.brand_ = brand_;
         onBuilt();
         return result;
       }
@@ -7959,6 +8029,10 @@ public final class PaymentOuterClass {
         }
         if (!other.getCvc().isEmpty()) {
           cvc_ = other.cvc_;
+          onChanged();
+        }
+        if (!other.getBrand().isEmpty()) {
+          brand_ = other.brand_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -8442,6 +8516,82 @@ public final class PaymentOuterClass {
   checkByteStringIsUtf8(value);
         
         cvc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object brand_ = "";
+      /**
+       * <code>string brand = 7 [json_name = "brand"];</code>
+       * @return The brand.
+       */
+      public java.lang.String getBrand() {
+        java.lang.Object ref = brand_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          brand_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string brand = 7 [json_name = "brand"];</code>
+       * @return The bytes for brand.
+       */
+      public com.google.protobuf.ByteString
+          getBrandBytes() {
+        java.lang.Object ref = brand_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          brand_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string brand = 7 [json_name = "brand"];</code>
+       * @param value The brand to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBrand(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        brand_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string brand = 7 [json_name = "brand"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBrand() {
+        
+        brand_ = getDefaultInstance().getBrand();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string brand = 7 [json_name = "brand"];</code>
+       * @param value The bytes for brand to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBrandBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        brand_ = value;
         onChanged();
         return this;
       }
@@ -19346,42 +19496,43 @@ public final class PaymentOuterClass {
       "\030\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001" +
       "(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntok" +
       "en_card\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132\026" +
-      ".payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016\n" +
+      ".payment.v1alpha1.CardR\004card\"\255\001\n\004Card\022\016\n" +
       "\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037\n" +
       "\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmon" +
       "th\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007exp" +
-      "year\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id" +
-      "\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006pe" +
-      "riod\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\ts" +
-      "tatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030" +
-      "\006 \001(\tR\007product\"\340\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014acco" +
-      "unt_name\030\003 \001(\tR\013accountName\022\036\n\ntotalusag" +
-      "e\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n" +
-      "\003ram\030\006 \001(\001R\003ram\022\032\n\010pipeline\030\007 \001(\001R\010pipel" +
-      "ine\022\024\n\005month\030\010 \001(\tR\005month\022\022\n\004year\030\t \001(\tR" +
-      "\004year\022\026\n\006amount\030\n \001(\003R\006amount\022\026\n\006period\030" +
-      "\013 \001(\tR\006period\022\034\n\tstatuspay\030\014 \001(\tR\tstatus" +
-      "pay\022\022\n\004date\030\r \001(\tR\004date\022\030\n\007product\030\016 \001(\t" +
-      "R\007product\"\217\001\n\021SubscriptionItems\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\0220\n\024subscription_item_id\030\002 \001(\tR\022s" +
-      "ubscriptionItemId\022\031\n\010price_id\030\003 \001(\tR\007pri" +
-      "ceId\022\035\n\nproduct_id\030\004 \001(\tR\tproductId\"R\n\025S" +
-      "ubscriptionItemsList\0229\n\005items\030\001 \003(\0132#.pa" +
-      "yment.v1alpha1.SubscriptionItemsR\005items\"" +
-      ">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031.payment." +
-      "v1alpha1.InvoiceR\005items\"@\n\014CustomerList\022" +
-      "0\n\005items\030\001 \003(\0132\032.payment.v1alpha1.Custom" +
-      "erR\005items\"<\n\nBilingList\022.\n\005items\030\001 \003(\0132\030" +
-      ".payment.v1alpha1.BilingR\005items\"H\n\020Subsc" +
-      "riptionList\0224\n\005items\030\001 \003(\0132\036.payment.v1a" +
-      "lpha1.SubscriptionR\005items\"8\n\010CardList\022,\n" +
-      "\005items\030\001 \003(\0132\026.payment.v1alpha1.CardR\005it" +
-      "ems\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.paym" +
-      "ent.v1alpha1.PaymentR\005items\">\n\013ProjectLi" +
-      "st\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Pro" +
-      "jectR\005itemsB8Z6github.com/cuemby/ccp-pay" +
-      "ment-service/payment/v1alpha1b\006proto3"
+      "year\022\020\n\003cvc\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001(\tR\005b" +
+      "rand\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amou" +
+      "nt\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006period" +
+      "\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n\004date\030\005" +
+      " \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007product\"\340\002\n" +
+      "\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_id\030\002 " +
+      "\001(\tR\tinvoiceId\022!\n\014account_name\030\003 \001(\tR\013ac" +
+      "countName\022\036\n\ntotalusage\030\004 \001(\003R\ntotalusag" +
+      "e\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ram\022\032\n" +
+      "\010pipeline\030\007 \001(\001R\010pipeline\022\024\n\005month\030\010 \001(\t" +
+      "R\005month\022\022\n\004year\030\t \001(\tR\004year\022\026\n\006amount\030\n " +
+      "\001(\003R\006amount\022\026\n\006period\030\013 \001(\tR\006period\022\034\n\ts" +
+      "tatuspay\030\014 \001(\tR\tstatuspay\022\022\n\004date\030\r \001(\tR" +
+      "\004date\022\030\n\007product\030\016 \001(\tR\007product\"\217\001\n\021Subs" +
+      "criptionItems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024subscri" +
+      "ption_item_id\030\002 \001(\tR\022subscriptionItemId\022" +
+      "\031\n\010price_id\030\003 \001(\tR\007priceId\022\035\n\nproduct_id" +
+      "\030\004 \001(\tR\tproductId\"R\n\025SubscriptionItemsLi" +
+      "st\0229\n\005items\030\001 \003(\0132#.payment.v1alpha1.Sub" +
+      "scriptionItemsR\005items\">\n\013InvoiceList\022/\n\005" +
+      "items\030\001 \003(\0132\031.payment.v1alpha1.InvoiceR\005" +
+      "items\"@\n\014CustomerList\0220\n\005items\030\001 \003(\0132\032.p" +
+      "ayment.v1alpha1.CustomerR\005items\"<\n\nBilin" +
+      "gList\022.\n\005items\030\001 \003(\0132\030.payment.v1alpha1." +
+      "BilingR\005items\"H\n\020SubscriptionList\0224\n\005ite" +
+      "ms\030\001 \003(\0132\036.payment.v1alpha1.Subscription" +
+      "R\005items\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026.pay" +
+      "ment.v1alpha1.CardR\005items\">\n\013PaymentList" +
+      "\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Payme" +
+      "ntR\005items\">\n\013ProjectList\022/\n\005items\030\001 \003(\0132" +
+      "\031.payment.v1alpha1.ProjectR\005itemsB8Z6git" +
+      "hub.com/cuemby/ccp-payment-service/payme" +
+      "nt/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19416,7 +19567,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Card_descriptor,
-        new java.lang.String[] { "Id", "Number", "CardHolder", "Expmonth", "Expyear", "Cvc", });
+        new java.lang.String[] { "Id", "Number", "CardHolder", "Expmonth", "Expyear", "Cvc", "Brand", });
     internal_static_payment_v1alpha1_Invoice_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_payment_v1alpha1_Invoice_fieldAccessorTable = new

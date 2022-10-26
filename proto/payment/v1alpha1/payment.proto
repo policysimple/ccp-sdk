@@ -58,7 +58,8 @@ message Card {
   string card_holder = 3;
   string expmonth = 4;
   string expyear = 5;
-  string cvc = 6;  
+  string cvc = 6;
+  string brand = 7;  
 }
 
 message Invoice {

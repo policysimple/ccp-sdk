@@ -1336,6 +1336,7 @@ class Card final :
     kExpmonthFieldNumber = 4,
     kExpyearFieldNumber = 5,
     kCvcFieldNumber = 6,
+    kBrandFieldNumber = 7,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1421,6 +1422,20 @@ class Card final :
   std::string* _internal_mutable_cvc();
   public:
 
+  // string brand = 7 [json_name = "brand"];
+  void clear_brand();
+  const std::string& brand() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_brand(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_brand();
+  PROTOBUF_MUST_USE_RESULT std::string* release_brand();
+  void set_allocated_brand(std::string* brand);
+  private:
+  const std::string& _internal_brand() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_brand(const std::string& value);
+  std::string* _internal_mutable_brand();
+  public:
+
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.Card)
  private:
   class _Internal;
@@ -1434,6 +1449,7 @@ class Card final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expmonth_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expyear_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cvc_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr brand_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
 };
@@ -5400,6 +5416,52 @@ inline void Card::set_allocated_cvc(std::string* cvc) {
   cvc_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cvc,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Card.cvc)
+}
+
+// string brand = 7 [json_name = "brand"];
+inline void Card::clear_brand() {
+  brand_.ClearToEmpty();
+}
+inline const std::string& Card::brand() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Card.brand)
+  return _internal_brand();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Card::set_brand(ArgT0&& arg0, ArgT... args) {
+ 
+ brand_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Card.brand)
+}
+inline std::string* Card::mutable_brand() {
+  std::string* _s = _internal_mutable_brand();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Card.brand)
+  return _s;
+}
+inline const std::string& Card::_internal_brand() const {
+  return brand_.Get();
+}
+inline void Card::_internal_set_brand(const std::string& value) {
+  
+  brand_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Card::_internal_mutable_brand() {
+  
+  return brand_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Card::release_brand() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Card.brand)
+  return brand_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Card::set_allocated_brand(std::string* brand) {
+  if (brand != nullptr) {
+    
+  } else {
+    
+  }
+  brand_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), brand,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Card.brand)
 }
 
 // -------------------------------------------------------------------
