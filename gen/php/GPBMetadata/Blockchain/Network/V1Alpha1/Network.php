@@ -16,7 +16,7 @@ class Network
         }
         $pool->internalAddGeneratedFile(
             '
-­
+á
 )blockchain/network/v1alpha1/network.protoblockchain.network.v1alpha1"Ó
 Network
 id (	Rid!
@@ -31,7 +31,7 @@ created_at (	R	createdAt
 
 updated_at	 (	R	updatedAtO
 organizations
- (2).blockchain.network.v1alpha1.OrganizationRorganizations"î
+ (2).blockchain.network.v1alpha1.OrganizationRorganizations"¢
 Organization
 id (	Rid
 user_id (	RuserId
@@ -47,7 +47,9 @@ admin_user (	R	adminUser#
 created_at
  (	R	createdAt
 
-updated_at (	R	updatedAt"”
+updated_at (	R	updatedAt
+name_ca (	RnameCa
+name_msp (	RnameMsp"”
 Peer
 id (	Rid
 name (	Rname

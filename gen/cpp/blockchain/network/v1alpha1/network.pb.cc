@@ -52,7 +52,9 @@ constexpr Organization::Organization(
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , error_details_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_ca_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_msp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct OrganizationDefaultTypeInternal {
   constexpr OrganizationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -155,6 +157,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Organization, error_details_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Organization, created_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Organization, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Organization, name_ca_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Organization, name_msp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -195,9 +199,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::network::v1alpha1::Network)},
   { 15, -1, sizeof(::blockchain::network::v1alpha1::Organization)},
-  { 31, -1, sizeof(::blockchain::network::v1alpha1::Peer)},
-  { 42, -1, sizeof(::blockchain::network::v1alpha1::Channel)},
-  { 55, -1, sizeof(::blockchain::network::v1alpha1::Invitation)},
+  { 33, -1, sizeof(::blockchain::network::v1alpha1::Peer)},
+  { 44, -1, sizeof(::blockchain::network::v1alpha1::Channel)},
+  { 57, -1, sizeof(::blockchain::network::v1alpha1::Invitation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -219,7 +223,7 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2
   "ed_at\030\010 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\t \001"
   "(\tR\tupdatedAt\022O\n\rorganizations\030\n \003(\0132).b"
   "lockchain.network.v1alpha1.OrganizationR"
-  "\rorganizations\"\356\002\n\014Organization\022\016\n\002id\030\001 "
+  "\rorganizations\"\242\003\n\014Organization\022\016\n\002id\030\001 "
   "\001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006doma"
   "in\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004 \001(\t"
   "R\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR\tadm"
@@ -228,28 +232,29 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2
   "v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\tR\006st"
   "atus\022#\n\rerror_details\030\t \001(\tR\014errorDetail"
   "s\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\nupda"
-  "ted_at\030\013 \001(\tR\tupdatedAt\"\224\001\n\004Peer\022\016\n\002id\030\001"
-  " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001"
-  "(\tR\004type\022\026\n\006status\030\004 \001(\tR\006status\022\035\n\ncrea"
-  "ted_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 "
-  "\001(\tR\tupdatedAt\"\352\001\n\007Channel\022\016\n\002id\030\001 \001(\tR\002"
-  "id\022\'\n\017organization_id\030\002 \001(\tR\016organizatio"
-  "nId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchainId"
-  "\022\022\n\004name\030\004 \001(\tR\004name\022\027\n\007org_ids\030\005 \003(\tR\006o"
-  "rgIds\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncreated"
-  "_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\t"
-  "R\tupdatedAt\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\tR\002"
-  "id\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024\n\005"
-  "email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006stat"
-  "us\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainId\022"
-  "\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdate"
-  "d_at\030\007 \001(\tR\tupdatedAtB>Z<github.com/cuem"
-  "by/ccp-sdk/gen/go/blockchain/network/v1a"
-  "lpha1b\006proto3"
+  "ted_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_ca\030\014 \001(\t"
+  "R\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007nameMsp\"\224\001\n\004"
+  "Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name"
+  "\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006st"
+  "atus\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n\nu"
+  "pdated_at\030\006 \001(\tR\tupdatedAt\"\352\001\n\007Channel\022\016"
+  "\n\002id\030\001 \001(\tR\002id\022\'\n\017organization_id\030\002 \001(\tR"
+  "\016organizationId\022#\n\rblockchain_id\030\003 \001(\tR\014"
+  "blockchainId\022\022\n\004name\030\004 \001(\tR\004name\022\027\n\007org_"
+  "ids\030\005 \003(\tR\006orgIds\022\026\n\006status\030\006 \001(\tR\006statu"
+  "s\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupda"
+  "ted_at\030\010 \001(\tR\tupdatedAt\"\317\001\n\nInvitation\022\016"
+  "\n\002id\030\001 \001(\tR\002id\022 \n\014from_user_id\030\002 \001(\tR\nfr"
+  "omUserId\022\024\n\005email\030\003 \001(\tR\005email\022\026\n\006status"
+  "\030\004 \001(\tR\006status\022#\n\rblockchain_id\030\005 \001(\tR\014b"
+  "lockchainId\022\035\n\ncreated_at\030\006 \001(\tR\tcreated"
+  "At\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAtB>Z<git"
+  "hub.com/cuemby/ccp-sdk/gen/go/blockchain"
+  "/network/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto = {
-  false, false, 1453, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, "blockchain/network/v1alpha1/network.proto", 
+  false, false, 1505, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, "blockchain/network/v1alpha1/network.proto", 
   &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto::offsets,
   file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, file_level_enum_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, file_level_service_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto,
@@ -902,6 +907,16 @@ Organization::Organization(const Organization& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
+  name_ca_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name_ca().empty()) {
+    name_ca_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_ca(), 
+      GetArenaForAllocation());
+  }
+  name_msp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name_msp().empty()) {
+    name_msp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_msp(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.Organization)
 }
 
@@ -916,6 +931,8 @@ status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
 error_details_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_ca_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_msp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Organization::~Organization() {
@@ -937,6 +954,8 @@ inline void Organization::SharedDtor() {
   error_details_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_ca_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_msp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Organization::ArenaDtor(void* object) {
@@ -966,6 +985,8 @@ void Organization::Clear() {
   error_details_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
+  name_ca_.ClearToEmpty();
+  name_msp_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1074,6 +1095,24 @@ const char* Organization::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           auto str = _internal_mutable_updated_at();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Organization.updated_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name_ca = 12 [json_name = "nameCa"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          auto str = _internal_mutable_name_ca();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Organization.name_ca"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name_msp = 13 [json_name = "nameMsp"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_name_msp();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Organization.name_msp"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1214,6 +1253,26 @@ failure:
         11, this->_internal_updated_at(), target);
   }
 
+  // string name_ca = 12 [json_name = "nameCa"];
+  if (!this->_internal_name_ca().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name_ca().data(), static_cast<int>(this->_internal_name_ca().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Organization.name_ca");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_name_ca(), target);
+  }
+
+  // string name_msp = 13 [json_name = "nameMsp"];
+  if (!this->_internal_name_msp().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name_msp().data(), static_cast<int>(this->_internal_name_msp().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Organization.name_msp");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_name_msp(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1307,6 +1366,20 @@ size_t Organization::ByteSizeLong() const {
         this->_internal_updated_at());
   }
 
+  // string name_ca = 12 [json_name = "nameCa"];
+  if (!this->_internal_name_ca().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name_ca());
+  }
+
+  // string name_msp = 13 [json_name = "nameMsp"];
+  if (!this->_internal_name_msp().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name_msp());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1365,6 +1438,12 @@ void Organization::MergeFrom(const Organization& from) {
   }
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_name_ca().empty()) {
+    _internal_set_name_ca(from._internal_name_ca());
+  }
+  if (!from._internal_name_msp().empty()) {
+    _internal_set_name_msp(from._internal_name_msp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1433,6 +1512,16 @@ void Organization::InternalSwap(Organization* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &updated_at_, GetArenaForAllocation(),
       &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_ca_, GetArenaForAllocation(),
+      &other->name_ca_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_msp_, GetArenaForAllocation(),
+      &other->name_msp_, other->GetArenaForAllocation()
   );
 }
 

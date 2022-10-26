@@ -605,7 +605,9 @@ proto.blockchain.network.v1alpha1.Organization.toObject = function(includeInstan
     status: jspb.Message.getFieldWithDefault(msg, 8, ""),
     errorDetails: jspb.Message.getFieldWithDefault(msg, 9, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 11, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    nameCa: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    nameMsp: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -686,6 +688,14 @@ proto.blockchain.network.v1alpha1.Organization.deserializeBinaryFromReader = fun
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNameCa(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNameMsp(value);
       break;
     default:
       reader.skipField();
@@ -791,6 +801,20 @@ proto.blockchain.network.v1alpha1.Organization.serializeBinaryToWriter = functio
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getNameCa();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getNameMsp();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -1012,6 +1036,42 @@ proto.blockchain.network.v1alpha1.Organization.prototype.getUpdatedAt = function
  */
 proto.blockchain.network.v1alpha1.Organization.prototype.setUpdatedAt = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string name_ca = 12;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Organization.prototype.getNameCa = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Organization} returns this
+ */
+proto.blockchain.network.v1alpha1.Organization.prototype.setNameCa = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string name_msp = 13;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Organization.prototype.getNameMsp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Organization} returns this
+ */
+proto.blockchain.network.v1alpha1.Organization.prototype.setNameMsp = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 

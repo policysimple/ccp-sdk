@@ -29,6 +29,8 @@ message Organization {
     string error_details = 9;
     string created_at = 10;
     string updated_at = 11;
+    string name_ca = 12;
+    string name_msp = 13;
 }
 
 message Peer {
