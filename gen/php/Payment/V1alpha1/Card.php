@@ -37,6 +37,10 @@ class Card extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cvc = 6 [json_name = "cvc"];</code>
      */
     protected $cvc = '';
+    /**
+     * Generated from protobuf field <code>string brand = 7 [json_name = "brand"];</code>
+     */
+    protected $brand = '';
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Card extends \Google\Protobuf\Internal\Message
      *     @type string $expmonth
      *     @type string $expyear
      *     @type string $cvc
+     *     @type string $brand
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,28 @@ class Card extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->cvc = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string brand = 7 [json_name = "brand"];</code>
+     * @return string
+     */
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+    /**
+     * Generated from protobuf field <code>string brand = 7 [json_name = "brand"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBrand($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->brand = $var;
 
         return $this;
     }

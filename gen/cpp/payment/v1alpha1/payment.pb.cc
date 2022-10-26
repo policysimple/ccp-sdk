@@ -105,7 +105,8 @@ constexpr Card::Card(
   , card_holder_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , expmonth_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , expyear_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cvc_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , cvc_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , brand_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct CardDefaultTypeInternal {
   constexpr CardDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -342,6 +343,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Card, expmonth_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Card, expyear_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Card, cvc_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Card, brand_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Invoice, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -436,17 +438,17 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 30, -1, sizeof(::payment::v1alpha1::Subscription)},
   { 45, -1, sizeof(::payment::v1alpha1::Payment)},
   { 56, -1, sizeof(::payment::v1alpha1::Card)},
-  { 67, -1, sizeof(::payment::v1alpha1::Invoice)},
-  { 78, -1, sizeof(::payment::v1alpha1::Biling)},
-  { 97, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
-  { 106, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
-  { 112, -1, sizeof(::payment::v1alpha1::InvoiceList)},
-  { 118, -1, sizeof(::payment::v1alpha1::CustomerList)},
-  { 124, -1, sizeof(::payment::v1alpha1::BilingList)},
-  { 130, -1, sizeof(::payment::v1alpha1::SubscriptionList)},
-  { 136, -1, sizeof(::payment::v1alpha1::CardList)},
-  { 142, -1, sizeof(::payment::v1alpha1::PaymentList)},
-  { 148, -1, sizeof(::payment::v1alpha1::ProjectList)},
+  { 68, -1, sizeof(::payment::v1alpha1::Invoice)},
+  { 79, -1, sizeof(::payment::v1alpha1::Biling)},
+  { 98, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
+  { 107, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
+  { 113, -1, sizeof(::payment::v1alpha1::InvoiceList)},
+  { 119, -1, sizeof(::payment::v1alpha1::CustomerList)},
+  { 125, -1, sizeof(::payment::v1alpha1::BilingList)},
+  { 131, -1, sizeof(::payment::v1alpha1::SubscriptionList)},
+  { 137, -1, sizeof(::payment::v1alpha1::CardList)},
+  { 143, -1, sizeof(::payment::v1alpha1::PaymentList)},
+  { 149, -1, sizeof(::payment::v1alpha1::ProjectList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -501,46 +503,47 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "\030\n\007default\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001"
   "(\010R\007enabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntok"
   "en_card\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132\026"
-  ".payment.v1alpha1.CardR\004card\"\227\001\n\004Card\022\016\n"
+  ".payment.v1alpha1.CardR\004card\"\255\001\n\004Card\022\016\n"
   "\002id\030\001 \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037\n"
   "\013card_holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmon"
   "th\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007exp"
-  "year\022\020\n\003cvc\030\006 \001(\tR\003cvc\"\225\001\n\007Invoice\022\016\n\002id"
-  "\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\026\n\006pe"
-  "riod\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004 \001(\tR\ts"
-  "tatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007product\030"
-  "\006 \001(\tR\007product\"\340\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022!\n\014acco"
-  "unt_name\030\003 \001(\tR\013accountName\022\036\n\ntotalusag"
-  "e\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n"
-  "\003ram\030\006 \001(\001R\003ram\022\032\n\010pipeline\030\007 \001(\001R\010pipel"
-  "ine\022\024\n\005month\030\010 \001(\tR\005month\022\022\n\004year\030\t \001(\tR"
-  "\004year\022\026\n\006amount\030\n \001(\003R\006amount\022\026\n\006period\030"
-  "\013 \001(\tR\006period\022\034\n\tstatuspay\030\014 \001(\tR\tstatus"
-  "pay\022\022\n\004date\030\r \001(\tR\004date\022\030\n\007product\030\016 \001(\t"
-  "R\007product\"\217\001\n\021SubscriptionItems\022\016\n\002id\030\001 "
-  "\001(\tR\002id\0220\n\024subscription_item_id\030\002 \001(\tR\022s"
-  "ubscriptionItemId\022\031\n\010price_id\030\003 \001(\tR\007pri"
-  "ceId\022\035\n\nproduct_id\030\004 \001(\tR\tproductId\"R\n\025S"
-  "ubscriptionItemsList\0229\n\005items\030\001 \003(\0132#.pa"
-  "yment.v1alpha1.SubscriptionItemsR\005items\""
-  ">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031.payment."
-  "v1alpha1.InvoiceR\005items\"@\n\014CustomerList\022"
-  "0\n\005items\030\001 \003(\0132\032.payment.v1alpha1.Custom"
-  "erR\005items\"<\n\nBilingList\022.\n\005items\030\001 \003(\0132\030"
-  ".payment.v1alpha1.BilingR\005items\"H\n\020Subsc"
-  "riptionList\0224\n\005items\030\001 \003(\0132\036.payment.v1a"
-  "lpha1.SubscriptionR\005items\"8\n\010CardList\022,\n"
-  "\005items\030\001 \003(\0132\026.payment.v1alpha1.CardR\005it"
-  "ems\">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.paym"
-  "ent.v1alpha1.PaymentR\005items\">\n\013ProjectLi"
-  "st\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Pro"
-  "jectR\005itemsB8Z6github.com/cuemby/ccp-pay"
-  "ment-service/payment/v1alpha1b\006proto3"
+  "year\022\020\n\003cvc\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001(\tR\005b"
+  "rand\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amou"
+  "nt\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006period"
+  "\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n\004date\030\005"
+  " \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007product\"\340\002\n"
+  "\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_id\030\002 "
+  "\001(\tR\tinvoiceId\022!\n\014account_name\030\003 \001(\tR\013ac"
+  "countName\022\036\n\ntotalusage\030\004 \001(\003R\ntotalusag"
+  "e\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ram\022\032\n"
+  "\010pipeline\030\007 \001(\001R\010pipeline\022\024\n\005month\030\010 \001(\t"
+  "R\005month\022\022\n\004year\030\t \001(\tR\004year\022\026\n\006amount\030\n "
+  "\001(\003R\006amount\022\026\n\006period\030\013 \001(\tR\006period\022\034\n\ts"
+  "tatuspay\030\014 \001(\tR\tstatuspay\022\022\n\004date\030\r \001(\tR"
+  "\004date\022\030\n\007product\030\016 \001(\tR\007product\"\217\001\n\021Subs"
+  "criptionItems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024subscri"
+  "ption_item_id\030\002 \001(\tR\022subscriptionItemId\022"
+  "\031\n\010price_id\030\003 \001(\tR\007priceId\022\035\n\nproduct_id"
+  "\030\004 \001(\tR\tproductId\"R\n\025SubscriptionItemsLi"
+  "st\0229\n\005items\030\001 \003(\0132#.payment.v1alpha1.Sub"
+  "scriptionItemsR\005items\">\n\013InvoiceList\022/\n\005"
+  "items\030\001 \003(\0132\031.payment.v1alpha1.InvoiceR\005"
+  "items\"@\n\014CustomerList\0220\n\005items\030\001 \003(\0132\032.p"
+  "ayment.v1alpha1.CustomerR\005items\"<\n\nBilin"
+  "gList\022.\n\005items\030\001 \003(\0132\030.payment.v1alpha1."
+  "BilingR\005items\"H\n\020SubscriptionList\0224\n\005ite"
+  "ms\030\001 \003(\0132\036.payment.v1alpha1.Subscription"
+  "R\005items\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026.pay"
+  "ment.v1alpha1.CardR\005items\">\n\013PaymentList"
+  "\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Payme"
+  "ntR\005items\">\n\013ProjectList\022/\n\005items\030\001 \003(\0132"
+  "\031.payment.v1alpha1.ProjectR\005itemsB8Z6git"
+  "hub.com/cuemby/ccp-payment-service/payme"
+  "nt/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 2717, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 2739, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 16,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -2667,6 +2670,11 @@ Card::Card(const Card& from)
     cvc_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cvc(), 
       GetArenaForAllocation());
   }
+  brand_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_brand().empty()) {
+    brand_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_brand(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Card)
 }
 
@@ -2677,6 +2685,7 @@ card_holder_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 expmonth_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 expyear_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 cvc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+brand_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Card::~Card() {
@@ -2694,6 +2703,7 @@ inline void Card::SharedDtor() {
   expmonth_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   expyear_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   cvc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  brand_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Card::ArenaDtor(void* object) {
@@ -2718,6 +2728,7 @@ void Card::Clear() {
   expmonth_.ClearToEmpty();
   expyear_.ClearToEmpty();
   cvc_.ClearToEmpty();
+  brand_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2778,6 +2789,15 @@ const char* Card::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           auto str = _internal_mutable_cvc();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Card.cvc"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string brand = 7 [json_name = "brand"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_brand();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Card.brand"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2870,6 +2890,16 @@ failure:
         6, this->_internal_cvc(), target);
   }
 
+  // string brand = 7 [json_name = "brand"];
+  if (!this->_internal_brand().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_brand().data(), static_cast<int>(this->_internal_brand().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Card.brand");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_brand(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2928,6 +2958,13 @@ size_t Card::ByteSizeLong() const {
         this->_internal_cvc());
   }
 
+  // string brand = 7 [json_name = "brand"];
+  if (!this->_internal_brand().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_brand());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2973,6 +3010,9 @@ void Card::MergeFrom(const Card& from) {
   }
   if (!from._internal_cvc().empty()) {
     _internal_set_cvc(from._internal_cvc());
+  }
+  if (!from._internal_brand().empty()) {
+    _internal_set_brand(from._internal_brand());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3020,6 +3060,11 @@ void Card::InternalSwap(Card* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &cvc_, GetArenaForAllocation(),
       &other->cvc_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &brand_, GetArenaForAllocation(),
+      &other->brand_, other->GetArenaForAllocation()
   );
 }
 
