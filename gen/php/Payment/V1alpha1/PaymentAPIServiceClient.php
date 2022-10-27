@@ -309,6 +309,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Payment\V1alpha1\ConsumeByProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ConsumeByProject(\Payment\V1alpha1\ConsumeByProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ConsumeByProject',
+        $argument,
+        ['\Payment\V1alpha1\ConsumeByProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Pause Project Consumption
      * @param \Payment\V1alpha1\StopProjectRequest $argument input argument
      * @param array $metadata metadata

@@ -434,3 +434,24 @@ func SetDefaultPaymentMethod(in *paymentpkgv1.SetDefaultPaymentMethodRequest) (r
 	}
 	return response, nil
 }
+
+func ConsumeByProject(in *paymentpkgv1.ConsumeByProjectRequest) (response *paymentpkgv1.ConsumeByProjectResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ConsumeByProject(ctx, &paymentpkgv1.ConsumeByProjectRequest{
+		OrganizationId: in.OrganizationId,
+		Year: 		 in.Year,
+		Month: 		 in.Month,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error consume by project", err)
+		return nil, fmt.Errorf("%s: %w", "Error consume by project", err)
+	}
+	return response, nil
+}

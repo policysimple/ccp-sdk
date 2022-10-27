@@ -128,3 +128,16 @@ message PaymentList {
 message ProjectList {
   repeated Project items = 1;
 } 
+
+message ProjectBilling {
+  string id =1;
+  string project_id = 2;
+  string name_project = 3;
+  string ram = 4;
+  string cpu = 5;
+  string pipeline = 6;
+}
+
+message ProjectBillingList {
+  repeated ProjectBilling items = 1;
+}

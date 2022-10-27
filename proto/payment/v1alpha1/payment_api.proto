@@ -41,6 +41,7 @@ service PaymentAPIService{
 
     //Filter service
     rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
+    rpc ConsumeByProject(ConsumeByProjectRequest) returns (ConsumeByProjectResponse) {};
 
     //Pause Project Consumption
     rpc StopProject(StopProjectRequest) returns (StopProjectResponse){};
@@ -298,4 +299,15 @@ message SetDefaultPaymentMethodRequest {
 message SetDefaultPaymentMethodResponse {
     string msg = 1;
     string error = 2;
+}
+
+message ConsumeByProjectRequest{
+    uint32 organization_id = 1;
+    string year = 2;
+    string month = 3;
+}
+
+message ConsumeByProjectResponse{
+    payment.v1alpha1.ProjectBillingList project_billing_list = 1;
+    string status = 2;
 }

@@ -124,6 +124,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterResponse.FromString,
         )
+    self.ConsumeByProject = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/ConsumeByProject',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ConsumeByProjectRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ConsumeByProjectResponse.FromString,
+        )
     self.StopProject = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/StopProject',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.StopProjectRequest.SerializeToString,
@@ -289,6 +294,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ConsumeByProject(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def StopProject(self, request, context):
     """Pause Project Consumption
     """
@@ -408,6 +420,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.InvoiceFilter,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.InvoiceFilterResponse.SerializeToString,
+      ),
+      'ConsumeByProject': grpc.unary_unary_rpc_method_handler(
+          servicer.ConsumeByProject,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ConsumeByProjectRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ConsumeByProjectResponse.SerializeToString,
       ),
       'StopProject': grpc.unary_unary_rpc_method_handler(
           servicer.StopProject,
