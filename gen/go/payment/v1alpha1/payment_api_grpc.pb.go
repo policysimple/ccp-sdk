@@ -46,6 +46,7 @@ type PaymentAPIServiceClient interface {
 	DeleteCustomer(ctx context.Context, in *DeleteCustomerRequest, opts ...grpc.CallOption) (*DeleteCustomerResponse, error)
 	//Filter service
 	InvoiceFilter(ctx context.Context, in *InvoiceFilterRequest, opts ...grpc.CallOption) (*InvoiceFilterResponse, error)
+	ConsumeByProject(ctx context.Context, in *ConsumeByProjectRequest, opts ...grpc.CallOption) (*ConsumeByProjectResponse, error)
 	//Pause Project Consumption
 	StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error)
 }
@@ -256,6 +257,15 @@ func (c *paymentAPIServiceClient) InvoiceFilter(ctx context.Context, in *Invoice
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) ConsumeByProject(ctx context.Context, in *ConsumeByProjectRequest, opts ...grpc.CallOption) (*ConsumeByProjectResponse, error) {
+	out := new(ConsumeByProjectResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/ConsumeByProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *paymentAPIServiceClient) StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error) {
 	out := new(StopProjectResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/StopProject", in, out, opts...)
@@ -297,6 +307,7 @@ type PaymentAPIServiceServer interface {
 	DeleteCustomer(context.Context, *DeleteCustomerRequest) (*DeleteCustomerResponse, error)
 	//Filter service
 	InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error)
+	ConsumeByProject(context.Context, *ConsumeByProjectRequest) (*ConsumeByProjectResponse, error)
 	//Pause Project Consumption
 	StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error)
 }
@@ -370,6 +381,9 @@ func (UnimplementedPaymentAPIServiceServer) DeleteCustomer(context.Context, *Del
 }
 func (UnimplementedPaymentAPIServiceServer) InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InvoiceFilter not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) ConsumeByProject(context.Context, *ConsumeByProjectRequest) (*ConsumeByProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ConsumeByProject not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopProject not implemented")
@@ -782,6 +796,24 @@ func _PaymentAPIService_InvoiceFilter_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_ConsumeByProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConsumeByProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).ConsumeByProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/ConsumeByProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).ConsumeByProject(ctx, req.(*ConsumeByProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PaymentAPIService_StopProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(StopProjectRequest)
 	if err := dec(in); err != nil {
@@ -894,6 +926,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "InvoiceFilter",
 			Handler:    _PaymentAPIService_InvoiceFilter_Handler,
+		},
+		{
+			MethodName: "ConsumeByProject",
+			Handler:    _PaymentAPIService_ConsumeByProject_Handler,
 		},
 		{
 			MethodName: "StopProject",

@@ -46,7 +46,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -88,6 +88,12 @@ extern PaymentListDefaultTypeInternal _PaymentList_default_instance_;
 class Project;
 struct ProjectDefaultTypeInternal;
 extern ProjectDefaultTypeInternal _Project_default_instance_;
+class ProjectBilling;
+struct ProjectBillingDefaultTypeInternal;
+extern ProjectBillingDefaultTypeInternal _ProjectBilling_default_instance_;
+class ProjectBillingList;
+struct ProjectBillingListDefaultTypeInternal;
+extern ProjectBillingListDefaultTypeInternal _ProjectBillingList_default_instance_;
 class ProjectList;
 struct ProjectListDefaultTypeInternal;
 extern ProjectListDefaultTypeInternal _ProjectList_default_instance_;
@@ -117,6 +123,8 @@ template<> ::payment::v1alpha1::InvoiceList* Arena::CreateMaybeMessage<::payment
 template<> ::payment::v1alpha1::Payment* Arena::CreateMaybeMessage<::payment::v1alpha1::Payment>(Arena*);
 template<> ::payment::v1alpha1::PaymentList* Arena::CreateMaybeMessage<::payment::v1alpha1::PaymentList>(Arena*);
 template<> ::payment::v1alpha1::Project* Arena::CreateMaybeMessage<::payment::v1alpha1::Project>(Arena*);
+template<> ::payment::v1alpha1::ProjectBilling* Arena::CreateMaybeMessage<::payment::v1alpha1::ProjectBilling>(Arena*);
+template<> ::payment::v1alpha1::ProjectBillingList* Arena::CreateMaybeMessage<::payment::v1alpha1::ProjectBillingList>(Arena*);
 template<> ::payment::v1alpha1::ProjectList* Arena::CreateMaybeMessage<::payment::v1alpha1::ProjectList>(Arena*);
 template<> ::payment::v1alpha1::Subscription* Arena::CreateMaybeMessage<::payment::v1alpha1::Subscription>(Arena*);
 template<> ::payment::v1alpha1::SubscriptionItems* Arena::CreateMaybeMessage<::payment::v1alpha1::SubscriptionItems>(Arena*);
@@ -3372,6 +3380,378 @@ class ProjectList final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project > items_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ProjectBilling final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.ProjectBilling) */ {
+ public:
+  inline ProjectBilling() : ProjectBilling(nullptr) {}
+  ~ProjectBilling() override;
+  explicit constexpr ProjectBilling(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ProjectBilling(const ProjectBilling& from);
+  ProjectBilling(ProjectBilling&& from) noexcept
+    : ProjectBilling() {
+    *this = ::std::move(from);
+  }
+
+  inline ProjectBilling& operator=(const ProjectBilling& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProjectBilling& operator=(ProjectBilling&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProjectBilling& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ProjectBilling* internal_default_instance() {
+    return reinterpret_cast<const ProjectBilling*>(
+               &_ProjectBilling_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(ProjectBilling& a, ProjectBilling& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ProjectBilling* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProjectBilling* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ProjectBilling* New() const final {
+    return new ProjectBilling();
+  }
+
+  ProjectBilling* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ProjectBilling>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ProjectBilling& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ProjectBilling& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ProjectBilling* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.ProjectBilling";
+  }
+  protected:
+  explicit ProjectBilling(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
+    kNameProjectFieldNumber = 3,
+    kRamFieldNumber = 4,
+    kCpuFieldNumber = 5,
+    kPipelineFieldNumber = 6,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
+  // string name_project = 3 [json_name = "nameProject"];
+  void clear_name_project();
+  const std::string& name_project() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name_project(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name_project();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name_project();
+  void set_allocated_name_project(std::string* name_project);
+  private:
+  const std::string& _internal_name_project() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_project(const std::string& value);
+  std::string* _internal_mutable_name_project();
+  public:
+
+  // string ram = 4 [json_name = "ram"];
+  void clear_ram();
+  const std::string& ram() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ram(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ram();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ram();
+  void set_allocated_ram(std::string* ram);
+  private:
+  const std::string& _internal_ram() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ram(const std::string& value);
+  std::string* _internal_mutable_ram();
+  public:
+
+  // string cpu = 5 [json_name = "cpu"];
+  void clear_cpu();
+  const std::string& cpu() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_cpu(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_cpu();
+  PROTOBUF_MUST_USE_RESULT std::string* release_cpu();
+  void set_allocated_cpu(std::string* cpu);
+  private:
+  const std::string& _internal_cpu() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_cpu(const std::string& value);
+  std::string* _internal_mutable_cpu();
+  public:
+
+  // string pipeline = 6 [json_name = "pipeline"];
+  void clear_pipeline();
+  const std::string& pipeline() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_pipeline(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_pipeline();
+  PROTOBUF_MUST_USE_RESULT std::string* release_pipeline();
+  void set_allocated_pipeline(std::string* pipeline);
+  private:
+  const std::string& _internal_pipeline() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pipeline(const std::string& value);
+  std::string* _internal_mutable_pipeline();
+  public:
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.ProjectBilling)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_project_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ram_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cpu_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pipeline_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ProjectBillingList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.ProjectBillingList) */ {
+ public:
+  inline ProjectBillingList() : ProjectBillingList(nullptr) {}
+  ~ProjectBillingList() override;
+  explicit constexpr ProjectBillingList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ProjectBillingList(const ProjectBillingList& from);
+  ProjectBillingList(ProjectBillingList&& from) noexcept
+    : ProjectBillingList() {
+    *this = ::std::move(from);
+  }
+
+  inline ProjectBillingList& operator=(const ProjectBillingList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProjectBillingList& operator=(ProjectBillingList&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProjectBillingList& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ProjectBillingList* internal_default_instance() {
+    return reinterpret_cast<const ProjectBillingList*>(
+               &_ProjectBillingList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(ProjectBillingList& a, ProjectBillingList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ProjectBillingList* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProjectBillingList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ProjectBillingList* New() const final {
+    return new ProjectBillingList();
+  }
+
+  ProjectBillingList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ProjectBillingList>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ProjectBillingList& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ProjectBillingList& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ProjectBillingList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.ProjectBillingList";
+  }
+  protected:
+  explicit ProjectBillingList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kItemsFieldNumber = 1,
+  };
+  // repeated .payment.v1alpha1.ProjectBilling items = 1 [json_name = "items"];
+  int items_size() const;
+  private:
+  int _internal_items_size() const;
+  public:
+  void clear_items();
+  ::payment::v1alpha1::ProjectBilling* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::ProjectBilling >*
+      mutable_items();
+  private:
+  const ::payment::v1alpha1::ProjectBilling& _internal_items(int index) const;
+  ::payment::v1alpha1::ProjectBilling* _internal_add_items();
+  public:
+  const ::payment::v1alpha1::ProjectBilling& items(int index) const;
+  ::payment::v1alpha1::ProjectBilling* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::ProjectBilling >&
+      items() const;
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.ProjectBillingList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::ProjectBilling > items_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
 };
@@ -6776,9 +7156,337 @@ ProjectList::items() const {
   return items_;
 }
 
+// -------------------------------------------------------------------
+
+// ProjectBilling
+
+// string id = 1 [json_name = "id"];
+inline void ProjectBilling::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.id)
+}
+inline std::string* ProjectBilling::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.id)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_id() const {
+  return id_.Get();
+}
+inline void ProjectBilling::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.id)
+}
+
+// string project_id = 2 [json_name = "projectId"];
+inline void ProjectBilling::clear_project_id() {
+  project_id_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::project_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.project_id)
+  return _internal_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.project_id)
+}
+inline std::string* ProjectBilling::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.project_id)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void ProjectBilling::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_project_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.project_id)
+}
+
+// string name_project = 3 [json_name = "nameProject"];
+inline void ProjectBilling::clear_name_project() {
+  name_project_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::name_project() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.name_project)
+  return _internal_name_project();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_name_project(ArgT0&& arg0, ArgT... args) {
+ 
+ name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.name_project)
+}
+inline std::string* ProjectBilling::mutable_name_project() {
+  std::string* _s = _internal_mutable_name_project();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.name_project)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_name_project() const {
+  return name_project_.Get();
+}
+inline void ProjectBilling::_internal_set_name_project(const std::string& value) {
+  
+  name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_name_project() {
+  
+  return name_project_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_name_project() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.name_project)
+  return name_project_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_name_project(std::string* name_project) {
+  if (name_project != nullptr) {
+    
+  } else {
+    
+  }
+  name_project_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_project,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.name_project)
+}
+
+// string ram = 4 [json_name = "ram"];
+inline void ProjectBilling::clear_ram() {
+  ram_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::ram() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.ram)
+  return _internal_ram();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_ram(ArgT0&& arg0, ArgT... args) {
+ 
+ ram_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.ram)
+}
+inline std::string* ProjectBilling::mutable_ram() {
+  std::string* _s = _internal_mutable_ram();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.ram)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_ram() const {
+  return ram_.Get();
+}
+inline void ProjectBilling::_internal_set_ram(const std::string& value) {
+  
+  ram_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_ram() {
+  
+  return ram_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_ram() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.ram)
+  return ram_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_ram(std::string* ram) {
+  if (ram != nullptr) {
+    
+  } else {
+    
+  }
+  ram_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ram,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.ram)
+}
+
+// string cpu = 5 [json_name = "cpu"];
+inline void ProjectBilling::clear_cpu() {
+  cpu_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::cpu() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.cpu)
+  return _internal_cpu();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_cpu(ArgT0&& arg0, ArgT... args) {
+ 
+ cpu_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.cpu)
+}
+inline std::string* ProjectBilling::mutable_cpu() {
+  std::string* _s = _internal_mutable_cpu();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.cpu)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_cpu() const {
+  return cpu_.Get();
+}
+inline void ProjectBilling::_internal_set_cpu(const std::string& value) {
+  
+  cpu_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_cpu() {
+  
+  return cpu_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_cpu() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.cpu)
+  return cpu_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_cpu(std::string* cpu) {
+  if (cpu != nullptr) {
+    
+  } else {
+    
+  }
+  cpu_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), cpu,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.cpu)
+}
+
+// string pipeline = 6 [json_name = "pipeline"];
+inline void ProjectBilling::clear_pipeline() {
+  pipeline_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::pipeline() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.pipeline)
+  return _internal_pipeline();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_pipeline(ArgT0&& arg0, ArgT... args) {
+ 
+ pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.pipeline)
+}
+inline std::string* ProjectBilling::mutable_pipeline() {
+  std::string* _s = _internal_mutable_pipeline();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.pipeline)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_pipeline() const {
+  return pipeline_.Get();
+}
+inline void ProjectBilling::_internal_set_pipeline(const std::string& value) {
+  
+  pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_pipeline() {
+  
+  return pipeline_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_pipeline() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.pipeline)
+  return pipeline_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_pipeline(std::string* pipeline) {
+  if (pipeline != nullptr) {
+    
+  } else {
+    
+  }
+  pipeline_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pipeline,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.pipeline)
+}
+
+// -------------------------------------------------------------------
+
+// ProjectBillingList
+
+// repeated .payment.v1alpha1.ProjectBilling items = 1 [json_name = "items"];
+inline int ProjectBillingList::_internal_items_size() const {
+  return items_.size();
+}
+inline int ProjectBillingList::items_size() const {
+  return _internal_items_size();
+}
+inline void ProjectBillingList::clear_items() {
+  items_.Clear();
+}
+inline ::payment::v1alpha1::ProjectBilling* ProjectBillingList::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBillingList.items)
+  return items_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::ProjectBilling >*
+ProjectBillingList::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:payment.v1alpha1.ProjectBillingList.items)
+  return &items_;
+}
+inline const ::payment::v1alpha1::ProjectBilling& ProjectBillingList::_internal_items(int index) const {
+  return items_.Get(index);
+}
+inline const ::payment::v1alpha1::ProjectBilling& ProjectBillingList::items(int index) const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBillingList.items)
+  return _internal_items(index);
+}
+inline ::payment::v1alpha1::ProjectBilling* ProjectBillingList::_internal_add_items() {
+  return items_.Add();
+}
+inline ::payment::v1alpha1::ProjectBilling* ProjectBillingList::add_items() {
+  ::payment::v1alpha1::ProjectBilling* _add = _internal_add_items();
+  // @@protoc_insertion_point(field_add:payment.v1alpha1.ProjectBillingList.items)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::ProjectBilling >&
+ProjectBillingList::items() const {
+  // @@protoc_insertion_point(field_list:payment.v1alpha1.ProjectBillingList.items)
+  return items_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

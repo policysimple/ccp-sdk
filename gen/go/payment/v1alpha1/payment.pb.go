@@ -1244,6 +1244,140 @@ func (x *ProjectList) GetItems() []*Project {
 	return nil
 }
 
+type ProjectBilling struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ProjectId   string `protobuf:"bytes,2,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	NameProject string `protobuf:"bytes,3,opt,name=name_project,json=nameProject,proto3" json:"name_project,omitempty"`
+	Ram         string `protobuf:"bytes,4,opt,name=ram,proto3" json:"ram,omitempty"`
+	Cpu         string `protobuf:"bytes,5,opt,name=cpu,proto3" json:"cpu,omitempty"`
+	Pipeline    string `protobuf:"bytes,6,opt,name=pipeline,proto3" json:"pipeline,omitempty"`
+}
+
+func (x *ProjectBilling) Reset() {
+	*x = ProjectBilling{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_payment_v1alpha1_payment_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ProjectBilling) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProjectBilling) ProtoMessage() {}
+
+func (x *ProjectBilling) ProtoReflect() protoreflect.Message {
+	mi := &file_payment_v1alpha1_payment_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProjectBilling.ProtoReflect.Descriptor instead.
+func (*ProjectBilling) Descriptor() ([]byte, []int) {
+	return file_payment_v1alpha1_payment_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ProjectBilling) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ProjectBilling) GetProjectId() string {
+	if x != nil {
+		return x.ProjectId
+	}
+	return ""
+}
+
+func (x *ProjectBilling) GetNameProject() string {
+	if x != nil {
+		return x.NameProject
+	}
+	return ""
+}
+
+func (x *ProjectBilling) GetRam() string {
+	if x != nil {
+		return x.Ram
+	}
+	return ""
+}
+
+func (x *ProjectBilling) GetCpu() string {
+	if x != nil {
+		return x.Cpu
+	}
+	return ""
+}
+
+func (x *ProjectBilling) GetPipeline() string {
+	if x != nil {
+		return x.Pipeline
+	}
+	return ""
+}
+
+type ProjectBillingList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Items []*ProjectBilling `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+}
+
+func (x *ProjectBillingList) Reset() {
+	*x = ProjectBillingList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_payment_v1alpha1_payment_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ProjectBillingList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProjectBillingList) ProtoMessage() {}
+
+func (x *ProjectBillingList) ProtoReflect() protoreflect.Message {
+	mi := &file_payment_v1alpha1_payment_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProjectBillingList.ProtoReflect.Descriptor instead.
+func (*ProjectBillingList) Descriptor() ([]byte, []int) {
+	return file_payment_v1alpha1_payment_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ProjectBillingList) GetItems() []*ProjectBilling {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_payment_v1alpha1_payment_proto protoreflect.FileDescriptor
 
 var file_payment_v1alpha1_payment_proto_rawDesc = []byte{
@@ -1414,11 +1548,26 @@ var file_payment_v1alpha1_payment_proto_rawDesc = []byte{
 	0x12, 0x2f, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x19, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
 	0x61, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d,
-	0x73, 0x42, 0x38, 0x5a, 0x36, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x70, 0x61, 0x79, 0x6d, 0x65,
-	0x6e, 0x74, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x61, 0x79, 0x6d, 0x65,
-	0x6e, 0x74, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x73, 0x22, 0xa2, 0x01, 0x0a, 0x0e, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x42, 0x69, 0x6c,
+	0x6c, 0x69, 0x6e, 0x67, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x02, 0x69, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x5f,
+	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63,
+	0x74, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x6e, 0x61, 0x6d, 0x65, 0x5f, 0x70, 0x72, 0x6f, 0x6a,
+	0x65, 0x63, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6e, 0x61, 0x6d, 0x65, 0x50,
+	0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x72, 0x61, 0x6d, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x03, 0x72, 0x61, 0x6d, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x70, 0x75, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x63, 0x70, 0x75, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x22, 0x4c, 0x0a, 0x12, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63,
+	0x74, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x05,
+	0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x70, 0x61,
+	0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50,
+	0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x52, 0x05, 0x69,
+	0x74, 0x65, 0x6d, 0x73, 0x42, 0x38, 0x5a, 0x36, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x70, 0x61,
+	0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x61,
+	0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1433,7 +1582,7 @@ func file_payment_v1alpha1_payment_proto_rawDescGZIP() []byte {
 	return file_payment_v1alpha1_payment_proto_rawDescData
 }
 
-var file_payment_v1alpha1_payment_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
+var file_payment_v1alpha1_payment_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_payment_v1alpha1_payment_proto_goTypes = []interface{}{
 	(*Customer)(nil),              // 0: payment.v1alpha1.Customer
 	(*Project)(nil),               // 1: payment.v1alpha1.Project
@@ -1451,6 +1600,8 @@ var file_payment_v1alpha1_payment_proto_goTypes = []interface{}{
 	(*CardList)(nil),              // 13: payment.v1alpha1.CardList
 	(*PaymentList)(nil),           // 14: payment.v1alpha1.PaymentList
 	(*ProjectList)(nil),           // 15: payment.v1alpha1.ProjectList
+	(*ProjectBilling)(nil),        // 16: payment.v1alpha1.ProjectBilling
+	(*ProjectBillingList)(nil),    // 17: payment.v1alpha1.ProjectBillingList
 }
 var file_payment_v1alpha1_payment_proto_depIdxs = []int32{
 	2,  // 0: payment.v1alpha1.Customer.subscription:type_name -> payment.v1alpha1.Subscription
@@ -1467,11 +1618,12 @@ var file_payment_v1alpha1_payment_proto_depIdxs = []int32{
 	4,  // 11: payment.v1alpha1.CardList.items:type_name -> payment.v1alpha1.Card
 	3,  // 12: payment.v1alpha1.PaymentList.items:type_name -> payment.v1alpha1.Payment
 	1,  // 13: payment.v1alpha1.ProjectList.items:type_name -> payment.v1alpha1.Project
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	16, // 14: payment.v1alpha1.ProjectBillingList.items:type_name -> payment.v1alpha1.ProjectBilling
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_payment_v1alpha1_payment_proto_init() }
@@ -1672,6 +1824,30 @@ func file_payment_v1alpha1_payment_proto_init() {
 				return nil
 			}
 		}
+		file_payment_v1alpha1_payment_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProjectBilling); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_payment_v1alpha1_payment_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProjectBillingList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1679,7 +1855,7 @@ func file_payment_v1alpha1_payment_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_payment_v1alpha1_payment_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   16,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

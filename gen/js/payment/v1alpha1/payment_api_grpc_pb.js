@@ -27,6 +27,28 @@ function deserialize_payment_v1alpha1_CancelSubscriptionResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.CancelSubscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_ConsumeByProjectRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.ConsumeByProjectRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.ConsumeByProjectRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_ConsumeByProjectRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.ConsumeByProjectRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_ConsumeByProjectResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.ConsumeByProjectResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.ConsumeByProjectResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_ConsumeByProjectResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.ConsumeByProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_CreateCardRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.CreateCardRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.CreateCardRequest');
@@ -760,6 +782,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_InvoiceFilterRequest,
     responseSerialize: serialize_payment_v1alpha1_InvoiceFilterResponse,
     responseDeserialize: deserialize_payment_v1alpha1_InvoiceFilterResponse,
+  },
+  consumeByProject: {
+    path: '/payment.v1alpha1.PaymentAPIService/ConsumeByProject',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.ConsumeByProjectRequest,
+    responseType: payment_v1alpha1_payment_api_pb.ConsumeByProjectResponse,
+    requestSerialize: serialize_payment_v1alpha1_ConsumeByProjectRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_ConsumeByProjectRequest,
+    responseSerialize: serialize_payment_v1alpha1_ConsumeByProjectResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_ConsumeByProjectResponse,
   },
   // Pause Project Consumption
   stopProject: {
