@@ -133,4 +133,17 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Blockchain\Network\V1alpha1\GetPeersByOrganizationIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetPeersByOrganizationId(\Blockchain\Network\V1alpha1\GetPeersByOrganizationIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId',
+        $argument,
+        ['\Blockchain\Network\V1alpha1\GetPeersByOrganizationIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -27,6 +27,7 @@ type BlockchainAPIServiceClient interface {
 	SendInvitation(ctx context.Context, in *SendInvitationRequest, opts ...grpc.CallOption) (*SendInvitationResponse, error)
 	CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error)
 	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
+	GetPeersByOrganizationId(ctx context.Context, in *GetPeersByOrganizationIdRequest, opts ...grpc.CallOption) (*GetPeersByOrganizationIdResponse, error)
 }
 
 type blockchainAPIServiceClient struct {
@@ -118,6 +119,15 @@ func (c *blockchainAPIServiceClient) CreateChannel(ctx context.Context, in *Crea
 	return out, nil
 }
 
+func (c *blockchainAPIServiceClient) GetPeersByOrganizationId(ctx context.Context, in *GetPeersByOrganizationIdRequest, opts ...grpc.CallOption) (*GetPeersByOrganizationIdResponse, error) {
+	out := new(GetPeersByOrganizationIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BlockchainAPIServiceServer is the server API for BlockchainAPIService service.
 // All implementations should embed UnimplementedBlockchainAPIServiceServer
 // for forward compatibility
@@ -131,6 +141,7 @@ type BlockchainAPIServiceServer interface {
 	SendInvitation(context.Context, *SendInvitationRequest) (*SendInvitationResponse, error)
 	CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error)
 	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
+	GetPeersByOrganizationId(context.Context, *GetPeersByOrganizationIdRequest) (*GetPeersByOrganizationIdResponse, error)
 }
 
 // UnimplementedBlockchainAPIServiceServer should be embedded to have forward compatible implementations.
@@ -163,6 +174,9 @@ func (UnimplementedBlockchainAPIServiceServer) CreateOrganization(context.Contex
 }
 func (UnimplementedBlockchainAPIServiceServer) CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateChannel not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) GetPeersByOrganizationId(context.Context, *GetPeersByOrganizationIdRequest) (*GetPeersByOrganizationIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPeersByOrganizationId not implemented")
 }
 
 // UnsafeBlockchainAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -338,6 +352,24 @@ func _BlockchainAPIService_CreateChannel_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BlockchainAPIService_GetPeersByOrganizationId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPeersByOrganizationIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).GetPeersByOrganizationId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).GetPeersByOrganizationId(ctx, req.(*GetPeersByOrganizationIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BlockchainAPIService_ServiceDesc is the grpc.ServiceDesc for BlockchainAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -380,6 +412,10 @@ var BlockchainAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateChannel",
 			Handler:    _BlockchainAPIService_CreateChannel_Handler,
+		},
+		{
+			MethodName: "GetPeersByOrganizationId",
+			Handler:    _BlockchainAPIService_GetPeersByOrganizationId_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -16,6 +16,7 @@ service BlockchainAPIService {
     rpc SendInvitation(SendInvitationRequest) returns (SendInvitationResponse);
     rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
     rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
+    rpc GetPeersByOrganizationId(GetPeersByOrganizationIdRequest) returns (GetPeersByOrganizationIdResponse);
 }
 
 
@@ -40,6 +41,12 @@ message GetBlockchainsRequest {
 
 message GetBlockchainsByUserIdRequest {
     string user_id = 1;
+    int64 offset = 2;
+    int64 limit = 3;
+}
+
+message GetPeersByOrganizationIdRequest {
+    string organization_id = 1;
     int64 offset = 2;
     int64 limit = 3;
 }
@@ -87,6 +94,13 @@ message GetBlockchainsResponse {
 
 message GetBlockchainsByUserIdResponse {
     repeated blockchain.network.v1alpha1.Network networks = 1;
+    int64 total = 2;
+    string next_url = 3;
+    string previous_url = 4; 
+}
+
+message GetPeersByOrganizationIdResponse {
+    repeated blockchain.network.v1alpha1.Peer peer = 1;
     int64 total = 2;
     string next_url = 3;
     string previous_url = 4; 

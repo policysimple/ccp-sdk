@@ -48,7 +48,7 @@ struct TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -106,6 +106,12 @@ extern GetOrganizationsByBlockchainIdRequestDefaultTypeInternal _GetOrganization
 class GetOrganizationsByBlockchainIdResponse;
 struct GetOrganizationsByBlockchainIdResponseDefaultTypeInternal;
 extern GetOrganizationsByBlockchainIdResponseDefaultTypeInternal _GetOrganizationsByBlockchainIdResponse_default_instance_;
+class GetPeersByOrganizationIdRequest;
+struct GetPeersByOrganizationIdRequestDefaultTypeInternal;
+extern GetPeersByOrganizationIdRequestDefaultTypeInternal _GetPeersByOrganizationIdRequest_default_instance_;
+class GetPeersByOrganizationIdResponse;
+struct GetPeersByOrganizationIdResponseDefaultTypeInternal;
+extern GetPeersByOrganizationIdResponseDefaultTypeInternal _GetPeersByOrganizationIdResponse_default_instance_;
 class SendInvitationRequest;
 struct SendInvitationRequestDefaultTypeInternal;
 extern SendInvitationRequestDefaultTypeInternal _SendInvitationRequest_default_instance_;
@@ -132,6 +138,8 @@ template<> ::blockchain::network::v1alpha1::GetBlockchainsRequest* Arena::Create
 template<> ::blockchain::network::v1alpha1::GetBlockchainsResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetBlockchainsResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>(Arena*);
+template<> ::blockchain::network::v1alpha1::GetPeersByOrganizationIdRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetPeersByOrganizationIdRequest>(Arena*);
+template<> ::blockchain::network::v1alpha1::GetPeersByOrganizationIdResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetPeersByOrganizationIdResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::SendInvitationRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::SendInvitationRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::SendInvitationResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::SendInvitationResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -917,6 +925,172 @@ class GetBlockchainsByUserIdRequest final :
 };
 // -------------------------------------------------------------------
 
+class GetPeersByOrganizationIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest) */ {
+ public:
+  inline GetPeersByOrganizationIdRequest() : GetPeersByOrganizationIdRequest(nullptr) {}
+  ~GetPeersByOrganizationIdRequest() override;
+  explicit constexpr GetPeersByOrganizationIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetPeersByOrganizationIdRequest(const GetPeersByOrganizationIdRequest& from);
+  GetPeersByOrganizationIdRequest(GetPeersByOrganizationIdRequest&& from) noexcept
+    : GetPeersByOrganizationIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetPeersByOrganizationIdRequest& operator=(const GetPeersByOrganizationIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPeersByOrganizationIdRequest& operator=(GetPeersByOrganizationIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetPeersByOrganizationIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetPeersByOrganizationIdRequest* internal_default_instance() {
+    return reinterpret_cast<const GetPeersByOrganizationIdRequest*>(
+               &_GetPeersByOrganizationIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(GetPeersByOrganizationIdRequest& a, GetPeersByOrganizationIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetPeersByOrganizationIdRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPeersByOrganizationIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetPeersByOrganizationIdRequest* New() const final {
+    return new GetPeersByOrganizationIdRequest();
+  }
+
+  GetPeersByOrganizationIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetPeersByOrganizationIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetPeersByOrganizationIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetPeersByOrganizationIdRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetPeersByOrganizationIdRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest";
+  }
+  protected:
+  explicit GetPeersByOrganizationIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+    kOffsetFieldNumber = 2,
+    kLimitFieldNumber = 3,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // int64 offset = 2 [json_name = "offset"];
+  void clear_offset();
+  ::PROTOBUF_NAMESPACE_ID::int64 offset() const;
+  void set_offset(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_offset() const;
+  void _internal_set_offset(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 limit = 3 [json_name = "limit"];
+  void clear_limit();
+  ::PROTOBUF_NAMESPACE_ID::int64 limit() const;
+  void set_limit(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_limit() const;
+  void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::int64 offset_;
+  ::PROTOBUF_NAMESPACE_ID::int64 limit_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetBlockchainByIdRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetBlockchainByIdRequest) */ {
  public:
@@ -961,7 +1135,7 @@ class GetBlockchainByIdRequest final :
                &_GetBlockchainByIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(GetBlockchainByIdRequest& a, GetBlockchainByIdRequest& b) {
     a.Swap(&b);
@@ -1105,7 +1279,7 @@ class GetOrganizationsByBlockchainIdRequest final :
                &_GetOrganizationsByBlockchainIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(GetOrganizationsByBlockchainIdRequest& a, GetOrganizationsByBlockchainIdRequest& b) {
     a.Swap(&b);
@@ -1271,7 +1445,7 @@ class CreateOrganizationRequest final :
                &_CreateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(CreateOrganizationRequest& a, CreateOrganizationRequest& b) {
     a.Swap(&b);
@@ -1419,7 +1593,7 @@ class SendInvitationRequest final :
                &_SendInvitationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(SendInvitationRequest& a, SendInvitationRequest& b) {
     a.Swap(&b);
@@ -1567,7 +1741,7 @@ class CreateNetworkResponse final :
                &_CreateNetworkResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(CreateNetworkResponse& a, CreateNetworkResponse& b) {
     a.Swap(&b);
@@ -1731,7 +1905,7 @@ class AddPeerToOrganizationResponse final :
                &_AddPeerToOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(AddPeerToOrganizationResponse& a, AddPeerToOrganizationResponse& b) {
     a.Swap(&b);
@@ -1895,7 +2069,7 @@ class CreateChannelResponse final :
                &_CreateChannelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(CreateChannelResponse& a, CreateChannelResponse& b) {
     a.Swap(&b);
@@ -2059,7 +2233,7 @@ class GetBlockchainsResponse final :
                &_GetBlockchainsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(GetBlockchainsResponse& a, GetBlockchainsResponse& b) {
     a.Swap(&b);
@@ -2250,7 +2424,7 @@ class GetBlockchainsByUserIdResponse final :
                &_GetBlockchainsByUserIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(GetBlockchainsByUserIdResponse& a, GetBlockchainsByUserIdResponse& b) {
     a.Swap(&b);
@@ -2397,6 +2571,197 @@ class GetBlockchainsByUserIdResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetPeersByOrganizationIdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse) */ {
+ public:
+  inline GetPeersByOrganizationIdResponse() : GetPeersByOrganizationIdResponse(nullptr) {}
+  ~GetPeersByOrganizationIdResponse() override;
+  explicit constexpr GetPeersByOrganizationIdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetPeersByOrganizationIdResponse(const GetPeersByOrganizationIdResponse& from);
+  GetPeersByOrganizationIdResponse(GetPeersByOrganizationIdResponse&& from) noexcept
+    : GetPeersByOrganizationIdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetPeersByOrganizationIdResponse& operator=(const GetPeersByOrganizationIdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPeersByOrganizationIdResponse& operator=(GetPeersByOrganizationIdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetPeersByOrganizationIdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetPeersByOrganizationIdResponse* internal_default_instance() {
+    return reinterpret_cast<const GetPeersByOrganizationIdResponse*>(
+               &_GetPeersByOrganizationIdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(GetPeersByOrganizationIdResponse& a, GetPeersByOrganizationIdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetPeersByOrganizationIdResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPeersByOrganizationIdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetPeersByOrganizationIdResponse* New() const final {
+    return new GetPeersByOrganizationIdResponse();
+  }
+
+  GetPeersByOrganizationIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetPeersByOrganizationIdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetPeersByOrganizationIdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetPeersByOrganizationIdResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetPeersByOrganizationIdResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse";
+  }
+  protected:
+  explicit GetPeersByOrganizationIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPeerFieldNumber = 1,
+    kNextUrlFieldNumber = 3,
+    kPreviousUrlFieldNumber = 4,
+    kTotalFieldNumber = 2,
+  };
+  // repeated .blockchain.network.v1alpha1.Peer peer = 1 [json_name = "peer"];
+  int peer_size() const;
+  private:
+  int _internal_peer_size() const;
+  public:
+  void clear_peer();
+  ::blockchain::network::v1alpha1::Peer* mutable_peer(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >*
+      mutable_peer();
+  private:
+  const ::blockchain::network::v1alpha1::Peer& _internal_peer(int index) const;
+  ::blockchain::network::v1alpha1::Peer* _internal_add_peer();
+  public:
+  const ::blockchain::network::v1alpha1::Peer& peer(int index) const;
+  ::blockchain::network::v1alpha1::Peer* add_peer();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >&
+      peer() const;
+
+  // string next_url = 3 [json_name = "nextUrl"];
+  void clear_next_url();
+  const std::string& next_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_next_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_next_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_next_url();
+  void set_allocated_next_url(std::string* next_url);
+  private:
+  const std::string& _internal_next_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_next_url(const std::string& value);
+  std::string* _internal_mutable_next_url();
+  public:
+
+  // string previous_url = 4 [json_name = "previousUrl"];
+  void clear_previous_url();
+  const std::string& previous_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_previous_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_previous_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_previous_url();
+  void set_allocated_previous_url(std::string* previous_url);
+  private:
+  const std::string& _internal_previous_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_previous_url(const std::string& value);
+  std::string* _internal_mutable_previous_url();
+  public:
+
+  // int64 total = 2 [json_name = "total"];
+  void clear_total();
+  ::PROTOBUF_NAMESPACE_ID::int64 total() const;
+  void set_total(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_total() const;
+  void _internal_set_total(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer > peer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_url_;
+  ::PROTOBUF_NAMESPACE_ID::int64 total_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetBlockchainByIdResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetBlockchainByIdResponse) */ {
  public:
@@ -2441,7 +2806,7 @@ class GetBlockchainByIdResponse final :
                &_GetBlockchainByIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(GetBlockchainByIdResponse& a, GetBlockchainByIdResponse& b) {
     a.Swap(&b);
@@ -2589,7 +2954,7 @@ class GetOrganizationsByBlockchainIdResponse final :
                &_GetOrganizationsByBlockchainIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(GetOrganizationsByBlockchainIdResponse& a, GetOrganizationsByBlockchainIdResponse& b) {
     a.Swap(&b);
@@ -2780,7 +3145,7 @@ class CreateOrganizationResponse final :
                &_CreateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(CreateOrganizationResponse& a, CreateOrganizationResponse& b) {
     a.Swap(&b);
@@ -2944,7 +3309,7 @@ class SendInvitationResponse final :
                &_SendInvitationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(SendInvitationResponse& a, SendInvitationResponse& b) {
     a.Swap(&b);
@@ -3517,6 +3882,96 @@ inline void GetBlockchainsByUserIdRequest::_internal_set_limit(::PROTOBUF_NAMESP
 inline void GetBlockchainsByUserIdRequest::set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_limit(value);
   // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsByUserIdRequest.limit)
+}
+
+// -------------------------------------------------------------------
+
+// GetPeersByOrganizationIdRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void GetPeersByOrganizationIdRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& GetPeersByOrganizationIdRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetPeersByOrganizationIdRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.organization_id)
+}
+inline std::string* GetPeersByOrganizationIdRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.organization_id)
+  return _s;
+}
+inline const std::string& GetPeersByOrganizationIdRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void GetPeersByOrganizationIdRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetPeersByOrganizationIdRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetPeersByOrganizationIdRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetPeersByOrganizationIdRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.organization_id)
+}
+
+// int64 offset = 2 [json_name = "offset"];
+inline void GetPeersByOrganizationIdRequest::clear_offset() {
+  offset_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetPeersByOrganizationIdRequest::_internal_offset() const {
+  return offset_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetPeersByOrganizationIdRequest::offset() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.offset)
+  return _internal_offset();
+}
+inline void GetPeersByOrganizationIdRequest::_internal_set_offset(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  offset_ = value;
+}
+inline void GetPeersByOrganizationIdRequest::set_offset(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_offset(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.offset)
+}
+
+// int64 limit = 3 [json_name = "limit"];
+inline void GetPeersByOrganizationIdRequest::clear_limit() {
+  limit_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetPeersByOrganizationIdRequest::_internal_limit() const {
+  return limit_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetPeersByOrganizationIdRequest::limit() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.limit)
+  return _internal_limit();
+}
+inline void GetPeersByOrganizationIdRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  limit_ = value;
+}
+inline void GetPeersByOrganizationIdRequest::set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_limit(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.limit)
 }
 
 // -------------------------------------------------------------------
@@ -4555,6 +5010,159 @@ inline void GetBlockchainsByUserIdResponse::set_allocated_previous_url(std::stri
 
 // -------------------------------------------------------------------
 
+// GetPeersByOrganizationIdResponse
+
+// repeated .blockchain.network.v1alpha1.Peer peer = 1 [json_name = "peer"];
+inline int GetPeersByOrganizationIdResponse::_internal_peer_size() const {
+  return peer_.size();
+}
+inline int GetPeersByOrganizationIdResponse::peer_size() const {
+  return _internal_peer_size();
+}
+inline ::blockchain::network::v1alpha1::Peer* GetPeersByOrganizationIdResponse::mutable_peer(int index) {
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.peer)
+  return peer_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >*
+GetPeersByOrganizationIdResponse::mutable_peer() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.peer)
+  return &peer_;
+}
+inline const ::blockchain::network::v1alpha1::Peer& GetPeersByOrganizationIdResponse::_internal_peer(int index) const {
+  return peer_.Get(index);
+}
+inline const ::blockchain::network::v1alpha1::Peer& GetPeersByOrganizationIdResponse::peer(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.peer)
+  return _internal_peer(index);
+}
+inline ::blockchain::network::v1alpha1::Peer* GetPeersByOrganizationIdResponse::_internal_add_peer() {
+  return peer_.Add();
+}
+inline ::blockchain::network::v1alpha1::Peer* GetPeersByOrganizationIdResponse::add_peer() {
+  ::blockchain::network::v1alpha1::Peer* _add = _internal_add_peer();
+  // @@protoc_insertion_point(field_add:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.peer)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >&
+GetPeersByOrganizationIdResponse::peer() const {
+  // @@protoc_insertion_point(field_list:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.peer)
+  return peer_;
+}
+
+// int64 total = 2 [json_name = "total"];
+inline void GetPeersByOrganizationIdResponse::clear_total() {
+  total_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetPeersByOrganizationIdResponse::_internal_total() const {
+  return total_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetPeersByOrganizationIdResponse::total() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.total)
+  return _internal_total();
+}
+inline void GetPeersByOrganizationIdResponse::_internal_set_total(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  total_ = value;
+}
+inline void GetPeersByOrganizationIdResponse::set_total(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_total(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.total)
+}
+
+// string next_url = 3 [json_name = "nextUrl"];
+inline void GetPeersByOrganizationIdResponse::clear_next_url() {
+  next_url_.ClearToEmpty();
+}
+inline const std::string& GetPeersByOrganizationIdResponse::next_url() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.next_url)
+  return _internal_next_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetPeersByOrganizationIdResponse::set_next_url(ArgT0&& arg0, ArgT... args) {
+ 
+ next_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.next_url)
+}
+inline std::string* GetPeersByOrganizationIdResponse::mutable_next_url() {
+  std::string* _s = _internal_mutable_next_url();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.next_url)
+  return _s;
+}
+inline const std::string& GetPeersByOrganizationIdResponse::_internal_next_url() const {
+  return next_url_.Get();
+}
+inline void GetPeersByOrganizationIdResponse::_internal_set_next_url(const std::string& value) {
+  
+  next_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetPeersByOrganizationIdResponse::_internal_mutable_next_url() {
+  
+  return next_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetPeersByOrganizationIdResponse::release_next_url() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.next_url)
+  return next_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetPeersByOrganizationIdResponse::set_allocated_next_url(std::string* next_url) {
+  if (next_url != nullptr) {
+    
+  } else {
+    
+  }
+  next_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), next_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.next_url)
+}
+
+// string previous_url = 4 [json_name = "previousUrl"];
+inline void GetPeersByOrganizationIdResponse::clear_previous_url() {
+  previous_url_.ClearToEmpty();
+}
+inline const std::string& GetPeersByOrganizationIdResponse::previous_url() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.previous_url)
+  return _internal_previous_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetPeersByOrganizationIdResponse::set_previous_url(ArgT0&& arg0, ArgT... args) {
+ 
+ previous_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.previous_url)
+}
+inline std::string* GetPeersByOrganizationIdResponse::mutable_previous_url() {
+  std::string* _s = _internal_mutable_previous_url();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.previous_url)
+  return _s;
+}
+inline const std::string& GetPeersByOrganizationIdResponse::_internal_previous_url() const {
+  return previous_url_.Get();
+}
+inline void GetPeersByOrganizationIdResponse::_internal_set_previous_url(const std::string& value) {
+  
+  previous_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetPeersByOrganizationIdResponse::_internal_mutable_previous_url() {
+  
+  return previous_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetPeersByOrganizationIdResponse::release_previous_url() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.previous_url)
+  return previous_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetPeersByOrganizationIdResponse::set_allocated_previous_url(std::string* previous_url) {
+  if (previous_url != nullptr) {
+    
+  } else {
+    
+  }
+  previous_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse.previous_url)
+}
+
+// -------------------------------------------------------------------
+
 // GetBlockchainByIdResponse
 
 // .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
@@ -5071,6 +5679,10 @@ inline void SendInvitationResponse::set_allocated_message(std::string* message) 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
