@@ -18,7 +18,7 @@ class NetworkApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‰
+Í
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"¥
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetworkM
@@ -32,6 +32,10 @@ class NetworkApi
 limit (Rlimit"f
 GetBlockchainsByUserIdRequest
 user_id (	RuserId
+offset (Roffset
+limit (Rlimit"x
+GetPeersByOrganizationIdRequest\'
+organization_id (	RorganizationId
 offset (Roffset
 limit (Rlimit"*
 GetBlockchainByIdRequest
@@ -64,6 +68,11 @@ invitation"q
 networks (2$.blockchain.network.v1alpha1.NetworkRnetworks
 total (Rtotal
 next_url (	RnextUrl!
+previous_url (	RpreviousUrl"­
+ GetPeersByOrganizationIdResponse5
+peer (2!.blockchain.network.v1alpha1.PeerRpeer
+total (Rtotal
+next_url (	RnextUrl!
 previous_url (	RpreviousUrl"[
 GetBlockchainByIdResponse>
 network (2$.blockchain.network.v1alpha1.NetworkRnetwork"Í
@@ -79,7 +88,8 @@ invitation"q
 
 invitation (2\'.blockchain.network.v1alpha1.InvitationR
 invitation
-message (	Rmessage2Ú	
+message (	Rmessage2ô
+
 BlockchainAPIServicev
 CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseŽ
 AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsey
@@ -89,7 +99,8 @@ invitation
 GetOrganizationsByBlockchainIdB.blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequestC.blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponsey
 SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponse…
 CreateOrganization6.blockchain.network.v1alpha1.CreateOrganizationRequest7.blockchain.network.v1alpha1.CreateOrganizationResponsev
-CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
+CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponse—
+GetPeersByOrganizationId<.blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest=.blockchain.network.v1alpha1.GetPeersByOrganizationIdResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

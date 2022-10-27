@@ -57,6 +57,14 @@ class Organization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string updated_at = 11 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>string name_ca = 12 [json_name = "nameCa"];</code>
+     */
+    protected $name_ca = '';
+    /**
+     * Generated from protobuf field <code>string name_msp = 13 [json_name = "nameMsp"];</code>
+     */
+    protected $name_msp = '';
 
     /**
      * Constructor.
@@ -75,6 +83,8 @@ class Organization extends \Google\Protobuf\Internal\Message
      *     @type string $error_details
      *     @type string $created_at
      *     @type string $updated_at
+     *     @type string $name_ca
+     *     @type string $name_msp
      * }
      */
     public function __construct($data = NULL) {
@@ -320,6 +330,50 @@ class Organization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name_ca = 12 [json_name = "nameCa"];</code>
+     * @return string
+     */
+    public function getNameCa()
+    {
+        return $this->name_ca;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name_ca = 12 [json_name = "nameCa"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNameCa($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name_ca = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name_msp = 13 [json_name = "nameMsp"];</code>
+     * @return string
+     */
+    public function getNameMsp()
+    {
+        return $this->name_msp;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name_msp = 13 [json_name = "nameMsp"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNameMsp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name_msp = $var;
 
         return $this;
     }

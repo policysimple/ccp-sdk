@@ -182,6 +182,28 @@ function deserialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdR
   return blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdRequest)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdResponse)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_blockchain_network_v1alpha1_SendInvitationRequest(arg) {
   if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.SendInvitationRequest)) {
     throw new Error('Expected argument of type blockchain.network.v1alpha1.SendInvitationRequest');
@@ -304,6 +326,17 @@ var BlockchainAPIServiceService = exports.BlockchainAPIServiceService = {
     requestDeserialize: deserialize_blockchain_network_v1alpha1_CreateChannelRequest,
     responseSerialize: serialize_blockchain_network_v1alpha1_CreateChannelResponse,
     responseDeserialize: deserialize_blockchain_network_v1alpha1_CreateChannelResponse,
+  },
+  getPeersByOrganizationId: {
+    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId',
+    requestStream: false,
+    responseStream: false,
+    requestType: blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdRequest,
+    responseType: blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdResponse,
+    requestSerialize: serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest,
+    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest,
+    responseSerialize: serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse,
+    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse,
   },
 };
 
