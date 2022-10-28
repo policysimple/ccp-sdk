@@ -28,6 +28,8 @@ type BlockchainAPIServiceClient interface {
 	CreateOrganization(ctx context.Context, in *CreateOrganizationRequest, opts ...grpc.CallOption) (*CreateOrganizationResponse, error)
 	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
 	GetPeersByOrganizationId(ctx context.Context, in *GetPeersByOrganizationIdRequest, opts ...grpc.CallOption) (*GetPeersByOrganizationIdResponse, error)
+	GetOrdererByNetworkId(ctx context.Context, in *GetOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*GetOrdererByNetworkIdResponse, error)
+	AddOrdererByNetworkId(ctx context.Context, in *AddOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*AddOrdererByNetworkIdResponse, error)
 }
 
 type blockchainAPIServiceClient struct {
@@ -128,6 +130,24 @@ func (c *blockchainAPIServiceClient) GetPeersByOrganizationId(ctx context.Contex
 	return out, nil
 }
 
+func (c *blockchainAPIServiceClient) GetOrdererByNetworkId(ctx context.Context, in *GetOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*GetOrdererByNetworkIdResponse, error) {
+	out := new(GetOrdererByNetworkIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *blockchainAPIServiceClient) AddOrdererByNetworkId(ctx context.Context, in *AddOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*AddOrdererByNetworkIdResponse, error) {
+	out := new(AddOrdererByNetworkIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/AddOrdererByNetworkId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BlockchainAPIServiceServer is the server API for BlockchainAPIService service.
 // All implementations should embed UnimplementedBlockchainAPIServiceServer
 // for forward compatibility
@@ -142,6 +162,8 @@ type BlockchainAPIServiceServer interface {
 	CreateOrganization(context.Context, *CreateOrganizationRequest) (*CreateOrganizationResponse, error)
 	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
 	GetPeersByOrganizationId(context.Context, *GetPeersByOrganizationIdRequest) (*GetPeersByOrganizationIdResponse, error)
+	GetOrdererByNetworkId(context.Context, *GetOrdererByNetworkIdRequest) (*GetOrdererByNetworkIdResponse, error)
+	AddOrdererByNetworkId(context.Context, *AddOrdererByNetworkIdRequest) (*AddOrdererByNetworkIdResponse, error)
 }
 
 // UnimplementedBlockchainAPIServiceServer should be embedded to have forward compatible implementations.
@@ -177,6 +199,12 @@ func (UnimplementedBlockchainAPIServiceServer) CreateChannel(context.Context, *C
 }
 func (UnimplementedBlockchainAPIServiceServer) GetPeersByOrganizationId(context.Context, *GetPeersByOrganizationIdRequest) (*GetPeersByOrganizationIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeersByOrganizationId not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) GetOrdererByNetworkId(context.Context, *GetOrdererByNetworkIdRequest) (*GetOrdererByNetworkIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrdererByNetworkId not implemented")
+}
+func (UnimplementedBlockchainAPIServiceServer) AddOrdererByNetworkId(context.Context, *AddOrdererByNetworkIdRequest) (*AddOrdererByNetworkIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddOrdererByNetworkId not implemented")
 }
 
 // UnsafeBlockchainAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -370,6 +398,42 @@ func _BlockchainAPIService_GetPeersByOrganizationId_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BlockchainAPIService_GetOrdererByNetworkId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrdererByNetworkIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).GetOrdererByNetworkId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).GetOrdererByNetworkId(ctx, req.(*GetOrdererByNetworkIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BlockchainAPIService_AddOrdererByNetworkId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddOrdererByNetworkIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BlockchainAPIServiceServer).AddOrdererByNetworkId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/AddOrdererByNetworkId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BlockchainAPIServiceServer).AddOrdererByNetworkId(ctx, req.(*AddOrdererByNetworkIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // BlockchainAPIService_ServiceDesc is the grpc.ServiceDesc for BlockchainAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -416,6 +480,14 @@ var BlockchainAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPeersByOrganizationId",
 			Handler:    _BlockchainAPIService_GetPeersByOrganizationId_Handler,
+		},
+		{
+			MethodName: "GetOrdererByNetworkId",
+			Handler:    _BlockchainAPIService_GetOrdererByNetworkId_Handler,
+		},
+		{
+			MethodName: "AddOrdererByNetworkId",
+			Handler:    _BlockchainAPIService_AddOrdererByNetworkId_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

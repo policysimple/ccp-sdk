@@ -17,6 +17,8 @@ service BlockchainAPIService {
     rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
     rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
     rpc GetPeersByOrganizationId(GetPeersByOrganizationIdRequest) returns (GetPeersByOrganizationIdResponse);
+    rpc GetOrdererByNetworkId(GetOrdererByNetworkIdRequest) returns (GetOrdererByNetworkIdResponse);
+    rpc AddOrdererByNetworkId(AddOrdererByNetworkIdRequest) returns (AddOrdererByNetworkIdResponse);
 }
 
 
@@ -28,6 +30,10 @@ message CreateNetworkRequest {
 
 message AddPeerToOrganizationRequest {
     string organization_id = 1;
+}
+
+message AddOrdererByNetworkIdRequest {
+    blockchain.network.v1alpha1.Orderer orderer = 1;
 }
 
 message CreateChannelRequest {
@@ -47,6 +53,12 @@ message GetBlockchainsByUserIdRequest {
 
 message GetPeersByOrganizationIdRequest {
     string organization_id = 1;
+    int64 offset = 2;
+    int64 limit = 3;
+}
+
+message GetOrdererByNetworkIdRequest {
+    string network_id = 1;
     int64 offset = 2;
     int64 limit = 3;
 }
@@ -80,6 +92,11 @@ message AddPeerToOrganizationResponse {
     string message = 2;
 }
 
+message AddOrdererByNetworkIdResponse {
+    blockchain.network.v1alpha1.Orderer orderer = 1;
+    string message = 2;
+}
+
 message CreateChannelResponse {
     blockchain.network.v1alpha1.Channel channel = 1;
     string message = 2;
@@ -94,6 +111,13 @@ message GetBlockchainsResponse {
 
 message GetBlockchainsByUserIdResponse {
     repeated blockchain.network.v1alpha1.Network networks = 1;
+    int64 total = 2;
+    string next_url = 3;
+    string previous_url = 4; 
+}
+
+message GetOrdererByNetworkIdResponse {
+    repeated blockchain.network.v1alpha1.Orderer orderer = 1;
     int64 total = 2;
     string next_url = 3;
     string previous_url = 4; 

@@ -48,7 +48,7 @@ struct TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -58,6 +58,12 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace blockchain {
 namespace network {
 namespace v1alpha1 {
+class AddOrdererByNetworkIdRequest;
+struct AddOrdererByNetworkIdRequestDefaultTypeInternal;
+extern AddOrdererByNetworkIdRequestDefaultTypeInternal _AddOrdererByNetworkIdRequest_default_instance_;
+class AddOrdererByNetworkIdResponse;
+struct AddOrdererByNetworkIdResponseDefaultTypeInternal;
+extern AddOrdererByNetworkIdResponseDefaultTypeInternal _AddOrdererByNetworkIdResponse_default_instance_;
 class AddPeerToOrganizationRequest;
 struct AddPeerToOrganizationRequestDefaultTypeInternal;
 extern AddPeerToOrganizationRequestDefaultTypeInternal _AddPeerToOrganizationRequest_default_instance_;
@@ -100,6 +106,12 @@ extern GetBlockchainsRequestDefaultTypeInternal _GetBlockchainsRequest_default_i
 class GetBlockchainsResponse;
 struct GetBlockchainsResponseDefaultTypeInternal;
 extern GetBlockchainsResponseDefaultTypeInternal _GetBlockchainsResponse_default_instance_;
+class GetOrdererByNetworkIdRequest;
+struct GetOrdererByNetworkIdRequestDefaultTypeInternal;
+extern GetOrdererByNetworkIdRequestDefaultTypeInternal _GetOrdererByNetworkIdRequest_default_instance_;
+class GetOrdererByNetworkIdResponse;
+struct GetOrdererByNetworkIdResponseDefaultTypeInternal;
+extern GetOrdererByNetworkIdResponseDefaultTypeInternal _GetOrdererByNetworkIdResponse_default_instance_;
 class GetOrganizationsByBlockchainIdRequest;
 struct GetOrganizationsByBlockchainIdRequestDefaultTypeInternal;
 extern GetOrganizationsByBlockchainIdRequestDefaultTypeInternal _GetOrganizationsByBlockchainIdRequest_default_instance_;
@@ -122,6 +134,8 @@ extern SendInvitationResponseDefaultTypeInternal _SendInvitationResponse_default
 }  // namespace network
 }  // namespace blockchain
 PROTOBUF_NAMESPACE_OPEN
+template<> ::blockchain::network::v1alpha1::AddOrdererByNetworkIdRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::AddOrdererByNetworkIdRequest>(Arena*);
+template<> ::blockchain::network::v1alpha1::AddOrdererByNetworkIdResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::AddOrdererByNetworkIdResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::AddPeerToOrganizationRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::AddPeerToOrganizationRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::AddPeerToOrganizationResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::AddPeerToOrganizationResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::CreateChannelRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::CreateChannelRequest>(Arena*);
@@ -136,6 +150,8 @@ template<> ::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest* Arena
 template<> ::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetBlockchainsRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetBlockchainsRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetBlockchainsResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetBlockchainsResponse>(Arena*);
+template<> ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest>(Arena*);
+template<> ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdRequest>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetOrganizationsByBlockchainIdResponse>(Arena*);
 template<> ::blockchain::network::v1alpha1::GetPeersByOrganizationIdRequest* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::GetPeersByOrganizationIdRequest>(Arena*);
@@ -461,6 +477,154 @@ class AddPeerToOrganizationRequest final :
 };
 // -------------------------------------------------------------------
 
+class AddOrdererByNetworkIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest) */ {
+ public:
+  inline AddOrdererByNetworkIdRequest() : AddOrdererByNetworkIdRequest(nullptr) {}
+  ~AddOrdererByNetworkIdRequest() override;
+  explicit constexpr AddOrdererByNetworkIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddOrdererByNetworkIdRequest(const AddOrdererByNetworkIdRequest& from);
+  AddOrdererByNetworkIdRequest(AddOrdererByNetworkIdRequest&& from) noexcept
+    : AddOrdererByNetworkIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddOrdererByNetworkIdRequest& operator=(const AddOrdererByNetworkIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddOrdererByNetworkIdRequest& operator=(AddOrdererByNetworkIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddOrdererByNetworkIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddOrdererByNetworkIdRequest* internal_default_instance() {
+    return reinterpret_cast<const AddOrdererByNetworkIdRequest*>(
+               &_AddOrdererByNetworkIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(AddOrdererByNetworkIdRequest& a, AddOrdererByNetworkIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddOrdererByNetworkIdRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddOrdererByNetworkIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddOrdererByNetworkIdRequest* New() const final {
+    return new AddOrdererByNetworkIdRequest();
+  }
+
+  AddOrdererByNetworkIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddOrdererByNetworkIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddOrdererByNetworkIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AddOrdererByNetworkIdRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddOrdererByNetworkIdRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest";
+  }
+  protected:
+  explicit AddOrdererByNetworkIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrdererFieldNumber = 1,
+  };
+  // .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
+  bool has_orderer() const;
+  private:
+  bool _internal_has_orderer() const;
+  public:
+  void clear_orderer();
+  const ::blockchain::network::v1alpha1::Orderer& orderer() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Orderer* release_orderer();
+  ::blockchain::network::v1alpha1::Orderer* mutable_orderer();
+  void set_allocated_orderer(::blockchain::network::v1alpha1::Orderer* orderer);
+  private:
+  const ::blockchain::network::v1alpha1::Orderer& _internal_orderer() const;
+  ::blockchain::network::v1alpha1::Orderer* _internal_mutable_orderer();
+  public:
+  void unsafe_arena_set_allocated_orderer(
+      ::blockchain::network::v1alpha1::Orderer* orderer);
+  ::blockchain::network::v1alpha1::Orderer* unsafe_arena_release_orderer();
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::blockchain::network::v1alpha1::Orderer* orderer_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateChannelRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.CreateChannelRequest) */ {
  public:
@@ -505,7 +669,7 @@ class CreateChannelRequest final :
                &_CreateChannelRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(CreateChannelRequest& a, CreateChannelRequest& b) {
     a.Swap(&b);
@@ -653,7 +817,7 @@ class GetBlockchainsRequest final :
                &_GetBlockchainsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(GetBlockchainsRequest& a, GetBlockchainsRequest& b) {
     a.Swap(&b);
@@ -803,7 +967,7 @@ class GetBlockchainsByUserIdRequest final :
                &_GetBlockchainsByUserIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(GetBlockchainsByUserIdRequest& a, GetBlockchainsByUserIdRequest& b) {
     a.Swap(&b);
@@ -969,7 +1133,7 @@ class GetPeersByOrganizationIdRequest final :
                &_GetPeersByOrganizationIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(GetPeersByOrganizationIdRequest& a, GetPeersByOrganizationIdRequest& b) {
     a.Swap(&b);
@@ -1091,6 +1255,172 @@ class GetPeersByOrganizationIdRequest final :
 };
 // -------------------------------------------------------------------
 
+class GetOrdererByNetworkIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest) */ {
+ public:
+  inline GetOrdererByNetworkIdRequest() : GetOrdererByNetworkIdRequest(nullptr) {}
+  ~GetOrdererByNetworkIdRequest() override;
+  explicit constexpr GetOrdererByNetworkIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetOrdererByNetworkIdRequest(const GetOrdererByNetworkIdRequest& from);
+  GetOrdererByNetworkIdRequest(GetOrdererByNetworkIdRequest&& from) noexcept
+    : GetOrdererByNetworkIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetOrdererByNetworkIdRequest& operator=(const GetOrdererByNetworkIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetOrdererByNetworkIdRequest& operator=(GetOrdererByNetworkIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetOrdererByNetworkIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetOrdererByNetworkIdRequest* internal_default_instance() {
+    return reinterpret_cast<const GetOrdererByNetworkIdRequest*>(
+               &_GetOrdererByNetworkIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(GetOrdererByNetworkIdRequest& a, GetOrdererByNetworkIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetOrdererByNetworkIdRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetOrdererByNetworkIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetOrdererByNetworkIdRequest* New() const final {
+    return new GetOrdererByNetworkIdRequest();
+  }
+
+  GetOrdererByNetworkIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetOrdererByNetworkIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetOrdererByNetworkIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetOrdererByNetworkIdRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetOrdererByNetworkIdRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest";
+  }
+  protected:
+  explicit GetOrdererByNetworkIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNetworkIdFieldNumber = 1,
+    kOffsetFieldNumber = 2,
+    kLimitFieldNumber = 3,
+  };
+  // string network_id = 1 [json_name = "networkId"];
+  void clear_network_id();
+  const std::string& network_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_network_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_network_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_network_id();
+  void set_allocated_network_id(std::string* network_id);
+  private:
+  const std::string& _internal_network_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_network_id(const std::string& value);
+  std::string* _internal_mutable_network_id();
+  public:
+
+  // int64 offset = 2 [json_name = "offset"];
+  void clear_offset();
+  ::PROTOBUF_NAMESPACE_ID::int64 offset() const;
+  void set_offset(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_offset() const;
+  void _internal_set_offset(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 limit = 3 [json_name = "limit"];
+  void clear_limit();
+  ::PROTOBUF_NAMESPACE_ID::int64 limit() const;
+  void set_limit(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_limit() const;
+  void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_id_;
+  ::PROTOBUF_NAMESPACE_ID::int64 offset_;
+  ::PROTOBUF_NAMESPACE_ID::int64 limit_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetBlockchainByIdRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetBlockchainByIdRequest) */ {
  public:
@@ -1135,7 +1465,7 @@ class GetBlockchainByIdRequest final :
                &_GetBlockchainByIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(GetBlockchainByIdRequest& a, GetBlockchainByIdRequest& b) {
     a.Swap(&b);
@@ -1279,7 +1609,7 @@ class GetOrganizationsByBlockchainIdRequest final :
                &_GetOrganizationsByBlockchainIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(GetOrganizationsByBlockchainIdRequest& a, GetOrganizationsByBlockchainIdRequest& b) {
     a.Swap(&b);
@@ -1445,7 +1775,7 @@ class CreateOrganizationRequest final :
                &_CreateOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(CreateOrganizationRequest& a, CreateOrganizationRequest& b) {
     a.Swap(&b);
@@ -1593,7 +1923,7 @@ class SendInvitationRequest final :
                &_SendInvitationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(SendInvitationRequest& a, SendInvitationRequest& b) {
     a.Swap(&b);
@@ -1741,7 +2071,7 @@ class CreateNetworkResponse final :
                &_CreateNetworkResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(CreateNetworkResponse& a, CreateNetworkResponse& b) {
     a.Swap(&b);
@@ -1905,7 +2235,7 @@ class AddPeerToOrganizationResponse final :
                &_AddPeerToOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(AddPeerToOrganizationResponse& a, AddPeerToOrganizationResponse& b) {
     a.Swap(&b);
@@ -2025,6 +2355,170 @@ class AddPeerToOrganizationResponse final :
 };
 // -------------------------------------------------------------------
 
+class AddOrdererByNetworkIdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse) */ {
+ public:
+  inline AddOrdererByNetworkIdResponse() : AddOrdererByNetworkIdResponse(nullptr) {}
+  ~AddOrdererByNetworkIdResponse() override;
+  explicit constexpr AddOrdererByNetworkIdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddOrdererByNetworkIdResponse(const AddOrdererByNetworkIdResponse& from);
+  AddOrdererByNetworkIdResponse(AddOrdererByNetworkIdResponse&& from) noexcept
+    : AddOrdererByNetworkIdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddOrdererByNetworkIdResponse& operator=(const AddOrdererByNetworkIdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddOrdererByNetworkIdResponse& operator=(AddOrdererByNetworkIdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddOrdererByNetworkIdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddOrdererByNetworkIdResponse* internal_default_instance() {
+    return reinterpret_cast<const AddOrdererByNetworkIdResponse*>(
+               &_AddOrdererByNetworkIdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(AddOrdererByNetworkIdResponse& a, AddOrdererByNetworkIdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddOrdererByNetworkIdResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddOrdererByNetworkIdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddOrdererByNetworkIdResponse* New() const final {
+    return new AddOrdererByNetworkIdResponse();
+  }
+
+  AddOrdererByNetworkIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddOrdererByNetworkIdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddOrdererByNetworkIdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AddOrdererByNetworkIdResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddOrdererByNetworkIdResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse";
+  }
+  protected:
+  explicit AddOrdererByNetworkIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 2,
+    kOrdererFieldNumber = 1,
+  };
+  // string message = 2 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
+  bool has_orderer() const;
+  private:
+  bool _internal_has_orderer() const;
+  public:
+  void clear_orderer();
+  const ::blockchain::network::v1alpha1::Orderer& orderer() const;
+  PROTOBUF_MUST_USE_RESULT ::blockchain::network::v1alpha1::Orderer* release_orderer();
+  ::blockchain::network::v1alpha1::Orderer* mutable_orderer();
+  void set_allocated_orderer(::blockchain::network::v1alpha1::Orderer* orderer);
+  private:
+  const ::blockchain::network::v1alpha1::Orderer& _internal_orderer() const;
+  ::blockchain::network::v1alpha1::Orderer* _internal_mutable_orderer();
+  public:
+  void unsafe_arena_set_allocated_orderer(
+      ::blockchain::network::v1alpha1::Orderer* orderer);
+  ::blockchain::network::v1alpha1::Orderer* unsafe_arena_release_orderer();
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::blockchain::network::v1alpha1::Orderer* orderer_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateChannelResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.CreateChannelResponse) */ {
  public:
@@ -2069,7 +2563,7 @@ class CreateChannelResponse final :
                &_CreateChannelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    15;
 
   friend void swap(CreateChannelResponse& a, CreateChannelResponse& b) {
     a.Swap(&b);
@@ -2233,7 +2727,7 @@ class GetBlockchainsResponse final :
                &_GetBlockchainsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    16;
 
   friend void swap(GetBlockchainsResponse& a, GetBlockchainsResponse& b) {
     a.Swap(&b);
@@ -2424,7 +2918,7 @@ class GetBlockchainsByUserIdResponse final :
                &_GetBlockchainsByUserIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    17;
 
   friend void swap(GetBlockchainsByUserIdResponse& a, GetBlockchainsByUserIdResponse& b) {
     a.Swap(&b);
@@ -2571,6 +3065,197 @@ class GetBlockchainsByUserIdResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetOrdererByNetworkIdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse) */ {
+ public:
+  inline GetOrdererByNetworkIdResponse() : GetOrdererByNetworkIdResponse(nullptr) {}
+  ~GetOrdererByNetworkIdResponse() override;
+  explicit constexpr GetOrdererByNetworkIdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetOrdererByNetworkIdResponse(const GetOrdererByNetworkIdResponse& from);
+  GetOrdererByNetworkIdResponse(GetOrdererByNetworkIdResponse&& from) noexcept
+    : GetOrdererByNetworkIdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetOrdererByNetworkIdResponse& operator=(const GetOrdererByNetworkIdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetOrdererByNetworkIdResponse& operator=(GetOrdererByNetworkIdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetOrdererByNetworkIdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetOrdererByNetworkIdResponse* internal_default_instance() {
+    return reinterpret_cast<const GetOrdererByNetworkIdResponse*>(
+               &_GetOrdererByNetworkIdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(GetOrdererByNetworkIdResponse& a, GetOrdererByNetworkIdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetOrdererByNetworkIdResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetOrdererByNetworkIdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetOrdererByNetworkIdResponse* New() const final {
+    return new GetOrdererByNetworkIdResponse();
+  }
+
+  GetOrdererByNetworkIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetOrdererByNetworkIdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetOrdererByNetworkIdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetOrdererByNetworkIdResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetOrdererByNetworkIdResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse";
+  }
+  protected:
+  explicit GetOrdererByNetworkIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrdererFieldNumber = 1,
+    kNextUrlFieldNumber = 3,
+    kPreviousUrlFieldNumber = 4,
+    kTotalFieldNumber = 2,
+  };
+  // repeated .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
+  int orderer_size() const;
+  private:
+  int _internal_orderer_size() const;
+  public:
+  void clear_orderer();
+  ::blockchain::network::v1alpha1::Orderer* mutable_orderer(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Orderer >*
+      mutable_orderer();
+  private:
+  const ::blockchain::network::v1alpha1::Orderer& _internal_orderer(int index) const;
+  ::blockchain::network::v1alpha1::Orderer* _internal_add_orderer();
+  public:
+  const ::blockchain::network::v1alpha1::Orderer& orderer(int index) const;
+  ::blockchain::network::v1alpha1::Orderer* add_orderer();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Orderer >&
+      orderer() const;
+
+  // string next_url = 3 [json_name = "nextUrl"];
+  void clear_next_url();
+  const std::string& next_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_next_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_next_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_next_url();
+  void set_allocated_next_url(std::string* next_url);
+  private:
+  const std::string& _internal_next_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_next_url(const std::string& value);
+  std::string* _internal_mutable_next_url();
+  public:
+
+  // string previous_url = 4 [json_name = "previousUrl"];
+  void clear_previous_url();
+  const std::string& previous_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_previous_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_previous_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_previous_url();
+  void set_allocated_previous_url(std::string* previous_url);
+  private:
+  const std::string& _internal_previous_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_previous_url(const std::string& value);
+  std::string* _internal_mutable_previous_url();
+  public:
+
+  // int64 total = 2 [json_name = "total"];
+  void clear_total();
+  ::PROTOBUF_NAMESPACE_ID::int64 total() const;
+  void set_total(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_total() const;
+  void _internal_set_total(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Orderer > orderer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_url_;
+  ::PROTOBUF_NAMESPACE_ID::int64 total_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetPeersByOrganizationIdResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse) */ {
  public:
@@ -2615,7 +3300,7 @@ class GetPeersByOrganizationIdResponse final :
                &_GetPeersByOrganizationIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(GetPeersByOrganizationIdResponse& a, GetPeersByOrganizationIdResponse& b) {
     a.Swap(&b);
@@ -2806,7 +3491,7 @@ class GetBlockchainByIdResponse final :
                &_GetBlockchainByIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(GetBlockchainByIdResponse& a, GetBlockchainByIdResponse& b) {
     a.Swap(&b);
@@ -2954,7 +3639,7 @@ class GetOrganizationsByBlockchainIdResponse final :
                &_GetOrganizationsByBlockchainIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(GetOrganizationsByBlockchainIdResponse& a, GetOrganizationsByBlockchainIdResponse& b) {
     a.Swap(&b);
@@ -3145,7 +3830,7 @@ class CreateOrganizationResponse final :
                &_CreateOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    22;
 
   friend void swap(CreateOrganizationResponse& a, CreateOrganizationResponse& b) {
     a.Swap(&b);
@@ -3309,7 +3994,7 @@ class SendInvitationResponse final :
                &_SendInvitationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(SendInvitationResponse& a, SendInvitationResponse& b) {
     a.Swap(&b);
@@ -3662,6 +4347,96 @@ inline void AddPeerToOrganizationRequest::set_allocated_organization_id(std::str
 
 // -------------------------------------------------------------------
 
+// AddOrdererByNetworkIdRequest
+
+// .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
+inline bool AddOrdererByNetworkIdRequest::_internal_has_orderer() const {
+  return this != internal_default_instance() && orderer_ != nullptr;
+}
+inline bool AddOrdererByNetworkIdRequest::has_orderer() const {
+  return _internal_has_orderer();
+}
+inline const ::blockchain::network::v1alpha1::Orderer& AddOrdererByNetworkIdRequest::_internal_orderer() const {
+  const ::blockchain::network::v1alpha1::Orderer* p = orderer_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Orderer&>(
+      ::blockchain::network::v1alpha1::_Orderer_default_instance_);
+}
+inline const ::blockchain::network::v1alpha1::Orderer& AddOrdererByNetworkIdRequest::orderer() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.orderer)
+  return _internal_orderer();
+}
+inline void AddOrdererByNetworkIdRequest::unsafe_arena_set_allocated_orderer(
+    ::blockchain::network::v1alpha1::Orderer* orderer) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(orderer_);
+  }
+  orderer_ = orderer;
+  if (orderer) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.orderer)
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdRequest::release_orderer() {
+  
+  ::blockchain::network::v1alpha1::Orderer* temp = orderer_;
+  orderer_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdRequest::unsafe_arena_release_orderer() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.orderer)
+  
+  ::blockchain::network::v1alpha1::Orderer* temp = orderer_;
+  orderer_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdRequest::_internal_mutable_orderer() {
+  
+  if (orderer_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Orderer>(GetArenaForAllocation());
+    orderer_ = p;
+  }
+  return orderer_;
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdRequest::mutable_orderer() {
+  ::blockchain::network::v1alpha1::Orderer* _msg = _internal_mutable_orderer();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.orderer)
+  return _msg;
+}
+inline void AddOrdererByNetworkIdRequest::set_allocated_orderer(::blockchain::network::v1alpha1::Orderer* orderer) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(orderer_);
+  }
+  if (orderer) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(orderer));
+    if (message_arena != submessage_arena) {
+      orderer = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, orderer, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  orderer_ = orderer;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.orderer)
+}
+
+// -------------------------------------------------------------------
+
 // CreateChannelRequest
 
 // .blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];
@@ -3972,6 +4747,96 @@ inline void GetPeersByOrganizationIdRequest::_internal_set_limit(::PROTOBUF_NAME
 inline void GetPeersByOrganizationIdRequest::set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_limit(value);
   // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest.limit)
+}
+
+// -------------------------------------------------------------------
+
+// GetOrdererByNetworkIdRequest
+
+// string network_id = 1 [json_name = "networkId"];
+inline void GetOrdererByNetworkIdRequest::clear_network_id() {
+  network_id_.ClearToEmpty();
+}
+inline const std::string& GetOrdererByNetworkIdRequest::network_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.network_id)
+  return _internal_network_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOrdererByNetworkIdRequest::set_network_id(ArgT0&& arg0, ArgT... args) {
+ 
+ network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.network_id)
+}
+inline std::string* GetOrdererByNetworkIdRequest::mutable_network_id() {
+  std::string* _s = _internal_mutable_network_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.network_id)
+  return _s;
+}
+inline const std::string& GetOrdererByNetworkIdRequest::_internal_network_id() const {
+  return network_id_.Get();
+}
+inline void GetOrdererByNetworkIdRequest::_internal_set_network_id(const std::string& value) {
+  
+  network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOrdererByNetworkIdRequest::_internal_mutable_network_id() {
+  
+  return network_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOrdererByNetworkIdRequest::release_network_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.network_id)
+  return network_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOrdererByNetworkIdRequest::set_allocated_network_id(std::string* network_id) {
+  if (network_id != nullptr) {
+    
+  } else {
+    
+  }
+  network_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.network_id)
+}
+
+// int64 offset = 2 [json_name = "offset"];
+inline void GetOrdererByNetworkIdRequest::clear_offset() {
+  offset_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetOrdererByNetworkIdRequest::_internal_offset() const {
+  return offset_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetOrdererByNetworkIdRequest::offset() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.offset)
+  return _internal_offset();
+}
+inline void GetOrdererByNetworkIdRequest::_internal_set_offset(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  offset_ = value;
+}
+inline void GetOrdererByNetworkIdRequest::set_offset(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_offset(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.offset)
+}
+
+// int64 limit = 3 [json_name = "limit"];
+inline void GetOrdererByNetworkIdRequest::clear_limit() {
+  limit_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetOrdererByNetworkIdRequest::_internal_limit() const {
+  return limit_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetOrdererByNetworkIdRequest::limit() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.limit)
+  return _internal_limit();
+}
+inline void GetOrdererByNetworkIdRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  limit_ = value;
+}
+inline void GetOrdererByNetworkIdRequest::set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_limit(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest.limit)
 }
 
 // -------------------------------------------------------------------
@@ -4568,6 +5433,142 @@ inline void AddPeerToOrganizationResponse::set_allocated_message(std::string* me
 
 // -------------------------------------------------------------------
 
+// AddOrdererByNetworkIdResponse
+
+// .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
+inline bool AddOrdererByNetworkIdResponse::_internal_has_orderer() const {
+  return this != internal_default_instance() && orderer_ != nullptr;
+}
+inline bool AddOrdererByNetworkIdResponse::has_orderer() const {
+  return _internal_has_orderer();
+}
+inline const ::blockchain::network::v1alpha1::Orderer& AddOrdererByNetworkIdResponse::_internal_orderer() const {
+  const ::blockchain::network::v1alpha1::Orderer* p = orderer_;
+  return p != nullptr ? *p : reinterpret_cast<const ::blockchain::network::v1alpha1::Orderer&>(
+      ::blockchain::network::v1alpha1::_Orderer_default_instance_);
+}
+inline const ::blockchain::network::v1alpha1::Orderer& AddOrdererByNetworkIdResponse::orderer() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.orderer)
+  return _internal_orderer();
+}
+inline void AddOrdererByNetworkIdResponse::unsafe_arena_set_allocated_orderer(
+    ::blockchain::network::v1alpha1::Orderer* orderer) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(orderer_);
+  }
+  orderer_ = orderer;
+  if (orderer) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.orderer)
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdResponse::release_orderer() {
+  
+  ::blockchain::network::v1alpha1::Orderer* temp = orderer_;
+  orderer_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdResponse::unsafe_arena_release_orderer() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.orderer)
+  
+  ::blockchain::network::v1alpha1::Orderer* temp = orderer_;
+  orderer_ = nullptr;
+  return temp;
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdResponse::_internal_mutable_orderer() {
+  
+  if (orderer_ == nullptr) {
+    auto* p = CreateMaybeMessage<::blockchain::network::v1alpha1::Orderer>(GetArenaForAllocation());
+    orderer_ = p;
+  }
+  return orderer_;
+}
+inline ::blockchain::network::v1alpha1::Orderer* AddOrdererByNetworkIdResponse::mutable_orderer() {
+  ::blockchain::network::v1alpha1::Orderer* _msg = _internal_mutable_orderer();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.orderer)
+  return _msg;
+}
+inline void AddOrdererByNetworkIdResponse::set_allocated_orderer(::blockchain::network::v1alpha1::Orderer* orderer) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(orderer_);
+  }
+  if (orderer) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(orderer));
+    if (message_arena != submessage_arena) {
+      orderer = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, orderer, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  orderer_ = orderer;
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.orderer)
+}
+
+// string message = 2 [json_name = "message"];
+inline void AddOrdererByNetworkIdResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& AddOrdererByNetworkIdResponse::message() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddOrdererByNetworkIdResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.message)
+}
+inline std::string* AddOrdererByNetworkIdResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.message)
+  return _s;
+}
+inline const std::string& AddOrdererByNetworkIdResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void AddOrdererByNetworkIdResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddOrdererByNetworkIdResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddOrdererByNetworkIdResponse::release_message() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddOrdererByNetworkIdResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdResponse.message)
+}
+
+// -------------------------------------------------------------------
+
 // CreateChannelResponse
 
 // .blockchain.network.v1alpha1.Channel channel = 1 [json_name = "channel"];
@@ -5006,6 +6007,159 @@ inline void GetBlockchainsByUserIdResponse::set_allocated_previous_url(std::stri
   previous_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous_url,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetBlockchainsByUserIdResponse.previous_url)
+}
+
+// -------------------------------------------------------------------
+
+// GetOrdererByNetworkIdResponse
+
+// repeated .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
+inline int GetOrdererByNetworkIdResponse::_internal_orderer_size() const {
+  return orderer_.size();
+}
+inline int GetOrdererByNetworkIdResponse::orderer_size() const {
+  return _internal_orderer_size();
+}
+inline ::blockchain::network::v1alpha1::Orderer* GetOrdererByNetworkIdResponse::mutable_orderer(int index) {
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.orderer)
+  return orderer_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Orderer >*
+GetOrdererByNetworkIdResponse::mutable_orderer() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.orderer)
+  return &orderer_;
+}
+inline const ::blockchain::network::v1alpha1::Orderer& GetOrdererByNetworkIdResponse::_internal_orderer(int index) const {
+  return orderer_.Get(index);
+}
+inline const ::blockchain::network::v1alpha1::Orderer& GetOrdererByNetworkIdResponse::orderer(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.orderer)
+  return _internal_orderer(index);
+}
+inline ::blockchain::network::v1alpha1::Orderer* GetOrdererByNetworkIdResponse::_internal_add_orderer() {
+  return orderer_.Add();
+}
+inline ::blockchain::network::v1alpha1::Orderer* GetOrdererByNetworkIdResponse::add_orderer() {
+  ::blockchain::network::v1alpha1::Orderer* _add = _internal_add_orderer();
+  // @@protoc_insertion_point(field_add:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.orderer)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Orderer >&
+GetOrdererByNetworkIdResponse::orderer() const {
+  // @@protoc_insertion_point(field_list:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.orderer)
+  return orderer_;
+}
+
+// int64 total = 2 [json_name = "total"];
+inline void GetOrdererByNetworkIdResponse::clear_total() {
+  total_ = int64_t{0};
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetOrdererByNetworkIdResponse::_internal_total() const {
+  return total_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 GetOrdererByNetworkIdResponse::total() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.total)
+  return _internal_total();
+}
+inline void GetOrdererByNetworkIdResponse::_internal_set_total(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  total_ = value;
+}
+inline void GetOrdererByNetworkIdResponse::set_total(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_total(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.total)
+}
+
+// string next_url = 3 [json_name = "nextUrl"];
+inline void GetOrdererByNetworkIdResponse::clear_next_url() {
+  next_url_.ClearToEmpty();
+}
+inline const std::string& GetOrdererByNetworkIdResponse::next_url() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.next_url)
+  return _internal_next_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOrdererByNetworkIdResponse::set_next_url(ArgT0&& arg0, ArgT... args) {
+ 
+ next_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.next_url)
+}
+inline std::string* GetOrdererByNetworkIdResponse::mutable_next_url() {
+  std::string* _s = _internal_mutable_next_url();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.next_url)
+  return _s;
+}
+inline const std::string& GetOrdererByNetworkIdResponse::_internal_next_url() const {
+  return next_url_.Get();
+}
+inline void GetOrdererByNetworkIdResponse::_internal_set_next_url(const std::string& value) {
+  
+  next_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOrdererByNetworkIdResponse::_internal_mutable_next_url() {
+  
+  return next_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOrdererByNetworkIdResponse::release_next_url() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.next_url)
+  return next_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOrdererByNetworkIdResponse::set_allocated_next_url(std::string* next_url) {
+  if (next_url != nullptr) {
+    
+  } else {
+    
+  }
+  next_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), next_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.next_url)
+}
+
+// string previous_url = 4 [json_name = "previousUrl"];
+inline void GetOrdererByNetworkIdResponse::clear_previous_url() {
+  previous_url_.ClearToEmpty();
+}
+inline const std::string& GetOrdererByNetworkIdResponse::previous_url() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.previous_url)
+  return _internal_previous_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOrdererByNetworkIdResponse::set_previous_url(ArgT0&& arg0, ArgT... args) {
+ 
+ previous_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.previous_url)
+}
+inline std::string* GetOrdererByNetworkIdResponse::mutable_previous_url() {
+  std::string* _s = _internal_mutable_previous_url();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.previous_url)
+  return _s;
+}
+inline const std::string& GetOrdererByNetworkIdResponse::_internal_previous_url() const {
+  return previous_url_.Get();
+}
+inline void GetOrdererByNetworkIdResponse::_internal_set_previous_url(const std::string& value) {
+  
+  previous_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetOrdererByNetworkIdResponse::_internal_mutable_previous_url() {
+  
+  return previous_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetOrdererByNetworkIdResponse::release_previous_url() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.previous_url)
+  return previous_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetOrdererByNetworkIdResponse::set_allocated_previous_url(std::string* previous_url) {
+  if (previous_url != nullptr) {
+    
+  } else {
+    
+  }
+  previous_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse.previous_url)
 }
 
 // -------------------------------------------------------------------
@@ -5679,6 +6833,14 @@ inline void SendInvitationResponse::set_allocated_message(std::string* message) 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
