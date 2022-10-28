@@ -46,7 +46,7 @@ struct TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,9 @@ extern InvitationDefaultTypeInternal _Invitation_default_instance_;
 class Network;
 struct NetworkDefaultTypeInternal;
 extern NetworkDefaultTypeInternal _Network_default_instance_;
+class Orderer;
+struct OrdererDefaultTypeInternal;
+extern OrdererDefaultTypeInternal _Orderer_default_instance_;
 class Organization;
 struct OrganizationDefaultTypeInternal;
 extern OrganizationDefaultTypeInternal _Organization_default_instance_;
@@ -78,6 +81,7 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::blockchain::network::v1alpha1::Channel* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Channel>(Arena*);
 template<> ::blockchain::network::v1alpha1::Invitation* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Invitation>(Arena*);
 template<> ::blockchain::network::v1alpha1::Network* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Network>(Arena*);
+template<> ::blockchain::network::v1alpha1::Orderer* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Orderer>(Arena*);
 template<> ::blockchain::network::v1alpha1::Organization* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Organization>(Arena*);
 template<> ::blockchain::network::v1alpha1::Peer* Arena::CreateMaybeMessage<::blockchain::network::v1alpha1::Peer>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -943,6 +947,246 @@ class Peer final :
 };
 // -------------------------------------------------------------------
 
+class Orderer final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.Orderer) */ {
+ public:
+  inline Orderer() : Orderer(nullptr) {}
+  ~Orderer() override;
+  explicit constexpr Orderer(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Orderer(const Orderer& from);
+  Orderer(Orderer&& from) noexcept
+    : Orderer() {
+    *this = ::std::move(from);
+  }
+
+  inline Orderer& operator=(const Orderer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Orderer& operator=(Orderer&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Orderer& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Orderer* internal_default_instance() {
+    return reinterpret_cast<const Orderer*>(
+               &_Orderer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(Orderer& a, Orderer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Orderer* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Orderer* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Orderer* New() const final {
+    return new Orderer();
+  }
+
+  Orderer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Orderer>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Orderer& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Orderer& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Orderer* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "blockchain.network.v1alpha1.Orderer";
+  }
+  protected:
+  explicit Orderer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kBlockchainIdFieldNumber = 3,
+    kTypeFieldNumber = 4,
+    kStatusFieldNumber = 5,
+    kCreatedAtFieldNumber = 6,
+    kUpdatedAtFieldNumber = 7,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string blockchain_id = 3 [json_name = "blockchainId"];
+  void clear_blockchain_id();
+  const std::string& blockchain_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_blockchain_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockchain_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_id();
+  void set_allocated_blockchain_id(std::string* blockchain_id);
+  private:
+  const std::string& _internal_blockchain_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_id(const std::string& value);
+  std::string* _internal_mutable_blockchain_id();
+  public:
+
+  // string type = 4 [json_name = "type"];
+  void clear_type();
+  const std::string& type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_type();
+  PROTOBUF_MUST_USE_RESULT std::string* release_type();
+  void set_allocated_type(std::string* type);
+  private:
+  const std::string& _internal_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_type(const std::string& value);
+  std::string* _internal_mutable_type();
+  public:
+
+  // string status = 5 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string created_at = 6 [json_name = "createdAt"];
+  void clear_created_at();
+  const std::string& created_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_created_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_created_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_created_at();
+  void set_allocated_created_at(std::string* created_at);
+  private:
+  const std::string& _internal_created_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_created_at(const std::string& value);
+  std::string* _internal_mutable_created_at();
+  public:
+
+  // string updated_at = 7 [json_name = "updatedAt"];
+  void clear_updated_at();
+  const std::string& updated_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_updated_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_updated_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_updated_at();
+  void set_allocated_updated_at(std::string* updated_at);
+  private:
+  const std::string& _internal_updated_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_updated_at(const std::string& value);
+  std::string* _internal_mutable_updated_at();
+  public:
+
+  // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Orderer)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Channel final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:blockchain.network.v1alpha1.Channel) */ {
  public:
@@ -987,7 +1231,7 @@ class Channel final :
                &_Channel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(Channel& a, Channel& b) {
     a.Swap(&b);
@@ -1253,7 +1497,7 @@ class Invitation final :
                &_Invitation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(Invitation& a, Invitation& b) {
     a.Swap(&b);
@@ -2790,6 +3034,332 @@ inline void Peer::set_allocated_updated_at(std::string* updated_at) {
 
 // -------------------------------------------------------------------
 
+// Orderer
+
+// string id = 1 [json_name = "id"];
+inline void Orderer::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& Orderer::id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.id)
+}
+inline std::string* Orderer::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.id)
+  return _s;
+}
+inline const std::string& Orderer::_internal_id() const {
+  return id_.Get();
+}
+inline void Orderer::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void Orderer::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Orderer::name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.name)
+}
+inline std::string* Orderer::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.name)
+  return _s;
+}
+inline const std::string& Orderer::_internal_name() const {
+  return name_.Get();
+}
+inline void Orderer::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.name)
+}
+
+// string blockchain_id = 3 [json_name = "blockchainId"];
+inline void Orderer::clear_blockchain_id() {
+  blockchain_id_.ClearToEmpty();
+}
+inline const std::string& Orderer::blockchain_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.blockchain_id)
+  return _internal_blockchain_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_blockchain_id(ArgT0&& arg0, ArgT... args) {
+ 
+ blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.blockchain_id)
+}
+inline std::string* Orderer::mutable_blockchain_id() {
+  std::string* _s = _internal_mutable_blockchain_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.blockchain_id)
+  return _s;
+}
+inline const std::string& Orderer::_internal_blockchain_id() const {
+  return blockchain_id_.Get();
+}
+inline void Orderer::_internal_set_blockchain_id(const std::string& value) {
+  
+  blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_blockchain_id() {
+  
+  return blockchain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_blockchain_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.blockchain_id)
+  return blockchain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_blockchain_id(std::string* blockchain_id) {
+  if (blockchain_id != nullptr) {
+    
+  } else {
+    
+  }
+  blockchain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.blockchain_id)
+}
+
+// string type = 4 [json_name = "type"];
+inline void Orderer::clear_type() {
+  type_.ClearToEmpty();
+}
+inline const std::string& Orderer::type() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.type)
+  return _internal_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_type(ArgT0&& arg0, ArgT... args) {
+ 
+ type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.type)
+}
+inline std::string* Orderer::mutable_type() {
+  std::string* _s = _internal_mutable_type();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.type)
+  return _s;
+}
+inline const std::string& Orderer::_internal_type() const {
+  return type_.Get();
+}
+inline void Orderer::_internal_set_type(const std::string& value) {
+  
+  type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_type() {
+  
+  return type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_type() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.type)
+  return type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_type(std::string* type) {
+  if (type != nullptr) {
+    
+  } else {
+    
+  }
+  type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.type)
+}
+
+// string status = 5 [json_name = "status"];
+inline void Orderer::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& Orderer::status() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.status)
+}
+inline std::string* Orderer::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.status)
+  return _s;
+}
+inline const std::string& Orderer::_internal_status() const {
+  return status_.Get();
+}
+inline void Orderer::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_status() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.status)
+}
+
+// string created_at = 6 [json_name = "createdAt"];
+inline void Orderer::clear_created_at() {
+  created_at_.ClearToEmpty();
+}
+inline const std::string& Orderer::created_at() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.created_at)
+  return _internal_created_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_created_at(ArgT0&& arg0, ArgT... args) {
+ 
+ created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.created_at)
+}
+inline std::string* Orderer::mutable_created_at() {
+  std::string* _s = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.created_at)
+  return _s;
+}
+inline const std::string& Orderer::_internal_created_at() const {
+  return created_at_.Get();
+}
+inline void Orderer::_internal_set_created_at(const std::string& value) {
+  
+  created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_created_at() {
+  
+  return created_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_created_at() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.created_at)
+  return created_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_created_at(std::string* created_at) {
+  if (created_at != nullptr) {
+    
+  } else {
+    
+  }
+  created_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), created_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.created_at)
+}
+
+// string updated_at = 7 [json_name = "updatedAt"];
+inline void Orderer::clear_updated_at() {
+  updated_at_.ClearToEmpty();
+}
+inline const std::string& Orderer::updated_at() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.updated_at)
+  return _internal_updated_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_updated_at(ArgT0&& arg0, ArgT... args) {
+ 
+ updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.updated_at)
+}
+inline std::string* Orderer::mutable_updated_at() {
+  std::string* _s = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.updated_at)
+  return _s;
+}
+inline const std::string& Orderer::_internal_updated_at() const {
+  return updated_at_.Get();
+}
+inline void Orderer::_internal_set_updated_at(const std::string& value) {
+  
+  updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_updated_at() {
+  
+  return updated_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_updated_at() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.updated_at)
+  return updated_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_updated_at(std::string* updated_at) {
+  if (updated_at != nullptr) {
+    
+  } else {
+    
+  }
+  updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.updated_at)
+}
+
+// -------------------------------------------------------------------
+
 // Channel
 
 // string id = 1 [json_name = "id"];
@@ -3518,6 +4088,8 @@ inline void Invitation::set_allocated_updated_at(std::string* updated_at) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

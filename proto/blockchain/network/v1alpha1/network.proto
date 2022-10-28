@@ -42,6 +42,16 @@ message Peer {
     string updated_at = 6;
 }
 
+message Orderer {
+    string id = 1;
+    string name = 2;
+    string blockchain_id = 3;
+    string type = 4;
+    string status = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
 message Channel {
     string id = 1;
     string organization_id = 2; // Organizations that creates the channel
