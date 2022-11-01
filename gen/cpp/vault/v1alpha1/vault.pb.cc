@@ -103,9 +103,21 @@ struct TokenIntegrationDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TokenIntegrationDefaultTypeInternal _TokenIntegration_default_instance_;
+constexpr BlockchainSecret::BlockchainSecret(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : data_(nullptr){}
+struct BlockchainSecretDefaultTypeInternal {
+  constexpr BlockchainSecretDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BlockchainSecretDefaultTypeInternal() {}
+  union {
+    BlockchainSecret _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BlockchainSecretDefaultTypeInternal _BlockchainSecret_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[6];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[7];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto = nullptr;
 
@@ -163,6 +175,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_2epro
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, organization_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, integration_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::TokenIntegration, token_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::BlockchainSecret, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::BlockchainSecret, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vault::v1alpha1::Metadata)},
@@ -171,6 +189,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 26, -1, sizeof(::vault::v1alpha1::SecretWarnings)},
   { 32, -1, sizeof(::vault::v1alpha1::Secret)},
   { 45, -1, sizeof(::vault::v1alpha1::TokenIntegration)},
+  { 53, -1, sizeof(::vault::v1alpha1::BlockchainSecret)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -180,6 +199,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SecretWarnings_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_Secret_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_TokenIntegration_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_BlockchainSecret_default_instance_),
 };
 
 const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -204,16 +224,18 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF
   "v1alpha1.SecretWarningsR\010warnings\"x\n\020Tok"
   "enIntegration\022\'\n\017organization_id\030\001 \001(\tR\016"
   "organizationId\022%\n\016integration_id\030\002 \001(\tR\r"
-  "integrationId\022\024\n\005token\030\003 \001(\tR\005tokenB\203\001\n\030"
-  "io.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1"
-  "github.com/cuemby/ccp-vault-service/vaul"
-  "tv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault"
-  "\\V1Alpha1b\006proto3"
+  "integrationId\022\024\n\005token\030\003 \001(\tR\005token\"B\n\020B"
+  "lockchainSecret\022.\n\004data\030\003 \001(\0132\032.vault.v1"
+  "alpha1.SecretDataR\004dataB\203\001\n\030io.cuemby.va"
+  "ult.v1alpha1B\nVaultProtoP\001Z1github.com/c"
+  "uemby/ccp-vault-service/vaultv1alpha1\242\002\003"
+  "PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006p"
+  "roto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_2eproto = {
-  false, false, 1017, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
-  &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 6,
+  false, false, 1085, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
+  &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 7,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto,
 };
@@ -1805,6 +1827,206 @@ void TokenIntegration::InternalSwap(TokenIntegration* other) {
       file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[5]);
 }
 
+// ===================================================================
+
+class BlockchainSecret::_Internal {
+ public:
+  static const ::vault::v1alpha1::SecretData& data(const BlockchainSecret* msg);
+};
+
+const ::vault::v1alpha1::SecretData&
+BlockchainSecret::_Internal::data(const BlockchainSecret* msg) {
+  return *msg->data_;
+}
+BlockchainSecret::BlockchainSecret(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.BlockchainSecret)
+}
+BlockchainSecret::BlockchainSecret(const BlockchainSecret& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_data()) {
+    data_ = new ::vault::v1alpha1::SecretData(*from.data_);
+  } else {
+    data_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.BlockchainSecret)
+}
+
+inline void BlockchainSecret::SharedCtor() {
+data_ = nullptr;
+}
+
+BlockchainSecret::~BlockchainSecret() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.BlockchainSecret)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void BlockchainSecret::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete data_;
+}
+
+void BlockchainSecret::ArenaDtor(void* object) {
+  BlockchainSecret* _this = reinterpret_cast< BlockchainSecret* >(object);
+  (void)_this;
+}
+void BlockchainSecret::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BlockchainSecret::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BlockchainSecret::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.BlockchainSecret)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && data_ != nullptr) {
+    delete data_;
+  }
+  data_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BlockchainSecret::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .vault.v1alpha1.SecretData data = 3 [json_name = "data"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BlockchainSecret::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.BlockchainSecret)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .vault.v1alpha1.SecretData data = 3 [json_name = "data"];
+  if (this->_internal_has_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::data(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.BlockchainSecret)
+  return target;
+}
+
+size_t BlockchainSecret::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.BlockchainSecret)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .vault.v1alpha1.SecretData data = 3 [json_name = "data"];
+  if (this->_internal_has_data()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *data_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BlockchainSecret::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BlockchainSecret::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BlockchainSecret::GetClassData() const { return &_class_data_; }
+
+void BlockchainSecret::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<BlockchainSecret *>(to)->MergeFrom(
+      static_cast<const BlockchainSecret &>(from));
+}
+
+
+void BlockchainSecret::MergeFrom(const BlockchainSecret& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.BlockchainSecret)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_data()) {
+    _internal_mutable_data()->::vault::v1alpha1::SecretData::MergeFrom(from._internal_data());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BlockchainSecret::CopyFrom(const BlockchainSecret& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.BlockchainSecret)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BlockchainSecret::IsInitialized() const {
+  return true;
+}
+
+void BlockchainSecret::InternalSwap(BlockchainSecret* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(data_, other->data_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BlockchainSecret::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[6]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace vault
@@ -1826,6 +2048,9 @@ template<> PROTOBUF_NOINLINE ::vault::v1alpha1::Secret* Arena::CreateMaybeMessag
 }
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::TokenIntegration* Arena::CreateMaybeMessage< ::vault::v1alpha1::TokenIntegration >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::TokenIntegration >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::BlockchainSecret* Arena::CreateMaybeMessage< ::vault::v1alpha1::BlockchainSecret >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::BlockchainSecret >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

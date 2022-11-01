@@ -23,6 +23,10 @@ service VaultAPIService{
     rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse) {};
     rpc SaveTokenIntegrations(SaveTokenIntegrationsRequest) returns (SaveTokenIntegrationsResponse) {};
     rpc GetTokenIntegrations(GetTokenIntegrationsRequest) returns (GetTokenIntegrationsResponse) {};
+
+    //BlockChain
+    rpc SaveTokenBlockChain(SaveTokenBlockChainRequest) returns (SaveTokenBlockChainResponse) {};
+    rpc GetTokenBlockChain(GetTokenBlockChainRequest) returns (GetTokenBlockChainResponse) {};
 }
 
 message CreateSecretRequest {
@@ -100,5 +104,27 @@ message GetTokenIntegrationsRequest {
 
 message GetTokenIntegrationsResponse {
     string token = 1;
+    string error = 2;
+}
+
+message SaveTokenBlockChainRequest {
+    string blockchain_id = 1;
+    string blockchain_name = 2;
+    string node_name = 3;
+    BlockchainSecret secret = 4;
+}
+
+message SaveTokenBlockChainResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message GetTokenBlockChainRequest {
+    string blockchain_id = 1;
+    string blockchain_name = 2;
+}
+
+message GetTokenBlockChainResponse {
+    BlockchainSecret secret = 1;
     string error = 2;
 }

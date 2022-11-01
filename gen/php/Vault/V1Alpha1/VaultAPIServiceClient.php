@@ -107,4 +107,31 @@ class VaultAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * BlockChain
+     * @param \Vault\V1Alpha1\SaveTokenBlockChainRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SaveTokenBlockChain(\Vault\V1Alpha1\SaveTokenBlockChainRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/SaveTokenBlockChain',
+        $argument,
+        ['\Vault\V1Alpha1\SaveTokenBlockChainResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Vault\V1Alpha1\GetTokenBlockChainRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTokenBlockChain(\Vault\V1Alpha1\GetTokenBlockChainRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/GetTokenBlockChain',
+        $argument,
+        ['\Vault\V1Alpha1\GetTokenBlockChainResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

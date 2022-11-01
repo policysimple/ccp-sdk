@@ -44,3 +44,7 @@ message TokenIntegration {
     string integration_id = 2;
     string token = 3;
 }
+
+message BlockchainSecret {
+    SecretData data = 3;
+}

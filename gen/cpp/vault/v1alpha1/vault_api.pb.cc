@@ -208,9 +208,63 @@ struct GetTokenIntegrationsResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTokenIntegrationsResponseDefaultTypeInternal _GetTokenIntegrationsResponse_default_instance_;
+constexpr SaveTokenBlockChainRequest::SaveTokenBlockChainRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : blockchain_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , blockchain_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , node_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , secret_(nullptr){}
+struct SaveTokenBlockChainRequestDefaultTypeInternal {
+  constexpr SaveTokenBlockChainRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SaveTokenBlockChainRequestDefaultTypeInternal() {}
+  union {
+    SaveTokenBlockChainRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SaveTokenBlockChainRequestDefaultTypeInternal _SaveTokenBlockChainRequest_default_instance_;
+constexpr SaveTokenBlockChainResponse::SaveTokenBlockChainResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SaveTokenBlockChainResponseDefaultTypeInternal {
+  constexpr SaveTokenBlockChainResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SaveTokenBlockChainResponseDefaultTypeInternal() {}
+  union {
+    SaveTokenBlockChainResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SaveTokenBlockChainResponseDefaultTypeInternal _SaveTokenBlockChainResponse_default_instance_;
+constexpr GetTokenBlockChainRequest::GetTokenBlockChainRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : blockchain_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , blockchain_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetTokenBlockChainRequestDefaultTypeInternal {
+  constexpr GetTokenBlockChainRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetTokenBlockChainRequestDefaultTypeInternal() {}
+  union {
+    GetTokenBlockChainRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTokenBlockChainRequestDefaultTypeInternal _GetTokenBlockChainRequest_default_instance_;
+constexpr GetTokenBlockChainResponse::GetTokenBlockChainResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , secret_(nullptr){}
+struct GetTokenBlockChainResponseDefaultTypeInternal {
+  constexpr GetTokenBlockChainResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetTokenBlockChainResponseDefaultTypeInternal() {}
+  union {
+    GetTokenBlockChainResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTokenBlockChainResponseDefaultTypeInternal _GetTokenBlockChainResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[14];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[18];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto = nullptr;
 
@@ -321,6 +375,36 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenIntegrationsResponse, token_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenIntegrationsResponse, error_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainRequest, blockchain_id_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainRequest, blockchain_name_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainRequest, node_name_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainRequest, secret_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainResponse, msg_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::SaveTokenBlockChainResponse, error_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainRequest, blockchain_id_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainRequest, blockchain_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainResponse, secret_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vault::v1alpha1::CreateSecretRequest)},
@@ -337,6 +421,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 85, -1, sizeof(::vault::v1alpha1::SaveTokenIntegrationsResponse)},
   { 92, -1, sizeof(::vault::v1alpha1::GetTokenIntegrationsRequest)},
   { 99, -1, sizeof(::vault::v1alpha1::GetTokenIntegrationsResponse)},
+  { 106, -1, sizeof(::vault::v1alpha1::SaveTokenBlockChainRequest)},
+  { 115, -1, sizeof(::vault::v1alpha1::SaveTokenBlockChainResponse)},
+  { 122, -1, sizeof(::vault::v1alpha1::GetTokenBlockChainRequest)},
+  { 129, -1, sizeof(::vault::v1alpha1::GetTokenBlockChainResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -354,6 +442,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SaveTokenIntegrationsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetTokenIntegrationsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetTokenIntegrationsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SaveTokenBlockChainRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_SaveTokenBlockChainResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetTokenBlockChainRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetTokenBlockChainResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -395,37 +487,55 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PR
   "ation_id\030\001 \001(\rR\016organizationId\022%\n\016integr"
   "ation_id\030\002 \001(\tR\rintegrationId\"J\n\034GetToke"
   "nIntegrationsResponse\022\024\n\005token\030\001 \001(\tR\005to"
-  "ken\022\024\n\005error\030\002 \001(\tR\005error2\330\005\n\017VaultAPISe"
-  "rvice\022[\n\014CreateSecret\022#.vault.v1alpha1.C"
-  "reateSecretRequest\032$.vault.v1alpha1.Crea"
-  "teSecretResponse\"\000\022[\n\014UpdateSecret\022#.vau"
-  "lt.v1alpha1.UpdateSecretRequest\032$.vault."
-  "v1alpha1.UpdateSecretResponse\"\000\022[\n\014Delet"
-  "eSecret\022#.vault.v1alpha1.DeleteSecretReq"
-  "uest\032$.vault.v1alpha1.DeleteSecretRespon"
-  "se\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.GetSe"
-  "cretRequest\032!.vault.v1alpha1.GetSecretRe"
-  "sponse\"\000\022m\n\022DeleteOrganization\022).vault.v"
-  "1alpha1.DeleteOrganizationRequest\032*.vaul"
-  "t.v1alpha1.DeleteOrganizationResponse\"\000\022"
-  "v\n\025SaveTokenIntegrations\022,.vault.v1alpha"
-  "1.SaveTokenIntegrationsRequest\032-.vault.v"
-  "1alpha1.SaveTokenIntegrationsResponse\"\000\022"
-  "s\n\024GetTokenIntegrations\022+.vault.v1alpha1"
-  ".GetTokenIntegrationsRequest\032,.vault.v1a"
-  "lpha1.GetTokenIntegrationsResponse\"\000B\206\001\n"
-  "\030io.cuemby.vault.v1alpha1B\rVaultAPIProto"
-  "P\001Z1github.com/cuemby/ccp-vault-service/"
-  "vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016V"
-  "ault\\V1Alpha1b\006proto3"
+  "ken\022\024\n\005error\030\002 \001(\tR\005error\"\301\001\n\032SaveTokenB"
+  "lockChainRequest\022#\n\rblockchain_id\030\001 \001(\tR"
+  "\014blockchainId\022\'\n\017blockchain_name\030\002 \001(\tR\016"
+  "blockchainName\022\033\n\tnode_name\030\003 \001(\tR\010nodeN"
+  "ame\0228\n\006secret\030\004 \001(\0132 .vault.v1alpha1.Blo"
+  "ckchainSecretR\006secret\"E\n\033SaveTokenBlockC"
+  "hainResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030"
+  "\002 \001(\tR\005error\"i\n\031GetTokenBlockChainReques"
+  "t\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022\'"
+  "\n\017blockchain_name\030\002 \001(\tR\016blockchainName\""
+  "l\n\032GetTokenBlockChainResponse\0228\n\006secret\030"
+  "\001 \001(\0132 .vault.v1alpha1.BlockchainSecretR"
+  "\006secret\022\024\n\005error\030\002 \001(\tR\005error2\271\007\n\017VaultA"
+  "PIService\022[\n\014CreateSecret\022#.vault.v1alph"
+  "a1.CreateSecretRequest\032$.vault.v1alpha1."
+  "CreateSecretResponse\"\000\022[\n\014UpdateSecret\022#"
+  ".vault.v1alpha1.UpdateSecretRequest\032$.va"
+  "ult.v1alpha1.UpdateSecretResponse\"\000\022[\n\014D"
+  "eleteSecret\022#.vault.v1alpha1.DeleteSecre"
+  "tRequest\032$.vault.v1alpha1.DeleteSecretRe"
+  "sponse\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.G"
+  "etSecretRequest\032!.vault.v1alpha1.GetSecr"
+  "etResponse\"\000\022m\n\022DeleteOrganization\022).vau"
+  "lt.v1alpha1.DeleteOrganizationRequest\032*."
+  "vault.v1alpha1.DeleteOrganizationRespons"
+  "e\"\000\022v\n\025SaveTokenIntegrations\022,.vault.v1a"
+  "lpha1.SaveTokenIntegrationsRequest\032-.vau"
+  "lt.v1alpha1.SaveTokenIntegrationsRespons"
+  "e\"\000\022s\n\024GetTokenIntegrations\022+.vault.v1al"
+  "pha1.GetTokenIntegrationsRequest\032,.vault"
+  ".v1alpha1.GetTokenIntegrationsResponse\"\000"
+  "\022p\n\023SaveTokenBlockChain\022*.vault.v1alpha1"
+  ".SaveTokenBlockChainRequest\032+.vault.v1al"
+  "pha1.SaveTokenBlockChainResponse\"\000\022m\n\022Ge"
+  "tTokenBlockChain\022).vault.v1alpha1.GetTok"
+  "enBlockChainRequest\032*.vault.v1alpha1.Get"
+  "TokenBlockChainResponse\"\000B\206\001\n\030io.cuemby."
+  "vault.v1alpha1B\rVaultAPIProtoP\001Z1github."
+  "com/cuemby/ccp-vault-service/vaultv1alph"
+  "a1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alph"
+  "a1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps[1] = {
   &::descriptor_table_vault_2fv1alpha1_2fvault_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto = {
-  false, false, 2421, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
-  &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 14,
+  false, false, 3130, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
+  &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 18,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto,
 };
@@ -4082,6 +4192,1070 @@ void GetTokenIntegrationsResponse::InternalSwap(GetTokenIntegrationsResponse* ot
       file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[13]);
 }
 
+// ===================================================================
+
+class SaveTokenBlockChainRequest::_Internal {
+ public:
+  static const ::vault::v1alpha1::BlockchainSecret& secret(const SaveTokenBlockChainRequest* msg);
+};
+
+const ::vault::v1alpha1::BlockchainSecret&
+SaveTokenBlockChainRequest::_Internal::secret(const SaveTokenBlockChainRequest* msg) {
+  return *msg->secret_;
+}
+void SaveTokenBlockChainRequest::clear_secret() {
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
+  }
+  secret_ = nullptr;
+}
+SaveTokenBlockChainRequest::SaveTokenBlockChainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.SaveTokenBlockChainRequest)
+}
+SaveTokenBlockChainRequest::SaveTokenBlockChainRequest(const SaveTokenBlockChainRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  blockchain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_blockchain_id().empty()) {
+    blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_id(), 
+      GetArenaForAllocation());
+  }
+  blockchain_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_blockchain_name().empty()) {
+    blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_name(), 
+      GetArenaForAllocation());
+  }
+  node_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_node_name().empty()) {
+    node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node_name(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_secret()) {
+    secret_ = new ::vault::v1alpha1::BlockchainSecret(*from.secret_);
+  } else {
+    secret_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.SaveTokenBlockChainRequest)
+}
+
+inline void SaveTokenBlockChainRequest::SharedCtor() {
+blockchain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+blockchain_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+node_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+secret_ = nullptr;
+}
+
+SaveTokenBlockChainRequest::~SaveTokenBlockChainRequest() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.SaveTokenBlockChainRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void SaveTokenBlockChainRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  blockchain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  blockchain_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  node_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete secret_;
+}
+
+void SaveTokenBlockChainRequest::ArenaDtor(void* object) {
+  SaveTokenBlockChainRequest* _this = reinterpret_cast< SaveTokenBlockChainRequest* >(object);
+  (void)_this;
+}
+void SaveTokenBlockChainRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SaveTokenBlockChainRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SaveTokenBlockChainRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.SaveTokenBlockChainRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  blockchain_id_.ClearToEmpty();
+  blockchain_name_.ClearToEmpty();
+  node_name_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
+  }
+  secret_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SaveTokenBlockChainRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string blockchain_id = 1 [json_name = "blockchainId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_blockchain_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string blockchain_name = 2 [json_name = "blockchainName"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_blockchain_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string node_name = 3 [json_name = "nodeName"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_node_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SaveTokenBlockChainRequest.node_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vault.v1alpha1.BlockchainSecret secret = 4 [json_name = "secret"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_secret(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* SaveTokenBlockChainRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.SaveTokenBlockChainRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string blockchain_id = 1 [json_name = "blockchainId"];
+  if (!this->_internal_blockchain_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_blockchain_id().data(), static_cast<int>(this->_internal_blockchain_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_blockchain_id(), target);
+  }
+
+  // string blockchain_name = 2 [json_name = "blockchainName"];
+  if (!this->_internal_blockchain_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_blockchain_name().data(), static_cast<int>(this->_internal_blockchain_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_blockchain_name(), target);
+  }
+
+  // string node_name = 3 [json_name = "nodeName"];
+  if (!this->_internal_node_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_node_name().data(), static_cast<int>(this->_internal_node_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.SaveTokenBlockChainRequest.node_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_node_name(), target);
+  }
+
+  // .vault.v1alpha1.BlockchainSecret secret = 4 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::secret(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.SaveTokenBlockChainRequest)
+  return target;
+}
+
+size_t SaveTokenBlockChainRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.SaveTokenBlockChainRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string blockchain_id = 1 [json_name = "blockchainId"];
+  if (!this->_internal_blockchain_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_blockchain_id());
+  }
+
+  // string blockchain_name = 2 [json_name = "blockchainName"];
+  if (!this->_internal_blockchain_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_blockchain_name());
+  }
+
+  // string node_name = 3 [json_name = "nodeName"];
+  if (!this->_internal_node_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_node_name());
+  }
+
+  // .vault.v1alpha1.BlockchainSecret secret = 4 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *secret_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SaveTokenBlockChainRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SaveTokenBlockChainRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SaveTokenBlockChainRequest::GetClassData() const { return &_class_data_; }
+
+void SaveTokenBlockChainRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<SaveTokenBlockChainRequest *>(to)->MergeFrom(
+      static_cast<const SaveTokenBlockChainRequest &>(from));
+}
+
+
+void SaveTokenBlockChainRequest::MergeFrom(const SaveTokenBlockChainRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.SaveTokenBlockChainRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_blockchain_id().empty()) {
+    _internal_set_blockchain_id(from._internal_blockchain_id());
+  }
+  if (!from._internal_blockchain_name().empty()) {
+    _internal_set_blockchain_name(from._internal_blockchain_name());
+  }
+  if (!from._internal_node_name().empty()) {
+    _internal_set_node_name(from._internal_node_name());
+  }
+  if (from._internal_has_secret()) {
+    _internal_mutable_secret()->::vault::v1alpha1::BlockchainSecret::MergeFrom(from._internal_secret());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SaveTokenBlockChainRequest::CopyFrom(const SaveTokenBlockChainRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.SaveTokenBlockChainRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SaveTokenBlockChainRequest::IsInitialized() const {
+  return true;
+}
+
+void SaveTokenBlockChainRequest::InternalSwap(SaveTokenBlockChainRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &blockchain_id_, GetArenaForAllocation(),
+      &other->blockchain_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &blockchain_name_, GetArenaForAllocation(),
+      &other->blockchain_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &node_name_, GetArenaForAllocation(),
+      &other->node_name_, other->GetArenaForAllocation()
+  );
+  swap(secret_, other->secret_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SaveTokenBlockChainRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[14]);
+}
+
+// ===================================================================
+
+class SaveTokenBlockChainResponse::_Internal {
+ public:
+};
+
+SaveTokenBlockChainResponse::SaveTokenBlockChainResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.SaveTokenBlockChainResponse)
+}
+SaveTokenBlockChainResponse::SaveTokenBlockChainResponse(const SaveTokenBlockChainResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
+      GetArenaForAllocation());
+  }
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.SaveTokenBlockChainResponse)
+}
+
+inline void SaveTokenBlockChainResponse::SharedCtor() {
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+SaveTokenBlockChainResponse::~SaveTokenBlockChainResponse() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.SaveTokenBlockChainResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void SaveTokenBlockChainResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void SaveTokenBlockChainResponse::ArenaDtor(void* object) {
+  SaveTokenBlockChainResponse* _this = reinterpret_cast< SaveTokenBlockChainResponse* >(object);
+  (void)_this;
+}
+void SaveTokenBlockChainResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SaveTokenBlockChainResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SaveTokenBlockChainResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.SaveTokenBlockChainResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  msg_.ClearToEmpty();
+  error_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SaveTokenBlockChainResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string msg = 1 [json_name = "msg"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_msg();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SaveTokenBlockChainResponse.msg"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_error();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SaveTokenBlockChainResponse.error"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* SaveTokenBlockChainResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.SaveTokenBlockChainResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.SaveTokenBlockChainResponse.msg");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_msg(), target);
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.SaveTokenBlockChainResponse.error");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.SaveTokenBlockChainResponse)
+  return target;
+}
+
+size_t SaveTokenBlockChainResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.SaveTokenBlockChainResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SaveTokenBlockChainResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SaveTokenBlockChainResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SaveTokenBlockChainResponse::GetClassData() const { return &_class_data_; }
+
+void SaveTokenBlockChainResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<SaveTokenBlockChainResponse *>(to)->MergeFrom(
+      static_cast<const SaveTokenBlockChainResponse &>(from));
+}
+
+
+void SaveTokenBlockChainResponse::MergeFrom(const SaveTokenBlockChainResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.SaveTokenBlockChainResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
+  }
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SaveTokenBlockChainResponse::CopyFrom(const SaveTokenBlockChainResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.SaveTokenBlockChainResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SaveTokenBlockChainResponse::IsInitialized() const {
+  return true;
+}
+
+void SaveTokenBlockChainResponse::InternalSwap(SaveTokenBlockChainResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SaveTokenBlockChainResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[15]);
+}
+
+// ===================================================================
+
+class GetTokenBlockChainRequest::_Internal {
+ public:
+};
+
+GetTokenBlockChainRequest::GetTokenBlockChainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.GetTokenBlockChainRequest)
+}
+GetTokenBlockChainRequest::GetTokenBlockChainRequest(const GetTokenBlockChainRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  blockchain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_blockchain_id().empty()) {
+    blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_id(), 
+      GetArenaForAllocation());
+  }
+  blockchain_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_blockchain_name().empty()) {
+    blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_name(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetTokenBlockChainRequest)
+}
+
+inline void GetTokenBlockChainRequest::SharedCtor() {
+blockchain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+blockchain_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+GetTokenBlockChainRequest::~GetTokenBlockChainRequest() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.GetTokenBlockChainRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetTokenBlockChainRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  blockchain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  blockchain_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetTokenBlockChainRequest::ArenaDtor(void* object) {
+  GetTokenBlockChainRequest* _this = reinterpret_cast< GetTokenBlockChainRequest* >(object);
+  (void)_this;
+}
+void GetTokenBlockChainRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetTokenBlockChainRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetTokenBlockChainRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.GetTokenBlockChainRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  blockchain_id_.ClearToEmpty();
+  blockchain_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetTokenBlockChainRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string blockchain_id = 1 [json_name = "blockchainId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_blockchain_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string blockchain_name = 2 [json_name = "blockchainName"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_blockchain_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetTokenBlockChainRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.GetTokenBlockChainRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string blockchain_id = 1 [json_name = "blockchainId"];
+  if (!this->_internal_blockchain_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_blockchain_id().data(), static_cast<int>(this->_internal_blockchain_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_blockchain_id(), target);
+  }
+
+  // string blockchain_name = 2 [json_name = "blockchainName"];
+  if (!this->_internal_blockchain_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_blockchain_name().data(), static_cast<int>(this->_internal_blockchain_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_blockchain_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.GetTokenBlockChainRequest)
+  return target;
+}
+
+size_t GetTokenBlockChainRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.GetTokenBlockChainRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string blockchain_id = 1 [json_name = "blockchainId"];
+  if (!this->_internal_blockchain_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_blockchain_id());
+  }
+
+  // string blockchain_name = 2 [json_name = "blockchainName"];
+  if (!this->_internal_blockchain_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_blockchain_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTokenBlockChainRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetTokenBlockChainRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTokenBlockChainRequest::GetClassData() const { return &_class_data_; }
+
+void GetTokenBlockChainRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetTokenBlockChainRequest *>(to)->MergeFrom(
+      static_cast<const GetTokenBlockChainRequest &>(from));
+}
+
+
+void GetTokenBlockChainRequest::MergeFrom(const GetTokenBlockChainRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.GetTokenBlockChainRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_blockchain_id().empty()) {
+    _internal_set_blockchain_id(from._internal_blockchain_id());
+  }
+  if (!from._internal_blockchain_name().empty()) {
+    _internal_set_blockchain_name(from._internal_blockchain_name());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetTokenBlockChainRequest::CopyFrom(const GetTokenBlockChainRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.GetTokenBlockChainRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTokenBlockChainRequest::IsInitialized() const {
+  return true;
+}
+
+void GetTokenBlockChainRequest::InternalSwap(GetTokenBlockChainRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &blockchain_id_, GetArenaForAllocation(),
+      &other->blockchain_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &blockchain_name_, GetArenaForAllocation(),
+      &other->blockchain_name_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetTokenBlockChainRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[16]);
+}
+
+// ===================================================================
+
+class GetTokenBlockChainResponse::_Internal {
+ public:
+  static const ::vault::v1alpha1::BlockchainSecret& secret(const GetTokenBlockChainResponse* msg);
+};
+
+const ::vault::v1alpha1::BlockchainSecret&
+GetTokenBlockChainResponse::_Internal::secret(const GetTokenBlockChainResponse* msg) {
+  return *msg->secret_;
+}
+void GetTokenBlockChainResponse::clear_secret() {
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
+  }
+  secret_ = nullptr;
+}
+GetTokenBlockChainResponse::GetTokenBlockChainResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.GetTokenBlockChainResponse)
+}
+GetTokenBlockChainResponse::GetTokenBlockChainResponse(const GetTokenBlockChainResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_secret()) {
+    secret_ = new ::vault::v1alpha1::BlockchainSecret(*from.secret_);
+  } else {
+    secret_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetTokenBlockChainResponse)
+}
+
+inline void GetTokenBlockChainResponse::SharedCtor() {
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+secret_ = nullptr;
+}
+
+GetTokenBlockChainResponse::~GetTokenBlockChainResponse() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.GetTokenBlockChainResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetTokenBlockChainResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete secret_;
+}
+
+void GetTokenBlockChainResponse::ArenaDtor(void* object) {
+  GetTokenBlockChainResponse* _this = reinterpret_cast< GetTokenBlockChainResponse* >(object);
+  (void)_this;
+}
+void GetTokenBlockChainResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetTokenBlockChainResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetTokenBlockChainResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.GetTokenBlockChainResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  error_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && secret_ != nullptr) {
+    delete secret_;
+  }
+  secret_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetTokenBlockChainResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .vault.v1alpha1.BlockchainSecret secret = 1 [json_name = "secret"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_secret(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_error();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetTokenBlockChainResponse.error"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetTokenBlockChainResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.GetTokenBlockChainResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .vault.v1alpha1.BlockchainSecret secret = 1 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::secret(this), target, stream);
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetTokenBlockChainResponse.error");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.GetTokenBlockChainResponse)
+  return target;
+}
+
+size_t GetTokenBlockChainResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.GetTokenBlockChainResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
+  }
+
+  // .vault.v1alpha1.BlockchainSecret secret = 1 [json_name = "secret"];
+  if (this->_internal_has_secret()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *secret_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTokenBlockChainResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetTokenBlockChainResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTokenBlockChainResponse::GetClassData() const { return &_class_data_; }
+
+void GetTokenBlockChainResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetTokenBlockChainResponse *>(to)->MergeFrom(
+      static_cast<const GetTokenBlockChainResponse &>(from));
+}
+
+
+void GetTokenBlockChainResponse::MergeFrom(const GetTokenBlockChainResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.GetTokenBlockChainResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
+  }
+  if (from._internal_has_secret()) {
+    _internal_mutable_secret()->::vault::v1alpha1::BlockchainSecret::MergeFrom(from._internal_secret());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetTokenBlockChainResponse::CopyFrom(const GetTokenBlockChainResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.GetTokenBlockChainResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTokenBlockChainResponse::IsInitialized() const {
+  return true;
+}
+
+void GetTokenBlockChainResponse::InternalSwap(GetTokenBlockChainResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
+  );
+  swap(secret_, other->secret_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetTokenBlockChainResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[17]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace vault
@@ -4127,6 +5301,18 @@ template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetTokenIntegrationsRequest* Are
 }
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetTokenIntegrationsResponse* Arena::CreateMaybeMessage< ::vault::v1alpha1::GetTokenIntegrationsResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::GetTokenIntegrationsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::SaveTokenBlockChainRequest* Arena::CreateMaybeMessage< ::vault::v1alpha1::SaveTokenBlockChainRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::SaveTokenBlockChainRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::SaveTokenBlockChainResponse* Arena::CreateMaybeMessage< ::vault::v1alpha1::SaveTokenBlockChainResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::SaveTokenBlockChainResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetTokenBlockChainRequest* Arena::CreateMaybeMessage< ::vault::v1alpha1::GetTokenBlockChainRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::GetTokenBlockChainRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetTokenBlockChainResponse* Arena::CreateMaybeMessage< ::vault::v1alpha1::GetTokenBlockChainResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::GetTokenBlockChainResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -85,6 +85,21 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>> PrepareAsyncGetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>>(PrepareAsyncGetTokenIntegrationsRaw(context, request, cq));
     }
+    // BlockChain
+    virtual ::grpc::Status SaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenBlockChainResponse>> AsyncSaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenBlockChainResponse>>(AsyncSaveTokenBlockChainRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenBlockChainResponse>> PrepareAsyncSaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenBlockChainResponse>>(PrepareAsyncSaveTokenBlockChainRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenBlockChainResponse>> AsyncGetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenBlockChainResponse>>(AsyncGetTokenBlockChainRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenBlockChainResponse>> PrepareAsyncGetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenBlockChainResponse>>(PrepareAsyncGetTokenBlockChainRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -95,6 +110,9 @@ class VaultAPIService final {
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // BlockChain
+      virtual void SaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -112,6 +130,10 @@ class VaultAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* PrepareAsyncSaveTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>* AsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenIntegrationsResponse>* PrepareAsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenBlockChainResponse>* AsyncSaveTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenBlockChainResponse>* PrepareAsyncSaveTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenBlockChainResponse>* AsyncGetTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenBlockChainResponse>* PrepareAsyncGetTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -165,6 +187,20 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>> PrepareAsyncGetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>>(PrepareAsyncGetTokenIntegrationsRaw(context, request, cq));
     }
+    ::grpc::Status SaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>> AsyncSaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>>(AsyncSaveTokenBlockChainRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>> PrepareAsyncSaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>>(PrepareAsyncSaveTokenBlockChainRaw(context, request, cq));
+    }
+    ::grpc::Status GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>> AsyncGetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>>(AsyncGetTokenBlockChainRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>> PrepareAsyncGetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>>(PrepareAsyncGetTokenBlockChainRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -175,6 +211,8 @@ class VaultAPIService final {
       void DeleteOrganization(::grpc::ClientContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       void SaveTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetTokenIntegrations(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response, std::function<void(::grpc::Status)>) override;
+      void SaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -200,6 +238,10 @@ class VaultAPIService final {
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenIntegrationsResponse>* PrepareAsyncSaveTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>* AsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenIntegrationsResponse>* PrepareAsyncGetTokenIntegrationsRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>* AsyncSaveTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>* PrepareAsyncSaveTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>* AsyncGetTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>* PrepareAsyncGetTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSecret_;
@@ -207,6 +249,8 @@ class VaultAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_DeleteOrganization_;
     const ::grpc::internal::RpcMethod rpcmethod_SaveTokenIntegrations_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTokenIntegrations_;
+    const ::grpc::internal::RpcMethod rpcmethod_SaveTokenBlockChain_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTokenBlockChain_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -221,6 +265,9 @@ class VaultAPIService final {
     virtual ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::vault::v1alpha1::DeleteOrganizationRequest* request, ::vault::v1alpha1::DeleteOrganizationResponse* response);
     virtual ::grpc::Status SaveTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenIntegrationsRequest* request, ::vault::v1alpha1::SaveTokenIntegrationsResponse* response);
     virtual ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response);
+    // BlockChain
+    virtual ::grpc::Status SaveTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response);
+    virtual ::grpc::Status GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateSecret : public BaseClass {
@@ -362,7 +409,47 @@ class VaultAPIService final {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_SaveTokenIntegrations<WithAsyncMethod_GetTokenIntegrations<Service > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SaveTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_SaveTokenBlockChain() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_SaveTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSaveTokenBlockChain(::grpc::ServerContext* context, ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::SaveTokenBlockChainResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetTokenBlockChain() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_GetTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTokenBlockChain(::grpc::ServerContext* context, ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::GetTokenBlockChainResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_SaveTokenIntegrations<WithAsyncMethod_GetTokenIntegrations<WithAsyncMethod_SaveTokenBlockChain<WithAsyncMethod_GetTokenBlockChain<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateSecret : public BaseClass {
    private:
@@ -478,6 +565,40 @@ class VaultAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SaveTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_SaveTokenBlockChain() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_SaveTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetTokenBlockChain() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_GetTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -623,6 +744,46 @@ class VaultAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SaveTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_SaveTokenBlockChain() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_SaveTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSaveTokenBlockChain(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetTokenBlockChain() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_GetTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTokenBlockChain(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateSecret : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -762,9 +923,49 @@ class VaultAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetTokenIntegrations(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::GetTokenIntegrationsRequest,::vault::v1alpha1::GetTokenIntegrationsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<Service > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SaveTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_SaveTokenBlockChain() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::SaveTokenBlockChainRequest, ::vault::v1alpha1::SaveTokenBlockChainResponse>(std::bind(&WithStreamedUnaryMethod_SaveTokenBlockChain<BaseClass>::StreamedSaveTokenBlockChain, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_SaveTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SaveTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSaveTokenBlockChain(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::SaveTokenBlockChainRequest,::vault::v1alpha1::SaveTokenBlockChainResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetTokenBlockChain : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetTokenBlockChain() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::GetTokenBlockChainRequest, ::vault::v1alpha1::GetTokenBlockChainResponse>(std::bind(&WithStreamedUnaryMethod_GetTokenBlockChain<BaseClass>::StreamedGetTokenBlockChain, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetTokenBlockChain() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetTokenBlockChain(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::GetTokenBlockChainRequest,::vault::v1alpha1::GetTokenBlockChainResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<WithStreamedUnaryMethod_SaveTokenBlockChain<WithStreamedUnaryMethod_GetTokenBlockChain<Service > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<Service > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<WithStreamedUnaryMethod_SaveTokenBlockChain<WithStreamedUnaryMethod_GetTokenBlockChain<Service > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
