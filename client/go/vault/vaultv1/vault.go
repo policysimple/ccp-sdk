@@ -205,3 +205,48 @@ func GetTokenIntegrations(in *vaultpkgv1.GetTokenIntegrationsRequest) (*vaultpkg
 	bylogs.LogInfo("GetTokenIntegrationsRequest Client Sdk", "Success")
 	return response, nil
 }
+
+func SaveTokenBlockChain(in *vaultpkgv1.SaveTokenBlockChainRequest) (*vaultpkgv1.SaveTokenBlockChainResponse, error) {
+	bylogs.LogInfo("SaveTokenBlockChain Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.SaveTokenBlockChain(ctx, &vaultpkgv1.SaveTokenBlockChainRequest{
+		BlockchainId:  in.BlockchainId,
+		BlockchainName: in.BlockchainName,
+		Secret: 	  in.Secret,
+	})
+
+	if err != nil {
+		bylogs.LogErr("SaveTokenBlockChain Client Sdk", err)
+		return nil, fmt.Errorf("[SaveTokenBlockChain] %w", err)
+	}
+	bylogs.LogInfo("SaveTokenBlockChain Client Sdk", "Success")
+	return response, nil
+}
+
+func GetTokenBlockChain(in *vaultpkgv1.GetTokenBlockChainRequest) (*vaultpkgv1.GetTokenBlockChainResponse, error) {
+	bylogs.LogInfo("GetTokenBlockChainRequest Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetTokenBlockChain(ctx, &vaultpkgv1.GetTokenBlockChainRequest{
+		BlockchainId: in.BlockchainId,
+		BlockchainName: in.BlockchainName,
+	})
+
+	if err != nil {
+		bylogs.LogErr("GetTokenBlockChainRequest Client Sdk", err)
+		return nil, fmt.Errorf("[GetTokenBlockChain] %w", err)
+	}
+	bylogs.LogInfo("GetTokenBlockChainRequest Client Sdk", "Success")
+	return response, nil
+}

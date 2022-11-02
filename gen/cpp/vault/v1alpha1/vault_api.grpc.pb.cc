@@ -26,6 +26,8 @@ static const char* VaultAPIService_method_names[] = {
   "/vault.v1alpha1.VaultAPIService/DeleteOrganization",
   "/vault.v1alpha1.VaultAPIService/SaveTokenIntegrations",
   "/vault.v1alpha1.VaultAPIService/GetTokenIntegrations",
+  "/vault.v1alpha1.VaultAPIService/SaveTokenBlockChain",
+  "/vault.v1alpha1.VaultAPIService/GetTokenBlockChain",
 };
 
 std::unique_ptr< VaultAPIService::Stub> VaultAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +44,8 @@ VaultAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_DeleteOrganization_(VaultAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SaveTokenIntegrations_(VaultAPIService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetTokenIntegrations_(VaultAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SaveTokenBlockChain_(VaultAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTokenBlockChain_(VaultAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status VaultAPIService::Stub::CreateSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::CreateSecretRequest& request, ::vault::v1alpha1::CreateSecretResponse* response) {
@@ -156,6 +160,38 @@ void VaultAPIService::Stub::experimental_async::GetTokenIntegrations(::grpc::Cli
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetTokenIntegrationsResponse>::Create(channel_.get(), cq, rpcmethod_GetTokenIntegrations_, context, request, false);
 }
 
+::grpc::Status VaultAPIService::Stub::SaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SaveTokenBlockChain_, context, request, response);
+}
+
+void VaultAPIService::Stub::experimental_async::SaveTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveTokenBlockChain_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>* VaultAPIService::Stub::AsyncSaveTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::SaveTokenBlockChainResponse>::Create(channel_.get(), cq, rpcmethod_SaveTokenBlockChain_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenBlockChainResponse>* VaultAPIService::Stub::PrepareAsyncSaveTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::SaveTokenBlockChainResponse>::Create(channel_.get(), cq, rpcmethod_SaveTokenBlockChain_, context, request, false);
+}
+
+::grpc::Status VaultAPIService::Stub::GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTokenBlockChain_, context, request, response);
+}
+
+void VaultAPIService::Stub::experimental_async::GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTokenBlockChain_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>* VaultAPIService::Stub::AsyncGetTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetTokenBlockChainResponse>::Create(channel_.get(), cq, rpcmethod_GetTokenBlockChain_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenBlockChainResponse>* VaultAPIService::Stub::PrepareAsyncGetTokenBlockChainRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetTokenBlockChainResponse>::Create(channel_.get(), cq, rpcmethod_GetTokenBlockChain_, context, request, false);
+}
+
 VaultAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VaultAPIService_method_names[0],
@@ -192,6 +228,16 @@ VaultAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::GetTokenIntegrationsRequest, ::vault::v1alpha1::GetTokenIntegrationsResponse>(
           std::mem_fn(&VaultAPIService::Service::GetTokenIntegrations), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VaultAPIService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::SaveTokenBlockChainRequest, ::vault::v1alpha1::SaveTokenBlockChainResponse>(
+          std::mem_fn(&VaultAPIService::Service::SaveTokenBlockChain), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VaultAPIService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::GetTokenBlockChainRequest, ::vault::v1alpha1::GetTokenBlockChainResponse>(
+          std::mem_fn(&VaultAPIService::Service::GetTokenBlockChain), this)));
 }
 
 VaultAPIService::Service::~Service() {
@@ -240,6 +286,20 @@ VaultAPIService::Service::~Service() {
 }
 
 ::grpc::Status VaultAPIService::Service::GetTokenIntegrations(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenIntegrationsRequest* request, ::vault::v1alpha1::GetTokenIntegrationsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status VaultAPIService::Service::SaveTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenBlockChainRequest* request, ::vault::v1alpha1::SaveTokenBlockChainResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status VaultAPIService::Service::GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) {
   (void) context;
   (void) request;
   (void) response;

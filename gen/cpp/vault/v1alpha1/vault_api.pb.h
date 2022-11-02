@@ -47,7 +47,7 @@ struct TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -80,12 +80,24 @@ extern GetSecretRequestDefaultTypeInternal _GetSecretRequest_default_instance_;
 class GetSecretResponse;
 struct GetSecretResponseDefaultTypeInternal;
 extern GetSecretResponseDefaultTypeInternal _GetSecretResponse_default_instance_;
+class GetTokenBlockChainRequest;
+struct GetTokenBlockChainRequestDefaultTypeInternal;
+extern GetTokenBlockChainRequestDefaultTypeInternal _GetTokenBlockChainRequest_default_instance_;
+class GetTokenBlockChainResponse;
+struct GetTokenBlockChainResponseDefaultTypeInternal;
+extern GetTokenBlockChainResponseDefaultTypeInternal _GetTokenBlockChainResponse_default_instance_;
 class GetTokenIntegrationsRequest;
 struct GetTokenIntegrationsRequestDefaultTypeInternal;
 extern GetTokenIntegrationsRequestDefaultTypeInternal _GetTokenIntegrationsRequest_default_instance_;
 class GetTokenIntegrationsResponse;
 struct GetTokenIntegrationsResponseDefaultTypeInternal;
 extern GetTokenIntegrationsResponseDefaultTypeInternal _GetTokenIntegrationsResponse_default_instance_;
+class SaveTokenBlockChainRequest;
+struct SaveTokenBlockChainRequestDefaultTypeInternal;
+extern SaveTokenBlockChainRequestDefaultTypeInternal _SaveTokenBlockChainRequest_default_instance_;
+class SaveTokenBlockChainResponse;
+struct SaveTokenBlockChainResponseDefaultTypeInternal;
+extern SaveTokenBlockChainResponseDefaultTypeInternal _SaveTokenBlockChainResponse_default_instance_;
 class SaveTokenIntegrationsRequest;
 struct SaveTokenIntegrationsRequestDefaultTypeInternal;
 extern SaveTokenIntegrationsRequestDefaultTypeInternal _SaveTokenIntegrationsRequest_default_instance_;
@@ -109,8 +121,12 @@ template<> ::vault::v1alpha1::DeleteSecretRequest* Arena::CreateMaybeMessage<::v
 template<> ::vault::v1alpha1::DeleteSecretResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::DeleteSecretResponse>(Arena*);
 template<> ::vault::v1alpha1::GetSecretRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretRequest>(Arena*);
 template<> ::vault::v1alpha1::GetSecretResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretResponse>(Arena*);
+template<> ::vault::v1alpha1::GetTokenBlockChainRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenBlockChainRequest>(Arena*);
+template<> ::vault::v1alpha1::GetTokenBlockChainResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenBlockChainResponse>(Arena*);
 template<> ::vault::v1alpha1::GetTokenIntegrationsRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenIntegrationsRequest>(Arena*);
 template<> ::vault::v1alpha1::GetTokenIntegrationsResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenIntegrationsResponse>(Arena*);
+template<> ::vault::v1alpha1::SaveTokenBlockChainRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenBlockChainRequest>(Arena*);
+template<> ::vault::v1alpha1::SaveTokenBlockChainResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenBlockChainResponse>(Arena*);
 template<> ::vault::v1alpha1::SaveTokenIntegrationsRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenIntegrationsRequest>(Arena*);
 template<> ::vault::v1alpha1::SaveTokenIntegrationsResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenIntegrationsResponse>(Arena*);
 template<> ::vault::v1alpha1::UpdateSecretRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::UpdateSecretRequest>(Arena*);
@@ -2459,6 +2475,686 @@ class GetTokenIntegrationsResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class SaveTokenBlockChainRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.SaveTokenBlockChainRequest) */ {
+ public:
+  inline SaveTokenBlockChainRequest() : SaveTokenBlockChainRequest(nullptr) {}
+  ~SaveTokenBlockChainRequest() override;
+  explicit constexpr SaveTokenBlockChainRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SaveTokenBlockChainRequest(const SaveTokenBlockChainRequest& from);
+  SaveTokenBlockChainRequest(SaveTokenBlockChainRequest&& from) noexcept
+    : SaveTokenBlockChainRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SaveTokenBlockChainRequest& operator=(const SaveTokenBlockChainRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SaveTokenBlockChainRequest& operator=(SaveTokenBlockChainRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SaveTokenBlockChainRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SaveTokenBlockChainRequest* internal_default_instance() {
+    return reinterpret_cast<const SaveTokenBlockChainRequest*>(
+               &_SaveTokenBlockChainRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(SaveTokenBlockChainRequest& a, SaveTokenBlockChainRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SaveTokenBlockChainRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SaveTokenBlockChainRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SaveTokenBlockChainRequest* New() const final {
+    return new SaveTokenBlockChainRequest();
+  }
+
+  SaveTokenBlockChainRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SaveTokenBlockChainRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SaveTokenBlockChainRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SaveTokenBlockChainRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SaveTokenBlockChainRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.SaveTokenBlockChainRequest";
+  }
+  protected:
+  explicit SaveTokenBlockChainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBlockchainIdFieldNumber = 1,
+    kBlockchainNameFieldNumber = 2,
+    kNodeNameFieldNumber = 3,
+    kSecretFieldNumber = 4,
+  };
+  // string blockchain_id = 1 [json_name = "blockchainId"];
+  void clear_blockchain_id();
+  const std::string& blockchain_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_blockchain_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockchain_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_id();
+  void set_allocated_blockchain_id(std::string* blockchain_id);
+  private:
+  const std::string& _internal_blockchain_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_id(const std::string& value);
+  std::string* _internal_mutable_blockchain_id();
+  public:
+
+  // string blockchain_name = 2 [json_name = "blockchainName"];
+  void clear_blockchain_name();
+  const std::string& blockchain_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_blockchain_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockchain_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_name();
+  void set_allocated_blockchain_name(std::string* blockchain_name);
+  private:
+  const std::string& _internal_blockchain_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_name(const std::string& value);
+  std::string* _internal_mutable_blockchain_name();
+  public:
+
+  // string node_name = 3 [json_name = "nodeName"];
+  void clear_node_name();
+  const std::string& node_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_node_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_node_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_node_name();
+  void set_allocated_node_name(std::string* node_name);
+  private:
+  const std::string& _internal_node_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_node_name(const std::string& value);
+  std::string* _internal_mutable_node_name();
+  public:
+
+  // .vault.v1alpha1.BlockchainSecret secret = 4 [json_name = "secret"];
+  bool has_secret() const;
+  private:
+  bool _internal_has_secret() const;
+  public:
+  void clear_secret();
+  const ::vault::v1alpha1::BlockchainSecret& secret() const;
+  PROTOBUF_MUST_USE_RESULT ::vault::v1alpha1::BlockchainSecret* release_secret();
+  ::vault::v1alpha1::BlockchainSecret* mutable_secret();
+  void set_allocated_secret(::vault::v1alpha1::BlockchainSecret* secret);
+  private:
+  const ::vault::v1alpha1::BlockchainSecret& _internal_secret() const;
+  ::vault::v1alpha1::BlockchainSecret* _internal_mutable_secret();
+  public:
+  void unsafe_arena_set_allocated_secret(
+      ::vault::v1alpha1::BlockchainSecret* secret);
+  ::vault::v1alpha1::BlockchainSecret* unsafe_arena_release_secret();
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.SaveTokenBlockChainRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_name_;
+  ::vault::v1alpha1::BlockchainSecret* secret_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SaveTokenBlockChainResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.SaveTokenBlockChainResponse) */ {
+ public:
+  inline SaveTokenBlockChainResponse() : SaveTokenBlockChainResponse(nullptr) {}
+  ~SaveTokenBlockChainResponse() override;
+  explicit constexpr SaveTokenBlockChainResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SaveTokenBlockChainResponse(const SaveTokenBlockChainResponse& from);
+  SaveTokenBlockChainResponse(SaveTokenBlockChainResponse&& from) noexcept
+    : SaveTokenBlockChainResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SaveTokenBlockChainResponse& operator=(const SaveTokenBlockChainResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SaveTokenBlockChainResponse& operator=(SaveTokenBlockChainResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SaveTokenBlockChainResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SaveTokenBlockChainResponse* internal_default_instance() {
+    return reinterpret_cast<const SaveTokenBlockChainResponse*>(
+               &_SaveTokenBlockChainResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(SaveTokenBlockChainResponse& a, SaveTokenBlockChainResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SaveTokenBlockChainResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SaveTokenBlockChainResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SaveTokenBlockChainResponse* New() const final {
+    return new SaveTokenBlockChainResponse();
+  }
+
+  SaveTokenBlockChainResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SaveTokenBlockChainResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SaveTokenBlockChainResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SaveTokenBlockChainResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SaveTokenBlockChainResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.SaveTokenBlockChainResponse";
+  }
+  protected:
+  explicit SaveTokenBlockChainResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.SaveTokenBlockChainResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTokenBlockChainRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.GetTokenBlockChainRequest) */ {
+ public:
+  inline GetTokenBlockChainRequest() : GetTokenBlockChainRequest(nullptr) {}
+  ~GetTokenBlockChainRequest() override;
+  explicit constexpr GetTokenBlockChainRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTokenBlockChainRequest(const GetTokenBlockChainRequest& from);
+  GetTokenBlockChainRequest(GetTokenBlockChainRequest&& from) noexcept
+    : GetTokenBlockChainRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTokenBlockChainRequest& operator=(const GetTokenBlockChainRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTokenBlockChainRequest& operator=(GetTokenBlockChainRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTokenBlockChainRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTokenBlockChainRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTokenBlockChainRequest*>(
+               &_GetTokenBlockChainRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(GetTokenBlockChainRequest& a, GetTokenBlockChainRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTokenBlockChainRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTokenBlockChainRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTokenBlockChainRequest* New() const final {
+    return new GetTokenBlockChainRequest();
+  }
+
+  GetTokenBlockChainRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTokenBlockChainRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTokenBlockChainRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTokenBlockChainRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTokenBlockChainRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.GetTokenBlockChainRequest";
+  }
+  protected:
+  explicit GetTokenBlockChainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBlockchainIdFieldNumber = 1,
+    kBlockchainNameFieldNumber = 2,
+  };
+  // string blockchain_id = 1 [json_name = "blockchainId"];
+  void clear_blockchain_id();
+  const std::string& blockchain_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_blockchain_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockchain_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_id();
+  void set_allocated_blockchain_id(std::string* blockchain_id);
+  private:
+  const std::string& _internal_blockchain_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_id(const std::string& value);
+  std::string* _internal_mutable_blockchain_id();
+  public:
+
+  // string blockchain_name = 2 [json_name = "blockchainName"];
+  void clear_blockchain_name();
+  const std::string& blockchain_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_blockchain_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_blockchain_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_blockchain_name();
+  void set_allocated_blockchain_name(std::string* blockchain_name);
+  private:
+  const std::string& _internal_blockchain_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_blockchain_name(const std::string& value);
+  std::string* _internal_mutable_blockchain_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetTokenBlockChainRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTokenBlockChainResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.GetTokenBlockChainResponse) */ {
+ public:
+  inline GetTokenBlockChainResponse() : GetTokenBlockChainResponse(nullptr) {}
+  ~GetTokenBlockChainResponse() override;
+  explicit constexpr GetTokenBlockChainResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTokenBlockChainResponse(const GetTokenBlockChainResponse& from);
+  GetTokenBlockChainResponse(GetTokenBlockChainResponse&& from) noexcept
+    : GetTokenBlockChainResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTokenBlockChainResponse& operator=(const GetTokenBlockChainResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTokenBlockChainResponse& operator=(GetTokenBlockChainResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTokenBlockChainResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTokenBlockChainResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTokenBlockChainResponse*>(
+               &_GetTokenBlockChainResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(GetTokenBlockChainResponse& a, GetTokenBlockChainResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTokenBlockChainResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTokenBlockChainResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTokenBlockChainResponse* New() const final {
+    return new GetTokenBlockChainResponse();
+  }
+
+  GetTokenBlockChainResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTokenBlockChainResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTokenBlockChainResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTokenBlockChainResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTokenBlockChainResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.GetTokenBlockChainResponse";
+  }
+  protected:
+  explicit GetTokenBlockChainResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kErrorFieldNumber = 2,
+    kSecretFieldNumber = 1,
+  };
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // .vault.v1alpha1.BlockchainSecret secret = 1 [json_name = "secret"];
+  bool has_secret() const;
+  private:
+  bool _internal_has_secret() const;
+  public:
+  void clear_secret();
+  const ::vault::v1alpha1::BlockchainSecret& secret() const;
+  PROTOBUF_MUST_USE_RESULT ::vault::v1alpha1::BlockchainSecret* release_secret();
+  ::vault::v1alpha1::BlockchainSecret* mutable_secret();
+  void set_allocated_secret(::vault::v1alpha1::BlockchainSecret* secret);
+  private:
+  const ::vault::v1alpha1::BlockchainSecret& _internal_secret() const;
+  ::vault::v1alpha1::BlockchainSecret* _internal_mutable_secret();
+  public:
+  void unsafe_arena_set_allocated_secret(
+      ::vault::v1alpha1::BlockchainSecret* secret);
+  ::vault::v1alpha1::BlockchainSecret* unsafe_arena_release_secret();
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetTokenBlockChainResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::vault::v1alpha1::BlockchainSecret* secret_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -4090,9 +4786,573 @@ inline void GetTokenIntegrationsResponse::set_allocated_error(std::string* error
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenIntegrationsResponse.error)
 }
 
+// -------------------------------------------------------------------
+
+// SaveTokenBlockChainRequest
+
+// string blockchain_id = 1 [json_name = "blockchainId"];
+inline void SaveTokenBlockChainRequest::clear_blockchain_id() {
+  blockchain_id_.ClearToEmpty();
+}
+inline const std::string& SaveTokenBlockChainRequest::blockchain_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id)
+  return _internal_blockchain_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenBlockChainRequest::set_blockchain_id(ArgT0&& arg0, ArgT... args) {
+ 
+ blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id)
+}
+inline std::string* SaveTokenBlockChainRequest::mutable_blockchain_id() {
+  std::string* _s = _internal_mutable_blockchain_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id)
+  return _s;
+}
+inline const std::string& SaveTokenBlockChainRequest::_internal_blockchain_id() const {
+  return blockchain_id_.Get();
+}
+inline void SaveTokenBlockChainRequest::_internal_set_blockchain_id(const std::string& value) {
+  
+  blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainRequest::_internal_mutable_blockchain_id() {
+  
+  return blockchain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainRequest::release_blockchain_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id)
+  return blockchain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenBlockChainRequest::set_allocated_blockchain_id(std::string* blockchain_id) {
+  if (blockchain_id != nullptr) {
+    
+  } else {
+    
+  }
+  blockchain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_id)
+}
+
+// string blockchain_name = 2 [json_name = "blockchainName"];
+inline void SaveTokenBlockChainRequest::clear_blockchain_name() {
+  blockchain_name_.ClearToEmpty();
+}
+inline const std::string& SaveTokenBlockChainRequest::blockchain_name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name)
+  return _internal_blockchain_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenBlockChainRequest::set_blockchain_name(ArgT0&& arg0, ArgT... args) {
+ 
+ blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name)
+}
+inline std::string* SaveTokenBlockChainRequest::mutable_blockchain_name() {
+  std::string* _s = _internal_mutable_blockchain_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name)
+  return _s;
+}
+inline const std::string& SaveTokenBlockChainRequest::_internal_blockchain_name() const {
+  return blockchain_name_.Get();
+}
+inline void SaveTokenBlockChainRequest::_internal_set_blockchain_name(const std::string& value) {
+  
+  blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainRequest::_internal_mutable_blockchain_name() {
+  
+  return blockchain_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainRequest::release_blockchain_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name)
+  return blockchain_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenBlockChainRequest::set_allocated_blockchain_name(std::string* blockchain_name) {
+  if (blockchain_name != nullptr) {
+    
+  } else {
+    
+  }
+  blockchain_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenBlockChainRequest.blockchain_name)
+}
+
+// string node_name = 3 [json_name = "nodeName"];
+inline void SaveTokenBlockChainRequest::clear_node_name() {
+  node_name_.ClearToEmpty();
+}
+inline const std::string& SaveTokenBlockChainRequest::node_name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenBlockChainRequest.node_name)
+  return _internal_node_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenBlockChainRequest::set_node_name(ArgT0&& arg0, ArgT... args) {
+ 
+ node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenBlockChainRequest.node_name)
+}
+inline std::string* SaveTokenBlockChainRequest::mutable_node_name() {
+  std::string* _s = _internal_mutable_node_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenBlockChainRequest.node_name)
+  return _s;
+}
+inline const std::string& SaveTokenBlockChainRequest::_internal_node_name() const {
+  return node_name_.Get();
+}
+inline void SaveTokenBlockChainRequest::_internal_set_node_name(const std::string& value) {
+  
+  node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainRequest::_internal_mutable_node_name() {
+  
+  return node_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainRequest::release_node_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenBlockChainRequest.node_name)
+  return node_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenBlockChainRequest::set_allocated_node_name(std::string* node_name) {
+  if (node_name != nullptr) {
+    
+  } else {
+    
+  }
+  node_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), node_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenBlockChainRequest.node_name)
+}
+
+// .vault.v1alpha1.BlockchainSecret secret = 4 [json_name = "secret"];
+inline bool SaveTokenBlockChainRequest::_internal_has_secret() const {
+  return this != internal_default_instance() && secret_ != nullptr;
+}
+inline bool SaveTokenBlockChainRequest::has_secret() const {
+  return _internal_has_secret();
+}
+inline const ::vault::v1alpha1::BlockchainSecret& SaveTokenBlockChainRequest::_internal_secret() const {
+  const ::vault::v1alpha1::BlockchainSecret* p = secret_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vault::v1alpha1::BlockchainSecret&>(
+      ::vault::v1alpha1::_BlockchainSecret_default_instance_);
+}
+inline const ::vault::v1alpha1::BlockchainSecret& SaveTokenBlockChainRequest::secret() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenBlockChainRequest.secret)
+  return _internal_secret();
+}
+inline void SaveTokenBlockChainRequest::unsafe_arena_set_allocated_secret(
+    ::vault::v1alpha1::BlockchainSecret* secret) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  secret_ = secret;
+  if (secret) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vault.v1alpha1.SaveTokenBlockChainRequest.secret)
+}
+inline ::vault::v1alpha1::BlockchainSecret* SaveTokenBlockChainRequest::release_secret() {
+  
+  ::vault::v1alpha1::BlockchainSecret* temp = secret_;
+  secret_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::vault::v1alpha1::BlockchainSecret* SaveTokenBlockChainRequest::unsafe_arena_release_secret() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenBlockChainRequest.secret)
+  
+  ::vault::v1alpha1::BlockchainSecret* temp = secret_;
+  secret_ = nullptr;
+  return temp;
+}
+inline ::vault::v1alpha1::BlockchainSecret* SaveTokenBlockChainRequest::_internal_mutable_secret() {
+  
+  if (secret_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vault::v1alpha1::BlockchainSecret>(GetArenaForAllocation());
+    secret_ = p;
+  }
+  return secret_;
+}
+inline ::vault::v1alpha1::BlockchainSecret* SaveTokenBlockChainRequest::mutable_secret() {
+  ::vault::v1alpha1::BlockchainSecret* _msg = _internal_mutable_secret();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenBlockChainRequest.secret)
+  return _msg;
+}
+inline void SaveTokenBlockChainRequest::set_allocated_secret(::vault::v1alpha1::BlockchainSecret* secret) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  if (secret) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret));
+    if (message_arena != submessage_arena) {
+      secret = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, secret, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  secret_ = secret;
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenBlockChainRequest.secret)
+}
+
+// -------------------------------------------------------------------
+
+// SaveTokenBlockChainResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void SaveTokenBlockChainResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& SaveTokenBlockChainResponse::msg() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenBlockChainResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenBlockChainResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenBlockChainResponse.msg)
+}
+inline std::string* SaveTokenBlockChainResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenBlockChainResponse.msg)
+  return _s;
+}
+inline const std::string& SaveTokenBlockChainResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void SaveTokenBlockChainResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenBlockChainResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenBlockChainResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenBlockChainResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void SaveTokenBlockChainResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& SaveTokenBlockChainResponse::error() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenBlockChainResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenBlockChainResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenBlockChainResponse.error)
+}
+inline std::string* SaveTokenBlockChainResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenBlockChainResponse.error)
+  return _s;
+}
+inline const std::string& SaveTokenBlockChainResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void SaveTokenBlockChainResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenBlockChainResponse::release_error() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenBlockChainResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenBlockChainResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenBlockChainResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// GetTokenBlockChainRequest
+
+// string blockchain_id = 1 [json_name = "blockchainId"];
+inline void GetTokenBlockChainRequest::clear_blockchain_id() {
+  blockchain_id_.ClearToEmpty();
+}
+inline const std::string& GetTokenBlockChainRequest::blockchain_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id)
+  return _internal_blockchain_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenBlockChainRequest::set_blockchain_id(ArgT0&& arg0, ArgT... args) {
+ 
+ blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id)
+}
+inline std::string* GetTokenBlockChainRequest::mutable_blockchain_id() {
+  std::string* _s = _internal_mutable_blockchain_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id)
+  return _s;
+}
+inline const std::string& GetTokenBlockChainRequest::_internal_blockchain_id() const {
+  return blockchain_id_.Get();
+}
+inline void GetTokenBlockChainRequest::_internal_set_blockchain_id(const std::string& value) {
+  
+  blockchain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainRequest::_internal_mutable_blockchain_id() {
+  
+  return blockchain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainRequest::release_blockchain_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id)
+  return blockchain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenBlockChainRequest::set_allocated_blockchain_id(std::string* blockchain_id) {
+  if (blockchain_id != nullptr) {
+    
+  } else {
+    
+  }
+  blockchain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_id)
+}
+
+// string blockchain_name = 2 [json_name = "blockchainName"];
+inline void GetTokenBlockChainRequest::clear_blockchain_name() {
+  blockchain_name_.ClearToEmpty();
+}
+inline const std::string& GetTokenBlockChainRequest::blockchain_name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name)
+  return _internal_blockchain_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenBlockChainRequest::set_blockchain_name(ArgT0&& arg0, ArgT... args) {
+ 
+ blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name)
+}
+inline std::string* GetTokenBlockChainRequest::mutable_blockchain_name() {
+  std::string* _s = _internal_mutable_blockchain_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name)
+  return _s;
+}
+inline const std::string& GetTokenBlockChainRequest::_internal_blockchain_name() const {
+  return blockchain_name_.Get();
+}
+inline void GetTokenBlockChainRequest::_internal_set_blockchain_name(const std::string& value) {
+  
+  blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainRequest::_internal_mutable_blockchain_name() {
+  
+  return blockchain_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainRequest::release_blockchain_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name)
+  return blockchain_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenBlockChainRequest::set_allocated_blockchain_name(std::string* blockchain_name) {
+  if (blockchain_name != nullptr) {
+    
+  } else {
+    
+  }
+  blockchain_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name)
+}
+
+// -------------------------------------------------------------------
+
+// GetTokenBlockChainResponse
+
+// .vault.v1alpha1.BlockchainSecret secret = 1 [json_name = "secret"];
+inline bool GetTokenBlockChainResponse::_internal_has_secret() const {
+  return this != internal_default_instance() && secret_ != nullptr;
+}
+inline bool GetTokenBlockChainResponse::has_secret() const {
+  return _internal_has_secret();
+}
+inline const ::vault::v1alpha1::BlockchainSecret& GetTokenBlockChainResponse::_internal_secret() const {
+  const ::vault::v1alpha1::BlockchainSecret* p = secret_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vault::v1alpha1::BlockchainSecret&>(
+      ::vault::v1alpha1::_BlockchainSecret_default_instance_);
+}
+inline const ::vault::v1alpha1::BlockchainSecret& GetTokenBlockChainResponse::secret() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenBlockChainResponse.secret)
+  return _internal_secret();
+}
+inline void GetTokenBlockChainResponse::unsafe_arena_set_allocated_secret(
+    ::vault::v1alpha1::BlockchainSecret* secret) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  secret_ = secret;
+  if (secret) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vault.v1alpha1.GetTokenBlockChainResponse.secret)
+}
+inline ::vault::v1alpha1::BlockchainSecret* GetTokenBlockChainResponse::release_secret() {
+  
+  ::vault::v1alpha1::BlockchainSecret* temp = secret_;
+  secret_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::vault::v1alpha1::BlockchainSecret* GetTokenBlockChainResponse::unsafe_arena_release_secret() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenBlockChainResponse.secret)
+  
+  ::vault::v1alpha1::BlockchainSecret* temp = secret_;
+  secret_ = nullptr;
+  return temp;
+}
+inline ::vault::v1alpha1::BlockchainSecret* GetTokenBlockChainResponse::_internal_mutable_secret() {
+  
+  if (secret_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vault::v1alpha1::BlockchainSecret>(GetArenaForAllocation());
+    secret_ = p;
+  }
+  return secret_;
+}
+inline ::vault::v1alpha1::BlockchainSecret* GetTokenBlockChainResponse::mutable_secret() {
+  ::vault::v1alpha1::BlockchainSecret* _msg = _internal_mutable_secret();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenBlockChainResponse.secret)
+  return _msg;
+}
+inline void GetTokenBlockChainResponse::set_allocated_secret(::vault::v1alpha1::BlockchainSecret* secret) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  if (secret) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret));
+    if (message_arena != submessage_arena) {
+      secret = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, secret, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  secret_ = secret;
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainResponse.secret)
+}
+
+// string error = 2 [json_name = "error"];
+inline void GetTokenBlockChainResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetTokenBlockChainResponse::error() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenBlockChainResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenBlockChainResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenBlockChainResponse.error)
+}
+inline std::string* GetTokenBlockChainResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenBlockChainResponse.error)
+  return _s;
+}
+inline const std::string& GetTokenBlockChainResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetTokenBlockChainResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainResponse::release_error() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenBlockChainResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenBlockChainResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainResponse.error)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -38,15 +38,19 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = 0;
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string name_project = 7 [json_name = "nameProject"];</code>
+     */
+    protected $name_project = '';
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
      */
     protected $organization_id = 0;
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
      */
     protected $scaling = null;
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
      */
     protected $traffic_type = 0;
 
@@ -62,6 +66,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Repository $repository
      *     @type \Application\V1alpha1\Configuration $configuration
      *     @type int $project_id
+     *     @type string $name_project
      *     @type int $organization_id
      *     @type \Application\V1alpha1\Scaling $scaling
      *     @type int $traffic_type
@@ -225,7 +230,29 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string name_project = 7 [json_name = "nameProject"];</code>
+     * @return string
+     */
+    public function getNameProject()
+    {
+        return $this->name_project;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name_project = 7 [json_name = "nameProject"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNameProject($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name_project = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
      * @return int
      */
     public function getOrganizationId()
@@ -234,7 +261,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 7 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
      * @param int $var
      * @return $this
      */
@@ -247,7 +274,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
      * @return \Application\V1alpha1\Scaling|null
      */
     public function getScaling()
@@ -266,7 +293,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 8 [json_name = "scaling"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
      * @param \Application\V1alpha1\Scaling $var
      * @return $this
      */
@@ -279,7 +306,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
      * @return int
      */
     public function getTrafficType()
@@ -288,7 +315,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 9 [json_name = "trafficType"];</code>
+     * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
      * @param int $var
      * @return $this
      */

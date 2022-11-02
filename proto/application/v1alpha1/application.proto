@@ -62,9 +62,10 @@ message Application {
     Repository repository = 4;
     Configuration configuration = 5;
     uint32 project_id = 6;
-    uint32 organization_id = 7;
-    Scaling scaling = 8;
-    TrafficType traffic_type = 9;
+    string name_project = 7;
+    uint32 organization_id = 8;
+    Scaling scaling = 9;
+    TrafficType traffic_type = 10;
 }
 
 message ListApplication {

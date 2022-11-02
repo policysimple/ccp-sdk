@@ -93,6 +93,28 @@ function deserialize_vault_v1alpha1_GetSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_GetTokenBlockChainRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenBlockChainRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetTokenBlockChainRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetTokenBlockChainRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetTokenBlockChainRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_GetTokenBlockChainResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenBlockChainResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetTokenBlockChainResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetTokenBlockChainResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetTokenBlockChainResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_GetTokenIntegrationsRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenIntegrationsRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.GetTokenIntegrationsRequest');
@@ -113,6 +135,28 @@ function serialize_vault_v1alpha1_GetTokenIntegrationsResponse(arg) {
 
 function deserialize_vault_v1alpha1_GetTokenIntegrationsResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetTokenIntegrationsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_SaveTokenBlockChainRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.SaveTokenBlockChainRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.SaveTokenBlockChainRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_SaveTokenBlockChainRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.SaveTokenBlockChainRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_SaveTokenBlockChainResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.SaveTokenBlockChainResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.SaveTokenBlockChainResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_SaveTokenBlockChainResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.SaveTokenBlockChainResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_vault_v1alpha1_SaveTokenIntegrationsRequest(arg) {
@@ -237,6 +281,29 @@ var VaultAPIServiceService = exports.VaultAPIServiceService = {
     requestDeserialize: deserialize_vault_v1alpha1_GetTokenIntegrationsRequest,
     responseSerialize: serialize_vault_v1alpha1_GetTokenIntegrationsResponse,
     responseDeserialize: deserialize_vault_v1alpha1_GetTokenIntegrationsResponse,
+  },
+  // BlockChain
+  saveTokenBlockChain: {
+    path: '/vault.v1alpha1.VaultAPIService/SaveTokenBlockChain',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.SaveTokenBlockChainRequest,
+    responseType: vault_v1alpha1_vault_api_pb.SaveTokenBlockChainResponse,
+    requestSerialize: serialize_vault_v1alpha1_SaveTokenBlockChainRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_SaveTokenBlockChainRequest,
+    responseSerialize: serialize_vault_v1alpha1_SaveTokenBlockChainResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_SaveTokenBlockChainResponse,
+  },
+  getTokenBlockChain: {
+    path: '/vault.v1alpha1.VaultAPIService/GetTokenBlockChain',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.GetTokenBlockChainRequest,
+    responseType: vault_v1alpha1_vault_api_pb.GetTokenBlockChainResponse,
+    requestSerialize: serialize_vault_v1alpha1_GetTokenBlockChainRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_GetTokenBlockChainRequest,
+    responseSerialize: serialize_vault_v1alpha1_GetTokenBlockChainResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_GetTokenBlockChainResponse,
   },
 };
 

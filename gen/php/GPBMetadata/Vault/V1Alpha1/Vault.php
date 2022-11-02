@@ -16,7 +16,7 @@ class Vault
         }
         $pool->internalAddGeneratedFile(
             '
-ù
+½
 vault/v1alpha1/vault.protovault.v1alpha1"Å
 Metadata
 key (	Rkey!
@@ -46,7 +46,9 @@ project_id (R	projectId%
 TokenIntegration\'
 organization_id (	RorganizationId%
 integration_id (	RintegrationId
-token (	RtokenBƒ
+token (	Rtoken"B
+BlockchainSecret.
+data (2.vault.v1alpha1.SecretDataRdataBƒ
 io.cuemby.vault.v1alpha1B
 VaultProtoPZ1github.com/cuemby/ccp-vault-service/vaultv1alpha1¢PPXªVault.V1Alpha1ÊVault\\V1Alpha1bproto3'
         , true);

@@ -25,6 +25,9 @@ type VaultAPIServiceClient interface {
 	DeleteOrganization(ctx context.Context, in *DeleteOrganizationRequest, opts ...grpc.CallOption) (*DeleteOrganizationResponse, error)
 	SaveTokenIntegrations(ctx context.Context, in *SaveTokenIntegrationsRequest, opts ...grpc.CallOption) (*SaveTokenIntegrationsResponse, error)
 	GetTokenIntegrations(ctx context.Context, in *GetTokenIntegrationsRequest, opts ...grpc.CallOption) (*GetTokenIntegrationsResponse, error)
+	//BlockChain
+	SaveTokenBlockChain(ctx context.Context, in *SaveTokenBlockChainRequest, opts ...grpc.CallOption) (*SaveTokenBlockChainResponse, error)
+	GetTokenBlockChain(ctx context.Context, in *GetTokenBlockChainRequest, opts ...grpc.CallOption) (*GetTokenBlockChainResponse, error)
 }
 
 type vaultAPIServiceClient struct {
@@ -98,6 +101,24 @@ func (c *vaultAPIServiceClient) GetTokenIntegrations(ctx context.Context, in *Ge
 	return out, nil
 }
 
+func (c *vaultAPIServiceClient) SaveTokenBlockChain(ctx context.Context, in *SaveTokenBlockChainRequest, opts ...grpc.CallOption) (*SaveTokenBlockChainResponse, error) {
+	out := new(SaveTokenBlockChainResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/SaveTokenBlockChain", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultAPIServiceClient) GetTokenBlockChain(ctx context.Context, in *GetTokenBlockChainRequest, opts ...grpc.CallOption) (*GetTokenBlockChainResponse, error) {
+	out := new(GetTokenBlockChainResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/GetTokenBlockChain", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultAPIServiceServer is the server API for VaultAPIService service.
 // All implementations should embed UnimplementedVaultAPIServiceServer
 // for forward compatibility
@@ -109,6 +130,9 @@ type VaultAPIServiceServer interface {
 	DeleteOrganization(context.Context, *DeleteOrganizationRequest) (*DeleteOrganizationResponse, error)
 	SaveTokenIntegrations(context.Context, *SaveTokenIntegrationsRequest) (*SaveTokenIntegrationsResponse, error)
 	GetTokenIntegrations(context.Context, *GetTokenIntegrationsRequest) (*GetTokenIntegrationsResponse, error)
+	//BlockChain
+	SaveTokenBlockChain(context.Context, *SaveTokenBlockChainRequest) (*SaveTokenBlockChainResponse, error)
+	GetTokenBlockChain(context.Context, *GetTokenBlockChainRequest) (*GetTokenBlockChainResponse, error)
 }
 
 // UnimplementedVaultAPIServiceServer should be embedded to have forward compatible implementations.
@@ -135,6 +159,12 @@ func (UnimplementedVaultAPIServiceServer) SaveTokenIntegrations(context.Context,
 }
 func (UnimplementedVaultAPIServiceServer) GetTokenIntegrations(context.Context, *GetTokenIntegrationsRequest) (*GetTokenIntegrationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTokenIntegrations not implemented")
+}
+func (UnimplementedVaultAPIServiceServer) SaveTokenBlockChain(context.Context, *SaveTokenBlockChainRequest) (*SaveTokenBlockChainResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SaveTokenBlockChain not implemented")
+}
+func (UnimplementedVaultAPIServiceServer) GetTokenBlockChain(context.Context, *GetTokenBlockChainRequest) (*GetTokenBlockChainResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTokenBlockChain not implemented")
 }
 
 // UnsafeVaultAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -274,6 +304,42 @@ func _VaultAPIService_GetTokenIntegrations_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultAPIService_SaveTokenBlockChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveTokenBlockChainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultAPIServiceServer).SaveTokenBlockChain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vault.v1alpha1.VaultAPIService/SaveTokenBlockChain",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultAPIServiceServer).SaveTokenBlockChain(ctx, req.(*SaveTokenBlockChainRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultAPIService_GetTokenBlockChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTokenBlockChainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultAPIServiceServer).GetTokenBlockChain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vault.v1alpha1.VaultAPIService/GetTokenBlockChain",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultAPIServiceServer).GetTokenBlockChain(ctx, req.(*GetTokenBlockChainRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultAPIService_ServiceDesc is the grpc.ServiceDesc for VaultAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -308,6 +374,14 @@ var VaultAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTokenIntegrations",
 			Handler:    _VaultAPIService_GetTokenIntegrations_Handler,
+		},
+		{
+			MethodName: "SaveTokenBlockChain",
+			Handler:    _VaultAPIService_SaveTokenBlockChain_Handler,
+		},
+		{
+			MethodName: "GetTokenBlockChain",
+			Handler:    _VaultAPIService_GetTokenBlockChain_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
