@@ -122,6 +122,7 @@ message SaveTokenBlockChainResponse {
 message GetTokenBlockChainRequest {
     string blockchain_id = 1;
     string blockchain_name = 2;
+    string node_name = 3;
 }
 
 message GetTokenBlockChainResponse {

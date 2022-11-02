@@ -239,7 +239,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SaveTokenBlockChainResponseDefa
 constexpr GetTokenBlockChainRequest::GetTokenBlockChainRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : blockchain_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , blockchain_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , blockchain_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , node_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetTokenBlockChainRequestDefaultTypeInternal {
   constexpr GetTokenBlockChainRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -398,6 +399,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainRequest, blockchain_id_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainRequest, blockchain_name_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainRequest, node_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetTokenBlockChainResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -424,7 +426,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 106, -1, sizeof(::vault::v1alpha1::SaveTokenBlockChainRequest)},
   { 115, -1, sizeof(::vault::v1alpha1::SaveTokenBlockChainResponse)},
   { 122, -1, sizeof(::vault::v1alpha1::GetTokenBlockChainRequest)},
-  { 129, -1, sizeof(::vault::v1alpha1::GetTokenBlockChainResponse)},
+  { 130, -1, sizeof(::vault::v1alpha1::GetTokenBlockChainResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -494,47 +496,47 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PR
   "ame\0228\n\006secret\030\004 \001(\0132 .vault.v1alpha1.Blo"
   "ckchainSecretR\006secret\"E\n\033SaveTokenBlockC"
   "hainResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030"
-  "\002 \001(\tR\005error\"i\n\031GetTokenBlockChainReques"
-  "t\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022\'"
-  "\n\017blockchain_name\030\002 \001(\tR\016blockchainName\""
-  "l\n\032GetTokenBlockChainResponse\0228\n\006secret\030"
-  "\001 \001(\0132 .vault.v1alpha1.BlockchainSecretR"
-  "\006secret\022\024\n\005error\030\002 \001(\tR\005error2\271\007\n\017VaultA"
-  "PIService\022[\n\014CreateSecret\022#.vault.v1alph"
-  "a1.CreateSecretRequest\032$.vault.v1alpha1."
-  "CreateSecretResponse\"\000\022[\n\014UpdateSecret\022#"
-  ".vault.v1alpha1.UpdateSecretRequest\032$.va"
-  "ult.v1alpha1.UpdateSecretResponse\"\000\022[\n\014D"
-  "eleteSecret\022#.vault.v1alpha1.DeleteSecre"
-  "tRequest\032$.vault.v1alpha1.DeleteSecretRe"
-  "sponse\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.G"
-  "etSecretRequest\032!.vault.v1alpha1.GetSecr"
-  "etResponse\"\000\022m\n\022DeleteOrganization\022).vau"
-  "lt.v1alpha1.DeleteOrganizationRequest\032*."
-  "vault.v1alpha1.DeleteOrganizationRespons"
-  "e\"\000\022v\n\025SaveTokenIntegrations\022,.vault.v1a"
-  "lpha1.SaveTokenIntegrationsRequest\032-.vau"
-  "lt.v1alpha1.SaveTokenIntegrationsRespons"
-  "e\"\000\022s\n\024GetTokenIntegrations\022+.vault.v1al"
-  "pha1.GetTokenIntegrationsRequest\032,.vault"
-  ".v1alpha1.GetTokenIntegrationsResponse\"\000"
-  "\022p\n\023SaveTokenBlockChain\022*.vault.v1alpha1"
-  ".SaveTokenBlockChainRequest\032+.vault.v1al"
-  "pha1.SaveTokenBlockChainResponse\"\000\022m\n\022Ge"
-  "tTokenBlockChain\022).vault.v1alpha1.GetTok"
-  "enBlockChainRequest\032*.vault.v1alpha1.Get"
-  "TokenBlockChainResponse\"\000B\206\001\n\030io.cuemby."
-  "vault.v1alpha1B\rVaultAPIProtoP\001Z1github."
-  "com/cuemby/ccp-vault-service/vaultv1alph"
-  "a1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alph"
-  "a1b\006proto3"
+  "\002 \001(\tR\005error\"\206\001\n\031GetTokenBlockChainReque"
+  "st\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022"
+  "\'\n\017blockchain_name\030\002 \001(\tR\016blockchainName"
+  "\022\033\n\tnode_name\030\003 \001(\tR\010nodeName\"l\n\032GetToke"
+  "nBlockChainResponse\0228\n\006secret\030\001 \001(\0132 .va"
+  "ult.v1alpha1.BlockchainSecretR\006secret\022\024\n"
+  "\005error\030\002 \001(\tR\005error2\271\007\n\017VaultAPIService\022"
+  "[\n\014CreateSecret\022#.vault.v1alpha1.CreateS"
+  "ecretRequest\032$.vault.v1alpha1.CreateSecr"
+  "etResponse\"\000\022[\n\014UpdateSecret\022#.vault.v1a"
+  "lpha1.UpdateSecretRequest\032$.vault.v1alph"
+  "a1.UpdateSecretResponse\"\000\022[\n\014DeleteSecre"
+  "t\022#.vault.v1alpha1.DeleteSecretRequest\032$"
+  ".vault.v1alpha1.DeleteSecretResponse\"\000\022R"
+  "\n\tGetSecret\022 .vault.v1alpha1.GetSecretRe"
+  "quest\032!.vault.v1alpha1.GetSecretResponse"
+  "\"\000\022m\n\022DeleteOrganization\022).vault.v1alpha"
+  "1.DeleteOrganizationRequest\032*.vault.v1al"
+  "pha1.DeleteOrganizationResponse\"\000\022v\n\025Sav"
+  "eTokenIntegrations\022,.vault.v1alpha1.Save"
+  "TokenIntegrationsRequest\032-.vault.v1alpha"
+  "1.SaveTokenIntegrationsResponse\"\000\022s\n\024Get"
+  "TokenIntegrations\022+.vault.v1alpha1.GetTo"
+  "kenIntegrationsRequest\032,.vault.v1alpha1."
+  "GetTokenIntegrationsResponse\"\000\022p\n\023SaveTo"
+  "kenBlockChain\022*.vault.v1alpha1.SaveToken"
+  "BlockChainRequest\032+.vault.v1alpha1.SaveT"
+  "okenBlockChainResponse\"\000\022m\n\022GetTokenBloc"
+  "kChain\022).vault.v1alpha1.GetTokenBlockCha"
+  "inRequest\032*.vault.v1alpha1.GetTokenBlock"
+  "ChainResponse\"\000B\206\001\n\030io.cuemby.vault.v1al"
+  "pha1B\rVaultAPIProtoP\001Z1github.com/cuemby"
+  "/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002"
+  "\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps[1] = {
   &::descriptor_table_vault_2fv1alpha1_2fvault_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto = {
-  false, false, 3130, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
+  false, false, 3160, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
   &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 18,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto,
@@ -4794,12 +4796,18 @@ GetTokenBlockChainRequest::GetTokenBlockChainRequest(const GetTokenBlockChainReq
     blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_name(), 
       GetArenaForAllocation());
   }
+  node_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_node_name().empty()) {
+    node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetTokenBlockChainRequest)
 }
 
 inline void GetTokenBlockChainRequest::SharedCtor() {
 blockchain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 blockchain_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+node_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetTokenBlockChainRequest::~GetTokenBlockChainRequest() {
@@ -4813,6 +4821,7 @@ inline void GetTokenBlockChainRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   blockchain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   blockchain_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  node_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetTokenBlockChainRequest::ArenaDtor(void* object) {
@@ -4833,6 +4842,7 @@ void GetTokenBlockChainRequest::Clear() {
 
   blockchain_id_.ClearToEmpty();
   blockchain_name_.ClearToEmpty();
+  node_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4857,6 +4867,15 @@ const char* GetTokenBlockChainRequest::_InternalParse(const char* ptr, ::PROTOBU
           auto str = _internal_mutable_blockchain_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string node_name = 3 [json_name = "nodeName"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_node_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetTokenBlockChainRequest.node_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4909,6 +4928,16 @@ failure:
         2, this->_internal_blockchain_name(), target);
   }
 
+  // string node_name = 3 [json_name = "nodeName"];
+  if (!this->_internal_node_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_node_name().data(), static_cast<int>(this->_internal_node_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetTokenBlockChainRequest.node_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_node_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4937,6 +4966,13 @@ size_t GetTokenBlockChainRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_blockchain_name());
+  }
+
+  // string node_name = 3 [json_name = "nodeName"];
+  if (!this->_internal_node_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_node_name());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4973,6 +5009,9 @@ void GetTokenBlockChainRequest::MergeFrom(const GetTokenBlockChainRequest& from)
   if (!from._internal_blockchain_name().empty()) {
     _internal_set_blockchain_name(from._internal_blockchain_name());
   }
+  if (!from._internal_node_name().empty()) {
+    _internal_set_node_name(from._internal_node_name());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4999,6 +5038,11 @@ void GetTokenBlockChainRequest::InternalSwap(GetTokenBlockChainRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &blockchain_name_, GetArenaForAllocation(),
       &other->blockchain_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &node_name_, GetArenaForAllocation(),
+      &other->node_name_, other->GetArenaForAllocation()
   );
 }
 

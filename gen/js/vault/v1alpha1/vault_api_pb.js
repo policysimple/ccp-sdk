@@ -3390,7 +3390,8 @@ proto.vault.v1alpha1.GetTokenBlockChainRequest.prototype.toObject = function(opt
 proto.vault.v1alpha1.GetTokenBlockChainRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     blockchainId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    blockchainName: jspb.Message.getFieldWithDefault(msg, 2, "")
+    blockchainName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    nodeName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3435,6 +3436,10 @@ proto.vault.v1alpha1.GetTokenBlockChainRequest.deserializeBinaryFromReader = fun
       var value = /** @type {string} */ (reader.readString());
       msg.setBlockchainName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNodeName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3478,6 +3483,13 @@ proto.vault.v1alpha1.GetTokenBlockChainRequest.serializeBinaryToWriter = functio
       f
     );
   }
+  f = message.getNodeName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -3514,6 +3526,24 @@ proto.vault.v1alpha1.GetTokenBlockChainRequest.prototype.getBlockchainName = fun
  */
 proto.vault.v1alpha1.GetTokenBlockChainRequest.prototype.setBlockchainName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string node_name = 3;
+ * @return {string}
+ */
+proto.vault.v1alpha1.GetTokenBlockChainRequest.prototype.getNodeName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vault.v1alpha1.GetTokenBlockChainRequest} returns this
+ */
+proto.vault.v1alpha1.GetTokenBlockChainRequest.prototype.setNodeName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

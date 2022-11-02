@@ -158,40 +158,40 @@ public final class VaultAPIProto {
       "ame\0228\n\006secret\030\004 \001(\0132 .vault.v1alpha1.Blo" +
       "ckchainSecretR\006secret\"E\n\033SaveTokenBlockC" +
       "hainResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\"i\n\031GetTokenBlockChainReques" +
-      "t\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022\'" +
-      "\n\017blockchain_name\030\002 \001(\tR\016blockchainName\"" +
-      "l\n\032GetTokenBlockChainResponse\0228\n\006secret\030" +
-      "\001 \001(\0132 .vault.v1alpha1.BlockchainSecretR" +
-      "\006secret\022\024\n\005error\030\002 \001(\tR\005error2\271\007\n\017VaultA" +
-      "PIService\022[\n\014CreateSecret\022#.vault.v1alph" +
-      "a1.CreateSecretRequest\032$.vault.v1alpha1." +
-      "CreateSecretResponse\"\000\022[\n\014UpdateSecret\022#" +
-      ".vault.v1alpha1.UpdateSecretRequest\032$.va" +
-      "ult.v1alpha1.UpdateSecretResponse\"\000\022[\n\014D" +
-      "eleteSecret\022#.vault.v1alpha1.DeleteSecre" +
-      "tRequest\032$.vault.v1alpha1.DeleteSecretRe" +
-      "sponse\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.G" +
-      "etSecretRequest\032!.vault.v1alpha1.GetSecr" +
-      "etResponse\"\000\022m\n\022DeleteOrganization\022).vau" +
-      "lt.v1alpha1.DeleteOrganizationRequest\032*." +
-      "vault.v1alpha1.DeleteOrganizationRespons" +
-      "e\"\000\022v\n\025SaveTokenIntegrations\022,.vault.v1a" +
-      "lpha1.SaveTokenIntegrationsRequest\032-.vau" +
-      "lt.v1alpha1.SaveTokenIntegrationsRespons" +
-      "e\"\000\022s\n\024GetTokenIntegrations\022+.vault.v1al" +
-      "pha1.GetTokenIntegrationsRequest\032,.vault" +
-      ".v1alpha1.GetTokenIntegrationsResponse\"\000" +
-      "\022p\n\023SaveTokenBlockChain\022*.vault.v1alpha1" +
-      ".SaveTokenBlockChainRequest\032+.vault.v1al" +
-      "pha1.SaveTokenBlockChainResponse\"\000\022m\n\022Ge" +
-      "tTokenBlockChain\022).vault.v1alpha1.GetTok" +
-      "enBlockChainRequest\032*.vault.v1alpha1.Get" +
-      "TokenBlockChainResponse\"\000B\206\001\n\030io.cuemby." +
-      "vault.v1alpha1B\rVaultAPIProtoP\001Z1github." +
-      "com/cuemby/ccp-vault-service/vaultv1alph" +
-      "a1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alph" +
-      "a1b\006proto3"
+      "\002 \001(\tR\005error\"\206\001\n\031GetTokenBlockChainReque" +
+      "st\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022" +
+      "\'\n\017blockchain_name\030\002 \001(\tR\016blockchainName" +
+      "\022\033\n\tnode_name\030\003 \001(\tR\010nodeName\"l\n\032GetToke" +
+      "nBlockChainResponse\0228\n\006secret\030\001 \001(\0132 .va" +
+      "ult.v1alpha1.BlockchainSecretR\006secret\022\024\n" +
+      "\005error\030\002 \001(\tR\005error2\271\007\n\017VaultAPIService\022" +
+      "[\n\014CreateSecret\022#.vault.v1alpha1.CreateS" +
+      "ecretRequest\032$.vault.v1alpha1.CreateSecr" +
+      "etResponse\"\000\022[\n\014UpdateSecret\022#.vault.v1a" +
+      "lpha1.UpdateSecretRequest\032$.vault.v1alph" +
+      "a1.UpdateSecretResponse\"\000\022[\n\014DeleteSecre" +
+      "t\022#.vault.v1alpha1.DeleteSecretRequest\032$" +
+      ".vault.v1alpha1.DeleteSecretResponse\"\000\022R" +
+      "\n\tGetSecret\022 .vault.v1alpha1.GetSecretRe" +
+      "quest\032!.vault.v1alpha1.GetSecretResponse" +
+      "\"\000\022m\n\022DeleteOrganization\022).vault.v1alpha" +
+      "1.DeleteOrganizationRequest\032*.vault.v1al" +
+      "pha1.DeleteOrganizationResponse\"\000\022v\n\025Sav" +
+      "eTokenIntegrations\022,.vault.v1alpha1.Save" +
+      "TokenIntegrationsRequest\032-.vault.v1alpha" +
+      "1.SaveTokenIntegrationsResponse\"\000\022s\n\024Get" +
+      "TokenIntegrations\022+.vault.v1alpha1.GetTo" +
+      "kenIntegrationsRequest\032,.vault.v1alpha1." +
+      "GetTokenIntegrationsResponse\"\000\022p\n\023SaveTo" +
+      "kenBlockChain\022*.vault.v1alpha1.SaveToken" +
+      "BlockChainRequest\032+.vault.v1alpha1.SaveT" +
+      "okenBlockChainResponse\"\000\022m\n\022GetTokenBloc" +
+      "kChain\022).vault.v1alpha1.GetTokenBlockCha" +
+      "inRequest\032*.vault.v1alpha1.GetTokenBlock" +
+      "ChainResponse\"\000B\206\001\n\030io.cuemby.vault.v1al" +
+      "pha1B\rVaultAPIProtoP\001Z1github.com/cuemby" +
+      "/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002" +
+      "\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -299,7 +299,7 @@ public final class VaultAPIProto {
     internal_static_vault_v1alpha1_GetTokenBlockChainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetTokenBlockChainRequest_descriptor,
-        new java.lang.String[] { "BlockchainId", "BlockchainName", });
+        new java.lang.String[] { "BlockchainId", "BlockchainName", "NodeName", });
     internal_static_vault_v1alpha1_GetTokenBlockChainResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_vault_v1alpha1_GetTokenBlockChainResponse_fieldAccessorTable = new
