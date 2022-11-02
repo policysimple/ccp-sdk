@@ -2950,6 +2950,7 @@ class GetTokenBlockChainRequest final :
   enum : int {
     kBlockchainIdFieldNumber = 1,
     kBlockchainNameFieldNumber = 2,
+    kNodeNameFieldNumber = 3,
   };
   // string blockchain_id = 1 [json_name = "blockchainId"];
   void clear_blockchain_id();
@@ -2979,6 +2980,20 @@ class GetTokenBlockChainRequest final :
   std::string* _internal_mutable_blockchain_name();
   public:
 
+  // string node_name = 3 [json_name = "nodeName"];
+  void clear_node_name();
+  const std::string& node_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_node_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_node_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_node_name();
+  void set_allocated_node_name(std::string* node_name);
+  private:
+  const std::string& _internal_node_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_node_name(const std::string& value);
+  std::string* _internal_mutable_node_name();
+  public:
+
   // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetTokenBlockChainRequest)
  private:
   class _Internal;
@@ -2988,6 +3003,7 @@ class GetTokenBlockChainRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
 };
@@ -5204,6 +5220,52 @@ inline void GetTokenBlockChainRequest::set_allocated_blockchain_name(std::string
   blockchain_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blockchain_name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainRequest.blockchain_name)
+}
+
+// string node_name = 3 [json_name = "nodeName"];
+inline void GetTokenBlockChainRequest::clear_node_name() {
+  node_name_.ClearToEmpty();
+}
+inline const std::string& GetTokenBlockChainRequest::node_name() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenBlockChainRequest.node_name)
+  return _internal_node_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenBlockChainRequest::set_node_name(ArgT0&& arg0, ArgT... args) {
+ 
+ node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenBlockChainRequest.node_name)
+}
+inline std::string* GetTokenBlockChainRequest::mutable_node_name() {
+  std::string* _s = _internal_mutable_node_name();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenBlockChainRequest.node_name)
+  return _s;
+}
+inline const std::string& GetTokenBlockChainRequest::_internal_node_name() const {
+  return node_name_.Get();
+}
+inline void GetTokenBlockChainRequest::_internal_set_node_name(const std::string& value) {
+  
+  node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainRequest::_internal_mutable_node_name() {
+  
+  return node_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenBlockChainRequest::release_node_name() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenBlockChainRequest.node_name)
+  return node_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenBlockChainRequest::set_allocated_node_name(std::string* node_name) {
+  if (node_name != nullptr) {
+    
+  } else {
+    
+  }
+  node_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), node_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainRequest.node_name)
 }
 
 // -------------------------------------------------------------------

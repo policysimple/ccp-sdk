@@ -30,4 +30,16 @@ public interface GetTokenBlockChainRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBlockchainNameBytes();
+
+  /**
+   * <code>string node_name = 3 [json_name = "nodeName"];</code>
+   * @return The nodeName.
+   */
+  java.lang.String getNodeName();
+  /**
+   * <code>string node_name = 3 [json_name = "nodeName"];</code>
+   * @return The bytes for nodeName.
+   */
+  com.google.protobuf.ByteString
+      getNodeNameBytes();
 }

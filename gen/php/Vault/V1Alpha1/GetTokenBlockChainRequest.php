@@ -21,6 +21,10 @@ class GetTokenBlockChainRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string blockchain_name = 2 [json_name = "blockchainName"];</code>
      */
     protected $blockchain_name = '';
+    /**
+     * Generated from protobuf field <code>string node_name = 3 [json_name = "nodeName"];</code>
+     */
+    protected $node_name = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class GetTokenBlockChainRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $blockchain_id
      *     @type string $blockchain_name
+     *     @type string $node_name
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class GetTokenBlockChainRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->blockchain_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string node_name = 3 [json_name = "nodeName"];</code>
+     * @return string
+     */
+    public function getNodeName()
+    {
+        return $this->node_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string node_name = 3 [json_name = "nodeName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNodeName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->node_name = $var;
 
         return $this;
     }
