@@ -6661,33 +6661,57 @@ public final class ApplicationOuterClass {
         getNameProjectBytes();
 
     /**
-     * <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+     * <code>string project_image = 8 [json_name = "projectImage"];</code>
+     * @return The projectImage.
+     */
+    java.lang.String getProjectImage();
+    /**
+     * <code>string project_image = 8 [json_name = "projectImage"];</code>
+     * @return The bytes for projectImage.
+     */
+    com.google.protobuf.ByteString
+        getProjectImageBytes();
+
+    /**
+     * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+     * @return The projectDescription.
+     */
+    java.lang.String getProjectDescription();
+    /**
+     * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+     * @return The bytes for projectDescription.
+     */
+    com.google.protobuf.ByteString
+        getProjectDescriptionBytes();
+
+    /**
+     * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     int getOrganizationId();
 
     /**
-     * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+     * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      * @return Whether the scaling field is set.
      */
     boolean hasScaling();
     /**
-     * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+     * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      * @return The scaling.
      */
     application.v1alpha1.ApplicationOuterClass.Scaling getScaling();
     /**
-     * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+     * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      */
     application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder();
 
     /**
-     * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+     * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
      * @return The enum numeric value on the wire for trafficType.
      */
     int getTrafficTypeValue();
     /**
-     * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+     * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
      * @return The trafficType.
      */
     application.v1alpha1.ApplicationOuterClass.TrafficType getTrafficType();
@@ -6709,6 +6733,8 @@ public final class ApplicationOuterClass {
       name_ = "";
       integration_ = "";
       nameProject_ = "";
+      projectImage_ = "";
+      projectDescription_ = "";
       trafficType_ = 0;
     }
 
@@ -6797,12 +6823,24 @@ public final class ApplicationOuterClass {
               nameProject_ = s;
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectImage_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectDescription_ = s;
+              break;
+            }
+            case 80: {
 
               organizationId_ = input.readUInt32();
               break;
             }
-            case 74: {
+            case 90: {
               application.v1alpha1.ApplicationOuterClass.Scaling.Builder subBuilder = null;
               if (scaling_ != null) {
                 subBuilder = scaling_.toBuilder();
@@ -6815,7 +6853,7 @@ public final class ApplicationOuterClass {
 
               break;
             }
-            case 80: {
+            case 96: {
               int rawValue = input.readEnum();
 
               trafficType_ = rawValue;
@@ -7068,10 +7106,86 @@ public final class ApplicationOuterClass {
       }
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 8;
+    public static final int PROJECT_IMAGE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object projectImage_;
+    /**
+     * <code>string project_image = 8 [json_name = "projectImage"];</code>
+     * @return The projectImage.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectImage() {
+      java.lang.Object ref = projectImage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectImage_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_image = 8 [json_name = "projectImage"];</code>
+     * @return The bytes for projectImage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectImageBytes() {
+      java.lang.Object ref = projectImage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_DESCRIPTION_FIELD_NUMBER = 9;
+    private volatile java.lang.Object projectDescription_;
+    /**
+     * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+     * @return The projectDescription.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectDescription() {
+      java.lang.Object ref = projectDescription_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectDescription_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+     * @return The bytes for projectDescription.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectDescriptionBytes() {
+      java.lang.Object ref = projectDescription_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 10;
     private int organizationId_;
     /**
-     * <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+     * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
@@ -7079,10 +7193,10 @@ public final class ApplicationOuterClass {
       return organizationId_;
     }
 
-    public static final int SCALING_FIELD_NUMBER = 9;
+    public static final int SCALING_FIELD_NUMBER = 11;
     private application.v1alpha1.ApplicationOuterClass.Scaling scaling_;
     /**
-     * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+     * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      * @return Whether the scaling field is set.
      */
     @java.lang.Override
@@ -7090,7 +7204,7 @@ public final class ApplicationOuterClass {
       return scaling_ != null;
     }
     /**
-     * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+     * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      * @return The scaling.
      */
     @java.lang.Override
@@ -7098,24 +7212,24 @@ public final class ApplicationOuterClass {
       return scaling_ == null ? application.v1alpha1.ApplicationOuterClass.Scaling.getDefaultInstance() : scaling_;
     }
     /**
-     * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+     * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      */
     @java.lang.Override
     public application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder() {
       return getScaling();
     }
 
-    public static final int TRAFFIC_TYPE_FIELD_NUMBER = 10;
+    public static final int TRAFFIC_TYPE_FIELD_NUMBER = 12;
     private int trafficType_;
     /**
-     * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+     * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
      * @return The enum numeric value on the wire for trafficType.
      */
     @java.lang.Override public int getTrafficTypeValue() {
       return trafficType_;
     }
     /**
-     * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+     * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
      * @return The trafficType.
      */
     @java.lang.Override public application.v1alpha1.ApplicationOuterClass.TrafficType getTrafficType() {
@@ -7159,14 +7273,20 @@ public final class ApplicationOuterClass {
       if (!getNameProjectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nameProject_);
       }
+      if (!getProjectImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, projectImage_);
+      }
+      if (!getProjectDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, projectDescription_);
+      }
       if (organizationId_ != 0) {
-        output.writeUInt32(8, organizationId_);
+        output.writeUInt32(10, organizationId_);
       }
       if (scaling_ != null) {
-        output.writeMessage(9, getScaling());
+        output.writeMessage(11, getScaling());
       }
       if (trafficType_ != application.v1alpha1.ApplicationOuterClass.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
-        output.writeEnum(10, trafficType_);
+        output.writeEnum(12, trafficType_);
       }
       unknownFields.writeTo(output);
     }
@@ -7201,17 +7321,23 @@ public final class ApplicationOuterClass {
       if (!getNameProjectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nameProject_);
       }
+      if (!getProjectImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectImage_);
+      }
+      if (!getProjectDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, projectDescription_);
+      }
       if (organizationId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, organizationId_);
+          .computeUInt32Size(10, organizationId_);
       }
       if (scaling_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getScaling());
+          .computeMessageSize(11, getScaling());
       }
       if (trafficType_ != application.v1alpha1.ApplicationOuterClass.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, trafficType_);
+          .computeEnumSize(12, trafficType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7248,6 +7374,10 @@ public final class ApplicationOuterClass {
           != other.getProjectId()) return false;
       if (!getNameProject()
           .equals(other.getNameProject())) return false;
+      if (!getProjectImage()
+          .equals(other.getProjectImage())) return false;
+      if (!getProjectDescription()
+          .equals(other.getProjectDescription())) return false;
       if (getOrganizationId()
           != other.getOrganizationId()) return false;
       if (hasScaling() != other.hasScaling()) return false;
@@ -7285,6 +7415,10 @@ public final class ApplicationOuterClass {
       hash = (53 * hash) + getProjectId();
       hash = (37 * hash) + NAME_PROJECT_FIELD_NUMBER;
       hash = (53 * hash) + getNameProject().hashCode();
+      hash = (37 * hash) + PROJECT_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectImage().hashCode();
+      hash = (37 * hash) + PROJECT_DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectDescription().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId();
       if (hasScaling()) {
@@ -7448,6 +7582,10 @@ public final class ApplicationOuterClass {
 
         nameProject_ = "";
 
+        projectImage_ = "";
+
+        projectDescription_ = "";
+
         organizationId_ = 0;
 
         if (scalingBuilder_ == null) {
@@ -7499,6 +7637,8 @@ public final class ApplicationOuterClass {
         }
         result.projectId_ = projectId_;
         result.nameProject_ = nameProject_;
+        result.projectImage_ = projectImage_;
+        result.projectDescription_ = projectDescription_;
         result.organizationId_ = organizationId_;
         if (scalingBuilder_ == null) {
           result.scaling_ = scaling_;
@@ -7577,6 +7717,14 @@ public final class ApplicationOuterClass {
         }
         if (!other.getNameProject().isEmpty()) {
           nameProject_ = other.nameProject_;
+          onChanged();
+        }
+        if (!other.getProjectImage().isEmpty()) {
+          projectImage_ = other.projectImage_;
+          onChanged();
+        }
+        if (!other.getProjectDescription().isEmpty()) {
+          projectDescription_ = other.projectDescription_;
           onChanged();
         }
         if (other.getOrganizationId() != 0) {
@@ -8190,9 +8338,161 @@ public final class ApplicationOuterClass {
         return this;
       }
 
+      private java.lang.Object projectImage_ = "";
+      /**
+       * <code>string project_image = 8 [json_name = "projectImage"];</code>
+       * @return The projectImage.
+       */
+      public java.lang.String getProjectImage() {
+        java.lang.Object ref = projectImage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectImage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_image = 8 [json_name = "projectImage"];</code>
+       * @return The bytes for projectImage.
+       */
+      public com.google.protobuf.ByteString
+          getProjectImageBytes() {
+        java.lang.Object ref = projectImage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectImage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_image = 8 [json_name = "projectImage"];</code>
+       * @param value The projectImage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectImage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectImage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_image = 8 [json_name = "projectImage"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectImage() {
+        
+        projectImage_ = getDefaultInstance().getProjectImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_image = 8 [json_name = "projectImage"];</code>
+       * @param value The bytes for projectImage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectImage_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object projectDescription_ = "";
+      /**
+       * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+       * @return The projectDescription.
+       */
+      public java.lang.String getProjectDescription() {
+        java.lang.Object ref = projectDescription_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectDescription_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+       * @return The bytes for projectDescription.
+       */
+      public com.google.protobuf.ByteString
+          getProjectDescriptionBytes() {
+        java.lang.Object ref = projectDescription_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+       * @param value The projectDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectDescription_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectDescription() {
+        
+        projectDescription_ = getDefaultInstance().getProjectDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_description = 9 [json_name = "projectDescription"];</code>
+       * @param value The bytes for projectDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectDescription_ = value;
+        onChanged();
+        return this;
+      }
+
       private int organizationId_ ;
       /**
-       * <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
       @java.lang.Override
@@ -8200,7 +8500,7 @@ public final class ApplicationOuterClass {
         return organizationId_;
       }
       /**
-       * <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
@@ -8211,7 +8511,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>uint32 organization_id = 8 [json_name = "organizationId"];</code>
+       * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
@@ -8225,14 +8525,14 @@ public final class ApplicationOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder> scalingBuilder_;
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        * @return Whether the scaling field is set.
        */
       public boolean hasScaling() {
         return scalingBuilder_ != null || scaling_ != null;
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        * @return The scaling.
        */
       public application.v1alpha1.ApplicationOuterClass.Scaling getScaling() {
@@ -8243,7 +8543,7 @@ public final class ApplicationOuterClass {
         }
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       public Builder setScaling(application.v1alpha1.ApplicationOuterClass.Scaling value) {
         if (scalingBuilder_ == null) {
@@ -8259,7 +8559,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       public Builder setScaling(
           application.v1alpha1.ApplicationOuterClass.Scaling.Builder builderForValue) {
@@ -8273,7 +8573,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       public Builder mergeScaling(application.v1alpha1.ApplicationOuterClass.Scaling value) {
         if (scalingBuilder_ == null) {
@@ -8291,7 +8591,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       public Builder clearScaling() {
         if (scalingBuilder_ == null) {
@@ -8305,7 +8605,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       public application.v1alpha1.ApplicationOuterClass.Scaling.Builder getScalingBuilder() {
         
@@ -8313,7 +8613,7 @@ public final class ApplicationOuterClass {
         return getScalingFieldBuilder().getBuilder();
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       public application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder getScalingOrBuilder() {
         if (scalingBuilder_ != null) {
@@ -8324,7 +8624,7 @@ public final class ApplicationOuterClass {
         }
       }
       /**
-       * <code>.application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];</code>
+       * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           application.v1alpha1.ApplicationOuterClass.Scaling, application.v1alpha1.ApplicationOuterClass.Scaling.Builder, application.v1alpha1.ApplicationOuterClass.ScalingOrBuilder> 
@@ -8342,14 +8642,14 @@ public final class ApplicationOuterClass {
 
       private int trafficType_ = 0;
       /**
-       * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+       * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
        * @return The enum numeric value on the wire for trafficType.
        */
       @java.lang.Override public int getTrafficTypeValue() {
         return trafficType_;
       }
       /**
-       * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+       * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
        * @param value The enum numeric value on the wire for trafficType to set.
        * @return This builder for chaining.
        */
@@ -8360,7 +8660,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+       * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
        * @return The trafficType.
        */
       @java.lang.Override
@@ -8370,7 +8670,7 @@ public final class ApplicationOuterClass {
         return result == null ? application.v1alpha1.ApplicationOuterClass.TrafficType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+       * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
        * @param value The trafficType to set.
        * @return This builder for chaining.
        */
@@ -8384,7 +8684,7 @@ public final class ApplicationOuterClass {
         return this;
       }
       /**
-       * <code>.application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];</code>
+       * <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTrafficType() {
@@ -9578,27 +9878,29 @@ public final class ApplicationOuterClass {
       "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic" +
       "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t" +
       "R\nmaxReplica\022\037\n\013memory_rule\030\006 \001(\tR\nmemor" +
-      "yRule\"\312\003\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
+      "yRule\"\240\004\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
       "\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013" +
       "integration\022@\n\nrepository\030\004 \001(\0132 .applic" +
       "ation.v1alpha1.RepositoryR\nrepository\022I\n" +
       "\rconfiguration\030\005 \001(\0132#.application.v1alp" +
       "ha1.ConfigurationR\rconfiguration\022\035\n\nproj" +
       "ect_id\030\006 \001(\rR\tprojectId\022!\n\014name_project\030" +
-      "\007 \001(\tR\013nameProject\022\'\n\017organization_id\030\010 " +
-      "\001(\rR\016organizationId\0227\n\007scaling\030\t \001(\0132\035.a" +
-      "pplication.v1alpha1.ScalingR\007scaling\022D\n\014" +
-      "traffic_type\030\n \001(\0162!.application.v1alpha" +
-      "1.TrafficTypeR\013trafficType\"\277\001\n\017ListAppli" +
-      "cation\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
-      "me\022@\n\nrepository\030\003 \001(\0132 .application.v1a" +
-      "lpha1.RepositoryR\nrepository\022\035\n\nproject_" +
-      "id\030\004 \001(\rR\tprojectId\022\'\n\017organization_id\030\005" +
-      " \001(\rR\016organizationId*a\n\013TrafficType\022\034\n\030T" +
-      "RAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYP" +
-      "E_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B" +
-      "7Z5github.com/cuemby/ccp-sdk/gen/go/appl" +
-      "ication/v1alpha1b\006proto3"
+      "\007 \001(\tR\013nameProject\022#\n\rproject_image\030\010 \001(" +
+      "\tR\014projectImage\022/\n\023project_description\030\t" +
+      " \001(\tR\022projectDescription\022\'\n\017organization" +
+      "_id\030\n \001(\rR\016organizationId\0227\n\007scaling\030\013 \001" +
+      "(\0132\035.application.v1alpha1.ScalingR\007scali" +
+      "ng\022D\n\014traffic_type\030\014 \001(\0162!.application.v" +
+      "1alpha1.TrafficTypeR\013trafficType\"\277\001\n\017Lis" +
+      "tApplication\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001" +
+      "(\tR\004name\022@\n\nrepository\030\003 \001(\0132 .applicati" +
+      "on.v1alpha1.RepositoryR\nrepository\022\035\n\npr" +
+      "oject_id\030\004 \001(\rR\tprojectId\022\'\n\017organizatio" +
+      "n_id\030\005 \001(\rR\016organizationId*a\n\013TrafficTyp" +
+      "e\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFF" +
+      "IC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTER" +
+      "NAL\020\002B7Z5github.com/cuemby/ccp-sdk/gen/g" +
+      "o/application/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9645,7 +9947,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
-        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "NameProject", "OrganizationId", "Scaling", "TrafficType", });
+        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "NameProject", "ProjectImage", "ProjectDescription", "OrganizationId", "Scaling", "TrafficType", });
     internal_static_application_v1alpha1_ListApplication_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_application_v1alpha1_ListApplication_fieldAccessorTable = new

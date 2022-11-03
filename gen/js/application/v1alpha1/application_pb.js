@@ -1655,9 +1655,11 @@ proto.application.v1alpha1.Application.toObject = function(includeInstance, msg)
     configuration: (f = msg.getConfiguration()) && proto.application.v1alpha1.Configuration.toObject(includeInstance, f),
     projectId: jspb.Message.getFieldWithDefault(msg, 6, 0),
     nameProject: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    projectImage: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    projectDescription: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 10, 0),
     scaling: (f = msg.getScaling()) && proto.application.v1alpha1.Scaling.toObject(includeInstance, f),
-    trafficType: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    trafficType: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -1725,15 +1727,23 @@ proto.application.v1alpha1.Application.deserializeBinaryFromReader = function(ms
       msg.setNameProject(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectImage(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectDescription(value);
+      break;
+    case 10:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOrganizationId(value);
       break;
-    case 9:
+    case 11:
       var value = new proto.application.v1alpha1.Scaling;
       reader.readMessage(value,proto.application.v1alpha1.Scaling.deserializeBinaryFromReader);
       msg.setScaling(value);
       break;
-    case 10:
+    case 12:
       var value = /** @type {!proto.application.v1alpha1.TrafficType} */ (reader.readEnum());
       msg.setTrafficType(value);
       break;
@@ -1817,17 +1827,31 @@ proto.application.v1alpha1.Application.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getProjectImage();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getProjectDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getOrganizationId();
   if (f !== 0) {
     writer.writeUint32(
-      8,
+      10,
       f
     );
   }
   f = message.getScaling();
   if (f != null) {
     writer.writeMessage(
-      9,
+      11,
       f,
       proto.application.v1alpha1.Scaling.serializeBinaryToWriter
     );
@@ -1835,7 +1859,7 @@ proto.application.v1alpha1.Application.serializeBinaryToWriter = function(messag
   f = message.getTrafficType();
   if (f !== 0.0) {
     writer.writeEnum(
-      10,
+      12,
       f
     );
   }
@@ -2007,11 +2031,47 @@ proto.application.v1alpha1.Application.prototype.setNameProject = function(value
 
 
 /**
- * optional uint32 organization_id = 8;
+ * optional string project_image = 8;
+ * @return {string}
+ */
+proto.application.v1alpha1.Application.prototype.getProjectImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.application.v1alpha1.Application} returns this
+ */
+proto.application.v1alpha1.Application.prototype.setProjectImage = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string project_description = 9;
+ * @return {string}
+ */
+proto.application.v1alpha1.Application.prototype.getProjectDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.application.v1alpha1.Application} returns this
+ */
+proto.application.v1alpha1.Application.prototype.setProjectDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional uint32 organization_id = 10;
  * @return {number}
  */
 proto.application.v1alpha1.Application.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
@@ -2020,17 +2080,17 @@ proto.application.v1alpha1.Application.prototype.getOrganizationId = function() 
  * @return {!proto.application.v1alpha1.Application} returns this
  */
 proto.application.v1alpha1.Application.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional Scaling scaling = 9;
+ * optional Scaling scaling = 11;
  * @return {?proto.application.v1alpha1.Scaling}
  */
 proto.application.v1alpha1.Application.prototype.getScaling = function() {
   return /** @type{?proto.application.v1alpha1.Scaling} */ (
-    jspb.Message.getWrapperField(this, proto.application.v1alpha1.Scaling, 9));
+    jspb.Message.getWrapperField(this, proto.application.v1alpha1.Scaling, 11));
 };
 
 
@@ -2039,7 +2099,7 @@ proto.application.v1alpha1.Application.prototype.getScaling = function() {
  * @return {!proto.application.v1alpha1.Application} returns this
 */
 proto.application.v1alpha1.Application.prototype.setScaling = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -2057,16 +2117,16 @@ proto.application.v1alpha1.Application.prototype.clearScaling = function() {
  * @return {boolean}
  */
 proto.application.v1alpha1.Application.prototype.hasScaling = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional TrafficType traffic_type = 10;
+ * optional TrafficType traffic_type = 12;
  * @return {!proto.application.v1alpha1.TrafficType}
  */
 proto.application.v1alpha1.Application.prototype.getTrafficType = function() {
-  return /** @type {!proto.application.v1alpha1.TrafficType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {!proto.application.v1alpha1.TrafficType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
@@ -2075,7 +2135,7 @@ proto.application.v1alpha1.Application.prototype.getTrafficType = function() {
  * @return {!proto.application.v1alpha1.Application} returns this
  */
 proto.application.v1alpha1.Application.prototype.setTrafficType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 10, value);
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
