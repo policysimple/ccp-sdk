@@ -17,7 +17,7 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-º
+Ì
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"¤
 CreateProjectRequest
 name (	Rname 
@@ -41,17 +41,7 @@ class Projects
 is_admin (RisAdmin"7
 ProjectList
 name (	Rname
-image (	Rimage"œ
-MemberProject
-id (Rid
-user_id (	RuserId
-
-first_name (	R	firstName
-	last_name (	RlastName
-	is_active (RisActive
-image (	Rimage+
-role (2.accounts.v1alpha1.RoleRroleF
-projects (2*.accounts.v1alpha1.projects.v1.ProjectListRprojects"O
+image (	Rimage"O
 CreateProjectResponse
 msg (	Rmsg
 error (	Rerror
@@ -61,7 +51,7 @@ first_name (	R	firstName
 error (	Rerror"?
 DeleteProjectResponse
 msg (	Rmsg
-error (	Rerror"á
+error (	Rerror"’
 GetOneProjectResponse
 id (Rid
 name (	Rname
@@ -71,9 +61,12 @@ first_name (	R	firstName
 
 created_at (	R	createdAt
 
-updated_at (	R	updatedAtF
-members (2,.accounts.v1alpha1.projects.v1.MemberProjectRmembers=
-owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner"c
+updated_at (	R	updatedAt:
+members (2 .accounts.v1alpha1.MemberProjectRmembers=
+owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner
+uid
+ (	Ruid)
+organization_uid (	RorganizationUid"c
 ListProjectResponse6
 projects (2.accounts.v1alpha1.ProjectRprojects
 error (	Rerror"L

@@ -52,18 +52,7 @@ message ProjectList{
     string image = 2;
 }
 
-message MemberProject {
 
-    uint32 id = 1;
-    string user_id = 2;
-    string first_name = 3;
-    string last_name = 4;
-    bool is_active = 5;
-    string image = 6;
-    Role role = 7;
-    repeated ProjectList projects = 8;
-
-}
 
 
 
@@ -93,6 +82,8 @@ message GetOneProjectResponse {
     string updated_at = 7;
     repeated MemberProject members = 8;
     UserList owner = 9;
+    string uid = 10;
+    string  organization_uid = 11;
 
 }
 

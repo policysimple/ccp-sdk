@@ -46,7 +46,7 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     private $roles;
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.UserList users = 9 [json_name = "users"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];</code>
      */
     private $users;
 
@@ -64,7 +64,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $created_at
      *     @type string $updated_at
      *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
-     *     @type \Accounts\V1alpha1\UserList[]|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type \Accounts\V1alpha1\MemberProject[]|\Google\Protobuf\Internal\RepeatedField $users
      * }
      */
     public function __construct($data = NULL) {
@@ -249,7 +249,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.UserList users = 9 [json_name = "users"];</code>
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsers()
@@ -258,13 +258,13 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .accounts.v1alpha1.UserList users = 9 [json_name = "users"];</code>
-     * @param \Accounts\V1alpha1\UserList[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];</code>
+     * @param \Accounts\V1alpha1\MemberProject[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\UserList::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\MemberProject::class);
         $this->users = $arr;
 
         return $this;
