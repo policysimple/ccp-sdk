@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&application/v1alpha1/application.proto\x12\x14\x61pplication.v1alpha1\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xe0\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\x12\x34\n\x06\x62ranch\x18\x07 \x01(\x0b\x32\x1c.application.v1alpha1.BranchR\x06\x62ranch\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\xb0\x01\n\rConfiguration\x12-\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x19.application.v1alpha1.EnvR\x04\x65nvs\x12\x39\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x1d.application.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\x12!\n\x0cruntime_type\x18\x04 \x01(\tR\x0bruntimeType\"\xdc\x01\n\x07Scaling\x12\x19\n\x08\x63pu_rule\x18\x01 \x01(\tR\x07\x63puRule\x12(\n\x10\x63ool_down_period\x18\x02 \x01(\tR\x0e\x63oolDownPeriod\x12)\n\x10polling_interval\x18\x03 \x01(\tR\x0fpollingInterval\x12\x1f\n\x0bmin_replica\x18\x04 \x01(\tR\nminReplica\x12\x1f\n\x0bmax_replica\x18\x05 \x01(\tR\nmaxReplica\x12\x1f\n\x0bmemory_rule\x18\x06 \x01(\tR\nmemoryRule\"\xca\x03\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12@\n\nrepository\x18\x04 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12I\n\rconfiguration\x18\x05 \x01(\x0b\x32#.application.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\rR\tprojectId\x12!\n\x0cname_project\x18\x07 \x01(\tR\x0bnameProject\x12\'\n\x0forganization_id\x18\x08 \x01(\rR\x0eorganizationId\x12\x37\n\x07scaling\x18\t \x01(\x0b\x32\x1d.application.v1alpha1.ScalingR\x07scaling\x12\x44\n\x0ctraffic_type\x18\n \x01(\x0e\x32!.application.v1alpha1.TrafficTypeR\x0btrafficType\"\xbf\x01\n\x0fListApplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12@\n\nrepository\x18\x03 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\x37Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1b\x06proto3'
+  serialized_pb=b'\n&application/v1alpha1/application.proto\x12\x14\x61pplication.v1alpha1\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xe0\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\x12\x34\n\x06\x62ranch\x18\x07 \x01(\x0b\x32\x1c.application.v1alpha1.BranchR\x06\x62ranch\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\xb0\x01\n\rConfiguration\x12-\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x19.application.v1alpha1.EnvR\x04\x65nvs\x12\x39\n\x08\x63ommands\x18\x02 \x03(\x0b\x32\x1d.application.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\x12!\n\x0cruntime_type\x18\x04 \x01(\tR\x0bruntimeType\"\xdc\x01\n\x07Scaling\x12\x19\n\x08\x63pu_rule\x18\x01 \x01(\tR\x07\x63puRule\x12(\n\x10\x63ool_down_period\x18\x02 \x01(\tR\x0e\x63oolDownPeriod\x12)\n\x10polling_interval\x18\x03 \x01(\tR\x0fpollingInterval\x12\x1f\n\x0bmin_replica\x18\x04 \x01(\tR\nminReplica\x12\x1f\n\x0bmax_replica\x18\x05 \x01(\tR\nmaxReplica\x12\x1f\n\x0bmemory_rule\x18\x06 \x01(\tR\nmemoryRule\"\xa0\x04\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12@\n\nrepository\x18\x04 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12I\n\rconfiguration\x18\x05 \x01(\x0b\x32#.application.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\rR\tprojectId\x12!\n\x0cname_project\x18\x07 \x01(\tR\x0bnameProject\x12#\n\rproject_image\x18\x08 \x01(\tR\x0cprojectImage\x12/\n\x13project_description\x18\t \x01(\tR\x12projectDescription\x12\'\n\x0forganization_id\x18\n \x01(\rR\x0eorganizationId\x12\x37\n\x07scaling\x18\x0b \x01(\x0b\x32\x1d.application.v1alpha1.ScalingR\x07scaling\x12\x44\n\x0ctraffic_type\x18\x0c \x01(\x0e\x32!.application.v1alpha1.TrafficTypeR\x0btrafficType\"\xbf\x01\n\x0fListApplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12@\n\nrepository\x18\x03 \x01(\x0b\x32 .application.v1alpha1.RepositoryR\nrepository\x12\x1d\n\nproject_id\x18\x04 \x01(\rR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\rR\x0eorganizationId*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\x37Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1b\x06proto3'
 )
 
 _TRAFFICTYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _TRAFFICTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1542,
-  serialized_end=1639,
+  serialized_start=1628,
+  serialized_end=1725,
 )
 _sym_db.RegisterEnumDescriptor(_TRAFFICTYPE)
 
@@ -443,22 +443,36 @@ _APPLICATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='nameProject', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='application.v1alpha1.Application.organization_id', index=7,
-      number=8, type=13, cpp_type=3, label=1,
+      name='project_image', full_name='application.v1alpha1.Application.project_image', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectImage', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='project_description', full_name='application.v1alpha1.Application.project_description', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectDescription', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='application.v1alpha1.Application.organization_id', index=9,
+      number=10, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scaling', full_name='application.v1alpha1.Application.scaling', index=8,
-      number=9, type=11, cpp_type=10, label=1,
+      name='scaling', full_name='application.v1alpha1.Application.scaling', index=10,
+      number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='scaling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='traffic_type', full_name='application.v1alpha1.Application.traffic_type', index=9,
-      number=10, type=14, cpp_type=8, label=1,
+      name='traffic_type', full_name='application.v1alpha1.Application.traffic_type', index=11,
+      number=12, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -476,7 +490,7 @@ _APPLICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=888,
-  serialized_end=1346,
+  serialized_end=1432,
 )
 
 
@@ -535,8 +549,8 @@ _LISTAPPLICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1349,
-  serialized_end=1540,
+  serialized_start=1435,
+  serialized_end=1626,
 )
 
 _REPOSITORY.fields_by_name['branch'].message_type = _BRANCH

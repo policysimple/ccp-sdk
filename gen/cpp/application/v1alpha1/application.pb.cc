@@ -115,6 +115,8 @@ constexpr Application::Application(
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , integration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_project_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , repository_(nullptr)
   , configuration_(nullptr)
   , scaling_(nullptr)
@@ -221,6 +223,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, configuration_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, project_id_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, name_project_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, project_image_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, project_description_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, organization_id_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, scaling_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, traffic_type_),
@@ -243,7 +247,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 35, -1, sizeof(::application::v1alpha1::Configuration)},
   { 44, -1, sizeof(::application::v1alpha1::Scaling)},
   { 55, -1, sizeof(::application::v1alpha1::Application)},
-  { 70, -1, sizeof(::application::v1alpha1::ListApplication)},
+  { 72, -1, sizeof(::application::v1alpha1::ListApplication)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -280,31 +284,33 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic"
   "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t"
   "R\nmaxReplica\022\037\n\013memory_rule\030\006 \001(\tR\nmemor"
-  "yRule\"\312\003\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
+  "yRule\"\240\004\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
   "\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013"
   "integration\022@\n\nrepository\030\004 \001(\0132 .applic"
   "ation.v1alpha1.RepositoryR\nrepository\022I\n"
   "\rconfiguration\030\005 \001(\0132#.application.v1alp"
   "ha1.ConfigurationR\rconfiguration\022\035\n\nproj"
   "ect_id\030\006 \001(\rR\tprojectId\022!\n\014name_project\030"
-  "\007 \001(\tR\013nameProject\022\'\n\017organization_id\030\010 "
-  "\001(\rR\016organizationId\0227\n\007scaling\030\t \001(\0132\035.a"
-  "pplication.v1alpha1.ScalingR\007scaling\022D\n\014"
-  "traffic_type\030\n \001(\0162!.application.v1alpha"
-  "1.TrafficTypeR\013trafficType\"\277\001\n\017ListAppli"
-  "cation\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na"
-  "me\022@\n\nrepository\030\003 \001(\0132 .application.v1a"
-  "lpha1.RepositoryR\nrepository\022\035\n\nproject_"
-  "id\030\004 \001(\rR\tprojectId\022\'\n\017organization_id\030\005"
-  " \001(\rR\016organizationId*a\n\013TrafficType\022\034\n\030T"
-  "RAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYP"
-  "E_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B"
-  "7Z5github.com/cuemby/ccp-sdk/gen/go/appl"
-  "ication/v1alpha1b\006proto3"
+  "\007 \001(\tR\013nameProject\022#\n\rproject_image\030\010 \001("
+  "\tR\014projectImage\022/\n\023project_description\030\t"
+  " \001(\tR\022projectDescription\022\'\n\017organization"
+  "_id\030\n \001(\rR\016organizationId\0227\n\007scaling\030\013 \001"
+  "(\0132\035.application.v1alpha1.ScalingR\007scali"
+  "ng\022D\n\014traffic_type\030\014 \001(\0162!.application.v"
+  "1alpha1.TrafficTypeR\013trafficType\"\277\001\n\017Lis"
+  "tApplication\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001"
+  "(\tR\004name\022@\n\nrepository\030\003 \001(\0132 .applicati"
+  "on.v1alpha1.RepositoryR\nrepository\022\035\n\npr"
+  "oject_id\030\004 \001(\rR\tprojectId\022\'\n\017organizatio"
+  "n_id\030\005 \001(\rR\016organizationId*a\n\013TrafficTyp"
+  "e\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFF"
+  "IC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTER"
+  "NAL\020\002B7Z5github.com/cuemby/ccp-sdk/gen/g"
+  "o/application/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 1704, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  false, false, 1790, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
   &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 8,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
@@ -2304,6 +2310,16 @@ Application::Application(const Application& from)
     name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_project(), 
       GetArenaForAllocation());
   }
+  project_image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_image().empty()) {
+    project_image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_image(), 
+      GetArenaForAllocation());
+  }
+  project_description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_description().empty()) {
+    project_description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_description(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_repository()) {
     repository_ = new ::application::v1alpha1::Repository(*from.repository_);
   } else {
@@ -2330,6 +2346,8 @@ id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyIn
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 integration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_project_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&repository_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&traffic_type_) -
@@ -2349,6 +2367,8 @@ inline void Application::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   integration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_project_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete repository_;
   if (this != internal_default_instance()) delete configuration_;
   if (this != internal_default_instance()) delete scaling_;
@@ -2374,6 +2394,8 @@ void Application::Clear() {
   name_.ClearToEmpty();
   integration_.ClearToEmpty();
   name_project_.ClearToEmpty();
+  project_image_.ClearToEmpty();
+  project_description_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && repository_ != nullptr) {
     delete repository_;
   }
@@ -2455,23 +2477,41 @@ const char* Application::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 organization_id = 8 [json_name = "organizationId"];
+      // string project_image = 8 [json_name = "projectImage"];
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_project_image();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Application.project_image"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string project_description = 9 [json_name = "projectDescription"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_project_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.Application.project_description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 organization_id = 10 [json_name = "organizationId"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
           organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+      // .application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
           ptr = ctx->ParseMessage(_internal_mutable_scaling(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+      // .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_traffic_type(static_cast<::application::v1alpha1::TrafficType>(val));
@@ -2568,25 +2608,45 @@ failure:
         7, this->_internal_name_project(), target);
   }
 
-  // uint32 organization_id = 8 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_organization_id(), target);
+  // string project_image = 8 [json_name = "projectImage"];
+  if (!this->_internal_project_image().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_image().data(), static_cast<int>(this->_internal_project_image().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Application.project_image");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_project_image(), target);
   }
 
-  // .application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];
+  // string project_description = 9 [json_name = "projectDescription"];
+  if (!this->_internal_project_description().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_description().data(), static_cast<int>(this->_internal_project_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.Application.project_description");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_project_description(), target);
+  }
+
+  // uint32 organization_id = 10 [json_name = "organizationId"];
+  if (this->_internal_organization_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(10, this->_internal_organization_id(), target);
+  }
+
+  // .application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];
   if (this->_internal_has_scaling()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        9, _Internal::scaling(this), target, stream);
+        11, _Internal::scaling(this), target, stream);
   }
 
-  // .application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];
+  // .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
   if (this->_internal_traffic_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      10, this->_internal_traffic_type(), target);
+      12, this->_internal_traffic_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2633,6 +2693,20 @@ size_t Application::ByteSizeLong() const {
         this->_internal_name_project());
   }
 
+  // string project_image = 8 [json_name = "projectImage"];
+  if (!this->_internal_project_image().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_image());
+  }
+
+  // string project_description = 9 [json_name = "projectDescription"];
+  if (!this->_internal_project_description().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_description());
+  }
+
   // .application.v1alpha1.Repository repository = 4 [json_name = "repository"];
   if (this->_internal_has_repository()) {
     total_size += 1 +
@@ -2647,7 +2721,7 @@ size_t Application::ByteSizeLong() const {
         *configuration_);
   }
 
-  // .application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];
+  // .application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];
   if (this->_internal_has_scaling()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2661,14 +2735,14 @@ size_t Application::ByteSizeLong() const {
         this->_internal_project_id());
   }
 
-  // uint32 organization_id = 8 [json_name = "organizationId"];
+  // uint32 organization_id = 10 [json_name = "organizationId"];
   if (this->_internal_organization_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_organization_id());
   }
 
-  // .application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];
+  // .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
   if (this->_internal_traffic_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_traffic_type());
@@ -2713,6 +2787,12 @@ void Application::MergeFrom(const Application& from) {
   }
   if (!from._internal_name_project().empty()) {
     _internal_set_name_project(from._internal_name_project());
+  }
+  if (!from._internal_project_image().empty()) {
+    _internal_set_project_image(from._internal_project_image());
+  }
+  if (!from._internal_project_description().empty()) {
+    _internal_set_project_description(from._internal_project_description());
   }
   if (from._internal_has_repository()) {
     _internal_mutable_repository()->::application::v1alpha1::Repository::MergeFrom(from._internal_repository());
@@ -2768,6 +2848,16 @@ void Application::InternalSwap(Application* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_project_, GetArenaForAllocation(),
       &other->name_project_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_image_, GetArenaForAllocation(),
+      &other->project_image_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_description_, GetArenaForAllocation(),
+      &other->project_description_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Application, traffic_type_)

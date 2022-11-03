@@ -1402,12 +1402,14 @@ class Application final :
     kNameFieldNumber = 2,
     kIntegrationFieldNumber = 3,
     kNameProjectFieldNumber = 7,
+    kProjectImageFieldNumber = 8,
+    kProjectDescriptionFieldNumber = 9,
     kRepositoryFieldNumber = 4,
     kConfigurationFieldNumber = 5,
-    kScalingFieldNumber = 9,
+    kScalingFieldNumber = 11,
     kProjectIdFieldNumber = 6,
-    kOrganizationIdFieldNumber = 8,
-    kTrafficTypeFieldNumber = 10,
+    kOrganizationIdFieldNumber = 10,
+    kTrafficTypeFieldNumber = 12,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1465,6 +1467,34 @@ class Application final :
   std::string* _internal_mutable_name_project();
   public:
 
+  // string project_image = 8 [json_name = "projectImage"];
+  void clear_project_image();
+  const std::string& project_image() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_image(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_image();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_image();
+  void set_allocated_project_image(std::string* project_image);
+  private:
+  const std::string& _internal_project_image() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_image(const std::string& value);
+  std::string* _internal_mutable_project_image();
+  public:
+
+  // string project_description = 9 [json_name = "projectDescription"];
+  void clear_project_description();
+  const std::string& project_description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_description();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_description();
+  void set_allocated_project_description(std::string* project_description);
+  private:
+  const std::string& _internal_project_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_description(const std::string& value);
+  std::string* _internal_mutable_project_description();
+  public:
+
   // .application.v1alpha1.Repository repository = 4 [json_name = "repository"];
   bool has_repository() const;
   private:
@@ -1501,7 +1531,7 @@ class Application final :
       ::application::v1alpha1::Configuration* configuration);
   ::application::v1alpha1::Configuration* unsafe_arena_release_configuration();
 
-  // .application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];
+  // .application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];
   bool has_scaling() const;
   private:
   bool _internal_has_scaling() const;
@@ -1528,7 +1558,7 @@ class Application final :
   void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 organization_id = 8 [json_name = "organizationId"];
+  // uint32 organization_id = 10 [json_name = "organizationId"];
   void clear_organization_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
   void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1537,7 +1567,7 @@ class Application final :
   void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];
+  // .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
   void clear_traffic_type();
   ::application::v1alpha1::TrafficType traffic_type() const;
   void set_traffic_type(::application::v1alpha1::TrafficType value);
@@ -1557,6 +1587,8 @@ class Application final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_project_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_image_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_description_;
   ::application::v1alpha1::Repository* repository_;
   ::application::v1alpha1::Configuration* configuration_;
   ::application::v1alpha1::Scaling* scaling_;
@@ -3265,7 +3297,99 @@ inline void Application::set_allocated_name_project(std::string* name_project) {
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.name_project)
 }
 
-// uint32 organization_id = 8 [json_name = "organizationId"];
+// string project_image = 8 [json_name = "projectImage"];
+inline void Application::clear_project_image() {
+  project_image_.ClearToEmpty();
+}
+inline const std::string& Application::project_image() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.project_image)
+  return _internal_project_image();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Application::set_project_image(ArgT0&& arg0, ArgT... args) {
+ 
+ project_image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Application.project_image)
+}
+inline std::string* Application::mutable_project_image() {
+  std::string* _s = _internal_mutable_project_image();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Application.project_image)
+  return _s;
+}
+inline const std::string& Application::_internal_project_image() const {
+  return project_image_.Get();
+}
+inline void Application::_internal_set_project_image(const std::string& value) {
+  
+  project_image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Application::_internal_mutable_project_image() {
+  
+  return project_image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Application::release_project_image() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Application.project_image)
+  return project_image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Application::set_allocated_project_image(std::string* project_image) {
+  if (project_image != nullptr) {
+    
+  } else {
+    
+  }
+  project_image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_image,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.project_image)
+}
+
+// string project_description = 9 [json_name = "projectDescription"];
+inline void Application::clear_project_description() {
+  project_description_.ClearToEmpty();
+}
+inline const std::string& Application::project_description() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.project_description)
+  return _internal_project_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Application::set_project_description(ArgT0&& arg0, ArgT... args) {
+ 
+ project_description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Application.project_description)
+}
+inline std::string* Application::mutable_project_description() {
+  std::string* _s = _internal_mutable_project_description();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Application.project_description)
+  return _s;
+}
+inline const std::string& Application::_internal_project_description() const {
+  return project_description_.Get();
+}
+inline void Application::_internal_set_project_description(const std::string& value) {
+  
+  project_description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Application::_internal_mutable_project_description() {
+  
+  return project_description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Application::release_project_description() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Application.project_description)
+  return project_description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Application::set_allocated_project_description(std::string* project_description) {
+  if (project_description != nullptr) {
+    
+  } else {
+    
+  }
+  project_description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.project_description)
+}
+
+// uint32 organization_id = 10 [json_name = "organizationId"];
 inline void Application::clear_organization_id() {
   organization_id_ = 0u;
 }
@@ -3285,7 +3409,7 @@ inline void Application::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 val
   // @@protoc_insertion_point(field_set:application.v1alpha1.Application.organization_id)
 }
 
-// .application.v1alpha1.Scaling scaling = 9 [json_name = "scaling"];
+// .application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];
 inline bool Application::_internal_has_scaling() const {
   return this != internal_default_instance() && scaling_ != nullptr;
 }
@@ -3375,7 +3499,7 @@ inline void Application::set_allocated_scaling(::application::v1alpha1::Scaling*
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.scaling)
 }
 
-// .application.v1alpha1.TrafficType traffic_type = 10 [json_name = "trafficType"];
+// .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
 inline void Application::clear_traffic_type() {
   traffic_type_ = 0;
 }

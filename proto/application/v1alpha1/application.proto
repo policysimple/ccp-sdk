@@ -63,9 +63,11 @@ message Application {
     Configuration configuration = 5;
     uint32 project_id = 6;
     string name_project = 7;
-    uint32 organization_id = 8;
-    Scaling scaling = 9;
-    TrafficType traffic_type = 10;
+    string project_image = 8;
+    string project_description = 9;
+    uint32 organization_id = 10;
+    Scaling scaling = 11;
+    TrafficType traffic_type = 12;
 }
 
 message ListApplication {
