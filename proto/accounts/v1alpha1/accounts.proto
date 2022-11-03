@@ -34,8 +34,19 @@ message MemberRol {
     uint32 id = 1;
     string name = 2;
     bool is_admin = 3;
+    string uid = 4;
 }
+message MemberProject {
+    uint32 id = 1;
+    string user_id = 2;
+    string first_name = 3;
+    string last_name = 4;
+    bool is_active = 5;
+    string image = 6;
+    Role role = 7;
+    string uid = 9;
 
+}
 message Permission {
     uint32 id = 1;
     string name = 2;
@@ -52,7 +63,7 @@ message Project {
     string created_at = 6;
     string updated_at = 7;
     repeated Role roles = 8;
-    repeated UserList users = 9;
+    repeated MemberProject users = 9;
 
 }
 
