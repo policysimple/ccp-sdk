@@ -35,6 +35,24 @@ func init() {
 	})
 }
 
+func CreateIntegration(req *sourcepkgv1.CreateIntegrationRequest) (*sourcepkgv1.CreateIntegrationResponse, error) {
+	log.Println("CreateIntegration")
+
+	d, err := time.ParseDuration(sourceServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.CreateIntegration(ctx, req)
+	if err != nil {
+		return nil, fmt.Errorf("[CreateIntegration] %w", err)
+	}
+
+	return response, nil
+}
+
 func DeleteIntegration(req *sourcepkgv1.DeleteIntegrationRequest) (*sourcepkgv1.DeleteIntegrationResponse, error) {
 	d, err := time.ParseDuration(sourceServiceTimeout)
 	if err != nil {

@@ -353,10 +353,7 @@ func GetOneUserDex(req *accountpkgv1.GetOneUserDexRequest) (*accountpkgv1.GetOne
 	response, err := client.GetOneUserDex(ctx, req)
 	if err != nil {
 		bylogs.LogErr("GetOneUserDex Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error GetOneUserDex: %v", err),
-		)
+		return nil, fmt.Errorf("[GetOneUserDex] %w", err)
 	} else {
 		bylogs.LogInfo("GetOneUserDex Client Sdk", "Success")
 	}
