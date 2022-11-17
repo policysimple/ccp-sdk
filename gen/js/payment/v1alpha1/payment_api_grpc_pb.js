@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var payment_v1alpha1_payment_api_pb = require('../../payment/v1alpha1/payment_api_pb.js');
 var payment_v1alpha1_payment_pb = require('../../payment/v1alpha1/payment_pb.js');
 
+function serialize_payment_v1alpha1_BlockChainSubscriptionRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.BlockChainSubscriptionRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.BlockChainSubscriptionRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_BlockChainSubscriptionRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.BlockChainSubscriptionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_BlockChainSubscriptionResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.BlockChainSubscriptionResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.BlockChainSubscriptionResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_BlockChainSubscriptionResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.BlockChainSubscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_CancelSubscriptionRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.CancelSubscriptionRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.CancelSubscriptionRequest');
@@ -805,6 +827,18 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_StopProjectRequest,
     responseSerialize: serialize_payment_v1alpha1_StopProjectResponse,
     responseDeserialize: deserialize_payment_v1alpha1_StopProjectResponse,
+  },
+  // BlockChain Subscription
+  blockChainSubscription: {
+    path: '/payment.v1alpha1.PaymentAPIService/BlockChainSubscription',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.BlockChainSubscriptionRequest,
+    responseType: payment_v1alpha1_payment_api_pb.BlockChainSubscriptionResponse,
+    requestSerialize: serialize_payment_v1alpha1_BlockChainSubscriptionRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_BlockChainSubscriptionRequest,
+    responseSerialize: serialize_payment_v1alpha1_BlockChainSubscriptionResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_BlockChainSubscriptionResponse,
   },
 };
 

@@ -45,11 +45,11 @@ struct CreateSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateSecretResponseDefaultTypeInternal _CreateSecretResponse_default_instance_;
 constexpr UpdateSecretRequest::UpdateSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , secret_(nullptr)
-  , organization_id_(0u){}
+  , secret_(nullptr){}
 struct UpdateSecretRequestDefaultTypeInternal {
   constexpr UpdateSecretRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -74,11 +74,11 @@ struct UpdateSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateSecretResponseDefaultTypeInternal _UpdateSecretResponse_default_instance_;
 constexpr DeleteSecretRequest::DeleteSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u)
-  , project_id_(0u){}
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteSecretRequestDefaultTypeInternal {
   constexpr DeleteSecretRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -103,11 +103,11 @@ struct DeleteSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteSecretResponseDefaultTypeInternal _DeleteSecretResponse_default_instance_;
 constexpr GetSecretRequest::GetSecretRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u)
-  , project_id_(0u){}
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetSecretRequestDefaultTypeInternal {
   constexpr GetSecretRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -132,7 +132,7 @@ struct GetSecretResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSecretResponseDefaultTypeInternal _GetSecretResponse_default_instance_;
 constexpr DeleteOrganizationRequest::DeleteOrganizationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : organization_id_(0u){}
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteOrganizationRequestDefaultTypeInternal {
   constexpr DeleteOrganizationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -157,9 +157,9 @@ struct DeleteOrganizationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteOrganizationResponseDefaultTypeInternal _DeleteOrganizationResponse_default_instance_;
 constexpr SaveTokenIntegrationsRequest::SaveTokenIntegrationsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u){}
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct SaveTokenIntegrationsRequestDefaultTypeInternal {
   constexpr SaveTokenIntegrationsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -184,8 +184,8 @@ struct SaveTokenIntegrationsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SaveTokenIntegrationsResponseDefaultTypeInternal _SaveTokenIntegrationsResponse_default_instance_;
 constexpr GetTokenIntegrationsRequest::GetTokenIntegrationsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u){}
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetTokenIntegrationsRequestDefaultTypeInternal {
   constexpr GetTokenIntegrationsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -457,36 +457,36 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PR
   "ult.v1alpha1.SecretR\006secret\">\n\024CreateSec"
   "retResponse\022\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg"
   "\030\002 \001(\tR\003msg\"\322\001\n\023UpdateSecretRequest\022\'\n\017o"
-  "rganization_id\030\001 \001(\rR\016organizationId\022\035\n\n"
+  "rganization_id\030\001 \001(\tR\016organizationId\022\035\n\n"
   "project_id\030\002 \001(\tR\tprojectId\022\034\n\tnamespace"
   "\030\003 \001(\tR\tnamespace\022%\n\016application_id\030\004 \001("
   "\tR\rapplicationId\022.\n\006secret\030\005 \001(\0132\026.vault"
   ".v1alpha1.SecretR\006secret\">\n\024UpdateSecret"
   "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001("
   "\tR\005error\"\266\001\n\023DeleteSecretRequest\022\'\n\017orga"
-  "nization_id\030\001 \001(\rR\016organizationId\022\035\n\npro"
-  "ject_id\030\002 \001(\rR\tprojectId\022%\n\016application_"
+  "nization_id\030\001 \001(\tR\016organizationId\022\035\n\npro"
+  "ject_id\030\002 \001(\tR\tprojectId\022%\n\016application_"
   "id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001"
   "(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\">\n\024Del"
   "eteSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e"
   "rror\030\002 \001(\tR\005error\"\263\001\n\020GetSecretRequest\022\'"
-  "\n\017organization_id\030\001 \001(\rR\016organizationId\022"
-  "\035\n\nproject_id\030\002 \001(\rR\tprojectId\022%\n\016applic"
+  "\n\017organization_id\030\001 \001(\tR\016organizationId\022"
+  "\035\n\nproject_id\030\002 \001(\tR\tprojectId\022%\n\016applic"
   "ation_id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespa"
   "ce\030\004 \001(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\""
   "Y\n\021GetSecretResponse\022.\n\006secret\030\001 \001(\0132\026.v"
   "ault.v1alpha1.SecretR\006secret\022\024\n\005error\030\002 "
   "\001(\tR\005error\"D\n\031DeleteOrganizationRequest\022"
-  "\'\n\017organization_id\030\001 \001(\rR\016organizationId"
+  "\'\n\017organization_id\030\001 \001(\tR\016organizationId"
   "\"D\n\032DeleteOrganizationResponse\022\020\n\003msg\030\001 "
   "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\204\001\n\034SaveT"
   "okenIntegrationsRequest\022\'\n\017organization_"
-  "id\030\001 \001(\rR\016organizationId\022%\n\016integration_"
+  "id\030\001 \001(\tR\016organizationId\022%\n\016integration_"
   "id\030\002 \001(\tR\rintegrationId\022\024\n\005token\030\003 \001(\tR\005"
   "token\"G\n\035SaveTokenIntegrationsResponse\022\020"
   "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"m"
   "\n\033GetTokenIntegrationsRequest\022\'\n\017organiz"
-  "ation_id\030\001 \001(\rR\016organizationId\022%\n\016integr"
+  "ation_id\030\001 \001(\tR\016organizationId\022%\n\016integr"
   "ation_id\030\002 \001(\tR\rintegrationId\"J\n\034GetToke"
   "nIntegrationsResponse\022\024\n\005token\030\001 \001(\tR\005to"
   "ken\022\024\n\005error\030\002 \001(\tR\005error\"\301\001\n\032SaveTokenB"
@@ -1027,6 +1027,11 @@ UpdateSecretRequest::UpdateSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 UpdateSecretRequest::UpdateSecretRequest(const UpdateSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_project_id().empty()) {
     project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
@@ -1047,18 +1052,15 @@ UpdateSecretRequest::UpdateSecretRequest(const UpdateSecretRequest& from)
   } else {
     secret_ = nullptr;
   }
-  organization_id_ = from.organization_id_;
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.UpdateSecretRequest)
 }
 
 inline void UpdateSecretRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&secret_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
-    reinterpret_cast<char*>(&secret_)) + sizeof(organization_id_));
+secret_ = nullptr;
 }
 
 UpdateSecretRequest::~UpdateSecretRequest() {
@@ -1070,6 +1072,7 @@ UpdateSecretRequest::~UpdateSecretRequest() {
 
 inline void UpdateSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1092,6 +1095,7 @@ void UpdateSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
   project_id_.ClearToEmpty();
   namespace__.ClearToEmpty();
   application_id_.ClearToEmpty();
@@ -1099,7 +1103,6 @@ void UpdateSecretRequest::Clear() {
     delete secret_;
   }
   secret_ = nullptr;
-  organization_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1109,10 +1112,12 @@ const char* UpdateSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.UpdateSecretRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1179,10 +1184,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.UpdateSecretRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
   // string project_id = 2 [json_name = "projectId"];
@@ -1239,6 +1248,13 @@ size_t UpdateSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
   // string project_id = 2 [json_name = "projectId"];
   if (!this->_internal_project_id().empty()) {
     total_size += 1 +
@@ -1265,13 +1281,6 @@ size_t UpdateSecretRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *secret_);
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1302,6 +1311,9 @@ void UpdateSecretRequest::MergeFrom(const UpdateSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
   if (!from._internal_project_id().empty()) {
     _internal_set_project_id(from._internal_project_id());
   }
@@ -1313,9 +1325,6 @@ void UpdateSecretRequest::MergeFrom(const UpdateSecretRequest& from) {
   }
   if (from._internal_has_secret()) {
     _internal_mutable_secret()->::vault::v1alpha1::Secret::MergeFrom(from._internal_secret());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1336,6 +1345,11 @@ void UpdateSecretRequest::InternalSwap(UpdateSecretRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &project_id_, GetArenaForAllocation(),
       &other->project_id_, other->GetArenaForAllocation()
   );
@@ -1349,12 +1363,7 @@ void UpdateSecretRequest::InternalSwap(UpdateSecretRequest* other) {
       &application_id_, GetArenaForAllocation(),
       &other->application_id_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateSecretRequest, organization_id_)
-      + sizeof(UpdateSecretRequest::organization_id_)
-      - PROTOBUF_FIELD_OFFSET(UpdateSecretRequest, secret_)>(
-          reinterpret_cast<char*>(&secret_),
-          reinterpret_cast<char*>(&other->secret_));
+  swap(secret_, other->secret_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateSecretRequest::GetMetadata() const {
@@ -1623,6 +1632,16 @@ DeleteSecretRequest::DeleteSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteSecretRequest::DeleteSecretRequest(const DeleteSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
   application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_application_id().empty()) {
     application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
@@ -1638,20 +1657,15 @@ DeleteSecretRequest::DeleteSecretRequest(const DeleteSecretRequest& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&organization_id_, &from.organization_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.DeleteSecretRequest)
 }
 
 inline void DeleteSecretRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
 }
 
 DeleteSecretRequest::~DeleteSecretRequest() {
@@ -1663,6 +1677,8 @@ DeleteSecretRequest::~DeleteSecretRequest() {
 
 inline void DeleteSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1684,12 +1700,11 @@ void DeleteSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
   application_id_.ClearToEmpty();
   namespace__.ClearToEmpty();
   name_.ClearToEmpty();
-  ::memset(&organization_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&project_id_) -
-      reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1699,17 +1714,21 @@ const char* DeleteSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.DeleteSecretRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 2 [json_name = "projectId"];
+      // string project_id = 2 [json_name = "projectId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.DeleteSecretRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1769,16 +1788,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.DeleteSecretRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.DeleteSecretRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_project_id(), target);
   }
 
   // string application_id = 3 [json_name = "applicationId"];
@@ -1827,6 +1854,20 @@ size_t DeleteSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
   // string application_id = 3 [json_name = "applicationId"];
   if (!this->_internal_application_id().empty()) {
     total_size += 1 +
@@ -1846,20 +1887,6 @@ size_t DeleteSecretRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
-  }
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1890,6 +1917,12 @@ void DeleteSecretRequest::MergeFrom(const DeleteSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   if (!from._internal_application_id().empty()) {
     _internal_set_application_id(from._internal_application_id());
   }
@@ -1898,12 +1931,6 @@ void DeleteSecretRequest::MergeFrom(const DeleteSecretRequest& from) {
   }
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1924,6 +1951,16 @@ void DeleteSecretRequest::InternalSwap(DeleteSecretRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &application_id_, GetArenaForAllocation(),
       &other->application_id_, other->GetArenaForAllocation()
   );
@@ -1937,12 +1974,6 @@ void DeleteSecretRequest::InternalSwap(DeleteSecretRequest* other) {
       &name_, GetArenaForAllocation(),
       &other->name_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeleteSecretRequest, project_id_)
-      + sizeof(DeleteSecretRequest::project_id_)
-      - PROTOBUF_FIELD_OFFSET(DeleteSecretRequest, organization_id_)>(
-          reinterpret_cast<char*>(&organization_id_),
-          reinterpret_cast<char*>(&other->organization_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteSecretRequest::GetMetadata() const {
@@ -2211,6 +2242,16 @@ GetSecretRequest::GetSecretRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetSecretRequest::GetSecretRequest(const GetSecretRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
   application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_application_id().empty()) {
     application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
@@ -2226,20 +2267,15 @@ GetSecretRequest::GetSecretRequest(const GetSecretRequest& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&organization_id_, &from.organization_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetSecretRequest)
 }
 
 inline void GetSecretRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
 }
 
 GetSecretRequest::~GetSecretRequest() {
@@ -2251,6 +2287,8 @@ GetSecretRequest::~GetSecretRequest() {
 
 inline void GetSecretRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -2272,12 +2310,11 @@ void GetSecretRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
   application_id_.ClearToEmpty();
   namespace__.ClearToEmpty();
   name_.ClearToEmpty();
-  ::memset(&organization_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&project_id_) -
-      reinterpret_cast<char*>(&organization_id_)) + sizeof(project_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2287,17 +2324,21 @@ const char* GetSecretRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 2 [json_name = "projectId"];
+      // string project_id = 2 [json_name = "projectId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2357,16 +2398,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetSecretRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetSecretRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_project_id(), target);
   }
 
   // string application_id = 3 [json_name = "applicationId"];
@@ -2415,6 +2464,20 @@ size_t GetSecretRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
   // string application_id = 3 [json_name = "applicationId"];
   if (!this->_internal_application_id().empty()) {
     total_size += 1 +
@@ -2434,20 +2497,6 @@ size_t GetSecretRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
-  }
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2478,6 +2527,12 @@ void GetSecretRequest::MergeFrom(const GetSecretRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   if (!from._internal_application_id().empty()) {
     _internal_set_application_id(from._internal_application_id());
   }
@@ -2486,12 +2541,6 @@ void GetSecretRequest::MergeFrom(const GetSecretRequest& from) {
   }
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2512,6 +2561,16 @@ void GetSecretRequest::InternalSwap(GetSecretRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &application_id_, GetArenaForAllocation(),
       &other->application_id_, other->GetArenaForAllocation()
   );
@@ -2525,12 +2584,6 @@ void GetSecretRequest::InternalSwap(GetSecretRequest* other) {
       &name_, GetArenaForAllocation(),
       &other->name_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetSecretRequest, project_id_)
-      + sizeof(GetSecretRequest::project_id_)
-      - PROTOBUF_FIELD_OFFSET(GetSecretRequest, organization_id_)>(
-          reinterpret_cast<char*>(&organization_id_),
-          reinterpret_cast<char*>(&other->organization_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSecretRequest::GetMetadata() const {
@@ -2805,12 +2858,16 @@ DeleteOrganizationRequest::DeleteOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Ar
 DeleteOrganizationRequest::DeleteOrganizationRequest(const DeleteOrganizationRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  organization_id_ = from.organization_id_;
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.DeleteOrganizationRequest)
 }
 
 inline void DeleteOrganizationRequest::SharedCtor() {
-organization_id_ = 0u;
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteOrganizationRequest::~DeleteOrganizationRequest() {
@@ -2822,6 +2879,7 @@ DeleteOrganizationRequest::~DeleteOrganizationRequest() {
 
 inline void DeleteOrganizationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteOrganizationRequest::ArenaDtor(void* object) {
@@ -2840,7 +2898,7 @@ void DeleteOrganizationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  organization_id_ = 0u;
+  organization_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2850,10 +2908,12 @@ const char* DeleteOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.DeleteOrganizationRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2886,10 +2946,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.DeleteOrganizationRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2908,10 +2972,10 @@ size_t DeleteOrganizationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_organization_id());
   }
 
@@ -2943,7 +3007,7 @@ void DeleteOrganizationRequest::MergeFrom(const DeleteOrganizationRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_organization_id() != 0) {
+  if (!from._internal_organization_id().empty()) {
     _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2963,7 +3027,11 @@ bool DeleteOrganizationRequest::IsInitialized() const {
 void DeleteOrganizationRequest::InternalSwap(DeleteOrganizationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(organization_id_, other->organization_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteOrganizationRequest::GetMetadata() const {
@@ -3232,6 +3300,11 @@ SaveTokenIntegrationsRequest::SaveTokenIntegrationsRequest(::PROTOBUF_NAMESPACE_
 SaveTokenIntegrationsRequest::SaveTokenIntegrationsRequest(const SaveTokenIntegrationsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_integration_id().empty()) {
     integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
@@ -3242,14 +3315,13 @@ SaveTokenIntegrationsRequest::SaveTokenIntegrationsRequest(const SaveTokenIntegr
     token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token(), 
       GetArenaForAllocation());
   }
-  organization_id_ = from.organization_id_;
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.SaveTokenIntegrationsRequest)
 }
 
 inline void SaveTokenIntegrationsRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_ = 0u;
 }
 
 SaveTokenIntegrationsRequest::~SaveTokenIntegrationsRequest() {
@@ -3261,6 +3333,7 @@ SaveTokenIntegrationsRequest::~SaveTokenIntegrationsRequest() {
 
 inline void SaveTokenIntegrationsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -3281,9 +3354,9 @@ void SaveTokenIntegrationsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
   integration_id_.ClearToEmpty();
   token_.ClearToEmpty();
-  organization_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3293,10 +3366,12 @@ const char* SaveTokenIntegrationsRequest::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.SaveTokenIntegrationsRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3347,10 +3422,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.SaveTokenIntegrationsRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
   // string integration_id = 2 [json_name = "integrationId"];
@@ -3389,6 +3468,13 @@ size_t SaveTokenIntegrationsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
   // string integration_id = 2 [json_name = "integrationId"];
   if (!this->_internal_integration_id().empty()) {
     total_size += 1 +
@@ -3401,13 +3487,6 @@ size_t SaveTokenIntegrationsRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_token());
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3438,14 +3517,14 @@ void SaveTokenIntegrationsRequest::MergeFrom(const SaveTokenIntegrationsRequest&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
   if (!from._internal_integration_id().empty()) {
     _internal_set_integration_id(from._internal_integration_id());
   }
   if (!from._internal_token().empty()) {
     _internal_set_token(from._internal_token());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3466,6 +3545,11 @@ void SaveTokenIntegrationsRequest::InternalSwap(SaveTokenIntegrationsRequest* ot
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &integration_id_, GetArenaForAllocation(),
       &other->integration_id_, other->GetArenaForAllocation()
   );
@@ -3474,7 +3558,6 @@ void SaveTokenIntegrationsRequest::InternalSwap(SaveTokenIntegrationsRequest* ot
       &token_, GetArenaForAllocation(),
       &other->token_, other->GetArenaForAllocation()
   );
-  swap(organization_id_, other->organization_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SaveTokenIntegrationsRequest::GetMetadata() const {
@@ -3743,18 +3826,22 @@ GetTokenIntegrationsRequest::GetTokenIntegrationsRequest(::PROTOBUF_NAMESPACE_ID
 GetTokenIntegrationsRequest::GetTokenIntegrationsRequest(const GetTokenIntegrationsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_integration_id().empty()) {
     integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
       GetArenaForAllocation());
   }
-  organization_id_ = from.organization_id_;
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetTokenIntegrationsRequest)
 }
 
 inline void GetTokenIntegrationsRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_ = 0u;
 }
 
 GetTokenIntegrationsRequest::~GetTokenIntegrationsRequest() {
@@ -3766,6 +3853,7 @@ GetTokenIntegrationsRequest::~GetTokenIntegrationsRequest() {
 
 inline void GetTokenIntegrationsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -3785,8 +3873,8 @@ void GetTokenIntegrationsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
   integration_id_.ClearToEmpty();
-  organization_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3796,10 +3884,12 @@ const char* GetTokenIntegrationsRequest::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetTokenIntegrationsRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3841,10 +3931,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetTokenIntegrationsRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
   // string integration_id = 2 [json_name = "integrationId"];
@@ -3873,18 +3967,18 @@ size_t GetTokenIntegrationsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
   // string integration_id = 2 [json_name = "integrationId"];
   if (!this->_internal_integration_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_integration_id());
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3915,11 +4009,11 @@ void GetTokenIntegrationsRequest::MergeFrom(const GetTokenIntegrationsRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
   if (!from._internal_integration_id().empty()) {
     _internal_set_integration_id(from._internal_integration_id());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3940,10 +4034,14 @@ void GetTokenIntegrationsRequest::InternalSwap(GetTokenIntegrationsRequest* othe
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &integration_id_, GetArenaForAllocation(),
       &other->integration_id_, other->GetArenaForAllocation()
   );
-  swap(organization_id_, other->organization_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTokenIntegrationsRequest::GetMetadata() const {

@@ -335,4 +335,18 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * BlockChain Subscription
+     * @param \Payment\V1alpha1\BlockChainSubscriptionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function BlockChainSubscription(\Payment\V1alpha1\BlockChainSubscriptionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/BlockChainSubscription',
+        $argument,
+        ['\Payment\V1alpha1\BlockChainSubscriptionResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

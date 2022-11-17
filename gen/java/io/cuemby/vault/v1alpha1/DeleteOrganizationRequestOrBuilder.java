@@ -8,8 +8,14 @@ public interface DeleteOrganizationRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
    * @return The organizationId.
    */
-  int getOrganizationId();
+  java.lang.String getOrganizationId();
+  /**
+   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationIdBytes();
 }

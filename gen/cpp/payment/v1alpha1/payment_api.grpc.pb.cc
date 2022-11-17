@@ -43,6 +43,7 @@ static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/InvoiceFilter",
   "/payment.v1alpha1.PaymentAPIService/ConsumeByProject",
   "/payment.v1alpha1.PaymentAPIService/StopProject",
+  "/payment.v1alpha1.PaymentAPIService/BlockChainSubscription",
 };
 
 std::unique_ptr< PaymentAPIService::Stub> PaymentAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -76,6 +77,7 @@ PaymentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_InvoiceFilter_(PaymentAPIService_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ConsumeByProject_(PaymentAPIService_method_names[22], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_StopProject_(PaymentAPIService_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BlockChainSubscription_(PaymentAPIService_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PaymentAPIService::Stub::CreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::payment::v1alpha1::CreateCustomerResponse* response) {
@@ -462,6 +464,22 @@ void PaymentAPIService::Stub::experimental_async::StopProject(::grpc::ClientCont
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::StopProjectResponse>::Create(channel_.get(), cq, rpcmethod_StopProject_, context, request, false);
 }
 
+::grpc::Status PaymentAPIService::Stub::BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_BlockChainSubscription_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BlockChainSubscription_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>* PaymentAPIService::Stub::AsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::BlockChainSubscriptionResponse>::Create(channel_.get(), cq, rpcmethod_BlockChainSubscription_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>* PaymentAPIService::Stub::PrepareAsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::BlockChainSubscriptionResponse>::Create(channel_.get(), cq, rpcmethod_BlockChainSubscription_, context, request, false);
+}
+
 PaymentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PaymentAPIService_method_names[0],
@@ -583,6 +601,11 @@ PaymentAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::StopProjectRequest, ::payment::v1alpha1::StopProjectResponse>(
           std::mem_fn(&PaymentAPIService::Service::StopProject), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[24],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::BlockChainSubscriptionRequest, ::payment::v1alpha1::BlockChainSubscriptionResponse>(
+          std::mem_fn(&PaymentAPIService::Service::BlockChainSubscription), this)));
 }
 
 PaymentAPIService::Service::~Service() {
@@ -750,6 +773,13 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) {
   (void) context;
   (void) request;
   (void) response;

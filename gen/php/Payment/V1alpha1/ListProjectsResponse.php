@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProjectsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
      */
-    protected $customer = null;
+    private $projects;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $status
      * }
      */
@@ -38,33 +38,23 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getCustomer()
+    public function getProjects()
     {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
+        return $this->projects;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
+     * @param \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setProjects($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Project::class);
+        $this->projects = $arr;
 
         return $this;
     }

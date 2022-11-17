@@ -95,7 +95,7 @@ func UpdateSecret(in *Secret) (*vaultpkgv1.UpdateSecretResponse, error) {
 	return response, nil
 }
 
-func DeleteSecret(organizationId uint32, projectId uint32, name string) (*vaultpkgv1.DeleteSecretResponse, error) {
+func DeleteSecret(organizationId string, projectId string, name string) (*vaultpkgv1.DeleteSecretResponse, error) {
 	bylogs.LogInfo("DeleteSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
@@ -118,7 +118,7 @@ func DeleteSecret(organizationId uint32, projectId uint32, name string) (*vaultp
 	return response, nil
 }
 
-func GetSecret(organizationId uint32, projectId uint32, name string) (*vaultpkgv1.GetSecretResponse, error) {
+func GetSecret(organizationId string, projectId string, name string) (*vaultpkgv1.GetSecretResponse, error) {
 	bylogs.LogInfo("GetSecret Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {
@@ -141,7 +141,7 @@ func GetSecret(organizationId uint32, projectId uint32, name string) (*vaultpkgv
 	return response, nil
 }
 
-func DeleteOrganization(orgId uint32) (*vaultpkgv1.DeleteOrganizationResponse, error) {
+func DeleteOrganization(orgId string) (*vaultpkgv1.DeleteOrganizationResponse, error) {
 	bylogs.LogInfo("DeleteOrganization Client Sdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
 	if err != nil {

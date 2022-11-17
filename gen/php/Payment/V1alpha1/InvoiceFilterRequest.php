@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     */
-    protected $organization_id = 0;
-    /**
      * Generated from protobuf field <code>string invoice_id = 2 [json_name = "invoiceId"];</code>
      */
     protected $invoice_id = '';
@@ -53,6 +49,10 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.payment.v1alpha1.CustomerList customer_list = 10 [json_name = "customerList"];</code>
      */
     protected $customer_list = null;
+    /**
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = '';
 
     /**
      * Constructor.
@@ -60,7 +60,6 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $organization_id
      *     @type string $invoice_id
      *     @type string $year
      *     @type string $month
@@ -70,33 +69,12 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
      *     @type float $ram
      *     @type float $pipeline
      *     @type \Payment\V1alpha1\CustomerList $customer_list
+     *     @type string $organization_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Payment\V1Alpha1\PaymentApi::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->organization_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOrganizationId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
-
-        return $this;
     }
 
     /**
@@ -303,6 +281,28 @@ class InvoiceFilterRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\CustomerList::class);
         $this->customer_list = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->organization_id = $var;
 
         return $this;
     }

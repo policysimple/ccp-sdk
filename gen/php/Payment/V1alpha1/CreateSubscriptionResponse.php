@@ -18,9 +18,9 @@ class CreateSubscriptionResponse extends \Google\Protobuf\Internal\Message
      */
     protected $subscription = null;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
-    protected $status = '';
+    protected $error = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class CreateSubscriptionResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Payment\V1alpha1\Subscription $subscription
-     *     @type string $status
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -70,23 +70,23 @@ class CreateSubscriptionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      * @return string
      */
-    public function getStatus()
+    public function getError()
     {
-        return $this->status;
+        return $this->error;
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setError($var)
     {
         GPBUtil::checkString($var, True);
-        $this->status = $var;
+        $this->error = $var;
 
         return $this;
     }

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\030io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\001Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1evault/v1alpha1/vault_api.proto\x12\x0evault.v1alpha1\x1a\x1avault/v1alpha1/vault.proto\"E\n\x13\x43reateSecretRequest\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14\x43reateSecretResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\tR\x05\x65rror\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\"\xd2\x01\n\x13UpdateSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\tR\rapplicationId\x12.\n\x06secret\x18\x05 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14UpdateSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb6\x01\n\x13\x44\x65leteSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\">\n\x14\x44\x65leteSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb3\x01\n\x10GetSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\"Y\n\x11GetSecretResponse\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x84\x01\n\x1cSaveTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\"G\n\x1dSaveTokenIntegrationsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"m\n\x1bGetTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\"J\n\x1cGetTokenIntegrationsResponse\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xc1\x01\n\x1aSaveTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\x12\x38\n\x06secret\x18\x04 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\"E\n\x1bSaveTokenBlockChainResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x86\x01\n\x19GetTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\"l\n\x1aGetTokenBlockChainResponse\x12\x38\n\x06secret\x18\x01 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xb9\x07\n\x0fVaultAPIService\x12[\n\x0c\x43reateSecret\x12#.vault.v1alpha1.CreateSecretRequest\x1a$.vault.v1alpha1.CreateSecretResponse\"\x00\x12[\n\x0cUpdateSecret\x12#.vault.v1alpha1.UpdateSecretRequest\x1a$.vault.v1alpha1.UpdateSecretResponse\"\x00\x12[\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\"\x00\x12R\n\tGetSecret\x12 .vault.v1alpha1.GetSecretRequest\x1a!.vault.v1alpha1.GetSecretResponse\"\x00\x12m\n\x12\x44\x65leteOrganization\x12).vault.v1alpha1.DeleteOrganizationRequest\x1a*.vault.v1alpha1.DeleteOrganizationResponse\"\x00\x12v\n\x15SaveTokenIntegrations\x12,.vault.v1alpha1.SaveTokenIntegrationsRequest\x1a-.vault.v1alpha1.SaveTokenIntegrationsResponse\"\x00\x12s\n\x14GetTokenIntegrations\x12+.vault.v1alpha1.GetTokenIntegrationsRequest\x1a,.vault.v1alpha1.GetTokenIntegrationsResponse\"\x00\x12p\n\x13SaveTokenBlockChain\x12*.vault.v1alpha1.SaveTokenBlockChainRequest\x1a+.vault.v1alpha1.SaveTokenBlockChainResponse\"\x00\x12m\n\x12GetTokenBlockChain\x12).vault.v1alpha1.GetTokenBlockChainRequest\x1a*.vault.v1alpha1.GetTokenBlockChainResponse\"\x00\x42\x86\x01\n\x18io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n\x1evault/v1alpha1/vault_api.proto\x12\x0evault.v1alpha1\x1a\x1avault/v1alpha1/vault.proto\"E\n\x13\x43reateSecretRequest\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14\x43reateSecretResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\tR\x05\x65rror\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\"\xd2\x01\n\x13UpdateSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\tR\rapplicationId\x12.\n\x06secret\x18\x05 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14UpdateSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb6\x01\n\x13\x44\x65leteSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\">\n\x14\x44\x65leteSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb3\x01\n\x10GetSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\"Y\n\x11GetSecretResponse\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x84\x01\n\x1cSaveTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\"G\n\x1dSaveTokenIntegrationsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"m\n\x1bGetTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\"J\n\x1cGetTokenIntegrationsResponse\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xc1\x01\n\x1aSaveTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\x12\x38\n\x06secret\x18\x04 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\"E\n\x1bSaveTokenBlockChainResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x86\x01\n\x19GetTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\"l\n\x1aGetTokenBlockChainResponse\x12\x38\n\x06secret\x18\x01 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xb9\x07\n\x0fVaultAPIService\x12[\n\x0c\x43reateSecret\x12#.vault.v1alpha1.CreateSecretRequest\x1a$.vault.v1alpha1.CreateSecretResponse\"\x00\x12[\n\x0cUpdateSecret\x12#.vault.v1alpha1.UpdateSecretRequest\x1a$.vault.v1alpha1.UpdateSecretResponse\"\x00\x12[\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\"\x00\x12R\n\tGetSecret\x12 .vault.v1alpha1.GetSecretRequest\x1a!.vault.v1alpha1.GetSecretResponse\"\x00\x12m\n\x12\x44\x65leteOrganization\x12).vault.v1alpha1.DeleteOrganizationRequest\x1a*.vault.v1alpha1.DeleteOrganizationResponse\"\x00\x12v\n\x15SaveTokenIntegrations\x12,.vault.v1alpha1.SaveTokenIntegrationsRequest\x1a-.vault.v1alpha1.SaveTokenIntegrationsResponse\"\x00\x12s\n\x14GetTokenIntegrations\x12+.vault.v1alpha1.GetTokenIntegrationsRequest\x1a,.vault.v1alpha1.GetTokenIntegrationsResponse\"\x00\x12p\n\x13SaveTokenBlockChain\x12*.vault.v1alpha1.SaveTokenBlockChainRequest\x1a+.vault.v1alpha1.SaveTokenBlockChainResponse\"\x00\x12m\n\x12GetTokenBlockChain\x12).vault.v1alpha1.GetTokenBlockChainRequest\x1a*.vault.v1alpha1.GetTokenBlockChainResponse\"\x00\x42\x86\x01\n\x18io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
   ,
   dependencies=[vault_dot_v1alpha1_dot_vault__pb2.DESCRIPTOR,])
 
@@ -108,8 +108,8 @@ _UPDATESECRETREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='vault.v1alpha1.UpdateSecretRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -207,15 +207,15 @@ _DELETESECRETREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='vault.v1alpha1.DeleteSecretRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='project_id', full_name='vault.v1alpha1.DeleteSecretRequest.project_id', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -306,15 +306,15 @@ _GETSECRETREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='vault.v1alpha1.GetSecretRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='project_id', full_name='vault.v1alpha1.GetSecretRequest.project_id', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -405,8 +405,8 @@ _DELETEORGANIZATIONREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='vault.v1alpha1.DeleteOrganizationRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -476,8 +476,8 @@ _SAVETOKENINTEGRATIONSREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='vault.v1alpha1.SaveTokenIntegrationsRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -561,8 +561,8 @@ _GETTOKENINTEGRATIONSREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='vault.v1alpha1.GetTokenIntegrationsRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),

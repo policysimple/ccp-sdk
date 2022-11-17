@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class SetDefaultPaymentMethodResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      */
-    protected $msg = '';
+    protected $status = '';
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class SetDefaultPaymentMethodResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $msg
+     *     @type string $status
      *     @type string $error
      * }
      */
@@ -38,23 +38,23 @@ class SetDefaultPaymentMethodResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      * @return string
      */
-    public function getMsg()
+    public function getStatus()
     {
-        return $this->msg;
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
-    public function setMsg($var)
+    public function setStatus($var)
     {
         GPBUtil::checkString($var, True);
-        $this->msg = $var;
+        $this->status = $var;
 
         return $this;
     }

@@ -44,7 +44,9 @@ func CreateCustomer(in *paymentpkgv1.CreateCustomerRequest) (response *paymentpk
 	defer cancel()
 
 	response, err = client.CreateCustomer(ctx, &paymentpkgv1.CreateCustomerRequest{
-		Customer: in.Customer,
+		OrganizationId: in.OrganizationId,
+		Name: 		 in.Name,
+		Email: 		 in.Email,
 	})
 
 	if err != nil {
@@ -64,7 +66,6 @@ func DeleteCustomer(in *paymentpkgv1.DeleteCustomerRequest) (response *paymentpk
 
 	response, err = client.DeleteCustomer(ctx, &paymentpkgv1.DeleteCustomerRequest{
 		OrganizationId: in.OrganizationId,
-		CustomerId:     in.CustomerId,
 	})
 
 	if err != nil {
@@ -83,7 +84,7 @@ func CreateSubscription(in *paymentpkgv1.CreateSubscriptionRequest) (response *p
 	defer cancel()
 
 	response, err = client.CreateSubscription(ctx, &paymentpkgv1.CreateSubscriptionRequest{
-		CustomerId:   in.CustomerId,
+		OrganizationId: in.OrganizationId,
 		Subscription: in.Subscription,
 	})
 
@@ -199,7 +200,7 @@ func GetCustomer(in *paymentpkgv1.GetCustomerRequest) (response *paymentpkgv1.Ge
 	defer cancel()
 
 	response, err = client.GetCustomer(ctx, &paymentpkgv1.GetCustomerRequest{
-		CustomerId: in.CustomerId,
+		OrganizationId: in.OrganizationId,
 	})
 
 	if err != nil {
@@ -219,7 +220,6 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 fmt.Println("CreatePayment---", in)
 	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
 		OrganizationId: in.OrganizationId,
-		CustomerId: in.CustomerId,
 		Payment:    in.Payment,
 	})
 
@@ -259,7 +259,6 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 
 	response, err = client.GetPayments(ctx, &paymentpkgv1.GetPaymentsRequest{
 		OrganizationId: in.OrganizationId,
-		CustomerId:     in.CustomerId,
 	})
 
 	if err != nil {
@@ -269,7 +268,7 @@ func GetPayments(in *paymentpkgv1.GetPaymentsRequest) (response *paymentpkgv1.Ge
 	return response, nil
 }
 
-func GetOrganization(organizationId uint32) (response *paymentpkgv1.GetOrganizationResponse, err error) {
+func GetOrganization(organizationId string) (response *paymentpkgv1.GetOrganizationResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -288,7 +287,7 @@ func GetOrganization(organizationId uint32) (response *paymentpkgv1.GetOrganizat
 	return response, nil
 }
 
-func ListProjects(organizationId uint32) (response *paymentpkgv1.ListProjectsResponse, err error) {
+func ListProjects(organizationId string) (response *paymentpkgv1.ListProjectsResponse, err error) {
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
 		return
@@ -318,7 +317,6 @@ func DeletePayment(in *paymentpkgv1.DeletePaymentRequest) (response *paymentpkgv
 	response, err = client.DeletePayment(ctx, &paymentpkgv1.DeletePaymentRequest{
 		OrganizationId: in.OrganizationId,
 		CardId:         in.CardId,
-		CustomerId:     in.CustomerId,
 	})
 
 	if err != nil {
@@ -360,7 +358,7 @@ func ListPayment(in *paymentpkgv1.ListPaymentRequest) (response *paymentpkgv1.Li
 	defer cancel()
 
 	response, err = client.ListPayment(ctx, &paymentpkgv1.ListPaymentRequest{
-		CustomerId: in.CustomerId,
+		OrganizationId: in.OrganizationId,
 	})
 
 	if err != nil {

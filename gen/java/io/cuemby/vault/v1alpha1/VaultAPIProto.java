@@ -119,36 +119,36 @@ public final class VaultAPIProto {
       "ult.v1alpha1.SecretR\006secret\">\n\024CreateSec" +
       "retResponse\022\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg" +
       "\030\002 \001(\tR\003msg\"\322\001\n\023UpdateSecretRequest\022\'\n\017o" +
-      "rganization_id\030\001 \001(\rR\016organizationId\022\035\n\n" +
+      "rganization_id\030\001 \001(\tR\016organizationId\022\035\n\n" +
       "project_id\030\002 \001(\tR\tprojectId\022\034\n\tnamespace" +
       "\030\003 \001(\tR\tnamespace\022%\n\016application_id\030\004 \001(" +
       "\tR\rapplicationId\022.\n\006secret\030\005 \001(\0132\026.vault" +
       ".v1alpha1.SecretR\006secret\">\n\024UpdateSecret" +
       "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
       "\tR\005error\"\266\001\n\023DeleteSecretRequest\022\'\n\017orga" +
-      "nization_id\030\001 \001(\rR\016organizationId\022\035\n\npro" +
-      "ject_id\030\002 \001(\rR\tprojectId\022%\n\016application_" +
+      "nization_id\030\001 \001(\tR\016organizationId\022\035\n\npro" +
+      "ject_id\030\002 \001(\tR\tprojectId\022%\n\016application_" +
       "id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001" +
       "(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\">\n\024Del" +
       "eteSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
       "rror\030\002 \001(\tR\005error\"\263\001\n\020GetSecretRequest\022\'" +
-      "\n\017organization_id\030\001 \001(\rR\016organizationId\022" +
-      "\035\n\nproject_id\030\002 \001(\rR\tprojectId\022%\n\016applic" +
+      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
+      "\035\n\nproject_id\030\002 \001(\tR\tprojectId\022%\n\016applic" +
       "ation_id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespa" +
       "ce\030\004 \001(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\"" +
       "Y\n\021GetSecretResponse\022.\n\006secret\030\001 \001(\0132\026.v" +
       "ault.v1alpha1.SecretR\006secret\022\024\n\005error\030\002 " +
       "\001(\tR\005error\"D\n\031DeleteOrganizationRequest\022" +
-      "\'\n\017organization_id\030\001 \001(\rR\016organizationId" +
+      "\'\n\017organization_id\030\001 \001(\tR\016organizationId" +
       "\"D\n\032DeleteOrganizationResponse\022\020\n\003msg\030\001 " +
       "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\204\001\n\034SaveT" +
       "okenIntegrationsRequest\022\'\n\017organization_" +
-      "id\030\001 \001(\rR\016organizationId\022%\n\016integration_" +
+      "id\030\001 \001(\tR\016organizationId\022%\n\016integration_" +
       "id\030\002 \001(\tR\rintegrationId\022\024\n\005token\030\003 \001(\tR\005" +
       "token\"G\n\035SaveTokenIntegrationsResponse\022\020" +
       "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"m" +
       "\n\033GetTokenIntegrationsRequest\022\'\n\017organiz" +
-      "ation_id\030\001 \001(\rR\016organizationId\022%\n\016integr" +
+      "ation_id\030\001 \001(\tR\016organizationId\022%\n\016integr" +
       "ation_id\030\002 \001(\tR\rintegrationId\"J\n\034GetToke" +
       "nIntegrationsResponse\022\024\n\005token\030\001 \001(\tR\005to" +
       "ken\022\024\n\005error\030\002 \001(\tR\005error\"\301\001\n\032SaveTokenB" +
