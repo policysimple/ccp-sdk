@@ -757,15 +757,43 @@ class Secret final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kOrganizationIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
     kApplicationIdFieldNumber = 3,
     kNamespaceFieldNumber = 4,
     kNameFieldNumber = 5,
     kMetadataFieldNumber = 6,
     kDataFieldNumber = 7,
     kWarningsFieldNumber = 8,
-    kOrganizationIdFieldNumber = 1,
-    kProjectIdFieldNumber = 2,
   };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // string project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
   // string application_id = 3 [json_name = "applicationId"];
   void clear_application_id();
   const std::string& application_id() const;
@@ -862,24 +890,6 @@ class Secret final :
       ::vault::v1alpha1::SecretWarnings* warnings);
   ::vault::v1alpha1::SecretWarnings* unsafe_arena_release_warnings();
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  void clear_organization_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
-  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
-  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  void clear_project_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
-  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
-  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:vault.v1alpha1.Secret)
  private:
   class _Internal;
@@ -887,14 +897,14 @@ class Secret final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::vault::v1alpha1::Metadata* metadata_;
   ::vault::v1alpha1::SecretData* data_;
   ::vault::v1alpha1::SecretWarnings* warnings_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_2eproto;
 };
@@ -1575,44 +1585,96 @@ SecretWarnings::mutable_warnings() {
 
 // Secret
 
-// uint32 organization_id = 1 [json_name = "organizationId"];
+// string organization_id = 1 [json_name = "organizationId"];
 inline void Secret::clear_organization_id() {
-  organization_id_ = 0u;
+  organization_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Secret::_internal_organization_id() const {
-  return organization_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Secret::organization_id() const {
+inline const std::string& Secret::organization_id() const {
   // @@protoc_insertion_point(field_get:vault.v1alpha1.Secret.organization_id)
   return _internal_organization_id();
 }
-inline void Secret::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  organization_id_ = value;
-}
-inline void Secret::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_organization_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Secret::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:vault.v1alpha1.Secret.organization_id)
 }
+inline std::string* Secret::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.Secret.organization_id)
+  return _s;
+}
+inline const std::string& Secret::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void Secret::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Secret::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Secret::release_organization_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.Secret.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Secret::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.organization_id)
+}
 
-// uint32 project_id = 2 [json_name = "projectId"];
+// string project_id = 2 [json_name = "projectId"];
 inline void Secret::clear_project_id() {
-  project_id_ = 0u;
+  project_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Secret::_internal_project_id() const {
-  return project_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Secret::project_id() const {
+inline const std::string& Secret::project_id() const {
   // @@protoc_insertion_point(field_get:vault.v1alpha1.Secret.project_id)
   return _internal_project_id();
 }
-inline void Secret::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  project_id_ = value;
-}
-inline void Secret::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_project_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Secret::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:vault.v1alpha1.Secret.project_id)
+}
+inline std::string* Secret::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.Secret.project_id)
+  return _s;
+}
+inline const std::string& Secret::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void Secret::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Secret::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Secret::release_project_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.Secret.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Secret::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.Secret.project_id)
 }
 
 // string application_id = 3 [json_name = "applicationId"];

@@ -748,8 +748,8 @@ proto.vault.v1alpha1.Secret.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vault.v1alpha1.Secret.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -793,11 +793,11 @@ proto.vault.v1alpha1.Secret.deserializeBinaryFromReader = function(msg, reader) 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
@@ -857,15 +857,15 @@ proto.vault.v1alpha1.Secret.prototype.serializeBinary = function() {
 proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -919,38 +919,38 @@ proto.vault.v1alpha1.Secret.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.Secret.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.Secret} returns this
  */
 proto.vault.v1alpha1.Secret.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.vault.v1alpha1.Secret.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.Secret} returns this
  */
 proto.vault.v1alpha1.Secret.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
