@@ -31,10 +31,16 @@ public final class PaymentApi {
         getOrganizationIdBytes();
 
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.StopProjectRequest}
@@ -50,6 +56,7 @@ public final class PaymentApi {
     }
     private StopProjectRequest() {
       organizationId_ = "";
+      projectId_ = "";
     }
 
     @java.lang.Override
@@ -88,9 +95,10 @@ public final class PaymentApi {
               organizationId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
             default: {
@@ -164,14 +172,41 @@ public final class PaymentApi {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,8 +226,8 @@ public final class PaymentApi {
       if (!getOrganizationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -206,9 +241,8 @@ public final class PaymentApi {
       if (!getOrganizationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,8 +261,8 @@ public final class PaymentApi {
 
       if (!getOrganizationId()
           .equals(other.getOrganizationId())) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -243,7 +277,7 @@ public final class PaymentApi {
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -379,7 +413,7 @@ public final class PaymentApi {
         super.clear();
         organizationId_ = "";
 
-        projectId_ = 0;
+        projectId_ = "";
 
         return this;
       }
@@ -461,8 +495,9 @@ public final class PaymentApi {
           organizationId_ = other.organizationId_;
           onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -569,33 +604,78 @@ public final class PaymentApi {
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -39997,7 +40077,7 @@ public final class PaymentApi {
       "yment.v1alpha1\032\036payment/v1alpha1/payment" +
       ".proto\"\\\n\022StopProjectRequest\022\'\n\017organiza" +
       "tion_id\030\001 \001(\tR\016organizationId\022\035\n\nproject" +
-      "_id\030\002 \001(\rR\tprojectId\"-\n\023StopProjectRespo" +
+      "_id\030\002 \001(\tR\tprojectId\"-\n\023StopProjectRespo" +
       "nse\022\026\n\006status\030\001 \001(\tR\006status\"\315\002\n\024InvoiceF" +
       "ilterRequest\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoic" +
       "eId\022\022\n\004year\030\003 \001(\tR\004year\022\024\n\005month\030\004 \001(\tR\005" +
