@@ -69,8 +69,8 @@ public final class VaultProto {
       "DataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
       "(\tR\005value:\0028\001\",\n\016SecretWarnings\022\032\n\010warni" +
       "ngs\030\001 \003(\tR\010warnings\"\313\002\n\006Secret\022\'\n\017organi" +
-      "zation_id\030\001 \001(\rR\016organizationId\022\035\n\nproje" +
-      "ct_id\030\002 \001(\rR\tprojectId\022%\n\016application_id" +
+      "zation_id\030\001 \001(\tR\016organizationId\022\035\n\nproje" +
+      "ct_id\030\002 \001(\tR\tprojectId\022%\n\016application_id" +
       "\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001(\t" +
       "R\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\0224\n\010metad" +
       "ata\030\006 \001(\0132\030.vault.v1alpha1.MetadataR\010met" +

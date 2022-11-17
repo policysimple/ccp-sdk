@@ -29,8 +29,8 @@ message SecretWarnings {
 }
 
 message Secret {
-    uint32 organization_id = 1;
-    uint32 project_id = 2;
+    string organization_id = 1;
+    string project_id = 2;
     string application_id = 3;
     string namespace = 4;
     string name = 5;
