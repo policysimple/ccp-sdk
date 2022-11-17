@@ -75,12 +75,11 @@ message AccountsProvidersResponse {
 */
 
 message DeleteIntegrationsByOrganizationRequest {
-    uint32 organization_id = 1;
+    string organization_uid = 1;
 }
 
 message DeleteIntegrationsByOrganizationResponse {
     string msg = 1;
-    string error = 2;
 }
 
 /*
@@ -93,7 +92,6 @@ message GetOneProviderByNameRequest {
 
 message GetOneProviderByNameResponse {
     Provider provider = 1;
-    string error = 2;
 
 }
 /*
@@ -115,18 +113,16 @@ message ListRepositoriesProviderResponse {
     repeated Repository repositories = 1;
     uint32 total_pages = 2;
     uint32 count = 3;
-    string error = 4;
 
 }
 
 message GetRepositoryProviderRequest {
     string integration_id = 1;
-    string name = 2;
+    string name =2;
 }
 
 message GetRepositoryProviderResponse {
     repeated Branch branchs = 1;
-    string error = 2;
 }
 
 /*
@@ -142,9 +138,8 @@ message DetailRepository {
     string description = 5;
     bool fork = 6;
     string clone_url = 7;
-
-    uint32 project_id = 8;
-    uint32 organization_id = 9;
+    string project_id = 8;
+    string organization_id = 9;
 
     repeated string branchs = 10;
     string integration_id = 11;
@@ -158,8 +153,8 @@ message ListRepository{
     string fullname = 4;
     string description = 5;
     string clone_url = 7;
-    uint32 project_id = 8;
-    uint32 organization_id = 9;
+    string project_id = 8;
+    string organization_id = 9;
     string integration_id = 11;
 }
 
@@ -172,26 +167,25 @@ message CreateDetailRepository {
     bool fork = 5;
     string clone_url = 6;
 
-    uint32 project_id = 7;
-    uint32 organization_id = 8;
+    string project_id = 7;
+    string organization_id = 8;
     string integration_id = 9;
 }
 
 
 message CreateRepositoryRequest {
     CreateDetailRepository repository = 1;
-    uint32 project_id = 2;
-    uint32 organization_id = 3;
+    string project_id = 2;
+    string organization_id = 3;
 }
 
 message CreateRepositoryResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message ListRepositoriesRequest {
-    uint32 project_id = 1;
-    uint32 organization_id = 2;
+    string project_id = 1;
+    string organization_id = 2;
 }
 
 message ListRepositoriesResponse {
@@ -205,7 +199,6 @@ message GetRepositoryRequest {
 
 message  GetRepositoryResponse {
     DetailRepository repository = 1;
-    string error = 2;
     
 }
 
@@ -215,19 +208,16 @@ message DeleteRepositoryRequest {
 
 message DeleteRepositoryResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message UpdateRepositoryRequest {
     string repository_id = 1;
     DetailRepository repository = 2;
-    string error = 3;
 
 }
 
 message UpdateRepositoryResponse {
     string msg = 1;
-    string error = 2;
 }
 
 /*
@@ -238,7 +228,7 @@ message UpdateRepositoryResponse {
 
 message Integration {
     string id = 1;
-    uint32 organization_id = 2;
+    string organization_id = 2;
     string name = 3;
     Provider provider = 4;
     map<string, string> data = 5;
@@ -265,7 +255,6 @@ message AccountIntegration {
 
 message CreateIntegrationRequest {
     //string id = 1;
-    uint32 organization_id = 2;
     string name = 3;
     //Provider provider = 4;
     map<string, string> data = 5;
@@ -273,17 +262,16 @@ message CreateIntegrationRequest {
     string user_id = 7;
     string provider_id = 8;
     AccountIntegration account = 9;
-
+    string organization_id = 10;
 }
 
 message CreateIntegrationResponse {
     string msg = 1;
-    string error = 2;
     string integration_id = 3;
 }
 
 message ListIntegrationsRequest {
-    uint32 organization_id = 1;
+    string organization_uid = 3;
     string user_id = 2;
 }
 
@@ -299,7 +287,6 @@ message GetIntegrationRequest {
 
 message GetIntegrationResponse {
     Integration integration = 1;
-    string error = 2;
     //repeated Repository repositories = 2;
 }
 
@@ -310,7 +297,6 @@ message UpdateIntegrationRequest {
 
 message UpdateIntegrationResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message DeleteIntegrationRequest {
@@ -319,7 +305,6 @@ message DeleteIntegrationRequest {
 
 message DeleteIntegrationResponse {
     string msg = 1;
-    string error = 2;
 }
 
 /*
@@ -345,7 +330,6 @@ message DeleteProviderRequest{
 
 message DeleteProviderResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message UpdateProviderRequest {
@@ -355,7 +339,6 @@ message UpdateProviderRequest {
 
 message UpdateProviderResponse {
     string msg = 1;
-    string error = 2;
 }
 
 
@@ -379,7 +362,6 @@ message CreateProviderRequest {
 
 message CreateProviderResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message ListProvidersRequest {

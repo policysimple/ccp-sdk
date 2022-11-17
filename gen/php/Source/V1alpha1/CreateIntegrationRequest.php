@@ -16,10 +16,6 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     /**
      *string id = 1;
      *
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     */
-    protected $organization_id = 0;
-    /**
      * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
      */
     protected $name = '';
@@ -45,6 +41,10 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.source.v1alpha1.AccountIntegration account = 9 [json_name = "account"];</code>
      */
     protected $account = null;
+    /**
+     * Generated from protobuf field <code>string organization_id = 10 [json_name = "organizationId"];</code>
+     */
+    protected $organization_id = '';
 
     /**
      * Constructor.
@@ -52,15 +52,15 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $organization_id
-     *          string id = 1;
      *     @type string $name
+     *          string id = 1;
      *     @type array|\Google\Protobuf\Internal\MapField $data
      *          Provider provider = 4;
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $user_id
      *     @type string $provider_id
      *     @type \Source\V1alpha1\AccountIntegration $account
+     *     @type string $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -71,30 +71,6 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     /**
      *string id = 1;
      *
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->organization_id;
-    }
-
-    /**
-     *string id = 1;
-     *
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOrganizationId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
      * @return string
      */
@@ -104,6 +80,8 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *string id = 1;
+     *
      * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
      * @param string $var
      * @return $this
@@ -236,6 +214,28 @@ class CreateIntegrationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Source\V1alpha1\AccountIntegration::class);
         $this->account = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 10 [json_name = "organizationId"];</code>
+     * @return string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 10 [json_name = "organizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->organization_id = $var;
 
         return $this;
     }
