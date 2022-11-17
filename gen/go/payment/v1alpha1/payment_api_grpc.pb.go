@@ -49,6 +49,8 @@ type PaymentAPIServiceClient interface {
 	ConsumeByProject(ctx context.Context, in *ConsumeByProjectRequest, opts ...grpc.CallOption) (*ConsumeByProjectResponse, error)
 	//Pause Project Consumption
 	StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error)
+	//BlockChain Subscription
+	BlockChainSubscription(ctx context.Context, in *BlockChainSubscriptionRequest, opts ...grpc.CallOption) (*BlockChainSubscriptionResponse, error)
 }
 
 type paymentAPIServiceClient struct {
@@ -275,6 +277,15 @@ func (c *paymentAPIServiceClient) StopProject(ctx context.Context, in *StopProje
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) BlockChainSubscription(ctx context.Context, in *BlockChainSubscriptionRequest, opts ...grpc.CallOption) (*BlockChainSubscriptionResponse, error) {
+	out := new(BlockChainSubscriptionResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/BlockChainSubscription", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PaymentAPIServiceServer is the server API for PaymentAPIService service.
 // All implementations should embed UnimplementedPaymentAPIServiceServer
 // for forward compatibility
@@ -310,6 +321,8 @@ type PaymentAPIServiceServer interface {
 	ConsumeByProject(context.Context, *ConsumeByProjectRequest) (*ConsumeByProjectResponse, error)
 	//Pause Project Consumption
 	StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error)
+	//BlockChain Subscription
+	BlockChainSubscription(context.Context, *BlockChainSubscriptionRequest) (*BlockChainSubscriptionResponse, error)
 }
 
 // UnimplementedPaymentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -387,6 +400,9 @@ func (UnimplementedPaymentAPIServiceServer) ConsumeByProject(context.Context, *C
 }
 func (UnimplementedPaymentAPIServiceServer) StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopProject not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) BlockChainSubscription(context.Context, *BlockChainSubscriptionRequest) (*BlockChainSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BlockChainSubscription not implemented")
 }
 
 // UnsafePaymentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -832,6 +848,24 @@ func _PaymentAPIService_StopProject_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_BlockChainSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BlockChainSubscriptionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).BlockChainSubscription(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/BlockChainSubscription",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).BlockChainSubscription(ctx, req.(*BlockChainSubscriptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PaymentAPIService_ServiceDesc is the grpc.ServiceDesc for PaymentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -934,6 +968,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StopProject",
 			Handler:    _PaymentAPIService_StopProject_Handler,
+		},
+		{
+			MethodName: "BlockChainSubscription",
+			Handler:    _PaymentAPIService_BlockChainSubscription_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

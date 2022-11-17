@@ -9,18 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>payment.v1alpha1.DeletePaymentRequest</code>
+ * Generated from protobuf message <code>payment.v1alpha1.BlockChainSubscriptionRequest</code>
  */
-class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
+class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string card_id = 2 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
      */
-    protected $card_id = '';
+    protected $blockchain_id = '';
+    /**
+     * Generated from protobuf field <code>string blockchain_name = 3 [json_name = "blockchainName"];</code>
+     */
+    protected $blockchain_name = '';
 
     /**
      * Constructor.
@@ -29,7 +33,8 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $organization_id
-     *     @type string $card_id
+     *     @type string $blockchain_id
+     *     @type string $blockchain_name
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +65,45 @@ class DeletePaymentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 2 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
      * @return string
      */
-    public function getCardId()
+    public function getBlockchainId()
     {
-        return $this->card_id;
+        return $this->blockchain_id;
     }
 
     /**
-     * Generated from protobuf field <code>string card_id = 2 [json_name = "cardId"];</code>
+     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setCardId($var)
+    public function setBlockchainId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->card_id = $var;
+        $this->blockchain_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string blockchain_name = 3 [json_name = "blockchainName"];</code>
+     * @return string
+     */
+    public function getBlockchainName()
+    {
+        return $this->blockchain_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string blockchain_name = 3 [json_name = "blockchainName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBlockchainName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->blockchain_name = $var;
 
         return $this;
     }

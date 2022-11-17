@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class CancelSubscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = 0;
+    protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     */
-    protected $customer_id = '';
-    /**
-     * Generated from protobuf field <code>string subscription_id = 3 [json_name = "subscriptionId"];</code>
+     * Generated from protobuf field <code>string subscription_id = 2 [json_name = "subscriptionId"];</code>
      */
     protected $subscription_id = '';
 
@@ -32,8 +28,7 @@ class CancelSubscriptionRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $organization_id
-     *     @type string $customer_id
+     *     @type string $organization_id
      *     @type string $subscription_id
      * }
      */
@@ -43,8 +38,8 @@ class CancelSubscriptionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return string
      */
     public function getOrganizationId()
     {
@@ -52,42 +47,20 @@ class CancelSubscriptionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->organization_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     * @return string
-     */
-    public function getCustomerId()
-    {
-        return $this->customer_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCustomerId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->customer_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string subscription_id = 3 [json_name = "subscriptionId"];</code>
+     * Generated from protobuf field <code>string subscription_id = 2 [json_name = "subscriptionId"];</code>
      * @return string
      */
     public function getSubscriptionId()
@@ -96,7 +69,7 @@ class CancelSubscriptionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subscription_id = 3 [json_name = "subscriptionId"];</code>
+     * Generated from protobuf field <code>string subscription_id = 2 [json_name = "subscriptionId"];</code>
      * @param string $var
      * @return $this
      */

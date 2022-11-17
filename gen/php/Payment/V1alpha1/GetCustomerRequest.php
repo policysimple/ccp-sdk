@@ -14,13 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetCustomerRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = 0;
-    /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     */
-    protected $customer_id = '';
+    protected $organization_id = '';
 
     /**
      * Constructor.
@@ -28,8 +24,7 @@ class GetCustomerRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $organization_id
-     *     @type string $customer_id
+     *     @type string $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -38,8 +33,8 @@ class GetCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return string
      */
     public function getOrganizationId()
     {
@@ -47,36 +42,14 @@ class GetCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     * @return string
-     */
-    public function getCustomerId()
-    {
-        return $this->customer_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCustomerId($var)
-    {
         GPBUtil::checkString($var, True);
-        $this->customer_id = $var;
+        $this->organization_id = $var;
 
         return $this;
     }

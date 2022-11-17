@@ -18,9 +18,9 @@ class DeletePaymentResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = '';
     /**
-     * Generated from protobuf field <code>string msg_error = 2 [json_name = "msgError"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
-    protected $msg_error = '';
+    protected $error = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class DeletePaymentResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $status
-     *     @type string $msg_error
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class DeletePaymentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string msg_error = 2 [json_name = "msgError"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      * @return string
      */
-    public function getMsgError()
+    public function getError()
     {
-        return $this->msg_error;
+        return $this->error;
     }
 
     /**
-     * Generated from protobuf field <code>string msg_error = 2 [json_name = "msgError"];</code>
+     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      * @param string $var
      * @return $this
      */
-    public function setMsgError($var)
+    public function setError($var)
     {
         GPBUtil::checkString($var, True);
-        $this->msg_error = $var;
+        $this->error = $var;
 
         return $this;
     }

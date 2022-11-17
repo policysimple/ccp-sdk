@@ -756,7 +756,7 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.toObject = function(opt_inclu
  */
 proto.vault.v1alpha1.UpdateSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -798,7 +798,7 @@ proto.vault.v1alpha1.UpdateSecretRequest.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
@@ -848,8 +848,8 @@ proto.vault.v1alpha1.UpdateSecretRequest.prototype.serializeBinary = function() 
 proto.vault.v1alpha1.UpdateSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -887,20 +887,20 @@ proto.vault.v1alpha1.UpdateSecretRequest.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.UpdateSecretRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.UpdateSecretRequest} returns this
  */
 proto.vault.v1alpha1.UpdateSecretRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1187,8 +1187,8 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.toObject = function(opt_inclu
  */
 proto.vault.v1alpha1.DeleteSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, "")
@@ -1229,11 +1229,11 @@ proto.vault.v1alpha1.DeleteSecretRequest.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
@@ -1278,15 +1278,15 @@ proto.vault.v1alpha1.DeleteSecretRequest.prototype.serializeBinary = function() 
 proto.vault.v1alpha1.DeleteSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1316,38 +1316,38 @@ proto.vault.v1alpha1.DeleteSecretRequest.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.DeleteSecretRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.DeleteSecretRequest} returns this
  */
 proto.vault.v1alpha1.DeleteSecretRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.vault.v1alpha1.DeleteSecretRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.DeleteSecretRequest} returns this
  */
 proto.vault.v1alpha1.DeleteSecretRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1597,8 +1597,8 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.toObject = function(opt_includeI
  */
 proto.vault.v1alpha1.GetSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, "")
@@ -1639,11 +1639,11 @@ proto.vault.v1alpha1.GetSecretRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
@@ -1688,15 +1688,15 @@ proto.vault.v1alpha1.GetSecretRequest.prototype.serializeBinary = function() {
 proto.vault.v1alpha1.GetSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1726,38 +1726,38 @@ proto.vault.v1alpha1.GetSecretRequest.serializeBinaryToWriter = function(message
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.GetSecretRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.GetSecretRequest} returns this
  */
 proto.vault.v1alpha1.GetSecretRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.vault.v1alpha1.GetSecretRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.GetSecretRequest} returns this
  */
 proto.vault.v1alpha1.GetSecretRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2028,7 +2028,7 @@ proto.vault.v1alpha1.DeleteOrganizationRequest.prototype.toObject = function(opt
  */
 proto.vault.v1alpha1.DeleteOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2066,7 +2066,7 @@ proto.vault.v1alpha1.DeleteOrganizationRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -2099,8 +2099,8 @@ proto.vault.v1alpha1.DeleteOrganizationRequest.prototype.serializeBinary = funct
 proto.vault.v1alpha1.DeleteOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2109,20 +2109,20 @@ proto.vault.v1alpha1.DeleteOrganizationRequest.serializeBinaryToWriter = functio
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.DeleteOrganizationRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.DeleteOrganizationRequest} returns this
  */
 proto.vault.v1alpha1.DeleteOrganizationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2318,7 +2318,7 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.toObject = function(
  */
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     integrationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     token: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -2358,7 +2358,7 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
@@ -2399,8 +2399,8 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.serializeBinary = fu
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2423,20 +2423,20 @@ proto.vault.v1alpha1.SaveTokenIntegrationsRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.SaveTokenIntegrationsRequest} returns this
  */
 proto.vault.v1alpha1.SaveTokenIntegrationsRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2668,7 +2668,7 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.toObject = function(o
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     integrationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -2707,7 +2707,7 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
@@ -2744,8 +2744,8 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.serializeBinary = fun
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2761,20 +2761,20 @@ proto.vault.v1alpha1.GetTokenIntegrationsRequest.serializeBinaryToWriter = funct
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.vault.v1alpha1.GetTokenIntegrationsRequest} returns this
  */
 proto.vault.v1alpha1.GetTokenIntegrationsRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

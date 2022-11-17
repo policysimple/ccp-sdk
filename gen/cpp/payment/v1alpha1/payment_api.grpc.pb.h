@@ -211,6 +211,14 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>> PrepareAsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>>(PrepareAsyncStopProjectRaw(context, request, cq));
     }
+    // BlockChain Subscription
+    virtual ::grpc::Status BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>> AsyncBlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>>(AsyncBlockChainSubscriptionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>> PrepareAsyncBlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>>(PrepareAsyncBlockChainSubscriptionRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -245,6 +253,8 @@ class PaymentAPIService final {
       virtual void ConsumeByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest* request, ::payment::v1alpha1::ConsumeByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Pause Project Consumption
       virtual void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // BlockChain Subscription
+      virtual void BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -296,6 +306,8 @@ class PaymentAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ConsumeByProjectResponse>* PrepareAsyncConsumeByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>* AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>* PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>* AsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>* PrepareAsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -468,6 +480,13 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>> PrepareAsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>>(PrepareAsyncStopProjectRaw(context, request, cq));
     }
+    ::grpc::Status BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>> AsyncBlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>>(AsyncBlockChainSubscriptionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>> PrepareAsyncBlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>>(PrepareAsyncBlockChainSubscriptionRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -495,6 +514,7 @@ class PaymentAPIService final {
       void InvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response, std::function<void(::grpc::Status)>) override;
       void ConsumeByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest* request, ::payment::v1alpha1::ConsumeByProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -554,6 +574,8 @@ class PaymentAPIService final {
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ConsumeByProjectResponse>* PrepareAsyncConsumeByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>* AsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>* PrepareAsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateCustomer_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePayment_;
@@ -578,6 +600,7 @@ class PaymentAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_InvoiceFilter_;
     const ::grpc::internal::RpcMethod rpcmethod_ConsumeByProject_;
     const ::grpc::internal::RpcMethod rpcmethod_StopProject_;
+    const ::grpc::internal::RpcMethod rpcmethod_BlockChainSubscription_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -616,6 +639,8 @@ class PaymentAPIService final {
     virtual ::grpc::Status ConsumeByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest* request, ::payment::v1alpha1::ConsumeByProjectResponse* response);
     // Pause Project Consumption
     virtual ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response);
+    // BlockChain Subscription
+    virtual ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateCustomer : public BaseClass {
@@ -1097,7 +1122,27 @@ class PaymentAPIService final {
       ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateProject<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_SetDefaultPaymentMethod<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_ConsumeByProject<WithAsyncMethod_StopProject<Service > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_BlockChainSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_BlockChainSubscription() {
+      ::grpc::Service::MarkMethodAsync(24);
+    }
+    ~WithAsyncMethod_BlockChainSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestBlockChainSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::BlockChainSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateProject<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_SetDefaultPaymentMethod<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_ConsumeByProject<WithAsyncMethod_StopProject<WithAsyncMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateCustomer : public BaseClass {
    private:
@@ -1502,6 +1547,23 @@ class PaymentAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_BlockChainSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_BlockChainSubscription() {
+      ::grpc::Service::MarkMethodGeneric(24);
+    }
+    ~WithGenericMethod_BlockChainSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1987,6 +2049,26 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_BlockChainSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_BlockChainSubscription() {
+      ::grpc::Service::MarkMethodRaw(24);
+    }
+    ~WithRawMethod_BlockChainSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestBlockChainSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateCustomer : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -2466,9 +2548,29 @@ class PaymentAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedStopProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::StopProjectRequest,::payment::v1alpha1::StopProjectResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_StopProject<Service > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_BlockChainSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_BlockChainSubscription() {
+      ::grpc::Service::MarkMethodStreamed(24,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::BlockChainSubscriptionRequest, ::payment::v1alpha1::BlockChainSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_BlockChainSubscription<BaseClass>::StreamedBlockChainSubscription, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_BlockChainSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedBlockChainSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::BlockChainSubscriptionRequest,::payment::v1alpha1::BlockChainSubscriptionResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_StopProject<Service > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

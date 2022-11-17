@@ -7,15 +7,14 @@ option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 message Customer {
   string id =1;
   string customer_id = 2;
-  uint32 organization_id = 3;
+  string organization_id = 3;
   string name = 4;
   string email = 5; 
   string defaultpaymentmethod = 6; 
-  Subscription subscription = 7;
-  PaymentList payments = 8;
-  Invoice invoice = 9;
-  Biling biling = 10;
-  repeated Project projects= 11;
+  PaymentList payments = 7;
+  Invoice invoice = 8;
+  Biling biling = 9;
+  repeated Project projects= 10;
 }
 
 message Project {
@@ -26,8 +25,9 @@ message Project {
   string description = 5;
   string created_at = 6;
   string updated_at = 7;
-  bool status = 8;
-  bool is_suspended = 9;
+  Subscription subscription = 8;
+  bool status = 9;
+  bool is_suspended = 10;
 }
 
 message Subscription {
@@ -140,4 +140,12 @@ message ProjectBilling {
 
 message ProjectBillingList {
   repeated ProjectBilling items = 1;
+}
+
+
+message BlockChain {
+    string blockchain_id = 1;
+    string blockchain_name = 2;
+    string node_name = 3;
+    Subscription subscription = 4;
 }
