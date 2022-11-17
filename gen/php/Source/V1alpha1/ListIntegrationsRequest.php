@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListIntegrationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_uid = 3 [json_name = "organizationUid"];</code>
      */
-    protected $organization_id = 0;
+    protected $organization_uid = '';
     /**
      * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
      */
@@ -28,7 +28,7 @@ class ListIntegrationsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $organization_id
+     *     @type string $organization_uid
      *     @type string $user_id
      * }
      */
@@ -38,23 +38,23 @@ class ListIntegrationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_uid = 3 [json_name = "organizationUid"];</code>
+     * @return string
      */
-    public function getOrganizationId()
+    public function getOrganizationUid()
     {
-        return $this->organization_id;
+        return $this->organization_uid;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_uid = 3 [json_name = "organizationUid"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setOrganizationUid($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
+        GPBUtil::checkString($var, True);
+        $this->organization_uid = $var;
 
         return $this;
     }
