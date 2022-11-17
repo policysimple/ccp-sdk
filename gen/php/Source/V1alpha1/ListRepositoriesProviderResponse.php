@@ -25,10 +25,6 @@ class ListRepositoriesProviderResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 count = 3 [json_name = "count"];</code>
      */
     protected $count = 0;
-    /**
-     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -39,7 +35,6 @@ class ListRepositoriesProviderResponse extends \Google\Protobuf\Internal\Message
      *     @type \Source\V1alpha1\Repository[]|\Google\Protobuf\Internal\RepeatedField $repositories
      *     @type int $total_pages
      *     @type int $count
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -109,28 +104,6 @@ class ListRepositoriesProviderResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->count = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

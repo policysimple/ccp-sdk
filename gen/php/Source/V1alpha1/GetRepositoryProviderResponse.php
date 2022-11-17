@@ -17,10 +17,6 @@ class GetRepositoryProviderResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .source.v1alpha1.Branch branchs = 1 [json_name = "branchs"];</code>
      */
     private $branchs;
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class GetRepositoryProviderResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Source\V1alpha1\Branch[]|\Google\Protobuf\Internal\RepeatedField $branchs
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class GetRepositoryProviderResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Source\V1alpha1\Branch::class);
         $this->branchs = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }
