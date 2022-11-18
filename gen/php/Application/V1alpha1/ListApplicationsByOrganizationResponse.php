@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ *List Application by organization
+ *
  * Generated from protobuf message <code>application.v1alpha1.ListApplicationsByOrganizationResponse</code>
  */
 class ListApplicationsByOrganizationResponse extends \Google\Protobuf\Internal\Message
@@ -17,10 +19,6 @@ class ListApplicationsByOrganizationResponse extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
      */
     private $applications;
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -29,7 +27,6 @@ class ListApplicationsByOrganizationResponse extends \Google\Protobuf\Internal\M
      *     Optional. Data for populating the Message object.
      *
      *     @type \Application\V1alpha1\Application[]|\Google\Protobuf\Internal\RepeatedField $applications
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +52,6 @@ class ListApplicationsByOrganizationResponse extends \Google\Protobuf\Internal\M
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Application\V1alpha1\Application::class);
         $this->applications = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }
