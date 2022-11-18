@@ -56,7 +56,7 @@ func GetOneApplicationById(applicationId string) (response *applicationpkgv1.Get
 	return response, nil
 }
 
-func ListApplicationByOrganization(organizationId uint32) (response *applicationpkgv1.ListApplicationsByOrganizationResponse, err error) {
+func ListApplicationByOrganization(organizationId string) (response *applicationpkgv1.ListApplicationsByOrganizationResponse, err error) {
 	bylogs.LogInfo("client list application")
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {
@@ -78,7 +78,7 @@ func ListApplicationByOrganization(organizationId uint32) (response *application
 	return response, nil
 }
 
-func ListApplicationByProject(projectId uint32) (response *applicationpkgv1.ListApplicationResponse, err error) {
+func ListApplicationByProject(projectId string) (response *applicationpkgv1.ListApplicationResponse, err error) {
 	bylogs.LogInfo("client list application")
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {
