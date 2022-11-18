@@ -13,11 +13,12 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
-var client applicationpkgv1.ApplicationServiceClient
-var doOnce sync.Once
-
-var applicationServiceUri string
-var applicationServiceTimeout string
+var (
+	client                    applicationpkgv1.ApplicationServiceClient
+	doOnce                    sync.Once
+	applicationServiceUri     string
+	applicationServiceTimeout string
+)
 
 func init() {
 	doOnce.Do(func() {
@@ -56,7 +57,7 @@ func GetOneApplicationById(applicationId string) (response *applicationpkgv1.Get
 	return response, nil
 }
 
-func ListApplicationByOrganization(organizationId uint32) (response *applicationpkgv1.ListApplicationsByOrganizationResponse, err error) {
+func ListApplicationByOrganization(organizationId string) (response *applicationpkgv1.ListApplicationsByOrganizationResponse, err error) {
 	bylogs.LogInfo("client list application")
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {
@@ -78,7 +79,7 @@ func ListApplicationByOrganization(organizationId uint32) (response *application
 	return response, nil
 }
 
-func ListApplicationByProject(projectId uint32) (response *applicationpkgv1.ListApplicationResponse, err error) {
+func ListApplicationByProject(projectId string) (response *applicationpkgv1.ListApplicationResponse, err error) {
 	bylogs.LogInfo("client list application")
 	d, err := time.ParseDuration(applicationServiceTimeout)
 	if err != nil {

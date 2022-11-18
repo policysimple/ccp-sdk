@@ -1006,7 +1006,7 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.toO
  */
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1044,7 +1044,7 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.deserializeBi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -1077,8 +1077,8 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.ser
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1087,20 +1087,20 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.serializeBina
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest} returns this
  */
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

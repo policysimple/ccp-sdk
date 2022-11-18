@@ -33,7 +33,7 @@ class Organizations
 description (	Rdescription
 image (	Rimage"D
 DeleteOrganizationRequest\'
-organization_id (RorganizationId"ð
+organization_id (	RorganizationId"ð
 GetOneOrganizationResponse
 id (Rid
 name (	Rname
