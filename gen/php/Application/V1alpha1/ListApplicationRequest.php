@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListApplicationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      */
-    protected $project_id = 0;
+    protected $project_id = '';
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class ListApplicationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $project_id
+     *     @type string $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -35,8 +35,8 @@ class ListApplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return string
      */
     public function getProjectId()
     {
@@ -44,13 +44,13 @@ class ListApplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 1 [json_name = "projectId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setProjectId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;

@@ -6643,10 +6643,16 @@ public final class ApplicationOuterClass {
     application.v1alpha1.ApplicationOuterClass.ConfigurationOrBuilder getConfigurationOrBuilder();
 
     /**
-     * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+     * <code>string project_id = 13 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 13 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
      * <code>string name_project = 7 [json_name = "nameProject"];</code>
@@ -6685,10 +6691,16 @@ public final class ApplicationOuterClass {
         getProjectDescriptionBytes();
 
     /**
-     * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 14 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
 
     /**
      * <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
@@ -6732,9 +6744,11 @@ public final class ApplicationOuterClass {
       id_ = "";
       name_ = "";
       integration_ = "";
+      projectId_ = "";
       nameProject_ = "";
       projectImage_ = "";
       projectDescription_ = "";
+      organizationId_ = "";
       trafficType_ = 0;
     }
 
@@ -6812,11 +6826,6 @@ public final class ApplicationOuterClass {
 
               break;
             }
-            case 48: {
-
-              projectId_ = input.readUInt32();
-              break;
-            }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -6833,11 +6842,6 @@ public final class ApplicationOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               projectDescription_ = s;
-              break;
-            }
-            case 80: {
-
-              organizationId_ = input.readUInt32();
               break;
             }
             case 90: {
@@ -6857,6 +6861,18 @@ public final class ApplicationOuterClass {
               int rawValue = input.readEnum();
 
               trafficType_ = rawValue;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
               break;
             }
             default: {
@@ -7057,15 +7073,42 @@ public final class ApplicationOuterClass {
       return getConfiguration();
     }
 
-    public static final int PROJECT_ID_FIELD_NUMBER = 6;
-    private int projectId_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 13;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+     * <code>string project_id = 13 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 13 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NAME_PROJECT_FIELD_NUMBER = 7;
@@ -7182,15 +7225,42 @@ public final class ApplicationOuterClass {
       }
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 10;
-    private int organizationId_;
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 14;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 14 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SCALING_FIELD_NUMBER = 11;
@@ -7267,9 +7337,6 @@ public final class ApplicationOuterClass {
       if (configuration_ != null) {
         output.writeMessage(5, getConfiguration());
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(6, projectId_);
-      }
       if (!getNameProjectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nameProject_);
       }
@@ -7279,14 +7346,17 @@ public final class ApplicationOuterClass {
       if (!getProjectDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, projectDescription_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(10, organizationId_);
-      }
       if (scaling_ != null) {
         output.writeMessage(11, getScaling());
       }
       if (trafficType_ != application.v1alpha1.ApplicationOuterClass.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(12, trafficType_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, projectId_);
+      }
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -7314,10 +7384,6 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getConfiguration());
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, projectId_);
-      }
       if (!getNameProjectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nameProject_);
       }
@@ -7327,10 +7393,6 @@ public final class ApplicationOuterClass {
       if (!getProjectDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, projectDescription_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, organizationId_);
-      }
       if (scaling_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getScaling());
@@ -7338,6 +7400,12 @@ public final class ApplicationOuterClass {
       if (trafficType_ != application.v1alpha1.ApplicationOuterClass.TrafficType.TRAFFIC_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, trafficType_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, projectId_);
+      }
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7370,16 +7438,16 @@ public final class ApplicationOuterClass {
         if (!getConfiguration()
             .equals(other.getConfiguration())) return false;
       }
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!getNameProject()
           .equals(other.getNameProject())) return false;
       if (!getProjectImage()
           .equals(other.getProjectImage())) return false;
       if (!getProjectDescription()
           .equals(other.getProjectDescription())) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (hasScaling() != other.hasScaling()) return false;
       if (hasScaling()) {
         if (!getScaling()
@@ -7412,7 +7480,7 @@ public final class ApplicationOuterClass {
         hash = (53 * hash) + getConfiguration().hashCode();
       }
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + NAME_PROJECT_FIELD_NUMBER;
       hash = (53 * hash) + getNameProject().hashCode();
       hash = (37 * hash) + PROJECT_IMAGE_FIELD_NUMBER;
@@ -7420,7 +7488,7 @@ public final class ApplicationOuterClass {
       hash = (37 * hash) + PROJECT_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getProjectDescription().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       if (hasScaling()) {
         hash = (37 * hash) + SCALING_FIELD_NUMBER;
         hash = (53 * hash) + getScaling().hashCode();
@@ -7578,7 +7646,7 @@ public final class ApplicationOuterClass {
           configuration_ = null;
           configurationBuilder_ = null;
         }
-        projectId_ = 0;
+        projectId_ = "";
 
         nameProject_ = "";
 
@@ -7586,7 +7654,7 @@ public final class ApplicationOuterClass {
 
         projectDescription_ = "";
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         if (scalingBuilder_ == null) {
           scaling_ = null;
@@ -7712,8 +7780,9 @@ public final class ApplicationOuterClass {
         if (other.hasConfiguration()) {
           mergeConfiguration(other.getConfiguration());
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
         if (!other.getNameProject().isEmpty()) {
           nameProject_ = other.nameProject_;
@@ -7727,8 +7796,9 @@ public final class ApplicationOuterClass {
           projectDescription_ = other.projectDescription_;
           onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         if (other.hasScaling()) {
           mergeScaling(other.getScaling());
@@ -8231,33 +8301,78 @@ public final class ApplicationOuterClass {
         return configurationBuilder_;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+       * <code>string project_id = 13 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+       * <code>string project_id = 13 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 13 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+       * <code>string project_id = 13 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 13 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -8490,33 +8605,78 @@ public final class ApplicationOuterClass {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 14 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 14 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 14 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 14 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 14 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -8790,16 +8950,28 @@ public final class ApplicationOuterClass {
     application.v1alpha1.ApplicationOuterClass.RepositoryOrBuilder getRepositoryOrBuilder();
 
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 6 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 6 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 7 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 7 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.ListApplication}
@@ -8816,6 +8988,8 @@ public final class ApplicationOuterClass {
     private ListApplication() {
       id_ = "";
       name_ = "";
+      projectId_ = "";
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -8873,14 +9047,16 @@ public final class ApplicationOuterClass {
 
               break;
             }
-            case 32: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
-            case 40: {
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -9017,26 +9193,80 @@ public final class ApplicationOuterClass {
       return getRepository();
     }
 
-    public static final int PROJECT_ID_FIELD_NUMBER = 4;
-    private int projectId_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 6 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 6 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 5;
-    private int organizationId_;
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 7 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 7 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9062,11 +9292,11 @@ public final class ApplicationOuterClass {
       if (repository_ != null) {
         output.writeMessage(3, getRepository());
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(4, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, projectId_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(5, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -9087,13 +9317,11 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRepository());
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, projectId_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9119,10 +9347,10 @@ public final class ApplicationOuterClass {
         if (!getRepository()
             .equals(other.getRepository())) return false;
       }
-      if (getProjectId()
-          != other.getProjectId()) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9143,9 +9371,9 @@ public final class ApplicationOuterClass {
         hash = (53 * hash) + getRepository().hashCode();
       }
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9289,9 +9517,9 @@ public final class ApplicationOuterClass {
           repository_ = null;
           repositoryBuilder_ = null;
         }
-        projectId_ = 0;
+        projectId_ = "";
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -9387,11 +9615,13 @@ public final class ApplicationOuterClass {
         if (other.hasRepository()) {
           mergeRepository(other.getRepository());
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9693,64 +9923,154 @@ public final class ApplicationOuterClass {
         return repositoryBuilder_;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+       * <code>string project_id = 6 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+       * <code>string project_id = 6 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 6 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+       * <code>string project_id = 6 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 6 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 7 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 7 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 7 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 7 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 7 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -9884,19 +10204,19 @@ public final class ApplicationOuterClass {
       "ation.v1alpha1.RepositoryR\nrepository\022I\n" +
       "\rconfiguration\030\005 \001(\0132#.application.v1alp" +
       "ha1.ConfigurationR\rconfiguration\022\035\n\nproj" +
-      "ect_id\030\006 \001(\rR\tprojectId\022!\n\014name_project\030" +
+      "ect_id\030\r \001(\tR\tprojectId\022!\n\014name_project\030" +
       "\007 \001(\tR\013nameProject\022#\n\rproject_image\030\010 \001(" +
       "\tR\014projectImage\022/\n\023project_description\030\t" +
       " \001(\tR\022projectDescription\022\'\n\017organization" +
-      "_id\030\n \001(\rR\016organizationId\0227\n\007scaling\030\013 \001" +
+      "_id\030\016 \001(\tR\016organizationId\0227\n\007scaling\030\013 \001" +
       "(\0132\035.application.v1alpha1.ScalingR\007scali" +
       "ng\022D\n\014traffic_type\030\014 \001(\0162!.application.v" +
       "1alpha1.TrafficTypeR\013trafficType\"\277\001\n\017Lis" +
       "tApplication\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001" +
       "(\tR\004name\022@\n\nrepository\030\003 \001(\0132 .applicati" +
       "on.v1alpha1.RepositoryR\nrepository\022\035\n\npr" +
-      "oject_id\030\004 \001(\rR\tprojectId\022\'\n\017organizatio" +
-      "n_id\030\005 \001(\rR\016organizationId*a\n\013TrafficTyp" +
+      "oject_id\030\006 \001(\tR\tprojectId\022\'\n\017organizatio" +
+      "n_id\030\007 \001(\tR\016organizationId*a\n\013TrafficTyp" +
       "e\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFF" +
       "IC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTER" +
       "NAL\020\002B7Z5github.com/cuemby/ccp-sdk/gen/g" +

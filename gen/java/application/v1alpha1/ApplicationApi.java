@@ -1796,18 +1796,6 @@ public final class ApplicationApi {
         getMsgBytes();
 
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
-
-    /**
      * <code>string id = 3 [json_name = "id"];</code>
      * @return The id.
      */
@@ -1833,7 +1821,6 @@ public final class ApplicationApi {
     }
     private CreateApplicationResponse() {
       msg_ = "";
-      error_ = "";
       id_ = "";
     }
 
@@ -1871,12 +1858,6 @@ public final class ApplicationApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             case 26: {
@@ -1955,44 +1936,6 @@ public final class ApplicationApi {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
@@ -2048,9 +1991,6 @@ public final class ApplicationApi {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
@@ -2065,9 +2005,6 @@ public final class ApplicationApi {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
@@ -2089,8 +2026,6 @@ public final class ApplicationApi {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2106,8 +2041,6 @@ public final class ApplicationApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2245,8 +2178,6 @@ public final class ApplicationApi {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         id_ = "";
 
         return this;
@@ -2276,7 +2207,6 @@ public final class ApplicationApi {
       public application.v1alpha1.ApplicationApi.CreateApplicationResponse buildPartial() {
         application.v1alpha1.ApplicationApi.CreateApplicationResponse result = new application.v1alpha1.ApplicationApi.CreateApplicationResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         result.id_ = id_;
         onBuilt();
         return result;
@@ -2328,10 +2258,6 @@ public final class ApplicationApi {
         if (other == application.v1alpha1.ApplicationApi.CreateApplicationResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         if (!other.getId().isEmpty()) {
@@ -2439,82 +2365,6 @@ public final class ApplicationApi {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -2652,10 +2502,16 @@ public final class ApplicationApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
   }
   /**
    * <pre>
@@ -2674,6 +2530,7 @@ public final class ApplicationApi {
       super(builder);
     }
     private ListApplicationRequest() {
+      projectId_ = "";
     }
 
     @java.lang.Override
@@ -2706,9 +2563,10 @@ public final class ApplicationApi {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
             default: {
@@ -2744,14 +2602,41 @@ public final class ApplicationApi {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2768,8 +2653,8 @@ public final class ApplicationApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (projectId_ != 0) {
-        output.writeUInt32(1, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2780,9 +2665,8 @@ public final class ApplicationApi {
       if (size != -1) return size;
 
       size = 0;
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2799,8 +2683,8 @@ public final class ApplicationApi {
       }
       application.v1alpha1.ApplicationApi.ListApplicationRequest other = (application.v1alpha1.ApplicationApi.ListApplicationRequest) obj;
 
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2813,7 +2697,7 @@ public final class ApplicationApi {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2951,7 +2835,7 @@ public final class ApplicationApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        projectId_ = 0;
+        projectId_ = "";
 
         return this;
       }
@@ -3028,8 +2912,9 @@ public final class ApplicationApi {
 
       public Builder mergeFrom(application.v1alpha1.ApplicationApi.ListApplicationRequest other) {
         if (other == application.v1alpha1.ApplicationApi.ListApplicationRequest.getDefaultInstance()) return this;
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3060,33 +2945,78 @@ public final class ApplicationApi {
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -5182,16 +5112,28 @@ public final class ApplicationApi {
         getIntegrationBytes();
 
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * <pre>
@@ -5213,6 +5155,8 @@ public final class ApplicationApi {
       id_ = "";
       name_ = "";
       integration_ = "";
+      projectId_ = "";
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -5263,14 +5207,16 @@ public final class ApplicationApi {
               integration_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -5428,25 +5374,79 @@ public final class ApplicationApi {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 4;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 5;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5472,11 +5472,11 @@ public final class ApplicationApi {
       if (!getIntegrationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, integration_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(4, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, projectId_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(5, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -5496,13 +5496,11 @@ public final class ApplicationApi {
       if (!getIntegrationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, integration_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, projectId_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5525,10 +5523,10 @@ public final class ApplicationApi {
           .equals(other.getName())) return false;
       if (!getIntegration()
           .equals(other.getIntegration())) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5547,9 +5545,9 @@ public final class ApplicationApi {
       hash = (37 * hash) + INTEGRATION_FIELD_NUMBER;
       hash = (53 * hash) + getIntegration().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5693,9 +5691,9 @@ public final class ApplicationApi {
 
         integration_ = "";
 
-        projectId_ = 0;
+        projectId_ = "";
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -5788,11 +5786,13 @@ public final class ApplicationApi {
           integration_ = other.integration_;
           onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6071,64 +6071,154 @@ public final class ApplicationApi {
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -6200,18 +6290,6 @@ public final class ApplicationApi {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.DeleteApplicationResponse}
@@ -6227,7 +6305,6 @@ public final class ApplicationApi {
     }
     private DeleteApplicationResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -6264,12 +6341,6 @@ public final class ApplicationApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -6342,44 +6413,6 @@ public final class ApplicationApi {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6397,9 +6430,6 @@ public final class ApplicationApi {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -6411,9 +6441,6 @@ public final class ApplicationApi {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6432,8 +6459,6 @@ public final class ApplicationApi {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6447,8 +6472,6 @@ public final class ApplicationApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6584,8 +6607,6 @@ public final class ApplicationApi {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -6613,7 +6634,6 @@ public final class ApplicationApi {
       public application.v1alpha1.ApplicationApi.DeleteApplicationResponse buildPartial() {
         application.v1alpha1.ApplicationApi.DeleteApplicationResponse result = new application.v1alpha1.ApplicationApi.DeleteApplicationResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -6664,10 +6684,6 @@ public final class ApplicationApi {
         if (other == application.v1alpha1.ApplicationApi.DeleteApplicationResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6771,82 +6787,6 @@ public final class ApplicationApi {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -7697,18 +7637,6 @@ public final class ApplicationApi {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code application.v1alpha1.UpdateApplicationResponse}
@@ -7724,7 +7652,6 @@ public final class ApplicationApi {
     }
     private UpdateApplicationResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -7761,12 +7688,6 @@ public final class ApplicationApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -7839,44 +7760,6 @@ public final class ApplicationApi {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7894,9 +7777,6 @@ public final class ApplicationApi {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7908,9 +7788,6 @@ public final class ApplicationApi {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7929,8 +7806,6 @@ public final class ApplicationApi {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7944,8 +7819,6 @@ public final class ApplicationApi {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8081,8 +7954,6 @@ public final class ApplicationApi {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -8110,7 +7981,6 @@ public final class ApplicationApi {
       public application.v1alpha1.ApplicationApi.UpdateApplicationResponse buildPartial() {
         application.v1alpha1.ApplicationApi.UpdateApplicationResponse result = new application.v1alpha1.ApplicationApi.UpdateApplicationResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -8161,10 +8031,6 @@ public final class ApplicationApi {
         if (other == application.v1alpha1.ApplicationApi.UpdateApplicationResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -8271,82 +8137,6 @@ public final class ApplicationApi {
         onChanged();
         return this;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8405,10 +8195,16 @@ public final class ApplicationApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * <pre>
@@ -8427,6 +8223,7 @@ public final class ApplicationApi {
       super(builder);
     }
     private ListApplicationsByOrganizationRequest() {
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -8459,9 +8256,10 @@ public final class ApplicationApi {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -8497,14 +8295,41 @@ public final class ApplicationApi {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8521,8 +8346,8 @@ public final class ApplicationApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organizationId_ != 0) {
-        output.writeUInt32(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -8533,9 +8358,8 @@ public final class ApplicationApi {
       if (size != -1) return size;
 
       size = 0;
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8552,8 +8376,8 @@ public final class ApplicationApi {
       }
       application.v1alpha1.ApplicationApi.ListApplicationsByOrganizationRequest other = (application.v1alpha1.ApplicationApi.ListApplicationsByOrganizationRequest) obj;
 
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8566,7 +8390,7 @@ public final class ApplicationApi {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8704,7 +8528,7 @@ public final class ApplicationApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -8781,8 +8605,9 @@ public final class ApplicationApi {
 
       public Builder mergeFrom(application.v1alpha1.ApplicationApi.ListApplicationsByOrganizationRequest other) {
         if (other == application.v1alpha1.ApplicationApi.ListApplicationsByOrganizationRequest.getDefaultInstance()) return this;
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8813,33 +8638,78 @@ public final class ApplicationApi {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -8923,20 +8793,12 @@ public final class ApplicationApi {
      */
     application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
         int index);
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
+   * <pre>
+   *List Application by organization
+   * </pre>
+   *
    * Protobuf type {@code application.v1alpha1.ListApplicationsByOrganizationResponse}
    */
   public static final class ListApplicationsByOrganizationResponse extends
@@ -8950,7 +8812,6 @@ public final class ApplicationApi {
     }
     private ListApplicationsByOrganizationResponse() {
       applications_ = java.util.Collections.emptyList();
-      error_ = "";
     }
 
     @java.lang.Override
@@ -8991,12 +8852,6 @@ public final class ApplicationApi {
               }
               applications_.add(
                   input.readMessage(application.v1alpha1.ApplicationOuterClass.Application.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -9074,44 +8929,6 @@ public final class ApplicationApi {
       return applications_.get(index);
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9129,9 +8946,6 @@ public final class ApplicationApi {
       for (int i = 0; i < applications_.size(); i++) {
         output.writeMessage(1, applications_.get(i));
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -9144,9 +8958,6 @@ public final class ApplicationApi {
       for (int i = 0; i < applications_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, applications_.get(i));
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9165,8 +8976,6 @@ public final class ApplicationApi {
 
       if (!getApplicationsList()
           .equals(other.getApplicationsList())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9182,8 +8991,6 @@ public final class ApplicationApi {
         hash = (37 * hash) + APPLICATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getApplicationsList().hashCode();
       }
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9280,6 +9087,10 @@ public final class ApplicationApi {
       return builder;
     }
     /**
+     * <pre>
+     *List Application by organization
+     * </pre>
+     *
      * Protobuf type {@code application.v1alpha1.ListApplicationsByOrganizationResponse}
      */
     public static final class Builder extends
@@ -9324,8 +9135,6 @@ public final class ApplicationApi {
         } else {
           applicationsBuilder_.clear();
         }
-        error_ = "";
-
         return this;
       }
 
@@ -9362,7 +9171,6 @@ public final class ApplicationApi {
         } else {
           result.applications_ = applicationsBuilder_.build();
         }
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -9436,10 +9244,6 @@ public final class ApplicationApi {
               applicationsBuilder_.addAllMessages(other.applications_);
             }
           }
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9710,82 +9514,6 @@ public final class ApplicationApi {
         }
         return applicationsBuilder_;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9926,57 +9654,55 @@ public final class ApplicationApi {
       "licationsByIntegrationResponse\022\020\n\003msg\030\001 " +
       "\001(\tR\003msg\"_\n\030CreateApplicationRequest\022C\n\013" +
       "application\030\001 \001(\0132!.application.v1alpha1" +
-      ".ApplicationR\013application\"S\n\031CreateAppli" +
-      "cationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro" +
-      "r\030\002 \001(\tR\005error\022\016\n\002id\030\003 \001(\tR\002id\"7\n\026ListAp" +
-      "plicationRequest\022\035\n\nproject_id\030\001 \001(\rR\tpr" +
-      "ojectId\"d\n\027ListApplicationResponse\022I\n\014ap" +
-      "plications\030\001 \003(\0132%.application.v1alpha1." +
-      "ListApplicationR\014applications\"\'\n\025GetAppl" +
-      "icationRequest\022\016\n\002id\030\001 \001(\tR\002id\"]\n\026GetApp" +
-      "licationResponse\022C\n\013application\030\001 \001(\0132!." +
-      "application.v1alpha1.ApplicationR\013applic" +
-      "ation\"\250\001\n\030DeleteApplicationRequest\022\016\n\002id" +
-      "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013integr" +
-      "ation\030\003 \001(\tR\013integration\022\035\n\nproject_id\030\004" +
-      " \001(\rR\tprojectId\022\'\n\017organization_id\030\005 \001(\r" +
-      "R\016organizationId\"C\n\031DeleteApplicationRes" +
-      "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005" +
-      "error\"|\n\030UpdateApplicationRequest\022\016\n\002id\030" +
-      "\001 \001(\tR\002id\022P\n\013application\030\002 \001(\0132..applica" +
-      "tion.v1alpha1.CreateApplicationRequestR\013" +
-      "application\"C\n\031UpdateApplicationResponse" +
-      "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error" +
-      "\"P\n%ListApplicationsByOrganizationReques" +
-      "t\022\'\n\017organization_id\030\001 \001(\rR\016organization" +
-      "Id\"\205\001\n&ListApplicationsByOrganizationRes" +
-      "ponse\022E\n\014applications\030\001 \003(\0132!.applicatio" +
-      "n.v1alpha1.ApplicationR\014applications\022\024\n\005" +
-      "error\030\002 \001(\tR\005error2\222\007\n\022ApplicationServic" +
-      "e\022t\n\021CreateApplication\022..application.v1a" +
-      "lpha1.CreateApplicationRequest\032/.applica" +
-      "tion.v1alpha1.CreateApplicationResponse\022" +
-      "n\n\017ListApplication\022,.application.v1alpha" +
-      "1.ListApplicationRequest\032-.application.v" +
-      "1alpha1.ListApplicationResponse\022k\n\016GetAp" +
-      "plication\022+.application.v1alpha1.GetAppl" +
-      "icationRequest\032,.application.v1alpha1.Ge" +
-      "tApplicationResponse\022t\n\021DeleteApplicatio" +
-      "n\022..application.v1alpha1.DeleteApplicati" +
-      "onRequest\032/.application.v1alpha1.DeleteA" +
-      "pplicationResponse\022t\n\021UpdateApplication\022" +
-      "..application.v1alpha1.UpdateApplication" +
-      "Request\032/.application.v1alpha1.UpdateApp" +
-      "licationResponse\022\236\001\n\037DeleteApplicationsB" +
-      "yIntegration\022<.application.v1alpha1.Dele" +
-      "teApplicationsByIntegrationRequest\032=.app" +
-      "lication.v1alpha1.DeleteApplicationsByIn" +
-      "tegrationResponse\022\233\001\n\036ListApplicationsBy" +
-      "Organization\022;.application.v1alpha1.List" +
-      "ApplicationsByOrganizationRequest\032<.appl" +
-      "ication.v1alpha1.ListApplicationsByOrgan" +
-      "izationResponseB7Z5github.com/cuemby/ccp" +
-      "-sdk/gen/go/application/v1alpha1b\006proto3"
+      ".ApplicationR\013application\"=\n\031CreateAppli" +
+      "cationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\016\n\002id\030\003" +
+      " \001(\tR\002id\"7\n\026ListApplicationRequest\022\035\n\npr" +
+      "oject_id\030\001 \001(\tR\tprojectId\"d\n\027ListApplica" +
+      "tionResponse\022I\n\014applications\030\001 \003(\0132%.app" +
+      "lication.v1alpha1.ListApplicationR\014appli" +
+      "cations\"\'\n\025GetApplicationRequest\022\016\n\002id\030\001" +
+      " \001(\tR\002id\"]\n\026GetApplicationResponse\022C\n\013ap" +
+      "plication\030\001 \001(\0132!.application.v1alpha1.A" +
+      "pplicationR\013application\"\250\001\n\030DeleteApplic" +
+      "ationRequest\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001" +
+      "(\tR\004name\022 \n\013integration\030\003 \001(\tR\013integrati" +
+      "on\022\035\n\nproject_id\030\004 \001(\tR\tprojectId\022\'\n\017org" +
+      "anization_id\030\005 \001(\tR\016organizationId\"-\n\031De" +
+      "leteApplicationResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\"|\n\030UpdateApplicationRequest\022\016\n\002id\030\001 \001(" +
+      "\tR\002id\022P\n\013application\030\002 \001(\0132..application" +
+      ".v1alpha1.CreateApplicationRequestR\013appl" +
+      "ication\"-\n\031UpdateApplicationResponse\022\020\n\003" +
+      "msg\030\001 \001(\tR\003msg\"P\n%ListApplicationsByOrga" +
+      "nizationRequest\022\'\n\017organization_id\030\001 \001(\t" +
+      "R\016organizationId\"o\n&ListApplicationsByOr" +
+      "ganizationResponse\022E\n\014applications\030\001 \003(\013" +
+      "2!.application.v1alpha1.ApplicationR\014app" +
+      "lications2\222\007\n\022ApplicationService\022t\n\021Crea" +
+      "teApplication\022..application.v1alpha1.Cre" +
+      "ateApplicationRequest\032/.application.v1al" +
+      "pha1.CreateApplicationResponse\022n\n\017ListAp" +
+      "plication\022,.application.v1alpha1.ListApp" +
+      "licationRequest\032-.application.v1alpha1.L" +
+      "istApplicationResponse\022k\n\016GetApplication" +
+      "\022+.application.v1alpha1.GetApplicationRe" +
+      "quest\032,.application.v1alpha1.GetApplicat" +
+      "ionResponse\022t\n\021DeleteApplication\022..appli" +
+      "cation.v1alpha1.DeleteApplicationRequest" +
+      "\032/.application.v1alpha1.DeleteApplicatio" +
+      "nResponse\022t\n\021UpdateApplication\022..applica" +
+      "tion.v1alpha1.UpdateApplicationRequest\032/" +
+      ".application.v1alpha1.UpdateApplicationR" +
+      "esponse\022\236\001\n\037DeleteApplicationsByIntegrat" +
+      "ion\022<.application.v1alpha1.DeleteApplica" +
+      "tionsByIntegrationRequest\032=.application." +
+      "v1alpha1.DeleteApplicationsByIntegration" +
+      "Response\022\233\001\n\036ListApplicationsByOrganizat" +
+      "ion\022;.application.v1alpha1.ListApplicati" +
+      "onsByOrganizationRequest\032<.application.v" +
+      "1alpha1.ListApplicationsByOrganizationRe" +
+      "sponseB7Z5github.com/cuemby/ccp-sdk/gen/" +
+      "go/application/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10006,7 +9732,7 @@ public final class ApplicationApi {
     internal_static_application_v1alpha1_CreateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_CreateApplicationResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", "Id", });
+        new java.lang.String[] { "Msg", "Id", });
     internal_static_application_v1alpha1_ListApplicationRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_application_v1alpha1_ListApplicationRequest_fieldAccessorTable = new
@@ -10042,7 +9768,7 @@ public final class ApplicationApi {
     internal_static_application_v1alpha1_DeleteApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_DeleteApplicationResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_application_v1alpha1_UpdateApplicationRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_application_v1alpha1_UpdateApplicationRequest_fieldAccessorTable = new
@@ -10054,7 +9780,7 @@ public final class ApplicationApi {
     internal_static_application_v1alpha1_UpdateApplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_UpdateApplicationResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_application_v1alpha1_ListApplicationsByOrganizationRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_application_v1alpha1_ListApplicationsByOrganizationRequest_fieldAccessorTable = new
@@ -10066,7 +9792,7 @@ public final class ApplicationApi {
     internal_static_application_v1alpha1_ListApplicationsByOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationsByOrganizationResponse_descriptor,
-        new java.lang.String[] { "Applications", "Error", });
+        new java.lang.String[] { "Applications", });
     application.v1alpha1.ApplicationOuterClass.getDescriptor();
   }
 

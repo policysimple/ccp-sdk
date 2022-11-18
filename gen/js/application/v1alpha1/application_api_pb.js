@@ -769,7 +769,6 @@ proto.application.v1alpha1.CreateApplicationResponse.prototype.toObject = functi
 proto.application.v1alpha1.CreateApplicationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
     id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -811,10 +810,6 @@ proto.application.v1alpha1.CreateApplicationResponse.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
@@ -855,13 +850,6 @@ proto.application.v1alpha1.CreateApplicationResponse.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getId();
   if (f.length > 0) {
     writer.writeString(
@@ -887,24 +875,6 @@ proto.application.v1alpha1.CreateApplicationResponse.prototype.getMsg = function
  */
 proto.application.v1alpha1.CreateApplicationResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.application.v1alpha1.CreateApplicationResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.application.v1alpha1.CreateApplicationResponse} returns this
- */
-proto.application.v1alpha1.CreateApplicationResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -958,7 +928,7 @@ proto.application.v1alpha1.ListApplicationRequest.prototype.toObject = function(
  */
 proto.application.v1alpha1.ListApplicationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -996,7 +966,7 @@ proto.application.v1alpha1.ListApplicationRequest.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     default:
@@ -1029,8 +999,8 @@ proto.application.v1alpha1.ListApplicationRequest.prototype.serializeBinary = fu
 proto.application.v1alpha1.ListApplicationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1039,20 +1009,20 @@ proto.application.v1alpha1.ListApplicationRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional uint32 project_id = 1;
- * @return {number}
+ * optional string project_id = 1;
+ * @return {string}
  */
 proto.application.v1alpha1.ListApplicationRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.application.v1alpha1.ListApplicationRequest} returns this
  */
 proto.application.v1alpha1.ListApplicationRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1532,8 +1502,8 @@ proto.application.v1alpha1.DeleteApplicationRequest.toObject = function(includeI
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     integration: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1583,11 +1553,11 @@ proto.application.v1alpha1.DeleteApplicationRequest.deserializeBinaryFromReader 
       msg.setIntegration(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -1641,15 +1611,15 @@ proto.application.v1alpha1.DeleteApplicationRequest.serializeBinaryToWriter = fu
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -1712,38 +1682,38 @@ proto.application.v1alpha1.DeleteApplicationRequest.prototype.setIntegration = f
 
 
 /**
- * optional uint32 project_id = 4;
- * @return {number}
+ * optional string project_id = 4;
+ * @return {string}
  */
 proto.application.v1alpha1.DeleteApplicationRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.application.v1alpha1.DeleteApplicationRequest} returns this
  */
 proto.application.v1alpha1.DeleteApplicationRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional uint32 organization_id = 5;
- * @return {number}
+ * optional string organization_id = 5;
+ * @return {string}
  */
 proto.application.v1alpha1.DeleteApplicationRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.application.v1alpha1.DeleteApplicationRequest} returns this
  */
 proto.application.v1alpha1.DeleteApplicationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1779,8 +1749,7 @@ proto.application.v1alpha1.DeleteApplicationResponse.prototype.toObject = functi
  */
 proto.application.v1alpha1.DeleteApplicationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1821,10 +1790,6 @@ proto.application.v1alpha1.DeleteApplicationResponse.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1861,13 +1826,6 @@ proto.application.v1alpha1.DeleteApplicationResponse.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -1886,24 +1844,6 @@ proto.application.v1alpha1.DeleteApplicationResponse.prototype.getMsg = function
  */
 proto.application.v1alpha1.DeleteApplicationResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.application.v1alpha1.DeleteApplicationResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.application.v1alpha1.DeleteApplicationResponse} returns this
- */
-proto.application.v1alpha1.DeleteApplicationResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2120,8 +2060,7 @@ proto.application.v1alpha1.UpdateApplicationResponse.prototype.toObject = functi
  */
 proto.application.v1alpha1.UpdateApplicationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2162,10 +2101,6 @@ proto.application.v1alpha1.UpdateApplicationResponse.deserializeBinaryFromReader
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2202,13 +2137,6 @@ proto.application.v1alpha1.UpdateApplicationResponse.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -2227,24 +2155,6 @@ proto.application.v1alpha1.UpdateApplicationResponse.prototype.getMsg = function
  */
 proto.application.v1alpha1.UpdateApplicationResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.application.v1alpha1.UpdateApplicationResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.application.v1alpha1.UpdateApplicationResponse} returns this
- */
-proto.application.v1alpha1.UpdateApplicationResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2280,7 +2190,7 @@ proto.application.v1alpha1.ListApplicationsByOrganizationRequest.prototype.toObj
  */
 proto.application.v1alpha1.ListApplicationsByOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2318,7 +2228,7 @@ proto.application.v1alpha1.ListApplicationsByOrganizationRequest.deserializeBina
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -2351,8 +2261,8 @@ proto.application.v1alpha1.ListApplicationsByOrganizationRequest.prototype.seria
 proto.application.v1alpha1.ListApplicationsByOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2361,20 +2271,20 @@ proto.application.v1alpha1.ListApplicationsByOrganizationRequest.serializeBinary
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.application.v1alpha1.ListApplicationsByOrganizationRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.application.v1alpha1.ListApplicationsByOrganizationRequest} returns this
  */
 proto.application.v1alpha1.ListApplicationsByOrganizationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2418,8 +2328,7 @@ proto.application.v1alpha1.ListApplicationsByOrganizationResponse.prototype.toOb
 proto.application.v1alpha1.ListApplicationsByOrganizationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     applicationsList: jspb.Message.toObjectList(msg.getApplicationsList(),
-    application_v1alpha1_application_pb.Application.toObject, includeInstance),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    application_v1alpha1_application_pb.Application.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2461,10 +2370,6 @@ proto.application.v1alpha1.ListApplicationsByOrganizationResponse.deserializeBin
       reader.readMessage(value,application_v1alpha1_application_pb.Application.deserializeBinaryFromReader);
       msg.addApplications(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2500,13 +2405,6 @@ proto.application.v1alpha1.ListApplicationsByOrganizationResponse.serializeBinar
       1,
       f,
       application_v1alpha1_application_pb.Application.serializeBinaryToWriter
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
     );
   }
 };
@@ -2547,24 +2445,6 @@ proto.application.v1alpha1.ListApplicationsByOrganizationResponse.prototype.addA
  */
 proto.application.v1alpha1.ListApplicationsByOrganizationResponse.prototype.clearApplicationsList = function() {
   return this.setApplicationsList([]);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.application.v1alpha1.ListApplicationsByOrganizationResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.application.v1alpha1.ListApplicationsByOrganizationResponse} returns this
- */
-proto.application.v1alpha1.ListApplicationsByOrganizationResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

@@ -61,11 +61,11 @@ message Application {
     string integration = 3;
     Repository repository = 4;
     Configuration configuration = 5;
-    uint32 project_id = 6;
+    string project_id = 13;
     string name_project = 7;
     string project_image = 8;
     string project_description = 9;
-    uint32 organization_id = 10;
+    string organization_id = 14;
     Scaling scaling = 11;
     TrafficType traffic_type = 12;
 }
@@ -74,6 +74,6 @@ message ListApplication {
     string id = 1;
     string name = 2;
     Repository repository = 3;
-    uint32 project_id = 4;
-    uint32 organization_id = 5;
+    string project_id = 6;
+    string organization_id = 7;
 }

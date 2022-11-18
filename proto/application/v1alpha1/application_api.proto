@@ -31,13 +31,12 @@ message CreateApplicationRequest {
 
 message CreateApplicationResponse {
     string msg = 1;
-    string error = 2;
     string id = 3;
 }
 
 /* LIST */
 message ListApplicationRequest {
-    uint32 project_id = 1;
+    string project_id = 1;
 }
 
 message ListApplicationResponse {
@@ -59,13 +58,12 @@ message DeleteApplicationRequest {
     //requiered for delete in the runtime, vault and pipelines
     string name = 2;
     string integration = 3;
-    uint32 project_id = 4;
-    uint32 organization_id = 5;
+    string project_id = 4;
+    string organization_id = 5;
 }
 
 message DeleteApplicationResponse {
     string msg = 1;
-    string error = 2;
 }
 
 /* UPDATE */
@@ -76,16 +74,13 @@ message UpdateApplicationRequest {
 
 message UpdateApplicationResponse {
     string msg = 1;
-    string error = 2;
 }
-
 //List Application by organization
 message ListApplicationsByOrganizationRequest {
-    uint32 organization_id = 1;
+    string organization_id = 1;
 }
-
+//List Application by organization
 message ListApplicationsByOrganizationResponse {
     repeated Application applications = 1;
-    string error = 2;
 }
 
