@@ -18,13 +18,13 @@ class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      */
-    protected $blockchain_id = '';
+    protected $customer_id = '';
     /**
-     * Generated from protobuf field <code>string blockchain_name = 3 [json_name = "blockchainName"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
      */
-    protected $blockchain_name = '';
+    protected $blochchain = null;
 
     /**
      * Constructor.
@@ -33,8 +33,8 @@ class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $organization_id
-     *     @type string $blockchain_id
-     *     @type string $blockchain_name
+     *     @type string $customer_id
+     *     @type \Payment\V1alpha1\BlockChain $blochchain
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +65,55 @@ class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @return string
      */
-    public function getBlockchainId()
+    public function getCustomerId()
     {
-        return $this->blockchain_id;
+        return $this->customer_id;
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_id = 2 [json_name = "blockchainId"];</code>
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setBlockchainId($var)
+    public function setCustomerId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->blockchain_id = $var;
+        $this->customer_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_name = 3 [json_name = "blockchainName"];</code>
-     * @return string
+     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * @return \Payment\V1alpha1\BlockChain|null
      */
-    public function getBlockchainName()
+    public function getBlochchain()
     {
-        return $this->blockchain_name;
+        return $this->blochchain;
+    }
+
+    public function hasBlochchain()
+    {
+        return isset($this->blochchain);
+    }
+
+    public function clearBlochchain()
+    {
+        unset($this->blochchain);
     }
 
     /**
-     * Generated from protobuf field <code>string blockchain_name = 3 [json_name = "blockchainName"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * @param \Payment\V1alpha1\BlockChain $var
      * @return $this
      */
-    public function setBlockchainName($var)
+    public function setBlochchain($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->blockchain_name = $var;
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\BlockChain::class);
+        $this->blochchain = $var;
 
         return $this;
     }

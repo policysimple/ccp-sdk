@@ -453,3 +453,24 @@ func ConsumeByProject(in *paymentpkgv1.ConsumeByProjectRequest) (response *payme
 	}
 	return response, nil
 }
+
+func CreateBlockchainNodeSubscription(in *paymentpkgv1.BlockChainSubscriptionRequest) (response *paymentpkgv1.BlockChainSubscriptionResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.BlockChainSubscription(ctx, &paymentpkgv1.BlockChainSubscriptionRequest{
+		OrganizationId: in.OrganizationId,
+		CustomerId:    in.CustomerId,
+		Blochchain:   in.Blochchain,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error create blockchain node", err)
+		return nil, fmt.Errorf("%s: %w", "Error create blockchain node", err)
+	}
+	return response, nil
+}

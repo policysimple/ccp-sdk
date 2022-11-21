@@ -26,9 +26,29 @@ class BlockChain extends \Google\Protobuf\Internal\Message
      */
     protected $node_name = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 4 [json_name = "subscription"];</code>
+     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     */
+    protected $budget = '';
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 5 [json_name = "subscription"];</code>
      */
     protected $subscription = null;
+    /**
+     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     */
+    protected $created_at = '';
+    /**
+     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     */
+    protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>bool status = 8 [json_name = "status"];</code>
+     */
+    protected $status = false;
+    /**
+     * Generated from protobuf field <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     */
+    protected $is_suspended = false;
 
     /**
      * Constructor.
@@ -39,7 +59,12 @@ class BlockChain extends \Google\Protobuf\Internal\Message
      *     @type string $blockchain_id
      *     @type string $blockchain_name
      *     @type string $node_name
+     *     @type string $budget
      *     @type \Payment\V1alpha1\Subscription $subscription
+     *     @type string $created_at
+     *     @type string $updated_at
+     *     @type bool $status
+     *     @type bool $is_suspended
      * }
      */
     public function __construct($data = NULL) {
@@ -114,7 +139,29 @@ class BlockChain extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 4 [json_name = "subscription"];</code>
+     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * @return string
+     */
+    public function getBudget()
+    {
+        return $this->budget;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBudget($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->budget = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 5 [json_name = "subscription"];</code>
      * @return \Payment\V1alpha1\Subscription|null
      */
     public function getSubscription()
@@ -133,7 +180,7 @@ class BlockChain extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 4 [json_name = "subscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 5 [json_name = "subscription"];</code>
      * @param \Payment\V1alpha1\Subscription $var
      * @return $this
      */
@@ -141,6 +188,94 @@ class BlockChain extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\Subscription::class);
         $this->subscription = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool status = 8 [json_name = "status"];</code>
+     * @return bool
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool status = 8 [json_name = "status"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     * @return bool
+     */
+    public function getIsSuspended()
+    {
+        return $this->is_suspended;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_suspended = 9 [json_name = "isSuspended"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsSuspended($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_suspended = $var;
 
         return $this;
     }

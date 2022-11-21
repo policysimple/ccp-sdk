@@ -21,6 +21,10 @@ class GetPaymentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string card_id = 2 [json_name = "cardId"];</code>
      */
     protected $card_id = '';
+    /**
+     * Generated from protobuf field <code>string customer_id = 3 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class GetPaymentRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $organization_id
      *     @type string $card_id
+     *     @type string $customer_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class GetPaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->card_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 3 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 3 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
 
         return $this;
     }

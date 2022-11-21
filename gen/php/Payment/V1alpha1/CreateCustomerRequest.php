@@ -25,6 +25,10 @@ class CreateCustomerRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string email = 3 [json_name = "email"];</code>
      */
     protected $email = '';
+    /**
+     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class CreateCustomerRequest extends \Google\Protobuf\Internal\Message
      *     @type string $organization_id
      *     @type string $name
      *     @type string $email
+     *     @type string $customer_id
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class CreateCustomerRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
 
         return $this;
     }

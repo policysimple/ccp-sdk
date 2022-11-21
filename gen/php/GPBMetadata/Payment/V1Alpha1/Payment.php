@@ -16,8 +16,8 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-ä
-payment/v1alpha1/payment.protopayment.v1alpha1"›
+—
+payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
 customer_id (	R
@@ -30,13 +30,14 @@ customerId\'
 invoice (2.payment.v1alpha1.InvoiceRinvoice0
 biling	 (2.payment.v1alpha1.BilingRbiling5
 projects
- (2.payment.v1alpha1.ProjectRprojects"Á
-Project
-id (	Rid
+ (2.payment.v1alpha1.ProjectRprojects>
+blockchains (2.payment.v1alpha1.BlockChainRblockchains"É
+Project
 
-project_id (	R	projectId
-name (	Rname
-image (	Rimage 
+project_id (	R	projectId
+name (	Rname
+image (	Rimage
+budget (	Rbudget 
 description (	Rdescription
 
 created_at (	R	createdAt
@@ -45,21 +46,18 @@ updated_at (	R	updatedAtB
 subscription (2.payment.v1alpha1.SubscriptionRsubscription
 status	 (Rstatus!
 is_suspended
- (RisSuspended"Ë
-Subscription
-id (	Rid\'
-subscription_id (	RsubscriptionId0
-subscription_item_id (	RsubscriptionItemId
+ (RisSuspended"¥
+Subscription\'
+subscription_id (	RsubscriptionId0
+subscription_item_id (	RsubscriptionItemId
 
-invoice_id (	R	invoiceId
-price (	Rprice
-	price_cpu (	RpriceCpu
-price_bytes (	R
+invoice_id (	R	invoiceId
+	price_cpu (	RpriceCpu
+price_bytes (	R
 priceBytes%
-price_pipeline (	RpricePipeline
-currency	 (	Rcurrency
-interval
- (	Rinterval"·
+price_pipeline (	RpricePipeline
+currency (	Rcurrency
+interval (	Rinterval"·
 Payment
 card_id (	RcardId
 default (Rdefault
@@ -135,13 +133,20 @@ project_id (	R	projectId!
 cpu (	Rcpu
 pipeline (	Rpipeline"L
 ProjectBillingList6
-items (2 .payment.v1alpha1.ProjectBillingRitems"»
+items (2 .payment.v1alpha1.ProjectBillingRitems"Ì
 
 BlockChain#
 blockchain_id (	RblockchainId\'
 blockchain_name (	RblockchainName
-	node_name (	RnodeNameB
-subscription (2.payment.v1alpha1.SubscriptionRsubscriptionB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
+	node_name (	RnodeName
+budget (	RbudgetB
+subscription (2.payment.v1alpha1.SubscriptionRsubscription
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt
+status (Rstatus!
+is_suspended	 (RisSuspendedB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
