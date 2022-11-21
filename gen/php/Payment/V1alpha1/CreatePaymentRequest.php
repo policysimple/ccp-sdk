@@ -18,6 +18,10 @@ class CreatePaymentRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = '';
     /**
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
+    /**
      * Generated from protobuf field <code>.payment.v1alpha1.Payment payment = 3 [json_name = "payment"];</code>
      */
     protected $payment = null;
@@ -29,6 +33,7 @@ class CreatePaymentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $organization_id
+     *     @type string $customer_id
      *     @type \Payment\V1alpha1\Payment $payment
      * }
      */
@@ -55,6 +60,28 @@ class CreatePaymentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
 
         return $this;
     }

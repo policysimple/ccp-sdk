@@ -80,6 +80,7 @@ message InvoiceFilterResponse {
 
 message DeleteCustomerRequest {
     string organization_id = 1;
+    string customer_id = 2;
 }
 
 message DeleteCustomerResponse {
@@ -107,6 +108,7 @@ message GetOrganizationResponse {
 
 message GetCustomerRequest {
     string organization_id = 1;
+    string customer_id = 2;
 }  
 
 message GetCustomerResponse {
@@ -126,6 +128,7 @@ message GetBilingMonthResponse {
 
 message GetPaymentsRequest {
     string organization_id = 1;
+    string customer_id = 2;
 }
 
 message GetPaymentsResponse {
@@ -135,7 +138,8 @@ message GetPaymentsResponse {
 
 message CreateSubscriptionRequest {
     string organization_id = 1;
-    payment.v1alpha1.Subscription subscription = 2;
+    string customer_id = 2;
+    payment.v1alpha1.Subscription subscription = 3;
 }
 message CreateSubscriptionResponse {
     payment.v1alpha1.Subscription subscription = 1;
@@ -143,18 +147,21 @@ message CreateSubscriptionResponse {
 }
 
 message UpdateSubscriptionRequest {
-    string subscription_id = 1;
-    string organization_id = 2;  
+    string organization_id = 1;
+    string customer_id = 2; 
+    string subscription_id = 3;
+     
 }
 
 message UpdateSubscriptionResponse {
-    payment.v1alpha1.Customer customer = 1;
+    string status = 1;
     string error = 2;
 }
 
 message CreateProjectRequest {
     string organization_id = 1;
-    payment.v1alpha1.Project project = 2;
+    string customer_id = 2;
+    payment.v1alpha1.Project project = 3;
 }
 
 message CreateProjectResponse {
@@ -200,6 +207,7 @@ message CreateCustomerRequest {
     string organization_id = 1;
     string name = 2;
 	string email = 3;
+    string customer_id = 4;
 	
 }
 
@@ -210,6 +218,7 @@ message CreateCustomerResponse {
 
 message CreatePaymentRequest {
     string organization_id = 1;
+    string customer_id = 2;
     payment.v1alpha1.Payment payment = 3;
 }
 message CreatePaymentResponse {
@@ -220,6 +229,7 @@ message CreatePaymentResponse {
 message DeletePaymentRequest {
     string organization_id = 1;
     string card_id = 2;
+    string customer_id = 3;
 }
 
 message DeletePaymentResponse {
@@ -230,6 +240,7 @@ message DeletePaymentResponse {
 message GetPaymentRequest {
     string organization_id = 1;
     string card_id = 2;
+    string customer_id = 3;
 }
 
 message GetPaymentResponse {
@@ -239,6 +250,7 @@ message GetPaymentResponse {
 
 message ListPaymentRequest {
     string organization_id = 1;
+    string customer_id = 2;
 }
 
 message ListPaymentResponse {
@@ -309,8 +321,8 @@ message ConsumeByProjectResponse{
 
 message BlockChainSubscriptionRequest{
     string organization_id = 1;
-    string blockchain_id = 2;
-    string blockchain_name = 3;
+    string customer_id = 2;
+    payment.v1alpha1.BlockChain blochchain = 3;
 }
 
 message BlockChainSubscriptionResponse{

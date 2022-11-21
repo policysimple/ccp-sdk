@@ -14,21 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class Project extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     */
-    protected $id = '';
-    /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      */
     protected $project_id = '';
     /**
-     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string image = 4 [json_name = "image"];</code>
+     * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      */
     protected $image = '';
+    /**
+     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     */
+    protected $budget = '';
     /**
      * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
      */
@@ -60,10 +60,10 @@ class Project extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
      *     @type string $project_id
      *     @type string $name
      *     @type string $image
+     *     @type string $budget
      *     @type string $description
      *     @type string $created_at
      *     @type string $updated_at
@@ -78,29 +78,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      * @return string
      */
     public function getProjectId()
@@ -109,7 +87,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 1 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
@@ -122,7 +100,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      * @return string
      */
     public function getName()
@@ -131,7 +109,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 3 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      * @param string $var
      * @return $this
      */
@@ -144,7 +122,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string image = 4 [json_name = "image"];</code>
+     * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      * @return string
      */
     public function getImage()
@@ -153,7 +131,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string image = 4 [json_name = "image"];</code>
+     * Generated from protobuf field <code>string image = 3 [json_name = "image"];</code>
      * @param string $var
      * @return $this
      */
@@ -161,6 +139,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * @return string
+     */
+    public function getBudget()
+    {
+        return $this->budget;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBudget($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->budget = $var;
 
         return $this;
     }

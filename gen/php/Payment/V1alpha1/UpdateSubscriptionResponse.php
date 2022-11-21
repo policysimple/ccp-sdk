@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSubscriptionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      */
-    protected $customer = null;
+    protected $status = '';
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class UpdateSubscriptionResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Customer $customer
+     *     @type string $status
      *     @type string $error
      * }
      */
@@ -38,33 +38,23 @@ class UpdateSubscriptionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @return \Payment\V1alpha1\Customer|null
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * @return string
      */
-    public function getCustomer()
+    public function getStatus()
     {
-        return $this->customer;
-    }
-
-    public function hasCustomer()
-    {
-        return isset($this->customer);
-    }
-
-    public function clearCustomer()
-    {
-        unset($this->customer);
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Customer customer = 1 [json_name = "customer"];</code>
-     * @param \Payment\V1alpha1\Customer $var
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setCustomer($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Customer::class);
-        $this->customer = $var;
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }

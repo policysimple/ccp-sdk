@@ -53,6 +53,10 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 10 [json_name = "projects"];</code>
      */
     private $projects;
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.BlockChain blockchains = 11 [json_name = "blockchains"];</code>
+     */
+    private $blockchains;
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type \Payment\V1alpha1\Invoice $invoice
      *     @type \Payment\V1alpha1\Biling $biling
      *     @type \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
+     *     @type \Payment\V1alpha1\BlockChain[]|\Google\Protobuf\Internal\RepeatedField $blockchains
      * }
      */
     public function __construct($data = NULL) {
@@ -323,6 +328,28 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\Project::class);
         $this->projects = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.BlockChain blockchains = 11 [json_name = "blockchains"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getBlockchains()
+    {
+        return $this->blockchains;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.BlockChain blockchains = 11 [json_name = "blockchains"];</code>
+     * @param \Payment\V1alpha1\BlockChain[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setBlockchains($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Payment\V1alpha1\BlockChain::class);
+        $this->blockchains = $arr;
 
         return $this;
     }
