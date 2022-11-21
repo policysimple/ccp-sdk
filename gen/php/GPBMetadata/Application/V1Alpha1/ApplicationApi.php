@@ -17,21 +17,20 @@ class ApplicationApi
         \GPBMetadata\Application\V1Alpha1\Application::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
+∑
 *application/v1alpha1/application_api.protoapplication.v1alpha1"O
 &DeleteApplicationsByIntegrationRequest%
 integration_id (	RintegrationId";
 \'DeleteApplicationsByIntegrationResponse
 msg (	Rmsg"_
 CreateApplicationRequestC
-application (2!.application.v1alpha1.ApplicationRapplication"S
+application (2!.application.v1alpha1.ApplicationRapplication"=
 CreateApplicationResponse
-msg (	Rmsg
-error (	Rerror
+msg (	Rmsg
 id (	Rid"7
 ListApplicationRequest
 
-project_id (R	projectId"d
+project_id (	R	projectId"d
 ListApplicationResponseI
 applications (2%.application.v1alpha1.ListApplicationRapplications"\'
 GetApplicationRequest
@@ -43,22 +42,19 @@ project_id (R	projectId"d
 name (	Rname 
 integration (	Rintegration
 
-project_id (R	projectId\'
-organization_id (RorganizationId"C
+project_id (	R	projectId\'
+organization_id (	RorganizationId"-
 DeleteApplicationResponse
-msg (	Rmsg
-error (	Rerror"|
+msg (	Rmsg"|
 UpdateApplicationRequest
 id (	RidP
-application (2..application.v1alpha1.CreateApplicationRequestRapplication"C
+application (2..application.v1alpha1.CreateApplicationRequestRapplication"-
 UpdateApplicationResponse
-msg (	Rmsg
-error (	Rerror"P
+msg (	Rmsg"P
 %ListApplicationsByOrganizationRequest\'
-organization_id (RorganizationId"Ö
+organization_id (	RorganizationId"o
 &ListApplicationsByOrganizationResponseE
-applications (2!.application.v1alpha1.ApplicationRapplications
-error (	Rerror2í
+applications (2!.application.v1alpha1.ApplicationRapplications2í
 ApplicationServicet
 CreateApplication..application.v1alpha1.CreateApplicationRequest/.application.v1alpha1.CreateApplicationResponsen
 ListApplication,.application.v1alpha1.ListApplicationRequest-.application.v1alpha1.ListApplicationResponsek

@@ -2889,10 +2889,16 @@ public final class Organizations {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest}
@@ -2907,6 +2913,7 @@ public final class Organizations {
       super(builder);
     }
     private DeleteOrganizationRequest() {
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -2939,9 +2946,10 @@ public final class Organizations {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -2977,14 +2985,41 @@ public final class Organizations {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3001,8 +3036,8 @@ public final class Organizations {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organizationId_ != 0) {
-        output.writeUInt32(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3013,9 +3048,8 @@ public final class Organizations {
       if (size != -1) return size;
 
       size = 0;
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3032,8 +3066,8 @@ public final class Organizations {
       }
       accounts.v1alpha1.organizations.v1.Organizations.DeleteOrganizationRequest other = (accounts.v1alpha1.organizations.v1.Organizations.DeleteOrganizationRequest) obj;
 
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3046,7 +3080,7 @@ public final class Organizations {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3180,7 +3214,7 @@ public final class Organizations {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -3257,8 +3291,9 @@ public final class Organizations {
 
       public Builder mergeFrom(accounts.v1alpha1.organizations.v1.Organizations.DeleteOrganizationRequest other) {
         if (other == accounts.v1alpha1.organizations.v1.Organizations.DeleteOrganizationRequest.getDefaultInstance()) return this;
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3289,33 +3324,78 @@ public final class Organizations {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -12073,7 +12153,7 @@ public final class Organizations {
       "\030\001 \001(\rR\016organizationId\022\022\n\004name\030\002 \001(\tR\004na" +
       "me\022 \n\013description\030\003 \001(\tR\013description\022\024\n\005" +
       "image\030\004 \001(\tR\005image\"D\n\031DeleteOrganization" +
-      "Request\022\'\n\017organization_id\030\001 \001(\rR\016organi" +
+      "Request\022\'\n\017organization_id\030\001 \001(\tR\016organi" +
       "zationId\"\360\002\n\032GetOneOrganizationResponse\022" +
       "\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005i" +
       "mage\030\003 \001(\tR\005image\022S\n\010projects\030\004 \003(\01327.ac" +

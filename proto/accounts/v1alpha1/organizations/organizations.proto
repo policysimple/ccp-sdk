@@ -35,7 +35,7 @@ message UpdateOrganizationRequest {
 
 
 message DeleteOrganizationRequest {
-    uint32 organization_id = 1;
+    string organization_id = 1;
 }
 
 

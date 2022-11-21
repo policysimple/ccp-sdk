@@ -34,9 +34,9 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $configuration = null;
     /**
-     * Generated from protobuf field <code>uint32 project_id = 6 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 13 [json_name = "projectId"];</code>
      */
-    protected $project_id = 0;
+    protected $project_id = '';
     /**
      * Generated from protobuf field <code>string name_project = 7 [json_name = "nameProject"];</code>
      */
@@ -50,9 +50,9 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $project_description = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 14 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = 0;
+    protected $organization_id = '';
     /**
      * Generated from protobuf field <code>.application.v1alpha1.Scaling scaling = 11 [json_name = "scaling"];</code>
      */
@@ -73,11 +73,11 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type string $integration
      *     @type \Application\V1alpha1\Repository $repository
      *     @type \Application\V1alpha1\Configuration $configuration
-     *     @type int $project_id
+     *     @type string $project_id
      *     @type string $name_project
      *     @type string $project_image
      *     @type string $project_description
-     *     @type int $organization_id
+     *     @type string $organization_id
      *     @type \Application\V1alpha1\Scaling $scaling
      *     @type int $traffic_type
      * }
@@ -218,8 +218,8 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 6 [json_name = "projectId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string project_id = 13 [json_name = "projectId"];</code>
+     * @return string
      */
     public function getProjectId()
     {
@@ -227,13 +227,13 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 6 [json_name = "projectId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string project_id = 13 [json_name = "projectId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setProjectId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;
@@ -306,8 +306,8 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * @return string
      */
     public function getOrganizationId()
     {
@@ -315,13 +315,13 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 10 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->organization_id = $var;
 
         return $this;

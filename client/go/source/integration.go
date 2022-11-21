@@ -70,7 +70,7 @@ func DeleteIntegration(req *sourcepkgv1.DeleteIntegrationRequest) (*sourcepkgv1.
 	return response, nil
 }
 
-func DeleteIntegrationsByOrganization(OrganizationId uint32) (*sourcepkgv1.DeleteIntegrationsByOrganizationResponse, error) {
+func DeleteIntegrationsByOrganization(OrganizationId string) (*sourcepkgv1.DeleteIntegrationsByOrganizationResponse, error) {
 	log.Println("DeleteIntegrationsByOrganization")
 
 	d, err := time.ParseDuration(sourceServiceTimeout)
@@ -80,7 +80,7 @@ func DeleteIntegrationsByOrganization(OrganizationId uint32) (*sourcepkgv1.Delet
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
-	response, err := client.DeleteIntegrationsByOrganization(ctx, &sourcepkgv1.DeleteIntegrationsByOrganizationRequest{OrganizationId: OrganizationId})
+	response, err := client.DeleteIntegrationsByOrganization(ctx, &sourcepkgv1.DeleteIntegrationsByOrganizationRequest{OrganizationUid: OrganizationId})
 	if err != nil {
 		return nil, fmt.Errorf("[DeleteIntegrationsByOrganization] %w", err)
 	}
