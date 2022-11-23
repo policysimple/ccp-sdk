@@ -13,12 +13,12 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
-var client projectspkgv1.ProjectServiceClient
-
-var doOnce sync.Once
-
-var projectServiceUri string
-var projectServiceTimeout string
+var (
+	client                projectspkgv1.ProjectServiceClient
+	doOnce                sync.Once
+	projectServiceUri     string
+	projectServiceTimeout string
+)
 
 func init() {
 	doOnce.Do(func() {

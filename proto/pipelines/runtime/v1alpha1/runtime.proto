@@ -21,8 +21,8 @@ message Runtime {
   string id = 1;
   string name = 2;
   repeated IntanceType instance_types= 3;
-  uint32 organization_id = 4;
-  uint32 project_id = 5;
+  string organization_id = 4;
+  string project_id = 5;
   string name_project = 6;
   string application_id = 7;
   string workspace_id = 8;

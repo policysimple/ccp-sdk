@@ -105,7 +105,7 @@ public final class EnvironmentAPIProto {
       "ponse\022M\n\013environment\030\001 \001(\0132+.pipelines.e" +
       "nvironment.v1alpha1.EnvironmentR\013environ" +
       "ment\022\026\n\006status\030\002 \001(\tR\006status\"7\n\026ListEnvi" +
-      "ronmentRequest\022\035\n\nproject_id\030\001 \001(\rR\tproj" +
+      "ronmentRequest\022\035\n\nproject_id\030\001 \001(\tR\tproj" +
       "ectId\"h\n\027ListEnvironmentResponse\022M\n\013envi" +
       "ronment\030\001 \003(\0132+.pipelines.environment.v1" +
       "alpha1.EnvironmentR\013environment\"Z\n\030Delet" +

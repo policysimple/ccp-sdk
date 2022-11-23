@@ -1348,7 +1348,7 @@ proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.prototype.toObject =
  */
 proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1386,7 +1386,7 @@ proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     default:
@@ -1419,8 +1419,8 @@ proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.prototype.serializeB
 proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1429,20 +1429,20 @@ proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.serializeBinaryToWri
 
 
 /**
- * optional uint32 project_id = 1;
- * @return {number}
+ * optional string project_id = 1;
+ * @return {string}
  */
 proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.pipelines.environment.v1alpha1.ListEnvironmentRequest} returns this
  */
 proto.pipelines.environment.v1alpha1.ListEnvironmentRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

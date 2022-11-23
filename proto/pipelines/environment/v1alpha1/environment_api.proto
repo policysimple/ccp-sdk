@@ -52,7 +52,7 @@ message UpdateEnvironmentResponse {
 }
 
 message ListEnvironmentRequest {
-    uint32 project_id = 1; 
+    string project_id = 1; 
 }
 
 message ListEnvironmentResponse {

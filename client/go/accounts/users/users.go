@@ -11,6 +11,7 @@ import (
 
 	accountpkgv1 "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/users"
 
+	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
@@ -83,9 +84,7 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 	} else if req.ProjectId > 0 {
 		checkUser.ProjectId = req.ProjectId
 	} else {
-		return &accountpkgv1.CheckUserResponse{
-			Error: "OrganizationId or ProjectId is required",
-		}, nil
+		return nil, status.Error(codes.InvalidArgument, "OrganizationId or ProjectId is required")
 	}
 
 	if len(req.RolesIds) > 0 {
@@ -99,14 +98,9 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 
 	if err != nil {
 		bylogs.LogErr("CheckUser Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error CheckUser: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("CheckUser Client Sdk", "Success")
+		return nil, fmt.Errorf("[Error CheckUser] %w", err)
 	}
-
+	bylogs.LogInfo("CheckUser Client Sdk", "Success")
 	return response, nil
 }
 
@@ -114,7 +108,19 @@ func SendVerificationEmail(req *accountpkgv1.SendVerificationEmailRequest) (*acc
 	bylogs.LogInfo("SendVerificationEmail Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {
-		return nil, err
+		st := status.New(codes.InvalidArgument, "Error SendVerificationEmail")
+		detail := errdetails.ErrorInfo{
+			Reason: "Error SendVerificationEmail",
+			Domain: "accounts",
+			Metadata: map[string]string{
+				"error": err.Error(),
+			},
+		}
+		st, err := st.WithDetails(&detail)
+		if err != nil {
+			return nil, err
+		}
+		return nil, st.Err()
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
@@ -122,13 +128,9 @@ func SendVerificationEmail(req *accountpkgv1.SendVerificationEmailRequest) (*acc
 	response, err := client.SendVerificationEmail(ctx, req)
 	if err != nil {
 		bylogs.LogErr("SendVerificationEmail Client Sdk", err)
-		return nil, status.Errorf(
-			codes.InvalidArgument,
-			fmt.Sprintf("Error SendVerificationEmail: %v", err),
-		)
-	} else {
-		bylogs.LogInfo("SendVerificationEmail Client Sdk", "Success")
+		return nil, fmt.Errorf("[SendVerificationEmail]: %w", err)
 	}
+	bylogs.LogInfo("SendVerificationEmail Client Sdk", "Success")
 	return response, nil
 }
 
