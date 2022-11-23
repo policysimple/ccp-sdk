@@ -20,9 +20,9 @@ class Environment
 0pipelines/environment/v1alpha1/environment.protopipelines.environment.v1alpha1"•
 Environment
 id (	Rid\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId
+project_id (	R	projectId
 name (	Rname
 active (Ractive
 status_type (	R

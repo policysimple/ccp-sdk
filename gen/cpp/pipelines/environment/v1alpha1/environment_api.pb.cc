@@ -98,7 +98,7 @@ struct UpdateEnvironmentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateEnvironmentResponseDefaultTypeInternal _UpdateEnvironmentResponse_default_instance_;
 constexpr ListEnvironmentRequest::ListEnvironmentRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : project_id_(0u){}
+  : project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ListEnvironmentRequestDefaultTypeInternal {
   constexpr ListEnvironmentRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -311,7 +311,7 @@ const char descriptor_table_protodef_pipelines_2fenvironment_2fv1alpha1_2fenviro
   "ponse\022M\n\013environment\030\001 \001(\0132+.pipelines.e"
   "nvironment.v1alpha1.EnvironmentR\013environ"
   "ment\022\026\n\006status\030\002 \001(\tR\006status\"7\n\026ListEnvi"
-  "ronmentRequest\022\035\n\nproject_id\030\001 \001(\rR\tproj"
+  "ronmentRequest\022\035\n\nproject_id\030\001 \001(\tR\tproj"
   "ectId\"h\n\027ListEnvironmentResponse\022M\n\013envi"
   "ronment\030\001 \003(\0132+.pipelines.environment.v1"
   "alpha1.EnvironmentR\013environment\"Z\n\030Delet"
@@ -1831,12 +1831,16 @@ ListEnvironmentRequest::ListEnvironmentRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 ListEnvironmentRequest::ListEnvironmentRequest(const ListEnvironmentRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  project_id_ = from.project_id_;
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.environment.v1alpha1.ListEnvironmentRequest)
 }
 
 inline void ListEnvironmentRequest::SharedCtor() {
-project_id_ = 0u;
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ListEnvironmentRequest::~ListEnvironmentRequest() {
@@ -1848,6 +1852,7 @@ ListEnvironmentRequest::~ListEnvironmentRequest() {
 
 inline void ListEnvironmentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListEnvironmentRequest::ArenaDtor(void* object) {
@@ -1866,7 +1871,7 @@ void ListEnvironmentRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  project_id_ = 0u;
+  project_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1876,10 +1881,12 @@ const char* ListEnvironmentRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 project_id = 1 [json_name = "projectId"];
+      // string project_id = 1 [json_name = "projectId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.environment.v1alpha1.ListEnvironmentRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1912,10 +1919,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 project_id = 1 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_project_id(), target);
+  // string project_id = 1 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.environment.v1alpha1.ListEnvironmentRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_project_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1934,10 +1945,10 @@ size_t ListEnvironmentRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 project_id = 1 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
+  // string project_id = 1 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_project_id());
   }
 
@@ -1969,7 +1980,7 @@ void ListEnvironmentRequest::MergeFrom(const ListEnvironmentRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_project_id() != 0) {
+  if (!from._internal_project_id().empty()) {
     _internal_set_project_id(from._internal_project_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1989,7 +2000,11 @@ bool ListEnvironmentRequest::IsInitialized() const {
 void ListEnvironmentRequest::InternalSwap(ListEnvironmentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(project_id_, other->project_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListEnvironmentRequest::GetMetadata() const {

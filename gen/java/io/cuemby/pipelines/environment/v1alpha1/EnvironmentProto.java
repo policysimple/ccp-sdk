@@ -31,8 +31,8 @@ public final class EnvironmentProto {
       "\n0pipelines/environment/v1alpha1/environ" +
       "ment.proto\022\036pipelines.environment.v1alph" +
       "a1\"\225\002\n\013Environment\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017or" +
-      "ganization_id\030\002 \001(\rR\016organizationId\022\035\n\np" +
-      "roject_id\030\003 \001(\rR\tprojectId\022\022\n\004name\030\004 \001(\t" +
+      "ganization_id\030\002 \001(\tR\016organizationId\022\035\n\np" +
+      "roject_id\030\003 \001(\tR\tprojectId\022\022\n\004name\030\004 \001(\t" +
       "R\004name\022\026\n\006active\030\005 \001(\010R\006active\022\037\n\013status" +
       "_type\030\006 \001(\tR\nstatusType\022#\n\rinternal_name" +
       "\030\007 \001(\tR\014internalName\022\035\n\ncreated_at\030\t \001(\t" +

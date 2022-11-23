@@ -35,6 +35,22 @@ func init() {
 	})
 }
 
+func CreateApplication(req *applicationpkgv1.CreateApplicationRequest) (*applicationpkgv1.CreateApplicationResponse, error) {
+	bylogs.LogInfo("CreateApplicationRequest")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.CreateApplication(ctx, req)
+	if err != nil {
+		return nil, fmt.Errorf("[CreateApplication] %w", err)
+	}
+	return response, nil
+}
+
 func GetOneApplicationById(applicationId string) (response *applicationpkgv1.GetApplicationResponse, err error) {
 	bylogs.LogInfo("GetOneApplicationById: ", applicationId)
 	d, err := time.ParseDuration(applicationServiceTimeout)

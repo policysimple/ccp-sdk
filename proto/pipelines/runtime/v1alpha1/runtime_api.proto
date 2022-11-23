@@ -63,8 +63,8 @@ message DeleteRuntimeRequest {
     string runtime_id = 1;
     string name = 2;
     string integration = 3;
-    uint32 project_id = 4;
-    uint32 organization_id = 5;
+    string project_id = 4;
+    string organization_id = 5;
     string user_id = 6;
 }
 
@@ -77,8 +77,8 @@ message DeleteRuntimesByApplicationRequest {
     string application_id = 1;
     string name_application = 2;
     string integration_id = 3;
-    uint32 project_id = 4;
-    uint32 organization_id = 5;
+    string project_id = 4;
+    string organization_id = 5;
 }
 
 message DeleteRuntimesByApplicationResponse {
@@ -106,7 +106,7 @@ message GetRuntimeResponse {
 }
 
 message ListRuntimesRequest {
-    uint32 project_id = 1;
+    string project_id = 1;
 }
 
 message ListRuntimesResponse {
@@ -118,8 +118,8 @@ message ResponseMessageDeleteRuntimeByAppIdRequest {
     string application_id = 1;
     string name_application = 2;
     string integration_id = 3;
-    uint32 project_id = 4;
-    uint32 organization_id = 5;
+    string project_id = 4;
+    string organization_id = 5;
 }
 
 message ResponseMessageDeleteRuntimeByAppIdResponse {

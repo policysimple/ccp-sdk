@@ -83,8 +83,8 @@ public final class RuntimeProto {
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N" +
       "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti" +
       "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'" +
-      "\n\017organization_id\030\004 \001(\rR\016organizationId\022" +
-      "\035\n\nproject_id\030\005 \001(\rR\tprojectId\022!\n\014name_p" +
+      "\n\017organization_id\030\004 \001(\tR\016organizationId\022" +
+      "\035\n\nproject_id\030\005 \001(\tR\tprojectId\022!\n\014name_p" +
       "roject\030\006 \001(\tR\013nameProject\022%\n\016application" +
       "_id\030\007 \001(\tR\rapplicationId\022!\n\014workspace_id" +
       "\030\010 \001(\tR\013workspaceId\022%\n\016environment_id\030\t " +

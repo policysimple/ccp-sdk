@@ -19,6 +19,8 @@ private static final long serialVersionUID = 0L;
     applicationId_ = "";
     nameApplication_ = "";
     integrationId_ = "";
+    projectId_ = "";
+    organizationId_ = "";
   }
 
   @java.lang.Override
@@ -69,14 +71,16 @@ private static final long serialVersionUID = 0L;
             integrationId_ = s;
             break;
           }
-          case 32: {
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = input.readUInt32();
+            projectId_ = s;
             break;
           }
-          case 40: {
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            organizationId_ = input.readUInt32();
+            organizationId_ = s;
             break;
           }
           default: {
@@ -226,25 +230,79 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 4;
-  private int projectId_;
+  private volatile java.lang.Object projectId_;
   /**
-   * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+   * <code>string project_id = 4 [json_name = "projectId"];</code>
    * @return The projectId.
    */
   @java.lang.Override
-  public int getProjectId() {
-    return projectId_;
+  public java.lang.String getProjectId() {
+    java.lang.Object ref = projectId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      projectId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string project_id = 4 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProjectIdBytes() {
+    java.lang.Object ref = projectId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      projectId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 5;
-  private int organizationId_;
+  private volatile java.lang.Object organizationId_;
   /**
-   * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 5 [json_name = "organizationId"];</code>
    * @return The organizationId.
    */
   @java.lang.Override
-  public int getOrganizationId() {
-    return organizationId_;
+  public java.lang.String getOrganizationId() {
+    java.lang.Object ref = organizationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationIdBytes() {
+    java.lang.Object ref = organizationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organizationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,11 +328,11 @@ private static final long serialVersionUID = 0L;
     if (!getIntegrationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, integrationId_);
     }
-    if (projectId_ != 0) {
-      output.writeUInt32(4, projectId_);
+    if (!getProjectIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, projectId_);
     }
-    if (organizationId_ != 0) {
-      output.writeUInt32(5, organizationId_);
+    if (!getOrganizationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, organizationId_);
     }
     unknownFields.writeTo(output);
   }
@@ -294,13 +352,11 @@ private static final long serialVersionUID = 0L;
     if (!getIntegrationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, integrationId_);
     }
-    if (projectId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(4, projectId_);
+    if (!getProjectIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, projectId_);
     }
-    if (organizationId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(5, organizationId_);
+    if (!getOrganizationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, organizationId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -323,10 +379,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNameApplication())) return false;
     if (!getIntegrationId()
         .equals(other.getIntegrationId())) return false;
-    if (getProjectId()
-        != other.getProjectId()) return false;
-    if (getOrganizationId()
-        != other.getOrganizationId()) return false;
+    if (!getProjectId()
+        .equals(other.getProjectId())) return false;
+    if (!getOrganizationId()
+        .equals(other.getOrganizationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -345,9 +401,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INTEGRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getIntegrationId().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProjectId();
+    hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getOrganizationId();
+    hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -487,9 +543,9 @@ private static final long serialVersionUID = 0L;
 
       integrationId_ = "";
 
-      projectId_ = 0;
+      projectId_ = "";
 
-      organizationId_ = 0;
+      organizationId_ = "";
 
       return this;
     }
@@ -582,11 +638,13 @@ private static final long serialVersionUID = 0L;
         integrationId_ = other.integrationId_;
         onChanged();
       }
-      if (other.getProjectId() != 0) {
-        setProjectId(other.getProjectId());
+      if (!other.getProjectId().isEmpty()) {
+        projectId_ = other.projectId_;
+        onChanged();
       }
-      if (other.getOrganizationId() != 0) {
-        setOrganizationId(other.getOrganizationId());
+      if (!other.getOrganizationId().isEmpty()) {
+        organizationId_ = other.organizationId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -845,64 +903,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int projectId_ ;
+    private java.lang.Object projectId_ = "";
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectId(int value) {
-      
+    public Builder setProjectId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
       
-      projectId_ = 0;
+      projectId_ = getDefaultInstance().getProjectId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @param value The bytes for projectId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      projectId_ = value;
       onChanged();
       return this;
     }
 
-    private int organizationId_ ;
+    private java.lang.Object organizationId_ = "";
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
-    public Builder setOrganizationId(int value) {
-      
+    public Builder setOrganizationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       organizationId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
       
-      organizationId_ = 0;
+      organizationId_ = getDefaultInstance().getOrganizationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @param value The bytes for organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      organizationId_ = value;
       onChanged();
       return this;
     }

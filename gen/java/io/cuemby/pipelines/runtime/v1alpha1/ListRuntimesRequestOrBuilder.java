@@ -8,8 +8,14 @@ public interface ListRuntimesRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
    * @return The projectId.
    */
-  int getProjectId();
+  java.lang.String getProjectId();
+  /**
+   * <code>string project_id = 1 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
+   */
+  com.google.protobuf.ByteString
+      getProjectIdBytes();
 }
