@@ -645,18 +645,6 @@ public final class Tokens {
      * @return The emailVerified.
      */
     boolean getEmailVerified();
-
-    /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse}
@@ -675,7 +663,6 @@ public final class Tokens {
       email_ = "";
       userIdDex_ = "";
       firstName_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -740,12 +727,6 @@ public final class Tokens {
             case 48: {
 
               emailVerified_ = input.readBool();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -954,44 +935,6 @@ public final class Tokens {
       return emailVerified_;
     }
 
-    public static final int ERROR_FIELD_NUMBER = 7;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1024,9 +967,6 @@ public final class Tokens {
       if (emailVerified_ != false) {
         output.writeBool(6, emailVerified_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1056,9 +996,6 @@ public final class Tokens {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, emailVerified_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, error_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1086,8 +1023,6 @@ public final class Tokens {
           .equals(other.getFirstName())) return false;
       if (getEmailVerified()
           != other.getEmailVerified()) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1112,8 +1047,6 @@ public final class Tokens {
       hash = (37 * hash) + EMAIL_VERIFIED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEmailVerified());
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1259,8 +1192,6 @@ public final class Tokens {
 
         emailVerified_ = false;
 
-        error_ = "";
-
         return this;
       }
 
@@ -1293,7 +1224,6 @@ public final class Tokens {
         result.userIdDex_ = userIdDex_;
         result.firstName_ = firstName_;
         result.emailVerified_ = emailVerified_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -1363,10 +1293,6 @@ public final class Tokens {
         }
         if (other.getEmailVerified() != false) {
           setEmailVerified(other.getEmailVerified());
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1759,82 +1685,6 @@ public final class Tokens {
       public Builder clearEmailVerified() {
         
         emailVerified_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -10581,37 +10431,36 @@ public final class Tokens {
     java.lang.String[] descriptorData = {
       "\n%accounts/v1alpha1/tokens/tokens.proto\022" +
       "\033accounts.v1alpha1.tokens.v1\"-\n\025GetOneTo" +
-      "kenCCPRequest\022\024\n\005token\030\001 \001(\tR\005token\"\331\001\n\026" +
+      "kenCCPRequest\022\024\n\005token\030\001 \001(\tR\005token\"\303\001\n\026" +
       "GetOneTokenCCPResponse\022\027\n\007user_id\030\001 \001(\rR" +
       "\006userId\022\024\n\005token\030\002 \001(\tR\005token\022\024\n\005email\030\003" +
       " \001(\tR\005email\022\036\n\013user_id_dex\030\004 \001(\tR\tuserId" +
       "Dex\022\035\n\nfirst_name\030\005 \001(\tR\tfirstName\022%\n\016em" +
-      "ail_verified\030\006 \001(\010R\remailVerified\022\024\n\005err" +
-      "or\030\007 \001(\tR\005error\"4\n\025CreateTokenCCPRequest" +
-      "\022\033\n\ttoken_dex\030\001 \001(\tR\010tokenDex\"\246\001\n\026Create" +
-      "TokenCCPResponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tok" +
-      "enCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\004 \001(\tR\005" +
-      "error\022.\n\023time_expiration_mfa\030\005 \001(\003R\021time" +
-      "ExpirationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"y" +
-      "\n\003Log\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006system" +
-      "\030\002 \001(\tR\006system\022\035\n\nclient_web\030\003 \001(\tR\tclie" +
-      "ntWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 \001(\tR\004dat" +
-      "e\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .acco" +
-      "unts.v1alpha1.tokens.v1.LogR\003log\":\n\020Save" +
-      "LogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\"&\n\013LogsRequest\022\027\n\007user_id\030\001" +
-      " \001(\tR\006userId\"Z\n\014LogsResponse\0224\n\004logs\030\001 \003" +
-      "(\0132 .accounts.v1alpha1.tokens.v1.LogR\004lo" +
-      "gs\022\024\n\005error\030\002 \001(\tR\005error\"4\n\031EnableOrDisa" +
-      "bleMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D" +
-      "\n\032EnableOrDisableMFAResponse\022\020\n\003msg\030\001 \001(" +
-      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\nMFAReque" +
-      "st\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003" +
-      " \003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoken_cc" +
-      "p\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\003 \001(\tR\005errorB;Z9github.com/cuemby/c" +
-      "cp-sdk/gen/go/accounts/v1alpha1/tokensb\006" +
-      "proto3"
+      "ail_verified\030\006 \001(\010R\remailVerified\"4\n\025Cre" +
+      "ateTokenCCPRequest\022\033\n\ttoken_dex\030\001 \001(\tR\010t" +
+      "okenDex\"\246\001\n\026CreateTokenCCPResponse\022\033\n\tto" +
+      "ken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003ms" +
+      "g\022\024\n\005error\030\004 \001(\tR\005error\022.\n\023time_expirati" +
+      "on_mfa\030\005 \001(\003R\021timeExpirationMfa\022\027\n\007user_" +
+      "id\030\006 \001(\tR\006userId\"y\n\003Log\022\027\n\007user_id\030\001 \001(\t" +
+      "R\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nclie" +
+      "nt_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022" +
+      "\022\n\004date\030\005 \001(\tR\004date\"E\n\017SaveLogsRequest\0222" +
+      "\n\003log\030\001 \001(\0132 .accounts.v1alpha1.tokens.v" +
+      "1.LogR\003log\":\n\020SaveLogsResponse\022\020\n\003msg\030\001 " +
+      "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"&\n\013LogsRe" +
+      "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"Z\n\014LogsRe" +
+      "sponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1" +
+      ".tokens.v1.LogR\004logs\022\024\n\005error\030\002 \001(\tR\005err" +
+      "or\"4\n\031EnableOrDisableMFARequest\022\027\n\007user_" +
+      "id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisableMFARe" +
+      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
+      "\005error\"?\n\nMFARequest\022\027\n\007user_id\030\001 \001(\tR\006u" +
+      "serId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013MFARe" +
+      "sponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003m" +
+      "sg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005errorB;Z9g" +
+      "ithub.com/cuemby/ccp-sdk/gen/go/accounts" +
+      "/v1alpha1/tokensb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10628,7 +10477,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_GetOneTokenCCPResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_GetOneTokenCCPResponse_descriptor,
-        new java.lang.String[] { "UserId", "Token", "Email", "UserIdDex", "FirstName", "EmailVerified", "Error", });
+        new java.lang.String[] { "UserId", "Token", "Email", "UserIdDex", "FirstName", "EmailVerified", });
     internal_static_accounts_v1alpha1_tokens_v1_CreateTokenCCPRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_accounts_v1alpha1_tokens_v1_CreateTokenCCPRequest_fieldAccessorTable = new

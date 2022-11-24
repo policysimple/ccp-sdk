@@ -16,11 +16,10 @@ class Tokens
         }
         $pool->internalAddGeneratedFile(
             '
-†
-
+ð	
 %accounts/v1alpha1/tokens/tokens.protoaccounts.v1alpha1.tokens.v1"-
 GetOneTokenCCPRequest
-token (	Rtoken"Ù
+token (	Rtoken"Ã
 GetOneTokenCCPResponse
 user_id (RuserId
 token (	Rtoken
@@ -28,8 +27,7 @@ class Tokens
 user_id_dex (	R	userIdDex
 
 first_name (	R	firstName%
-email_verified (RemailVerified
-error (	Rerror"4
+email_verified (RemailVerified"4
 CreateTokenCCPRequest
 	token_dex (	RtokenDex"¦
 CreateTokenCCPResponse

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package search.v1alpha1;
+
+option csharp_namespace = "Search.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "SearchAPIProto";
+option java_package = "io.cuemby.Search.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Search\\V1Alpha1";
+
+import "search/v1alpha1/search.proto";
+
+service SearchAPIService{
+    rpc Search(SearchRequest) returns (SearchResponse);
+}
+
+message SearchRequest {
+    uint32 size = 1; 
+    uint32 page = 2; 
+    string org_id = 3; 
+    string query = 4; 
+}
+
+message SearchResponse {
+    repeated search.v1alpha1.SearchItem results = 1;
+    uint32 total_hits = 2;
+    uint32 total_pages = 3;
+}
