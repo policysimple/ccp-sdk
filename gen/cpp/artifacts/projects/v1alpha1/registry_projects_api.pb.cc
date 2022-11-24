@@ -71,10 +71,10 @@ struct UpdateProjectRegistryResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateProjectRegistryResponseDefaultTypeInternal _UpdateProjectRegistryResponse_default_instance_;
 constexpr ListProjectsRegistryRequest::ListProjectsRegistryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : query_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , query_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , sort_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u)
-  , project_id_(0u)
   , page_(0u)
   , size_(0u)
   , public__(false)
@@ -233,8 +233,8 @@ const char descriptor_table_protodef_artifacts_2fprojects_2fv1alpha1_2fregistry_
   "cts.projects.v1alpha1.ProjectsRegistryR\017"
   "projectRegistry\022\026\n\006status\030\002 \001(\tR\006status\""
   "\360\001\n\033ListProjectsRegistryRequest\022\'\n\017organ"
-  "ization_id\030\001 \001(\rR\016organizationId\022\035\n\nproj"
-  "ect_id\030\002 \001(\rR\tprojectId\022\024\n\005query\030\003 \001(\tR\005"
+  "ization_id\030\001 \001(\tR\016organizationId\022\035\n\nproj"
+  "ect_id\030\002 \001(\tR\tprojectId\022\024\n\005query\030\003 \001(\tR\005"
   "query\022\022\n\004page\030\004 \001(\rR\004page\022\022\n\004size\030\005 \001(\rR"
   "\004size\022\022\n\004sort\030\006 \001(\tR\004sort\022\026\n\006public\030\007 \001("
   "\010R\006public\022\037\n\013with_detail\030\010 \001(\010R\nwithDeta"
@@ -1213,6 +1213,16 @@ ListProjectsRegistryRequest::ListProjectsRegistryRequest(::PROTOBUF_NAMESPACE_ID
 ListProjectsRegistryRequest::ListProjectsRegistryRequest(const ListProjectsRegistryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
   query_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_query().empty()) {
     query_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_query(), 
@@ -1223,19 +1233,21 @@ ListProjectsRegistryRequest::ListProjectsRegistryRequest(const ListProjectsRegis
     sort_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sort(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&organization_id_, &from.organization_id_,
+  ::memcpy(&page_, &from.page_,
     static_cast<size_t>(reinterpret_cast<char*>(&with_detail_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(with_detail_));
+    reinterpret_cast<char*>(&page_)) + sizeof(with_detail_));
   // @@protoc_insertion_point(copy_constructor:artifacts.projects.v1alpha1.ListProjectsRegistryRequest)
 }
 
 inline void ListProjectsRegistryRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 query_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 sort_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&page_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&with_detail_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(with_detail_));
+    reinterpret_cast<char*>(&page_)) + sizeof(with_detail_));
 }
 
 ListProjectsRegistryRequest::~ListProjectsRegistryRequest() {
@@ -1247,6 +1259,8 @@ ListProjectsRegistryRequest::~ListProjectsRegistryRequest() {
 
 inline void ListProjectsRegistryRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   query_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   sort_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1267,11 +1281,13 @@ void ListProjectsRegistryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
   query_.ClearToEmpty();
   sort_.ClearToEmpty();
-  ::memset(&organization_id_, 0, static_cast<size_t>(
+  ::memset(&page_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&with_detail_) -
-      reinterpret_cast<char*>(&organization_id_)) + sizeof(with_detail_));
+      reinterpret_cast<char*>(&page_)) + sizeof(with_detail_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1281,17 +1297,21 @@ const char* ListProjectsRegistryRequest::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.projects.v1alpha1.ListProjectsRegistryRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 2 [json_name = "projectId"];
+      // string project_id = 2 [json_name = "projectId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.projects.v1alpha1.ListProjectsRegistryRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1370,16 +1390,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.projects.v1alpha1.ListProjectsRegistryRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.projects.v1alpha1.ListProjectsRegistryRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_project_id(), target);
   }
 
   // string query = 3 [json_name = "query"];
@@ -1442,6 +1470,20 @@ size_t ListProjectsRegistryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
   // string query = 3 [json_name = "query"];
   if (!this->_internal_query().empty()) {
     total_size += 1 +
@@ -1454,20 +1496,6 @@ size_t ListProjectsRegistryRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_sort());
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
-  }
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   // uint32 page = 4 [json_name = "page"];
@@ -1522,17 +1550,17 @@ void ListProjectsRegistryRequest::MergeFrom(const ListProjectsRegistryRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   if (!from._internal_query().empty()) {
     _internal_set_query(from._internal_query());
   }
   if (!from._internal_sort().empty()) {
     _internal_set_sort(from._internal_sort());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
   }
   if (from._internal_page() != 0) {
     _internal_set_page(from._internal_page());
@@ -1565,6 +1593,16 @@ void ListProjectsRegistryRequest::InternalSwap(ListProjectsRegistryRequest* othe
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &query_, GetArenaForAllocation(),
       &other->query_, other->GetArenaForAllocation()
   );
@@ -1576,9 +1614,9 @@ void ListProjectsRegistryRequest::InternalSwap(ListProjectsRegistryRequest* othe
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ListProjectsRegistryRequest, with_detail_)
       + sizeof(ListProjectsRegistryRequest::with_detail_)
-      - PROTOBUF_FIELD_OFFSET(ListProjectsRegistryRequest, organization_id_)>(
-          reinterpret_cast<char*>(&organization_id_),
-          reinterpret_cast<char*>(&other->organization_id_));
+      - PROTOBUF_FIELD_OFFSET(ListProjectsRegistryRequest, page_)>(
+          reinterpret_cast<char*>(&page_),
+          reinterpret_cast<char*>(&other->page_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProjectsRegistryRequest::GetMetadata() const {

@@ -39,8 +39,8 @@ message UpdateProjectRegistryResponse {
 }
 
 message ListProjectsRegistryRequest {
-    uint32 organization_id = 1;
-    uint32 project_id = 2;
+    string organization_id = 1;
+    string project_id = 2;
     string query = 3;
     uint32 page = 4;
     uint32 size = 5;

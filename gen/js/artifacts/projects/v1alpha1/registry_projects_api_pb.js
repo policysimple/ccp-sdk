@@ -889,8 +889,8 @@ proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.prototype.toObject
  */
 proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     query: jspb.Message.getFieldWithDefault(msg, 3, ""),
     page: jspb.Message.getFieldWithDefault(msg, 4, 0),
     size: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -934,11 +934,11 @@ proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
@@ -995,15 +995,15 @@ proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.prototype.serializ
 proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1054,38 +1054,38 @@ proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.serializeBinaryToW
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest} returns this
  */
 proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest} returns this
  */
 proto.artifacts.projects.v1alpha1.ListProjectsRegistryRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

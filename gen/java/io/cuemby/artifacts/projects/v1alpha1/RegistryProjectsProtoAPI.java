@@ -81,8 +81,8 @@ public final class RegistryProjectsProtoAPI {
       "cts.projects.v1alpha1.ProjectsRegistryR\017" +
       "projectRegistry\022\026\n\006status\030\002 \001(\tR\006status\"" +
       "\360\001\n\033ListProjectsRegistryRequest\022\'\n\017organ" +
-      "ization_id\030\001 \001(\rR\016organizationId\022\035\n\nproj" +
-      "ect_id\030\002 \001(\rR\tprojectId\022\024\n\005query\030\003 \001(\tR\005" +
+      "ization_id\030\001 \001(\tR\016organizationId\022\035\n\nproj" +
+      "ect_id\030\002 \001(\tR\tprojectId\022\024\n\005query\030\003 \001(\tR\005" +
       "query\022\022\n\004page\030\004 \001(\rR\004page\022\022\n\004size\030\005 \001(\rR" +
       "\004size\022\022\n\004sort\030\006 \001(\tR\004sort\022\026\n\006public\030\007 \001(" +
       "\010R\006public\022\037\n\013with_detail\030\010 \001(\010R\nwithDeta" +

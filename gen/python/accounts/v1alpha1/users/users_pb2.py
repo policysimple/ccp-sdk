@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/users',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#accounts/v1alpha1/users/users.proto\x12\x1a\x61\x63\x63ounts.v1alpha1.users.v1\x1a accounts/v1alpha1/accounts.proto\"<\n\x12\x43reateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12UpdateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12\x44\x65leteUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"Y\n\x0fListUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\"\xa7\x08\n\x11\x43reateUserRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x1b\n\troles_ids\x18\x06 \x03(\rR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x07 \x03(\rR\x0epermissionsIds\x12+\n\x11organizations_ids\x18\x08 \x03(\rR\x10organizationsIds\x12!\n\x0cphone_number\x18\t \x01(\tR\x0bphoneNumber\x12\x18\n\x07\x63ountry\x18\n \x01(\tR\x07\x63ountry\x12\x12\n\x04\x63ity\x18\x0b \x01(\tR\x04\x63ity\x12\x19\n\x08zip_code\x18\x0c \x01(\tR\x07zipCode\x12\x18\n\x07\x61\x64\x64ress\x18\r \x01(\tR\x07\x61\x64\x64ress\x12\x14\n\x05state\x18\x0e \x01(\tR\x05state\x12#\n\remoji_country\x18\x0f \x01(\tR\x0c\x65mojiCountry\x12\'\n\x0finvitation_code\x18\x10 \x01(\tR\x0einvitationCode\x12$\n\x0eis_mfa_enabled\x18\x11 \x01(\x08R\x0cisMfaEnabled\x12\x1a\n\x08language\x18\x12 \x01(\tR\x08language\x12+\n\x11push_notification\x18\x13 \x01(\x08R\x10pushNotification\x12-\n\x12\x65mail_notification\x18\x14 \x01(\x08R\x11\x65mailNotification\x12\x34\n\x16new_login_notification\x18\x15 \x01(\x08R\x14newLoginNotification\x12/\n\x13\x63reate_notification\x18\x16 \x01(\x08R\x12\x63reateNotification\x12/\n\x13update_notification\x18\x17 \x01(\x08R\x12updateNotification\x12/\n\x13\x64\x65lete_notification\x18\x18 \x01(\x08R\x12\x64\x65leteNotification\x12\x39\n\x18\x61pplication_notification\x18\x19 \x01(\x08R\x17\x61pplicationNotification\x12+\n\x11read_notification\x18\x1a \x01(\x08R\x10readNotification\x12\x1d\n\nphone_code\x18\x1b \x01(\tR\tphoneCode\x12)\n\x10optional_address\x18\x1c \x01(\tR\x0foptionalAddress\x12\x14\n\x05image\x18\x1d \x01(\tR\x05image\"o\n\x11UpdateUserRequest\x12\x17\n\x07\x61uth_id\x18\x01 \x01(\rR\x06\x61uthId\x12\x41\n\x04\x61uth\x18\x02 \x01(\x0b\x32-.accounts.v1alpha1.users.v1.CreateUserRequestR\x04\x61uth\"U\n\x11\x44\x65leteUserRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"L\n\x11GetOneUserRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"o\n\x12GetOneUserResponse\x12\x31\n\x04user\x18\x01 \x01(\x0b\x32\x1d.accounts.v1alpha1.UserDetailR\x04user\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\"E\n\x10ListUserResponse\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"I\n\x19ListUserPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"e\n\x1aListUserPaginationResponse\x12\x14\n\x05\x63ount\x18\x01 \x01(\x03R\x05\x63ount\x12\x31\n\x05users\x18\x02 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"\x17\n\x15GetListUserDexRequest\"[\n\x16GetListUserDexResponse\x12\x41\n\tusers_dex\x18\x01 \x03(\x0b\x32$.accounts.v1alpha1.users.v1.UsersDexR\x08usersDex\"r\n\x14GetOneUserDexRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x41\n\x04user\x18\x02 \x01(\x0b\x32-.accounts.v1alpha1.users.v1.CreateUserRequestR\x04user\"r\n\x15GetOneUserDexResponse\x12\x31\n\x04user\x18\x01 \x01(\x0b\x32\x1d.accounts.v1alpha1.UserDetailR\x04user\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\"Z\n\x1cSendVerificationEmailRequest\x12\x14\n\x05\x65mail\x18\x01 \x01(\tR\x05\x65mail\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"V\n\x1dSendVerificationEmailResponse\x12\x1f\n\x0bhtml_result\x18\x01 \x01(\tR\nhtmlResult\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"*\n\x12VerifyEmailRequest\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\"=\n\x13VerifyEmailResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xd7\x03\n\x10\x43heckUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\x41\n\x1dget_organization_from_project\x18\x03 \x01(\rR\x1agetOrganizationFromProject\x12\x1e\n\npermission\x18\x04 \x01(\tR\npermission\x12\x1e\n\x0buser_id_dex\x18\x05 \x01(\tR\tuserIdDex\x12\"\n\ruser_id_admin\x18\x06 \x01(\tR\x0buserIdAdmin\x12\x17\n\x07user_id\x18\x07 \x01(\rR\x06userId\x12\'\n\x0ftype_permission\x18\t \x01(\tR\x0etypePermission\x12\x1b\n\troles_ids\x18\n \x03(\rR\x08rolesIds\x12\"\n\rapi_key_value\x18\x0b \x01(\tR\x0b\x61piKeyValue\x12&\n\x0ftoken_ccp_admin\x18\x0c \x01(\tR\rtokenCcpAdmin\x12)\n\x11token_ccp_user_id\x18\r \x01(\tR\x0etokenCcpUserId\"s\n\x11\x43heckUserResponse\x12\x1b\n\tis_exists\x18\x01 \x01(\x08R\x08isExists\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\x12\x10\n\x03msg\x18\x04 \x01(\tR\x03msg\"?\n\x08UsersDex\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n\x08provider\x18\x02 \x01(\tR\x08provider\"2\n\x1aGetUsersEmailFilterRequest\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"P\n\x1bGetUsersEmailFilterResponse\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05usersB:Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/usersb\x06proto3'
+  serialized_pb=b'\n#accounts/v1alpha1/users/users.proto\x12\x1a\x61\x63\x63ounts.v1alpha1.users.v1\x1a accounts/v1alpha1/accounts.proto\"<\n\x12\x43reateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12UpdateUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"<\n\x12\x44\x65leteUserResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"Y\n\x0fListUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\"\xa7\x08\n\x11\x43reateUserRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x1b\n\troles_ids\x18\x06 \x03(\rR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x07 \x03(\rR\x0epermissionsIds\x12+\n\x11organizations_ids\x18\x08 \x03(\rR\x10organizationsIds\x12!\n\x0cphone_number\x18\t \x01(\tR\x0bphoneNumber\x12\x18\n\x07\x63ountry\x18\n \x01(\tR\x07\x63ountry\x12\x12\n\x04\x63ity\x18\x0b \x01(\tR\x04\x63ity\x12\x19\n\x08zip_code\x18\x0c \x01(\tR\x07zipCode\x12\x18\n\x07\x61\x64\x64ress\x18\r \x01(\tR\x07\x61\x64\x64ress\x12\x14\n\x05state\x18\x0e \x01(\tR\x05state\x12#\n\remoji_country\x18\x0f \x01(\tR\x0c\x65mojiCountry\x12\'\n\x0finvitation_code\x18\x10 \x01(\tR\x0einvitationCode\x12$\n\x0eis_mfa_enabled\x18\x11 \x01(\x08R\x0cisMfaEnabled\x12\x1a\n\x08language\x18\x12 \x01(\tR\x08language\x12+\n\x11push_notification\x18\x13 \x01(\x08R\x10pushNotification\x12-\n\x12\x65mail_notification\x18\x14 \x01(\x08R\x11\x65mailNotification\x12\x34\n\x16new_login_notification\x18\x15 \x01(\x08R\x14newLoginNotification\x12/\n\x13\x63reate_notification\x18\x16 \x01(\x08R\x12\x63reateNotification\x12/\n\x13update_notification\x18\x17 \x01(\x08R\x12updateNotification\x12/\n\x13\x64\x65lete_notification\x18\x18 \x01(\x08R\x12\x64\x65leteNotification\x12\x39\n\x18\x61pplication_notification\x18\x19 \x01(\x08R\x17\x61pplicationNotification\x12+\n\x11read_notification\x18\x1a \x01(\x08R\x10readNotification\x12\x1d\n\nphone_code\x18\x1b \x01(\tR\tphoneCode\x12)\n\x10optional_address\x18\x1c \x01(\tR\x0foptionalAddress\x12\x14\n\x05image\x18\x1d \x01(\tR\x05image\"o\n\x11UpdateUserRequest\x12\x17\n\x07\x61uth_id\x18\x01 \x01(\rR\x06\x61uthId\x12\x41\n\x04\x61uth\x18\x02 \x01(\x0b\x32-.accounts.v1alpha1.users.v1.CreateUserRequestR\x04\x61uth\"U\n\x11\x44\x65leteUserRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"L\n\x11GetOneUserRequest\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\"o\n\x12GetOneUserResponse\x12\x31\n\x04user\x18\x01 \x01(\x0b\x32\x1d.accounts.v1alpha1.UserDetailR\x04user\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\"E\n\x10ListUserResponse\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"I\n\x19ListUserPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"e\n\x1aListUserPaginationResponse\x12\x14\n\x05\x63ount\x18\x01 \x01(\x03R\x05\x63ount\x12\x31\n\x05users\x18\x02 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05users\"\x17\n\x15GetListUserDexRequest\"[\n\x16GetListUserDexResponse\x12\x41\n\tusers_dex\x18\x01 \x03(\x0b\x32$.accounts.v1alpha1.users.v1.UsersDexR\x08usersDex\"r\n\x14GetOneUserDexRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x41\n\x04user\x18\x02 \x01(\x0b\x32-.accounts.v1alpha1.users.v1.CreateUserRequestR\x04user\"r\n\x15GetOneUserDexResponse\x12\x31\n\x04user\x18\x01 \x01(\x0b\x32\x1d.accounts.v1alpha1.UserDetailR\x04user\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\"Z\n\x1cSendVerificationEmailRequest\x12\x14\n\x05\x65mail\x18\x01 \x01(\tR\x05\x65mail\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"V\n\x1dSendVerificationEmailResponse\x12\x1f\n\x0bhtml_result\x18\x01 \x01(\tR\nhtmlResult\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"*\n\x12VerifyEmailRequest\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\"=\n\x13VerifyEmailResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xd7\x03\n\x10\x43heckUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\rR\tprojectId\x12\x41\n\x1dget_organization_from_project\x18\x03 \x01(\rR\x1agetOrganizationFromProject\x12\x1e\n\npermission\x18\x04 \x01(\tR\npermission\x12\x1e\n\x0buser_id_dex\x18\x05 \x01(\tR\tuserIdDex\x12\"\n\ruser_id_admin\x18\x06 \x01(\tR\x0buserIdAdmin\x12\x17\n\x07user_id\x18\x07 \x01(\rR\x06userId\x12\'\n\x0ftype_permission\x18\t \x01(\tR\x0etypePermission\x12\x1b\n\troles_ids\x18\n \x03(\rR\x08rolesIds\x12\"\n\rapi_key_value\x18\x0b \x01(\tR\x0b\x61piKeyValue\x12&\n\x0ftoken_ccp_admin\x18\x0c \x01(\tR\rtokenCcpAdmin\x12)\n\x11token_ccp_user_id\x18\r \x01(\tR\x0etokenCcpUserId\"]\n\x11\x43heckUserResponse\x12\x1b\n\tis_exists\x18\x01 \x01(\x08R\x08isExists\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\x12\x10\n\x03msg\x18\x04 \x01(\tR\x03msg\"?\n\x08UsersDex\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n\x08provider\x18\x02 \x01(\tR\x08provider\"2\n\x1aGetUsersEmailFilterRequest\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\"P\n\x1bGetUsersEmailFilterResponse\x12\x31\n\x05users\x18\x01 \x03(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05usersB:Z8github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/usersb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -1107,21 +1107,14 @@ _CHECKUSERRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isExists', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.users.v1.CheckUserResponse.error', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='is_admin', full_name='accounts.v1alpha1.users.v1.CheckUserResponse.is_admin', index=2,
+      name='is_admin', full_name='accounts.v1alpha1.users.v1.CheckUserResponse.is_admin', index=1,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isAdmin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='msg', full_name='accounts.v1alpha1.users.v1.CheckUserResponse.msg', index=3,
+      name='msg', full_name='accounts.v1alpha1.users.v1.CheckUserResponse.msg', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1140,7 +1133,7 @@ _CHECKUSERRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=3195,
-  serialized_end=3310,
+  serialized_end=3288,
 )
 
 
@@ -1178,8 +1171,8 @@ _USERSDEX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3312,
-  serialized_end=3375,
+  serialized_start=3290,
+  serialized_end=3353,
 )
 
 
@@ -1210,8 +1203,8 @@ _GETUSERSEMAILFILTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3377,
-  serialized_end=3427,
+  serialized_start=3355,
+  serialized_end=3405,
 )
 
 
@@ -1242,8 +1235,8 @@ _GETUSERSEMAILFILTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3429,
-  serialized_end=3509,
+  serialized_start=3407,
+  serialized_end=3487,
 )
 
 _UPDATEUSERREQUEST.fields_by_name['auth'].message_type = _CREATEUSERREQUEST

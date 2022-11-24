@@ -200,7 +200,6 @@ message CheckUserRequest {
 
 message CheckUserResponse {
     bool is_exists = 1;
-    string error = 2;
     bool is_admin = 3;
     string msg = 4;
 }

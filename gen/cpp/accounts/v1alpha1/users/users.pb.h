@@ -4148,25 +4148,10 @@ class CheckUserResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kErrorFieldNumber = 2,
     kMsgFieldNumber = 4,
     kIsExistsFieldNumber = 1,
     kIsAdminFieldNumber = 3,
   };
-  // string error = 2 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
   // string msg = 4 [json_name = "msg"];
   void clear_msg();
   const std::string& msg() const;
@@ -4206,7 +4191,6 @@ class CheckUserResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   bool is_exists_;
   bool is_admin_;
@@ -7844,52 +7828,6 @@ inline void CheckUserResponse::_internal_set_is_exists(bool value) {
 inline void CheckUserResponse::set_is_exists(bool value) {
   _internal_set_is_exists(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.CheckUserResponse.is_exists)
-}
-
-// string error = 2 [json_name = "error"];
-inline void CheckUserResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& CheckUserResponse::error() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.CheckUserResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CheckUserResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.users.v1.CheckUserResponse.error)
-}
-inline std::string* CheckUserResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.CheckUserResponse.error)
-  return _s;
-}
-inline const std::string& CheckUserResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void CheckUserResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CheckUserResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CheckUserResponse::release_error() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.CheckUserResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CheckUserResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.users.v1.CheckUserResponse.error)
 }
 
 // bool is_admin = 3 [json_name = "isAdmin"];

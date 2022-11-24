@@ -468,8 +468,7 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.toObject = function(inc
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userIdDex: jspb.Message.getFieldWithDefault(msg, 4, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    error: jspb.Message.getFieldWithDefault(msg, 7, "")
+    emailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -529,10 +528,6 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.deserializeBinaryFromRe
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -602,13 +597,6 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.serializeBinaryToWriter
   if (f) {
     writer.writeBool(
       6,
-      f
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
       f
     );
   }
@@ -720,24 +708,6 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.getEmailVerif
  */
 proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.setEmailVerified = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
-};
-
-
-/**
- * optional string error = 7;
- * @return {string}
- */
-proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse} returns this
- */
-proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

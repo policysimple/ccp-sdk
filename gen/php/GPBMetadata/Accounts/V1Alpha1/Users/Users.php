@@ -17,7 +17,7 @@ class Users
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-×
+Á
 #accounts/v1alpha1/users/users.protoaccounts.v1alpha1.users.v1"<
 CreateUserResponse
 msg (	Rmsg
@@ -125,10 +125,9 @@ permission
  (RrolesIds"
 api_key_value (	RapiKeyValue&
 token_ccp_admin (	RtokenCcpAdmin)
-token_ccp_user_id (	RtokenCcpUserId"s
+token_ccp_user_id (	RtokenCcpUserId"]
 CheckUserResponse
-	is_exists (RisExists
-error (	Rerror
+	is_exists (RisExists
 is_admin (RisAdmin
 msg (	Rmsg"?
 UsersDex
