@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package search.v1alpha1;
+
+option csharp_namespace = "Search.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "SearchProto";
+option java_package = "io.cuemby.search.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Search\\V1Alpha1";
+
+message SearchItem {
+    string object_id = 1;
+    string type = 2;
+    string name = 3;
+    string org_id = 4;
+    string description = 5;
+    string metadata = 6;
+    map<string, string> data = 7;
+}

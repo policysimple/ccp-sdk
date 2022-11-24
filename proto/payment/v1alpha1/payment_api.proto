@@ -132,8 +132,9 @@ message GetPaymentsRequest {
 }
 
 message GetPaymentsResponse {
-    payment.v1alpha1.CardList card = 1;
-    string error = 2;
+    string default_card = 1;
+    payment.v1alpha1.CardList card = 2;
+    string error = 3;
 }
 
 message CreateSubscriptionRequest {
@@ -300,7 +301,8 @@ message DeleteProjectResponse {
 
 message SetDefaultPaymentMethodRequest {
     string organization_id = 1;
-    string card_id = 2;
+    string customer_id = 2;
+    string card_id = 3;
 }
 
 message SetDefaultPaymentMethodResponse {
