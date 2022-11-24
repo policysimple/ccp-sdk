@@ -93,7 +93,7 @@ const char descriptor_table_protodef_search_2fv1alpha1_2fsearch_5fapi_2eproto[] 
   "otalHits\022\037\n\013total_pages\030\003 \001(\rR\ntotalPage"
   "s2]\n\020SearchAPIService\022I\n\006Search\022\036.search"
   ".v1alpha1.SearchRequest\032\037.search.v1alpha"
-  "1.SearchResponseB\211\001\n\031io.cuemby.Search.v1"
+  "1.SearchResponseB\211\001\n\031io.cuemby.search.v1"
   "alpha1B\016SearchAPIProtoP\001Z0github.com/cue"
   "mby/ccp-sdk/gen/go/search/v1alpha1\242\002\003PPX"
   "\252\002\017Search.V1Alpha1\312\002\017Search\\V1Alpha1b\006pr"

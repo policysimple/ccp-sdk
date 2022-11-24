@@ -32,7 +32,7 @@ total_hits (R	totalHits
 totalPages2]
 SearchAPIServiceI
 Search.search.v1alpha1.SearchRequest.search.v1alpha1.SearchResponseB‰
-io.cuemby.Search.v1alpha1BSearchAPIProtoPZ0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1¢PPXªSearch.V1Alpha1ÊSearch\\V1Alpha1bproto3'
+io.cuemby.search.v1alpha1BSearchAPIProtoPZ0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1¢PPXªSearch.V1Alpha1ÊSearch\\V1Alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
