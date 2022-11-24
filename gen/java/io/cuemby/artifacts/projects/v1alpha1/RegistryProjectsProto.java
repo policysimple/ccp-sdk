@@ -40,8 +40,8 @@ public final class RegistryProjectsProto {
       "gistryId\022\026\n\006public\030\003 \001(\010R\006public\022#\n\rstor" +
       "age_limit\030\004 \001(\rR\014storageLimit\"\251\002\n\020Projec" +
       "tsRegistry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017organizati" +
-      "on_id\030\002 \001(\rR\016organizationId\022\035\n\nproject_i" +
-      "d\030\003 \001(\rR\tprojectId\022%\n\016environment_id\030\004 \001" +
+      "on_id\030\002 \001(\tR\016organizationId\022\035\n\nproject_i" +
+      "d\030\003 \001(\tR\tprojectId\022%\n\016environment_id\030\004 \001" +
       "(\tR\renvironmentId\022:\n\031environment_interna" +
       "l_name\030\005 \001(\tR\027environmentInternalName\022\026\n" +
       "\006active\030\006 \001(\010R\006active\022B\n\006harbor\030\007 \001(\0132*." +

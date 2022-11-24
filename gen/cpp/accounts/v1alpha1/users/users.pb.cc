@@ -334,8 +334,7 @@ struct CheckUserRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CheckUserRequestDefaultTypeInternal _CheckUserRequest_default_instance_;
 constexpr CheckUserResponse::CheckUserResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , is_exists_(false)
   , is_admin_(false){}
 struct CheckUserResponseDefaultTypeInternal {
@@ -581,7 +580,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fusers_2f
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CheckUserResponse, is_exists_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CheckUserResponse, error_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CheckUserResponse, is_admin_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::users::v1::CheckUserResponse, msg_),
   ~0u,  // no _has_bits_
@@ -627,9 +625,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 158, -1, sizeof(::accounts::v1alpha1::users::v1::VerifyEmailResponse)},
   { 165, -1, sizeof(::accounts::v1alpha1::users::v1::CheckUserRequest)},
   { 182, -1, sizeof(::accounts::v1alpha1::users::v1::CheckUserResponse)},
-  { 191, -1, sizeof(::accounts::v1alpha1::users::v1::UsersDex)},
-  { 198, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest)},
-  { 204, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse)},
+  { 190, -1, sizeof(::accounts::v1alpha1::users::v1::UsersDex)},
+  { 197, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterRequest)},
+  { 203, -1, sizeof(::accounts::v1alpha1::users::v1::GetUsersEmailFilterResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -740,24 +738,23 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto
   "ssion\022\033\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rap"
   "i_key_value\030\013 \001(\tR\013apiKeyValue\022&\n\017token_"
   "ccp_admin\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_"
-  "ccp_user_id\030\r \001(\tR\016tokenCcpUserId\"s\n\021Che"
+  "ccp_user_id\030\r \001(\tR\016tokenCcpUserId\"]\n\021Che"
   "ckUserResponse\022\033\n\tis_exists\030\001 \001(\010R\010isExi"
-  "sts\022\024\n\005error\030\002 \001(\tR\005error\022\031\n\010is_admin\030\003 "
-  "\001(\010R\007isAdmin\022\020\n\003msg\030\004 \001(\tR\003msg\"\?\n\010UsersD"
-  "ex\022\027\n\007user_id\030\001 \001(\tR\006userId\022\032\n\010provider\030"
-  "\002 \001(\tR\010provider\"2\n\032GetUsersEmailFilterRe"
-  "quest\022\024\n\005value\030\001 \001(\tR\005value\"P\n\033GetUsersE"
-  "mailFilterResponse\0221\n\005users\030\001 \003(\0132\033.acco"
-  "unts.v1alpha1.UserListR\005usersB:Z8github."
-  "com/cuemby/ccp-sdk/gen/go/accounts/v1alp"
-  "ha1/usersb\006proto3"
+  "sts\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003msg\030\004 "
+  "\001(\tR\003msg\"\?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006u"
+  "serId\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032Get"
+  "UsersEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005"
+  "value\"P\n\033GetUsersEmailFilterResponse\0221\n\005"
+  "users\030\001 \003(\0132\033.accounts.v1alpha1.UserList"
+  "R\005usersB:Z8github.com/cuemby/ccp-sdk/gen"
+  "/go/accounts/v1alpha1/usersb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto = {
-  false, false, 3577, descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto, "accounts/v1alpha1/users/users.proto", 
+  false, false, 3555, descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto, "accounts/v1alpha1/users/users.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_deps, 1, 25,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fusers_2fusers_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fusers_2fusers_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fusers_2fusers_2eproto,
@@ -6948,11 +6945,6 @@ CheckUserResponse::CheckUserResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CheckUserResponse::CheckUserResponse(const CheckUserResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_msg().empty()) {
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
@@ -6965,7 +6957,6 @@ CheckUserResponse::CheckUserResponse(const CheckUserResponse& from)
 }
 
 inline void CheckUserResponse::SharedCtor() {
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&is_exists_) - reinterpret_cast<char*>(this)),
@@ -6982,7 +6973,6 @@ CheckUserResponse::~CheckUserResponse() {
 
 inline void CheckUserResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -7002,7 +6992,6 @@ void CheckUserResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  error_.ClearToEmpty();
   msg_.ClearToEmpty();
   ::memset(&is_exists_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_admin_) -
@@ -7020,15 +7009,6 @@ const char* CheckUserResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           is_exists_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.users.v1.CheckUserResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7083,16 +7063,6 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_is_exists(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.users.v1.CheckUserResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   // bool is_admin = 3 [json_name = "isAdmin"];
   if (this->_internal_is_admin() != 0) {
     target = stream->EnsureSpace(target);
@@ -7124,13 +7094,6 @@ size_t CheckUserResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
-  }
 
   // string msg = 4 [json_name = "msg"];
   if (!this->_internal_msg().empty()) {
@@ -7177,9 +7140,6 @@ void CheckUserResponse::MergeFrom(const CheckUserResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
@@ -7206,11 +7166,6 @@ bool CheckUserResponse::IsInitialized() const {
 void CheckUserResponse::InternalSwap(CheckUserResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),

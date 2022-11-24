@@ -30,9 +30,9 @@ class RegistryProjectsApi
 project_registry (2-.artifacts.projects.v1alpha1.ProjectsRegistryRprojectRegistry
 status (	Rstatus"ð
 ListProjectsRegistryRequest\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId
+project_id (	R	projectId
 query (	Rquery
 page (Rpage
 size (Rsize

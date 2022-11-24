@@ -19755,18 +19755,6 @@ public final class Users {
     boolean getIsExists();
 
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
-
-    /**
      * <code>bool is_admin = 3 [json_name = "isAdmin"];</code>
      * @return The isAdmin.
      */
@@ -19797,7 +19785,6 @@ public final class Users {
       super(builder);
     }
     private CheckUserResponse() {
-      error_ = "";
       msg_ = "";
     }
 
@@ -19834,12 +19821,6 @@ public final class Users {
             case 8: {
 
               isExists_ = input.readBool();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             case 24: {
@@ -19894,44 +19875,6 @@ public final class Users {
     @java.lang.Override
     public boolean getIsExists() {
       return isExists_;
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int IS_ADMIN_FIELD_NUMBER = 3;
@@ -20000,9 +19943,6 @@ public final class Users {
       if (isExists_ != false) {
         output.writeBool(1, isExists_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       if (isAdmin_ != false) {
         output.writeBool(3, isAdmin_);
       }
@@ -20021,9 +19961,6 @@ public final class Users {
       if (isExists_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, isExists_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       if (isAdmin_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -20049,8 +19986,6 @@ public final class Users {
 
       if (getIsExists()
           != other.getIsExists()) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (getIsAdmin()
           != other.getIsAdmin()) return false;
       if (!getMsg()
@@ -20069,8 +20004,6 @@ public final class Users {
       hash = (37 * hash) + IS_EXISTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsExists());
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAdmin());
@@ -20211,8 +20144,6 @@ public final class Users {
         super.clear();
         isExists_ = false;
 
-        error_ = "";
-
         isAdmin_ = false;
 
         msg_ = "";
@@ -20244,7 +20175,6 @@ public final class Users {
       public accounts.v1alpha1.users.v1.Users.CheckUserResponse buildPartial() {
         accounts.v1alpha1.users.v1.Users.CheckUserResponse result = new accounts.v1alpha1.users.v1.Users.CheckUserResponse(this);
         result.isExists_ = isExists_;
-        result.error_ = error_;
         result.isAdmin_ = isAdmin_;
         result.msg_ = msg_;
         onBuilt();
@@ -20297,10 +20227,6 @@ public final class Users {
         if (other == accounts.v1alpha1.users.v1.Users.CheckUserResponse.getDefaultInstance()) return this;
         if (other.getIsExists() != false) {
           setIsExists(other.getIsExists());
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          onChanged();
         }
         if (other.getIsAdmin() != false) {
           setIsAdmin(other.getIsAdmin());
@@ -20365,82 +20291,6 @@ public final class Users {
       public Builder clearIsExists() {
         
         isExists_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -22896,17 +22746,16 @@ public final class Users {
       "ssion\022\033\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rap" +
       "i_key_value\030\013 \001(\tR\013apiKeyValue\022&\n\017token_" +
       "ccp_admin\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_" +
-      "ccp_user_id\030\r \001(\tR\016tokenCcpUserId\"s\n\021Che" +
+      "ccp_user_id\030\r \001(\tR\016tokenCcpUserId\"]\n\021Che" +
       "ckUserResponse\022\033\n\tis_exists\030\001 \001(\010R\010isExi" +
-      "sts\022\024\n\005error\030\002 \001(\tR\005error\022\031\n\010is_admin\030\003 " +
-      "\001(\010R\007isAdmin\022\020\n\003msg\030\004 \001(\tR\003msg\"?\n\010UsersD" +
-      "ex\022\027\n\007user_id\030\001 \001(\tR\006userId\022\032\n\010provider\030" +
-      "\002 \001(\tR\010provider\"2\n\032GetUsersEmailFilterRe" +
-      "quest\022\024\n\005value\030\001 \001(\tR\005value\"P\n\033GetUsersE" +
-      "mailFilterResponse\0221\n\005users\030\001 \003(\0132\033.acco" +
-      "unts.v1alpha1.UserListR\005usersB:Z8github." +
-      "com/cuemby/ccp-sdk/gen/go/accounts/v1alp" +
-      "ha1/usersb\006proto3"
+      "sts\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003msg\030\004 " +
+      "\001(\tR\003msg\"?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006u" +
+      "serId\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032Get" +
+      "UsersEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005" +
+      "value\"P\n\033GetUsersEmailFilterResponse\0221\n\005" +
+      "users\030\001 \003(\0132\033.accounts.v1alpha1.UserList" +
+      "R\005usersB:Z8github.com/cuemby/ccp-sdk/gen" +
+      "/go/accounts/v1alpha1/usersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23044,7 +22893,7 @@ public final class Users {
     internal_static_accounts_v1alpha1_users_v1_CheckUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_CheckUserResponse_descriptor,
-        new java.lang.String[] { "IsExists", "Error", "IsAdmin", "Msg", });
+        new java.lang.String[] { "IsExists", "IsAdmin", "Msg", });
     internal_static_accounts_v1alpha1_users_v1_UsersDex_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_accounts_v1alpha1_users_v1_UsersDex_fieldAccessorTable = new

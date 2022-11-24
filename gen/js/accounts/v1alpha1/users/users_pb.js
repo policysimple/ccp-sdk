@@ -5283,7 +5283,6 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.toObject = function
 proto.accounts.v1alpha1.users.v1.CheckUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     isExists: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
     isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     msg: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -5325,10 +5324,6 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.deserializeBinaryFromReader =
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsExists(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -5374,13 +5369,6 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.serializeBinaryToWriter = fun
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getIsAdmin();
   if (f) {
     writer.writeBool(
@@ -5413,24 +5401,6 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.getIsExists = funct
  */
 proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.setIsExists = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.CheckUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
