@@ -37,10 +37,6 @@ class GetOneTokenCCPResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool email_verified = 6 [json_name = "emailVerified"];</code>
      */
     protected $email_verified = false;
-    /**
-     * Generated from protobuf field <code>string error = 7 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -54,7 +50,6 @@ class GetOneTokenCCPResponse extends \Google\Protobuf\Internal\Message
      *     @type string $user_id_dex
      *     @type string $first_name
      *     @type bool $email_verified
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -190,28 +185,6 @@ class GetOneTokenCCPResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->email_verified = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 7 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 7 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

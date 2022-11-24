@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokens',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%accounts/v1alpha1/tokens/tokens.proto\x12\x1b\x61\x63\x63ounts.v1alpha1.tokens.v1\"-\n\x15GetOneTokenCCPRequest\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\"\xd9\x01\n\x16GetOneTokenCCPResponse\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x14\n\x05token\x18\x02 \x01(\tR\x05token\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\x1e\n\x0buser_id_dex\x18\x04 \x01(\tR\tuserIdDex\x12\x1d\n\nfirst_name\x18\x05 \x01(\tR\tfirstName\x12%\n\x0e\x65mail_verified\x18\x06 \x01(\x08R\remailVerified\x12\x14\n\x05\x65rror\x18\x07 \x01(\tR\x05\x65rror\"4\n\x15\x43reateTokenCCPRequest\x12\x1b\n\ttoken_dex\x18\x01 \x01(\tR\x08tokenDex\"\xa6\x01\n\x16\x43reateTokenCCPResponse\x12\x1b\n\ttoken_ccp\x18\x01 \x01(\tR\x08tokenCcp\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x04 \x01(\tR\x05\x65rror\x12.\n\x13time_expiration_mfa\x18\x05 \x01(\x03R\x11timeExpirationMfa\x12\x17\n\x07user_id\x18\x06 \x01(\tR\x06userId\"y\n\x03Log\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x16\n\x06system\x18\x02 \x01(\tR\x06system\x12\x1d\n\nclient_web\x18\x03 \x01(\tR\tclientWeb\x12\x0e\n\x02ip\x18\x04 \x01(\tR\x02ip\x12\x12\n\x04\x64\x61te\x18\x05 \x01(\tR\x04\x64\x61te\"E\n\x0fSaveLogsRequest\x12\x32\n\x03log\x18\x01 \x01(\x0b\x32 .accounts.v1alpha1.tokens.v1.LogR\x03log\":\n\x10SaveLogsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"&\n\x0bLogsRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"Z\n\x0cLogsResponse\x12\x34\n\x04logs\x18\x01 \x03(\x0b\x32 .accounts.v1alpha1.tokens.v1.LogR\x04logs\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"4\n\x19\x45nableOrDisableMFARequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"D\n\x1a\x45nableOrDisableMFAResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\nMFARequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x18\n\x07numbers\x18\x03 \x03(\x05R\x07numbers\"R\n\x0bMFAResponse\x12\x1b\n\ttoken_ccp\x18\x01 \x01(\tR\x08tokenCcp\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rrorB;Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokensb\x06proto3'
+  serialized_pb=b'\n%accounts/v1alpha1/tokens/tokens.proto\x12\x1b\x61\x63\x63ounts.v1alpha1.tokens.v1\"-\n\x15GetOneTokenCCPRequest\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\"\xc3\x01\n\x16GetOneTokenCCPResponse\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x14\n\x05token\x18\x02 \x01(\tR\x05token\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\x1e\n\x0buser_id_dex\x18\x04 \x01(\tR\tuserIdDex\x12\x1d\n\nfirst_name\x18\x05 \x01(\tR\tfirstName\x12%\n\x0e\x65mail_verified\x18\x06 \x01(\x08R\remailVerified\"4\n\x15\x43reateTokenCCPRequest\x12\x1b\n\ttoken_dex\x18\x01 \x01(\tR\x08tokenDex\"\xa6\x01\n\x16\x43reateTokenCCPResponse\x12\x1b\n\ttoken_ccp\x18\x01 \x01(\tR\x08tokenCcp\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x04 \x01(\tR\x05\x65rror\x12.\n\x13time_expiration_mfa\x18\x05 \x01(\x03R\x11timeExpirationMfa\x12\x17\n\x07user_id\x18\x06 \x01(\tR\x06userId\"y\n\x03Log\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x16\n\x06system\x18\x02 \x01(\tR\x06system\x12\x1d\n\nclient_web\x18\x03 \x01(\tR\tclientWeb\x12\x0e\n\x02ip\x18\x04 \x01(\tR\x02ip\x12\x12\n\x04\x64\x61te\x18\x05 \x01(\tR\x04\x64\x61te\"E\n\x0fSaveLogsRequest\x12\x32\n\x03log\x18\x01 \x01(\x0b\x32 .accounts.v1alpha1.tokens.v1.LogR\x03log\":\n\x10SaveLogsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"&\n\x0bLogsRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"Z\n\x0cLogsResponse\x12\x34\n\x04logs\x18\x01 \x03(\x0b\x32 .accounts.v1alpha1.tokens.v1.LogR\x04logs\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"4\n\x19\x45nableOrDisableMFARequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"D\n\x1a\x45nableOrDisableMFAResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"?\n\nMFARequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x18\n\x07numbers\x18\x03 \x03(\x05R\x07numbers\"R\n\x0bMFAResponse\x12\x1b\n\ttoken_ccp\x18\x01 \x01(\tR\x08tokenCcp\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rrorB;Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokensb\x06proto3'
 )
 
 
@@ -107,13 +107,6 @@ _GETONETOKENCCPRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='emailVerified', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse.error', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -127,7 +120,7 @@ _GETONETOKENCCPRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=118,
-  serialized_end=335,
+  serialized_end=313,
 )
 
 
@@ -158,8 +151,8 @@ _CREATETOKENCCPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=337,
-  serialized_end=389,
+  serialized_start=315,
+  serialized_end=367,
 )
 
 
@@ -218,8 +211,8 @@ _CREATETOKENCCPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=558,
+  serialized_start=370,
+  serialized_end=536,
 )
 
 
@@ -278,8 +271,8 @@ _LOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=560,
-  serialized_end=681,
+  serialized_start=538,
+  serialized_end=659,
 )
 
 
@@ -310,8 +303,8 @@ _SAVELOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=683,
-  serialized_end=752,
+  serialized_start=661,
+  serialized_end=730,
 )
 
 
@@ -349,8 +342,8 @@ _SAVELOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=754,
-  serialized_end=812,
+  serialized_start=732,
+  serialized_end=790,
 )
 
 
@@ -381,8 +374,8 @@ _LOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=814,
-  serialized_end=852,
+  serialized_start=792,
+  serialized_end=830,
 )
 
 
@@ -420,8 +413,8 @@ _LOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=854,
-  serialized_end=944,
+  serialized_start=832,
+  serialized_end=922,
 )
 
 
@@ -452,8 +445,8 @@ _ENABLEORDISABLEMFAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=946,
-  serialized_end=998,
+  serialized_start=924,
+  serialized_end=976,
 )
 
 
@@ -491,8 +484,8 @@ _ENABLEORDISABLEMFARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1000,
-  serialized_end=1068,
+  serialized_start=978,
+  serialized_end=1046,
 )
 
 
@@ -530,8 +523,8 @@ _MFAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1070,
-  serialized_end=1133,
+  serialized_start=1048,
+  serialized_end=1111,
 )
 
 
@@ -576,8 +569,8 @@ _MFARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1135,
-  serialized_end=1217,
+  serialized_start=1113,
+  serialized_end=1195,
 )
 
 _SAVELOGSREQUEST.fields_by_name['log'].message_type = _LOG
