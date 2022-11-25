@@ -74,9 +74,7 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 		checkUser.UserIdAdmin = req.UserIdAdmin
 
 	} else {
-		return &accountpkgv1.CheckUserResponse{
-			Error: "ApiKey or CCP token not found",
-		}, nil
+		return &accountpkgv1.CheckUserResponse{}, nil
 	}
 
 	if req.OrganizationId > 0 {
