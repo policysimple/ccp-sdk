@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='search/v1alpha1/search_api.proto',
   package='search.v1alpha1',
   syntax='proto3',
-  serialized_options=b'\n\031io.cuemby.Search.v1alpha1B\016SearchAPIProtoP\001Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1\242\002\003PPX\252\002\017Search.V1Alpha1\312\002\017Search\\V1Alpha1',
+  serialized_options=b'\n\031io.cuemby.search.v1alpha1B\016SearchAPIProtoP\001Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1\242\002\003PPX\252\002\017Search.V1Alpha1\312\002\017Search\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n search/v1alpha1/search_api.proto\x12\x0fsearch.v1alpha1\x1a\x1csearch/v1alpha1/search.proto\"d\n\rSearchRequest\x12\x12\n\x04size\x18\x01 \x01(\rR\x04size\x12\x12\n\x04page\x18\x02 \x01(\rR\x04page\x12\x15\n\x06org_id\x18\x03 \x01(\tR\x05orgId\x12\x14\n\x05query\x18\x04 \x01(\tR\x05query\"\x87\x01\n\x0eSearchResponse\x12\x35\n\x07results\x18\x01 \x03(\x0b\x32\x1b.search.v1alpha1.SearchItemR\x07results\x12\x1d\n\ntotal_hits\x18\x02 \x01(\rR\ttotalHits\x12\x1f\n\x0btotal_pages\x18\x03 \x01(\rR\ntotalPages2]\n\x10SearchAPIService\x12I\n\x06Search\x12\x1e.search.v1alpha1.SearchRequest\x1a\x1f.search.v1alpha1.SearchResponseB\x89\x01\n\x19io.cuemby.Search.v1alpha1B\x0eSearchAPIProtoP\x01Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1\xa2\x02\x03PPX\xaa\x02\x0fSearch.V1Alpha1\xca\x02\x0fSearch\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n search/v1alpha1/search_api.proto\x12\x0fsearch.v1alpha1\x1a\x1csearch/v1alpha1/search.proto\"d\n\rSearchRequest\x12\x12\n\x04size\x18\x01 \x01(\rR\x04size\x12\x12\n\x04page\x18\x02 \x01(\rR\x04page\x12\x15\n\x06org_id\x18\x03 \x01(\tR\x05orgId\x12\x14\n\x05query\x18\x04 \x01(\tR\x05query\"\x87\x01\n\x0eSearchResponse\x12\x35\n\x07results\x18\x01 \x03(\x0b\x32\x1b.search.v1alpha1.SearchItemR\x07results\x12\x1d\n\ntotal_hits\x18\x02 \x01(\rR\ttotalHits\x12\x1f\n\x0btotal_pages\x18\x03 \x01(\rR\ntotalPages2]\n\x10SearchAPIService\x12I\n\x06Search\x12\x1e.search.v1alpha1.SearchRequest\x1a\x1f.search.v1alpha1.SearchResponseB\x89\x01\n\x19io.cuemby.search.v1alpha1B\x0eSearchAPIProtoP\x01Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1\xa2\x02\x03PPX\xaa\x02\x0fSearch.V1Alpha1\xca\x02\x0fSearch\\V1Alpha1b\x06proto3'
   ,
   dependencies=[search_dot_v1alpha1_dot_search__pb2.DESCRIPTOR,])
 
