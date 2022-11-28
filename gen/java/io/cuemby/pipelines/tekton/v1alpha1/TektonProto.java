@@ -99,8 +99,8 @@ public final class TektonProto {
       "amsR\ntaskParams\022 \n\013description\030\010 \001(\tR\013de" +
       "scription\"\212\013\n\010Pipeline\022\016\n\002id\030\001 \001(\tR\002id\022\022" +
       "\n\004name\030\002 \001(\tR\004name\022!\n\014traffic_type\030\003 \001(\005" +
-      "R\013trafficType\022\'\n\017organization_id\030\004 \001(\rR\016" +
-      "organizationId\022\035\n\nproject_id\030\005 \001(\rR\tproj" +
+      "R\013trafficType\022\'\n\017organization_id\030\004 \001(\tR\016" +
+      "organizationId\022\035\n\nproject_id\030\005 \001(\tR\tproj" +
       "ectId\022!\n\014name_project\030\006 \001(\tR\013nameProject" +
       "\022%\n\016environment_id\030\007 \001(\tR\renvironmentId\022" +
       "%\n\016application_id\030\010 \001(\tR\rapplicationId\022\035" +

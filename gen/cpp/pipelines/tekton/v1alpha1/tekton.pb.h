@@ -1256,14 +1256,14 @@ class Pipeline final :
     kInstanceTypeFieldNumber = 18,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
+    kOrganizationIdFieldNumber = 4,
+    kProjectIdFieldNumber = 5,
     kNameProjectFieldNumber = 6,
     kEnvironmentIdFieldNumber = 7,
     kApplicationIdFieldNumber = 8,
     kRuntimeIdFieldNumber = 9,
     kStatusTypeFieldNumber = 12,
     kTrafficTypeFieldNumber = 3,
-    kOrganizationIdFieldNumber = 4,
-    kProjectIdFieldNumber = 5,
     kIsDefaultFieldNumber = 19,
     kActiveFieldNumber = 20,
   };
@@ -1433,6 +1433,34 @@ class Pipeline final :
   std::string* _internal_mutable_name();
   public:
 
+  // string organization_id = 4 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // string project_id = 5 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
   // string name_project = 6 [json_name = "nameProject"];
   void clear_name_project();
   const std::string& name_project() const;
@@ -1512,24 +1540,6 @@ class Pipeline final :
   void _internal_set_traffic_type(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint32 organization_id = 4 [json_name = "organizationId"];
-  void clear_organization_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
-  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
-  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 project_id = 5 [json_name = "projectId"];
-  void clear_project_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id() const;
-  void set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_project_id() const;
-  void _internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // bool is_default = 19 [json_name = "isDefault"];
   void clear_is_default();
   bool is_default() const;
@@ -1589,14 +1599,14 @@ class Pipeline final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> instance_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_project_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_type_;
   ::PROTOBUF_NAMESPACE_ID::int32 traffic_type_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 project_id_;
   bool is_default_;
   bool active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2702,44 +2712,96 @@ inline void Pipeline::set_traffic_type(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.traffic_type)
 }
 
-// uint32 organization_id = 4 [json_name = "organizationId"];
+// string organization_id = 4 [json_name = "organizationId"];
 inline void Pipeline::clear_organization_id() {
-  organization_id_ = 0u;
+  organization_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Pipeline::_internal_organization_id() const {
-  return organization_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Pipeline::organization_id() const {
+inline const std::string& Pipeline::organization_id() const {
   // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.organization_id)
   return _internal_organization_id();
 }
-inline void Pipeline::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  organization_id_ = value;
-}
-inline void Pipeline::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_organization_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Pipeline::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.organization_id)
 }
+inline std::string* Pipeline::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.organization_id)
+  return _s;
+}
+inline const std::string& Pipeline::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void Pipeline::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Pipeline::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Pipeline::release_organization_id() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Pipeline.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Pipeline::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.organization_id)
+}
 
-// uint32 project_id = 5 [json_name = "projectId"];
+// string project_id = 5 [json_name = "projectId"];
 inline void Pipeline::clear_project_id() {
-  project_id_ = 0u;
+  project_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Pipeline::_internal_project_id() const {
-  return project_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Pipeline::project_id() const {
+inline const std::string& Pipeline::project_id() const {
   // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.project_id)
   return _internal_project_id();
 }
-inline void Pipeline::_internal_set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  project_id_ = value;
-}
-inline void Pipeline::set_project_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_project_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Pipeline::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.project_id)
+}
+inline std::string* Pipeline::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.project_id)
+  return _s;
+}
+inline const std::string& Pipeline::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void Pipeline::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Pipeline::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Pipeline::release_project_id() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Pipeline.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Pipeline::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.project_id)
 }
 
 // string name_project = 6 [json_name = "nameProject"];

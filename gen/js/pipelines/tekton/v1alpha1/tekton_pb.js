@@ -1261,8 +1261,8 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     trafficType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     nameProject: jspb.Message.getFieldWithDefault(msg, 6, ""),
     environmentId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -1329,11 +1329,11 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
       msg.setTrafficType(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 6:
@@ -1461,15 +1461,15 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -1621,38 +1621,38 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setTrafficType = function(val
 
 
 /**
- * optional uint32 organization_id = 4;
- * @return {number}
+ * optional string organization_id = 4;
+ * @return {string}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional uint32 project_id = 5;
- * @return {number}
+ * optional string project_id = 5;
+ * @return {string}
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
