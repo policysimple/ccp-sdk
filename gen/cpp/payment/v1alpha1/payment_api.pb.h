@@ -7309,10 +7309,11 @@ class ListProjectsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kProjectsFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kProjectsFieldNumber = 2,
+    kCustomerIdFieldNumber = 1,
+    kStatusFieldNumber = 3,
   };
-  // repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];
+  // repeated .payment.v1alpha1.Project projects = 2 [json_name = "projects"];
   int projects_size() const;
   private:
   int _internal_projects_size() const;
@@ -7330,7 +7331,21 @@ class ListProjectsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project >&
       projects() const;
 
-  // string status = 2 [json_name = "status"];
+  // string customer_id = 1 [json_name = "customerId"];
+  void clear_customer_id();
+  const std::string& customer_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_customer_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_customer_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_customer_id();
+  void set_allocated_customer_id(std::string* customer_id);
+  private:
+  const std::string& _internal_customer_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_customer_id(const std::string& value);
+  std::string* _internal_mutable_customer_id();
+  public:
+
+  // string status = 3 [json_name = "status"];
   void clear_status();
   const std::string& status() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7352,6 +7367,7 @@ class ListProjectsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::payment::v1alpha1::Project > projects_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -14479,7 +14495,53 @@ inline void ListProjectsRequest::set_allocated_organization_id(std::string* orga
 
 // ListProjectsResponse
 
-// repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];
+// string customer_id = 1 [json_name = "customerId"];
+inline void ListProjectsResponse::clear_customer_id() {
+  customer_id_.ClearToEmpty();
+}
+inline const std::string& ListProjectsResponse::customer_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ListProjectsResponse.customer_id)
+  return _internal_customer_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListProjectsResponse::set_customer_id(ArgT0&& arg0, ArgT... args) {
+ 
+ customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ListProjectsResponse.customer_id)
+}
+inline std::string* ListProjectsResponse::mutable_customer_id() {
+  std::string* _s = _internal_mutable_customer_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ListProjectsResponse.customer_id)
+  return _s;
+}
+inline const std::string& ListProjectsResponse::_internal_customer_id() const {
+  return customer_id_.Get();
+}
+inline void ListProjectsResponse::_internal_set_customer_id(const std::string& value) {
+  
+  customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListProjectsResponse::_internal_mutable_customer_id() {
+  
+  return customer_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListProjectsResponse::release_customer_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ListProjectsResponse.customer_id)
+  return customer_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListProjectsResponse::set_allocated_customer_id(std::string* customer_id) {
+  if (customer_id != nullptr) {
+    
+  } else {
+    
+  }
+  customer_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), customer_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListProjectsResponse.customer_id)
+}
+
+// repeated .payment.v1alpha1.Project projects = 2 [json_name = "projects"];
 inline int ListProjectsResponse::_internal_projects_size() const {
   return projects_.size();
 }
@@ -14516,7 +14578,7 @@ ListProjectsResponse::projects() const {
   return projects_;
 }
 
-// string status = 2 [json_name = "status"];
+// string status = 3 [json_name = "status"];
 inline void ListProjectsResponse::clear_status() {
   status_.ClearToEmpty();
 }

@@ -93,18 +93,15 @@ const char descriptor_table_protodef_search_2fv1alpha1_2fsearch_5fapi_2eproto[] 
   "otalHits\022\037\n\013total_pages\030\003 \001(\rR\ntotalPage"
   "s2]\n\020SearchAPIService\022I\n\006Search\022\036.search"
   ".v1alpha1.SearchRequest\032\037.search.v1alpha"
-  "1.SearchResponseB\211\001\n\031io.cuemby.search.v1"
-  "alpha1B\016SearchAPIProtoP\001Z0github.com/cue"
-  "mby/ccp-sdk/gen/go/search/v1alpha1\242\002\003PPX"
-  "\252\002\017Search.V1Alpha1\312\002\017Search\\V1Alpha1b\006pr"
-  "oto3"
+  "1.SearchResponseB2Z0github.com/cuemby/cc"
+  "p-sdk/gen/go/search/v1alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_search_2fv1alpha1_2fsearch_5fapi_2eproto_deps[1] = {
   &::descriptor_table_search_2fv1alpha1_2fsearch_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_search_2fv1alpha1_2fsearch_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_search_2fv1alpha1_2fsearch_5fapi_2eproto = {
-  false, false, 564, descriptor_table_protodef_search_2fv1alpha1_2fsearch_5fapi_2eproto, "search/v1alpha1/search_api.proto", 
+  false, false, 476, descriptor_table_protodef_search_2fv1alpha1_2fsearch_5fapi_2eproto, "search/v1alpha1/search_api.proto", 
   &descriptor_table_search_2fv1alpha1_2fsearch_5fapi_2eproto_once, descriptor_table_search_2fv1alpha1_2fsearch_5fapi_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_search_2fv1alpha1_2fsearch_5fapi_2eproto::offsets,
   file_level_metadata_search_2fv1alpha1_2fsearch_5fapi_2eproto, file_level_enum_descriptors_search_2fv1alpha1_2fsearch_5fapi_2eproto, file_level_service_descriptors_search_2fv1alpha1_2fsearch_5fapi_2eproto,

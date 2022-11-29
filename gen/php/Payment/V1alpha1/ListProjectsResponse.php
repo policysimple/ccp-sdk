@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProjectsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     */
+    protected $customer_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      */
     private $projects;
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -28,6 +32,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $customer_id
      *     @type \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $status
      * }
@@ -38,7 +43,29 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string customer_id = 1 [json_name = "customerId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getProjects()
@@ -47,7 +74,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 1 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>repeated .payment.v1alpha1.Project projects = 2 [json_name = "projects"];</code>
      * @param \Payment\V1alpha1\Project[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -69,7 +96,7 @@ class ListProjectsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 3 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */

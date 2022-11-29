@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='search/v1alpha1/search.proto',
   package='search.v1alpha1',
   syntax='proto3',
-  serialized_options=b'\n\031io.cuemby.search.v1alpha1B\013SearchProtoP\001Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1\242\002\003PPX\252\002\017Search.V1Alpha1\312\002\017Search\\V1Alpha1',
+  serialized_options=b'Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1csearch/v1alpha1/search.proto\x12\x0fsearch.v1alpha1\"\x9a\x02\n\nSearchItem\x12\x1b\n\tobject_id\x18\x01 \x01(\tR\x08objectId\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x15\n\x06org_id\x18\x04 \x01(\tR\x05orgId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1a\n\x08metadata\x18\x06 \x01(\tR\x08metadata\x12\x39\n\x04\x64\x61ta\x18\x07 \x03(\x0b\x32%.search.v1alpha1.SearchItem.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x86\x01\n\x19io.cuemby.search.v1alpha1B\x0bSearchProtoP\x01Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1\xa2\x02\x03PPX\xaa\x02\x0fSearch.V1Alpha1\xca\x02\x0fSearch\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n\x1csearch/v1alpha1/search.proto\x12\x0fsearch.v1alpha1\"\x9a\x02\n\nSearchItem\x12\x1b\n\tobject_id\x18\x01 \x01(\tR\x08objectId\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x15\n\x06org_id\x18\x04 \x01(\tR\x05orgId\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1a\n\x08metadata\x18\x06 \x01(\tR\x08metadata\x12\x39\n\x04\x64\x61ta\x18\x07 \x03(\x0b\x32%.search.v1alpha1.SearchItem.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x32Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1b\x06proto3'
 )
 
 

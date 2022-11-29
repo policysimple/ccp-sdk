@@ -16,7 +16,7 @@ class Search
         }
         $pool->internalAddGeneratedFile(
             '
-Ý
+ˆ
 search/v1alpha1/search.protosearch.v1alpha1"š
 
 SearchItem
@@ -29,8 +29,7 @@ SearchItem
 data (2%.search.v1alpha1.SearchItem.DataEntryRdata7
 	DataEntry
 key (	Rkey
-value (	Rvalue:8B†
-io.cuemby.search.v1alpha1BSearchProtoPZ0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1¢PPXªSearch.V1Alpha1ÊSearch\\V1Alpha1bproto3'
+value (	Rvalue:8B2Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

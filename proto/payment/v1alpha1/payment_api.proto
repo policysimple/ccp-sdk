@@ -275,8 +275,9 @@ message ListProjectsRequest {
 }
 
 message ListProjectsResponse {
-    repeated payment.v1alpha1.Project projects= 1;
-    string status = 2;
+    string customer_id = 1;
+    repeated payment.v1alpha1.Project projects= 2;
+    string status = 3;
 }
 message GetProjectRequest {
     string organization_id = 1;
