@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Search\V1Alpha1;
+namespace Search\V1alpha1;
 
 /**
  */
@@ -17,15 +17,15 @@ class SearchAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Search\V1Alpha1\SearchRequest $argument input argument
+     * @param \Search\V1alpha1\SearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function Search(\Search\V1Alpha1\SearchRequest $argument,
+    public function Search(\Search\V1alpha1\SearchRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/search.v1alpha1.SearchAPIService/Search',
         $argument,
-        ['\Search\V1Alpha1\SearchResponse', 'decode'],
+        ['\Search\V1alpha1\SearchResponse', 'decode'],
         $metadata, $options);
     }
 

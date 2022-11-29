@@ -17,7 +17,7 @@ class SearchApi
         \GPBMetadata\Search\V1Alpha1\Search::initOnce();
         $pool->internalAddGeneratedFile(
             '
-–
+¾
  search/v1alpha1/search_api.protosearch.v1alpha1"d
 SearchRequest
 size (Rsize
@@ -31,8 +31,7 @@ total_hits (R	totalHits
 total_pages (R
 totalPages2]
 SearchAPIServiceI
-Search.search.v1alpha1.SearchRequest.search.v1alpha1.SearchResponseB‰
-io.cuemby.search.v1alpha1BSearchAPIProtoPZ0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1¢PPXªSearch.V1Alpha1ÊSearch\\V1Alpha1bproto3'
+Search.search.v1alpha1.SearchRequest.search.v1alpha1.SearchResponseB2Z0github.com/cuemby/ccp-sdk/gen/go/search/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

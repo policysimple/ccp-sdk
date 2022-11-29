@@ -95,14 +95,12 @@ const char descriptor_table_protodef_search_2fv1alpha1_2fsearch_2eproto[] PROTOB
   "\030\006 \001(\tR\010metadata\0229\n\004data\030\007 \003(\0132%.search."
   "v1alpha1.SearchItem.DataEntryR\004data\0327\n\tD"
   "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
-  "\tR\005value:\0028\001B\206\001\n\031io.cuemby.search.v1alph"
-  "a1B\013SearchProtoP\001Z0github.com/cuemby/ccp"
-  "-sdk/gen/go/search/v1alpha1\242\002\003PPX\252\002\017Sear"
-  "ch.V1Alpha1\312\002\017Search\\V1Alpha1b\006proto3"
+  "\tR\005value:\0028\001B2Z0github.com/cuemby/ccp-sd"
+  "k/gen/go/search/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_search_2fv1alpha1_2fsearch_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_search_2fv1alpha1_2fsearch_2eproto = {
-  false, false, 477, descriptor_table_protodef_search_2fv1alpha1_2fsearch_2eproto, "search/v1alpha1/search.proto", 
+  false, false, 392, descriptor_table_protodef_search_2fv1alpha1_2fsearch_2eproto, "search/v1alpha1/search.proto", 
   &descriptor_table_search_2fv1alpha1_2fsearch_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_search_2fv1alpha1_2fsearch_2eproto::offsets,
   file_level_metadata_search_2fv1alpha1_2fsearch_2eproto, file_level_enum_descriptors_search_2fv1alpha1_2fsearch_2eproto, file_level_service_descriptors_search_2fv1alpha1_2fsearch_2eproto,
