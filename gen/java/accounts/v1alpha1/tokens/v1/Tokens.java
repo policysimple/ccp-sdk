@@ -2338,18 +2338,6 @@ public final class Tokens {
         getMsgBytes();
 
     /**
-     * <code>string error = 4 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 4 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
-
-    /**
      * <pre>
      *tiempo de expiracion fma
      * </pre>
@@ -2386,7 +2374,6 @@ public final class Tokens {
     private CreateTokenCCPResponse() {
       tokenCcp_ = "";
       msg_ = "";
-      error_ = "";
       userId_ = "";
     }
 
@@ -2430,12 +2417,6 @@ public final class Tokens {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             case 40: {
@@ -2557,44 +2538,6 @@ public final class Tokens {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 4;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 4 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 4 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int TIME_EXPIRATION_MFA_FIELD_NUMBER = 5;
     private long timeExpirationMfa_;
     /**
@@ -2668,9 +2611,6 @@ public final class Tokens {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, error_);
-      }
       if (timeExpirationMfa_ != 0L) {
         output.writeInt64(5, timeExpirationMfa_);
       }
@@ -2691,9 +2631,6 @@ public final class Tokens {
       }
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, error_);
       }
       if (timeExpirationMfa_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -2721,8 +2658,6 @@ public final class Tokens {
           .equals(other.getTokenCcp())) return false;
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (getTimeExpirationMfa()
           != other.getTimeExpirationMfa()) return false;
       if (!getUserId()
@@ -2742,8 +2677,6 @@ public final class Tokens {
       hash = (53 * hash) + getTokenCcp().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (37 * hash) + TIME_EXPIRATION_MFA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimeExpirationMfa());
@@ -2886,8 +2819,6 @@ public final class Tokens {
 
         msg_ = "";
 
-        error_ = "";
-
         timeExpirationMfa_ = 0L;
 
         userId_ = "";
@@ -2920,7 +2851,6 @@ public final class Tokens {
         accounts.v1alpha1.tokens.v1.Tokens.CreateTokenCCPResponse result = new accounts.v1alpha1.tokens.v1.Tokens.CreateTokenCCPResponse(this);
         result.tokenCcp_ = tokenCcp_;
         result.msg_ = msg_;
-        result.error_ = error_;
         result.timeExpirationMfa_ = timeExpirationMfa_;
         result.userId_ = userId_;
         onBuilt();
@@ -2977,10 +2907,6 @@ public final class Tokens {
         }
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         if (other.getTimeExpirationMfa() != 0L) {
@@ -3167,82 +3093,6 @@ public final class Tokens {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 4 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 4 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 4 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 4 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 4 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -5222,18 +5072,6 @@ public final class Tokens {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.SaveLogsResponse}
@@ -5249,7 +5087,6 @@ public final class Tokens {
     }
     private SaveLogsResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -5286,12 +5123,6 @@ public final class Tokens {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -5364,44 +5195,6 @@ public final class Tokens {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5419,9 +5212,6 @@ public final class Tokens {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5433,9 +5223,6 @@ public final class Tokens {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5454,8 +5241,6 @@ public final class Tokens {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5469,8 +5254,6 @@ public final class Tokens {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5606,8 +5389,6 @@ public final class Tokens {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -5635,7 +5416,6 @@ public final class Tokens {
       public accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse buildPartial() {
         accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse result = new accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -5686,10 +5466,6 @@ public final class Tokens {
         if (other == accounts.v1alpha1.tokens.v1.Tokens.SaveLogsResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5793,82 +5569,6 @@ public final class Tokens {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -6520,18 +6220,6 @@ public final class Tokens {
      */
     accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder getLogsOrBuilder(
         int index);
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.LogsResponse}
@@ -6547,7 +6235,6 @@ public final class Tokens {
     }
     private LogsResponse() {
       logs_ = java.util.Collections.emptyList();
-      error_ = "";
     }
 
     @java.lang.Override
@@ -6588,12 +6275,6 @@ public final class Tokens {
               }
               logs_.add(
                   input.readMessage(accounts.v1alpha1.tokens.v1.Tokens.Log.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -6671,44 +6352,6 @@ public final class Tokens {
       return logs_.get(index);
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6726,9 +6369,6 @@ public final class Tokens {
       for (int i = 0; i < logs_.size(); i++) {
         output.writeMessage(1, logs_.get(i));
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -6741,9 +6381,6 @@ public final class Tokens {
       for (int i = 0; i < logs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, logs_.get(i));
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6762,8 +6399,6 @@ public final class Tokens {
 
       if (!getLogsList()
           .equals(other.getLogsList())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6779,8 +6414,6 @@ public final class Tokens {
         hash = (37 * hash) + LOGS_FIELD_NUMBER;
         hash = (53 * hash) + getLogsList().hashCode();
       }
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6921,8 +6554,6 @@ public final class Tokens {
         } else {
           logsBuilder_.clear();
         }
-        error_ = "";
-
         return this;
       }
 
@@ -6959,7 +6590,6 @@ public final class Tokens {
         } else {
           result.logs_ = logsBuilder_.build();
         }
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -7033,10 +6663,6 @@ public final class Tokens {
               logsBuilder_.addAllMessages(other.logs_);
             }
           }
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7306,82 +6932,6 @@ public final class Tokens {
           logs_ = null;
         }
         return logsBuilder_;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10438,29 +9988,27 @@ public final class Tokens {
       "Dex\022\035\n\nfirst_name\030\005 \001(\tR\tfirstName\022%\n\016em" +
       "ail_verified\030\006 \001(\010R\remailVerified\"4\n\025Cre" +
       "ateTokenCCPRequest\022\033\n\ttoken_dex\030\001 \001(\tR\010t" +
-      "okenDex\"\246\001\n\026CreateTokenCCPResponse\022\033\n\tto" +
+      "okenDex\"\220\001\n\026CreateTokenCCPResponse\022\033\n\tto" +
       "ken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003ms" +
-      "g\022\024\n\005error\030\004 \001(\tR\005error\022.\n\023time_expirati" +
-      "on_mfa\030\005 \001(\003R\021timeExpirationMfa\022\027\n\007user_" +
-      "id\030\006 \001(\tR\006userId\"y\n\003Log\022\027\n\007user_id\030\001 \001(\t" +
-      "R\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nclie" +
-      "nt_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022" +
-      "\022\n\004date\030\005 \001(\tR\004date\"E\n\017SaveLogsRequest\0222" +
-      "\n\003log\030\001 \001(\0132 .accounts.v1alpha1.tokens.v" +
-      "1.LogR\003log\":\n\020SaveLogsResponse\022\020\n\003msg\030\001 " +
-      "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"&\n\013LogsRe" +
-      "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"Z\n\014LogsRe" +
-      "sponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1" +
-      ".tokens.v1.LogR\004logs\022\024\n\005error\030\002 \001(\tR\005err" +
-      "or\"4\n\031EnableOrDisableMFARequest\022\027\n\007user_" +
-      "id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisableMFARe" +
-      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
-      "\005error\"?\n\nMFARequest\022\027\n\007user_id\030\001 \001(\tR\006u" +
-      "serId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013MFARe" +
-      "sponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003m" +
-      "sg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005errorB;Z9g" +
-      "ithub.com/cuemby/ccp-sdk/gen/go/accounts" +
-      "/v1alpha1/tokensb\006proto3"
+      "g\022.\n\023time_expiration_mfa\030\005 \001(\003R\021timeExpi" +
+      "rationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"y\n\003Lo" +
+      "g\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006system\030\002 \001" +
+      "(\tR\006system\022\035\n\nclient_web\030\003 \001(\tR\tclientWe" +
+      "b\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 \001(\tR\004date\"E\n" +
+      "\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .accounts" +
+      ".v1alpha1.tokens.v1.LogR\003log\"$\n\020SaveLogs" +
+      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsReques" +
+      "t\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\014LogsRespon" +
+      "se\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1.tok" +
+      "ens.v1.LogR\004logs\"4\n\031EnableOrDisableMFARe" +
+      "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\032Enable" +
+      "OrDisableMFAResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024" +
+      "\n\005error\030\002 \001(\tR\005error\"?\n\nMFARequest\022\027\n\007us" +
+      "er_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003 \003(\005R\007nu" +
+      "mbers\"R\n\013MFAResponse\022\033\n\ttoken_ccp\030\001 \001(\tR" +
+      "\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001" +
+      "(\tR\005errorB;Z9github.com/cuemby/ccp-sdk/g" +
+      "en/go/accounts/v1alpha1/tokensb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10489,7 +10037,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_CreateTokenCCPResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_CreateTokenCCPResponse_descriptor,
-        new java.lang.String[] { "TokenCcp", "Msg", "Error", "TimeExpirationMfa", "UserId", });
+        new java.lang.String[] { "TokenCcp", "Msg", "TimeExpirationMfa", "UserId", });
     internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_tokens_v1_Log_fieldAccessorTable = new
@@ -10507,7 +10055,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_fieldAccessorTable = new
@@ -10519,7 +10067,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_LogsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_LogsResponse_descriptor,
-        new java.lang.String[] { "Logs", "Error", });
+        new java.lang.String[] { "Logs", });
     internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFARequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFARequest_fieldAccessorTable = new

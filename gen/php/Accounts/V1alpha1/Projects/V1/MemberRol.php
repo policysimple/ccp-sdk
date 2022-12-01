@@ -25,6 +25,10 @@ class MemberRol extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_admin = 3 [json_name = "isAdmin"];</code>
      */
     protected $is_admin = false;
+    /**
+     * Generated from protobuf field <code>string uid = 4 [json_name = "uid"];</code>
+     */
+    protected $uid = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class MemberRol extends \Google\Protobuf\Internal\Message
      *     @type int $id
      *     @type string $name
      *     @type bool $is_admin
+     *     @type string $uid
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class MemberRol extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uid = 4 [json_name = "uid"];</code>
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uid = 4 [json_name = "uid"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uid = $var;
 
         return $this;
     }

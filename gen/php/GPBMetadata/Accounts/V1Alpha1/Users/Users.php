@@ -17,21 +17,18 @@ class Users
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Á
-#accounts/v1alpha1/users/users.protoaccounts.v1alpha1.users.v1"<
+•
+#accounts/v1alpha1/users/users.protoaccounts.v1alpha1.users.v1"&
 CreateUserResponse
-msg (	Rmsg
-error (	Rerror"<
+msg (	Rmsg"&
 UpdateUserResponse
-msg (	Rmsg
-error (	Rerror"<
+msg (	Rmsg"&
 DeleteUserResponse
-msg (	Rmsg
-error (	Rerror"Y
+msg (	Rmsg"Y
 ListUserRequest\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId"§
+project_id (	R	projectId"§
 CreateUserRequest
 user_id (	RuserId
 
@@ -39,9 +36,9 @@ first_name (	R	firstName
 	last_name (	RlastName
 email (	Remail
 	is_active (RisActive
-	roles_ids (RrolesIds\'
+	roles_ids (	RrolesIds\'
 permissions_ids (RpermissionsIds+
-organizations_ids (RorganizationsIds!
+organizations_ids (	RorganizationsIds!
 phone_number	 (	RphoneNumber
 country
  (	Rcountry
@@ -70,10 +67,10 @@ phone_code (	R	phoneCode)
 auth (2-.accounts.v1alpha1.users.v1.CreateUserRequestRauth"U
 DeleteUserRequest
 user_id (RuserId\'
-organization_id (RorganizationId"L
+organization_id (	RorganizationId"L
 GetOneUserRequest
 id (Rid\'
-organization_id (RorganizationId"o
+organization_id (	RorganizationId"o
 GetOneUserResponse1
 user (2.accounts.v1alpha1.UserDetailRuser
 msg (	Rmsg
@@ -110,10 +107,10 @@ htmlResult
 msg (	Rmsg
 error (	Rerror"×
 CheckUserRequest\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectIdA
-get_organization_from_project (RgetOrganizationFromProject
+project_id (	R	projectIdA
+get_organization_from_project (	RgetOrganizationFromProject
 
 permission (	R
 permission
@@ -122,14 +119,15 @@ permission
 user_id (RuserId\'
 type_permission	 (	RtypePermission
 	roles_ids
- (RrolesIds"
+ (	RrolesIds"
 api_key_value (	RapiKeyValue&
 token_ccp_admin (	RtokenCcpAdmin)
-token_ccp_user_id (	RtokenCcpUserId"]
+token_ccp_user_id (	RtokenCcpUserId"s
 CheckUserResponse
 	is_exists (RisExists
 is_admin (RisAdmin
-msg (	Rmsg"?
+msg (	Rmsg
+error (	Rerror"?
 UsersDex
 user_id (	RuserId
 provider (	Rprovider"2

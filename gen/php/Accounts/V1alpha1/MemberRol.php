@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class MemberRol extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     */
-    protected $id = 0;
-    /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
@@ -36,7 +32,6 @@ class MemberRol extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
      *     @type string $name
      *     @type bool $is_admin
      *     @type string $uid
@@ -45,28 +40,6 @@ class MemberRol extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
-
-        return $this;
     }
 
     /**

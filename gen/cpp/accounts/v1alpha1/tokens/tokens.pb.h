@@ -741,7 +741,6 @@ class CreateTokenCCPResponse final :
   enum : int {
     kTokenCcpFieldNumber = 1,
     kMsgFieldNumber = 2,
-    kErrorFieldNumber = 4,
     kUserIdFieldNumber = 6,
     kTimeExpirationMfaFieldNumber = 5,
   };
@@ -771,20 +770,6 @@ class CreateTokenCCPResponse final :
   const std::string& _internal_msg() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
   std::string* _internal_mutable_msg();
-  public:
-
-  // string error = 4 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
   public:
 
   // string user_id = 6 [json_name = "userId"];
@@ -819,7 +804,6 @@ class CreateTokenCCPResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_ccp_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::int64 time_expiration_mfa_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1299,7 +1283,6 @@ class SaveLogsResponse final :
 
   enum : int {
     kMsgFieldNumber = 1,
-    kErrorFieldNumber = 2,
   };
   // string msg = 1 [json_name = "msg"];
   void clear_msg();
@@ -1315,20 +1298,6 @@ class SaveLogsResponse final :
   std::string* _internal_mutable_msg();
   public:
 
-  // string error = 2 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.SaveLogsResponse)
  private:
   class _Internal;
@@ -1337,7 +1306,6 @@ class SaveLogsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
 };
@@ -1603,7 +1571,6 @@ class LogsResponse final :
 
   enum : int {
     kLogsFieldNumber = 1,
-    kErrorFieldNumber = 2,
   };
   // repeated .accounts.v1alpha1.tokens.v1.Log logs = 1 [json_name = "logs"];
   int logs_size() const;
@@ -1623,20 +1590,6 @@ class LogsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::tokens::v1::Log >&
       logs() const;
 
-  // string error = 2 [json_name = "error"];
-  void clear_error();
-  const std::string& error() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error();
-  PROTOBUF_MUST_USE_RESULT std::string* release_error();
-  void set_allocated_error(std::string* error);
-  private:
-  const std::string& _internal_error() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
-  std::string* _internal_mutable_error();
-  public:
-
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.LogsResponse)
  private:
   class _Internal;
@@ -1645,7 +1598,6 @@ class LogsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::tokens::v1::Log > logs_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
 };
@@ -2729,52 +2681,6 @@ inline void CreateTokenCCPResponse::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.msg)
 }
 
-// string error = 4 [json_name = "error"];
-inline void CreateTokenCCPResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& CreateTokenCCPResponse::error() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateTokenCCPResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error)
-}
-inline std::string* CreateTokenCCPResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error)
-  return _s;
-}
-inline const std::string& CreateTokenCCPResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void CreateTokenCCPResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateTokenCCPResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateTokenCCPResponse::release_error() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateTokenCCPResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error)
-}
-
 // int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];
 inline void CreateTokenCCPResponse::clear_time_expiration_mfa() {
   time_expiration_mfa_ = int64_t{0};
@@ -3219,52 +3125,6 @@ inline void SaveLogsResponse::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.SaveLogsResponse.msg)
 }
 
-// string error = 2 [json_name = "error"];
-inline void SaveLogsResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& SaveLogsResponse::error() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.SaveLogsResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void SaveLogsResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.SaveLogsResponse.error)
-}
-inline std::string* SaveLogsResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.SaveLogsResponse.error)
-  return _s;
-}
-inline const std::string& SaveLogsResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void SaveLogsResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* SaveLogsResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* SaveLogsResponse::release_error() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.SaveLogsResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void SaveLogsResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.SaveLogsResponse.error)
-}
-
 // -------------------------------------------------------------------
 
 // LogsRequest
@@ -3357,52 +3217,6 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::to
 LogsResponse::logs() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.tokens.v1.LogsResponse.logs)
   return logs_;
-}
-
-// string error = 2 [json_name = "error"];
-inline void LogsResponse::clear_error() {
-  error_.ClearToEmpty();
-}
-inline const std::string& LogsResponse::error() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.LogsResponse.error)
-  return _internal_error();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void LogsResponse::set_error(ArgT0&& arg0, ArgT... args) {
- 
- error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.LogsResponse.error)
-}
-inline std::string* LogsResponse::mutable_error() {
-  std::string* _s = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.LogsResponse.error)
-  return _s;
-}
-inline const std::string& LogsResponse::_internal_error() const {
-  return error_.Get();
-}
-inline void LogsResponse::_internal_set_error(const std::string& value) {
-  
-  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* LogsResponse::_internal_mutable_error() {
-  
-  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* LogsResponse::release_error() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.LogsResponse.error)
-  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void LogsResponse::set_allocated_error(std::string* error) {
-  if (error != nullptr) {
-    
-  } else {
-    
-  }
-  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.LogsResponse.error)
 }
 
 // -------------------------------------------------------------------

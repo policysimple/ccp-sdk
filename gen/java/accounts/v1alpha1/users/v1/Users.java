@@ -29,18 +29,6 @@ public final class Users {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.users.v1.CreateUserResponse}
@@ -56,7 +44,6 @@ public final class Users {
     }
     private CreateUserResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -93,12 +80,6 @@ public final class Users {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -171,44 +152,6 @@ public final class Users {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -226,9 +169,6 @@ public final class Users {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -240,9 +180,6 @@ public final class Users {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -261,8 +198,6 @@ public final class Users {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -276,8 +211,6 @@ public final class Users {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -413,8 +346,6 @@ public final class Users {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -442,7 +373,6 @@ public final class Users {
       public accounts.v1alpha1.users.v1.Users.CreateUserResponse buildPartial() {
         accounts.v1alpha1.users.v1.Users.CreateUserResponse result = new accounts.v1alpha1.users.v1.Users.CreateUserResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -493,10 +423,6 @@ public final class Users {
         if (other == accounts.v1alpha1.users.v1.Users.CreateUserResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -603,82 +529,6 @@ public final class Users {
         onChanged();
         return this;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -747,18 +597,6 @@ public final class Users {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.users.v1.UpdateUserResponse}
@@ -774,7 +612,6 @@ public final class Users {
     }
     private UpdateUserResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -811,12 +648,6 @@ public final class Users {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -889,44 +720,6 @@ public final class Users {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -944,9 +737,6 @@ public final class Users {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -958,9 +748,6 @@ public final class Users {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -979,8 +766,6 @@ public final class Users {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -994,8 +779,6 @@ public final class Users {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1131,8 +914,6 @@ public final class Users {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -1160,7 +941,6 @@ public final class Users {
       public accounts.v1alpha1.users.v1.Users.UpdateUserResponse buildPartial() {
         accounts.v1alpha1.users.v1.Users.UpdateUserResponse result = new accounts.v1alpha1.users.v1.Users.UpdateUserResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -1211,10 +991,6 @@ public final class Users {
         if (other == accounts.v1alpha1.users.v1.Users.UpdateUserResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1321,82 +1097,6 @@ public final class Users {
         onChanged();
         return this;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1465,18 +1165,6 @@ public final class Users {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.users.v1.DeleteUserResponse}
@@ -1492,7 +1180,6 @@ public final class Users {
     }
     private DeleteUserResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -1529,12 +1216,6 @@ public final class Users {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -1607,44 +1288,6 @@ public final class Users {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1662,9 +1305,6 @@ public final class Users {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1676,9 +1316,6 @@ public final class Users {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1697,8 +1334,6 @@ public final class Users {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1712,8 +1347,6 @@ public final class Users {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1849,8 +1482,6 @@ public final class Users {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -1878,7 +1509,6 @@ public final class Users {
       public accounts.v1alpha1.users.v1.Users.DeleteUserResponse buildPartial() {
         accounts.v1alpha1.users.v1.Users.DeleteUserResponse result = new accounts.v1alpha1.users.v1.Users.DeleteUserResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -1929,10 +1559,6 @@ public final class Users {
         if (other == accounts.v1alpha1.users.v1.Users.DeleteUserResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2039,82 +1665,6 @@ public final class Users {
         onChanged();
         return this;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2173,16 +1723,28 @@ public final class Users {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
 
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
   }
   /**
    * <pre>
@@ -2201,6 +1763,8 @@ public final class Users {
       super(builder);
     }
     private ListUserRequest() {
+      organizationId_ = "";
+      projectId_ = "";
     }
 
     @java.lang.Override
@@ -2233,14 +1797,16 @@ public final class Users {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
             default: {
@@ -2276,25 +1842,79 @@ public final class Users {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2311,11 +1931,11 @@ public final class Users {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organizationId_ != 0) {
-        output.writeUInt32(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2326,13 +1946,11 @@ public final class Users {
       if (size != -1) return size;
 
       size = 0;
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2349,10 +1967,10 @@ public final class Users {
       }
       accounts.v1alpha1.users.v1.Users.ListUserRequest other = (accounts.v1alpha1.users.v1.Users.ListUserRequest) obj;
 
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2365,9 +1983,9 @@ public final class Users {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2505,9 +2123,9 @@ public final class Users {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = 0;
+        organizationId_ = "";
 
-        projectId_ = 0;
+        projectId_ = "";
 
         return this;
       }
@@ -2585,11 +2203,13 @@ public final class Users {
 
       public Builder mergeFrom(accounts.v1alpha1.users.v1.Users.ListUserRequest other) {
         if (other == accounts.v1alpha1.users.v1.Users.ListUserRequest.getDefaultInstance()) return this;
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2620,64 +2240,154 @@ public final class Users {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -2793,21 +2503,29 @@ public final class Users {
     boolean getIsActive();
 
     /**
-     * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @return A list containing the rolesIds.
      */
-    java.util.List<java.lang.Integer> getRolesIdsList();
+    java.util.List<java.lang.String>
+        getRolesIdsList();
     /**
-     * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @return The count of rolesIds.
      */
     int getRolesIdsCount();
     /**
-     * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @param index The index of the element to return.
      * @return The rolesIds at the given index.
      */
-    int getRolesIds(int index);
+    java.lang.String getRolesIds(int index);
+    /**
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the rolesIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getRolesIdsBytes(int index);
 
     /**
      * <code>repeated uint32 permissions_ids = 7 [json_name = "permissionsIds"];</code>
@@ -2827,21 +2545,29 @@ public final class Users {
     int getPermissionsIds(int index);
 
     /**
-     * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @return A list containing the organizationsIds.
      */
-    java.util.List<java.lang.Integer> getOrganizationsIdsList();
+    java.util.List<java.lang.String>
+        getOrganizationsIdsList();
     /**
-     * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @return The count of organizationsIds.
      */
     int getOrganizationsIdsCount();
     /**
-     * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @param index The index of the element to return.
      * @return The organizationsIds at the given index.
      */
-    int getOrganizationsIds(int index);
+    java.lang.String getOrganizationsIds(int index);
+    /**
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the organizationsIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationsIdsBytes(int index);
 
     /**
      * <pre>
@@ -3086,9 +2812,9 @@ public final class Users {
       firstName_ = "";
       lastName_ = "";
       email_ = "";
-      rolesIds_ = emptyIntList();
+      rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       permissionsIds_ = emptyIntList();
-      organizationsIds_ = emptyIntList();
+      organizationsIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       phoneNumber_ = "";
       country_ = "";
       city_ = "";
@@ -3163,25 +2889,13 @@ public final class Users {
               isActive_ = input.readBool();
               break;
             }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rolesIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              rolesIds_.addInt(input.readUInt32());
-              break;
-            }
             case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                rolesIds_ = newIntList();
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rolesIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                rolesIds_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
+              rolesIds_.add(s);
               break;
             }
             case 56: {
@@ -3205,25 +2919,13 @@ public final class Users {
               input.popLimit(limit);
               break;
             }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                organizationsIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              organizationsIds_.addInt(input.readUInt32());
-              break;
-            }
             case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                organizationsIds_ = newIntList();
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                organizationsIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                organizationsIds_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
+              organizationsIds_.add(s);
               break;
             }
             case 74: {
@@ -3359,13 +3061,13 @@ public final class Users {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rolesIds_.makeImmutable(); // C
+          rolesIds_ = rolesIds_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           permissionsIds_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          organizationsIds_.makeImmutable(); // C
+          organizationsIds_ = organizationsIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3548,32 +3250,39 @@ public final class Users {
     }
 
     public static final int ROLES_IDS_FIELD_NUMBER = 6;
-    private com.google.protobuf.Internal.IntList rolesIds_;
+    private com.google.protobuf.LazyStringList rolesIds_;
     /**
-     * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @return A list containing the rolesIds.
      */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    public com.google.protobuf.ProtocolStringList
         getRolesIdsList() {
       return rolesIds_;
     }
     /**
-     * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @return The count of rolesIds.
      */
     public int getRolesIdsCount() {
       return rolesIds_.size();
     }
     /**
-     * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @param index The index of the element to return.
      * @return The rolesIds at the given index.
      */
-    public int getRolesIds(int index) {
-      return rolesIds_.getInt(index);
+    public java.lang.String getRolesIds(int index) {
+      return rolesIds_.get(index);
     }
-    private int rolesIdsMemoizedSerializedSize = -1;
+    /**
+     * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the rolesIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRolesIdsBytes(int index) {
+      return rolesIds_.getByteString(index);
+    }
 
     public static final int PERMISSIONS_IDS_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList permissionsIds_;
@@ -3604,32 +3313,39 @@ public final class Users {
     private int permissionsIdsMemoizedSerializedSize = -1;
 
     public static final int ORGANIZATIONS_IDS_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.IntList organizationsIds_;
+    private com.google.protobuf.LazyStringList organizationsIds_;
     /**
-     * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @return A list containing the organizationsIds.
      */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    public com.google.protobuf.ProtocolStringList
         getOrganizationsIdsList() {
       return organizationsIds_;
     }
     /**
-     * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @return The count of organizationsIds.
      */
     public int getOrganizationsIdsCount() {
       return organizationsIds_.size();
     }
     /**
-     * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @param index The index of the element to return.
      * @return The organizationsIds at the given index.
      */
-    public int getOrganizationsIds(int index) {
-      return organizationsIds_.getInt(index);
+    public java.lang.String getOrganizationsIds(int index) {
+      return organizationsIds_.get(index);
     }
-    private int organizationsIdsMemoizedSerializedSize = -1;
+    /**
+     * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the organizationsIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationsIdsBytes(int index) {
+      return organizationsIds_.getByteString(index);
+    }
 
     public static final int PHONE_NUMBER_FIELD_NUMBER = 9;
     private volatile java.lang.Object phoneNumber_;
@@ -4240,12 +3956,8 @@ public final class Users {
       if (isActive_ != false) {
         output.writeBool(5, isActive_);
       }
-      if (getRolesIdsList().size() > 0) {
-        output.writeUInt32NoTag(50);
-        output.writeUInt32NoTag(rolesIdsMemoizedSerializedSize);
-      }
       for (int i = 0; i < rolesIds_.size(); i++) {
-        output.writeUInt32NoTag(rolesIds_.getInt(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rolesIds_.getRaw(i));
       }
       if (getPermissionsIdsList().size() > 0) {
         output.writeUInt32NoTag(58);
@@ -4254,12 +3966,8 @@ public final class Users {
       for (int i = 0; i < permissionsIds_.size(); i++) {
         output.writeUInt32NoTag(permissionsIds_.getInt(i));
       }
-      if (getOrganizationsIdsList().size() > 0) {
-        output.writeUInt32NoTag(66);
-        output.writeUInt32NoTag(organizationsIdsMemoizedSerializedSize);
-      }
       for (int i = 0; i < organizationsIds_.size(); i++) {
-        output.writeUInt32NoTag(organizationsIds_.getInt(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, organizationsIds_.getRaw(i));
       }
       if (!getPhoneNumberBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, phoneNumber_);
@@ -4352,16 +4060,10 @@ public final class Users {
       {
         int dataSize = 0;
         for (int i = 0; i < rolesIds_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(rolesIds_.getInt(i));
+          dataSize += computeStringSizeNoTag(rolesIds_.getRaw(i));
         }
         size += dataSize;
-        if (!getRolesIdsList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        rolesIdsMemoizedSerializedSize = dataSize;
+        size += 1 * getRolesIdsList().size();
       }
       {
         int dataSize = 0;
@@ -4380,16 +4082,10 @@ public final class Users {
       {
         int dataSize = 0;
         for (int i = 0; i < organizationsIds_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(organizationsIds_.getInt(i));
+          dataSize += computeStringSizeNoTag(organizationsIds_.getRaw(i));
         }
         size += dataSize;
-        if (!getOrganizationsIdsList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        organizationsIdsMemoizedSerializedSize = dataSize;
+        size += 1 * getOrganizationsIdsList().size();
       }
       if (!getPhoneNumberBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, phoneNumber_);
@@ -4768,11 +4464,11 @@ public final class Users {
 
         isActive_ = false;
 
-        rolesIds_ = emptyIntList();
+        rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         permissionsIds_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        organizationsIds_ = emptyIntList();
+        organizationsIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         phoneNumber_ = "";
 
@@ -4849,7 +4545,7 @@ public final class Users {
         result.email_ = email_;
         result.isActive_ = isActive_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          rolesIds_.makeImmutable();
+          rolesIds_ = rolesIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.rolesIds_ = rolesIds_;
@@ -4859,7 +4555,7 @@ public final class Users {
         }
         result.permissionsIds_ = permissionsIds_;
         if (((bitField0_ & 0x00000004) != 0)) {
-          organizationsIds_.makeImmutable();
+          organizationsIds_ = organizationsIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.organizationsIds_ = organizationsIds_;
@@ -5421,68 +5117,83 @@ public final class Users {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList rolesIds_ = emptyIntList();
+      private com.google.protobuf.LazyStringList rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureRolesIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          rolesIds_ = mutableCopy(rolesIds_);
+          rolesIds_ = new com.google.protobuf.LazyStringArrayList(rolesIds_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @return A list containing the rolesIds.
        */
-      public java.util.List<java.lang.Integer>
+      public com.google.protobuf.ProtocolStringList
           getRolesIdsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(rolesIds_) : rolesIds_;
+        return rolesIds_.getUnmodifiableView();
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @return The count of rolesIds.
        */
       public int getRolesIdsCount() {
         return rolesIds_.size();
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @param index The index of the element to return.
        * @return The rolesIds at the given index.
        */
-      public int getRolesIds(int index) {
-        return rolesIds_.getInt(index);
+      public java.lang.String getRolesIds(int index) {
+        return rolesIds_.get(index);
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the rolesIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getRolesIdsBytes(int index) {
+        return rolesIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @param index The index to set the value at.
        * @param value The rolesIds to set.
        * @return This builder for chaining.
        */
       public Builder setRolesIds(
-          int index, int value) {
-        ensureRolesIdsIsMutable();
-        rolesIds_.setInt(index, value);
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRolesIdsIsMutable();
+        rolesIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @param value The rolesIds to add.
        * @return This builder for chaining.
        */
-      public Builder addRolesIds(int value) {
-        ensureRolesIdsIsMutable();
-        rolesIds_.addInt(value);
+      public Builder addRolesIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRolesIdsIsMutable();
+        rolesIds_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @param values The rolesIds to add.
        * @return This builder for chaining.
        */
       public Builder addAllRolesIds(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureRolesIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, rolesIds_);
@@ -5490,12 +5201,28 @@ public final class Users {
         return this;
       }
       /**
-       * <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRolesIds() {
-        rolesIds_ = emptyIntList();
+        rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
+       * @param value The bytes of the rolesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRolesIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRolesIdsIsMutable();
+        rolesIds_.add(value);
         onChanged();
         return this;
       }
@@ -5579,68 +5306,83 @@ public final class Users {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList organizationsIds_ = emptyIntList();
+      private com.google.protobuf.LazyStringList organizationsIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureOrganizationsIdsIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          organizationsIds_ = mutableCopy(organizationsIds_);
+          organizationsIds_ = new com.google.protobuf.LazyStringArrayList(organizationsIds_);
           bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @return A list containing the organizationsIds.
        */
-      public java.util.List<java.lang.Integer>
+      public com.google.protobuf.ProtocolStringList
           getOrganizationsIdsList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
-                 java.util.Collections.unmodifiableList(organizationsIds_) : organizationsIds_;
+        return organizationsIds_.getUnmodifiableView();
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @return The count of organizationsIds.
        */
       public int getOrganizationsIdsCount() {
         return organizationsIds_.size();
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @param index The index of the element to return.
        * @return The organizationsIds at the given index.
        */
-      public int getOrganizationsIds(int index) {
-        return organizationsIds_.getInt(index);
+      public java.lang.String getOrganizationsIds(int index) {
+        return organizationsIds_.get(index);
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the organizationsIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationsIdsBytes(int index) {
+        return organizationsIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @param index The index to set the value at.
        * @param value The organizationsIds to set.
        * @return This builder for chaining.
        */
       public Builder setOrganizationsIds(
-          int index, int value) {
-        ensureOrganizationsIdsIsMutable();
-        organizationsIds_.setInt(index, value);
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureOrganizationsIdsIsMutable();
+        organizationsIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @param value The organizationsIds to add.
        * @return This builder for chaining.
        */
-      public Builder addOrganizationsIds(int value) {
-        ensureOrganizationsIdsIsMutable();
-        organizationsIds_.addInt(value);
+      public Builder addOrganizationsIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureOrganizationsIdsIsMutable();
+        organizationsIds_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @param values The organizationsIds to add.
        * @return This builder for chaining.
        */
       public Builder addAllOrganizationsIds(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureOrganizationsIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, organizationsIds_);
@@ -5648,12 +5390,28 @@ public final class Users {
         return this;
       }
       /**
-       * <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationsIds() {
-        organizationsIds_ = emptyIntList();
+        organizationsIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
+       * @param value The bytes of the organizationsIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOrganizationsIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureOrganizationsIdsIsMutable();
+        organizationsIds_.add(value);
         onChanged();
         return this;
       }
@@ -7671,10 +7429,16 @@ public final class Users {
     int getUserId();
 
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * <pre>
@@ -7693,6 +7457,7 @@ public final class Users {
       super(builder);
     }
     private DeleteUserRequest() {
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -7730,9 +7495,10 @@ public final class Users {
               userId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -7779,14 +7545,41 @@ public final class Users {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7806,8 +7599,8 @@ public final class Users {
       if (userId_ != 0) {
         output.writeUInt32(1, userId_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -7822,9 +7615,8 @@ public final class Users {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, userId_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7843,8 +7635,8 @@ public final class Users {
 
       if (getUserId()
           != other.getUserId()) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7859,7 +7651,7 @@ public final class Users {
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7999,7 +7791,7 @@ public final class Users {
         super.clear();
         userId_ = 0;
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -8080,8 +7872,9 @@ public final class Users {
         if (other.getUserId() != 0) {
           setUserId(other.getUserId());
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8143,33 +7936,78 @@ public final class Users {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -8237,10 +8075,16 @@ public final class Users {
     int getId();
 
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * <pre>
@@ -8259,6 +8103,7 @@ public final class Users {
       super(builder);
     }
     private GetOneUserRequest() {
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -8296,9 +8141,10 @@ public final class Users {
               id_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -8345,14 +8191,41 @@ public final class Users {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8372,8 +8245,8 @@ public final class Users {
       if (id_ != 0) {
         output.writeUInt32(1, id_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -8388,9 +8261,8 @@ public final class Users {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8409,8 +8281,8 @@ public final class Users {
 
       if (getId()
           != other.getId()) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8425,7 +8297,7 @@ public final class Users {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8565,7 +8437,7 @@ public final class Users {
         super.clear();
         id_ = 0;
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -8646,8 +8518,9 @@ public final class Users {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8709,33 +8582,78 @@ public final class Users {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -17732,22 +17650,40 @@ public final class Users {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
 
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
-     * <code>uint32 get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+     * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
      * @return The getOrganizationFromProject.
      */
-    int getGetOrganizationFromProject();
+    java.lang.String getGetOrganizationFromProject();
+    /**
+     * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+     * @return The bytes for getOrganizationFromProject.
+     */
+    com.google.protobuf.ByteString
+        getGetOrganizationFromProjectBytes();
 
     /**
      * <code>string permission = 4 [json_name = "permission"];</code>
@@ -17812,21 +17748,29 @@ public final class Users {
         getTypePermissionBytes();
 
     /**
-     * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
      * @return A list containing the rolesIds.
      */
-    java.util.List<java.lang.Integer> getRolesIdsList();
+    java.util.List<java.lang.String>
+        getRolesIdsList();
     /**
-     * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
      * @return The count of rolesIds.
      */
     int getRolesIdsCount();
     /**
-     * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
      * @param index The index of the element to return.
      * @return The rolesIds at the given index.
      */
-    int getRolesIds(int index);
+    java.lang.String getRolesIds(int index);
+    /**
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the rolesIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getRolesIdsBytes(int index);
 
     /**
      * <code>string api_key_value = 11 [json_name = "apiKeyValue"];</code>
@@ -17885,11 +17829,14 @@ public final class Users {
       super(builder);
     }
     private CheckUserRequest() {
+      organizationId_ = "";
+      projectId_ = "";
+      getOrganizationFromProject_ = "";
       permission_ = "";
       userIdDex_ = "";
       userIdAdmin_ = "";
       typePermission_ = "";
-      rolesIds_ = emptyIntList();
+      rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       apiKeyValue_ = "";
       tokenCcpAdmin_ = "";
       tokenCcpUserId_ = "";
@@ -17926,19 +17873,22 @@ public final class Users {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              getOrganizationFromProject_ = input.readUInt32();
+              getOrganizationFromProject_ = s;
               break;
             }
             case 34: {
@@ -17970,25 +17920,13 @@ public final class Users {
               typePermission_ = s;
               break;
             }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rolesIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              rolesIds_.addInt(input.readUInt32());
-              break;
-            }
             case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                rolesIds_ = newIntList();
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rolesIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                rolesIds_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
+              rolesIds_.add(s);
               break;
             }
             case 90: {
@@ -18025,7 +17963,7 @@ public final class Users {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rolesIds_.makeImmutable(); // C
+          rolesIds_ = rolesIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -18045,36 +17983,117 @@ public final class Users {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int GET_ORGANIZATION_FROM_PROJECT_FIELD_NUMBER = 3;
-    private int getOrganizationFromProject_;
+    private volatile java.lang.Object getOrganizationFromProject_;
     /**
-     * <code>uint32 get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+     * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
      * @return The getOrganizationFromProject.
      */
     @java.lang.Override
-    public int getGetOrganizationFromProject() {
-      return getOrganizationFromProject_;
+    public java.lang.String getGetOrganizationFromProject() {
+      java.lang.Object ref = getOrganizationFromProject_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        getOrganizationFromProject_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+     * @return The bytes for getOrganizationFromProject.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGetOrganizationFromProjectBytes() {
+      java.lang.Object ref = getOrganizationFromProject_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        getOrganizationFromProject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 4;
@@ -18249,32 +18268,39 @@ public final class Users {
     }
 
     public static final int ROLES_IDS_FIELD_NUMBER = 10;
-    private com.google.protobuf.Internal.IntList rolesIds_;
+    private com.google.protobuf.LazyStringList rolesIds_;
     /**
-     * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
      * @return A list containing the rolesIds.
      */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    public com.google.protobuf.ProtocolStringList
         getRolesIdsList() {
       return rolesIds_;
     }
     /**
-     * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
      * @return The count of rolesIds.
      */
     public int getRolesIdsCount() {
       return rolesIds_.size();
     }
     /**
-     * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
      * @param index The index of the element to return.
      * @return The rolesIds at the given index.
      */
-    public int getRolesIds(int index) {
-      return rolesIds_.getInt(index);
+    public java.lang.String getRolesIds(int index) {
+      return rolesIds_.get(index);
     }
-    private int rolesIdsMemoizedSerializedSize = -1;
+    /**
+     * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the rolesIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRolesIdsBytes(int index) {
+      return rolesIds_.getByteString(index);
+    }
 
     public static final int API_KEY_VALUE_FIELD_NUMBER = 11;
     private volatile java.lang.Object apiKeyValue_;
@@ -18412,15 +18438,14 @@ public final class Users {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
-      if (organizationId_ != 0) {
-        output.writeUInt32(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
-      if (getOrganizationFromProject_ != 0) {
-        output.writeUInt32(3, getOrganizationFromProject_);
+      if (!getGetOrganizationFromProjectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, getOrganizationFromProject_);
       }
       if (!getPermissionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, permission_);
@@ -18437,12 +18462,8 @@ public final class Users {
       if (!getTypePermissionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, typePermission_);
       }
-      if (getRolesIdsList().size() > 0) {
-        output.writeUInt32NoTag(82);
-        output.writeUInt32NoTag(rolesIdsMemoizedSerializedSize);
-      }
       for (int i = 0; i < rolesIds_.size(); i++) {
-        output.writeUInt32NoTag(rolesIds_.getInt(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, rolesIds_.getRaw(i));
       }
       if (!getApiKeyValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, apiKeyValue_);
@@ -18462,17 +18483,14 @@ public final class Users {
       if (size != -1) return size;
 
       size = 0;
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
-      if (getOrganizationFromProject_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, getOrganizationFromProject_);
+      if (!getGetOrganizationFromProjectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, getOrganizationFromProject_);
       }
       if (!getPermissionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, permission_);
@@ -18493,16 +18511,10 @@ public final class Users {
       {
         int dataSize = 0;
         for (int i = 0; i < rolesIds_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(rolesIds_.getInt(i));
+          dataSize += computeStringSizeNoTag(rolesIds_.getRaw(i));
         }
         size += dataSize;
-        if (!getRolesIdsList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        rolesIdsMemoizedSerializedSize = dataSize;
+        size += 1 * getRolesIdsList().size();
       }
       if (!getApiKeyValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, apiKeyValue_);
@@ -18528,12 +18540,12 @@ public final class Users {
       }
       accounts.v1alpha1.users.v1.Users.CheckUserRequest other = (accounts.v1alpha1.users.v1.Users.CheckUserRequest) obj;
 
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
-      if (getGetOrganizationFromProject()
-          != other.getGetOrganizationFromProject()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getGetOrganizationFromProject()
+          .equals(other.getGetOrganizationFromProject())) return false;
       if (!getPermission()
           .equals(other.getPermission())) return false;
       if (!getUserIdDex()
@@ -18564,11 +18576,11 @@ public final class Users {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + GET_ORGANIZATION_FROM_PROJECT_FIELD_NUMBER;
-      hash = (53 * hash) + getGetOrganizationFromProject();
+      hash = (53 * hash) + getGetOrganizationFromProject().hashCode();
       hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getPermission().hashCode();
       hash = (37 * hash) + USER_ID_DEX_FIELD_NUMBER;
@@ -18722,11 +18734,11 @@ public final class Users {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = 0;
+        organizationId_ = "";
 
-        projectId_ = 0;
+        projectId_ = "";
 
-        getOrganizationFromProject_ = 0;
+        getOrganizationFromProject_ = "";
 
         permission_ = "";
 
@@ -18738,7 +18750,7 @@ public final class Users {
 
         typePermission_ = "";
 
-        rolesIds_ = emptyIntList();
+        rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         apiKeyValue_ = "";
 
@@ -18782,7 +18794,7 @@ public final class Users {
         result.userId_ = userId_;
         result.typePermission_ = typePermission_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          rolesIds_.makeImmutable();
+          rolesIds_ = rolesIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.rolesIds_ = rolesIds_;
@@ -18837,14 +18849,17 @@ public final class Users {
 
       public Builder mergeFrom(accounts.v1alpha1.users.v1.Users.CheckUserRequest other) {
         if (other == accounts.v1alpha1.users.v1.Users.CheckUserRequest.getDefaultInstance()) return this;
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
-        if (other.getGetOrganizationFromProject() != 0) {
-          setGetOrganizationFromProject(other.getGetOrganizationFromProject());
+        if (!other.getGetOrganizationFromProject().isEmpty()) {
+          getOrganizationFromProject_ = other.getOrganizationFromProject_;
+          onChanged();
         }
         if (!other.getPermission().isEmpty()) {
           permission_ = other.permission_;
@@ -18917,95 +18932,230 @@ public final class Users {
       }
       private int bitField0_;
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
 
-      private int getOrganizationFromProject_ ;
+      private java.lang.Object getOrganizationFromProject_ = "";
       /**
-       * <code>uint32 get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+       * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
        * @return The getOrganizationFromProject.
        */
-      @java.lang.Override
-      public int getGetOrganizationFromProject() {
-        return getOrganizationFromProject_;
+      public java.lang.String getGetOrganizationFromProject() {
+        java.lang.Object ref = getOrganizationFromProject_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          getOrganizationFromProject_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+       * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+       * @return The bytes for getOrganizationFromProject.
+       */
+      public com.google.protobuf.ByteString
+          getGetOrganizationFromProjectBytes() {
+        java.lang.Object ref = getOrganizationFromProject_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          getOrganizationFromProject_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
        * @param value The getOrganizationFromProject to set.
        * @return This builder for chaining.
        */
-      public Builder setGetOrganizationFromProject(int value) {
-        
+      public Builder setGetOrganizationFromProject(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         getOrganizationFromProject_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+       * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGetOrganizationFromProject() {
         
-        getOrganizationFromProject_ = 0;
+        getOrganizationFromProject_ = getDefaultInstance().getGetOrganizationFromProject();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string get_organization_from_project = 3 [json_name = "getOrganizationFromProject"];</code>
+       * @param value The bytes for getOrganizationFromProject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGetOrganizationFromProjectBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        getOrganizationFromProject_ = value;
         onChanged();
         return this;
       }
@@ -19365,68 +19515,83 @@ public final class Users {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList rolesIds_ = emptyIntList();
+      private com.google.protobuf.LazyStringList rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureRolesIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          rolesIds_ = mutableCopy(rolesIds_);
+          rolesIds_ = new com.google.protobuf.LazyStringArrayList(rolesIds_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @return A list containing the rolesIds.
        */
-      public java.util.List<java.lang.Integer>
+      public com.google.protobuf.ProtocolStringList
           getRolesIdsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(rolesIds_) : rolesIds_;
+        return rolesIds_.getUnmodifiableView();
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @return The count of rolesIds.
        */
       public int getRolesIdsCount() {
         return rolesIds_.size();
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @param index The index of the element to return.
        * @return The rolesIds at the given index.
        */
-      public int getRolesIds(int index) {
-        return rolesIds_.getInt(index);
+      public java.lang.String getRolesIds(int index) {
+        return rolesIds_.get(index);
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the rolesIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getRolesIdsBytes(int index) {
+        return rolesIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @param index The index to set the value at.
        * @param value The rolesIds to set.
        * @return This builder for chaining.
        */
       public Builder setRolesIds(
-          int index, int value) {
-        ensureRolesIdsIsMutable();
-        rolesIds_.setInt(index, value);
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRolesIdsIsMutable();
+        rolesIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @param value The rolesIds to add.
        * @return This builder for chaining.
        */
-      public Builder addRolesIds(int value) {
-        ensureRolesIdsIsMutable();
-        rolesIds_.addInt(value);
+      public Builder addRolesIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRolesIdsIsMutable();
+        rolesIds_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @param values The rolesIds to add.
        * @return This builder for chaining.
        */
       public Builder addAllRolesIds(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureRolesIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, rolesIds_);
@@ -19434,12 +19599,28 @@ public final class Users {
         return this;
       }
       /**
-       * <code>repeated uint32 roles_ids = 10 [json_name = "rolesIds"];</code>
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRolesIds() {
-        rolesIds_ = emptyIntList();
+        rolesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string roles_ids = 10 [json_name = "rolesIds"];</code>
+       * @param value The bytes of the rolesIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRolesIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRolesIdsIsMutable();
+        rolesIds_.add(value);
         onChanged();
         return this;
       }
@@ -19771,6 +19952,18 @@ public final class Users {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
+
+    /**
+     * <code>string error = 5 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 5 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.users.v1.CheckUserResponse}
@@ -19786,6 +19979,7 @@ public final class Users {
     }
     private CheckUserResponse() {
       msg_ = "";
+      error_ = "";
     }
 
     @java.lang.Override
@@ -19832,6 +20026,12 @@ public final class Users {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
               break;
             }
             default: {
@@ -19926,6 +20126,44 @@ public final class Users {
       }
     }
 
+    public static final int ERROR_FIELD_NUMBER = 5;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 5 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 5 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -19949,6 +20187,9 @@ public final class Users {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, msg_);
       }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, error_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -19968,6 +20209,9 @@ public final class Users {
       }
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19990,6 +20234,8 @@ public final class Users {
           != other.getIsAdmin()) return false;
       if (!getMsg()
           .equals(other.getMsg())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -20009,6 +20255,8 @@ public final class Users {
           getIsAdmin());
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -20148,6 +20396,8 @@ public final class Users {
 
         msg_ = "";
 
+        error_ = "";
+
         return this;
       }
 
@@ -20177,6 +20427,7 @@ public final class Users {
         result.isExists_ = isExists_;
         result.isAdmin_ = isAdmin_;
         result.msg_ = msg_;
+        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -20233,6 +20484,10 @@ public final class Users {
         }
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -20398,6 +20653,82 @@ public final class Users {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 5 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 5 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 5 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 5 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 5 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
         onChanged();
         return this;
       }
@@ -22669,93 +23000,92 @@ public final class Users {
     java.lang.String[] descriptorData = {
       "\n#accounts/v1alpha1/users/users.proto\022\032a" +
       "ccounts.v1alpha1.users.v1\032 accounts/v1al" +
-      "pha1/accounts.proto\"<\n\022CreateUserRespons" +
-      "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro" +
-      "r\"<\n\022UpdateUserResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
-      "g\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteUserRes" +
-      "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005" +
-      "error\"Y\n\017ListUserRequest\022\'\n\017organization" +
-      "_id\030\001 \001(\rR\016organizationId\022\035\n\nproject_id\030" +
-      "\002 \001(\rR\tprojectId\"\247\010\n\021CreateUserRequest\022\027" +
-      "\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nfirst_name\030\002 " +
-      "\001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010lastN" +
-      "ame\022\024\n\005email\030\004 \001(\tR\005email\022\033\n\tis_active\030\005" +
-      " \001(\010R\010isActive\022\033\n\troles_ids\030\006 \003(\rR\010roles" +
-      "Ids\022\'\n\017permissions_ids\030\007 \003(\rR\016permission" +
-      "sIds\022+\n\021organizations_ids\030\010 \003(\rR\020organiz" +
-      "ationsIds\022!\n\014phone_number\030\t \001(\tR\013phoneNu" +
-      "mber\022\030\n\007country\030\n \001(\tR\007country\022\022\n\004city\030\013" +
-      " \001(\tR\004city\022\031\n\010zip_code\030\014 \001(\tR\007zipCode\022\030\n" +
-      "\007address\030\r \001(\tR\007address\022\024\n\005state\030\016 \001(\tR\005" +
-      "state\022#\n\remoji_country\030\017 \001(\tR\014emojiCount" +
-      "ry\022\'\n\017invitation_code\030\020 \001(\tR\016invitationC" +
-      "ode\022$\n\016is_mfa_enabled\030\021 \001(\010R\014isMfaEnable" +
-      "d\022\032\n\010language\030\022 \001(\tR\010language\022+\n\021push_no" +
-      "tification\030\023 \001(\010R\020pushNotification\022-\n\022em" +
-      "ail_notification\030\024 \001(\010R\021emailNotificatio" +
-      "n\0224\n\026new_login_notification\030\025 \001(\010R\024newLo" +
-      "ginNotification\022/\n\023create_notification\030\026" +
-      " \001(\010R\022createNotification\022/\n\023update_notif" +
-      "ication\030\027 \001(\010R\022updateNotification\022/\n\023del" +
-      "ete_notification\030\030 \001(\010R\022deleteNotificati" +
-      "on\0229\n\030application_notification\030\031 \001(\010R\027ap" +
-      "plicationNotification\022+\n\021read_notificati" +
-      "on\030\032 \001(\010R\020readNotification\022\035\n\nphone_code" +
-      "\030\033 \001(\tR\tphoneCode\022)\n\020optional_address\030\034 " +
-      "\001(\tR\017optionalAddress\022\024\n\005image\030\035 \001(\tR\005ima" +
-      "ge\"o\n\021UpdateUserRequest\022\027\n\007auth_id\030\001 \001(\r" +
-      "R\006authId\022A\n\004auth\030\002 \001(\0132-.accounts.v1alph" +
-      "a1.users.v1.CreateUserRequestR\004auth\"U\n\021D" +
-      "eleteUserRequest\022\027\n\007user_id\030\001 \001(\rR\006userI" +
-      "d\022\'\n\017organization_id\030\002 \001(\rR\016organization" +
-      "Id\"L\n\021GetOneUserRequest\022\016\n\002id\030\001 \001(\rR\002id\022" +
-      "\'\n\017organization_id\030\002 \001(\rR\016organizationId" +
-      "\"o\n\022GetOneUserResponse\0221\n\004user\030\001 \001(\0132\035.a" +
-      "ccounts.v1alpha1.UserDetailR\004user\022\020\n\003msg" +
-      "\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error\"E\n\020Lis" +
-      "tUserResponse\0221\n\005users\030\001 \003(\0132\033.accounts." +
-      "v1alpha1.UserListR\005users\"I\n\031ListUserPagi" +
-      "nationRequest\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n" +
-      "\005limit\030\002 \001(\005R\005limit\"e\n\032ListUserPaginatio" +
-      "nResponse\022\024\n\005count\030\001 \001(\003R\005count\0221\n\005users" +
-      "\030\002 \003(\0132\033.accounts.v1alpha1.UserListR\005use" +
-      "rs\"\027\n\025GetListUserDexRequest\"[\n\026GetListUs" +
-      "erDexResponse\022A\n\tusers_dex\030\001 \003(\0132$.accou" +
-      "nts.v1alpha1.users.v1.UsersDexR\010usersDex" +
-      "\"r\n\024GetOneUserDexRequest\022\027\n\007user_id\030\001 \001(" +
-      "\tR\006userId\022A\n\004user\030\002 \001(\0132-.accounts.v1alp" +
-      "ha1.users.v1.CreateUserRequestR\004user\"r\n\025" +
-      "GetOneUserDexResponse\0221\n\004user\030\001 \001(\0132\035.ac" +
-      "counts.v1alpha1.UserDetailR\004user\022\020\n\003msg\030" +
-      "\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error\"Z\n\034Send" +
-      "VerificationEmailRequest\022\024\n\005email\030\001 \001(\tR" +
-      "\005email\022\022\n\004name\030\002 \001(\tR\004name\022\020\n\003url\030\003 \001(\tR" +
-      "\003url\"V\n\035SendVerificationEmailResponse\022\037\n" +
-      "\013html_result\030\001 \001(\tR\nhtmlResult\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\"*\n\022VerifyEmailRequest\022\024\n\005to" +
-      "ken\030\001 \001(\tR\005token\"=\n\023VerifyEmailResponse\022" +
-      "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"" +
-      "\327\003\n\020CheckUserRequest\022\'\n\017organization_id\030" +
-      "\001 \001(\rR\016organizationId\022\035\n\nproject_id\030\002 \001(" +
-      "\rR\tprojectId\022A\n\035get_organization_from_pr" +
-      "oject\030\003 \001(\rR\032getOrganizationFromProject\022" +
-      "\036\n\npermission\030\004 \001(\tR\npermission\022\036\n\013user_" +
-      "id_dex\030\005 \001(\tR\tuserIdDex\022\"\n\ruser_id_admin" +
-      "\030\006 \001(\tR\013userIdAdmin\022\027\n\007user_id\030\007 \001(\rR\006us" +
-      "erId\022\'\n\017type_permission\030\t \001(\tR\016typePermi" +
-      "ssion\022\033\n\troles_ids\030\n \003(\rR\010rolesIds\022\"\n\rap" +
-      "i_key_value\030\013 \001(\tR\013apiKeyValue\022&\n\017token_" +
-      "ccp_admin\030\014 \001(\tR\rtokenCcpAdmin\022)\n\021token_" +
-      "ccp_user_id\030\r \001(\tR\016tokenCcpUserId\"]\n\021Che" +
-      "ckUserResponse\022\033\n\tis_exists\030\001 \001(\010R\010isExi" +
-      "sts\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003msg\030\004 " +
-      "\001(\tR\003msg\"?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006u" +
-      "serId\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032Get" +
-      "UsersEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005" +
-      "value\"P\n\033GetUsersEmailFilterResponse\0221\n\005" +
-      "users\030\001 \003(\0132\033.accounts.v1alpha1.UserList" +
-      "R\005usersB:Z8github.com/cuemby/ccp-sdk/gen" +
-      "/go/accounts/v1alpha1/usersb\006proto3"
+      "pha1/accounts.proto\"&\n\022CreateUserRespons" +
+      "e\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\022UpdateUserRespons" +
+      "e\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\022DeleteUserRespons" +
+      "e\022\020\n\003msg\030\001 \001(\tR\003msg\"Y\n\017ListUserRequest\022\'" +
+      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
+      "\035\n\nproject_id\030\002 \001(\tR\tprojectId\"\247\010\n\021Creat" +
+      "eUserRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n" +
+      "\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_nam" +
+      "e\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001(\tR\005email\022" +
+      "\033\n\tis_active\030\005 \001(\010R\010isActive\022\033\n\troles_id" +
+      "s\030\006 \003(\tR\010rolesIds\022\'\n\017permissions_ids\030\007 \003" +
+      "(\rR\016permissionsIds\022+\n\021organizations_ids\030" +
+      "\010 \003(\tR\020organizationsIds\022!\n\014phone_number\030" +
+      "\t \001(\tR\013phoneNumber\022\030\n\007country\030\n \001(\tR\007cou" +
+      "ntry\022\022\n\004city\030\013 \001(\tR\004city\022\031\n\010zip_code\030\014 \001" +
+      "(\tR\007zipCode\022\030\n\007address\030\r \001(\tR\007address\022\024\n" +
+      "\005state\030\016 \001(\tR\005state\022#\n\remoji_country\030\017 \001" +
+      "(\tR\014emojiCountry\022\'\n\017invitation_code\030\020 \001(" +
+      "\tR\016invitationCode\022$\n\016is_mfa_enabled\030\021 \001(" +
+      "\010R\014isMfaEnabled\022\032\n\010language\030\022 \001(\tR\010langu" +
+      "age\022+\n\021push_notification\030\023 \001(\010R\020pushNoti" +
+      "fication\022-\n\022email_notification\030\024 \001(\010R\021em" +
+      "ailNotification\0224\n\026new_login_notificatio" +
+      "n\030\025 \001(\010R\024newLoginNotification\022/\n\023create_" +
+      "notification\030\026 \001(\010R\022createNotification\022/" +
+      "\n\023update_notification\030\027 \001(\010R\022updateNotif" +
+      "ication\022/\n\023delete_notification\030\030 \001(\010R\022de" +
+      "leteNotification\0229\n\030application_notifica" +
+      "tion\030\031 \001(\010R\027applicationNotification\022+\n\021r" +
+      "ead_notification\030\032 \001(\010R\020readNotification" +
+      "\022\035\n\nphone_code\030\033 \001(\tR\tphoneCode\022)\n\020optio" +
+      "nal_address\030\034 \001(\tR\017optionalAddress\022\024\n\005im" +
+      "age\030\035 \001(\tR\005image\"o\n\021UpdateUserRequest\022\027\n" +
+      "\007auth_id\030\001 \001(\rR\006authId\022A\n\004auth\030\002 \001(\0132-.a" +
+      "ccounts.v1alpha1.users.v1.CreateUserRequ" +
+      "estR\004auth\"U\n\021DeleteUserRequest\022\027\n\007user_i" +
+      "d\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002 \001(\t" +
+      "R\016organizationId\"L\n\021GetOneUserRequest\022\016\n" +
+      "\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 \001(\tR\016" +
+      "organizationId\"o\n\022GetOneUserResponse\0221\n\004" +
+      "user\030\001 \001(\0132\035.accounts.v1alpha1.UserDetai" +
+      "lR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\t" +
+      "R\005error\"E\n\020ListUserResponse\0221\n\005users\030\001 \003" +
+      "(\0132\033.accounts.v1alpha1.UserListR\005users\"I" +
+      "\n\031ListUserPaginationRequest\022\026\n\006offset\030\001 " +
+      "\001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"e\n\032Lis" +
+      "tUserPaginationResponse\022\024\n\005count\030\001 \001(\003R\005" +
+      "count\0221\n\005users\030\002 \003(\0132\033.accounts.v1alpha1" +
+      ".UserListR\005users\"\027\n\025GetListUserDexReques" +
+      "t\"[\n\026GetListUserDexResponse\022A\n\tusers_dex" +
+      "\030\001 \003(\0132$.accounts.v1alpha1.users.v1.User" +
+      "sDexR\010usersDex\"r\n\024GetOneUserDexRequest\022\027" +
+      "\n\007user_id\030\001 \001(\tR\006userId\022A\n\004user\030\002 \001(\0132-." +
+      "accounts.v1alpha1.users.v1.CreateUserReq" +
+      "uestR\004user\"r\n\025GetOneUserDexResponse\0221\n\004u" +
+      "ser\030\001 \001(\0132\035.accounts.v1alpha1.UserDetail" +
+      "R\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR" +
+      "\005error\"Z\n\034SendVerificationEmailRequest\022\024" +
+      "\n\005email\030\001 \001(\tR\005email\022\022\n\004name\030\002 \001(\tR\004name" +
+      "\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035SendVerificationEm" +
+      "ailResponse\022\037\n\013html_result\030\001 \001(\tR\nhtmlRe" +
+      "sult\022\024\n\005error\030\002 \001(\tR\005error\"*\n\022VerifyEmai" +
+      "lRequest\022\024\n\005token\030\001 \001(\tR\005token\"=\n\023Verify" +
+      "EmailResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"\327\003\n\020CheckUserRequest\022\'\n\017or" +
+      "ganization_id\030\001 \001(\tR\016organizationId\022\035\n\np" +
+      "roject_id\030\002 \001(\tR\tprojectId\022A\n\035get_organi" +
+      "zation_from_project\030\003 \001(\tR\032getOrganizati" +
+      "onFromProject\022\036\n\npermission\030\004 \001(\tR\npermi" +
+      "ssion\022\036\n\013user_id_dex\030\005 \001(\tR\tuserIdDex\022\"\n" +
+      "\ruser_id_admin\030\006 \001(\tR\013userIdAdmin\022\027\n\007use" +
+      "r_id\030\007 \001(\rR\006userId\022\'\n\017type_permission\030\t " +
+      "\001(\tR\016typePermission\022\033\n\troles_ids\030\n \003(\tR\010" +
+      "rolesIds\022\"\n\rapi_key_value\030\013 \001(\tR\013apiKeyV" +
+      "alue\022&\n\017token_ccp_admin\030\014 \001(\tR\rtokenCcpA" +
+      "dmin\022)\n\021token_ccp_user_id\030\r \001(\tR\016tokenCc" +
+      "pUserId\"s\n\021CheckUserResponse\022\033\n\tis_exist" +
+      "s\030\001 \001(\010R\010isExists\022\031\n\010is_admin\030\003 \001(\010R\007isA" +
+      "dmin\022\020\n\003msg\030\004 \001(\tR\003msg\022\024\n\005error\030\005 \001(\tR\005e" +
+      "rror\"?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006userI" +
+      "d\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032GetUser" +
+      "sEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005valu" +
+      "e\"P\n\033GetUsersEmailFilterResponse\0221\n\005user" +
+      "s\030\001 \003(\0132\033.accounts.v1alpha1.UserListR\005us" +
+      "ersB:Z8github.com/cuemby/ccp-sdk/gen/go/" +
+      "accounts/v1alpha1/usersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -22767,19 +23097,19 @@ public final class Users {
     internal_static_accounts_v1alpha1_users_v1_CreateUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_CreateUserResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_users_v1_UpdateUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_accounts_v1alpha1_users_v1_UpdateUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_UpdateUserResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_users_v1_DeleteUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_accounts_v1alpha1_users_v1_DeleteUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_DeleteUserResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_users_v1_ListUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_accounts_v1alpha1_users_v1_ListUserRequest_fieldAccessorTable = new
@@ -22893,7 +23223,7 @@ public final class Users {
     internal_static_accounts_v1alpha1_users_v1_CheckUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_users_v1_CheckUserResponse_descriptor,
-        new java.lang.String[] { "IsExists", "IsAdmin", "Msg", });
+        new java.lang.String[] { "IsExists", "IsAdmin", "Msg", "Error", });
     internal_static_accounts_v1alpha1_users_v1_UsersDex_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_accounts_v1alpha1_users_v1_UsersDex_fieldAccessorTable = new

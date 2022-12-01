@@ -36,7 +36,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $is_active = false;
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * Generated from protobuf field <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      */
     private $roles_ids;
     /**
@@ -44,7 +44,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      */
     private $permissions_ids;
     /**
-     * Generated from protobuf field <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * Generated from protobuf field <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      */
     private $organizations_ids;
     /**
@@ -149,9 +149,9 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
      *     @type string $last_name
      *     @type string $email
      *     @type bool $is_active
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $roles_ids
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $organizations_ids
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $organizations_ids
      *     @type string $phone_number
      *           details
      *     @type string $country
@@ -294,7 +294,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
+     * Generated from protobuf field <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRolesIds()
@@ -303,13 +303,13 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 roles_ids = 6 [json_name = "rolesIds"];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string roles_ids = 6 [json_name = "rolesIds"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRolesIds($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->roles_ids = $arr;
 
         return $this;
@@ -338,7 +338,7 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * Generated from protobuf field <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOrganizationsIds()
@@ -347,13 +347,13 @@ class CreateUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated uint32 organizations_ids = 8 [json_name = "organizationsIds"];</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string organizations_ids = 8 [json_name = "organizationsIds"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOrganizationsIds($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->organizations_ids = $arr;
 
         return $this;

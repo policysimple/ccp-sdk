@@ -18,13 +18,9 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
      */
     protected $msg = '';
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string id = 3 [json_name = "id"];</code>
      */
-    protected $error = '';
-    /**
-     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
-     */
-    protected $id = 0;
+    protected $id = '';
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $msg
-     *     @type string $error
-     *     @type int $id
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,30 +60,8 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
+     * Generated from protobuf field <code>string id = 3 [json_name = "id"];</code>
      * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
-     * @return int
      */
     public function getId()
     {
@@ -96,13 +69,13 @@ class CreateRoleResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 3 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string id = 3 [json_name = "id"];</code>
+     * @param string $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;

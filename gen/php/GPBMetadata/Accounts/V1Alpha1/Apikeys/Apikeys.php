@@ -17,7 +17,7 @@ class Apikeys
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-≠
+©
 \'accounts/v1alpha1/apikeys/apikeys.protoaccounts.v1alpha1.apikeys.v1"Ô
 CreateApiKeyRequest
 name (	Rname
@@ -26,17 +26,16 @@ class Apikeys
 organization_id (RorganizationId
 	is_active (RisActive
 
-project_id (R	projectId
+project_id (	R	projectId
 
-expired_at (	R	expiredAt"k
+expired_at (	R	expiredAt"U
 CreateApiKeyResponse
 msg (	Rmsg
 api_key (	RapiKey
-uuid (	Ruuid
-error (	Rerror"?
+uuid (	Ruuid"?
 GetOneApiKeyRequest
 uuid (	Ruuid
-value (	Rvalue"ˆ
+value (	Rvalue"ï
 GetOneApiKeyResponse
 uuid (	Ruuid
 api_key (	RapiKey
@@ -47,10 +46,12 @@ expired_at (	R	expiredAt"k
 	is_active (RisActive4
 project	 (2.accounts.v1alpha1.ProjectRprojectC
 organization
- (2.accounts.v1alpha1.OrganizationRorganization"U
+ (2.accounts.v1alpha1.OrganizationRorganization
+
+expired_at (	R	expiredAt"U
 ListApiKeyRequest
 user_id (	RuserId\'
-organization_id (RorganizationId"˛
+organization_id (	RorganizationId"ù
 
 ApiKeyList
 uuid (	Ruuid
@@ -59,22 +60,22 @@ ApiKeyList
 user_id (	RuserId
 	is_active (RisActive4
 project (2.accounts.v1alpha1.ProjectRprojectC
-organization (2.accounts.v1alpha1.OrganizationRorganization"Y
+organization (2.accounts.v1alpha1.OrganizationRorganization
+
+expired_at	 (	R	expiredAt"Y
 ListApiKeyResponseC
 api_keys (2(.accounts.v1alpha1.apikeys.v1.ApiKeyListRapiKeys"u
 UpdateApiKeyRequest
 uuid (	RuuidJ
-api_key (21.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestRapiKey"W
+api_key (21.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequestRapiKey"A
 UpdateApiKeyResponse
 msg (	Rmsg
-api_key (	RapiKey
-error (	Rerror")
+api_key (	RapiKey")
 DeleteApiKeyRequest
-uuid (	Ruuid"W
+uuid (	Ruuid"A
 DeleteApiKeyResponse
 msg (	Rmsg
-api_key (	RapiKey
-error (	RerrorB<Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeysbproto3'
+api_key (	RapiKeyB<Z:github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/apikeysbproto3'
         , true);
 
         static::$is_initialized = true;

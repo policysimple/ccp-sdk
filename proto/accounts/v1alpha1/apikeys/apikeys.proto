@@ -16,7 +16,7 @@ message CreateApiKeyRequest {
     repeated uint32 permissions_ids = 4;
     uint32 organization_id = 5;
     bool is_active = 6;
-    uint32 project_id = 7;
+    string project_id = 7;
     string expired_at = 8;
 
 
@@ -27,7 +27,6 @@ message CreateApiKeyResponse {
     string msg = 1;
     string api_key = 2;
     string uuid = 4;
-    string error = 5;
 }
 
 /*
@@ -49,15 +48,14 @@ message GetOneApiKeyResponse {
     bool is_active = 8;
     Project project = 9;
     Organization organization = 10;
-
-
+    string expired_at = 11;
 }
 /*
     Tokens List
 */
 message ListApiKeyRequest {
     string user_id = 1;
-    uint32 organization_id = 2;
+    string organization_id = 2;
 }
 
 message ApiKeyList {
@@ -68,6 +66,7 @@ message ApiKeyList {
     bool is_active = 6;
     Project project = 7;
     Organization organization = 8;
+    string expired_at = 9;
 }
 
 message ListApiKeyResponse {
@@ -86,7 +85,6 @@ message UpdateApiKeyRequest {
 message UpdateApiKeyResponse {
     string msg = 1;
     string api_key = 2;
-    string error = 3;
 }
 
 /*
@@ -100,7 +98,6 @@ message DeleteApiKeyRequest {
 message DeleteApiKeyResponse {
     string msg = 1;
     string api_key = 2;
-    string error = 3;
 }
 
 

@@ -25,10 +25,6 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string uuid = 4 [json_name = "uuid"];</code>
      */
     protected $uuid = '';
-    /**
-     * Generated from protobuf field <code>string error = 5 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -39,7 +35,6 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      *     @type string $msg
      *     @type string $api_key
      *     @type string $uuid
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -109,28 +104,6 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->uuid = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 5 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 5 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

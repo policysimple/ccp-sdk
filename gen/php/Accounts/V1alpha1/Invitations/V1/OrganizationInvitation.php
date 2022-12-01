@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class OrganizationInvitation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string id = 6 [json_name = "id"];</code>
      */
-    protected $id = 0;
+    protected $id = '';
     /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
@@ -40,7 +40,7 @@ class OrganizationInvitation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $id
      *     @type string $name
      *     @type string $image
      *     @type string $description
@@ -53,8 +53,8 @@ class OrganizationInvitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string id = 6 [json_name = "id"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -62,13 +62,13 @@ class OrganizationInvitation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string id = 6 [json_name = "id"];</code>
+     * @param string $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;

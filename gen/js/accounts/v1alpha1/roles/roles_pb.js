@@ -366,8 +366,8 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.toObject = function(includeIn
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     typePermission: jspb.Message.getFieldWithDefault(msg, 5, ""),
     permissionIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
@@ -415,11 +415,11 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.deserializeBinaryFromReader =
       msg.setDescription(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 5:
@@ -476,15 +476,15 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.serializeBinaryToWriter = fun
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -543,38 +543,38 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.prototype.setDescription = fu
 
 
 /**
- * optional uint32 project_id = 3;
- * @return {number}
+ * optional string project_id = 3;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.CreateRoleRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional uint32 organization_id = 4;
- * @return {number}
+ * optional string organization_id = 4;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.CreateRoleRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -665,7 +665,7 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.prototype.toObject = function
  */
 proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rolId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    rolId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     rol: (f = msg.getRol()) && proto.accounts.v1alpha1.roles.v1.CreateRoleRequest.toObject(includeInstance, f)
   };
 
@@ -703,8 +703,8 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.deserializeBinaryFromReader =
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
       msg.setRolId(value);
       break;
     case 2:
@@ -742,9 +742,9 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.prototype.serializeBinary = f
 proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRolId();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -760,20 +760,20 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.serializeBinaryToWriter = fun
 
 
 /**
- * optional uint32 rol_id = 1;
- * @return {number}
+ * optional string rol_id = 3;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.prototype.getRolId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.UpdateRoleRequest.prototype.setRolId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -846,7 +846,7 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.prototype.toObject = function
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rolId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    rolId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -883,8 +883,8 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.deserializeBinaryFromReader =
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setRolId(value);
       break;
     default:
@@ -917,9 +917,9 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.prototype.serializeBinary = f
 proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRolId();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -927,20 +927,20 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.serializeBinaryToWriter = fun
 
 
 /**
- * optional uint32 rol_id = 1;
- * @return {number}
+ * optional string rol_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.prototype.getRolId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleRequest.prototype.setRolId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -983,14 +983,13 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
     accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
     isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    error: jspb.Message.getFieldWithDefault(msg, 7, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1028,20 +1027,12 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setOrganizationId(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setProjectId(value);
       break;
     case 5:
       var value = new accounts_v1alpha1_accounts_pb.Permission;
@@ -1052,9 +1043,13 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.deserializeBinaryFromReader 
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsAdmin(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
+      msg.setOrganizationId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectId(value);
       break;
     default:
       reader.skipField();
@@ -1086,8 +1081,8 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.serializeBinary = 
 proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -1096,20 +1091,6 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.serializeBinaryToWriter = fu
   if (f.length > 0) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
-      3,
-      f
-    );
-  }
-  f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
-      4,
       f
     );
   }
@@ -1128,10 +1109,17 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
+  f = message.getOrganizationId();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      8,
+      f
+    );
+  }
+  f = message.getProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -1139,20 +1127,20 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.serializeBinaryToWriter = fu
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string id = 1;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse} returns this
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1171,42 +1159,6 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getName = function
  */
 proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional uint32 organization_id = 3;
- * @return {number}
- */
-proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse} returns this
- */
-proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional uint32 project_id = 4;
- * @return {number}
- */
-proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse} returns this
- */
-proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1267,11 +1219,11 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setIsAdmin = funct
 
 
 /**
- * optional string error = 7;
+ * optional string organization_id = 8;
  * @return {string}
  */
-proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -1279,8 +1231,26 @@ proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getError = functio
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse} returns this
  */
-proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string project_id = 9;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.getProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse} returns this
+ */
+proto.accounts.v1alpha1.roles.v1.GetOneRoleResponse.prototype.setProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -1316,7 +1286,7 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.prototype.toObject = function
  */
 proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rolId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    rolId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1353,8 +1323,8 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.deserializeBinaryFromReader =
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setRolId(value);
       break;
     default:
@@ -1387,9 +1357,9 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.prototype.serializeBinary = f
 proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRolId();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -1397,20 +1367,20 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.serializeBinaryToWriter = fun
 
 
 /**
- * optional uint32 rol_id = 1;
- * @return {number}
+ * optional string rol_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.prototype.getRolId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.DeleteRoleRequest.prototype.setRolId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1446,8 +1416,8 @@ proto.accounts.v1alpha1.roles.v1.ListRolesRequest.prototype.toObject = function(
  */
 proto.accounts.v1alpha1.roles.v1.ListRolesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1484,12 +1454,12 @@ proto.accounts.v1alpha1.roles.v1.ListRolesRequest.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -1522,16 +1492,16 @@ proto.accounts.v1alpha1.roles.v1.ListRolesRequest.prototype.serializeBinary = fu
 proto.accounts.v1alpha1.roles.v1.ListRolesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
-      2,
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1539,38 +1509,38 @@ proto.accounts.v1alpha1.roles.v1.ListRolesRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional uint32 project_id = 1;
- * @return {number}
+ * optional string project_id = 3;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.ListRolesRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.ListRolesRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.ListRolesRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 4;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.ListRolesRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.ListRolesRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.ListRolesRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1767,8 +1737,7 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.toObject = functio
 proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1809,12 +1778,8 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     default:
@@ -1853,16 +1818,9 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
       3,
       f
     );
@@ -1889,11 +1847,11 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.setMsg = function(
 
 
 /**
- * optional string error = 2;
+ * optional string id = 3;
  * @return {string}
  */
-proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1901,26 +1859,8 @@ proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.getError = functio
  * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.CreateRoleResponse} returns this
  */
-proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional uint32 id = 3;
- * @return {number}
- */
-proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.accounts.v1alpha1.roles.v1.CreateRoleResponse} returns this
- */
 proto.accounts.v1alpha1.roles.v1.CreateRoleResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1956,8 +1896,7 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1998,10 +1937,6 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2038,13 +1973,6 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -2063,24 +1991,6 @@ proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.prototype.getMsg = function(
  */
 proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse} returns this
- */
-proto.accounts.v1alpha1.roles.v1.UpdateRoleResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2116,8 +2026,7 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2158,10 +2067,6 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2198,13 +2103,6 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -2223,24 +2121,6 @@ proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.prototype.getMsg = function(
  */
 proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse} returns this
- */
-proto.accounts.v1alpha1.roles.v1.DeleteRoleResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2619,8 +2499,8 @@ proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.prototype.toObject = f
  */
 proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -2659,11 +2539,11 @@ proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
@@ -2700,15 +2580,15 @@ proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.prototype.serializeBin
 proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2724,38 +2604,38 @@ proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.serializeBinaryToWrite
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest} returns this
  */
 proto.accounts.v1alpha1.roles.v1.GetRolesByOrgUserRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
