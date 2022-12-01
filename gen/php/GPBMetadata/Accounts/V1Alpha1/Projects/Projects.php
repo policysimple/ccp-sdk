@@ -17,59 +17,54 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ã
+ù
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"§
 CreateProjectRequest
 name (	Rname 
 description (	Rdescription
-image (	Rimage\'
-organization_id (RorganizationId
-user_id (	RuserId"&
+image (	Rimage
+user_id (	RuserId\'
+organization_id (	RorganizationId"&
 GetOneProjectRequest
-id (Rid"&
+id (	Rid"&
 DeleteProjectRequest
-id (Rid"V
-ListProjectRequest\'
-organization_id (RorganizationId
-user_id (	RuserId"u
-UpdateProjectRequest
-id (RidM
-project (23.accounts.v1alpha1.projects.v1.CreateProjectRequestRproject"J
+id (	Rid"V
+ListProjectRequest
+user_id (	RuserId\'
+organization_id (	RorganizationId"u
+UpdateProjectRequestM
+project (23.accounts.v1alpha1.projects.v1.CreateProjectRequestRproject
+id (	Rid"\\
 	MemberRol
 id (Rid
 name (	Rname
-is_admin (RisAdmin"7
+is_admin (RisAdmin
+uid (	Ruid"7
 ProjectList
 name (	Rname
-image (	Rimage"O
+image (	Rimage"9
 CreateProjectResponse
-msg (	Rmsg
-error (	Rerror
-id (Rid"?
+msg (	Rmsg
+id (	Rid")
 UpdateProjectResponse
-msg (	Rmsg
-error (	Rerror"?
+msg (	Rmsg")
 DeleteProjectResponse
-msg (	Rmsg
-error (	Rerror"í
-GetOneProjectResponse
-id (Rid
+msg (	Rmsg"’
+GetOneProjectResponse
 name (	Rname
-image (	Rimage\'
-organization_id (RorganizationId 
+image (	Rimage 
 description (	Rdescription
 
 created_at (	R	createdAt
 
 updated_at (	R	updatedAt:
 members (2 .accounts.v1alpha1.MemberProjectRmembers=
-owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner
-uid
- (	Ruid)
-organization_uid (	RorganizationUid"c
+owner	 (2\'.accounts.v1alpha1.projects.v1.UserListRowner
+id
+ (	Rid\'
+organization_id (	RorganizationId"M
 ListProjectResponse6
-projects (2.accounts.v1alpha1.ProjectRprojects
-error (	Rerror"L
+projects (2.accounts.v1alpha1.ProjectRprojects"L
 ListProjectPaginationRequest
 offset (Roffset
 limit (Rlimit"ú
@@ -91,18 +86,16 @@ first_name (	R	firstName
 DeleteUserByProjectRequest
 user_id (RuserId
 
-project_id (R	projectId"E
+project_id (	R	projectId"/
 DeleteUserByProjectResponse
-msg (	Rmsg
-error (	Rerror"o
+msg (	Rmsg"o
 EditRoleUserByProjectRequest
 user_id (RuserId
 
-project_id (R	projectId
-role_id (RroleId"G
+project_id (	R	projectId
+role_id (	RroleId"1
 EditRoleUserByProjectResponse
-msg (	Rmsg
-error (	RerrorB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsbproto3'
+msg (	RmsgB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateRoleRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * Generated from protobuf field <code>string rol_id = 3 [json_name = "rolId"];</code>
      */
-    protected $rol_id = 0;
+    protected $rol_id = '';
     /**
      * Generated from protobuf field <code>.accounts.v1alpha1.roles.v1.CreateRoleRequest rol = 2 [json_name = "rol"];</code>
      */
@@ -28,7 +28,7 @@ class UpdateRoleRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $rol_id
+     *     @type string $rol_id
      *     @type \Accounts\V1alpha1\Roles\V1\CreateRoleRequest $rol
      * }
      */
@@ -38,8 +38,8 @@ class UpdateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string rol_id = 3 [json_name = "rolId"];</code>
+     * @return string
      */
     public function getRolId()
     {
@@ -47,13 +47,13 @@ class UpdateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string rol_id = 3 [json_name = "rolId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setRolId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->rol_id = $var;
 
         return $this;

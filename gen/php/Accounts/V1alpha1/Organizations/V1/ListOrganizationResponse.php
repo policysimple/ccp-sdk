@@ -17,10 +17,6 @@ class ListOrganizationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
      */
     private $organizations;
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class ListOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Accounts\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class ListOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Organization::class);
         $this->organizations = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

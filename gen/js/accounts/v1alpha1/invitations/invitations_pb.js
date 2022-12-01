@@ -304,7 +304,7 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.toObject = func
     userIdAdmin: jspb.Message.getFieldWithDefault(msg, 4, ""),
     rolesIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    organizationId: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -354,10 +354,8 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.deserializeBina
       msg.setUserIdAdmin(value);
       break;
     case 5:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addRolesIds(values[i]);
-      }
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRolesIds(value);
       break;
     case 6:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
@@ -366,7 +364,7 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.deserializeBina
       }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -421,7 +419,7 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.serializeBinary
   }
   f = message.getRolesIdsList();
   if (f.length > 0) {
-    writer.writePackedUint32(
+    writer.writeRepeatedString(
       5,
       f
     );
@@ -434,8 +432,8 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.serializeBinary
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
@@ -498,16 +496,16 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.setUs
 
 
 /**
- * repeated uint32 roles_ids = 5;
- * @return {!Array<number>}
+ * repeated string roles_ids = 5;
+ * @return {!Array<string>}
  */
 proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.getRolesIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.setRolesIdsList = function(value) {
@@ -516,7 +514,7 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.setRo
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest} returns this
  */
@@ -572,20 +570,20 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.clear
 
 
 /**
- * optional uint32 organization_id = 7;
- * @return {number}
+ * optional string organization_id = 7;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -636,8 +634,7 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.toObject = fun
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     accounts_v1alpha1_accounts_pb.Role.toObject, includeInstance),
     permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
-    accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
-    error: jspb.Message.getFieldWithDefault(msg, 7, "")
+    accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -701,10 +698,6 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.deserializeBin
       var value = new accounts_v1alpha1_accounts_pb.Permission;
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Permission.deserializeBinaryFromReader);
       msg.addPermissions(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -779,13 +772,6 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.serializeBinar
       6,
       f,
       accounts_v1alpha1_accounts_pb.Permission.serializeBinaryToWriter
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
     );
   }
 };
@@ -975,24 +961,6 @@ proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.prototype.addP
  */
 proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.prototype.clearPermissionsList = function() {
   return this.setPermissionsList([]);
-};
-
-
-/**
- * optional string error = 7;
- * @return {string}
- */
-proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse} returns this
- */
-proto.accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1195,7 +1163,7 @@ proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.prototype.toObject
  */
 proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 6, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     image: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1237,8 +1205,8 @@ proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.deserializeBinaryF
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     case 2:
@@ -1288,9 +1256,9 @@ proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.prototype.serializ
 proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1327,20 +1295,20 @@ proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.serializeBinaryToW
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string id = 6;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -1475,7 +1443,7 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.toObj
  */
 proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 10, ""),
     invitationCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
     rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     accounts_v1alpha1_accounts_pb.Role.toObject, includeInstance),
@@ -1483,8 +1451,7 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.toObject = func
     accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
     organization: (f = msg.getOrganization()) && proto.accounts.v1alpha1.invitations.v1.OrganizationInvitation.toObject(includeInstance, f),
     email: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    success: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    error: jspb.Message.getFieldWithDefault(msg, 9, "")
+    success: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -1521,8 +1488,8 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.deserializeBina
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     case 2:
@@ -1551,10 +1518,6 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.deserializeBina
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuccess(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -1586,9 +1549,9 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.seria
 proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -1637,31 +1600,24 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.serializeBinary
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
 };
 
 
 /**
- * optional uint32 id = 1;
- * @return {number}
+ * optional string id = 10;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
@@ -1832,24 +1788,6 @@ proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.setSu
 };
 
 
-/**
- * optional string error = 9;
- * @return {string}
- */
-proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse} returns this
- */
-proto.accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
 
 
 
@@ -1942,7 +1880,7 @@ proto.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest.deserializeBin
     case 5:
       var value = msg.getProjectsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32, null, 0, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
     default:
@@ -2004,7 +1942,7 @@ proto.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest.serializeBinar
   }
   f = message.getProjectsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -2082,13 +2020,13 @@ proto.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest.prototype.setI
 
 
 /**
- * map<uint32, uint32> projects = 5;
+ * map<string, string> projects = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<number,number>}
+ * @return {!jspb.Map<string,string>}
  */
 proto.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest.prototype.getProjectsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<number,number>} */ (
+  return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
@@ -2266,8 +2204,8 @@ proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.prototype.toObj
 proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     ownerId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     email: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -2310,11 +2248,11 @@ proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.deserializeBina
       msg.setOwnerId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 4:
@@ -2358,15 +2296,15 @@ proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.serializeBinary
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -2400,38 +2338,38 @@ proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.prototype.setOw
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint32 organization_id = 3;
- * @return {number}
+ * optional string organization_id = 3;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2645,8 +2583,8 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.toObjec
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    invitationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    invitationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -2685,11 +2623,11 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.deserializeBinary
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setInvitationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 3:
@@ -2726,15 +2664,15 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.seriali
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getInvitationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2750,38 +2688,38 @@ proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.serializeBinaryTo
 
 
 /**
- * optional uint32 invitation_id = 1;
- * @return {number}
+ * optional string invitation_id = 1;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.getInvitationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.setInvitationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest} returns this
  */
 proto.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

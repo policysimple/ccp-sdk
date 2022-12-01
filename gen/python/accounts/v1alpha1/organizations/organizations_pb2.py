@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3accounts/v1alpha1/organizations/organizations.proto\x12\"accounts.v1alpha1.organizations.v1\x1a accounts/v1alpha1/accounts.proto\"\x80\x01\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\"\x90\x01\n\x19UpdateOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\rR\x0eorganizationId\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"\xf0\x02\n\x1aGetOneOrganizationResponse\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12S\n\x08projects\x18\x04 \x03(\x0b\x32\x37.accounts.v1alpha1.organizations.v1.ProjectOrganizationR\x08projects\x12\x44\n\x07members\x18\x05 \x03(\x0b\x32*.accounts.v1alpha1.organizations.v1.MemberR\x07members\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12\x14\n\x05\x65rror\x18\x08 \x01(\tR\x05\x65rror\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\"w\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x86\x01\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x02 \x01(\rR\x12roleIdOrganization\x12\x14\n\x05\x65rror\x18\x03 \x01(\tR\x05\x65rror\x12\x0e\n\x02id\x18\x04 \x01(\rR\x02id\"D\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xe5\x01\n\x06Member\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x43\n\x05roles\x18\x06 \x03(\x0b\x32-.accounts.v1alpha1.organizations.v1.MemberRolR\x05roles\x12\x14\n\x05image\x18\x07 \x01(\tR\x05image\"q\n\x13ProjectOrganization\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"J\n\tMemberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdminBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
+  serialized_pb=b'\n3accounts/v1alpha1/organizations/organizations.proto\x12\"accounts.v1alpha1.organizations.v1\x1a accounts/v1alpha1/accounts.proto\"\x80\x01\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\x90\x01\n\x19UpdateOrganizationRequest\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\xda\x02\n\x1aGetOneOrganizationResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12S\n\x08projects\x18\x04 \x03(\x0b\x32\x37.accounts.v1alpha1.organizations.v1.ProjectOrganizationR\x08projects\x12\x44\n\x07members\x18\x05 \x03(\x0b\x32*.accounts.v1alpha1.organizations.v1.MemberR\x07members\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"p\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x06 \x01(\tR\x12roleIdOrganization\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02id\".\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\".\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd4\x01\n\x06Member\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x32\n\x05roles\x18\x06 \x03(\x0b\x32\x1c.accounts.v1alpha1.MemberRolR\x05roles\x12\x14\n\x05image\x18\x07 \x01(\tR\x05image\x12\x0e\n\x02id\x18\x08 \x01(\rR\x02id\"q\n\x13ProjectOrganization\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02idBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -115,8 +115,8 @@ _GETONEORGANIZATIONREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -146,33 +146,33 @@ _UPDATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='organization_id', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.organization_id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.name', index=1,
+      name='name', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.name', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.description', index=2,
+      name='description', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.description', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='description', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='image', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.image', index=3,
+      name='image', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.image', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='image', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest.organization_id', index=3,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -200,7 +200,7 @@ _DELETEORGANIZATIONREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -231,68 +231,61 @@ _GETONEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.name', index=1,
+      name='name', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.name', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='image', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.image', index=2,
+      name='image', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.image', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='image', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='projects', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.projects', index=3,
+      name='projects', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.projects', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projects', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='members', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members', index=4,
+      name='members', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.members', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='members', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.description', index=5,
+      name='description', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.description', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='description', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='owner', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.owner', index=6,
+      name='owner', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.owner', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='owner', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.error', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='slug', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.slug', index=8,
+      name='slug', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.slug', index=6,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='slug', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.id', index=7,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -306,7 +299,7 @@ _GETONEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=571,
-  serialized_end=939,
+  serialized_end=917,
 )
 
 
@@ -325,13 +318,6 @@ _LISTORGANIZATIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizations', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.organizations.v1.ListOrganizationResponse.error', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -344,8 +330,8 @@ _LISTORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=941,
-  serialized_end=1060,
+  serialized_start=919,
+  serialized_end=1016,
 )
 
 
@@ -366,22 +352,15 @@ _CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
       serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='role_id_organization', full_name='accounts.v1alpha1.organizations.v1.CreateOrganizationResponse.role_id_organization', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='roleIdOrganization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.organizations.v1.CreateOrganizationResponse.error', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='id', full_name='accounts.v1alpha1.organizations.v1.CreateOrganizationResponse.id', index=2,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.organizations.v1.CreateOrganizationResponse.id', index=3,
-      number=4, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -397,8 +376,8 @@ _CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1197,
+  serialized_start=1018,
+  serialized_end=1130,
 )
 
 
@@ -417,13 +396,6 @@ _UPDATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationResponse.error', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -436,8 +408,8 @@ _UPDATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1199,
-  serialized_end=1267,
+  serialized_start=1132,
+  serialized_end=1178,
 )
 
 
@@ -456,13 +428,6 @@ _DELETEORGANIZATIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='accounts.v1alpha1.organizations.v1.DeleteOrganizationResponse.error', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -475,8 +440,8 @@ _DELETEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1269,
-  serialized_end=1337,
+  serialized_start=1180,
+  serialized_end=1226,
 )
 
 
@@ -489,54 +454,54 @@ _MEMBER = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.organizations.v1.Member.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='user_id', full_name='accounts.v1alpha1.organizations.v1.Member.user_id', index=1,
+      name='user_id', full_name='accounts.v1alpha1.organizations.v1.Member.user_id', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='first_name', full_name='accounts.v1alpha1.organizations.v1.Member.first_name', index=2,
+      name='first_name', full_name='accounts.v1alpha1.organizations.v1.Member.first_name', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='firstName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_name', full_name='accounts.v1alpha1.organizations.v1.Member.last_name', index=3,
+      name='last_name', full_name='accounts.v1alpha1.organizations.v1.Member.last_name', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lastName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_active', full_name='accounts.v1alpha1.organizations.v1.Member.is_active', index=4,
+      name='is_active', full_name='accounts.v1alpha1.organizations.v1.Member.is_active', index=3,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isActive', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='roles', full_name='accounts.v1alpha1.organizations.v1.Member.roles', index=5,
+      name='roles', full_name='accounts.v1alpha1.organizations.v1.Member.roles', index=4,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='roles', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='image', full_name='accounts.v1alpha1.organizations.v1.Member.image', index=6,
+      name='image', full_name='accounts.v1alpha1.organizations.v1.Member.image', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='image', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='accounts.v1alpha1.organizations.v1.Member.id', index=6,
+      number=8, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -549,8 +514,8 @@ _MEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1340,
-  serialized_end=1569,
+  serialized_start=1229,
+  serialized_end=1441,
 )
 
 
@@ -563,79 +528,33 @@ _PROJECTORGANIZATION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.id', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.name', index=1,
+      name='name', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.name', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='image', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.image', index=2,
+      name='image', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.image', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='image', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.description', index=3,
+      name='description', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.description', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='description', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1571,
-  serialized_end=1684,
-)
-
-
-_MEMBERROL = _descriptor.Descriptor(
-  name='MemberRol',
-  full_name='accounts.v1alpha1.organizations.v1.MemberRol',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='accounts.v1alpha1.organizations.v1.MemberRol.id', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='accounts.v1alpha1.organizations.v1.MemberRol.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='id', full_name='accounts.v1alpha1.organizations.v1.ProjectOrganization.id', index=3,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='is_admin', full_name='accounts.v1alpha1.organizations.v1.MemberRol.is_admin', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='isAdmin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -648,15 +567,15 @@ _MEMBERROL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1686,
-  serialized_end=1760,
+  serialized_start=1443,
+  serialized_end=1556,
 )
 
 _GETONEORGANIZATIONRESPONSE.fields_by_name['projects'].message_type = _PROJECTORGANIZATION
 _GETONEORGANIZATIONRESPONSE.fields_by_name['members'].message_type = _MEMBER
 _GETONEORGANIZATIONRESPONSE.fields_by_name['owner'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._USERLIST
 _LISTORGANIZATIONRESPONSE.fields_by_name['organizations'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._ORGANIZATION
-_MEMBER.fields_by_name['roles'].message_type = _MEMBERROL
+_MEMBER.fields_by_name['roles'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._MEMBERROL
 DESCRIPTOR.message_types_by_name['CreateOrganizationRequest'] = _CREATEORGANIZATIONREQUEST
 DESCRIPTOR.message_types_by_name['ListOrganizationRequest'] = _LISTORGANIZATIONREQUEST
 DESCRIPTOR.message_types_by_name['GetOneOrganizationRequest'] = _GETONEORGANIZATIONREQUEST
@@ -669,7 +588,6 @@ DESCRIPTOR.message_types_by_name['UpdateOrganizationResponse'] = _UPDATEORGANIZA
 DESCRIPTOR.message_types_by_name['DeleteOrganizationResponse'] = _DELETEORGANIZATIONRESPONSE
 DESCRIPTOR.message_types_by_name['Member'] = _MEMBER
 DESCRIPTOR.message_types_by_name['ProjectOrganization'] = _PROJECTORGANIZATION
-DESCRIPTOR.message_types_by_name['MemberRol'] = _MEMBERROL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateOrganizationRequest = _reflection.GeneratedProtocolMessageType('CreateOrganizationRequest', (_message.Message,), {
@@ -755,13 +673,6 @@ ProjectOrganization = _reflection.GeneratedProtocolMessageType('ProjectOrganizat
   # @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.ProjectOrganization)
   })
 _sym_db.RegisterMessage(ProjectOrganization)
-
-MemberRol = _reflection.GeneratedProtocolMessageType('MemberRol', (_message.Message,), {
-  'DESCRIPTOR' : _MEMBERROL,
-  '__module__' : 'accounts.v1alpha1.organizations.organizations_pb2'
-  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.MemberRol)
-  })
-_sym_db.RegisterMessage(MemberRol)
 
 
 DESCRIPTOR._options = None

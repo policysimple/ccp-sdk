@@ -17,9 +17,9 @@ message SendInvitationUserRequest {
     string email = 2;
     //repeated ProjectDetail projects = 3;
     string user_id_admin = 4;
-    repeated uint32 roles_ids = 5; //roles projects
+    repeated string roles_ids = 5; //roles projects
     repeated uint32 permissions_ids = 6;
-    uint32 organization_id = 7;
+    string organization_id = 7;
 }
 
 message SendInvitationUserResponse {
@@ -29,7 +29,6 @@ message SendInvitationUserResponse {
     string result=4;
     repeated Role roles = 5;
     repeated Permission permissions = 6;
-    string error = 7;
 }
 
 message GetInvitationUserRequest {
@@ -38,7 +37,7 @@ message GetInvitationUserRequest {
 }
 
 message OrganizationInvitation {
-    uint32 id = 1;
+    string id = 6;
     string name = 2;
     string image = 3;
     string description = 4;
@@ -46,14 +45,13 @@ message OrganizationInvitation {
 }
 
 message GetInvitationUserResponse {
-    uint32 id = 1;
+    string id = 10;
     string invitation_code = 2;
     repeated Role roles = 4;
     repeated Permission permissions = 5;
     OrganizationInvitation organization = 6;
     string email = 7;
     bool success = 8;   
-    string error = 9;
 }
 
 message AgreeInvitationUserRequest {
@@ -61,7 +59,7 @@ message AgreeInvitationUserRequest {
     string email=2;
     string guest_user_id=3;
     InvitationResponse invitation_response=4;
-    map<uint32, uint32> projects=5;
+    map<string, string> projects=5;
 }
 
 message AgreeInvitationUserResponse {
@@ -75,8 +73,8 @@ message AgreeInvitationUserResponse {
 */
 message ListInvitationSendRequest {
     string owner_id = 1;
-    uint32 project_id = 2;
-    uint32 organization_id = 3;
+    string project_id = 2;
+    string organization_id = 3;
     string email = 4;
 }
 
@@ -89,8 +87,8 @@ message ListInvitationSendResponse {
 */
 
 message DeleteInvitationRequest {
-    uint32 invitation_id = 1; 
-    uint32 organization_id = 2;
+    string invitation_id = 1; 
+    string organization_id = 2;
     string user_id = 3;
 }
 

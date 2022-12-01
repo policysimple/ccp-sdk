@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
      */
-    protected $id = 0;
+    protected $id = '';
     /**
      * Generated from protobuf field <code>string invitation_code = 2 [json_name = "invitationCode"];</code>
      */
@@ -41,10 +41,6 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool success = 8 [json_name = "success"];</code>
      */
     protected $success = false;
-    /**
-     * Generated from protobuf field <code>string error = 9 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -52,14 +48,13 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $id
      *     @type string $invitation_code
      *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type \Accounts\V1alpha1\Invitations\V1\OrganizationInvitation $organization
      *     @type string $email
      *     @type bool $success
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -68,8 +63,8 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -77,13 +72,13 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     * @param string $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -227,28 +222,6 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->success = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 9 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 9 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

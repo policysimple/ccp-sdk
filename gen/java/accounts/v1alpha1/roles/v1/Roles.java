@@ -43,16 +43,28 @@ public final class Roles {
         getDescriptionBytes();
 
     /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
-     * <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
 
     /**
      * <code>string type_permission = 5 [json_name = "typePermission"];</code>
@@ -98,6 +110,8 @@ public final class Roles {
     private CreateRoleRequest() {
       name_ = "";
       description_ = "";
+      projectId_ = "";
+      organizationId_ = "";
       typePermission_ = "";
       permissionIds_ = emptyIntList();
     }
@@ -145,14 +159,16 @@ public final class Roles {
               description_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             case 42: {
@@ -294,25 +310,79 @@ public final class Roles {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 3;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 4;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int TYPE_PERMISSION_FIELD_NUMBER = 5;
@@ -402,11 +472,11 @@ public final class Roles {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(3, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(4, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, organizationId_);
       }
       if (!getTypePermissionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, typePermission_);
@@ -433,13 +503,11 @@ public final class Roles {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, organizationId_);
       }
       if (!getTypePermissionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, typePermission_);
@@ -477,10 +545,10 @@ public final class Roles {
           .equals(other.getName())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!getTypePermission()
           .equals(other.getTypePermission())) return false;
       if (!getPermissionIdsList()
@@ -501,9 +569,9 @@ public final class Roles {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + TYPE_PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getTypePermission().hashCode();
       if (getPermissionIdsCount() > 0) {
@@ -647,9 +715,9 @@ public final class Roles {
 
         description_ = "";
 
-        projectId_ = 0;
+        projectId_ = "";
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         typePermission_ = "";
 
@@ -748,11 +816,13 @@ public final class Roles {
           description_ = other.description_;
           onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         if (!other.getTypePermission().isEmpty()) {
           typePermission_ = other.typePermission_;
@@ -950,64 +1020,154 @@ public final class Roles {
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -1224,10 +1384,16 @@ public final class Roles {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * <code>string rol_id = 3 [json_name = "rolId"];</code>
      * @return The rolId.
      */
-    int getRolId();
+    java.lang.String getRolId();
+    /**
+     * <code>string rol_id = 3 [json_name = "rolId"];</code>
+     * @return The bytes for rolId.
+     */
+    com.google.protobuf.ByteString
+        getRolIdBytes();
 
     /**
      * <code>.accounts.v1alpha1.roles.v1.CreateRoleRequest rol = 2 [json_name = "rol"];</code>
@@ -1257,6 +1423,7 @@ public final class Roles {
       super(builder);
     }
     private UpdateRoleRequest() {
+      rolId_ = "";
     }
 
     @java.lang.Override
@@ -1289,11 +1456,6 @@ public final class Roles {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              rolId_ = input.readUInt32();
-              break;
-            }
             case 18: {
               accounts.v1alpha1.roles.v1.Roles.CreateRoleRequest.Builder subBuilder = null;
               if (rol_ != null) {
@@ -1305,6 +1467,12 @@ public final class Roles {
                 rol_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rolId_ = s;
               break;
             }
             default: {
@@ -1339,15 +1507,42 @@ public final class Roles {
               accounts.v1alpha1.roles.v1.Roles.UpdateRoleRequest.class, accounts.v1alpha1.roles.v1.Roles.UpdateRoleRequest.Builder.class);
     }
 
-    public static final int ROL_ID_FIELD_NUMBER = 1;
-    private int rolId_;
+    public static final int ROL_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object rolId_;
     /**
-     * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * <code>string rol_id = 3 [json_name = "rolId"];</code>
      * @return The rolId.
      */
     @java.lang.Override
-    public int getRolId() {
-      return rolId_;
+    public java.lang.String getRolId() {
+      java.lang.Object ref = rolId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rolId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rol_id = 3 [json_name = "rolId"];</code>
+     * @return The bytes for rolId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRolIdBytes() {
+      java.lang.Object ref = rolId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ROL_FIELD_NUMBER = 2;
@@ -1390,11 +1585,11 @@ public final class Roles {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rolId_ != 0) {
-        output.writeUInt32(1, rolId_);
-      }
       if (rol_ != null) {
         output.writeMessage(2, getRol());
+      }
+      if (!getRolIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, rolId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1405,13 +1600,12 @@ public final class Roles {
       if (size != -1) return size;
 
       size = 0;
-      if (rolId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, rolId_);
-      }
       if (rol_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getRol());
+      }
+      if (!getRolIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, rolId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1428,8 +1622,8 @@ public final class Roles {
       }
       accounts.v1alpha1.roles.v1.Roles.UpdateRoleRequest other = (accounts.v1alpha1.roles.v1.Roles.UpdateRoleRequest) obj;
 
-      if (getRolId()
-          != other.getRolId()) return false;
+      if (!getRolId()
+          .equals(other.getRolId())) return false;
       if (hasRol() != other.hasRol()) return false;
       if (hasRol()) {
         if (!getRol()
@@ -1447,7 +1641,7 @@ public final class Roles {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ROL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRolId();
+      hash = (53 * hash) + getRolId().hashCode();
       if (hasRol()) {
         hash = (37 * hash) + ROL_FIELD_NUMBER;
         hash = (53 * hash) + getRol().hashCode();
@@ -1585,7 +1779,7 @@ public final class Roles {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rolId_ = 0;
+        rolId_ = "";
 
         if (rolBuilder_ == null) {
           rol_ = null;
@@ -1673,8 +1867,9 @@ public final class Roles {
 
       public Builder mergeFrom(accounts.v1alpha1.roles.v1.Roles.UpdateRoleRequest other) {
         if (other == accounts.v1alpha1.roles.v1.Roles.UpdateRoleRequest.getDefaultInstance()) return this;
-        if (other.getRolId() != 0) {
-          setRolId(other.getRolId());
+        if (!other.getRolId().isEmpty()) {
+          rolId_ = other.rolId_;
+          onChanged();
         }
         if (other.hasRol()) {
           mergeRol(other.getRol());
@@ -1708,33 +1903,78 @@ public final class Roles {
         return this;
       }
 
-      private int rolId_ ;
+      private java.lang.Object rolId_ = "";
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 3 [json_name = "rolId"];</code>
        * @return The rolId.
        */
-      @java.lang.Override
-      public int getRolId() {
-        return rolId_;
+      public java.lang.String getRolId() {
+        java.lang.Object ref = rolId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rolId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 3 [json_name = "rolId"];</code>
+       * @return The bytes for rolId.
+       */
+      public com.google.protobuf.ByteString
+          getRolIdBytes() {
+        java.lang.Object ref = rolId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rolId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rol_id = 3 [json_name = "rolId"];</code>
        * @param value The rolId to set.
        * @return This builder for chaining.
        */
-      public Builder setRolId(int value) {
-        
+      public Builder setRolId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         rolId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 3 [json_name = "rolId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRolId() {
         
-        rolId_ = 0;
+        rolId_ = getDefaultInstance().getRolId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rol_id = 3 [json_name = "rolId"];</code>
+       * @param value The bytes for rolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRolIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rolId_ = value;
         onChanged();
         return this;
       }
@@ -1915,10 +2155,16 @@ public final class Roles {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
      * @return The rolId.
      */
-    int getRolId();
+    java.lang.String getRolId();
+    /**
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
+     * @return The bytes for rolId.
+     */
+    com.google.protobuf.ByteString
+        getRolIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.GetOneRoleRequest}
@@ -1933,6 +2179,7 @@ public final class Roles {
       super(builder);
     }
     private GetOneRoleRequest() {
+      rolId_ = "";
     }
 
     @java.lang.Override
@@ -1965,9 +2212,10 @@ public final class Roles {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              rolId_ = input.readUInt32();
+              rolId_ = s;
               break;
             }
             default: {
@@ -2002,15 +2250,42 @@ public final class Roles {
               accounts.v1alpha1.roles.v1.Roles.GetOneRoleRequest.class, accounts.v1alpha1.roles.v1.Roles.GetOneRoleRequest.Builder.class);
     }
 
-    public static final int ROL_ID_FIELD_NUMBER = 1;
-    private int rolId_;
+    public static final int ROL_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object rolId_;
     /**
-     * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
      * @return The rolId.
      */
     @java.lang.Override
-    public int getRolId() {
-      return rolId_;
+    public java.lang.String getRolId() {
+      java.lang.Object ref = rolId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rolId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
+     * @return The bytes for rolId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRolIdBytes() {
+      java.lang.Object ref = rolId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2027,8 +2302,8 @@ public final class Roles {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rolId_ != 0) {
-        output.writeUInt32(1, rolId_);
+      if (!getRolIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rolId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2039,9 +2314,8 @@ public final class Roles {
       if (size != -1) return size;
 
       size = 0;
-      if (rolId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, rolId_);
+      if (!getRolIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rolId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2058,8 +2332,8 @@ public final class Roles {
       }
       accounts.v1alpha1.roles.v1.Roles.GetOneRoleRequest other = (accounts.v1alpha1.roles.v1.Roles.GetOneRoleRequest) obj;
 
-      if (getRolId()
-          != other.getRolId()) return false;
+      if (!getRolId()
+          .equals(other.getRolId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2072,7 +2346,7 @@ public final class Roles {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ROL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRolId();
+      hash = (53 * hash) + getRolId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2206,7 +2480,7 @@ public final class Roles {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rolId_ = 0;
+        rolId_ = "";
 
         return this;
       }
@@ -2283,8 +2557,9 @@ public final class Roles {
 
       public Builder mergeFrom(accounts.v1alpha1.roles.v1.Roles.GetOneRoleRequest other) {
         if (other == accounts.v1alpha1.roles.v1.Roles.GetOneRoleRequest.getDefaultInstance()) return this;
-        if (other.getRolId() != 0) {
-          setRolId(other.getRolId());
+        if (!other.getRolId().isEmpty()) {
+          rolId_ = other.rolId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2315,33 +2590,78 @@ public final class Roles {
         return this;
       }
 
-      private int rolId_ ;
+      private java.lang.Object rolId_ = "";
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
        * @return The rolId.
        */
-      @java.lang.Override
-      public int getRolId() {
-        return rolId_;
+      public java.lang.String getRolId() {
+        java.lang.Object ref = rolId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rolId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
+       * @return The bytes for rolId.
+       */
+      public com.google.protobuf.ByteString
+          getRolIdBytes() {
+        java.lang.Object ref = rolId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rolId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
        * @param value The rolId to set.
        * @return This builder for chaining.
        */
-      public Builder setRolId(int value) {
-        
+      public Builder setRolId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         rolId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRolId() {
         
-        rolId_ = 0;
+        rolId_ = getDefaultInstance().getRolId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
+       * @param value The bytes for rolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRolIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rolId_ = value;
         onChanged();
         return this;
       }
@@ -2403,10 +2723,16 @@ public final class Roles {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
-    int getId();
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
 
     /**
      * <code>string name = 2 [json_name = "name"];</code>
@@ -2419,18 +2745,6 @@ public final class Roles {
      */
     com.google.protobuf.ByteString
         getNameBytes();
-
-    /**
-     * <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
-     * @return The organizationId.
-     */
-    int getOrganizationId();
-
-    /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
-     * @return The projectId.
-     */
-    int getProjectId();
 
     /**
      * <code>repeated .accounts.v1alpha1.Permission permissions = 5 [json_name = "permissions"];</code>
@@ -2463,16 +2777,28 @@ public final class Roles {
     boolean getIsAdmin();
 
     /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     * @return The organizationId.
      */
-    java.lang.String getError();
+    java.lang.String getOrganizationId();
     /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
      */
     com.google.protobuf.ByteString
-        getErrorBytes();
+        getOrganizationIdBytes();
+
+    /**
+     * <code>string project_id = 9 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 9 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.GetOneRoleResponse}
@@ -2487,9 +2813,11 @@ public final class Roles {
       super(builder);
     }
     private GetOneRoleResponse() {
+      id_ = "";
       name_ = "";
       permissions_ = java.util.Collections.emptyList();
-      error_ = "";
+      organizationId_ = "";
+      projectId_ = "";
     }
 
     @java.lang.Override
@@ -2523,25 +2851,16 @@ public final class Roles {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readUInt32();
+              id_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
-              break;
-            }
-            case 24: {
-
-              organizationId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              projectId_ = input.readUInt32();
               break;
             }
             case 42: {
@@ -2558,10 +2877,16 @@ public final class Roles {
               isAdmin_ = input.readBool();
               break;
             }
-            case 58: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              error_ = s;
+              organizationId_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
               break;
             }
             default: {
@@ -2600,14 +2925,41 @@ public final class Roles {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private volatile java.lang.Object id_;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
@@ -2646,28 +2998,6 @@ public final class Roles {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 3;
-    private int organizationId_;
-    /**
-     * <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
-     * @return The organizationId.
-     */
-    @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
-    }
-
-    public static final int PROJECT_ID_FIELD_NUMBER = 4;
-    private int projectId_;
-    /**
-     * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
-     * @return The projectId.
-     */
-    @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
     }
 
     public static final int PERMISSIONS_FIELD_NUMBER = 5;
@@ -2721,38 +3051,76 @@ public final class Roles {
       return isAdmin_;
     }
 
-    public static final int ERROR_FIELD_NUMBER = 7;
-    private volatile java.lang.Object error_;
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 8;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     * @return The organizationId.
      */
     @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        error_ = s;
+        organizationId_ = s;
         return s;
       }
     }
     /**
-     * <code>string error = 7 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        error_ = b;
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <code>string project_id = 9 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 9 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2773,17 +3141,11 @@ public final class Roles {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      if (organizationId_ != 0) {
-        output.writeUInt32(3, organizationId_);
-      }
-      if (projectId_ != 0) {
-        output.writeUInt32(4, projectId_);
       }
       for (int i = 0; i < permissions_.size(); i++) {
         output.writeMessage(5, permissions_.get(i));
@@ -2791,8 +3153,11 @@ public final class Roles {
       if (isAdmin_ != false) {
         output.writeBool(6, isAdmin_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, error_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, organizationId_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, projectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2803,20 +3168,11 @@ public final class Roles {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, organizationId_);
-      }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, projectId_);
       }
       for (int i = 0; i < permissions_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -2826,8 +3182,11 @@ public final class Roles {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isAdmin_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, error_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, organizationId_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2844,20 +3203,18 @@ public final class Roles {
       }
       accounts.v1alpha1.roles.v1.Roles.GetOneRoleResponse other = (accounts.v1alpha1.roles.v1.Roles.GetOneRoleResponse) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
       if (!getPermissionsList()
           .equals(other.getPermissionsList())) return false;
       if (getIsAdmin()
           != other.getIsAdmin()) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2870,13 +3227,9 @@ public final class Roles {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
-      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
       if (getPermissionsCount() > 0) {
         hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
         hash = (53 * hash) + getPermissionsList().hashCode();
@@ -2884,8 +3237,10 @@ public final class Roles {
       hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAdmin());
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3020,13 +3375,9 @@ public final class Roles {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        id_ = "";
 
         name_ = "";
-
-        organizationId_ = 0;
-
-        projectId_ = 0;
 
         if (permissionsBuilder_ == null) {
           permissions_ = java.util.Collections.emptyList();
@@ -3036,7 +3387,9 @@ public final class Roles {
         }
         isAdmin_ = false;
 
-        error_ = "";
+        organizationId_ = "";
+
+        projectId_ = "";
 
         return this;
       }
@@ -3067,8 +3420,6 @@ public final class Roles {
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.name_ = name_;
-        result.organizationId_ = organizationId_;
-        result.projectId_ = projectId_;
         if (permissionsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             permissions_ = java.util.Collections.unmodifiableList(permissions_);
@@ -3079,7 +3430,8 @@ public final class Roles {
           result.permissions_ = permissionsBuilder_.build();
         }
         result.isAdmin_ = isAdmin_;
-        result.error_ = error_;
+        result.organizationId_ = organizationId_;
+        result.projectId_ = projectId_;
         onBuilt();
         return result;
       }
@@ -3128,18 +3480,13 @@ public final class Roles {
 
       public Builder mergeFrom(accounts.v1alpha1.roles.v1.Roles.GetOneRoleResponse other) {
         if (other == accounts.v1alpha1.roles.v1.Roles.GetOneRoleResponse.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
-        }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
-        }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
         }
         if (permissionsBuilder_ == null) {
           if (!other.permissions_.isEmpty()) {
@@ -3170,8 +3517,12 @@ public final class Roles {
         if (other.getIsAdmin() != false) {
           setIsAdmin(other.getIsAdmin());
         }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3204,33 +3555,78 @@ public final class Roles {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private java.lang.Object id_ = "";
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
        * @return The id.
        */
-      @java.lang.Override
-      public int getId() {
-        return id_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
-        
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         
-        id_ = 0;
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
         onChanged();
         return this;
       }
@@ -3307,68 +3703,6 @@ public final class Roles {
   checkByteStringIsUtf8(value);
         
         name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int organizationId_ ;
-      /**
-       * <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
-       * @return The organizationId.
-       */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
-      }
-      /**
-       * <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOrganizationId(int value) {
-        
-        organizationId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 organization_id = 3 [json_name = "organizationId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOrganizationId() {
-        
-        organizationId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int projectId_ ;
-      /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
-       * @return The projectId.
-       */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
-      }
-      /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
-       * @param value The projectId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProjectId(int value) {
-        
-        projectId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 project_id = 4 [json_name = "projectId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProjectId() {
-        
-        projectId_ = 0;
         onChanged();
         return this;
       }
@@ -3644,78 +3978,154 @@ public final class Roles {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @return The error.
+       * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+       * @return The organizationId.
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          error_ = s;
+          organizationId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @return The bytes for error.
+       * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
        */
       public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          error_ = b;
+          organizationId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @param value The error to set.
+       * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setError(
+      public Builder setOrganizationId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        error_ = value;
+        organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 7 [json_name = "error"];</code>
+       * <code>string organization_id = 8 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearError() {
+      public Builder clearOrganizationId() {
         
-        error_ = getDefaultInstance().getError();
+        organizationId_ = getDefaultInstance().getOrganizationId();
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 7 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
+       * <code>string organization_id = 8 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorBytes(
+      public Builder setOrganizationIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        error_ = value;
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <code>string project_id = 9 [json_name = "projectId"];</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 9 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 9 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 9 [json_name = "projectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 9 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -3777,10 +4187,16 @@ public final class Roles {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
      * @return The rolId.
      */
-    int getRolId();
+    java.lang.String getRolId();
+    /**
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
+     * @return The bytes for rolId.
+     */
+    com.google.protobuf.ByteString
+        getRolIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.DeleteRoleRequest}
@@ -3795,6 +4211,7 @@ public final class Roles {
       super(builder);
     }
     private DeleteRoleRequest() {
+      rolId_ = "";
     }
 
     @java.lang.Override
@@ -3827,9 +4244,10 @@ public final class Roles {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              rolId_ = input.readUInt32();
+              rolId_ = s;
               break;
             }
             default: {
@@ -3864,15 +4282,42 @@ public final class Roles {
               accounts.v1alpha1.roles.v1.Roles.DeleteRoleRequest.class, accounts.v1alpha1.roles.v1.Roles.DeleteRoleRequest.Builder.class);
     }
 
-    public static final int ROL_ID_FIELD_NUMBER = 1;
-    private int rolId_;
+    public static final int ROL_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object rolId_;
     /**
-     * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
      * @return The rolId.
      */
     @java.lang.Override
-    public int getRolId() {
-      return rolId_;
+    public java.lang.String getRolId() {
+      java.lang.Object ref = rolId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rolId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rol_id = 2 [json_name = "rolId"];</code>
+     * @return The bytes for rolId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRolIdBytes() {
+      java.lang.Object ref = rolId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3889,8 +4334,8 @@ public final class Roles {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rolId_ != 0) {
-        output.writeUInt32(1, rolId_);
+      if (!getRolIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rolId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3901,9 +4346,8 @@ public final class Roles {
       if (size != -1) return size;
 
       size = 0;
-      if (rolId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, rolId_);
+      if (!getRolIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rolId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3920,8 +4364,8 @@ public final class Roles {
       }
       accounts.v1alpha1.roles.v1.Roles.DeleteRoleRequest other = (accounts.v1alpha1.roles.v1.Roles.DeleteRoleRequest) obj;
 
-      if (getRolId()
-          != other.getRolId()) return false;
+      if (!getRolId()
+          .equals(other.getRolId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3934,7 +4378,7 @@ public final class Roles {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ROL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRolId();
+      hash = (53 * hash) + getRolId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4068,7 +4512,7 @@ public final class Roles {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rolId_ = 0;
+        rolId_ = "";
 
         return this;
       }
@@ -4145,8 +4589,9 @@ public final class Roles {
 
       public Builder mergeFrom(accounts.v1alpha1.roles.v1.Roles.DeleteRoleRequest other) {
         if (other == accounts.v1alpha1.roles.v1.Roles.DeleteRoleRequest.getDefaultInstance()) return this;
-        if (other.getRolId() != 0) {
-          setRolId(other.getRolId());
+        if (!other.getRolId().isEmpty()) {
+          rolId_ = other.rolId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4177,33 +4622,78 @@ public final class Roles {
         return this;
       }
 
-      private int rolId_ ;
+      private java.lang.Object rolId_ = "";
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
        * @return The rolId.
        */
-      @java.lang.Override
-      public int getRolId() {
-        return rolId_;
+      public java.lang.String getRolId() {
+        java.lang.Object ref = rolId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rolId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
+       * @return The bytes for rolId.
+       */
+      public com.google.protobuf.ByteString
+          getRolIdBytes() {
+        java.lang.Object ref = rolId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rolId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
        * @param value The rolId to set.
        * @return This builder for chaining.
        */
-      public Builder setRolId(int value) {
-        
+      public Builder setRolId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         rolId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 rol_id = 1 [json_name = "rolId"];</code>
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRolId() {
         
-        rolId_ = 0;
+        rolId_ = getDefaultInstance().getRolId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rol_id = 2 [json_name = "rolId"];</code>
+       * @param value The bytes for rolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRolIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rolId_ = value;
         onChanged();
         return this;
       }
@@ -4265,16 +4755,28 @@ public final class Roles {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.ListRolesRequest}
@@ -4289,6 +4791,8 @@ public final class Roles {
       super(builder);
     }
     private ListRolesRequest() {
+      projectId_ = "";
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -4321,14 +4825,16 @@ public final class Roles {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
-            case 16: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -4363,26 +4869,80 @@ public final class Roles {
               accounts.v1alpha1.roles.v1.Roles.ListRolesRequest.class, accounts.v1alpha1.roles.v1.Roles.ListRolesRequest.Builder.class);
     }
 
-    public static final int PROJECT_ID_FIELD_NUMBER = 1;
-    private int projectId_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 3 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
-    private int organizationId_;
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4399,11 +4959,11 @@ public final class Roles {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (projectId_ != 0) {
-        output.writeUInt32(1, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -4414,13 +4974,11 @@ public final class Roles {
       if (size != -1) return size;
 
       size = 0;
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4437,10 +4995,10 @@ public final class Roles {
       }
       accounts.v1alpha1.roles.v1.Roles.ListRolesRequest other = (accounts.v1alpha1.roles.v1.Roles.ListRolesRequest) obj;
 
-      if (getProjectId()
-          != other.getProjectId()) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4453,9 +5011,9 @@ public final class Roles {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4589,9 +5147,9 @@ public final class Roles {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        projectId_ = 0;
+        projectId_ = "";
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -4669,11 +5227,13 @@ public final class Roles {
 
       public Builder mergeFrom(accounts.v1alpha1.roles.v1.Roles.ListRolesRequest other) {
         if (other == accounts.v1alpha1.roles.v1.Roles.ListRolesRequest.getDefaultInstance()) return this;
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4704,64 +5264,154 @@ public final class Roles {
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 1 [json_name = "projectId"];</code>
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 3 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -5636,22 +6286,16 @@ public final class Roles {
         getMsgBytes();
 
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
-
-    /**
-     * <code>uint32 id = 3 [json_name = "id"];</code>
+     * <code>string id = 3 [json_name = "id"];</code>
      * @return The id.
      */
-    int getId();
+    java.lang.String getId();
+    /**
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.CreateRoleResponse}
@@ -5667,7 +6311,7 @@ public final class Roles {
     }
     private CreateRoleResponse() {
       msg_ = "";
-      error_ = "";
+      id_ = "";
     }
 
     @java.lang.Override
@@ -5706,15 +6350,10 @@ public final class Roles {
               msg_ = s;
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              error_ = s;
-              break;
-            }
-            case 24: {
-
-              id_ = input.readUInt32();
+              id_ = s;
               break;
             }
             default: {
@@ -5787,53 +6426,42 @@ public final class Roles {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
+    public static final int ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object id_;
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        error_ = s;
+        id_ = s;
         return s;
       }
     }
     /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>string id = 3 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        error_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int ID_FIELD_NUMBER = 3;
-    private int id_;
-    /**
-     * <code>uint32 id = 3 [json_name = "id"];</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public int getId() {
-      return id_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5853,11 +6481,8 @@ public final class Roles {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
-      if (id_ != 0) {
-        output.writeUInt32(3, id_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -5871,12 +6496,8 @@ public final class Roles {
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
-      }
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, id_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5895,10 +6516,8 @@ public final class Roles {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
-      if (getId()
-          != other.getId()) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5912,10 +6531,8 @@ public final class Roles {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6051,9 +6668,7 @@ public final class Roles {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
-        id_ = 0;
+        id_ = "";
 
         return this;
       }
@@ -6082,7 +6697,6 @@ public final class Roles {
       public accounts.v1alpha1.roles.v1.Roles.CreateRoleResponse buildPartial() {
         accounts.v1alpha1.roles.v1.Roles.CreateRoleResponse result = new accounts.v1alpha1.roles.v1.Roles.CreateRoleResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         result.id_ = id_;
         onBuilt();
         return result;
@@ -6136,12 +6750,9 @@ public final class Roles {
           msg_ = other.msg_;
           onChanged();
         }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
-        }
-        if (other.getId() != 0) {
-          setId(other.getId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6248,109 +6859,78 @@ public final class Roles {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private java.lang.Object id_ = "";
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @return The id.
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          error_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          error_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setError(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        error_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
+       * <code>string id = 3 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearError() {
+      public Builder clearId() {
         
-        error_ = getDefaultInstance().getError();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
+       * <code>string id = 3 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        error_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int id_ ;
-      /**
-       * <code>uint32 id = 3 [json_name = "id"];</code>
-       * @return The id.
-       */
-      @java.lang.Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>uint32 id = 3 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
         id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 3 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
         onChanged();
         return this;
       }
@@ -6422,18 +7002,6 @@ public final class Roles {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.UpdateRoleResponse}
@@ -6449,7 +7017,6 @@ public final class Roles {
     }
     private UpdateRoleResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -6486,12 +7053,6 @@ public final class Roles {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -6564,44 +7125,6 @@ public final class Roles {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6619,9 +7142,6 @@ public final class Roles {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -6633,9 +7153,6 @@ public final class Roles {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6654,8 +7171,6 @@ public final class Roles {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6669,8 +7184,6 @@ public final class Roles {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6806,8 +7319,6 @@ public final class Roles {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -6835,7 +7346,6 @@ public final class Roles {
       public accounts.v1alpha1.roles.v1.Roles.UpdateRoleResponse buildPartial() {
         accounts.v1alpha1.roles.v1.Roles.UpdateRoleResponse result = new accounts.v1alpha1.roles.v1.Roles.UpdateRoleResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -6886,10 +7396,6 @@ public final class Roles {
         if (other == accounts.v1alpha1.roles.v1.Roles.UpdateRoleResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6996,82 +7502,6 @@ public final class Roles {
         onChanged();
         return this;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7140,18 +7570,6 @@ public final class Roles {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.roles.v1.DeleteRoleResponse}
@@ -7167,7 +7585,6 @@ public final class Roles {
     }
     private DeleteRoleResponse() {
       msg_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -7204,12 +7621,6 @@ public final class Roles {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -7282,44 +7693,6 @@ public final class Roles {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 2 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7337,9 +7710,6 @@ public final class Roles {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7351,9 +7721,6 @@ public final class Roles {
       size = 0;
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7372,8 +7739,6 @@ public final class Roles {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7387,8 +7752,6 @@ public final class Roles {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7524,8 +7887,6 @@ public final class Roles {
         super.clear();
         msg_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -7553,7 +7914,6 @@ public final class Roles {
       public accounts.v1alpha1.roles.v1.Roles.DeleteRoleResponse buildPartial() {
         accounts.v1alpha1.roles.v1.Roles.DeleteRoleResponse result = new accounts.v1alpha1.roles.v1.Roles.DeleteRoleResponse(this);
         result.msg_ = msg_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -7604,10 +7964,6 @@ public final class Roles {
         if (other == accounts.v1alpha1.roles.v1.Roles.DeleteRoleResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7711,82 +8067,6 @@ public final class Roles {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 2 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -9581,16 +9861,28 @@ public final class Roles {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
 
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
      * <code>uint32 user_id = 3 [json_name = "userId"];</code>
@@ -9611,6 +9903,8 @@ public final class Roles {
       super(builder);
     }
     private GetRolesByOrgUserRequest() {
+      organizationId_ = "";
+      projectId_ = "";
     }
 
     @java.lang.Override
@@ -9643,14 +9937,16 @@ public final class Roles {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
             case 24: {
@@ -9691,25 +9987,79 @@ public final class Roles {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int USER_ID_FIELD_NUMBER = 3;
@@ -9737,11 +10087,11 @@ public final class Roles {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organizationId_ != 0) {
-        output.writeUInt32(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
       if (userId_ != 0) {
         output.writeUInt32(3, userId_);
@@ -9755,13 +10105,11 @@ public final class Roles {
       if (size != -1) return size;
 
       size = 0;
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
       if (userId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -9782,10 +10130,10 @@ public final class Roles {
       }
       accounts.v1alpha1.roles.v1.Roles.GetRolesByOrgUserRequest other = (accounts.v1alpha1.roles.v1.Roles.GetRolesByOrgUserRequest) obj;
 
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (getUserId()
           != other.getUserId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9800,9 +10148,9 @@ public final class Roles {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9938,9 +10286,9 @@ public final class Roles {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = 0;
+        organizationId_ = "";
 
-        projectId_ = 0;
+        projectId_ = "";
 
         userId_ = 0;
 
@@ -10021,11 +10369,13 @@ public final class Roles {
 
       public Builder mergeFrom(accounts.v1alpha1.roles.v1.Roles.GetRolesByOrgUserRequest other) {
         if (other == accounts.v1alpha1.roles.v1.Roles.GetRolesByOrgUserRequest.getDefaultInstance()) return this;
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
         if (other.getUserId() != 0) {
           setUserId(other.getUserId());
@@ -10059,64 +10409,154 @@ public final class Roles {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 2 [json_name = "projectId"];</code>
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -11452,44 +11892,42 @@ public final class Roles {
       "ccounts.v1alpha1.roles.v1\032 accounts/v1al" +
       "pha1/accounts.proto\"\341\001\n\021CreateRoleReques" +
       "t\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013description\030\002 \001" +
-      "(\tR\013description\022\035\n\nproject_id\030\003 \001(\rR\tpro" +
-      "jectId\022\'\n\017organization_id\030\004 \001(\rR\016organiz" +
+      "(\tR\013description\022\035\n\nproject_id\030\003 \001(\tR\tpro" +
+      "jectId\022\'\n\017organization_id\030\004 \001(\tR\016organiz" +
       "ationId\022\'\n\017type_permission\030\005 \001(\tR\016typePe" +
       "rmission\022%\n\016permission_ids\030\006 \003(\rR\rpermis" +
-      "sionIds\"k\n\021UpdateRoleRequest\022\025\n\006rol_id\030\001" +
-      " \001(\rR\005rolId\022?\n\003rol\030\002 \001(\0132-.accounts.v1al" +
+      "sionIds\"k\n\021UpdateRoleRequest\022\025\n\006rol_id\030\003" +
+      " \001(\tR\005rolId\022?\n\003rol\030\002 \001(\0132-.accounts.v1al" +
       "pha1.roles.v1.CreateRoleRequestR\003rol\"*\n\021" +
-      "GetOneRoleRequest\022\025\n\006rol_id\030\001 \001(\rR\005rolId" +
-      "\"\362\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\rR\002id\022" +
-      "\022\n\004name\030\002 \001(\tR\004name\022\'\n\017organization_id\030\003" +
-      " \001(\rR\016organizationId\022\035\n\nproject_id\030\004 \001(\r" +
-      "R\tprojectId\022?\n\013permissions\030\005 \003(\0132\035.accou" +
-      "nts.v1alpha1.PermissionR\013permissions\022\031\n\010" +
-      "is_admin\030\006 \001(\010R\007isAdmin\022\024\n\005error\030\007 \001(\tR\005" +
-      "error\"*\n\021DeleteRoleRequest\022\025\n\006rol_id\030\001 \001" +
-      "(\rR\005rolId\"Z\n\020ListRolesRequest\022\035\n\nproject" +
-      "_id\030\001 \001(\rR\tprojectId\022\'\n\017organization_id\030" +
-      "\002 \001(\rR\016organizationId\"B\n\021ListRolesRespon" +
-      "se\022-\n\005roles\030\001 \003(\0132\027.accounts.v1alpha1.Ro" +
-      "leR\005roles\"L\n\022CreateRoleResponse\022\020\n\003msg\030\001" +
-      " \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\022\016\n\002id\030\003 " +
-      "\001(\rR\002id\"<\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001" +
-      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"<\n\022DeleteR" +
-      "oleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"0\n\025GetRolesByUserRequest\022\027\n\007" +
-      "user_id\030\001 \001(\tR\006userId\"\223\001\n\026GetRolesByUser" +
-      "Response\022C\n\014organization\030\001 \003(\0132\037.account" +
-      "s.v1alpha1.OrganizationR\014organization\0224\n" +
-      "\007project\030\002 \003(\0132\032.accounts.v1alpha1.Proje" +
-      "ctR\007project\"{\n\030GetRolesByOrgUserRequest\022" +
-      "\'\n\017organization_id\030\001 \001(\rR\016organizationId" +
-      "\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\027\n\007user_" +
-      "id\030\003 \001(\rR\006userId\"\226\001\n\031GetRolesByOrgUserRe" +
-      "sponse\022C\n\014organization\030\001 \003(\0132\037.accounts." +
-      "v1alpha1.OrganizationR\014organization\0224\n\007p" +
-      "roject\030\002 \003(\0132\032.accounts.v1alpha1.Project" +
-      "R\007projectB:Z8github.com/cuemby/ccp-sdk/g" +
-      "en/go/accounts/v1alpha1/rolesb\006proto3"
+      "GetOneRoleRequest\022\025\n\006rol_id\030\002 \001(\tR\005rolId" +
+      "\"\334\001\n\022GetOneRoleResponse\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\022\n\004name\030\002 \001(\tR\004name\022?\n\013permissions\030\005 \003(\013" +
+      "2\035.accounts.v1alpha1.PermissionR\013permiss" +
+      "ions\022\031\n\010is_admin\030\006 \001(\010R\007isAdmin\022\'\n\017organ" +
+      "ization_id\030\010 \001(\tR\016organizationId\022\035\n\nproj" +
+      "ect_id\030\t \001(\tR\tprojectId\"*\n\021DeleteRoleReq" +
+      "uest\022\025\n\006rol_id\030\002 \001(\tR\005rolId\"Z\n\020ListRoles" +
+      "Request\022\035\n\nproject_id\030\003 \001(\tR\tprojectId\022\'" +
+      "\n\017organization_id\030\004 \001(\tR\016organizationId\"" +
+      "B\n\021ListRolesResponse\022-\n\005roles\030\001 \003(\0132\027.ac" +
+      "counts.v1alpha1.RoleR\005roles\"6\n\022CreateRol" +
+      "eResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\016\n\002id\030\003 \001(\tR" +
+      "\002id\"&\n\022UpdateRoleResponse\022\020\n\003msg\030\001 \001(\tR\003" +
+      "msg\"&\n\022DeleteRoleResponse\022\020\n\003msg\030\001 \001(\tR\003" +
+      "msg\"0\n\025GetRolesByUserRequest\022\027\n\007user_id\030" +
+      "\001 \001(\tR\006userId\"\223\001\n\026GetRolesByUserResponse" +
+      "\022C\n\014organization\030\001 \003(\0132\037.accounts.v1alph" +
+      "a1.OrganizationR\014organization\0224\n\007project" +
+      "\030\002 \003(\0132\032.accounts.v1alpha1.ProjectR\007proj" +
+      "ect\"{\n\030GetRolesByOrgUserRequest\022\'\n\017organ" +
+      "ization_id\030\001 \001(\tR\016organizationId\022\035\n\nproj" +
+      "ect_id\030\002 \001(\tR\tprojectId\022\027\n\007user_id\030\003 \001(\r" +
+      "R\006userId\"\226\001\n\031GetRolesByOrgUserResponse\022C" +
+      "\n\014organization\030\001 \003(\0132\037.accounts.v1alpha1" +
+      ".OrganizationR\014organization\0224\n\007project\030\002" +
+      " \003(\0132\032.accounts.v1alpha1.ProjectR\007projec" +
+      "tB:Z8github.com/cuemby/ccp-sdk/gen/go/ac" +
+      "counts/v1alpha1/rolesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11519,7 +11957,7 @@ public final class Roles {
     internal_static_accounts_v1alpha1_roles_v1_GetOneRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_roles_v1_GetOneRoleResponse_descriptor,
-        new java.lang.String[] { "Id", "Name", "OrganizationId", "ProjectId", "Permissions", "IsAdmin", "Error", });
+        new java.lang.String[] { "Id", "Name", "Permissions", "IsAdmin", "OrganizationId", "ProjectId", });
     internal_static_accounts_v1alpha1_roles_v1_DeleteRoleRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_roles_v1_DeleteRoleRequest_fieldAccessorTable = new
@@ -11543,19 +11981,19 @@ public final class Roles {
     internal_static_accounts_v1alpha1_roles_v1_CreateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_roles_v1_CreateRoleResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", "Id", });
+        new java.lang.String[] { "Msg", "Id", });
     internal_static_accounts_v1alpha1_roles_v1_UpdateRoleResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_accounts_v1alpha1_roles_v1_UpdateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_roles_v1_UpdateRoleResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_roles_v1_DeleteRoleResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_accounts_v1alpha1_roles_v1_DeleteRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_roles_v1_DeleteRoleResponse_descriptor,
-        new java.lang.String[] { "Msg", "Error", });
+        new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_roles_v1_GetRolesByUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_accounts_v1alpha1_roles_v1_GetRolesByUserRequest_fieldAccessorTable = new

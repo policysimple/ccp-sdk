@@ -599,8 +599,7 @@ proto.accounts.v1alpha1.users.v1.CreateUserResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.users.v1.CreateUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -641,10 +640,6 @@ proto.accounts.v1alpha1.users.v1.CreateUserResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -681,13 +676,6 @@ proto.accounts.v1alpha1.users.v1.CreateUserResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -706,24 +694,6 @@ proto.accounts.v1alpha1.users.v1.CreateUserResponse.prototype.getMsg = function(
  */
 proto.accounts.v1alpha1.users.v1.CreateUserResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.CreateUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.CreateUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.CreateUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -759,8 +729,7 @@ proto.accounts.v1alpha1.users.v1.UpdateUserResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.users.v1.UpdateUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -801,10 +770,6 @@ proto.accounts.v1alpha1.users.v1.UpdateUserResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -841,13 +806,6 @@ proto.accounts.v1alpha1.users.v1.UpdateUserResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -866,24 +824,6 @@ proto.accounts.v1alpha1.users.v1.UpdateUserResponse.prototype.getMsg = function(
  */
 proto.accounts.v1alpha1.users.v1.UpdateUserResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.UpdateUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.UpdateUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.UpdateUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -919,8 +859,7 @@ proto.accounts.v1alpha1.users.v1.DeleteUserResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.users.v1.DeleteUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -961,10 +900,6 @@ proto.accounts.v1alpha1.users.v1.DeleteUserResponse.deserializeBinaryFromReader 
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1001,13 +936,6 @@ proto.accounts.v1alpha1.users.v1.DeleteUserResponse.serializeBinaryToWriter = fu
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -1026,24 +954,6 @@ proto.accounts.v1alpha1.users.v1.DeleteUserResponse.prototype.getMsg = function(
  */
 proto.accounts.v1alpha1.users.v1.DeleteUserResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.users.v1.DeleteUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.users.v1.DeleteUserResponse} returns this
- */
-proto.accounts.v1alpha1.users.v1.DeleteUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1079,8 +989,8 @@ proto.accounts.v1alpha1.users.v1.ListUserRequest.prototype.toObject = function(o
  */
 proto.accounts.v1alpha1.users.v1.ListUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1118,11 +1028,11 @@ proto.accounts.v1alpha1.users.v1.ListUserRequest.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     default:
@@ -1155,15 +1065,15 @@ proto.accounts.v1alpha1.users.v1.ListUserRequest.prototype.serializeBinary = fun
 proto.accounts.v1alpha1.users.v1.ListUserRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1172,38 +1082,38 @@ proto.accounts.v1alpha1.users.v1.ListUserRequest.serializeBinaryToWriter = funct
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.ListUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.ListUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.ListUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.ListUserRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.ListUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.ListUserRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1332,10 +1242,8 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.deserializeBinaryFromReader =
       msg.setIsActive(value);
       break;
     case 6:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addRolesIds(values[i]);
-      }
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRolesIds(value);
       break;
     case 7:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
@@ -1344,10 +1252,8 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.deserializeBinaryFromReader =
       }
       break;
     case 8:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addOrganizationsIds(values[i]);
-      }
+      var value = /** @type {string} */ (reader.readString());
+      msg.addOrganizationsIds(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -1499,7 +1405,7 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.serializeBinaryToWriter = fun
   }
   f = message.getRolesIdsList();
   if (f.length > 0) {
-    writer.writePackedUint32(
+    writer.writeRepeatedString(
       6,
       f
     );
@@ -1513,7 +1419,7 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.serializeBinaryToWriter = fun
   }
   f = message.getOrganizationsIdsList();
   if (f.length > 0) {
-    writer.writePackedUint32(
+    writer.writeRepeatedString(
       8,
       f
     );
@@ -1759,16 +1665,16 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setIsActive = funct
 
 
 /**
- * repeated uint32 roles_ids = 6;
- * @return {!Array<number>}
+ * repeated string roles_ids = 6;
+ * @return {!Array<string>}
  */
 proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.getRolesIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.accounts.v1alpha1.users.v1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setRolesIdsList = function(value) {
@@ -1777,7 +1683,7 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setRolesIdsList = f
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.users.v1.CreateUserRequest} returns this
  */
@@ -1833,16 +1739,16 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.clearPermissionsIds
 
 
 /**
- * repeated uint32 organizations_ids = 8;
- * @return {!Array<number>}
+ * repeated string organizations_ids = 8;
+ * @return {!Array<string>}
  */
 proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.getOrganizationsIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.accounts.v1alpha1.users.v1.CreateUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setOrganizationsIdsList = function(value) {
@@ -1851,7 +1757,7 @@ proto.accounts.v1alpha1.users.v1.CreateUserRequest.prototype.setOrganizationsIds
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.users.v1.CreateUserRequest} returns this
  */
@@ -2461,7 +2367,7 @@ proto.accounts.v1alpha1.users.v1.DeleteUserRequest.prototype.toObject = function
 proto.accounts.v1alpha1.users.v1.DeleteUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2503,7 +2409,7 @@ proto.accounts.v1alpha1.users.v1.DeleteUserRequest.deserializeBinaryFromReader =
       msg.setUserId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -2543,8 +2449,8 @@ proto.accounts.v1alpha1.users.v1.DeleteUserRequest.serializeBinaryToWriter = fun
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2571,20 +2477,20 @@ proto.accounts.v1alpha1.users.v1.DeleteUserRequest.prototype.setUserId = functio
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.DeleteUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.DeleteUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.DeleteUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2621,7 +2527,7 @@ proto.accounts.v1alpha1.users.v1.GetOneUserRequest.prototype.toObject = function
 proto.accounts.v1alpha1.users.v1.GetOneUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2663,7 +2569,7 @@ proto.accounts.v1alpha1.users.v1.GetOneUserRequest.deserializeBinaryFromReader =
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -2703,8 +2609,8 @@ proto.accounts.v1alpha1.users.v1.GetOneUserRequest.serializeBinaryToWriter = fun
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -2731,20 +2637,20 @@ proto.accounts.v1alpha1.users.v1.GetOneUserRequest.prototype.setId = function(va
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4801,9 +4707,9 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.toObject = function(
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    getOrganizationFromProject: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    getOrganizationFromProject: jspb.Message.getFieldWithDefault(msg, 3, ""),
     permission: jspb.Message.getFieldWithDefault(msg, 4, ""),
     userIdDex: jspb.Message.getFieldWithDefault(msg, 5, ""),
     userIdAdmin: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -4850,15 +4756,15 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setGetOrganizationFromProject(value);
       break;
     case 4:
@@ -4882,10 +4788,8 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.deserializeBinaryFromReader = 
       msg.setTypePermission(value);
       break;
     case 10:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addRolesIds(values[i]);
-      }
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRolesIds(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
@@ -4929,22 +4833,22 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.serializeBinary = fu
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getGetOrganizationFromProject();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -4986,7 +4890,7 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.serializeBinaryToWriter = func
   }
   f = message.getRolesIdsList();
   if (f.length > 0) {
-    writer.writePackedUint32(
+    writer.writeRepeatedString(
       10,
       f
     );
@@ -5016,56 +4920,56 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.CheckUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.CheckUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint32 get_organization_from_project = 3;
- * @return {number}
+ * optional string get_organization_from_project = 3;
+ * @return {string}
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.getGetOrganizationFromProject = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.users.v1.CheckUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.setGetOrganizationFromProject = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5160,16 +5064,16 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.setTypePermission = 
 
 
 /**
- * repeated uint32 roles_ids = 10;
- * @return {!Array<number>}
+ * repeated string roles_ids = 10;
+ * @return {!Array<string>}
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.getRolesIdsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 10));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
 };
 
 
 /**
- * @param {!Array<number>} value
+ * @param {!Array<string>} value
  * @return {!proto.accounts.v1alpha1.users.v1.CheckUserRequest} returns this
  */
 proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.setRolesIdsList = function(value) {
@@ -5178,7 +5082,7 @@ proto.accounts.v1alpha1.users.v1.CheckUserRequest.prototype.setRolesIdsList = fu
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.accounts.v1alpha1.users.v1.CheckUserRequest} returns this
  */
@@ -5284,7 +5188,8 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.toObject = function(includeIn
   var f, obj = {
     isExists: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     isAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    msg: jspb.Message.getFieldWithDefault(msg, 4, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    error: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -5333,6 +5238,10 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.deserializeBinaryFromReader =
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5380,6 +5289,13 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.serializeBinaryToWriter = fun
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getError();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -5437,6 +5353,24 @@ proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.getMsg = function()
  */
 proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string error = 5;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.users.v1.CheckUserResponse} returns this
+ */
+proto.accounts.v1alpha1.users.v1.CheckUserResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

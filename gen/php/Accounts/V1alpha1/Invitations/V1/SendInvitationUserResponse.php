@@ -37,10 +37,6 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 6 [json_name = "permissions"];</code>
      */
     private $permissions;
-    /**
-     * Generated from protobuf field <code>string error = 7 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -54,7 +50,6 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
      *     @type string $result
      *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -200,28 +195,6 @@ class SendInvitationUserResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
         $this->permissions = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 7 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 7 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

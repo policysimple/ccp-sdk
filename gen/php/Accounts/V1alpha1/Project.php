@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Project extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
      */
-    protected $id = 0;
+    protected $id = '';
     /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
@@ -26,9 +26,9 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 4 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = 0;
+    protected $organization_id = '';
     /**
      * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
      */
@@ -56,10 +56,10 @@ class Project extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $id
      *     @type string $name
      *     @type string $image
-     *     @type int $organization_id
+     *     @type string $organization_id
      *     @type string $description
      *     @type string $created_at
      *     @type string $updated_at
@@ -73,8 +73,8 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -82,13 +82,13 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     * @param string $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -139,8 +139,8 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * @return string
      */
     public function getOrganizationId()
     {
@@ -148,13 +148,13 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->organization_id = $var;
 
         return $this;

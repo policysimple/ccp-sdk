@@ -16,16 +16,16 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-ª
+š
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"Î
-Role
-id (Rid
+Role
 name (	Rname
 
-project_id (R	projectId\'
-organization_id (RorganizationId?
+project_id (	R	projectId\'
+organization_id (	RorganizationId?
 permissions (2.accounts.v1alpha1.PermissionRpermissions
-is_admin (RisAdmin"Ü
+is_admin (RisAdmin
+id (	Rid"Ü
 UserList
 id (Rid
 
@@ -35,9 +35,8 @@ first_name (	R	firstName
 user_id (	RuserId
 	is_active (RisActive"
 is_super_user (RisSuperUser
-image (	Rimage"\\
-	MemberRol
-id (Rid
+image (	Rimage"L
+	MemberRol
 name (	Rname
 is_admin (RisAdmin
 uid (	Ruid"æ
@@ -59,10 +58,11 @@ Permission
 type (	Rtype
 	full_name (	RfullName"³
 Project
-id (Rid
+id
+ (	Rid
 name (	Rname
 image (	Rimage\'
-organization_id (RorganizationId 
+organization_id (	RorganizationId 
 description (	Rdescription
 
 created_at (	R	createdAt
@@ -70,8 +70,7 @@ created_at (	R	createdAt
 updated_at (	R	updatedAt-
 roles (2.accounts.v1alpha1.RoleRroles6
 users	 (2 .accounts.v1alpha1.MemberProjectRusers"˜
-Organization
-id (Rid
+Organization
 name (	Rname
 image (	Rimage 
 description (	Rdescription1
@@ -79,7 +78,8 @@ updated_at (	R	updatedAt-
 roles (2.accounts.v1alpha1.RoleRroles
 slug	 (	Rslug6
 projects
- (2.accounts.v1alpha1.ProjectRprojects"ñ	
+ (2.accounts.v1alpha1.ProjectRprojects
+id (	Rid"ñ	
 
 UserDetail
 id (Rid
