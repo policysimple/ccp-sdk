@@ -21,10 +21,6 @@ class UpdateApiKeyResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string api_key = 2 [json_name = "apiKey"];</code>
      */
     protected $api_key = '';
-    /**
-     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
-     */
-    protected $error = '';
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class UpdateApiKeyResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $msg
      *     @type string $api_key
-     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class UpdateApiKeyResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->api_key = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 3 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

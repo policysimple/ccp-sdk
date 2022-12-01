@@ -72,10 +72,16 @@ public final class Apikeys {
     boolean getIsActive();
 
     /**
-     * <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+     * <code>string project_id = 7 [json_name = "projectId"];</code>
      * @return The projectId.
      */
-    int getProjectId();
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 7 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
 
     /**
      * <code>string expired_at = 8 [json_name = "expiredAt"];</code>
@@ -105,6 +111,7 @@ public final class Apikeys {
       name_ = "";
       userId_ = "";
       permissionsIds_ = emptyIntList();
+      projectId_ = "";
       expiredAt_ = "";
     }
 
@@ -182,9 +189,10 @@ public final class Apikeys {
               isActive_ = input.readBool();
               break;
             }
-            case 56: {
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = input.readUInt32();
+              projectId_ = s;
               break;
             }
             case 66: {
@@ -355,14 +363,41 @@ public final class Apikeys {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 7;
-    private int projectId_;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+     * <code>string project_id = 7 [json_name = "projectId"];</code>
      * @return The projectId.
      */
     @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 7 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int EXPIRED_AT_FIELD_NUMBER = 8;
@@ -437,8 +472,8 @@ public final class Apikeys {
       if (isActive_ != false) {
         output.writeBool(6, isActive_);
       }
-      if (projectId_ != 0) {
-        output.writeUInt32(7, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, projectId_);
       }
       if (!getExpiredAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, expiredAt_);
@@ -480,9 +515,8 @@ public final class Apikeys {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isActive_);
       }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, projectId_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, projectId_);
       }
       if (!getExpiredAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, expiredAt_);
@@ -512,8 +546,8 @@ public final class Apikeys {
           != other.getOrganizationId()) return false;
       if (getIsActive()
           != other.getIsActive()) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!getExpiredAt()
           .equals(other.getExpiredAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -541,7 +575,7 @@ public final class Apikeys {
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + EXPIRED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getExpiredAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -687,7 +721,7 @@ public final class Apikeys {
 
         isActive_ = false;
 
-        projectId_ = 0;
+        projectId_ = "";
 
         expiredAt_ = "";
 
@@ -801,8 +835,9 @@ public final class Apikeys {
         if (other.getIsActive() != false) {
           setIsActive(other.getIsActive());
         }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
         }
         if (!other.getExpiredAt().isEmpty()) {
           expiredAt_ = other.expiredAt_;
@@ -1131,33 +1166,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int projectId_ ;
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+       * <code>string project_id = 7 [json_name = "projectId"];</code>
        * @return The projectId.
        */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+       * <code>string project_id = 7 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 7 [json_name = "projectId"];</code>
        * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setProjectId(int value) {
-        
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 project_id = 7 [json_name = "projectId"];</code>
+       * <code>string project_id = 7 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
         
-        projectId_ = 0;
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 7 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -1329,18 +1409,6 @@ public final class Apikeys {
      */
     com.google.protobuf.ByteString
         getUuidBytes();
-
-    /**
-     * <code>string error = 5 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 5 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse}
@@ -1358,7 +1426,6 @@ public final class Apikeys {
       msg_ = "";
       apiKey_ = "";
       uuid_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -1407,12 +1474,6 @@ public final class Apikeys {
               java.lang.String s = input.readStringRequireUtf8();
 
               uuid_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -1561,44 +1622,6 @@ public final class Apikeys {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 5;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 5 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 5 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1622,9 +1645,6 @@ public final class Apikeys {
       if (!getUuidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uuid_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1642,9 +1662,6 @@ public final class Apikeys {
       }
       if (!getUuidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uuid_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1667,8 +1684,6 @@ public final class Apikeys {
           .equals(other.getApiKey())) return false;
       if (!getUuid()
           .equals(other.getUuid())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1686,8 +1701,6 @@ public final class Apikeys {
       hash = (53 * hash) + getApiKey().hashCode();
       hash = (37 * hash) + UUID_FIELD_NUMBER;
       hash = (53 * hash) + getUuid().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1827,8 +1840,6 @@ public final class Apikeys {
 
         uuid_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -1858,7 +1869,6 @@ public final class Apikeys {
         result.msg_ = msg_;
         result.apiKey_ = apiKey_;
         result.uuid_ = uuid_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -1917,10 +1927,6 @@ public final class Apikeys {
         }
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2176,82 +2182,6 @@ public final class Apikeys {
   checkByteStringIsUtf8(value);
         
         uuid_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 5 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 5 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 5 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 5 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 5 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -3152,6 +3082,18 @@ public final class Apikeys {
      * <code>.accounts.v1alpha1.Organization organization = 10 [json_name = "organization"];</code>
      */
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationOrBuilder();
+
+    /**
+     * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     * @return The expiredAt.
+     */
+    java.lang.String getExpiredAt();
+    /**
+     * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     * @return The bytes for expiredAt.
+     */
+    com.google.protobuf.ByteString
+        getExpiredAtBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse}
@@ -3171,6 +3113,7 @@ public final class Apikeys {
       name_ = "";
       userId_ = "";
       permissions_ = java.util.Collections.emptyList();
+      expiredAt_ = "";
     }
 
     @java.lang.Override
@@ -3279,6 +3222,12 @@ public final class Apikeys {
                 organization_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expiredAt_ = s;
               break;
             }
             default: {
@@ -3597,6 +3546,44 @@ public final class Apikeys {
       return getOrganization();
     }
 
+    public static final int EXPIRED_AT_FIELD_NUMBER = 11;
+    private volatile java.lang.Object expiredAt_;
+    /**
+     * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     * @return The expiredAt.
+     */
+    @java.lang.Override
+    public java.lang.String getExpiredAt() {
+      java.lang.Object ref = expiredAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiredAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     * @return The bytes for expiredAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getExpiredAtBytes() {
+      java.lang.Object ref = expiredAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiredAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3638,6 +3625,9 @@ public final class Apikeys {
       if (organization_ != null) {
         output.writeMessage(10, getOrganization());
       }
+      if (!getExpiredAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, expiredAt_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3678,6 +3668,9 @@ public final class Apikeys {
       if (organization_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getOrganization());
+      }
+      if (!getExpiredAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, expiredAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3721,6 +3714,8 @@ public final class Apikeys {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
+      if (!getExpiredAt()
+          .equals(other.getExpiredAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3759,6 +3754,8 @@ public final class Apikeys {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
       }
+      hash = (37 * hash) + EXPIRED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiredAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3927,6 +3924,8 @@ public final class Apikeys {
           organization_ = null;
           organizationBuilder_ = null;
         }
+        expiredAt_ = "";
+
         return this;
       }
 
@@ -3983,6 +3982,7 @@ public final class Apikeys {
         } else {
           result.organization_ = organizationBuilder_.build();
         }
+        result.expiredAt_ = expiredAt_;
         onBuilt();
         return result;
       }
@@ -4084,6 +4084,10 @@ public final class Apikeys {
         }
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
+        }
+        if (!other.getExpiredAt().isEmpty()) {
+          expiredAt_ = other.expiredAt_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5046,6 +5050,82 @@ public final class Apikeys {
         }
         return organizationBuilder_;
       }
+
+      private java.lang.Object expiredAt_ = "";
+      /**
+       * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+       * @return The expiredAt.
+       */
+      public java.lang.String getExpiredAt() {
+        java.lang.Object ref = expiredAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expiredAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+       * @return The bytes for expiredAt.
+       */
+      public com.google.protobuf.ByteString
+          getExpiredAtBytes() {
+        java.lang.Object ref = expiredAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expiredAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+       * @param value The expiredAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpiredAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        expiredAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExpiredAt() {
+        
+        expiredAt_ = getDefaultInstance().getExpiredAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+       * @param value The bytes for expiredAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpiredAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        expiredAt_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5116,10 +5196,16 @@ public final class Apikeys {
         getUserIdBytes();
 
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
   }
   /**
    * <pre>
@@ -5139,6 +5225,7 @@ public final class Apikeys {
     }
     private ListApiKeyRequest() {
       userId_ = "";
+      organizationId_ = "";
     }
 
     @java.lang.Override
@@ -5177,9 +5264,10 @@ public final class Apikeys {
               userId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             default: {
@@ -5253,14 +5341,41 @@ public final class Apikeys {
     }
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 2;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5280,8 +5395,8 @@ public final class Apikeys {
       if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -5295,9 +5410,8 @@ public final class Apikeys {
       if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5316,8 +5430,8 @@ public final class Apikeys {
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5332,7 +5446,7 @@ public final class Apikeys {
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5472,7 +5586,7 @@ public final class Apikeys {
         super.clear();
         userId_ = "";
 
-        organizationId_ = 0;
+        organizationId_ = "";
 
         return this;
       }
@@ -5554,8 +5668,9 @@ public final class Apikeys {
           userId_ = other.userId_;
           onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5662,33 +5777,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -5832,6 +5992,18 @@ public final class Apikeys {
      * <code>.accounts.v1alpha1.Organization organization = 8 [json_name = "organization"];</code>
      */
     accounts.v1alpha1.Accounts.OrganizationOrBuilder getOrganizationOrBuilder();
+
+    /**
+     * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @return The expiredAt.
+     */
+    java.lang.String getExpiredAt();
+    /**
+     * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @return The bytes for expiredAt.
+     */
+    com.google.protobuf.ByteString
+        getExpiredAtBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.ApiKeyList}
@@ -5850,6 +6022,7 @@ public final class Apikeys {
       apiKey_ = "";
       name_ = "";
       userId_ = "";
+      expiredAt_ = "";
     }
 
     @java.lang.Override
@@ -5935,6 +6108,12 @@ public final class Apikeys {
                 organization_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expiredAt_ = s;
               break;
             }
             default: {
@@ -6184,6 +6363,44 @@ public final class Apikeys {
       return getOrganization();
     }
 
+    public static final int EXPIRED_AT_FIELD_NUMBER = 9;
+    private volatile java.lang.Object expiredAt_;
+    /**
+     * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @return The expiredAt.
+     */
+    @java.lang.Override
+    public java.lang.String getExpiredAt() {
+      java.lang.Object ref = expiredAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiredAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @return The bytes for expiredAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getExpiredAtBytes() {
+      java.lang.Object ref = expiredAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiredAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6219,6 +6436,9 @@ public final class Apikeys {
       if (organization_ != null) {
         output.writeMessage(8, getOrganization());
       }
+      if (!getExpiredAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, expiredAt_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6251,6 +6471,9 @@ public final class Apikeys {
       if (organization_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getOrganization());
+      }
+      if (!getExpiredAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, expiredAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6287,6 +6510,8 @@ public final class Apikeys {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
+      if (!getExpiredAt()
+          .equals(other.getExpiredAt())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6317,6 +6542,8 @@ public final class Apikeys {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
       }
+      hash = (37 * hash) + EXPIRED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiredAt().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6472,6 +6699,8 @@ public final class Apikeys {
           organization_ = null;
           organizationBuilder_ = null;
         }
+        expiredAt_ = "";
+
         return this;
       }
 
@@ -6513,6 +6742,7 @@ public final class Apikeys {
         } else {
           result.organization_ = organizationBuilder_.build();
         }
+        result.expiredAt_ = expiredAt_;
         onBuilt();
         return result;
       }
@@ -6585,6 +6815,10 @@ public final class Apikeys {
         }
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
+        }
+        if (!other.getExpiredAt().isEmpty()) {
+          expiredAt_ = other.expiredAt_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7186,6 +7420,82 @@ public final class Apikeys {
           organization_ = null;
         }
         return organizationBuilder_;
+      }
+
+      private java.lang.Object expiredAt_ = "";
+      /**
+       * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+       * @return The expiredAt.
+       */
+      public java.lang.String getExpiredAt() {
+        java.lang.Object ref = expiredAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expiredAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+       * @return The bytes for expiredAt.
+       */
+      public com.google.protobuf.ByteString
+          getExpiredAtBytes() {
+        java.lang.Object ref = expiredAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expiredAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+       * @param value The expiredAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpiredAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        expiredAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExpiredAt() {
+        
+        expiredAt_ = getDefaultInstance().getExpiredAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+       * @param value The bytes for expiredAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpiredAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        expiredAt_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8831,18 +9141,6 @@ public final class Apikeys {
      */
     com.google.protobuf.ByteString
         getApiKeyBytes();
-
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse}
@@ -8859,7 +9157,6 @@ public final class Apikeys {
     private UpdateApiKeyResponse() {
       msg_ = "";
       apiKey_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -8902,12 +9199,6 @@ public final class Apikeys {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiKey_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -9018,44 +9309,6 @@ public final class Apikeys {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 3;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9076,9 +9329,6 @@ public final class Apikeys {
       if (!getApiKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -9093,9 +9343,6 @@ public final class Apikeys {
       }
       if (!getApiKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9116,8 +9363,6 @@ public final class Apikeys {
           .equals(other.getMsg())) return false;
       if (!getApiKey()
           .equals(other.getApiKey())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9133,8 +9378,6 @@ public final class Apikeys {
       hash = (53 * hash) + getMsg().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9272,8 +9515,6 @@ public final class Apikeys {
 
         apiKey_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -9302,7 +9543,6 @@ public final class Apikeys {
         accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyResponse result = new accounts.v1alpha1.apikeys.v1.Apikeys.UpdateApiKeyResponse(this);
         result.msg_ = msg_;
         result.apiKey_ = apiKey_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -9357,10 +9597,6 @@ public final class Apikeys {
         }
         if (!other.getApiKey().isEmpty()) {
           apiKey_ = other.apiKey_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9540,82 +9776,6 @@ public final class Apikeys {
   checkByteStringIsUtf8(value);
         
         apiKey_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
         onChanged();
         return this;
       }
@@ -10267,18 +10427,6 @@ public final class Apikeys {
      */
     com.google.protobuf.ByteString
         getApiKeyBytes();
-
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The error.
-     */
-    java.lang.String getError();
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse}
@@ -10295,7 +10443,6 @@ public final class Apikeys {
     private DeleteApiKeyResponse() {
       msg_ = "";
       apiKey_ = "";
-      error_ = "";
     }
 
     @java.lang.Override
@@ -10338,12 +10485,6 @@ public final class Apikeys {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiKey_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
               break;
             }
             default: {
@@ -10454,44 +10595,6 @@ public final class Apikeys {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 3;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The bytes for error.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10512,9 +10615,6 @@ public final class Apikeys {
       if (!getApiKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiKey_);
       }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -10529,9 +10629,6 @@ public final class Apikeys {
       }
       if (!getApiKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiKey_);
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10552,8 +10649,6 @@ public final class Apikeys {
           .equals(other.getMsg())) return false;
       if (!getApiKey()
           .equals(other.getApiKey())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10569,8 +10664,6 @@ public final class Apikeys {
       hash = (53 * hash) + getMsg().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10708,8 +10801,6 @@ public final class Apikeys {
 
         apiKey_ = "";
 
-        error_ = "";
-
         return this;
       }
 
@@ -10738,7 +10829,6 @@ public final class Apikeys {
         accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyResponse result = new accounts.v1alpha1.apikeys.v1.Apikeys.DeleteApiKeyResponse(this);
         result.msg_ = msg_;
         result.apiKey_ = apiKey_;
-        result.error_ = error_;
         onBuilt();
         return result;
       }
@@ -10793,10 +10883,6 @@ public final class Apikeys {
         }
         if (!other.getApiKey().isEmpty()) {
           apiKey_ = other.apiKey_;
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -10979,82 +11065,6 @@ public final class Apikeys {
         onChanged();
         return this;
       }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return The error.
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return The bytes for error.
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11179,43 +11189,43 @@ public final class Apikeys {
       "\030\002 \001(\tR\006userId\022\'\n\017permissions_ids\030\004 \003(\rR" +
       "\016permissionsIds\022\'\n\017organization_id\030\005 \001(\r" +
       "R\016organizationId\022\033\n\tis_active\030\006 \001(\010R\010isA" +
-      "ctive\022\035\n\nproject_id\030\007 \001(\rR\tprojectId\022\035\n\n" +
-      "expired_at\030\010 \001(\tR\texpiredAt\"k\n\024CreateApi" +
+      "ctive\022\035\n\nproject_id\030\007 \001(\tR\tprojectId\022\035\n\n" +
+      "expired_at\030\010 \001(\tR\texpiredAt\"U\n\024CreateApi" +
       "KeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key" +
-      "\030\002 \001(\tR\006apiKey\022\022\n\004uuid\030\004 \001(\tR\004uuid\022\024\n\005er" +
-      "ror\030\005 \001(\tR\005error\"?\n\023GetOneApiKeyRequest\022" +
-      "\022\n\004uuid\030\001 \001(\tR\004uuid\022\024\n\005value\030\002 \001(\tR\005valu" +
-      "e\"\366\002\n\024GetOneApiKeyResponse\022\022\n\004uuid\030\001 \001(\t" +
-      "R\004uuid\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022\022\n\004name\030" +
-      "\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001(\tR\006userId\022+\n\004" +
-      "role\030\005 \001(\0132\027.accounts.v1alpha1.RoleR\004rol" +
-      "e\022?\n\013permissions\030\006 \003(\0132\035.accounts.v1alph" +
-      "a1.PermissionR\013permissions\022\033\n\tis_active\030" +
-      "\010 \001(\010R\010isActive\0224\n\007project\030\t \001(\0132\032.accou" +
-      "nts.v1alpha1.ProjectR\007project\022C\n\014organiz" +
-      "ation\030\n \001(\0132\037.accounts.v1alpha1.Organiza" +
-      "tionR\014organization\"U\n\021ListApiKeyRequest\022" +
-      "\027\n\007user_id\030\001 \001(\tR\006userId\022\'\n\017organization" +
-      "_id\030\002 \001(\rR\016organizationId\"\376\001\n\nApiKeyList" +
-      "\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key\030\002 \001(\tR\006a" +
-      "piKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id\030\004 \001" +
-      "(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isActive\022" +
-      "4\n\007project\030\007 \001(\0132\032.accounts.v1alpha1.Pro" +
-      "jectR\007project\022C\n\014organization\030\010 \001(\0132\037.ac" +
-      "counts.v1alpha1.OrganizationR\014organizati" +
-      "on\"Y\n\022ListApiKeyResponse\022C\n\010api_keys\030\001 \003" +
+      "\030\002 \001(\tR\006apiKey\022\022\n\004uuid\030\004 \001(\tR\004uuid\"?\n\023Ge" +
+      "tOneApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\024\n" +
+      "\005value\030\002 \001(\tR\005value\"\225\003\n\024GetOneApiKeyResp" +
+      "onse\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key\030\002 \001(" +
+      "\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007user_id" +
+      "\030\004 \001(\tR\006userId\022+\n\004role\030\005 \001(\0132\027.accounts." +
+      "v1alpha1.RoleR\004role\022?\n\013permissions\030\006 \003(\013" +
+      "2\035.accounts.v1alpha1.PermissionR\013permiss" +
+      "ions\022\033\n\tis_active\030\010 \001(\010R\010isActive\0224\n\007pro" +
+      "ject\030\t \001(\0132\032.accounts.v1alpha1.ProjectR\007" +
+      "project\022C\n\014organization\030\n \001(\0132\037.accounts" +
+      ".v1alpha1.OrganizationR\014organization\022\035\n\n" +
+      "expired_at\030\013 \001(\tR\texpiredAt\"U\n\021ListApiKe" +
+      "yRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\'\n\017org" +
+      "anization_id\030\002 \001(\tR\016organizationId\"\235\002\n\nA" +
+      "piKeyList\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key" +
+      "\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007us" +
+      "er_id\030\004 \001(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010" +
+      "isActive\0224\n\007project\030\007 \001(\0132\032.accounts.v1a" +
+      "lpha1.ProjectR\007project\022C\n\014organization\030\010" +
+      " \001(\0132\037.accounts.v1alpha1.OrganizationR\014o" +
+      "rganization\022\035\n\nexpired_at\030\t \001(\tR\texpired" +
+      "At\"Y\n\022ListApiKeyResponse\022C\n\010api_keys\030\001 \003" +
       "(\0132(.accounts.v1alpha1.apikeys.v1.ApiKey" +
       "ListR\007apiKeys\"u\n\023UpdateApiKeyRequest\022\022\n\004" +
       "uuid\030\001 \001(\tR\004uuid\022J\n\007api_key\030\006 \001(\01321.acco" +
       "unts.v1alpha1.apikeys.v1.CreateApiKeyReq" +
-      "uestR\006apiKey\"W\n\024UpdateApiKeyResponse\022\020\n\003" +
-      "msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\022" +
-      "\024\n\005error\030\003 \001(\tR\005error\")\n\023DeleteApiKeyReq" +
-      "uest\022\022\n\004uuid\030\001 \001(\tR\004uuid\"W\n\024DeleteApiKey" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 " +
-      "\001(\tR\006apiKey\022\024\n\005error\030\003 \001(\tR\005errorB<Z:git" +
-      "hub.com/cuemby/ccp-sdk/gen/go/accounts/v" +
-      "1alpha1/apikeysb\006proto3"
+      "uestR\006apiKey\"A\n\024UpdateApiKeyResponse\022\020\n\003" +
+      "msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\"" +
+      ")\n\023DeleteApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uu" +
+      "id\"A\n\024DeleteApiKeyResponse\022\020\n\003msg\030\001 \001(\tR" +
+      "\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKeyB<Z:github." +
+      "com/cuemby/ccp-sdk/gen/go/accounts/v1alp" +
+      "ha1/apikeysb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11233,7 +11243,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_CreateApiKeyResponse_descriptor,
-        new java.lang.String[] { "Msg", "ApiKey", "Uuid", "Error", });
+        new java.lang.String[] { "Msg", "ApiKey", "Uuid", });
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyRequest_fieldAccessorTable = new
@@ -11245,7 +11255,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_GetOneApiKeyResponse_descriptor,
-        new java.lang.String[] { "Uuid", "ApiKey", "Name", "UserId", "Role", "Permissions", "IsActive", "Project", "Organization", });
+        new java.lang.String[] { "Uuid", "ApiKey", "Name", "UserId", "Role", "Permissions", "IsActive", "Project", "Organization", "ExpiredAt", });
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyRequest_fieldAccessorTable = new
@@ -11257,7 +11267,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_ApiKeyList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_ApiKeyList_descriptor,
-        new java.lang.String[] { "Uuid", "ApiKey", "Name", "UserId", "IsActive", "Project", "Organization", });
+        new java.lang.String[] { "Uuid", "ApiKey", "Name", "UserId", "IsActive", "Project", "Organization", "ExpiredAt", });
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_accounts_v1alpha1_apikeys_v1_ListApiKeyResponse_fieldAccessorTable = new
@@ -11275,7 +11285,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_UpdateApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_UpdateApiKeyResponse_descriptor,
-        new java.lang.String[] { "Msg", "ApiKey", "Error", });
+        new java.lang.String[] { "Msg", "ApiKey", });
     internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyRequest_fieldAccessorTable = new
@@ -11287,7 +11297,7 @@ public final class Apikeys {
     internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_apikeys_v1_DeleteApiKeyResponse_descriptor,
-        new java.lang.String[] { "Msg", "ApiKey", "Error", });
+        new java.lang.String[] { "Msg", "ApiKey", });
     accounts.v1alpha1.Accounts.getDescriptor();
   }
 

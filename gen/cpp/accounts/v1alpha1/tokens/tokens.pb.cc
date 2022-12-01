@@ -65,7 +65,6 @@ constexpr CreateTokenCCPResponse::CreateTokenCCPResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : token_ccp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , time_expiration_mfa_(int64_t{0}){}
 struct CreateTokenCCPResponseDefaultTypeInternal {
@@ -107,8 +106,7 @@ struct SaveLogsRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SaveLogsRequestDefaultTypeInternal _SaveLogsRequest_default_instance_;
 constexpr SaveLogsResponse::SaveLogsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct SaveLogsResponseDefaultTypeInternal {
   constexpr SaveLogsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -132,8 +130,7 @@ struct LogsRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LogsRequestDefaultTypeInternal _LogsRequest_default_instance_;
 constexpr LogsResponse::LogsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : logs_()
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : logs_(){}
 struct LogsResponseDefaultTypeInternal {
   constexpr LogsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -235,7 +232,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse, token_ccp_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse, error_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse, time_expiration_mfa_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse, user_id_),
   ~0u,  // no _has_bits_
@@ -260,7 +256,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::SaveLogsResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::SaveLogsResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::LogsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -273,7 +268,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::LogsResponse, logs_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::LogsResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -308,15 +302,15 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 6, -1, sizeof(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse)},
   { 17, -1, sizeof(::accounts::v1alpha1::tokens::v1::CreateTokenCCPRequest)},
   { 23, -1, sizeof(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse)},
-  { 33, -1, sizeof(::accounts::v1alpha1::tokens::v1::Log)},
-  { 43, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsRequest)},
-  { 49, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsResponse)},
-  { 56, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsRequest)},
-  { 62, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsResponse)},
-  { 69, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest)},
-  { 75, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse)},
-  { 82, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFARequest)},
-  { 89, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFAResponse)},
+  { 32, -1, sizeof(::accounts::v1alpha1::tokens::v1::Log)},
+  { 42, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsRequest)},
+  { 48, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsResponse)},
+  { 54, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsRequest)},
+  { 60, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsResponse)},
+  { 66, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest)},
+  { 72, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse)},
+  { 79, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFARequest)},
+  { 86, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFAResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -345,33 +339,31 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2epro
   "Dex\022\035\n\nfirst_name\030\005 \001(\tR\tfirstName\022%\n\016em"
   "ail_verified\030\006 \001(\010R\remailVerified\"4\n\025Cre"
   "ateTokenCCPRequest\022\033\n\ttoken_dex\030\001 \001(\tR\010t"
-  "okenDex\"\246\001\n\026CreateTokenCCPResponse\022\033\n\tto"
+  "okenDex\"\220\001\n\026CreateTokenCCPResponse\022\033\n\tto"
   "ken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003ms"
-  "g\022\024\n\005error\030\004 \001(\tR\005error\022.\n\023time_expirati"
-  "on_mfa\030\005 \001(\003R\021timeExpirationMfa\022\027\n\007user_"
-  "id\030\006 \001(\tR\006userId\"y\n\003Log\022\027\n\007user_id\030\001 \001(\t"
-  "R\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nclie"
-  "nt_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022"
-  "\022\n\004date\030\005 \001(\tR\004date\"E\n\017SaveLogsRequest\0222"
-  "\n\003log\030\001 \001(\0132 .accounts.v1alpha1.tokens.v"
-  "1.LogR\003log\":\n\020SaveLogsResponse\022\020\n\003msg\030\001 "
-  "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"&\n\013LogsRe"
-  "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"Z\n\014LogsRe"
-  "sponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1"
-  ".tokens.v1.LogR\004logs\022\024\n\005error\030\002 \001(\tR\005err"
-  "or\"4\n\031EnableOrDisableMFARequest\022\027\n\007user_"
-  "id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisableMFARe"
-  "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR"
-  "\005error\"\?\n\nMFARequest\022\027\n\007user_id\030\001 \001(\tR\006u"
-  "serId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013MFARe"
-  "sponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003m"
-  "sg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005errorB;Z9g"
-  "ithub.com/cuemby/ccp-sdk/gen/go/accounts"
-  "/v1alpha1/tokensb\006proto3"
+  "g\022.\n\023time_expiration_mfa\030\005 \001(\003R\021timeExpi"
+  "rationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"y\n\003Lo"
+  "g\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006system\030\002 \001"
+  "(\tR\006system\022\035\n\nclient_web\030\003 \001(\tR\tclientWe"
+  "b\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 \001(\tR\004date\"E\n"
+  "\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .accounts"
+  ".v1alpha1.tokens.v1.LogR\003log\"$\n\020SaveLogs"
+  "Response\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsReques"
+  "t\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\014LogsRespon"
+  "se\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1.tok"
+  "ens.v1.LogR\004logs\"4\n\031EnableOrDisableMFARe"
+  "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\032Enable"
+  "OrDisableMFAResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024"
+  "\n\005error\030\002 \001(\tR\005error\"\?\n\nMFARequest\022\027\n\007us"
+  "er_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003 \003(\005R\007nu"
+  "mbers\"R\n\013MFAResponse\022\033\n\ttoken_ccp\030\001 \001(\tR"
+  "\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001"
+  "(\tR\005errorB;Z9github.com/cuemby/ccp-sdk/g"
+  "en/go/accounts/v1alpha1/tokensb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto = {
-  false, false, 1264, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, "accounts/v1alpha1/tokens/tokens.proto", 
+  false, false, 1198, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, "accounts/v1alpha1/tokens/tokens.proto", 
   &descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto_once, nullptr, 0, 13,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto,
@@ -1201,11 +1193,6 @@ CreateTokenCCPResponse::CreateTokenCCPResponse(const CreateTokenCCPResponse& fro
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_user_id().empty()) {
     user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
@@ -1218,7 +1205,6 @@ CreateTokenCCPResponse::CreateTokenCCPResponse(const CreateTokenCCPResponse& fro
 inline void CreateTokenCCPResponse::SharedCtor() {
 token_ccp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 time_expiration_mfa_ = int64_t{0};
 }
@@ -1234,7 +1220,6 @@ inline void CreateTokenCCPResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   token_ccp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1256,7 +1241,6 @@ void CreateTokenCCPResponse::Clear() {
 
   token_ccp_.ClearToEmpty();
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
   user_id_.ClearToEmpty();
   time_expiration_mfa_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1283,15 +1267,6 @@ const char* CreateTokenCCPResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.msg"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 4 [json_name = "error"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1360,16 +1335,6 @@ failure:
         2, this->_internal_msg(), target);
   }
 
-  // string error = 4 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_error(), target);
-  }
-
   // int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];
   if (this->_internal_time_expiration_mfa() != 0) {
     target = stream->EnsureSpace(target);
@@ -1414,13 +1379,6 @@ size_t CreateTokenCCPResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
-  }
-
-  // string error = 4 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   // string user_id = 6 [json_name = "userId"];
@@ -1471,9 +1429,6 @@ void CreateTokenCCPResponse::MergeFrom(const CreateTokenCCPResponse& from) {
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
@@ -1506,11 +1461,6 @@ void CreateTokenCCPResponse::InternalSwap(CreateTokenCCPResponse* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -2117,17 +2067,11 @@ SaveLogsResponse::SaveLogsResponse(const SaveLogsResponse& from)
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.tokens.v1.SaveLogsResponse)
 }
 
 inline void SaveLogsResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 SaveLogsResponse::~SaveLogsResponse() {
@@ -2140,7 +2084,6 @@ SaveLogsResponse::~SaveLogsResponse() {
 inline void SaveLogsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void SaveLogsResponse::ArenaDtor(void* object) {
@@ -2160,7 +2103,6 @@ void SaveLogsResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2176,15 +2118,6 @@ const char* SaveLogsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.SaveLogsResponse.msg"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.SaveLogsResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2227,16 +2160,6 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.tokens.v1.SaveLogsResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2258,13 +2181,6 @@ size_t SaveLogsResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2298,9 +2214,6 @@ void SaveLogsResponse::MergeFrom(const SaveLogsResponse& from) {
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2322,11 +2235,6 @@ void SaveLogsResponse::InternalSwap(SaveLogsResponse* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
   );
 }
 
@@ -2556,16 +2464,10 @@ LogsResponse::LogsResponse(const LogsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       logs_(from.logs_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.tokens.v1.LogsResponse)
 }
 
 inline void LogsResponse::SharedCtor() {
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 LogsResponse::~LogsResponse() {
@@ -2577,7 +2479,6 @@ LogsResponse::~LogsResponse() {
 
 inline void LogsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void LogsResponse::ArenaDtor(void* object) {
@@ -2597,7 +2498,6 @@ void LogsResponse::Clear() {
   (void) cached_has_bits;
 
   logs_.Clear();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2617,15 +2517,6 @@ const char* LogsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.LogsResponse.error"));
-          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2665,16 +2556,6 @@ failure:
       InternalWriteMessage(1, this->_internal_logs(i), target, stream);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.tokens.v1.LogsResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2696,13 +2577,6 @@ size_t LogsResponse::ByteSizeLong() const {
   for (const auto& msg : this->logs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2734,9 +2608,6 @@ void LogsResponse::MergeFrom(const LogsResponse& from) {
   (void) cached_has_bits;
 
   logs_.MergeFrom(from.logs_);
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2755,11 +2626,6 @@ void LogsResponse::InternalSwap(LogsResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   logs_.InternalSwap(&other->logs_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
-  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LogsResponse::GetMetadata() const {

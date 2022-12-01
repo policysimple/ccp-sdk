@@ -16,10 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ProjectOrganization extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     */
-    protected $id = 0;
-    /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
@@ -31,6 +27,10 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 4 [json_name = "description"];</code>
      */
     protected $description = '';
+    /**
+     * Generated from protobuf field <code>string id = 5 [json_name = "id"];</code>
+     */
+    protected $id = '';
 
     /**
      * Constructor.
@@ -38,37 +38,15 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
      *     @type string $name
      *     @type string $image
      *     @type string $description
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Accounts\V1Alpha1\Organizations\Organizations::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->id = $var;
-
-        return $this;
     }
 
     /**
@@ -133,6 +111,28 @@ class ProjectOrganization extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 5 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 5 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

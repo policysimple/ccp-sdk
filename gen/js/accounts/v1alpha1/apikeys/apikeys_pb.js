@@ -303,7 +303,7 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.toObject = function(inclu
     permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    projectId: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    projectId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     expiredAt: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
@@ -364,7 +364,7 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.deserializeBinaryFromRead
       msg.setIsActive(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 8:
@@ -436,8 +436,8 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.serializeBinaryToWriter =
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
@@ -562,20 +562,20 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setIsActive = f
 
 
 /**
- * optional uint32 project_id = 7;
- * @return {number}
+ * optional string project_id = 7;
+ * @return {string}
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest} returns this
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -631,8 +631,7 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.toObject = function(incl
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
     apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    uuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 5, "")
+    uuid: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -681,10 +680,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -732,13 +727,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.serializeBinaryToWriter 
   if (f.length > 0) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -796,24 +784,6 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.getUuid = func
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.setUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string error = 5;
- * @return {string}
- */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1025,7 +995,8 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.toObject = function(incl
     accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     project: (f = msg.getProject()) && accounts_v1alpha1_accounts_pb.Project.toObject(includeInstance, f),
-    organization: (f = msg.getOrganization()) && accounts_v1alpha1_accounts_pb.Organization.toObject(includeInstance, f)
+    organization: (f = msg.getOrganization()) && accounts_v1alpha1_accounts_pb.Organization.toObject(includeInstance, f),
+    expiredAt: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -1101,6 +1072,10 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.deserializeBinaryFromRea
       var value = new accounts_v1alpha1_accounts_pb.Organization;
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Organization.deserializeBinaryFromReader);
       msg.setOrganization(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExpiredAt(value);
       break;
     default:
       reader.skipField();
@@ -1196,6 +1171,13 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.serializeBinaryToWriter 
       10,
       f,
       accounts_v1alpha1_accounts_pb.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiredAt();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -1440,6 +1422,24 @@ proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.hasOrganizatio
 };
 
 
+/**
+ * optional string expired_at = 11;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.getExpiredAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse} returns this
+ */
+proto.accounts.v1alpha1.apikeys.v1.GetOneApiKeyResponse.prototype.setExpiredAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
 
 
 
@@ -1473,7 +1473,7 @@ proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.prototype.toObject = functi
 proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1515,7 +1515,7 @@ proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.deserializeBinaryFromReader
       msg.setUserId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -1555,8 +1555,8 @@ proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.serializeBinaryToWriter = f
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1583,20 +1583,20 @@ proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.prototype.setUserId = funct
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 2;
+ * @return {string}
  */
 proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest} returns this
  */
 proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1638,7 +1638,8 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.toObject = function(includeInstanc
     userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     project: (f = msg.getProject()) && accounts_v1alpha1_accounts_pb.Project.toObject(includeInstance, f),
-    organization: (f = msg.getOrganization()) && accounts_v1alpha1_accounts_pb.Organization.toObject(includeInstance, f)
+    organization: (f = msg.getOrganization()) && accounts_v1alpha1_accounts_pb.Organization.toObject(includeInstance, f),
+    expiredAt: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1704,6 +1705,10 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.deserializeBinaryFromReader = func
       var value = new accounts_v1alpha1_accounts_pb.Organization;
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Organization.deserializeBinaryFromReader);
       msg.setOrganization(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExpiredAt(value);
       break;
     default:
       reader.skipField();
@@ -1783,6 +1788,13 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.serializeBinaryToWriter = function
       8,
       f,
       accounts_v1alpha1_accounts_pb.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiredAt();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
@@ -1949,6 +1961,24 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.clearOrganization = func
  */
 proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.hasOrganization = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string expired_at = 9;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.getExpiredAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.apikeys.v1.ApiKeyList} returns this
+ */
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.setExpiredAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -2326,8 +2356,7 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.prototype.toObject = fun
 proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 3, "")
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2372,10 +2401,6 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setApiKey(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2419,13 +2444,6 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -2462,24 +2480,6 @@ proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.prototype.getApiKey = fu
  */
 proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string error = 3;
- * @return {string}
- */
-proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.UpdateApiKeyResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2646,8 +2646,7 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.prototype.toObject = fun
 proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 3, "")
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2692,10 +2691,6 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setApiKey(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2739,13 +2734,6 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -2782,24 +2770,6 @@ proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.prototype.getApiKey = fu
  */
 proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string error = 3;
- * @return {string}
- */
-proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse} returns this
- */
-proto.accounts.v1alpha1.apikeys.v1.DeleteApiKeyResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

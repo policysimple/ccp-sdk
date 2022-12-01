@@ -23,19 +23,19 @@ message ListOrganizationRequest {
 }
 
 message GetOneOrganizationRequest {
-    uint32 organization_id = 1;
+    string organization_id = 2;
 }
 
 message UpdateOrganizationRequest {
-    uint32 organization_id = 1;
     string name = 2;
     string description = 3;
     string image = 4;
+    string organization_id=5;
 }
 
 
 message DeleteOrganizationRequest {
-    string organization_id = 1;
+    string organization_id = 2;
 }
 
 
@@ -47,72 +47,53 @@ message DeleteOrganizationRequest {
 
 
 message GetOneOrganizationResponse{
-    uint32 id = 1;
     string name = 2;
     string image = 3;
     repeated ProjectOrganization projects = 4;
     repeated Member members = 5;
     string description = 6;
     UserList owner = 7;
-    string error = 8;
     string slug = 9;
+    string id = 10;
 
 }
 
 
 message ListOrganizationResponse {
     repeated Organization organizations = 1;
-    string error = 2;
 }
 
 message CreateOrganizationResponse {
     string msg = 1;
-    uint32 role_id_organization = 2;
-    string error = 3;
-    uint32 id = 4;
+    string role_id_organization = 6;
+    string id = 5;
+
 }
 
 message UpdateOrganizationResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message DeleteOrganizationResponse {
     string msg = 1;
-    string error = 2;
 }
 
 
 message Member {
-    uint32 id = 1;
     string user_id = 2;
     string first_name = 3;
     string last_name = 4;
     bool is_active = 5;
     repeated MemberRol roles = 6;
     string image = 7;
+    uint32 id = 8;
 }
 
 //Project Organization
 message ProjectOrganization {
-    int32 id = 1;
     string name = 2;
     string image = 3;
     string description = 4;
-}
-
-
-////
-///
-/*
-    COMMONS
-*/
-
-
-
-message MemberRol {
-    uint32 id = 1;
-    string name = 2;
-    bool is_admin = 3;
+    string id =5;
 }
 

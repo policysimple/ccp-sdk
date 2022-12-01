@@ -16,39 +16,38 @@ package accounts.v1alpha1.roles.v1;
 message CreateRoleRequest {
     string name = 1;
     string description = 2;
-    uint32 project_id = 3;
-    uint32 organization_id = 4;
+    string project_id = 3;
+    string organization_id = 4;
     string type_permission = 5;
     repeated uint32 permission_ids = 6;
 }
 
 
 message UpdateRoleRequest {
-    uint32 rol_id = 1;
+    string rol_id = 3;
     CreateRoleRequest rol = 2;
 }
 
 message GetOneRoleRequest {
-    uint32 rol_id = 1;
+    string rol_id = 2;
 }
 
 message GetOneRoleResponse{
-    uint32 id = 1;
+    string id = 1;
     string name = 2;
-    uint32 organization_id = 3;
-    uint32 project_id = 4;
     repeated Permission permissions = 5;
     bool is_admin = 6; 
-    string error = 7;
+    string organization_id = 8;
+    string project_id = 9;
 }
 
 message DeleteRoleRequest {
-    uint32 rol_id = 1;
+    string rol_id = 2;
 }
 
 message ListRolesRequest {
-    uint32 project_id = 1;
-    uint32 organization_id = 2;
+    string project_id = 3;
+    string organization_id = 4;
 }   
 /* 
     Responses
@@ -59,22 +58,16 @@ message ListRolesResponse {
 
 message CreateRoleResponse {
     string msg = 1;
-    string error = 2;
-    uint32 id = 3;
+    string id = 3;
 }
 
 message UpdateRoleResponse {
     string msg = 1;
-    string error = 2;
 }
 
 message DeleteRoleResponse {
     string msg = 1;
-    string error = 2;
 }
-
-
-
 
 /*
     GET ROLES BY USER 
@@ -97,8 +90,8 @@ message GetRolesByUserResponse {
 */
 
 message GetRolesByOrgUserRequest {
-    uint32 organization_id = 1;
-    uint32 project_id = 2;
+    string organization_id = 1;
+    string project_id = 2;
     uint32 user_id = 3;
 }
 

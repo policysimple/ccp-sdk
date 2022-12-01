@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     */
-    protected $id = 0;
-    /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
@@ -26,10 +22,8 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     */
-    protected $organization_id = 0;
-    /**
+     *uint32 organization_id = 4;
+     *
      * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
      */
     protected $description = '';
@@ -50,13 +44,13 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      */
     protected $owner = null;
     /**
-     * Generated from protobuf field <code>string uid = 10 [json_name = "uid"];</code>
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
      */
-    protected $uid = '';
+    protected $id = '';
     /**
-     * Generated from protobuf field <code>string organization_uid = 11 [json_name = "organizationUid"];</code>
+     * Generated from protobuf field <code>string organization_id = 11 [json_name = "organizationId"];</code>
      */
-    protected $organization_uid = '';
+    protected $organization_id = '';
 
     /**
      * Constructor.
@@ -64,44 +58,21 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
      *     @type string $name
      *     @type string $image
-     *     @type int $organization_id
      *     @type string $description
+     *          uint32 organization_id = 4;
      *     @type string $created_at
      *     @type string $updated_at
      *     @type \Accounts\V1alpha1\MemberProject[]|\Google\Protobuf\Internal\RepeatedField $members
      *     @type \Accounts\V1alpha1\Projects\V1\UserList $owner
-     *     @type string $uid
-     *     @type string $organization_uid
+     *     @type string $id
+     *     @type string $organization_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Accounts\V1Alpha1\Projects\Projects::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->id = $var;
-
-        return $this;
     }
 
     /**
@@ -149,28 +120,8 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     * @return int
-     */
-    public function getOrganizationId()
-    {
-        return $this->organization_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 organization_id = 4 [json_name = "organizationId"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOrganizationId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->organization_id = $var;
-
-        return $this;
-    }
-
-    /**
+     *uint32 organization_id = 4;
+     *
      * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
      * @return string
      */
@@ -180,6 +131,8 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *uint32 organization_id = 4;
+     *
      * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
      * @param string $var
      * @return $this
@@ -291,45 +244,45 @@ class GetOneProjectResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string uid = 10 [json_name = "uid"];</code>
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
      * @return string
      */
-    public function getUid()
+    public function getId()
     {
-        return $this->uid;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string uid = 10 [json_name = "uid"];</code>
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
      * @param string $var
      * @return $this
      */
-    public function setUid($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->uid = $var;
+        $this->id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string organization_uid = 11 [json_name = "organizationUid"];</code>
+     * Generated from protobuf field <code>string organization_id = 11 [json_name = "organizationId"];</code>
      * @return string
      */
-    public function getOrganizationUid()
+    public function getOrganizationId()
     {
-        return $this->organization_uid;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string organization_uid = 11 [json_name = "organizationUid"];</code>
+     * Generated from protobuf field <code>string organization_id = 11 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setOrganizationUid($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->organization_uid = $var;
+        $this->organization_id = $var;
 
         return $this;
     }

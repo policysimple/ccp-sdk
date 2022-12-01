@@ -17,57 +17,53 @@ class Roles
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ë
+“
 #accounts/v1alpha1/roles/roles.protoaccounts.v1alpha1.roles.v1"á
 CreateRoleRequest
 name (	Rname 
 description (	Rdescription
 
-project_id (R	projectId\'
-organization_id (RorganizationId\'
+project_id (	R	projectId\'
+organization_id (	RorganizationId\'
 type_permission (	RtypePermission%
 permission_ids (RpermissionIds"k
 UpdateRoleRequest
-rol_id (RrolId?
+rol_id (	RrolId?
 rol (2-.accounts.v1alpha1.roles.v1.CreateRoleRequestRrol"*
 GetOneRoleRequest
-rol_id (RrolId"ò
+rol_id (	RrolId"Ü
 GetOneRoleResponse
-id (Rid
-name (	Rname\'
-organization_id (RorganizationId
-
-project_id (R	projectId?
+id (	Rid
+name (	Rname?
 permissions (2.accounts.v1alpha1.PermissionRpermissions
-is_admin (RisAdmin
-error (	Rerror"*
+is_admin (RisAdmin\'
+organization_id (	RorganizationId
+
+project_id	 (	R	projectId"*
 DeleteRoleRequest
-rol_id (RrolId"Z
+rol_id (	RrolId"Z
 ListRolesRequest
 
-project_id (R	projectId\'
-organization_id (RorganizationId"B
+project_id (	R	projectId\'
+organization_id (	RorganizationId"B
 ListRolesResponse-
-roles (2.accounts.v1alpha1.RoleRroles"L
+roles (2.accounts.v1alpha1.RoleRroles"6
 CreateRoleResponse
-msg (	Rmsg
-error (	Rerror
-id (Rid"<
+msg (	Rmsg
+id (	Rid"&
 UpdateRoleResponse
-msg (	Rmsg
-error (	Rerror"<
+msg (	Rmsg"&
 DeleteRoleResponse
-msg (	Rmsg
-error (	Rerror"0
+msg (	Rmsg"0
 GetRolesByUserRequest
 user_id (	RuserId"“
 GetRolesByUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization4
 project (2.accounts.v1alpha1.ProjectRproject"{
 GetRolesByOrgUserRequest\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId
+project_id (	R	projectId
 user_id (RuserId"–
 GetRolesByOrgUserResponseC
 organization (2.accounts.v1alpha1.OrganizationRorganization4

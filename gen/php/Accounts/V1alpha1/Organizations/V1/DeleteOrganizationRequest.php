@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
 
@@ -33,7 +33,7 @@ class DeleteOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @return string
      */
     public function getOrganizationId()
@@ -42,7 +42,7 @@ class DeleteOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */

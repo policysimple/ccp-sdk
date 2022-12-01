@@ -26,7 +26,7 @@ constexpr CreateProjectRequest::CreateProjectRequest(
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u){}
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct CreateProjectRequestDefaultTypeInternal {
   constexpr CreateProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -38,7 +38,7 @@ struct CreateProjectRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateProjectRequestDefaultTypeInternal _CreateProjectRequest_default_instance_;
 constexpr GetOneProjectRequest::GetOneProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(0){}
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetOneProjectRequestDefaultTypeInternal {
   constexpr GetOneProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -50,7 +50,7 @@ struct GetOneProjectRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetOneProjectRequestDefaultTypeInternal _GetOneProjectRequest_default_instance_;
 constexpr DeleteProjectRequest::DeleteProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(0){}
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteProjectRequestDefaultTypeInternal {
   constexpr DeleteProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -63,7 +63,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteProjectRequestDefaultType
 constexpr ListProjectRequest::ListProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u){}
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ListProjectRequestDefaultTypeInternal {
   constexpr ListProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -75,8 +75,8 @@ struct ListProjectRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListProjectRequestDefaultTypeInternal _ListProjectRequest_default_instance_;
 constexpr UpdateProjectRequest::UpdateProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : project_(nullptr)
-  , id_(0){}
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_(nullptr){}
 struct UpdateProjectRequestDefaultTypeInternal {
   constexpr UpdateProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -89,6 +89,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateProjectRequestDefaultType
 constexpr MemberRol::MemberRol(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , uid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(0u)
   , is_admin_(false){}
 struct MemberRolDefaultTypeInternal {
@@ -116,8 +117,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProjectListDefaultTypeInternal 
 constexpr CreateProjectResponse::CreateProjectResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(0u){}
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct CreateProjectResponseDefaultTypeInternal {
   constexpr CreateProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -129,8 +129,7 @@ struct CreateProjectResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateProjectResponseDefaultTypeInternal _CreateProjectResponse_default_instance_;
 constexpr UpdateProjectResponse::UpdateProjectResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct UpdateProjectResponseDefaultTypeInternal {
   constexpr UpdateProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -142,8 +141,7 @@ struct UpdateProjectResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateProjectResponseDefaultTypeInternal _UpdateProjectResponse_default_instance_;
 constexpr DeleteProjectResponse::DeleteProjectResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteProjectResponseDefaultTypeInternal {
   constexpr DeleteProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -161,11 +159,9 @@ constexpr GetOneProjectResponse::GetOneProjectResponse(
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , uid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_uid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , owner_(nullptr)
-  , id_(0)
-  , organization_id_(0u){}
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , owner_(nullptr){}
 struct GetOneProjectResponseDefaultTypeInternal {
   constexpr GetOneProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -177,8 +173,7 @@ struct GetOneProjectResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetOneProjectResponseDefaultTypeInternal _GetOneProjectResponse_default_instance_;
 constexpr ListProjectResponse::ListProjectResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : projects_()
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : projects_(){}
 struct ListProjectResponseDefaultTypeInternal {
   constexpr ListProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -237,8 +232,8 @@ struct UserListDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UserListDefaultTypeInternal _UserList_default_instance_;
 constexpr DeleteUserByProjectRequest::DeleteUserByProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : user_id_(0u)
-  , project_id_(0u){}
+  : project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(0u){}
 struct DeleteUserByProjectRequestDefaultTypeInternal {
   constexpr DeleteUserByProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -250,8 +245,7 @@ struct DeleteUserByProjectRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteUserByProjectRequestDefaultTypeInternal _DeleteUserByProjectRequest_default_instance_;
 constexpr DeleteUserByProjectResponse::DeleteUserByProjectResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteUserByProjectResponseDefaultTypeInternal {
   constexpr DeleteUserByProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -263,9 +257,9 @@ struct DeleteUserByProjectResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteUserByProjectResponseDefaultTypeInternal _DeleteUserByProjectResponse_default_instance_;
 constexpr EditRoleUserByProjectRequest::EditRoleUserByProjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : user_id_(0u)
-  , project_id_(0u)
-  , role_id_(0u){}
+  : project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , role_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(0u){}
 struct EditRoleUserByProjectRequestDefaultTypeInternal {
   constexpr EditRoleUserByProjectRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -277,8 +271,7 @@ struct EditRoleUserByProjectRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EditRoleUserByProjectRequestDefaultTypeInternal _EditRoleUserByProjectRequest_default_instance_;
 constexpr EditRoleUserByProjectResponse::EditRoleUserByProjectResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct EditRoleUserByProjectResponseDefaultTypeInternal {
   constexpr EditRoleUserByProjectResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -305,8 +298,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectRequest, name_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectRequest, description_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectRequest, image_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectRequest, organization_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectRequest, organization_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -324,15 +317,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectRequest, organization_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectRequest, organization_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectRequest, id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectRequest, project_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectRequest, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::MemberRol, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -341,6 +334,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::MemberRol, id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::MemberRol, name_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::MemberRol, is_admin_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::MemberRol, uid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ProjectList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -354,7 +348,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectResponse, error_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::CreateProjectResponse, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectResponse, _internal_metadata_),
@@ -362,37 +355,32 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::UpdateProjectResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::DeleteProjectResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::DeleteProjectResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::DeleteProjectResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, name_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, image_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, organization_id_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, description_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, created_at_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, updated_at_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, members_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, owner_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, uid_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, organization_uid_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::GetOneProjectResponse, organization_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectResponse, projects_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -435,7 +423,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -450,7 +437,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fprojects
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse, msg_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::accounts::v1alpha1::projects::v1::CreateProjectRequest)},
@@ -459,19 +445,19 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 22, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectRequest)},
   { 29, -1, sizeof(::accounts::v1alpha1::projects::v1::UpdateProjectRequest)},
   { 36, -1, sizeof(::accounts::v1alpha1::projects::v1::MemberRol)},
-  { 44, -1, sizeof(::accounts::v1alpha1::projects::v1::ProjectList)},
-  { 51, -1, sizeof(::accounts::v1alpha1::projects::v1::CreateProjectResponse)},
+  { 45, -1, sizeof(::accounts::v1alpha1::projects::v1::ProjectList)},
+  { 52, -1, sizeof(::accounts::v1alpha1::projects::v1::CreateProjectResponse)},
   { 59, -1, sizeof(::accounts::v1alpha1::projects::v1::UpdateProjectResponse)},
-  { 66, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteProjectResponse)},
-  { 73, -1, sizeof(::accounts::v1alpha1::projects::v1::GetOneProjectResponse)},
-  { 89, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectResponse)},
-  { 96, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest)},
-  { 103, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse)},
-  { 112, -1, sizeof(::accounts::v1alpha1::projects::v1::UserList)},
-  { 125, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest)},
-  { 132, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse)},
-  { 139, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest)},
-  { 147, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse)},
+  { 65, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteProjectResponse)},
+  { 71, -1, sizeof(::accounts::v1alpha1::projects::v1::GetOneProjectResponse)},
+  { 85, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectResponse)},
+  { 91, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationRequest)},
+  { 98, -1, sizeof(::accounts::v1alpha1::projects::v1::ListProjectPaginationResponse)},
+  { 107, -1, sizeof(::accounts::v1alpha1::projects::v1::UserList)},
+  { 120, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest)},
+  { 127, -1, sizeof(::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse)},
+  { 133, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest)},
+  { 141, -1, sizeof(::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -502,66 +488,61 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_2
   "unts/v1alpha1/accounts.proto\"\244\001\n\024CreateP"
   "rojectRequest\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013des"
   "cription\030\002 \001(\tR\013description\022\024\n\005image\030\003 \001"
-  "(\tR\005image\022\'\n\017organization_id\030\004 \001(\rR\016orga"
-  "nizationId\022\027\n\007user_id\030\005 \001(\tR\006userId\"&\n\024G"
-  "etOneProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"&\n\024D"
-  "eleteProjectRequest\022\016\n\002id\030\001 \001(\005R\002id\"V\n\022L"
-  "istProjectRequest\022\'\n\017organization_id\030\001 \001"
-  "(\rR\016organizationId\022\027\n\007user_id\030\002 \001(\tR\006use"
-  "rId\"u\n\024UpdateProjectRequest\022\016\n\002id\030\001 \001(\005R"
-  "\002id\022M\n\007project\030\002 \001(\01323.accounts.v1alpha1"
-  ".projects.v1.CreateProjectRequestR\007proje"
-  "ct\"J\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030"
-  "\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\"7"
-  "\n\013ProjectList\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005ima"
-  "ge\030\002 \001(\tR\005image\"O\n\025CreateProjectResponse"
-  "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error"
-  "\022\016\n\002id\030\003 \001(\rR\002id\"\?\n\025UpdateProjectRespons"
-  "e\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005erro"
-  "r\"\?\n\025DeleteProjectResponse\022\020\n\003msg\030\001 \001(\tR"
-  "\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\222\003\n\025GetOnePro"
-  "jectResponse\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001"
-  "(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organi"
-  "zation_id\030\004 \001(\rR\016organizationId\022 \n\013descr"
-  "iption\030\005 \001(\tR\013description\022\035\n\ncreated_at\030"
-  "\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tup"
-  "datedAt\022:\n\007members\030\010 \003(\0132 .accounts.v1al"
-  "pha1.MemberProjectR\007members\022=\n\005owner\030\t \001"
-  "(\0132\'.accounts.v1alpha1.projects.v1.UserL"
-  "istR\005owner\022\020\n\003uid\030\n \001(\tR\003uid\022)\n\020organiza"
-  "tion_uid\030\013 \001(\tR\017organizationUid\"c\n\023ListP"
-  "rojectResponse\0226\n\010projects\030\001 \003(\0132\032.accou"
-  "nts.v1alpha1.ProjectR\010projects\022\024\n\005error\030"
-  "\002 \001(\tR\005error\"L\n\034ListProjectPaginationReq"
-  "uest\022\026\n\006offset\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 "
-  "\001(\005R\005limit\"\234\001\n\035ListProjectPaginationResp"
-  "onse\0226\n\010projects\030\001 \003(\0132\032.accounts.v1alph"
-  "a1.ProjectR\010projects\022\024\n\005count\030\002 \001(\005R\005cou"
-  "nt\022\022\n\004page\030\003 \001(\005R\004page\022\031\n\010max_page\030\004 \001(\005"
-  "R\007maxPage\"\334\001\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035"
-  "\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_na"
-  "me\030\003 \001(\tR\010lastName\022\024\n\005email\030\004 \001(\tR\005email"
-  "\022\027\n\007user_id\030\005 \001(\tR\006userId\022\033\n\tis_active\030\006"
-  " \001(\010R\010isActive\022\"\n\ris_super_user\030\007 \001(\010R\013i"
-  "sSuperUser\022\024\n\005image\030\010 \001(\tR\005image\"T\n\032Dele"
-  "teUserByProjectRequest\022\027\n\007user_id\030\001 \001(\rR"
-  "\006userId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\"E"
-  "\n\033DeleteUserByProjectResponse\022\020\n\003msg\030\001 \001"
-  "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"o\n\034EditRol"
-  "eUserByProjectRequest\022\027\n\007user_id\030\001 \001(\rR\006"
-  "userId\022\035\n\nproject_id\030\002 \001(\rR\tprojectId\022\027\n"
-  "\007role_id\030\003 \001(\rR\006roleId\"G\n\035EditRoleUserBy"
-  "ProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err"
-  "or\030\002 \001(\tR\005errorB=Z;github.com/cuemby/ccp"
-  "-sdk/gen/go/accounts/v1alpha1/projectsb\006"
-  "proto3"
+  "(\tR\005image\022\027\n\007user_id\030\005 \001(\tR\006userId\022\'\n\017or"
+  "ganization_id\030\006 \001(\tR\016organizationId\"&\n\024G"
+  "etOneProjectRequest\022\016\n\002id\030\002 \001(\tR\002id\"&\n\024D"
+  "eleteProjectRequest\022\016\n\002id\030\002 \001(\tR\002id\"V\n\022L"
+  "istProjectRequest\022\027\n\007user_id\030\002 \001(\tR\006user"
+  "Id\022\'\n\017organization_id\030\003 \001(\tR\016organizatio"
+  "nId\"u\n\024UpdateProjectRequest\022M\n\007project\030\002"
+  " \001(\01323.accounts.v1alpha1.projects.v1.Cre"
+  "ateProjectRequestR\007project\022\016\n\002id\030\003 \001(\tR\002"
+  "id\"\\\n\tMemberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030"
+  "\002 \001(\tR\004name\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020"
+  "\n\003uid\030\004 \001(\tR\003uid\"7\n\013ProjectList\022\022\n\004name\030"
+  "\001 \001(\tR\004name\022\024\n\005image\030\002 \001(\tR\005image\"9\n\025Cre"
+  "ateProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\016\n\002"
+  "id\030\004 \001(\tR\002id\")\n\025UpdateProjectResponse\022\020\n"
+  "\003msg\030\001 \001(\tR\003msg\")\n\025DeleteProjectResponse"
+  "\022\020\n\003msg\030\001 \001(\tR\003msg\"\325\002\n\025GetOneProjectResp"
+  "onse\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR"
+  "\005image\022 \n\013description\030\005 \001(\tR\013description"
+  "\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdat"
+  "ed_at\030\007 \001(\tR\tupdatedAt\022:\n\007members\030\010 \003(\0132"
+  " .accounts.v1alpha1.MemberProjectR\007membe"
+  "rs\022=\n\005owner\030\t \001(\0132\'.accounts.v1alpha1.pr"
+  "ojects.v1.UserListR\005owner\022\016\n\002id\030\n \001(\tR\002i"
+  "d\022\'\n\017organization_id\030\013 \001(\tR\016organization"
+  "Id\"M\n\023ListProjectResponse\0226\n\010projects\030\001 "
+  "\003(\0132\032.accounts.v1alpha1.ProjectR\010project"
+  "s\"L\n\034ListProjectPaginationRequest\022\026\n\006off"
+  "set\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\""
+  "\234\001\n\035ListProjectPaginationResponse\0226\n\010pro"
+  "jects\030\001 \003(\0132\032.accounts.v1alpha1.ProjectR"
+  "\010projects\022\024\n\005count\030\002 \001(\005R\005count\022\022\n\004page\030"
+  "\003 \001(\005R\004page\022\031\n\010max_page\030\004 \001(\005R\007maxPage\"\334"
+  "\001\n\010UserList\022\016\n\002id\030\001 \001(\rR\002id\022\035\n\nfirst_nam"
+  "e\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010l"
+  "astName\022\024\n\005email\030\004 \001(\tR\005email\022\027\n\007user_id"
+  "\030\005 \001(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010isAct"
+  "ive\022\"\n\ris_super_user\030\007 \001(\010R\013isSuperUser\022"
+  "\024\n\005image\030\010 \001(\tR\005image\"T\n\032DeleteUserByPro"
+  "jectRequest\022\027\n\007user_id\030\001 \001(\rR\006userId\022\035\n\n"
+  "project_id\030\003 \001(\tR\tprojectId\"/\n\033DeleteUse"
+  "rByProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"o\n\034"
+  "EditRoleUserByProjectRequest\022\027\n\007user_id\030"
+  "\001 \001(\rR\006userId\022\035\n\nproject_id\030\004 \001(\tR\tproje"
+  "ctId\022\027\n\007role_id\030\005 \001(\tR\006roleId\"1\n\035EditRol"
+  "eUserByProjectResponse\022\020\n\003msg\030\001 \001(\tR\003msg"
+  "B=Z;github.com/cuemby/ccp-sdk/gen/go/acc"
+  "ounts/v1alpha1/projectsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto = {
-  false, false, 2286, descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, "accounts/v1alpha1/projects/projects.proto", 
+  false, false, 2111, descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, "accounts/v1alpha1/projects/projects.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto_deps, 1, 19,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto,
@@ -615,7 +596,11 @@ CreateProjectRequest::CreateProjectRequest(const CreateProjectRequest& from)
     user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
       GetArenaForAllocation());
   }
-  organization_id_ = from.organization_id_;
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.CreateProjectRequest)
 }
 
@@ -624,7 +609,7 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_ = 0u;
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 CreateProjectRequest::~CreateProjectRequest() {
@@ -640,6 +625,7 @@ inline void CreateProjectRequest::SharedDtor() {
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateProjectRequest::ArenaDtor(void* object) {
@@ -662,7 +648,7 @@ void CreateProjectRequest::Clear() {
   description_.ClearToEmpty();
   image_.ClearToEmpty();
   user_id_.ClearToEmpty();
-  organization_id_ = 0u;
+  organization_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -699,19 +685,21 @@ const char* CreateProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 organization_id = 4 [json_name = "organizationId"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
       // string user_id = 5 [json_name = "userId"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_user_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.CreateProjectRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string organization_id = 6 [json_name = "organizationId"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.CreateProjectRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -774,12 +762,6 @@ failure:
         3, this->_internal_image(), target);
   }
 
-  // uint32 organization_id = 4 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_organization_id(), target);
-  }
-
   // string user_id = 5 [json_name = "userId"];
   if (!this->_internal_user_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -788,6 +770,16 @@ failure:
       "accounts.v1alpha1.projects.v1.CreateProjectRequest.user_id");
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_user_id(), target);
+  }
+
+  // string organization_id = 6 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.CreateProjectRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_organization_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -834,10 +826,10 @@ size_t CreateProjectRequest::ByteSizeLong() const {
         this->_internal_user_id());
   }
 
-  // uint32 organization_id = 4 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
+  // string organization_id = 6 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_organization_id());
   }
 
@@ -881,7 +873,7 @@ void CreateProjectRequest::MergeFrom(const CreateProjectRequest& from) {
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
-  if (from._internal_organization_id() != 0) {
+  if (!from._internal_organization_id().empty()) {
     _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -921,7 +913,11 @@ void CreateProjectRequest::InternalSwap(CreateProjectRequest* other) {
       &user_id_, GetArenaForAllocation(),
       &other->user_id_, other->GetArenaForAllocation()
   );
-  swap(organization_id_, other->organization_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProjectRequest::GetMetadata() const {
@@ -948,12 +944,16 @@ GetOneProjectRequest::GetOneProjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 GetOneProjectRequest::GetOneProjectRequest(const GetOneProjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_ = from.id_;
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.GetOneProjectRequest)
 }
 
 inline void GetOneProjectRequest::SharedCtor() {
-id_ = 0;
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetOneProjectRequest::~GetOneProjectRequest() {
@@ -965,6 +965,7 @@ GetOneProjectRequest::~GetOneProjectRequest() {
 
 inline void GetOneProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetOneProjectRequest::ArenaDtor(void* object) {
@@ -983,7 +984,7 @@ void GetOneProjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0;
+  id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -993,10 +994,12 @@ const char* GetOneProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1 [json_name = "id"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+      // string id = 2 [json_name = "id"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.GetOneProjectRequest.id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1029,10 +1032,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  // string id = 2 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.GetOneProjectRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1051,10 +1058,10 @@ size_t GetOneProjectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
+  // string id = 2 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
   }
 
@@ -1086,7 +1093,7 @@ void GetOneProjectRequest::MergeFrom(const GetOneProjectRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
+  if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1106,7 +1113,11 @@ bool GetOneProjectRequest::IsInitialized() const {
 void GetOneProjectRequest::InternalSwap(GetOneProjectRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneProjectRequest::GetMetadata() const {
@@ -1133,12 +1144,16 @@ DeleteProjectRequest::DeleteProjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 DeleteProjectRequest::DeleteProjectRequest(const DeleteProjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_ = from.id_;
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.DeleteProjectRequest)
 }
 
 inline void DeleteProjectRequest::SharedCtor() {
-id_ = 0;
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteProjectRequest::~DeleteProjectRequest() {
@@ -1150,6 +1165,7 @@ DeleteProjectRequest::~DeleteProjectRequest() {
 
 inline void DeleteProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteProjectRequest::ArenaDtor(void* object) {
@@ -1168,7 +1184,7 @@ void DeleteProjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0;
+  id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1178,10 +1194,12 @@ const char* DeleteProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1 [json_name = "id"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+      // string id = 2 [json_name = "id"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.DeleteProjectRequest.id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1214,10 +1232,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  // string id = 2 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.DeleteProjectRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1236,10 +1258,10 @@ size_t DeleteProjectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
+  // string id = 2 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
   }
 
@@ -1271,7 +1293,7 @@ void DeleteProjectRequest::MergeFrom(const DeleteProjectRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
+  if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1291,7 +1313,11 @@ bool DeleteProjectRequest::IsInitialized() const {
 void DeleteProjectRequest::InternalSwap(DeleteProjectRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteProjectRequest::GetMetadata() const {
@@ -1323,13 +1349,17 @@ ListProjectRequest::ListProjectRequest(const ListProjectRequest& from)
     user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
       GetArenaForAllocation());
   }
-  organization_id_ = from.organization_id_;
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.ListProjectRequest)
 }
 
 inline void ListProjectRequest::SharedCtor() {
 user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_id_ = 0u;
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ListProjectRequest::~ListProjectRequest() {
@@ -1342,6 +1372,7 @@ ListProjectRequest::~ListProjectRequest() {
 inline void ListProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListProjectRequest::ArenaDtor(void* object) {
@@ -1361,7 +1392,7 @@ void ListProjectRequest::Clear() {
   (void) cached_has_bits;
 
   user_id_.ClearToEmpty();
-  organization_id_ = 0u;
+  organization_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1371,19 +1402,21 @@ const char* ListProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
       // string user_id = 2 [json_name = "userId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_user_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.ListProjectRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string organization_id = 3 [json_name = "organizationId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.ListProjectRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1416,12 +1449,6 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
-  }
-
   // string user_id = 2 [json_name = "userId"];
   if (!this->_internal_user_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -1430,6 +1457,16 @@ failure:
       "accounts.v1alpha1.projects.v1.ListProjectRequest.user_id");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_user_id(), target);
+  }
+
+  // string organization_id = 3 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.ListProjectRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_organization_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1455,10 +1492,10 @@ size_t ListProjectRequest::ByteSizeLong() const {
         this->_internal_user_id());
   }
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
+  // string organization_id = 3 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_organization_id());
   }
 
@@ -1493,7 +1530,7 @@ void ListProjectRequest::MergeFrom(const ListProjectRequest& from) {
   if (!from._internal_user_id().empty()) {
     _internal_set_user_id(from._internal_user_id());
   }
-  if (from._internal_organization_id() != 0) {
+  if (!from._internal_organization_id().empty()) {
     _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1518,7 +1555,11 @@ void ListProjectRequest::InternalSwap(ListProjectRequest* other) {
       &user_id_, GetArenaForAllocation(),
       &other->user_id_, other->GetArenaForAllocation()
   );
-  swap(organization_id_, other->organization_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProjectRequest::GetMetadata() const {
@@ -1550,20 +1591,22 @@ UpdateProjectRequest::UpdateProjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 UpdateProjectRequest::UpdateProjectRequest(const UpdateProjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_project()) {
     project_ = new ::accounts::v1alpha1::projects::v1::CreateProjectRequest(*from.project_);
   } else {
     project_ = nullptr;
   }
-  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.UpdateProjectRequest)
 }
 
 inline void UpdateProjectRequest::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&project_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&id_) -
-    reinterpret_cast<char*>(&project_)) + sizeof(id_));
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_ = nullptr;
 }
 
 UpdateProjectRequest::~UpdateProjectRequest() {
@@ -1575,6 +1618,7 @@ UpdateProjectRequest::~UpdateProjectRequest() {
 
 inline void UpdateProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete project_;
 }
 
@@ -1594,11 +1638,11 @@ void UpdateProjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && project_ != nullptr) {
     delete project_;
   }
   project_ = nullptr;
-  id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1608,17 +1652,19 @@ const char* UpdateProjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1 [json_name = "id"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
       // .accounts.v1alpha1.projects.v1.CreateProjectRequest project = 2 [json_name = "project"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_project(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string id = 3 [json_name = "id"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.UpdateProjectRequest.id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1651,18 +1697,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
-  }
-
   // .accounts.v1alpha1.projects.v1.CreateProjectRequest project = 2 [json_name = "project"];
   if (this->_internal_has_project()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
         2, _Internal::project(this), target, stream);
+  }
+
+  // string id = 3 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.UpdateProjectRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1681,18 +1731,18 @@ size_t UpdateProjectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string id = 3 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
   // .accounts.v1alpha1.projects.v1.CreateProjectRequest project = 2 [json_name = "project"];
   if (this->_internal_has_project()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *project_);
-  }
-
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1723,11 +1773,11 @@ void UpdateProjectRequest::MergeFrom(const UpdateProjectRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_id().empty()) {
+    _internal_set_id(from._internal_id());
+  }
   if (from._internal_has_project()) {
     _internal_mutable_project()->::accounts::v1alpha1::projects::v1::CreateProjectRequest::MergeFrom(from._internal_project());
-  }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1746,12 +1796,12 @@ bool UpdateProjectRequest::IsInitialized() const {
 void UpdateProjectRequest::InternalSwap(UpdateProjectRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UpdateProjectRequest, id_)
-      + sizeof(UpdateProjectRequest::id_)
-      - PROTOBUF_FIELD_OFFSET(UpdateProjectRequest, project_)>(
-          reinterpret_cast<char*>(&project_),
-          reinterpret_cast<char*>(&other->project_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  swap(project_, other->project_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateProjectRequest::GetMetadata() const {
@@ -1783,6 +1833,11 @@ MemberRol::MemberRol(const MemberRol& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
+  uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_uid().empty()) {
+    uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uid(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_admin_) -
     reinterpret_cast<char*>(&id_)) + sizeof(is_admin_));
@@ -1791,6 +1846,7 @@ MemberRol::MemberRol(const MemberRol& from)
 
 inline void MemberRol::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&is_admin_) -
@@ -1807,6 +1863,7 @@ MemberRol::~MemberRol() {
 inline void MemberRol::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  uid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void MemberRol::ArenaDtor(void* object) {
@@ -1826,6 +1883,7 @@ void MemberRol::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
+  uid_.ClearToEmpty();
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_admin_) -
       reinterpret_cast<char*>(&id_)) + sizeof(is_admin_));
@@ -1858,6 +1916,15 @@ const char* MemberRol::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           is_admin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string uid = 4 [json_name = "uid"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_uid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.MemberRol.uid"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1912,6 +1979,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_is_admin(), target);
   }
 
+  // string uid = 4 [json_name = "uid"];
+  if (!this->_internal_uid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_uid().data(), static_cast<int>(this->_internal_uid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.MemberRol.uid");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_uid(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1933,6 +2010,13 @@ size_t MemberRol::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // string uid = 4 [json_name = "uid"];
+  if (!this->_internal_uid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_uid());
   }
 
   // uint32 id = 1 [json_name = "id"];
@@ -1978,6 +2062,9 @@ void MemberRol::MergeFrom(const MemberRol& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
+  if (!from._internal_uid().empty()) {
+    _internal_set_uid(from._internal_uid());
+  }
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -2005,6 +2092,11 @@ void MemberRol::InternalSwap(MemberRol* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
       &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &uid_, GetArenaForAllocation(),
+      &other->uid_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(MemberRol, is_admin_)
@@ -2285,19 +2377,17 @@ CreateProjectResponse::CreateProjectResponse(const CreateProjectResponse& from)
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.CreateProjectResponse)
 }
 
 inline void CreateProjectResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-id_ = 0u;
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 CreateProjectResponse::~CreateProjectResponse() {
@@ -2310,7 +2400,7 @@ CreateProjectResponse::~CreateProjectResponse() {
 inline void CreateProjectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateProjectResponse::ArenaDtor(void* object) {
@@ -2330,8 +2420,7 @@ void CreateProjectResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
-  id_ = 0u;
+  id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2350,19 +2439,12 @@ const char* CreateProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
+      // string id = 4 [json_name = "id"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.CreateProjectResponse.error"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 id = 3 [json_name = "id"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.CreateProjectResponse.id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2405,20 +2487,14 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
+  // string id = 4 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.CreateProjectResponse.error");
+      "accounts.v1alpha1.projects.v1.CreateProjectResponse.id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
-  // uint32 id = 3 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_id(), target);
+        4, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2444,17 +2520,10 @@ size_t CreateProjectResponse::ByteSizeLong() const {
         this->_internal_msg());
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
+  // string id = 4 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
-  }
-
-  // uint32 id = 3 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_id());
   }
 
@@ -2489,10 +2558,7 @@ void CreateProjectResponse::MergeFrom(const CreateProjectResponse& from) {
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
-  if (from._internal_id() != 0) {
+  if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2519,10 +2585,9 @@ void CreateProjectResponse::InternalSwap(CreateProjectResponse* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
   );
-  swap(id_, other->id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateProjectResponse::GetMetadata() const {
@@ -2554,17 +2619,11 @@ UpdateProjectResponse::UpdateProjectResponse(const UpdateProjectResponse& from)
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.UpdateProjectResponse)
 }
 
 inline void UpdateProjectResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 UpdateProjectResponse::~UpdateProjectResponse() {
@@ -2577,7 +2636,6 @@ UpdateProjectResponse::~UpdateProjectResponse() {
 inline void UpdateProjectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UpdateProjectResponse::ArenaDtor(void* object) {
@@ -2597,7 +2655,6 @@ void UpdateProjectResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2613,15 +2670,6 @@ const char* UpdateProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.UpdateProjectResponse.msg"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.UpdateProjectResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2664,16 +2712,6 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.UpdateProjectResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2695,13 +2733,6 @@ size_t UpdateProjectResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2735,9 +2766,6 @@ void UpdateProjectResponse::MergeFrom(const UpdateProjectResponse& from) {
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2759,11 +2787,6 @@ void UpdateProjectResponse::InternalSwap(UpdateProjectResponse* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
   );
 }
 
@@ -2796,17 +2819,11 @@ DeleteProjectResponse::DeleteProjectResponse(const DeleteProjectResponse& from)
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.DeleteProjectResponse)
 }
 
 inline void DeleteProjectResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteProjectResponse::~DeleteProjectResponse() {
@@ -2819,7 +2836,6 @@ DeleteProjectResponse::~DeleteProjectResponse() {
 inline void DeleteProjectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteProjectResponse::ArenaDtor(void* object) {
@@ -2839,7 +2855,6 @@ void DeleteProjectResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2855,15 +2870,6 @@ const char* DeleteProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.DeleteProjectResponse.msg"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.DeleteProjectResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2906,16 +2912,6 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.DeleteProjectResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2937,13 +2933,6 @@ size_t DeleteProjectResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2977,9 +2966,6 @@ void DeleteProjectResponse::MergeFrom(const DeleteProjectResponse& from) {
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3001,11 +2987,6 @@ void DeleteProjectResponse::InternalSwap(DeleteProjectResponse* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
   );
 }
 
@@ -3068,14 +3049,14 @@ GetOneProjectResponse::GetOneProjectResponse(const GetOneProjectResponse& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
-  uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_uid().empty()) {
-    uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uid(), 
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  organization_uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_organization_uid().empty()) {
-    organization_uid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_uid(), 
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
       GetArenaForAllocation());
   }
   if (from._internal_has_owner()) {
@@ -3083,9 +3064,6 @@ GetOneProjectResponse::GetOneProjectResponse(const GetOneProjectResponse& from)
   } else {
     owner_ = nullptr;
   }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(organization_id_));
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.GetOneProjectResponse)
 }
 
@@ -3095,12 +3073,9 @@ image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlread
 description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-organization_uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&owner_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&organization_id_) -
-    reinterpret_cast<char*>(&owner_)) + sizeof(organization_id_));
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+owner_ = nullptr;
 }
 
 GetOneProjectResponse::~GetOneProjectResponse() {
@@ -3117,8 +3092,8 @@ inline void GetOneProjectResponse::SharedDtor() {
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  uid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  organization_uid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete owner_;
 }
 
@@ -3144,15 +3119,12 @@ void GetOneProjectResponse::Clear() {
   description_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
-  uid_.ClearToEmpty();
-  organization_uid_.ClearToEmpty();
+  id_.ClearToEmpty();
+  organization_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && owner_ != nullptr) {
     delete owner_;
   }
   owner_ = nullptr;
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&organization_id_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(organization_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3162,13 +3134,6 @@ const char* GetOneProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1 [json_name = "id"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
       // string name = 2 [json_name = "name"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
@@ -3184,13 +3149,6 @@ const char* GetOneProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           auto str = _internal_mutable_image();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.GetOneProjectResponse.image"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 organization_id = 4 [json_name = "organizationId"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3240,21 +3198,21 @@ const char* GetOneProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string uid = 10 [json_name = "uid"];
+      // string id = 10 [json_name = "id"];
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          auto str = _internal_mutable_uid();
+          auto str = _internal_mutable_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.GetOneProjectResponse.uid"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.GetOneProjectResponse.id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string organization_uid = 11 [json_name = "organizationUid"];
+      // string organization_id = 11 [json_name = "organizationId"];
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
-          auto str = _internal_mutable_organization_uid();
+          auto str = _internal_mutable_organization_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.GetOneProjectResponse.organization_uid"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.GetOneProjectResponse.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3287,12 +3245,6 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
-  }
-
   // string name = 2 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -3311,12 +3263,6 @@ failure:
       "accounts.v1alpha1.projects.v1.GetOneProjectResponse.image");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_image(), target);
-  }
-
-  // uint32 organization_id = 4 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_organization_id(), target);
   }
 
   // string description = 5 [json_name = "description"];
@@ -3365,24 +3311,24 @@ failure:
         9, _Internal::owner(this), target, stream);
   }
 
-  // string uid = 10 [json_name = "uid"];
-  if (!this->_internal_uid().empty()) {
+  // string id = 10 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_uid().data(), static_cast<int>(this->_internal_uid().length()),
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.GetOneProjectResponse.uid");
+      "accounts.v1alpha1.projects.v1.GetOneProjectResponse.id");
     target = stream->WriteStringMaybeAliased(
-        10, this->_internal_uid(), target);
+        10, this->_internal_id(), target);
   }
 
-  // string organization_uid = 11 [json_name = "organizationUid"];
-  if (!this->_internal_organization_uid().empty()) {
+  // string organization_id = 11 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_organization_uid().data(), static_cast<int>(this->_internal_organization_uid().length()),
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.GetOneProjectResponse.organization_uid");
+      "accounts.v1alpha1.projects.v1.GetOneProjectResponse.organization_id");
     target = stream->WriteStringMaybeAliased(
-        11, this->_internal_organization_uid(), target);
+        11, this->_internal_organization_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3443,18 +3389,18 @@ size_t GetOneProjectResponse::ByteSizeLong() const {
         this->_internal_updated_at());
   }
 
-  // string uid = 10 [json_name = "uid"];
-  if (!this->_internal_uid().empty()) {
+  // string id = 10 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_uid());
+        this->_internal_id());
   }
 
-  // string organization_uid = 11 [json_name = "organizationUid"];
-  if (!this->_internal_organization_uid().empty()) {
+  // string organization_id = 11 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_organization_uid());
+        this->_internal_organization_id());
   }
 
   // .accounts.v1alpha1.projects.v1.UserList owner = 9 [json_name = "owner"];
@@ -3462,20 +3408,6 @@ size_t GetOneProjectResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *owner_);
-  }
-
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_id());
-  }
-
-  // uint32 organization_id = 4 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3522,20 +3454,14 @@ void GetOneProjectResponse::MergeFrom(const GetOneProjectResponse& from) {
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
   }
-  if (!from._internal_uid().empty()) {
-    _internal_set_uid(from._internal_uid());
+  if (!from._internal_id().empty()) {
+    _internal_set_id(from._internal_id());
   }
-  if (!from._internal_organization_uid().empty()) {
-    _internal_set_organization_uid(from._internal_organization_uid());
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
   }
   if (from._internal_has_owner()) {
     _internal_mutable_owner()->::accounts::v1alpha1::projects::v1::UserList::MergeFrom(from._internal_owner());
-  }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3582,20 +3508,15 @@ void GetOneProjectResponse::InternalSwap(GetOneProjectResponse* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &uid_, GetArenaForAllocation(),
-      &other->uid_, other->GetArenaForAllocation()
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &organization_uid_, GetArenaForAllocation(),
-      &other->organization_uid_, other->GetArenaForAllocation()
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetOneProjectResponse, organization_id_)
-      + sizeof(GetOneProjectResponse::organization_id_)
-      - PROTOBUF_FIELD_OFFSET(GetOneProjectResponse, owner_)>(
-          reinterpret_cast<char*>(&owner_),
-          reinterpret_cast<char*>(&other->owner_));
+  swap(owner_, other->owner_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneProjectResponse::GetMetadata() const {
@@ -3627,16 +3548,10 @@ ListProjectResponse::ListProjectResponse(const ListProjectResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       projects_(from.projects_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.ListProjectResponse)
 }
 
 inline void ListProjectResponse::SharedCtor() {
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ListProjectResponse::~ListProjectResponse() {
@@ -3648,7 +3563,6 @@ ListProjectResponse::~ListProjectResponse() {
 
 inline void ListProjectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListProjectResponse::ArenaDtor(void* object) {
@@ -3668,7 +3582,6 @@ void ListProjectResponse::Clear() {
   (void) cached_has_bits;
 
   projects_.Clear();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3688,15 +3601,6 @@ const char* ListProjectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.ListProjectResponse.error"));
-          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -3736,16 +3640,6 @@ failure:
       InternalWriteMessage(1, this->_internal_projects(i), target, stream);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.ListProjectResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3767,13 +3661,6 @@ size_t ListProjectResponse::ByteSizeLong() const {
   for (const auto& msg : this->projects_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3805,9 +3692,6 @@ void ListProjectResponse::MergeFrom(const ListProjectResponse& from) {
   (void) cached_has_bits;
 
   projects_.MergeFrom(from.projects_);
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3826,11 +3710,6 @@ void ListProjectResponse::InternalSwap(ListProjectResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   projects_.InternalSwap(&other->projects_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
-  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListProjectResponse::GetMetadata() const {
@@ -4804,17 +4683,18 @@ DeleteUserByProjectRequest::DeleteUserByProjectRequest(::PROTOBUF_NAMESPACE_ID::
 DeleteUserByProjectRequest::DeleteUserByProjectRequest(const DeleteUserByProjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&user_id_, &from.user_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&user_id_)) + sizeof(project_id_));
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
+  user_id_ = from.user_id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest)
 }
 
 inline void DeleteUserByProjectRequest::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&user_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&project_id_) -
-    reinterpret_cast<char*>(&user_id_)) + sizeof(project_id_));
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_ = 0u;
 }
 
 DeleteUserByProjectRequest::~DeleteUserByProjectRequest() {
@@ -4826,6 +4706,7 @@ DeleteUserByProjectRequest::~DeleteUserByProjectRequest() {
 
 inline void DeleteUserByProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteUserByProjectRequest::ArenaDtor(void* object) {
@@ -4844,9 +4725,8 @@ void DeleteUserByProjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&user_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&project_id_) -
-      reinterpret_cast<char*>(&user_id_)) + sizeof(project_id_));
+  project_id_.ClearToEmpty();
+  user_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4863,10 +4743,12 @@ const char* DeleteUserByProjectRequest::_InternalParse(const char* ptr, ::PROTOB
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 2 [json_name = "projectId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+      // string project_id = 3 [json_name = "projectId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4905,10 +4787,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_user_id(), target);
   }
 
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  // string project_id = 3 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_project_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4927,18 +4813,18 @@ size_t DeleteUserByProjectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string project_id = 3 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
   // uint32 user_id = 1 [json_name = "userId"];
   if (this->_internal_user_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_user_id());
-  }
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4969,11 +4855,11 @@ void DeleteUserByProjectRequest::MergeFrom(const DeleteUserByProjectRequest& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   if (from._internal_user_id() != 0) {
     _internal_set_user_id(from._internal_user_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4992,12 +4878,12 @@ bool DeleteUserByProjectRequest::IsInitialized() const {
 void DeleteUserByProjectRequest::InternalSwap(DeleteUserByProjectRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeleteUserByProjectRequest, project_id_)
-      + sizeof(DeleteUserByProjectRequest::project_id_)
-      - PROTOBUF_FIELD_OFFSET(DeleteUserByProjectRequest, user_id_)>(
-          reinterpret_cast<char*>(&user_id_),
-          reinterpret_cast<char*>(&other->user_id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  swap(user_id_, other->user_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteUserByProjectRequest::GetMetadata() const {
@@ -5029,17 +4915,11 @@ DeleteUserByProjectResponse::DeleteUserByProjectResponse(const DeleteUserByProje
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse)
 }
 
 inline void DeleteUserByProjectResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteUserByProjectResponse::~DeleteUserByProjectResponse() {
@@ -5052,7 +4932,6 @@ DeleteUserByProjectResponse::~DeleteUserByProjectResponse() {
 inline void DeleteUserByProjectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteUserByProjectResponse::ArenaDtor(void* object) {
@@ -5072,7 +4951,6 @@ void DeleteUserByProjectResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5088,15 +4966,6 @@ const char* DeleteUserByProjectResponse::_InternalParse(const char* ptr, ::PROTO
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse.msg"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5139,16 +5008,6 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5170,13 +5029,6 @@ size_t DeleteUserByProjectResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5210,9 +5062,6 @@ void DeleteUserByProjectResponse::MergeFrom(const DeleteUserByProjectResponse& f
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5234,11 +5083,6 @@ void DeleteUserByProjectResponse::InternalSwap(DeleteUserByProjectResponse* othe
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
   );
 }
 
@@ -5266,17 +5110,24 @@ EditRoleUserByProjectRequest::EditRoleUserByProjectRequest(::PROTOBUF_NAMESPACE_
 EditRoleUserByProjectRequest::EditRoleUserByProjectRequest(const EditRoleUserByProjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&user_id_, &from.user_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&role_id_) -
-    reinterpret_cast<char*>(&user_id_)) + sizeof(role_id_));
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
+  role_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_role_id().empty()) {
+    role_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_role_id(), 
+      GetArenaForAllocation());
+  }
+  user_id_ = from.user_id_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest)
 }
 
 inline void EditRoleUserByProjectRequest::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&user_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&role_id_) -
-    reinterpret_cast<char*>(&user_id_)) + sizeof(role_id_));
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+role_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_ = 0u;
 }
 
 EditRoleUserByProjectRequest::~EditRoleUserByProjectRequest() {
@@ -5288,6 +5139,8 @@ EditRoleUserByProjectRequest::~EditRoleUserByProjectRequest() {
 
 inline void EditRoleUserByProjectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  role_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void EditRoleUserByProjectRequest::ArenaDtor(void* object) {
@@ -5306,9 +5159,9 @@ void EditRoleUserByProjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&user_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&role_id_) -
-      reinterpret_cast<char*>(&user_id_)) + sizeof(role_id_));
+  project_id_.ClearToEmpty();
+  role_id_.ClearToEmpty();
+  user_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5325,17 +5178,21 @@ const char* EditRoleUserByProjectRequest::_InternalParse(const char* ptr, ::PROT
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 2 [json_name = "projectId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+      // string project_id = 4 [json_name = "projectId"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 role_id = 3 [json_name = "roleId"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          role_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+      // string role_id = 5 [json_name = "roleId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_role_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest.role_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5374,16 +5231,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_user_id(), target);
   }
 
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  // string project_id = 4 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_project_id(), target);
   }
 
-  // uint32 role_id = 3 [json_name = "roleId"];
-  if (this->_internal_role_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_role_id(), target);
+  // string role_id = 5 [json_name = "roleId"];
+  if (!this->_internal_role_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_role_id().data(), static_cast<int>(this->_internal_role_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest.role_id");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_role_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5402,25 +5267,25 @@ size_t EditRoleUserByProjectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string project_id = 4 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
+  // string role_id = 5 [json_name = "roleId"];
+  if (!this->_internal_role_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_role_id());
+  }
+
   // uint32 user_id = 1 [json_name = "userId"];
   if (this->_internal_user_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_user_id());
-  }
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
-  }
-
-  // uint32 role_id = 3 [json_name = "roleId"];
-  if (this->_internal_role_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_role_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5451,14 +5316,14 @@ void EditRoleUserByProjectRequest::MergeFrom(const EditRoleUserByProjectRequest&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_user_id() != 0) {
-    _internal_set_user_id(from._internal_user_id());
-  }
-  if (from._internal_project_id() != 0) {
+  if (!from._internal_project_id().empty()) {
     _internal_set_project_id(from._internal_project_id());
   }
-  if (from._internal_role_id() != 0) {
+  if (!from._internal_role_id().empty()) {
     _internal_set_role_id(from._internal_role_id());
+  }
+  if (from._internal_user_id() != 0) {
+    _internal_set_user_id(from._internal_user_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5477,12 +5342,17 @@ bool EditRoleUserByProjectRequest::IsInitialized() const {
 void EditRoleUserByProjectRequest::InternalSwap(EditRoleUserByProjectRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(EditRoleUserByProjectRequest, role_id_)
-      + sizeof(EditRoleUserByProjectRequest::role_id_)
-      - PROTOBUF_FIELD_OFFSET(EditRoleUserByProjectRequest, user_id_)>(
-          reinterpret_cast<char*>(&user_id_),
-          reinterpret_cast<char*>(&other->user_id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &role_id_, GetArenaForAllocation(),
+      &other->role_id_, other->GetArenaForAllocation()
+  );
+  swap(user_id_, other->user_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EditRoleUserByProjectRequest::GetMetadata() const {
@@ -5514,17 +5384,11 @@ EditRoleUserByProjectResponse::EditRoleUserByProjectResponse(const EditRoleUserB
     msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
       GetArenaForAllocation());
   }
-  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_error().empty()) {
-    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse)
 }
 
 inline void EditRoleUserByProjectResponse::SharedCtor() {
 msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 EditRoleUserByProjectResponse::~EditRoleUserByProjectResponse() {
@@ -5537,7 +5401,6 @@ EditRoleUserByProjectResponse::~EditRoleUserByProjectResponse() {
 inline void EditRoleUserByProjectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void EditRoleUserByProjectResponse::ArenaDtor(void* object) {
@@ -5557,7 +5420,6 @@ void EditRoleUserByProjectResponse::Clear() {
   (void) cached_has_bits;
 
   msg_.ClearToEmpty();
-  error_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5573,15 +5435,6 @@ const char* EditRoleUserByProjectResponse::_InternalParse(const char* ptr, ::PRO
           auto str = _internal_mutable_msg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse.msg"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_error();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse.error"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5624,16 +5477,6 @@ failure:
         1, this->_internal_msg(), target);
   }
 
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse.error");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_error(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5655,13 +5498,6 @@ size_t EditRoleUserByProjectResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_msg());
-  }
-
-  // string error = 2 [json_name = "error"];
-  if (!this->_internal_error().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5695,9 +5531,6 @@ void EditRoleUserByProjectResponse::MergeFrom(const EditRoleUserByProjectRespons
   if (!from._internal_msg().empty()) {
     _internal_set_msg(from._internal_msg());
   }
-  if (!from._internal_error().empty()) {
-    _internal_set_error(from._internal_error());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5719,11 +5552,6 @@ void EditRoleUserByProjectResponse::InternalSwap(EditRoleUserByProjectResponse* 
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &msg_, GetArenaForAllocation(),
       &other->msg_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &error_, GetArenaForAllocation(),
-      &other->error_, other->GetArenaForAllocation()
   );
 }
 

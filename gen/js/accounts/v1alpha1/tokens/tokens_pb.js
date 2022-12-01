@@ -875,7 +875,6 @@ proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.toObject = function(inc
   var f, obj = {
     tokenCcp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     msg: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 4, ""),
     timeExpirationMfa: jspb.Message.getFieldWithDefault(msg, 5, 0),
     userId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
@@ -921,10 +920,6 @@ proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.deserializeBinaryFromRe
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
@@ -974,13 +969,6 @@ proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.serializeBinaryToWriter
   if (f.length > 0) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
       f
     );
   }
@@ -1034,24 +1022,6 @@ proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.prototype.getMsg = func
  */
 proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string error = 4;
- * @return {string}
- */
-proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse} returns this
- */
-proto.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1524,8 +1494,7 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.toObject = function
  */
 proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msg: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    msg: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1566,10 +1535,6 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.deserializeBinaryFromReader =
       var value = /** @type {string} */ (reader.readString());
       msg.setMsg(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1606,13 +1571,6 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.serializeBinaryToWriter = fun
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -1631,24 +1589,6 @@ proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.getMsg = function()
  */
 proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse} returns this
- */
-proto.accounts.v1alpha1.tokens.v1.SaveLogsResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1822,8 +1762,7 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.toObject = function(opt
 proto.accounts.v1alpha1.tokens.v1.LogsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     logsList: jspb.Message.toObjectList(msg.getLogsList(),
-    proto.accounts.v1alpha1.tokens.v1.Log.toObject, includeInstance),
-    error: jspb.Message.getFieldWithDefault(msg, 2, "")
+    proto.accounts.v1alpha1.tokens.v1.Log.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1865,10 +1804,6 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.accounts.v1alpha1.tokens.v1.Log.deserializeBinaryFromReader);
       msg.addLogs(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1904,13 +1839,6 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.serializeBinaryToWriter = functio
       1,
       f,
       proto.accounts.v1alpha1.tokens.v1.Log.serializeBinaryToWriter
-    );
-  }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
     );
   }
 };
@@ -1951,24 +1879,6 @@ proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.addLogs = function(opt_
  */
 proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.clearLogsList = function() {
   return this.setLogsList([]);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.accounts.v1alpha1.tokens.v1.LogsResponse} returns this
- */
-proto.accounts.v1alpha1.tokens.v1.LogsResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

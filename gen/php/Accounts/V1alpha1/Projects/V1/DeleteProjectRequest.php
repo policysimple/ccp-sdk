@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>string id = 2 [json_name = "id"];</code>
      */
-    protected $id = 0;
+    protected $id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @return int
+     * Generated from protobuf field <code>string id = 2 [json_name = "id"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -42,13 +42,13 @@ class DeleteProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1 [json_name = "id"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string id = 2 [json_name = "id"];</code>
+     * @param string $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;

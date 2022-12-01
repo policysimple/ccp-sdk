@@ -22,10 +22,6 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
      */
     protected $msg = '';
     /**
-     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
-     */
-    protected $error = '';
-    /**
      *tiempo de expiracion fma
      *
      * Generated from protobuf field <code>int64 time_expiration_mfa = 5 [json_name = "timeExpirationMfa"];</code>
@@ -44,7 +40,6 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $token_ccp
      *     @type string $msg
-     *     @type string $error
      *     @type int|string $time_expiration_mfa
      *          tiempo de expiracion fma
      *     @type string $user_id
@@ -95,28 +90,6 @@ class CreateTokenCCPResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->msg = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 4 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
 
         return $this;
     }

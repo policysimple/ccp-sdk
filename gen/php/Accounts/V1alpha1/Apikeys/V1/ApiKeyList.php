@@ -41,6 +41,10 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.accounts.v1alpha1.Organization organization = 8 [json_name = "organization"];</code>
      */
     protected $organization = null;
+    /**
+     * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     */
+    protected $expired_at = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      *     @type bool $is_active
      *     @type \Accounts\V1alpha1\Project $project
      *     @type \Accounts\V1alpha1\Organization $organization
+     *     @type string $expired_at
      * }
      */
     public function __construct($data = NULL) {
@@ -232,6 +237,28 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Accounts\V1alpha1\Organization::class);
         $this->organization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @return string
+     */
+    public function getExpiredAt()
+    {
+        return $this->expired_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExpiredAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->expired_at = $var;
 
         return $this;
     }

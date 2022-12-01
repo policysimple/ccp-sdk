@@ -30,7 +30,7 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
      */
     protected $invitation_response = 0;
     /**
-     * Generated from protobuf field <code>map<uint32, uint32> projects = 5 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>map<string, string> projects = 5 [json_name = "projects"];</code>
      */
     private $projects;
 
@@ -141,7 +141,7 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<uint32, uint32> projects = 5 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>map<string, string> projects = 5 [json_name = "projects"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getProjects()
@@ -150,13 +150,13 @@ class AgreeInvitationUserRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<uint32, uint32> projects = 5 [json_name = "projects"];</code>
+     * Generated from protobuf field <code>map<string, string> projects = 5 [json_name = "projects"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setProjects($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::UINT32, \Google\Protobuf\Internal\GPBType::UINT32);
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->projects = $arr;
 
         return $this;

@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     */
-    protected $id = 0;
-    /**
      * Generated from protobuf field <code>string name = 2 [json_name = "name"];</code>
      */
     protected $name = '';
@@ -42,13 +38,13 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      */
     protected $owner = null;
     /**
-     * Generated from protobuf field <code>string error = 8 [json_name = "error"];</code>
-     */
-    protected $error = '';
-    /**
      * Generated from protobuf field <code>string slug = 9 [json_name = "slug"];</code>
      */
     protected $slug = '';
+    /**
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     */
+    protected $id = '';
 
     /**
      * Constructor.
@@ -56,42 +52,19 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
      *     @type string $name
      *     @type string $image
      *     @type \Accounts\V1alpha1\Organizations\V1\ProjectOrganization[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type \Accounts\V1alpha1\Organizations\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      *     @type string $description
      *     @type \Accounts\V1alpha1\UserList $owner
-     *     @type string $error
      *     @type string $slug
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Accounts\V1Alpha1\Organizations\Organizations::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1 [json_name = "id"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
-
-        return $this;
     }
 
     /**
@@ -237,28 +210,6 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 8 [json_name = "error"];</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 8 [json_name = "error"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string slug = 9 [json_name = "slug"];</code>
      * @return string
      */
@@ -276,6 +227,28 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->slug = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }
