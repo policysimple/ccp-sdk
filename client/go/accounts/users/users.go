@@ -27,12 +27,12 @@ var accountServiceTimeout string
 type CheckUserData struct {
 	Permission     string
 	TypePermission string
-	OrganizationId uint32
-	ProjectId      uint32
+	OrganizationId string
+	ProjectId      string
 	ApiKeyValue    string
 	UserIdAdmin    string
 	UserIdDex      string
-	RolesIds       []uint32
+	RolesIds       []string
 	UserId         uint32
 }
 
@@ -77,9 +77,9 @@ func CheckUser(req *CheckUserData) (*accountpkgv1.CheckUserResponse, error) {
 		return &accountpkgv1.CheckUserResponse{}, nil
 	}
 
-	if req.OrganizationId > 0 {
+	if req.OrganizationId != "" {
 		checkUser.OrganizationId = req.OrganizationId
-	} else if req.ProjectId > 0 {
+	} else if req.ProjectId != "" {
 		checkUser.ProjectId = req.ProjectId
 	} else {
 		return nil, status.Error(codes.InvalidArgument, "OrganizationId or ProjectId is required")

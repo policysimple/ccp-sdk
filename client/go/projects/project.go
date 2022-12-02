@@ -38,7 +38,7 @@ func init() {
 
 }
 
-func ListProjects(orgId uint32) (response *projectspkgv1.ListProjectResponse, err error) {
+func ListProjects(orgId string) (response *projectspkgv1.ListProjectResponse, err error) {
 	log.Println("List Project SDK")
 	dur, err := time.ParseDuration(projectServiceTimeout)
 
