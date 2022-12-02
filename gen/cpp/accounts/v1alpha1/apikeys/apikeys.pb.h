@@ -233,9 +233,9 @@ class CreateApiKeyRequest final :
     kPermissionsIdsFieldNumber = 4,
     kNameFieldNumber = 1,
     kUserIdFieldNumber = 2,
+    kOrganizationIdFieldNumber = 5,
     kProjectIdFieldNumber = 7,
     kExpiredAtFieldNumber = 8,
-    kOrganizationIdFieldNumber = 5,
     kIsActiveFieldNumber = 6,
   };
   // repeated uint32 permissions_ids = 4 [json_name = "permissionsIds"];
@@ -288,6 +288,20 @@ class CreateApiKeyRequest final :
   std::string* _internal_mutable_user_id();
   public:
 
+  // string organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
   // string project_id = 7 [json_name = "projectId"];
   void clear_project_id();
   const std::string& project_id() const;
@@ -316,15 +330,6 @@ class CreateApiKeyRequest final :
   std::string* _internal_mutable_expired_at();
   public:
 
-  // uint32 organization_id = 5 [json_name = "organizationId"];
-  void clear_organization_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id() const;
-  void set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_organization_id() const;
-  void _internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // bool is_active = 6 [json_name = "isActive"];
   void clear_is_active();
   bool is_active() const;
@@ -345,9 +350,9 @@ class CreateApiKeyRequest final :
   mutable std::atomic<int> _permissions_ids_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 organization_id_;
   bool is_active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto;
@@ -2332,24 +2337,50 @@ CreateApiKeyRequest::mutable_permissions_ids() {
   return _internal_mutable_permissions_ids();
 }
 
-// uint32 organization_id = 5 [json_name = "organizationId"];
+// string organization_id = 5 [json_name = "organizationId"];
 inline void CreateApiKeyRequest::clear_organization_id() {
-  organization_id_ = 0u;
+  organization_id_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApiKeyRequest::_internal_organization_id() const {
-  return organization_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateApiKeyRequest::organization_id() const {
+inline const std::string& CreateApiKeyRequest::organization_id() const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id)
   return _internal_organization_id();
 }
-inline void CreateApiKeyRequest::_internal_set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  organization_id_ = value;
-}
-inline void CreateApiKeyRequest::set_organization_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_organization_id(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateApiKeyRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id)
+}
+inline std::string* CreateApiKeyRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id)
+  return _s;
+}
+inline const std::string& CreateApiKeyRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void CreateApiKeyRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateApiKeyRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateApiKeyRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateApiKeyRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.organization_id)
 }
 
 // bool is_active = 6 [json_name = "isActive"];

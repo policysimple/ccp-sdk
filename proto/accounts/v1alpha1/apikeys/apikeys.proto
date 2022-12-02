@@ -14,7 +14,7 @@ message CreateApiKeyRequest {
     string name = 1;
     string user_id =2;
     repeated uint32 permissions_ids = 4;
-    uint32 organization_id = 5;
+    string organization_id = 5;
     bool is_active = 6;
     string project_id = 7;
     string expired_at = 8;
