@@ -60,10 +60,16 @@ public final class Apikeys {
     int getPermissionsIds(int index);
 
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
-    int getOrganizationId();
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
 
     /**
      * <code>bool is_active = 6 [json_name = "isActive"];</code>
@@ -111,6 +117,7 @@ public final class Apikeys {
       name_ = "";
       userId_ = "";
       permissionsIds_ = emptyIntList();
+      organizationId_ = "";
       projectId_ = "";
       expiredAt_ = "";
     }
@@ -179,9 +186,10 @@ public final class Apikeys {
               input.popLimit(limit);
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = input.readUInt32();
+              organizationId_ = s;
               break;
             }
             case 48: {
@@ -341,14 +349,41 @@ public final class Apikeys {
     private int permissionsIdsMemoizedSerializedSize = -1;
 
     public static final int ORGANIZATION_ID_FIELD_NUMBER = 5;
-    private int organizationId_;
+    private volatile java.lang.Object organizationId_;
     /**
-     * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
-    public int getOrganizationId() {
-      return organizationId_;
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int IS_ACTIVE_FIELD_NUMBER = 6;
@@ -466,8 +501,8 @@ public final class Apikeys {
       for (int i = 0; i < permissionsIds_.size(); i++) {
         output.writeUInt32NoTag(permissionsIds_.getInt(i));
       }
-      if (organizationId_ != 0) {
-        output.writeUInt32(5, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, organizationId_);
       }
       if (isActive_ != false) {
         output.writeBool(6, isActive_);
@@ -507,9 +542,8 @@ public final class Apikeys {
         }
         permissionsIdsMemoizedSerializedSize = dataSize;
       }
-      if (organizationId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, organizationId_);
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, organizationId_);
       }
       if (isActive_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -542,8 +576,8 @@ public final class Apikeys {
           .equals(other.getUserId())) return false;
       if (!getPermissionsIdsList()
           .equals(other.getPermissionsIdsList())) return false;
-      if (getOrganizationId()
-          != other.getOrganizationId()) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
       if (getIsActive()
           != other.getIsActive()) return false;
       if (!getProjectId()
@@ -570,7 +604,7 @@ public final class Apikeys {
         hash = (53 * hash) + getPermissionsIdsList().hashCode();
       }
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId();
+      hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
@@ -717,7 +751,7 @@ public final class Apikeys {
 
         permissionsIds_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        organizationId_ = 0;
+        organizationId_ = "";
 
         isActive_ = false;
 
@@ -829,8 +863,9 @@ public final class Apikeys {
           }
           onChanged();
         }
-        if (other.getOrganizationId() != 0) {
-          setOrganizationId(other.getOrganizationId());
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
         }
         if (other.getIsActive() != false) {
           setIsActive(other.getIsActive());
@@ -1104,33 +1139,78 @@ public final class Apikeys {
         return this;
       }
 
-      private int organizationId_ ;
+      private java.lang.Object organizationId_ = "";
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
-      @java.lang.Override
-      public int getOrganizationId() {
-        return organizationId_;
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(int value) {
-        
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         organizationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
         
-        organizationId_ = 0;
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 5 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
         onChanged();
         return this;
       }
@@ -11187,7 +11267,7 @@ public final class Apikeys {
       "s/v1alpha1/accounts.proto\"\357\001\n\023CreateApiK" +
       "eyRequest\022\022\n\004name\030\001 \001(\tR\004name\022\027\n\007user_id" +
       "\030\002 \001(\tR\006userId\022\'\n\017permissions_ids\030\004 \003(\rR" +
-      "\016permissionsIds\022\'\n\017organization_id\030\005 \001(\r" +
+      "\016permissionsIds\022\'\n\017organization_id\030\005 \001(\t" +
       "R\016organizationId\022\033\n\tis_active\030\006 \001(\010R\010isA" +
       "ctive\022\035\n\nproject_id\030\007 \001(\tR\tprojectId\022\035\n\n" +
       "expired_at\030\010 \001(\tR\texpiredAt\"U\n\024CreateApi" +

@@ -26,9 +26,9 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
      */
     private $permissions_ids;
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 5 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = 0;
+    protected $organization_id = '';
     /**
      * Generated from protobuf field <code>bool is_active = 6 [json_name = "isActive"];</code>
      */
@@ -51,7 +51,7 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $user_id
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions_ids
-     *     @type int $organization_id
+     *     @type string $organization_id
      *     @type bool $is_active
      *     @type string $project_id
      *     @type string $expired_at
@@ -129,8 +129,8 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @return string
      */
     public function getOrganizationId()
     {
@@ -138,13 +138,13 @@ class CreateApiKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 5 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_id = 5 [json_name = "organizationId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->organization_id = $var;
 
         return $this;

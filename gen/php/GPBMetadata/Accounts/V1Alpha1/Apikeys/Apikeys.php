@@ -23,7 +23,7 @@ class Apikeys
 name (	Rname
 user_id (	RuserId\'
 permissions_ids (RpermissionsIds\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 	is_active (RisActive
 
 project_id (	R	projectId

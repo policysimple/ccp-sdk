@@ -301,7 +301,7 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.toObject = function(inclu
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     permissionsIdsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    organizationId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     projectId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     expiredAt: jspb.Message.getFieldWithDefault(msg, 8, "")
@@ -356,7 +356,7 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.deserializeBinaryFromRead
       }
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 6:
@@ -422,8 +422,8 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.serializeBinaryToWriter =
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -526,20 +526,20 @@ proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.clearPermission
 
 
 /**
- * optional uint32 organization_id = 5;
- * @return {number}
+ * optional string organization_id = 5;
+ * @return {string}
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest} returns this
  */
 proto.accounts.v1alpha1.apikeys.v1.CreateApiKeyRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
