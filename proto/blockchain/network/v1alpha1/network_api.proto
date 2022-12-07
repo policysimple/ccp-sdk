@@ -29,7 +29,9 @@ message CreateNetworkRequest {
 }
 
 message AddPeerToOrganizationRequest {
-    string organization_id = 1;
+    string ccp_organization_id = 1;
+    string ccp_project_id = 2;
+    string organization_id = 3;
 }
 
 message AddOrdererByNetworkIdRequest {

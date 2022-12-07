@@ -12,9 +12,11 @@ message Network {
     string user_id = 5;
     string status = 6;
     string error_details = 7;
-    string created_at = 8;
-    string updated_at = 9;
-    repeated Organization organizations = 10;
+    string ccp_organization_id  = 8;
+    string ccp_project_id  = 9;
+    string created_at = 10;
+    string updated_at = 11;
+    repeated Organization organizations = 12;
 }
 
 message Organization {
@@ -48,8 +50,10 @@ message Orderer {
     string blockchain_id = 3;
     string type = 4;
     string status = 5;
-    string created_at = 6;
-    string updated_at = 7;
+    string ccp_organization_id  = 6; // Only used when creating new orderer in blockchain network
+    string ccp_project_id  = 7; // Only used when creating new orderer in blockchain network
+    string created_at = 8;
+    string updated_at = 9;
 }
 
 message Channel {
