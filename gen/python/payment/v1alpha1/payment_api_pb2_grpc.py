@@ -89,6 +89,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListSubscriptionItemsRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListSubscriptionItemsResponse.FromString,
         )
+    self.ListCustomers = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/ListCustomers',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListCustomersRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListCustomersResponse.FromString,
+        )
     self.UpdateSubscription = channel.unary_unary(
         '/payment.v1alpha1.PaymentAPIService/UpdateSubscription',
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.UpdateSubscriptionRequest.SerializeToString,
@@ -250,6 +255,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListCustomers(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def UpdateSubscription(self, request, context):
     """Update service
     """
@@ -397,6 +409,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.ListSubscriptionItems,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListSubscriptionItemsRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListSubscriptionItemsResponse.SerializeToString,
+      ),
+      'ListCustomers': grpc.unary_unary_rpc_method_handler(
+          servicer.ListCustomers,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListCustomersRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.ListCustomersResponse.SerializeToString,
       ),
       'UpdateSubscription': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateSubscription,

@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-—
+ª
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -133,13 +133,14 @@ project_id (	R	projectId!
 cpu (	Rcpu
 pipeline (	Rpipeline"L
 ProjectBillingList6
-items (2 .payment.v1alpha1.ProjectBillingRitems"Ì
+items (2 .payment.v1alpha1.ProjectBillingRitems"ß
 
 BlockChain#
 blockchain_id (	RblockchainId\'
-blockchain_name (	RblockchainName
-	node_name (	RnodeName
-budget (	RbudgetB
+blockchain_name (	RblockchainName\'
+blockchain_type (	RblockchainType
+
+project_id (	R	projectIdB
 subscription (2.payment.v1alpha1.SubscriptionRsubscription
 
 created_at (	R	createdAt

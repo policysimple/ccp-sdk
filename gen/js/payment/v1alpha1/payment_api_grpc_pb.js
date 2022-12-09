@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('grpc');
 var payment_v1alpha1_payment_api_pb = require('../../payment/v1alpha1/payment_api_pb.js');
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var payment_v1alpha1_payment_pb = require('../../payment/v1alpha1/payment_pb.js');
 
 function serialize_payment_v1alpha1_BlockChainSubscriptionRequest(arg) {
@@ -423,6 +424,28 @@ function deserialize_payment_v1alpha1_InvoiceFilterResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.InvoiceFilterResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_ListCustomersRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListCustomersRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.ListCustomersRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_ListCustomersRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.ListCustomersRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_ListCustomersResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListCustomersResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.ListCustomersResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_ListCustomersResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.ListCustomersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_ListPaymentRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListPaymentRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.ListPaymentRequest');
@@ -724,6 +747,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_ListSubscriptionItemsRequest,
     responseSerialize: serialize_payment_v1alpha1_ListSubscriptionItemsResponse,
     responseDeserialize: deserialize_payment_v1alpha1_ListSubscriptionItemsResponse,
+  },
+  listCustomers: {
+    path: '/payment.v1alpha1.PaymentAPIService/ListCustomers',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.ListCustomersRequest,
+    responseType: payment_v1alpha1_payment_api_pb.ListCustomersResponse,
+    requestSerialize: serialize_payment_v1alpha1_ListCustomersRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_ListCustomersRequest,
+    responseSerialize: serialize_payment_v1alpha1_ListCustomersResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_ListCustomersResponse,
   },
   // Update service
   updateSubscription: {

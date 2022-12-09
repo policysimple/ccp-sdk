@@ -145,8 +145,8 @@ message ProjectBillingList {
 message BlockChain {
   string blockchain_id = 1;
   string blockchain_name = 2;
-  string node_name = 3;
-  string budget = 4;
+  string blockchain_type = 3;
+  string project_id = 4;
   Subscription subscription = 5;
   string created_at = 6;
   string updated_at = 7;
