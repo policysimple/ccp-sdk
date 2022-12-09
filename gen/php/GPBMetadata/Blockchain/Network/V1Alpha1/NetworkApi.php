@@ -18,15 +18,21 @@ class NetworkApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-í%
--blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"¥
+È(
+-blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"û
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetworkM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization"G
-AddPeerToOrganizationRequest\'
-organization_id (	RorganizationId"^
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization.
+ccp_organization_id (	RccpOrganizationId$
+ccp_project_id (	RccpProjectId"
+AddPeerToOrganizationRequest.
+ccp_organization_id (	RccpOrganizationId$
+ccp_project_id (	RccpProjectId\'
+organization_id (	RorganizationId"´
 AddOrdererByNetworkIdRequest>
-orderer (2$.blockchain.network.v1alpha1.OrdererRorderer"V
+orderer (2$.blockchain.network.v1alpha1.OrdererRorderer.
+ccp_organization_id (	RccpOrganizationId$
+ccp_project_id (	RccpProjectId"V
 CreateChannelRequest>
 channel (2$.blockchain.network.v1alpha1.ChannelRchannel"E
 GetBlockchainsRequest
@@ -50,9 +56,11 @@ network_id (	R	networkId
 %GetOrganizationsByBlockchainIdRequest#
 blockchain_id (	RblockchainId
 offset (Roffset
-limit (Rlimit"j
+limit (Rlimit"À
 CreateOrganizationRequestM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization"`
+organization (2).blockchain.network.v1alpha1.OrganizationRorganization.
+ccp_organization_id (	RccpOrganizationId$
+ccp_project_id (	RccpProjectId"`
 SendInvitationRequestG
 
 invitation (2\'.blockchain.network.v1alpha1.InvitationR

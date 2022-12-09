@@ -280,9 +280,39 @@ class CreateNetworkRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kCcpOrganizationIdFieldNumber = 3,
+    kCcpProjectIdFieldNumber = 4,
     kNetworkFieldNumber = 1,
     kOrganizationFieldNumber = 2,
   };
+  // string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];
+  void clear_ccp_organization_id();
+  const std::string& ccp_organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_organization_id();
+  void set_allocated_ccp_organization_id(std::string* ccp_organization_id);
+  private:
+  const std::string& _internal_ccp_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_organization_id(const std::string& value);
+  std::string* _internal_mutable_ccp_organization_id();
+  public:
+
+  // string ccp_project_id = 4 [json_name = "ccpProjectId"];
+  void clear_ccp_project_id();
+  const std::string& ccp_project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_project_id();
+  void set_allocated_ccp_project_id(std::string* ccp_project_id);
+  private:
+  const std::string& _internal_ccp_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_project_id(const std::string& value);
+  std::string* _internal_mutable_ccp_project_id();
+  public:
+
   // .blockchain.network.v1alpha1.Network network = 1 [json_name = "network"];
   bool has_network() const;
   private:
@@ -326,6 +356,8 @@ class CreateNetworkRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_project_id_;
   ::blockchain::network::v1alpha1::Network* network_;
   ::blockchain::network::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -448,9 +480,39 @@ class AddPeerToOrganizationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrganizationIdFieldNumber = 1,
+    kCcpOrganizationIdFieldNumber = 1,
+    kCcpProjectIdFieldNumber = 2,
+    kOrganizationIdFieldNumber = 3,
   };
-  // string organization_id = 1 [json_name = "organizationId"];
+  // string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];
+  void clear_ccp_organization_id();
+  const std::string& ccp_organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_organization_id();
+  void set_allocated_ccp_organization_id(std::string* ccp_organization_id);
+  private:
+  const std::string& _internal_ccp_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_organization_id(const std::string& value);
+  std::string* _internal_mutable_ccp_organization_id();
+  public:
+
+  // string ccp_project_id = 2 [json_name = "ccpProjectId"];
+  void clear_ccp_project_id();
+  const std::string& ccp_project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_project_id();
+  void set_allocated_ccp_project_id(std::string* ccp_project_id);
+  private:
+  const std::string& _internal_ccp_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_project_id(const std::string& value);
+  std::string* _internal_mutable_ccp_project_id();
+  public:
+
+  // string organization_id = 3 [json_name = "organizationId"];
   void clear_organization_id();
   const std::string& organization_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -471,6 +533,8 @@ class AddPeerToOrganizationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
@@ -592,8 +656,38 @@ class AddOrdererByNetworkIdRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kCcpOrganizationIdFieldNumber = 2,
+    kCcpProjectIdFieldNumber = 3,
     kOrdererFieldNumber = 1,
   };
+  // string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+  void clear_ccp_organization_id();
+  const std::string& ccp_organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_organization_id();
+  void set_allocated_ccp_organization_id(std::string* ccp_organization_id);
+  private:
+  const std::string& _internal_ccp_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_organization_id(const std::string& value);
+  std::string* _internal_mutable_ccp_organization_id();
+  public:
+
+  // string ccp_project_id = 3 [json_name = "ccpProjectId"];
+  void clear_ccp_project_id();
+  const std::string& ccp_project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_project_id();
+  void set_allocated_ccp_project_id(std::string* ccp_project_id);
+  private:
+  const std::string& _internal_ccp_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_project_id(const std::string& value);
+  std::string* _internal_mutable_ccp_project_id();
+  public:
+
   // .blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];
   bool has_orderer() const;
   private:
@@ -619,6 +713,8 @@ class AddOrdererByNetworkIdRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_project_id_;
   ::blockchain::network::v1alpha1::Orderer* orderer_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
@@ -1846,8 +1942,38 @@ class CreateOrganizationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kCcpOrganizationIdFieldNumber = 2,
+    kCcpProjectIdFieldNumber = 3,
     kOrganizationFieldNumber = 1,
   };
+  // string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+  void clear_ccp_organization_id();
+  const std::string& ccp_organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_organization_id();
+  void set_allocated_ccp_organization_id(std::string* ccp_organization_id);
+  private:
+  const std::string& _internal_ccp_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_organization_id(const std::string& value);
+  std::string* _internal_mutable_ccp_organization_id();
+  public:
+
+  // string ccp_project_id = 3 [json_name = "ccpProjectId"];
+  void clear_ccp_project_id();
+  const std::string& ccp_project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_project_id();
+  void set_allocated_ccp_project_id(std::string* ccp_project_id);
+  private:
+  const std::string& _internal_ccp_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_project_id(const std::string& value);
+  std::string* _internal_mutable_ccp_project_id();
+  public:
+
   // .blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];
   bool has_organization() const;
   private:
@@ -1873,6 +1999,8 @@ class CreateOrganizationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_project_id_;
   ::blockchain::network::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
@@ -4295,11 +4423,195 @@ inline void CreateNetworkRequest::set_allocated_organization(::blockchain::netwo
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkRequest.organization)
 }
 
+// string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];
+inline void CreateNetworkRequest::clear_ccp_organization_id() {
+  ccp_organization_id_.ClearToEmpty();
+}
+inline const std::string& CreateNetworkRequest::ccp_organization_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_organization_id)
+  return _internal_ccp_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateNetworkRequest::set_ccp_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_organization_id)
+}
+inline std::string* CreateNetworkRequest::mutable_ccp_organization_id() {
+  std::string* _s = _internal_mutable_ccp_organization_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_organization_id)
+  return _s;
+}
+inline const std::string& CreateNetworkRequest::_internal_ccp_organization_id() const {
+  return ccp_organization_id_.Get();
+}
+inline void CreateNetworkRequest::_internal_set_ccp_organization_id(const std::string& value) {
+  
+  ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateNetworkRequest::_internal_mutable_ccp_organization_id() {
+  
+  return ccp_organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateNetworkRequest::release_ccp_organization_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_organization_id)
+  return ccp_organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateNetworkRequest::set_allocated_ccp_organization_id(std::string* ccp_organization_id) {
+  if (ccp_organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_organization_id)
+}
+
+// string ccp_project_id = 4 [json_name = "ccpProjectId"];
+inline void CreateNetworkRequest::clear_ccp_project_id() {
+  ccp_project_id_.ClearToEmpty();
+}
+inline const std::string& CreateNetworkRequest::ccp_project_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_project_id)
+  return _internal_ccp_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateNetworkRequest::set_ccp_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_project_id)
+}
+inline std::string* CreateNetworkRequest::mutable_ccp_project_id() {
+  std::string* _s = _internal_mutable_ccp_project_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_project_id)
+  return _s;
+}
+inline const std::string& CreateNetworkRequest::_internal_ccp_project_id() const {
+  return ccp_project_id_.Get();
+}
+inline void CreateNetworkRequest::_internal_set_ccp_project_id(const std::string& value) {
+  
+  ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateNetworkRequest::_internal_mutable_ccp_project_id() {
+  
+  return ccp_project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateNetworkRequest::release_ccp_project_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_project_id)
+  return ccp_project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateNetworkRequest::set_allocated_ccp_project_id(std::string* ccp_project_id) {
+  if (ccp_project_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateNetworkRequest.ccp_project_id)
+}
+
 // -------------------------------------------------------------------
 
 // AddPeerToOrganizationRequest
 
-// string organization_id = 1 [json_name = "organizationId"];
+// string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];
+inline void AddPeerToOrganizationRequest::clear_ccp_organization_id() {
+  ccp_organization_id_.ClearToEmpty();
+}
+inline const std::string& AddPeerToOrganizationRequest::ccp_organization_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_organization_id)
+  return _internal_ccp_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddPeerToOrganizationRequest::set_ccp_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_organization_id)
+}
+inline std::string* AddPeerToOrganizationRequest::mutable_ccp_organization_id() {
+  std::string* _s = _internal_mutable_ccp_organization_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_organization_id)
+  return _s;
+}
+inline const std::string& AddPeerToOrganizationRequest::_internal_ccp_organization_id() const {
+  return ccp_organization_id_.Get();
+}
+inline void AddPeerToOrganizationRequest::_internal_set_ccp_organization_id(const std::string& value) {
+  
+  ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddPeerToOrganizationRequest::_internal_mutable_ccp_organization_id() {
+  
+  return ccp_organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddPeerToOrganizationRequest::release_ccp_organization_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_organization_id)
+  return ccp_organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddPeerToOrganizationRequest::set_allocated_ccp_organization_id(std::string* ccp_organization_id) {
+  if (ccp_organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_organization_id)
+}
+
+// string ccp_project_id = 2 [json_name = "ccpProjectId"];
+inline void AddPeerToOrganizationRequest::clear_ccp_project_id() {
+  ccp_project_id_.ClearToEmpty();
+}
+inline const std::string& AddPeerToOrganizationRequest::ccp_project_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_project_id)
+  return _internal_ccp_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddPeerToOrganizationRequest::set_ccp_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_project_id)
+}
+inline std::string* AddPeerToOrganizationRequest::mutable_ccp_project_id() {
+  std::string* _s = _internal_mutable_ccp_project_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_project_id)
+  return _s;
+}
+inline const std::string& AddPeerToOrganizationRequest::_internal_ccp_project_id() const {
+  return ccp_project_id_.Get();
+}
+inline void AddPeerToOrganizationRequest::_internal_set_ccp_project_id(const std::string& value) {
+  
+  ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddPeerToOrganizationRequest::_internal_mutable_ccp_project_id() {
+  
+  return ccp_project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddPeerToOrganizationRequest::release_ccp_project_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_project_id)
+  return ccp_project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddPeerToOrganizationRequest::set_allocated_ccp_project_id(std::string* ccp_project_id) {
+  if (ccp_project_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToOrganizationRequest.ccp_project_id)
+}
+
+// string organization_id = 3 [json_name = "organizationId"];
 inline void AddPeerToOrganizationRequest::clear_organization_id() {
   organization_id_.ClearToEmpty();
 }
@@ -4433,6 +4745,98 @@ inline void AddOrdererByNetworkIdRequest::set_allocated_orderer(::blockchain::ne
   }
   orderer_ = orderer;
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.orderer)
+}
+
+// string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+inline void AddOrdererByNetworkIdRequest::clear_ccp_organization_id() {
+  ccp_organization_id_.ClearToEmpty();
+}
+inline const std::string& AddOrdererByNetworkIdRequest::ccp_organization_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_organization_id)
+  return _internal_ccp_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddOrdererByNetworkIdRequest::set_ccp_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_organization_id)
+}
+inline std::string* AddOrdererByNetworkIdRequest::mutable_ccp_organization_id() {
+  std::string* _s = _internal_mutable_ccp_organization_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_organization_id)
+  return _s;
+}
+inline const std::string& AddOrdererByNetworkIdRequest::_internal_ccp_organization_id() const {
+  return ccp_organization_id_.Get();
+}
+inline void AddOrdererByNetworkIdRequest::_internal_set_ccp_organization_id(const std::string& value) {
+  
+  ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddOrdererByNetworkIdRequest::_internal_mutable_ccp_organization_id() {
+  
+  return ccp_organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddOrdererByNetworkIdRequest::release_ccp_organization_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_organization_id)
+  return ccp_organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddOrdererByNetworkIdRequest::set_allocated_ccp_organization_id(std::string* ccp_organization_id) {
+  if (ccp_organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_organization_id)
+}
+
+// string ccp_project_id = 3 [json_name = "ccpProjectId"];
+inline void AddOrdererByNetworkIdRequest::clear_ccp_project_id() {
+  ccp_project_id_.ClearToEmpty();
+}
+inline const std::string& AddOrdererByNetworkIdRequest::ccp_project_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_project_id)
+  return _internal_ccp_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddOrdererByNetworkIdRequest::set_ccp_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_project_id)
+}
+inline std::string* AddOrdererByNetworkIdRequest::mutable_ccp_project_id() {
+  std::string* _s = _internal_mutable_ccp_project_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_project_id)
+  return _s;
+}
+inline const std::string& AddOrdererByNetworkIdRequest::_internal_ccp_project_id() const {
+  return ccp_project_id_.Get();
+}
+inline void AddOrdererByNetworkIdRequest::_internal_set_ccp_project_id(const std::string& value) {
+  
+  ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddOrdererByNetworkIdRequest::_internal_mutable_ccp_project_id() {
+  
+  return ccp_project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddOrdererByNetworkIdRequest::release_ccp_project_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_project_id)
+  return ccp_project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddOrdererByNetworkIdRequest::set_allocated_ccp_project_id(std::string* ccp_project_id) {
+  if (ccp_project_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.ccp_project_id)
 }
 
 // -------------------------------------------------------------------
@@ -5067,6 +5471,98 @@ inline void CreateOrganizationRequest::set_allocated_organization(::blockchain::
   }
   organization_ = organization;
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateOrganizationRequest.organization)
+}
+
+// string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+inline void CreateOrganizationRequest::clear_ccp_organization_id() {
+  ccp_organization_id_.ClearToEmpty();
+}
+inline const std::string& CreateOrganizationRequest::ccp_organization_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_organization_id)
+  return _internal_ccp_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationRequest::set_ccp_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_organization_id)
+}
+inline std::string* CreateOrganizationRequest::mutable_ccp_organization_id() {
+  std::string* _s = _internal_mutable_ccp_organization_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_organization_id)
+  return _s;
+}
+inline const std::string& CreateOrganizationRequest::_internal_ccp_organization_id() const {
+  return ccp_organization_id_.Get();
+}
+inline void CreateOrganizationRequest::_internal_set_ccp_organization_id(const std::string& value) {
+  
+  ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::_internal_mutable_ccp_organization_id() {
+  
+  return ccp_organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::release_ccp_organization_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_organization_id)
+  return ccp_organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationRequest::set_allocated_ccp_organization_id(std::string* ccp_organization_id) {
+  if (ccp_organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_organization_id)
+}
+
+// string ccp_project_id = 3 [json_name = "ccpProjectId"];
+inline void CreateOrganizationRequest::clear_ccp_project_id() {
+  ccp_project_id_.ClearToEmpty();
+}
+inline const std::string& CreateOrganizationRequest::ccp_project_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_project_id)
+  return _internal_ccp_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateOrganizationRequest::set_ccp_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_project_id)
+}
+inline std::string* CreateOrganizationRequest::mutable_ccp_project_id() {
+  std::string* _s = _internal_mutable_ccp_project_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_project_id)
+  return _s;
+}
+inline const std::string& CreateOrganizationRequest::_internal_ccp_project_id() const {
+  return ccp_project_id_.Get();
+}
+inline void CreateOrganizationRequest::_internal_set_ccp_project_id(const std::string& value) {
+  
+  ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::_internal_mutable_ccp_project_id() {
+  
+  return ccp_project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateOrganizationRequest::release_ccp_project_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_project_id)
+  return ccp_project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateOrganizationRequest::set_allocated_ccp_project_id(std::string* ccp_project_id) {
+  if (ccp_project_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.CreateOrganizationRequest.ccp_project_id)
 }
 
 // -------------------------------------------------------------------

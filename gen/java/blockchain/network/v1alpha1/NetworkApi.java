@@ -47,6 +47,30 @@ public final class NetworkApi {
      * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
      */
     blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder();
+
+    /**
+     * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    java.lang.String getCcpOrganizationId();
+    /**
+     * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes();
+
+    /**
+     * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    java.lang.String getCcpProjectId();
+    /**
+     * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    com.google.protobuf.ByteString
+        getCcpProjectIdBytes();
   }
   /**
    * <pre>
@@ -65,6 +89,8 @@ public final class NetworkApi {
       super(builder);
     }
     private CreateNetworkRequest() {
+      ccpOrganizationId_ = "";
+      ccpProjectId_ = "";
     }
 
     @java.lang.Override
@@ -121,6 +147,18 @@ public final class NetworkApi {
                 organization_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpOrganizationId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpProjectId_ = s;
               break;
             }
             default: {
@@ -207,6 +245,82 @@ public final class NetworkApi {
       return getOrganization();
     }
 
+    public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object ccpOrganizationId_;
+    /**
+     * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpOrganizationId() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpOrganizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpOrganizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CCP_PROJECT_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object ccpProjectId_;
+    /**
+     * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpProjectId() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpProjectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpProjectIdBytes() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpProjectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -227,6 +341,12 @@ public final class NetworkApi {
       if (organization_ != null) {
         output.writeMessage(2, getOrganization());
       }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ccpProjectId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -243,6 +363,12 @@ public final class NetworkApi {
       if (organization_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getOrganization());
+      }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ccpProjectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -269,6 +395,10 @@ public final class NetworkApi {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
+      if (!getCcpOrganizationId()
+          .equals(other.getCcpOrganizationId())) return false;
+      if (!getCcpProjectId()
+          .equals(other.getCcpProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -288,6 +418,10 @@ public final class NetworkApi {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
       }
+      hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + CCP_PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -437,6 +571,10 @@ public final class NetworkApi {
           organization_ = null;
           organizationBuilder_ = null;
         }
+        ccpOrganizationId_ = "";
+
+        ccpProjectId_ = "";
+
         return this;
       }
 
@@ -473,6 +611,8 @@ public final class NetworkApi {
         } else {
           result.organization_ = organizationBuilder_.build();
         }
+        result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.ccpProjectId_ = ccpProjectId_;
         onBuilt();
         return result;
       }
@@ -526,6 +666,14 @@ public final class NetworkApi {
         }
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
+        }
+        if (!other.getCcpOrganizationId().isEmpty()) {
+          ccpOrganizationId_ = other.ccpOrganizationId_;
+          onChanged();
+        }
+        if (!other.getCcpProjectId().isEmpty()) {
+          ccpProjectId_ = other.ccpProjectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -793,6 +941,158 @@ public final class NetworkApi {
         }
         return organizationBuilder_;
       }
+
+      private java.lang.Object ccpOrganizationId_ = "";
+      /**
+       * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+       * @return The ccpOrganizationId.
+       */
+      public java.lang.String getCcpOrganizationId() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpOrganizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+       * @return The bytes for ccpOrganizationId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpOrganizationIdBytes() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpOrganizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+       * @param value The ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpOrganizationId() {
+        
+        ccpOrganizationId_ = getDefaultInstance().getCcpOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+       * @param value The bytes for ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ccpProjectId_ = "";
+      /**
+       * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+       * @return The ccpProjectId.
+       */
+      public java.lang.String getCcpProjectId() {
+        java.lang.Object ref = ccpProjectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpProjectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+       * @return The bytes for ccpProjectId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpProjectIdBytes() {
+        java.lang.Object ref = ccpProjectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+       * @param value The ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpProjectId() {
+        
+        ccpProjectId_ = getDefaultInstance().getCcpProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+       * @param value The bytes for ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -851,12 +1151,36 @@ public final class NetworkApi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    java.lang.String getCcpOrganizationId();
+    /**
+     * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes();
+
+    /**
+     * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    java.lang.String getCcpProjectId();
+    /**
+     * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    com.google.protobuf.ByteString
+        getCcpProjectIdBytes();
+
+    /**
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     java.lang.String getOrganizationId();
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
      * @return The bytes for organizationId.
      */
     com.google.protobuf.ByteString
@@ -875,6 +1199,8 @@ public final class NetworkApi {
       super(builder);
     }
     private AddPeerToOrganizationRequest() {
+      ccpOrganizationId_ = "";
+      ccpProjectId_ = "";
       organizationId_ = "";
     }
 
@@ -909,6 +1235,18 @@ public final class NetworkApi {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpOrganizationId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpProjectId_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               organizationId_ = s;
@@ -946,10 +1284,86 @@ public final class NetworkApi {
               blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.Builder.class);
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ccpOrganizationId_;
+    /**
+     * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpOrganizationId() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpOrganizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpOrganizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CCP_PROJECT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ccpProjectId_;
+    /**
+     * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpProjectId() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpProjectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpProjectIdBytes() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpProjectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object organizationId_;
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
      * @return The organizationId.
      */
     @java.lang.Override
@@ -966,7 +1380,7 @@ public final class NetworkApi {
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
      * @return The bytes for organizationId.
      */
     @java.lang.Override
@@ -998,8 +1412,14 @@ public final class NetworkApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ccpProjectId_);
+      }
       if (!getOrganizationIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, organizationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1010,8 +1430,14 @@ public final class NetworkApi {
       if (size != -1) return size;
 
       size = 0;
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ccpProjectId_);
+      }
       if (!getOrganizationIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, organizationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1028,6 +1454,10 @@ public final class NetworkApi {
       }
       blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest other = (blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest) obj;
 
+      if (!getCcpOrganizationId()
+          .equals(other.getCcpOrganizationId())) return false;
+      if (!getCcpProjectId()
+          .equals(other.getCcpProjectId())) return false;
       if (!getOrganizationId()
           .equals(other.getOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1041,6 +1471,10 @@ public final class NetworkApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + CCP_PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpProjectId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1176,6 +1610,10 @@ public final class NetworkApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ccpOrganizationId_ = "";
+
+        ccpProjectId_ = "";
+
         organizationId_ = "";
 
         return this;
@@ -1204,6 +1642,8 @@ public final class NetworkApi {
       @java.lang.Override
       public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest buildPartial() {
         blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest result = new blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest(this);
+        result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.ccpProjectId_ = ccpProjectId_;
         result.organizationId_ = organizationId_;
         onBuilt();
         return result;
@@ -1253,6 +1693,14 @@ public final class NetworkApi {
 
       public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest other) {
         if (other == blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.getDefaultInstance()) return this;
+        if (!other.getCcpOrganizationId().isEmpty()) {
+          ccpOrganizationId_ = other.ccpOrganizationId_;
+          onChanged();
+        }
+        if (!other.getCcpProjectId().isEmpty()) {
+          ccpProjectId_ = other.ccpProjectId_;
+          onChanged();
+        }
         if (!other.getOrganizationId().isEmpty()) {
           organizationId_ = other.organizationId_;
           onChanged();
@@ -1286,9 +1734,161 @@ public final class NetworkApi {
         return this;
       }
 
+      private java.lang.Object ccpOrganizationId_ = "";
+      /**
+       * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+       * @return The ccpOrganizationId.
+       */
+      public java.lang.String getCcpOrganizationId() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpOrganizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+       * @return The bytes for ccpOrganizationId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpOrganizationIdBytes() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpOrganizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+       * @param value The ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpOrganizationId() {
+        
+        ccpOrganizationId_ = getDefaultInstance().getCcpOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+       * @param value The bytes for ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ccpProjectId_ = "";
+      /**
+       * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+       * @return The ccpProjectId.
+       */
+      public java.lang.String getCcpProjectId() {
+        java.lang.Object ref = ccpProjectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpProjectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+       * @return The bytes for ccpProjectId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpProjectIdBytes() {
+        java.lang.Object ref = ccpProjectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+       * @param value The ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpProjectId() {
+        
+        ccpProjectId_ = getDefaultInstance().getCcpProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+       * @param value The bytes for ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object organizationId_ = "";
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
        * @return The organizationId.
        */
       public java.lang.String getOrganizationId() {
@@ -1304,7 +1904,7 @@ public final class NetworkApi {
         }
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
        * @return The bytes for organizationId.
        */
       public com.google.protobuf.ByteString
@@ -1321,7 +1921,7 @@ public final class NetworkApi {
         }
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
        * @param value The organizationId to set.
        * @return This builder for chaining.
        */
@@ -1336,7 +1936,7 @@ public final class NetworkApi {
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOrganizationId() {
@@ -1346,7 +1946,7 @@ public final class NetworkApi {
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
        * @param value The bytes for organizationId to set.
        * @return This builder for chaining.
        */
@@ -1432,6 +2032,30 @@ public final class NetworkApi {
      * <code>.blockchain.network.v1alpha1.Orderer orderer = 1 [json_name = "orderer"];</code>
      */
     blockchain.network.v1alpha1.NetworkOuterClass.OrdererOrBuilder getOrdererOrBuilder();
+
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    java.lang.String getCcpOrganizationId();
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes();
+
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    java.lang.String getCcpProjectId();
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    com.google.protobuf.ByteString
+        getCcpProjectIdBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest}
@@ -1446,6 +2070,8 @@ public final class NetworkApi {
       super(builder);
     }
     private AddOrdererByNetworkIdRequest() {
+      ccpOrganizationId_ = "";
+      ccpProjectId_ = "";
     }
 
     @java.lang.Override
@@ -1489,6 +2115,18 @@ public final class NetworkApi {
                 orderer_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpOrganizationId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpProjectId_ = s;
               break;
             }
             default: {
@@ -1549,6 +2187,82 @@ public final class NetworkApi {
       return getOrderer();
     }
 
+    public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ccpOrganizationId_;
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpOrganizationId() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpOrganizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpOrganizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CCP_PROJECT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object ccpProjectId_;
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpProjectId() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpProjectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpProjectIdBytes() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpProjectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1566,6 +2280,12 @@ public final class NetworkApi {
       if (orderer_ != null) {
         output.writeMessage(1, getOrderer());
       }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ccpProjectId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1578,6 +2298,12 @@ public final class NetworkApi {
       if (orderer_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getOrderer());
+      }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ccpProjectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1599,6 +2325,10 @@ public final class NetworkApi {
         if (!getOrderer()
             .equals(other.getOrderer())) return false;
       }
+      if (!getCcpOrganizationId()
+          .equals(other.getCcpOrganizationId())) return false;
+      if (!getCcpProjectId()
+          .equals(other.getCcpProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1614,6 +2344,10 @@ public final class NetworkApi {
         hash = (37 * hash) + ORDERER_FIELD_NUMBER;
         hash = (53 * hash) + getOrderer().hashCode();
       }
+      hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + CCP_PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1753,6 +2487,10 @@ public final class NetworkApi {
           orderer_ = null;
           ordererBuilder_ = null;
         }
+        ccpOrganizationId_ = "";
+
+        ccpProjectId_ = "";
+
         return this;
       }
 
@@ -1784,6 +2522,8 @@ public final class NetworkApi {
         } else {
           result.orderer_ = ordererBuilder_.build();
         }
+        result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.ccpProjectId_ = ccpProjectId_;
         onBuilt();
         return result;
       }
@@ -1834,6 +2574,14 @@ public final class NetworkApi {
         if (other == blockchain.network.v1alpha1.NetworkApi.AddOrdererByNetworkIdRequest.getDefaultInstance()) return this;
         if (other.hasOrderer()) {
           mergeOrderer(other.getOrderer());
+        }
+        if (!other.getCcpOrganizationId().isEmpty()) {
+          ccpOrganizationId_ = other.ccpOrganizationId_;
+          onChanged();
+        }
+        if (!other.getCcpProjectId().isEmpty()) {
+          ccpProjectId_ = other.ccpProjectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1981,6 +2729,158 @@ public final class NetworkApi {
           orderer_ = null;
         }
         return ordererBuilder_;
+      }
+
+      private java.lang.Object ccpOrganizationId_ = "";
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return The ccpOrganizationId.
+       */
+      public java.lang.String getCcpOrganizationId() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpOrganizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return The bytes for ccpOrganizationId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpOrganizationIdBytes() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpOrganizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @param value The ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpOrganizationId() {
+        
+        ccpOrganizationId_ = getDefaultInstance().getCcpOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @param value The bytes for ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ccpProjectId_ = "";
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return The ccpProjectId.
+       */
+      public java.lang.String getCcpProjectId() {
+        java.lang.Object ref = ccpProjectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpProjectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return The bytes for ccpProjectId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpProjectIdBytes() {
+        java.lang.Object ref = ccpProjectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @param value The ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpProjectId() {
+        
+        ccpProjectId_ = getDefaultInstance().getCcpProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @param value The bytes for ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6642,6 +7542,30 @@ public final class NetworkApi {
      * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
      */
     blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder();
+
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    java.lang.String getCcpOrganizationId();
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes();
+
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    java.lang.String getCcpProjectId();
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    com.google.protobuf.ByteString
+        getCcpProjectIdBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.CreateOrganizationRequest}
@@ -6656,6 +7580,8 @@ public final class NetworkApi {
       super(builder);
     }
     private CreateOrganizationRequest() {
+      ccpOrganizationId_ = "";
+      ccpProjectId_ = "";
     }
 
     @java.lang.Override
@@ -6699,6 +7625,18 @@ public final class NetworkApi {
                 organization_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpOrganizationId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpProjectId_ = s;
               break;
             }
             default: {
@@ -6759,6 +7697,82 @@ public final class NetworkApi {
       return getOrganization();
     }
 
+    public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ccpOrganizationId_;
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpOrganizationId() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpOrganizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpOrganizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CCP_PROJECT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object ccpProjectId_;
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpProjectId() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpProjectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpProjectIdBytes() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpProjectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6776,6 +7790,12 @@ public final class NetworkApi {
       if (organization_ != null) {
         output.writeMessage(1, getOrganization());
       }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ccpProjectId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6788,6 +7808,12 @@ public final class NetworkApi {
       if (organization_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getOrganization());
+      }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ccpProjectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6809,6 +7835,10 @@ public final class NetworkApi {
         if (!getOrganization()
             .equals(other.getOrganization())) return false;
       }
+      if (!getCcpOrganizationId()
+          .equals(other.getCcpOrganizationId())) return false;
+      if (!getCcpProjectId()
+          .equals(other.getCcpProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6824,6 +7854,10 @@ public final class NetworkApi {
         hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
         hash = (53 * hash) + getOrganization().hashCode();
       }
+      hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + CCP_PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6963,6 +7997,10 @@ public final class NetworkApi {
           organization_ = null;
           organizationBuilder_ = null;
         }
+        ccpOrganizationId_ = "";
+
+        ccpProjectId_ = "";
+
         return this;
       }
 
@@ -6994,6 +8032,8 @@ public final class NetworkApi {
         } else {
           result.organization_ = organizationBuilder_.build();
         }
+        result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.ccpProjectId_ = ccpProjectId_;
         onBuilt();
         return result;
       }
@@ -7044,6 +8084,14 @@ public final class NetworkApi {
         if (other == blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.getDefaultInstance()) return this;
         if (other.hasOrganization()) {
           mergeOrganization(other.getOrganization());
+        }
+        if (!other.getCcpOrganizationId().isEmpty()) {
+          ccpOrganizationId_ = other.ccpOrganizationId_;
+          onChanged();
+        }
+        if (!other.getCcpProjectId().isEmpty()) {
+          ccpProjectId_ = other.ccpProjectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7191,6 +8239,158 @@ public final class NetworkApi {
           organization_ = null;
         }
         return organizationBuilder_;
+      }
+
+      private java.lang.Object ccpOrganizationId_ = "";
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return The ccpOrganizationId.
+       */
+      public java.lang.String getCcpOrganizationId() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpOrganizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return The bytes for ccpOrganizationId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpOrganizationIdBytes() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpOrganizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @param value The ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpOrganizationId() {
+        
+        ccpOrganizationId_ = getDefaultInstance().getCcpOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @param value The bytes for ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ccpProjectId_ = "";
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return The ccpProjectId.
+       */
+      public java.lang.String getCcpProjectId() {
+        java.lang.Object ref = ccpProjectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpProjectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return The bytes for ccpProjectId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpProjectIdBytes() {
+        java.lang.Object ref = ccpProjectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @param value The ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpProjectId() {
+        
+        ccpProjectId_ = getDefaultInstance().getCcpProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @param value The bytes for ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19073,126 +20273,134 @@ public final class NetworkApi {
       "\n-blockchain/network/v1alpha1/network_ap" +
       "i.proto\022\033blockchain.network.v1alpha1\032)bl" +
       "ockchain/network/v1alpha1/network.proto\032" +
-      "\033google/protobuf/empty.proto\"\245\001\n\024CreateN" +
+      "\033google/protobuf/empty.proto\"\373\001\n\024CreateN" +
       "etworkRequest\022>\n\007network\030\001 \001(\0132$.blockch" +
       "ain.network.v1alpha1.NetworkR\007network\022M\n" +
       "\014organization\030\002 \001(\0132).blockchain.network" +
-      ".v1alpha1.OrganizationR\014organization\"G\n\034" +
-      "AddPeerToOrganizationRequest\022\'\n\017organiza" +
-      "tion_id\030\001 \001(\tR\016organizationId\"^\n\034AddOrde" +
-      "rerByNetworkIdRequest\022>\n\007orderer\030\001 \001(\0132$" +
-      ".blockchain.network.v1alpha1.OrdererR\007or" +
-      "derer\"V\n\024CreateChannelRequest\022>\n\007channel" +
-      "\030\001 \001(\0132$.blockchain.network.v1alpha1.Cha" +
-      "nnelR\007channel\"E\n\025GetBlockchainsRequest\022\026" +
-      "\n\006offset\030\001 \001(\003R\006offset\022\024\n\005limit\030\002 \001(\003R\005l" +
-      "imit\"f\n\035GetBlockchainsByUserIdRequest\022\027\n" +
-      "\007user_id\030\001 \001(\tR\006userId\022\026\n\006offset\030\002 \001(\003R\006" +
-      "offset\022\024\n\005limit\030\003 \001(\003R\005limit\"x\n\037GetPeers" +
-      "ByOrganizationIdRequest\022\'\n\017organization_" +
-      "id\030\001 \001(\tR\016organizationId\022\026\n\006offset\030\002 \001(\003" +
-      "R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"k\n\034GetOrd" +
-      "ererByNetworkIdRequest\022\035\n\nnetwork_id\030\001 \001" +
-      "(\tR\tnetworkId\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n" +
-      "\005limit\030\003 \001(\003R\005limit\"*\n\030GetBlockchainById" +
-      "Request\022\016\n\002id\030\001 \001(\tR\002id\"z\n%GetOrganizati" +
-      "onsByBlockchainIdRequest\022#\n\rblockchain_i" +
-      "d\030\001 \001(\tR\014blockchainId\022\026\n\006offset\030\002 \001(\003R\006o" +
-      "ffset\022\024\n\005limit\030\003 \001(\003R\005limit\"j\n\031CreateOrg" +
-      "anizationRequest\022M\n\014organization\030\001 \001(\0132)" +
-      ".blockchain.network.v1alpha1.Organizatio" +
-      "nR\014organization\"`\n\025SendInvitationRequest" +
-      "\022G\n\ninvitation\030\001 \001(\0132\'.blockchain.networ" +
-      "k.v1alpha1.InvitationR\ninvitation\"q\n\025Cre" +
-      "ateNetworkResponse\022>\n\007network\030\001 \001(\0132$.bl" +
-      "ockchain.network.v1alpha1.NetworkR\007netwo" +
-      "rk\022\030\n\007message\030\002 \001(\tR\007message\"\210\001\n\035AddPeer" +
-      "ToOrganizationResponse\022M\n\014organization\030\001" +
-      " \001(\0132).blockchain.network.v1alpha1.Organ" +
-      "izationR\014organization\022\030\n\007message\030\002 \001(\tR\007" +
-      "message\"y\n\035AddOrdererByNetworkIdResponse" +
-      "\022>\n\007orderer\030\001 \001(\0132$.blockchain.network.v" +
-      "1alpha1.OrdererR\007orderer\022\030\n\007message\030\002 \001(" +
-      "\tR\007message\"q\n\025CreateChannelResponse\022>\n\007c" +
-      "hannel\030\001 \001(\0132$.blockchain.network.v1alph" +
-      "a1.ChannelR\007channel\022\030\n\007message\030\002 \001(\tR\007me" +
-      "ssage\"\256\001\n\026GetBlockchainsResponse\022@\n\010netw" +
-      "orks\030\001 \003(\0132$.blockchain.network.v1alpha1" +
-      ".NetworkR\010networks\022\024\n\005total\030\002 \001(\003R\005total" +
-      "\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_" +
-      "url\030\004 \001(\tR\013previousUrl\"\266\001\n\036GetBlockchain" +
-      "sByUserIdResponse\022@\n\010networks\030\001 \003(\0132$.bl" +
-      "ockchain.network.v1alpha1.NetworkR\010netwo" +
-      "rks\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 " +
-      "\001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013prev" +
-      "iousUrl\"\263\001\n\035GetOrdererByNetworkIdRespons" +
-      "e\022>\n\007orderer\030\001 \003(\0132$.blockchain.network." +
-      "v1alpha1.OrdererR\007orderer\022\024\n\005total\030\002 \001(\003" +
-      "R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014pr" +
-      "evious_url\030\004 \001(\tR\013previousUrl\"\255\001\n GetPee" +
-      "rsByOrganizationIdResponse\0225\n\004peer\030\001 \003(\013" +
-      "2!.blockchain.network.v1alpha1.PeerR\004pee" +
-      "r\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(" +
-      "\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013previo" +
-      "usUrl\"[\n\031GetBlockchainByIdResponse\022>\n\007ne" +
-      "twork\030\001 \001(\0132$.blockchain.network.v1alpha" +
-      "1.NetworkR\007network\"\315\001\n&GetOrganizationsB" +
-      "yBlockchainIdResponse\022O\n\rorganizations\030\001" +
-      " \003(\0132).blockchain.network.v1alpha1.Organ" +
-      "izationR\rorganizations\022\024\n\005total\030\002 \001(\003R\005t" +
-      "otal\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014previ" +
-      "ous_url\030\004 \001(\tR\013previousUrl\"\205\001\n\032CreateOrg" +
-      "anizationResponse\022M\n\014organization\030\001 \001(\0132" +
-      ").blockchain.network.v1alpha1.Organizati" +
-      "onR\014organization\022\030\n\007message\030\002 \001(\tR\007messa" +
-      "ge\"{\n\026SendInvitationResponse\022G\n\ninvitati" +
-      "on\030\001 \001(\0132\'.blockchain.network.v1alpha1.I" +
-      "nvitationR\ninvitation\022\030\n\007message\030\002 \001(\tR\007" +
-      "message2\226\r\n\024BlockchainAPIService\022v\n\rCrea" +
-      "teNetwork\0221.blockchain.network.v1alpha1." +
-      "CreateNetworkRequest\0322.blockchain.networ" +
-      "k.v1alpha1.CreateNetworkResponse\022\216\001\n\025Add" +
-      "PeerToOrganization\0229.blockchain.network." +
-      "v1alpha1.AddPeerToOrganizationRequest\032:." +
-      "blockchain.network.v1alpha1.AddPeerToOrg" +
-      "anizationResponse\022y\n\016GetBlockchains\0222.bl" +
-      "ockchain.network.v1alpha1.GetBlockchains" +
-      "Request\0323.blockchain.network.v1alpha1.Ge" +
-      "tBlockchainsResponse\022\221\001\n\026GetBlockchainsB" +
-      "yUserId\022:.blockchain.network.v1alpha1.Ge" +
-      "tBlockchainsByUserIdRequest\032;.blockchain" +
-      ".network.v1alpha1.GetBlockchainsByUserId" +
-      "Response\022\202\001\n\021GetBlockchainById\0225.blockch" +
-      "ain.network.v1alpha1.GetBlockchainByIdRe" +
-      "quest\0326.blockchain.network.v1alpha1.GetB" +
-      "lockchainByIdResponse\022\251\001\n\036GetOrganizatio" +
-      "nsByBlockchainId\022B.blockchain.network.v1" +
-      "alpha1.GetOrganizationsByBlockchainIdReq" +
-      "uest\032C.blockchain.network.v1alpha1.GetOr" +
-      "ganizationsByBlockchainIdResponse\022y\n\016Sen" +
-      "dInvitation\0222.blockchain.network.v1alpha" +
-      "1.SendInvitationRequest\0323.blockchain.net" +
-      "work.v1alpha1.SendInvitationResponse\022\205\001\n" +
-      "\022CreateOrganization\0226.blockchain.network" +
-      ".v1alpha1.CreateOrganizationRequest\0327.bl" +
-      "ockchain.network.v1alpha1.CreateOrganiza" +
-      "tionResponse\022v\n\rCreateChannel\0221.blockcha" +
-      "in.network.v1alpha1.CreateChannelRequest" +
-      "\0322.blockchain.network.v1alpha1.CreateCha" +
-      "nnelResponse\022\227\001\n\030GetPeersByOrganizationI" +
-      "d\022<.blockchain.network.v1alpha1.GetPeers" +
-      "ByOrganizationIdRequest\032=.blockchain.net" +
-      "work.v1alpha1.GetPeersByOrganizationIdRe" +
-      "sponse\022\216\001\n\025GetOrdererByNetworkId\0229.block" +
-      "chain.network.v1alpha1.GetOrdererByNetwo" +
-      "rkIdRequest\032:.blockchain.network.v1alpha" +
-      "1.GetOrdererByNetworkIdResponse\022\216\001\n\025AddO" +
-      "rdererByNetworkId\0229.blockchain.network.v" +
-      "1alpha1.AddOrdererByNetworkIdRequest\032:.b" +
-      "lockchain.network.v1alpha1.AddOrdererByN" +
-      "etworkIdResponseB>Z<github.com/cuemby/cc" +
-      "p-sdk/gen/go/blockchain/network/v1alpha1" +
-      "b\006proto3"
+      ".v1alpha1.OrganizationR\014organization\022.\n\023" +
+      "ccp_organization_id\030\003 \001(\tR\021ccpOrganizati" +
+      "onId\022$\n\016ccp_project_id\030\004 \001(\tR\014ccpProject" +
+      "Id\"\235\001\n\034AddPeerToOrganizationRequest\022.\n\023c" +
+      "cp_organization_id\030\001 \001(\tR\021ccpOrganizatio" +
+      "nId\022$\n\016ccp_project_id\030\002 \001(\tR\014ccpProjectI" +
+      "d\022\'\n\017organization_id\030\003 \001(\tR\016organization" +
+      "Id\"\264\001\n\034AddOrdererByNetworkIdRequest\022>\n\007o" +
+      "rderer\030\001 \001(\0132$.blockchain.network.v1alph" +
+      "a1.OrdererR\007orderer\022.\n\023ccp_organization_" +
+      "id\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_proje" +
+      "ct_id\030\003 \001(\tR\014ccpProjectId\"V\n\024CreateChann" +
+      "elRequest\022>\n\007channel\030\001 \001(\0132$.blockchain." +
+      "network.v1alpha1.ChannelR\007channel\"E\n\025Get" +
+      "BlockchainsRequest\022\026\n\006offset\030\001 \001(\003R\006offs" +
+      "et\022\024\n\005limit\030\002 \001(\003R\005limit\"f\n\035GetBlockchai" +
+      "nsByUserIdRequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
+      "Id\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(" +
+      "\003R\005limit\"x\n\037GetPeersByOrganizationIdRequ" +
+      "est\022\'\n\017organization_id\030\001 \001(\tR\016organizati" +
+      "onId\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 " +
+      "\001(\003R\005limit\"k\n\034GetOrdererByNetworkIdReque" +
+      "st\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId\022\026\n\006off" +
+      "set\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"" +
+      "*\n\030GetBlockchainByIdRequest\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\"z\n%GetOrganizationsByBlockchainIdReq" +
+      "uest\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainI" +
+      "d\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003" +
+      "R\005limit\"\300\001\n\031CreateOrganizationRequest\022M\n" +
+      "\014organization\030\001 \001(\0132).blockchain.network" +
+      ".v1alpha1.OrganizationR\014organization\022.\n\023" +
+      "ccp_organization_id\030\002 \001(\tR\021ccpOrganizati" +
+      "onId\022$\n\016ccp_project_id\030\003 \001(\tR\014ccpProject" +
+      "Id\"`\n\025SendInvitationRequest\022G\n\ninvitatio" +
+      "n\030\001 \001(\0132\'.blockchain.network.v1alpha1.In" +
+      "vitationR\ninvitation\"q\n\025CreateNetworkRes" +
+      "ponse\022>\n\007network\030\001 \001(\0132$.blockchain.netw" +
+      "ork.v1alpha1.NetworkR\007network\022\030\n\007message" +
+      "\030\002 \001(\tR\007message\"\210\001\n\035AddPeerToOrganizatio" +
+      "nResponse\022M\n\014organization\030\001 \001(\0132).blockc" +
+      "hain.network.v1alpha1.OrganizationR\014orga" +
+      "nization\022\030\n\007message\030\002 \001(\tR\007message\"y\n\035Ad" +
+      "dOrdererByNetworkIdResponse\022>\n\007orderer\030\001" +
+      " \001(\0132$.blockchain.network.v1alpha1.Order" +
+      "erR\007orderer\022\030\n\007message\030\002 \001(\tR\007message\"q\n" +
+      "\025CreateChannelResponse\022>\n\007channel\030\001 \001(\0132" +
+      "$.blockchain.network.v1alpha1.ChannelR\007c" +
+      "hannel\022\030\n\007message\030\002 \001(\tR\007message\"\256\001\n\026Get" +
+      "BlockchainsResponse\022@\n\010networks\030\001 \003(\0132$." +
+      "blockchain.network.v1alpha1.NetworkR\010net" +
+      "works\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030" +
+      "\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013pr" +
+      "eviousUrl\"\266\001\n\036GetBlockchainsByUserIdResp" +
+      "onse\022@\n\010networks\030\001 \003(\0132$.blockchain.netw" +
+      "ork.v1alpha1.NetworkR\010networks\022\024\n\005total\030" +
+      "\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022" +
+      "!\n\014previous_url\030\004 \001(\tR\013previousUrl\"\263\001\n\035G" +
+      "etOrdererByNetworkIdResponse\022>\n\007orderer\030" +
+      "\001 \003(\0132$.blockchain.network.v1alpha1.Orde" +
+      "rerR\007orderer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010ne" +
+      "xt_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 " +
+      "\001(\tR\013previousUrl\"\255\001\n GetPeersByOrganizat" +
+      "ionIdResponse\0225\n\004peer\030\001 \003(\0132!.blockchain" +
+      ".network.v1alpha1.PeerR\004peer\022\024\n\005total\030\002 " +
+      "\001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n" +
+      "\014previous_url\030\004 \001(\tR\013previousUrl\"[\n\031GetB" +
+      "lockchainByIdResponse\022>\n\007network\030\001 \001(\0132$" +
+      ".blockchain.network.v1alpha1.NetworkR\007ne" +
+      "twork\"\315\001\n&GetOrganizationsByBlockchainId" +
+      "Response\022O\n\rorganizations\030\001 \003(\0132).blockc" +
+      "hain.network.v1alpha1.OrganizationR\rorga" +
+      "nizations\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_" +
+      "url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\t" +
+      "R\013previousUrl\"\205\001\n\032CreateOrganizationResp" +
+      "onse\022M\n\014organization\030\001 \001(\0132).blockchain." +
+      "network.v1alpha1.OrganizationR\014organizat" +
+      "ion\022\030\n\007message\030\002 \001(\tR\007message\"{\n\026SendInv" +
+      "itationResponse\022G\n\ninvitation\030\001 \001(\0132\'.bl" +
+      "ockchain.network.v1alpha1.InvitationR\nin" +
+      "vitation\022\030\n\007message\030\002 \001(\tR\007message2\226\r\n\024B" +
+      "lockchainAPIService\022v\n\rCreateNetwork\0221.b" +
+      "lockchain.network.v1alpha1.CreateNetwork" +
+      "Request\0322.blockchain.network.v1alpha1.Cr" +
+      "eateNetworkResponse\022\216\001\n\025AddPeerToOrganiz" +
+      "ation\0229.blockchain.network.v1alpha1.AddP" +
+      "eerToOrganizationRequest\032:.blockchain.ne" +
+      "twork.v1alpha1.AddPeerToOrganizationResp" +
+      "onse\022y\n\016GetBlockchains\0222.blockchain.netw" +
+      "ork.v1alpha1.GetBlockchainsRequest\0323.blo" +
+      "ckchain.network.v1alpha1.GetBlockchainsR" +
+      "esponse\022\221\001\n\026GetBlockchainsByUserId\022:.blo" +
+      "ckchain.network.v1alpha1.GetBlockchainsB" +
+      "yUserIdRequest\032;.blockchain.network.v1al" +
+      "pha1.GetBlockchainsByUserIdResponse\022\202\001\n\021" +
+      "GetBlockchainById\0225.blockchain.network.v" +
+      "1alpha1.GetBlockchainByIdRequest\0326.block" +
+      "chain.network.v1alpha1.GetBlockchainById" +
+      "Response\022\251\001\n\036GetOrganizationsByBlockchai" +
+      "nId\022B.blockchain.network.v1alpha1.GetOrg" +
+      "anizationsByBlockchainIdRequest\032C.blockc" +
+      "hain.network.v1alpha1.GetOrganizationsBy" +
+      "BlockchainIdResponse\022y\n\016SendInvitation\0222" +
+      ".blockchain.network.v1alpha1.SendInvitat" +
+      "ionRequest\0323.blockchain.network.v1alpha1" +
+      ".SendInvitationResponse\022\205\001\n\022CreateOrgani" +
+      "zation\0226.blockchain.network.v1alpha1.Cre" +
+      "ateOrganizationRequest\0327.blockchain.netw" +
+      "ork.v1alpha1.CreateOrganizationResponse\022" +
+      "v\n\rCreateChannel\0221.blockchain.network.v1" +
+      "alpha1.CreateChannelRequest\0322.blockchain" +
+      ".network.v1alpha1.CreateChannelResponse\022" +
+      "\227\001\n\030GetPeersByOrganizationId\022<.blockchai" +
+      "n.network.v1alpha1.GetPeersByOrganizatio" +
+      "nIdRequest\032=.blockchain.network.v1alpha1" +
+      ".GetPeersByOrganizationIdResponse\022\216\001\n\025Ge" +
+      "tOrdererByNetworkId\0229.blockchain.network" +
+      ".v1alpha1.GetOrdererByNetworkIdRequest\032:" +
+      ".blockchain.network.v1alpha1.GetOrdererB" +
+      "yNetworkIdResponse\022\216\001\n\025AddOrdererByNetwo" +
+      "rkId\0229.blockchain.network.v1alpha1.AddOr" +
+      "dererByNetworkIdRequest\032:.blockchain.net" +
+      "work.v1alpha1.AddOrdererByNetworkIdRespo" +
+      "nseB>Z<github.com/cuemby/ccp-sdk/gen/go/" +
+      "blockchain/network/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19205,19 +20413,19 @@ public final class NetworkApi {
     internal_static_blockchain_network_v1alpha1_CreateNetworkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_CreateNetworkRequest_descriptor,
-        new java.lang.String[] { "Network", "Organization", });
+        new java.lang.String[] { "Network", "Organization", "CcpOrganizationId", "CcpProjectId", });
     internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", });
+        new java.lang.String[] { "CcpOrganizationId", "CcpProjectId", "OrganizationId", });
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_descriptor,
-        new java.lang.String[] { "Orderer", });
+        new java.lang.String[] { "Orderer", "CcpOrganizationId", "CcpProjectId", });
     internal_static_blockchain_network_v1alpha1_CreateChannelRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_blockchain_network_v1alpha1_CreateChannelRequest_fieldAccessorTable = new
@@ -19265,7 +20473,7 @@ public final class NetworkApi {
     internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor,
-        new java.lang.String[] { "Organization", });
+        new java.lang.String[] { "Organization", "CcpOrganizationId", "CcpProjectId", });
     internal_static_blockchain_network_v1alpha1_SendInvitationRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_blockchain_network_v1alpha1_SendInvitationRequest_fieldAccessorTable = new

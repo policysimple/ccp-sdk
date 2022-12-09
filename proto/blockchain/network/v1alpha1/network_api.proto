@@ -26,14 +26,20 @@ service BlockchainAPIService {
 message CreateNetworkRequest {
     blockchain.network.v1alpha1.Network network = 1;
     blockchain.network.v1alpha1.Organization organization = 2;
+    string ccp_organization_id  = 3;
+    string ccp_project_id  = 4;
 }
 
 message AddPeerToOrganizationRequest {
-    string organization_id = 1;
+    string ccp_organization_id = 1;
+    string ccp_project_id = 2;
+    string organization_id = 3;
 }
 
 message AddOrdererByNetworkIdRequest {
     blockchain.network.v1alpha1.Orderer orderer = 1;
+    string ccp_organization_id  = 2;
+    string ccp_project_id  = 3;
 }
 
 message CreateChannelRequest {
@@ -75,6 +81,8 @@ message GetOrganizationsByBlockchainIdRequest {
 
 message CreateOrganizationRequest {
     blockchain.network.v1alpha1.Organization organization = 1;
+    string ccp_organization_id  = 2;
+    string ccp_project_id = 3;
 }
 
 message SendInvitationRequest {

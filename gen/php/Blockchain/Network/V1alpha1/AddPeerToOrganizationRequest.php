@@ -14,7 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     */
+    protected $ccp_organization_id = '';
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     */
+    protected $ccp_project_id = '';
+    /**
+     * Generated from protobuf field <code>string organization_id = 3 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
 
@@ -24,6 +32,8 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $ccp_organization_id
+     *     @type string $ccp_project_id
      *     @type string $organization_id
      * }
      */
@@ -33,7 +43,51 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     * @return string
+     */
+    public function getCcpOrganizationId()
+    {
+        return $this->ccp_organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     * @return string
+     */
+    public function getCcpProjectId()
+    {
+        return $this->ccp_project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 2 [json_name = "ccpProjectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_id = 3 [json_name = "organizationId"];</code>
      * @return string
      */
     public function getOrganizationId()
@@ -42,7 +96,7 @@ class AddPeerToOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 3 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
