@@ -301,8 +301,8 @@ constexpr BlockChain::BlockChain(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : blockchain_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , blockchain_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , node_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , budget_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , blockchain_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , subscription_(nullptr)
@@ -502,8 +502,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, blockchain_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, blockchain_name_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, node_name_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, budget_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, blockchain_type_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, project_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, subscription_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, created_at_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChain, updated_at_),
@@ -628,21 +628,22 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "eProject\022\020\n\003ram\030\004 \001(\tR\003ram\022\020\n\003cpu\030\005 \001(\tR"
   "\003cpu\022\032\n\010pipeline\030\006 \001(\tR\010pipeline\"L\n\022Proj"
   "ectBillingList\0226\n\005items\030\001 \003(\0132 .payment."
-  "v1alpha1.ProjectBillingR\005items\"\314\002\n\nBlock"
+  "v1alpha1.ProjectBillingR\005items\"\337\002\n\nBlock"
   "Chain\022#\n\rblockchain_id\030\001 \001(\tR\014blockchain"
   "Id\022\'\n\017blockchain_name\030\002 \001(\tR\016blockchainN"
-  "ame\022\033\n\tnode_name\030\003 \001(\tR\010nodeName\022\026\n\006budg"
-  "et\030\004 \001(\tR\006budget\022B\n\014subscription\030\005 \001(\0132\036"
-  ".payment.v1alpha1.SubscriptionR\014subscrip"
-  "tion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nu"
-  "pdated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001"
-  "(\010R\006status\022!\n\014is_suspended\030\t \001(\010R\013isSusp"
-  "endedB8Z6github.com/cuemby/ccp-payment-s"
-  "ervice/payment/v1alpha1b\006proto3"
+  "ame\022\'\n\017blockchain_type\030\003 \001(\tR\016blockchain"
+  "Type\022\035\n\nproject_id\030\004 \001(\tR\tprojectId\022B\n\014s"
+  "ubscription\030\005 \001(\0132\036.payment.v1alpha1.Sub"
+  "scriptionR\014subscription\022\035\n\ncreated_at\030\006 "
+  "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupda"
+  "tedAt\022\026\n\006status\030\010 \001(\010R\006status\022!\n\014is_susp"
+  "ended\030\t \001(\010R\013isSuspendedB8Z6github.com/c"
+  "uemby/ccp-payment-service/payment/v1alph"
+  "a1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 3351, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 3370, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 19,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -6673,14 +6674,14 @@ BlockChain::BlockChain(const BlockChain& from)
     blockchain_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_name(), 
       GetArenaForAllocation());
   }
-  node_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_node_name().empty()) {
-    node_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node_name(), 
+  blockchain_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_blockchain_type().empty()) {
+    blockchain_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blockchain_type(), 
       GetArenaForAllocation());
   }
-  budget_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_budget().empty()) {
-    budget_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_budget(), 
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
       GetArenaForAllocation());
   }
   created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -6707,8 +6708,8 @@ BlockChain::BlockChain(const BlockChain& from)
 inline void BlockChain::SharedCtor() {
 blockchain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 blockchain_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-node_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-budget_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+blockchain_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
@@ -6728,8 +6729,8 @@ inline void BlockChain::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   blockchain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   blockchain_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  node_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  budget_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  blockchain_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete subscription_;
@@ -6753,8 +6754,8 @@ void BlockChain::Clear() {
 
   blockchain_id_.ClearToEmpty();
   blockchain_name_.ClearToEmpty();
-  node_name_.ClearToEmpty();
-  budget_.ClearToEmpty();
+  blockchain_type_.ClearToEmpty();
+  project_id_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && subscription_ != nullptr) {
@@ -6791,21 +6792,21 @@ const char* BlockChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string node_name = 3 [json_name = "nodeName"];
+      // string blockchain_type = 3 [json_name = "blockchainType"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_node_name();
+          auto str = _internal_mutable_blockchain_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.BlockChain.node_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.BlockChain.blockchain_type"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string budget = 4 [json_name = "budget"];
+      // string project_id = 4 [json_name = "projectId"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_budget();
+          auto str = _internal_mutable_project_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.BlockChain.budget"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.BlockChain.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6897,24 +6898,24 @@ failure:
         2, this->_internal_blockchain_name(), target);
   }
 
-  // string node_name = 3 [json_name = "nodeName"];
-  if (!this->_internal_node_name().empty()) {
+  // string blockchain_type = 3 [json_name = "blockchainType"];
+  if (!this->_internal_blockchain_type().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_node_name().data(), static_cast<int>(this->_internal_node_name().length()),
+      this->_internal_blockchain_type().data(), static_cast<int>(this->_internal_blockchain_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.BlockChain.node_name");
+      "payment.v1alpha1.BlockChain.blockchain_type");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_node_name(), target);
+        3, this->_internal_blockchain_type(), target);
   }
 
-  // string budget = 4 [json_name = "budget"];
-  if (!this->_internal_budget().empty()) {
+  // string project_id = 4 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_budget().data(), static_cast<int>(this->_internal_budget().length()),
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.BlockChain.budget");
+      "payment.v1alpha1.BlockChain.project_id");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_budget(), target);
+        4, this->_internal_project_id(), target);
   }
 
   // .payment.v1alpha1.Subscription subscription = 5 [json_name = "subscription"];
@@ -6987,18 +6988,18 @@ size_t BlockChain::ByteSizeLong() const {
         this->_internal_blockchain_name());
   }
 
-  // string node_name = 3 [json_name = "nodeName"];
-  if (!this->_internal_node_name().empty()) {
+  // string blockchain_type = 3 [json_name = "blockchainType"];
+  if (!this->_internal_blockchain_type().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_node_name());
+        this->_internal_blockchain_type());
   }
 
-  // string budget = 4 [json_name = "budget"];
-  if (!this->_internal_budget().empty()) {
+  // string project_id = 4 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_budget());
+        this->_internal_project_id());
   }
 
   // string created_at = 6 [json_name = "createdAt"];
@@ -7066,11 +7067,11 @@ void BlockChain::MergeFrom(const BlockChain& from) {
   if (!from._internal_blockchain_name().empty()) {
     _internal_set_blockchain_name(from._internal_blockchain_name());
   }
-  if (!from._internal_node_name().empty()) {
-    _internal_set_node_name(from._internal_node_name());
+  if (!from._internal_blockchain_type().empty()) {
+    _internal_set_blockchain_type(from._internal_blockchain_type());
   }
-  if (!from._internal_budget().empty()) {
-    _internal_set_budget(from._internal_budget());
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
   }
   if (!from._internal_created_at().empty()) {
     _internal_set_created_at(from._internal_created_at());
@@ -7116,13 +7117,13 @@ void BlockChain::InternalSwap(BlockChain* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &node_name_, GetArenaForAllocation(),
-      &other->node_name_, other->GetArenaForAllocation()
+      &blockchain_type_, GetArenaForAllocation(),
+      &other->blockchain_type_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &budget_, GetArenaForAllocation(),
-      &other->budget_, other->GetArenaForAllocation()
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),

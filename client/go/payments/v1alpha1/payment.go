@@ -474,3 +474,22 @@ func CreateBlockchainNodeSubscription(in *paymentpkgv1.BlockChainSubscriptionReq
 	}
 	return response, nil
 }
+
+func ListCustomers(in *paymentpkgv1.ListCustomersRequest) (response *paymentpkgv1.ListCustomersResponse, err error) {
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListCustomers(ctx, &paymentpkgv1.ListCustomersRequest{
+		Empty:          in.Empty,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error list customers", err)
+		return nil, fmt.Errorf("%s: %w", "Error list customers", err)
+	}
+	return response, nil
+}

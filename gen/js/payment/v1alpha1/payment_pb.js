@@ -5125,8 +5125,8 @@ proto.payment.v1alpha1.BlockChain.toObject = function(includeInstance, msg) {
   var f, obj = {
     blockchainId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     blockchainName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    nodeName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    budget: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    blockchainType: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     subscription: (f = msg.getSubscription()) && proto.payment.v1alpha1.Subscription.toObject(includeInstance, f),
     createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
@@ -5178,11 +5178,11 @@ proto.payment.v1alpha1.BlockChain.deserializeBinaryFromReader = function(msg, re
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNodeName(value);
+      msg.setBlockchainType(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBudget(value);
+      msg.setProjectId(value);
       break;
     case 5:
       var value = new proto.payment.v1alpha1.Subscription;
@@ -5248,14 +5248,14 @@ proto.payment.v1alpha1.BlockChain.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getNodeName();
+  f = message.getBlockchainType();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getBudget();
+  f = message.getProjectId();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -5338,10 +5338,10 @@ proto.payment.v1alpha1.BlockChain.prototype.setBlockchainName = function(value) 
 
 
 /**
- * optional string node_name = 3;
+ * optional string blockchain_type = 3;
  * @return {string}
  */
-proto.payment.v1alpha1.BlockChain.prototype.getNodeName = function() {
+proto.payment.v1alpha1.BlockChain.prototype.getBlockchainType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -5350,16 +5350,16 @@ proto.payment.v1alpha1.BlockChain.prototype.getNodeName = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.BlockChain} returns this
  */
-proto.payment.v1alpha1.BlockChain.prototype.setNodeName = function(value) {
+proto.payment.v1alpha1.BlockChain.prototype.setBlockchainType = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string budget = 4;
+ * optional string project_id = 4;
  * @return {string}
  */
-proto.payment.v1alpha1.BlockChain.prototype.getBudget = function() {
+proto.payment.v1alpha1.BlockChain.prototype.getProjectId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -5368,7 +5368,7 @@ proto.payment.v1alpha1.BlockChain.prototype.getBudget = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.BlockChain} returns this
  */
-proto.payment.v1alpha1.BlockChain.prototype.setBudget = function(value) {
+proto.payment.v1alpha1.BlockChain.prototype.setProjectId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
