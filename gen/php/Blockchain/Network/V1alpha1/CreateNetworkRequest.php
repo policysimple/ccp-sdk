@@ -23,6 +23,14 @@ class CreateNetworkRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
      */
     protected $organization = null;
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     */
+    protected $ccp_organization_id = '';
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     */
+    protected $ccp_project_id = '';
 
     /**
      * Constructor.
@@ -32,6 +40,8 @@ class CreateNetworkRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Blockchain\Network\V1alpha1\Network $network
      *     @type \Blockchain\Network\V1alpha1\Organization $organization
+     *     @type string $ccp_organization_id
+     *     @type string $ccp_project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -99,6 +109,50 @@ class CreateNetworkRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Organization::class);
         $this->organization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     * @return string
+     */
+    public function getCcpOrganizationId()
+    {
+        return $this->ccp_organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     * @return string
+     */
+    public function getCcpProjectId()
+    {
+        return $this->ccp_project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 4 [json_name = "ccpProjectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_project_id = $var;
 
         return $this;
     }

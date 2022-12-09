@@ -580,7 +580,9 @@ proto.blockchain.network.v1alpha1.CreateNetworkRequest.prototype.toObject = func
 proto.blockchain.network.v1alpha1.CreateNetworkRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     network: (f = msg.getNetwork()) && blockchain_network_v1alpha1_network_pb.Network.toObject(includeInstance, f),
-    organization: (f = msg.getOrganization()) && blockchain_network_v1alpha1_network_pb.Organization.toObject(includeInstance, f)
+    organization: (f = msg.getOrganization()) && blockchain_network_v1alpha1_network_pb.Organization.toObject(includeInstance, f),
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    ccpProjectId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -627,6 +629,14 @@ proto.blockchain.network.v1alpha1.CreateNetworkRequest.deserializeBinaryFromRead
       reader.readMessage(value,blockchain_network_v1alpha1_network_pb.Organization.deserializeBinaryFromReader);
       msg.setOrganization(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpProjectId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -670,6 +680,20 @@ proto.blockchain.network.v1alpha1.CreateNetworkRequest.serializeBinaryToWriter =
       2,
       f,
       blockchain_network_v1alpha1_network_pb.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getCcpOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCcpProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -749,6 +773,42 @@ proto.blockchain.network.v1alpha1.CreateNetworkRequest.prototype.hasOrganization
 };
 
 
+/**
+ * optional string ccp_organization_id = 3;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.CreateNetworkRequest.prototype.getCcpOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.CreateNetworkRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.CreateNetworkRequest.prototype.setCcpOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string ccp_project_id = 4;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.CreateNetworkRequest.prototype.getCcpProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.CreateNetworkRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.CreateNetworkRequest.prototype.setCcpProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 
 
@@ -781,7 +841,9 @@ proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.toObjec
  */
 proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    ccpProjectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -820,6 +882,14 @@ proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.deserializeBinary
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpProjectId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     default:
@@ -851,10 +921,24 @@ proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.seriali
  */
 proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrganizationId();
+  f = message.getCcpOrganizationId();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getCcpProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -862,10 +946,10 @@ proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.serializeBinaryTo
 
 
 /**
- * optional string organization_id = 1;
+ * optional string ccp_organization_id = 1;
  * @return {string}
  */
-proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.getOrganizationId = function() {
+proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.getCcpOrganizationId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -874,8 +958,44 @@ proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.getOrga
  * @param {string} value
  * @return {!proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest} returns this
  */
-proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.setOrganizationId = function(value) {
+proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.setCcpOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string ccp_project_id = 2;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.getCcpProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.setCcpProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string organization_id = 3;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.getOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddPeerToOrganizationRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -911,7 +1031,9 @@ proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.toObjec
  */
 proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orderer: (f = msg.getOrderer()) && blockchain_network_v1alpha1_network_pb.Orderer.toObject(includeInstance, f)
+    orderer: (f = msg.getOrderer()) && blockchain_network_v1alpha1_network_pb.Orderer.toObject(includeInstance, f),
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    ccpProjectId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -953,6 +1075,14 @@ proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.deserializeBinary
       reader.readMessage(value,blockchain_network_v1alpha1_network_pb.Orderer.deserializeBinaryFromReader);
       msg.setOrderer(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpProjectId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -988,6 +1118,20 @@ proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.serializeBinaryTo
       1,
       f,
       blockchain_network_v1alpha1_network_pb.Orderer.serializeBinaryToWriter
+    );
+  }
+  f = message.getCcpOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCcpProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -1027,6 +1171,42 @@ proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.clearOr
  */
 proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.hasOrderer = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string ccp_organization_id = 2;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.getCcpOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.setCcpOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string ccp_project_id = 3;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.getCcpProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest.prototype.setCcpProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2263,7 +2443,9 @@ proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.toObject =
  */
 proto.blockchain.network.v1alpha1.CreateOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organization: (f = msg.getOrganization()) && blockchain_network_v1alpha1_network_pb.Organization.toObject(includeInstance, f)
+    organization: (f = msg.getOrganization()) && blockchain_network_v1alpha1_network_pb.Organization.toObject(includeInstance, f),
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    ccpProjectId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2305,6 +2487,14 @@ proto.blockchain.network.v1alpha1.CreateOrganizationRequest.deserializeBinaryFro
       reader.readMessage(value,blockchain_network_v1alpha1_network_pb.Organization.deserializeBinaryFromReader);
       msg.setOrganization(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpProjectId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2340,6 +2530,20 @@ proto.blockchain.network.v1alpha1.CreateOrganizationRequest.serializeBinaryToWri
       1,
       f,
       blockchain_network_v1alpha1_network_pb.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getCcpOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCcpProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -2379,6 +2583,42 @@ proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.clearOrgan
  */
 proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.hasOrganization = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string ccp_organization_id = 2;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.getCcpOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.CreateOrganizationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.setCcpOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string ccp_project_id = 3;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.getCcpProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.CreateOrganizationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.CreateOrganizationRequest.prototype.setCcpProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
