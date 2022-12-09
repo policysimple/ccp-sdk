@@ -1,7 +1,9 @@
 syntax = "proto3";
+import "google/protobuf/empty.proto";
 
 package payment.v1alpha1;
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
+
 
 
 import "payment/v1alpha1/payment.proto";
@@ -27,7 +29,8 @@ service PaymentAPIService{
     //List the service
     rpc ListProjects(ListProjectsRequest) returns (ListProjectsResponse) {}; 
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};  
-    rpc ListSubscriptionItems(ListSubscriptionItemsRequest) returns (ListSubscriptionItemsResponse) {};  
+    rpc ListSubscriptionItems(ListSubscriptionItemsRequest) returns (ListSubscriptionItemsResponse) {}; 
+    rpc ListCustomers(ListCustomersRequest) returns (ListCustomersResponse) {}; 
    
     //Update service
     rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse) {};
@@ -325,10 +328,19 @@ message ConsumeByProjectResponse{
 message BlockChainSubscriptionRequest{
     string organization_id = 1;
     string customer_id = 2;
-    payment.v1alpha1.BlockChain blochchain = 3;
+    payment.v1alpha1.BlockChain Blockchain = 3;
 }
 
 message BlockChainSubscriptionResponse{
     string status = 1;
+    string error = 2;
+}
+
+message ListCustomersRequest {
+    string empty = 1;
+}
+
+message ListCustomersResponse {
+    repeated payment.v1alpha1.Customer customers = 1;
     string error = 2;
 }
