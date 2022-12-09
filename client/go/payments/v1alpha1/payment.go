@@ -465,7 +465,7 @@ func CreateBlockchainNodeSubscription(in *paymentpkgv1.BlockChainSubscriptionReq
 	response, err = client.BlockChainSubscription(ctx, &paymentpkgv1.BlockChainSubscriptionRequest{
 		OrganizationId: in.OrganizationId,
 		CustomerId:    in.CustomerId,
-		Blochchain:   in.Blochchain,
+		Blockchain:   in.Blockchain,
 	})
 
 	if err != nil {
