@@ -40294,19 +40294,19 @@ public final class PaymentApi {
         getCustomerIdBytes();
 
     /**
-     * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
-     * @return Whether the blochchain field is set.
+     * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
+     * @return Whether the blockchain field is set.
      */
-    boolean hasBlochchain();
+    boolean hasBlockchain();
     /**
-     * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
-     * @return The blochchain.
+     * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
+     * @return The blockchain.
      */
-    payment.v1alpha1.PaymentOuterClass.BlockChain getBlochchain();
+    payment.v1alpha1.PaymentOuterClass.BlockChain getBlockchain();
     /**
-     * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
      */
-    payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder getBlochchainOrBuilder();
+    payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder getBlockchainOrBuilder();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.BlockChainSubscriptionRequest}
@@ -40369,13 +40369,13 @@ public final class PaymentApi {
             }
             case 26: {
               payment.v1alpha1.PaymentOuterClass.BlockChain.Builder subBuilder = null;
-              if (blochchain_ != null) {
-                subBuilder = blochchain_.toBuilder();
+              if (blockchain_ != null) {
+                subBuilder = blockchain_.toBuilder();
               }
-              blochchain_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.BlockChain.parser(), extensionRegistry);
+              blockchain_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.BlockChain.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(blochchain_);
-                blochchain_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(blockchain_);
+                blockchain_ = subBuilder.buildPartial();
               }
 
               break;
@@ -40488,30 +40488,30 @@ public final class PaymentApi {
       }
     }
 
-    public static final int BLOCHCHAIN_FIELD_NUMBER = 3;
-    private payment.v1alpha1.PaymentOuterClass.BlockChain blochchain_;
+    public static final int BLOCKCHAIN_FIELD_NUMBER = 3;
+    private payment.v1alpha1.PaymentOuterClass.BlockChain blockchain_;
     /**
-     * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
-     * @return Whether the blochchain field is set.
+     * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
+     * @return Whether the blockchain field is set.
      */
     @java.lang.Override
-    public boolean hasBlochchain() {
-      return blochchain_ != null;
+    public boolean hasBlockchain() {
+      return blockchain_ != null;
     }
     /**
-     * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
-     * @return The blochchain.
+     * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
+     * @return The blockchain.
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.BlockChain getBlochchain() {
-      return blochchain_ == null ? payment.v1alpha1.PaymentOuterClass.BlockChain.getDefaultInstance() : blochchain_;
+    public payment.v1alpha1.PaymentOuterClass.BlockChain getBlockchain() {
+      return blockchain_ == null ? payment.v1alpha1.PaymentOuterClass.BlockChain.getDefaultInstance() : blockchain_;
     }
     /**
-     * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
      */
     @java.lang.Override
-    public payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder getBlochchainOrBuilder() {
-      return getBlochchain();
+    public payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder getBlockchainOrBuilder() {
+      return getBlockchain();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -40534,8 +40534,8 @@ public final class PaymentApi {
       if (!getCustomerIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customerId_);
       }
-      if (blochchain_ != null) {
-        output.writeMessage(3, getBlochchain());
+      if (blockchain_ != null) {
+        output.writeMessage(3, getBlockchain());
       }
       unknownFields.writeTo(output);
     }
@@ -40552,9 +40552,9 @@ public final class PaymentApi {
       if (!getCustomerIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customerId_);
       }
-      if (blochchain_ != null) {
+      if (blockchain_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getBlochchain());
+          .computeMessageSize(3, getBlockchain());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -40575,10 +40575,10 @@ public final class PaymentApi {
           .equals(other.getOrganizationId())) return false;
       if (!getCustomerId()
           .equals(other.getCustomerId())) return false;
-      if (hasBlochchain() != other.hasBlochchain()) return false;
-      if (hasBlochchain()) {
-        if (!getBlochchain()
-            .equals(other.getBlochchain())) return false;
+      if (hasBlockchain() != other.hasBlockchain()) return false;
+      if (hasBlockchain()) {
+        if (!getBlockchain()
+            .equals(other.getBlockchain())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -40595,9 +40595,9 @@ public final class PaymentApi {
       hash = (53 * hash) + getOrganizationId().hashCode();
       hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCustomerId().hashCode();
-      if (hasBlochchain()) {
-        hash = (37 * hash) + BLOCHCHAIN_FIELD_NUMBER;
-        hash = (53 * hash) + getBlochchain().hashCode();
+      if (hasBlockchain()) {
+        hash = (37 * hash) + BLOCKCHAIN_FIELD_NUMBER;
+        hash = (53 * hash) + getBlockchain().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -40736,11 +40736,11 @@ public final class PaymentApi {
 
         customerId_ = "";
 
-        if (blochchainBuilder_ == null) {
-          blochchain_ = null;
+        if (blockchainBuilder_ == null) {
+          blockchain_ = null;
         } else {
-          blochchain_ = null;
-          blochchainBuilder_ = null;
+          blockchain_ = null;
+          blockchainBuilder_ = null;
         }
         return this;
       }
@@ -40770,10 +40770,10 @@ public final class PaymentApi {
         payment.v1alpha1.PaymentApi.BlockChainSubscriptionRequest result = new payment.v1alpha1.PaymentApi.BlockChainSubscriptionRequest(this);
         result.organizationId_ = organizationId_;
         result.customerId_ = customerId_;
-        if (blochchainBuilder_ == null) {
-          result.blochchain_ = blochchain_;
+        if (blockchainBuilder_ == null) {
+          result.blockchain_ = blockchain_;
         } else {
-          result.blochchain_ = blochchainBuilder_.build();
+          result.blockchain_ = blockchainBuilder_.build();
         }
         onBuilt();
         return result;
@@ -40831,8 +40831,8 @@ public final class PaymentApi {
           customerId_ = other.customerId_;
           onChanged();
         }
-        if (other.hasBlochchain()) {
-          mergeBlochchain(other.getBlochchain());
+        if (other.hasBlockchain()) {
+          mergeBlockchain(other.getBlockchain());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -41015,123 +41015,123 @@ public final class PaymentApi {
         return this;
       }
 
-      private payment.v1alpha1.PaymentOuterClass.BlockChain blochchain_;
+      private payment.v1alpha1.PaymentOuterClass.BlockChain blockchain_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          payment.v1alpha1.PaymentOuterClass.BlockChain, payment.v1alpha1.PaymentOuterClass.BlockChain.Builder, payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder> blochchainBuilder_;
+          payment.v1alpha1.PaymentOuterClass.BlockChain, payment.v1alpha1.PaymentOuterClass.BlockChain.Builder, payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder> blockchainBuilder_;
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
-       * @return Whether the blochchain field is set.
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
+       * @return Whether the blockchain field is set.
        */
-      public boolean hasBlochchain() {
-        return blochchainBuilder_ != null || blochchain_ != null;
+      public boolean hasBlockchain() {
+        return blockchainBuilder_ != null || blockchain_ != null;
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
-       * @return The blochchain.
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
+       * @return The blockchain.
        */
-      public payment.v1alpha1.PaymentOuterClass.BlockChain getBlochchain() {
-        if (blochchainBuilder_ == null) {
-          return blochchain_ == null ? payment.v1alpha1.PaymentOuterClass.BlockChain.getDefaultInstance() : blochchain_;
+      public payment.v1alpha1.PaymentOuterClass.BlockChain getBlockchain() {
+        if (blockchainBuilder_ == null) {
+          return blockchain_ == null ? payment.v1alpha1.PaymentOuterClass.BlockChain.getDefaultInstance() : blockchain_;
         } else {
-          return blochchainBuilder_.getMessage();
+          return blockchainBuilder_.getMessage();
         }
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
-      public Builder setBlochchain(payment.v1alpha1.PaymentOuterClass.BlockChain value) {
-        if (blochchainBuilder_ == null) {
+      public Builder setBlockchain(payment.v1alpha1.PaymentOuterClass.BlockChain value) {
+        if (blockchainBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          blochchain_ = value;
+          blockchain_ = value;
           onChanged();
         } else {
-          blochchainBuilder_.setMessage(value);
+          blockchainBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
-      public Builder setBlochchain(
+      public Builder setBlockchain(
           payment.v1alpha1.PaymentOuterClass.BlockChain.Builder builderForValue) {
-        if (blochchainBuilder_ == null) {
-          blochchain_ = builderForValue.build();
+        if (blockchainBuilder_ == null) {
+          blockchain_ = builderForValue.build();
           onChanged();
         } else {
-          blochchainBuilder_.setMessage(builderForValue.build());
+          blockchainBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
-      public Builder mergeBlochchain(payment.v1alpha1.PaymentOuterClass.BlockChain value) {
-        if (blochchainBuilder_ == null) {
-          if (blochchain_ != null) {
-            blochchain_ =
-              payment.v1alpha1.PaymentOuterClass.BlockChain.newBuilder(blochchain_).mergeFrom(value).buildPartial();
+      public Builder mergeBlockchain(payment.v1alpha1.PaymentOuterClass.BlockChain value) {
+        if (blockchainBuilder_ == null) {
+          if (blockchain_ != null) {
+            blockchain_ =
+              payment.v1alpha1.PaymentOuterClass.BlockChain.newBuilder(blockchain_).mergeFrom(value).buildPartial();
           } else {
-            blochchain_ = value;
+            blockchain_ = value;
           }
           onChanged();
         } else {
-          blochchainBuilder_.mergeFrom(value);
+          blockchainBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
-      public Builder clearBlochchain() {
-        if (blochchainBuilder_ == null) {
-          blochchain_ = null;
+      public Builder clearBlockchain() {
+        if (blockchainBuilder_ == null) {
+          blockchain_ = null;
           onChanged();
         } else {
-          blochchain_ = null;
-          blochchainBuilder_ = null;
+          blockchain_ = null;
+          blockchainBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.BlockChain.Builder getBlochchainBuilder() {
+      public payment.v1alpha1.PaymentOuterClass.BlockChain.Builder getBlockchainBuilder() {
         
         onChanged();
-        return getBlochchainFieldBuilder().getBuilder();
+        return getBlockchainFieldBuilder().getBuilder();
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
-      public payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder getBlochchainOrBuilder() {
-        if (blochchainBuilder_ != null) {
-          return blochchainBuilder_.getMessageOrBuilder();
+      public payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder getBlockchainOrBuilder() {
+        if (blockchainBuilder_ != null) {
+          return blockchainBuilder_.getMessageOrBuilder();
         } else {
-          return blochchain_ == null ?
-              payment.v1alpha1.PaymentOuterClass.BlockChain.getDefaultInstance() : blochchain_;
+          return blockchain_ == null ?
+              payment.v1alpha1.PaymentOuterClass.BlockChain.getDefaultInstance() : blockchain_;
         }
       }
       /**
-       * <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+       * <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           payment.v1alpha1.PaymentOuterClass.BlockChain, payment.v1alpha1.PaymentOuterClass.BlockChain.Builder, payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder> 
-          getBlochchainFieldBuilder() {
-        if (blochchainBuilder_ == null) {
-          blochchainBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getBlockchainFieldBuilder() {
+        if (blockchainBuilder_ == null) {
+          blockchainBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               payment.v1alpha1.PaymentOuterClass.BlockChain, payment.v1alpha1.PaymentOuterClass.BlockChain.Builder, payment.v1alpha1.PaymentOuterClass.BlockChainOrBuilder>(
-                  getBlochchain(),
+                  getBlockchain(),
                   getParentForChildren(),
                   isClean());
-          blochchain_ = null;
+          blockchain_ = null;
         }
-        return blochchainBuilder_;
+        return blockchainBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -43840,8 +43840,8 @@ public final class PaymentApi {
       "\n\005error\030\002 \001(\tR\005error\"\247\001\n\035BlockChainSubsc" +
       "riptionRequest\022\'\n\017organization_id\030\001 \001(\tR" +
       "\016organizationId\022\037\n\013customer_id\030\002 \001(\tR\ncu" +
-      "stomerId\022<\n\nblochchain\030\003 \001(\0132\034.payment.v" +
-      "1alpha1.BlockChainR\nblochchain\"N\n\036BlockC" +
+      "stomerId\022<\n\nblockchain\030\003 \001(\0132\034.payment.v" +
+      "1alpha1.BlockChainR\nblockchain\"N\n\036BlockC" +
       "hainSubscriptionResponse\022\026\n\006status\030\001 \001(\t" +
       "R\006status\022\024\n\005error\030\002 \001(\tR\005error\",\n\024ListCu" +
       "stomersRequest\022\024\n\005empty\030\001 \001(\tR\005empty\"g\n\025" +
@@ -44230,7 +44230,7 @@ public final class PaymentApi {
     internal_static_payment_v1alpha1_BlockChainSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_BlockChainSubscriptionRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "CustomerId", "Blochchain", });
+        new java.lang.String[] { "OrganizationId", "CustomerId", "Blockchain", });
     internal_static_payment_v1alpha1_BlockChainSubscriptionResponse_descriptor =
       getDescriptor().getMessageTypes().get(51);
     internal_static_payment_v1alpha1_BlockChainSubscriptionResponse_fieldAccessorTable = new

@@ -328,7 +328,7 @@ message ConsumeByProjectResponse{
 message BlockChainSubscriptionRequest{
     string organization_id = 1;
     string customer_id = 2;
-    payment.v1alpha1.BlockChain Blockchain = 3;
+    payment.v1alpha1.BlockChain blockchain = 3;
 }
 
 message BlockChainSubscriptionResponse{

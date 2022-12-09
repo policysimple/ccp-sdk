@@ -8820,7 +8820,7 @@ class BlockChainSubscriptionRequest final :
   enum : int {
     kOrganizationIdFieldNumber = 1,
     kCustomerIdFieldNumber = 2,
-    kBlochchainFieldNumber = 3,
+    kBlockchainFieldNumber = 3,
   };
   // string organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
@@ -8850,23 +8850,23 @@ class BlockChainSubscriptionRequest final :
   std::string* _internal_mutable_customer_id();
   public:
 
-  // .payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];
-  bool has_blochchain() const;
+  // .payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];
+  bool has_blockchain() const;
   private:
-  bool _internal_has_blochchain() const;
+  bool _internal_has_blockchain() const;
   public:
-  void clear_blochchain();
-  const ::payment::v1alpha1::BlockChain& blochchain() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::BlockChain* release_blochchain();
-  ::payment::v1alpha1::BlockChain* mutable_blochchain();
-  void set_allocated_blochchain(::payment::v1alpha1::BlockChain* blochchain);
+  void clear_blockchain();
+  const ::payment::v1alpha1::BlockChain& blockchain() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::BlockChain* release_blockchain();
+  ::payment::v1alpha1::BlockChain* mutable_blockchain();
+  void set_allocated_blockchain(::payment::v1alpha1::BlockChain* blockchain);
   private:
-  const ::payment::v1alpha1::BlockChain& _internal_blochchain() const;
-  ::payment::v1alpha1::BlockChain* _internal_mutable_blochchain();
+  const ::payment::v1alpha1::BlockChain& _internal_blockchain() const;
+  ::payment::v1alpha1::BlockChain* _internal_mutable_blockchain();
   public:
-  void unsafe_arena_set_allocated_blochchain(
-      ::payment::v1alpha1::BlockChain* blochchain);
-  ::payment::v1alpha1::BlockChain* unsafe_arena_release_blochchain();
+  void unsafe_arena_set_allocated_blockchain(
+      ::payment::v1alpha1::BlockChain* blockchain);
+  ::payment::v1alpha1::BlockChain* unsafe_arena_release_blockchain();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.BlockChainSubscriptionRequest)
  private:
@@ -8877,7 +8877,7 @@ class BlockChainSubscriptionRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr customer_id_;
-  ::payment::v1alpha1::BlockChain* blochchain_;
+  ::payment::v1alpha1::BlockChain* blockchain_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -15977,39 +15977,39 @@ inline void BlockChainSubscriptionRequest::set_allocated_customer_id(std::string
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.BlockChainSubscriptionRequest.customer_id)
 }
 
-// .payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];
-inline bool BlockChainSubscriptionRequest::_internal_has_blochchain() const {
-  return this != internal_default_instance() && blochchain_ != nullptr;
+// .payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];
+inline bool BlockChainSubscriptionRequest::_internal_has_blockchain() const {
+  return this != internal_default_instance() && blockchain_ != nullptr;
 }
-inline bool BlockChainSubscriptionRequest::has_blochchain() const {
-  return _internal_has_blochchain();
+inline bool BlockChainSubscriptionRequest::has_blockchain() const {
+  return _internal_has_blockchain();
 }
-inline const ::payment::v1alpha1::BlockChain& BlockChainSubscriptionRequest::_internal_blochchain() const {
-  const ::payment::v1alpha1::BlockChain* p = blochchain_;
+inline const ::payment::v1alpha1::BlockChain& BlockChainSubscriptionRequest::_internal_blockchain() const {
+  const ::payment::v1alpha1::BlockChain* p = blockchain_;
   return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::BlockChain&>(
       ::payment::v1alpha1::_BlockChain_default_instance_);
 }
-inline const ::payment::v1alpha1::BlockChain& BlockChainSubscriptionRequest::blochchain() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.BlockChainSubscriptionRequest.blochchain)
-  return _internal_blochchain();
+inline const ::payment::v1alpha1::BlockChain& BlockChainSubscriptionRequest::blockchain() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.BlockChainSubscriptionRequest.blockchain)
+  return _internal_blockchain();
 }
-inline void BlockChainSubscriptionRequest::unsafe_arena_set_allocated_blochchain(
-    ::payment::v1alpha1::BlockChain* blochchain) {
+inline void BlockChainSubscriptionRequest::unsafe_arena_set_allocated_blockchain(
+    ::payment::v1alpha1::BlockChain* blockchain) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(blochchain_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(blockchain_);
   }
-  blochchain_ = blochchain;
-  if (blochchain) {
+  blockchain_ = blockchain;
+  if (blockchain) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.BlockChainSubscriptionRequest.blochchain)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.BlockChainSubscriptionRequest.blockchain)
 }
-inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::release_blochchain() {
+inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::release_blockchain() {
   
-  ::payment::v1alpha1::BlockChain* temp = blochchain_;
-  blochchain_ = nullptr;
+  ::payment::v1alpha1::BlockChain* temp = blockchain_;
+  blockchain_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -16021,46 +16021,46 @@ inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::release_b
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::unsafe_arena_release_blochchain() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.BlockChainSubscriptionRequest.blochchain)
+inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::unsafe_arena_release_blockchain() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.BlockChainSubscriptionRequest.blockchain)
   
-  ::payment::v1alpha1::BlockChain* temp = blochchain_;
-  blochchain_ = nullptr;
+  ::payment::v1alpha1::BlockChain* temp = blockchain_;
+  blockchain_ = nullptr;
   return temp;
 }
-inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::_internal_mutable_blochchain() {
+inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::_internal_mutable_blockchain() {
   
-  if (blochchain_ == nullptr) {
+  if (blockchain_ == nullptr) {
     auto* p = CreateMaybeMessage<::payment::v1alpha1::BlockChain>(GetArenaForAllocation());
-    blochchain_ = p;
+    blockchain_ = p;
   }
-  return blochchain_;
+  return blockchain_;
 }
-inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::mutable_blochchain() {
-  ::payment::v1alpha1::BlockChain* _msg = _internal_mutable_blochchain();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.BlockChainSubscriptionRequest.blochchain)
+inline ::payment::v1alpha1::BlockChain* BlockChainSubscriptionRequest::mutable_blockchain() {
+  ::payment::v1alpha1::BlockChain* _msg = _internal_mutable_blockchain();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.BlockChainSubscriptionRequest.blockchain)
   return _msg;
 }
-inline void BlockChainSubscriptionRequest::set_allocated_blochchain(::payment::v1alpha1::BlockChain* blochchain) {
+inline void BlockChainSubscriptionRequest::set_allocated_blockchain(::payment::v1alpha1::BlockChain* blockchain) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(blochchain_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(blockchain_);
   }
-  if (blochchain) {
+  if (blockchain) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(blochchain));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(blockchain));
     if (message_arena != submessage_arena) {
-      blochchain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, blochchain, submessage_arena);
+      blockchain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, blockchain, submessage_arena);
     }
     
   } else {
     
   }
-  blochchain_ = blochchain;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.BlockChainSubscriptionRequest.blochchain)
+  blockchain_ = blockchain;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.BlockChainSubscriptionRequest.blockchain)
 }
 
 // -------------------------------------------------------------------

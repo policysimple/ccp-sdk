@@ -21667,28 +21667,28 @@ public final class PaymentOuterClass {
         getBlockchainNameBytes();
 
     /**
-     * <code>string node_name = 3 [json_name = "nodeName"];</code>
-     * @return The nodeName.
+     * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+     * @return The blockchainType.
      */
-    java.lang.String getNodeName();
+    java.lang.String getBlockchainType();
     /**
-     * <code>string node_name = 3 [json_name = "nodeName"];</code>
-     * @return The bytes for nodeName.
+     * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+     * @return The bytes for blockchainType.
      */
     com.google.protobuf.ByteString
-        getNodeNameBytes();
+        getBlockchainTypeBytes();
 
     /**
-     * <code>string budget = 4 [json_name = "budget"];</code>
-     * @return The budget.
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
-    java.lang.String getBudget();
+    java.lang.String getProjectId();
     /**
-     * <code>string budget = 4 [json_name = "budget"];</code>
-     * @return The bytes for budget.
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
      */
     com.google.protobuf.ByteString
-        getBudgetBytes();
+        getProjectIdBytes();
 
     /**
      * <code>.payment.v1alpha1.Subscription subscription = 5 [json_name = "subscription"];</code>
@@ -21756,8 +21756,8 @@ public final class PaymentOuterClass {
     private BlockChain() {
       blockchainId_ = "";
       blockchainName_ = "";
-      nodeName_ = "";
-      budget_ = "";
+      blockchainType_ = "";
+      projectId_ = "";
       createdAt_ = "";
       updatedAt_ = "";
     }
@@ -21807,13 +21807,13 @@ public final class PaymentOuterClass {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              nodeName_ = s;
+              blockchainType_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              budget_ = s;
+              projectId_ = s;
               break;
             }
             case 42: {
@@ -21959,76 +21959,76 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int NODE_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object nodeName_;
+    public static final int BLOCKCHAIN_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object blockchainType_;
     /**
-     * <code>string node_name = 3 [json_name = "nodeName"];</code>
-     * @return The nodeName.
+     * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+     * @return The blockchainType.
      */
     @java.lang.Override
-    public java.lang.String getNodeName() {
-      java.lang.Object ref = nodeName_;
+    public java.lang.String getBlockchainType() {
+      java.lang.Object ref = blockchainType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nodeName_ = s;
+        blockchainType_ = s;
         return s;
       }
     }
     /**
-     * <code>string node_name = 3 [json_name = "nodeName"];</code>
-     * @return The bytes for nodeName.
+     * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+     * @return The bytes for blockchainType.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNodeNameBytes() {
-      java.lang.Object ref = nodeName_;
+        getBlockchainTypeBytes() {
+      java.lang.Object ref = blockchainType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nodeName_ = b;
+        blockchainType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BUDGET_FIELD_NUMBER = 4;
-    private volatile java.lang.Object budget_;
+    public static final int PROJECT_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object projectId_;
     /**
-     * <code>string budget = 4 [json_name = "budget"];</code>
-     * @return The budget.
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The projectId.
      */
     @java.lang.Override
-    public java.lang.String getBudget() {
-      java.lang.Object ref = budget_;
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        budget_ = s;
+        projectId_ = s;
         return s;
       }
     }
     /**
-     * <code>string budget = 4 [json_name = "budget"];</code>
-     * @return The bytes for budget.
+     * <code>string project_id = 4 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getBudgetBytes() {
-      java.lang.Object ref = budget_;
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        budget_ = b;
+        projectId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -22179,11 +22179,11 @@ public final class PaymentOuterClass {
       if (!getBlockchainNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, blockchainName_);
       }
-      if (!getNodeNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nodeName_);
+      if (!getBlockchainTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, blockchainType_);
       }
-      if (!getBudgetBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, budget_);
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, projectId_);
       }
       if (subscription_ != null) {
         output.writeMessage(5, getSubscription());
@@ -22215,11 +22215,11 @@ public final class PaymentOuterClass {
       if (!getBlockchainNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, blockchainName_);
       }
-      if (!getNodeNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nodeName_);
+      if (!getBlockchainTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, blockchainType_);
       }
-      if (!getBudgetBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, budget_);
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, projectId_);
       }
       if (subscription_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -22258,10 +22258,10 @@ public final class PaymentOuterClass {
           .equals(other.getBlockchainId())) return false;
       if (!getBlockchainName()
           .equals(other.getBlockchainName())) return false;
-      if (!getNodeName()
-          .equals(other.getNodeName())) return false;
-      if (!getBudget()
-          .equals(other.getBudget())) return false;
+      if (!getBlockchainType()
+          .equals(other.getBlockchainType())) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (hasSubscription() != other.hasSubscription()) return false;
       if (hasSubscription()) {
         if (!getSubscription()
@@ -22290,10 +22290,10 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getBlockchainId().hashCode();
       hash = (37 * hash) + BLOCKCHAIN_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getBlockchainName().hashCode();
-      hash = (37 * hash) + NODE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getNodeName().hashCode();
-      hash = (37 * hash) + BUDGET_FIELD_NUMBER;
-      hash = (53 * hash) + getBudget().hashCode();
+      hash = (37 * hash) + BLOCKCHAIN_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockchainType().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
       if (hasSubscription()) {
         hash = (37 * hash) + SUBSCRIPTION_FIELD_NUMBER;
         hash = (53 * hash) + getSubscription().hashCode();
@@ -22445,9 +22445,9 @@ public final class PaymentOuterClass {
 
         blockchainName_ = "";
 
-        nodeName_ = "";
+        blockchainType_ = "";
 
-        budget_ = "";
+        projectId_ = "";
 
         if (subscriptionBuilder_ == null) {
           subscription_ = null;
@@ -22491,8 +22491,8 @@ public final class PaymentOuterClass {
         payment.v1alpha1.PaymentOuterClass.BlockChain result = new payment.v1alpha1.PaymentOuterClass.BlockChain(this);
         result.blockchainId_ = blockchainId_;
         result.blockchainName_ = blockchainName_;
-        result.nodeName_ = nodeName_;
-        result.budget_ = budget_;
+        result.blockchainType_ = blockchainType_;
+        result.projectId_ = projectId_;
         if (subscriptionBuilder_ == null) {
           result.subscription_ = subscription_;
         } else {
@@ -22558,12 +22558,12 @@ public final class PaymentOuterClass {
           blockchainName_ = other.blockchainName_;
           onChanged();
         }
-        if (!other.getNodeName().isEmpty()) {
-          nodeName_ = other.nodeName_;
+        if (!other.getBlockchainType().isEmpty()) {
+          blockchainType_ = other.blockchainType_;
           onChanged();
         }
-        if (!other.getBudget().isEmpty()) {
-          budget_ = other.budget_;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
           onChanged();
         }
         if (other.hasSubscription()) {
@@ -22764,154 +22764,154 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private java.lang.Object nodeName_ = "";
+      private java.lang.Object blockchainType_ = "";
       /**
-       * <code>string node_name = 3 [json_name = "nodeName"];</code>
-       * @return The nodeName.
+       * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+       * @return The blockchainType.
        */
-      public java.lang.String getNodeName() {
-        java.lang.Object ref = nodeName_;
+      public java.lang.String getBlockchainType() {
+        java.lang.Object ref = blockchainType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          nodeName_ = s;
+          blockchainType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string node_name = 3 [json_name = "nodeName"];</code>
-       * @return The bytes for nodeName.
+       * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+       * @return The bytes for blockchainType.
        */
       public com.google.protobuf.ByteString
-          getNodeNameBytes() {
-        java.lang.Object ref = nodeName_;
+          getBlockchainTypeBytes() {
+        java.lang.Object ref = blockchainType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nodeName_ = b;
+          blockchainType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string node_name = 3 [json_name = "nodeName"];</code>
-       * @param value The nodeName to set.
+       * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+       * @param value The blockchainType to set.
        * @return This builder for chaining.
        */
-      public Builder setNodeName(
+      public Builder setBlockchainType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        nodeName_ = value;
+        blockchainType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string node_name = 3 [json_name = "nodeName"];</code>
+       * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearNodeName() {
+      public Builder clearBlockchainType() {
         
-        nodeName_ = getDefaultInstance().getNodeName();
+        blockchainType_ = getDefaultInstance().getBlockchainType();
         onChanged();
         return this;
       }
       /**
-       * <code>string node_name = 3 [json_name = "nodeName"];</code>
-       * @param value The bytes for nodeName to set.
+       * <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
+       * @param value The bytes for blockchainType to set.
        * @return This builder for chaining.
        */
-      public Builder setNodeNameBytes(
+      public Builder setBlockchainTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        nodeName_ = value;
+        blockchainType_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object budget_ = "";
+      private java.lang.Object projectId_ = "";
       /**
-       * <code>string budget = 4 [json_name = "budget"];</code>
-       * @return The budget.
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
+       * @return The projectId.
        */
-      public java.lang.String getBudget() {
-        java.lang.Object ref = budget_;
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          budget_ = s;
+          projectId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string budget = 4 [json_name = "budget"];</code>
-       * @return The bytes for budget.
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
        */
       public com.google.protobuf.ByteString
-          getBudgetBytes() {
-        java.lang.Object ref = budget_;
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          budget_ = b;
+          projectId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string budget = 4 [json_name = "budget"];</code>
-       * @param value The budget to set.
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setBudget(
+      public Builder setProjectId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        budget_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string budget = 4 [json_name = "budget"];</code>
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearBudget() {
+      public Builder clearProjectId() {
         
-        budget_ = getDefaultInstance().getBudget();
+        projectId_ = getDefaultInstance().getProjectId();
         onChanged();
         return this;
       }
       /**
-       * <code>string budget = 4 [json_name = "budget"];</code>
-       * @param value The bytes for budget to set.
+       * <code>string project_id = 4 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
        * @return This builder for chaining.
        */
-      public Builder setBudgetBytes(
+      public Builder setProjectIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        budget_ = value;
+        projectId_ = value;
         onChanged();
         return this;
       }
@@ -23478,17 +23478,18 @@ public final class PaymentOuterClass {
       "eProject\022\020\n\003ram\030\004 \001(\tR\003ram\022\020\n\003cpu\030\005 \001(\tR" +
       "\003cpu\022\032\n\010pipeline\030\006 \001(\tR\010pipeline\"L\n\022Proj" +
       "ectBillingList\0226\n\005items\030\001 \003(\0132 .payment." +
-      "v1alpha1.ProjectBillingR\005items\"\314\002\n\nBlock" +
+      "v1alpha1.ProjectBillingR\005items\"\337\002\n\nBlock" +
       "Chain\022#\n\rblockchain_id\030\001 \001(\tR\014blockchain" +
       "Id\022\'\n\017blockchain_name\030\002 \001(\tR\016blockchainN" +
-      "ame\022\033\n\tnode_name\030\003 \001(\tR\010nodeName\022\026\n\006budg" +
-      "et\030\004 \001(\tR\006budget\022B\n\014subscription\030\005 \001(\0132\036" +
-      ".payment.v1alpha1.SubscriptionR\014subscrip" +
-      "tion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nu" +
-      "pdated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001" +
-      "(\010R\006status\022!\n\014is_suspended\030\t \001(\010R\013isSusp" +
-      "endedB8Z6github.com/cuemby/ccp-payment-s" +
-      "ervice/payment/v1alpha1b\006proto3"
+      "ame\022\'\n\017blockchain_type\030\003 \001(\tR\016blockchain" +
+      "Type\022\035\n\nproject_id\030\004 \001(\tR\tprojectId\022B\n\014s" +
+      "ubscription\030\005 \001(\0132\036.payment.v1alpha1.Sub" +
+      "scriptionR\014subscription\022\035\n\ncreated_at\030\006 " +
+      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupda" +
+      "tedAt\022\026\n\006status\030\010 \001(\010R\006status\022!\n\014is_susp" +
+      "ended\030\t \001(\010R\013isSuspendedB8Z6github.com/c" +
+      "uemby/ccp-payment-service/payment/v1alph" +
+      "a1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23607,7 +23608,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_BlockChain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_BlockChain_descriptor,
-        new java.lang.String[] { "BlockchainId", "BlockchainName", "NodeName", "Budget", "Subscription", "CreatedAt", "UpdatedAt", "Status", "IsSuspended", });
+        new java.lang.String[] { "BlockchainId", "BlockchainName", "BlockchainType", "ProjectId", "Subscription", "CreatedAt", "UpdatedAt", "Status", "IsSuspended", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

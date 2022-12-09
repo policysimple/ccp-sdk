@@ -22,9 +22,9 @@ class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $customer_id = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
      */
-    protected $blochchain = null;
+    protected $blockchain = null;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $organization_id
      *     @type string $customer_id
-     *     @type \Payment\V1alpha1\BlockChain $blochchain
+     *     @type \Payment\V1alpha1\BlockChain $blockchain
      * }
      */
     public function __construct($data = NULL) {
@@ -87,33 +87,33 @@ class BlockChainSubscriptionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
      * @return \Payment\V1alpha1\BlockChain|null
      */
-    public function getBlochchain()
+    public function getBlockchain()
     {
-        return $this->blochchain;
+        return $this->blockchain;
     }
 
-    public function hasBlochchain()
+    public function hasBlockchain()
     {
-        return isset($this->blochchain);
+        return isset($this->blockchain);
     }
 
-    public function clearBlochchain()
+    public function clearBlockchain()
     {
-        unset($this->blochchain);
+        unset($this->blockchain);
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];</code>
      * @param \Payment\V1alpha1\BlockChain $var
      * @return $this
      */
-    public function setBlochchain($var)
+    public function setBlockchain($var)
     {
         GPBUtil::checkMessage($var, \Payment\V1alpha1\BlockChain::class);
-        $this->blochchain = $var;
+        $this->blockchain = $var;
 
         return $this;
     }

@@ -22,13 +22,13 @@ class BlockChain extends \Google\Protobuf\Internal\Message
      */
     protected $blockchain_name = '';
     /**
-     * Generated from protobuf field <code>string node_name = 3 [json_name = "nodeName"];</code>
+     * Generated from protobuf field <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
      */
-    protected $node_name = '';
+    protected $blockchain_type = '';
     /**
-     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * Generated from protobuf field <code>string project_id = 4 [json_name = "projectId"];</code>
      */
-    protected $budget = '';
+    protected $project_id = '';
     /**
      * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 5 [json_name = "subscription"];</code>
      */
@@ -58,8 +58,8 @@ class BlockChain extends \Google\Protobuf\Internal\Message
      *
      *     @type string $blockchain_id
      *     @type string $blockchain_name
-     *     @type string $node_name
-     *     @type string $budget
+     *     @type string $blockchain_type
+     *     @type string $project_id
      *     @type \Payment\V1alpha1\Subscription $subscription
      *     @type string $created_at
      *     @type string $updated_at
@@ -117,45 +117,45 @@ class BlockChain extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string node_name = 3 [json_name = "nodeName"];</code>
+     * Generated from protobuf field <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
      * @return string
      */
-    public function getNodeName()
+    public function getBlockchainType()
     {
-        return $this->node_name;
+        return $this->blockchain_type;
     }
 
     /**
-     * Generated from protobuf field <code>string node_name = 3 [json_name = "nodeName"];</code>
+     * Generated from protobuf field <code>string blockchain_type = 3 [json_name = "blockchainType"];</code>
      * @param string $var
      * @return $this
      */
-    public function setNodeName($var)
+    public function setBlockchainType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->node_name = $var;
+        $this->blockchain_type = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * Generated from protobuf field <code>string project_id = 4 [json_name = "projectId"];</code>
      * @return string
      */
-    public function getBudget()
+    public function getProjectId()
     {
-        return $this->budget;
+        return $this->project_id;
     }
 
     /**
-     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * Generated from protobuf field <code>string project_id = 4 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setBudget($var)
+    public function setProjectId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->budget = $var;
+        $this->project_id = $var;
 
         return $this;
     }

@@ -10351,7 +10351,7 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.toObject = function(include
   var f, obj = {
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     customerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    blochchain: (f = msg.getBlochchain()) && payment_v1alpha1_payment_pb.BlockChain.toObject(includeInstance, f)
+    blockchain: (f = msg.getBlockchain()) && payment_v1alpha1_payment_pb.BlockChain.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10399,7 +10399,7 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.deserializeBinaryFromReader
     case 3:
       var value = new payment_v1alpha1_payment_pb.BlockChain;
       reader.readMessage(value,payment_v1alpha1_payment_pb.BlockChain.deserializeBinaryFromReader);
-      msg.setBlochchain(value);
+      msg.setBlockchain(value);
       break;
     default:
       reader.skipField();
@@ -10444,7 +10444,7 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getBlochchain();
+  f = message.getBlockchain();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -10492,10 +10492,10 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.setCustomerId = f
 
 
 /**
- * optional BlockChain blochchain = 3;
+ * optional BlockChain blockchain = 3;
  * @return {?proto.payment.v1alpha1.BlockChain}
  */
-proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.getBlochchain = function() {
+proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.getBlockchain = function() {
   return /** @type{?proto.payment.v1alpha1.BlockChain} */ (
     jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.BlockChain, 3));
 };
@@ -10505,7 +10505,7 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.getBlochchain = f
  * @param {?proto.payment.v1alpha1.BlockChain|undefined} value
  * @return {!proto.payment.v1alpha1.BlockChainSubscriptionRequest} returns this
 */
-proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.setBlochchain = function(value) {
+proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.setBlockchain = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -10514,8 +10514,8 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.setBlochchain = f
  * Clears the message field making it undefined.
  * @return {!proto.payment.v1alpha1.BlockChainSubscriptionRequest} returns this
  */
-proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.clearBlochchain = function() {
-  return this.setBlochchain(undefined);
+proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.clearBlockchain = function() {
+  return this.setBlockchain(undefined);
 };
 
 
@@ -10523,7 +10523,7 @@ proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.clearBlochchain =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.hasBlochchain = function() {
+proto.payment.v1alpha1.BlockChainSubscriptionRequest.prototype.hasBlockchain = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

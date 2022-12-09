@@ -694,7 +694,7 @@ constexpr BlockChainSubscriptionRequest::BlockChainSubscriptionRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , customer_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , blochchain_(nullptr){}
+  , blockchain_(nullptr){}
 struct BlockChainSubscriptionRequestDefaultTypeInternal {
   constexpr BlockChainSubscriptionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1128,7 +1128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_5
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChainSubscriptionRequest, organization_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChainSubscriptionRequest, customer_id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChainSubscriptionRequest, blochchain_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChainSubscriptionRequest, blockchain_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::BlockChainSubscriptionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1411,8 +1411,8 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "\n\005error\030\002 \001(\tR\005error\"\247\001\n\035BlockChainSubsc"
   "riptionRequest\022\'\n\017organization_id\030\001 \001(\tR"
   "\016organizationId\022\037\n\013customer_id\030\002 \001(\tR\ncu"
-  "stomerId\022<\n\nblochchain\030\003 \001(\0132\034.payment.v"
-  "1alpha1.BlockChainR\nblochchain\"N\n\036BlockC"
+  "stomerId\022<\n\nblockchain\030\003 \001(\0132\034.payment.v"
+  "1alpha1.BlockChainR\nblockchain\"N\n\036BlockC"
   "hainSubscriptionResponse\022\026\n\006status\030\001 \001(\t"
   "R\006status\022\024\n\005error\030\002 \001(\tR\005error\",\n\024ListCu"
   "stomersRequest\022\024\n\005empty\030\001 \001(\tR\005empty\"g\n\025"
@@ -14614,18 +14614,18 @@ void ConsumeByProjectResponse::InternalSwap(ConsumeByProjectResponse* other) {
 
 class BlockChainSubscriptionRequest::_Internal {
  public:
-  static const ::payment::v1alpha1::BlockChain& blochchain(const BlockChainSubscriptionRequest* msg);
+  static const ::payment::v1alpha1::BlockChain& blockchain(const BlockChainSubscriptionRequest* msg);
 };
 
 const ::payment::v1alpha1::BlockChain&
-BlockChainSubscriptionRequest::_Internal::blochchain(const BlockChainSubscriptionRequest* msg) {
-  return *msg->blochchain_;
+BlockChainSubscriptionRequest::_Internal::blockchain(const BlockChainSubscriptionRequest* msg) {
+  return *msg->blockchain_;
 }
-void BlockChainSubscriptionRequest::clear_blochchain() {
-  if (GetArenaForAllocation() == nullptr && blochchain_ != nullptr) {
-    delete blochchain_;
+void BlockChainSubscriptionRequest::clear_blockchain() {
+  if (GetArenaForAllocation() == nullptr && blockchain_ != nullptr) {
+    delete blockchain_;
   }
-  blochchain_ = nullptr;
+  blockchain_ = nullptr;
 }
 BlockChainSubscriptionRequest::BlockChainSubscriptionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -14649,10 +14649,10 @@ BlockChainSubscriptionRequest::BlockChainSubscriptionRequest(const BlockChainSub
     customer_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_customer_id(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_blochchain()) {
-    blochchain_ = new ::payment::v1alpha1::BlockChain(*from.blochchain_);
+  if (from._internal_has_blockchain()) {
+    blockchain_ = new ::payment::v1alpha1::BlockChain(*from.blockchain_);
   } else {
-    blochchain_ = nullptr;
+    blockchain_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.BlockChainSubscriptionRequest)
 }
@@ -14660,7 +14660,7 @@ BlockChainSubscriptionRequest::BlockChainSubscriptionRequest(const BlockChainSub
 inline void BlockChainSubscriptionRequest::SharedCtor() {
 organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 customer_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-blochchain_ = nullptr;
+blockchain_ = nullptr;
 }
 
 BlockChainSubscriptionRequest::~BlockChainSubscriptionRequest() {
@@ -14674,7 +14674,7 @@ inline void BlockChainSubscriptionRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   customer_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete blochchain_;
+  if (this != internal_default_instance()) delete blockchain_;
 }
 
 void BlockChainSubscriptionRequest::ArenaDtor(void* object) {
@@ -14695,10 +14695,10 @@ void BlockChainSubscriptionRequest::Clear() {
 
   organization_id_.ClearToEmpty();
   customer_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && blochchain_ != nullptr) {
-    delete blochchain_;
+  if (GetArenaForAllocation() == nullptr && blockchain_ != nullptr) {
+    delete blockchain_;
   }
-  blochchain_ = nullptr;
+  blockchain_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -14726,10 +14726,10 @@ const char* BlockChainSubscriptionRequest::_InternalParse(const char* ptr, ::PRO
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];
+      // .payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_blochchain(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_blockchain(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14782,12 +14782,12 @@ failure:
         2, this->_internal_customer_id(), target);
   }
 
-  // .payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];
-  if (this->_internal_has_blochchain()) {
+  // .payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];
+  if (this->_internal_has_blockchain()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::blochchain(this), target, stream);
+        3, _Internal::blockchain(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -14820,11 +14820,11 @@ size_t BlockChainSubscriptionRequest::ByteSizeLong() const {
         this->_internal_customer_id());
   }
 
-  // .payment.v1alpha1.BlockChain blochchain = 3 [json_name = "blochchain"];
-  if (this->_internal_has_blochchain()) {
+  // .payment.v1alpha1.BlockChain blockchain = 3 [json_name = "blockchain"];
+  if (this->_internal_has_blockchain()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *blochchain_);
+        *blockchain_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -14861,8 +14861,8 @@ void BlockChainSubscriptionRequest::MergeFrom(const BlockChainSubscriptionReques
   if (!from._internal_customer_id().empty()) {
     _internal_set_customer_id(from._internal_customer_id());
   }
-  if (from._internal_has_blochchain()) {
-    _internal_mutable_blochchain()->::payment::v1alpha1::BlockChain::MergeFrom(from._internal_blochchain());
+  if (from._internal_has_blockchain()) {
+    _internal_mutable_blockchain()->::payment::v1alpha1::BlockChain::MergeFrom(from._internal_blockchain());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -14891,7 +14891,7 @@ void BlockChainSubscriptionRequest::InternalSwap(BlockChainSubscriptionRequest* 
       &customer_id_, GetArenaForAllocation(),
       &other->customer_id_, other->GetArenaForAllocation()
   );
-  swap(blochchain_, other->blochchain_);
+  swap(blockchain_, other->blockchain_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BlockChainSubscriptionRequest::GetMetadata() const {
