@@ -984,9 +984,24 @@ class GetBlockchainsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kQueryParamsFieldNumber = 3,
     kOffsetFieldNumber = 1,
     kLimitFieldNumber = 2,
   };
+  // string query_params = 3 [json_name = "queryParams"];
+  void clear_query_params();
+  const std::string& query_params() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_query_params(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_query_params();
+  PROTOBUF_MUST_USE_RESULT std::string* release_query_params();
+  void set_allocated_query_params(std::string* query_params);
+  private:
+  const std::string& _internal_query_params() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_query_params(const std::string& value);
+  std::string* _internal_mutable_query_params();
+  public:
+
   // int64 offset = 1 [json_name = "offset"];
   void clear_offset();
   ::PROTOBUF_NAMESPACE_ID::int64 offset() const;
@@ -1012,6 +1027,7 @@ class GetBlockchainsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr query_params_;
   ::PROTOBUF_NAMESPACE_ID::int64 offset_;
   ::PROTOBUF_NAMESPACE_ID::int64 limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4971,6 +4987,52 @@ inline void GetBlockchainsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::
 inline void GetBlockchainsRequest::set_limit(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_limit(value);
   // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsRequest.limit)
+}
+
+// string query_params = 3 [json_name = "queryParams"];
+inline void GetBlockchainsRequest::clear_query_params() {
+  query_params_.ClearToEmpty();
+}
+inline const std::string& GetBlockchainsRequest::query_params() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.GetBlockchainsRequest.query_params)
+  return _internal_query_params();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetBlockchainsRequest::set_query_params(ArgT0&& arg0, ArgT... args) {
+ 
+ query_params_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.GetBlockchainsRequest.query_params)
+}
+inline std::string* GetBlockchainsRequest::mutable_query_params() {
+  std::string* _s = _internal_mutable_query_params();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.GetBlockchainsRequest.query_params)
+  return _s;
+}
+inline const std::string& GetBlockchainsRequest::_internal_query_params() const {
+  return query_params_.Get();
+}
+inline void GetBlockchainsRequest::_internal_set_query_params(const std::string& value) {
+  
+  query_params_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetBlockchainsRequest::_internal_mutable_query_params() {
+  
+  return query_params_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetBlockchainsRequest::release_query_params() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.GetBlockchainsRequest.query_params)
+  return query_params_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetBlockchainsRequest::set_allocated_query_params(std::string* query_params) {
+  if (query_params != nullptr) {
+    
+  } else {
+    
+  }
+  query_params_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), query_params,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.GetBlockchainsRequest.query_params)
 }
 
 // -------------------------------------------------------------------

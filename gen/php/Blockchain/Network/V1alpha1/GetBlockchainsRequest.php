@@ -21,6 +21,12 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 limit = 2 [json_name = "limit"];</code>
      */
     protected $limit = 0;
+    /**
+     * Params to allow doing custom filters for blockchains.
+     *
+     * Generated from protobuf field <code>string query_params = 3 [json_name = "queryParams"];</code>
+     */
+    protected $query_params = '';
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $offset
      *     @type int|string $limit
+     *     @type string $query_params
+     *           Params to allow doing custom filters for blockchains.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +85,32 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Params to allow doing custom filters for blockchains.
+     *
+     * Generated from protobuf field <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return string
+     */
+    public function getQueryParams()
+    {
+        return $this->query_params;
+    }
+
+    /**
+     * Params to allow doing custom filters for blockchains.
+     *
+     * Generated from protobuf field <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQueryParams($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query_params = $var;
 
         return $this;
     }

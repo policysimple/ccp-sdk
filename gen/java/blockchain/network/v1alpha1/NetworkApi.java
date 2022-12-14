@@ -3571,6 +3571,26 @@ public final class NetworkApi {
      * @return The limit.
      */
     long getLimit();
+
+    /**
+     * <pre>
+     * Params to allow doing custom filters for blockchains.
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The queryParams.
+     */
+    java.lang.String getQueryParams();
+    /**
+     * <pre>
+     * Params to allow doing custom filters for blockchains.
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The bytes for queryParams.
+     */
+    com.google.protobuf.ByteString
+        getQueryParamsBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.GetBlockchainsRequest}
@@ -3585,6 +3605,7 @@ public final class NetworkApi {
       super(builder);
     }
     private GetBlockchainsRequest() {
+      queryParams_ = "";
     }
 
     @java.lang.Override
@@ -3625,6 +3646,12 @@ public final class NetworkApi {
             case 16: {
 
               limit_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              queryParams_ = s;
               break;
             }
             default: {
@@ -3681,6 +3708,52 @@ public final class NetworkApi {
       return limit_;
     }
 
+    public static final int QUERY_PARAMS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object queryParams_;
+    /**
+     * <pre>
+     * Params to allow doing custom filters for blockchains.
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The queryParams.
+     */
+    @java.lang.Override
+    public java.lang.String getQueryParams() {
+      java.lang.Object ref = queryParams_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryParams_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Params to allow doing custom filters for blockchains.
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The bytes for queryParams.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getQueryParamsBytes() {
+      java.lang.Object ref = queryParams_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        queryParams_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3701,6 +3774,9 @@ public final class NetworkApi {
       if (limit_ != 0L) {
         output.writeInt64(2, limit_);
       }
+      if (!getQueryParamsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, queryParams_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3717,6 +3793,9 @@ public final class NetworkApi {
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, limit_);
+      }
+      if (!getQueryParamsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, queryParams_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3737,6 +3816,8 @@ public final class NetworkApi {
           != other.getOffset()) return false;
       if (getLimit()
           != other.getLimit()) return false;
+      if (!getQueryParams()
+          .equals(other.getQueryParams())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3754,6 +3835,8 @@ public final class NetworkApi {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLimit());
+      hash = (37 * hash) + QUERY_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryParams().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3891,6 +3974,8 @@ public final class NetworkApi {
 
         limit_ = 0L;
 
+        queryParams_ = "";
+
         return this;
       }
 
@@ -3919,6 +4004,7 @@ public final class NetworkApi {
         blockchain.network.v1alpha1.NetworkApi.GetBlockchainsRequest result = new blockchain.network.v1alpha1.NetworkApi.GetBlockchainsRequest(this);
         result.offset_ = offset_;
         result.limit_ = limit_;
+        result.queryParams_ = queryParams_;
         onBuilt();
         return result;
       }
@@ -3972,6 +4058,10 @@ public final class NetworkApi {
         }
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
+        }
+        if (!other.getQueryParams().isEmpty()) {
+          queryParams_ = other.queryParams_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4060,6 +4150,102 @@ public final class NetworkApi {
       public Builder clearLimit() {
         
         limit_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object queryParams_ = "";
+      /**
+       * <pre>
+       * Params to allow doing custom filters for blockchains.
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @return The queryParams.
+       */
+      public java.lang.String getQueryParams() {
+        java.lang.Object ref = queryParams_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          queryParams_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Params to allow doing custom filters for blockchains.
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @return The bytes for queryParams.
+       */
+      public com.google.protobuf.ByteString
+          getQueryParamsBytes() {
+        java.lang.Object ref = queryParams_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          queryParams_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Params to allow doing custom filters for blockchains.
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @param value The queryParams to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryParams(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        queryParams_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Params to allow doing custom filters for blockchains.
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryParams() {
+        
+        queryParams_ = getDefaultInstance().getQueryParams();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Params to allow doing custom filters for blockchains.
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @param value The bytes for queryParams to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryParamsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        queryParams_ = value;
         onChanged();
         return this;
       }
@@ -20290,117 +20476,118 @@ public final class NetworkApi {
       "id\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_proje" +
       "ct_id\030\003 \001(\tR\014ccpProjectId\"V\n\024CreateChann" +
       "elRequest\022>\n\007channel\030\001 \001(\0132$.blockchain." +
-      "network.v1alpha1.ChannelR\007channel\"E\n\025Get" +
+      "network.v1alpha1.ChannelR\007channel\"h\n\025Get" +
       "BlockchainsRequest\022\026\n\006offset\030\001 \001(\003R\006offs" +
-      "et\022\024\n\005limit\030\002 \001(\003R\005limit\"f\n\035GetBlockchai" +
-      "nsByUserIdRequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
-      "Id\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(" +
-      "\003R\005limit\"x\n\037GetPeersByOrganizationIdRequ" +
-      "est\022\'\n\017organization_id\030\001 \001(\tR\016organizati" +
-      "onId\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 " +
-      "\001(\003R\005limit\"k\n\034GetOrdererByNetworkIdReque" +
-      "st\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId\022\026\n\006off" +
-      "set\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"" +
-      "*\n\030GetBlockchainByIdRequest\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\"z\n%GetOrganizationsByBlockchainIdReq" +
-      "uest\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainI" +
-      "d\022\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003" +
-      "R\005limit\"\300\001\n\031CreateOrganizationRequest\022M\n" +
-      "\014organization\030\001 \001(\0132).blockchain.network" +
-      ".v1alpha1.OrganizationR\014organization\022.\n\023" +
-      "ccp_organization_id\030\002 \001(\tR\021ccpOrganizati" +
-      "onId\022$\n\016ccp_project_id\030\003 \001(\tR\014ccpProject" +
-      "Id\"`\n\025SendInvitationRequest\022G\n\ninvitatio" +
-      "n\030\001 \001(\0132\'.blockchain.network.v1alpha1.In" +
-      "vitationR\ninvitation\"q\n\025CreateNetworkRes" +
-      "ponse\022>\n\007network\030\001 \001(\0132$.blockchain.netw" +
-      "ork.v1alpha1.NetworkR\007network\022\030\n\007message" +
-      "\030\002 \001(\tR\007message\"\210\001\n\035AddPeerToOrganizatio" +
-      "nResponse\022M\n\014organization\030\001 \001(\0132).blockc" +
-      "hain.network.v1alpha1.OrganizationR\014orga" +
-      "nization\022\030\n\007message\030\002 \001(\tR\007message\"y\n\035Ad" +
-      "dOrdererByNetworkIdResponse\022>\n\007orderer\030\001" +
-      " \001(\0132$.blockchain.network.v1alpha1.Order" +
-      "erR\007orderer\022\030\n\007message\030\002 \001(\tR\007message\"q\n" +
-      "\025CreateChannelResponse\022>\n\007channel\030\001 \001(\0132" +
-      "$.blockchain.network.v1alpha1.ChannelR\007c" +
-      "hannel\022\030\n\007message\030\002 \001(\tR\007message\"\256\001\n\026Get" +
-      "BlockchainsResponse\022@\n\010networks\030\001 \003(\0132$." +
-      "blockchain.network.v1alpha1.NetworkR\010net" +
-      "works\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030" +
-      "\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013pr" +
-      "eviousUrl\"\266\001\n\036GetBlockchainsByUserIdResp" +
-      "onse\022@\n\010networks\030\001 \003(\0132$.blockchain.netw" +
-      "ork.v1alpha1.NetworkR\010networks\022\024\n\005total\030" +
-      "\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022" +
-      "!\n\014previous_url\030\004 \001(\tR\013previousUrl\"\263\001\n\035G" +
-      "etOrdererByNetworkIdResponse\022>\n\007orderer\030" +
-      "\001 \003(\0132$.blockchain.network.v1alpha1.Orde" +
-      "rerR\007orderer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010ne" +
-      "xt_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 " +
-      "\001(\tR\013previousUrl\"\255\001\n GetPeersByOrganizat" +
-      "ionIdResponse\0225\n\004peer\030\001 \003(\0132!.blockchain" +
-      ".network.v1alpha1.PeerR\004peer\022\024\n\005total\030\002 " +
-      "\001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n" +
-      "\014previous_url\030\004 \001(\tR\013previousUrl\"[\n\031GetB" +
-      "lockchainByIdResponse\022>\n\007network\030\001 \001(\0132$" +
-      ".blockchain.network.v1alpha1.NetworkR\007ne" +
-      "twork\"\315\001\n&GetOrganizationsByBlockchainId" +
-      "Response\022O\n\rorganizations\030\001 \003(\0132).blockc" +
-      "hain.network.v1alpha1.OrganizationR\rorga" +
-      "nizations\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_" +
-      "url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\t" +
-      "R\013previousUrl\"\205\001\n\032CreateOrganizationResp" +
+      "et\022\024\n\005limit\030\002 \001(\003R\005limit\022!\n\014query_params" +
+      "\030\003 \001(\tR\013queryParams\"f\n\035GetBlockchainsByU" +
+      "serIdRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n" +
+      "\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005li" +
+      "mit\"x\n\037GetPeersByOrganizationIdRequest\022\'" +
+      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
+      "\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005" +
+      "limit\"k\n\034GetOrdererByNetworkIdRequest\022\035\n" +
+      "\nnetwork_id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002" +
+      " \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030Ge" +
+      "tBlockchainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"z" +
+      "\n%GetOrganizationsByBlockchainIdRequest\022" +
+      "#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022\026\n\006" +
+      "offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005lim" +
+      "it\"\300\001\n\031CreateOrganizationRequest\022M\n\014orga" +
+      "nization\030\001 \001(\0132).blockchain.network.v1al" +
+      "pha1.OrganizationR\014organization\022.\n\023ccp_o" +
+      "rganization_id\030\002 \001(\tR\021ccpOrganizationId\022" +
+      "$\n\016ccp_project_id\030\003 \001(\tR\014ccpProjectId\"`\n" +
+      "\025SendInvitationRequest\022G\n\ninvitation\030\001 \001" +
+      "(\0132\'.blockchain.network.v1alpha1.Invitat" +
+      "ionR\ninvitation\"q\n\025CreateNetworkResponse" +
+      "\022>\n\007network\030\001 \001(\0132$.blockchain.network.v" +
+      "1alpha1.NetworkR\007network\022\030\n\007message\030\002 \001(" +
+      "\tR\007message\"\210\001\n\035AddPeerToOrganizationResp" +
       "onse\022M\n\014organization\030\001 \001(\0132).blockchain." +
       "network.v1alpha1.OrganizationR\014organizat" +
-      "ion\022\030\n\007message\030\002 \001(\tR\007message\"{\n\026SendInv" +
-      "itationResponse\022G\n\ninvitation\030\001 \001(\0132\'.bl" +
-      "ockchain.network.v1alpha1.InvitationR\nin" +
-      "vitation\022\030\n\007message\030\002 \001(\tR\007message2\226\r\n\024B" +
-      "lockchainAPIService\022v\n\rCreateNetwork\0221.b" +
-      "lockchain.network.v1alpha1.CreateNetwork" +
-      "Request\0322.blockchain.network.v1alpha1.Cr" +
-      "eateNetworkResponse\022\216\001\n\025AddPeerToOrganiz" +
-      "ation\0229.blockchain.network.v1alpha1.AddP" +
-      "eerToOrganizationRequest\032:.blockchain.ne" +
-      "twork.v1alpha1.AddPeerToOrganizationResp" +
-      "onse\022y\n\016GetBlockchains\0222.blockchain.netw" +
-      "ork.v1alpha1.GetBlockchainsRequest\0323.blo" +
-      "ckchain.network.v1alpha1.GetBlockchainsR" +
-      "esponse\022\221\001\n\026GetBlockchainsByUserId\022:.blo" +
-      "ckchain.network.v1alpha1.GetBlockchainsB" +
-      "yUserIdRequest\032;.blockchain.network.v1al" +
-      "pha1.GetBlockchainsByUserIdResponse\022\202\001\n\021" +
-      "GetBlockchainById\0225.blockchain.network.v" +
-      "1alpha1.GetBlockchainByIdRequest\0326.block" +
-      "chain.network.v1alpha1.GetBlockchainById" +
-      "Response\022\251\001\n\036GetOrganizationsByBlockchai" +
-      "nId\022B.blockchain.network.v1alpha1.GetOrg" +
-      "anizationsByBlockchainIdRequest\032C.blockc" +
-      "hain.network.v1alpha1.GetOrganizationsBy" +
-      "BlockchainIdResponse\022y\n\016SendInvitation\0222" +
-      ".blockchain.network.v1alpha1.SendInvitat" +
-      "ionRequest\0323.blockchain.network.v1alpha1" +
-      ".SendInvitationResponse\022\205\001\n\022CreateOrgani" +
-      "zation\0226.blockchain.network.v1alpha1.Cre" +
-      "ateOrganizationRequest\0327.blockchain.netw" +
-      "ork.v1alpha1.CreateOrganizationResponse\022" +
-      "v\n\rCreateChannel\0221.blockchain.network.v1" +
-      "alpha1.CreateChannelRequest\0322.blockchain" +
-      ".network.v1alpha1.CreateChannelResponse\022" +
-      "\227\001\n\030GetPeersByOrganizationId\022<.blockchai" +
-      "n.network.v1alpha1.GetPeersByOrganizatio" +
-      "nIdRequest\032=.blockchain.network.v1alpha1" +
-      ".GetPeersByOrganizationIdResponse\022\216\001\n\025Ge" +
-      "tOrdererByNetworkId\0229.blockchain.network" +
-      ".v1alpha1.GetOrdererByNetworkIdRequest\032:" +
-      ".blockchain.network.v1alpha1.GetOrdererB" +
-      "yNetworkIdResponse\022\216\001\n\025AddOrdererByNetwo" +
-      "rkId\0229.blockchain.network.v1alpha1.AddOr" +
-      "dererByNetworkIdRequest\032:.blockchain.net" +
-      "work.v1alpha1.AddOrdererByNetworkIdRespo" +
-      "nseB>Z<github.com/cuemby/ccp-sdk/gen/go/" +
-      "blockchain/network/v1alpha1b\006proto3"
+      "ion\022\030\n\007message\030\002 \001(\tR\007message\"y\n\035AddOrde" +
+      "rerByNetworkIdResponse\022>\n\007orderer\030\001 \001(\0132" +
+      "$.blockchain.network.v1alpha1.OrdererR\007o" +
+      "rderer\022\030\n\007message\030\002 \001(\tR\007message\"q\n\025Crea" +
+      "teChannelResponse\022>\n\007channel\030\001 \001(\0132$.blo" +
+      "ckchain.network.v1alpha1.ChannelR\007channe" +
+      "l\022\030\n\007message\030\002 \001(\tR\007message\"\256\001\n\026GetBlock" +
+      "chainsResponse\022@\n\010networks\030\001 \003(\0132$.block" +
+      "chain.network.v1alpha1.NetworkR\010networks" +
+      "\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\t" +
+      "R\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013previou" +
+      "sUrl\"\266\001\n\036GetBlockchainsByUserIdResponse\022" +
+      "@\n\010networks\030\001 \003(\0132$.blockchain.network.v" +
+      "1alpha1.NetworkR\010networks\022\024\n\005total\030\002 \001(\003" +
+      "R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014pr" +
+      "evious_url\030\004 \001(\tR\013previousUrl\"\263\001\n\035GetOrd" +
+      "ererByNetworkIdResponse\022>\n\007orderer\030\001 \003(\013" +
+      "2$.blockchain.network.v1alpha1.OrdererR\007" +
+      "orderer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_ur" +
+      "l\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013" +
+      "previousUrl\"\255\001\n GetPeersByOrganizationId" +
+      "Response\0225\n\004peer\030\001 \003(\0132!.blockchain.netw" +
+      "ork.v1alpha1.PeerR\004peer\022\024\n\005total\030\002 \001(\003R\005" +
+      "total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014prev" +
+      "ious_url\030\004 \001(\tR\013previousUrl\"[\n\031GetBlockc" +
+      "hainByIdResponse\022>\n\007network\030\001 \001(\0132$.bloc" +
+      "kchain.network.v1alpha1.NetworkR\007network" +
+      "\"\315\001\n&GetOrganizationsByBlockchainIdRespo" +
+      "nse\022O\n\rorganizations\030\001 \003(\0132).blockchain." +
+      "network.v1alpha1.OrganizationR\rorganizat" +
+      "ions\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003" +
+      " \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013pre" +
+      "viousUrl\"\205\001\n\032CreateOrganizationResponse\022" +
+      "M\n\014organization\030\001 \001(\0132).blockchain.netwo" +
+      "rk.v1alpha1.OrganizationR\014organization\022\030" +
+      "\n\007message\030\002 \001(\tR\007message\"{\n\026SendInvitati" +
+      "onResponse\022G\n\ninvitation\030\001 \001(\0132\'.blockch" +
+      "ain.network.v1alpha1.InvitationR\ninvitat" +
+      "ion\022\030\n\007message\030\002 \001(\tR\007message2\226\r\n\024Blockc" +
+      "hainAPIService\022v\n\rCreateNetwork\0221.blockc" +
+      "hain.network.v1alpha1.CreateNetworkReque" +
+      "st\0322.blockchain.network.v1alpha1.CreateN" +
+      "etworkResponse\022\216\001\n\025AddPeerToOrganization" +
+      "\0229.blockchain.network.v1alpha1.AddPeerTo" +
+      "OrganizationRequest\032:.blockchain.network" +
+      ".v1alpha1.AddPeerToOrganizationResponse\022" +
+      "y\n\016GetBlockchains\0222.blockchain.network.v" +
+      "1alpha1.GetBlockchainsRequest\0323.blockcha" +
+      "in.network.v1alpha1.GetBlockchainsRespon" +
+      "se\022\221\001\n\026GetBlockchainsByUserId\022:.blockcha" +
+      "in.network.v1alpha1.GetBlockchainsByUser" +
+      "IdRequest\032;.blockchain.network.v1alpha1." +
+      "GetBlockchainsByUserIdResponse\022\202\001\n\021GetBl" +
+      "ockchainById\0225.blockchain.network.v1alph" +
+      "a1.GetBlockchainByIdRequest\0326.blockchain" +
+      ".network.v1alpha1.GetBlockchainByIdRespo" +
+      "nse\022\251\001\n\036GetOrganizationsByBlockchainId\022B" +
+      ".blockchain.network.v1alpha1.GetOrganiza" +
+      "tionsByBlockchainIdRequest\032C.blockchain." +
+      "network.v1alpha1.GetOrganizationsByBlock" +
+      "chainIdResponse\022y\n\016SendInvitation\0222.bloc" +
+      "kchain.network.v1alpha1.SendInvitationRe" +
+      "quest\0323.blockchain.network.v1alpha1.Send" +
+      "InvitationResponse\022\205\001\n\022CreateOrganizatio" +
+      "n\0226.blockchain.network.v1alpha1.CreateOr" +
+      "ganizationRequest\0327.blockchain.network.v" +
+      "1alpha1.CreateOrganizationResponse\022v\n\rCr" +
+      "eateChannel\0221.blockchain.network.v1alpha" +
+      "1.CreateChannelRequest\0322.blockchain.netw" +
+      "ork.v1alpha1.CreateChannelResponse\022\227\001\n\030G" +
+      "etPeersByOrganizationId\022<.blockchain.net" +
+      "work.v1alpha1.GetPeersByOrganizationIdRe" +
+      "quest\032=.blockchain.network.v1alpha1.GetP" +
+      "eersByOrganizationIdResponse\022\216\001\n\025GetOrde" +
+      "rerByNetworkId\0229.blockchain.network.v1al" +
+      "pha1.GetOrdererByNetworkIdRequest\032:.bloc" +
+      "kchain.network.v1alpha1.GetOrdererByNetw" +
+      "orkIdResponse\022\216\001\n\025AddOrdererByNetworkId\022" +
+      "9.blockchain.network.v1alpha1.AddOrderer" +
+      "ByNetworkIdRequest\032:.blockchain.network." +
+      "v1alpha1.AddOrdererByNetworkIdResponseB>" +
+      "Z<github.com/cuemby/ccp-sdk/gen/go/block" +
+      "chain/network/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20437,7 +20624,7 @@ public final class NetworkApi {
     internal_static_blockchain_network_v1alpha1_GetBlockchainsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_GetBlockchainsRequest_descriptor,
-        new java.lang.String[] { "Offset", "Limit", });
+        new java.lang.String[] { "Offset", "Limit", "QueryParams", });
     internal_static_blockchain_network_v1alpha1_GetBlockchainsByUserIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_blockchain_network_v1alpha1_GetBlockchainsByUserIdRequest_fieldAccessorTable = new
