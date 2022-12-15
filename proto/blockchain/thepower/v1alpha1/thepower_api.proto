@@ -17,6 +17,8 @@ service BlockchainThePowerService {
 // Request messages
 message CreateTpChainRequest {
     blockchain.thepower.v1alpha1.TpChain tp_chain = 1; 
+    string ccp_organization_id = 2;
+    string ccp_project_id = 3;
 }
 
 message GetTpChainsByUserIdRequest {

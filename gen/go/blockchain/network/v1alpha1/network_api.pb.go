@@ -273,7 +273,7 @@ type GetBlockchainsRequest struct {
 
 	Offset      int64  `protobuf:"varint,1,opt,name=offset,proto3" json:"offset,omitempty"`
 	Limit       int64  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
-	QueryParams string `protobuf:"bytes,3,opt,name=query_params,json=queryParams,proto3" json:"query_params,omitempty"` // Params to allow doing custom filters for blockchains.
+	QueryParams string `protobuf:"bytes,3,opt,name=query_params,json=queryParams,proto3" json:"query_params,omitempty"` // Standard query params to allow doing custom filters for blockchains.
 }
 
 func (x *GetBlockchainsRequest) Reset() {

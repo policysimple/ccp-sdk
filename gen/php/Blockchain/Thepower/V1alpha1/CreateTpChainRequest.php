@@ -19,6 +19,14 @@ class CreateTpChainRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
      */
     protected $tp_chain = null;
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     */
+    protected $ccp_organization_id = '';
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     */
+    protected $ccp_project_id = '';
 
     /**
      * Constructor.
@@ -27,6 +35,8 @@ class CreateTpChainRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Blockchain\Thepower\V1alpha1\TpChain $tp_chain
+     *     @type string $ccp_organization_id
+     *     @type string $ccp_project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -62,6 +72,50 @@ class CreateTpChainRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Blockchain\Thepower\V1alpha1\TpChain::class);
         $this->tp_chain = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return string
+     */
+    public function getCcpOrganizationId()
+    {
+        return $this->ccp_organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return string
+     */
+    public function getCcpProjectId()
+    {
+        return $this->ccp_project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_project_id = $var;
 
         return $this;
     }

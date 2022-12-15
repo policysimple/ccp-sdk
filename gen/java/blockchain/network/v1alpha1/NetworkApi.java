@@ -3574,7 +3574,7 @@ public final class NetworkApi {
 
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -3583,7 +3583,7 @@ public final class NetworkApi {
     java.lang.String getQueryParams();
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -3712,7 +3712,7 @@ public final class NetworkApi {
     private volatile java.lang.Object queryParams_;
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -3733,7 +3733,7 @@ public final class NetworkApi {
     }
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4157,7 +4157,7 @@ public final class NetworkApi {
       private java.lang.Object queryParams_ = "";
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4177,7 +4177,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4198,7 +4198,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4217,7 +4217,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4231,7 +4231,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>

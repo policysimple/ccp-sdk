@@ -271,7 +271,9 @@ proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.toObject = fun
  */
 proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tpChain: (f = msg.getTpChain()) && blockchain_thepower_v1alpha1_thepower_pb.TpChain.toObject(includeInstance, f)
+    tpChain: (f = msg.getTpChain()) && blockchain_thepower_v1alpha1_thepower_pb.TpChain.toObject(includeInstance, f),
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    ccpProjectId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -313,6 +315,14 @@ proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.deserializeBinaryFromRea
       reader.readMessage(value,blockchain_thepower_v1alpha1_thepower_pb.TpChain.deserializeBinaryFromReader);
       msg.setTpChain(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpProjectId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -348,6 +358,20 @@ proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.serializeBinaryToWriter 
       1,
       f,
       blockchain_thepower_v1alpha1_thepower_pb.TpChain.serializeBinaryToWriter
+    );
+  }
+  f = message.getCcpOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCcpProjectId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -387,6 +411,42 @@ proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.clearTpChain =
  */
 proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.hasTpChain = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string ccp_organization_id = 2;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.getCcpOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.CreateTpChainRequest} returns this
+ */
+proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.setCcpOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string ccp_project_id = 3;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.getCcpProjectId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.CreateTpChainRequest} returns this
+ */
+proto.blockchain.thepower.v1alpha1.CreateTpChainRequest.prototype.setCcpProjectId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
