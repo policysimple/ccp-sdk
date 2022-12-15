@@ -18,7 +18,7 @@ class NetworkApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-È(
+ë(
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"û
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetworkM
@@ -34,10 +34,11 @@ class NetworkApi
 ccp_organization_id (	RccpOrganizationId$
 ccp_project_id (	RccpProjectId"V
 CreateChannelRequest>
-channel (2$.blockchain.network.v1alpha1.ChannelRchannel"E
+channel (2$.blockchain.network.v1alpha1.ChannelRchannel"h
 GetBlockchainsRequest
 offset (Roffset
-limit (Rlimit"f
+limit (Rlimit!
+query_params (	RqueryParams"f
 GetBlockchainsByUserIdRequest
 user_id (	RuserId
 offset (Roffset

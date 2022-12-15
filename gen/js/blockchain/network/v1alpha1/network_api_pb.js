@@ -1394,7 +1394,8 @@ proto.blockchain.network.v1alpha1.GetBlockchainsRequest.prototype.toObject = fun
 proto.blockchain.network.v1alpha1.GetBlockchainsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     offset: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    limit: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    limit: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    queryParams: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1439,6 +1440,10 @@ proto.blockchain.network.v1alpha1.GetBlockchainsRequest.deserializeBinaryFromRea
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLimit(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setQueryParams(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1482,6 +1487,13 @@ proto.blockchain.network.v1alpha1.GetBlockchainsRequest.serializeBinaryToWriter 
       f
     );
   }
+  f = message.getQueryParams();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1518,6 +1530,24 @@ proto.blockchain.network.v1alpha1.GetBlockchainsRequest.prototype.getLimit = fun
  */
 proto.blockchain.network.v1alpha1.GetBlockchainsRequest.prototype.setLimit = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string query_params = 3;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.GetBlockchainsRequest.prototype.getQueryParams = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.GetBlockchainsRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.GetBlockchainsRequest.prototype.setQueryParams = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
