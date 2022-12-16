@@ -803,7 +803,8 @@ proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.prototype.toObject = funct
 proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     offset: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    limit: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    limit: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    queryParams: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -848,6 +849,10 @@ proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.deserializeBinaryFromReade
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLimit(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setQueryParams(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -891,6 +896,13 @@ proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getQueryParams();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -927,6 +939,24 @@ proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.prototype.getLimit = funct
  */
 proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.prototype.setLimit = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string query_params = 3;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.prototype.getQueryParams = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.GetTpChainsRequest} returns this
+ */
+proto.blockchain.thepower.v1alpha1.GetTpChainsRequest.prototype.setQueryParams = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -149,6 +149,18 @@ public final class NetworkOuterClass {
      */
     blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
         int index);
+
+    /**
+     * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    java.lang.String getCcpOrganizationId();
+    /**
+     * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Network}
@@ -173,6 +185,7 @@ public final class NetworkOuterClass {
       createdAt_ = "";
       updatedAt_ = "";
       organizations_ = java.util.Collections.emptyList();
+      ccpOrganizationId_ = "";
     }
 
     @java.lang.Override
@@ -267,6 +280,12 @@ public final class NetworkOuterClass {
               }
               organizations_.add(
                   input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry));
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpOrganizationId_ = s;
               break;
             }
             default: {
@@ -686,6 +705,44 @@ public final class NetworkOuterClass {
       return organizations_.get(index);
     }
 
+    public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 11;
+    private volatile java.lang.Object ccpOrganizationId_;
+    /**
+     * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpOrganizationId() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpOrganizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpOrganizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -730,6 +787,9 @@ public final class NetworkOuterClass {
       for (int i = 0; i < organizations_.size(); i++) {
         output.writeMessage(10, organizations_.get(i));
       }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, ccpOrganizationId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -770,6 +830,9 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, organizations_.get(i));
       }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, ccpOrganizationId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -805,6 +868,8 @@ public final class NetworkOuterClass {
           .equals(other.getUpdatedAt())) return false;
       if (!getOrganizationsList()
           .equals(other.getOrganizationsList())) return false;
+      if (!getCcpOrganizationId()
+          .equals(other.getCcpOrganizationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -838,6 +903,8 @@ public final class NetworkOuterClass {
         hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getOrganizationsList().hashCode();
       }
+      hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpOrganizationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -996,6 +1063,8 @@ public final class NetworkOuterClass {
         } else {
           organizationsBuilder_.clear();
         }
+        ccpOrganizationId_ = "";
+
         return this;
       }
 
@@ -1041,6 +1110,7 @@ public final class NetworkOuterClass {
         } else {
           result.organizations_ = organizationsBuilder_.build();
         }
+        result.ccpOrganizationId_ = ccpOrganizationId_;
         onBuilt();
         return result;
       }
@@ -1150,6 +1220,10 @@ public final class NetworkOuterClass {
               organizationsBuilder_.addAllMessages(other.organizations_);
             }
           }
+        }
+        if (!other.getCcpOrganizationId().isEmpty()) {
+          ccpOrganizationId_ = other.ccpOrganizationId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2103,6 +2177,82 @@ public final class NetworkOuterClass {
           organizations_ = null;
         }
         return organizationsBuilder_;
+      }
+
+      private java.lang.Object ccpOrganizationId_ = "";
+      /**
+       * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+       * @return The ccpOrganizationId.
+       */
+      public java.lang.String getCcpOrganizationId() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpOrganizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+       * @return The bytes for ccpOrganizationId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpOrganizationIdBytes() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpOrganizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+       * @param value The ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpOrganizationId() {
+        
+        ccpOrganizationId_ = getDefaultInstance().getCcpOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+       * @param value The bytes for ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10768,7 +10918,7 @@ public final class NetworkOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)blockchain/network/v1alpha1/network.pr" +
-      "oto\022\033blockchain.network.v1alpha1\"\323\002\n\007Net" +
+      "oto\022\033blockchain.network.v1alpha1\"\203\003\n\007Net" +
       "work\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014network_name\030\002 \001" +
       "(\tR\013networkName\022\034\n\tframework\030\003 \001(\tR\tfram" +
       "ework\022\022\n\004type\030\004 \001(\tR\004type\022\027\n\007user_id\030\005 \001" +
@@ -10777,39 +10927,40 @@ public final class NetworkOuterClass {
       "ed_at\030\010 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\t \001" +
       "(\tR\tupdatedAt\022O\n\rorganizations\030\n \003(\0132).b" +
       "lockchain.network.v1alpha1.OrganizationR" +
-      "\rorganizations\"\242\003\n\014Organization\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006doma" +
-      "in\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004 \001(\t" +
-      "R\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR\tadm" +
-      "inUser\022#\n\rblockchain_id\030\006 \001(\tR\014blockchai" +
-      "nId\0227\n\005peers\030\007 \003(\0132!.blockchain.network." +
-      "v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\tR\006st" +
-      "atus\022#\n\rerror_details\030\t \001(\tR\014errorDetail" +
-      "s\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_ca\030\014 \001(\t" +
-      "R\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007nameMsp\"\224\001\n\004" +
-      "Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name" +
-      "\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006st" +
-      "atus\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n\nu" +
-      "pdated_at\030\006 \001(\tR\tupdatedAt\"\274\001\n\007Orderer\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022#\n\rbl" +
-      "ockchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004type\030" +
-      "\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006status\022\035\n\nc" +
-      "reated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at" +
-      "\030\007 \001(\tR\tupdatedAt\"\352\001\n\007Channel\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\022\'\n\017organization_id\030\002 \001(\tR\016organiza" +
-      "tionId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchai" +
-      "nId\022\022\n\004name\030\004 \001(\tR\004name\022\027\n\007org_ids\030\005 \003(\t" +
-      "R\006orgIds\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncrea" +
-      "ted_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 " +
-      "\001(\tR\tupdatedAt\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022" +
-      "\024\n\005email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006s" +
-      "tatus\022#\n\rblockchain_id\030\005 \001(\tR\014blockchain" +
-      "Id\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupd" +
-      "ated_at\030\007 \001(\tR\tupdatedAtB>Z<github.com/c" +
-      "uemby/ccp-sdk/gen/go/blockchain/network/" +
-      "v1alpha1b\006proto3"
+      "\rorganizations\022.\n\023ccp_organization_id\030\013 " +
+      "\001(\tR\021ccpOrganizationId\"\242\003\n\014Organization\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId" +
+      "\022\026\n\006domain\030\003 \001(\tR\006domain\022%\n\016admin_passwo" +
+      "rd\030\004 \001(\tR\radminPassword\022\035\n\nadmin_user\030\005 " +
+      "\001(\tR\tadminUser\022#\n\rblockchain_id\030\006 \001(\tR\014b" +
+      "lockchainId\0227\n\005peers\030\007 \003(\0132!.blockchain." +
+      "network.v1alpha1.PeerR\005peers\022\026\n\006status\030\010" +
+      " \001(\tR\006status\022#\n\rerror_details\030\t \001(\tR\014err" +
+      "orDetails\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt" +
+      "\022\035\n\nupdated_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_" +
+      "ca\030\014 \001(\tR\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007name" +
+      "Msp\"\224\001\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001" +
+      "(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004" +
+      " \001(\tR\006status\022\035\n\ncreated_at\030\005 \001(\tR\tcreate" +
+      "dAt\022\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\"\274\001\n\007O" +
+      "rderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
+      "me\022#\n\rblockchain_id\030\003 \001(\tR\014blockchainId\022" +
+      "\022\n\004type\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006sta" +
+      "tus\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup" +
+      "dated_at\030\007 \001(\tR\tupdatedAt\"\352\001\n\007Channel\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022\'\n\017organization_id\030\002 \001(\tR\016" +
+      "organizationId\022#\n\rblockchain_id\030\003 \001(\tR\014b" +
+      "lockchainId\022\022\n\004name\030\004 \001(\tR\004name\022\027\n\007org_i" +
+      "ds\030\005 \003(\tR\006orgIds\022\026\n\006status\030\006 \001(\tR\006status" +
+      "\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdat" +
+      "ed_at\030\010 \001(\tR\tupdatedAt\"\317\001\n\nInvitation\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022 \n\014from_user_id\030\002 \001(\tR\nfro" +
+      "mUserId\022\024\n\005email\030\003 \001(\tR\005email\022\026\n\006status\030" +
+      "\004 \001(\tR\006status\022#\n\rblockchain_id\030\005 \001(\tR\014bl" +
+      "ockchainId\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedA" +
+      "t\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAtB>Z<gith" +
+      "ub.com/cuemby/ccp-sdk/gen/go/blockchain/" +
+      "network/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10820,7 +10971,7 @@ public final class NetworkOuterClass {
     internal_static_blockchain_network_v1alpha1_Network_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Network_descriptor,
-        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Organizations", });
+        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Organizations", "CcpOrganizationId", });
     internal_static_blockchain_network_v1alpha1_Organization_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_network_v1alpha1_Organization_fieldAccessorTable = new

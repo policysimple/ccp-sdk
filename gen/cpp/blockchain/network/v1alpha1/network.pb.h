@@ -216,6 +216,7 @@ class Network final :
     kErrorDetailsFieldNumber = 7,
     kCreatedAtFieldNumber = 8,
     kUpdatedAtFieldNumber = 9,
+    kCcpOrganizationIdFieldNumber = 11,
   };
   // repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];
   int organizations_size() const;
@@ -361,6 +362,20 @@ class Network final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];
+  void clear_ccp_organization_id();
+  const std::string& ccp_organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ccp_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ccp_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_ccp_organization_id();
+  void set_allocated_ccp_organization_id(std::string* ccp_organization_id);
+  private:
+  const std::string& _internal_ccp_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ccp_organization_id(const std::string& value);
+  std::string* _internal_mutable_ccp_organization_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Network)
  private:
   class _Internal;
@@ -378,6 +393,7 @@ class Network final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_details_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -2154,6 +2170,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v
 Network::organizations() const {
   // @@protoc_insertion_point(field_list:blockchain.network.v1alpha1.Network.organizations)
   return organizations_;
+}
+
+// string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];
+inline void Network::clear_ccp_organization_id() {
+  ccp_organization_id_.ClearToEmpty();
+}
+inline const std::string& Network::ccp_organization_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Network.ccp_organization_id)
+  return _internal_ccp_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Network::set_ccp_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Network.ccp_organization_id)
+}
+inline std::string* Network::mutable_ccp_organization_id() {
+  std::string* _s = _internal_mutable_ccp_organization_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Network.ccp_organization_id)
+  return _s;
+}
+inline const std::string& Network::_internal_ccp_organization_id() const {
+  return ccp_organization_id_.Get();
+}
+inline void Network::_internal_set_ccp_organization_id(const std::string& value) {
+  
+  ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Network::_internal_mutable_ccp_organization_id() {
+  
+  return ccp_organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Network::release_ccp_organization_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Network.ccp_organization_id)
+  return ccp_organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Network::set_allocated_ccp_organization_id(std::string* ccp_organization_id) {
+  if (ccp_organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  ccp_organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Network.ccp_organization_id)
 }
 
 // -------------------------------------------------------------------

@@ -18,7 +18,7 @@ class ThepowerApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-œ
+¿
 /blockchain/thepower/v1alpha1/thepower_api.protoblockchain.thepower.v1alpha1google/protobuf/empty.proto"®
 CreateTpChainRequest@
 tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain.
@@ -29,10 +29,11 @@ class ThepowerApi
 offset (Roffset
 limit (Rlimit"\'
 GetTpChainByIdRequest
-id (	Rid"B
+id (	Rid"e
 GetTpChainsRequest
 offset (Roffset
-limit (Rlimit"X
+limit (Rlimit!
+query_params (	RqueryParams"X
 UpdateTpChainRequest@
 tp_chain (2%.blockchain.thepower.v1alpha1.TpChainRtpChain"Y
 CreateTpChainResponse@

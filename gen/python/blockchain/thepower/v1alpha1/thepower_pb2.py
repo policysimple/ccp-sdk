@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+blockchain/thepower/v1alpha1/thepower.proto\x12\x1c\x62lockchain.thepower.v1alpha1\"\xe6\x02\n\x07TpChain\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0c\x63hain_number\x18\x02 \x01(\x05R\x0b\x63hainNumber\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x45\n\x0b\x63hain_nodes\x18\x04 \x03(\x0b\x32$.blockchain.thepower.v1alpha1.TpNodeR\nchainNodes\x12\x16\n\x06status\x18\x05 \x01(\tR\x06status\x12#\n\rerror_details\x18\x06 \x01(\tR\x0c\x65rrorDetails\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12M\n\x08settings\x18\t \x01(\x0b\x32\x31.blockchain.thepower.v1alpha1.TeaCeremonySettingsR\x08settings\"\xf5\x01\n\x06TpNode\x12\x1a\n\x08nodename\x18\x01 \x01(\tR\x08nodename\x12\x1b\n\ttpic_port\x18\x02 \x01(\x03R\x08tpicPort\x12\x19\n\x08\x61pi_port\x18\x03 \x01(\x03R\x07\x61piPort\x12\x1b\n\tapis_port\x18\x04 \x01(\x03R\x08\x61pisPort\x12\x17\n\x07\x63\x63_port\x18\x05 \x01(\x03R\x06\x63\x63Port\x12\x61\n\x13\x63rosschain_external\x18\x06 \x03(\x0b\x32\x30.blockchain.thepower.v1alpha1.CrosschainExternalR\x12\x63rosschainExternal\"<\n\x12\x43rosschainExternal\x12\x12\n\x04host\x18\x01 \x01(\tR\x04host\x12\x12\n\x04port\x18\x02 \x01(\x03R\x04port\"\xd0\x02\n\x13TeaCeremonySettings\x12\'\n\x0f\x63hain_blocktime\x18\x01 \x01(\x03R\x0e\x63hainBlocktime\x12!\n\x0c\x63hain_minsig\x18\x02 \x01(\x03R\x0b\x63hainMinsig\x12*\n\x11\x63hain_allow_empty\x18\x03 \x01(\x03R\x0f\x63hainAllowEmpty\x12(\n\x10\x63hain_patch_sigs\x18\x04 \x01(\x03R\x0e\x63hainPatchSigs\x12)\n\x10\x61llocblock_group\x18\x05 \x01(\x03R\x0f\x61llocblockGroup\x12\'\n\x0f\x61llocblock_last\x18\x06 \x01(\x03R\x0e\x61llocblockLast\x12\x18\n\x07\x66reegas\x18\x07 \x01(\x03R\x07\x66reegas\x12\x15\n\x06gas_sk\x18\x08 \x01(\x03R\x05gasSk\x12\x12\n\x04nosk\x18\t \x01(\x03R\x04noskB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
+  serialized_pb=b'\n+blockchain/thepower/v1alpha1/thepower.proto\x12\x1c\x62lockchain.thepower.v1alpha1\"\x96\x03\n\x07TpChain\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0c\x63hain_number\x18\x02 \x01(\x05R\x0b\x63hainNumber\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x45\n\x0b\x63hain_nodes\x18\x04 \x03(\x0b\x32$.blockchain.thepower.v1alpha1.TpNodeR\nchainNodes\x12\x16\n\x06status\x18\x05 \x01(\tR\x06status\x12#\n\rerror_details\x18\x06 \x01(\tR\x0c\x65rrorDetails\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12M\n\x08settings\x18\t \x01(\x0b\x32\x31.blockchain.thepower.v1alpha1.TeaCeremonySettingsR\x08settings\x12.\n\x13\x63\x63p_organization_id\x18\n \x01(\tR\x11\x63\x63pOrganizationId\"\xf5\x01\n\x06TpNode\x12\x1a\n\x08nodename\x18\x01 \x01(\tR\x08nodename\x12\x1b\n\ttpic_port\x18\x02 \x01(\x03R\x08tpicPort\x12\x19\n\x08\x61pi_port\x18\x03 \x01(\x03R\x07\x61piPort\x12\x1b\n\tapis_port\x18\x04 \x01(\x03R\x08\x61pisPort\x12\x17\n\x07\x63\x63_port\x18\x05 \x01(\x03R\x06\x63\x63Port\x12\x61\n\x13\x63rosschain_external\x18\x06 \x03(\x0b\x32\x30.blockchain.thepower.v1alpha1.CrosschainExternalR\x12\x63rosschainExternal\"<\n\x12\x43rosschainExternal\x12\x12\n\x04host\x18\x01 \x01(\tR\x04host\x12\x12\n\x04port\x18\x02 \x01(\x03R\x04port\"\xd0\x02\n\x13TeaCeremonySettings\x12\'\n\x0f\x63hain_blocktime\x18\x01 \x01(\x03R\x0e\x63hainBlocktime\x12!\n\x0c\x63hain_minsig\x18\x02 \x01(\x03R\x0b\x63hainMinsig\x12*\n\x11\x63hain_allow_empty\x18\x03 \x01(\x03R\x0f\x63hainAllowEmpty\x12(\n\x10\x63hain_patch_sigs\x18\x04 \x01(\x03R\x0e\x63hainPatchSigs\x12)\n\x10\x61llocblock_group\x18\x05 \x01(\x03R\x0f\x61llocblockGroup\x12\'\n\x0f\x61llocblock_last\x18\x06 \x01(\x03R\x0e\x61llocblockLast\x12\x18\n\x07\x66reegas\x18\x07 \x01(\x03R\x07\x66reegas\x12\x15\n\x06gas_sk\x18\x08 \x01(\x03R\x05gasSk\x12\x12\n\x04nosk\x18\t \x01(\x03R\x04noskB?Z=github.com/cuemby/ccp-sdk/gen/go/blockchain/thepower/v1alpha1b\x06proto3'
 )
 
 
@@ -96,6 +96,13 @@ _TPCHAIN = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='settings', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ccp_organization_id', full_name='blockchain.thepower.v1alpha1.TpChain.ccp_organization_id', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ccpOrganizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -109,7 +116,7 @@ _TPCHAIN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=78,
-  serialized_end=436,
+  serialized_end=484,
 )
 
 
@@ -175,8 +182,8 @@ _TPNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=439,
-  serialized_end=684,
+  serialized_start=487,
+  serialized_end=732,
 )
 
 
@@ -214,8 +221,8 @@ _CROSSCHAINEXTERNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=686,
-  serialized_end=746,
+  serialized_start=734,
+  serialized_end=794,
 )
 
 
@@ -302,8 +309,8 @@ _TEACEREMONYSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=749,
-  serialized_end=1085,
+  serialized_start=797,
+  serialized_end=1133,
 )
 
 _TPCHAIN.fields_by_name['chain_nodes'].message_type = _TPNODE

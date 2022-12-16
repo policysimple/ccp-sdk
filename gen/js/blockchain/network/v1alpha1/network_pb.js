@@ -196,7 +196,8 @@ proto.blockchain.network.v1alpha1.Network.toObject = function(includeInstance, m
     createdAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 9, ""),
     organizationsList: jspb.Message.toObjectList(msg.getOrganizationsList(),
-    proto.blockchain.network.v1alpha1.Organization.toObject, includeInstance)
+    proto.blockchain.network.v1alpha1.Organization.toObject, includeInstance),
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -273,6 +274,10 @@ proto.blockchain.network.v1alpha1.Network.deserializeBinaryFromReader = function
       var value = new proto.blockchain.network.v1alpha1.Organization;
       reader.readMessage(value,proto.blockchain.network.v1alpha1.Organization.deserializeBinaryFromReader);
       msg.addOrganizations(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
       break;
     default:
       reader.skipField();
@@ -372,6 +377,13 @@ proto.blockchain.network.v1alpha1.Network.serializeBinaryToWriter = function(mes
       10,
       f,
       proto.blockchain.network.v1alpha1.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getCcpOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -574,6 +586,24 @@ proto.blockchain.network.v1alpha1.Network.prototype.addOrganizations = function(
  */
 proto.blockchain.network.v1alpha1.Network.prototype.clearOrganizationsList = function() {
   return this.setOrganizationsList([]);
+};
+
+
+/**
+ * optional string ccp_organization_id = 11;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.getCcpOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Network} returns this
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.setCcpOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

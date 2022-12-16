@@ -13,6 +13,7 @@ message TpChain {
     string created_at = 7;
     string updated_at = 8;
     TeaCeremonySettings settings = 9;
+    string ccp_organization_id = 10;
 }
 
 message TpNode {

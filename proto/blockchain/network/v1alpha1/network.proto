@@ -15,6 +15,7 @@ message Network {
     string created_at = 8;
     string updated_at = 9;
     repeated Organization organizations = 10;
+    string ccp_organization_id = 11;
 }
 
 message Organization {

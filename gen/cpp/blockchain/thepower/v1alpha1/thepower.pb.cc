@@ -28,6 +28,7 @@ constexpr TpChain::TpChain(
   , error_details_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ccp_organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , settings_(nullptr)
   , chain_number_(0){}
 struct TpChainDefaultTypeInternal {
@@ -111,6 +112,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, created_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, updated_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, settings_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, ccp_organization_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpNode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -146,9 +148,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::thepower::v1alpha1::TpChain)},
-  { 14, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
-  { 25, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
-  { 32, -1, sizeof(::blockchain::thepower::v1alpha1::TeaCeremonySettings)},
+  { 15, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
+  { 26, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
+  { 33, -1, sizeof(::blockchain::thepower::v1alpha1::TeaCeremonySettings)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -160,7 +162,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+blockchain/thepower/v1alpha1/thepower."
-  "proto\022\034blockchain.thepower.v1alpha1\"\346\002\n\007"
+  "proto\022\034blockchain.thepower.v1alpha1\"\226\003\n\007"
   "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030"
   "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use"
   "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th"
@@ -169,29 +171,31 @@ const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower
   "\tR\014errorDetails\022\035\n\ncreated_at\030\007 \001(\tR\tcre"
   "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022M\n"
   "\010settings\030\t \001(\01321.blockchain.thepower.v1"
-  "alpha1.TeaCeremonySettingsR\010settings\"\365\001\n"
-  "\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodename\022\033\n\tt"
-  "pic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_port\030\003 \001"
-  "(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010apisPort"
-  "\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023crosschain_"
-  "external\030\006 \003(\01320.blockchain.thepower.v1a"
-  "lpha1.CrosschainExternalR\022crosschainExte"
-  "rnal\"<\n\022CrosschainExternal\022\022\n\004host\030\001 \001(\t"
-  "R\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023TeaCeremo"
-  "nySettings\022\'\n\017chain_blocktime\030\001 \001(\003R\016cha"
-  "inBlocktime\022!\n\014chain_minsig\030\002 \001(\003R\013chain"
-  "Minsig\022*\n\021chain_allow_empty\030\003 \001(\003R\017chain"
-  "AllowEmpty\022(\n\020chain_patch_sigs\030\004 \001(\003R\016ch"
-  "ainPatchSigs\022)\n\020allocblock_group\030\005 \001(\003R\017"
-  "allocblockGroup\022\'\n\017allocblock_last\030\006 \001(\003"
-  "R\016allocblockLast\022\030\n\007freegas\030\007 \001(\003R\007freeg"
-  "as\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nosk\030\t \001(\003R"
-  "\004noskB\?Z=github.com/cuemby/ccp-sdk/gen/g"
-  "o/blockchain/thepower/v1alpha1b\006proto3"
+  "alpha1.TeaCeremonySettingsR\010settings\022.\n\023"
+  "ccp_organization_id\030\n \001(\tR\021ccpOrganizati"
+  "onId\"\365\001\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010noden"
+  "ame\022\033\n\ttpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_"
+  "port\030\003 \001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010"
+  "apisPort\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023cro"
+  "sschain_external\030\006 \003(\01320.blockchain.thep"
+  "ower.v1alpha1.CrosschainExternalR\022crossc"
+  "hainExternal\"<\n\022CrosschainExternal\022\022\n\004ho"
+  "st\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023T"
+  "eaCeremonySettings\022\'\n\017chain_blocktime\030\001 "
+  "\001(\003R\016chainBlocktime\022!\n\014chain_minsig\030\002 \001("
+  "\003R\013chainMinsig\022*\n\021chain_allow_empty\030\003 \001("
+  "\003R\017chainAllowEmpty\022(\n\020chain_patch_sigs\030\004"
+  " \001(\003R\016chainPatchSigs\022)\n\020allocblock_group"
+  "\030\005 \001(\003R\017allocblockGroup\022\'\n\017allocblock_la"
+  "st\030\006 \001(\003R\016allocblockLast\022\030\n\007freegas\030\007 \001("
+  "\003R\007freegas\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nos"
+  "k\030\t \001(\003R\004noskB\?Z=github.com/cuemby/ccp-s"
+  "dk/gen/go/blockchain/thepower/v1alpha1b\006"
+  "proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto = {
-  false, false, 1158, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
+  false, false, 1206, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
   &descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto::offsets,
   file_level_metadata_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_service_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto,
@@ -261,6 +265,11 @@ TpChain::TpChain(const TpChain& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
+  ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_ccp_organization_id().empty()) {
+    ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ccp_organization_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_settings()) {
     settings_ = new ::blockchain::thepower::v1alpha1::TeaCeremonySettings(*from.settings_);
   } else {
@@ -277,6 +286,7 @@ status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
 error_details_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&settings_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&chain_number_) -
@@ -298,6 +308,7 @@ inline void TpChain::SharedDtor() {
   error_details_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ccp_organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete settings_;
 }
 
@@ -324,6 +335,7 @@ void TpChain::Clear() {
   error_details_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
+  ccp_organization_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && settings_ != nullptr) {
     delete settings_;
   }
@@ -415,6 +427,15 @@ const char* TpChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_settings(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_ccp_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.ccp_organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -529,6 +550,16 @@ failure:
         9, _Internal::settings(this), target, stream);
   }
 
+  // string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];
+  if (!this->_internal_ccp_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ccp_organization_id().data(), static_cast<int>(this->_internal_ccp_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.TpChain.ccp_organization_id");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_ccp_organization_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -594,6 +625,13 @@ size_t TpChain::ByteSizeLong() const {
         this->_internal_updated_at());
   }
 
+  // string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];
+  if (!this->_internal_ccp_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ccp_organization_id());
+  }
+
   // .blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];
   if (this->_internal_has_settings()) {
     total_size += 1 +
@@ -655,6 +693,9 @@ void TpChain::MergeFrom(const TpChain& from) {
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
   }
+  if (!from._internal_ccp_organization_id().empty()) {
+    _internal_set_ccp_organization_id(from._internal_ccp_organization_id());
+  }
   if (from._internal_has_settings()) {
     _internal_mutable_settings()->::blockchain::thepower::v1alpha1::TeaCeremonySettings::MergeFrom(from._internal_settings());
   }
@@ -708,6 +749,11 @@ void TpChain::InternalSwap(TpChain* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &updated_at_, GetArenaForAllocation(),
       &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ccp_organization_id_, GetArenaForAllocation(),
+      &other->ccp_organization_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(TpChain, chain_number_)

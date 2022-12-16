@@ -16,8 +16,8 @@ class Thepower
         }
         $pool->internalAddGeneratedFile(
             '
-†	
-+blockchain/thepower/v1alpha1/thepower.protoblockchain.thepower.v1alpha1"æ
+¶	
++blockchain/thepower/v1alpha1/thepower.protoblockchain.thepower.v1alpha1"–
 TpChain
 id (	Rid!
 chain_number (RchainNumber
@@ -30,7 +30,9 @@ chainNodes
 created_at (	R	createdAt
 
 updated_at (	R	updatedAtM
-settings	 (21.blockchain.thepower.v1alpha1.TeaCeremonySettingsRsettings"õ
+settings	 (21.blockchain.thepower.v1alpha1.TeaCeremonySettingsRsettings.
+ccp_organization_id
+ (	RccpOrganizationId"õ
 TpNode
 nodename (	Rnodename
 	tpic_port (RtpicPort

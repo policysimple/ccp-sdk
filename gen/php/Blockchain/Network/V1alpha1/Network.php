@@ -53,6 +53,10 @@ class Network extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
      */
     private $organizations;
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     */
+    protected $ccp_organization_id = '';
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class Network extends \Google\Protobuf\Internal\Message
      *     @type string $created_at
      *     @type string $updated_at
      *     @type \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
+     *     @type string $ccp_organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +298,28 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Organization::class);
         $this->organizations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     * @return string
+     */
+    public function getCcpOrganizationId()
+    {
+        return $this->ccp_organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_organization_id = $var;
 
         return $this;
     }
