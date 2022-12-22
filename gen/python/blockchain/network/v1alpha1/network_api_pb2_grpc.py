@@ -19,10 +19,10 @@ class BlockchainAPIServiceStub(object):
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkResponse.FromString,
         )
-    self.AddPeerToOrganization = channel.unary_unary(
-        '/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization',
-        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationRequest.SerializeToString,
-        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationResponse.FromString,
+    self.AddPeerToCorporation = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToCorporation',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToCorporationRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToCorporationResponse.FromString,
         )
     self.GetBlockchains = channel.unary_unary(
         '/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains',
@@ -39,30 +39,30 @@ class BlockchainAPIServiceStub(object):
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainByIdRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainByIdResponse.FromString,
         )
-    self.GetOrganizationsByBlockchainId = channel.unary_unary(
-        '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId',
-        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrganizationsByBlockchainIdRequest.SerializeToString,
-        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrganizationsByBlockchainIdResponse.FromString,
+    self.GetCorporationsByBlockchainId = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/GetCorporationsByBlockchainId',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetCorporationsByBlockchainIdRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetCorporationsByBlockchainIdResponse.FromString,
         )
     self.SendInvitation = channel.unary_unary(
         '/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation',
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationResponse.FromString,
         )
-    self.CreateOrganization = channel.unary_unary(
-        '/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization',
-        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationRequest.SerializeToString,
-        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationResponse.FromString,
+    self.CreateCorporation = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/CreateCorporation',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateCorporationRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateCorporationResponse.FromString,
         )
     self.CreateChannel = channel.unary_unary(
         '/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel',
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelResponse.FromString,
         )
-    self.GetPeersByOrganizationId = channel.unary_unary(
-        '/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId',
-        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByOrganizationIdRequest.SerializeToString,
-        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByOrganizationIdResponse.FromString,
+    self.GetPeersByCorporationId = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByCorporationId',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdResponse.FromString,
         )
     self.GetOrdererByNetworkId = channel.unary_unary(
         '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId',
@@ -87,7 +87,7 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AddPeerToOrganization(self, request, context):
+  def AddPeerToCorporation(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -115,7 +115,7 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetOrganizationsByBlockchainId(self, request, context):
+  def GetCorporationsByBlockchainId(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -129,7 +129,7 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CreateOrganization(self, request, context):
+  def CreateCorporation(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -143,7 +143,7 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetPeersByOrganizationId(self, request, context):
+  def GetPeersByCorporationId(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -172,10 +172,10 @@ def add_BlockchainAPIServiceServicer_to_server(servicer, server):
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateNetworkResponse.SerializeToString,
       ),
-      'AddPeerToOrganization': grpc.unary_unary_rpc_method_handler(
-          servicer.AddPeerToOrganization,
-          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationRequest.FromString,
-          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToOrganizationResponse.SerializeToString,
+      'AddPeerToCorporation': grpc.unary_unary_rpc_method_handler(
+          servicer.AddPeerToCorporation,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToCorporationRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.AddPeerToCorporationResponse.SerializeToString,
       ),
       'GetBlockchains': grpc.unary_unary_rpc_method_handler(
           servicer.GetBlockchains,
@@ -192,30 +192,30 @@ def add_BlockchainAPIServiceServicer_to_server(servicer, server):
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainByIdRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetBlockchainByIdResponse.SerializeToString,
       ),
-      'GetOrganizationsByBlockchainId': grpc.unary_unary_rpc_method_handler(
-          servicer.GetOrganizationsByBlockchainId,
-          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrganizationsByBlockchainIdRequest.FromString,
-          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrganizationsByBlockchainIdResponse.SerializeToString,
+      'GetCorporationsByBlockchainId': grpc.unary_unary_rpc_method_handler(
+          servicer.GetCorporationsByBlockchainId,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetCorporationsByBlockchainIdRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetCorporationsByBlockchainIdResponse.SerializeToString,
       ),
       'SendInvitation': grpc.unary_unary_rpc_method_handler(
           servicer.SendInvitation,
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.SendInvitationResponse.SerializeToString,
       ),
-      'CreateOrganization': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateOrganization,
-          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationRequest.FromString,
-          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateOrganizationResponse.SerializeToString,
+      'CreateCorporation': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateCorporation,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateCorporationRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateCorporationResponse.SerializeToString,
       ),
       'CreateChannel': grpc.unary_unary_rpc_method_handler(
           servicer.CreateChannel,
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.CreateChannelResponse.SerializeToString,
       ),
-      'GetPeersByOrganizationId': grpc.unary_unary_rpc_method_handler(
-          servicer.GetPeersByOrganizationId,
-          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByOrganizationIdRequest.FromString,
-          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByOrganizationIdResponse.SerializeToString,
+      'GetPeersByCorporationId': grpc.unary_unary_rpc_method_handler(
+          servicer.GetPeersByCorporationId,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdResponse.SerializeToString,
       ),
       'GetOrdererByNetworkId': grpc.unary_unary_rpc_method_handler(
           servicer.GetOrdererByNetworkId,

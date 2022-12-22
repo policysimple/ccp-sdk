@@ -30,15 +30,15 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\AddPeerToOrganizationRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\AddPeerToCorporationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function AddPeerToOrganization(\Blockchain\Network\V1alpha1\AddPeerToOrganizationRequest $argument,
+    public function AddPeerToCorporation(\Blockchain\Network\V1alpha1\AddPeerToCorporationRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToCorporation',
         $argument,
-        ['\Blockchain\Network\V1alpha1\AddPeerToOrganizationResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\AddPeerToCorporationResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -82,15 +82,15 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\GetOrganizationsByBlockchainIdRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\GetCorporationsByBlockchainIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetOrganizationsByBlockchainId(\Blockchain\Network\V1alpha1\GetOrganizationsByBlockchainIdRequest $argument,
+    public function GetCorporationsByBlockchainId(\Blockchain\Network\V1alpha1\GetCorporationsByBlockchainIdRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetCorporationsByBlockchainId',
         $argument,
-        ['\Blockchain\Network\V1alpha1\GetOrganizationsByBlockchainIdResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\GetCorporationsByBlockchainIdResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -108,15 +108,15 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\CreateOrganizationRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\CreateCorporationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function CreateOrganization(\Blockchain\Network\V1alpha1\CreateOrganizationRequest $argument,
+    public function CreateCorporation(\Blockchain\Network\V1alpha1\CreateCorporationRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/CreateCorporation',
         $argument,
-        ['\Blockchain\Network\V1alpha1\CreateOrganizationResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\CreateCorporationResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -134,15 +134,15 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\GetPeersByOrganizationIdRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\GetPeersByCorporationIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetPeersByOrganizationId(\Blockchain\Network\V1alpha1\GetPeersByOrganizationIdRequest $argument,
+    public function GetPeersByCorporationId(\Blockchain\Network\V1alpha1\GetPeersByCorporationIdRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByCorporationId',
         $argument,
-        ['\Blockchain\Network\V1alpha1\GetPeersByOrganizationIdResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\GetPeersByCorporationIdResponse', 'decode'],
         $metadata, $options);
     }
 

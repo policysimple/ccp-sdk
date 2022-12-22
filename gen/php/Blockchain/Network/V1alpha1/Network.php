@@ -50,9 +50,9 @@ class Network extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 10 [json_name = "corporations"];</code>
      */
-    private $organizations;
+    private $corporations;
     /**
      * Generated from protobuf field <code>string ccp_organization_id = 11 [json_name = "ccpOrganizationId"];</code>
      */
@@ -73,7 +73,7 @@ class Network extends \Google\Protobuf\Internal\Message
      *     @type string $error_details
      *     @type string $created_at
      *     @type string $updated_at
-     *     @type \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $organizations
+     *     @type \Blockchain\Network\V1alpha1\Corporation[]|\Google\Protobuf\Internal\RepeatedField $corporations
      *     @type string $ccp_organization_id
      * }
      */
@@ -281,23 +281,23 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 10 [json_name = "corporations"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getOrganizations()
+    public function getCorporations()
     {
-        return $this->organizations;
+        return $this->corporations;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Organization organizations = 10 [json_name = "organizations"];</code>
-     * @param \Blockchain\Network\V1alpha1\Organization[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 10 [json_name = "corporations"];</code>
+     * @param \Blockchain\Network\V1alpha1\Corporation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setOrganizations($var)
+    public function setCorporations($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Organization::class);
-        $this->organizations = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Corporation::class);
+        $this->corporations = $arr;
 
         return $this;
     }

@@ -8,15 +8,15 @@ import  "google/protobuf/empty.proto";
 
 service BlockchainAPIService {
     rpc CreateNetwork(CreateNetworkRequest) returns (CreateNetworkResponse);
-    rpc AddPeerToOrganization(AddPeerToOrganizationRequest) returns (AddPeerToOrganizationResponse);
+    rpc AddPeerToCorporation(AddPeerToCorporationRequest) returns (AddPeerToCorporationResponse);
     rpc GetBlockchains(GetBlockchainsRequest) returns (GetBlockchainsResponse);
     rpc GetBlockchainsByUserId(GetBlockchainsByUserIdRequest) returns (GetBlockchainsByUserIdResponse);
     rpc GetBlockchainById(GetBlockchainByIdRequest) returns (GetBlockchainByIdResponse);
-    rpc GetOrganizationsByBlockchainId(GetOrganizationsByBlockchainIdRequest) returns (GetOrganizationsByBlockchainIdResponse);
+    rpc GetCorporationsByBlockchainId(GetCorporationsByBlockchainIdRequest) returns (GetCorporationsByBlockchainIdResponse);
     rpc SendInvitation(SendInvitationRequest) returns (SendInvitationResponse);
-    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc CreateCorporation(CreateCorporationRequest) returns (CreateCorporationResponse);
     rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
-    rpc GetPeersByOrganizationId(GetPeersByOrganizationIdRequest) returns (GetPeersByOrganizationIdResponse);
+    rpc GetPeersByCorporationId(GetPeersByCorporationIdRequest) returns (GetPeersByCorporationIdResponse);
     rpc GetOrdererByNetworkId(GetOrdererByNetworkIdRequest) returns (GetOrdererByNetworkIdResponse);
     rpc AddOrdererByNetworkId(AddOrdererByNetworkIdRequest) returns (AddOrdererByNetworkIdResponse);
 }
@@ -25,15 +25,15 @@ service BlockchainAPIService {
 // Requests messages
 message CreateNetworkRequest {
     blockchain.network.v1alpha1.Network network = 1;
-    blockchain.network.v1alpha1.Organization organization = 2;
+    blockchain.network.v1alpha1.Corporation corporation = 2;
     string ccp_organization_id  = 3;
     string ccp_project_id  = 4;
 }
 
-message AddPeerToOrganizationRequest {
+message AddPeerToCorporationRequest {
     string ccp_organization_id = 1;
     string ccp_project_id = 2;
-    string organization_id = 3;
+    string corporation_id = 3;
 }
 
 message AddOrdererByNetworkIdRequest {
@@ -58,8 +58,8 @@ message GetBlockchainsByUserIdRequest {
     int64 limit = 3;
 }
 
-message GetPeersByOrganizationIdRequest {
-    string organization_id = 1;
+message GetPeersByCorporationIdRequest {
+    string corporation_id = 1;
     int64 offset = 2;
     int64 limit = 3;
 }
@@ -74,14 +74,14 @@ message GetBlockchainByIdRequest {
     string id = 1;
 }
 
-message GetOrganizationsByBlockchainIdRequest {
+message GetCorporationsByBlockchainIdRequest {
     string blockchain_id = 1;
     int64 offset = 2;
     int64 limit = 3;
 }
 
-message CreateOrganizationRequest {
-    blockchain.network.v1alpha1.Organization organization = 1;
+message CreateCorporationRequest {
+    blockchain.network.v1alpha1.Corporation corporation = 1;
     string ccp_organization_id  = 2;
     string ccp_project_id = 3;
 }
@@ -96,8 +96,8 @@ message CreateNetworkResponse {
     string message = 2;
 }
 
-message AddPeerToOrganizationResponse {
-    blockchain.network.v1alpha1.Organization organization = 1;
+message AddPeerToCorporationResponse {
+    blockchain.network.v1alpha1.Corporation corporation = 1;
     string message = 2;
 }
 
@@ -132,7 +132,7 @@ message GetOrdererByNetworkIdResponse {
     string previous_url = 4; 
 }
 
-message GetPeersByOrganizationIdResponse {
+message GetPeersByCorporationIdResponse {
     repeated blockchain.network.v1alpha1.Peer peer = 1;
     int64 total = 2;
     string next_url = 3;
@@ -143,15 +143,15 @@ message GetBlockchainByIdResponse {
     blockchain.network.v1alpha1.Network network = 1;
 }
 
-message GetOrganizationsByBlockchainIdResponse {
-    repeated blockchain.network.v1alpha1.Organization organizations = 1;
+message GetCorporationsByBlockchainIdResponse {
+    repeated blockchain.network.v1alpha1.Corporation corporations = 1;
     int64 total = 2;
     string next_url = 3;
     string previous_url = 4; 
 }
 
-message CreateOrganizationResponse {
-    blockchain.network.v1alpha1.Organization organization = 1;
+message CreateCorporationResponse {
+    blockchain.network.v1alpha1.Corporation corporation = 1;
     string message = 2;
 }
 
