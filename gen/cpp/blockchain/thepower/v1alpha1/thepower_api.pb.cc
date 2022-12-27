@@ -21,7 +21,9 @@ namespace thepower {
 namespace v1alpha1 {
 constexpr CreateTpChainRequest::CreateTpChainRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : tp_chain_(nullptr){}
+  : ccp_organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ccp_project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tp_chain_(nullptr){}
 struct CreateTpChainRequestDefaultTypeInternal {
   constexpr CreateTpChainRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -59,7 +61,8 @@ struct GetTpChainByIdRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTpChainByIdRequestDefaultTypeInternal _GetTpChainByIdRequest_default_instance_;
 constexpr GetTpChainsRequest::GetTpChainsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : offset_(int64_t{0})
+  : query_params_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , offset_(int64_t{0})
   , limit_(int64_t{0}){}
 struct GetTpChainsRequestDefaultTypeInternal {
   constexpr GetTpChainsRequestDefaultTypeInternal()
@@ -162,6 +165,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::CreateTpChainRequest, tp_chain_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::CreateTpChainRequest, ccp_organization_id_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::CreateTpChainRequest, ccp_project_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -183,6 +188,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::GetTpChainsRequest, offset_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::GetTpChainsRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::GetTpChainsRequest, query_params_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::UpdateTpChainRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -228,15 +234,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::thepower::v1alpha1::CreateTpChainRequest)},
-  { 6, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest)},
-  { 14, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainByIdRequest)},
-  { 20, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsRequest)},
-  { 27, -1, sizeof(::blockchain::thepower::v1alpha1::UpdateTpChainRequest)},
-  { 33, -1, sizeof(::blockchain::thepower::v1alpha1::CreateTpChainResponse)},
-  { 39, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsResponse)},
-  { 48, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse)},
-  { 57, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainByIdResponse)},
-  { 63, -1, sizeof(::blockchain::thepower::v1alpha1::UpdateTpChainResponse)},
+  { 8, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsByUserIdRequest)},
+  { 16, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainByIdRequest)},
+  { 22, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsRequest)},
+  { 30, -1, sizeof(::blockchain::thepower::v1alpha1::UpdateTpChainRequest)},
+  { 36, -1, sizeof(::blockchain::thepower::v1alpha1::CreateTpChainResponse)},
+  { 42, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsResponse)},
+  { 51, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainsByUserIdResponse)},
+  { 60, -1, sizeof(::blockchain::thepower::v1alpha1::GetTpChainByIdResponse)},
+  { 66, -1, sizeof(::blockchain::thepower::v1alpha1::UpdateTpChainResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -256,51 +262,54 @@ const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower
   "\n/blockchain/thepower/v1alpha1/thepower_"
   "api.proto\022\034blockchain.thepower.v1alpha1\032"
   "+blockchain/thepower/v1alpha1/thepower.p"
-  "roto\032\033google/protobuf/empty.proto\"X\n\024Cre"
-  "ateTpChainRequest\022@\n\010tp_chain\030\001 \001(\0132%.bl"
-  "ockchain.thepower.v1alpha1.TpChainR\007tpCh"
-  "ain\"c\n\032GetTpChainsByUserIdRequest\022\027\n\007use"
-  "r_id\030\001 \001(\tR\006userId\022\026\n\006offset\030\002 \001(\003R\006offs"
-  "et\022\024\n\005limit\030\003 \001(\003R\005limit\"\'\n\025GetTpChainBy"
-  "IdRequest\022\016\n\002id\030\001 \001(\tR\002id\"B\n\022GetTpChains"
-  "Request\022\026\n\006offset\030\001 \001(\003R\006offset\022\024\n\005limit"
-  "\030\002 \001(\003R\005limit\"X\n\024UpdateTpChainRequest\022@\n"
-  "\010tp_chain\030\001 \001(\0132%.blockchain.thepower.v1"
-  "alpha1.TpChainR\007tpChain\"Y\n\025CreateTpChain"
-  "Response\022@\n\010tp_chain\030\001 \001(\0132%.blockchain."
-  "thepower.v1alpha1.TpChainR\007tpChain\"\255\001\n\023G"
-  "etTpChainsResponse\022B\n\ttp_chains\030\001 \003(\0132%."
-  "blockchain.thepower.v1alpha1.TpChainR\010tp"
-  "Chains\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url"
-  "\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013p"
-  "reviousUrl\"\265\001\n\033GetTpChainsByUserIdRespon"
-  "se\022B\n\ttp_chains\030\001 \003(\0132%.blockchain.thepo"
-  "wer.v1alpha1.TpChainR\010tpChains\022\024\n\005total\030"
-  "\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022"
-  "!\n\014previous_url\030\004 \001(\tR\013previousUrl\"Z\n\026Ge"
-  "tTpChainByIdResponse\022@\n\010tp_chain\030\001 \001(\0132%"
-  ".blockchain.thepower.v1alpha1.TpChainR\007t"
-  "pChain\"Y\n\025UpdateTpChainResponse\022@\n\010tp_ch"
-  "ain\030\001 \001(\0132%.blockchain.thepower.v1alpha1"
-  ".TpChainR\007tpChain2\215\005\n\031BlockchainThePower"
-  "Service\022x\n\rCreateTpChain\0222.blockchain.th"
-  "epower.v1alpha1.CreateTpChainRequest\0323.b"
-  "lockchain.thepower.v1alpha1.CreateTpChai"
-  "nResponse\022r\n\013GetTpChains\0220.blockchain.th"
-  "epower.v1alpha1.GetTpChainsRequest\0321.blo"
-  "ckchain.thepower.v1alpha1.GetTpChainsRes"
-  "ponse\022\212\001\n\023GetTpChainsByUserId\0228.blockcha"
-  "in.thepower.v1alpha1.GetTpChainsByUserId"
-  "Request\0329.blockchain.thepower.v1alpha1.G"
-  "etTpChainsByUserIdResponse\022{\n\016GetTpChain"
-  "ById\0223.blockchain.thepower.v1alpha1.GetT"
-  "pChainByIdRequest\0324.blockchain.thepower."
-  "v1alpha1.GetTpChainByIdResponse\022x\n\rUpdat"
-  "eTpChain\0222.blockchain.thepower.v1alpha1."
-  "UpdateTpChainRequest\0323.blockchain.thepow"
-  "er.v1alpha1.UpdateTpChainResponseB\?Z=git"
-  "hub.com/cuemby/ccp-sdk/gen/go/blockchain"
-  "/thepower/v1alpha1b\006proto3"
+  "roto\032\033google/protobuf/empty.proto\"\256\001\n\024Cr"
+  "eateTpChainRequest\022@\n\010tp_chain\030\001 \001(\0132%.b"
+  "lockchain.thepower.v1alpha1.TpChainR\007tpC"
+  "hain\022.\n\023ccp_organization_id\030\002 \001(\tR\021ccpOr"
+  "ganizationId\022$\n\016ccp_project_id\030\003 \001(\tR\014cc"
+  "pProjectId\"c\n\032GetTpChainsByUserIdRequest"
+  "\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006offset\030\002 \001("
+  "\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\'\n\025GetTp"
+  "ChainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"e\n\022GetT"
+  "pChainsRequest\022\026\n\006offset\030\001 \001(\003R\006offset\022\024"
+  "\n\005limit\030\002 \001(\003R\005limit\022!\n\014query_params\030\003 \001"
+  "(\tR\013queryParams\"X\n\024UpdateTpChainRequest\022"
+  "@\n\010tp_chain\030\001 \001(\0132%.blockchain.thepower."
+  "v1alpha1.TpChainR\007tpChain\"Y\n\025CreateTpCha"
+  "inResponse\022@\n\010tp_chain\030\001 \001(\0132%.blockchai"
+  "n.thepower.v1alpha1.TpChainR\007tpChain\"\255\001\n"
+  "\023GetTpChainsResponse\022B\n\ttp_chains\030\001 \003(\0132"
+  "%.blockchain.thepower.v1alpha1.TpChainR\010"
+  "tpChains\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_u"
+  "rl\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR"
+  "\013previousUrl\"\265\001\n\033GetTpChainsByUserIdResp"
+  "onse\022B\n\ttp_chains\030\001 \003(\0132%.blockchain.the"
+  "power.v1alpha1.TpChainR\010tpChains\022\024\n\005tota"
+  "l\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUr"
+  "l\022!\n\014previous_url\030\004 \001(\tR\013previousUrl\"Z\n\026"
+  "GetTpChainByIdResponse\022@\n\010tp_chain\030\001 \001(\013"
+  "2%.blockchain.thepower.v1alpha1.TpChainR"
+  "\007tpChain\"Y\n\025UpdateTpChainResponse\022@\n\010tp_"
+  "chain\030\001 \001(\0132%.blockchain.thepower.v1alph"
+  "a1.TpChainR\007tpChain2\215\005\n\031BlockchainThePow"
+  "erService\022x\n\rCreateTpChain\0222.blockchain."
+  "thepower.v1alpha1.CreateTpChainRequest\0323"
+  ".blockchain.thepower.v1alpha1.CreateTpCh"
+  "ainResponse\022r\n\013GetTpChains\0220.blockchain."
+  "thepower.v1alpha1.GetTpChainsRequest\0321.b"
+  "lockchain.thepower.v1alpha1.GetTpChainsR"
+  "esponse\022\212\001\n\023GetTpChainsByUserId\0228.blockc"
+  "hain.thepower.v1alpha1.GetTpChainsByUser"
+  "IdRequest\0329.blockchain.thepower.v1alpha1"
+  ".GetTpChainsByUserIdResponse\022{\n\016GetTpCha"
+  "inById\0223.blockchain.thepower.v1alpha1.Ge"
+  "tTpChainByIdRequest\0324.blockchain.thepowe"
+  "r.v1alpha1.GetTpChainByIdResponse\022x\n\rUpd"
+  "ateTpChain\0222.blockchain.thepower.v1alpha"
+  "1.UpdateTpChainRequest\0323.blockchain.thep"
+  "ower.v1alpha1.UpdateTpChainResponseB\?Z=g"
+  "ithub.com/cuemby/ccp-sdk/gen/go/blockcha"
+  "in/thepower/v1alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto_deps[2] = {
   &::descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto,
@@ -308,7 +317,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto = {
-  false, false, 1906, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto, "blockchain/thepower/v1alpha1/thepower_api.proto", 
+  false, false, 2028, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto, "blockchain/thepower/v1alpha1/thepower_api.proto", 
   &descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto_once, descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto_deps, 2, 10,
   schemas, file_default_instances, TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto::offsets,
   file_level_metadata_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto, file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto, file_level_service_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_5fapi_2eproto,
@@ -352,6 +361,16 @@ CreateTpChainRequest::CreateTpChainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 CreateTpChainRequest::CreateTpChainRequest(const CreateTpChainRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_ccp_organization_id().empty()) {
+    ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ccp_organization_id(), 
+      GetArenaForAllocation());
+  }
+  ccp_project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_ccp_project_id().empty()) {
+    ccp_project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ccp_project_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_tp_chain()) {
     tp_chain_ = new ::blockchain::thepower::v1alpha1::TpChain(*from.tp_chain_);
   } else {
@@ -361,6 +380,8 @@ CreateTpChainRequest::CreateTpChainRequest(const CreateTpChainRequest& from)
 }
 
 inline void CreateTpChainRequest::SharedCtor() {
+ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+ccp_project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 tp_chain_ = nullptr;
 }
 
@@ -373,6 +394,8 @@ CreateTpChainRequest::~CreateTpChainRequest() {
 
 inline void CreateTpChainRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ccp_organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ccp_project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete tp_chain_;
 }
 
@@ -392,6 +415,8 @@ void CreateTpChainRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ccp_organization_id_.ClearToEmpty();
+  ccp_project_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && tp_chain_ != nullptr) {
     delete tp_chain_;
   }
@@ -409,6 +434,24 @@ const char* CreateTpChainRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_tp_chain(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_ccp_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.CreateTpChainRequest.ccp_organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string ccp_project_id = 3 [json_name = "ccpProjectId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_ccp_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.CreateTpChainRequest.ccp_project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -449,6 +492,26 @@ failure:
         1, _Internal::tp_chain(this), target, stream);
   }
 
+  // string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+  if (!this->_internal_ccp_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ccp_organization_id().data(), static_cast<int>(this->_internal_ccp_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.CreateTpChainRequest.ccp_organization_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ccp_organization_id(), target);
+  }
+
+  // string ccp_project_id = 3 [json_name = "ccpProjectId"];
+  if (!this->_internal_ccp_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ccp_project_id().data(), static_cast<int>(this->_internal_ccp_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.CreateTpChainRequest.ccp_project_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_ccp_project_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -464,6 +527,20 @@ size_t CreateTpChainRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];
+  if (!this->_internal_ccp_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ccp_organization_id());
+  }
+
+  // string ccp_project_id = 3 [json_name = "ccpProjectId"];
+  if (!this->_internal_ccp_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ccp_project_id());
+  }
 
   // .blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];
   if (this->_internal_has_tp_chain()) {
@@ -500,6 +577,12 @@ void CreateTpChainRequest::MergeFrom(const CreateTpChainRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_ccp_organization_id().empty()) {
+    _internal_set_ccp_organization_id(from._internal_ccp_organization_id());
+  }
+  if (!from._internal_ccp_project_id().empty()) {
+    _internal_set_ccp_project_id(from._internal_ccp_project_id());
+  }
   if (from._internal_has_tp_chain()) {
     _internal_mutable_tp_chain()->::blockchain::thepower::v1alpha1::TpChain::MergeFrom(from._internal_tp_chain());
   }
@@ -520,6 +603,16 @@ bool CreateTpChainRequest::IsInitialized() const {
 void CreateTpChainRequest::InternalSwap(CreateTpChainRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ccp_organization_id_, GetArenaForAllocation(),
+      &other->ccp_organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ccp_project_id_, GetArenaForAllocation(),
+      &other->ccp_project_id_, other->GetArenaForAllocation()
+  );
   swap(tp_chain_, other->tp_chain_);
 }
 
@@ -1009,6 +1102,11 @@ GetTpChainsRequest::GetTpChainsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetTpChainsRequest::GetTpChainsRequest(const GetTpChainsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  query_params_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_query_params().empty()) {
+    query_params_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_query_params(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&offset_, &from.offset_,
     static_cast<size_t>(reinterpret_cast<char*>(&limit_) -
     reinterpret_cast<char*>(&offset_)) + sizeof(limit_));
@@ -1016,6 +1114,7 @@ GetTpChainsRequest::GetTpChainsRequest(const GetTpChainsRequest& from)
 }
 
 inline void GetTpChainsRequest::SharedCtor() {
+query_params_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&offset_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&limit_) -
@@ -1031,6 +1130,7 @@ GetTpChainsRequest::~GetTpChainsRequest() {
 
 inline void GetTpChainsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  query_params_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetTpChainsRequest::ArenaDtor(void* object) {
@@ -1049,6 +1149,7 @@ void GetTpChainsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  query_params_.ClearToEmpty();
   ::memset(&offset_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&limit_) -
       reinterpret_cast<char*>(&offset_)) + sizeof(limit_));
@@ -1072,6 +1173,15 @@ const char* GetTpChainsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string query_params = 3 [json_name = "queryParams"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_query_params();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.GetTpChainsRequest.query_params"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1116,6 +1226,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_limit(), target);
   }
 
+  // string query_params = 3 [json_name = "queryParams"];
+  if (!this->_internal_query_params().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_query_params().data(), static_cast<int>(this->_internal_query_params().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.thepower.v1alpha1.GetTpChainsRequest.query_params");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_query_params(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1131,6 +1251,13 @@ size_t GetTpChainsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string query_params = 3 [json_name = "queryParams"];
+  if (!this->_internal_query_params().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_query_params());
+  }
 
   // int64 offset = 1 [json_name = "offset"];
   if (this->_internal_offset() != 0) {
@@ -1174,6 +1301,9 @@ void GetTpChainsRequest::MergeFrom(const GetTpChainsRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_query_params().empty()) {
+    _internal_set_query_params(from._internal_query_params());
+  }
   if (from._internal_offset() != 0) {
     _internal_set_offset(from._internal_offset());
   }
@@ -1197,6 +1327,11 @@ bool GetTpChainsRequest::IsInitialized() const {
 void GetTpChainsRequest::InternalSwap(GetTpChainsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &query_params_, GetArenaForAllocation(),
+      &other->query_params_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetTpChainsRequest, limit_)
       + sizeof(GetTpChainsRequest::limit_)

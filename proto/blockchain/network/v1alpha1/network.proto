@@ -14,10 +14,11 @@ message Network {
     string error_details = 7;
     string created_at = 8;
     string updated_at = 9;
-    repeated Organization organizations = 10;
+    repeated Corporation corporations = 10;
+    string ccp_organization_id = 11;
 }
 
-message Organization {
+message Corporation {
     string id = 1; 
     string user_id = 2;
     string domain = 3;
@@ -54,10 +55,10 @@ message Orderer {
 
 message Channel {
     string id = 1;
-    string organization_id = 2; // Organizations that creates the channel
+    string corporation_id = 2; // Corporation that creates the channel
     string blockchain_id = 3;
     string name = 4;
-    repeated string org_ids = 5;
+    repeated string corporation_ids = 5;
     string status = 6;
     string created_at = 7;
     string updated_at = 8;

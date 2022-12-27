@@ -32,6 +32,30 @@ public final class ThepowerApi {
      * <code>.blockchain.thepower.v1alpha1.TpChain tp_chain = 1 [json_name = "tpChain"];</code>
      */
     blockchain.thepower.v1alpha1.Thepower.TpChainOrBuilder getTpChainOrBuilder();
+
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    java.lang.String getCcpOrganizationId();
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes();
+
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    java.lang.String getCcpProjectId();
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    com.google.protobuf.ByteString
+        getCcpProjectIdBytes();
   }
   /**
    * <pre>
@@ -50,6 +74,8 @@ public final class ThepowerApi {
       super(builder);
     }
     private CreateTpChainRequest() {
+      ccpOrganizationId_ = "";
+      ccpProjectId_ = "";
     }
 
     @java.lang.Override
@@ -93,6 +119,18 @@ public final class ThepowerApi {
                 tpChain_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpOrganizationId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ccpProjectId_ = s;
               break;
             }
             default: {
@@ -153,6 +191,82 @@ public final class ThepowerApi {
       return getTpChain();
     }
 
+    public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ccpOrganizationId_;
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The ccpOrganizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpOrganizationId() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpOrganizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+     * @return The bytes for ccpOrganizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpOrganizationIdBytes() {
+      java.lang.Object ref = ccpOrganizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpOrganizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CCP_PROJECT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object ccpProjectId_;
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The ccpProjectId.
+     */
+    @java.lang.Override
+    public java.lang.String getCcpProjectId() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ccpProjectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+     * @return The bytes for ccpProjectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCcpProjectIdBytes() {
+      java.lang.Object ref = ccpProjectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ccpProjectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -170,6 +284,12 @@ public final class ThepowerApi {
       if (tpChain_ != null) {
         output.writeMessage(1, getTpChain());
       }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ccpProjectId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -182,6 +302,12 @@ public final class ThepowerApi {
       if (tpChain_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTpChain());
+      }
+      if (!getCcpOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ccpOrganizationId_);
+      }
+      if (!getCcpProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ccpProjectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -203,6 +329,10 @@ public final class ThepowerApi {
         if (!getTpChain()
             .equals(other.getTpChain())) return false;
       }
+      if (!getCcpOrganizationId()
+          .equals(other.getCcpOrganizationId())) return false;
+      if (!getCcpProjectId()
+          .equals(other.getCcpProjectId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -218,6 +348,10 @@ public final class ThepowerApi {
         hash = (37 * hash) + TP_CHAIN_FIELD_NUMBER;
         hash = (53 * hash) + getTpChain().hashCode();
       }
+      hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + CCP_PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCcpProjectId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -361,6 +495,10 @@ public final class ThepowerApi {
           tpChain_ = null;
           tpChainBuilder_ = null;
         }
+        ccpOrganizationId_ = "";
+
+        ccpProjectId_ = "";
+
         return this;
       }
 
@@ -392,6 +530,8 @@ public final class ThepowerApi {
         } else {
           result.tpChain_ = tpChainBuilder_.build();
         }
+        result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.ccpProjectId_ = ccpProjectId_;
         onBuilt();
         return result;
       }
@@ -442,6 +582,14 @@ public final class ThepowerApi {
         if (other == blockchain.thepower.v1alpha1.ThepowerApi.CreateTpChainRequest.getDefaultInstance()) return this;
         if (other.hasTpChain()) {
           mergeTpChain(other.getTpChain());
+        }
+        if (!other.getCcpOrganizationId().isEmpty()) {
+          ccpOrganizationId_ = other.ccpOrganizationId_;
+          onChanged();
+        }
+        if (!other.getCcpProjectId().isEmpty()) {
+          ccpProjectId_ = other.ccpProjectId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -589,6 +737,158 @@ public final class ThepowerApi {
           tpChain_ = null;
         }
         return tpChainBuilder_;
+      }
+
+      private java.lang.Object ccpOrganizationId_ = "";
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return The ccpOrganizationId.
+       */
+      public java.lang.String getCcpOrganizationId() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpOrganizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return The bytes for ccpOrganizationId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpOrganizationIdBytes() {
+        java.lang.Object ref = ccpOrganizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpOrganizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @param value The ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpOrganizationId() {
+        
+        ccpOrganizationId_ = getDefaultInstance().getCcpOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
+       * @param value The bytes for ccpOrganizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ccpProjectId_ = "";
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return The ccpProjectId.
+       */
+      public java.lang.String getCcpProjectId() {
+        java.lang.Object ref = ccpProjectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ccpProjectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return The bytes for ccpProjectId.
+       */
+      public com.google.protobuf.ByteString
+          getCcpProjectIdBytes() {
+        java.lang.Object ref = ccpProjectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ccpProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @param value The ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCcpProjectId() {
+        
+        ccpProjectId_ = getDefaultInstance().getCcpProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ccp_project_id = 3 [json_name = "ccpProjectId"];</code>
+       * @param value The bytes for ccpProjectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCcpProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ccpProjectId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1936,6 +2236,26 @@ public final class ThepowerApi {
      * @return The limit.
      */
     long getLimit();
+
+    /**
+     * <pre>
+     * Used for applying custom filters
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The queryParams.
+     */
+    java.lang.String getQueryParams();
+    /**
+     * <pre>
+     * Used for applying custom filters
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The bytes for queryParams.
+     */
+    com.google.protobuf.ByteString
+        getQueryParamsBytes();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.GetTpChainsRequest}
@@ -1950,6 +2270,7 @@ public final class ThepowerApi {
       super(builder);
     }
     private GetTpChainsRequest() {
+      queryParams_ = "";
     }
 
     @java.lang.Override
@@ -1990,6 +2311,12 @@ public final class ThepowerApi {
             case 16: {
 
               limit_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              queryParams_ = s;
               break;
             }
             default: {
@@ -2046,6 +2373,52 @@ public final class ThepowerApi {
       return limit_;
     }
 
+    public static final int QUERY_PARAMS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object queryParams_;
+    /**
+     * <pre>
+     * Used for applying custom filters
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The queryParams.
+     */
+    @java.lang.Override
+    public java.lang.String getQueryParams() {
+      java.lang.Object ref = queryParams_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryParams_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Used for applying custom filters
+     * </pre>
+     *
+     * <code>string query_params = 3 [json_name = "queryParams"];</code>
+     * @return The bytes for queryParams.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getQueryParamsBytes() {
+      java.lang.Object ref = queryParams_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        queryParams_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2066,6 +2439,9 @@ public final class ThepowerApi {
       if (limit_ != 0L) {
         output.writeInt64(2, limit_);
       }
+      if (!getQueryParamsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, queryParams_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2082,6 +2458,9 @@ public final class ThepowerApi {
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, limit_);
+      }
+      if (!getQueryParamsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, queryParams_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2102,6 +2481,8 @@ public final class ThepowerApi {
           != other.getOffset()) return false;
       if (getLimit()
           != other.getLimit()) return false;
+      if (!getQueryParams()
+          .equals(other.getQueryParams())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2119,6 +2500,8 @@ public final class ThepowerApi {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLimit());
+      hash = (37 * hash) + QUERY_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryParams().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2256,6 +2639,8 @@ public final class ThepowerApi {
 
         limit_ = 0L;
 
+        queryParams_ = "";
+
         return this;
       }
 
@@ -2284,6 +2669,7 @@ public final class ThepowerApi {
         blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest result = new blockchain.thepower.v1alpha1.ThepowerApi.GetTpChainsRequest(this);
         result.offset_ = offset_;
         result.limit_ = limit_;
+        result.queryParams_ = queryParams_;
         onBuilt();
         return result;
       }
@@ -2337,6 +2723,10 @@ public final class ThepowerApi {
         }
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
+        }
+        if (!other.getQueryParams().isEmpty()) {
+          queryParams_ = other.queryParams_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2425,6 +2815,102 @@ public final class ThepowerApi {
       public Builder clearLimit() {
         
         limit_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object queryParams_ = "";
+      /**
+       * <pre>
+       * Used for applying custom filters
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @return The queryParams.
+       */
+      public java.lang.String getQueryParams() {
+        java.lang.Object ref = queryParams_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          queryParams_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Used for applying custom filters
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @return The bytes for queryParams.
+       */
+      public com.google.protobuf.ByteString
+          getQueryParamsBytes() {
+        java.lang.Object ref = queryParams_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          queryParams_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Used for applying custom filters
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @param value The queryParams to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryParams(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        queryParams_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for applying custom filters
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryParams() {
+        
+        queryParams_ = getDefaultInstance().getQueryParams();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Used for applying custom filters
+       * </pre>
+       *
+       * <code>string query_params = 3 [json_name = "queryParams"];</code>
+       * @param value The bytes for queryParams to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryParamsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        queryParams_ = value;
         onChanged();
         return this;
       }
@@ -7363,51 +7849,54 @@ public final class ThepowerApi {
       "\n/blockchain/thepower/v1alpha1/thepower_" +
       "api.proto\022\034blockchain.thepower.v1alpha1\032" +
       "+blockchain/thepower/v1alpha1/thepower.p" +
-      "roto\032\033google/protobuf/empty.proto\"X\n\024Cre" +
-      "ateTpChainRequest\022@\n\010tp_chain\030\001 \001(\0132%.bl" +
-      "ockchain.thepower.v1alpha1.TpChainR\007tpCh" +
-      "ain\"c\n\032GetTpChainsByUserIdRequest\022\027\n\007use" +
-      "r_id\030\001 \001(\tR\006userId\022\026\n\006offset\030\002 \001(\003R\006offs" +
-      "et\022\024\n\005limit\030\003 \001(\003R\005limit\"\'\n\025GetTpChainBy" +
-      "IdRequest\022\016\n\002id\030\001 \001(\tR\002id\"B\n\022GetTpChains" +
-      "Request\022\026\n\006offset\030\001 \001(\003R\006offset\022\024\n\005limit" +
-      "\030\002 \001(\003R\005limit\"X\n\024UpdateTpChainRequest\022@\n" +
-      "\010tp_chain\030\001 \001(\0132%.blockchain.thepower.v1" +
-      "alpha1.TpChainR\007tpChain\"Y\n\025CreateTpChain" +
-      "Response\022@\n\010tp_chain\030\001 \001(\0132%.blockchain." +
-      "thepower.v1alpha1.TpChainR\007tpChain\"\255\001\n\023G" +
-      "etTpChainsResponse\022B\n\ttp_chains\030\001 \003(\0132%." +
-      "blockchain.thepower.v1alpha1.TpChainR\010tp" +
-      "Chains\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url" +
-      "\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013p" +
-      "reviousUrl\"\265\001\n\033GetTpChainsByUserIdRespon" +
-      "se\022B\n\ttp_chains\030\001 \003(\0132%.blockchain.thepo" +
-      "wer.v1alpha1.TpChainR\010tpChains\022\024\n\005total\030" +
-      "\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022" +
-      "!\n\014previous_url\030\004 \001(\tR\013previousUrl\"Z\n\026Ge" +
-      "tTpChainByIdResponse\022@\n\010tp_chain\030\001 \001(\0132%" +
-      ".blockchain.thepower.v1alpha1.TpChainR\007t" +
-      "pChain\"Y\n\025UpdateTpChainResponse\022@\n\010tp_ch" +
-      "ain\030\001 \001(\0132%.blockchain.thepower.v1alpha1" +
-      ".TpChainR\007tpChain2\215\005\n\031BlockchainThePower" +
-      "Service\022x\n\rCreateTpChain\0222.blockchain.th" +
-      "epower.v1alpha1.CreateTpChainRequest\0323.b" +
-      "lockchain.thepower.v1alpha1.CreateTpChai" +
-      "nResponse\022r\n\013GetTpChains\0220.blockchain.th" +
-      "epower.v1alpha1.GetTpChainsRequest\0321.blo" +
-      "ckchain.thepower.v1alpha1.GetTpChainsRes" +
-      "ponse\022\212\001\n\023GetTpChainsByUserId\0228.blockcha" +
-      "in.thepower.v1alpha1.GetTpChainsByUserId" +
-      "Request\0329.blockchain.thepower.v1alpha1.G" +
-      "etTpChainsByUserIdResponse\022{\n\016GetTpChain" +
-      "ById\0223.blockchain.thepower.v1alpha1.GetT" +
-      "pChainByIdRequest\0324.blockchain.thepower." +
-      "v1alpha1.GetTpChainByIdResponse\022x\n\rUpdat" +
-      "eTpChain\0222.blockchain.thepower.v1alpha1." +
-      "UpdateTpChainRequest\0323.blockchain.thepow" +
-      "er.v1alpha1.UpdateTpChainResponseB?Z=git" +
-      "hub.com/cuemby/ccp-sdk/gen/go/blockchain" +
-      "/thepower/v1alpha1b\006proto3"
+      "roto\032\033google/protobuf/empty.proto\"\256\001\n\024Cr" +
+      "eateTpChainRequest\022@\n\010tp_chain\030\001 \001(\0132%.b" +
+      "lockchain.thepower.v1alpha1.TpChainR\007tpC" +
+      "hain\022.\n\023ccp_organization_id\030\002 \001(\tR\021ccpOr" +
+      "ganizationId\022$\n\016ccp_project_id\030\003 \001(\tR\014cc" +
+      "pProjectId\"c\n\032GetTpChainsByUserIdRequest" +
+      "\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006offset\030\002 \001(" +
+      "\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\'\n\025GetTp" +
+      "ChainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"e\n\022GetT" +
+      "pChainsRequest\022\026\n\006offset\030\001 \001(\003R\006offset\022\024" +
+      "\n\005limit\030\002 \001(\003R\005limit\022!\n\014query_params\030\003 \001" +
+      "(\tR\013queryParams\"X\n\024UpdateTpChainRequest\022" +
+      "@\n\010tp_chain\030\001 \001(\0132%.blockchain.thepower." +
+      "v1alpha1.TpChainR\007tpChain\"Y\n\025CreateTpCha" +
+      "inResponse\022@\n\010tp_chain\030\001 \001(\0132%.blockchai" +
+      "n.thepower.v1alpha1.TpChainR\007tpChain\"\255\001\n" +
+      "\023GetTpChainsResponse\022B\n\ttp_chains\030\001 \003(\0132" +
+      "%.blockchain.thepower.v1alpha1.TpChainR\010" +
+      "tpChains\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_u" +
+      "rl\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR" +
+      "\013previousUrl\"\265\001\n\033GetTpChainsByUserIdResp" +
+      "onse\022B\n\ttp_chains\030\001 \003(\0132%.blockchain.the" +
+      "power.v1alpha1.TpChainR\010tpChains\022\024\n\005tota" +
+      "l\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUr" +
+      "l\022!\n\014previous_url\030\004 \001(\tR\013previousUrl\"Z\n\026" +
+      "GetTpChainByIdResponse\022@\n\010tp_chain\030\001 \001(\013" +
+      "2%.blockchain.thepower.v1alpha1.TpChainR" +
+      "\007tpChain\"Y\n\025UpdateTpChainResponse\022@\n\010tp_" +
+      "chain\030\001 \001(\0132%.blockchain.thepower.v1alph" +
+      "a1.TpChainR\007tpChain2\215\005\n\031BlockchainThePow" +
+      "erService\022x\n\rCreateTpChain\0222.blockchain." +
+      "thepower.v1alpha1.CreateTpChainRequest\0323" +
+      ".blockchain.thepower.v1alpha1.CreateTpCh" +
+      "ainResponse\022r\n\013GetTpChains\0220.blockchain." +
+      "thepower.v1alpha1.GetTpChainsRequest\0321.b" +
+      "lockchain.thepower.v1alpha1.GetTpChainsR" +
+      "esponse\022\212\001\n\023GetTpChainsByUserId\0228.blockc" +
+      "hain.thepower.v1alpha1.GetTpChainsByUser" +
+      "IdRequest\0329.blockchain.thepower.v1alpha1" +
+      ".GetTpChainsByUserIdResponse\022{\n\016GetTpCha" +
+      "inById\0223.blockchain.thepower.v1alpha1.Ge" +
+      "tTpChainByIdRequest\0324.blockchain.thepowe" +
+      "r.v1alpha1.GetTpChainByIdResponse\022x\n\rUpd" +
+      "ateTpChain\0222.blockchain.thepower.v1alpha" +
+      "1.UpdateTpChainRequest\0323.blockchain.thep" +
+      "ower.v1alpha1.UpdateTpChainResponseB?Z=g" +
+      "ithub.com/cuemby/ccp-sdk/gen/go/blockcha" +
+      "in/thepower/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7420,7 +7909,7 @@ public final class ThepowerApi {
     internal_static_blockchain_thepower_v1alpha1_CreateTpChainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_CreateTpChainRequest_descriptor,
-        new java.lang.String[] { "TpChain", });
+        new java.lang.String[] { "TpChain", "CcpOrganizationId", "CcpProjectId", });
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsByUserIdRequest_fieldAccessorTable = new
@@ -7438,7 +7927,7 @@ public final class ThepowerApi {
     internal_static_blockchain_thepower_v1alpha1_GetTpChainsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_GetTpChainsRequest_descriptor,
-        new java.lang.String[] { "Offset", "Limit", });
+        new java.lang.String[] { "Offset", "Limit", "QueryParams", });
     internal_static_blockchain_thepower_v1alpha1_UpdateTpChainRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_blockchain_thepower_v1alpha1_UpdateTpChainRequest_fieldAccessorTable = new

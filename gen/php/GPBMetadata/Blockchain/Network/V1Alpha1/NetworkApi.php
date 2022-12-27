@@ -18,17 +18,17 @@ class NetworkApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Î(
--blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"˚
+ƒ(
+-blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"¯
 CreateNetworkRequest>
-network (2$.blockchain.network.v1alpha1.NetworkRnetworkM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization.
+network (2$.blockchain.network.v1alpha1.NetworkRnetworkJ
+corporation (2(.blockchain.network.v1alpha1.CorporationRcorporation.
 ccp_organization_id (	RccpOrganizationId$
-ccp_project_id (	RccpProjectId"ù
-AddPeerToOrganizationRequest.
+ccp_project_id (	RccpProjectId"ö
+AddPeerToCorporationRequest.
 ccp_organization_id (	RccpOrganizationId$
-ccp_project_id (	RccpProjectId\'
-organization_id (	RorganizationId"¥
+ccp_project_id (	RccpProjectId%
+corporation_id (	RcorporationId"¥
 AddOrdererByNetworkIdRequest>
 orderer (2$.blockchain.network.v1alpha1.OrdererRorderer.
 ccp_organization_id (	RccpOrganizationId$
@@ -42,9 +42,9 @@ class NetworkApi
 GetBlockchainsByUserIdRequest
 user_id (	RuserId
 offset (Roffset
-limit (Rlimit"x
-GetPeersByOrganizationIdRequest\'
-organization_id (	RorganizationId
+limit (Rlimit"u
+GetPeersByCorporationIdRequest%
+corporation_id (	RcorporationId
 offset (Roffset
 limit (Rlimit"k
 GetOrdererByNetworkIdRequest
@@ -53,13 +53,13 @@ network_id (	R	networkId
 offset (Roffset
 limit (Rlimit"*
 GetBlockchainByIdRequest
-id (	Rid"z
-%GetOrganizationsByBlockchainIdRequest#
+id (	Rid"y
+$GetCorporationsByBlockchainIdRequest#
 blockchain_id (	RblockchainId
 offset (Roffset
-limit (Rlimit"¿
-CreateOrganizationRequestM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization.
+limit (Rlimit"º
+CreateCorporationRequestJ
+corporation (2(.blockchain.network.v1alpha1.CorporationRcorporation.
 ccp_organization_id (	RccpOrganizationId$
 ccp_project_id (	RccpProjectId"`
 SendInvitationRequestG
@@ -68,9 +68,9 @@ invitation (2\'.blockchain.network.v1alpha1.InvitationR
 invitation"q
 CreateNetworkResponse>
 network (2$.blockchain.network.v1alpha1.NetworkRnetwork
-message (	Rmessage"à
-AddPeerToOrganizationResponseM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization
+message (	Rmessage"Ñ
+AddPeerToCorporationResponseJ
+corporation (2(.blockchain.network.v1alpha1.CorporationRcorporation
 message (	Rmessage"y
 AddOrdererByNetworkIdResponse>
 orderer (2$.blockchain.network.v1alpha1.OrdererRorderer
@@ -92,38 +92,38 @@ invitation"q
 orderer (2$.blockchain.network.v1alpha1.OrdererRorderer
 total (Rtotal
 next_url (	RnextUrl!
-previous_url (	RpreviousUrl"≠
- GetPeersByOrganizationIdResponse5
+previous_url (	RpreviousUrl"¨
+GetPeersByCorporationIdResponse5
 peer (2!.blockchain.network.v1alpha1.PeerRpeer
 total (Rtotal
 next_url (	RnextUrl!
 previous_url (	RpreviousUrl"[
 GetBlockchainByIdResponse>
-network (2$.blockchain.network.v1alpha1.NetworkRnetwork"Õ
-&GetOrganizationsByBlockchainIdResponseO
-organizations (2).blockchain.network.v1alpha1.OrganizationRorganizations
+network (2$.blockchain.network.v1alpha1.NetworkRnetwork"…
+%GetCorporationsByBlockchainIdResponseL
+corporations (2(.blockchain.network.v1alpha1.CorporationRcorporations
 total (Rtotal
 next_url (	RnextUrl!
-previous_url (	RpreviousUrl"Ö
-CreateOrganizationResponseM
-organization (2).blockchain.network.v1alpha1.OrganizationRorganization
+previous_url (	RpreviousUrl"Å
+CreateCorporationResponseJ
+corporation (2(.blockchain.network.v1alpha1.CorporationRcorporation
 message (	Rmessage"{
 SendInvitationResponseG
 
 invitation (2\'.blockchain.network.v1alpha1.InvitationR
 invitation
-message (	Rmessage2ñ
+message (	Rmessage2ä
 BlockchainAPIServicev
-CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseé
-AddPeerToOrganization9.blockchain.network.v1alpha1.AddPeerToOrganizationRequest:.blockchain.network.v1alpha1.AddPeerToOrganizationResponsey
+CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseã
+AddPeerToCorporation8.blockchain.network.v1alpha1.AddPeerToCorporationRequest9.blockchain.network.v1alpha1.AddPeerToCorporationResponsey
 GetBlockchains2.blockchain.network.v1alpha1.GetBlockchainsRequest3.blockchain.network.v1alpha1.GetBlockchainsResponseë
 GetBlockchainsByUserId:.blockchain.network.v1alpha1.GetBlockchainsByUserIdRequest;.blockchain.network.v1alpha1.GetBlockchainsByUserIdResponseÇ
-GetBlockchainById5.blockchain.network.v1alpha1.GetBlockchainByIdRequest6.blockchain.network.v1alpha1.GetBlockchainByIdResponse©
-GetOrganizationsByBlockchainIdB.blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequestC.blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponsey
-SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponseÖ
-CreateOrganization6.blockchain.network.v1alpha1.CreateOrganizationRequest7.blockchain.network.v1alpha1.CreateOrganizationResponsev
-CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseó
-GetPeersByOrganizationId<.blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest=.blockchain.network.v1alpha1.GetPeersByOrganizationIdResponseé
+GetBlockchainById5.blockchain.network.v1alpha1.GetBlockchainByIdRequest6.blockchain.network.v1alpha1.GetBlockchainByIdResponse¶
+GetCorporationsByBlockchainIdA.blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequestB.blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponsey
+SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponseÇ
+CreateCorporation5.blockchain.network.v1alpha1.CreateCorporationRequest6.blockchain.network.v1alpha1.CreateCorporationResponsev
+CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseî
+GetPeersByCorporationId;.blockchain.network.v1alpha1.GetPeersByCorporationIdRequest<.blockchain.network.v1alpha1.GetPeersByCorporationIdResponseé
 GetOrdererByNetworkId9.blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest:.blockchain.network.v1alpha1.GetOrdererByNetworkIdResponseé
 AddOrdererByNetworkId9.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest:.blockchain.network.v1alpha1.AddOrdererByNetworkIdResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);

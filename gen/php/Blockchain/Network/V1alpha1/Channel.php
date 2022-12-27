@@ -18,11 +18,11 @@ class Channel extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Organizations that creates the channel
+     * Corporation that creates the channel
      *
-     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string corporation_id = 2 [json_name = "corporationId"];</code>
      */
-    protected $organization_id = '';
+    protected $corporation_id = '';
     /**
      * Generated from protobuf field <code>string blockchain_id = 3 [json_name = "blockchainId"];</code>
      */
@@ -32,9 +32,9 @@ class Channel extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated string org_ids = 5 [json_name = "orgIds"];</code>
+     * Generated from protobuf field <code>repeated string corporation_ids = 5 [json_name = "corporationIds"];</code>
      */
-    private $org_ids;
+    private $corporation_ids;
     /**
      * Generated from protobuf field <code>string status = 6 [json_name = "status"];</code>
      */
@@ -55,11 +55,11 @@ class Channel extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $organization_id
-     *           Organizations that creates the channel
+     *     @type string $corporation_id
+     *           Corporation that creates the channel
      *     @type string $blockchain_id
      *     @type string $name
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $org_ids
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $corporation_ids
      *     @type string $status
      *     @type string $created_at
      *     @type string $updated_at
@@ -93,27 +93,27 @@ class Channel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Organizations that creates the channel
+     * Corporation that creates the channel
      *
-     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string corporation_id = 2 [json_name = "corporationId"];</code>
      * @return string
      */
-    public function getOrganizationId()
+    public function getCorporationId()
     {
-        return $this->organization_id;
+        return $this->corporation_id;
     }
 
     /**
-     * Organizations that creates the channel
+     * Corporation that creates the channel
      *
-     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string corporation_id = 2 [json_name = "corporationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setCorporationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->organization_id = $var;
+        $this->corporation_id = $var;
 
         return $this;
     }
@@ -163,23 +163,23 @@ class Channel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string org_ids = 5 [json_name = "orgIds"];</code>
+     * Generated from protobuf field <code>repeated string corporation_ids = 5 [json_name = "corporationIds"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getOrgIds()
+    public function getCorporationIds()
     {
-        return $this->org_ids;
+        return $this->corporation_ids;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string org_ids = 5 [json_name = "orgIds"];</code>
+     * Generated from protobuf field <code>repeated string corporation_ids = 5 [json_name = "corporationIds"];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setOrgIds($var)
+    public function setCorporationIds($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->org_ids = $arr;
+        $this->corporation_ids = $arr;
 
         return $this;
     }

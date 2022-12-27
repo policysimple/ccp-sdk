@@ -28,26 +28,26 @@ function deserialize_blockchain_network_v1alpha1_AddOrdererByNetworkIdResponse(b
   return blockchain_network_v1alpha1_network_api_pb.AddOrdererByNetworkIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_blockchain_network_v1alpha1_AddPeerToOrganizationRequest(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.AddPeerToOrganizationRequest)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.AddPeerToOrganizationRequest');
+function serialize_blockchain_network_v1alpha1_AddPeerToCorporationRequest(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.AddPeerToCorporationRequest)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.AddPeerToCorporationRequest');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_blockchain_network_v1alpha1_AddPeerToOrganizationRequest(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.AddPeerToOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_blockchain_network_v1alpha1_AddPeerToCorporationRequest(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.AddPeerToCorporationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_blockchain_network_v1alpha1_AddPeerToOrganizationResponse(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.AddPeerToOrganizationResponse)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.AddPeerToOrganizationResponse');
+function serialize_blockchain_network_v1alpha1_AddPeerToCorporationResponse(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.AddPeerToCorporationResponse)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.AddPeerToCorporationResponse');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_blockchain_network_v1alpha1_AddPeerToOrganizationResponse(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.AddPeerToOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_blockchain_network_v1alpha1_AddPeerToCorporationResponse(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.AddPeerToCorporationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_blockchain_network_v1alpha1_CreateChannelRequest(arg) {
@@ -72,6 +72,28 @@ function deserialize_blockchain_network_v1alpha1_CreateChannelResponse(buffer_ar
   return blockchain_network_v1alpha1_network_api_pb.CreateChannelResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_blockchain_network_v1alpha1_CreateCorporationRequest(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.CreateCorporationRequest)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.CreateCorporationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_network_v1alpha1_CreateCorporationRequest(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.CreateCorporationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_blockchain_network_v1alpha1_CreateCorporationResponse(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.CreateCorporationResponse)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.CreateCorporationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_network_v1alpha1_CreateCorporationResponse(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.CreateCorporationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_blockchain_network_v1alpha1_CreateNetworkRequest(arg) {
   if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.CreateNetworkRequest)) {
     throw new Error('Expected argument of type blockchain.network.v1alpha1.CreateNetworkRequest');
@@ -92,28 +114,6 @@ function serialize_blockchain_network_v1alpha1_CreateNetworkResponse(arg) {
 
 function deserialize_blockchain_network_v1alpha1_CreateNetworkResponse(buffer_arg) {
   return blockchain_network_v1alpha1_network_api_pb.CreateNetworkResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_blockchain_network_v1alpha1_CreateOrganizationRequest(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.CreateOrganizationRequest)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.CreateOrganizationRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_blockchain_network_v1alpha1_CreateOrganizationRequest(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.CreateOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_blockchain_network_v1alpha1_CreateOrganizationResponse(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.CreateOrganizationResponse)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.CreateOrganizationResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_blockchain_network_v1alpha1_CreateOrganizationResponse(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.CreateOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_blockchain_network_v1alpha1_GetBlockchainByIdRequest(arg) {
@@ -182,6 +182,28 @@ function deserialize_blockchain_network_v1alpha1_GetBlockchainsResponse(buffer_a
   return blockchain_network_v1alpha1_network_api_pb.GetBlockchainsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdRequest)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdResponse)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest(arg) {
   if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdRequest)) {
     throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest');
@@ -204,48 +226,26 @@ function deserialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse(b
   return blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdRequest)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest');
+function serialize_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetPeersByCorporationIdRequest)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetPeersByCorporationIdRequest');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetPeersByCorporationIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdResponse)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse');
+function serialize_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetPeersByCorporationIdResponse)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetPeersByCorporationIdResponse');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdRequest)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdResponse)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetPeersByCorporationIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_blockchain_network_v1alpha1_SendInvitationRequest(arg) {
@@ -283,16 +283,16 @@ var BlockchainAPIServiceService = exports.BlockchainAPIServiceService = {
     responseSerialize: serialize_blockchain_network_v1alpha1_CreateNetworkResponse,
     responseDeserialize: deserialize_blockchain_network_v1alpha1_CreateNetworkResponse,
   },
-  addPeerToOrganization: {
-    path: '/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToOrganization',
+  addPeerToCorporation: {
+    path: '/blockchain.network.v1alpha1.BlockchainAPIService/AddPeerToCorporation',
     requestStream: false,
     responseStream: false,
-    requestType: blockchain_network_v1alpha1_network_api_pb.AddPeerToOrganizationRequest,
-    responseType: blockchain_network_v1alpha1_network_api_pb.AddPeerToOrganizationResponse,
-    requestSerialize: serialize_blockchain_network_v1alpha1_AddPeerToOrganizationRequest,
-    requestDeserialize: deserialize_blockchain_network_v1alpha1_AddPeerToOrganizationRequest,
-    responseSerialize: serialize_blockchain_network_v1alpha1_AddPeerToOrganizationResponse,
-    responseDeserialize: deserialize_blockchain_network_v1alpha1_AddPeerToOrganizationResponse,
+    requestType: blockchain_network_v1alpha1_network_api_pb.AddPeerToCorporationRequest,
+    responseType: blockchain_network_v1alpha1_network_api_pb.AddPeerToCorporationResponse,
+    requestSerialize: serialize_blockchain_network_v1alpha1_AddPeerToCorporationRequest,
+    requestDeserialize: deserialize_blockchain_network_v1alpha1_AddPeerToCorporationRequest,
+    responseSerialize: serialize_blockchain_network_v1alpha1_AddPeerToCorporationResponse,
+    responseDeserialize: deserialize_blockchain_network_v1alpha1_AddPeerToCorporationResponse,
   },
   getBlockchains: {
     path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetBlockchains',
@@ -327,16 +327,16 @@ var BlockchainAPIServiceService = exports.BlockchainAPIServiceService = {
     responseSerialize: serialize_blockchain_network_v1alpha1_GetBlockchainByIdResponse,
     responseDeserialize: deserialize_blockchain_network_v1alpha1_GetBlockchainByIdResponse,
   },
-  getOrganizationsByBlockchainId: {
-    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrganizationsByBlockchainId',
+  getCorporationsByBlockchainId: {
+    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetCorporationsByBlockchainId',
     requestStream: false,
     responseStream: false,
-    requestType: blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdRequest,
-    responseType: blockchain_network_v1alpha1_network_api_pb.GetOrganizationsByBlockchainIdResponse,
-    requestSerialize: serialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest,
-    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest,
-    responseSerialize: serialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse,
-    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse,
+    requestType: blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdRequest,
+    responseType: blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdResponse,
+    requestSerialize: serialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest,
+    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest,
+    responseSerialize: serialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse,
+    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse,
   },
   sendInvitation: {
     path: '/blockchain.network.v1alpha1.BlockchainAPIService/SendInvitation',
@@ -349,16 +349,16 @@ var BlockchainAPIServiceService = exports.BlockchainAPIServiceService = {
     responseSerialize: serialize_blockchain_network_v1alpha1_SendInvitationResponse,
     responseDeserialize: deserialize_blockchain_network_v1alpha1_SendInvitationResponse,
   },
-  createOrganization: {
-    path: '/blockchain.network.v1alpha1.BlockchainAPIService/CreateOrganization',
+  createCorporation: {
+    path: '/blockchain.network.v1alpha1.BlockchainAPIService/CreateCorporation',
     requestStream: false,
     responseStream: false,
-    requestType: blockchain_network_v1alpha1_network_api_pb.CreateOrganizationRequest,
-    responseType: blockchain_network_v1alpha1_network_api_pb.CreateOrganizationResponse,
-    requestSerialize: serialize_blockchain_network_v1alpha1_CreateOrganizationRequest,
-    requestDeserialize: deserialize_blockchain_network_v1alpha1_CreateOrganizationRequest,
-    responseSerialize: serialize_blockchain_network_v1alpha1_CreateOrganizationResponse,
-    responseDeserialize: deserialize_blockchain_network_v1alpha1_CreateOrganizationResponse,
+    requestType: blockchain_network_v1alpha1_network_api_pb.CreateCorporationRequest,
+    responseType: blockchain_network_v1alpha1_network_api_pb.CreateCorporationResponse,
+    requestSerialize: serialize_blockchain_network_v1alpha1_CreateCorporationRequest,
+    requestDeserialize: deserialize_blockchain_network_v1alpha1_CreateCorporationRequest,
+    responseSerialize: serialize_blockchain_network_v1alpha1_CreateCorporationResponse,
+    responseDeserialize: deserialize_blockchain_network_v1alpha1_CreateCorporationResponse,
   },
   createChannel: {
     path: '/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel',
@@ -371,16 +371,16 @@ var BlockchainAPIServiceService = exports.BlockchainAPIServiceService = {
     responseSerialize: serialize_blockchain_network_v1alpha1_CreateChannelResponse,
     responseDeserialize: deserialize_blockchain_network_v1alpha1_CreateChannelResponse,
   },
-  getPeersByOrganizationId: {
-    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByOrganizationId',
+  getPeersByCorporationId: {
+    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByCorporationId',
     requestStream: false,
     responseStream: false,
-    requestType: blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdRequest,
-    responseType: blockchain_network_v1alpha1_network_api_pb.GetPeersByOrganizationIdResponse,
-    requestSerialize: serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest,
-    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest,
-    responseSerialize: serialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse,
-    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse,
+    requestType: blockchain_network_v1alpha1_network_api_pb.GetPeersByCorporationIdRequest,
+    responseType: blockchain_network_v1alpha1_network_api_pb.GetPeersByCorporationIdResponse,
+    requestSerialize: serialize_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest,
+    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest,
+    responseSerialize: serialize_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse,
+    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse,
   },
   getOrdererByNetworkId: {
     path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId',

@@ -20,9 +20,9 @@ class CreateNetworkRequest extends \Google\Protobuf\Internal\Message
      */
     protected $network = null;
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
      */
-    protected $organization = null;
+    protected $corporation = null;
     /**
      * Generated from protobuf field <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
      */
@@ -39,7 +39,7 @@ class CreateNetworkRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Blockchain\Network\V1alpha1\Network $network
-     *     @type \Blockchain\Network\V1alpha1\Organization $organization
+     *     @type \Blockchain\Network\V1alpha1\Corporation $corporation
      *     @type string $ccp_organization_id
      *     @type string $ccp_project_id
      * }
@@ -82,33 +82,33 @@ class CreateNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-     * @return \Blockchain\Network\V1alpha1\Organization|null
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+     * @return \Blockchain\Network\V1alpha1\Corporation|null
      */
-    public function getOrganization()
+    public function getCorporation()
     {
-        return $this->organization;
+        return $this->corporation;
     }
 
-    public function hasOrganization()
+    public function hasCorporation()
     {
-        return isset($this->organization);
+        return isset($this->corporation);
     }
 
-    public function clearOrganization()
+    public function clearCorporation()
     {
-        unset($this->organization);
+        unset($this->corporation);
     }
 
     /**
-     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-     * @param \Blockchain\Network\V1alpha1\Organization $var
+     * Generated from protobuf field <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+     * @param \Blockchain\Network\V1alpha1\Corporation $var
      * @return $this
      */
-    public function setOrganization($var)
+    public function setCorporation($var)
     {
-        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Organization::class);
-        $this->organization = $var;
+        GPBUtil::checkMessage($var, \Blockchain\Network\V1alpha1\Corporation::class);
+        $this->corporation = $var;
 
         return $this;
     }

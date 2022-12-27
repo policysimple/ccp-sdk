@@ -151,7 +151,8 @@ proto.blockchain.thepower.v1alpha1.TpChain.toObject = function(includeInstance, 
     errorDetails: jspb.Message.getFieldWithDefault(msg, 6, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    settings: (f = msg.getSettings()) && proto.blockchain.thepower.v1alpha1.TeaCeremonySettings.toObject(includeInstance, f)
+    settings: (f = msg.getSettings()) && proto.blockchain.thepower.v1alpha1.TeaCeremonySettings.toObject(includeInstance, f),
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -225,6 +226,10 @@ proto.blockchain.thepower.v1alpha1.TpChain.deserializeBinaryFromReader = functio
       var value = new proto.blockchain.thepower.v1alpha1.TeaCeremonySettings;
       reader.readMessage(value,proto.blockchain.thepower.v1alpha1.TeaCeremonySettings.deserializeBinaryFromReader);
       msg.setSettings(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcpOrganizationId(value);
       break;
     default:
       reader.skipField();
@@ -318,6 +323,13 @@ proto.blockchain.thepower.v1alpha1.TpChain.serializeBinaryToWriter = function(me
       9,
       f,
       proto.blockchain.thepower.v1alpha1.TeaCeremonySettings.serializeBinaryToWriter
+    );
+  }
+  f = message.getCcpOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
     );
   }
 };
@@ -521,6 +533,24 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.clearSettings = function() 
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.hasSettings = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string ccp_organization_id = 10;
+ * @return {string}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getCcpOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setCcpOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

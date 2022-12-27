@@ -49,6 +49,10 @@ class TpChain extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.TeaCeremonySettings settings = 9 [json_name = "settings"];</code>
      */
     protected $settings = null;
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];</code>
+     */
+    protected $ccp_organization_id = '';
 
     /**
      * Constructor.
@@ -65,6 +69,7 @@ class TpChain extends \Google\Protobuf\Internal\Message
      *     @type string $created_at
      *     @type string $updated_at
      *     @type \Blockchain\Thepower\V1alpha1\TeaCeremonySettings $settings
+     *     @type string $ccp_organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -276,6 +281,28 @@ class TpChain extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Blockchain\Thepower\V1alpha1\TeaCeremonySettings::class);
         $this->settings = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];</code>
+     * @return string
+     */
+    public function getCcpOrganizationId()
+    {
+        return $this->ccp_organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCcpOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ccp_organization_id = $var;
 
         return $this;
     }

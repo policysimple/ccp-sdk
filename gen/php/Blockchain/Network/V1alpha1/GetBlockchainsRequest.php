@@ -22,7 +22,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $limit = 0;
     /**
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      *
      * Generated from protobuf field <code>string query_params = 3 [json_name = "queryParams"];</code>
      */
@@ -37,7 +37,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
      *     @type int|string $offset
      *     @type int|string $limit
      *     @type string $query_params
-     *           Params to allow doing custom filters for blockchains.
+     *           Standard query params to allow doing custom filters for blockchains.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,7 +90,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      *
      * Generated from protobuf field <code>string query_params = 3 [json_name = "queryParams"];</code>
      * @return string
@@ -101,7 +101,7 @@ class GetBlockchainsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      *
      * Generated from protobuf field <code>string query_params = 3 [json_name = "queryParams"];</code>
      * @param string $var

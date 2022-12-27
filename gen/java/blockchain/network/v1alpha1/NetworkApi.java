@@ -34,19 +34,19 @@ public final class NetworkApi {
     blockchain.network.v1alpha1.NetworkOuterClass.NetworkOrBuilder getNetworkOrBuilder();
 
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
-    boolean hasOrganization();
+    boolean hasCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization();
+    blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder();
+    blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder();
 
     /**
      * <code>string ccp_organization_id = 3 [json_name = "ccpOrganizationId"];</code>
@@ -137,14 +137,14 @@ public final class NetworkApi {
               break;
             }
             case 18: {
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder subBuilder = null;
-              if (organization_ != null) {
-                subBuilder = organization_.toBuilder();
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder subBuilder = null;
+              if (corporation_ != null) {
+                subBuilder = corporation_.toBuilder();
               }
-              organization_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry);
+              corporation_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Corporation.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(organization_);
-                organization_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(corporation_);
+                corporation_ = subBuilder.buildPartial();
               }
 
               break;
@@ -219,30 +219,30 @@ public final class NetworkApi {
       return getNetwork();
     }
 
-    public static final int ORGANIZATION_FIELD_NUMBER = 2;
-    private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+    public static final int CORPORATION_FIELD_NUMBER = 2;
+    private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
     @java.lang.Override
-    public boolean hasOrganization() {
-      return organization_ != null;
+    public boolean hasCorporation() {
+      return corporation_ != null;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-      return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+    public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+      return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-      return getOrganization();
+    public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+      return getCorporation();
     }
 
     public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 3;
@@ -338,8 +338,8 @@ public final class NetworkApi {
       if (network_ != null) {
         output.writeMessage(1, getNetwork());
       }
-      if (organization_ != null) {
-        output.writeMessage(2, getOrganization());
+      if (corporation_ != null) {
+        output.writeMessage(2, getCorporation());
       }
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ccpOrganizationId_);
@@ -360,9 +360,9 @@ public final class NetworkApi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getNetwork());
       }
-      if (organization_ != null) {
+      if (corporation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getOrganization());
+          .computeMessageSize(2, getCorporation());
       }
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ccpOrganizationId_);
@@ -390,10 +390,10 @@ public final class NetworkApi {
         if (!getNetwork()
             .equals(other.getNetwork())) return false;
       }
-      if (hasOrganization() != other.hasOrganization()) return false;
-      if (hasOrganization()) {
-        if (!getOrganization()
-            .equals(other.getOrganization())) return false;
+      if (hasCorporation() != other.hasCorporation()) return false;
+      if (hasCorporation()) {
+        if (!getCorporation()
+            .equals(other.getCorporation())) return false;
       }
       if (!getCcpOrganizationId()
           .equals(other.getCcpOrganizationId())) return false;
@@ -414,9 +414,9 @@ public final class NetworkApi {
         hash = (37 * hash) + NETWORK_FIELD_NUMBER;
         hash = (53 * hash) + getNetwork().hashCode();
       }
-      if (hasOrganization()) {
-        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganization().hashCode();
+      if (hasCorporation()) {
+        hash = (37 * hash) + CORPORATION_FIELD_NUMBER;
+        hash = (53 * hash) + getCorporation().hashCode();
       }
       hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCcpOrganizationId().hashCode();
@@ -565,11 +565,11 @@ public final class NetworkApi {
           network_ = null;
           networkBuilder_ = null;
         }
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
         ccpOrganizationId_ = "";
 
@@ -606,10 +606,10 @@ public final class NetworkApi {
         } else {
           result.network_ = networkBuilder_.build();
         }
-        if (organizationBuilder_ == null) {
-          result.organization_ = organization_;
+        if (corporationBuilder_ == null) {
+          result.corporation_ = corporation_;
         } else {
-          result.organization_ = organizationBuilder_.build();
+          result.corporation_ = corporationBuilder_.build();
         }
         result.ccpOrganizationId_ = ccpOrganizationId_;
         result.ccpProjectId_ = ccpProjectId_;
@@ -664,8 +664,8 @@ public final class NetworkApi {
         if (other.hasNetwork()) {
           mergeNetwork(other.getNetwork());
         }
-        if (other.hasOrganization()) {
-          mergeOrganization(other.getOrganization());
+        if (other.hasCorporation()) {
+          mergeCorporation(other.getCorporation());
         }
         if (!other.getCcpOrganizationId().isEmpty()) {
           ccpOrganizationId_ = other.ccpOrganizationId_;
@@ -823,123 +823,123 @@ public final class NetworkApi {
         return networkBuilder_;
       }
 
-      private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+      private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> organizationBuilder_;
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> corporationBuilder_;
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-       * @return Whether the organization field is set.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+       * @return Whether the corporation field is set.
        */
-      public boolean hasOrganization() {
-        return organizationBuilder_ != null || organization_ != null;
+      public boolean hasCorporation() {
+        return corporationBuilder_ != null || corporation_ != null;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
-       * @return The organization.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
+       * @return The corporation.
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-        if (organizationBuilder_ == null) {
-          return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+        if (corporationBuilder_ == null) {
+          return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         } else {
-          return organizationBuilder_.getMessage();
+          return corporationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
+      public Builder setCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          organization_ = value;
+          corporation_ = value;
           onChanged();
         } else {
-          organizationBuilder_.setMessage(value);
+          corporationBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationBuilder_ == null) {
-          organization_ = builderForValue.build();
+      public Builder setCorporation(
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationBuilder_ == null) {
+          corporation_ = builderForValue.build();
           onChanged();
         } else {
-          organizationBuilder_.setMessage(builderForValue.build());
+          corporationBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
-      public Builder mergeOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
-          if (organization_ != null) {
-            organization_ =
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.newBuilder(organization_).mergeFrom(value).buildPartial();
+      public Builder mergeCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
+          if (corporation_ != null) {
+            corporation_ =
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.newBuilder(corporation_).mergeFrom(value).buildPartial();
           } else {
-            organization_ = value;
+            corporation_ = value;
           }
           onChanged();
         } else {
-          organizationBuilder_.mergeFrom(value);
+          corporationBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
-      public Builder clearOrganization() {
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+      public Builder clearCorporation() {
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
           onChanged();
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder getOrganizationBuilder() {
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder getCorporationBuilder() {
         
         onChanged();
-        return getOrganizationFieldBuilder().getBuilder();
+        return getCorporationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-        if (organizationBuilder_ != null) {
-          return organizationBuilder_.getMessageOrBuilder();
+      public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+        if (corporationBuilder_ != null) {
+          return corporationBuilder_.getMessageOrBuilder();
         } else {
-          return organization_ == null ?
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+          return corporation_ == null ?
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 2 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 2 [json_name = "corporation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-          getOrganizationFieldBuilder() {
-        if (organizationBuilder_ == null) {
-          organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder>(
-                  getOrganization(),
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+          getCorporationFieldBuilder() {
+        if (corporationBuilder_ == null) {
+          corporationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder>(
+                  getCorporation(),
                   getParentForChildren(),
                   isClean());
-          organization_ = null;
+          corporation_ = null;
         }
-        return organizationBuilder_;
+        return corporationBuilder_;
       }
 
       private java.lang.Object ccpOrganizationId_ = "";
@@ -1146,8 +1146,8 @@ public final class NetworkApi {
 
   }
 
-  public interface AddPeerToOrganizationRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+  public interface AddPeerToCorporationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1175,40 +1175,40 @@ public final class NetworkApi {
         getCcpProjectIdBytes();
 
     /**
-     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+     * @return The corporationId.
      */
-    java.lang.String getOrganizationId();
+    java.lang.String getCorporationId();
     /**
-     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
+     * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+     * @return The bytes for corporationId.
      */
     com.google.protobuf.ByteString
-        getOrganizationIdBytes();
+        getCorporationIdBytes();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToOrganizationRequest}
+   * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToCorporationRequest}
    */
-  public static final class AddPeerToOrganizationRequest extends
+  public static final class AddPeerToCorporationRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
-      AddPeerToOrganizationRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
+      AddPeerToCorporationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use AddPeerToOrganizationRequest.newBuilder() to construct.
-    private AddPeerToOrganizationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AddPeerToCorporationRequest.newBuilder() to construct.
+    private AddPeerToCorporationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AddPeerToOrganizationRequest() {
+    private AddPeerToCorporationRequest() {
       ccpOrganizationId_ = "";
       ccpProjectId_ = "";
-      organizationId_ = "";
+      corporationId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new AddPeerToOrganizationRequest();
+      return new AddPeerToCorporationRequest();
     }
 
     @java.lang.Override
@@ -1216,7 +1216,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AddPeerToOrganizationRequest(
+    private AddPeerToCorporationRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1249,7 +1249,7 @@ public final class NetworkApi {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = s;
+              corporationId_ = s;
               break;
             }
             default: {
@@ -1273,15 +1273,15 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.Builder.class);
     }
 
     public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 1;
@@ -1360,38 +1360,38 @@ public final class NetworkApi {
       }
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object organizationId_;
+    public static final int CORPORATION_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object corporationId_;
     /**
-     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+     * @return The corporationId.
      */
     @java.lang.Override
-    public java.lang.String getOrganizationId() {
-      java.lang.Object ref = organizationId_;
+    public java.lang.String getCorporationId() {
+      java.lang.Object ref = corporationId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        organizationId_ = s;
+        corporationId_ = s;
         return s;
       }
     }
     /**
-     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
+     * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+     * @return The bytes for corporationId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOrganizationIdBytes() {
-      java.lang.Object ref = organizationId_;
+        getCorporationIdBytes() {
+      java.lang.Object ref = corporationId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        organizationId_ = b;
+        corporationId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1418,8 +1418,8 @@ public final class NetworkApi {
       if (!getCcpProjectIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ccpProjectId_);
       }
-      if (!getOrganizationIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, organizationId_);
+      if (!getCorporationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, corporationId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1436,8 +1436,8 @@ public final class NetworkApi {
       if (!getCcpProjectIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ccpProjectId_);
       }
-      if (!getOrganizationIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, organizationId_);
+      if (!getCorporationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, corporationId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1449,17 +1449,17 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest other = (blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest) obj;
+      blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest other = (blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest) obj;
 
       if (!getCcpOrganizationId()
           .equals(other.getCcpOrganizationId())) return false;
       if (!getCcpProjectId()
           .equals(other.getCcpProjectId())) return false;
-      if (!getOrganizationId()
-          .equals(other.getOrganizationId())) return false;
+      if (!getCorporationId()
+          .equals(other.getCorporationId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1475,76 +1475,76 @@ public final class NetworkApi {
       hash = (53 * hash) + getCcpOrganizationId().hashCode();
       hash = (37 * hash) + CCP_PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCcpProjectId().hashCode();
-      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + CORPORATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCorporationId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1557,7 +1557,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1573,26 +1573,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToOrganizationRequest}
+     * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToCorporationRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1614,7 +1614,7 @@ public final class NetworkApi {
 
         ccpProjectId_ = "";
 
-        organizationId_ = "";
+        corporationId_ = "";
 
         return this;
       }
@@ -1622,17 +1622,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest build() {
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest build() {
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1640,11 +1640,11 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest result = new blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest(this);
+      public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest result = new blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest(this);
         result.ccpOrganizationId_ = ccpOrganizationId_;
         result.ccpProjectId_ = ccpProjectId_;
-        result.organizationId_ = organizationId_;
+        result.corporationId_ = corporationId_;
         onBuilt();
         return result;
       }
@@ -1683,16 +1683,16 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest.getDefaultInstance()) return this;
         if (!other.getCcpOrganizationId().isEmpty()) {
           ccpOrganizationId_ = other.ccpOrganizationId_;
           onChanged();
@@ -1701,8 +1701,8 @@ public final class NetworkApi {
           ccpProjectId_ = other.ccpProjectId_;
           onChanged();
         }
-        if (!other.getOrganizationId().isEmpty()) {
-          organizationId_ = other.organizationId_;
+        if (!other.getCorporationId().isEmpty()) {
+          corporationId_ = other.corporationId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1720,11 +1720,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1886,78 +1886,78 @@ public final class NetworkApi {
         return this;
       }
 
-      private java.lang.Object organizationId_ = "";
+      private java.lang.Object corporationId_ = "";
       /**
-       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-       * @return The organizationId.
+       * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+       * @return The corporationId.
        */
-      public java.lang.String getOrganizationId() {
-        java.lang.Object ref = organizationId_;
+      public java.lang.String getCorporationId() {
+        java.lang.Object ref = corporationId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          organizationId_ = s;
+          corporationId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-       * @return The bytes for organizationId.
+       * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+       * @return The bytes for corporationId.
        */
       public com.google.protobuf.ByteString
-          getOrganizationIdBytes() {
-        java.lang.Object ref = organizationId_;
+          getCorporationIdBytes() {
+        java.lang.Object ref = corporationId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          organizationId_ = b;
+          corporationId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
+       * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+       * @param value The corporationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(
+      public Builder setCorporationId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        organizationId_ = value;
+        corporationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+       * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationId() {
+      public Builder clearCorporationId() {
         
-        organizationId_ = getDefaultInstance().getOrganizationId();
+        corporationId_ = getDefaultInstance().getCorporationId();
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
-       * @param value The bytes for organizationId to set.
+       * <code>string corporation_id = 3 [json_name = "corporationId"];</code>
+       * @param value The bytes for corporationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationIdBytes(
+      public Builder setCorporationIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        organizationId_ = value;
+        corporationId_ = value;
         onChanged();
         return this;
       }
@@ -1974,41 +1974,41 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToOrganizationRequest)
-    private static final blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
+    private static final blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AddPeerToOrganizationRequest>
-        PARSER = new com.google.protobuf.AbstractParser<AddPeerToOrganizationRequest>() {
+    private static final com.google.protobuf.Parser<AddPeerToCorporationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AddPeerToCorporationRequest>() {
       @java.lang.Override
-      public AddPeerToOrganizationRequest parsePartialFrom(
+      public AddPeerToCorporationRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddPeerToOrganizationRequest(input, extensionRegistry);
+        return new AddPeerToCorporationRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AddPeerToOrganizationRequest> parser() {
+    public static com.google.protobuf.Parser<AddPeerToCorporationRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AddPeerToOrganizationRequest> getParserForType() {
+    public com.google.protobuf.Parser<AddPeerToCorporationRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationRequest getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3574,7 +3574,7 @@ public final class NetworkApi {
 
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -3583,7 +3583,7 @@ public final class NetworkApi {
     java.lang.String getQueryParams();
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -3712,7 +3712,7 @@ public final class NetworkApi {
     private volatile java.lang.Object queryParams_;
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -3733,7 +3733,7 @@ public final class NetworkApi {
     }
     /**
      * <pre>
-     * Params to allow doing custom filters for blockchains.
+     * Standard query params to allow doing custom filters for blockchains.
      * </pre>
      *
      * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4157,7 +4157,7 @@ public final class NetworkApi {
       private java.lang.Object queryParams_ = "";
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4177,7 +4177,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4198,7 +4198,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4217,7 +4217,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -4231,7 +4231,7 @@ public final class NetworkApi {
       }
       /**
        * <pre>
-       * Params to allow doing custom filters for blockchains.
+       * Standard query params to allow doing custom filters for blockchains.
        * </pre>
        *
        * <code>string query_params = 3 [json_name = "queryParams"];</code>
@@ -5012,21 +5012,21 @@ public final class NetworkApi {
 
   }
 
-  public interface GetPeersByOrganizationIdRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest)
+  public interface GetPeersByCorporationIdRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetPeersByCorporationIdRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+     * @return The corporationId.
      */
-    java.lang.String getOrganizationId();
+    java.lang.String getCorporationId();
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
+     * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+     * @return The bytes for corporationId.
      */
     com.google.protobuf.ByteString
-        getOrganizationIdBytes();
+        getCorporationIdBytes();
 
     /**
      * <code>int64 offset = 2 [json_name = "offset"];</code>
@@ -5041,26 +5041,26 @@ public final class NetworkApi {
     long getLimit();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest}
+   * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByCorporationIdRequest}
    */
-  public static final class GetPeersByOrganizationIdRequest extends
+  public static final class GetPeersByCorporationIdRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest)
-      GetPeersByOrganizationIdRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetPeersByCorporationIdRequest)
+      GetPeersByCorporationIdRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetPeersByOrganizationIdRequest.newBuilder() to construct.
-    private GetPeersByOrganizationIdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetPeersByCorporationIdRequest.newBuilder() to construct.
+    private GetPeersByCorporationIdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetPeersByOrganizationIdRequest() {
-      organizationId_ = "";
+    private GetPeersByCorporationIdRequest() {
+      corporationId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetPeersByOrganizationIdRequest();
+      return new GetPeersByCorporationIdRequest();
     }
 
     @java.lang.Override
@@ -5068,7 +5068,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetPeersByOrganizationIdRequest(
+    private GetPeersByCorporationIdRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5089,7 +5089,7 @@ public final class NetworkApi {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              organizationId_ = s;
+              corporationId_ = s;
               break;
             }
             case 16: {
@@ -5123,49 +5123,49 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.Builder.class);
     }
 
-    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object organizationId_;
+    public static final int CORPORATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object corporationId_;
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The organizationId.
+     * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+     * @return The corporationId.
      */
     @java.lang.Override
-    public java.lang.String getOrganizationId() {
-      java.lang.Object ref = organizationId_;
+    public java.lang.String getCorporationId() {
+      java.lang.Object ref = corporationId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        organizationId_ = s;
+        corporationId_ = s;
         return s;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return The bytes for organizationId.
+     * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+     * @return The bytes for corporationId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOrganizationIdBytes() {
-      java.lang.Object ref = organizationId_;
+        getCorporationIdBytes() {
+      java.lang.Object ref = corporationId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        organizationId_ = b;
+        corporationId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5208,8 +5208,8 @@ public final class NetworkApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getOrganizationIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      if (!getCorporationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, corporationId_);
       }
       if (offset_ != 0L) {
         output.writeInt64(2, offset_);
@@ -5226,8 +5226,8 @@ public final class NetworkApi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getOrganizationIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      if (!getCorporationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, corporationId_);
       }
       if (offset_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -5247,13 +5247,13 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest other = (blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest) obj;
+      blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest other = (blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest) obj;
 
-      if (!getOrganizationId()
-          .equals(other.getOrganizationId())) return false;
+      if (!getCorporationId()
+          .equals(other.getCorporationId())) return false;
       if (getOffset()
           != other.getOffset()) return false;
       if (getLimit()
@@ -5269,8 +5269,8 @@ public final class NetworkApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + CORPORATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCorporationId().hashCode();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOffset());
@@ -5282,69 +5282,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5357,7 +5357,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5373,26 +5373,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest}
+     * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByCorporationIdRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest)
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetPeersByCorporationIdRequest)
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5410,7 +5410,7 @@ public final class NetworkApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        organizationId_ = "";
+        corporationId_ = "";
 
         offset_ = 0L;
 
@@ -5422,17 +5422,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest build() {
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest build() {
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5440,9 +5440,9 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest result = new blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest(this);
-        result.organizationId_ = organizationId_;
+      public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest result = new blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest(this);
+        result.corporationId_ = corporationId_;
         result.offset_ = offset_;
         result.limit_ = limit_;
         onBuilt();
@@ -5483,18 +5483,18 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest.getDefaultInstance()) return this;
-        if (!other.getOrganizationId().isEmpty()) {
-          organizationId_ = other.organizationId_;
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest.getDefaultInstance()) return this;
+        if (!other.getCorporationId().isEmpty()) {
+          corporationId_ = other.corporationId_;
           onChanged();
         }
         if (other.getOffset() != 0L) {
@@ -5518,11 +5518,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5532,78 +5532,78 @@ public final class NetworkApi {
         return this;
       }
 
-      private java.lang.Object organizationId_ = "";
+      private java.lang.Object corporationId_ = "";
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @return The organizationId.
+       * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+       * @return The corporationId.
        */
-      public java.lang.String getOrganizationId() {
-        java.lang.Object ref = organizationId_;
+      public java.lang.String getCorporationId() {
+        java.lang.Object ref = corporationId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          organizationId_ = s;
+          corporationId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @return The bytes for organizationId.
+       * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+       * @return The bytes for corporationId.
        */
       public com.google.protobuf.ByteString
-          getOrganizationIdBytes() {
-        java.lang.Object ref = organizationId_;
+          getCorporationIdBytes() {
+        java.lang.Object ref = corporationId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          organizationId_ = b;
+          corporationId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @param value The organizationId to set.
+       * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+       * @param value The corporationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationId(
+      public Builder setCorporationId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        organizationId_ = value;
+        corporationId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationId() {
+      public Builder clearCorporationId() {
         
-        organizationId_ = getDefaultInstance().getOrganizationId();
+        corporationId_ = getDefaultInstance().getCorporationId();
         onChanged();
         return this;
       }
       /**
-       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-       * @param value The bytes for organizationId to set.
+       * <code>string corporation_id = 1 [json_name = "corporationId"];</code>
+       * @param value The bytes for corporationId to set.
        * @return This builder for chaining.
        */
-      public Builder setOrganizationIdBytes(
+      public Builder setCorporationIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        organizationId_ = value;
+        corporationId_ = value;
         onChanged();
         return this;
       }
@@ -5682,41 +5682,41 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetPeersByCorporationIdRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetPeersByOrganizationIdRequest)
-    private static final blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetPeersByCorporationIdRequest)
+    private static final blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetPeersByOrganizationIdRequest>
-        PARSER = new com.google.protobuf.AbstractParser<GetPeersByOrganizationIdRequest>() {
+    private static final com.google.protobuf.Parser<GetPeersByCorporationIdRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetPeersByCorporationIdRequest>() {
       @java.lang.Override
-      public GetPeersByOrganizationIdRequest parsePartialFrom(
+      public GetPeersByCorporationIdRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetPeersByOrganizationIdRequest(input, extensionRegistry);
+        return new GetPeersByCorporationIdRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetPeersByOrganizationIdRequest> parser() {
+    public static com.google.protobuf.Parser<GetPeersByCorporationIdRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetPeersByOrganizationIdRequest> getParserForType() {
+    public com.google.protobuf.Parser<GetPeersByCorporationIdRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdRequest getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7000,8 +7000,8 @@ public final class NetworkApi {
 
   }
 
-  public interface GetOrganizationsByBlockchainIdRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest)
+  public interface GetCorporationsByBlockchainIdRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7029,18 +7029,18 @@ public final class NetworkApi {
     long getLimit();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest}
+   * Protobuf type {@code blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest}
    */
-  public static final class GetOrganizationsByBlockchainIdRequest extends
+  public static final class GetCorporationsByBlockchainIdRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest)
-      GetOrganizationsByBlockchainIdRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest)
+      GetCorporationsByBlockchainIdRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetOrganizationsByBlockchainIdRequest.newBuilder() to construct.
-    private GetOrganizationsByBlockchainIdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetCorporationsByBlockchainIdRequest.newBuilder() to construct.
+    private GetCorporationsByBlockchainIdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetOrganizationsByBlockchainIdRequest() {
+    private GetCorporationsByBlockchainIdRequest() {
       blockchainId_ = "";
     }
 
@@ -7048,7 +7048,7 @@ public final class NetworkApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetOrganizationsByBlockchainIdRequest();
+      return new GetCorporationsByBlockchainIdRequest();
     }
 
     @java.lang.Override
@@ -7056,7 +7056,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetOrganizationsByBlockchainIdRequest(
+    private GetCorporationsByBlockchainIdRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7111,15 +7111,15 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.Builder.class);
     }
 
     public static final int BLOCKCHAIN_ID_FIELD_NUMBER = 1;
@@ -7235,10 +7235,10 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest other = (blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest) obj;
+      blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest other = (blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest) obj;
 
       if (!getBlockchainId()
           .equals(other.getBlockchainId())) return false;
@@ -7270,69 +7270,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7345,7 +7345,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7361,26 +7361,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest}
+     * Protobuf type {@code blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest)
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest)
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.class, blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7410,17 +7410,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest build() {
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest build() {
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7428,8 +7428,8 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest result = new blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest(this);
+      public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest result = new blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest(this);
         result.blockchainId_ = blockchainId_;
         result.offset_ = offset_;
         result.limit_ = limit_;
@@ -7471,16 +7471,16 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest.getDefaultInstance()) return this;
         if (!other.getBlockchainId().isEmpty()) {
           blockchainId_ = other.blockchainId_;
           onChanged();
@@ -7506,11 +7506,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7670,64 +7670,64 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdRequest)
-    private static final blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest)
+    private static final blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetOrganizationsByBlockchainIdRequest>
-        PARSER = new com.google.protobuf.AbstractParser<GetOrganizationsByBlockchainIdRequest>() {
+    private static final com.google.protobuf.Parser<GetCorporationsByBlockchainIdRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetCorporationsByBlockchainIdRequest>() {
       @java.lang.Override
-      public GetOrganizationsByBlockchainIdRequest parsePartialFrom(
+      public GetCorporationsByBlockchainIdRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetOrganizationsByBlockchainIdRequest(input, extensionRegistry);
+        return new GetCorporationsByBlockchainIdRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetOrganizationsByBlockchainIdRequest> parser() {
+    public static com.google.protobuf.Parser<GetCorporationsByBlockchainIdRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetOrganizationsByBlockchainIdRequest> getParserForType() {
+    public com.google.protobuf.Parser<GetCorporationsByBlockchainIdRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdRequest getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CreateOrganizationRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateOrganizationRequest)
+  public interface CreateCorporationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateCorporationRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
-    boolean hasOrganization();
+    boolean hasCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization();
+    blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder();
+    blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder();
 
     /**
      * <code>string ccp_organization_id = 2 [json_name = "ccpOrganizationId"];</code>
@@ -7754,18 +7754,18 @@ public final class NetworkApi {
         getCcpProjectIdBytes();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.CreateOrganizationRequest}
+   * Protobuf type {@code blockchain.network.v1alpha1.CreateCorporationRequest}
    */
-  public static final class CreateOrganizationRequest extends
+  public static final class CreateCorporationRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.CreateOrganizationRequest)
-      CreateOrganizationRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.CreateCorporationRequest)
+      CreateCorporationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateOrganizationRequest.newBuilder() to construct.
-    private CreateOrganizationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateCorporationRequest.newBuilder() to construct.
+    private CreateCorporationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateOrganizationRequest() {
+    private CreateCorporationRequest() {
       ccpOrganizationId_ = "";
       ccpProjectId_ = "";
     }
@@ -7774,7 +7774,7 @@ public final class NetworkApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateOrganizationRequest();
+      return new CreateCorporationRequest();
     }
 
     @java.lang.Override
@@ -7782,7 +7782,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateOrganizationRequest(
+    private CreateCorporationRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7801,14 +7801,14 @@ public final class NetworkApi {
               done = true;
               break;
             case 10: {
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder subBuilder = null;
-              if (organization_ != null) {
-                subBuilder = organization_.toBuilder();
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder subBuilder = null;
+              if (corporation_ != null) {
+                subBuilder = corporation_.toBuilder();
               }
-              organization_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry);
+              corporation_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Corporation.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(organization_);
-                organization_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(corporation_);
+                corporation_ = subBuilder.buildPartial();
               }
 
               break;
@@ -7846,41 +7846,41 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.class, blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.class, blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.Builder.class);
     }
 
-    public static final int ORGANIZATION_FIELD_NUMBER = 1;
-    private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+    public static final int CORPORATION_FIELD_NUMBER = 1;
+    private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
     @java.lang.Override
-    public boolean hasOrganization() {
-      return organization_ != null;
+    public boolean hasCorporation() {
+      return corporation_ != null;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-      return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+    public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+      return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-      return getOrganization();
+    public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+      return getCorporation();
     }
 
     public static final int CCP_ORGANIZATION_ID_FIELD_NUMBER = 2;
@@ -7973,8 +7973,8 @@ public final class NetworkApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organization_ != null) {
-        output.writeMessage(1, getOrganization());
+      if (corporation_ != null) {
+        output.writeMessage(1, getCorporation());
       }
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ccpOrganizationId_);
@@ -7991,9 +7991,9 @@ public final class NetworkApi {
       if (size != -1) return size;
 
       size = 0;
-      if (organization_ != null) {
+      if (corporation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getOrganization());
+          .computeMessageSize(1, getCorporation());
       }
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ccpOrganizationId_);
@@ -8011,15 +8011,15 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest other = (blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest) obj;
+      blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest other = (blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest) obj;
 
-      if (hasOrganization() != other.hasOrganization()) return false;
-      if (hasOrganization()) {
-        if (!getOrganization()
-            .equals(other.getOrganization())) return false;
+      if (hasCorporation() != other.hasCorporation()) return false;
+      if (hasCorporation()) {
+        if (!getCorporation()
+            .equals(other.getCorporation())) return false;
       }
       if (!getCcpOrganizationId()
           .equals(other.getCcpOrganizationId())) return false;
@@ -8036,9 +8036,9 @@ public final class NetworkApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasOrganization()) {
-        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganization().hashCode();
+      if (hasCorporation()) {
+        hash = (37 * hash) + CORPORATION_FIELD_NUMBER;
+        hash = (53 * hash) + getCorporation().hashCode();
       }
       hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCcpOrganizationId().hashCode();
@@ -8049,69 +8049,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8124,7 +8124,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8140,26 +8140,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.CreateOrganizationRequest}
+     * Protobuf type {@code blockchain.network.v1alpha1.CreateCorporationRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.CreateOrganizationRequest)
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.CreateCorporationRequest)
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.class, blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.class, blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8177,11 +8177,11 @@ public final class NetworkApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
         ccpOrganizationId_ = "";
 
@@ -8193,17 +8193,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest build() {
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest build() {
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8211,12 +8211,12 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest result = new blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest(this);
-        if (organizationBuilder_ == null) {
-          result.organization_ = organization_;
+      public blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest result = new blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest(this);
+        if (corporationBuilder_ == null) {
+          result.corporation_ = corporation_;
         } else {
-          result.organization_ = organizationBuilder_.build();
+          result.corporation_ = corporationBuilder_.build();
         }
         result.ccpOrganizationId_ = ccpOrganizationId_;
         result.ccpProjectId_ = ccpProjectId_;
@@ -8258,18 +8258,18 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest.getDefaultInstance()) return this;
-        if (other.hasOrganization()) {
-          mergeOrganization(other.getOrganization());
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest.getDefaultInstance()) return this;
+        if (other.hasCorporation()) {
+          mergeCorporation(other.getCorporation());
         }
         if (!other.getCcpOrganizationId().isEmpty()) {
           ccpOrganizationId_ = other.ccpOrganizationId_;
@@ -8294,11 +8294,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8308,123 +8308,123 @@ public final class NetworkApi {
         return this;
       }
 
-      private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+      private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> organizationBuilder_;
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> corporationBuilder_;
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-       * @return Whether the organization field is set.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+       * @return Whether the corporation field is set.
        */
-      public boolean hasOrganization() {
-        return organizationBuilder_ != null || organization_ != null;
+      public boolean hasCorporation() {
+        return corporationBuilder_ != null || corporation_ != null;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-       * @return The organization.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+       * @return The corporation.
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-        if (organizationBuilder_ == null) {
-          return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+        if (corporationBuilder_ == null) {
+          return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         } else {
-          return organizationBuilder_.getMessage();
+          return corporationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
+      public Builder setCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          organization_ = value;
+          corporation_ = value;
           onChanged();
         } else {
-          organizationBuilder_.setMessage(value);
+          corporationBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationBuilder_ == null) {
-          organization_ = builderForValue.build();
+      public Builder setCorporation(
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationBuilder_ == null) {
+          corporation_ = builderForValue.build();
           onChanged();
         } else {
-          organizationBuilder_.setMessage(builderForValue.build());
+          corporationBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder mergeOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
-          if (organization_ != null) {
-            organization_ =
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.newBuilder(organization_).mergeFrom(value).buildPartial();
+      public Builder mergeCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
+          if (corporation_ != null) {
+            corporation_ =
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.newBuilder(corporation_).mergeFrom(value).buildPartial();
           } else {
-            organization_ = value;
+            corporation_ = value;
           }
           onChanged();
         } else {
-          organizationBuilder_.mergeFrom(value);
+          corporationBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder clearOrganization() {
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+      public Builder clearCorporation() {
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
           onChanged();
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder getOrganizationBuilder() {
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder getCorporationBuilder() {
         
         onChanged();
-        return getOrganizationFieldBuilder().getBuilder();
+        return getCorporationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-        if (organizationBuilder_ != null) {
-          return organizationBuilder_.getMessageOrBuilder();
+      public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+        if (corporationBuilder_ != null) {
+          return corporationBuilder_.getMessageOrBuilder();
         } else {
-          return organization_ == null ?
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+          return corporation_ == null ?
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-          getOrganizationFieldBuilder() {
-        if (organizationBuilder_ == null) {
-          organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder>(
-                  getOrganization(),
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+          getCorporationFieldBuilder() {
+        if (corporationBuilder_ == null) {
+          corporationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder>(
+                  getCorporation(),
                   getParentForChildren(),
                   isClean());
-          organization_ = null;
+          corporation_ = null;
         }
-        return organizationBuilder_;
+        return corporationBuilder_;
       }
 
       private java.lang.Object ccpOrganizationId_ = "";
@@ -8591,41 +8591,41 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.CreateOrganizationRequest)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.CreateCorporationRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateOrganizationRequest)
-    private static final blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateCorporationRequest)
+    private static final blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateOrganizationRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateOrganizationRequest>() {
+    private static final com.google.protobuf.Parser<CreateCorporationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateCorporationRequest>() {
       @java.lang.Override
-      public CreateOrganizationRequest parsePartialFrom(
+      public CreateCorporationRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateOrganizationRequest(input, extensionRegistry);
+        return new CreateCorporationRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateOrganizationRequest> parser() {
+    public static com.google.protobuf.Parser<CreateCorporationRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateOrganizationRequest> getParserForType() {
+    public com.google.protobuf.Parser<CreateCorporationRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationRequest getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.CreateCorporationRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10031,24 +10031,24 @@ public final class NetworkApi {
 
   }
 
-  public interface AddPeerToOrganizationResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+  public interface AddPeerToCorporationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.AddPeerToCorporationResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
-    boolean hasOrganization();
+    boolean hasCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization();
+    blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder();
+    blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder();
 
     /**
      * <code>string message = 2 [json_name = "message"];</code>
@@ -10063,18 +10063,18 @@ public final class NetworkApi {
         getMessageBytes();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToOrganizationResponse}
+   * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToCorporationResponse}
    */
-  public static final class AddPeerToOrganizationResponse extends
+  public static final class AddPeerToCorporationResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
-      AddPeerToOrganizationResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.AddPeerToCorporationResponse)
+      AddPeerToCorporationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use AddPeerToOrganizationResponse.newBuilder() to construct.
-    private AddPeerToOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AddPeerToCorporationResponse.newBuilder() to construct.
+    private AddPeerToCorporationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AddPeerToOrganizationResponse() {
+    private AddPeerToCorporationResponse() {
       message_ = "";
     }
 
@@ -10082,7 +10082,7 @@ public final class NetworkApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new AddPeerToOrganizationResponse();
+      return new AddPeerToCorporationResponse();
     }
 
     @java.lang.Override
@@ -10090,7 +10090,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AddPeerToOrganizationResponse(
+    private AddPeerToCorporationResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10109,14 +10109,14 @@ public final class NetworkApi {
               done = true;
               break;
             case 10: {
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder subBuilder = null;
-              if (organization_ != null) {
-                subBuilder = organization_.toBuilder();
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder subBuilder = null;
+              if (corporation_ != null) {
+                subBuilder = corporation_.toBuilder();
               }
-              organization_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry);
+              corporation_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Corporation.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(organization_);
-                organization_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(corporation_);
+                corporation_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10148,41 +10148,41 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.Builder.class);
     }
 
-    public static final int ORGANIZATION_FIELD_NUMBER = 1;
-    private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+    public static final int CORPORATION_FIELD_NUMBER = 1;
+    private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
     @java.lang.Override
-    public boolean hasOrganization() {
-      return organization_ != null;
+    public boolean hasCorporation() {
+      return corporation_ != null;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-      return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+    public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+      return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-      return getOrganization();
+    public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+      return getCorporation();
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -10237,8 +10237,8 @@ public final class NetworkApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organization_ != null) {
-        output.writeMessage(1, getOrganization());
+      if (corporation_ != null) {
+        output.writeMessage(1, getCorporation());
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -10252,9 +10252,9 @@ public final class NetworkApi {
       if (size != -1) return size;
 
       size = 0;
-      if (organization_ != null) {
+      if (corporation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getOrganization());
+          .computeMessageSize(1, getCorporation());
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -10269,15 +10269,15 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse other = (blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse) obj;
+      blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse other = (blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse) obj;
 
-      if (hasOrganization() != other.hasOrganization()) return false;
-      if (hasOrganization()) {
-        if (!getOrganization()
-            .equals(other.getOrganization())) return false;
+      if (hasCorporation() != other.hasCorporation()) return false;
+      if (hasCorporation()) {
+        if (!getCorporation()
+            .equals(other.getCorporation())) return false;
       }
       if (!getMessage()
           .equals(other.getMessage())) return false;
@@ -10292,9 +10292,9 @@ public final class NetworkApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasOrganization()) {
-        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganization().hashCode();
+      if (hasCorporation()) {
+        hash = (37 * hash) + CORPORATION_FIELD_NUMBER;
+        hash = (53 * hash) + getCorporation().hashCode();
       }
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
@@ -10303,69 +10303,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10378,7 +10378,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10394,26 +10394,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToOrganizationResponse}
+     * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToCorporationResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.AddPeerToCorporationResponse)
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.class, blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10431,11 +10431,11 @@ public final class NetworkApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
         message_ = "";
 
@@ -10445,17 +10445,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse build() {
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse build() {
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10463,12 +10463,12 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse result = new blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse(this);
-        if (organizationBuilder_ == null) {
-          result.organization_ = organization_;
+      public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse result = new blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse(this);
+        if (corporationBuilder_ == null) {
+          result.corporation_ = corporation_;
         } else {
-          result.organization_ = organizationBuilder_.build();
+          result.corporation_ = corporationBuilder_.build();
         }
         result.message_ = message_;
         onBuilt();
@@ -10509,18 +10509,18 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse.getDefaultInstance()) return this;
-        if (other.hasOrganization()) {
-          mergeOrganization(other.getOrganization());
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse.getDefaultInstance()) return this;
+        if (other.hasCorporation()) {
+          mergeCorporation(other.getCorporation());
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -10541,11 +10541,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10555,123 +10555,123 @@ public final class NetworkApi {
         return this;
       }
 
-      private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+      private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> organizationBuilder_;
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> corporationBuilder_;
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-       * @return Whether the organization field is set.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+       * @return Whether the corporation field is set.
        */
-      public boolean hasOrganization() {
-        return organizationBuilder_ != null || organization_ != null;
+      public boolean hasCorporation() {
+        return corporationBuilder_ != null || corporation_ != null;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-       * @return The organization.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+       * @return The corporation.
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-        if (organizationBuilder_ == null) {
-          return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+        if (corporationBuilder_ == null) {
+          return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         } else {
-          return organizationBuilder_.getMessage();
+          return corporationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
+      public Builder setCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          organization_ = value;
+          corporation_ = value;
           onChanged();
         } else {
-          organizationBuilder_.setMessage(value);
+          corporationBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationBuilder_ == null) {
-          organization_ = builderForValue.build();
+      public Builder setCorporation(
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationBuilder_ == null) {
+          corporation_ = builderForValue.build();
           onChanged();
         } else {
-          organizationBuilder_.setMessage(builderForValue.build());
+          corporationBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder mergeOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
-          if (organization_ != null) {
-            organization_ =
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.newBuilder(organization_).mergeFrom(value).buildPartial();
+      public Builder mergeCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
+          if (corporation_ != null) {
+            corporation_ =
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.newBuilder(corporation_).mergeFrom(value).buildPartial();
           } else {
-            organization_ = value;
+            corporation_ = value;
           }
           onChanged();
         } else {
-          organizationBuilder_.mergeFrom(value);
+          corporationBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder clearOrganization() {
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+      public Builder clearCorporation() {
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
           onChanged();
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder getOrganizationBuilder() {
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder getCorporationBuilder() {
         
         onChanged();
-        return getOrganizationFieldBuilder().getBuilder();
+        return getCorporationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-        if (organizationBuilder_ != null) {
-          return organizationBuilder_.getMessageOrBuilder();
+      public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+        if (corporationBuilder_ != null) {
+          return corporationBuilder_.getMessageOrBuilder();
         } else {
-          return organization_ == null ?
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+          return corporation_ == null ?
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-          getOrganizationFieldBuilder() {
-        if (organizationBuilder_ == null) {
-          organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder>(
-                  getOrganization(),
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+          getCorporationFieldBuilder() {
+        if (corporationBuilder_ == null) {
+          corporationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder>(
+                  getCorporation(),
                   getParentForChildren(),
                   isClean());
-          organization_ = null;
+          corporation_ = null;
         }
-        return organizationBuilder_;
+        return corporationBuilder_;
       }
 
       private java.lang.Object message_ = "";
@@ -10762,41 +10762,41 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.AddPeerToCorporationResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToOrganizationResponse)
-    private static final blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToCorporationResponse)
+    private static final blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AddPeerToOrganizationResponse>
-        PARSER = new com.google.protobuf.AbstractParser<AddPeerToOrganizationResponse>() {
+    private static final com.google.protobuf.Parser<AddPeerToCorporationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AddPeerToCorporationResponse>() {
       @java.lang.Override
-      public AddPeerToOrganizationResponse parsePartialFrom(
+      public AddPeerToCorporationResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddPeerToOrganizationResponse(input, extensionRegistry);
+        return new AddPeerToCorporationResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AddPeerToOrganizationResponse> parser() {
+    public static com.google.protobuf.Parser<AddPeerToCorporationResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AddPeerToOrganizationResponse> getParserForType() {
+    public com.google.protobuf.Parser<AddPeerToCorporationResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.AddPeerToOrganizationResponse getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.AddPeerToCorporationResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15836,8 +15836,8 @@ public final class NetworkApi {
 
   }
 
-  public interface GetPeersByOrganizationIdResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse)
+  public interface GetPeersByCorporationIdResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetPeersByCorporationIdResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -15895,18 +15895,18 @@ public final class NetworkApi {
         getPreviousUrlBytes();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse}
+   * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByCorporationIdResponse}
    */
-  public static final class GetPeersByOrganizationIdResponse extends
+  public static final class GetPeersByCorporationIdResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse)
-      GetPeersByOrganizationIdResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetPeersByCorporationIdResponse)
+      GetPeersByCorporationIdResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetPeersByOrganizationIdResponse.newBuilder() to construct.
-    private GetPeersByOrganizationIdResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetPeersByCorporationIdResponse.newBuilder() to construct.
+    private GetPeersByCorporationIdResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetPeersByOrganizationIdResponse() {
+    private GetPeersByCorporationIdResponse() {
       peer_ = java.util.Collections.emptyList();
       nextUrl_ = "";
       previousUrl_ = "";
@@ -15916,7 +15916,7 @@ public final class NetworkApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetPeersByOrganizationIdResponse();
+      return new GetPeersByCorporationIdResponse();
     }
 
     @java.lang.Override
@@ -15924,7 +15924,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetPeersByOrganizationIdResponse(
+    private GetPeersByCorporationIdResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -15993,15 +15993,15 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.Builder.class);
     }
 
     public static final int PEER_FIELD_NUMBER = 1;
@@ -16190,10 +16190,10 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse other = (blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse) obj;
+      blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse other = (blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse) obj;
 
       if (!getPeerList()
           .equals(other.getPeerList())) return false;
@@ -16230,69 +16230,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16305,7 +16305,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -16321,26 +16321,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse}
+     * Protobuf type {@code blockchain.network.v1alpha1.GetPeersByCorporationIdResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse)
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetPeersByCorporationIdResponse)
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -16377,17 +16377,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse build() {
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse build() {
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -16395,8 +16395,8 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse result = new blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse(this);
+      public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse result = new blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse(this);
         int from_bitField0_ = bitField0_;
         if (peerBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -16448,16 +16448,16 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse.getDefaultInstance()) return this;
         if (peerBuilder_ == null) {
           if (!other.peer_.isEmpty()) {
             if (peer_.isEmpty()) {
@@ -16510,11 +16510,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -16960,41 +16960,41 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetPeersByCorporationIdResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetPeersByOrganizationIdResponse)
-    private static final blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetPeersByCorporationIdResponse)
+    private static final blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetPeersByOrganizationIdResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetPeersByOrganizationIdResponse>() {
+    private static final com.google.protobuf.Parser<GetPeersByCorporationIdResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetPeersByCorporationIdResponse>() {
       @java.lang.Override
-      public GetPeersByOrganizationIdResponse parsePartialFrom(
+      public GetPeersByCorporationIdResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetPeersByOrganizationIdResponse(input, extensionRegistry);
+        return new GetPeersByCorporationIdResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetPeersByOrganizationIdResponse> parser() {
+    public static com.google.protobuf.Parser<GetPeersByCorporationIdResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetPeersByOrganizationIdResponse> getParserForType() {
+    public com.google.protobuf.Parser<GetPeersByCorporationIdResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.GetPeersByOrganizationIdResponse getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.GetPeersByCorporationIdResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -17621,32 +17621,32 @@ public final class NetworkApi {
 
   }
 
-  public interface GetOrganizationsByBlockchainIdResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse)
+  public interface GetCorporationsByBlockchainIdResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
-    java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> 
-        getOrganizationsList();
+    java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Corporation> 
+        getCorporationsList();
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganizations(int index);
+    blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporations(int index);
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
-    int getOrganizationsCount();
+    int getCorporationsCount();
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
-    java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-        getOrganizationsOrBuilderList();
+    java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+        getCorporationsOrBuilderList();
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
+    blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationsOrBuilder(
         int index);
 
     /**
@@ -17680,19 +17680,19 @@ public final class NetworkApi {
         getPreviousUrlBytes();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse}
+   * Protobuf type {@code blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse}
    */
-  public static final class GetOrganizationsByBlockchainIdResponse extends
+  public static final class GetCorporationsByBlockchainIdResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse)
-      GetOrganizationsByBlockchainIdResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse)
+      GetCorporationsByBlockchainIdResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetOrganizationsByBlockchainIdResponse.newBuilder() to construct.
-    private GetOrganizationsByBlockchainIdResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetCorporationsByBlockchainIdResponse.newBuilder() to construct.
+    private GetCorporationsByBlockchainIdResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetOrganizationsByBlockchainIdResponse() {
-      organizations_ = java.util.Collections.emptyList();
+    private GetCorporationsByBlockchainIdResponse() {
+      corporations_ = java.util.Collections.emptyList();
       nextUrl_ = "";
       previousUrl_ = "";
     }
@@ -17701,7 +17701,7 @@ public final class NetworkApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetOrganizationsByBlockchainIdResponse();
+      return new GetCorporationsByBlockchainIdResponse();
     }
 
     @java.lang.Override
@@ -17709,7 +17709,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetOrganizationsByBlockchainIdResponse(
+    private GetCorporationsByBlockchainIdResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -17730,11 +17730,11 @@ public final class NetworkApi {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                organizations_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Organization>();
+                corporations_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Corporation>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              organizations_.add(
-                  input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry));
+              corporations_.add(
+                  input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Corporation.parser(), extensionRegistry));
               break;
             }
             case 16: {
@@ -17770,7 +17770,7 @@ public final class NetworkApi {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          organizations_ = java.util.Collections.unmodifiableList(organizations_);
+          corporations_ = java.util.Collections.unmodifiableList(corporations_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -17778,55 +17778,55 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.Builder.class);
     }
 
-    public static final int ORGANIZATIONS_FIELD_NUMBER = 1;
-    private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> organizations_;
+    public static final int CORPORATIONS_FIELD_NUMBER = 1;
+    private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Corporation> corporations_;
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
     @java.lang.Override
-    public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> getOrganizationsList() {
-      return organizations_;
+    public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Corporation> getCorporationsList() {
+      return corporations_;
     }
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-        getOrganizationsOrBuilderList() {
-      return organizations_;
+    public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+        getCorporationsOrBuilderList() {
+      return corporations_;
     }
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
     @java.lang.Override
-    public int getOrganizationsCount() {
-      return organizations_.size();
+    public int getCorporationsCount() {
+      return corporations_.size();
     }
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganizations(int index) {
-      return organizations_.get(index);
+    public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporations(int index) {
+      return corporations_.get(index);
     }
     /**
-     * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+     * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
+    public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationsOrBuilder(
         int index) {
-      return organizations_.get(index);
+      return corporations_.get(index);
     }
 
     public static final int TOTAL_FIELD_NUMBER = 2;
@@ -17930,8 +17930,8 @@ public final class NetworkApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < organizations_.size(); i++) {
-        output.writeMessage(1, organizations_.get(i));
+      for (int i = 0; i < corporations_.size(); i++) {
+        output.writeMessage(1, corporations_.get(i));
       }
       if (total_ != 0L) {
         output.writeInt64(2, total_);
@@ -17951,9 +17951,9 @@ public final class NetworkApi {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < organizations_.size(); i++) {
+      for (int i = 0; i < corporations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, organizations_.get(i));
+          .computeMessageSize(1, corporations_.get(i));
       }
       if (total_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -17975,13 +17975,13 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse other = (blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse) obj;
+      blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse other = (blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse) obj;
 
-      if (!getOrganizationsList()
-          .equals(other.getOrganizationsList())) return false;
+      if (!getCorporationsList()
+          .equals(other.getCorporationsList())) return false;
       if (getTotal()
           != other.getTotal()) return false;
       if (!getNextUrl()
@@ -17999,9 +17999,9 @@ public final class NetworkApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getOrganizationsCount() > 0) {
-        hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganizationsList().hashCode();
+      if (getCorporationsCount() > 0) {
+        hash = (37 * hash) + CORPORATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getCorporationsList().hashCode();
       }
       hash = (37 * hash) + TOTAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -18015,69 +18015,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18090,7 +18090,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -18106,26 +18106,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse}
+     * Protobuf type {@code blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse)
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse)
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.class, blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -18138,17 +18138,17 @@ public final class NetworkApi {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getOrganizationsFieldBuilder();
+          getCorporationsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (organizationsBuilder_ == null) {
-          organizations_ = java.util.Collections.emptyList();
+        if (corporationsBuilder_ == null) {
+          corporations_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          organizationsBuilder_.clear();
+          corporationsBuilder_.clear();
         }
         total_ = 0L;
 
@@ -18162,17 +18162,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse build() {
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse build() {
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -18180,17 +18180,17 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse result = new blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse(this);
+      public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse result = new blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse(this);
         int from_bitField0_ = bitField0_;
-        if (organizationsBuilder_ == null) {
+        if (corporationsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            organizations_ = java.util.Collections.unmodifiableList(organizations_);
+            corporations_ = java.util.Collections.unmodifiableList(corporations_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.organizations_ = organizations_;
+          result.corporations_ = corporations_;
         } else {
-          result.organizations_ = organizationsBuilder_.build();
+          result.corporations_ = corporationsBuilder_.build();
         }
         result.total_ = total_;
         result.nextUrl_ = nextUrl_;
@@ -18233,39 +18233,39 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse.getDefaultInstance()) return this;
-        if (organizationsBuilder_ == null) {
-          if (!other.organizations_.isEmpty()) {
-            if (organizations_.isEmpty()) {
-              organizations_ = other.organizations_;
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse.getDefaultInstance()) return this;
+        if (corporationsBuilder_ == null) {
+          if (!other.corporations_.isEmpty()) {
+            if (corporations_.isEmpty()) {
+              corporations_ = other.corporations_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureOrganizationsIsMutable();
-              organizations_.addAll(other.organizations_);
+              ensureCorporationsIsMutable();
+              corporations_.addAll(other.corporations_);
             }
             onChanged();
           }
         } else {
-          if (!other.organizations_.isEmpty()) {
-            if (organizationsBuilder_.isEmpty()) {
-              organizationsBuilder_.dispose();
-              organizationsBuilder_ = null;
-              organizations_ = other.organizations_;
+          if (!other.corporations_.isEmpty()) {
+            if (corporationsBuilder_.isEmpty()) {
+              corporationsBuilder_.dispose();
+              corporationsBuilder_ = null;
+              corporations_ = other.corporations_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              organizationsBuilder_ = 
+              corporationsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOrganizationsFieldBuilder() : null;
+                   getCorporationsFieldBuilder() : null;
             } else {
-              organizationsBuilder_.addAllMessages(other.organizations_);
+              corporationsBuilder_.addAllMessages(other.corporations_);
             }
           }
         }
@@ -18295,11 +18295,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -18310,244 +18310,244 @@ public final class NetworkApi {
       }
       private int bitField0_;
 
-      private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> organizations_ =
+      private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Corporation> corporations_ =
         java.util.Collections.emptyList();
-      private void ensureOrganizationsIsMutable() {
+      private void ensureCorporationsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          organizations_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Organization>(organizations_);
+          corporations_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Corporation>(corporations_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> organizationsBuilder_;
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> corporationsBuilder_;
 
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization> getOrganizationsList() {
-        if (organizationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(organizations_);
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Corporation> getCorporationsList() {
+        if (corporationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(corporations_);
         } else {
-          return organizationsBuilder_.getMessageList();
+          return corporationsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public int getOrganizationsCount() {
-        if (organizationsBuilder_ == null) {
-          return organizations_.size();
+      public int getCorporationsCount() {
+        if (corporationsBuilder_ == null) {
+          return corporations_.size();
         } else {
-          return organizationsBuilder_.getCount();
+          return corporationsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganizations(int index) {
-        if (organizationsBuilder_ == null) {
-          return organizations_.get(index);
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporations(int index) {
+        if (corporationsBuilder_ == null) {
+          return corporations_.get(index);
         } else {
-          return organizationsBuilder_.getMessage(index);
+          return corporationsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder setOrganizations(
-          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationsBuilder_ == null) {
+      public Builder setCorporations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrganizationsIsMutable();
-          organizations_.set(index, value);
+          ensureCorporationsIsMutable();
+          corporations_.set(index, value);
           onChanged();
         } else {
-          organizationsBuilder_.setMessage(index, value);
+          corporationsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder setOrganizations(
-          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.set(index, builderForValue.build());
+      public Builder setCorporations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationsBuilder_ == null) {
+          ensureCorporationsIsMutable();
+          corporations_.set(index, builderForValue.build());
           onChanged();
         } else {
-          organizationsBuilder_.setMessage(index, builderForValue.build());
+          corporationsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder addOrganizations(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationsBuilder_ == null) {
+      public Builder addCorporations(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrganizationsIsMutable();
-          organizations_.add(value);
+          ensureCorporationsIsMutable();
+          corporations_.add(value);
           onChanged();
         } else {
-          organizationsBuilder_.addMessage(value);
+          corporationsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder addOrganizations(
-          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationsBuilder_ == null) {
+      public Builder addCorporations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrganizationsIsMutable();
-          organizations_.add(index, value);
+          ensureCorporationsIsMutable();
+          corporations_.add(index, value);
           onChanged();
         } else {
-          organizationsBuilder_.addMessage(index, value);
+          corporationsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder addOrganizations(
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.add(builderForValue.build());
+      public Builder addCorporations(
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationsBuilder_ == null) {
+          ensureCorporationsIsMutable();
+          corporations_.add(builderForValue.build());
           onChanged();
         } else {
-          organizationsBuilder_.addMessage(builderForValue.build());
+          corporationsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder addOrganizations(
-          int index, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.add(index, builderForValue.build());
+      public Builder addCorporations(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationsBuilder_ == null) {
+          ensureCorporationsIsMutable();
+          corporations_.add(index, builderForValue.build());
           onChanged();
         } else {
-          organizationsBuilder_.addMessage(index, builderForValue.build());
+          corporationsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder addAllOrganizations(
-          java.lang.Iterable<? extends blockchain.network.v1alpha1.NetworkOuterClass.Organization> values) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
+      public Builder addAllCorporations(
+          java.lang.Iterable<? extends blockchain.network.v1alpha1.NetworkOuterClass.Corporation> values) {
+        if (corporationsBuilder_ == null) {
+          ensureCorporationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, organizations_);
+              values, corporations_);
           onChanged();
         } else {
-          organizationsBuilder_.addAllMessages(values);
+          corporationsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder clearOrganizations() {
-        if (organizationsBuilder_ == null) {
-          organizations_ = java.util.Collections.emptyList();
+      public Builder clearCorporations() {
+        if (corporationsBuilder_ == null) {
+          corporations_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          organizationsBuilder_.clear();
+          corporationsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public Builder removeOrganizations(int index) {
-        if (organizationsBuilder_ == null) {
-          ensureOrganizationsIsMutable();
-          organizations_.remove(index);
+      public Builder removeCorporations(int index) {
+        if (corporationsBuilder_ == null) {
+          ensureCorporationsIsMutable();
+          corporations_.remove(index);
           onChanged();
         } else {
-          organizationsBuilder_.remove(index);
+          corporationsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder getOrganizationsBuilder(
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder getCorporationsBuilder(
           int index) {
-        return getOrganizationsFieldBuilder().getBuilder(index);
+        return getCorporationsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationsOrBuilder(
+      public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationsOrBuilder(
           int index) {
-        if (organizationsBuilder_ == null) {
-          return organizations_.get(index);  } else {
-          return organizationsBuilder_.getMessageOrBuilder(index);
+        if (corporationsBuilder_ == null) {
+          return corporations_.get(index);  } else {
+          return corporationsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-           getOrganizationsOrBuilderList() {
-        if (organizationsBuilder_ != null) {
-          return organizationsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+           getCorporationsOrBuilderList() {
+        if (corporationsBuilder_ != null) {
+          return corporationsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(organizations_);
+          return java.util.Collections.unmodifiableList(corporations_);
         }
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder addOrganizationsBuilder() {
-        return getOrganizationsFieldBuilder().addBuilder(
-            blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance());
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder addCorporationsBuilder() {
+        return getCorporationsFieldBuilder().addBuilder(
+            blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance());
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder addOrganizationsBuilder(
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder addCorporationsBuilder(
           int index) {
-        return getOrganizationsFieldBuilder().addBuilder(
-            index, blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance());
+        return getCorporationsFieldBuilder().addBuilder(
+            index, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance());
       }
       /**
-       * <code>repeated .blockchain.network.v1alpha1.Organization organizations = 1 [json_name = "organizations"];</code>
+       * <code>repeated .blockchain.network.v1alpha1.Corporation corporations = 1 [json_name = "corporations"];</code>
        */
-      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder> 
-           getOrganizationsBuilderList() {
-        return getOrganizationsFieldBuilder().getBuilderList();
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder> 
+           getCorporationsBuilderList() {
+        return getCorporationsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-          getOrganizationsFieldBuilder() {
-        if (organizationsBuilder_ == null) {
-          organizationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder>(
-                  organizations_,
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+          getCorporationsFieldBuilder() {
+        if (corporationsBuilder_ == null) {
+          corporationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder>(
+                  corporations_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          organizations_ = null;
+          corporations_ = null;
         }
-        return organizationsBuilder_;
+        return corporationsBuilder_;
       }
 
       private long total_ ;
@@ -18745,64 +18745,64 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetOrganizationsByBlockchainIdResponse)
-    private static final blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse)
+    private static final blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetOrganizationsByBlockchainIdResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetOrganizationsByBlockchainIdResponse>() {
+    private static final com.google.protobuf.Parser<GetCorporationsByBlockchainIdResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetCorporationsByBlockchainIdResponse>() {
       @java.lang.Override
-      public GetOrganizationsByBlockchainIdResponse parsePartialFrom(
+      public GetCorporationsByBlockchainIdResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetOrganizationsByBlockchainIdResponse(input, extensionRegistry);
+        return new GetCorporationsByBlockchainIdResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetOrganizationsByBlockchainIdResponse> parser() {
+    public static com.google.protobuf.Parser<GetCorporationsByBlockchainIdResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetOrganizationsByBlockchainIdResponse> getParserForType() {
+    public com.google.protobuf.Parser<GetCorporationsByBlockchainIdResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.GetOrganizationsByBlockchainIdResponse getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.GetCorporationsByBlockchainIdResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CreateOrganizationResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateOrganizationResponse)
+  public interface CreateCorporationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.CreateCorporationResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
-    boolean hasOrganization();
+    boolean hasCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization();
+    blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation();
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
      */
-    blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder();
+    blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder();
 
     /**
      * <code>string message = 2 [json_name = "message"];</code>
@@ -18817,18 +18817,18 @@ public final class NetworkApi {
         getMessageBytes();
   }
   /**
-   * Protobuf type {@code blockchain.network.v1alpha1.CreateOrganizationResponse}
+   * Protobuf type {@code blockchain.network.v1alpha1.CreateCorporationResponse}
    */
-  public static final class CreateOrganizationResponse extends
+  public static final class CreateCorporationResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.CreateOrganizationResponse)
-      CreateOrganizationResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:blockchain.network.v1alpha1.CreateCorporationResponse)
+      CreateCorporationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateOrganizationResponse.newBuilder() to construct.
-    private CreateOrganizationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateCorporationResponse.newBuilder() to construct.
+    private CreateCorporationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateOrganizationResponse() {
+    private CreateCorporationResponse() {
       message_ = "";
     }
 
@@ -18836,7 +18836,7 @@ public final class NetworkApi {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateOrganizationResponse();
+      return new CreateCorporationResponse();
     }
 
     @java.lang.Override
@@ -18844,7 +18844,7 @@ public final class NetworkApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateOrganizationResponse(
+    private CreateCorporationResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -18863,14 +18863,14 @@ public final class NetworkApi {
               done = true;
               break;
             case 10: {
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder subBuilder = null;
-              if (organization_ != null) {
-                subBuilder = organization_.toBuilder();
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder subBuilder = null;
+              if (corporation_ != null) {
+                subBuilder = corporation_.toBuilder();
               }
-              organization_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Organization.parser(), extensionRegistry);
+              corporation_ = input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Corporation.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(organization_);
-                organization_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(corporation_);
+                corporation_ = subBuilder.buildPartial();
               }
 
               break;
@@ -18902,41 +18902,41 @@ public final class NetworkApi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_descriptor;
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_fieldAccessorTable
+      return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.class, blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.Builder.class);
+              blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.class, blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.Builder.class);
     }
 
-    public static final int ORGANIZATION_FIELD_NUMBER = 1;
-    private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+    public static final int CORPORATION_FIELD_NUMBER = 1;
+    private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return Whether the organization field is set.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return Whether the corporation field is set.
      */
     @java.lang.Override
-    public boolean hasOrganization() {
-      return organization_ != null;
+    public boolean hasCorporation() {
+      return corporation_ != null;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-     * @return The organization.
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+     * @return The corporation.
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-      return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+    public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+      return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
     }
     /**
-     * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
      */
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-      return getOrganization();
+    public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+      return getCorporation();
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -18991,8 +18991,8 @@ public final class NetworkApi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (organization_ != null) {
-        output.writeMessage(1, getOrganization());
+      if (corporation_ != null) {
+        output.writeMessage(1, getCorporation());
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -19006,9 +19006,9 @@ public final class NetworkApi {
       if (size != -1) return size;
 
       size = 0;
-      if (organization_ != null) {
+      if (corporation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getOrganization());
+          .computeMessageSize(1, getCorporation());
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -19023,15 +19023,15 @@ public final class NetworkApi {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse)) {
+      if (!(obj instanceof blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse)) {
         return super.equals(obj);
       }
-      blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse other = (blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse) obj;
+      blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse other = (blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse) obj;
 
-      if (hasOrganization() != other.hasOrganization()) return false;
-      if (hasOrganization()) {
-        if (!getOrganization()
-            .equals(other.getOrganization())) return false;
+      if (hasCorporation() != other.hasCorporation()) return false;
+      if (hasCorporation()) {
+        if (!getCorporation()
+            .equals(other.getCorporation())) return false;
       }
       if (!getMessage()
           .equals(other.getMessage())) return false;
@@ -19046,9 +19046,9 @@ public final class NetworkApi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasOrganization()) {
-        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
-        hash = (53 * hash) + getOrganization().hashCode();
+      if (hasCorporation()) {
+        hash = (37 * hash) + CORPORATION_FIELD_NUMBER;
+        hash = (53 * hash) + getCorporation().hashCode();
       }
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
@@ -19057,69 +19057,69 @@ public final class NetworkApi {
       return hash;
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(byte[] data)
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseDelimitedFrom(java.io.InputStream input)
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseDelimitedFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parseFrom(
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19132,7 +19132,7 @@ public final class NetworkApi {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse prototype) {
+    public static Builder newBuilder(blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -19148,26 +19148,26 @@ public final class NetworkApi {
       return builder;
     }
     /**
-     * Protobuf type {@code blockchain.network.v1alpha1.CreateOrganizationResponse}
+     * Protobuf type {@code blockchain.network.v1alpha1.CreateCorporationResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.CreateOrganizationResponse)
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:blockchain.network.v1alpha1.CreateCorporationResponse)
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_fieldAccessorTable
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.class, blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.Builder.class);
+                blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.class, blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.Builder.class);
       }
 
-      // Construct using blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.newBuilder()
+      // Construct using blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -19185,11 +19185,11 @@ public final class NetworkApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
         message_ = "";
 
@@ -19199,17 +19199,17 @@ public final class NetworkApi {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_descriptor;
+        return blockchain.network.v1alpha1.NetworkApi.internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_descriptor;
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse getDefaultInstanceForType() {
-        return blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.getDefaultInstance();
+      public blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse getDefaultInstanceForType() {
+        return blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse build() {
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse result = buildPartial();
+      public blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse build() {
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -19217,12 +19217,12 @@ public final class NetworkApi {
       }
 
       @java.lang.Override
-      public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse buildPartial() {
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse result = new blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse(this);
-        if (organizationBuilder_ == null) {
-          result.organization_ = organization_;
+      public blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse buildPartial() {
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse result = new blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse(this);
+        if (corporationBuilder_ == null) {
+          result.corporation_ = corporation_;
         } else {
-          result.organization_ = organizationBuilder_.build();
+          result.corporation_ = corporationBuilder_.build();
         }
         result.message_ = message_;
         onBuilt();
@@ -19263,18 +19263,18 @@ public final class NetworkApi {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse) {
-          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse)other);
+        if (other instanceof blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse) {
+          return mergeFrom((blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse other) {
-        if (other == blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse.getDefaultInstance()) return this;
-        if (other.hasOrganization()) {
-          mergeOrganization(other.getOrganization());
+      public Builder mergeFrom(blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse other) {
+        if (other == blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse.getDefaultInstance()) return this;
+        if (other.hasCorporation()) {
+          mergeCorporation(other.getCorporation());
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -19295,11 +19295,11 @@ public final class NetworkApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse parsedMessage = null;
+        blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse) e.getUnfinishedMessage();
+          parsedMessage = (blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -19309,123 +19309,123 @@ public final class NetworkApi {
         return this;
       }
 
-      private blockchain.network.v1alpha1.NetworkOuterClass.Organization organization_;
+      private blockchain.network.v1alpha1.NetworkOuterClass.Corporation corporation_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> organizationBuilder_;
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> corporationBuilder_;
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-       * @return Whether the organization field is set.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+       * @return Whether the corporation field is set.
        */
-      public boolean hasOrganization() {
-        return organizationBuilder_ != null || organization_ != null;
+      public boolean hasCorporation() {
+        return corporationBuilder_ != null || corporation_ != null;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
-       * @return The organization.
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
+       * @return The corporation.
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization getOrganization() {
-        if (organizationBuilder_ == null) {
-          return organization_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation getCorporation() {
+        if (corporationBuilder_ == null) {
+          return corporation_ == null ? blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         } else {
-          return organizationBuilder_.getMessage();
+          return corporationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
+      public Builder setCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          organization_ = value;
+          corporation_ = value;
           onChanged();
         } else {
-          organizationBuilder_.setMessage(value);
+          corporationBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder setOrganization(
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder builderForValue) {
-        if (organizationBuilder_ == null) {
-          organization_ = builderForValue.build();
+      public Builder setCorporation(
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder builderForValue) {
+        if (corporationBuilder_ == null) {
+          corporation_ = builderForValue.build();
           onChanged();
         } else {
-          organizationBuilder_.setMessage(builderForValue.build());
+          corporationBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder mergeOrganization(blockchain.network.v1alpha1.NetworkOuterClass.Organization value) {
-        if (organizationBuilder_ == null) {
-          if (organization_ != null) {
-            organization_ =
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.newBuilder(organization_).mergeFrom(value).buildPartial();
+      public Builder mergeCorporation(blockchain.network.v1alpha1.NetworkOuterClass.Corporation value) {
+        if (corporationBuilder_ == null) {
+          if (corporation_ != null) {
+            corporation_ =
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.newBuilder(corporation_).mergeFrom(value).buildPartial();
           } else {
-            organization_ = value;
+            corporation_ = value;
           }
           onChanged();
         } else {
-          organizationBuilder_.mergeFrom(value);
+          corporationBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public Builder clearOrganization() {
-        if (organizationBuilder_ == null) {
-          organization_ = null;
+      public Builder clearCorporation() {
+        if (corporationBuilder_ == null) {
+          corporation_ = null;
           onChanged();
         } else {
-          organization_ = null;
-          organizationBuilder_ = null;
+          corporation_ = null;
+          corporationBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder getOrganizationBuilder() {
+      public blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder getCorporationBuilder() {
         
         onChanged();
-        return getOrganizationFieldBuilder().getBuilder();
+        return getCorporationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
-      public blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder getOrganizationOrBuilder() {
-        if (organizationBuilder_ != null) {
-          return organizationBuilder_.getMessageOrBuilder();
+      public blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder getCorporationOrBuilder() {
+        if (corporationBuilder_ != null) {
+          return corporationBuilder_.getMessageOrBuilder();
         } else {
-          return organization_ == null ?
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization.getDefaultInstance() : organization_;
+          return corporation_ == null ?
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation.getDefaultInstance() : corporation_;
         }
       }
       /**
-       * <code>.blockchain.network.v1alpha1.Organization organization = 1 [json_name = "organization"];</code>
+       * <code>.blockchain.network.v1alpha1.Corporation corporation = 1 [json_name = "corporation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder> 
-          getOrganizationFieldBuilder() {
-        if (organizationBuilder_ == null) {
-          organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              blockchain.network.v1alpha1.NetworkOuterClass.Organization, blockchain.network.v1alpha1.NetworkOuterClass.Organization.Builder, blockchain.network.v1alpha1.NetworkOuterClass.OrganizationOrBuilder>(
-                  getOrganization(),
+          blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder> 
+          getCorporationFieldBuilder() {
+        if (corporationBuilder_ == null) {
+          corporationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Corporation, blockchain.network.v1alpha1.NetworkOuterClass.Corporation.Builder, blockchain.network.v1alpha1.NetworkOuterClass.CorporationOrBuilder>(
+                  getCorporation(),
                   getParentForChildren(),
                   isClean());
-          organization_ = null;
+          corporation_ = null;
         }
-        return organizationBuilder_;
+        return corporationBuilder_;
       }
 
       private java.lang.Object message_ = "";
@@ -19516,41 +19516,41 @@ public final class NetworkApi {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.CreateOrganizationResponse)
+      // @@protoc_insertion_point(builder_scope:blockchain.network.v1alpha1.CreateCorporationResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateOrganizationResponse)
-    private static final blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.CreateCorporationResponse)
+    private static final blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse();
+      DEFAULT_INSTANCE = new blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse();
     }
 
-    public static blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse getDefaultInstance() {
+    public static blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateOrganizationResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CreateOrganizationResponse>() {
+    private static final com.google.protobuf.Parser<CreateCorporationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateCorporationResponse>() {
       @java.lang.Override
-      public CreateOrganizationResponse parsePartialFrom(
+      public CreateCorporationResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateOrganizationResponse(input, extensionRegistry);
+        return new CreateCorporationResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateOrganizationResponse> parser() {
+    public static com.google.protobuf.Parser<CreateCorporationResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateOrganizationResponse> getParserForType() {
+    public com.google.protobuf.Parser<CreateCorporationResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public blockchain.network.v1alpha1.NetworkApi.CreateOrganizationResponse getDefaultInstanceForType() {
+    public blockchain.network.v1alpha1.NetworkApi.CreateCorporationResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -20333,10 +20333,10 @@ public final class NetworkApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_CreateNetworkRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor;
+    internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_descriptor;
   private static final 
@@ -20358,10 +20358,10 @@ public final class NetworkApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_GetBlockchainsByUserIdRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_descriptor;
+    internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest_descriptor;
   private static final 
@@ -20373,15 +20373,15 @@ public final class NetworkApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_GetBlockchainByIdRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_descriptor;
+    internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor;
+    internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_SendInvitationRequest_descriptor;
   private static final 
@@ -20393,10 +20393,10 @@ public final class NetworkApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor;
+    internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdResponse_descriptor;
   private static final 
@@ -20423,25 +20423,25 @@ public final class NetworkApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_descriptor;
+    internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_GetBlockchainByIdResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_blockchain_network_v1alpha1_GetBlockchainByIdResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_descriptor;
+    internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_descriptor;
+    internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_fieldAccessorTable;
+      internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_blockchain_network_v1alpha1_SendInvitationResponse_descriptor;
   private static final 
@@ -20459,135 +20459,134 @@ public final class NetworkApi {
       "\n-blockchain/network/v1alpha1/network_ap" +
       "i.proto\022\033blockchain.network.v1alpha1\032)bl" +
       "ockchain/network/v1alpha1/network.proto\032" +
-      "\033google/protobuf/empty.proto\"\373\001\n\024CreateN" +
+      "\033google/protobuf/empty.proto\"\370\001\n\024CreateN" +
       "etworkRequest\022>\n\007network\030\001 \001(\0132$.blockch" +
-      "ain.network.v1alpha1.NetworkR\007network\022M\n" +
-      "\014organization\030\002 \001(\0132).blockchain.network" +
-      ".v1alpha1.OrganizationR\014organization\022.\n\023" +
-      "ccp_organization_id\030\003 \001(\tR\021ccpOrganizati" +
-      "onId\022$\n\016ccp_project_id\030\004 \001(\tR\014ccpProject" +
-      "Id\"\235\001\n\034AddPeerToOrganizationRequest\022.\n\023c" +
-      "cp_organization_id\030\001 \001(\tR\021ccpOrganizatio" +
-      "nId\022$\n\016ccp_project_id\030\002 \001(\tR\014ccpProjectI" +
-      "d\022\'\n\017organization_id\030\003 \001(\tR\016organization" +
-      "Id\"\264\001\n\034AddOrdererByNetworkIdRequest\022>\n\007o" +
-      "rderer\030\001 \001(\0132$.blockchain.network.v1alph" +
-      "a1.OrdererR\007orderer\022.\n\023ccp_organization_" +
-      "id\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_proje" +
-      "ct_id\030\003 \001(\tR\014ccpProjectId\"V\n\024CreateChann" +
-      "elRequest\022>\n\007channel\030\001 \001(\0132$.blockchain." +
-      "network.v1alpha1.ChannelR\007channel\"h\n\025Get" +
-      "BlockchainsRequest\022\026\n\006offset\030\001 \001(\003R\006offs" +
-      "et\022\024\n\005limit\030\002 \001(\003R\005limit\022!\n\014query_params" +
-      "\030\003 \001(\tR\013queryParams\"f\n\035GetBlockchainsByU" +
-      "serIdRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n" +
-      "\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005li" +
-      "mit\"x\n\037GetPeersByOrganizationIdRequest\022\'" +
-      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
-      "\026\n\006offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005" +
-      "limit\"k\n\034GetOrdererByNetworkIdRequest\022\035\n" +
-      "\nnetwork_id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002" +
-      " \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030Ge" +
-      "tBlockchainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"z" +
-      "\n%GetOrganizationsByBlockchainIdRequest\022" +
-      "#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022\026\n\006" +
-      "offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005lim" +
-      "it\"\300\001\n\031CreateOrganizationRequest\022M\n\014orga" +
-      "nization\030\001 \001(\0132).blockchain.network.v1al" +
-      "pha1.OrganizationR\014organization\022.\n\023ccp_o" +
-      "rganization_id\030\002 \001(\tR\021ccpOrganizationId\022" +
-      "$\n\016ccp_project_id\030\003 \001(\tR\014ccpProjectId\"`\n" +
-      "\025SendInvitationRequest\022G\n\ninvitation\030\001 \001" +
-      "(\0132\'.blockchain.network.v1alpha1.Invitat" +
-      "ionR\ninvitation\"q\n\025CreateNetworkResponse" +
-      "\022>\n\007network\030\001 \001(\0132$.blockchain.network.v" +
-      "1alpha1.NetworkR\007network\022\030\n\007message\030\002 \001(" +
-      "\tR\007message\"\210\001\n\035AddPeerToOrganizationResp" +
-      "onse\022M\n\014organization\030\001 \001(\0132).blockchain." +
-      "network.v1alpha1.OrganizationR\014organizat" +
-      "ion\022\030\n\007message\030\002 \001(\tR\007message\"y\n\035AddOrde" +
-      "rerByNetworkIdResponse\022>\n\007orderer\030\001 \001(\0132" +
-      "$.blockchain.network.v1alpha1.OrdererR\007o" +
-      "rderer\022\030\n\007message\030\002 \001(\tR\007message\"q\n\025Crea" +
-      "teChannelResponse\022>\n\007channel\030\001 \001(\0132$.blo" +
-      "ckchain.network.v1alpha1.ChannelR\007channe" +
-      "l\022\030\n\007message\030\002 \001(\tR\007message\"\256\001\n\026GetBlock" +
-      "chainsResponse\022@\n\010networks\030\001 \003(\0132$.block" +
-      "chain.network.v1alpha1.NetworkR\010networks" +
-      "\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\t" +
-      "R\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013previou" +
-      "sUrl\"\266\001\n\036GetBlockchainsByUserIdResponse\022" +
-      "@\n\010networks\030\001 \003(\0132$.blockchain.network.v" +
-      "1alpha1.NetworkR\010networks\022\024\n\005total\030\002 \001(\003" +
-      "R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014pr" +
-      "evious_url\030\004 \001(\tR\013previousUrl\"\263\001\n\035GetOrd" +
-      "ererByNetworkIdResponse\022>\n\007orderer\030\001 \003(\013" +
-      "2$.blockchain.network.v1alpha1.OrdererR\007" +
-      "orderer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_ur" +
+      "ain.network.v1alpha1.NetworkR\007network\022J\n" +
+      "\013corporation\030\002 \001(\0132(.blockchain.network." +
+      "v1alpha1.CorporationR\013corporation\022.\n\023ccp" +
+      "_organization_id\030\003 \001(\tR\021ccpOrganizationI" +
+      "d\022$\n\016ccp_project_id\030\004 \001(\tR\014ccpProjectId\"" +
+      "\232\001\n\033AddPeerToCorporationRequest\022.\n\023ccp_o" +
+      "rganization_id\030\001 \001(\tR\021ccpOrganizationId\022" +
+      "$\n\016ccp_project_id\030\002 \001(\tR\014ccpProjectId\022%\n" +
+      "\016corporation_id\030\003 \001(\tR\rcorporationId\"\264\001\n" +
+      "\034AddOrdererByNetworkIdRequest\022>\n\007orderer" +
+      "\030\001 \001(\0132$.blockchain.network.v1alpha1.Ord" +
+      "ererR\007orderer\022.\n\023ccp_organization_id\030\002 \001" +
+      "(\tR\021ccpOrganizationId\022$\n\016ccp_project_id\030" +
+      "\003 \001(\tR\014ccpProjectId\"V\n\024CreateChannelRequ" +
+      "est\022>\n\007channel\030\001 \001(\0132$.blockchain.networ" +
+      "k.v1alpha1.ChannelR\007channel\"h\n\025GetBlockc" +
+      "hainsRequest\022\026\n\006offset\030\001 \001(\003R\006offset\022\024\n\005" +
+      "limit\030\002 \001(\003R\005limit\022!\n\014query_params\030\003 \001(\t" +
+      "R\013queryParams\"f\n\035GetBlockchainsByUserIdR" +
+      "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006offse" +
+      "t\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"u\n" +
+      "\036GetPeersByCorporationIdRequest\022%\n\016corpo" +
+      "ration_id\030\001 \001(\tR\rcorporationId\022\026\n\006offset" +
+      "\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"k\n\034" +
+      "GetOrdererByNetworkIdRequest\022\035\n\nnetwork_" +
+      "id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002 \001(\003R\006off" +
+      "set\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030GetBlockcha" +
+      "inByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"y\n$GetCorp" +
+      "orationsByBlockchainIdRequest\022#\n\rblockch" +
+      "ain_id\030\001 \001(\tR\014blockchainId\022\026\n\006offset\030\002 \001" +
+      "(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\274\001\n\030Cre" +
+      "ateCorporationRequest\022J\n\013corporation\030\001 \001" +
+      "(\0132(.blockchain.network.v1alpha1.Corpora" +
+      "tionR\013corporation\022.\n\023ccp_organization_id" +
+      "\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_project" +
+      "_id\030\003 \001(\tR\014ccpProjectId\"`\n\025SendInvitatio" +
+      "nRequest\022G\n\ninvitation\030\001 \001(\0132\'.blockchai" +
+      "n.network.v1alpha1.InvitationR\ninvitatio" +
+      "n\"q\n\025CreateNetworkResponse\022>\n\007network\030\001 " +
+      "\001(\0132$.blockchain.network.v1alpha1.Networ" +
+      "kR\007network\022\030\n\007message\030\002 \001(\tR\007message\"\204\001\n" +
+      "\034AddPeerToCorporationResponse\022J\n\013corpora" +
+      "tion\030\001 \001(\0132(.blockchain.network.v1alpha1" +
+      ".CorporationR\013corporation\022\030\n\007message\030\002 \001" +
+      "(\tR\007message\"y\n\035AddOrdererByNetworkIdResp" +
+      "onse\022>\n\007orderer\030\001 \001(\0132$.blockchain.netwo" +
+      "rk.v1alpha1.OrdererR\007orderer\022\030\n\007message\030" +
+      "\002 \001(\tR\007message\"q\n\025CreateChannelResponse\022" +
+      ">\n\007channel\030\001 \001(\0132$.blockchain.network.v1" +
+      "alpha1.ChannelR\007channel\022\030\n\007message\030\002 \001(\t" +
+      "R\007message\"\256\001\n\026GetBlockchainsResponse\022@\n\010" +
+      "networks\030\001 \003(\0132$.blockchain.network.v1al" +
+      "pha1.NetworkR\010networks\022\024\n\005total\030\002 \001(\003R\005t" +
+      "otal\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014previ" +
+      "ous_url\030\004 \001(\tR\013previousUrl\"\266\001\n\036GetBlockc" +
+      "hainsByUserIdResponse\022@\n\010networks\030\001 \003(\0132" +
+      "$.blockchain.network.v1alpha1.NetworkR\010n" +
+      "etworks\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_ur" +
       "l\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013" +
-      "previousUrl\"\255\001\n GetPeersByOrganizationId" +
-      "Response\0225\n\004peer\030\001 \003(\0132!.blockchain.netw" +
-      "ork.v1alpha1.PeerR\004peer\022\024\n\005total\030\002 \001(\003R\005" +
-      "total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014prev" +
-      "ious_url\030\004 \001(\tR\013previousUrl\"[\n\031GetBlockc" +
-      "hainByIdResponse\022>\n\007network\030\001 \001(\0132$.bloc" +
-      "kchain.network.v1alpha1.NetworkR\007network" +
-      "\"\315\001\n&GetOrganizationsByBlockchainIdRespo" +
-      "nse\022O\n\rorganizations\030\001 \003(\0132).blockchain." +
-      "network.v1alpha1.OrganizationR\rorganizat" +
-      "ions\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003" +
+      "previousUrl\"\263\001\n\035GetOrdererByNetworkIdRes" +
+      "ponse\022>\n\007orderer\030\001 \003(\0132$.blockchain.netw" +
+      "ork.v1alpha1.OrdererR\007orderer\022\024\n\005total\030\002" +
+      " \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!" +
+      "\n\014previous_url\030\004 \001(\tR\013previousUrl\"\254\001\n\037Ge" +
+      "tPeersByCorporationIdResponse\0225\n\004peer\030\001 " +
+      "\003(\0132!.blockchain.network.v1alpha1.PeerR\004" +
+      "peer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003" +
       " \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR\013pre" +
-      "viousUrl\"\205\001\n\032CreateOrganizationResponse\022" +
-      "M\n\014organization\030\001 \001(\0132).blockchain.netwo" +
-      "rk.v1alpha1.OrganizationR\014organization\022\030" +
-      "\n\007message\030\002 \001(\tR\007message\"{\n\026SendInvitati" +
-      "onResponse\022G\n\ninvitation\030\001 \001(\0132\'.blockch" +
-      "ain.network.v1alpha1.InvitationR\ninvitat" +
-      "ion\022\030\n\007message\030\002 \001(\tR\007message2\226\r\n\024Blockc" +
-      "hainAPIService\022v\n\rCreateNetwork\0221.blockc" +
-      "hain.network.v1alpha1.CreateNetworkReque" +
-      "st\0322.blockchain.network.v1alpha1.CreateN" +
-      "etworkResponse\022\216\001\n\025AddPeerToOrganization" +
-      "\0229.blockchain.network.v1alpha1.AddPeerTo" +
-      "OrganizationRequest\032:.blockchain.network" +
-      ".v1alpha1.AddPeerToOrganizationResponse\022" +
-      "y\n\016GetBlockchains\0222.blockchain.network.v" +
-      "1alpha1.GetBlockchainsRequest\0323.blockcha" +
-      "in.network.v1alpha1.GetBlockchainsRespon" +
-      "se\022\221\001\n\026GetBlockchainsByUserId\022:.blockcha" +
-      "in.network.v1alpha1.GetBlockchainsByUser" +
-      "IdRequest\032;.blockchain.network.v1alpha1." +
-      "GetBlockchainsByUserIdResponse\022\202\001\n\021GetBl" +
-      "ockchainById\0225.blockchain.network.v1alph" +
-      "a1.GetBlockchainByIdRequest\0326.blockchain" +
-      ".network.v1alpha1.GetBlockchainByIdRespo" +
-      "nse\022\251\001\n\036GetOrganizationsByBlockchainId\022B" +
-      ".blockchain.network.v1alpha1.GetOrganiza" +
-      "tionsByBlockchainIdRequest\032C.blockchain." +
-      "network.v1alpha1.GetOrganizationsByBlock" +
-      "chainIdResponse\022y\n\016SendInvitation\0222.bloc" +
-      "kchain.network.v1alpha1.SendInvitationRe" +
-      "quest\0323.blockchain.network.v1alpha1.Send" +
-      "InvitationResponse\022\205\001\n\022CreateOrganizatio" +
-      "n\0226.blockchain.network.v1alpha1.CreateOr" +
-      "ganizationRequest\0327.blockchain.network.v" +
-      "1alpha1.CreateOrganizationResponse\022v\n\rCr" +
-      "eateChannel\0221.blockchain.network.v1alpha" +
-      "1.CreateChannelRequest\0322.blockchain.netw" +
-      "ork.v1alpha1.CreateChannelResponse\022\227\001\n\030G" +
-      "etPeersByOrganizationId\022<.blockchain.net" +
-      "work.v1alpha1.GetPeersByOrganizationIdRe" +
-      "quest\032=.blockchain.network.v1alpha1.GetP" +
-      "eersByOrganizationIdResponse\022\216\001\n\025GetOrde" +
-      "rerByNetworkId\0229.blockchain.network.v1al" +
-      "pha1.GetOrdererByNetworkIdRequest\032:.bloc" +
-      "kchain.network.v1alpha1.GetOrdererByNetw" +
-      "orkIdResponse\022\216\001\n\025AddOrdererByNetworkId\022" +
-      "9.blockchain.network.v1alpha1.AddOrderer" +
-      "ByNetworkIdRequest\032:.blockchain.network." +
-      "v1alpha1.AddOrdererByNetworkIdResponseB>" +
-      "Z<github.com/cuemby/ccp-sdk/gen/go/block" +
-      "chain/network/v1alpha1b\006proto3"
+      "viousUrl\"[\n\031GetBlockchainByIdResponse\022>\n" +
+      "\007network\030\001 \001(\0132$.blockchain.network.v1al" +
+      "pha1.NetworkR\007network\"\311\001\n%GetCorporation" +
+      "sByBlockchainIdResponse\022L\n\014corporations\030" +
+      "\001 \003(\0132(.blockchain.network.v1alpha1.Corp" +
+      "orationR\014corporations\022\024\n\005total\030\002 \001(\003R\005to" +
+      "tal\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014previo" +
+      "us_url\030\004 \001(\tR\013previousUrl\"\201\001\n\031CreateCorp" +
+      "orationResponse\022J\n\013corporation\030\001 \001(\0132(.b" +
+      "lockchain.network.v1alpha1.CorporationR\013" +
+      "corporation\022\030\n\007message\030\002 \001(\tR\007message\"{\n" +
+      "\026SendInvitationResponse\022G\n\ninvitation\030\001 " +
+      "\001(\0132\'.blockchain.network.v1alpha1.Invita" +
+      "tionR\ninvitation\022\030\n\007message\030\002 \001(\tR\007messa" +
+      "ge2\212\r\n\024BlockchainAPIService\022v\n\rCreateNet" +
+      "work\0221.blockchain.network.v1alpha1.Creat" +
+      "eNetworkRequest\0322.blockchain.network.v1a" +
+      "lpha1.CreateNetworkResponse\022\213\001\n\024AddPeerT" +
+      "oCorporation\0228.blockchain.network.v1alph" +
+      "a1.AddPeerToCorporationRequest\0329.blockch" +
+      "ain.network.v1alpha1.AddPeerToCorporatio" +
+      "nResponse\022y\n\016GetBlockchains\0222.blockchain" +
+      ".network.v1alpha1.GetBlockchainsRequest\032" +
+      "3.blockchain.network.v1alpha1.GetBlockch" +
+      "ainsResponse\022\221\001\n\026GetBlockchainsByUserId\022" +
+      ":.blockchain.network.v1alpha1.GetBlockch" +
+      "ainsByUserIdRequest\032;.blockchain.network" +
+      ".v1alpha1.GetBlockchainsByUserIdResponse" +
+      "\022\202\001\n\021GetBlockchainById\0225.blockchain.netw" +
+      "ork.v1alpha1.GetBlockchainByIdRequest\0326." +
+      "blockchain.network.v1alpha1.GetBlockchai" +
+      "nByIdResponse\022\246\001\n\035GetCorporationsByBlock" +
+      "chainId\022A.blockchain.network.v1alpha1.Ge" +
+      "tCorporationsByBlockchainIdRequest\032B.blo" +
+      "ckchain.network.v1alpha1.GetCorporations" +
+      "ByBlockchainIdResponse\022y\n\016SendInvitation" +
+      "\0222.blockchain.network.v1alpha1.SendInvit" +
+      "ationRequest\0323.blockchain.network.v1alph" +
+      "a1.SendInvitationResponse\022\202\001\n\021CreateCorp" +
+      "oration\0225.blockchain.network.v1alpha1.Cr" +
+      "eateCorporationRequest\0326.blockchain.netw" +
+      "ork.v1alpha1.CreateCorporationResponse\022v" +
+      "\n\rCreateChannel\0221.blockchain.network.v1a" +
+      "lpha1.CreateChannelRequest\0322.blockchain." +
+      "network.v1alpha1.CreateChannelResponse\022\224" +
+      "\001\n\027GetPeersByCorporationId\022;.blockchain." +
+      "network.v1alpha1.GetPeersByCorporationId" +
+      "Request\032<.blockchain.network.v1alpha1.Ge" +
+      "tPeersByCorporationIdResponse\022\216\001\n\025GetOrd" +
+      "ererByNetworkId\0229.blockchain.network.v1a" +
+      "lpha1.GetOrdererByNetworkIdRequest\032:.blo" +
+      "ckchain.network.v1alpha1.GetOrdererByNet" +
+      "workIdResponse\022\216\001\n\025AddOrdererByNetworkId" +
+      "\0229.blockchain.network.v1alpha1.AddOrdere" +
+      "rByNetworkIdRequest\032:.blockchain.network" +
+      ".v1alpha1.AddOrdererByNetworkIdResponseB" +
+      ">Z<github.com/cuemby/ccp-sdk/gen/go/bloc" +
+      "kchain/network/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20600,13 +20599,13 @@ public final class NetworkApi {
     internal_static_blockchain_network_v1alpha1_CreateNetworkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_CreateNetworkRequest_descriptor,
-        new java.lang.String[] { "Network", "Organization", "CcpOrganizationId", "CcpProjectId", });
-    internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor =
+        new java.lang.String[] { "Network", "Corporation", "CcpOrganizationId", "CcpProjectId", });
+    internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationRequest_descriptor,
-        new java.lang.String[] { "CcpOrganizationId", "CcpProjectId", "OrganizationId", });
+        internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor,
+        new java.lang.String[] { "CcpOrganizationId", "CcpProjectId", "CorporationId", });
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_fieldAccessorTable = new
@@ -20631,12 +20630,12 @@ public final class NetworkApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_GetBlockchainsByUserIdRequest_descriptor,
         new java.lang.String[] { "UserId", "Offset", "Limit", });
-    internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_descriptor =
+    internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "Offset", "Limit", });
+        internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest_descriptor,
+        new java.lang.String[] { "CorporationId", "Offset", "Limit", });
     internal_static_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest_fieldAccessorTable = new
@@ -20649,18 +20648,18 @@ public final class NetworkApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_GetBlockchainByIdRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_descriptor =
+    internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdRequest_descriptor,
+        internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRequest_descriptor,
         new java.lang.String[] { "BlockchainId", "Offset", "Limit", });
-    internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor =
+    internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_CreateOrganizationRequest_descriptor,
-        new java.lang.String[] { "Organization", "CcpOrganizationId", "CcpProjectId", });
+        internal_static_blockchain_network_v1alpha1_CreateCorporationRequest_descriptor,
+        new java.lang.String[] { "Corporation", "CcpOrganizationId", "CcpProjectId", });
     internal_static_blockchain_network_v1alpha1_SendInvitationRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_blockchain_network_v1alpha1_SendInvitationRequest_fieldAccessorTable = new
@@ -20673,12 +20672,12 @@ public final class NetworkApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_CreateNetworkResponse_descriptor,
         new java.lang.String[] { "Network", "Message", });
-    internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor =
+    internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_AddPeerToOrganizationResponse_descriptor,
-        new java.lang.String[] { "Organization", "Message", });
+        internal_static_blockchain_network_v1alpha1_AddPeerToCorporationResponse_descriptor,
+        new java.lang.String[] { "Corporation", "Message", });
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdResponse_fieldAccessorTable = new
@@ -20709,11 +20708,11 @@ public final class NetworkApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse_descriptor,
         new java.lang.String[] { "Orderer", "Total", "NextUrl", "PreviousUrl", });
-    internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_descriptor =
+    internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(19);
-    internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_GetPeersByOrganizationIdResponse_descriptor,
+        internal_static_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse_descriptor,
         new java.lang.String[] { "Peer", "Total", "NextUrl", "PreviousUrl", });
     internal_static_blockchain_network_v1alpha1_GetBlockchainByIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(20);
@@ -20721,18 +20720,18 @@ public final class NetworkApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_GetBlockchainByIdResponse_descriptor,
         new java.lang.String[] { "Network", });
-    internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_descriptor =
+    internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_GetOrganizationsByBlockchainIdResponse_descriptor,
-        new java.lang.String[] { "Organizations", "Total", "NextUrl", "PreviousUrl", });
-    internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_descriptor =
+        internal_static_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdResponse_descriptor,
+        new java.lang.String[] { "Corporations", "Total", "NextUrl", "PreviousUrl", });
+    internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_descriptor =
       getDescriptor().getMessageTypes().get(22);
-    internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_fieldAccessorTable = new
+    internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_blockchain_network_v1alpha1_CreateOrganizationResponse_descriptor,
-        new java.lang.String[] { "Organization", "Message", });
+        internal_static_blockchain_network_v1alpha1_CreateCorporationResponse_descriptor,
+        new java.lang.String[] { "Corporation", "Message", });
     internal_static_blockchain_network_v1alpha1_SendInvitationResponse_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_blockchain_network_v1alpha1_SendInvitationResponse_fieldAccessorTable = new
