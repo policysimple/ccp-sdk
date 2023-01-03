@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.pipelines.tekton.v1alpha1B\016TektonAPIProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*pipelines/tekton/v1alpha1/tekton_api.proto\x12\x19pipelines.tekton.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"\x84\x01\n\x1b\x43reateTektonPipelineRequest\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x84\x01\n\x1c\x43reateTektonPipelineResponse\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8e\x01\n\x1b\x44\x65leteTektonPipelineRequest\x12!\n\x0cruntime_name\x18\x01 \x01(\tR\x0bruntimeName\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12%\n\x0e\x65nvironment_id\x18\x03 \x01(\tR\renvironmentId\"6\n\x1c\x44\x65leteTektonPipelineResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status2\xae\x02\n\x18TektonPipelineAPIService\x12\x87\x01\n\x14\x43reateTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.CreateTektonPipelineResponse\x12\x87\x01\n\x14\x44\x65leteTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponseB\xb1\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0eTektonAPIProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n*pipelines/tekton/v1alpha1/tekton_api.proto\x12\x19pipelines.tekton.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"\x84\x01\n\x1b\x43reateTektonPipelineRequest\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x84\x01\n\x1c\x43reateTektonPipelineResponse\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8e\x01\n\x1b\x44\x65leteTektonPipelineRequest\x12!\n\x0cruntime_name\x18\x01 \x01(\tR\x0bruntimeName\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12%\n\x0e\x65nvironment_id\x18\x03 \x01(\tR\renvironmentId\"6\n\x1c\x44\x65leteTektonPipelineResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"y\n\x1f\x43reateTektonTaskPipelineRequest\x12@\n\x0btekton_task\x18\x01 \x01(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\ntektonTask\x12\x14\n\x05order\x18\x02 \x01(\x05R\x05order\"d\n CreateTektonTaskPipelineResponse\x12@\n\x0btekton_task\x18\x01 \x01(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\ntektonTask\":\n\x1f\x44\x65leteTektonTaskPipelineRequest\x12\x17\n\x07task_id\x18\x02 \x01(\tR\x06taskId\":\n DeleteTektonTaskPipelineResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"\x1f\n\x1dListTektonTaskPipelineRequest\"\x80\x01\n\x1eListTektonTaskPipelineResponse\x12\x46\n\ttask_list\x18\x01 \x01(\x0b\x32).pipelines.tekton.v1alpha1.TektonTaskListR\x08taskList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xea\x05\n\x18TektonPipelineAPIService\x12\x87\x01\n\x14\x43reateTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.CreateTektonPipelineResponse\x12\x87\x01\n\x14\x44\x65leteTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponse\x12\x93\x01\n\x18\x43reateTektonTaskPipeline\x12:.pipelines.tekton.v1alpha1.CreateTektonTaskPipelineRequest\x1a;.pipelines.tekton.v1alpha1.CreateTektonTaskPipelineResponse\x12\x93\x01\n\x18\x44\x65leteTektonTaskPipeline\x12:.pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineRequest\x1a;.pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineResponse\x12\x8d\x01\n\x16ListTektonTaskPipeline\x12\x38.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest\x1a\x39.pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponseB\xb1\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0eTektonAPIProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2.DESCRIPTOR,])
 
@@ -182,12 +182,220 @@ _DELETETEKTONPIPELINERESPONSE = _descriptor.Descriptor(
   serialized_end=582,
 )
 
+
+_CREATETEKTONTASKPIPELINEREQUEST = _descriptor.Descriptor(
+  name='CreateTektonTaskPipelineRequest',
+  full_name='pipelines.tekton.v1alpha1.CreateTektonTaskPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tekton_task', full_name='pipelines.tekton.v1alpha1.CreateTektonTaskPipelineRequest.tekton_task', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tektonTask', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order', full_name='pipelines.tekton.v1alpha1.CreateTektonTaskPipelineRequest.order', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='order', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=584,
+  serialized_end=705,
+)
+
+
+_CREATETEKTONTASKPIPELINERESPONSE = _descriptor.Descriptor(
+  name='CreateTektonTaskPipelineResponse',
+  full_name='pipelines.tekton.v1alpha1.CreateTektonTaskPipelineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tekton_task', full_name='pipelines.tekton.v1alpha1.CreateTektonTaskPipelineResponse.tekton_task', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tektonTask', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=707,
+  serialized_end=807,
+)
+
+
+_DELETETEKTONTASKPIPELINEREQUEST = _descriptor.Descriptor(
+  name='DeleteTektonTaskPipelineRequest',
+  full_name='pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='task_id', full_name='pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineRequest.task_id', index=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='taskId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=809,
+  serialized_end=867,
+)
+
+
+_DELETETEKTONTASKPIPELINERESPONSE = _descriptor.Descriptor(
+  name='DeleteTektonTaskPipelineResponse',
+  full_name='pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineResponse.status', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=869,
+  serialized_end=927,
+)
+
+
+_LISTTEKTONTASKPIPELINEREQUEST = _descriptor.Descriptor(
+  name='ListTektonTaskPipelineRequest',
+  full_name='pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=929,
+  serialized_end=960,
+)
+
+
+_LISTTEKTONTASKPIPELINERESPONSE = _descriptor.Descriptor(
+  name='ListTektonTaskPipelineResponse',
+  full_name='pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='task_list', full_name='pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse.task_list', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='taskList', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=963,
+  serialized_end=1091,
+)
+
 _CREATETEKTONPIPELINEREQUEST.fields_by_name['tekton_pipeline'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._PIPELINE
 _CREATETEKTONPIPELINERESPONSE.fields_by_name['tekton_pipeline'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._PIPELINE
+_CREATETEKTONTASKPIPELINEREQUEST.fields_by_name['tekton_task'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._TASK
+_CREATETEKTONTASKPIPELINERESPONSE.fields_by_name['tekton_task'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._TASK
+_LISTTEKTONTASKPIPELINERESPONSE.fields_by_name['task_list'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._TEKTONTASKLIST
 DESCRIPTOR.message_types_by_name['CreateTektonPipelineRequest'] = _CREATETEKTONPIPELINEREQUEST
 DESCRIPTOR.message_types_by_name['CreateTektonPipelineResponse'] = _CREATETEKTONPIPELINERESPONSE
 DESCRIPTOR.message_types_by_name['DeleteTektonPipelineRequest'] = _DELETETEKTONPIPELINEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteTektonPipelineResponse'] = _DELETETEKTONPIPELINERESPONSE
+DESCRIPTOR.message_types_by_name['CreateTektonTaskPipelineRequest'] = _CREATETEKTONTASKPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['CreateTektonTaskPipelineResponse'] = _CREATETEKTONTASKPIPELINERESPONSE
+DESCRIPTOR.message_types_by_name['DeleteTektonTaskPipelineRequest'] = _DELETETEKTONTASKPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['DeleteTektonTaskPipelineResponse'] = _DELETETEKTONTASKPIPELINERESPONSE
+DESCRIPTOR.message_types_by_name['ListTektonTaskPipelineRequest'] = _LISTTEKTONTASKPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['ListTektonTaskPipelineResponse'] = _LISTTEKTONTASKPIPELINERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateTektonPipelineRequest = _reflection.GeneratedProtocolMessageType('CreateTektonPipelineRequest', (_message.Message,), {
@@ -218,6 +426,48 @@ DeleteTektonPipelineResponse = _reflection.GeneratedProtocolMessageType('DeleteT
   })
 _sym_db.RegisterMessage(DeleteTektonPipelineResponse)
 
+CreateTektonTaskPipelineRequest = _reflection.GeneratedProtocolMessageType('CreateTektonTaskPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATETEKTONTASKPIPELINEREQUEST,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.CreateTektonTaskPipelineRequest)
+  })
+_sym_db.RegisterMessage(CreateTektonTaskPipelineRequest)
+
+CreateTektonTaskPipelineResponse = _reflection.GeneratedProtocolMessageType('CreateTektonTaskPipelineResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CREATETEKTONTASKPIPELINERESPONSE,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.CreateTektonTaskPipelineResponse)
+  })
+_sym_db.RegisterMessage(CreateTektonTaskPipelineResponse)
+
+DeleteTektonTaskPipelineRequest = _reflection.GeneratedProtocolMessageType('DeleteTektonTaskPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETETEKTONTASKPIPELINEREQUEST,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineRequest)
+  })
+_sym_db.RegisterMessage(DeleteTektonTaskPipelineRequest)
+
+DeleteTektonTaskPipelineResponse = _reflection.GeneratedProtocolMessageType('DeleteTektonTaskPipelineResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DELETETEKTONTASKPIPELINERESPONSE,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineResponse)
+  })
+_sym_db.RegisterMessage(DeleteTektonTaskPipelineResponse)
+
+ListTektonTaskPipelineRequest = _reflection.GeneratedProtocolMessageType('ListTektonTaskPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTEKTONTASKPIPELINEREQUEST,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)
+  })
+_sym_db.RegisterMessage(ListTektonTaskPipelineRequest)
+
+ListTektonTaskPipelineResponse = _reflection.GeneratedProtocolMessageType('ListTektonTaskPipelineResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTEKTONTASKPIPELINERESPONSE,
+  '__module__' : 'pipelines.tekton.v1alpha1.tekton_api_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse)
+  })
+_sym_db.RegisterMessage(ListTektonTaskPipelineResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -228,8 +478,8 @@ _TEKTONPIPELINEAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=585,
-  serialized_end=887,
+  serialized_start=1094,
+  serialized_end=1840,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTektonPipeline',
@@ -248,6 +498,36 @@ _TEKTONPIPELINEAPISERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETETEKTONPIPELINEREQUEST,
     output_type=_DELETETEKTONPIPELINERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateTektonTaskPipeline',
+    full_name='pipelines.tekton.v1alpha1.TektonPipelineAPIService.CreateTektonTaskPipeline',
+    index=2,
+    containing_service=None,
+    input_type=_CREATETEKTONTASKPIPELINEREQUEST,
+    output_type=_CREATETEKTONTASKPIPELINERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteTektonTaskPipeline',
+    full_name='pipelines.tekton.v1alpha1.TektonPipelineAPIService.DeleteTektonTaskPipeline',
+    index=3,
+    containing_service=None,
+    input_type=_DELETETEKTONTASKPIPELINEREQUEST,
+    output_type=_DELETETEKTONTASKPIPELINERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListTektonTaskPipeline',
+    full_name='pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListTektonTaskPipeline',
+    index=4,
+    containing_service=None,
+    input_type=_LISTTEKTONTASKPIPELINEREQUEST,
+    output_type=_LISTTEKTONTASKPIPELINERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

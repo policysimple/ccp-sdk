@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-Ç
+é
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -94,7 +94,13 @@ is_default (R	isDefault
 value (	Rvalue:8?
 InstanceTypeEntry
 key (	Rkey
-value (	Rvalue:8B®
+value (	Rvalue:8"W
+
+TektonTask3
+task (2.pipelines.tekton.v1alpha1.TaskRtask
+order (Rorder"G
+TektonTaskList5
+items (2.pipelines.tekton.v1alpha1.TaskRitemsB®
 #io.cuemby.pipelines.tekton.v1alpha1BTektonProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPXªPipelines.Tekton.V1Alpha1ÊPipelines\\Tekton\\V1Alpha1bproto3'
         , true);
 

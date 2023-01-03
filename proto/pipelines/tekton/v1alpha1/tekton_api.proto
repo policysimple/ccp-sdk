@@ -16,6 +16,9 @@ import "pipelines/tekton/v1alpha1/tekton.proto";
 service TektonPipelineAPIService{
     rpc CreateTektonPipeline(CreateTektonPipelineRequest) returns (CreateTektonPipelineResponse);
     rpc DeleteTektonPipeline(DeleteTektonPipelineRequest) returns (DeleteTektonPipelineResponse);
+    rpc CreateTektonTaskPipeline(CreateTektonTaskPipelineRequest) returns (CreateTektonTaskPipelineResponse);
+    rpc DeleteTektonTaskPipeline(DeleteTektonTaskPipelineRequest) returns (DeleteTektonTaskPipelineResponse);
+    rpc ListTektonTaskPipeline(ListTektonTaskPipelineRequest) returns (ListTektonTaskPipelineResponse);
 }
 
 message CreateTektonPipelineRequest {
@@ -36,4 +39,29 @@ message DeleteTektonPipelineRequest {
 
 message DeleteTektonPipelineResponse {
     string status = 1; 
+}
+
+message CreateTektonTaskPipelineRequest {
+    pipelines.tekton.v1alpha1.Task tekton_task = 1;
+    int32 order = 2;
+}
+
+message CreateTektonTaskPipelineResponse {
+    pipelines.tekton.v1alpha1.Task tekton_task = 1;
+}
+
+message DeleteTektonTaskPipelineRequest {
+    string task_id = 2;
+}
+
+message DeleteTektonTaskPipelineResponse {
+    string status = 1;
+}
+
+message ListTektonTaskPipelineRequest {
+}
+
+message ListTektonTaskPipelineResponse {
+    pipelines.tekton.v1alpha1.TektonTaskList task_list = 1;
+    string status = 2;
 }
