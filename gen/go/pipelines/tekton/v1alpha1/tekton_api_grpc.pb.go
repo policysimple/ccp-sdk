@@ -23,6 +23,7 @@ type TektonPipelineAPIServiceClient interface {
 	CreateTektonTaskPipeline(ctx context.Context, in *CreateTektonTaskPipelineRequest, opts ...grpc.CallOption) (*CreateTektonTaskPipelineResponse, error)
 	DeleteTektonTaskPipeline(ctx context.Context, in *DeleteTektonTaskPipelineRequest, opts ...grpc.CallOption) (*DeleteTektonTaskPipelineResponse, error)
 	ListTektonTaskPipeline(ctx context.Context, in *ListTektonTaskPipelineRequest, opts ...grpc.CallOption) (*ListTektonTaskPipelineResponse, error)
+	GetTektonTaskPipeline(ctx context.Context, in *GetTektonTaskPipelineRequest, opts ...grpc.CallOption) (*GetTektonTaskPipelineResponse, error)
 }
 
 type tektonPipelineAPIServiceClient struct {
@@ -78,6 +79,15 @@ func (c *tektonPipelineAPIServiceClient) ListTektonTaskPipeline(ctx context.Cont
 	return out, nil
 }
 
+func (c *tektonPipelineAPIServiceClient) GetTektonTaskPipeline(ctx context.Context, in *GetTektonTaskPipelineRequest, opts ...grpc.CallOption) (*GetTektonTaskPipelineResponse, error) {
+	out := new(GetTektonTaskPipelineResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetTektonTaskPipeline", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TektonPipelineAPIServiceServer is the server API for TektonPipelineAPIService service.
 // All implementations should embed UnimplementedTektonPipelineAPIServiceServer
 // for forward compatibility
@@ -87,6 +97,7 @@ type TektonPipelineAPIServiceServer interface {
 	CreateTektonTaskPipeline(context.Context, *CreateTektonTaskPipelineRequest) (*CreateTektonTaskPipelineResponse, error)
 	DeleteTektonTaskPipeline(context.Context, *DeleteTektonTaskPipelineRequest) (*DeleteTektonTaskPipelineResponse, error)
 	ListTektonTaskPipeline(context.Context, *ListTektonTaskPipelineRequest) (*ListTektonTaskPipelineResponse, error)
+	GetTektonTaskPipeline(context.Context, *GetTektonTaskPipelineRequest) (*GetTektonTaskPipelineResponse, error)
 }
 
 // UnimplementedTektonPipelineAPIServiceServer should be embedded to have forward compatible implementations.
@@ -107,6 +118,9 @@ func (UnimplementedTektonPipelineAPIServiceServer) DeleteTektonTaskPipeline(cont
 }
 func (UnimplementedTektonPipelineAPIServiceServer) ListTektonTaskPipeline(context.Context, *ListTektonTaskPipelineRequest) (*ListTektonTaskPipelineResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListTektonTaskPipeline not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) GetTektonTaskPipeline(context.Context, *GetTektonTaskPipelineRequest) (*GetTektonTaskPipelineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTektonTaskPipeline not implemented")
 }
 
 // UnsafeTektonPipelineAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -210,6 +224,24 @@ func _TektonPipelineAPIService_ListTektonTaskPipeline_Handler(srv interface{}, c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TektonPipelineAPIService_GetTektonTaskPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTektonTaskPipelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).GetTektonTaskPipeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetTektonTaskPipeline",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).GetTektonTaskPipeline(ctx, req.(*GetTektonTaskPipelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TektonPipelineAPIService_ServiceDesc is the grpc.ServiceDesc for TektonPipelineAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -236,6 +268,10 @@ var TektonPipelineAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListTektonTaskPipeline",
 			Handler:    _TektonPipelineAPIService_ListTektonTaskPipeline_Handler,
+		},
+		{
+			MethodName: "GetTektonTaskPipeline",
+			Handler:    _TektonPipelineAPIService_GetTektonTaskPipeline_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
