@@ -69,3 +69,57 @@ func DeleteTektonPipeline(in *tektonPipelinepkgv1.DeleteTektonPipelineRequest) (
 	}
 	return response, nil
 }
+
+func CreateTektonTaskPipeline(in *tektonPipelinepkgv1.CreateTektonTaskPipelineRequest) (response *tektonPipelinepkgv1.CreateTektonTaskPipelineResponse, err error) {
+	bylogs.LogInfo("client: create tekton task pipeline")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreateTektonTaskPipeline(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: create tekton task pipeline failed", err)
+		return nil, fmt.Errorf("[CreateTektonPipeline] %w", err)
+	}
+	return response, nil
+}
+
+func DeleteTektonTaskPipeline(in *tektonPipelinepkgv1.DeleteTektonTaskPipelineRequest) (response *tektonPipelinepkgv1.DeleteTektonTaskPipelineResponse, err error) {
+	bylogs.LogInfo("client: delete tekton task pipeline")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeleteTektonTaskPipeline(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: delete tekton task pipeline failed", err)
+		return nil, fmt.Errorf("[DeleteTektonPipeline] %w", err)
+	}
+	return response, nil
+}
+
+func ListTektonTaskPipeline(in *tektonPipelinepkgv1.ListTektonTaskPipelineRequest) (response *tektonPipelinepkgv1.ListTektonTaskPipelineResponse, err error) {
+	bylogs.LogInfo("client: list tekton task pipeline")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListTektonTaskPipeline(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: list tekton task pipeline failed", err)
+		return nil, fmt.Errorf("[DeleteTektonPipeline] %w", err)
+	}
+	return response, nil
+}

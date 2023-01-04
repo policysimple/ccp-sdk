@@ -17,7 +17,7 @@ class TektonApi
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\Tekton::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ã
+ƒ
 *pipelines/tekton/v1alpha1/tekton_api.protopipelines.tekton.v1alpha1"Ñ
 CreateTektonPipelineRequestL
 tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline
@@ -30,10 +30,28 @@ class TektonApi
 application_id (	RapplicationId%
 environment_id (	RenvironmentId"6
 DeleteTektonPipelineResponse
-status (	Rstatus2Æ
+status (	Rstatus"y
+CreateTektonTaskPipelineRequest@
+tekton_task (2.pipelines.tekton.v1alpha1.TaskR
+tektonTask
+order (Rorder"d
+ CreateTektonTaskPipelineResponse@
+tekton_task (2.pipelines.tekton.v1alpha1.TaskR
+tektonTask":
+DeleteTektonTaskPipelineRequest
+task_id (	RtaskId":
+ DeleteTektonTaskPipelineResponse
+status (	Rstatus"
+ListTektonTaskPipelineRequest"Ä
+ListTektonTaskPipelineResponseF
+	task_list (2).pipelines.tekton.v1alpha1.TektonTaskListRtaskList
+status (	Rstatus2Í
 TektonPipelineAPIServiceá
 CreateTektonPipeline6.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest7.pipelines.tekton.v1alpha1.CreateTektonPipelineResponseá
-DeleteTektonPipeline6.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest7.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponseB±
+DeleteTektonPipeline6.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest7.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponseì
+CreateTektonTaskPipeline:.pipelines.tekton.v1alpha1.CreateTektonTaskPipelineRequest;.pipelines.tekton.v1alpha1.CreateTektonTaskPipelineResponseì
+DeleteTektonTaskPipeline:.pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineRequest;.pipelines.tekton.v1alpha1.DeleteTektonTaskPipelineResponseç
+ListTektonTaskPipeline8.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest9.pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponseB±
 #io.cuemby.pipelines.tekton.v1alpha1BTektonAPIProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPX™Pipelines.Tekton.V1Alpha1 Pipelines\\Tekton\\V1Alpha1bproto3'
         , true);
 

@@ -64,3 +64,12 @@ message Pipeline {
     bool is_default = 19;
     bool active = 20;
 }
+
+message TektonTask {
+    repeated Task task = 1;
+    int32 order = 2;
+}
+
+message TektonTaskList {
+    repeated Task items = 1;
+}

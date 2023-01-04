@@ -528,6 +528,108 @@ func (x *Pipeline) GetActive() bool {
 	return false
 }
 
+type TektonTask struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Task  []*Task `protobuf:"bytes,1,rep,name=task,proto3" json:"task,omitempty"`
+	Order int32   `protobuf:"varint,2,opt,name=order,proto3" json:"order,omitempty"`
+}
+
+func (x *TektonTask) Reset() {
+	*x = TektonTask{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TektonTask) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TektonTask) ProtoMessage() {}
+
+func (x *TektonTask) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TektonTask.ProtoReflect.Descriptor instead.
+func (*TektonTask) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *TektonTask) GetTask() []*Task {
+	if x != nil {
+		return x.Task
+	}
+	return nil
+}
+
+func (x *TektonTask) GetOrder() int32 {
+	if x != nil {
+		return x.Order
+	}
+	return 0
+}
+
+type TektonTaskList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Items []*Task `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+}
+
+func (x *TektonTaskList) Reset() {
+	*x = TektonTaskList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TektonTaskList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TektonTaskList) ProtoMessage() {}
+
+func (x *TektonTaskList) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TektonTaskList.ProtoReflect.Descriptor instead.
+func (*TektonTaskList) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *TektonTaskList) GetItems() []*Task {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_pipelines_tekton_v1alpha1_tekton_proto protoreflect.FileDescriptor
 
 var file_pipelines_tekton_v1alpha1_tekton_proto_rawDesc = []byte{
@@ -667,19 +769,29 @@ var file_pipelines_tekton_v1alpha1_tekton_proto_rawDesc = []byte{
 	0x11, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x74,
 	0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x42, 0xae,
-	0x01, 0x0a, 0x23, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e, 0x70, 0x69, 0x70,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x57,
+	0x0a, 0x0a, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x33, 0x0a, 0x04,
+	0x74, 0x61, 0x73, 0x6b, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x70, 0x69, 0x70,
 	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0b, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x72,
-	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73, 0x64, 0x6b,
-	0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
-	0x73, 0x2f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0xa2, 0x02, 0x03, 0x50, 0x50, 0x58, 0xaa, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69,
-	0x6e, 0x65, 0x73, 0x2e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x56, 0x31, 0x41, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0xca, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x5c,
-	0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5c, 0x56, 0x31, 0x41, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x04, 0x74, 0x61, 0x73,
+	0x6b, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x22, 0x47, 0x0a, 0x0e, 0x54, 0x65, 0x6b, 0x74, 0x6f,
+	0x6e, 0x54, 0x61, 0x73, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x35, 0x0a, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
+	0x42, 0xae, 0x01, 0x0a, 0x23, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e, 0x70,
+	0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0b, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e,
+	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73,
+	0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69,
+	0x6e, 0x65, 0x73, 0x2f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70,
+	0x68, 0x61, 0x31, 0xa2, 0x02, 0x03, 0x50, 0x50, 0x58, 0xaa, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65,
+	0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x56, 0x31, 0x41,
+	0x6c, 0x70, 0x68, 0x61, 0x31, 0xca, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
+	0x73, 0x5c, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5c, 0x56, 0x31, 0x41, 0x6c, 0x70, 0x68, 0x61,
+	0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -694,36 +806,40 @@ func file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP() []byte {
 	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescData
 }
 
-var file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_pipelines_tekton_v1alpha1_tekton_proto_goTypes = []interface{}{
-	(*Params)(nil),     // 0: pipelines.tekton.v1alpha1.Params
-	(*TaskParams)(nil), // 1: pipelines.tekton.v1alpha1.TaskParams
-	(*Workspaces)(nil), // 2: pipelines.tekton.v1alpha1.Workspaces
-	(*Task)(nil),       // 3: pipelines.tekton.v1alpha1.Task
-	(*Pipeline)(nil),   // 4: pipelines.tekton.v1alpha1.Pipeline
-	nil,                // 5: pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
-	nil,                // 6: pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
-	nil,                // 7: pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
-	nil,                // 8: pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
-	nil,                // 9: pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
-	nil,                // 10: pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
+	(*Params)(nil),         // 0: pipelines.tekton.v1alpha1.Params
+	(*TaskParams)(nil),     // 1: pipelines.tekton.v1alpha1.TaskParams
+	(*Workspaces)(nil),     // 2: pipelines.tekton.v1alpha1.Workspaces
+	(*Task)(nil),           // 3: pipelines.tekton.v1alpha1.Task
+	(*Pipeline)(nil),       // 4: pipelines.tekton.v1alpha1.Pipeline
+	(*TektonTask)(nil),     // 5: pipelines.tekton.v1alpha1.TektonTask
+	(*TektonTaskList)(nil), // 6: pipelines.tekton.v1alpha1.TektonTaskList
+	nil,                    // 7: pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
+	nil,                    // 8: pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
+	nil,                    // 9: pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
+	nil,                    // 10: pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
+	nil,                    // 11: pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
+	nil,                    // 12: pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
 }
 var file_pipelines_tekton_v1alpha1_tekton_proto_depIdxs = []int32{
 	2,  // 0: pipelines.tekton.v1alpha1.Task.workspaces:type_name -> pipelines.tekton.v1alpha1.Workspaces
 	1,  // 1: pipelines.tekton.v1alpha1.Task.task_params:type_name -> pipelines.tekton.v1alpha1.TaskParams
 	0,  // 2: pipelines.tekton.v1alpha1.Pipeline.params:type_name -> pipelines.tekton.v1alpha1.Params
 	3,  // 3: pipelines.tekton.v1alpha1.Pipeline.tasks:type_name -> pipelines.tekton.v1alpha1.Task
-	5,  // 4: pipelines.tekton.v1alpha1.Pipeline.integration:type_name -> pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
-	6,  // 5: pipelines.tekton.v1alpha1.Pipeline.environment_variables:type_name -> pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
-	7,  // 6: pipelines.tekton.v1alpha1.Pipeline.commands:type_name -> pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
-	8,  // 7: pipelines.tekton.v1alpha1.Pipeline.secrets:type_name -> pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
-	9,  // 8: pipelines.tekton.v1alpha1.Pipeline.extra_args:type_name -> pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
-	10, // 9: pipelines.tekton.v1alpha1.Pipeline.instance_type:type_name -> pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	7,  // 4: pipelines.tekton.v1alpha1.Pipeline.integration:type_name -> pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
+	8,  // 5: pipelines.tekton.v1alpha1.Pipeline.environment_variables:type_name -> pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
+	9,  // 6: pipelines.tekton.v1alpha1.Pipeline.commands:type_name -> pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
+	10, // 7: pipelines.tekton.v1alpha1.Pipeline.secrets:type_name -> pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
+	11, // 8: pipelines.tekton.v1alpha1.Pipeline.extra_args:type_name -> pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
+	12, // 9: pipelines.tekton.v1alpha1.Pipeline.instance_type:type_name -> pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
+	3,  // 10: pipelines.tekton.v1alpha1.TektonTask.task:type_name -> pipelines.tekton.v1alpha1.Task
+	3,  // 11: pipelines.tekton.v1alpha1.TektonTaskList.items:type_name -> pipelines.tekton.v1alpha1.Task
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_pipelines_tekton_v1alpha1_tekton_proto_init() }
@@ -792,6 +908,30 @@ func file_pipelines_tekton_v1alpha1_tekton_proto_init() {
 				return nil
 			}
 		}
+		file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TektonTask); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TektonTaskList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -799,7 +939,7 @@ func file_pipelines_tekton_v1alpha1_tekton_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_pipelines_tekton_v1alpha1_tekton_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

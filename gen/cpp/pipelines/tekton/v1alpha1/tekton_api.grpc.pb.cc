@@ -22,6 +22,9 @@ namespace v1alpha1 {
 static const char* TektonPipelineAPIService_method_names[] = {
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateTektonPipeline",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteTektonPipeline",
+  "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateTektonTaskPipeline",
+  "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteTektonTaskPipeline",
+  "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTaskPipeline",
 };
 
 std::unique_ptr< TektonPipelineAPIService::Stub> TektonPipelineAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,6 +36,9 @@ std::unique_ptr< TektonPipelineAPIService::Stub> TektonPipelineAPIService::NewSt
 TektonPipelineAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateTektonPipeline_(TektonPipelineAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteTektonPipeline_(TektonPipelineAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateTektonTaskPipeline_(TektonPipelineAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteTektonTaskPipeline_(TektonPipelineAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListTektonTaskPipeline_(TektonPipelineAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TektonPipelineAPIService::Stub::CreateTektonPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonPipelineRequest& request, ::pipelines::tekton::v1alpha1::CreateTektonPipelineResponse* response) {
@@ -67,6 +73,54 @@ void TektonPipelineAPIService::Stub::experimental_async::DeleteTektonPipeline(::
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::DeleteTektonPipelineResponse>::Create(channel_.get(), cq, rpcmethod_DeleteTektonPipeline_, context, request, false);
 }
 
+::grpc::Status TektonPipelineAPIService::Stub::CreateTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest& request, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateTektonTaskPipeline_, context, request, response);
+}
+
+void TektonPipelineAPIService::Stub::experimental_async::CreateTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTektonTaskPipeline_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse>* TektonPipelineAPIService::Stub::AsyncCreateTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse>::Create(channel_.get(), cq, rpcmethod_CreateTektonTaskPipeline_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse>* TektonPipelineAPIService::Stub::PrepareAsyncCreateTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse>::Create(channel_.get(), cq, rpcmethod_CreateTektonTaskPipeline_, context, request, false);
+}
+
+::grpc::Status TektonPipelineAPIService::Stub::DeleteTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest& request, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteTektonTaskPipeline_, context, request, response);
+}
+
+void TektonPipelineAPIService::Stub::experimental_async::DeleteTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteTektonTaskPipeline_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>* TektonPipelineAPIService::Stub::AsyncDeleteTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>::Create(channel_.get(), cq, rpcmethod_DeleteTektonTaskPipeline_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>* TektonPipelineAPIService::Stub::PrepareAsyncDeleteTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>::Create(channel_.get(), cq, rpcmethod_DeleteTektonTaskPipeline_, context, request, false);
+}
+
+::grpc::Status TektonPipelineAPIService::Stub::ListTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListTektonTaskPipeline_, context, request, response);
+}
+
+void TektonPipelineAPIService::Stub::experimental_async::ListTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTektonTaskPipeline_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* TektonPipelineAPIService::Stub::AsyncListTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>::Create(channel_.get(), cq, rpcmethod_ListTektonTaskPipeline_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* TektonPipelineAPIService::Stub::PrepareAsyncListTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>::Create(channel_.get(), cq, rpcmethod_ListTektonTaskPipeline_, context, request, false);
+}
+
 TektonPipelineAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TektonPipelineAPIService_method_names[0],
@@ -78,6 +132,21 @@ TektonPipelineAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest, ::pipelines::tekton::v1alpha1::DeleteTektonPipelineResponse>(
           std::mem_fn(&TektonPipelineAPIService::Service::DeleteTektonPipeline), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TektonPipelineAPIService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse>(
+          std::mem_fn(&TektonPipelineAPIService::Service::CreateTektonTaskPipeline), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TektonPipelineAPIService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>(
+          std::mem_fn(&TektonPipelineAPIService::Service::DeleteTektonTaskPipeline), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TektonPipelineAPIService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>(
+          std::mem_fn(&TektonPipelineAPIService::Service::ListTektonTaskPipeline), this)));
 }
 
 TektonPipelineAPIService::Service::~Service() {
@@ -91,6 +160,27 @@ TektonPipelineAPIService::Service::~Service() {
 }
 
 ::grpc::Status TektonPipelineAPIService::Service::DeleteTektonPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonPipelineRequest* request, ::pipelines::tekton::v1alpha1::DeleteTektonPipelineResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TektonPipelineAPIService::Service::CreateTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TektonPipelineAPIService::Service::DeleteTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TektonPipelineAPIService::Service::ListTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response) {
   (void) context;
   (void) request;
   (void) response;
