@@ -72,6 +72,13 @@ class TektonPipelineAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>> PrepareAsyncListTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>>(PrepareAsyncListTektonTaskPipelineRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>> AsyncGetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>>(AsyncGetTektonTaskPipelineRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>> PrepareAsyncGetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>>(PrepareAsyncGetTektonTaskPipelineRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -80,6 +87,7 @@ class TektonPipelineAPIService final {
       virtual void CreateTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -93,6 +101,8 @@ class TektonPipelineAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>* PrepareAsyncDeleteTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* AsyncListTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* PrepareAsyncListTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>* AsyncGetTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>* PrepareAsyncGetTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -132,6 +142,13 @@ class TektonPipelineAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>> PrepareAsyncListTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>>(PrepareAsyncListTektonTaskPipelineRaw(context, request, cq));
     }
+    ::grpc::Status GetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>> AsyncGetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>>(AsyncGetTektonTaskPipelineRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>> PrepareAsyncGetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>>(PrepareAsyncGetTektonTaskPipelineRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -140,6 +157,7 @@ class TektonPipelineAPIService final {
       void CreateTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) override;
       void ListTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTektonTaskPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -161,11 +179,14 @@ class TektonPipelineAPIService final {
     ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse>* PrepareAsyncDeleteTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* AsyncListTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* PrepareAsyncListTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>* AsyncGetTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>* PrepareAsyncGetTektonTaskPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTektonPipeline_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteTektonPipeline_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTektonTaskPipeline_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteTektonTaskPipeline_;
     const ::grpc::internal::RpcMethod rpcmethod_ListTektonTaskPipeline_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTektonTaskPipeline_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -178,6 +199,7 @@ class TektonPipelineAPIService final {
     virtual ::grpc::Status CreateTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::CreateTektonTaskPipelineResponse* response);
     virtual ::grpc::Status DeleteTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::DeleteTektonTaskPipelineResponse* response);
     virtual ::grpc::Status ListTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response);
+    virtual ::grpc::Status GetTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateTektonPipeline : public BaseClass {
@@ -279,7 +301,27 @@ class TektonPipelineAPIService final {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateTektonPipeline<WithAsyncMethod_DeleteTektonPipeline<WithAsyncMethod_CreateTektonTaskPipeline<WithAsyncMethod_DeleteTektonTaskPipeline<WithAsyncMethod_ListTektonTaskPipeline<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetTektonTaskPipeline : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetTektonTaskPipeline() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_GetTektonTaskPipeline() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTektonTaskPipeline(::grpc::ServerContext* context, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateTektonPipeline<WithAsyncMethod_DeleteTektonPipeline<WithAsyncMethod_CreateTektonTaskPipeline<WithAsyncMethod_DeleteTektonTaskPipeline<WithAsyncMethod_ListTektonTaskPipeline<WithAsyncMethod_GetTektonTaskPipeline<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateTektonPipeline : public BaseClass {
    private:
@@ -361,6 +403,23 @@ class TektonPipelineAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetTektonTaskPipeline : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetTektonTaskPipeline() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_GetTektonTaskPipeline() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -466,6 +525,26 @@ class TektonPipelineAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetTektonTaskPipeline : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetTektonTaskPipeline() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_GetTektonTaskPipeline() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTektonTaskPipeline(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateTektonPipeline : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -565,9 +644,29 @@ class TektonPipelineAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListTektonTaskPipeline(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::tekton::v1alpha1::ListTektonTaskPipelineRequest,::pipelines::tekton::v1alpha1::ListTektonTaskPipelineResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateTektonPipeline<WithStreamedUnaryMethod_DeleteTektonPipeline<WithStreamedUnaryMethod_CreateTektonTaskPipeline<WithStreamedUnaryMethod_DeleteTektonTaskPipeline<WithStreamedUnaryMethod_ListTektonTaskPipeline<Service > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetTektonTaskPipeline : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetTektonTaskPipeline() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>(std::bind(&WithStreamedUnaryMethod_GetTektonTaskPipeline<BaseClass>::StreamedGetTektonTaskPipeline, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetTektonTaskPipeline() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetTektonTaskPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetTektonTaskPipeline(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::tekton::v1alpha1::GetTektonTaskPipelineRequest,::pipelines::tekton::v1alpha1::GetTektonTaskPipelineResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateTektonPipeline<WithStreamedUnaryMethod_DeleteTektonPipeline<WithStreamedUnaryMethod_CreateTektonTaskPipeline<WithStreamedUnaryMethod_DeleteTektonTaskPipeline<WithStreamedUnaryMethod_ListTektonTaskPipeline<WithStreamedUnaryMethod_GetTektonTaskPipeline<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateTektonPipeline<WithStreamedUnaryMethod_DeleteTektonPipeline<WithStreamedUnaryMethod_CreateTektonTaskPipeline<WithStreamedUnaryMethod_DeleteTektonTaskPipeline<WithStreamedUnaryMethod_ListTektonTaskPipeline<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateTektonPipeline<WithStreamedUnaryMethod_DeleteTektonPipeline<WithStreamedUnaryMethod_CreateTektonTaskPipeline<WithStreamedUnaryMethod_DeleteTektonTaskPipeline<WithStreamedUnaryMethod_ListTektonTaskPipeline<WithStreamedUnaryMethod_GetTektonTaskPipeline<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
