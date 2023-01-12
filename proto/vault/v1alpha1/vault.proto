@@ -46,5 +46,9 @@ message TokenIntegration {
 }
 
 message BlockchainSecret {
-    SecretData data = 3;
+    SecretData data = 1;
+}
+
+message FirebaseSecret {
+    map<string, string> data = 1;
 }

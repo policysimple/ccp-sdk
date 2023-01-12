@@ -15,6 +15,26 @@ public final class VaultAPIProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_SaveTokenFirebaseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_SaveTokenFirebaseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_SaveTokenFirebaseResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_SaveTokenFirebaseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_GetTokenFirebaseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_GetTokenFirebaseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_GetTokenFirebaseResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_GetTokenFirebaseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vault_v1alpha1_CreateSecretRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -114,194 +134,234 @@ public final class VaultAPIProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\036vault/v1alpha1/vault_api.proto\022\016vault." +
-      "v1alpha1\032\032vault/v1alpha1/vault.proto\"E\n\023" +
-      "CreateSecretRequest\022.\n\006secret\030\001 \001(\0132\026.va" +
-      "ult.v1alpha1.SecretR\006secret\">\n\024CreateSec" +
-      "retResponse\022\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg" +
-      "\030\002 \001(\tR\003msg\"\322\001\n\023UpdateSecretRequest\022\'\n\017o" +
-      "rganization_id\030\001 \001(\tR\016organizationId\022\035\n\n" +
-      "project_id\030\002 \001(\tR\tprojectId\022\034\n\tnamespace" +
-      "\030\003 \001(\tR\tnamespace\022%\n\016application_id\030\004 \001(" +
-      "\tR\rapplicationId\022.\n\006secret\030\005 \001(\0132\026.vault" +
-      ".v1alpha1.SecretR\006secret\">\n\024UpdateSecret" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(" +
-      "\tR\005error\"\266\001\n\023DeleteSecretRequest\022\'\n\017orga" +
-      "nization_id\030\001 \001(\tR\016organizationId\022\035\n\npro" +
-      "ject_id\030\002 \001(\tR\tprojectId\022%\n\016application_" +
-      "id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001" +
-      "(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\">\n\024Del" +
-      "eteSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error\"\263\001\n\020GetSecretRequest\022\'" +
-      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
-      "\035\n\nproject_id\030\002 \001(\tR\tprojectId\022%\n\016applic" +
-      "ation_id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespa" +
-      "ce\030\004 \001(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\"" +
-      "Y\n\021GetSecretResponse\022.\n\006secret\030\001 \001(\0132\026.v" +
-      "ault.v1alpha1.SecretR\006secret\022\024\n\005error\030\002 " +
-      "\001(\tR\005error\"D\n\031DeleteOrganizationRequest\022" +
-      "\'\n\017organization_id\030\001 \001(\tR\016organizationId" +
-      "\"D\n\032DeleteOrganizationResponse\022\020\n\003msg\030\001 " +
-      "\001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\204\001\n\034SaveT" +
-      "okenIntegrationsRequest\022\'\n\017organization_" +
-      "id\030\001 \001(\tR\016organizationId\022%\n\016integration_" +
-      "id\030\002 \001(\tR\rintegrationId\022\024\n\005token\030\003 \001(\tR\005" +
-      "token\"G\n\035SaveTokenIntegrationsResponse\022\020" +
-      "\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"m" +
-      "\n\033GetTokenIntegrationsRequest\022\'\n\017organiz" +
-      "ation_id\030\001 \001(\tR\016organizationId\022%\n\016integr" +
-      "ation_id\030\002 \001(\tR\rintegrationId\"J\n\034GetToke" +
-      "nIntegrationsResponse\022\024\n\005token\030\001 \001(\tR\005to" +
-      "ken\022\024\n\005error\030\002 \001(\tR\005error\"\301\001\n\032SaveTokenB" +
-      "lockChainRequest\022#\n\rblockchain_id\030\001 \001(\tR" +
-      "\014blockchainId\022\'\n\017blockchain_name\030\002 \001(\tR\016" +
-      "blockchainName\022\033\n\tnode_name\030\003 \001(\tR\010nodeN" +
-      "ame\0228\n\006secret\030\004 \001(\0132 .vault.v1alpha1.Blo" +
-      "ckchainSecretR\006secret\"E\n\033SaveTokenBlockC" +
-      "hainResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030" +
-      "\002 \001(\tR\005error\"\206\001\n\031GetTokenBlockChainReque" +
-      "st\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022" +
-      "\'\n\017blockchain_name\030\002 \001(\tR\016blockchainName" +
-      "\022\033\n\tnode_name\030\003 \001(\tR\010nodeName\"l\n\032GetToke" +
-      "nBlockChainResponse\0228\n\006secret\030\001 \001(\0132 .va" +
-      "ult.v1alpha1.BlockchainSecretR\006secret\022\024\n" +
-      "\005error\030\002 \001(\tR\005error2\271\007\n\017VaultAPIService\022" +
-      "[\n\014CreateSecret\022#.vault.v1alpha1.CreateS" +
-      "ecretRequest\032$.vault.v1alpha1.CreateSecr" +
-      "etResponse\"\000\022[\n\014UpdateSecret\022#.vault.v1a" +
-      "lpha1.UpdateSecretRequest\032$.vault.v1alph" +
-      "a1.UpdateSecretResponse\"\000\022[\n\014DeleteSecre" +
-      "t\022#.vault.v1alpha1.DeleteSecretRequest\032$" +
-      ".vault.v1alpha1.DeleteSecretResponse\"\000\022R" +
-      "\n\tGetSecret\022 .vault.v1alpha1.GetSecretRe" +
-      "quest\032!.vault.v1alpha1.GetSecretResponse" +
-      "\"\000\022m\n\022DeleteOrganization\022).vault.v1alpha" +
-      "1.DeleteOrganizationRequest\032*.vault.v1al" +
-      "pha1.DeleteOrganizationResponse\"\000\022v\n\025Sav" +
-      "eTokenIntegrations\022,.vault.v1alpha1.Save" +
-      "TokenIntegrationsRequest\032-.vault.v1alpha" +
-      "1.SaveTokenIntegrationsResponse\"\000\022s\n\024Get" +
-      "TokenIntegrations\022+.vault.v1alpha1.GetTo" +
-      "kenIntegrationsRequest\032,.vault.v1alpha1." +
-      "GetTokenIntegrationsResponse\"\000\022p\n\023SaveTo" +
-      "kenBlockChain\022*.vault.v1alpha1.SaveToken" +
-      "BlockChainRequest\032+.vault.v1alpha1.SaveT" +
-      "okenBlockChainResponse\"\000\022m\n\022GetTokenBloc" +
-      "kChain\022).vault.v1alpha1.GetTokenBlockCha" +
-      "inRequest\032*.vault.v1alpha1.GetTokenBlock" +
-      "ChainResponse\"\000B\206\001\n\030io.cuemby.vault.v1al" +
-      "pha1B\rVaultAPIProtoP\001Z1github.com/cuemby" +
-      "/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002" +
-      "\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
+      "v1alpha1\032\032vault/v1alpha1/vault.proto\"R\n\030" +
+      "SaveTokenFirebaseRequest\0226\n\006secret\030\001 \001(\013" +
+      "2\036.vault.v1alpha1.FirebaseSecretR\006secret" +
+      "\"C\n\031SaveTokenFirebaseResponse\022\020\n\003msg\030\001 \001" +
+      "(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\210\001\n\027GetTok" +
+      "enFirebaseRequest\022\'\n\017organization_id\030\001 \001" +
+      "(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\tR\t" +
+      "projectId\022%\n\016application_id\030\003 \001(\tR\rappli" +
+      "cationId\"h\n\030GetTokenFirebaseResponse\0226\n\006" +
+      "secret\030\001 \001(\0132\036.vault.v1alpha1.FirebaseSe" +
+      "cretR\006secret\022\024\n\005error\030\002 \001(\tR\005error\"E\n\023Cr" +
+      "eateSecretRequest\022.\n\006secret\030\001 \001(\0132\026.vaul" +
+      "t.v1alpha1.SecretR\006secret\">\n\024CreateSecre" +
+      "tResponse\022\024\n\005error\030\001 \001(\tR\005error\022\020\n\003msg\030\002" +
+      " \001(\tR\003msg\"\322\001\n\023UpdateSecretRequest\022\'\n\017org" +
+      "anization_id\030\001 \001(\tR\016organizationId\022\035\n\npr" +
+      "oject_id\030\002 \001(\tR\tprojectId\022\034\n\tnamespace\030\003" +
+      " \001(\tR\tnamespace\022%\n\016application_id\030\004 \001(\tR" +
+      "\rapplicationId\022.\n\006secret\030\005 \001(\0132\026.vault.v" +
+      "1alpha1.SecretR\006secret\">\n\024UpdateSecretRe" +
+      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR" +
+      "\005error\"\266\001\n\023DeleteSecretRequest\022\'\n\017organi" +
+      "zation_id\030\001 \001(\tR\016organizationId\022\035\n\nproje" +
+      "ct_id\030\002 \001(\tR\tprojectId\022%\n\016application_id" +
+      "\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace\030\004 \001(\t" +
+      "R\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\">\n\024Delet" +
+      "eSecretResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err" +
+      "or\030\002 \001(\tR\005error\"\263\001\n\020GetSecretRequest\022\'\n\017" +
+      "organization_id\030\001 \001(\tR\016organizationId\022\035\n" +
+      "\nproject_id\030\002 \001(\tR\tprojectId\022%\n\016applicat" +
+      "ion_id\030\003 \001(\tR\rapplicationId\022\034\n\tnamespace" +
+      "\030\004 \001(\tR\tnamespace\022\022\n\004name\030\005 \001(\tR\004name\"Y\n" +
+      "\021GetSecretResponse\022.\n\006secret\030\001 \001(\0132\026.vau" +
+      "lt.v1alpha1.SecretR\006secret\022\024\n\005error\030\002 \001(" +
+      "\tR\005error\"D\n\031DeleteOrganizationRequest\022\'\n" +
+      "\017organization_id\030\001 \001(\tR\016organizationId\"D" +
+      "\n\032DeleteOrganizationResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\204\001\n\034SaveTok" +
+      "enIntegrationsRequest\022\'\n\017organization_id" +
+      "\030\001 \001(\tR\016organizationId\022%\n\016integration_id" +
+      "\030\002 \001(\tR\rintegrationId\022\024\n\005token\030\003 \001(\tR\005to" +
+      "ken\"G\n\035SaveTokenIntegrationsResponse\022\020\n\003" +
+      "msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"m\n\033" +
+      "GetTokenIntegrationsRequest\022\'\n\017organizat" +
+      "ion_id\030\001 \001(\tR\016organizationId\022%\n\016integrat" +
+      "ion_id\030\002 \001(\tR\rintegrationId\"J\n\034GetTokenI" +
+      "ntegrationsResponse\022\024\n\005token\030\001 \001(\tR\005toke" +
+      "n\022\024\n\005error\030\002 \001(\tR\005error\"\301\001\n\032SaveTokenBlo" +
+      "ckChainRequest\022#\n\rblockchain_id\030\001 \001(\tR\014b" +
+      "lockchainId\022\'\n\017blockchain_name\030\002 \001(\tR\016bl" +
+      "ockchainName\022\033\n\tnode_name\030\003 \001(\tR\010nodeNam" +
+      "e\0228\n\006secret\030\004 \001(\0132 .vault.v1alpha1.Block" +
+      "chainSecretR\006secret\"E\n\033SaveTokenBlockCha" +
+      "inResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 " +
+      "\001(\tR\005error\"\206\001\n\031GetTokenBlockChainRequest" +
+      "\022#\n\rblockchain_id\030\001 \001(\tR\014blockchainId\022\'\n" +
+      "\017blockchain_name\030\002 \001(\tR\016blockchainName\022\033" +
+      "\n\tnode_name\030\003 \001(\tR\010nodeName\"l\n\032GetTokenB" +
+      "lockChainResponse\0228\n\006secret\030\001 \001(\0132 .vaul" +
+      "t.v1alpha1.BlockchainSecretR\006secret\022\024\n\005e" +
+      "rror\030\002 \001(\tR\005error2\216\t\n\017VaultAPIService\022[\n" +
+      "\014CreateSecret\022#.vault.v1alpha1.CreateSec" +
+      "retRequest\032$.vault.v1alpha1.CreateSecret" +
+      "Response\"\000\022[\n\014UpdateSecret\022#.vault.v1alp" +
+      "ha1.UpdateSecretRequest\032$.vault.v1alpha1" +
+      ".UpdateSecretResponse\"\000\022[\n\014DeleteSecret\022" +
+      "#.vault.v1alpha1.DeleteSecretRequest\032$.v" +
+      "ault.v1alpha1.DeleteSecretResponse\"\000\022R\n\t" +
+      "GetSecret\022 .vault.v1alpha1.GetSecretRequ" +
+      "est\032!.vault.v1alpha1.GetSecretResponse\"\000" +
+      "\022m\n\022DeleteOrganization\022).vault.v1alpha1." +
+      "DeleteOrganizationRequest\032*.vault.v1alph" +
+      "a1.DeleteOrganizationResponse\"\000\022v\n\025SaveT" +
+      "okenIntegrations\022,.vault.v1alpha1.SaveTo" +
+      "kenIntegrationsRequest\032-.vault.v1alpha1." +
+      "SaveTokenIntegrationsResponse\"\000\022s\n\024GetTo" +
+      "kenIntegrations\022+.vault.v1alpha1.GetToke" +
+      "nIntegrationsRequest\032,.vault.v1alpha1.Ge" +
+      "tTokenIntegrationsResponse\"\000\022p\n\023SaveToke" +
+      "nBlockChain\022*.vault.v1alpha1.SaveTokenBl" +
+      "ockChainRequest\032+.vault.v1alpha1.SaveTok" +
+      "enBlockChainResponse\"\000\022m\n\022GetTokenBlockC" +
+      "hain\022).vault.v1alpha1.GetTokenBlockChain" +
+      "Request\032*.vault.v1alpha1.GetTokenBlockCh" +
+      "ainResponse\"\000\022j\n\021SaveTokenFirebase\022(.vau" +
+      "lt.v1alpha1.SaveTokenFirebaseRequest\032).v" +
+      "ault.v1alpha1.SaveTokenFirebaseResponse\"" +
+      "\000\022g\n\020GetTokenFirebase\022\'.vault.v1alpha1.G" +
+      "etTokenFirebaseRequest\032(.vault.v1alpha1." +
+      "GetTokenFirebaseResponse\"\000B\206\001\n\030io.cuemby" +
+      ".vault.v1alpha1B\rVaultAPIProtoP\001Z1github" +
+      ".com/cuemby/ccp-vault-service/vaultv1alp" +
+      "ha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alp" +
+      "ha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.cuemby.vault.v1alpha1.VaultProto.getDescriptor(),
         });
-    internal_static_vault_v1alpha1_CreateSecretRequest_descriptor =
+    internal_static_vault_v1alpha1_SaveTokenFirebaseRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_vault_v1alpha1_SaveTokenFirebaseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_SaveTokenFirebaseRequest_descriptor,
+        new java.lang.String[] { "Secret", });
+    internal_static_vault_v1alpha1_SaveTokenFirebaseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_vault_v1alpha1_SaveTokenFirebaseResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_SaveTokenFirebaseResponse_descriptor,
+        new java.lang.String[] { "Msg", "Error", });
+    internal_static_vault_v1alpha1_GetTokenFirebaseRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_vault_v1alpha1_GetTokenFirebaseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_GetTokenFirebaseRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", });
+    internal_static_vault_v1alpha1_GetTokenFirebaseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_vault_v1alpha1_GetTokenFirebaseResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_GetTokenFirebaseResponse_descriptor,
+        new java.lang.String[] { "Secret", "Error", });
+    internal_static_vault_v1alpha1_CreateSecretRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_vault_v1alpha1_CreateSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_CreateSecretRequest_descriptor,
         new java.lang.String[] { "Secret", });
     internal_static_vault_v1alpha1_CreateSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_vault_v1alpha1_CreateSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_CreateSecretResponse_descriptor,
         new java.lang.String[] { "Error", "Msg", });
     internal_static_vault_v1alpha1_UpdateSecretRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_vault_v1alpha1_UpdateSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_UpdateSecretRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "ProjectId", "Namespace", "ApplicationId", "Secret", });
     internal_static_vault_v1alpha1_UpdateSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_vault_v1alpha1_UpdateSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_UpdateSecretResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_vault_v1alpha1_DeleteSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", "Namespace", "Name", });
     internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_vault_v1alpha1_DeleteSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteSecretResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_vault_v1alpha1_GetSecretRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_vault_v1alpha1_GetSecretRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetSecretRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "ProjectId", "ApplicationId", "Namespace", "Name", });
     internal_static_vault_v1alpha1_GetSecretResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_vault_v1alpha1_GetSecretResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetSecretResponse_descriptor,
         new java.lang.String[] { "Secret", "Error", });
     internal_static_vault_v1alpha1_DeleteOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_vault_v1alpha1_DeleteOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
     internal_static_vault_v1alpha1_DeleteOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_vault_v1alpha1_DeleteOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_DeleteOrganizationResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_vault_v1alpha1_SaveTokenIntegrationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_vault_v1alpha1_SaveTokenIntegrationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_SaveTokenIntegrationsRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "IntegrationId", "Token", });
     internal_static_vault_v1alpha1_SaveTokenIntegrationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_vault_v1alpha1_SaveTokenIntegrationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_SaveTokenIntegrationsResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_vault_v1alpha1_GetTokenIntegrationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_vault_v1alpha1_GetTokenIntegrationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetTokenIntegrationsRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "IntegrationId", });
     internal_static_vault_v1alpha1_GetTokenIntegrationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_vault_v1alpha1_GetTokenIntegrationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetTokenIntegrationsResponse_descriptor,
         new java.lang.String[] { "Token", "Error", });
     internal_static_vault_v1alpha1_SaveTokenBlockChainRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_vault_v1alpha1_SaveTokenBlockChainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_SaveTokenBlockChainRequest_descriptor,
         new java.lang.String[] { "BlockchainId", "BlockchainName", "NodeName", "Secret", });
     internal_static_vault_v1alpha1_SaveTokenBlockChainResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_vault_v1alpha1_SaveTokenBlockChainResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_SaveTokenBlockChainResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_vault_v1alpha1_GetTokenBlockChainRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_vault_v1alpha1_GetTokenBlockChainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetTokenBlockChainRequest_descriptor,
         new java.lang.String[] { "BlockchainId", "BlockchainName", "NodeName", });
     internal_static_vault_v1alpha1_GetTokenBlockChainResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_vault_v1alpha1_GetTokenBlockChainResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetTokenBlockChainResponse_descriptor,

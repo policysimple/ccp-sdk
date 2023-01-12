@@ -8,17 +8,17 @@ public interface BlockchainSecretOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.vault.v1alpha1.SecretData data = 3 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
    * @return Whether the data field is set.
    */
   boolean hasData();
   /**
-   * <code>.vault.v1alpha1.SecretData data = 3 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
    * @return The data.
    */
   io.cuemby.vault.v1alpha1.SecretData getData();
   /**
-   * <code>.vault.v1alpha1.SecretData data = 3 [json_name = "data"];</code>
+   * <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
    */
   io.cuemby.vault.v1alpha1.SecretDataOrBuilder getDataOrBuilder();
 }

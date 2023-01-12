@@ -28,6 +28,8 @@ static const char* VaultAPIService_method_names[] = {
   "/vault.v1alpha1.VaultAPIService/GetTokenIntegrations",
   "/vault.v1alpha1.VaultAPIService/SaveTokenBlockChain",
   "/vault.v1alpha1.VaultAPIService/GetTokenBlockChain",
+  "/vault.v1alpha1.VaultAPIService/SaveTokenFirebase",
+  "/vault.v1alpha1.VaultAPIService/GetTokenFirebase",
 };
 
 std::unique_ptr< VaultAPIService::Stub> VaultAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -46,6 +48,8 @@ VaultAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_GetTokenIntegrations_(VaultAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SaveTokenBlockChain_(VaultAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetTokenBlockChain_(VaultAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SaveTokenFirebase_(VaultAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTokenFirebase_(VaultAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status VaultAPIService::Stub::CreateSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::CreateSecretRequest& request, ::vault::v1alpha1::CreateSecretResponse* response) {
@@ -192,6 +196,38 @@ void VaultAPIService::Stub::experimental_async::GetTokenBlockChain(::grpc::Clien
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetTokenBlockChainResponse>::Create(channel_.get(), cq, rpcmethod_GetTokenBlockChain_, context, request, false);
 }
 
+::grpc::Status VaultAPIService::Stub::SaveTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest& request, ::vault::v1alpha1::SaveTokenFirebaseResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SaveTokenFirebase_, context, request, response);
+}
+
+void VaultAPIService::Stub::experimental_async::SaveTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest* request, ::vault::v1alpha1::SaveTokenFirebaseResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveTokenFirebase_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenFirebaseResponse>* VaultAPIService::Stub::AsyncSaveTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::SaveTokenFirebaseResponse>::Create(channel_.get(), cq, rpcmethod_SaveTokenFirebase_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenFirebaseResponse>* VaultAPIService::Stub::PrepareAsyncSaveTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::SaveTokenFirebaseResponse>::Create(channel_.get(), cq, rpcmethod_SaveTokenFirebase_, context, request, false);
+}
+
+::grpc::Status VaultAPIService::Stub::GetTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::vault::v1alpha1::GetTokenFirebaseResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTokenFirebase_, context, request, response);
+}
+
+void VaultAPIService::Stub::experimental_async::GetTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest* request, ::vault::v1alpha1::GetTokenFirebaseResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTokenFirebase_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenFirebaseResponse>* VaultAPIService::Stub::AsyncGetTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetTokenFirebaseResponse>::Create(channel_.get(), cq, rpcmethod_GetTokenFirebase_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenFirebaseResponse>* VaultAPIService::Stub::PrepareAsyncGetTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetTokenFirebaseResponse>::Create(channel_.get(), cq, rpcmethod_GetTokenFirebase_, context, request, false);
+}
+
 VaultAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VaultAPIService_method_names[0],
@@ -238,6 +274,16 @@ VaultAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::GetTokenBlockChainRequest, ::vault::v1alpha1::GetTokenBlockChainResponse>(
           std::mem_fn(&VaultAPIService::Service::GetTokenBlockChain), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VaultAPIService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::SaveTokenFirebaseRequest, ::vault::v1alpha1::SaveTokenFirebaseResponse>(
+          std::mem_fn(&VaultAPIService::Service::SaveTokenFirebase), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VaultAPIService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::GetTokenFirebaseRequest, ::vault::v1alpha1::GetTokenFirebaseResponse>(
+          std::mem_fn(&VaultAPIService::Service::GetTokenFirebase), this)));
 }
 
 VaultAPIService::Service::~Service() {
@@ -300,6 +346,20 @@ VaultAPIService::Service::~Service() {
 }
 
 ::grpc::Status VaultAPIService::Service::GetTokenBlockChain(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status VaultAPIService::Service::SaveTokenFirebase(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest* request, ::vault::v1alpha1::SaveTokenFirebaseResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status VaultAPIService::Service::GetTokenFirebase(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest* request, ::vault::v1alpha1::GetTokenFirebaseResponse* response) {
   (void) context;
   (void) request;
   (void) response;

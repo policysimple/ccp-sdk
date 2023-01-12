@@ -115,6 +115,28 @@ function deserialize_vault_v1alpha1_GetTokenBlockChainResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetTokenBlockChainResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_GetTokenFirebaseRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenFirebaseRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetTokenFirebaseRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetTokenFirebaseRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetTokenFirebaseRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_GetTokenFirebaseResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenFirebaseResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetTokenFirebaseResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetTokenFirebaseResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetTokenFirebaseResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_GetTokenIntegrationsRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenIntegrationsRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.GetTokenIntegrationsRequest');
@@ -157,6 +179,28 @@ function serialize_vault_v1alpha1_SaveTokenBlockChainResponse(arg) {
 
 function deserialize_vault_v1alpha1_SaveTokenBlockChainResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.SaveTokenBlockChainResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_SaveTokenFirebaseRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.SaveTokenFirebaseRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.SaveTokenFirebaseRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_SaveTokenFirebaseRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.SaveTokenFirebaseRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_SaveTokenFirebaseResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.SaveTokenFirebaseResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.SaveTokenFirebaseResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_SaveTokenFirebaseResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.SaveTokenFirebaseResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_vault_v1alpha1_SaveTokenIntegrationsRequest(arg) {
@@ -304,6 +348,29 @@ var VaultAPIServiceService = exports.VaultAPIServiceService = {
     requestDeserialize: deserialize_vault_v1alpha1_GetTokenBlockChainRequest,
     responseSerialize: serialize_vault_v1alpha1_GetTokenBlockChainResponse,
     responseDeserialize: deserialize_vault_v1alpha1_GetTokenBlockChainResponse,
+  },
+  // Firebase
+  saveTokenFirebase: {
+    path: '/vault.v1alpha1.VaultAPIService/SaveTokenFirebase',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.SaveTokenFirebaseRequest,
+    responseType: vault_v1alpha1_vault_api_pb.SaveTokenFirebaseResponse,
+    requestSerialize: serialize_vault_v1alpha1_SaveTokenFirebaseRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_SaveTokenFirebaseRequest,
+    responseSerialize: serialize_vault_v1alpha1_SaveTokenFirebaseResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_SaveTokenFirebaseResponse,
+  },
+  getTokenFirebase: {
+    path: '/vault.v1alpha1.VaultAPIService/GetTokenFirebase',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.GetTokenFirebaseRequest,
+    responseType: vault_v1alpha1_vault_api_pb.GetTokenFirebaseResponse,
+    requestSerialize: serialize_vault_v1alpha1_GetTokenFirebaseRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_GetTokenFirebaseRequest,
+    responseSerialize: serialize_vault_v1alpha1_GetTokenFirebaseResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_GetTokenFirebaseResponse,
   },
 };
 

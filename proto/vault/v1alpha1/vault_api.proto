@@ -27,7 +27,32 @@ service VaultAPIService{
     //BlockChain
     rpc SaveTokenBlockChain(SaveTokenBlockChainRequest) returns (SaveTokenBlockChainResponse) {};
     rpc GetTokenBlockChain(GetTokenBlockChainRequest) returns (GetTokenBlockChainResponse) {};
+
+    //Firebase
+    rpc SaveTokenFirebase(SaveTokenFirebaseRequest) returns (SaveTokenFirebaseResponse) {};
+    rpc GetTokenFirebase(GetTokenFirebaseRequest) returns (GetTokenFirebaseResponse) {};
 }
+
+message SaveTokenFirebaseRequest {
+    FirebaseSecret secret = 1;
+}
+
+message SaveTokenFirebaseResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message GetTokenFirebaseRequest {
+    string organization_id = 1;
+    string project_id = 2;
+    string application_id = 3;
+}
+
+message GetTokenFirebaseResponse {
+    FirebaseSecret secret = 1;
+    string error = 2;
+}
+
 
 message CreateSecretRequest {
     Secret secret = 1;

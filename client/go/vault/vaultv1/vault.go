@@ -50,6 +50,28 @@ func init() {
 	})
 }
 
+func SaveTokenFirebase(in *vaultpkgv1.SaveTokenFirebaseRequest) (*vaultpkgv1.SaveTokenFirebaseResponse, error) {
+	bylogs.LogInfo("SaveTokenFirebase-clientSdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.SaveTokenFirebase(ctx, &vaultpkgv1.SaveTokenFirebaseRequest{
+		Secret: in.Secret,
+	})
+
+	if err != nil {
+		bylogs.LogErr("SaveTokenFirebase-clientSdk", err)
+		return nil, fmt.Errorf("[SaveTokenFirebase] %w", err)
+
+	}
+	bylogs.LogInfo("SaveTokenFirebase Client Sdk", "Success")
+	return response, nil
+}
+
 func CreateSecret(in *vaultpkgv1.CreateSecretRequest) (*vaultpkgv1.CreateSecretResponse, error) {
 	bylogs.LogInfo("CreateSecret-clientSdk")
 	d, err := time.ParseDuration(vaultServiceTimeout)
