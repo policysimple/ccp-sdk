@@ -47,7 +47,7 @@ struct TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +86,12 @@ extern GetTokenBlockChainRequestDefaultTypeInternal _GetTokenBlockChainRequest_d
 class GetTokenBlockChainResponse;
 struct GetTokenBlockChainResponseDefaultTypeInternal;
 extern GetTokenBlockChainResponseDefaultTypeInternal _GetTokenBlockChainResponse_default_instance_;
+class GetTokenFirebaseRequest;
+struct GetTokenFirebaseRequestDefaultTypeInternal;
+extern GetTokenFirebaseRequestDefaultTypeInternal _GetTokenFirebaseRequest_default_instance_;
+class GetTokenFirebaseResponse;
+struct GetTokenFirebaseResponseDefaultTypeInternal;
+extern GetTokenFirebaseResponseDefaultTypeInternal _GetTokenFirebaseResponse_default_instance_;
 class GetTokenIntegrationsRequest;
 struct GetTokenIntegrationsRequestDefaultTypeInternal;
 extern GetTokenIntegrationsRequestDefaultTypeInternal _GetTokenIntegrationsRequest_default_instance_;
@@ -98,6 +104,12 @@ extern SaveTokenBlockChainRequestDefaultTypeInternal _SaveTokenBlockChainRequest
 class SaveTokenBlockChainResponse;
 struct SaveTokenBlockChainResponseDefaultTypeInternal;
 extern SaveTokenBlockChainResponseDefaultTypeInternal _SaveTokenBlockChainResponse_default_instance_;
+class SaveTokenFirebaseRequest;
+struct SaveTokenFirebaseRequestDefaultTypeInternal;
+extern SaveTokenFirebaseRequestDefaultTypeInternal _SaveTokenFirebaseRequest_default_instance_;
+class SaveTokenFirebaseResponse;
+struct SaveTokenFirebaseResponseDefaultTypeInternal;
+extern SaveTokenFirebaseResponseDefaultTypeInternal _SaveTokenFirebaseResponse_default_instance_;
 class SaveTokenIntegrationsRequest;
 struct SaveTokenIntegrationsRequestDefaultTypeInternal;
 extern SaveTokenIntegrationsRequestDefaultTypeInternal _SaveTokenIntegrationsRequest_default_instance_;
@@ -123,10 +135,14 @@ template<> ::vault::v1alpha1::GetSecretRequest* Arena::CreateMaybeMessage<::vaul
 template<> ::vault::v1alpha1::GetSecretResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretResponse>(Arena*);
 template<> ::vault::v1alpha1::GetTokenBlockChainRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenBlockChainRequest>(Arena*);
 template<> ::vault::v1alpha1::GetTokenBlockChainResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenBlockChainResponse>(Arena*);
+template<> ::vault::v1alpha1::GetTokenFirebaseRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenFirebaseRequest>(Arena*);
+template<> ::vault::v1alpha1::GetTokenFirebaseResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenFirebaseResponse>(Arena*);
 template<> ::vault::v1alpha1::GetTokenIntegrationsRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenIntegrationsRequest>(Arena*);
 template<> ::vault::v1alpha1::GetTokenIntegrationsResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenIntegrationsResponse>(Arena*);
 template<> ::vault::v1alpha1::SaveTokenBlockChainRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenBlockChainRequest>(Arena*);
 template<> ::vault::v1alpha1::SaveTokenBlockChainResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenBlockChainResponse>(Arena*);
+template<> ::vault::v1alpha1::SaveTokenFirebaseRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenFirebaseRequest>(Arena*);
+template<> ::vault::v1alpha1::SaveTokenFirebaseResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenFirebaseResponse>(Arena*);
 template<> ::vault::v1alpha1::SaveTokenIntegrationsRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenIntegrationsRequest>(Arena*);
 template<> ::vault::v1alpha1::SaveTokenIntegrationsResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::SaveTokenIntegrationsResponse>(Arena*);
 template<> ::vault::v1alpha1::UpdateSecretRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::UpdateSecretRequest>(Arena*);
@@ -136,6 +152,654 @@ namespace vault {
 namespace v1alpha1 {
 
 // ===================================================================
+
+class SaveTokenFirebaseRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.SaveTokenFirebaseRequest) */ {
+ public:
+  inline SaveTokenFirebaseRequest() : SaveTokenFirebaseRequest(nullptr) {}
+  ~SaveTokenFirebaseRequest() override;
+  explicit constexpr SaveTokenFirebaseRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SaveTokenFirebaseRequest(const SaveTokenFirebaseRequest& from);
+  SaveTokenFirebaseRequest(SaveTokenFirebaseRequest&& from) noexcept
+    : SaveTokenFirebaseRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SaveTokenFirebaseRequest& operator=(const SaveTokenFirebaseRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SaveTokenFirebaseRequest& operator=(SaveTokenFirebaseRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SaveTokenFirebaseRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SaveTokenFirebaseRequest* internal_default_instance() {
+    return reinterpret_cast<const SaveTokenFirebaseRequest*>(
+               &_SaveTokenFirebaseRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(SaveTokenFirebaseRequest& a, SaveTokenFirebaseRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SaveTokenFirebaseRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SaveTokenFirebaseRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SaveTokenFirebaseRequest* New() const final {
+    return new SaveTokenFirebaseRequest();
+  }
+
+  SaveTokenFirebaseRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SaveTokenFirebaseRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SaveTokenFirebaseRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SaveTokenFirebaseRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SaveTokenFirebaseRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.SaveTokenFirebaseRequest";
+  }
+  protected:
+  explicit SaveTokenFirebaseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSecretFieldNumber = 1,
+  };
+  // .vault.v1alpha1.FirebaseSecret secret = 1 [json_name = "secret"];
+  bool has_secret() const;
+  private:
+  bool _internal_has_secret() const;
+  public:
+  void clear_secret();
+  const ::vault::v1alpha1::FirebaseSecret& secret() const;
+  PROTOBUF_MUST_USE_RESULT ::vault::v1alpha1::FirebaseSecret* release_secret();
+  ::vault::v1alpha1::FirebaseSecret* mutable_secret();
+  void set_allocated_secret(::vault::v1alpha1::FirebaseSecret* secret);
+  private:
+  const ::vault::v1alpha1::FirebaseSecret& _internal_secret() const;
+  ::vault::v1alpha1::FirebaseSecret* _internal_mutable_secret();
+  public:
+  void unsafe_arena_set_allocated_secret(
+      ::vault::v1alpha1::FirebaseSecret* secret);
+  ::vault::v1alpha1::FirebaseSecret* unsafe_arena_release_secret();
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.SaveTokenFirebaseRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::vault::v1alpha1::FirebaseSecret* secret_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SaveTokenFirebaseResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.SaveTokenFirebaseResponse) */ {
+ public:
+  inline SaveTokenFirebaseResponse() : SaveTokenFirebaseResponse(nullptr) {}
+  ~SaveTokenFirebaseResponse() override;
+  explicit constexpr SaveTokenFirebaseResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SaveTokenFirebaseResponse(const SaveTokenFirebaseResponse& from);
+  SaveTokenFirebaseResponse(SaveTokenFirebaseResponse&& from) noexcept
+    : SaveTokenFirebaseResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SaveTokenFirebaseResponse& operator=(const SaveTokenFirebaseResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SaveTokenFirebaseResponse& operator=(SaveTokenFirebaseResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SaveTokenFirebaseResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SaveTokenFirebaseResponse* internal_default_instance() {
+    return reinterpret_cast<const SaveTokenFirebaseResponse*>(
+               &_SaveTokenFirebaseResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(SaveTokenFirebaseResponse& a, SaveTokenFirebaseResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SaveTokenFirebaseResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SaveTokenFirebaseResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SaveTokenFirebaseResponse* New() const final {
+    return new SaveTokenFirebaseResponse();
+  }
+
+  SaveTokenFirebaseResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SaveTokenFirebaseResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SaveTokenFirebaseResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SaveTokenFirebaseResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SaveTokenFirebaseResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.SaveTokenFirebaseResponse";
+  }
+  protected:
+  explicit SaveTokenFirebaseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.SaveTokenFirebaseResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTokenFirebaseRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.GetTokenFirebaseRequest) */ {
+ public:
+  inline GetTokenFirebaseRequest() : GetTokenFirebaseRequest(nullptr) {}
+  ~GetTokenFirebaseRequest() override;
+  explicit constexpr GetTokenFirebaseRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTokenFirebaseRequest(const GetTokenFirebaseRequest& from);
+  GetTokenFirebaseRequest(GetTokenFirebaseRequest&& from) noexcept
+    : GetTokenFirebaseRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTokenFirebaseRequest& operator=(const GetTokenFirebaseRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTokenFirebaseRequest& operator=(GetTokenFirebaseRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTokenFirebaseRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTokenFirebaseRequest* internal_default_instance() {
+    return reinterpret_cast<const GetTokenFirebaseRequest*>(
+               &_GetTokenFirebaseRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(GetTokenFirebaseRequest& a, GetTokenFirebaseRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTokenFirebaseRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTokenFirebaseRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTokenFirebaseRequest* New() const final {
+    return new GetTokenFirebaseRequest();
+  }
+
+  GetTokenFirebaseRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTokenFirebaseRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTokenFirebaseRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTokenFirebaseRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTokenFirebaseRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.GetTokenFirebaseRequest";
+  }
+  protected:
+  explicit GetTokenFirebaseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
+    kApplicationIdFieldNumber = 3,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // string project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
+  // string application_id = 3 [json_name = "applicationId"];
+  void clear_application_id();
+  const std::string& application_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_id();
+  void set_allocated_application_id(std::string* application_id);
+  private:
+  const std::string& _internal_application_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_id(const std::string& value);
+  std::string* _internal_mutable_application_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetTokenFirebaseRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetTokenFirebaseResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.GetTokenFirebaseResponse) */ {
+ public:
+  inline GetTokenFirebaseResponse() : GetTokenFirebaseResponse(nullptr) {}
+  ~GetTokenFirebaseResponse() override;
+  explicit constexpr GetTokenFirebaseResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetTokenFirebaseResponse(const GetTokenFirebaseResponse& from);
+  GetTokenFirebaseResponse(GetTokenFirebaseResponse&& from) noexcept
+    : GetTokenFirebaseResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetTokenFirebaseResponse& operator=(const GetTokenFirebaseResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTokenFirebaseResponse& operator=(GetTokenFirebaseResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetTokenFirebaseResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetTokenFirebaseResponse* internal_default_instance() {
+    return reinterpret_cast<const GetTokenFirebaseResponse*>(
+               &_GetTokenFirebaseResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(GetTokenFirebaseResponse& a, GetTokenFirebaseResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetTokenFirebaseResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTokenFirebaseResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetTokenFirebaseResponse* New() const final {
+    return new GetTokenFirebaseResponse();
+  }
+
+  GetTokenFirebaseResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetTokenFirebaseResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetTokenFirebaseResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetTokenFirebaseResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetTokenFirebaseResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.GetTokenFirebaseResponse";
+  }
+  protected:
+  explicit GetTokenFirebaseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kErrorFieldNumber = 2,
+    kSecretFieldNumber = 1,
+  };
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // .vault.v1alpha1.FirebaseSecret secret = 1 [json_name = "secret"];
+  bool has_secret() const;
+  private:
+  bool _internal_has_secret() const;
+  public:
+  void clear_secret();
+  const ::vault::v1alpha1::FirebaseSecret& secret() const;
+  PROTOBUF_MUST_USE_RESULT ::vault::v1alpha1::FirebaseSecret* release_secret();
+  ::vault::v1alpha1::FirebaseSecret* mutable_secret();
+  void set_allocated_secret(::vault::v1alpha1::FirebaseSecret* secret);
+  private:
+  const ::vault::v1alpha1::FirebaseSecret& _internal_secret() const;
+  ::vault::v1alpha1::FirebaseSecret* _internal_mutable_secret();
+  public:
+  void unsafe_arena_set_allocated_secret(
+      ::vault::v1alpha1::FirebaseSecret* secret);
+  ::vault::v1alpha1::FirebaseSecret* unsafe_arena_release_secret();
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetTokenFirebaseResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::vault::v1alpha1::FirebaseSecret* secret_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
 
 class CreateSecretRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.CreateSecretRequest) */ {
@@ -181,7 +845,7 @@ class CreateSecretRequest final :
                &_CreateSecretRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    4;
 
   friend void swap(CreateSecretRequest& a, CreateSecretRequest& b) {
     a.Swap(&b);
@@ -329,7 +993,7 @@ class CreateSecretResponse final :
                &_CreateSecretResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    5;
 
   friend void swap(CreateSecretResponse& a, CreateSecretResponse& b) {
     a.Swap(&b);
@@ -489,7 +1153,7 @@ class UpdateSecretRequest final :
                &_UpdateSecretRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    6;
 
   friend void swap(UpdateSecretRequest& a, UpdateSecretRequest& b) {
     a.Swap(&b);
@@ -701,7 +1365,7 @@ class UpdateSecretResponse final :
                &_UpdateSecretResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
   friend void swap(UpdateSecretResponse& a, UpdateSecretResponse& b) {
     a.Swap(&b);
@@ -861,7 +1525,7 @@ class DeleteSecretRequest final :
                &_DeleteSecretRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    8;
 
   friend void swap(DeleteSecretRequest& a, DeleteSecretRequest& b) {
     a.Swap(&b);
@@ -1069,7 +1733,7 @@ class DeleteSecretResponse final :
                &_DeleteSecretResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    9;
 
   friend void swap(DeleteSecretResponse& a, DeleteSecretResponse& b) {
     a.Swap(&b);
@@ -1229,7 +1893,7 @@ class GetSecretRequest final :
                &_GetSecretRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    10;
 
   friend void swap(GetSecretRequest& a, GetSecretRequest& b) {
     a.Swap(&b);
@@ -1437,7 +2101,7 @@ class GetSecretResponse final :
                &_GetSecretResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(GetSecretResponse& a, GetSecretResponse& b) {
     a.Swap(&b);
@@ -1601,7 +2265,7 @@ class DeleteOrganizationRequest final :
                &_DeleteOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(DeleteOrganizationRequest& a, DeleteOrganizationRequest& b) {
     a.Swap(&b);
@@ -1745,7 +2409,7 @@ class DeleteOrganizationResponse final :
                &_DeleteOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(DeleteOrganizationResponse& a, DeleteOrganizationResponse& b) {
     a.Swap(&b);
@@ -1905,7 +2569,7 @@ class SaveTokenIntegrationsRequest final :
                &_SaveTokenIntegrationsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(SaveTokenIntegrationsRequest& a, SaveTokenIntegrationsRequest& b) {
     a.Swap(&b);
@@ -2081,7 +2745,7 @@ class SaveTokenIntegrationsResponse final :
                &_SaveTokenIntegrationsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(SaveTokenIntegrationsResponse& a, SaveTokenIntegrationsResponse& b) {
     a.Swap(&b);
@@ -2241,7 +2905,7 @@ class GetTokenIntegrationsRequest final :
                &_GetTokenIntegrationsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(GetTokenIntegrationsRequest& a, GetTokenIntegrationsRequest& b) {
     a.Swap(&b);
@@ -2401,7 +3065,7 @@ class GetTokenIntegrationsResponse final :
                &_GetTokenIntegrationsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   friend void swap(GetTokenIntegrationsResponse& a, GetTokenIntegrationsResponse& b) {
     a.Swap(&b);
@@ -2561,7 +3225,7 @@ class SaveTokenBlockChainRequest final :
                &_SaveTokenBlockChainRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   friend void swap(SaveTokenBlockChainRequest& a, SaveTokenBlockChainRequest& b) {
     a.Swap(&b);
@@ -2757,7 +3421,7 @@ class SaveTokenBlockChainResponse final :
                &_SaveTokenBlockChainResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(SaveTokenBlockChainResponse& a, SaveTokenBlockChainResponse& b) {
     a.Swap(&b);
@@ -2917,7 +3581,7 @@ class GetTokenBlockChainRequest final :
                &_GetTokenBlockChainRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(GetTokenBlockChainRequest& a, GetTokenBlockChainRequest& b) {
     a.Swap(&b);
@@ -3093,7 +3757,7 @@ class GetTokenBlockChainResponse final :
                &_GetTokenBlockChainResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(GetTokenBlockChainResponse& a, GetTokenBlockChainResponse& b) {
     a.Swap(&b);
@@ -3220,6 +3884,470 @@ class GetTokenBlockChainResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// SaveTokenFirebaseRequest
+
+// .vault.v1alpha1.FirebaseSecret secret = 1 [json_name = "secret"];
+inline bool SaveTokenFirebaseRequest::_internal_has_secret() const {
+  return this != internal_default_instance() && secret_ != nullptr;
+}
+inline bool SaveTokenFirebaseRequest::has_secret() const {
+  return _internal_has_secret();
+}
+inline const ::vault::v1alpha1::FirebaseSecret& SaveTokenFirebaseRequest::_internal_secret() const {
+  const ::vault::v1alpha1::FirebaseSecret* p = secret_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vault::v1alpha1::FirebaseSecret&>(
+      ::vault::v1alpha1::_FirebaseSecret_default_instance_);
+}
+inline const ::vault::v1alpha1::FirebaseSecret& SaveTokenFirebaseRequest::secret() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenFirebaseRequest.secret)
+  return _internal_secret();
+}
+inline void SaveTokenFirebaseRequest::unsafe_arena_set_allocated_secret(
+    ::vault::v1alpha1::FirebaseSecret* secret) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  secret_ = secret;
+  if (secret) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vault.v1alpha1.SaveTokenFirebaseRequest.secret)
+}
+inline ::vault::v1alpha1::FirebaseSecret* SaveTokenFirebaseRequest::release_secret() {
+  
+  ::vault::v1alpha1::FirebaseSecret* temp = secret_;
+  secret_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::vault::v1alpha1::FirebaseSecret* SaveTokenFirebaseRequest::unsafe_arena_release_secret() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenFirebaseRequest.secret)
+  
+  ::vault::v1alpha1::FirebaseSecret* temp = secret_;
+  secret_ = nullptr;
+  return temp;
+}
+inline ::vault::v1alpha1::FirebaseSecret* SaveTokenFirebaseRequest::_internal_mutable_secret() {
+  
+  if (secret_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vault::v1alpha1::FirebaseSecret>(GetArenaForAllocation());
+    secret_ = p;
+  }
+  return secret_;
+}
+inline ::vault::v1alpha1::FirebaseSecret* SaveTokenFirebaseRequest::mutable_secret() {
+  ::vault::v1alpha1::FirebaseSecret* _msg = _internal_mutable_secret();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenFirebaseRequest.secret)
+  return _msg;
+}
+inline void SaveTokenFirebaseRequest::set_allocated_secret(::vault::v1alpha1::FirebaseSecret* secret) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  if (secret) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret));
+    if (message_arena != submessage_arena) {
+      secret = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, secret, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  secret_ = secret;
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenFirebaseRequest.secret)
+}
+
+// -------------------------------------------------------------------
+
+// SaveTokenFirebaseResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void SaveTokenFirebaseResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& SaveTokenFirebaseResponse::msg() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenFirebaseResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenFirebaseResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenFirebaseResponse.msg)
+}
+inline std::string* SaveTokenFirebaseResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenFirebaseResponse.msg)
+  return _s;
+}
+inline const std::string& SaveTokenFirebaseResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void SaveTokenFirebaseResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenFirebaseResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenFirebaseResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenFirebaseResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenFirebaseResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenFirebaseResponse.msg)
+}
+
+// string error = 2 [json_name = "error"];
+inline void SaveTokenFirebaseResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& SaveTokenFirebaseResponse::error() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.SaveTokenFirebaseResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveTokenFirebaseResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.SaveTokenFirebaseResponse.error)
+}
+inline std::string* SaveTokenFirebaseResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.SaveTokenFirebaseResponse.error)
+  return _s;
+}
+inline const std::string& SaveTokenFirebaseResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void SaveTokenFirebaseResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SaveTokenFirebaseResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SaveTokenFirebaseResponse::release_error() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.SaveTokenFirebaseResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SaveTokenFirebaseResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.SaveTokenFirebaseResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// GetTokenFirebaseRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void GetTokenFirebaseRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& GetTokenFirebaseRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenFirebaseRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenFirebaseRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenFirebaseRequest.organization_id)
+}
+inline std::string* GetTokenFirebaseRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenFirebaseRequest.organization_id)
+  return _s;
+}
+inline const std::string& GetTokenFirebaseRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void GetTokenFirebaseRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenFirebaseRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenFirebaseRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenFirebaseRequest.organization_id)
+}
+
+// string project_id = 2 [json_name = "projectId"];
+inline void GetTokenFirebaseRequest::clear_project_id() {
+  project_id_.ClearToEmpty();
+}
+inline const std::string& GetTokenFirebaseRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenFirebaseRequest.project_id)
+  return _internal_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenFirebaseRequest::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenFirebaseRequest.project_id)
+}
+inline std::string* GetTokenFirebaseRequest::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenFirebaseRequest.project_id)
+  return _s;
+}
+inline const std::string& GetTokenFirebaseRequest::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void GetTokenFirebaseRequest::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseRequest::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseRequest::release_project_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenFirebaseRequest.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenFirebaseRequest::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenFirebaseRequest.project_id)
+}
+
+// string application_id = 3 [json_name = "applicationId"];
+inline void GetTokenFirebaseRequest::clear_application_id() {
+  application_id_.ClearToEmpty();
+}
+inline const std::string& GetTokenFirebaseRequest::application_id() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenFirebaseRequest.application_id)
+  return _internal_application_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenFirebaseRequest::set_application_id(ArgT0&& arg0, ArgT... args) {
+ 
+ application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenFirebaseRequest.application_id)
+}
+inline std::string* GetTokenFirebaseRequest::mutable_application_id() {
+  std::string* _s = _internal_mutable_application_id();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenFirebaseRequest.application_id)
+  return _s;
+}
+inline const std::string& GetTokenFirebaseRequest::_internal_application_id() const {
+  return application_id_.Get();
+}
+inline void GetTokenFirebaseRequest::_internal_set_application_id(const std::string& value) {
+  
+  application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseRequest::_internal_mutable_application_id() {
+  
+  return application_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseRequest::release_application_id() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenFirebaseRequest.application_id)
+  return application_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenFirebaseRequest::set_allocated_application_id(std::string* application_id) {
+  if (application_id != nullptr) {
+    
+  } else {
+    
+  }
+  application_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenFirebaseRequest.application_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetTokenFirebaseResponse
+
+// .vault.v1alpha1.FirebaseSecret secret = 1 [json_name = "secret"];
+inline bool GetTokenFirebaseResponse::_internal_has_secret() const {
+  return this != internal_default_instance() && secret_ != nullptr;
+}
+inline bool GetTokenFirebaseResponse::has_secret() const {
+  return _internal_has_secret();
+}
+inline const ::vault::v1alpha1::FirebaseSecret& GetTokenFirebaseResponse::_internal_secret() const {
+  const ::vault::v1alpha1::FirebaseSecret* p = secret_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vault::v1alpha1::FirebaseSecret&>(
+      ::vault::v1alpha1::_FirebaseSecret_default_instance_);
+}
+inline const ::vault::v1alpha1::FirebaseSecret& GetTokenFirebaseResponse::secret() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenFirebaseResponse.secret)
+  return _internal_secret();
+}
+inline void GetTokenFirebaseResponse::unsafe_arena_set_allocated_secret(
+    ::vault::v1alpha1::FirebaseSecret* secret) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  secret_ = secret;
+  if (secret) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vault.v1alpha1.GetTokenFirebaseResponse.secret)
+}
+inline ::vault::v1alpha1::FirebaseSecret* GetTokenFirebaseResponse::release_secret() {
+  
+  ::vault::v1alpha1::FirebaseSecret* temp = secret_;
+  secret_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::vault::v1alpha1::FirebaseSecret* GetTokenFirebaseResponse::unsafe_arena_release_secret() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenFirebaseResponse.secret)
+  
+  ::vault::v1alpha1::FirebaseSecret* temp = secret_;
+  secret_ = nullptr;
+  return temp;
+}
+inline ::vault::v1alpha1::FirebaseSecret* GetTokenFirebaseResponse::_internal_mutable_secret() {
+  
+  if (secret_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vault::v1alpha1::FirebaseSecret>(GetArenaForAllocation());
+    secret_ = p;
+  }
+  return secret_;
+}
+inline ::vault::v1alpha1::FirebaseSecret* GetTokenFirebaseResponse::mutable_secret() {
+  ::vault::v1alpha1::FirebaseSecret* _msg = _internal_mutable_secret();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenFirebaseResponse.secret)
+  return _msg;
+}
+inline void GetTokenFirebaseResponse::set_allocated_secret(::vault::v1alpha1::FirebaseSecret* secret) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret_);
+  }
+  if (secret) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secret));
+    if (message_arena != submessage_arena) {
+      secret = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, secret, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  secret_ = secret;
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenFirebaseResponse.secret)
+}
+
+// string error = 2 [json_name = "error"];
+inline void GetTokenFirebaseResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetTokenFirebaseResponse::error() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetTokenFirebaseResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTokenFirebaseResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetTokenFirebaseResponse.error)
+}
+inline std::string* GetTokenFirebaseResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetTokenFirebaseResponse.error)
+  return _s;
+}
+inline const std::string& GetTokenFirebaseResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetTokenFirebaseResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetTokenFirebaseResponse::release_error() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetTokenFirebaseResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetTokenFirebaseResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenFirebaseResponse.error)
+}
+
+// -------------------------------------------------------------------
+
 // CreateSecretRequest
 
 // .vault.v1alpha1.Secret secret = 1 [json_name = "secret"];
@@ -5655,6 +6783,14 @@ inline void GetTokenBlockChainResponse::set_allocated_error(std::string* error) 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class BlockchainSecret extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 3 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
      */
     protected $data = null;
 
@@ -33,7 +33,7 @@ class BlockchainSecret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 3 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
      * @return \Vault\V1Alpha1\SecretData|null
      */
     public function getData()
@@ -52,7 +52,7 @@ class BlockchainSecret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 3 [json_name = "data"];</code>
+     * Generated from protobuf field <code>.vault.v1alpha1.SecretData data = 1 [json_name = "data"];</code>
      * @param \Vault\V1Alpha1\SecretData $var
      * @return $this
      */

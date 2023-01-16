@@ -59,6 +59,16 @@ class VaultAPIServiceStub(object):
         request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenBlockChainRequest.SerializeToString,
         response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenBlockChainResponse.FromString,
         )
+    self.SaveTokenFirebase = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/SaveTokenFirebase',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenFirebaseRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenFirebaseResponse.FromString,
+        )
+    self.GetTokenFirebase = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/GetTokenFirebase',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseResponse.FromString,
+        )
 
 
 class VaultAPIServiceServicer(object):
@@ -128,6 +138,20 @@ class VaultAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SaveTokenFirebase(self, request, context):
+    """Firebase
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetTokenFirebase(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_VaultAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -175,6 +199,16 @@ def add_VaultAPIServiceServicer_to_server(servicer, server):
           servicer.GetTokenBlockChain,
           request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenBlockChainRequest.FromString,
           response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenBlockChainResponse.SerializeToString,
+      ),
+      'SaveTokenFirebase': grpc.unary_unary_rpc_method_handler(
+          servicer.SaveTokenFirebase,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenFirebaseRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.SaveTokenFirebaseResponse.SerializeToString,
+      ),
+      'GetTokenFirebase': grpc.unary_unary_rpc_method_handler(
+          servicer.GetTokenFirebase,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

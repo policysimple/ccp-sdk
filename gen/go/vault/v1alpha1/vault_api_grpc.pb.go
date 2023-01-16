@@ -28,6 +28,9 @@ type VaultAPIServiceClient interface {
 	//BlockChain
 	SaveTokenBlockChain(ctx context.Context, in *SaveTokenBlockChainRequest, opts ...grpc.CallOption) (*SaveTokenBlockChainResponse, error)
 	GetTokenBlockChain(ctx context.Context, in *GetTokenBlockChainRequest, opts ...grpc.CallOption) (*GetTokenBlockChainResponse, error)
+	//Firebase
+	SaveTokenFirebase(ctx context.Context, in *SaveTokenFirebaseRequest, opts ...grpc.CallOption) (*SaveTokenFirebaseResponse, error)
+	GetTokenFirebase(ctx context.Context, in *GetTokenFirebaseRequest, opts ...grpc.CallOption) (*GetTokenFirebaseResponse, error)
 }
 
 type vaultAPIServiceClient struct {
@@ -119,6 +122,24 @@ func (c *vaultAPIServiceClient) GetTokenBlockChain(ctx context.Context, in *GetT
 	return out, nil
 }
 
+func (c *vaultAPIServiceClient) SaveTokenFirebase(ctx context.Context, in *SaveTokenFirebaseRequest, opts ...grpc.CallOption) (*SaveTokenFirebaseResponse, error) {
+	out := new(SaveTokenFirebaseResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/SaveTokenFirebase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultAPIServiceClient) GetTokenFirebase(ctx context.Context, in *GetTokenFirebaseRequest, opts ...grpc.CallOption) (*GetTokenFirebaseResponse, error) {
+	out := new(GetTokenFirebaseResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/GetTokenFirebase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultAPIServiceServer is the server API for VaultAPIService service.
 // All implementations should embed UnimplementedVaultAPIServiceServer
 // for forward compatibility
@@ -133,6 +154,9 @@ type VaultAPIServiceServer interface {
 	//BlockChain
 	SaveTokenBlockChain(context.Context, *SaveTokenBlockChainRequest) (*SaveTokenBlockChainResponse, error)
 	GetTokenBlockChain(context.Context, *GetTokenBlockChainRequest) (*GetTokenBlockChainResponse, error)
+	//Firebase
+	SaveTokenFirebase(context.Context, *SaveTokenFirebaseRequest) (*SaveTokenFirebaseResponse, error)
+	GetTokenFirebase(context.Context, *GetTokenFirebaseRequest) (*GetTokenFirebaseResponse, error)
 }
 
 // UnimplementedVaultAPIServiceServer should be embedded to have forward compatible implementations.
@@ -165,6 +189,12 @@ func (UnimplementedVaultAPIServiceServer) SaveTokenBlockChain(context.Context, *
 }
 func (UnimplementedVaultAPIServiceServer) GetTokenBlockChain(context.Context, *GetTokenBlockChainRequest) (*GetTokenBlockChainResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTokenBlockChain not implemented")
+}
+func (UnimplementedVaultAPIServiceServer) SaveTokenFirebase(context.Context, *SaveTokenFirebaseRequest) (*SaveTokenFirebaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SaveTokenFirebase not implemented")
+}
+func (UnimplementedVaultAPIServiceServer) GetTokenFirebase(context.Context, *GetTokenFirebaseRequest) (*GetTokenFirebaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTokenFirebase not implemented")
 }
 
 // UnsafeVaultAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -340,6 +370,42 @@ func _VaultAPIService_GetTokenBlockChain_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultAPIService_SaveTokenFirebase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveTokenFirebaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultAPIServiceServer).SaveTokenFirebase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vault.v1alpha1.VaultAPIService/SaveTokenFirebase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultAPIServiceServer).SaveTokenFirebase(ctx, req.(*SaveTokenFirebaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultAPIService_GetTokenFirebase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTokenFirebaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultAPIServiceServer).GetTokenFirebase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vault.v1alpha1.VaultAPIService/GetTokenFirebase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultAPIServiceServer).GetTokenFirebase(ctx, req.(*GetTokenFirebaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultAPIService_ServiceDesc is the grpc.ServiceDesc for VaultAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -382,6 +448,14 @@ var VaultAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTokenBlockChain",
 			Handler:    _VaultAPIService_GetTokenBlockChain_Handler,
+		},
+		{
+			MethodName: "SaveTokenFirebase",
+			Handler:    _VaultAPIService_SaveTokenFirebase_Handler,
+		},
+		{
+			MethodName: "GetTokenFirebase",
+			Handler:    _VaultAPIService_GetTokenFirebase_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -134,4 +134,31 @@ class VaultAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Firebase
+     * @param \Vault\V1Alpha1\SaveTokenFirebaseRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SaveTokenFirebase(\Vault\V1Alpha1\SaveTokenFirebaseRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/SaveTokenFirebase',
+        $argument,
+        ['\Vault\V1Alpha1\SaveTokenFirebaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Vault\V1Alpha1\GetTokenFirebaseRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTokenFirebase(\Vault\V1Alpha1\GetTokenFirebaseRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/GetTokenFirebase',
+        $argument,
+        ['\Vault\V1Alpha1\GetTokenFirebaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
