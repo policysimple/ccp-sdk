@@ -45,6 +45,10 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string uid = 9 [json_name = "uid"];</code>
      */
     protected $uid = '';
+    /**
+     * Generated from protobuf field <code>string status = 10 [json_name = "status"];</code>
+     */
+    protected $status = '';
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type \Accounts\V1alpha1\Role $role
      *     @type string $uid
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -249,6 +254,28 @@ class MemberProject extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->uid = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 10 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 10 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }

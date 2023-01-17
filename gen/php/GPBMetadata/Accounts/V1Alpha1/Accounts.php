@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-š
+²
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"Î
 Role
 name (	Rname
@@ -39,7 +39,7 @@ first_name (	R	firstName
 	MemberRol
 name (	Rname
 is_admin (RisAdmin
-uid (	Ruid"æ
+uid (	Ruid"þ
 MemberProject
 id (Rid
 user_id (	RuserId
@@ -49,7 +49,9 @@ first_name (	R	firstName
 	is_active (RisActive
 image (	Rimage+
 role (2.accounts.v1alpha1.RoleRrole
-uid	 (	Ruid"y
+uid	 (	Ruid
+status
+ (	Rstatus"y
 
 Permission
 id (Rid
