@@ -1070,7 +1070,8 @@ proto.accounts.v1alpha1.MemberProject.toObject = function(includeInstance, msg) 
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     image: jspb.Message.getFieldWithDefault(msg, 6, ""),
     role: (f = msg.getRole()) && proto.accounts.v1alpha1.Role.toObject(includeInstance, f),
-    uid: jspb.Message.getFieldWithDefault(msg, 9, "")
+    uid: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -1139,6 +1140,10 @@ proto.accounts.v1alpha1.MemberProject.deserializeBinaryFromReader = function(msg
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setUid(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -1223,6 +1228,13 @@ proto.accounts.v1alpha1.MemberProject.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -1389,6 +1401,24 @@ proto.accounts.v1alpha1.MemberProject.prototype.getUid = function() {
  */
 proto.accounts.v1alpha1.MemberProject.prototype.setUid = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string status = 10;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.MemberProject.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.MemberProject} returns this
+ */
+proto.accounts.v1alpha1.MemberProject.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

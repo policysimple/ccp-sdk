@@ -851,6 +851,7 @@ class MemberProject final :
     kLastNameFieldNumber = 4,
     kImageFieldNumber = 6,
     kUidFieldNumber = 9,
+    kStatusFieldNumber = 10,
     kRoleFieldNumber = 7,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 5,
@@ -925,6 +926,20 @@ class MemberProject final :
   std::string* _internal_mutable_uid();
   public:
 
+  // string status = 10 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // .accounts.v1alpha1.Role role = 7 [json_name = "role"];
   bool has_role() const;
   private:
@@ -973,6 +988,7 @@ class MemberProject final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::accounts::v1alpha1::Role* role_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
@@ -3376,6 +3392,52 @@ inline void MemberProject::set_allocated_uid(std::string* uid) {
   uid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uid,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.uid)
+}
+
+// string status = 10 [json_name = "status"];
+inline void MemberProject::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& MemberProject::status() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberProject.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MemberProject::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberProject.status)
+}
+inline std::string* MemberProject::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MemberProject.status)
+  return _s;
+}
+inline const std::string& MemberProject::_internal_status() const {
+  return status_.Get();
+}
+inline void MemberProject::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MemberProject::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MemberProject::release_status() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MemberProject.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MemberProject::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.status)
 }
 
 // -------------------------------------------------------------------

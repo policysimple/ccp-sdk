@@ -3745,6 +3745,18 @@ public final class Accounts {
      */
     com.google.protobuf.ByteString
         getUidBytes();
+
+    /**
+     * <code>string status = 10 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 10 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.MemberProject}
@@ -3764,6 +3776,7 @@ public final class Accounts {
       lastName_ = "";
       image_ = "";
       uid_ = "";
+      status_ = "";
     }
 
     @java.lang.Override
@@ -3847,6 +3860,12 @@ public final class Accounts {
               java.lang.String s = input.readStringRequireUtf8();
 
               uid_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
               break;
             }
             default: {
@@ -4119,6 +4138,44 @@ public final class Accounts {
       }
     }
 
+    public static final int STATUS_FIELD_NUMBER = 10;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 10 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 10 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4157,6 +4214,9 @@ public final class Accounts {
       if (!getUidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, uid_);
       }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, status_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4193,6 +4253,9 @@ public final class Accounts {
       if (!getUidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, uid_);
       }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, status_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4227,6 +4290,8 @@ public final class Accounts {
       }
       if (!getUid()
           .equals(other.getUid())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4257,6 +4322,8 @@ public final class Accounts {
       }
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4410,6 +4477,8 @@ public final class Accounts {
         }
         uid_ = "";
 
+        status_ = "";
+
         return this;
       }
 
@@ -4448,6 +4517,7 @@ public final class Accounts {
           result.role_ = roleBuilder_.build();
         }
         result.uid_ = uid_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -4523,6 +4593,10 @@ public final class Accounts {
         }
         if (!other.getUid().isEmpty()) {
           uid_ = other.uid_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5111,6 +5185,82 @@ public final class Accounts {
   checkByteStringIsUtf8(value);
         
         uid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 10 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 10 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 10 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 10 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 10 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
         onChanged();
         return this;
       }
@@ -15902,64 +16052,64 @@ public final class Accounts {
       "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005" +
       "image\"L\n\tMemberRol\022\022\n\004name\030\002 \001(\tR\004name\022\031" +
       "\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003uid\030\004 \001(\tR\003" +
-      "uid\"\346\001\n\rMemberProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n" +
+      "uid\"\376\001\n\rMemberProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n" +
       "\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001" +
       "(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastNa" +
       "me\022\033\n\tis_active\030\005 \001(\010R\010isActive\022\024\n\005image" +
       "\030\006 \001(\tR\005image\022+\n\004role\030\007 \001(\0132\027.accounts.v" +
-      "1alpha1.RoleR\004role\022\020\n\003uid\030\t \001(\tR\003uid\"y\n\n" +
-      "Permission\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\t" +
-      "R\004name\022\026\n\006action\030\003 \001(\tR\006action\022\022\n\004type\030\004" +
-      " \001(\tR\004type\022\033\n\tfull_name\030\005 \001(\tR\010fullName\"" +
-      "\263\002\n\007Project\022\016\n\002id\030\n \001(\tR\002id\022\022\n\004name\030\002 \001(" +
-      "\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organiz" +
-      "ation_id\030\004 \001(\tR\016organizationId\022 \n\013descri" +
-      "ption\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006" +
-      " \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupd" +
-      "atedAt\022-\n\005roles\030\010 \003(\0132\027.accounts.v1alpha" +
-      "1.RoleR\005roles\0226\n\005users\030\t \003(\0132 .accounts." +
-      "v1alpha1.MemberProjectR\005users\"\230\002\n\014Organi" +
-      "zation\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(" +
-      "\tR\005image\022 \n\013description\030\004 \001(\tR\013descripti" +
-      "on\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alpha1.Us" +
-      "erListR\005owner\022-\n\005roles\030\010 \003(\0132\027.accounts." +
-      "v1alpha1.RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004slug" +
-      "\0226\n\010projects\030\n \003(\0132\032.accounts.v1alpha1.P" +
-      "rojectR\010projects\022\016\n\002id\030\013 \001(\tR\002id\"\361\t\n\nUse" +
-      "rDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\t" +
-      "R\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022" +
-      "\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 " +
-      "\001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive\022" +
-      "\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdate" +
-      "d_at\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.a" +
-      "ccounts.v1alpha1.RoleR\005roles\022?\n\013permissi" +
-      "ons\030\n \003(\0132\035.accounts.v1alpha1.Permission" +
-      "R\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013is" +
-      "SuperUser\022E\n\rorganizations\030\014 \003(\0132\037.accou" +
-      "nts.v1alpha1.OrganizationR\rorganizations" +
-      "\022!\n\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007c" +
-      "ountry\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004cit" +
-      "y\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030" +
-      "\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n\r" +
-      "emoji_country\030\025 \001(\tR\014emojiCountry\022$\n\016is_" +
-      "mfa_enabled\030\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken" +
-      "_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016email_verified\030\030" +
-      " \001(\010R\remailVerified\022\032\n\010language\030\032 \001(\tR\010l" +
-      "anguage\022+\n\021push_notification\030\033 \001(\010R\020push" +
-      "Notification\022-\n\022email_notification\030\034 \001(\010" +
-      "R\021emailNotification\0224\n\026new_login_notific" +
-      "ation\030\035 \001(\010R\024newLoginNotification\022/\n\023cre" +
-      "ate_notification\030\036 \001(\010R\022createNotificati" +
-      "on\022/\n\023update_notification\030\037 \001(\010R\022updateN" +
-      "otification\022/\n\023delete_notification\030  \001(\010" +
-      "R\022deleteNotification\0229\n\030application_noti" +
-      "fication\030! \001(\010R\027applicationNotification\022" +
-      "+\n\021read_notification\030\" \001(\010R\020readNotifica" +
-      "tion\022\035\n\nphone_code\030# \001(\tR\tphoneCode\022)\n\020o" +
-      "ptional_address\030$ \001(\tR\017optionalAddress\022\024" +
-      "\n\005image\030% \001(\tR\005imageB4Z2github.com/cuemb" +
-      "y/ccp-sdk/gen/go/accounts/v1alpha1b\006prot" +
-      "o3"
+      "1alpha1.RoleR\004role\022\020\n\003uid\030\t \001(\tR\003uid\022\026\n\006" +
+      "status\030\n \001(\tR\006status\"y\n\nPermission\022\016\n\002id" +
+      "\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action" +
+      "\030\003 \001(\tR\006action\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tfu" +
+      "ll_name\030\005 \001(\tR\010fullName\"\263\002\n\007Project\022\016\n\002i" +
+      "d\030\n \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image" +
+      "\030\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\tR\016" +
+      "organizationId\022 \n\013description\030\005 \001(\tR\013des" +
+      "cription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022" +
+      "\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022-\n\005roles\030" +
+      "\010 \003(\0132\027.accounts.v1alpha1.RoleR\005roles\0226\n" +
+      "\005users\030\t \003(\0132 .accounts.v1alpha1.MemberP" +
+      "rojectR\005users\"\230\002\n\014Organization\022\022\n\004name\030\002" +
+      " \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013desc" +
+      "ription\030\004 \001(\tR\013description\0221\n\005owner\030\007 \001(" +
+      "\0132\033.accounts.v1alpha1.UserListR\005owner\022-\n" +
+      "\005roles\030\010 \003(\0132\027.accounts.v1alpha1.RoleR\005r" +
+      "oles\022\022\n\004slug\030\t \001(\tR\004slug\0226\n\010projects\030\n \003" +
+      "(\0132\032.accounts.v1alpha1.ProjectR\010projects" +
+      "\022\016\n\002id\030\013 \001(\tR\002id\"\361\t\n\nUserDetail\022\016\n\002id\030\001 " +
+      "\001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirs" +
+      "t_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001" +
+      "(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis" +
+      "_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 " +
+      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupda" +
+      "tedAt\022-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1" +
+      ".RoleR\005roles\022?\n\013permissions\030\n \003(\0132\035.acco" +
+      "unts.v1alpha1.PermissionR\013permissions\022\"\n" +
+      "\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n\rorg" +
+      "anizations\030\014 \003(\0132\037.accounts.v1alpha1.Org" +
+      "anizationR\rorganizations\022!\n\014phone_number" +
+      "\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001(\tR\007co" +
+      "untry\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 " +
+      "\001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007address\022\024" +
+      "\n\005state\030\024 \001(\tR\005state\022#\n\remoji_country\030\025 " +
+      "\001(\tR\014emojiCountry\022$\n\016is_mfa_enabled\030\026 \001(" +
+      "\010R\014isMfaEnabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010toke" +
+      "nCcp\022%\n\016email_verified\030\030 \001(\010R\remailVerif" +
+      "ied\022\032\n\010language\030\032 \001(\tR\010language\022+\n\021push_" +
+      "notification\030\033 \001(\010R\020pushNotification\022-\n\022" +
+      "email_notification\030\034 \001(\010R\021emailNotificat" +
+      "ion\0224\n\026new_login_notification\030\035 \001(\010R\024new" +
+      "LoginNotification\022/\n\023create_notification" +
+      "\030\036 \001(\010R\022createNotification\022/\n\023update_not" +
+      "ification\030\037 \001(\010R\022updateNotification\022/\n\023d" +
+      "elete_notification\030  \001(\010R\022deleteNotifica" +
+      "tion\0229\n\030application_notification\030! \001(\010R\027" +
+      "applicationNotification\022+\n\021read_notifica" +
+      "tion\030\" \001(\010R\020readNotification\022\035\n\nphone_co" +
+      "de\030# \001(\tR\tphoneCode\022)\n\020optional_address\030" +
+      "$ \001(\tR\017optionalAddress\022\024\n\005image\030% \001(\tR\005i" +
+      "mageB4Z2github.com/cuemby/ccp-sdk/gen/go" +
+      "/accounts/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15988,7 +16138,7 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_MemberProject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_MemberProject_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Image", "Role", "Uid", });
+        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Image", "Role", "Uid", "Status", });
     internal_static_accounts_v1alpha1_Permission_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_Permission_fieldAccessorTable = new
