@@ -20,13 +20,13 @@ class UsersRegistry extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
      */
-    protected $organization_id = 0;
+    protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 3 [json_name = "projectId"];</code>
      */
-    protected $project_id = 0;
+    protected $project_id = '';
     /**
      * Generated from protobuf field <code>string environment_id = 4 [json_name = "environmentId"];</code>
      */
@@ -51,8 +51,8 @@ class UsersRegistry extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type int $organization_id
-     *     @type int $project_id
+     *     @type string $organization_id
+     *     @type string $project_id
      *     @type string $environment_id
      *     @type string $environment_internal_name
      *     @type bool $active
@@ -87,8 +87,8 @@ class UsersRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @return string
      */
     public function getOrganizationId()
     {
@@ -96,21 +96,21 @@ class UsersRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string organization_id = 2 [json_name = "organizationId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setOrganizationId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->organization_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @return int
+     * Generated from protobuf field <code>string project_id = 3 [json_name = "projectId"];</code>
+     * @return string
      */
     public function getProjectId()
     {
@@ -118,13 +118,13 @@ class UsersRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 project_id = 3 [json_name = "projectId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>string project_id = 3 [json_name = "projectId"];</code>
+     * @param string $var
      * @return $this
      */
     public function setProjectId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;

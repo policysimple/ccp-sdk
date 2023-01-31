@@ -28,9 +28,9 @@ class RegistryQuotasApi
 quota_registry (2).artifacts.quotas.v1alpha1.QuotasRegistryRquotaRegistry
 status (	Rstatus"Š
 ListQuotasRegistryRequest\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId\'
+project_id (	R	projectId\'
 repository_name (	RrepositoryName
 query (	Rquery
 page (Rpage
@@ -39,9 +39,9 @@ project_id (R	projectId\'
 reference_id (	RreferenceId"®
  ListQuotaArtifactRegistryRequest
 id (	Rid\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId\'
+project_id (	R	projectId\'
 repository_name (	RrepositoryName
 query (	Rquery
 page (Rpage

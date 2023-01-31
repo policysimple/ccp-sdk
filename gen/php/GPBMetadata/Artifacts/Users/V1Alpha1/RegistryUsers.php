@@ -36,9 +36,9 @@ class RegistryUsers
 permissions_harbor (2+.artifacts.users.v1alpha1.PermissionsHarborRpermissionsHarbor"œ
 UsersRegistry
 id (	Rid\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId%
+project_id (	R	projectId%
 environment_id (	RenvironmentId:
 environment_internal_name (	RenvironmentInternalName
 active (Ractive8

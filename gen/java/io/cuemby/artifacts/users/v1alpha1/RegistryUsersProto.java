@@ -58,8 +58,8 @@ public final class RegistryUsersProto {
       "s_harbor\030\007 \003(\0132+.artifacts.users.v1alpha" +
       "1.PermissionsHarborR\021permissionsHarbor\"\234" +
       "\002\n\rUsersRegistry\022\016\n\002id\030\001 \001(\tR\002id\022\'\n\017orga" +
-      "nization_id\030\002 \001(\rR\016organizationId\022\035\n\npro" +
-      "ject_id\030\003 \001(\rR\tprojectId\022%\n\016environment_" +
+      "nization_id\030\002 \001(\tR\016organizationId\022\035\n\npro" +
+      "ject_id\030\003 \001(\tR\tprojectId\022%\n\016environment_" +
       "id\030\004 \001(\tR\renvironmentId\022:\n\031environment_i" +
       "nternal_name\030\005 \001(\tR\027environmentInternalN" +
       "ame\022\026\n\006active\030\006 \001(\010R\006active\0228\n\006harbor\030\007 " +

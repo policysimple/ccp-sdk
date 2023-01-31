@@ -703,8 +703,8 @@ proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.prototype.toObject = f
  */
 proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     repositoryName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     query: jspb.Message.getFieldWithDefault(msg, 4, ""),
     page: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -748,11 +748,11 @@ proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 3:
@@ -809,15 +809,15 @@ proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.prototype.serializeBin
 proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -868,38 +868,38 @@ proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.serializeBinaryToWrite
 
 
 /**
- * optional uint32 organization_id = 1;
- * @return {number}
+ * optional string organization_id = 1;
+ * @return {string}
  */
 proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest} returns this
  */
 proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint32 project_id = 2;
- * @return {number}
+ * optional string project_id = 2;
+ * @return {string}
  */
 proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest} returns this
  */
 proto.artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1044,8 +1044,8 @@ proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.prototype.toObj
 proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     repositoryName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     query: jspb.Message.getFieldWithDefault(msg, 5, ""),
     page: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -1100,11 +1100,11 @@ proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.deserializeBina
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 4:
@@ -1196,15 +1196,15 @@ proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.serializeBinary
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -1322,38 +1322,38 @@ proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.prototype.setId
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 2;
+ * @return {string}
  */
 proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest} returns this
  */
 proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint32 project_id = 3;
- * @return {number}
+ * optional string project_id = 3;
+ * @return {string}
  */
 proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest} returns this
  */
 proto.artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
