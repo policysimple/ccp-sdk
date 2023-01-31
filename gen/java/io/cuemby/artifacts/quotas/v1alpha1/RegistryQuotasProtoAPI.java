@@ -67,15 +67,15 @@ public final class RegistryQuotasProtoAPI {
       "\001(\0132).artifacts.quotas.v1alpha1.QuotasRe" +
       "gistryR\rquotaRegistry\022\026\n\006status\030\002 \001(\tR\006s" +
       "tatus\"\212\002\n\031ListQuotasRegistryRequest\022\'\n\017o" +
-      "rganization_id\030\001 \001(\rR\016organizationId\022\035\n\n" +
-      "project_id\030\002 \001(\rR\tprojectId\022\'\n\017repositor" +
+      "rganization_id\030\001 \001(\tR\016organizationId\022\035\n\n" +
+      "project_id\030\002 \001(\tR\tprojectId\022\'\n\017repositor" +
       "y_name\030\003 \001(\tR\016repositoryName\022\024\n\005query\030\004 " +
       "\001(\tR\005query\022\022\n\004page\030\005 \001(\rR\004page\022\033\n\tpage_s" +
       "ize\030\006 \001(\rR\010pageSize\022\022\n\004sort\030\007 \001(\tR\004sort\022" +
       "!\n\014reference_id\030\010 \001(\tR\013referenceId\"\256\004\n L" +
       "istQuotaArtifactRegistryRequest\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\022\'\n\017organization_id\030\002 \001(\rR\016organi" +
-      "zationId\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022" +
+      "\001(\tR\002id\022\'\n\017organization_id\030\002 \001(\tR\016organi" +
+      "zationId\022\035\n\nproject_id\030\003 \001(\tR\tprojectId\022" +
       "\'\n\017repository_name\030\004 \001(\tR\016repositoryName" +
       "\022\024\n\005query\030\005 \001(\tR\005query\022\022\n\004page\030\006 \001(\rR\004pa" +
       "ge\022\033\n\tpage_size\030\007 \001(\rR\010pageSize\022\022\n\004sort\030" +

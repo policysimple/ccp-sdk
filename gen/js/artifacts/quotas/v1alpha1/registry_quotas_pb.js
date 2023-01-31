@@ -252,8 +252,8 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.toObject = function(opt
 proto.artifacts.quotas.v1alpha1.QuotasRegistry.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    projectId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    projectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     environmentId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     environmentInternalName: jspb.Message.getFieldWithDefault(msg, 5, ""),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
@@ -299,11 +299,11 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.deserializeBinaryFromReader = fun
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setProjectId(value);
       break;
     case 4:
@@ -360,15 +360,15 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.serializeBinaryToWriter = functio
     );
   }
   f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
   f = message.getProjectId();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
@@ -424,38 +424,38 @@ proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.setId = function(value)
 
 
 /**
- * optional uint32 organization_id = 2;
- * @return {number}
+ * optional string organization_id = 2;
+ * @return {string}
  */
 proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.quotas.v1alpha1.QuotasRegistry} returns this
  */
 proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint32 project_id = 3;
- * @return {number}
+ * optional string project_id = 3;
+ * @return {string}
  */
 proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.getProjectId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.artifacts.quotas.v1alpha1.QuotasRegistry} returns this
  */
 proto.artifacts.quotas.v1alpha1.QuotasRegistry.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

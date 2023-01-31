@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"io.cuemby.artifacts.users.v1alpha1B\022RegistryUsersProtoP\001Z9github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1\242\002\003PPX\252\002\030Artifacts.Users.V1Alpha1\312\002\030Artifacts\\Users\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-artifacts/users/v1alpha1/registry_users.proto\x12\x18\x61rtifacts.users.v1alpha1\"Z\n\x0c\x41\x63\x63\x65ssHarbor\x12\x16\n\x06\x61\x63tion\x18\x01 \x01(\tR\x06\x61\x63tion\x12\x1a\n\x08resource\x18\x02 \x01(\tR\x08resource\x12\x16\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\tR\x06\x65\x66\x66\x65\x63t\"\x85\x01\n\x11PermissionsHarbor\x12>\n\x06\x61\x63\x63\x65ss\x18\x01 \x03(\x0b\x32&.artifacts.users.v1alpha1.AccessHarborR\x06\x61\x63\x63\x65ss\x12\x12\n\x04kind\x18\x02 \x01(\tR\x04kind\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\"\xfe\x01\n\x06Harbor\x12\x16\n\x06secret\x18\x01 \x01(\tR\x06secret\x12\x18\n\x07\x64isable\x18\x02 \x01(\x08R\x07\x64isable\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x14\n\x05level\x18\x04 \x01(\tR\x05level\x12\x1a\n\x08\x64uration\x18\x05 \x01(\rR\x08\x64uration\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12Z\n\x12permissions_harbor\x18\x07 \x03(\x0b\x32+.artifacts.users.v1alpha1.PermissionsHarborR\x11permissionsHarbor\"\x9c\x02\n\rUsersRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\rR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\rR\tprojectId\x12%\n\x0e\x65nvironment_id\x18\x04 \x01(\tR\renvironmentId\x12:\n\x19\x65nvironment_internal_name\x18\x05 \x01(\tR\x17\x65nvironmentInternalName\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12\x38\n\x06harbor\x18\x07 \x01(\x0b\x32 .artifacts.users.v1alpha1.HarborR\x06harborB\xb1\x01\n\"io.cuemby.artifacts.users.v1alpha1B\x12RegistryUsersProtoP\x01Z9github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1\xa2\x02\x03PPX\xaa\x02\x18\x41rtifacts.Users.V1Alpha1\xca\x02\x18\x41rtifacts\\Users\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n-artifacts/users/v1alpha1/registry_users.proto\x12\x18\x61rtifacts.users.v1alpha1\"Z\n\x0c\x41\x63\x63\x65ssHarbor\x12\x16\n\x06\x61\x63tion\x18\x01 \x01(\tR\x06\x61\x63tion\x12\x1a\n\x08resource\x18\x02 \x01(\tR\x08resource\x12\x16\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\tR\x06\x65\x66\x66\x65\x63t\"\x85\x01\n\x11PermissionsHarbor\x12>\n\x06\x61\x63\x63\x65ss\x18\x01 \x03(\x0b\x32&.artifacts.users.v1alpha1.AccessHarborR\x06\x61\x63\x63\x65ss\x12\x12\n\x04kind\x18\x02 \x01(\tR\x04kind\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\"\xfe\x01\n\x06Harbor\x12\x16\n\x06secret\x18\x01 \x01(\tR\x06secret\x12\x18\n\x07\x64isable\x18\x02 \x01(\x08R\x07\x64isable\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x14\n\x05level\x18\x04 \x01(\tR\x05level\x12\x1a\n\x08\x64uration\x18\x05 \x01(\rR\x08\x64uration\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12Z\n\x12permissions_harbor\x18\x07 \x03(\x0b\x32+.artifacts.users.v1alpha1.PermissionsHarborR\x11permissionsHarbor\"\x9c\x02\n\rUsersRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x03 \x01(\tR\tprojectId\x12%\n\x0e\x65nvironment_id\x18\x04 \x01(\tR\renvironmentId\x12:\n\x19\x65nvironment_internal_name\x18\x05 \x01(\tR\x17\x65nvironmentInternalName\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12\x38\n\x06harbor\x18\x07 \x01(\x0b\x32 .artifacts.users.v1alpha1.HarborR\x06harborB\xb1\x01\n\"io.cuemby.artifacts.users.v1alpha1B\x12RegistryUsersProtoP\x01Z9github.com/cuemby/ccp-sdk/gen/go/artifacts/users/v1alpha1\xa2\x02\x03PPX\xaa\x02\x18\x41rtifacts.Users.V1Alpha1\xca\x02\x18\x41rtifacts\\Users\\V1Alpha1b\x06proto3'
 )
 
 
@@ -208,15 +208,15 @@ _USERSREGISTRY = _descriptor.Descriptor(
       serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='artifacts.users.v1alpha1.UsersRegistry.organization_id', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='project_id', full_name='artifacts.users.v1alpha1.UsersRegistry.project_id', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),

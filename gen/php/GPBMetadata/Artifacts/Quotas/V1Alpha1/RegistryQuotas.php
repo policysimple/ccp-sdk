@@ -23,9 +23,9 @@ class RegistryQuotas
 storage_limit (RstorageLimit"¤
 QuotasRegistry
 id (	Rid\'
-organization_id (RorganizationId
+organization_id (	RorganizationId
 
-project_id (R	projectId%
+project_id (	R	projectId%
 environment_id (	RenvironmentId:
 environment_internal_name (	RenvironmentInternalName
 active (Ractive?

@@ -59,12 +59,12 @@ struct UpdateQuotaRegistryResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateQuotaRegistryResponseDefaultTypeInternal _UpdateQuotaRegistryResponse_default_instance_;
 constexpr ListQuotasRegistryRequest::ListQuotasRegistryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : repository_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , repository_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , query_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , sort_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , reference_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u)
-  , project_id_(0u)
   , page_(0u)
   , page_size_(0u){}
 struct ListQuotasRegistryRequestDefaultTypeInternal {
@@ -79,13 +79,13 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListQuotasRegistryRequestDefaul
 constexpr ListQuotaArtifactRegistryRequest::ListQuotaArtifactRegistryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , repository_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , query_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , sort_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , reference_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(0u)
-  , project_id_(0u)
   , page_(0u)
   , page_size_(0u)
   , with_tag_(false)
@@ -219,15 +219,15 @@ const char descriptor_table_protodef_artifacts_2fquotas_2fv1alpha1_2fregistry_5f
   "\001(\0132).artifacts.quotas.v1alpha1.QuotasRe"
   "gistryR\rquotaRegistry\022\026\n\006status\030\002 \001(\tR\006s"
   "tatus\"\212\002\n\031ListQuotasRegistryRequest\022\'\n\017o"
-  "rganization_id\030\001 \001(\rR\016organizationId\022\035\n\n"
-  "project_id\030\002 \001(\rR\tprojectId\022\'\n\017repositor"
+  "rganization_id\030\001 \001(\tR\016organizationId\022\035\n\n"
+  "project_id\030\002 \001(\tR\tprojectId\022\'\n\017repositor"
   "y_name\030\003 \001(\tR\016repositoryName\022\024\n\005query\030\004 "
   "\001(\tR\005query\022\022\n\004page\030\005 \001(\rR\004page\022\033\n\tpage_s"
   "ize\030\006 \001(\rR\010pageSize\022\022\n\004sort\030\007 \001(\tR\004sort\022"
   "!\n\014reference_id\030\010 \001(\tR\013referenceId\"\256\004\n L"
   "istQuotaArtifactRegistryRequest\022\016\n\002id\030\001 "
-  "\001(\tR\002id\022\'\n\017organization_id\030\002 \001(\rR\016organi"
-  "zationId\022\035\n\nproject_id\030\003 \001(\rR\tprojectId\022"
+  "\001(\tR\002id\022\'\n\017organization_id\030\002 \001(\tR\016organi"
+  "zationId\022\035\n\nproject_id\030\003 \001(\tR\tprojectId\022"
   "\'\n\017repository_name\030\004 \001(\tR\016repositoryName"
   "\022\024\n\005query\030\005 \001(\tR\005query\022\022\n\004page\030\006 \001(\rR\004pa"
   "ge\022\033\n\tpage_size\030\007 \001(\rR\010pageSize\022\022\n\004sort\030"
@@ -987,6 +987,16 @@ ListQuotasRegistryRequest::ListQuotasRegistryRequest(::PROTOBUF_NAMESPACE_ID::Ar
 ListQuotasRegistryRequest::ListQuotasRegistryRequest(const ListQuotasRegistryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
   repository_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_repository_name().empty()) {
     repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_repository_name(), 
@@ -1007,21 +1017,23 @@ ListQuotasRegistryRequest::ListQuotasRegistryRequest(const ListQuotasRegistryReq
     reference_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reference_id(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&organization_id_, &from.organization_id_,
+  ::memcpy(&page_, &from.page_,
     static_cast<size_t>(reinterpret_cast<char*>(&page_size_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(page_size_));
+    reinterpret_cast<char*>(&page_)) + sizeof(page_size_));
   // @@protoc_insertion_point(copy_constructor:artifacts.quotas.v1alpha1.ListQuotasRegistryRequest)
 }
 
 inline void ListQuotasRegistryRequest::SharedCtor() {
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 repository_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 query_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 sort_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 reference_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&page_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&page_size_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(page_size_));
+    reinterpret_cast<char*>(&page_)) + sizeof(page_size_));
 }
 
 ListQuotasRegistryRequest::~ListQuotasRegistryRequest() {
@@ -1033,6 +1045,8 @@ ListQuotasRegistryRequest::~ListQuotasRegistryRequest() {
 
 inline void ListQuotasRegistryRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   repository_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   query_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   sort_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1055,13 +1069,15 @@ void ListQuotasRegistryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  organization_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
   repository_name_.ClearToEmpty();
   query_.ClearToEmpty();
   sort_.ClearToEmpty();
   reference_id_.ClearToEmpty();
-  ::memset(&organization_id_, 0, static_cast<size_t>(
+  ::memset(&page_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&page_size_) -
-      reinterpret_cast<char*>(&organization_id_)) + sizeof(page_size_));
+      reinterpret_cast<char*>(&page_)) + sizeof(page_size_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1071,17 +1087,21 @@ const char* ListQuotasRegistryRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 organization_id = 1 [json_name = "organizationId"];
+      // string organization_id = 1 [json_name = "organizationId"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 2 [json_name = "projectId"];
+      // string project_id = 2 [json_name = "projectId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1164,16 +1184,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_organization_id(), target);
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_organization_id(), target);
   }
 
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_project_id(), target);
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.quotas.v1alpha1.ListQuotasRegistryRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_project_id(), target);
   }
 
   // string repository_name = 3 [json_name = "repositoryName"];
@@ -1244,6 +1272,20 @@ size_t ListQuotasRegistryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string organization_id = 1 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
   // string repository_name = 3 [json_name = "repositoryName"];
   if (!this->_internal_repository_name().empty()) {
     total_size += 1 +
@@ -1270,20 +1312,6 @@ size_t ListQuotasRegistryRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_reference_id());
-  }
-
-  // uint32 organization_id = 1 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
-  }
-
-  // uint32 project_id = 2 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   // uint32 page = 5 [json_name = "page"];
@@ -1328,6 +1356,12 @@ void ListQuotasRegistryRequest::MergeFrom(const ListQuotasRegistryRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   if (!from._internal_repository_name().empty()) {
     _internal_set_repository_name(from._internal_repository_name());
   }
@@ -1339,12 +1373,6 @@ void ListQuotasRegistryRequest::MergeFrom(const ListQuotasRegistryRequest& from)
   }
   if (!from._internal_reference_id().empty()) {
     _internal_set_reference_id(from._internal_reference_id());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
   }
   if (from._internal_page() != 0) {
     _internal_set_page(from._internal_page());
@@ -1371,6 +1399,16 @@ void ListQuotasRegistryRequest::InternalSwap(ListQuotasRegistryRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &repository_name_, GetArenaForAllocation(),
       &other->repository_name_, other->GetArenaForAllocation()
   );
@@ -1392,9 +1430,9 @@ void ListQuotasRegistryRequest::InternalSwap(ListQuotasRegistryRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ListQuotasRegistryRequest, page_size_)
       + sizeof(ListQuotasRegistryRequest::page_size_)
-      - PROTOBUF_FIELD_OFFSET(ListQuotasRegistryRequest, organization_id_)>(
-          reinterpret_cast<char*>(&organization_id_),
-          reinterpret_cast<char*>(&other->organization_id_));
+      - PROTOBUF_FIELD_OFFSET(ListQuotasRegistryRequest, page_)>(
+          reinterpret_cast<char*>(&page_),
+          reinterpret_cast<char*>(&other->page_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListQuotasRegistryRequest::GetMetadata() const {
@@ -1426,6 +1464,16 @@ ListQuotaArtifactRegistryRequest::ListQuotaArtifactRegistryRequest(const ListQuo
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
   repository_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_repository_name().empty()) {
     repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_repository_name(), 
@@ -1451,23 +1499,25 @@ ListQuotaArtifactRegistryRequest::ListQuotaArtifactRegistryRequest(const ListQuo
     project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_name(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&organization_id_, &from.organization_id_,
+  ::memcpy(&page_, &from.page_,
     static_cast<size_t>(reinterpret_cast<char*>(&with_accessory_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(with_accessory_));
+    reinterpret_cast<char*>(&page_)) + sizeof(with_accessory_));
   // @@protoc_insertion_point(copy_constructor:artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest)
 }
 
 inline void ListQuotaArtifactRegistryRequest::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 repository_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 query_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 sort_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 reference_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 project_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organization_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&page_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&with_accessory_) -
-    reinterpret_cast<char*>(&organization_id_)) + sizeof(with_accessory_));
+    reinterpret_cast<char*>(&page_)) + sizeof(with_accessory_));
 }
 
 ListQuotaArtifactRegistryRequest::~ListQuotaArtifactRegistryRequest() {
@@ -1480,6 +1530,8 @@ ListQuotaArtifactRegistryRequest::~ListQuotaArtifactRegistryRequest() {
 inline void ListQuotaArtifactRegistryRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   repository_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   query_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   sort_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1504,14 +1556,16 @@ void ListQuotaArtifactRegistryRequest::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmpty();
+  organization_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
   repository_name_.ClearToEmpty();
   query_.ClearToEmpty();
   sort_.ClearToEmpty();
   reference_id_.ClearToEmpty();
   project_name_.ClearToEmpty();
-  ::memset(&organization_id_, 0, static_cast<size_t>(
+  ::memset(&page_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&with_accessory_) -
-      reinterpret_cast<char*>(&organization_id_)) + sizeof(with_accessory_));
+      reinterpret_cast<char*>(&page_)) + sizeof(with_accessory_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1530,17 +1584,21 @@ const char* ListQuotaArtifactRegistryRequest::_InternalParse(const char* ptr, ::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 organization_id = 2 [json_name = "organizationId"];
+      // string organization_id = 2 [json_name = "organizationId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          organization_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.organization_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 project_id = 3 [json_name = "projectId"];
+      // string project_id = 3 [json_name = "projectId"];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          project_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1684,16 +1742,24 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // uint32 organization_id = 2 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_organization_id(), target);
+  // string organization_id = 2 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_organization_id(), target);
   }
 
-  // uint32 project_id = 3 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_project_id(), target);
+  // string project_id = 3 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.quotas.v1alpha1.ListQuotaArtifactRegistryRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_project_id(), target);
   }
 
   // string repository_name = 4 [json_name = "repositoryName"];
@@ -1817,6 +1883,20 @@ size_t ListQuotaArtifactRegistryRequest::ByteSizeLong() const {
         this->_internal_id());
   }
 
+  // string organization_id = 2 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string project_id = 3 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
   // string repository_name = 4 [json_name = "repositoryName"];
   if (!this->_internal_repository_name().empty()) {
     total_size += 1 +
@@ -1850,20 +1930,6 @@ size_t ListQuotaArtifactRegistryRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_project_name());
-  }
-
-  // uint32 organization_id = 2 [json_name = "organizationId"];
-  if (this->_internal_organization_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_organization_id());
-  }
-
-  // uint32 project_id = 3 [json_name = "projectId"];
-  if (this->_internal_project_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_project_id());
   }
 
   // uint32 page = 6 [json_name = "page"];
@@ -1941,6 +2007,12 @@ void ListQuotaArtifactRegistryRequest::MergeFrom(const ListQuotaArtifactRegistry
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
   if (!from._internal_repository_name().empty()) {
     _internal_set_repository_name(from._internal_repository_name());
   }
@@ -1955,12 +2027,6 @@ void ListQuotaArtifactRegistryRequest::MergeFrom(const ListQuotaArtifactRegistry
   }
   if (!from._internal_project_name().empty()) {
     _internal_set_project_name(from._internal_project_name());
-  }
-  if (from._internal_organization_id() != 0) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (from._internal_project_id() != 0) {
-    _internal_set_project_id(from._internal_project_id());
   }
   if (from._internal_page() != 0) {
     _internal_set_page(from._internal_page());
@@ -2010,6 +2076,16 @@ void ListQuotaArtifactRegistryRequest::InternalSwap(ListQuotaArtifactRegistryReq
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &repository_name_, GetArenaForAllocation(),
       &other->repository_name_, other->GetArenaForAllocation()
   );
@@ -2036,9 +2112,9 @@ void ListQuotaArtifactRegistryRequest::InternalSwap(ListQuotaArtifactRegistryReq
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ListQuotaArtifactRegistryRequest, with_accessory_)
       + sizeof(ListQuotaArtifactRegistryRequest::with_accessory_)
-      - PROTOBUF_FIELD_OFFSET(ListQuotaArtifactRegistryRequest, organization_id_)>(
-          reinterpret_cast<char*>(&organization_id_),
-          reinterpret_cast<char*>(&other->organization_id_));
+      - PROTOBUF_FIELD_OFFSET(ListQuotaArtifactRegistryRequest, page_)>(
+          reinterpret_cast<char*>(&page_),
+          reinterpret_cast<char*>(&other->page_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListQuotaArtifactRegistryRequest::GetMetadata() const {

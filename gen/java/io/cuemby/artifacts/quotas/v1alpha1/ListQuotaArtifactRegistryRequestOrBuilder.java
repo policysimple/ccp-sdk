@@ -20,16 +20,28 @@ public interface ListQuotaArtifactRegistryRequestOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>uint32 organization_id = 2 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
    * @return The organizationId.
    */
-  int getOrganizationId();
+  java.lang.String getOrganizationId();
+  /**
+   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationIdBytes();
 
   /**
-   * <code>uint32 project_id = 3 [json_name = "projectId"];</code>
+   * <code>string project_id = 3 [json_name = "projectId"];</code>
    * @return The projectId.
    */
-  int getProjectId();
+  java.lang.String getProjectId();
+  /**
+   * <code>string project_id = 3 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
+   */
+  com.google.protobuf.ByteString
+      getProjectIdBytes();
 
   /**
    * <code>string repository_name = 4 [json_name = "repositoryName"];</code>
