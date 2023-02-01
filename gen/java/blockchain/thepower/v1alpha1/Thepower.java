@@ -14,6 +14,123 @@ public final class Thepower {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code blockchain.thepower.v1alpha1.BlockchainEnv}
+   */
+  public enum BlockchainEnv
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>BLOCKCHAIN_ENV_UNSPECIFIED = 0;</code>
+     */
+    BLOCKCHAIN_ENV_UNSPECIFIED(0),
+    /**
+     * <code>BLOCKCHAIN_ENV_TESTNET = 1;</code>
+     */
+    BLOCKCHAIN_ENV_TESTNET(1),
+    /**
+     * <code>BLOCKCHAIN_ENV_MAINNET = 2;</code>
+     */
+    BLOCKCHAIN_ENV_MAINNET(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>BLOCKCHAIN_ENV_UNSPECIFIED = 0;</code>
+     */
+    public static final int BLOCKCHAIN_ENV_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>BLOCKCHAIN_ENV_TESTNET = 1;</code>
+     */
+    public static final int BLOCKCHAIN_ENV_TESTNET_VALUE = 1;
+    /**
+     * <code>BLOCKCHAIN_ENV_MAINNET = 2;</code>
+     */
+    public static final int BLOCKCHAIN_ENV_MAINNET_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BlockchainEnv valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BlockchainEnv forNumber(int value) {
+      switch (value) {
+        case 0: return BLOCKCHAIN_ENV_UNSPECIFIED;
+        case 1: return BLOCKCHAIN_ENV_TESTNET;
+        case 2: return BLOCKCHAIN_ENV_MAINNET;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BlockchainEnv>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BlockchainEnv> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BlockchainEnv>() {
+            public BlockchainEnv findValueByNumber(int number) {
+              return BlockchainEnv.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return blockchain.thepower.v1alpha1.Thepower.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BlockchainEnv[] VALUES = values();
+
+    public static BlockchainEnv valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BlockchainEnv(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:blockchain.thepower.v1alpha1.BlockchainEnv)
+  }
+
   public interface TpChainOrBuilder extends
       // @@protoc_insertion_point(interface_extends:blockchain.thepower.v1alpha1.TpChain)
       com.google.protobuf.MessageOrBuilder {
@@ -146,6 +263,17 @@ public final class Thepower {
      */
     com.google.protobuf.ByteString
         getCcpOrganizationIdBytes();
+
+    /**
+     * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The enum numeric value on the wire for environment.
+     */
+    int getEnvironmentValue();
+    /**
+     * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The environment.
+     */
+    blockchain.thepower.v1alpha1.Thepower.BlockchainEnv getEnvironment();
   }
   /**
    * Protobuf type {@code blockchain.thepower.v1alpha1.TpChain}
@@ -168,6 +296,7 @@ public final class Thepower {
       createdAt_ = "";
       updatedAt_ = "";
       ccpOrganizationId_ = "";
+      environment_ = 0;
     }
 
     @java.lang.Override
@@ -268,6 +397,12 @@ public final class Thepower {
               java.lang.String s = input.readStringRequireUtf8();
 
               ccpOrganizationId_ = s;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              environment_ = rawValue;
               break;
             }
             default: {
@@ -648,6 +783,25 @@ public final class Thepower {
       }
     }
 
+    public static final int ENVIRONMENT_FIELD_NUMBER = 12;
+    private int environment_;
+    /**
+     * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The enum numeric value on the wire for environment.
+     */
+    @java.lang.Override public int getEnvironmentValue() {
+      return environment_;
+    }
+    /**
+     * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The environment.
+     */
+    @java.lang.Override public blockchain.thepower.v1alpha1.Thepower.BlockchainEnv getEnvironment() {
+      @SuppressWarnings("deprecation")
+      blockchain.thepower.v1alpha1.Thepower.BlockchainEnv result = blockchain.thepower.v1alpha1.Thepower.BlockchainEnv.valueOf(environment_);
+      return result == null ? blockchain.thepower.v1alpha1.Thepower.BlockchainEnv.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -692,6 +846,9 @@ public final class Thepower {
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, ccpOrganizationId_);
       }
+      if (environment_ != blockchain.thepower.v1alpha1.Thepower.BlockchainEnv.BLOCKCHAIN_ENV_UNSPECIFIED.getNumber()) {
+        output.writeEnum(12, environment_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -734,6 +891,10 @@ public final class Thepower {
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, ccpOrganizationId_);
       }
+      if (environment_ != blockchain.thepower.v1alpha1.Thepower.BlockchainEnv.BLOCKCHAIN_ENV_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, environment_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -772,6 +933,7 @@ public final class Thepower {
       }
       if (!getCcpOrganizationId()
           .equals(other.getCcpOrganizationId())) return false;
+      if (environment_ != other.environment_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -807,6 +969,8 @@ public final class Thepower {
       }
       hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + environment_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -969,6 +1133,8 @@ public final class Thepower {
         }
         ccpOrganizationId_ = "";
 
+        environment_ = 0;
+
         return this;
       }
 
@@ -1018,6 +1184,7 @@ public final class Thepower {
           result.settings_ = settingsBuilder_.build();
         }
         result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.environment_ = environment_;
         onBuilt();
         return result;
       }
@@ -1125,6 +1292,9 @@ public final class Thepower {
         if (!other.getCcpOrganizationId().isEmpty()) {
           ccpOrganizationId_ = other.ccpOrganizationId_;
           onChanged();
+        }
+        if (other.environment_ != 0) {
+          setEnvironmentValue(other.getEnvironmentValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2074,6 +2244,60 @@ public final class Thepower {
   checkByteStringIsUtf8(value);
         
         ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int environment_ = 0;
+      /**
+       * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @return The enum numeric value on the wire for environment.
+       */
+      @java.lang.Override public int getEnvironmentValue() {
+        return environment_;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @param value The enum numeric value on the wire for environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironmentValue(int value) {
+        
+        environment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @return The environment.
+       */
+      @java.lang.Override
+      public blockchain.thepower.v1alpha1.Thepower.BlockchainEnv getEnvironment() {
+        @SuppressWarnings("deprecation")
+        blockchain.thepower.v1alpha1.Thepower.BlockchainEnv result = blockchain.thepower.v1alpha1.Thepower.BlockchainEnv.valueOf(environment_);
+        return result == null ? blockchain.thepower.v1alpha1.Thepower.BlockchainEnv.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @param value The environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironment(blockchain.thepower.v1alpha1.Thepower.BlockchainEnv value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        environment_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnvironment() {
+        
+        environment_ = 0;
         onChanged();
         return this;
       }
@@ -5083,7 +5307,7 @@ public final class Thepower {
   static {
     java.lang.String[] descriptorData = {
       "\n+blockchain/thepower/v1alpha1/thepower." +
-      "proto\022\034blockchain.thepower.v1alpha1\"\226\003\n\007" +
+      "proto\022\034blockchain.thepower.v1alpha1\"\345\003\n\007" +
       "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030" +
       "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use" +
       "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th" +
@@ -5094,25 +5318,29 @@ public final class Thepower {
       "\010settings\030\t \001(\01321.blockchain.thepower.v1" +
       "alpha1.TeaCeremonySettingsR\010settings\022.\n\023" +
       "ccp_organization_id\030\n \001(\tR\021ccpOrganizati" +
-      "onId\"\365\001\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010noden" +
-      "ame\022\033\n\ttpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_" +
-      "port\030\003 \001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010" +
-      "apisPort\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023cro" +
-      "sschain_external\030\006 \003(\01320.blockchain.thep" +
-      "ower.v1alpha1.CrosschainExternalR\022crossc" +
-      "hainExternal\"<\n\022CrosschainExternal\022\022\n\004ho" +
-      "st\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023T" +
-      "eaCeremonySettings\022\'\n\017chain_blocktime\030\001 " +
-      "\001(\003R\016chainBlocktime\022!\n\014chain_minsig\030\002 \001(" +
-      "\003R\013chainMinsig\022*\n\021chain_allow_empty\030\003 \001(" +
-      "\003R\017chainAllowEmpty\022(\n\020chain_patch_sigs\030\004" +
-      " \001(\003R\016chainPatchSigs\022)\n\020allocblock_group" +
-      "\030\005 \001(\003R\017allocblockGroup\022\'\n\017allocblock_la" +
-      "st\030\006 \001(\003R\016allocblockLast\022\030\n\007freegas\030\007 \001(" +
-      "\003R\007freegas\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nos" +
-      "k\030\t \001(\003R\004noskB?Z=github.com/cuemby/ccp-s" +
-      "dk/gen/go/blockchain/thepower/v1alpha1b\006" +
-      "proto3"
+      "onId\022M\n\013environment\030\014 \001(\0162+.blockchain.t" +
+      "hepower.v1alpha1.BlockchainEnvR\013environm" +
+      "ent\"\365\001\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodena" +
+      "me\022\033\n\ttpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_p" +
+      "ort\030\003 \001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010a" +
+      "pisPort\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023cros" +
+      "schain_external\030\006 \003(\01320.blockchain.thepo" +
+      "wer.v1alpha1.CrosschainExternalR\022crossch" +
+      "ainExternal\"<\n\022CrosschainExternal\022\022\n\004hos" +
+      "t\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023Te" +
+      "aCeremonySettings\022\'\n\017chain_blocktime\030\001 \001" +
+      "(\003R\016chainBlocktime\022!\n\014chain_minsig\030\002 \001(\003" +
+      "R\013chainMinsig\022*\n\021chain_allow_empty\030\003 \001(\003" +
+      "R\017chainAllowEmpty\022(\n\020chain_patch_sigs\030\004 " +
+      "\001(\003R\016chainPatchSigs\022)\n\020allocblock_group\030" +
+      "\005 \001(\003R\017allocblockGroup\022\'\n\017allocblock_las" +
+      "t\030\006 \001(\003R\016allocblockLast\022\030\n\007freegas\030\007 \001(\003" +
+      "R\007freegas\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nosk" +
+      "\030\t \001(\003R\004nosk*g\n\rBlockchainEnv\022\036\n\032BLOCKCH" +
+      "AIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOCKCHAIN_ENV_" +
+      "TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_MAINNET\020\002B?Z" +
+      "=github.com/cuemby/ccp-sdk/gen/go/blockc" +
+      "hain/thepower/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5123,7 +5351,7 @@ public final class Thepower {
     internal_static_blockchain_thepower_v1alpha1_TpChain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_thepower_v1alpha1_TpChain_descriptor,
-        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Settings", "CcpOrganizationId", });
+        new java.lang.String[] { "Id", "ChainNumber", "UserId", "ChainNodes", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Settings", "CcpOrganizationId", "Environment", });
     internal_static_blockchain_thepower_v1alpha1_TpNode_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_thepower_v1alpha1_TpNode_fieldAccessorTable = new

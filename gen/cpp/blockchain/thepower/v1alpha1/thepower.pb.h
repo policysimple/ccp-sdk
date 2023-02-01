@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -81,6 +82,32 @@ namespace blockchain {
 namespace thepower {
 namespace v1alpha1 {
 
+enum BlockchainEnv : int {
+  BLOCKCHAIN_ENV_UNSPECIFIED = 0,
+  BLOCKCHAIN_ENV_TESTNET = 1,
+  BLOCKCHAIN_ENV_MAINNET = 2,
+  BlockchainEnv_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  BlockchainEnv_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool BlockchainEnv_IsValid(int value);
+constexpr BlockchainEnv BlockchainEnv_MIN = BLOCKCHAIN_ENV_UNSPECIFIED;
+constexpr BlockchainEnv BlockchainEnv_MAX = BLOCKCHAIN_ENV_MAINNET;
+constexpr int BlockchainEnv_ARRAYSIZE = BlockchainEnv_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BlockchainEnv_descriptor();
+template<typename T>
+inline const std::string& BlockchainEnv_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, BlockchainEnv>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function BlockchainEnv_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    BlockchainEnv_descriptor(), enum_t_value);
+}
+inline bool BlockchainEnv_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BlockchainEnv* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BlockchainEnv>(
+    BlockchainEnv_descriptor(), name, value);
+}
 // ===================================================================
 
 class TpChain final :
@@ -208,6 +235,7 @@ class TpChain final :
     kCcpOrganizationIdFieldNumber = 10,
     kSettingsFieldNumber = 9,
     kChainNumberFieldNumber = 2,
+    kEnvironmentFieldNumber = 12,
   };
   // repeated .blockchain.thepower.v1alpha1.TpNode chain_nodes = 4 [json_name = "chainNodes"];
   int chain_nodes_size() const;
@@ -352,6 +380,15 @@ class TpChain final :
   void _internal_set_chain_number(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // .blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+  void clear_environment();
+  ::blockchain::thepower::v1alpha1::BlockchainEnv environment() const;
+  void set_environment(::blockchain::thepower::v1alpha1::BlockchainEnv value);
+  private:
+  ::blockchain::thepower::v1alpha1::BlockchainEnv _internal_environment() const;
+  void _internal_set_environment(::blockchain::thepower::v1alpha1::BlockchainEnv value);
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.thepower.v1alpha1.TpChain)
  private:
   class _Internal;
@@ -369,6 +406,7 @@ class TpChain final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
   ::blockchain::thepower::v1alpha1::TeaCeremonySettings* settings_;
   ::PROTOBUF_NAMESPACE_ID::int32 chain_number_;
+  int environment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto;
 };
@@ -1445,6 +1483,26 @@ inline void TpChain::set_allocated_ccp_organization_id(std::string* ccp_organiza
   // @@protoc_insertion_point(field_set_allocated:blockchain.thepower.v1alpha1.TpChain.ccp_organization_id)
 }
 
+// .blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+inline void TpChain::clear_environment() {
+  environment_ = 0;
+}
+inline ::blockchain::thepower::v1alpha1::BlockchainEnv TpChain::_internal_environment() const {
+  return static_cast< ::blockchain::thepower::v1alpha1::BlockchainEnv >(environment_);
+}
+inline ::blockchain::thepower::v1alpha1::BlockchainEnv TpChain::environment() const {
+  // @@protoc_insertion_point(field_get:blockchain.thepower.v1alpha1.TpChain.environment)
+  return _internal_environment();
+}
+inline void TpChain::_internal_set_environment(::blockchain::thepower::v1alpha1::BlockchainEnv value) {
+  
+  environment_ = value;
+}
+inline void TpChain::set_environment(::blockchain::thepower::v1alpha1::BlockchainEnv value) {
+  _internal_set_environment(value);
+  // @@protoc_insertion_point(field_set:blockchain.thepower.v1alpha1.TpChain.environment)
+}
+
 // -------------------------------------------------------------------
 
 // TpNode
@@ -1884,6 +1942,16 @@ inline void TeaCeremonySettings::set_nosk(::PROTOBUF_NAMESPACE_ID::int64 value) 
 }  // namespace v1alpha1
 }  // namespace thepower
 }  // namespace blockchain
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::blockchain::thepower::v1alpha1::BlockchainEnv> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::blockchain::thepower::v1alpha1::BlockchainEnv>() {
+  return ::blockchain::thepower::v1alpha1::BlockchainEnv_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

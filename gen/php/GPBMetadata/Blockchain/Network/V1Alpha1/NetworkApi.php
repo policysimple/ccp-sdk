@@ -18,7 +18,7 @@ class NetworkApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ƒ(
+À(
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"¯
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetworkJ
@@ -46,8 +46,8 @@ class NetworkApi
 GetPeersByCorporationIdRequest%
 corporation_id (	RcorporationId
 offset (Roffset
-limit (Rlimit"k
-GetOrdererByNetworkIdRequest
+limit (Rlimit"l
+GetOrderersByNetworkIdRequest
 
 network_id (	R	networkId
 offset (Roffset
@@ -87,9 +87,9 @@ invitation"q
 networks (2$.blockchain.network.v1alpha1.NetworkRnetworks
 total (Rtotal
 next_url (	RnextUrl!
-previous_url (	RpreviousUrl"≥
-GetOrdererByNetworkIdResponse>
-orderer (2$.blockchain.network.v1alpha1.OrdererRorderer
+previous_url (	RpreviousUrl"∂
+GetOrderersByNetworkIdResponse@
+orderers (2$.blockchain.network.v1alpha1.OrdererRorderers
 total (Rtotal
 next_url (	RnextUrl!
 previous_url (	RpreviousUrl"¨
@@ -112,7 +112,7 @@ invitation"q
 
 invitation (2\'.blockchain.network.v1alpha1.InvitationR
 invitation
-message (	Rmessage2ä
+message (	Rmessage2ç
 BlockchainAPIServicev
 CreateNetwork1.blockchain.network.v1alpha1.CreateNetworkRequest2.blockchain.network.v1alpha1.CreateNetworkResponseã
 AddPeerToCorporation8.blockchain.network.v1alpha1.AddPeerToCorporationRequest9.blockchain.network.v1alpha1.AddPeerToCorporationResponsey
@@ -123,8 +123,8 @@ invitation
 SendInvitation2.blockchain.network.v1alpha1.SendInvitationRequest3.blockchain.network.v1alpha1.SendInvitationResponseÇ
 CreateCorporation5.blockchain.network.v1alpha1.CreateCorporationRequest6.blockchain.network.v1alpha1.CreateCorporationResponsev
 CreateChannel1.blockchain.network.v1alpha1.CreateChannelRequest2.blockchain.network.v1alpha1.CreateChannelResponseî
-GetPeersByCorporationId;.blockchain.network.v1alpha1.GetPeersByCorporationIdRequest<.blockchain.network.v1alpha1.GetPeersByCorporationIdResponseé
-GetOrdererByNetworkId9.blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest:.blockchain.network.v1alpha1.GetOrdererByNetworkIdResponseé
+GetPeersByCorporationId;.blockchain.network.v1alpha1.GetPeersByCorporationIdRequest<.blockchain.network.v1alpha1.GetPeersByCorporationIdResponseë
+GetOrderersByNetworkId:.blockchain.network.v1alpha1.GetOrderersByNetworkIdRequest;.blockchain.network.v1alpha1.GetOrderersByNetworkIdResponseé
 AddOrdererByNetworkId9.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest:.blockchain.network.v1alpha1.AddOrdererByNetworkIdResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1bproto3'
         , true);
 

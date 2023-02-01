@@ -15,6 +15,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+goog.exportSymbol('proto.blockchain.thepower.v1alpha1.BlockchainEnv', null, global);
 goog.exportSymbol('proto.blockchain.thepower.v1alpha1.CrosschainExternal', null, global);
 goog.exportSymbol('proto.blockchain.thepower.v1alpha1.TeaCeremonySettings', null, global);
 goog.exportSymbol('proto.blockchain.thepower.v1alpha1.TpChain', null, global);
@@ -152,7 +153,8 @@ proto.blockchain.thepower.v1alpha1.TpChain.toObject = function(includeInstance, 
     createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
     settings: (f = msg.getSettings()) && proto.blockchain.thepower.v1alpha1.TeaCeremonySettings.toObject(includeInstance, f),
-    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 10, "")
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    environment: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -230,6 +232,10 @@ proto.blockchain.thepower.v1alpha1.TpChain.deserializeBinaryFromReader = functio
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setCcpOrganizationId(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.blockchain.thepower.v1alpha1.BlockchainEnv} */ (reader.readEnum());
+      msg.setEnvironment(value);
       break;
     default:
       reader.skipField();
@@ -329,6 +335,13 @@ proto.blockchain.thepower.v1alpha1.TpChain.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getEnvironment();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -551,6 +564,24 @@ proto.blockchain.thepower.v1alpha1.TpChain.prototype.getCcpOrganizationId = func
  */
 proto.blockchain.thepower.v1alpha1.TpChain.prototype.setCcpOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional BlockchainEnv environment = 12;
+ * @return {!proto.blockchain.thepower.v1alpha1.BlockchainEnv}
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.getEnvironment = function() {
+  return /** @type {!proto.blockchain.thepower.v1alpha1.BlockchainEnv} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.blockchain.thepower.v1alpha1.BlockchainEnv} value
+ * @return {!proto.blockchain.thepower.v1alpha1.TpChain} returns this
+ */
+proto.blockchain.thepower.v1alpha1.TpChain.prototype.setEnvironment = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -1393,5 +1424,14 @@ proto.blockchain.thepower.v1alpha1.TeaCeremonySettings.prototype.setNosk = funct
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.blockchain.thepower.v1alpha1.BlockchainEnv = {
+  BLOCKCHAIN_ENV_UNSPECIFIED: 0,
+  BLOCKCHAIN_ENV_TESTNET: 1,
+  BLOCKCHAIN_ENV_MAINNET: 2
+};
 
 goog.object.extend(exports, proto.blockchain.thepower.v1alpha1);

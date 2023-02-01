@@ -3,6 +3,11 @@ package blockchain.network.v1alpha1;
 
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1";
 
+enum BlockchainEnv {
+    BLOCKCHAIN_ENV_UNSPECIFIED = 0;
+    BLOCKCHAIN_ENV_TESTNET = 1;
+    BLOCKCHAIN_ENV_MAINNET = 2;
+}
 
 message Network {
     string id = 1;
@@ -16,6 +21,7 @@ message Network {
     string updated_at = 9;
     repeated Corporation corporations = 10;
     string ccp_organization_id = 11;
+    BlockchainEnv environment = 12;
 }
 
 message Corporation {

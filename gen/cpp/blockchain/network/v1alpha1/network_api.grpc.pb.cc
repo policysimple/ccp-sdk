@@ -30,7 +30,7 @@ static const char* BlockchainAPIService_method_names[] = {
   "/blockchain.network.v1alpha1.BlockchainAPIService/CreateCorporation",
   "/blockchain.network.v1alpha1.BlockchainAPIService/CreateChannel",
   "/blockchain.network.v1alpha1.BlockchainAPIService/GetPeersByCorporationId",
-  "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId",
+  "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrderersByNetworkId",
   "/blockchain.network.v1alpha1.BlockchainAPIService/AddOrdererByNetworkId",
 };
 
@@ -51,7 +51,7 @@ BlockchainAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_CreateCorporation_(BlockchainAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateChannel_(BlockchainAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetPeersByCorporationId_(BlockchainAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOrdererByNetworkId_(BlockchainAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrderersByNetworkId_(BlockchainAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddOrdererByNetworkId_(BlockchainAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
@@ -215,20 +215,20 @@ void BlockchainAPIService::Stub::experimental_async::GetPeersByCorporationId(::g
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetPeersByCorporationIdResponse>::Create(channel_.get(), cq, rpcmethod_GetPeersByCorporationId_, context, request, false);
 }
 
-::grpc::Status BlockchainAPIService::Stub::GetOrdererByNetworkId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest& request, ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOrdererByNetworkId_, context, request, response);
+::grpc::Status BlockchainAPIService::Stub::GetOrderersByNetworkId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest& request, ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOrderersByNetworkId_, context, request, response);
 }
 
-void BlockchainAPIService::Stub::experimental_async::GetOrdererByNetworkId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest* request, ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrdererByNetworkId_, context, request, response, std::move(f));
+void BlockchainAPIService::Stub::experimental_async::GetOrderersByNetworkId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest* request, ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrderersByNetworkId_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse>* BlockchainAPIService::Stub::AsyncGetOrdererByNetworkIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse>::Create(channel_.get(), cq, rpcmethod_GetOrdererByNetworkId_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse>* BlockchainAPIService::Stub::AsyncGetOrderersByNetworkIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse>::Create(channel_.get(), cq, rpcmethod_GetOrderersByNetworkId_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse>* BlockchainAPIService::Stub::PrepareAsyncGetOrdererByNetworkIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse>::Create(channel_.get(), cq, rpcmethod_GetOrdererByNetworkId_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse>* BlockchainAPIService::Stub::PrepareAsyncGetOrderersByNetworkIdRaw(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse>::Create(channel_.get(), cq, rpcmethod_GetOrderersByNetworkId_, context, request, false);
 }
 
 ::grpc::Status BlockchainAPIService::Stub::AddOrdererByNetworkId(::grpc::ClientContext* context, const ::blockchain::network::v1alpha1::AddOrdererByNetworkIdRequest& request, ::blockchain::network::v1alpha1::AddOrdererByNetworkIdResponse* response) {
@@ -301,8 +301,8 @@ BlockchainAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainAPIService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest, ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse>(
-          std::mem_fn(&BlockchainAPIService::Service::GetOrdererByNetworkId), this)));
+      new ::grpc::internal::RpcMethodHandler< BlockchainAPIService::Service, ::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest, ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse>(
+          std::mem_fn(&BlockchainAPIService::Service::GetOrderersByNetworkId), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BlockchainAPIService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
@@ -383,7 +383,7 @@ BlockchainAPIService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BlockchainAPIService::Service::GetOrdererByNetworkId(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetOrdererByNetworkIdRequest* request, ::blockchain::network::v1alpha1::GetOrdererByNetworkIdResponse* response) {
+::grpc::Status BlockchainAPIService::Service::GetOrderersByNetworkId(::grpc::ServerContext* context, const ::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest* request, ::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse* response) {
   (void) context;
   (void) request;
   (void) response;
