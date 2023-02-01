@@ -64,10 +64,10 @@ class BlockchainAPIServiceStub(object):
         request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdRequest.SerializeToString,
         response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdResponse.FromString,
         )
-    self.GetOrdererByNetworkId = channel.unary_unary(
-        '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId',
-        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrdererByNetworkIdRequest.SerializeToString,
-        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrdererByNetworkIdResponse.FromString,
+    self.GetOrderersByNetworkId = channel.unary_unary(
+        '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrderersByNetworkId',
+        request_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrderersByNetworkIdRequest.SerializeToString,
+        response_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrderersByNetworkIdResponse.FromString,
         )
     self.AddOrdererByNetworkId = channel.unary_unary(
         '/blockchain.network.v1alpha1.BlockchainAPIService/AddOrdererByNetworkId',
@@ -150,7 +150,7 @@ class BlockchainAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetOrdererByNetworkId(self, request, context):
+  def GetOrderersByNetworkId(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -217,10 +217,10 @@ def add_BlockchainAPIServiceServicer_to_server(servicer, server):
           request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdRequest.FromString,
           response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetPeersByCorporationIdResponse.SerializeToString,
       ),
-      'GetOrdererByNetworkId': grpc.unary_unary_rpc_method_handler(
-          servicer.GetOrdererByNetworkId,
-          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrdererByNetworkIdRequest.FromString,
-          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrdererByNetworkIdResponse.SerializeToString,
+      'GetOrderersByNetworkId': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrderersByNetworkId,
+          request_deserializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrderersByNetworkIdRequest.FromString,
+          response_serializer=blockchain_dot_network_dot_v1alpha1_dot_network__api__pb2.GetOrderersByNetworkIdResponse.SerializeToString,
       ),
       'AddOrdererByNetworkId': grpc.unary_unary_rpc_method_handler(
           servicer.AddOrdererByNetworkId,

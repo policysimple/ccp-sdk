@@ -14,6 +14,123 @@ public final class NetworkOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code blockchain.network.v1alpha1.BlockchainEnv}
+   */
+  public enum BlockchainEnv
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>BLOCKCHAIN_ENV_UNSPECIFIED = 0;</code>
+     */
+    BLOCKCHAIN_ENV_UNSPECIFIED(0),
+    /**
+     * <code>BLOCKCHAIN_ENV_TESTNET = 1;</code>
+     */
+    BLOCKCHAIN_ENV_TESTNET(1),
+    /**
+     * <code>BLOCKCHAIN_ENV_MAINNET = 2;</code>
+     */
+    BLOCKCHAIN_ENV_MAINNET(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>BLOCKCHAIN_ENV_UNSPECIFIED = 0;</code>
+     */
+    public static final int BLOCKCHAIN_ENV_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>BLOCKCHAIN_ENV_TESTNET = 1;</code>
+     */
+    public static final int BLOCKCHAIN_ENV_TESTNET_VALUE = 1;
+    /**
+     * <code>BLOCKCHAIN_ENV_MAINNET = 2;</code>
+     */
+    public static final int BLOCKCHAIN_ENV_MAINNET_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BlockchainEnv valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BlockchainEnv forNumber(int value) {
+      switch (value) {
+        case 0: return BLOCKCHAIN_ENV_UNSPECIFIED;
+        case 1: return BLOCKCHAIN_ENV_TESTNET;
+        case 2: return BLOCKCHAIN_ENV_MAINNET;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BlockchainEnv>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BlockchainEnv> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BlockchainEnv>() {
+            public BlockchainEnv findValueByNumber(int number) {
+              return BlockchainEnv.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return blockchain.network.v1alpha1.NetworkOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BlockchainEnv[] VALUES = values();
+
+    public static BlockchainEnv valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BlockchainEnv(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:blockchain.network.v1alpha1.BlockchainEnv)
+  }
+
   public interface NetworkOrBuilder extends
       // @@protoc_insertion_point(interface_extends:blockchain.network.v1alpha1.Network)
       com.google.protobuf.MessageOrBuilder {
@@ -161,6 +278,17 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getCcpOrganizationIdBytes();
+
+    /**
+     * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The enum numeric value on the wire for environment.
+     */
+    int getEnvironmentValue();
+    /**
+     * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The environment.
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv getEnvironment();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Network}
@@ -186,6 +314,7 @@ public final class NetworkOuterClass {
       updatedAt_ = "";
       corporations_ = java.util.Collections.emptyList();
       ccpOrganizationId_ = "";
+      environment_ = 0;
     }
 
     @java.lang.Override
@@ -286,6 +415,12 @@ public final class NetworkOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               ccpOrganizationId_ = s;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              environment_ = rawValue;
               break;
             }
             default: {
@@ -743,6 +878,25 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int ENVIRONMENT_FIELD_NUMBER = 12;
+    private int environment_;
+    /**
+     * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The enum numeric value on the wire for environment.
+     */
+    @java.lang.Override public int getEnvironmentValue() {
+      return environment_;
+    }
+    /**
+     * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return The environment.
+     */
+    @java.lang.Override public blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv getEnvironment() {
+      @SuppressWarnings("deprecation")
+      blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv result = blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.valueOf(environment_);
+      return result == null ? blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -790,6 +944,9 @@ public final class NetworkOuterClass {
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, ccpOrganizationId_);
       }
+      if (environment_ != blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.BLOCKCHAIN_ENV_UNSPECIFIED.getNumber()) {
+        output.writeEnum(12, environment_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -833,6 +990,10 @@ public final class NetworkOuterClass {
       if (!getCcpOrganizationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, ccpOrganizationId_);
       }
+      if (environment_ != blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.BLOCKCHAIN_ENV_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, environment_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -870,6 +1031,7 @@ public final class NetworkOuterClass {
           .equals(other.getCorporationsList())) return false;
       if (!getCcpOrganizationId()
           .equals(other.getCcpOrganizationId())) return false;
+      if (environment_ != other.environment_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -905,6 +1067,8 @@ public final class NetworkOuterClass {
       }
       hash = (37 * hash) + CCP_ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCcpOrganizationId().hashCode();
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + environment_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1065,6 +1229,8 @@ public final class NetworkOuterClass {
         }
         ccpOrganizationId_ = "";
 
+        environment_ = 0;
+
         return this;
       }
 
@@ -1111,6 +1277,7 @@ public final class NetworkOuterClass {
           result.corporations_ = corporationsBuilder_.build();
         }
         result.ccpOrganizationId_ = ccpOrganizationId_;
+        result.environment_ = environment_;
         onBuilt();
         return result;
       }
@@ -1224,6 +1391,9 @@ public final class NetworkOuterClass {
         if (!other.getCcpOrganizationId().isEmpty()) {
           ccpOrganizationId_ = other.ccpOrganizationId_;
           onChanged();
+        }
+        if (other.environment_ != 0) {
+          setEnvironmentValue(other.getEnvironmentValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2251,6 +2421,60 @@ public final class NetworkOuterClass {
   checkByteStringIsUtf8(value);
         
         ccpOrganizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int environment_ = 0;
+      /**
+       * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @return The enum numeric value on the wire for environment.
+       */
+      @java.lang.Override public int getEnvironmentValue() {
+        return environment_;
+      }
+      /**
+       * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @param value The enum numeric value on the wire for environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironmentValue(int value) {
+        
+        environment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @return The environment.
+       */
+      @java.lang.Override
+      public blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv getEnvironment() {
+        @SuppressWarnings("deprecation")
+        blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv result = blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.valueOf(environment_);
+        return result == null ? blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @param value The environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironment(blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        environment_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnvironment() {
+        
+        environment_ = 0;
         onChanged();
         return this;
       }
@@ -10918,7 +11142,7 @@ public final class NetworkOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)blockchain/network/v1alpha1/network.pr" +
-      "oto\022\033blockchain.network.v1alpha1\"\200\003\n\007Net" +
+      "oto\022\033blockchain.network.v1alpha1\"\316\003\n\007Net" +
       "work\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014network_name\030\002 \001" +
       "(\tR\013networkName\022\034\n\tframework\030\003 \001(\tR\tfram" +
       "ework\022\022\n\004type\030\004 \001(\tR\004type\022\027\n\007user_id\030\005 \001" +
@@ -10928,39 +11152,44 @@ public final class NetworkOuterClass {
       "(\tR\tupdatedAt\022L\n\014corporations\030\n \003(\0132(.bl" +
       "ockchain.network.v1alpha1.CorporationR\014c" +
       "orporations\022.\n\023ccp_organization_id\030\013 \001(\t" +
-      "R\021ccpOrganizationId\"\241\003\n\013Corporation\022\016\n\002i" +
-      "d\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006" +
-      "domain\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004" +
-      " \001(\tR\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR" +
-      "\tadminUser\022#\n\rblockchain_id\030\006 \001(\tR\014block" +
-      "chainId\0227\n\005peers\030\007 \003(\0132!.blockchain.netw" +
-      "ork.v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\t" +
-      "R\006status\022#\n\rerror_details\030\t \001(\tR\014errorDe" +
-      "tails\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\n" +
-      "updated_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_ca\030\014" +
-      " \001(\tR\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007nameMsp\"" +
-      "\224\001\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004" +
-      "name\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\t" +
-      "R\006status\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022" +
-      "\035\n\nupdated_at\030\006 \001(\tR\tupdatedAt\"\274\001\n\007Order" +
-      "er\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022#" +
-      "\n\rblockchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004t" +
-      "ype\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006status\022" +
-      "\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdate" +
-      "d_at\030\007 \001(\tR\tupdatedAt\"\370\001\n\007Channel\022\016\n\002id\030" +
-      "\001 \001(\tR\002id\022%\n\016corporation_id\030\002 \001(\tR\rcorpo" +
-      "rationId\022#\n\rblockchain_id\030\003 \001(\tR\014blockch" +
-      "ainId\022\022\n\004name\030\004 \001(\tR\004name\022\'\n\017corporation" +
-      "_ids\030\005 \003(\tR\016corporationIds\022\026\n\006status\030\006 \001" +
-      "(\tR\006status\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedA" +
-      "t\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\317\001\n\nInv" +
-      "itation\022\016\n\002id\030\001 \001(\tR\002id\022 \n\014from_user_id\030" +
-      "\002 \001(\tR\nfromUserId\022\024\n\005email\030\003 \001(\tR\005email\022" +
-      "\026\n\006status\030\004 \001(\tR\006status\022#\n\rblockchain_id" +
-      "\030\005 \001(\tR\014blockchainId\022\035\n\ncreated_at\030\006 \001(\t" +
-      "R\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdated" +
-      "AtB>Z<github.com/cuemby/ccp-sdk/gen/go/b" +
-      "lockchain/network/v1alpha1b\006proto3"
+      "R\021ccpOrganizationId\022L\n\013environment\030\014 \001(\016" +
+      "2*.blockchain.network.v1alpha1.Blockchai" +
+      "nEnvR\013environment\"\241\003\n\013Corporation\022\016\n\002id\030" +
+      "\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006do" +
+      "main\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004 \001" +
+      "(\tR\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR\ta" +
+      "dminUser\022#\n\rblockchain_id\030\006 \001(\tR\014blockch" +
+      "ainId\0227\n\005peers\030\007 \003(\0132!.blockchain.networ" +
+      "k.v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\tR\006" +
+      "status\022#\n\rerror_details\030\t \001(\tR\014errorDeta" +
+      "ils\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\nup" +
+      "dated_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_ca\030\014 \001" +
+      "(\tR\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007nameMsp\"\224\001" +
+      "\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
+      "me\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006" +
+      "status\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n" +
+      "\nupdated_at\030\006 \001(\tR\tupdatedAt\"\274\001\n\007Orderer" +
+      "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022#\n\r" +
+      "blockchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004typ" +
+      "e\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006status\022\035\n" +
+      "\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_" +
+      "at\030\007 \001(\tR\tupdatedAt\"\370\001\n\007Channel\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\022%\n\016corporation_id\030\002 \001(\tR\rcorpora" +
+      "tionId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchai" +
+      "nId\022\022\n\004name\030\004 \001(\tR\004name\022\'\n\017corporation_i" +
+      "ds\030\005 \003(\tR\016corporationIds\022\026\n\006status\030\006 \001(\t" +
+      "R\006status\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022" +
+      "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\317\001\n\nInvit" +
+      "ation\022\016\n\002id\030\001 \001(\tR\002id\022 \n\014from_user_id\030\002 " +
+      "\001(\tR\nfromUserId\022\024\n\005email\030\003 \001(\tR\005email\022\026\n" +
+      "\006status\030\004 \001(\tR\006status\022#\n\rblockchain_id\030\005" +
+      " \001(\tR\014blockchainId\022\035\n\ncreated_at\030\006 \001(\tR\t" +
+      "createdAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt" +
+      "*g\n\rBlockchainEnv\022\036\n\032BLOCKCHAIN_ENV_UNSP" +
+      "ECIFIED\020\000\022\032\n\026BLOCKCHAIN_ENV_TESTNET\020\001\022\032\n" +
+      "\026BLOCKCHAIN_ENV_MAINNET\020\002B>Z<github.com/" +
+      "cuemby/ccp-sdk/gen/go/blockchain/network" +
+      "/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10971,7 +11200,7 @@ public final class NetworkOuterClass {
     internal_static_blockchain_network_v1alpha1_Network_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Network_descriptor,
-        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Corporations", "CcpOrganizationId", });
+        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Corporations", "CcpOrganizationId", "Environment", });
     internal_static_blockchain_network_v1alpha1_Corporation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_network_v1alpha1_Corporation_fieldAccessorTable = new

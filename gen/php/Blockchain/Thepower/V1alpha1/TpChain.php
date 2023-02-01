@@ -53,6 +53,10 @@ class TpChain extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ccp_organization_id = 10 [json_name = "ccpOrganizationId"];</code>
      */
     protected $ccp_organization_id = '';
+    /**
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     */
+    protected $environment = 0;
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class TpChain extends \Google\Protobuf\Internal\Message
      *     @type string $updated_at
      *     @type \Blockchain\Thepower\V1alpha1\TeaCeremonySettings $settings
      *     @type string $ccp_organization_id
+     *     @type int $environment
      * }
      */
     public function __construct($data = NULL) {
@@ -303,6 +308,28 @@ class TpChain extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ccp_organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @return int
+     */
+    public function getEnvironment()
+    {
+        return $this->environment;
+    }
+
+    /**
+     * Generated from protobuf field <code>.blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEnvironment($var)
+    {
+        GPBUtil::checkEnum($var, \Blockchain\Thepower\V1alpha1\BlockchainEnv::class);
+        $this->environment = $var;
 
         return $this;
     }

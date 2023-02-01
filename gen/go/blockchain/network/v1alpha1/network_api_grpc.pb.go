@@ -28,7 +28,7 @@ type BlockchainAPIServiceClient interface {
 	CreateCorporation(ctx context.Context, in *CreateCorporationRequest, opts ...grpc.CallOption) (*CreateCorporationResponse, error)
 	CreateChannel(ctx context.Context, in *CreateChannelRequest, opts ...grpc.CallOption) (*CreateChannelResponse, error)
 	GetPeersByCorporationId(ctx context.Context, in *GetPeersByCorporationIdRequest, opts ...grpc.CallOption) (*GetPeersByCorporationIdResponse, error)
-	GetOrdererByNetworkId(ctx context.Context, in *GetOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*GetOrdererByNetworkIdResponse, error)
+	GetOrderersByNetworkId(ctx context.Context, in *GetOrderersByNetworkIdRequest, opts ...grpc.CallOption) (*GetOrderersByNetworkIdResponse, error)
 	AddOrdererByNetworkId(ctx context.Context, in *AddOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*AddOrdererByNetworkIdResponse, error)
 }
 
@@ -130,9 +130,9 @@ func (c *blockchainAPIServiceClient) GetPeersByCorporationId(ctx context.Context
 	return out, nil
 }
 
-func (c *blockchainAPIServiceClient) GetOrdererByNetworkId(ctx context.Context, in *GetOrdererByNetworkIdRequest, opts ...grpc.CallOption) (*GetOrdererByNetworkIdResponse, error) {
-	out := new(GetOrdererByNetworkIdResponse)
-	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId", in, out, opts...)
+func (c *blockchainAPIServiceClient) GetOrderersByNetworkId(ctx context.Context, in *GetOrderersByNetworkIdRequest, opts ...grpc.CallOption) (*GetOrderersByNetworkIdResponse, error) {
+	out := new(GetOrderersByNetworkIdResponse)
+	err := c.cc.Invoke(ctx, "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrderersByNetworkId", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -162,7 +162,7 @@ type BlockchainAPIServiceServer interface {
 	CreateCorporation(context.Context, *CreateCorporationRequest) (*CreateCorporationResponse, error)
 	CreateChannel(context.Context, *CreateChannelRequest) (*CreateChannelResponse, error)
 	GetPeersByCorporationId(context.Context, *GetPeersByCorporationIdRequest) (*GetPeersByCorporationIdResponse, error)
-	GetOrdererByNetworkId(context.Context, *GetOrdererByNetworkIdRequest) (*GetOrdererByNetworkIdResponse, error)
+	GetOrderersByNetworkId(context.Context, *GetOrderersByNetworkIdRequest) (*GetOrderersByNetworkIdResponse, error)
 	AddOrdererByNetworkId(context.Context, *AddOrdererByNetworkIdRequest) (*AddOrdererByNetworkIdResponse, error)
 }
 
@@ -200,8 +200,8 @@ func (UnimplementedBlockchainAPIServiceServer) CreateChannel(context.Context, *C
 func (UnimplementedBlockchainAPIServiceServer) GetPeersByCorporationId(context.Context, *GetPeersByCorporationIdRequest) (*GetPeersByCorporationIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeersByCorporationId not implemented")
 }
-func (UnimplementedBlockchainAPIServiceServer) GetOrdererByNetworkId(context.Context, *GetOrdererByNetworkIdRequest) (*GetOrdererByNetworkIdResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOrdererByNetworkId not implemented")
+func (UnimplementedBlockchainAPIServiceServer) GetOrderersByNetworkId(context.Context, *GetOrderersByNetworkIdRequest) (*GetOrderersByNetworkIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrderersByNetworkId not implemented")
 }
 func (UnimplementedBlockchainAPIServiceServer) AddOrdererByNetworkId(context.Context, *AddOrdererByNetworkIdRequest) (*AddOrdererByNetworkIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddOrdererByNetworkId not implemented")
@@ -398,20 +398,20 @@ func _BlockchainAPIService_GetPeersByCorporationId_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BlockchainAPIService_GetOrdererByNetworkId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOrdererByNetworkIdRequest)
+func _BlockchainAPIService_GetOrderersByNetworkId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrderersByNetworkIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BlockchainAPIServiceServer).GetOrdererByNetworkId(ctx, in)
+		return srv.(BlockchainAPIServiceServer).GetOrderersByNetworkId(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId",
+		FullMethod: "/blockchain.network.v1alpha1.BlockchainAPIService/GetOrderersByNetworkId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BlockchainAPIServiceServer).GetOrdererByNetworkId(ctx, req.(*GetOrdererByNetworkIdRequest))
+		return srv.(BlockchainAPIServiceServer).GetOrderersByNetworkId(ctx, req.(*GetOrderersByNetworkIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -482,8 +482,8 @@ var BlockchainAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _BlockchainAPIService_GetPeersByCorporationId_Handler,
 		},
 		{
-			MethodName: "GetOrdererByNetworkId",
-			Handler:    _BlockchainAPIService_GetOrdererByNetworkId_Handler,
+			MethodName: "GetOrderersByNetworkId",
+			Handler:    _BlockchainAPIService_GetOrderersByNetworkId_Handler,
 		},
 		{
 			MethodName: "AddOrdererByNetworkId",

@@ -15,6 +15,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+goog.exportSymbol('proto.blockchain.network.v1alpha1.BlockchainEnv', null, global);
 goog.exportSymbol('proto.blockchain.network.v1alpha1.Channel', null, global);
 goog.exportSymbol('proto.blockchain.network.v1alpha1.Corporation', null, global);
 goog.exportSymbol('proto.blockchain.network.v1alpha1.Invitation', null, global);
@@ -197,7 +198,8 @@ proto.blockchain.network.v1alpha1.Network.toObject = function(includeInstance, m
     updatedAt: jspb.Message.getFieldWithDefault(msg, 9, ""),
     corporationsList: jspb.Message.toObjectList(msg.getCorporationsList(),
     proto.blockchain.network.v1alpha1.Corporation.toObject, includeInstance),
-    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 11, "")
+    ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    environment: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -278,6 +280,10 @@ proto.blockchain.network.v1alpha1.Network.deserializeBinaryFromReader = function
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setCcpOrganizationId(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.blockchain.network.v1alpha1.BlockchainEnv} */ (reader.readEnum());
+      msg.setEnvironment(value);
       break;
     default:
       reader.skipField();
@@ -383,6 +389,13 @@ proto.blockchain.network.v1alpha1.Network.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getEnvironment();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -604,6 +617,24 @@ proto.blockchain.network.v1alpha1.Network.prototype.getCcpOrganizationId = funct
  */
 proto.blockchain.network.v1alpha1.Network.prototype.setCcpOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional BlockchainEnv environment = 12;
+ * @return {!proto.blockchain.network.v1alpha1.BlockchainEnv}
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.getEnvironment = function() {
+  return /** @type {!proto.blockchain.network.v1alpha1.BlockchainEnv} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.blockchain.network.v1alpha1.BlockchainEnv} value
+ * @return {!proto.blockchain.network.v1alpha1.Network} returns this
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.setEnvironment = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -2392,5 +2423,14 @@ proto.blockchain.network.v1alpha1.Invitation.prototype.setUpdatedAt = function(v
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.blockchain.network.v1alpha1.BlockchainEnv = {
+  BLOCKCHAIN_ENV_UNSPECIFIED: 0,
+  BLOCKCHAIN_ENV_TESTNET: 1,
+  BLOCKCHAIN_ENV_MAINNET: 2
+};
 
 goog.object.extend(exports, proto.blockchain.network.v1alpha1);

@@ -30,7 +30,9 @@ constexpr TpChain::TpChain(
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ccp_organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , settings_(nullptr)
-  , chain_number_(0){}
+  , chain_number_(0)
+  , environment_(0)
+{}
 struct TpChainDefaultTypeInternal {
   constexpr TpChainDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -94,7 +96,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TeaCeremonySettingsDefaultTypeI
 }  // namespace thepower
 }  // namespace blockchain
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[4];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -113,6 +115,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, updated_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, settings_),
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, ccp_organization_id_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpChain, environment_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::thepower::v1alpha1::TpNode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -148,9 +151,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fthepower_2fv1alph
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::thepower::v1alpha1::TpChain)},
-  { 15, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
-  { 26, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
-  { 33, -1, sizeof(::blockchain::thepower::v1alpha1::TeaCeremonySettings)},
+  { 16, -1, sizeof(::blockchain::thepower::v1alpha1::TpNode)},
+  { 27, -1, sizeof(::blockchain::thepower::v1alpha1::CrosschainExternal)},
+  { 34, -1, sizeof(::blockchain::thepower::v1alpha1::TeaCeremonySettings)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -162,7 +165,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+blockchain/thepower/v1alpha1/thepower."
-  "proto\022\034blockchain.thepower.v1alpha1\"\226\003\n\007"
+  "proto\022\034blockchain.thepower.v1alpha1\"\345\003\n\007"
   "TpChain\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014chain_number\030"
   "\002 \001(\005R\013chainNumber\022\027\n\007user_id\030\003 \001(\tR\006use"
   "rId\022E\n\013chain_nodes\030\004 \003(\0132$.blockchain.th"
@@ -173,29 +176,33 @@ const char descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower
   "\010settings\030\t \001(\01321.blockchain.thepower.v1"
   "alpha1.TeaCeremonySettingsR\010settings\022.\n\023"
   "ccp_organization_id\030\n \001(\tR\021ccpOrganizati"
-  "onId\"\365\001\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010noden"
-  "ame\022\033\n\ttpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_"
-  "port\030\003 \001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010"
-  "apisPort\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023cro"
-  "sschain_external\030\006 \003(\01320.blockchain.thep"
-  "ower.v1alpha1.CrosschainExternalR\022crossc"
-  "hainExternal\"<\n\022CrosschainExternal\022\022\n\004ho"
-  "st\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023T"
-  "eaCeremonySettings\022\'\n\017chain_blocktime\030\001 "
-  "\001(\003R\016chainBlocktime\022!\n\014chain_minsig\030\002 \001("
-  "\003R\013chainMinsig\022*\n\021chain_allow_empty\030\003 \001("
-  "\003R\017chainAllowEmpty\022(\n\020chain_patch_sigs\030\004"
-  " \001(\003R\016chainPatchSigs\022)\n\020allocblock_group"
-  "\030\005 \001(\003R\017allocblockGroup\022\'\n\017allocblock_la"
-  "st\030\006 \001(\003R\016allocblockLast\022\030\n\007freegas\030\007 \001("
-  "\003R\007freegas\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nos"
-  "k\030\t \001(\003R\004noskB\?Z=github.com/cuemby/ccp-s"
-  "dk/gen/go/blockchain/thepower/v1alpha1b\006"
-  "proto3"
+  "onId\022M\n\013environment\030\014 \001(\0162+.blockchain.t"
+  "hepower.v1alpha1.BlockchainEnvR\013environm"
+  "ent\"\365\001\n\006TpNode\022\032\n\010nodename\030\001 \001(\tR\010nodena"
+  "me\022\033\n\ttpic_port\030\002 \001(\003R\010tpicPort\022\031\n\010api_p"
+  "ort\030\003 \001(\003R\007apiPort\022\033\n\tapis_port\030\004 \001(\003R\010a"
+  "pisPort\022\027\n\007cc_port\030\005 \001(\003R\006ccPort\022a\n\023cros"
+  "schain_external\030\006 \003(\01320.blockchain.thepo"
+  "wer.v1alpha1.CrosschainExternalR\022crossch"
+  "ainExternal\"<\n\022CrosschainExternal\022\022\n\004hos"
+  "t\030\001 \001(\tR\004host\022\022\n\004port\030\002 \001(\003R\004port\"\320\002\n\023Te"
+  "aCeremonySettings\022\'\n\017chain_blocktime\030\001 \001"
+  "(\003R\016chainBlocktime\022!\n\014chain_minsig\030\002 \001(\003"
+  "R\013chainMinsig\022*\n\021chain_allow_empty\030\003 \001(\003"
+  "R\017chainAllowEmpty\022(\n\020chain_patch_sigs\030\004 "
+  "\001(\003R\016chainPatchSigs\022)\n\020allocblock_group\030"
+  "\005 \001(\003R\017allocblockGroup\022\'\n\017allocblock_las"
+  "t\030\006 \001(\003R\016allocblockLast\022\030\n\007freegas\030\007 \001(\003"
+  "R\007freegas\022\025\n\006gas_sk\030\010 \001(\003R\005gasSk\022\022\n\004nosk"
+  "\030\t \001(\003R\004nosk*g\n\rBlockchainEnv\022\036\n\032BLOCKCH"
+  "AIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOCKCHAIN_ENV_"
+  "TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_MAINNET\020\002B\?Z"
+  "=github.com/cuemby/ccp-sdk/gen/go/blockc"
+  "hain/thepower/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto = {
-  false, false, 1206, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
+  false, false, 1390, descriptor_table_protodef_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, "blockchain/thepower/v1alpha1/thepower.proto", 
   &descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto::offsets,
   file_level_metadata_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto, file_level_service_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto,
@@ -209,6 +216,21 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace blockchain {
 namespace thepower {
 namespace v1alpha1 {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BlockchainEnv_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto);
+  return file_level_enum_descriptors_blockchain_2fthepower_2fv1alpha1_2fthepower_2eproto[0];
+}
+bool BlockchainEnv_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -275,7 +297,9 @@ TpChain::TpChain(const TpChain& from)
   } else {
     settings_ = nullptr;
   }
-  chain_number_ = from.chain_number_;
+  ::memcpy(&chain_number_, &from.chain_number_,
+    static_cast<size_t>(reinterpret_cast<char*>(&environment_) -
+    reinterpret_cast<char*>(&chain_number_)) + sizeof(environment_));
   // @@protoc_insertion_point(copy_constructor:blockchain.thepower.v1alpha1.TpChain)
 }
 
@@ -289,8 +313,8 @@ updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&settings_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&chain_number_) -
-    reinterpret_cast<char*>(&settings_)) + sizeof(chain_number_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&environment_) -
+    reinterpret_cast<char*>(&settings_)) + sizeof(environment_));
 }
 
 TpChain::~TpChain() {
@@ -340,7 +364,9 @@ void TpChain::Clear() {
     delete settings_;
   }
   settings_ = nullptr;
-  chain_number_ = 0;
+  ::memset(&chain_number_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&environment_) -
+      reinterpret_cast<char*>(&chain_number_)) + sizeof(environment_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -437,6 +463,14 @@ const char* TpChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.thepower.v1alpha1.TpChain.ccp_organization_id"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_environment(static_cast<::blockchain::thepower::v1alpha1::BlockchainEnv>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -560,6 +594,13 @@ failure:
         10, this->_internal_ccp_organization_id(), target);
   }
 
+  // .blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+  if (this->_internal_environment() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      12, this->_internal_environment(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -646,6 +687,12 @@ size_t TpChain::ByteSizeLong() const {
         this->_internal_chain_number());
   }
 
+  // .blockchain.thepower.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+  if (this->_internal_environment() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_environment());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -702,6 +749,9 @@ void TpChain::MergeFrom(const TpChain& from) {
   if (from._internal_chain_number() != 0) {
     _internal_set_chain_number(from._internal_chain_number());
   }
+  if (from._internal_environment() != 0) {
+    _internal_set_environment(from._internal_environment());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -756,8 +806,8 @@ void TpChain::InternalSwap(TpChain* other) {
       &other->ccp_organization_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TpChain, chain_number_)
-      + sizeof(TpChain::chain_number_)
+      PROTOBUF_FIELD_OFFSET(TpChain, environment_)
+      + sizeof(TpChain::environment_)
       - PROTOBUF_FIELD_OFFSET(TpChain, settings_)>(
           reinterpret_cast<char*>(&settings_),
           reinterpret_cast<char*>(&other->settings_));

@@ -204,26 +204,26 @@ function deserialize_blockchain_network_v1alpha1_GetCorporationsByBlockchainIdRe
   return blockchain_network_v1alpha1_network_api_pb.GetCorporationsByBlockchainIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdRequest)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrdererByNetworkIdRequest');
+function serialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdRequest(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrderersByNetworkIdRequest)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrderersByNetworkIdRequest');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdRequest(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetOrderersByNetworkIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse(arg) {
-  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdResponse)) {
-    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrdererByNetworkIdResponse');
+function serialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdResponse(arg) {
+  if (!(arg instanceof blockchain_network_v1alpha1_network_api_pb.GetOrderersByNetworkIdResponse)) {
+    throw new Error('Expected argument of type blockchain.network.v1alpha1.GetOrderersByNetworkIdResponse');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse(buffer_arg) {
-  return blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdResponse(buffer_arg) {
+  return blockchain_network_v1alpha1_network_api_pb.GetOrderersByNetworkIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_blockchain_network_v1alpha1_GetPeersByCorporationIdRequest(arg) {
@@ -382,16 +382,16 @@ var BlockchainAPIServiceService = exports.BlockchainAPIServiceService = {
     responseSerialize: serialize_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse,
     responseDeserialize: deserialize_blockchain_network_v1alpha1_GetPeersByCorporationIdResponse,
   },
-  getOrdererByNetworkId: {
-    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId',
+  getOrderersByNetworkId: {
+    path: '/blockchain.network.v1alpha1.BlockchainAPIService/GetOrderersByNetworkId',
     requestStream: false,
     responseStream: false,
-    requestType: blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdRequest,
-    responseType: blockchain_network_v1alpha1_network_api_pb.GetOrdererByNetworkIdResponse,
-    requestSerialize: serialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest,
-    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdRequest,
-    responseSerialize: serialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse,
-    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetOrdererByNetworkIdResponse,
+    requestType: blockchain_network_v1alpha1_network_api_pb.GetOrderersByNetworkIdRequest,
+    responseType: blockchain_network_v1alpha1_network_api_pb.GetOrderersByNetworkIdResponse,
+    requestSerialize: serialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdRequest,
+    requestDeserialize: deserialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdRequest,
+    responseSerialize: serialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdResponse,
+    responseDeserialize: deserialize_blockchain_network_v1alpha1_GetOrderersByNetworkIdResponse,
   },
   addOrdererByNetworkId: {
     path: '/blockchain.network.v1alpha1.BlockchainAPIService/AddOrdererByNetworkId',

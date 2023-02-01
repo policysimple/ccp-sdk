@@ -147,15 +147,15 @@ class BlockchainAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Blockchain\Network\V1alpha1\GetOrdererByNetworkIdRequest $argument input argument
+     * @param \Blockchain\Network\V1alpha1\GetOrderersByNetworkIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetOrdererByNetworkId(\Blockchain\Network\V1alpha1\GetOrdererByNetworkIdRequest $argument,
+    public function GetOrderersByNetworkId(\Blockchain\Network\V1alpha1\GetOrderersByNetworkIdRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetOrdererByNetworkId',
+        return $this->_simpleRequest('/blockchain.network.v1alpha1.BlockchainAPIService/GetOrderersByNetworkId',
         $argument,
-        ['\Blockchain\Network\V1alpha1\GetOrdererByNetworkIdResponse', 'decode'],
+        ['\Blockchain\Network\V1alpha1\GetOrderersByNetworkIdResponse', 'decode'],
         $metadata, $options);
     }
 

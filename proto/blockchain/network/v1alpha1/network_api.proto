@@ -17,7 +17,7 @@ service BlockchainAPIService {
     rpc CreateCorporation(CreateCorporationRequest) returns (CreateCorporationResponse);
     rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse);
     rpc GetPeersByCorporationId(GetPeersByCorporationIdRequest) returns (GetPeersByCorporationIdResponse);
-    rpc GetOrdererByNetworkId(GetOrdererByNetworkIdRequest) returns (GetOrdererByNetworkIdResponse);
+    rpc GetOrderersByNetworkId(GetOrderersByNetworkIdRequest) returns (GetOrderersByNetworkIdResponse);
     rpc AddOrdererByNetworkId(AddOrdererByNetworkIdRequest) returns (AddOrdererByNetworkIdResponse);
 }
 
@@ -64,7 +64,7 @@ message GetPeersByCorporationIdRequest {
     int64 limit = 3;
 }
 
-message GetOrdererByNetworkIdRequest {
+message GetOrderersByNetworkIdRequest {
     string network_id = 1;
     int64 offset = 2;
     int64 limit = 3;
@@ -125,8 +125,8 @@ message GetBlockchainsByUserIdResponse {
     string previous_url = 4; 
 }
 
-message GetOrdererByNetworkIdResponse {
-    repeated blockchain.network.v1alpha1.Orderer orderer = 1;
+message GetOrderersByNetworkIdResponse {
+    repeated blockchain.network.v1alpha1.Orderer orderers = 1;
     int64 total = 2;
     string next_url = 3;
     string previous_url = 4; 

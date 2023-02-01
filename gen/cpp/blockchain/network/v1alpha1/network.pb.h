@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -89,6 +90,32 @@ namespace blockchain {
 namespace network {
 namespace v1alpha1 {
 
+enum BlockchainEnv : int {
+  BLOCKCHAIN_ENV_UNSPECIFIED = 0,
+  BLOCKCHAIN_ENV_TESTNET = 1,
+  BLOCKCHAIN_ENV_MAINNET = 2,
+  BlockchainEnv_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  BlockchainEnv_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool BlockchainEnv_IsValid(int value);
+constexpr BlockchainEnv BlockchainEnv_MIN = BLOCKCHAIN_ENV_UNSPECIFIED;
+constexpr BlockchainEnv BlockchainEnv_MAX = BLOCKCHAIN_ENV_MAINNET;
+constexpr int BlockchainEnv_ARRAYSIZE = BlockchainEnv_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BlockchainEnv_descriptor();
+template<typename T>
+inline const std::string& BlockchainEnv_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, BlockchainEnv>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function BlockchainEnv_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    BlockchainEnv_descriptor(), enum_t_value);
+}
+inline bool BlockchainEnv_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BlockchainEnv* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BlockchainEnv>(
+    BlockchainEnv_descriptor(), name, value);
+}
 // ===================================================================
 
 class Network final :
@@ -217,6 +244,7 @@ class Network final :
     kCreatedAtFieldNumber = 8,
     kUpdatedAtFieldNumber = 9,
     kCcpOrganizationIdFieldNumber = 11,
+    kEnvironmentFieldNumber = 12,
   };
   // repeated .blockchain.network.v1alpha1.Corporation corporations = 10 [json_name = "corporations"];
   int corporations_size() const;
@@ -376,6 +404,15 @@ class Network final :
   std::string* _internal_mutable_ccp_organization_id();
   public:
 
+  // .blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+  void clear_environment();
+  ::blockchain::network::v1alpha1::BlockchainEnv environment() const;
+  void set_environment(::blockchain::network::v1alpha1::BlockchainEnv value);
+  private:
+  ::blockchain::network::v1alpha1::BlockchainEnv _internal_environment() const;
+  void _internal_set_environment(::blockchain::network::v1alpha1::BlockchainEnv value);
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Network)
  private:
   class _Internal;
@@ -394,6 +431,7 @@ class Network final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
+  int environment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -2216,6 +2254,26 @@ inline void Network::set_allocated_ccp_organization_id(std::string* ccp_organiza
   ccp_organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ccp_organization_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Network.ccp_organization_id)
+}
+
+// .blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
+inline void Network::clear_environment() {
+  environment_ = 0;
+}
+inline ::blockchain::network::v1alpha1::BlockchainEnv Network::_internal_environment() const {
+  return static_cast< ::blockchain::network::v1alpha1::BlockchainEnv >(environment_);
+}
+inline ::blockchain::network::v1alpha1::BlockchainEnv Network::environment() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Network.environment)
+  return _internal_environment();
+}
+inline void Network::_internal_set_environment(::blockchain::network::v1alpha1::BlockchainEnv value) {
+  
+  environment_ = value;
+}
+inline void Network::set_environment(::blockchain::network::v1alpha1::BlockchainEnv value) {
+  _internal_set_environment(value);
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Network.environment)
 }
 
 // -------------------------------------------------------------------
@@ -4166,6 +4224,16 @@ inline void Invitation::set_allocated_updated_at(std::string* updated_at) {
 }  // namespace v1alpha1
 }  // namespace network
 }  // namespace blockchain
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::blockchain::network::v1alpha1::BlockchainEnv> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::blockchain::network::v1alpha1::BlockchainEnv>() {
+  return ::blockchain::network::v1alpha1::BlockchainEnv_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 
