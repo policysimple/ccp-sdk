@@ -7361,16 +7361,16 @@ public final class PaymentOuterClass {
         getNumberBytes();
 
     /**
-     * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-     * @return The cardHolder.
+     * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+     * @return The cardHolderName.
      */
-    java.lang.String getCardHolder();
+    java.lang.String getCardHolderName();
     /**
-     * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-     * @return The bytes for cardHolder.
+     * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+     * @return The bytes for cardHolderName.
      */
     com.google.protobuf.ByteString
-        getCardHolderBytes();
+        getCardHolderNameBytes();
 
     /**
      * <code>string expmonth = 4 [json_name = "expmonth"];</code>
@@ -7435,7 +7435,7 @@ public final class PaymentOuterClass {
     private Card() {
       id_ = "";
       number_ = "";
-      cardHolder_ = "";
+      cardHolderName_ = "";
       expmonth_ = "";
       expyear_ = "";
       cvc_ = "";
@@ -7487,7 +7487,7 @@ public final class PaymentOuterClass {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              cardHolder_ = s;
+              cardHolderName_ = s;
               break;
             }
             case 34: {
@@ -7622,38 +7622,38 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int CARD_HOLDER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object cardHolder_;
+    public static final int CARD_HOLDER_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object cardHolderName_;
     /**
-     * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-     * @return The cardHolder.
+     * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+     * @return The cardHolderName.
      */
     @java.lang.Override
-    public java.lang.String getCardHolder() {
-      java.lang.Object ref = cardHolder_;
+    public java.lang.String getCardHolderName() {
+      java.lang.Object ref = cardHolderName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        cardHolder_ = s;
+        cardHolderName_ = s;
         return s;
       }
     }
     /**
-     * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-     * @return The bytes for cardHolder.
+     * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+     * @return The bytes for cardHolderName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCardHolderBytes() {
-      java.lang.Object ref = cardHolder_;
+        getCardHolderNameBytes() {
+      java.lang.Object ref = cardHolderName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        cardHolder_ = b;
+        cardHolderName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7832,8 +7832,8 @@ public final class PaymentOuterClass {
       if (!getNumberBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, number_);
       }
-      if (!getCardHolderBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cardHolder_);
+      if (!getCardHolderNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cardHolderName_);
       }
       if (!getExpmonthBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, expmonth_);
@@ -7862,8 +7862,8 @@ public final class PaymentOuterClass {
       if (!getNumberBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, number_);
       }
-      if (!getCardHolderBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cardHolder_);
+      if (!getCardHolderNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cardHolderName_);
       }
       if (!getExpmonthBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, expmonth_);
@@ -7896,8 +7896,8 @@ public final class PaymentOuterClass {
           .equals(other.getId())) return false;
       if (!getNumber()
           .equals(other.getNumber())) return false;
-      if (!getCardHolder()
-          .equals(other.getCardHolder())) return false;
+      if (!getCardHolderName()
+          .equals(other.getCardHolderName())) return false;
       if (!getExpmonth()
           .equals(other.getExpmonth())) return false;
       if (!getExpyear()
@@ -7921,8 +7921,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getNumber().hashCode();
-      hash = (37 * hash) + CARD_HOLDER_FIELD_NUMBER;
-      hash = (53 * hash) + getCardHolder().hashCode();
+      hash = (37 * hash) + CARD_HOLDER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCardHolderName().hashCode();
       hash = (37 * hash) + EXPMONTH_FIELD_NUMBER;
       hash = (53 * hash) + getExpmonth().hashCode();
       hash = (37 * hash) + EXPYEAR_FIELD_NUMBER;
@@ -8068,7 +8068,7 @@ public final class PaymentOuterClass {
 
         number_ = "";
 
-        cardHolder_ = "";
+        cardHolderName_ = "";
 
         expmonth_ = "";
 
@@ -8106,7 +8106,7 @@ public final class PaymentOuterClass {
         payment.v1alpha1.PaymentOuterClass.Card result = new payment.v1alpha1.PaymentOuterClass.Card(this);
         result.id_ = id_;
         result.number_ = number_;
-        result.cardHolder_ = cardHolder_;
+        result.cardHolderName_ = cardHolderName_;
         result.expmonth_ = expmonth_;
         result.expyear_ = expyear_;
         result.cvc_ = cvc_;
@@ -8167,8 +8167,8 @@ public final class PaymentOuterClass {
           number_ = other.number_;
           onChanged();
         }
-        if (!other.getCardHolder().isEmpty()) {
-          cardHolder_ = other.cardHolder_;
+        if (!other.getCardHolderName().isEmpty()) {
+          cardHolderName_ = other.cardHolderName_;
           onChanged();
         }
         if (!other.getExpmonth().isEmpty()) {
@@ -8368,78 +8368,78 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private java.lang.Object cardHolder_ = "";
+      private java.lang.Object cardHolderName_ = "";
       /**
-       * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-       * @return The cardHolder.
+       * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+       * @return The cardHolderName.
        */
-      public java.lang.String getCardHolder() {
-        java.lang.Object ref = cardHolder_;
+      public java.lang.String getCardHolderName() {
+        java.lang.Object ref = cardHolderName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          cardHolder_ = s;
+          cardHolderName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-       * @return The bytes for cardHolder.
+       * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+       * @return The bytes for cardHolderName.
        */
       public com.google.protobuf.ByteString
-          getCardHolderBytes() {
-        java.lang.Object ref = cardHolder_;
+          getCardHolderNameBytes() {
+        java.lang.Object ref = cardHolderName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          cardHolder_ = b;
+          cardHolderName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-       * @param value The cardHolder to set.
+       * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+       * @param value The cardHolderName to set.
        * @return This builder for chaining.
        */
-      public Builder setCardHolder(
+      public Builder setCardHolderName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        cardHolder_ = value;
+        cardHolderName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+       * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearCardHolder() {
+      public Builder clearCardHolderName() {
         
-        cardHolder_ = getDefaultInstance().getCardHolder();
+        cardHolderName_ = getDefaultInstance().getCardHolderName();
         onChanged();
         return this;
       }
       /**
-       * <code>string card_holder = 3 [json_name = "cardHolder"];</code>
-       * @param value The bytes for cardHolder to set.
+       * <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
+       * @param value The bytes for cardHolderName to set.
        * @return This builder for chaining.
        */
-      public Builder setCardHolderBytes(
+      public Builder setCardHolderNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        cardHolder_ = value;
+        cardHolderName_ = value;
         onChanged();
         return this;
       }
@@ -23438,58 +23438,58 @@ public final class PaymentOuterClass {
       "ault\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007en" +
       "abled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntoken_car" +
       "d\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132\026.payme" +
-      "nt.v1alpha1.CardR\004card\"\255\001\n\004Card\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022\037\n\013card_" +
-      "holder\030\003 \001(\tR\ncardHolder\022\032\n\010expmonth\030\004 \001" +
-      "(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007expyear\022\020" +
-      "\n\003cvc\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001(\tR\005brand\"\225" +
-      "\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001" +
-      "(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006period\022\034\n\tst" +
-      "atuspay\030\004 \001(\tR\tstatuspay\022\022\n\004date\030\005 \001(\tR\004" +
-      "date\022\030\n\007product\030\006 \001(\tR\007product\"\340\002\n\006Bilin" +
-      "g\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_id\030\002 \001(\tR\ti" +
-      "nvoiceId\022!\n\014account_name\030\003 \001(\tR\013accountN" +
-      "ame\022\036\n\ntotalusage\030\004 \001(\003R\ntotalusage\022\020\n\003c" +
-      "pu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ram\022\032\n\010pipel" +
-      "ine\030\007 \001(\001R\010pipeline\022\024\n\005month\030\010 \001(\tR\005mont" +
-      "h\022\022\n\004year\030\t \001(\tR\004year\022\026\n\006amount\030\n \001(\003R\006a" +
-      "mount\022\026\n\006period\030\013 \001(\tR\006period\022\034\n\tstatusp" +
-      "ay\030\014 \001(\tR\tstatuspay\022\022\n\004date\030\r \001(\tR\004date\022" +
-      "\030\n\007product\030\016 \001(\tR\007product\"\217\001\n\021Subscripti" +
-      "onItems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024subscription_" +
-      "item_id\030\002 \001(\tR\022subscriptionItemId\022\031\n\010pri" +
-      "ce_id\030\003 \001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\t" +
-      "R\tproductId\"R\n\025SubscriptionItemsList\0229\n\005" +
-      "items\030\001 \003(\0132#.payment.v1alpha1.Subscript" +
-      "ionItemsR\005items\">\n\013InvoiceList\022/\n\005items\030" +
-      "\001 \003(\0132\031.payment.v1alpha1.InvoiceR\005items\"" +
-      "@\n\014CustomerList\0220\n\005items\030\001 \003(\0132\032.payment" +
-      ".v1alpha1.CustomerR\005items\"<\n\nBilingList\022" +
-      ".\n\005items\030\001 \003(\0132\030.payment.v1alpha1.Biling" +
-      "R\005items\"H\n\020SubscriptionList\0224\n\005items\030\001 \003" +
-      "(\0132\036.payment.v1alpha1.SubscriptionR\005item" +
-      "s\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026.payment.v" +
-      "1alpha1.CardR\005items\">\n\013PaymentList\022/\n\005it" +
-      "ems\030\001 \003(\0132\031.payment.v1alpha1.PaymentR\005it" +
-      "ems\">\n\013ProjectList\022/\n\005items\030\001 \003(\0132\031.paym" +
-      "ent.v1alpha1.ProjectR\005items\"\242\001\n\016ProjectB" +
-      "illing\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_id\030\002 \001" +
-      "(\tR\tprojectId\022!\n\014name_project\030\003 \001(\tR\013nam" +
-      "eProject\022\020\n\003ram\030\004 \001(\tR\003ram\022\020\n\003cpu\030\005 \001(\tR" +
-      "\003cpu\022\032\n\010pipeline\030\006 \001(\tR\010pipeline\"L\n\022Proj" +
-      "ectBillingList\0226\n\005items\030\001 \003(\0132 .payment." +
-      "v1alpha1.ProjectBillingR\005items\"\337\002\n\nBlock" +
-      "Chain\022#\n\rblockchain_id\030\001 \001(\tR\014blockchain" +
-      "Id\022\'\n\017blockchain_name\030\002 \001(\tR\016blockchainN" +
-      "ame\022\'\n\017blockchain_type\030\003 \001(\tR\016blockchain" +
-      "Type\022\035\n\nproject_id\030\004 \001(\tR\tprojectId\022B\n\014s" +
-      "ubscription\030\005 \001(\0132\036.payment.v1alpha1.Sub" +
-      "scriptionR\014subscription\022\035\n\ncreated_at\030\006 " +
-      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupda" +
-      "tedAt\022\026\n\006status\030\010 \001(\010R\006status\022!\n\014is_susp" +
-      "ended\030\t \001(\010R\013isSuspendedB8Z6github.com/c" +
-      "uemby/ccp-payment-service/payment/v1alph" +
-      "a1b\006proto3"
+      "nt.v1alpha1.CardR\004card\"\266\001\n\004Card\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022(\n\020card_" +
+      "holder_name\030\003 \001(\tR\016cardHolderName\022\032\n\010exp" +
+      "month\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR\007" +
+      "expyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001(\t" +
+      "R\005brand\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006a" +
+      "mount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006per" +
+      "iod\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n\004dat" +
+      "e\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007product\"" +
+      "\340\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_id" +
+      "\030\002 \001(\tR\tinvoiceId\022!\n\014account_name\030\003 \001(\tR" +
+      "\013accountName\022\036\n\ntotalusage\030\004 \001(\003R\ntotalu" +
+      "sage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ram" +
+      "\022\032\n\010pipeline\030\007 \001(\001R\010pipeline\022\024\n\005month\030\010 " +
+      "\001(\tR\005month\022\022\n\004year\030\t \001(\tR\004year\022\026\n\006amount" +
+      "\030\n \001(\003R\006amount\022\026\n\006period\030\013 \001(\tR\006period\022\034" +
+      "\n\tstatuspay\030\014 \001(\tR\tstatuspay\022\022\n\004date\030\r \001" +
+      "(\tR\004date\022\030\n\007product\030\016 \001(\tR\007product\"\217\001\n\021S" +
+      "ubscriptionItems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024subs" +
+      "cription_item_id\030\002 \001(\tR\022subscriptionItem" +
+      "Id\022\031\n\010price_id\030\003 \001(\tR\007priceId\022\035\n\nproduct" +
+      "_id\030\004 \001(\tR\tproductId\"R\n\025SubscriptionItem" +
+      "sList\0229\n\005items\030\001 \003(\0132#.payment.v1alpha1." +
+      "SubscriptionItemsR\005items\">\n\013InvoiceList\022" +
+      "/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Invoic" +
+      "eR\005items\"@\n\014CustomerList\0220\n\005items\030\001 \003(\0132" +
+      "\032.payment.v1alpha1.CustomerR\005items\"<\n\nBi" +
+      "lingList\022.\n\005items\030\001 \003(\0132\030.payment.v1alph" +
+      "a1.BilingR\005items\"H\n\020SubscriptionList\0224\n\005" +
+      "items\030\001 \003(\0132\036.payment.v1alpha1.Subscript" +
+      "ionR\005items\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026." +
+      "payment.v1alpha1.CardR\005items\">\n\013PaymentL" +
+      "ist\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Pa" +
+      "ymentR\005items\">\n\013ProjectList\022/\n\005items\030\001 \003" +
+      "(\0132\031.payment.v1alpha1.ProjectR\005items\"\242\001\n" +
+      "\016ProjectBilling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproje" +
+      "ct_id\030\002 \001(\tR\tprojectId\022!\n\014name_project\030\003" +
+      " \001(\tR\013nameProject\022\020\n\003ram\030\004 \001(\tR\003ram\022\020\n\003c" +
+      "pu\030\005 \001(\tR\003cpu\022\032\n\010pipeline\030\006 \001(\tR\010pipelin" +
+      "e\"L\n\022ProjectBillingList\0226\n\005items\030\001 \003(\0132 " +
+      ".payment.v1alpha1.ProjectBillingR\005items\"" +
+      "\337\002\n\nBlockChain\022#\n\rblockchain_id\030\001 \001(\tR\014b" +
+      "lockchainId\022\'\n\017blockchain_name\030\002 \001(\tR\016bl" +
+      "ockchainName\022\'\n\017blockchain_type\030\003 \001(\tR\016b" +
+      "lockchainType\022\035\n\nproject_id\030\004 \001(\tR\tproje" +
+      "ctId\022B\n\014subscription\030\005 \001(\0132\036.payment.v1a" +
+      "lpha1.SubscriptionR\014subscription\022\035\n\ncrea" +
+      "ted_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 " +
+      "\001(\tR\tupdatedAt\022\026\n\006status\030\010 \001(\010R\006status\022!" +
+      "\n\014is_suspended\030\t \001(\010R\013isSuspendedB8Z6git" +
+      "hub.com/cuemby/ccp-payment-service/payme" +
+      "nt/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23524,7 +23524,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Card_descriptor,
-        new java.lang.String[] { "Id", "Number", "CardHolder", "Expmonth", "Expyear", "Cvc", "Brand", });
+        new java.lang.String[] { "Id", "Number", "CardHolderName", "Expmonth", "Expyear", "Cvc", "Brand", });
     internal_static_payment_v1alpha1_Invoice_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_payment_v1alpha1_Invoice_fieldAccessorTable = new

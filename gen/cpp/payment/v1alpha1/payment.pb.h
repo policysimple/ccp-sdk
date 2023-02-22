@@ -1337,7 +1337,7 @@ class Card final :
   enum : int {
     kIdFieldNumber = 1,
     kNumberFieldNumber = 2,
-    kCardHolderFieldNumber = 3,
+    kCardHolderNameFieldNumber = 3,
     kExpmonthFieldNumber = 4,
     kExpyearFieldNumber = 5,
     kCvcFieldNumber = 6,
@@ -1371,18 +1371,18 @@ class Card final :
   std::string* _internal_mutable_number();
   public:
 
-  // string card_holder = 3 [json_name = "cardHolder"];
-  void clear_card_holder();
-  const std::string& card_holder() const;
+  // string card_holder_name = 3 [json_name = "cardHolderName"];
+  void clear_card_holder_name();
+  const std::string& card_holder_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_card_holder(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_card_holder();
-  PROTOBUF_MUST_USE_RESULT std::string* release_card_holder();
-  void set_allocated_card_holder(std::string* card_holder);
+  void set_card_holder_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_card_holder_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_card_holder_name();
+  void set_allocated_card_holder_name(std::string* card_holder_name);
   private:
-  const std::string& _internal_card_holder() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_card_holder(const std::string& value);
-  std::string* _internal_mutable_card_holder();
+  const std::string& _internal_card_holder_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_card_holder_name(const std::string& value);
+  std::string* _internal_mutable_card_holder_name();
   public:
 
   // string expmonth = 4 [json_name = "expmonth"];
@@ -1450,7 +1450,7 @@ class Card final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr number_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr card_holder_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr card_holder_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expmonth_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expyear_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cvc_;
@@ -5851,50 +5851,50 @@ inline void Card::set_allocated_number(std::string* number) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Card.number)
 }
 
-// string card_holder = 3 [json_name = "cardHolder"];
-inline void Card::clear_card_holder() {
-  card_holder_.ClearToEmpty();
+// string card_holder_name = 3 [json_name = "cardHolderName"];
+inline void Card::clear_card_holder_name() {
+  card_holder_name_.ClearToEmpty();
 }
-inline const std::string& Card::card_holder() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Card.card_holder)
-  return _internal_card_holder();
+inline const std::string& Card::card_holder_name() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Card.card_holder_name)
+  return _internal_card_holder_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Card::set_card_holder(ArgT0&& arg0, ArgT... args) {
+void Card::set_card_holder_name(ArgT0&& arg0, ArgT... args) {
  
- card_holder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Card.card_holder)
+ card_holder_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Card.card_holder_name)
 }
-inline std::string* Card::mutable_card_holder() {
-  std::string* _s = _internal_mutable_card_holder();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Card.card_holder)
+inline std::string* Card::mutable_card_holder_name() {
+  std::string* _s = _internal_mutable_card_holder_name();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Card.card_holder_name)
   return _s;
 }
-inline const std::string& Card::_internal_card_holder() const {
-  return card_holder_.Get();
+inline const std::string& Card::_internal_card_holder_name() const {
+  return card_holder_name_.Get();
 }
-inline void Card::_internal_set_card_holder(const std::string& value) {
+inline void Card::_internal_set_card_holder_name(const std::string& value) {
   
-  card_holder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  card_holder_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Card::_internal_mutable_card_holder() {
+inline std::string* Card::_internal_mutable_card_holder_name() {
   
-  return card_holder_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return card_holder_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Card::release_card_holder() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Card.card_holder)
-  return card_holder_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Card::release_card_holder_name() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Card.card_holder_name)
+  return card_holder_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Card::set_allocated_card_holder(std::string* card_holder) {
-  if (card_holder != nullptr) {
+inline void Card::set_allocated_card_holder_name(std::string* card_holder_name) {
+  if (card_holder_name != nullptr) {
     
   } else {
     
   }
-  card_holder_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), card_holder,
+  card_holder_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), card_holder_name,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Card.card_holder)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Card.card_holder_name)
 }
 
 // string expmonth = 4 [json_name = "expmonth"];
