@@ -22,9 +22,9 @@ class Card extends \Google\Protobuf\Internal\Message
      */
     protected $number = '';
     /**
-     * Generated from protobuf field <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+     * Generated from protobuf field <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
      */
-    protected $card_holder = '';
+    protected $card_holder_name = '';
     /**
      * Generated from protobuf field <code>string expmonth = 4 [json_name = "expmonth"];</code>
      */
@@ -50,7 +50,7 @@ class Card extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $number
-     *     @type string $card_holder
+     *     @type string $card_holder_name
      *     @type string $expmonth
      *     @type string $expyear
      *     @type string $cvc
@@ -107,23 +107,23 @@ class Card extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+     * Generated from protobuf field <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
      * @return string
      */
-    public function getCardHolder()
+    public function getCardHolderName()
     {
-        return $this->card_holder;
+        return $this->card_holder_name;
     }
 
     /**
-     * Generated from protobuf field <code>string card_holder = 3 [json_name = "cardHolder"];</code>
+     * Generated from protobuf field <code>string card_holder_name = 3 [json_name = "cardHolderName"];</code>
      * @param string $var
      * @return $this
      */
-    public function setCardHolder($var)
+    public function setCardHolderName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->card_holder = $var;
+        $this->card_holder_name = $var;
 
         return $this;
     }

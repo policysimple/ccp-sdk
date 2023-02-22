@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-ª
+³
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -65,12 +65,11 @@ priceBytes%
 alias (	Ralias
 
 token_card (	R	tokenCard*
-card (2.payment.v1alpha1.CardRcard"­
+card (2.payment.v1alpha1.CardRcard"¶
 Card
 id (	Rid
-number (	Rnumber
-card_holder (	R
-cardHolder
+number (	Rnumber(
+card_holder_name (	RcardHolderName
 expmonth (	Rexpmonth
 expyear (	Rexpyear
 cvc (	Rcvc

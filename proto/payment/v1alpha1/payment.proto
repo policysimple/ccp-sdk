@@ -54,7 +54,7 @@ message Payment {
 message Card {
   string id = 1;
   string number = 2;
-  string card_holder = 3;
+  string card_holder_name = 3;
   string expmonth = 4;
   string expyear = 5;
   string cvc = 6;

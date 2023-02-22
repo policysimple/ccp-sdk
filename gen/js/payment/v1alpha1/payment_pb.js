@@ -2075,7 +2075,7 @@ proto.payment.v1alpha1.Card.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     number: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    cardHolder: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    cardHolderName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     expmonth: jspb.Message.getFieldWithDefault(msg, 4, ""),
     expyear: jspb.Message.getFieldWithDefault(msg, 5, ""),
     cvc: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -2126,7 +2126,7 @@ proto.payment.v1alpha1.Card.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCardHolder(value);
+      msg.setCardHolderName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -2187,7 +2187,7 @@ proto.payment.v1alpha1.Card.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getCardHolder();
+  f = message.getCardHolderName();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -2262,10 +2262,10 @@ proto.payment.v1alpha1.Card.prototype.setNumber = function(value) {
 
 
 /**
- * optional string card_holder = 3;
+ * optional string card_holder_name = 3;
  * @return {string}
  */
-proto.payment.v1alpha1.Card.prototype.getCardHolder = function() {
+proto.payment.v1alpha1.Card.prototype.getCardHolderName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2274,7 +2274,7 @@ proto.payment.v1alpha1.Card.prototype.getCardHolder = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Card} returns this
  */
-proto.payment.v1alpha1.Card.prototype.setCardHolder = function(value) {
+proto.payment.v1alpha1.Card.prototype.setCardHolderName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
