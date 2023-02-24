@@ -14,6 +14,8 @@ service ApplicationService {
     rpc UpdateApplication(UpdateApplicationRequest) returns (UpdateApplicationResponse);
     rpc DeleteApplicationsByIntegration(DeleteApplicationsByIntegrationRequest) returns (DeleteApplicationsByIntegrationResponse);
     rpc ListApplicationsByOrganization(ListApplicationsByOrganizationRequest) returns (ListApplicationsByOrganizationResponse);
+    rpc ListApplicationsByIntegration(ListApplicationsByIntegrationRequest) returns (ListApplicationsByIntegrationResponse);
+
 }
 
 /* Integration with the application service */
@@ -81,6 +83,15 @@ message ListApplicationsByOrganizationRequest {
 }
 //List Application by organization
 message ListApplicationsByOrganizationResponse {
+    repeated Application applications = 1;
+}
+
+message ListApplicationsByIntegrationRequest {
+    string integration_id = 1;
+}
+
+
+message ListApplicationsByIntegrationResponse {
     repeated Application applications = 1;
 }
 

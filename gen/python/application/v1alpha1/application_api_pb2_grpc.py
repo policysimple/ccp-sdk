@@ -49,6 +49,11 @@ class ApplicationServiceStub(object):
         request_serializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByOrganizationRequest.SerializeToString,
         response_deserializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByOrganizationResponse.FromString,
         )
+    self.ListApplicationsByIntegration = channel.unary_unary(
+        '/application.v1alpha1.ApplicationService/ListApplicationsByIntegration',
+        request_serializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByIntegrationRequest.SerializeToString,
+        response_deserializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByIntegrationResponse.FromString,
+        )
 
 
 class ApplicationServiceServicer(object):
@@ -104,6 +109,13 @@ class ApplicationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListApplicationsByIntegration(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ApplicationServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -141,6 +153,11 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
           servicer.ListApplicationsByOrganization,
           request_deserializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByOrganizationRequest.FromString,
           response_serializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByOrganizationResponse.SerializeToString,
+      ),
+      'ListApplicationsByIntegration': grpc.unary_unary_rpc_method_handler(
+          servicer.ListApplicationsByIntegration,
+          request_deserializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByIntegrationRequest.FromString,
+          response_serializer=application_dot_v1alpha1_dot_application__api__pb2.ListApplicationsByIntegrationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

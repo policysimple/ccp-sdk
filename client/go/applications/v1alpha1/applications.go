@@ -137,3 +137,25 @@ func DeleteApplication(req *applicationpkgv1.DeleteApplicationRequest) (*applica
 	bylogs.LogInfo("DeleteApplicationRequestn", response)
 	return response, nil
 }
+
+func ListApplicationsByIntegration(integrationId string) (*applicationpkgv1.ListApplicationsByIntegrationResponse, error) {
+	bylogs.LogInfo("client ListApplicationsByIntegration")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.ListApplicationsByIntegration(ctx, &applicationpkgv1.ListApplicationsByIntegrationRequest{
+		IntegrationId: integrationId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("client list application", err)
+		return nil, fmt.Errorf("[ListApplicationsByIntegration] %w", err)
+
+	}
+	bylogs.LogInfo("client ListApplicationsByIntegration", response)
+	return response, nil
+}

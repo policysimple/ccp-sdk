@@ -17,7 +17,7 @@ class ApplicationApi
         \GPBMetadata\Application\V1Alpha1\Application::initOnce();
         $pool->internalAddGeneratedFile(
             '
-·
+‘
 *application/v1alpha1/application_api.protoapplication.v1alpha1"O
 &DeleteApplicationsByIntegrationRequest%
 integration_id (	RintegrationId";
@@ -54,7 +54,11 @@ project_id (	R	projectId\'
 %ListApplicationsByOrganizationRequest\'
 organization_id (	RorganizationId"o
 &ListApplicationsByOrganizationResponseE
-applications (2!.application.v1alpha1.ApplicationRapplications2’
+applications (2!.application.v1alpha1.ApplicationRapplications"M
+$ListApplicationsByIntegrationRequest%
+integration_id (	RintegrationId"n
+%ListApplicationsByIntegrationResponseE
+applications (2!.application.v1alpha1.ApplicationRapplications2­
 ApplicationServicet
 CreateApplication..application.v1alpha1.CreateApplicationRequest/.application.v1alpha1.CreateApplicationResponsen
 ListApplication,.application.v1alpha1.ListApplicationRequest-.application.v1alpha1.ListApplicationResponsek
@@ -62,7 +66,8 @@ project_id (	R	projectId\'
 DeleteApplication..application.v1alpha1.DeleteApplicationRequest/.application.v1alpha1.DeleteApplicationResponset
 UpdateApplication..application.v1alpha1.UpdateApplicationRequest/.application.v1alpha1.UpdateApplicationResponsež
 DeleteApplicationsByIntegration<.application.v1alpha1.DeleteApplicationsByIntegrationRequest=.application.v1alpha1.DeleteApplicationsByIntegrationResponse›
-ListApplicationsByOrganization;.application.v1alpha1.ListApplicationsByOrganizationRequest<.application.v1alpha1.ListApplicationsByOrganizationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
+ListApplicationsByOrganization;.application.v1alpha1.ListApplicationsByOrganizationRequest<.application.v1alpha1.ListApplicationsByOrganizationResponse˜
+ListApplicationsByIntegration:.application.v1alpha1.ListApplicationsByIntegrationRequest;.application.v1alpha1.ListApplicationsByIntegrationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
