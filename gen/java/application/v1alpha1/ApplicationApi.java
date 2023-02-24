@@ -9567,6 +9567,1367 @@ public final class ApplicationApi {
 
   }
 
+  public interface ListApplicationsByIntegrationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.ListApplicationsByIntegrationRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * @return The integrationId.
+     */
+    java.lang.String getIntegrationId();
+    /**
+     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * @return The bytes for integrationId.
+     */
+    com.google.protobuf.ByteString
+        getIntegrationIdBytes();
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.ListApplicationsByIntegrationRequest}
+   */
+  public static final class ListApplicationsByIntegrationRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.ListApplicationsByIntegrationRequest)
+      ListApplicationsByIntegrationRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListApplicationsByIntegrationRequest.newBuilder() to construct.
+    private ListApplicationsByIntegrationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListApplicationsByIntegrationRequest() {
+      integrationId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListApplicationsByIntegrationRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListApplicationsByIntegrationRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              integrationId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.class, application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.Builder.class);
+    }
+
+    public static final int INTEGRATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object integrationId_;
+    /**
+     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * @return The integrationId.
+     */
+    @java.lang.Override
+    public java.lang.String getIntegrationId() {
+      java.lang.Object ref = integrationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        integrationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+     * @return The bytes for integrationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIntegrationIdBytes() {
+      java.lang.Object ref = integrationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        integrationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIntegrationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, integrationId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIntegrationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, integrationId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest other = (application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest) obj;
+
+      if (!getIntegrationId()
+          .equals(other.getIntegrationId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INTEGRATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getIntegrationId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.ListApplicationsByIntegrationRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.ListApplicationsByIntegrationRequest)
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.class, application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        integrationId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest build() {
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest buildPartial() {
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest result = new application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest(this);
+        result.integrationId_ = integrationId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest) {
+          return mergeFrom((application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest other) {
+        if (other == application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest.getDefaultInstance()) return this;
+        if (!other.getIntegrationId().isEmpty()) {
+          integrationId_ = other.integrationId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object integrationId_ = "";
+      /**
+       * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+       * @return The integrationId.
+       */
+      public java.lang.String getIntegrationId() {
+        java.lang.Object ref = integrationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          integrationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+       * @return The bytes for integrationId.
+       */
+      public com.google.protobuf.ByteString
+          getIntegrationIdBytes() {
+        java.lang.Object ref = integrationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          integrationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+       * @param value The integrationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIntegrationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        integrationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIntegrationId() {
+        
+        integrationId_ = getDefaultInstance().getIntegrationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string integration_id = 1 [json_name = "integrationId"];</code>
+       * @param value The bytes for integrationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIntegrationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        integrationId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.ListApplicationsByIntegrationRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationsByIntegrationRequest)
+    private static final application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest();
+    }
+
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListApplicationsByIntegrationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListApplicationsByIntegrationRequest>() {
+      @java.lang.Override
+      public ListApplicationsByIntegrationRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListApplicationsByIntegrationRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListApplicationsByIntegrationRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListApplicationsByIntegrationRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListApplicationsByIntegrationResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.ListApplicationsByIntegrationResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    java.util.List<application.v1alpha1.ApplicationOuterClass.Application> 
+        getApplicationsList();
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    application.v1alpha1.ApplicationOuterClass.Application getApplications(int index);
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    int getApplicationsCount();
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+        getApplicationsOrBuilderList();
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.ListApplicationsByIntegrationResponse}
+   */
+  public static final class ListApplicationsByIntegrationResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.ListApplicationsByIntegrationResponse)
+      ListApplicationsByIntegrationResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListApplicationsByIntegrationResponse.newBuilder() to construct.
+    private ListApplicationsByIntegrationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListApplicationsByIntegrationResponse() {
+      applications_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListApplicationsByIntegrationResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListApplicationsByIntegrationResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                applications_ = new java.util.ArrayList<application.v1alpha1.ApplicationOuterClass.Application>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              applications_.add(
+                  input.readMessage(application.v1alpha1.ApplicationOuterClass.Application.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          applications_ = java.util.Collections.unmodifiableList(applications_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.class, application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.Builder.class);
+    }
+
+    public static final int APPLICATIONS_FIELD_NUMBER = 1;
+    private java.util.List<application.v1alpha1.ApplicationOuterClass.Application> applications_;
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<application.v1alpha1.ApplicationOuterClass.Application> getApplicationsList() {
+      return applications_;
+    }
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+        getApplicationsOrBuilderList() {
+      return applications_;
+    }
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    @java.lang.Override
+    public int getApplicationsCount() {
+      return applications_.size();
+    }
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.Application getApplications(int index) {
+      return applications_.get(index);
+    }
+    /**
+     * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
+        int index) {
+      return applications_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < applications_.size(); i++) {
+        output.writeMessage(1, applications_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < applications_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, applications_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse other = (application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse) obj;
+
+      if (!getApplicationsList()
+          .equals(other.getApplicationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getApplicationsCount() > 0) {
+        hash = (37 * hash) + APPLICATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getApplicationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.ListApplicationsByIntegrationResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.ListApplicationsByIntegrationResponse)
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.class, application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getApplicationsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (applicationsBuilder_ == null) {
+          applications_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          applicationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationApi.internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse build() {
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse buildPartial() {
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse result = new application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (applicationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            applications_ = java.util.Collections.unmodifiableList(applications_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.applications_ = applications_;
+        } else {
+          result.applications_ = applicationsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse) {
+          return mergeFrom((application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse other) {
+        if (other == application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse.getDefaultInstance()) return this;
+        if (applicationsBuilder_ == null) {
+          if (!other.applications_.isEmpty()) {
+            if (applications_.isEmpty()) {
+              applications_ = other.applications_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureApplicationsIsMutable();
+              applications_.addAll(other.applications_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.applications_.isEmpty()) {
+            if (applicationsBuilder_.isEmpty()) {
+              applicationsBuilder_.dispose();
+              applicationsBuilder_ = null;
+              applications_ = other.applications_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              applicationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getApplicationsFieldBuilder() : null;
+            } else {
+              applicationsBuilder_.addAllMessages(other.applications_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<application.v1alpha1.ApplicationOuterClass.Application> applications_ =
+        java.util.Collections.emptyList();
+      private void ensureApplicationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          applications_ = new java.util.ArrayList<application.v1alpha1.ApplicationOuterClass.Application>(applications_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> applicationsBuilder_;
+
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public java.util.List<application.v1alpha1.ApplicationOuterClass.Application> getApplicationsList() {
+        if (applicationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(applications_);
+        } else {
+          return applicationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public int getApplicationsCount() {
+        if (applicationsBuilder_ == null) {
+          return applications_.size();
+        } else {
+          return applicationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Application getApplications(int index) {
+        if (applicationsBuilder_ == null) {
+          return applications_.get(index);
+        } else {
+          return applicationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder setApplications(
+          int index, application.v1alpha1.ApplicationOuterClass.Application value) {
+        if (applicationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApplicationsIsMutable();
+          applications_.set(index, value);
+          onChanged();
+        } else {
+          applicationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder setApplications(
+          int index, application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+        if (applicationsBuilder_ == null) {
+          ensureApplicationsIsMutable();
+          applications_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          applicationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder addApplications(application.v1alpha1.ApplicationOuterClass.Application value) {
+        if (applicationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApplicationsIsMutable();
+          applications_.add(value);
+          onChanged();
+        } else {
+          applicationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder addApplications(
+          int index, application.v1alpha1.ApplicationOuterClass.Application value) {
+        if (applicationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApplicationsIsMutable();
+          applications_.add(index, value);
+          onChanged();
+        } else {
+          applicationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder addApplications(
+          application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+        if (applicationsBuilder_ == null) {
+          ensureApplicationsIsMutable();
+          applications_.add(builderForValue.build());
+          onChanged();
+        } else {
+          applicationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder addApplications(
+          int index, application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+        if (applicationsBuilder_ == null) {
+          ensureApplicationsIsMutable();
+          applications_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          applicationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder addAllApplications(
+          java.lang.Iterable<? extends application.v1alpha1.ApplicationOuterClass.Application> values) {
+        if (applicationsBuilder_ == null) {
+          ensureApplicationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, applications_);
+          onChanged();
+        } else {
+          applicationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder clearApplications() {
+        if (applicationsBuilder_ == null) {
+          applications_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          applicationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public Builder removeApplications(int index) {
+        if (applicationsBuilder_ == null) {
+          ensureApplicationsIsMutable();
+          applications_.remove(index);
+          onChanged();
+        } else {
+          applicationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Application.Builder getApplicationsBuilder(
+          int index) {
+        return getApplicationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationsOrBuilder(
+          int index) {
+        if (applicationsBuilder_ == null) {
+          return applications_.get(index);  } else {
+          return applicationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public java.util.List<? extends application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+           getApplicationsOrBuilderList() {
+        if (applicationsBuilder_ != null) {
+          return applicationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(applications_);
+        }
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Application.Builder addApplicationsBuilder() {
+        return getApplicationsFieldBuilder().addBuilder(
+            application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.Application.Builder addApplicationsBuilder(
+          int index) {
+        return getApplicationsFieldBuilder().addBuilder(
+            index, application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];</code>
+       */
+      public java.util.List<application.v1alpha1.ApplicationOuterClass.Application.Builder> 
+           getApplicationsBuilderList() {
+        return getApplicationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+          getApplicationsFieldBuilder() {
+        if (applicationsBuilder_ == null) {
+          applicationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder>(
+                  applications_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          applications_ = null;
+        }
+        return applicationsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.ListApplicationsByIntegrationResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationsByIntegrationResponse)
+    private static final application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse();
+    }
+
+    public static application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListApplicationsByIntegrationResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListApplicationsByIntegrationResponse>() {
+      @java.lang.Override
+      public ListApplicationsByIntegrationResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListApplicationsByIntegrationResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListApplicationsByIntegrationResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListApplicationsByIntegrationResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationApi.ListApplicationsByIntegrationResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_application_v1alpha1_DeleteApplicationsByIntegrationRequest_descriptor;
   private static final 
@@ -9637,6 +10998,16 @@ public final class ApplicationApi {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_application_v1alpha1_ListApplicationsByOrganizationResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9678,31 +11049,40 @@ public final class ApplicationApi {
       "R\016organizationId\"o\n&ListApplicationsByOr" +
       "ganizationResponse\022E\n\014applications\030\001 \003(\013" +
       "2!.application.v1alpha1.ApplicationR\014app" +
-      "lications2\222\007\n\022ApplicationService\022t\n\021Crea" +
-      "teApplication\022..application.v1alpha1.Cre" +
-      "ateApplicationRequest\032/.application.v1al" +
-      "pha1.CreateApplicationResponse\022n\n\017ListAp" +
-      "plication\022,.application.v1alpha1.ListApp" +
-      "licationRequest\032-.application.v1alpha1.L" +
-      "istApplicationResponse\022k\n\016GetApplication" +
-      "\022+.application.v1alpha1.GetApplicationRe" +
-      "quest\032,.application.v1alpha1.GetApplicat" +
-      "ionResponse\022t\n\021DeleteApplication\022..appli" +
-      "cation.v1alpha1.DeleteApplicationRequest" +
-      "\032/.application.v1alpha1.DeleteApplicatio" +
-      "nResponse\022t\n\021UpdateApplication\022..applica" +
-      "tion.v1alpha1.UpdateApplicationRequest\032/" +
-      ".application.v1alpha1.UpdateApplicationR" +
-      "esponse\022\236\001\n\037DeleteApplicationsByIntegrat" +
-      "ion\022<.application.v1alpha1.DeleteApplica" +
-      "tionsByIntegrationRequest\032=.application." +
-      "v1alpha1.DeleteApplicationsByIntegration" +
-      "Response\022\233\001\n\036ListApplicationsByOrganizat" +
-      "ion\022;.application.v1alpha1.ListApplicati" +
-      "onsByOrganizationRequest\032<.application.v" +
-      "1alpha1.ListApplicationsByOrganizationRe" +
-      "sponseB7Z5github.com/cuemby/ccp-sdk/gen/" +
-      "go/application/v1alpha1b\006proto3"
+      "lications\"M\n$ListApplicationsByIntegrati" +
+      "onRequest\022%\n\016integration_id\030\001 \001(\tR\rinteg" +
+      "rationId\"n\n%ListApplicationsByIntegratio" +
+      "nResponse\022E\n\014applications\030\001 \003(\0132!.applic" +
+      "ation.v1alpha1.ApplicationR\014applications" +
+      "2\255\010\n\022ApplicationService\022t\n\021CreateApplica" +
+      "tion\022..application.v1alpha1.CreateApplic" +
+      "ationRequest\032/.application.v1alpha1.Crea" +
+      "teApplicationResponse\022n\n\017ListApplication" +
+      "\022,.application.v1alpha1.ListApplicationR" +
+      "equest\032-.application.v1alpha1.ListApplic" +
+      "ationResponse\022k\n\016GetApplication\022+.applic" +
+      "ation.v1alpha1.GetApplicationRequest\032,.a" +
+      "pplication.v1alpha1.GetApplicationRespon" +
+      "se\022t\n\021DeleteApplication\022..application.v1" +
+      "alpha1.DeleteApplicationRequest\032/.applic" +
+      "ation.v1alpha1.DeleteApplicationResponse" +
+      "\022t\n\021UpdateApplication\022..application.v1al" +
+      "pha1.UpdateApplicationRequest\032/.applicat" +
+      "ion.v1alpha1.UpdateApplicationResponse\022\236" +
+      "\001\n\037DeleteApplicationsByIntegration\022<.app" +
+      "lication.v1alpha1.DeleteApplicationsByIn" +
+      "tegrationRequest\032=.application.v1alpha1." +
+      "DeleteApplicationsByIntegrationResponse\022" +
+      "\233\001\n\036ListApplicationsByOrganization\022;.app" +
+      "lication.v1alpha1.ListApplicationsByOrga" +
+      "nizationRequest\032<.application.v1alpha1.L" +
+      "istApplicationsByOrganizationResponse\022\230\001" +
+      "\n\035ListApplicationsByIntegration\022:.applic" +
+      "ation.v1alpha1.ListApplicationsByIntegra" +
+      "tionRequest\032;.application.v1alpha1.ListA" +
+      "pplicationsByIntegrationResponseB7Z5gith" +
+      "ub.com/cuemby/ccp-sdk/gen/go/application" +
+      "/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9792,6 +11172,18 @@ public final class ApplicationApi {
     internal_static_application_v1alpha1_ListApplicationsByOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplicationsByOrganizationResponse_descriptor,
+        new java.lang.String[] { "Applications", });
+    internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_ListApplicationsByIntegrationRequest_descriptor,
+        new java.lang.String[] { "IntegrationId", });
+    internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_ListApplicationsByIntegrationResponse_descriptor,
         new java.lang.String[] { "Applications", });
     application.v1alpha1.ApplicationOuterClass.getDescriptor();
   }

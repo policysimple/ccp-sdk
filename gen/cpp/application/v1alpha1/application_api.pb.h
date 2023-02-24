@@ -47,7 +47,7 @@ struct TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +86,12 @@ extern ListApplicationRequestDefaultTypeInternal _ListApplicationRequest_default
 class ListApplicationResponse;
 struct ListApplicationResponseDefaultTypeInternal;
 extern ListApplicationResponseDefaultTypeInternal _ListApplicationResponse_default_instance_;
+class ListApplicationsByIntegrationRequest;
+struct ListApplicationsByIntegrationRequestDefaultTypeInternal;
+extern ListApplicationsByIntegrationRequestDefaultTypeInternal _ListApplicationsByIntegrationRequest_default_instance_;
+class ListApplicationsByIntegrationResponse;
+struct ListApplicationsByIntegrationResponseDefaultTypeInternal;
+extern ListApplicationsByIntegrationResponseDefaultTypeInternal _ListApplicationsByIntegrationResponse_default_instance_;
 class ListApplicationsByOrganizationRequest;
 struct ListApplicationsByOrganizationRequestDefaultTypeInternal;
 extern ListApplicationsByOrganizationRequestDefaultTypeInternal _ListApplicationsByOrganizationRequest_default_instance_;
@@ -111,6 +117,8 @@ template<> ::application::v1alpha1::GetApplicationRequest* Arena::CreateMaybeMes
 template<> ::application::v1alpha1::GetApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::GetApplicationResponse>(Arena*);
 template<> ::application::v1alpha1::ListApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationRequest>(Arena*);
 template<> ::application::v1alpha1::ListApplicationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationResponse>(Arena*);
+template<> ::application::v1alpha1::ListApplicationsByIntegrationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationsByIntegrationRequest>(Arena*);
+template<> ::application::v1alpha1::ListApplicationsByIntegrationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationsByIntegrationResponse>(Arena*);
 template<> ::application::v1alpha1::ListApplicationsByOrganizationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationsByOrganizationRequest>(Arena*);
 template<> ::application::v1alpha1::ListApplicationsByOrganizationResponse* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplicationsByOrganizationResponse>(Arena*);
 template<> ::application::v1alpha1::UpdateApplicationRequest* Arena::CreateMaybeMessage<::application::v1alpha1::UpdateApplicationRequest>(Arena*);
@@ -2251,6 +2259,298 @@ class ListApplicationsByOrganizationResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ListApplicationsByIntegrationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.ListApplicationsByIntegrationRequest) */ {
+ public:
+  inline ListApplicationsByIntegrationRequest() : ListApplicationsByIntegrationRequest(nullptr) {}
+  ~ListApplicationsByIntegrationRequest() override;
+  explicit constexpr ListApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListApplicationsByIntegrationRequest(const ListApplicationsByIntegrationRequest& from);
+  ListApplicationsByIntegrationRequest(ListApplicationsByIntegrationRequest&& from) noexcept
+    : ListApplicationsByIntegrationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListApplicationsByIntegrationRequest& operator=(const ListApplicationsByIntegrationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListApplicationsByIntegrationRequest& operator=(ListApplicationsByIntegrationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListApplicationsByIntegrationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListApplicationsByIntegrationRequest* internal_default_instance() {
+    return reinterpret_cast<const ListApplicationsByIntegrationRequest*>(
+               &_ListApplicationsByIntegrationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(ListApplicationsByIntegrationRequest& a, ListApplicationsByIntegrationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListApplicationsByIntegrationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListApplicationsByIntegrationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListApplicationsByIntegrationRequest* New() const final {
+    return new ListApplicationsByIntegrationRequest();
+  }
+
+  ListApplicationsByIntegrationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListApplicationsByIntegrationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListApplicationsByIntegrationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListApplicationsByIntegrationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListApplicationsByIntegrationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "application.v1alpha1.ListApplicationsByIntegrationRequest";
+  }
+  protected:
+  explicit ListApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIntegrationIdFieldNumber = 1,
+  };
+  // string integration_id = 1 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationsByIntegrationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListApplicationsByIntegrationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.ListApplicationsByIntegrationResponse) */ {
+ public:
+  inline ListApplicationsByIntegrationResponse() : ListApplicationsByIntegrationResponse(nullptr) {}
+  ~ListApplicationsByIntegrationResponse() override;
+  explicit constexpr ListApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListApplicationsByIntegrationResponse(const ListApplicationsByIntegrationResponse& from);
+  ListApplicationsByIntegrationResponse(ListApplicationsByIntegrationResponse&& from) noexcept
+    : ListApplicationsByIntegrationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListApplicationsByIntegrationResponse& operator=(const ListApplicationsByIntegrationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListApplicationsByIntegrationResponse& operator=(ListApplicationsByIntegrationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListApplicationsByIntegrationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListApplicationsByIntegrationResponse* internal_default_instance() {
+    return reinterpret_cast<const ListApplicationsByIntegrationResponse*>(
+               &_ListApplicationsByIntegrationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(ListApplicationsByIntegrationResponse& a, ListApplicationsByIntegrationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListApplicationsByIntegrationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListApplicationsByIntegrationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListApplicationsByIntegrationResponse* New() const final {
+    return new ListApplicationsByIntegrationResponse();
+  }
+
+  ListApplicationsByIntegrationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListApplicationsByIntegrationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListApplicationsByIntegrationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListApplicationsByIntegrationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListApplicationsByIntegrationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "application.v1alpha1.ListApplicationsByIntegrationResponse";
+  }
+  protected:
+  explicit ListApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApplicationsFieldNumber = 1,
+  };
+  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+  int applications_size() const;
+  private:
+  int _internal_applications_size() const;
+  public:
+  void clear_applications();
+  ::application::v1alpha1::Application* mutable_applications(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >*
+      mutable_applications();
+  private:
+  const ::application::v1alpha1::Application& _internal_applications(int index) const;
+  ::application::v1alpha1::Application* _internal_add_applications();
+  public:
+  const ::application::v1alpha1::Application& applications(int index) const;
+  ::application::v1alpha1::Application* add_applications();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >&
+      applications() const;
+
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationsByIntegrationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application > applications_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -3340,9 +3640,104 @@ ListApplicationsByOrganizationResponse::applications() const {
   return applications_;
 }
 
+// -------------------------------------------------------------------
+
+// ListApplicationsByIntegrationRequest
+
+// string integration_id = 1 [json_name = "integrationId"];
+inline void ListApplicationsByIntegrationRequest::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& ListApplicationsByIntegrationRequest::integration_id() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListApplicationsByIntegrationRequest::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id)
+}
+inline std::string* ListApplicationsByIntegrationRequest::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id)
+  return _s;
+}
+inline const std::string& ListApplicationsByIntegrationRequest::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void ListApplicationsByIntegrationRequest::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListApplicationsByIntegrationRequest::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListApplicationsByIntegrationRequest::release_integration_id() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListApplicationsByIntegrationRequest::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id)
+}
+
+// -------------------------------------------------------------------
+
+// ListApplicationsByIntegrationResponse
+
+// repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+inline int ListApplicationsByIntegrationResponse::_internal_applications_size() const {
+  return applications_.size();
+}
+inline int ListApplicationsByIntegrationResponse::applications_size() const {
+  return _internal_applications_size();
+}
+inline ::application::v1alpha1::Application* ListApplicationsByIntegrationResponse::mutable_applications(int index) {
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ListApplicationsByIntegrationResponse.applications)
+  return applications_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >*
+ListApplicationsByIntegrationResponse::mutable_applications() {
+  // @@protoc_insertion_point(field_mutable_list:application.v1alpha1.ListApplicationsByIntegrationResponse.applications)
+  return &applications_;
+}
+inline const ::application::v1alpha1::Application& ListApplicationsByIntegrationResponse::_internal_applications(int index) const {
+  return applications_.Get(index);
+}
+inline const ::application::v1alpha1::Application& ListApplicationsByIntegrationResponse::applications(int index) const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplicationsByIntegrationResponse.applications)
+  return _internal_applications(index);
+}
+inline ::application::v1alpha1::Application* ListApplicationsByIntegrationResponse::_internal_add_applications() {
+  return applications_.Add();
+}
+inline ::application::v1alpha1::Application* ListApplicationsByIntegrationResponse::add_applications() {
+  ::application::v1alpha1::Application* _add = _internal_add_applications();
+  // @@protoc_insertion_point(field_add:application.v1alpha1.ListApplicationsByIntegrationResponse.applications)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::application::v1alpha1::Application >&
+ListApplicationsByIntegrationResponse::applications() const {
+  // @@protoc_insertion_point(field_list:application.v1alpha1.ListApplicationsByIntegrationResponse.applications)
+  return applications_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

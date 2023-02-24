@@ -192,9 +192,33 @@ struct ListApplicationsByOrganizationResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListApplicationsByOrganizationResponseDefaultTypeInternal _ListApplicationsByOrganizationResponse_default_instance_;
+constexpr ListApplicationsByIntegrationRequest::ListApplicationsByIntegrationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ListApplicationsByIntegrationRequestDefaultTypeInternal {
+  constexpr ListApplicationsByIntegrationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListApplicationsByIntegrationRequestDefaultTypeInternal() {}
+  union {
+    ListApplicationsByIntegrationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListApplicationsByIntegrationRequestDefaultTypeInternal _ListApplicationsByIntegrationRequest_default_instance_;
+constexpr ListApplicationsByIntegrationResponse::ListApplicationsByIntegrationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : applications_(){}
+struct ListApplicationsByIntegrationResponseDefaultTypeInternal {
+  constexpr ListApplicationsByIntegrationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListApplicationsByIntegrationResponseDefaultTypeInternal() {}
+  union {
+    ListApplicationsByIntegrationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListApplicationsByIntegrationResponseDefaultTypeInternal _ListApplicationsByIntegrationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace application
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto[14];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto[16];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_application_2fv1alpha1_2fapplication_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_application_2fv1alpha1_2fapplication_5fapi_2eproto = nullptr;
 
@@ -289,6 +313,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplicationsByOrganizationResponse, applications_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplicationsByIntegrationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplicationsByIntegrationRequest, integration_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplicationsByIntegrationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplicationsByIntegrationResponse, applications_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::application::v1alpha1::DeleteApplicationsByIntegrationRequest)},
@@ -305,6 +341,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 72, -1, sizeof(::application::v1alpha1::UpdateApplicationResponse)},
   { 78, -1, sizeof(::application::v1alpha1::ListApplicationsByOrganizationRequest)},
   { 84, -1, sizeof(::application::v1alpha1::ListApplicationsByOrganizationResponse)},
+  { 90, -1, sizeof(::application::v1alpha1::ListApplicationsByIntegrationRequest)},
+  { 96, -1, sizeof(::application::v1alpha1::ListApplicationsByIntegrationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -322,6 +360,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_UpdateApplicationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ListApplicationsByOrganizationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ListApplicationsByOrganizationResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ListApplicationsByIntegrationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ListApplicationsByIntegrationResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -357,39 +397,48 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_
   "R\016organizationId\"o\n&ListApplicationsByOr"
   "ganizationResponse\022E\n\014applications\030\001 \003(\013"
   "2!.application.v1alpha1.ApplicationR\014app"
-  "lications2\222\007\n\022ApplicationService\022t\n\021Crea"
-  "teApplication\022..application.v1alpha1.Cre"
-  "ateApplicationRequest\032/.application.v1al"
-  "pha1.CreateApplicationResponse\022n\n\017ListAp"
-  "plication\022,.application.v1alpha1.ListApp"
-  "licationRequest\032-.application.v1alpha1.L"
-  "istApplicationResponse\022k\n\016GetApplication"
-  "\022+.application.v1alpha1.GetApplicationRe"
-  "quest\032,.application.v1alpha1.GetApplicat"
-  "ionResponse\022t\n\021DeleteApplication\022..appli"
-  "cation.v1alpha1.DeleteApplicationRequest"
-  "\032/.application.v1alpha1.DeleteApplicatio"
-  "nResponse\022t\n\021UpdateApplication\022..applica"
-  "tion.v1alpha1.UpdateApplicationRequest\032/"
-  ".application.v1alpha1.UpdateApplicationR"
-  "esponse\022\236\001\n\037DeleteApplicationsByIntegrat"
-  "ion\022<.application.v1alpha1.DeleteApplica"
-  "tionsByIntegrationRequest\032=.application."
-  "v1alpha1.DeleteApplicationsByIntegration"
-  "Response\022\233\001\n\036ListApplicationsByOrganizat"
-  "ion\022;.application.v1alpha1.ListApplicati"
-  "onsByOrganizationRequest\032<.application.v"
-  "1alpha1.ListApplicationsByOrganizationRe"
-  "sponseB7Z5github.com/cuemby/ccp-sdk/gen/"
-  "go/application/v1alpha1b\006proto3"
+  "lications\"M\n$ListApplicationsByIntegrati"
+  "onRequest\022%\n\016integration_id\030\001 \001(\tR\rinteg"
+  "rationId\"n\n%ListApplicationsByIntegratio"
+  "nResponse\022E\n\014applications\030\001 \003(\0132!.applic"
+  "ation.v1alpha1.ApplicationR\014applications"
+  "2\255\010\n\022ApplicationService\022t\n\021CreateApplica"
+  "tion\022..application.v1alpha1.CreateApplic"
+  "ationRequest\032/.application.v1alpha1.Crea"
+  "teApplicationResponse\022n\n\017ListApplication"
+  "\022,.application.v1alpha1.ListApplicationR"
+  "equest\032-.application.v1alpha1.ListApplic"
+  "ationResponse\022k\n\016GetApplication\022+.applic"
+  "ation.v1alpha1.GetApplicationRequest\032,.a"
+  "pplication.v1alpha1.GetApplicationRespon"
+  "se\022t\n\021DeleteApplication\022..application.v1"
+  "alpha1.DeleteApplicationRequest\032/.applic"
+  "ation.v1alpha1.DeleteApplicationResponse"
+  "\022t\n\021UpdateApplication\022..application.v1al"
+  "pha1.UpdateApplicationRequest\032/.applicat"
+  "ion.v1alpha1.UpdateApplicationResponse\022\236"
+  "\001\n\037DeleteApplicationsByIntegration\022<.app"
+  "lication.v1alpha1.DeleteApplicationsByIn"
+  "tegrationRequest\032=.application.v1alpha1."
+  "DeleteApplicationsByIntegrationResponse\022"
+  "\233\001\n\036ListApplicationsByOrganization\022;.app"
+  "lication.v1alpha1.ListApplicationsByOrga"
+  "nizationRequest\032<.application.v1alpha1.L"
+  "istApplicationsByOrganizationResponse\022\230\001"
+  "\n\035ListApplicationsByIntegration\022:.applic"
+  "ation.v1alpha1.ListApplicationsByIntegra"
+  "tionRequest\032;.application.v1alpha1.ListA"
+  "pplicationsByIntegrationResponseB7Z5gith"
+  "ub.com/cuemby/ccp-sdk/gen/go/application"
+  "/v1alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_deps[1] = {
   &::descriptor_table_application_2fv1alpha1_2fapplication_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto = {
-  false, false, 2271, descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_2eproto, "application/v1alpha1/application_api.proto", 
-  &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once, descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_deps, 1, 14,
+  false, false, 2617, descriptor_table_protodef_application_2fv1alpha1_2fapplication_5fapi_2eproto, "application/v1alpha1/application_api.proto", 
+  &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once, descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_deps, 1, 16,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_5fapi_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_5fapi_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_5fapi_2eproto,
 };
@@ -3452,6 +3501,399 @@ void ListApplicationsByOrganizationResponse::InternalSwap(ListApplicationsByOrga
       file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto[13]);
 }
 
+// ===================================================================
+
+class ListApplicationsByIntegrationRequest::_Internal {
+ public:
+};
+
+ListApplicationsByIntegrationRequest::ListApplicationsByIntegrationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.ListApplicationsByIntegrationRequest)
+}
+ListApplicationsByIntegrationRequest::ListApplicationsByIntegrationRequest(const ListApplicationsByIntegrationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_integration_id().empty()) {
+    integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.ListApplicationsByIntegrationRequest)
+}
+
+inline void ListApplicationsByIntegrationRequest::SharedCtor() {
+integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ListApplicationsByIntegrationRequest::~ListApplicationsByIntegrationRequest() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ListApplicationsByIntegrationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ListApplicationsByIntegrationRequest::ArenaDtor(void* object) {
+  ListApplicationsByIntegrationRequest* _this = reinterpret_cast< ListApplicationsByIntegrationRequest* >(object);
+  (void)_this;
+}
+void ListApplicationsByIntegrationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListApplicationsByIntegrationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListApplicationsByIntegrationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  integration_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListApplicationsByIntegrationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string integration_id = 1 [json_name = "integrationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_integration_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListApplicationsByIntegrationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string integration_id = 1 [json_name = "integrationId"];
+  if (!this->_internal_integration_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_integration_id().data(), static_cast<int>(this->_internal_integration_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_integration_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  return target;
+}
+
+size_t ListApplicationsByIntegrationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string integration_id = 1 [json_name = "integrationId"];
+  if (!this->_internal_integration_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_integration_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListApplicationsByIntegrationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ListApplicationsByIntegrationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListApplicationsByIntegrationRequest::GetClassData() const { return &_class_data_; }
+
+void ListApplicationsByIntegrationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ListApplicationsByIntegrationRequest *>(to)->MergeFrom(
+      static_cast<const ListApplicationsByIntegrationRequest &>(from));
+}
+
+
+void ListApplicationsByIntegrationRequest::MergeFrom(const ListApplicationsByIntegrationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_integration_id().empty()) {
+    _internal_set_integration_id(from._internal_integration_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ListApplicationsByIntegrationRequest::CopyFrom(const ListApplicationsByIntegrationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListApplicationsByIntegrationRequest::IsInitialized() const {
+  return true;
+}
+
+void ListApplicationsByIntegrationRequest::InternalSwap(ListApplicationsByIntegrationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &integration_id_, GetArenaForAllocation(),
+      &other->integration_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListApplicationsByIntegrationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto[14]);
+}
+
+// ===================================================================
+
+class ListApplicationsByIntegrationResponse::_Internal {
+ public:
+};
+
+void ListApplicationsByIntegrationResponse::clear_applications() {
+  applications_.Clear();
+}
+ListApplicationsByIntegrationResponse::ListApplicationsByIntegrationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  applications_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.ListApplicationsByIntegrationResponse)
+}
+ListApplicationsByIntegrationResponse::ListApplicationsByIntegrationResponse(const ListApplicationsByIntegrationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      applications_(from.applications_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.ListApplicationsByIntegrationResponse)
+}
+
+inline void ListApplicationsByIntegrationResponse::SharedCtor() {
+}
+
+ListApplicationsByIntegrationResponse::~ListApplicationsByIntegrationResponse() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ListApplicationsByIntegrationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ListApplicationsByIntegrationResponse::ArenaDtor(void* object) {
+  ListApplicationsByIntegrationResponse* _this = reinterpret_cast< ListApplicationsByIntegrationResponse* >(object);
+  (void)_this;
+}
+void ListApplicationsByIntegrationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListApplicationsByIntegrationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListApplicationsByIntegrationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  applications_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListApplicationsByIntegrationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_applications(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListApplicationsByIntegrationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_applications_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_applications(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  return target;
+}
+
+size_t ListApplicationsByIntegrationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .application.v1alpha1.Application applications = 1 [json_name = "applications"];
+  total_size += 1UL * this->_internal_applications_size();
+  for (const auto& msg : this->applications_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListApplicationsByIntegrationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ListApplicationsByIntegrationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListApplicationsByIntegrationResponse::GetClassData() const { return &_class_data_; }
+
+void ListApplicationsByIntegrationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ListApplicationsByIntegrationResponse *>(to)->MergeFrom(
+      static_cast<const ListApplicationsByIntegrationResponse &>(from));
+}
+
+
+void ListApplicationsByIntegrationResponse::MergeFrom(const ListApplicationsByIntegrationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  applications_.MergeFrom(from.applications_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ListApplicationsByIntegrationResponse::CopyFrom(const ListApplicationsByIntegrationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListApplicationsByIntegrationResponse::IsInitialized() const {
+  return true;
+}
+
+void ListApplicationsByIntegrationResponse::InternalSwap(ListApplicationsByIntegrationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  applications_.InternalSwap(&other->applications_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListApplicationsByIntegrationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_5fapi_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_5fapi_2eproto[15]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace application
@@ -3497,6 +3939,12 @@ template<> PROTOBUF_NOINLINE ::application::v1alpha1::ListApplicationsByOrganiza
 }
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::ListApplicationsByOrganizationResponse* Arena::CreateMaybeMessage< ::application::v1alpha1::ListApplicationsByOrganizationResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::ListApplicationsByOrganizationResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::ListApplicationsByIntegrationRequest* Arena::CreateMaybeMessage< ::application::v1alpha1::ListApplicationsByIntegrationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::ListApplicationsByIntegrationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::ListApplicationsByIntegrationResponse* Arena::CreateMaybeMessage< ::application::v1alpha1::ListApplicationsByIntegrationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::ListApplicationsByIntegrationResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
