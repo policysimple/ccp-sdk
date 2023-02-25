@@ -138,7 +138,6 @@ func DeleteApplication(req *applicationpkgv1.DeleteApplicationRequest) (*applica
 	return response, nil
 }
 
-
 func ListApplicationByIntegration(integrationId string) (response *applicationpkgv1.ListApplicationsByIntegrationResponse, err error) {
 	bylogs.LogInfo("client ListApplicationByIntegration")
 	d, err := time.ParseDuration(applicationServiceTimeout)
@@ -147,7 +146,6 @@ func ListApplicationByIntegration(integrationId string) (response *applicationpk
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-
 
 	response, err = client.ListApplicationsByIntegration(ctx, &applicationpkgv1.ListApplicationsByIntegrationRequest{
 		IntegrationId: integrationId,
@@ -176,6 +174,26 @@ func ListApplication(req *applicationpkgv1.ListApplicationRequest) (response *ap
 	if err != nil {
 		bylogs.LogErr("client ListApplicationByIntegration", err)
 		return nil, fmt.Errorf("[ListApplicationByIntegration] %w", err)
+	}
+	bylogs.LogInfo("client list application", response)
+
+	return response, nil
+}
+
+func UpdateApplication(req *applicationpkgv1.UpdateApplicationRequest) (response *applicationpkgv1.UpdateApplicationResponse, err error) {
+	bylogs.LogInfo("client UpdateApplication")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdateApplication(ctx, req)
+
+	if err != nil {
+		bylogs.LogErr("client UpdateApplication", err)
+		return nil, fmt.Errorf("[UpdateApplication] %w", err)
 	}
 	bylogs.LogInfo("client list application", response)
 
