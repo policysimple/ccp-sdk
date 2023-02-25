@@ -115,6 +115,28 @@ function deserialize_application_v1alpha1_ListApplicationResponse(buffer_arg) {
   return application_v1alpha1_application_api_pb.ListApplicationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_application_v1alpha1_ListApplicationsByIntegrationRequest(arg) {
+  if (!(arg instanceof application_v1alpha1_application_api_pb.ListApplicationsByIntegrationRequest)) {
+    throw new Error('Expected argument of type application.v1alpha1.ListApplicationsByIntegrationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_application_v1alpha1_ListApplicationsByIntegrationRequest(buffer_arg) {
+  return application_v1alpha1_application_api_pb.ListApplicationsByIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_application_v1alpha1_ListApplicationsByIntegrationResponse(arg) {
+  if (!(arg instanceof application_v1alpha1_application_api_pb.ListApplicationsByIntegrationResponse)) {
+    throw new Error('Expected argument of type application.v1alpha1.ListApplicationsByIntegrationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_application_v1alpha1_ListApplicationsByIntegrationResponse(buffer_arg) {
+  return application_v1alpha1_application_api_pb.ListApplicationsByIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_application_v1alpha1_ListApplicationsByOrganizationRequest(arg) {
   if (!(arg instanceof application_v1alpha1_application_api_pb.ListApplicationsByOrganizationRequest)) {
     throw new Error('Expected argument of type application.v1alpha1.ListApplicationsByOrganizationRequest');
@@ -239,6 +261,17 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     requestDeserialize: deserialize_application_v1alpha1_ListApplicationsByOrganizationRequest,
     responseSerialize: serialize_application_v1alpha1_ListApplicationsByOrganizationResponse,
     responseDeserialize: deserialize_application_v1alpha1_ListApplicationsByOrganizationResponse,
+  },
+  listApplicationsByIntegration: {
+    path: '/application.v1alpha1.ApplicationService/ListApplicationsByIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: application_v1alpha1_application_api_pb.ListApplicationsByIntegrationRequest,
+    responseType: application_v1alpha1_application_api_pb.ListApplicationsByIntegrationResponse,
+    requestSerialize: serialize_application_v1alpha1_ListApplicationsByIntegrationRequest,
+    requestDeserialize: deserialize_application_v1alpha1_ListApplicationsByIntegrationRequest,
+    responseSerialize: serialize_application_v1alpha1_ListApplicationsByIntegrationResponse,
+    responseDeserialize: deserialize_application_v1alpha1_ListApplicationsByIntegrationResponse,
   },
 };
 

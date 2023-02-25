@@ -137,3 +137,43 @@ func DeleteApplication(req *applicationpkgv1.DeleteApplicationRequest) (*applica
 	bylogs.LogInfo("DeleteApplicationRequestn", response)
 	return response, nil
 }
+
+func ListApplicationByIntegration(integrationId string) (response *applicationpkgv1.ListApplicationsByIntegrationResponse, err error) {
+	bylogs.LogInfo("client ListApplicationByIntegration")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListApplicationsByIntegration(ctx, &applicationpkgv1.ListApplicationsByIntegrationRequest{
+		IntegrationId: integrationId,
+	})
+
+	if err != nil {
+		bylogs.LogErr("client ListApplicationByIntegration", err)
+		return nil, fmt.Errorf("[ListApplicationByIntegration] %w", err)
+	}
+	bylogs.LogInfo("client list application", response)
+	return response, nil
+}
+
+func ListApplication(req *applicationpkgv1.ListApplicationRequest) (response *applicationpkgv1.ListApplicationResponse, err error) {
+	bylogs.LogInfo("client ListApplicationByIntegration")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListApplication(ctx, req)
+
+	if err != nil {
+		bylogs.LogErr("client ListApplicationByIntegration", err)
+		return nil, fmt.Errorf("[ListApplicationByIntegration] %w", err)
+	}
+	bylogs.LogInfo("client list application", response)
+	return response, nil
+}
