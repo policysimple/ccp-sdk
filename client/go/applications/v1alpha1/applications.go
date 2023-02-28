@@ -24,7 +24,7 @@ func init() {
 	doOnce.Do(func() {
 		applicationServiceTimeout = os.Getenv("APPLICATION_SERVICE_TIMEOUT")
 		if applicationServiceTimeout == "" {
-			applicationServiceTimeout = "30s"
+			applicationServiceTimeout = "60s"
 		}
 		applicationServiceUri = os.Getenv("APPLICATION_SERVICE_URI")
 		con, err := grpc.Dial(applicationServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -34,7 +34,6 @@ func init() {
 		client = applicationpkgv1.NewApplicationServiceClient(con)
 	})
 }
-
 func CreateApplication(req *applicationpkgv1.CreateApplicationRequest) (*applicationpkgv1.CreateApplicationResponse, error) {
 	bylogs.LogInfo("CreateApplicationRequest")
 	d, err := time.ParseDuration(applicationServiceTimeout)
@@ -135,5 +134,67 @@ func DeleteApplication(req *applicationpkgv1.DeleteApplicationRequest) (*applica
 
 	}
 	bylogs.LogInfo("DeleteApplicationRequestn", response)
+	return response, nil
+}
+
+func ListApplicationByIntegration(integrationId string) (response *applicationpkgv1.ListApplicationsByIntegrationResponse, err error) {
+	bylogs.LogInfo("client ListApplicationByIntegration")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListApplicationsByIntegration(ctx, &applicationpkgv1.ListApplicationsByIntegrationRequest{
+		IntegrationId: integrationId,
+	})
+
+	if err != nil {
+
+		bylogs.LogErr("client ListApplicationByIntegration", err)
+		return nil, fmt.Errorf("[ListApplicationByIntegration] %w", err)
+	}
+	bylogs.LogInfo("client list application", response)
+	return response, nil
+}
+
+func ListApplication(req *applicationpkgv1.ListApplicationRequest) (response *applicationpkgv1.ListApplicationResponse, err error) {
+	bylogs.LogInfo("client ListApplicationByIntegration")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListApplication(ctx, req)
+
+	if err != nil {
+		bylogs.LogErr("client ListApplicationByIntegration", err)
+		return nil, fmt.Errorf("[ListApplicationByIntegration] %w", err)
+	}
+	bylogs.LogInfo("client list application", response)
+
+	return response, nil
+}
+
+func UpdateApplication(req *applicationpkgv1.UpdateApplicationRequest) (response *applicationpkgv1.UpdateApplicationResponse, err error) {
+	bylogs.LogInfo("client UpdateApplication")
+	d, err := time.ParseDuration(applicationServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdateApplication(ctx, req)
+
+	if err != nil {
+		bylogs.LogErr("client UpdateApplication", err)
+		return nil, fmt.Errorf("[UpdateApplication] %w", err)
+	}
+	bylogs.LogInfo("client list application", response)
+
 	return response, nil
 }

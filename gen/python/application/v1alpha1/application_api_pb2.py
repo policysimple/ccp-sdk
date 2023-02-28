@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*application/v1alpha1/application_api.proto\x12\x14\x61pplication.v1alpha1\x1a&application/v1alpha1/application.proto\"O\n&DeleteApplicationsByIntegrationRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\";\n\'DeleteApplicationsByIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"_\n\x18\x43reateApplicationRequest\x12\x43\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32!.application.v1alpha1.ApplicationR\x0b\x61pplication\"=\n\x19\x43reateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x0e\n\x02id\x18\x03 \x01(\tR\x02id\"7\n\x16ListApplicationRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\tR\tprojectId\"d\n\x17ListApplicationResponse\x12I\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32%.application.v1alpha1.ListApplicationR\x0c\x61pplications\"\'\n\x15GetApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"]\n\x16GetApplicationResponse\x12\x43\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32!.application.v1alpha1.ApplicationR\x0b\x61pplication\"\xa8\x01\n\x18\x44\x65leteApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x1d\n\nproject_id\x18\x04 \x01(\tR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"-\n\x19\x44\x65leteApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"|\n\x18UpdateApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12P\n\x0b\x61pplication\x18\x02 \x01(\x0b\x32..application.v1alpha1.CreateApplicationRequestR\x0b\x61pplication\"-\n\x19UpdateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"P\n%ListApplicationsByOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"o\n&ListApplicationsByOrganizationResponse\x12\x45\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32!.application.v1alpha1.ApplicationR\x0c\x61pplications2\x92\x07\n\x12\x41pplicationService\x12t\n\x11\x43reateApplication\x12..application.v1alpha1.CreateApplicationRequest\x1a/.application.v1alpha1.CreateApplicationResponse\x12n\n\x0fListApplication\x12,.application.v1alpha1.ListApplicationRequest\x1a-.application.v1alpha1.ListApplicationResponse\x12k\n\x0eGetApplication\x12+.application.v1alpha1.GetApplicationRequest\x1a,.application.v1alpha1.GetApplicationResponse\x12t\n\x11\x44\x65leteApplication\x12..application.v1alpha1.DeleteApplicationRequest\x1a/.application.v1alpha1.DeleteApplicationResponse\x12t\n\x11UpdateApplication\x12..application.v1alpha1.UpdateApplicationRequest\x1a/.application.v1alpha1.UpdateApplicationResponse\x12\x9e\x01\n\x1f\x44\x65leteApplicationsByIntegration\x12<.application.v1alpha1.DeleteApplicationsByIntegrationRequest\x1a=.application.v1alpha1.DeleteApplicationsByIntegrationResponse\x12\x9b\x01\n\x1eListApplicationsByOrganization\x12;.application.v1alpha1.ListApplicationsByOrganizationRequest\x1a<.application.v1alpha1.ListApplicationsByOrganizationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1b\x06proto3'
+  serialized_pb=b'\n*application/v1alpha1/application_api.proto\x12\x14\x61pplication.v1alpha1\x1a&application/v1alpha1/application.proto\"O\n&DeleteApplicationsByIntegrationRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\";\n\'DeleteApplicationsByIntegrationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"_\n\x18\x43reateApplicationRequest\x12\x43\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32!.application.v1alpha1.ApplicationR\x0b\x61pplication\"=\n\x19\x43reateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x0e\n\x02id\x18\x03 \x01(\tR\x02id\"7\n\x16ListApplicationRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\tR\tprojectId\"d\n\x17ListApplicationResponse\x12I\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32%.application.v1alpha1.ListApplicationR\x0c\x61pplications\"\'\n\x15GetApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"]\n\x16GetApplicationResponse\x12\x43\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32!.application.v1alpha1.ApplicationR\x0b\x61pplication\"\xa8\x01\n\x18\x44\x65leteApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x1d\n\nproject_id\x18\x04 \x01(\tR\tprojectId\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"-\n\x19\x44\x65leteApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"|\n\x18UpdateApplicationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12P\n\x0b\x61pplication\x18\x02 \x01(\x0b\x32..application.v1alpha1.CreateApplicationRequestR\x0b\x61pplication\"-\n\x19UpdateApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"P\n%ListApplicationsByOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"o\n&ListApplicationsByOrganizationResponse\x12\x45\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32!.application.v1alpha1.ApplicationR\x0c\x61pplications\"M\n$ListApplicationsByIntegrationRequest\x12%\n\x0eintegration_id\x18\x01 \x01(\tR\rintegrationId\"n\n%ListApplicationsByIntegrationResponse\x12\x45\n\x0c\x61pplications\x18\x01 \x03(\x0b\x32!.application.v1alpha1.ApplicationR\x0c\x61pplications2\xad\x08\n\x12\x41pplicationService\x12t\n\x11\x43reateApplication\x12..application.v1alpha1.CreateApplicationRequest\x1a/.application.v1alpha1.CreateApplicationResponse\x12n\n\x0fListApplication\x12,.application.v1alpha1.ListApplicationRequest\x1a-.application.v1alpha1.ListApplicationResponse\x12k\n\x0eGetApplication\x12+.application.v1alpha1.GetApplicationRequest\x1a,.application.v1alpha1.GetApplicationResponse\x12t\n\x11\x44\x65leteApplication\x12..application.v1alpha1.DeleteApplicationRequest\x1a/.application.v1alpha1.DeleteApplicationResponse\x12t\n\x11UpdateApplication\x12..application.v1alpha1.UpdateApplicationRequest\x1a/.application.v1alpha1.UpdateApplicationResponse\x12\x9e\x01\n\x1f\x44\x65leteApplicationsByIntegration\x12<.application.v1alpha1.DeleteApplicationsByIntegrationRequest\x1a=.application.v1alpha1.DeleteApplicationsByIntegrationResponse\x12\x9b\x01\n\x1eListApplicationsByOrganization\x12;.application.v1alpha1.ListApplicationsByOrganizationRequest\x1a<.application.v1alpha1.ListApplicationsByOrganizationResponse\x12\x98\x01\n\x1dListApplicationsByIntegration\x12:.application.v1alpha1.ListApplicationsByIntegrationRequest\x1a;.application.v1alpha1.ListApplicationsByIntegrationResponseB7Z5github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1b\x06proto3'
   ,
   dependencies=[application_dot_v1alpha1_dot_application__pb2.DESCRIPTOR,])
 
@@ -516,11 +516,76 @@ _LISTAPPLICATIONSBYORGANIZATIONRESPONSE = _descriptor.Descriptor(
   serialized_end=1289,
 )
 
+
+_LISTAPPLICATIONSBYINTEGRATIONREQUEST = _descriptor.Descriptor(
+  name='ListApplicationsByIntegrationRequest',
+  full_name='application.v1alpha1.ListApplicationsByIntegrationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='integration_id', full_name='application.v1alpha1.ListApplicationsByIntegrationRequest.integration_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='integrationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1291,
+  serialized_end=1368,
+)
+
+
+_LISTAPPLICATIONSBYINTEGRATIONRESPONSE = _descriptor.Descriptor(
+  name='ListApplicationsByIntegrationResponse',
+  full_name='application.v1alpha1.ListApplicationsByIntegrationResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='applications', full_name='application.v1alpha1.ListApplicationsByIntegrationResponse.applications', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='applications', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1370,
+  serialized_end=1480,
+)
+
 _CREATEAPPLICATIONREQUEST.fields_by_name['application'].message_type = application_dot_v1alpha1_dot_application__pb2._APPLICATION
 _LISTAPPLICATIONRESPONSE.fields_by_name['applications'].message_type = application_dot_v1alpha1_dot_application__pb2._LISTAPPLICATION
 _GETAPPLICATIONRESPONSE.fields_by_name['application'].message_type = application_dot_v1alpha1_dot_application__pb2._APPLICATION
 _UPDATEAPPLICATIONREQUEST.fields_by_name['application'].message_type = _CREATEAPPLICATIONREQUEST
 _LISTAPPLICATIONSBYORGANIZATIONRESPONSE.fields_by_name['applications'].message_type = application_dot_v1alpha1_dot_application__pb2._APPLICATION
+_LISTAPPLICATIONSBYINTEGRATIONRESPONSE.fields_by_name['applications'].message_type = application_dot_v1alpha1_dot_application__pb2._APPLICATION
 DESCRIPTOR.message_types_by_name['DeleteApplicationsByIntegrationRequest'] = _DELETEAPPLICATIONSBYINTEGRATIONREQUEST
 DESCRIPTOR.message_types_by_name['DeleteApplicationsByIntegrationResponse'] = _DELETEAPPLICATIONSBYINTEGRATIONRESPONSE
 DESCRIPTOR.message_types_by_name['CreateApplicationRequest'] = _CREATEAPPLICATIONREQUEST
@@ -535,6 +600,8 @@ DESCRIPTOR.message_types_by_name['UpdateApplicationRequest'] = _UPDATEAPPLICATIO
 DESCRIPTOR.message_types_by_name['UpdateApplicationResponse'] = _UPDATEAPPLICATIONRESPONSE
 DESCRIPTOR.message_types_by_name['ListApplicationsByOrganizationRequest'] = _LISTAPPLICATIONSBYORGANIZATIONREQUEST
 DESCRIPTOR.message_types_by_name['ListApplicationsByOrganizationResponse'] = _LISTAPPLICATIONSBYORGANIZATIONRESPONSE
+DESCRIPTOR.message_types_by_name['ListApplicationsByIntegrationRequest'] = _LISTAPPLICATIONSBYINTEGRATIONREQUEST
+DESCRIPTOR.message_types_by_name['ListApplicationsByIntegrationResponse'] = _LISTAPPLICATIONSBYINTEGRATIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DeleteApplicationsByIntegrationRequest = _reflection.GeneratedProtocolMessageType('DeleteApplicationsByIntegrationRequest', (_message.Message,), {
@@ -635,6 +702,20 @@ ListApplicationsByOrganizationResponse = _reflection.GeneratedProtocolMessageTyp
   })
 _sym_db.RegisterMessage(ListApplicationsByOrganizationResponse)
 
+ListApplicationsByIntegrationRequest = _reflection.GeneratedProtocolMessageType('ListApplicationsByIntegrationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAPPLICATIONSBYINTEGRATIONREQUEST,
+  '__module__' : 'application.v1alpha1.application_api_pb2'
+  # @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationsByIntegrationRequest)
+  })
+_sym_db.RegisterMessage(ListApplicationsByIntegrationRequest)
+
+ListApplicationsByIntegrationResponse = _reflection.GeneratedProtocolMessageType('ListApplicationsByIntegrationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAPPLICATIONSBYINTEGRATIONRESPONSE,
+  '__module__' : 'application.v1alpha1.application_api_pb2'
+  # @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplicationsByIntegrationResponse)
+  })
+_sym_db.RegisterMessage(ListApplicationsByIntegrationResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -645,8 +726,8 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1292,
-  serialized_end=2206,
+  serialized_start=1483,
+  serialized_end=2552,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateApplication',
@@ -715,6 +796,16 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTAPPLICATIONSBYORGANIZATIONREQUEST,
     output_type=_LISTAPPLICATIONSBYORGANIZATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListApplicationsByIntegration',
+    full_name='application.v1alpha1.ApplicationService.ListApplicationsByIntegration',
+    index=7,
+    containing_service=None,
+    input_type=_LISTAPPLICATIONSBYINTEGRATIONREQUEST,
+    output_type=_LISTAPPLICATIONSBYINTEGRATIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

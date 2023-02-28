@@ -26,6 +26,7 @@ static const char* ApplicationService_method_names[] = {
   "/application.v1alpha1.ApplicationService/UpdateApplication",
   "/application.v1alpha1.ApplicationService/DeleteApplicationsByIntegration",
   "/application.v1alpha1.ApplicationService/ListApplicationsByOrganization",
+  "/application.v1alpha1.ApplicationService/ListApplicationsByIntegration",
 };
 
 std::unique_ptr< ApplicationService::Stub> ApplicationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +43,7 @@ ApplicationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_UpdateApplication_(ApplicationService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteApplicationsByIntegration_(ApplicationService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListApplicationsByOrganization_(ApplicationService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListApplicationsByIntegration_(ApplicationService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ApplicationService::Stub::CreateApplication(::grpc::ClientContext* context, const ::application::v1alpha1::CreateApplicationRequest& request, ::application::v1alpha1::CreateApplicationResponse* response) {
@@ -156,6 +158,22 @@ void ApplicationService::Stub::experimental_async::ListApplicationsByOrganizatio
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::application::v1alpha1::ListApplicationsByOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_ListApplicationsByOrganization_, context, request, false);
 }
 
+::grpc::Status ApplicationService::Stub::ListApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::ListApplicationsByIntegrationRequest& request, ::application::v1alpha1::ListApplicationsByIntegrationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListApplicationsByIntegration_, context, request, response);
+}
+
+void ApplicationService::Stub::experimental_async::ListApplicationsByIntegration(::grpc::ClientContext* context, const ::application::v1alpha1::ListApplicationsByIntegrationRequest* request, ::application::v1alpha1::ListApplicationsByIntegrationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListApplicationsByIntegration_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::application::v1alpha1::ListApplicationsByIntegrationResponse>* ApplicationService::Stub::AsyncListApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::ListApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::application::v1alpha1::ListApplicationsByIntegrationResponse>::Create(channel_.get(), cq, rpcmethod_ListApplicationsByIntegration_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::application::v1alpha1::ListApplicationsByIntegrationResponse>* ApplicationService::Stub::PrepareAsyncListApplicationsByIntegrationRaw(::grpc::ClientContext* context, const ::application::v1alpha1::ListApplicationsByIntegrationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::application::v1alpha1::ListApplicationsByIntegrationResponse>::Create(channel_.get(), cq, rpcmethod_ListApplicationsByIntegration_, context, request, false);
+}
+
 ApplicationService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ApplicationService_method_names[0],
@@ -192,6 +210,11 @@ ApplicationService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ApplicationService::Service, ::application::v1alpha1::ListApplicationsByOrganizationRequest, ::application::v1alpha1::ListApplicationsByOrganizationResponse>(
           std::mem_fn(&ApplicationService::Service::ListApplicationsByOrganization), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ApplicationService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ApplicationService::Service, ::application::v1alpha1::ListApplicationsByIntegrationRequest, ::application::v1alpha1::ListApplicationsByIntegrationResponse>(
+          std::mem_fn(&ApplicationService::Service::ListApplicationsByIntegration), this)));
 }
 
 ApplicationService::Service::~Service() {
@@ -240,6 +263,13 @@ ApplicationService::Service::~Service() {
 }
 
 ::grpc::Status ApplicationService::Service::ListApplicationsByOrganization(::grpc::ServerContext* context, const ::application::v1alpha1::ListApplicationsByOrganizationRequest* request, ::application::v1alpha1::ListApplicationsByOrganizationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ApplicationService::Service::ListApplicationsByIntegration(::grpc::ServerContext* context, const ::application::v1alpha1::ListApplicationsByIntegrationRequest* request, ::application::v1alpha1::ListApplicationsByIntegrationResponse* response) {
   (void) context;
   (void) request;
   (void) response;
