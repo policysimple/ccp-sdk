@@ -24,6 +24,10 @@ type TektonPipelineAPIServiceClient interface {
 	DeleteTektonTaskPipeline(ctx context.Context, in *DeleteTektonTaskPipelineRequest, opts ...grpc.CallOption) (*DeleteTektonTaskPipelineResponse, error)
 	ListTektonTaskPipeline(ctx context.Context, in *ListTektonTaskPipelineRequest, opts ...grpc.CallOption) (*ListTektonTaskPipelineResponse, error)
 	GetTektonTaskPipeline(ctx context.Context, in *GetTektonTaskPipelineRequest, opts ...grpc.CallOption) (*GetTektonTaskPipelineResponse, error)
+	CreateCustomPipeline(ctx context.Context, in *CreateCustomPipelineRequest, opts ...grpc.CallOption) (*CreateCustomPipelineResponse, error)
+	DeleteCustomPipeline(ctx context.Context, in *DeleteCustomPipelineRequest, opts ...grpc.CallOption) (*DeleteCustomPipelineResponse, error)
+	ListCustomPipeline(ctx context.Context, in *ListCustomPipelineRequest, opts ...grpc.CallOption) (*ListCustomPipelineResponse, error)
+	GetCustomPipeline(ctx context.Context, in *GetCustomPipelineRequest, opts ...grpc.CallOption) (*GetCustomPipelineResponse, error)
 }
 
 type tektonPipelineAPIServiceClient struct {
@@ -88,6 +92,42 @@ func (c *tektonPipelineAPIServiceClient) GetTektonTaskPipeline(ctx context.Conte
 	return out, nil
 }
 
+func (c *tektonPipelineAPIServiceClient) CreateCustomPipeline(ctx context.Context, in *CreateCustomPipelineRequest, opts ...grpc.CallOption) (*CreateCustomPipelineResponse, error) {
+	out := new(CreateCustomPipelineResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateCustomPipeline", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tektonPipelineAPIServiceClient) DeleteCustomPipeline(ctx context.Context, in *DeleteCustomPipelineRequest, opts ...grpc.CallOption) (*DeleteCustomPipelineResponse, error) {
+	out := new(DeleteCustomPipelineResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteCustomPipeline", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tektonPipelineAPIServiceClient) ListCustomPipeline(ctx context.Context, in *ListCustomPipelineRequest, opts ...grpc.CallOption) (*ListCustomPipelineResponse, error) {
+	out := new(ListCustomPipelineResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListCustomPipeline", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tektonPipelineAPIServiceClient) GetCustomPipeline(ctx context.Context, in *GetCustomPipelineRequest, opts ...grpc.CallOption) (*GetCustomPipelineResponse, error) {
+	out := new(GetCustomPipelineResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetCustomPipeline", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TektonPipelineAPIServiceServer is the server API for TektonPipelineAPIService service.
 // All implementations should embed UnimplementedTektonPipelineAPIServiceServer
 // for forward compatibility
@@ -98,6 +138,10 @@ type TektonPipelineAPIServiceServer interface {
 	DeleteTektonTaskPipeline(context.Context, *DeleteTektonTaskPipelineRequest) (*DeleteTektonTaskPipelineResponse, error)
 	ListTektonTaskPipeline(context.Context, *ListTektonTaskPipelineRequest) (*ListTektonTaskPipelineResponse, error)
 	GetTektonTaskPipeline(context.Context, *GetTektonTaskPipelineRequest) (*GetTektonTaskPipelineResponse, error)
+	CreateCustomPipeline(context.Context, *CreateCustomPipelineRequest) (*CreateCustomPipelineResponse, error)
+	DeleteCustomPipeline(context.Context, *DeleteCustomPipelineRequest) (*DeleteCustomPipelineResponse, error)
+	ListCustomPipeline(context.Context, *ListCustomPipelineRequest) (*ListCustomPipelineResponse, error)
+	GetCustomPipeline(context.Context, *GetCustomPipelineRequest) (*GetCustomPipelineResponse, error)
 }
 
 // UnimplementedTektonPipelineAPIServiceServer should be embedded to have forward compatible implementations.
@@ -121,6 +165,18 @@ func (UnimplementedTektonPipelineAPIServiceServer) ListTektonTaskPipeline(contex
 }
 func (UnimplementedTektonPipelineAPIServiceServer) GetTektonTaskPipeline(context.Context, *GetTektonTaskPipelineRequest) (*GetTektonTaskPipelineResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTektonTaskPipeline not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) CreateCustomPipeline(context.Context, *CreateCustomPipelineRequest) (*CreateCustomPipelineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCustomPipeline not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) DeleteCustomPipeline(context.Context, *DeleteCustomPipelineRequest) (*DeleteCustomPipelineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCustomPipeline not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) ListCustomPipeline(context.Context, *ListCustomPipelineRequest) (*ListCustomPipelineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCustomPipeline not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) GetCustomPipeline(context.Context, *GetCustomPipelineRequest) (*GetCustomPipelineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomPipeline not implemented")
 }
 
 // UnsafeTektonPipelineAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -242,6 +298,78 @@ func _TektonPipelineAPIService_GetTektonTaskPipeline_Handler(srv interface{}, ct
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TektonPipelineAPIService_CreateCustomPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCustomPipelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).CreateCustomPipeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateCustomPipeline",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).CreateCustomPipeline(ctx, req.(*CreateCustomPipelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TektonPipelineAPIService_DeleteCustomPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCustomPipelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).DeleteCustomPipeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteCustomPipeline",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).DeleteCustomPipeline(ctx, req.(*DeleteCustomPipelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TektonPipelineAPIService_ListCustomPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCustomPipelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).ListCustomPipeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListCustomPipeline",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).ListCustomPipeline(ctx, req.(*ListCustomPipelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TektonPipelineAPIService_GetCustomPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomPipelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).GetCustomPipeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetCustomPipeline",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).GetCustomPipeline(ctx, req.(*GetCustomPipelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TektonPipelineAPIService_ServiceDesc is the grpc.ServiceDesc for TektonPipelineAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -272,6 +400,22 @@ var TektonPipelineAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTektonTaskPipeline",
 			Handler:    _TektonPipelineAPIService_GetTektonTaskPipeline_Handler,
+		},
+		{
+			MethodName: "CreateCustomPipeline",
+			Handler:    _TektonPipelineAPIService_CreateCustomPipeline_Handler,
+		},
+		{
+			MethodName: "DeleteCustomPipeline",
+			Handler:    _TektonPipelineAPIService_DeleteCustomPipeline_Handler,
+		},
+		{
+			MethodName: "ListCustomPipeline",
+			Handler:    _TektonPipelineAPIService_ListCustomPipeline_Handler,
+		},
+		{
+			MethodName: "GetCustomPipeline",
+			Handler:    _TektonPipelineAPIService_GetCustomPipeline_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -44,6 +44,26 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetTektonTaskPipelineRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetTektonTaskPipelineResponse.FromString,
         )
+    self.CreateCustomPipeline = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateCustomPipeline',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateCustomPipelineRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateCustomPipelineResponse.FromString,
+        )
+    self.DeleteCustomPipeline = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteCustomPipeline',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteCustomPipelineRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteCustomPipelineResponse.FromString,
+        )
+    self.ListCustomPipeline = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListCustomPipeline',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListCustomPipelineRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListCustomPipelineResponse.FromString,
+        )
+    self.GetCustomPipeline = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetCustomPipeline',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetCustomPipelineRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetCustomPipelineResponse.FromString,
+        )
 
 
 class TektonPipelineAPIServiceServicer(object):
@@ -92,6 +112,34 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateCustomPipeline(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteCustomPipeline(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListCustomPipeline(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetCustomPipeline(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -124,6 +172,26 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           servicer.GetTektonTaskPipeline,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetTektonTaskPipelineRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetTektonTaskPipelineResponse.SerializeToString,
+      ),
+      'CreateCustomPipeline': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateCustomPipeline,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateCustomPipelineRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.CreateCustomPipelineResponse.SerializeToString,
+      ),
+      'DeleteCustomPipeline': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteCustomPipeline,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteCustomPipelineRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.DeleteCustomPipelineResponse.SerializeToString,
+      ),
+      'ListCustomPipeline': grpc.unary_unary_rpc_method_handler(
+          servicer.ListCustomPipeline,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListCustomPipelineRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListCustomPipelineResponse.SerializeToString,
+      ),
+      'GetCustomPipeline': grpc.unary_unary_rpc_method_handler(
+          servicer.GetCustomPipeline,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetCustomPipelineRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetCustomPipelineResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

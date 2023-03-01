@@ -20,6 +20,10 @@ service TektonPipelineAPIService{
     rpc DeleteTektonTaskPipeline(DeleteTektonTaskPipelineRequest) returns (DeleteTektonTaskPipelineResponse);
     rpc ListTektonTaskPipeline(ListTektonTaskPipelineRequest) returns (ListTektonTaskPipelineResponse);
     rpc GetTektonTaskPipeline(GetTektonTaskPipelineRequest) returns (GetTektonTaskPipelineResponse);
+    rpc CreateCustomPipeline(CreateCustomPipelineRequest) returns (CreateCustomPipelineResponse);
+    rpc DeleteCustomPipeline(DeleteCustomPipelineRequest) returns (DeleteCustomPipelineResponse);
+    rpc ListCustomPipeline(ListCustomPipelineRequest) returns (ListCustomPipelineResponse);
+    rpc GetCustomPipeline(GetCustomPipelineRequest) returns (GetCustomPipelineResponse);
 }
 
 message CreateTektonPipelineRequest {
@@ -63,7 +67,7 @@ message ListTektonTaskPipelineRequest {
 }
 
 message ListTektonTaskPipelineResponse {
-    pipelines.tekton.v1alpha1.TektonTaskList task_list = 1;
+    pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1;
     string status = 2;
 }
 
@@ -72,6 +76,42 @@ message GetTektonTaskPipelineRequest {
 }
 
 message GetTektonTaskPipelineResponse {
+    pipelines.tekton.v1alpha1.CustomPipeline task = 1;
+    string status = 2;
+}
+
+
+// CUSTOM PIPELINES
+
+message CreateCustomPipelineRequest {
+    pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1;
+}
+
+message CreateCustomPipelineResponse {
+    pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1;
+}
+
+message DeleteCustomPipelineRequest {
+    string custom_pipeline_id = 1;
+}
+
+message DeleteCustomPipelineResponse {
+    string status = 1;
+}
+
+message ListCustomPipelineRequest {
+}
+
+message ListCustomPipelineResponse {
+    pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1;
+    string status = 2;
+}
+
+message GetCustomPipelineRequest {
+    string task_id = 1;
+}
+
+message GetCustomPipelineResponse {
     pipelines.tekton.v1alpha1.Task task = 1;
     string status = 2;
 }

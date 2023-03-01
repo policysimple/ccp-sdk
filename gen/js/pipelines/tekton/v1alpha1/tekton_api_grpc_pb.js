@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var pipelines_tekton_v1alpha1_tekton_api_pb = require('../../../pipelines/tekton/v1alpha1/tekton_api_pb.js');
 var pipelines_tekton_v1alpha1_tekton_pb = require('../../../pipelines/tekton/v1alpha1/tekton_pb.js');
 
+function serialize_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.CreateCustomPipelineRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.CreateCustomPipelineRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.CreateCustomPipelineRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.CreateCustomPipelineResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.CreateCustomPipelineResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.CreateCustomPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_tekton_v1alpha1_CreateTektonPipelineRequest(arg) {
   if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.CreateTektonPipelineRequest)) {
     throw new Error('Expected argument of type pipelines.tekton.v1alpha1.CreateTektonPipelineRequest');
@@ -47,6 +69,28 @@ function serialize_pipelines_tekton_v1alpha1_CreateTektonTaskPipelineResponse(ar
 
 function deserialize_pipelines_tekton_v1alpha1_CreateTektonTaskPipelineResponse(buffer_arg) {
   return pipelines_tekton_v1alpha1_tekton_api_pb.CreateTektonTaskPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.DeleteCustomPipelineRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.DeleteCustomPipelineRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.DeleteCustomPipelineRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.DeleteCustomPipelineResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.DeleteCustomPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_pipelines_tekton_v1alpha1_DeleteTektonPipelineRequest(arg) {
@@ -93,6 +137,28 @@ function deserialize_pipelines_tekton_v1alpha1_DeleteTektonTaskPipelineResponse(
   return pipelines_tekton_v1alpha1_tekton_api_pb.DeleteTektonTaskPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_tekton_v1alpha1_GetCustomPipelineRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.GetCustomPipelineRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.GetCustomPipelineRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_GetCustomPipelineRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.GetCustomPipelineRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_GetCustomPipelineResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.GetCustomPipelineResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.GetCustomPipelineResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_GetCustomPipelineResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.GetCustomPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_tekton_v1alpha1_GetTektonTaskPipelineRequest(arg) {
   if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.GetTektonTaskPipelineRequest)) {
     throw new Error('Expected argument of type pipelines.tekton.v1alpha1.GetTektonTaskPipelineRequest');
@@ -113,6 +179,28 @@ function serialize_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse(arg) 
 
 function deserialize_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse(buffer_arg) {
   return pipelines_tekton_v1alpha1_tekton_api_pb.GetTektonTaskPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_ListCustomPipelineRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ListCustomPipelineRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ListCustomPipelineRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_ListCustomPipelineRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.ListCustomPipelineRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_ListCustomPipelineResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ListCustomPipelineResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ListCustomPipelineResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_ListCustomPipelineResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.ListCustomPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_pipelines_tekton_v1alpha1_ListTektonTaskPipelineRequest(arg) {
@@ -204,6 +292,50 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_GetTektonTaskPipelineRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse,
+  },
+  createCustomPipeline: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateCustomPipeline',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.CreateCustomPipelineRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.CreateCustomPipelineResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse,
+  },
+  deleteCustomPipeline: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteCustomPipeline',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.DeleteCustomPipelineRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.DeleteCustomPipelineResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse,
+  },
+  listCustomPipeline: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListCustomPipeline',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.ListCustomPipelineRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.ListCustomPipelineResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_ListCustomPipelineRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_ListCustomPipelineRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_ListCustomPipelineResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ListCustomPipelineResponse,
+  },
+  getCustomPipeline: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetCustomPipeline',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.GetCustomPipelineRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.GetCustomPipelineResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_GetCustomPipelineRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_GetCustomPipelineRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_GetCustomPipelineResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_GetCustomPipelineResponse,
   },
 };
 

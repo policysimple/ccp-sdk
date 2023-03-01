@@ -50,11 +50,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.Builder subBuilder = null;
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.Builder subBuilder = null;
             if (taskList_ != null) {
               subBuilder = taskList_.toBuilder();
             }
-            taskList_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.parser(), extensionRegistry);
+            taskList_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(taskList_);
               taskList_ = subBuilder.buildPartial();
@@ -101,9 +101,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TASK_LIST_FIELD_NUMBER = 1;
-  private io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList taskList_;
+  private io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList taskList_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
    * @return Whether the taskList field is set.
    */
   @java.lang.Override
@@ -111,18 +111,18 @@ private static final long serialVersionUID = 0L;
     return taskList_ != null;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
    * @return The taskList.
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList getTaskList() {
-    return taskList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.getDefaultInstance() : taskList_;
+  public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList getTaskList() {
+    return taskList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.getDefaultInstance() : taskList_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TektonTaskListOrBuilder getTaskListOrBuilder() {
+  public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineListOrBuilder getTaskListOrBuilder() {
     return getTaskList();
   }
 
@@ -496,31 +496,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList taskList_;
+    private io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList taskList_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList, io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.Builder, io.cuemby.pipelines.tekton.v1alpha1.TektonTaskListOrBuilder> taskListBuilder_;
+        io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.Builder, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineListOrBuilder> taskListBuilder_;
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      * @return Whether the taskList field is set.
      */
     public boolean hasTaskList() {
       return taskListBuilder_ != null || taskList_ != null;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      * @return The taskList.
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList getTaskList() {
+    public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList getTaskList() {
       if (taskListBuilder_ == null) {
-        return taskList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.getDefaultInstance() : taskList_;
+        return taskList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.getDefaultInstance() : taskList_;
       } else {
         return taskListBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
-    public Builder setTaskList(io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList value) {
+    public Builder setTaskList(io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList value) {
       if (taskListBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -534,10 +534,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
     public Builder setTaskList(
-        io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.Builder builderForValue) {
+        io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.Builder builderForValue) {
       if (taskListBuilder_ == null) {
         taskList_ = builderForValue.build();
         onChanged();
@@ -548,13 +548,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
-    public Builder mergeTaskList(io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList value) {
+    public Builder mergeTaskList(io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList value) {
       if (taskListBuilder_ == null) {
         if (taskList_ != null) {
           taskList_ =
-            io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.newBuilder(taskList_).mergeFrom(value).buildPartial();
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.newBuilder(taskList_).mergeFrom(value).buildPartial();
         } else {
           taskList_ = value;
         }
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
     public Builder clearTaskList() {
       if (taskListBuilder_ == null) {
@@ -580,33 +580,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.Builder getTaskListBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.Builder getTaskListBuilder() {
       
       onChanged();
       return getTaskListFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.TektonTaskListOrBuilder getTaskListOrBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineListOrBuilder getTaskListOrBuilder() {
       if (taskListBuilder_ != null) {
         return taskListBuilder_.getMessageOrBuilder();
       } else {
         return taskList_ == null ?
-            io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.getDefaultInstance() : taskList_;
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.getDefaultInstance() : taskList_;
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList, io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.Builder, io.cuemby.pipelines.tekton.v1alpha1.TektonTaskListOrBuilder> 
+        io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.Builder, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineListOrBuilder> 
         getTaskListFieldBuilder() {
       if (taskListBuilder_ == null) {
         taskListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList, io.cuemby.pipelines.tekton.v1alpha1.TektonTaskList.Builder, io.cuemby.pipelines.tekton.v1alpha1.TektonTaskListOrBuilder>(
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList.Builder, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineListOrBuilder>(
                 getTaskList(),
                 getParentForChildren(),
                 isClean());

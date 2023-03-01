@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
      */
     protected $task_list = null;
     /**
@@ -28,7 +28,7 @@ class ListTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\TektonTaskList $task_list
+     *     @type \Pipelines\Tekton\V1Alpha1\CustomPipelineList $task_list
      *     @type string $status
      * }
      */
@@ -38,8 +38,8 @@ class ListTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\TektonTaskList|null
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\CustomPipelineList|null
      */
     public function getTaskList()
     {
@@ -57,13 +57,13 @@ class ListTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.TektonTaskList task_list = 1 [json_name = "taskList"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\TektonTaskList $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineList task_list = 1 [json_name = "taskList"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\CustomPipelineList $var
      * @return $this
      */
     public function setTaskList($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\TektonTaskList::class);
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\CustomPipelineList::class);
         $this->task_list = $var;
 
         return $this;

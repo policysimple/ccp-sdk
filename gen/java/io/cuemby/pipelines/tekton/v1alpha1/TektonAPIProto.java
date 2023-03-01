@@ -74,6 +74,46 @@ public final class TektonAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -107,41 +147,73 @@ public final class TektonAPIProto {
       "st\022\027\n\007task_id\030\002 \001(\tR\006taskId\":\n DeleteTek" +
       "tonTaskPipelineResponse\022\026\n\006status\030\001 \001(\tR" +
       "\006status\"\037\n\035ListTektonTaskPipelineRequest" +
-      "\"\200\001\n\036ListTektonTaskPipelineResponse\022F\n\tt" +
-      "ask_list\030\001 \001(\0132).pipelines.tekton.v1alph" +
-      "a1.TektonTaskListR\010taskList\022\026\n\006status\030\002 " +
-      "\001(\tR\006status\"7\n\034GetTektonTaskPipelineRequ" +
-      "est\022\027\n\007task_id\030\001 \001(\tR\006taskId\"l\n\035GetTekto" +
-      "nTaskPipelineResponse\0223\n\004task\030\001 \001(\0132\037.pi" +
-      "pelines.tekton.v1alpha1.TaskR\004task\022\026\n\006st" +
-      "atus\030\002 \001(\tR\006status2\367\006\n\030TektonPipelineAPI" +
-      "Service\022\207\001\n\024CreateTektonPipeline\0226.pipel" +
-      "ines.tekton.v1alpha1.CreateTektonPipelin" +
-      "eRequest\0327.pipelines.tekton.v1alpha1.Cre" +
-      "ateTektonPipelineResponse\022\207\001\n\024DeleteTekt" +
-      "onPipeline\0226.pipelines.tekton.v1alpha1.D" +
-      "eleteTektonPipelineRequest\0327.pipelines.t" +
-      "ekton.v1alpha1.DeleteTektonPipelineRespo" +
-      "nse\022\223\001\n\030CreateTektonTaskPipeline\022:.pipel" +
-      "ines.tekton.v1alpha1.CreateTektonTaskPip" +
-      "elineRequest\032;.pipelines.tekton.v1alpha1" +
-      ".CreateTektonTaskPipelineResponse\022\223\001\n\030De" +
-      "leteTektonTaskPipeline\022:.pipelines.tekto" +
-      "n.v1alpha1.DeleteTektonTaskPipelineReque" +
-      "st\032;.pipelines.tekton.v1alpha1.DeleteTek" +
-      "tonTaskPipelineResponse\022\215\001\n\026ListTektonTa" +
-      "skPipeline\0228.pipelines.tekton.v1alpha1.L" +
-      "istTektonTaskPipelineRequest\0329.pipelines" +
-      ".tekton.v1alpha1.ListTektonTaskPipelineR" +
-      "esponse\022\212\001\n\025GetTektonTaskPipeline\0227.pipe" +
-      "lines.tekton.v1alpha1.GetTektonTaskPipel" +
-      "ineRequest\0328.pipelines.tekton.v1alpha1.G" +
-      "etTektonTaskPipelineResponseB\261\001\n#io.cuem" +
-      "by.pipelines.tekton.v1alpha1B\016TektonAPIP" +
-      "rotoP\001Z:github.com/cuemby/ccp-sdk/gen/go" +
-      "/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipel" +
-      "ines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\" +
-      "V1Alpha1b\006proto3"
+      "\"\204\001\n\036ListTektonTaskPipelineResponse\022J\n\tt" +
+      "ask_list\030\001 \001(\0132-.pipelines.tekton.v1alph" +
+      "a1.CustomPipelineListR\010taskList\022\026\n\006statu" +
+      "s\030\002 \001(\tR\006status\"7\n\034GetTektonTaskPipeline" +
+      "Request\022\027\n\007task_id\030\001 \001(\tR\006taskId\"v\n\035GetT" +
+      "ektonTaskPipelineResponse\022=\n\004task\030\001 \001(\0132" +
+      ").pipelines.tekton.v1alpha1.CustomPipeli" +
+      "neR\004task\022\026\n\006status\030\002 \001(\tR\006status\"q\n\033Crea" +
+      "teCustomPipelineRequest\022R\n\017custom_pipeli" +
+      "ne\030\001 \001(\0132).pipelines.tekton.v1alpha1.Cus" +
+      "tomPipelineR\016customPipeline\"\213\001\n\034CreateCu" +
+      "stomPipelineResponse\022k\n\030custom_pipeline_" +
+      "response\030\001 \001(\01321.pipelines.tekton.v1alph" +
+      "a1.CustomPipelineResponseR\026customPipelin" +
+      "eResponse\"K\n\033DeleteCustomPipelineRequest" +
+      "\022,\n\022custom_pipeline_id\030\001 \001(\tR\020customPipe" +
+      "lineId\"6\n\034DeleteCustomPipelineResponse\022\026" +
+      "\n\006status\030\001 \001(\tR\006status\"\033\n\031ListCustomPipe" +
+      "lineRequest\"\210\001\n\032ListCustomPipelineRespon" +
+      "se\022R\n\017custom_pipeline\030\001 \001(\0132).pipelines." +
+      "tekton.v1alpha1.CustomPipelineR\016customPi" +
+      "peline\022\026\n\006status\030\002 \001(\tR\006status\"3\n\030GetCus" +
+      "tomPipelineRequest\022\027\n\007task_id\030\001 \001(\tR\006tas" +
+      "kId\"h\n\031GetCustomPipelineResponse\0223\n\004task" +
+      "\030\001 \001(\0132\037.pipelines.tekton.v1alpha1.TaskR" +
+      "\004task\022\026\n\006status\030\002 \001(\tR\006status2\217\013\n\030Tekton" +
+      "PipelineAPIService\022\207\001\n\024CreateTektonPipel" +
+      "ine\0226.pipelines.tekton.v1alpha1.CreateTe" +
+      "ktonPipelineRequest\0327.pipelines.tekton.v" +
+      "1alpha1.CreateTektonPipelineResponse\022\207\001\n" +
+      "\024DeleteTektonPipeline\0226.pipelines.tekton" +
+      ".v1alpha1.DeleteTektonPipelineRequest\0327." +
+      "pipelines.tekton.v1alpha1.DeleteTektonPi" +
+      "pelineResponse\022\223\001\n\030CreateTektonTaskPipel" +
+      "ine\022:.pipelines.tekton.v1alpha1.CreateTe" +
+      "ktonTaskPipelineRequest\032;.pipelines.tekt" +
+      "on.v1alpha1.CreateTektonTaskPipelineResp" +
+      "onse\022\223\001\n\030DeleteTektonTaskPipeline\022:.pipe" +
+      "lines.tekton.v1alpha1.DeleteTektonTaskPi" +
+      "pelineRequest\032;.pipelines.tekton.v1alpha" +
+      "1.DeleteTektonTaskPipelineResponse\022\215\001\n\026L" +
+      "istTektonTaskPipeline\0228.pipelines.tekton" +
+      ".v1alpha1.ListTektonTaskPipelineRequest\032" +
+      "9.pipelines.tekton.v1alpha1.ListTektonTa" +
+      "skPipelineResponse\022\212\001\n\025GetTektonTaskPipe" +
+      "line\0227.pipelines.tekton.v1alpha1.GetTekt" +
+      "onTaskPipelineRequest\0328.pipelines.tekton" +
+      ".v1alpha1.GetTektonTaskPipelineResponse\022" +
+      "\207\001\n\024CreateCustomPipeline\0226.pipelines.tek" +
+      "ton.v1alpha1.CreateCustomPipelineRequest" +
+      "\0327.pipelines.tekton.v1alpha1.CreateCusto" +
+      "mPipelineResponse\022\207\001\n\024DeleteCustomPipeli" +
+      "ne\0226.pipelines.tekton.v1alpha1.DeleteCus" +
+      "tomPipelineRequest\0327.pipelines.tekton.v1" +
+      "alpha1.DeleteCustomPipelineResponse\022\201\001\n\022" +
+      "ListCustomPipeline\0224.pipelines.tekton.v1" +
+      "alpha1.ListCustomPipelineRequest\0325.pipel" +
+      "ines.tekton.v1alpha1.ListCustomPipelineR" +
+      "esponse\022~\n\021GetCustomPipeline\0223.pipelines" +
+      ".tekton.v1alpha1.GetCustomPipelineReques" +
+      "t\0324.pipelines.tekton.v1alpha1.GetCustomP" +
+      "ipelineResponseB\261\001\n#io.cuemby.pipelines." +
+      "tekton.v1alpha1B\016TektonAPIProtoP\001Z:githu" +
+      "b.com/cuemby/ccp-sdk/gen/go/pipelines/te" +
+      "kton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V" +
+      "1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -219,6 +291,54 @@ public final class TektonAPIProto {
     internal_static_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_GetTektonTaskPipelineResponse_descriptor,
+        new java.lang.String[] { "Task", "Status", });
+    internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineRequest_descriptor,
+        new java.lang.String[] { "CustomPipeline", });
+    internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_CreateCustomPipelineResponse_descriptor,
+        new java.lang.String[] { "CustomPipelineResponse", });
+    internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineRequest_descriptor,
+        new java.lang.String[] { "CustomPipelineId", });
+    internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_descriptor,
+        new java.lang.String[] { "Status", });
+    internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_ListCustomPipelineResponse_descriptor,
+        new java.lang.String[] { "CustomPipeline", "Status", });
+    internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineRequest_descriptor,
+        new java.lang.String[] { "TaskId", });
+    internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_GetCustomPipelineResponse_descriptor,
         new java.lang.String[] { "Task", "Status", });
     io.cuemby.pipelines.tekton.v1alpha1.TektonProto.getDescriptor();
   }

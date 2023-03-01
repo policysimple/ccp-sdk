@@ -73,3 +73,41 @@ message TektonTask {
 message TektonTaskList {
     repeated Task items = 1;
 }
+
+// Custom Pipeline ...
+message CustomPipeline {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    bool is_public = 4;
+    OwnerType owner_type = 5;
+    string owner_id = 6;
+    string created_by = 7;
+    string copied_from = 8;
+    string runtime_id = 9;
+    PipelineSpec spec = 10;
+
+}
+
+message PipelineSpec {
+    Params params = 1;
+    string resources = 2;
+    Task tasks = 3;
+    Workspaces workspace = 4;
+}
+
+message CustomPipelineResponse {
+    bool ok = 1;
+    string message = 2;
+    CustomPipeline data = 3;
+}
+message CustomPipelineList {
+    repeated CustomPipeline items = 1;
+}
+
+enum OwnerType {
+    OWNER_TYPE_UNSPECIFIED = 0;
+    OWNER_TYPE_CUEMBY = 1;
+    OWNER_TYPE_ORG = 2;
+    OWNER_TYPE_PROJECT = 3;
+}
