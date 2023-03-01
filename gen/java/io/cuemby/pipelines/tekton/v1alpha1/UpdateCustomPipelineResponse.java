@@ -4,25 +4,25 @@
 package io.cuemby.pipelines.tekton.v1alpha1;
 
 /**
- * Protobuf type {@code pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse}
+ * Protobuf type {@code pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse}
  */
-public final class DeleteCustomPipelineResponse extends
+public final class UpdateCustomPipelineResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)
-    DeleteCustomPipelineResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)
+    UpdateCustomPipelineResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DeleteCustomPipelineResponse.newBuilder() to construct.
-  private DeleteCustomPipelineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateCustomPipelineResponse.newBuilder() to construct.
+  private UpdateCustomPipelineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DeleteCustomPipelineResponse() {
+  private UpdateCustomPipelineResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new DeleteCustomPipelineResponse();
+    return new UpdateCustomPipelineResponse();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DeleteCustomPipelineResponse(
+  private UpdateCustomPipelineResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,15 +82,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_descriptor;
+    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_fieldAccessorTable
+    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.class, io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.Builder.class);
+            io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.class, io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.Builder.class);
   }
 
   public static final int CUSTOM_PIPELINE_RESPONSE_FIELD_NUMBER = 1;
@@ -159,10 +159,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)) {
+    if (!(obj instanceof io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)) {
       return super.equals(obj);
     }
-    io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse other = (io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse) obj;
+    io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse other = (io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse) obj;
 
     if (hasCustomPipelineResponse() != other.hasCustomPipelineResponse()) return false;
     if (hasCustomPipelineResponse()) {
@@ -189,69 +189,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(byte[] data)
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseDelimitedFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseDelimitedFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse prototype) {
+  public static Builder newBuilder(io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse}
+   * Protobuf type {@code pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)
-      io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)
+      io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_descriptor;
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_fieldAccessorTable
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.class, io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.Builder.class);
+              io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.class, io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.Builder.class);
     }
 
-    // Construct using io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.newBuilder()
+    // Construct using io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -329,17 +329,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_DeleteCustomPipelineResponse_descriptor;
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse_descriptor;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse getDefaultInstanceForType() {
-      return io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.getDefaultInstance();
+    public io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse getDefaultInstanceForType() {
+      return io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse build() {
-      io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse result = buildPartial();
+    public io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse build() {
+      io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse buildPartial() {
-      io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse result = new io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse(this);
+    public io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse buildPartial() {
+      io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse result = new io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse(this);
       if (customPipelineResponseBuilder_ == null) {
         result.customPipelineResponse_ = customPipelineResponse_;
       } else {
@@ -392,16 +392,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse) {
-        return mergeFrom((io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)other);
+      if (other instanceof io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse) {
+        return mergeFrom((io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse other) {
-      if (other == io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse other) {
+      if (other == io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse.getDefaultInstance()) return this;
       if (other.hasCustomPipelineResponse()) {
         mergeCustomPipelineResponse(other.getCustomPipelineResponse());
       }
@@ -420,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse parsedMessage = null;
+      io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse) e.getUnfinishedMessage();
+        parsedMessage = (io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -565,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)
+    // @@protoc_insertion_point(builder_scope:pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)
-  private static final io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)
+  private static final io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse();
+    DEFAULT_INSTANCE = new io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse();
   }
 
-  public static io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse getDefaultInstance() {
+  public static io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteCustomPipelineResponse>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteCustomPipelineResponse>() {
+  private static final com.google.protobuf.Parser<UpdateCustomPipelineResponse>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateCustomPipelineResponse>() {
     @java.lang.Override
-    public DeleteCustomPipelineResponse parsePartialFrom(
+    public UpdateCustomPipelineResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeleteCustomPipelineResponse(input, extensionRegistry);
+      return new UpdateCustomPipelineResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DeleteCustomPipelineResponse> parser() {
+  public static com.google.protobuf.Parser<UpdateCustomPipelineResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteCustomPipelineResponse> getParserForType() {
+  public com.google.protobuf.Parser<UpdateCustomPipelineResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse getDefaultInstanceForType() {
+  public io.cuemby.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

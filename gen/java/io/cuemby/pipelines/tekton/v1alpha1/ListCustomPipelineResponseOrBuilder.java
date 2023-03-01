@@ -8,19 +8,19 @@ public interface ListCustomPipelineResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1 [json_name = "customPipeline"];</code>
-   * @return Whether the customPipeline field is set.
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1 [json_name = "customPipelineList"];</code>
+   * @return Whether the customPipelineList field is set.
    */
-  boolean hasCustomPipeline();
+  boolean hasCustomPipelineList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1 [json_name = "customPipeline"];</code>
-   * @return The customPipeline.
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1 [json_name = "customPipelineList"];</code>
+   * @return The customPipelineList.
    */
-  io.cuemby.pipelines.tekton.v1alpha1.CustomPipeline getCustomPipeline();
+  io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineList getCustomPipelineList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1 [json_name = "customPipeline"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1 [json_name = "customPipelineList"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineOrBuilder getCustomPipelineOrBuilder();
+  io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineListOrBuilder getCustomPipelineListOrBuilder();
 
   /**
    * <code>string status = 2 [json_name = "status"];</code>

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>pipelines.tekton.v1alpha1.GetCustomPipelineResponse</code>
+ * Generated from protobuf message <code>pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse</code>
  */
-class GetCustomPipelineResponse extends \Google\Protobuf\Internal\Message
+class UpdateCustomPipelineResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>

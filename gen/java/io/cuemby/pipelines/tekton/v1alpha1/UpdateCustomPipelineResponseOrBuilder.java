@@ -3,8 +3,8 @@
 
 package io.cuemby.pipelines.tekton.v1alpha1;
 
-public interface DeleteCustomPipelineResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pipelines.tekton.v1alpha1.DeleteCustomPipelineResponse)
+public interface UpdateCustomPipelineResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

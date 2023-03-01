@@ -146,4 +146,17 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Tekton\V1Alpha1\UpdateCustomPipelineRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateCustomPipeline(\Pipelines\Tekton\V1Alpha1\UpdateCustomPipelineRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/UpdateCustomPipeline',
+        $argument,
+        ['\Pipelines\Tekton\V1Alpha1\UpdateCustomPipelineResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -30,6 +30,7 @@ static const char* TektonPipelineAPIService_method_names[] = {
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteCustomPipeline",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListCustomPipeline",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetCustomPipeline",
+  "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/UpdateCustomPipeline",
 };
 
 std::unique_ptr< TektonPipelineAPIService::Stub> TektonPipelineAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -49,6 +50,7 @@ TektonPipelineAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInter
   , rpcmethod_DeleteCustomPipeline_(TektonPipelineAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListCustomPipeline_(TektonPipelineAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetCustomPipeline_(TektonPipelineAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateCustomPipeline_(TektonPipelineAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TektonPipelineAPIService::Stub::CreateTektonPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonPipelineRequest& request, ::pipelines::tekton::v1alpha1::CreateTektonPipelineResponse* response) {
@@ -211,6 +213,22 @@ void TektonPipelineAPIService::Stub::experimental_async::GetCustomPipeline(::grp
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::GetCustomPipelineResponse>::Create(channel_.get(), cq, rpcmethod_GetCustomPipeline_, context, request, false);
 }
 
+::grpc::Status TektonPipelineAPIService::Stub::UpdateCustomPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::UpdateCustomPipelineRequest& request, ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateCustomPipeline_, context, request, response);
+}
+
+void TektonPipelineAPIService::Stub::experimental_async::UpdateCustomPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::UpdateCustomPipelineRequest* request, ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateCustomPipeline_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse>* TektonPipelineAPIService::Stub::AsyncUpdateCustomPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::UpdateCustomPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse>::Create(channel_.get(), cq, rpcmethod_UpdateCustomPipeline_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse>* TektonPipelineAPIService::Stub::PrepareAsyncUpdateCustomPipelineRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::UpdateCustomPipelineRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse>::Create(channel_.get(), cq, rpcmethod_UpdateCustomPipeline_, context, request, false);
+}
+
 TektonPipelineAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TektonPipelineAPIService_method_names[0],
@@ -262,6 +280,11 @@ TektonPipelineAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::GetCustomPipelineRequest, ::pipelines::tekton::v1alpha1::GetCustomPipelineResponse>(
           std::mem_fn(&TektonPipelineAPIService::Service::GetCustomPipeline), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TektonPipelineAPIService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::UpdateCustomPipelineRequest, ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse>(
+          std::mem_fn(&TektonPipelineAPIService::Service::UpdateCustomPipeline), this)));
 }
 
 TektonPipelineAPIService::Service::~Service() {
@@ -331,6 +354,13 @@ TektonPipelineAPIService::Service::~Service() {
 }
 
 ::grpc::Status TektonPipelineAPIService::Service::GetCustomPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetCustomPipelineRequest* request, ::pipelines::tekton::v1alpha1::GetCustomPipelineResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TektonPipelineAPIService::Service::UpdateCustomPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::UpdateCustomPipelineRequest* request, ::pipelines::tekton::v1alpha1::UpdateCustomPipelineResponse* response) {
   (void) context;
   (void) request;
   (void) response;

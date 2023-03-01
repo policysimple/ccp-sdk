@@ -225,6 +225,28 @@ function deserialize_pipelines_tekton_v1alpha1_ListTektonTaskPipelineResponse(bu
   return pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.UpdateCustomPipelineRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.UpdateCustomPipelineRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.UpdateCustomPipelineRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.UpdateCustomPipelineResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.UpdateCustomPipelineResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.UpdateCustomPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = {
   createTektonPipeline: {
@@ -336,6 +358,17 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_GetCustomPipelineRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_GetCustomPipelineResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_GetCustomPipelineResponse,
+  },
+  updateCustomPipeline: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/UpdateCustomPipeline',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.UpdateCustomPipelineRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.UpdateCustomPipelineResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_UpdateCustomPipelineResponse,
   },
 };
 

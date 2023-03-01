@@ -8,29 +8,17 @@ public interface GetCustomPipelineResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-   * @return Whether the task field is set.
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+   * @return Whether the customPipelineResponse field is set.
    */
-  boolean hasTask();
+  boolean hasCustomPipelineResponse();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-   * @return The task.
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+   * @return The customPipelineResponse.
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Task getTask();
+  io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse getCustomPipelineResponse();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTaskOrBuilder();
-
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
-   */
-  java.lang.String getStatus();
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  com.google.protobuf.ByteString
-      getStatusBytes();
+  io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponseOrBuilder getCustomPipelineResponseOrBuilder();
 }

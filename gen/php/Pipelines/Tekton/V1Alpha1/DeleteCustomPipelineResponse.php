@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteCustomPipelineResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    protected $status = '';
+    protected $custom_pipeline_response = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteCustomPipelineResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $status
+     *     @type \Pipelines\Tekton\V1Alpha1\CustomPipelineResponse $custom_pipeline_response
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,33 @@ class DeleteCustomPipelineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
-     * @return string
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\CustomPipelineResponse|null
      */
-    public function getStatus()
+    public function getCustomPipelineResponse()
     {
-        return $this->status;
+        return $this->custom_pipeline_response;
+    }
+
+    public function hasCustomPipelineResponse()
+    {
+        return isset($this->custom_pipeline_response);
+    }
+
+    public function clearCustomPipelineResponse()
+    {
+        unset($this->custom_pipeline_response);
     }
 
     /**
-     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\CustomPipelineResponse $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setCustomPipelineResponse($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->status = $var;
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\CustomPipelineResponse::class);
+        $this->custom_pipeline_response = $var;
 
         return $this;
     }

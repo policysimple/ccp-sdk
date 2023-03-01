@@ -17,7 +17,7 @@ class TektonApi
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\Tekton::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Î
+• 
 *pipelines/tekton/v1alpha1/tekton_api.protopipelines.tekton.v1alpha1"Ñ
 CreateTektonPipelineRequestL
 tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline
@@ -42,9 +42,9 @@ tektonTask":
 task_id (	RtaskId":
  DeleteTektonTaskPipelineResponse
 status (	Rstatus"
-ListTektonTaskPipelineRequest"Ñ
-ListTektonTaskPipelineResponseJ
-	task_list (2-.pipelines.tekton.v1alpha1.CustomPipelineListRtaskList
+ListTektonTaskPipelineRequest"Ä
+ListTektonTaskPipelineResponseF
+	task_list (2).pipelines.tekton.v1alpha1.TektonTaskListRtaskList
 status (	Rstatus"7
 GetTektonTaskPipelineRequest
 task_id (	RtaskId"v
@@ -56,18 +56,22 @@ tektonTask":
 CreateCustomPipelineResponsek
 custom_pipeline_response (21.pipelines.tekton.v1alpha1.CustomPipelineResponseRcustomPipelineResponse"K
 DeleteCustomPipelineRequest,
-custom_pipeline_id (	RcustomPipelineId"6
-DeleteCustomPipelineResponse
-status (	Rstatus"
-ListCustomPipelineRequest"à
-ListCustomPipelineResponseR
-custom_pipeline (2).pipelines.tekton.v1alpha1.CustomPipelineRcustomPipeline
+custom_pipeline_id (	RcustomPipelineId"ã
+DeleteCustomPipelineResponsek
+custom_pipeline_response (21.pipelines.tekton.v1alpha1.CustomPipelineResponseRcustomPipelineResponse"
+ListCustomPipelineRequest"ï
+ListCustomPipelineResponse_
+custom_pipeline_list (2-.pipelines.tekton.v1alpha1.CustomPipelineListRcustomPipelineList
 status (	Rstatus"3
 GetCustomPipelineRequest
-task_id (	RtaskId"h
-GetCustomPipelineResponse3
-task (2.pipelines.tekton.v1alpha1.TaskRtask
-status (	Rstatus2è
+task_id (	RtaskId"à
+GetCustomPipelineResponsek
+custom_pipeline_response (21.pipelines.tekton.v1alpha1.CustomPipelineResponseRcustomPipelineResponse"ü
+UpdateCustomPipelineRequestR
+custom_pipeline (2).pipelines.tekton.v1alpha1.CustomPipelineRcustomPipeline,
+custom_pipeline_id (	RcustomPipelineId"ã
+UpdateCustomPipelineResponsek
+custom_pipeline_response (21.pipelines.tekton.v1alpha1.CustomPipelineResponseRcustomPipelineResponse2ô
 TektonPipelineAPIServiceá
 CreateTektonPipeline6.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest7.pipelines.tekton.v1alpha1.CreateTektonPipelineResponseá
 DeleteTektonPipeline6.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest7.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponseì
@@ -78,7 +82,8 @@ tektonTask":
 CreateCustomPipeline6.pipelines.tekton.v1alpha1.CreateCustomPipelineRequest7.pipelines.tekton.v1alpha1.CreateCustomPipelineResponseá
 DeleteCustomPipeline6.pipelines.tekton.v1alpha1.DeleteCustomPipelineRequest7.pipelines.tekton.v1alpha1.DeleteCustomPipelineResponseÅ
 ListCustomPipeline4.pipelines.tekton.v1alpha1.ListCustomPipelineRequest5.pipelines.tekton.v1alpha1.ListCustomPipelineResponse~
-GetCustomPipeline3.pipelines.tekton.v1alpha1.GetCustomPipelineRequest4.pipelines.tekton.v1alpha1.GetCustomPipelineResponseB±
+GetCustomPipeline3.pipelines.tekton.v1alpha1.GetCustomPipelineRequest4.pipelines.tekton.v1alpha1.GetCustomPipelineResponseá
+UpdateCustomPipeline6.pipelines.tekton.v1alpha1.UpdateCustomPipelineRequest7.pipelines.tekton.v1alpha1.UpdateCustomPipelineResponseB±
 #io.cuemby.pipelines.tekton.v1alpha1BTektonAPIProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPX™Pipelines.Tekton.V1Alpha1 Pipelines\\Tekton\\V1Alpha1bproto3'
         , true);
 

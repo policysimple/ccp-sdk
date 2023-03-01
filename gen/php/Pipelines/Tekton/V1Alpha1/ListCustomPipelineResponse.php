@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListCustomPipelineResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1 [json_name = "customPipeline"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1 [json_name = "customPipelineList"];</code>
      */
-    protected $custom_pipeline = null;
+    protected $custom_pipeline_list = null;
     /**
      * Generated from protobuf field <code>string status = 2 [json_name = "status"];</code>
      */
@@ -28,7 +28,7 @@ class ListCustomPipelineResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\CustomPipeline $custom_pipeline
+     *     @type \Pipelines\Tekton\V1Alpha1\CustomPipelineList $custom_pipeline_list
      *     @type string $status
      * }
      */
@@ -38,33 +38,33 @@ class ListCustomPipelineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1 [json_name = "customPipeline"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\CustomPipeline|null
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1 [json_name = "customPipelineList"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\CustomPipelineList|null
      */
-    public function getCustomPipeline()
+    public function getCustomPipelineList()
     {
-        return $this->custom_pipeline;
+        return $this->custom_pipeline_list;
     }
 
-    public function hasCustomPipeline()
+    public function hasCustomPipelineList()
     {
-        return isset($this->custom_pipeline);
+        return isset($this->custom_pipeline_list);
     }
 
-    public function clearCustomPipeline()
+    public function clearCustomPipelineList()
     {
-        unset($this->custom_pipeline);
+        unset($this->custom_pipeline_list);
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1 [json_name = "customPipeline"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\CustomPipeline $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1 [json_name = "customPipelineList"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\CustomPipelineList $var
      * @return $this
      */
-    public function setCustomPipeline($var)
+    public function setCustomPipelineList($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\CustomPipeline::class);
-        $this->custom_pipeline = $var;
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\CustomPipelineList::class);
+        $this->custom_pipeline_list = $var;
 
         return $this;
     }

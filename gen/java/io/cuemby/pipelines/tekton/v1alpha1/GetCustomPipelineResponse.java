@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetCustomPipelineResponse() {
-    status_ = "";
   }
 
   @java.lang.Override
@@ -50,22 +49,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            io.cuemby.pipelines.tekton.v1alpha1.Task.Builder subBuilder = null;
-            if (task_ != null) {
-              subBuilder = task_.toBuilder();
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.Builder subBuilder = null;
+            if (customPipelineResponse_ != null) {
+              subBuilder = customPipelineResponse_.toBuilder();
             }
-            task_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry);
+            customPipelineResponse_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(task_);
-              task_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(customPipelineResponse_);
+              customPipelineResponse_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            status_ = s;
             break;
           }
           default: {
@@ -100,68 +93,30 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse.class, io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse.Builder.class);
   }
 
-  public static final int TASK_FIELD_NUMBER = 1;
-  private io.cuemby.pipelines.tekton.v1alpha1.Task task_;
+  public static final int CUSTOM_PIPELINE_RESPONSE_FIELD_NUMBER = 1;
+  private io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse customPipelineResponse_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-   * @return Whether the task field is set.
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+   * @return Whether the customPipelineResponse field is set.
    */
   @java.lang.Override
-  public boolean hasTask() {
-    return task_ != null;
+  public boolean hasCustomPipelineResponse() {
+    return customPipelineResponse_ != null;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-   * @return The task.
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+   * @return The customPipelineResponse.
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Task getTask() {
-    return task_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance() : task_;
+  public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse getCustomPipelineResponse() {
+    return customPipelineResponse_ == null ? io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.getDefaultInstance() : customPipelineResponse_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTaskOrBuilder() {
-    return getTask();
-  }
-
-  public static final int STATUS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object status_;
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string status = 2 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponseOrBuilder getCustomPipelineResponseOrBuilder() {
+    return getCustomPipelineResponse();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -178,11 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (task_ != null) {
-      output.writeMessage(1, getTask());
-    }
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+    if (customPipelineResponse_ != null) {
+      output.writeMessage(1, getCustomPipelineResponse());
     }
     unknownFields.writeTo(output);
   }
@@ -193,12 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (task_ != null) {
+    if (customPipelineResponse_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getTask());
-    }
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+        .computeMessageSize(1, getCustomPipelineResponse());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,13 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse other = (io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse) obj;
 
-    if (hasTask() != other.hasTask()) return false;
-    if (hasTask()) {
-      if (!getTask()
-          .equals(other.getTask())) return false;
+    if (hasCustomPipelineResponse() != other.hasCustomPipelineResponse()) return false;
+    if (hasCustomPipelineResponse()) {
+      if (!getCustomPipelineResponse()
+          .equals(other.getCustomPipelineResponse())) return false;
     }
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -233,12 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasTask()) {
-      hash = (37 * hash) + TASK_FIELD_NUMBER;
-      hash = (53 * hash) + getTask().hashCode();
+    if (hasCustomPipelineResponse()) {
+      hash = (37 * hash) + CUSTOM_PIPELINE_RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomPipelineResponse().hashCode();
     }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,14 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (taskBuilder_ == null) {
-        task_ = null;
+      if (customPipelineResponseBuilder_ == null) {
+        customPipelineResponse_ = null;
       } else {
-        task_ = null;
-        taskBuilder_ = null;
+        customPipelineResponse_ = null;
+        customPipelineResponseBuilder_ = null;
       }
-      status_ = "";
-
       return this;
     }
 
@@ -406,12 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse result = new io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse(this);
-      if (taskBuilder_ == null) {
-        result.task_ = task_;
+      if (customPipelineResponseBuilder_ == null) {
+        result.customPipelineResponse_ = customPipelineResponse_;
       } else {
-        result.task_ = taskBuilder_.build();
+        result.customPipelineResponse_ = customPipelineResponseBuilder_.build();
       }
-      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -460,12 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse other) {
       if (other == io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineResponse.getDefaultInstance()) return this;
-      if (other.hasTask()) {
-        mergeTask(other.getTask());
-      }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
-        onChanged();
+      if (other.hasCustomPipelineResponse()) {
+        mergeCustomPipelineResponse(other.getCustomPipelineResponse());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -496,199 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.tekton.v1alpha1.Task task_;
+    private io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse customPipelineResponse_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> taskBuilder_;
+        io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.Builder, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponseOrBuilder> customPipelineResponseBuilder_;
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-     * @return Whether the task field is set.
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+     * @return Whether the customPipelineResponse field is set.
      */
-    public boolean hasTask() {
-      return taskBuilder_ != null || task_ != null;
+    public boolean hasCustomPipelineResponse() {
+      return customPipelineResponseBuilder_ != null || customPipelineResponse_ != null;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-     * @return The task.
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
+     * @return The customPipelineResponse.
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task getTask() {
-      if (taskBuilder_ == null) {
-        return task_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance() : task_;
+    public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse getCustomPipelineResponse() {
+      if (customPipelineResponseBuilder_ == null) {
+        return customPipelineResponse_ == null ? io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.getDefaultInstance() : customPipelineResponse_;
       } else {
-        return taskBuilder_.getMessage();
+        return customPipelineResponseBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    public Builder setTask(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
-      if (taskBuilder_ == null) {
+    public Builder setCustomPipelineResponse(io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse value) {
+      if (customPipelineResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        task_ = value;
+        customPipelineResponse_ = value;
         onChanged();
       } else {
-        taskBuilder_.setMessage(value);
+        customPipelineResponseBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    public Builder setTask(
-        io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
-      if (taskBuilder_ == null) {
-        task_ = builderForValue.build();
+    public Builder setCustomPipelineResponse(
+        io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.Builder builderForValue) {
+      if (customPipelineResponseBuilder_ == null) {
+        customPipelineResponse_ = builderForValue.build();
         onChanged();
       } else {
-        taskBuilder_.setMessage(builderForValue.build());
+        customPipelineResponseBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    public Builder mergeTask(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
-      if (taskBuilder_ == null) {
-        if (task_ != null) {
-          task_ =
-            io.cuemby.pipelines.tekton.v1alpha1.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+    public Builder mergeCustomPipelineResponse(io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse value) {
+      if (customPipelineResponseBuilder_ == null) {
+        if (customPipelineResponse_ != null) {
+          customPipelineResponse_ =
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.newBuilder(customPipelineResponse_).mergeFrom(value).buildPartial();
         } else {
-          task_ = value;
+          customPipelineResponse_ = value;
         }
         onChanged();
       } else {
-        taskBuilder_.mergeFrom(value);
+        customPipelineResponseBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    public Builder clearTask() {
-      if (taskBuilder_ == null) {
-        task_ = null;
+    public Builder clearCustomPipelineResponse() {
+      if (customPipelineResponseBuilder_ == null) {
+        customPipelineResponse_ = null;
         onChanged();
       } else {
-        task_ = null;
-        taskBuilder_ = null;
+        customPipelineResponse_ = null;
+        customPipelineResponseBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getTaskBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.Builder getCustomPipelineResponseBuilder() {
       
       onChanged();
-      return getTaskFieldBuilder().getBuilder();
+      return getCustomPipelineResponseFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTaskOrBuilder() {
-      if (taskBuilder_ != null) {
-        return taskBuilder_.getMessageOrBuilder();
+    public io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponseOrBuilder getCustomPipelineResponseOrBuilder() {
+      if (customPipelineResponseBuilder_ != null) {
+        return customPipelineResponseBuilder_.getMessageOrBuilder();
       } else {
-        return task_ == null ?
-            io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance() : task_;
+        return customPipelineResponse_ == null ?
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.getDefaultInstance() : customPipelineResponse_;
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * <code>.pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1 [json_name = "customPipelineResponse"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
-        getTaskFieldBuilder() {
-      if (taskBuilder_ == null) {
-        taskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder>(
-                getTask(),
+        io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.Builder, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponseOrBuilder> 
+        getCustomPipelineResponseFieldBuilder() {
+      if (customPipelineResponseBuilder_ == null) {
+        customPipelineResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponse.Builder, io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineResponseOrBuilder>(
+                getCustomPipelineResponse(),
                 getParentForChildren(),
                 isClean());
-        task_ = null;
+        customPipelineResponse_ = null;
       }
-      return taskBuilder_;
-    }
-
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      
-      status_ = getDefaultInstance().getStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 2 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      status_ = value;
-      onChanged();
-      return this;
+      return customPipelineResponseBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
