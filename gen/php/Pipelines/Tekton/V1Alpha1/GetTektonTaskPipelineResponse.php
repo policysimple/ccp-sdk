@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipeline task = 1 [json_name = "task"];</code>
      */
     protected $task = null;
     /**
@@ -28,7 +28,7 @@ class GetTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\Task $task
+     *     @type \Pipelines\Tekton\V1Alpha1\CustomPipeline $task
      *     @type string $status
      * }
      */
@@ -38,8 +38,8 @@ class GetTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\Task|null
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipeline task = 1 [json_name = "task"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\CustomPipeline|null
      */
     public function getTask()
     {
@@ -57,13 +57,13 @@ class GetTektonTaskPipelineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Task $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.CustomPipeline task = 1 [json_name = "task"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\CustomPipeline $var
      * @return $this
      */
     public function setTask($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\Task::class);
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\CustomPipeline::class);
         $this->task = $var;
 
         return $this;

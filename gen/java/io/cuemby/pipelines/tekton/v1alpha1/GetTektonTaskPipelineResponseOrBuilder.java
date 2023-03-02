@@ -8,19 +8,19 @@ public interface GetTektonTaskPipelineResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipeline task = 1 [json_name = "task"];</code>
    * @return Whether the task field is set.
    */
   boolean hasTask();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipeline task = 1 [json_name = "task"];</code>
    * @return The task.
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Task getTask();
+  io.cuemby.pipelines.tekton.v1alpha1.CustomPipeline getTask();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task task = 1 [json_name = "task"];</code>
+   * <code>.pipelines.tekton.v1alpha1.CustomPipeline task = 1 [json_name = "task"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTaskOrBuilder();
+  io.cuemby.pipelines.tekton.v1alpha1.CustomPipelineOrBuilder getTaskOrBuilder();
 
   /**
    * <code>string status = 2 [json_name = "status"];</code>
