@@ -79,6 +79,26 @@ public final class TektonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_TektonTaskList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_CustomPipeline_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_CustomPipeline_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_PipelineSpec_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_PipelineSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_CustomPipelineResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_CustomPipelineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_CustomPipelineList_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_CustomPipelineList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -146,12 +166,35 @@ public final class TektonProto {
       "Task\0223\n\004task\030\001 \003(\0132\037.pipelines.tekton.v1" +
       "alpha1.TaskR\004task\022\024\n\005order\030\002 \001(\005R\005order\"" +
       "G\n\016TektonTaskList\0225\n\005items\030\001 \003(\0132\037.pipel" +
-      "ines.tekton.v1alpha1.TaskR\005itemsB\256\001\n#io." +
-      "cuemby.pipelines.tekton.v1alpha1B\013Tekton" +
-      "ProtoP\001Z:github.com/cuemby/ccp-sdk/gen/g" +
-      "o/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipe" +
-      "lines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton" +
-      "\\V1Alpha1b\006proto3"
+      "ines.tekton.v1alpha1.TaskR\005items\"\357\002\n\016Cus" +
+      "tomPipeline\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(" +
+      "\tR\004name\022 \n\013description\030\003 \001(\tR\013descriptio" +
+      "n\022\033\n\tis_public\030\004 \001(\010R\010isPublic\022C\n\nowner_" +
+      "type\030\005 \001(\0162$.pipelines.tekton.v1alpha1.O" +
+      "wnerTypeR\townerType\022\031\n\010owner_id\030\006 \001(\tR\007o" +
+      "wnerId\022\035\n\ncreated_by\030\007 \001(\tR\tcreatedBy\022\037\n" +
+      "\013copied_from\030\010 \001(\tR\ncopiedFrom\022\035\n\nruntim" +
+      "e_id\030\t \001(\tR\truntimeId\022;\n\004spec\030\n \001(\0132\'.pi" +
+      "pelines.tekton.v1alpha1.PipelineSpecR\004sp" +
+      "ec\"\343\001\n\014PipelineSpec\0229\n\006params\030\001 \001(\0132!.pi" +
+      "pelines.tekton.v1alpha1.ParamsR\006params\022\034" +
+      "\n\tresources\030\002 \001(\tR\tresources\0225\n\005tasks\030\003 " +
+      "\001(\0132\037.pipelines.tekton.v1alpha1.TaskR\005ta" +
+      "sks\022C\n\tworkspace\030\004 \001(\0132%.pipelines.tekto" +
+      "n.v1alpha1.WorkspacesR\tworkspace\"\201\001\n\026Cus" +
+      "tomPipelineResponse\022\016\n\002ok\030\001 \001(\010R\002ok\022\030\n\007m" +
+      "essage\030\002 \001(\tR\007message\022=\n\004data\030\003 \001(\0132).pi" +
+      "pelines.tekton.v1alpha1.CustomPipelineR\004" +
+      "data\"U\n\022CustomPipelineList\022?\n\005items\030\001 \003(" +
+      "\0132).pipelines.tekton.v1alpha1.CustomPipe" +
+      "lineR\005items*j\n\tOwnerType\022\032\n\026OWNER_TYPE_U" +
+      "NSPECIFIED\020\000\022\025\n\021OWNER_TYPE_CUEMBY\020\001\022\022\n\016O" +
+      "WNER_TYPE_ORG\020\002\022\026\n\022OWNER_TYPE_PROJECT\020\003B" +
+      "\256\001\n#io.cuemby.pipelines.tekton.v1alpha1B" +
+      "\013TektonProtoP\001Z:github.com/cuemby/ccp-sd" +
+      "k/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX" +
+      "\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines" +
+      "\\Tekton\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -234,6 +277,30 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_TektonTaskList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_TektonTaskList_descriptor,
+        new java.lang.String[] { "Items", });
+    internal_static_pipelines_tekton_v1alpha1_CustomPipeline_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_pipelines_tekton_v1alpha1_CustomPipeline_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_CustomPipeline_descriptor,
+        new java.lang.String[] { "Id", "Name", "Description", "IsPublic", "OwnerType", "OwnerId", "CreatedBy", "CopiedFrom", "RuntimeId", "Spec", });
+    internal_static_pipelines_tekton_v1alpha1_PipelineSpec_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_pipelines_tekton_v1alpha1_PipelineSpec_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_PipelineSpec_descriptor,
+        new java.lang.String[] { "Params", "Resources", "Tasks", "Workspace", });
+    internal_static_pipelines_tekton_v1alpha1_CustomPipelineResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_pipelines_tekton_v1alpha1_CustomPipelineResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_CustomPipelineResponse_descriptor,
+        new java.lang.String[] { "Ok", "Message", "Data", });
+    internal_static_pipelines_tekton_v1alpha1_CustomPipelineList_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_pipelines_tekton_v1alpha1_CustomPipelineList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_CustomPipelineList_descriptor,
         new java.lang.String[] { "Items", });
   }
 

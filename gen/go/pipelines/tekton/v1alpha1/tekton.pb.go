@@ -20,6 +20,58 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type OwnerType int32
+
+const (
+	OwnerType_OWNER_TYPE_UNSPECIFIED OwnerType = 0
+	OwnerType_OWNER_TYPE_CUEMBY      OwnerType = 1
+	OwnerType_OWNER_TYPE_ORG         OwnerType = 2
+	OwnerType_OWNER_TYPE_PROJECT     OwnerType = 3
+)
+
+// Enum value maps for OwnerType.
+var (
+	OwnerType_name = map[int32]string{
+		0: "OWNER_TYPE_UNSPECIFIED",
+		1: "OWNER_TYPE_CUEMBY",
+		2: "OWNER_TYPE_ORG",
+		3: "OWNER_TYPE_PROJECT",
+	}
+	OwnerType_value = map[string]int32{
+		"OWNER_TYPE_UNSPECIFIED": 0,
+		"OWNER_TYPE_CUEMBY":      1,
+		"OWNER_TYPE_ORG":         2,
+		"OWNER_TYPE_PROJECT":     3,
+	}
+)
+
+func (x OwnerType) Enum() *OwnerType {
+	p := new(OwnerType)
+	*p = x
+	return p
+}
+
+func (x OwnerType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (OwnerType) Descriptor() protoreflect.EnumDescriptor {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_enumTypes[0].Descriptor()
+}
+
+func (OwnerType) Type() protoreflect.EnumType {
+	return &file_pipelines_tekton_v1alpha1_tekton_proto_enumTypes[0]
+}
+
+func (x OwnerType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use OwnerType.Descriptor instead.
+func (OwnerType) EnumDescriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{0}
+}
+
 type Params struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -630,6 +682,307 @@ func (x *TektonTaskList) GetItems() []*Task {
 	return nil
 }
 
+// Custom Pipeline ...
+type CustomPipeline struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          string        `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string        `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string        `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	IsPublic    bool          `protobuf:"varint,4,opt,name=is_public,json=isPublic,proto3" json:"is_public,omitempty"`
+	OwnerType   OwnerType     `protobuf:"varint,5,opt,name=owner_type,json=ownerType,proto3,enum=pipelines.tekton.v1alpha1.OwnerType" json:"owner_type,omitempty"`
+	OwnerId     string        `protobuf:"bytes,6,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
+	CreatedBy   string        `protobuf:"bytes,7,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
+	CopiedFrom  string        `protobuf:"bytes,8,opt,name=copied_from,json=copiedFrom,proto3" json:"copied_from,omitempty"`
+	RuntimeId   string        `protobuf:"bytes,9,opt,name=runtime_id,json=runtimeId,proto3" json:"runtime_id,omitempty"`
+	Spec        *PipelineSpec `protobuf:"bytes,10,opt,name=spec,proto3" json:"spec,omitempty"`
+}
+
+func (x *CustomPipeline) Reset() {
+	*x = CustomPipeline{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CustomPipeline) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CustomPipeline) ProtoMessage() {}
+
+func (x *CustomPipeline) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CustomPipeline.ProtoReflect.Descriptor instead.
+func (*CustomPipeline) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CustomPipeline) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetIsPublic() bool {
+	if x != nil {
+		return x.IsPublic
+	}
+	return false
+}
+
+func (x *CustomPipeline) GetOwnerType() OwnerType {
+	if x != nil {
+		return x.OwnerType
+	}
+	return OwnerType_OWNER_TYPE_UNSPECIFIED
+}
+
+func (x *CustomPipeline) GetOwnerId() string {
+	if x != nil {
+		return x.OwnerId
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetCreatedBy() string {
+	if x != nil {
+		return x.CreatedBy
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetCopiedFrom() string {
+	if x != nil {
+		return x.CopiedFrom
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetRuntimeId() string {
+	if x != nil {
+		return x.RuntimeId
+	}
+	return ""
+}
+
+func (x *CustomPipeline) GetSpec() *PipelineSpec {
+	if x != nil {
+		return x.Spec
+	}
+	return nil
+}
+
+type PipelineSpec struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Params    *Params     `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
+	Resources string      `protobuf:"bytes,2,opt,name=resources,proto3" json:"resources,omitempty"`
+	Tasks     *Task       `protobuf:"bytes,3,opt,name=tasks,proto3" json:"tasks,omitempty"`
+	Workspace *Workspaces `protobuf:"bytes,4,opt,name=workspace,proto3" json:"workspace,omitempty"`
+}
+
+func (x *PipelineSpec) Reset() {
+	*x = PipelineSpec{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PipelineSpec) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PipelineSpec) ProtoMessage() {}
+
+func (x *PipelineSpec) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PipelineSpec.ProtoReflect.Descriptor instead.
+func (*PipelineSpec) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *PipelineSpec) GetParams() *Params {
+	if x != nil {
+		return x.Params
+	}
+	return nil
+}
+
+func (x *PipelineSpec) GetResources() string {
+	if x != nil {
+		return x.Resources
+	}
+	return ""
+}
+
+func (x *PipelineSpec) GetTasks() *Task {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
+func (x *PipelineSpec) GetWorkspace() *Workspaces {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+type CustomPipelineResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Ok      bool            `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
+	Message string          `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	Data    *CustomPipeline `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *CustomPipelineResponse) Reset() {
+	*x = CustomPipelineResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CustomPipelineResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CustomPipelineResponse) ProtoMessage() {}
+
+func (x *CustomPipelineResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CustomPipelineResponse.ProtoReflect.Descriptor instead.
+func (*CustomPipelineResponse) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *CustomPipelineResponse) GetOk() bool {
+	if x != nil {
+		return x.Ok
+	}
+	return false
+}
+
+func (x *CustomPipelineResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *CustomPipelineResponse) GetData() *CustomPipeline {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+type CustomPipelineList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Items []*CustomPipeline `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+}
+
+func (x *CustomPipelineList) Reset() {
+	*x = CustomPipelineList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CustomPipelineList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CustomPipelineList) ProtoMessage() {}
+
+func (x *CustomPipelineList) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CustomPipelineList.ProtoReflect.Descriptor instead.
+func (*CustomPipelineList) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *CustomPipelineList) GetItems() []*CustomPipeline {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_pipelines_tekton_v1alpha1_tekton_proto protoreflect.FileDescriptor
 
 var file_pipelines_tekton_v1alpha1_tekton_proto_rawDesc = []byte{
@@ -780,18 +1133,76 @@ var file_pipelines_tekton_v1alpha1_tekton_proto_rawDesc = []byte{
 	0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c,
 	0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c,
 	0x70, 0x68, 0x61, 0x31, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
-	0x42, 0xae, 0x01, 0x0a, 0x23, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e, 0x70,
-	0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e,
-	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0b, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e,
-	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73,
-	0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69,
-	0x6e, 0x65, 0x73, 0x2f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0xa2, 0x02, 0x03, 0x50, 0x50, 0x58, 0xaa, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65,
-	0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x56, 0x31, 0x41,
-	0x6c, 0x70, 0x68, 0x61, 0x31, 0xca, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
-	0x73, 0x5c, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5c, 0x56, 0x31, 0x41, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0xef, 0x02, 0x0a, 0x0e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1b, 0x0a, 0x09, 0x69, 0x73, 0x5f,
+	0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x69, 0x73,
+	0x50, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x12, 0x43, 0x0a, 0x0a, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x5f,
+	0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x24, 0x2e, 0x70, 0x69, 0x70,
+	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
+	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65,
+	0x52, 0x09, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x6f,
+	0x77, 0x6e, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6f,
+	0x77, 0x6e, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x64, 0x5f, 0x62, 0x79, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x64, 0x42, 0x79, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x6f, 0x70, 0x69, 0x65, 0x64, 0x5f,
+	0x66, 0x72, 0x6f, 0x6d, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x6f, 0x70, 0x69,
+	0x65, 0x64, 0x46, 0x72, 0x6f, 0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d,
+	0x65, 0x5f, 0x69, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x75, 0x6e, 0x74,
+	0x69, 0x6d, 0x65, 0x49, 0x64, 0x12, 0x3b, 0x0a, 0x04, 0x73, 0x70, 0x65, 0x63, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e,
+	0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
+	0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x53, 0x70, 0x65, 0x63, 0x52, 0x04, 0x73, 0x70,
+	0x65, 0x63, 0x22, 0xe3, 0x01, 0x0a, 0x0c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x53,
+	0x70, 0x65, 0x63, 0x12, 0x39, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e,
+	0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
+	0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x1c,
+	0x0a, 0x09, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x09, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x12, 0x35, 0x0a, 0x05,
+	0x74, 0x61, 0x73, 0x6b, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x70, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x05, 0x74, 0x61,
+	0x73, 0x6b, 0x73, 0x12, 0x43, 0x0a, 0x09, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
+	0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
+	0x61, 0x31, 0x2e, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x09, 0x77,
+	0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x22, 0x81, 0x01, 0x0a, 0x16, 0x43, 0x75, 0x73,
+	0x74, 0x6f, 0x6d, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x6f, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
+	0x02, 0x6f, 0x6b, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x3d, 0x0a,
+	0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x70, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x55, 0x0a, 0x12,
+	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x4c, 0x69,
+	0x73, 0x74, 0x12, 0x3f, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x29, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65,
+	0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x75,
+	0x73, 0x74, 0x6f, 0x6d, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x05, 0x69, 0x74,
+	0x65, 0x6d, 0x73, 0x2a, 0x6a, 0x0a, 0x09, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x1a, 0x0a, 0x16, 0x4f, 0x57, 0x4e, 0x45, 0x52, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x55,
+	0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x15, 0x0a, 0x11,
+	0x4f, 0x57, 0x4e, 0x45, 0x52, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x43, 0x55, 0x45, 0x4d, 0x42,
+	0x59, 0x10, 0x01, 0x12, 0x12, 0x0a, 0x0e, 0x4f, 0x57, 0x4e, 0x45, 0x52, 0x5f, 0x54, 0x59, 0x50,
+	0x45, 0x5f, 0x4f, 0x52, 0x47, 0x10, 0x02, 0x12, 0x16, 0x0a, 0x12, 0x4f, 0x57, 0x4e, 0x45, 0x52,
+	0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x50, 0x52, 0x4f, 0x4a, 0x45, 0x43, 0x54, 0x10, 0x03, 0x42,
+	0xae, 0x01, 0x0a, 0x23, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e, 0x70, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76,
+	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0b, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50,
+	0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73, 0x64,
+	0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
+	0x65, 0x73, 0x2f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
+	0x61, 0x31, 0xa2, 0x02, 0x03, 0x50, 0x50, 0x58, 0xaa, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x73, 0x2e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x56, 0x31, 0x41, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0xca, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73,
+	0x5c, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5c, 0x56, 0x31, 0x41, 0x6c, 0x70, 0x68, 0x61, 0x31,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -806,40 +1217,53 @@ func file_pipelines_tekton_v1alpha1_tekton_proto_rawDescGZIP() []byte {
 	return file_pipelines_tekton_v1alpha1_tekton_proto_rawDescData
 }
 
-var file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_pipelines_tekton_v1alpha1_tekton_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_pipelines_tekton_v1alpha1_tekton_proto_goTypes = []interface{}{
-	(*Params)(nil),         // 0: pipelines.tekton.v1alpha1.Params
-	(*TaskParams)(nil),     // 1: pipelines.tekton.v1alpha1.TaskParams
-	(*Workspaces)(nil),     // 2: pipelines.tekton.v1alpha1.Workspaces
-	(*Task)(nil),           // 3: pipelines.tekton.v1alpha1.Task
-	(*Pipeline)(nil),       // 4: pipelines.tekton.v1alpha1.Pipeline
-	(*TektonTask)(nil),     // 5: pipelines.tekton.v1alpha1.TektonTask
-	(*TektonTaskList)(nil), // 6: pipelines.tekton.v1alpha1.TektonTaskList
-	nil,                    // 7: pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
-	nil,                    // 8: pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
-	nil,                    // 9: pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
-	nil,                    // 10: pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
-	nil,                    // 11: pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
-	nil,                    // 12: pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
+	(OwnerType)(0),                 // 0: pipelines.tekton.v1alpha1.OwnerType
+	(*Params)(nil),                 // 1: pipelines.tekton.v1alpha1.Params
+	(*TaskParams)(nil),             // 2: pipelines.tekton.v1alpha1.TaskParams
+	(*Workspaces)(nil),             // 3: pipelines.tekton.v1alpha1.Workspaces
+	(*Task)(nil),                   // 4: pipelines.tekton.v1alpha1.Task
+	(*Pipeline)(nil),               // 5: pipelines.tekton.v1alpha1.Pipeline
+	(*TektonTask)(nil),             // 6: pipelines.tekton.v1alpha1.TektonTask
+	(*TektonTaskList)(nil),         // 7: pipelines.tekton.v1alpha1.TektonTaskList
+	(*CustomPipeline)(nil),         // 8: pipelines.tekton.v1alpha1.CustomPipeline
+	(*PipelineSpec)(nil),           // 9: pipelines.tekton.v1alpha1.PipelineSpec
+	(*CustomPipelineResponse)(nil), // 10: pipelines.tekton.v1alpha1.CustomPipelineResponse
+	(*CustomPipelineList)(nil),     // 11: pipelines.tekton.v1alpha1.CustomPipelineList
+	nil,                            // 12: pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
+	nil,                            // 13: pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
+	nil,                            // 14: pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
+	nil,                            // 15: pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
+	nil,                            // 16: pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
+	nil,                            // 17: pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
 }
 var file_pipelines_tekton_v1alpha1_tekton_proto_depIdxs = []int32{
-	2,  // 0: pipelines.tekton.v1alpha1.Task.workspaces:type_name -> pipelines.tekton.v1alpha1.Workspaces
-	1,  // 1: pipelines.tekton.v1alpha1.Task.task_params:type_name -> pipelines.tekton.v1alpha1.TaskParams
-	0,  // 2: pipelines.tekton.v1alpha1.Pipeline.params:type_name -> pipelines.tekton.v1alpha1.Params
-	3,  // 3: pipelines.tekton.v1alpha1.Pipeline.tasks:type_name -> pipelines.tekton.v1alpha1.Task
-	7,  // 4: pipelines.tekton.v1alpha1.Pipeline.integration:type_name -> pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
-	8,  // 5: pipelines.tekton.v1alpha1.Pipeline.environment_variables:type_name -> pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
-	9,  // 6: pipelines.tekton.v1alpha1.Pipeline.commands:type_name -> pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
-	10, // 7: pipelines.tekton.v1alpha1.Pipeline.secrets:type_name -> pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
-	11, // 8: pipelines.tekton.v1alpha1.Pipeline.extra_args:type_name -> pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
-	12, // 9: pipelines.tekton.v1alpha1.Pipeline.instance_type:type_name -> pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
-	3,  // 10: pipelines.tekton.v1alpha1.TektonTask.task:type_name -> pipelines.tekton.v1alpha1.Task
-	3,  // 11: pipelines.tekton.v1alpha1.TektonTaskList.items:type_name -> pipelines.tekton.v1alpha1.Task
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	3,  // 0: pipelines.tekton.v1alpha1.Task.workspaces:type_name -> pipelines.tekton.v1alpha1.Workspaces
+	2,  // 1: pipelines.tekton.v1alpha1.Task.task_params:type_name -> pipelines.tekton.v1alpha1.TaskParams
+	1,  // 2: pipelines.tekton.v1alpha1.Pipeline.params:type_name -> pipelines.tekton.v1alpha1.Params
+	4,  // 3: pipelines.tekton.v1alpha1.Pipeline.tasks:type_name -> pipelines.tekton.v1alpha1.Task
+	12, // 4: pipelines.tekton.v1alpha1.Pipeline.integration:type_name -> pipelines.tekton.v1alpha1.Pipeline.IntegrationEntry
+	13, // 5: pipelines.tekton.v1alpha1.Pipeline.environment_variables:type_name -> pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntry
+	14, // 6: pipelines.tekton.v1alpha1.Pipeline.commands:type_name -> pipelines.tekton.v1alpha1.Pipeline.CommandsEntry
+	15, // 7: pipelines.tekton.v1alpha1.Pipeline.secrets:type_name -> pipelines.tekton.v1alpha1.Pipeline.SecretsEntry
+	16, // 8: pipelines.tekton.v1alpha1.Pipeline.extra_args:type_name -> pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntry
+	17, // 9: pipelines.tekton.v1alpha1.Pipeline.instance_type:type_name -> pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntry
+	4,  // 10: pipelines.tekton.v1alpha1.TektonTask.task:type_name -> pipelines.tekton.v1alpha1.Task
+	4,  // 11: pipelines.tekton.v1alpha1.TektonTaskList.items:type_name -> pipelines.tekton.v1alpha1.Task
+	0,  // 12: pipelines.tekton.v1alpha1.CustomPipeline.owner_type:type_name -> pipelines.tekton.v1alpha1.OwnerType
+	9,  // 13: pipelines.tekton.v1alpha1.CustomPipeline.spec:type_name -> pipelines.tekton.v1alpha1.PipelineSpec
+	1,  // 14: pipelines.tekton.v1alpha1.PipelineSpec.params:type_name -> pipelines.tekton.v1alpha1.Params
+	4,  // 15: pipelines.tekton.v1alpha1.PipelineSpec.tasks:type_name -> pipelines.tekton.v1alpha1.Task
+	3,  // 16: pipelines.tekton.v1alpha1.PipelineSpec.workspace:type_name -> pipelines.tekton.v1alpha1.Workspaces
+	8,  // 17: pipelines.tekton.v1alpha1.CustomPipelineResponse.data:type_name -> pipelines.tekton.v1alpha1.CustomPipeline
+	8,  // 18: pipelines.tekton.v1alpha1.CustomPipelineList.items:type_name -> pipelines.tekton.v1alpha1.CustomPipeline
+	19, // [19:19] is the sub-list for method output_type
+	19, // [19:19] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_pipelines_tekton_v1alpha1_tekton_proto_init() }
@@ -932,19 +1356,68 @@ func file_pipelines_tekton_v1alpha1_tekton_proto_init() {
 				return nil
 			}
 		}
+		file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CustomPipeline); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PipelineSpec); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CustomPipelineResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CustomPipelineList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_pipelines_tekton_v1alpha1_tekton_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   13,
+			NumEnums:      1,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_pipelines_tekton_v1alpha1_tekton_proto_goTypes,
 		DependencyIndexes: file_pipelines_tekton_v1alpha1_tekton_proto_depIdxs,
+		EnumInfos:         file_pipelines_tekton_v1alpha1_tekton_proto_enumTypes,
 		MessageInfos:      file_pipelines_tekton_v1alpha1_tekton_proto_msgTypes,
 	}.Build()
 	File_pipelines_tekton_v1alpha1_tekton_proto = out.File
