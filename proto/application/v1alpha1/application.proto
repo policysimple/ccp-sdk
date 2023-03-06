@@ -78,4 +78,6 @@ message ListApplication {
     Repository repository = 3;
     string project_id = 6;
     string organization_id = 7;
+    bool integration_status = 8;
+
 }

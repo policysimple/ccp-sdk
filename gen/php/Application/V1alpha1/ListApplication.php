@@ -33,6 +33,10 @@ class ListApplication extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string organization_id = 7 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
+    /**
+     * Generated from protobuf field <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+     */
+    protected $integration_status = false;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class ListApplication extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Repository $repository
      *     @type string $project_id
      *     @type string $organization_id
+     *     @type bool $integration_status
      * }
      */
     public function __construct($data = NULL) {
@@ -168,6 +173,28 @@ class ListApplication extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+     * @return bool
+     */
+    public function getIntegrationStatus()
+    {
+        return $this->integration_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIntegrationStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->integration_status = $var;
 
         return $this;
     }

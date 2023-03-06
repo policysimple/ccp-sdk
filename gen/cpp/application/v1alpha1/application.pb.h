@@ -1741,6 +1741,7 @@ class ListApplication final :
     kProjectIdFieldNumber = 6,
     kOrganizationIdFieldNumber = 7,
     kRepositoryFieldNumber = 3,
+    kIntegrationStatusFieldNumber = 8,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1816,6 +1817,15 @@ class ListApplication final :
       ::application::v1alpha1::Repository* repository);
   ::application::v1alpha1::Repository* unsafe_arena_release_repository();
 
+  // bool integration_status = 8 [json_name = "integrationStatus"];
+  void clear_integration_status();
+  bool integration_status() const;
+  void set_integration_status(bool value);
+  private:
+  bool _internal_integration_status() const;
+  void _internal_set_integration_status(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:application.v1alpha1.ListApplication)
  private:
   class _Internal;
@@ -1828,6 +1838,7 @@ class ListApplication final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   ::application::v1alpha1::Repository* repository_;
+  bool integration_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -3898,6 +3909,26 @@ inline void ListApplication::set_allocated_organization_id(std::string* organiza
   organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ListApplication.organization_id)
+}
+
+// bool integration_status = 8 [json_name = "integrationStatus"];
+inline void ListApplication::clear_integration_status() {
+  integration_status_ = false;
+}
+inline bool ListApplication::_internal_integration_status() const {
+  return integration_status_;
+}
+inline bool ListApplication::integration_status() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ListApplication.integration_status)
+  return _internal_integration_status();
+}
+inline void ListApplication::_internal_set_integration_status(bool value) {
+  
+  integration_status_ = value;
+}
+inline void ListApplication::set_integration_status(bool value) {
+  _internal_set_integration_status(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ListApplication.integration_status)
 }
 
 #ifdef __GNUC__

@@ -2205,7 +2205,8 @@ proto.application.v1alpha1.ListApplication.toObject = function(includeInstance, 
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     repository: (f = msg.getRepository()) && proto.application.v1alpha1.Repository.toObject(includeInstance, f),
     projectId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 7, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    integrationStatus: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -2262,6 +2263,10 @@ proto.application.v1alpha1.ListApplication.deserializeBinaryFromReader = functio
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIntegrationStatus(value);
       break;
     default:
       reader.skipField();
@@ -2325,6 +2330,13 @@ proto.application.v1alpha1.ListApplication.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getIntegrationStatus();
+  if (f) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -2437,6 +2449,24 @@ proto.application.v1alpha1.ListApplication.prototype.getOrganizationId = functio
  */
 proto.application.v1alpha1.ListApplication.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional bool integration_status = 8;
+ * @return {boolean}
+ */
+proto.application.v1alpha1.ListApplication.prototype.getIntegrationStatus = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.application.v1alpha1.ListApplication} returns this
+ */
+proto.application.v1alpha1.ListApplication.prototype.setIntegrationStatus = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 

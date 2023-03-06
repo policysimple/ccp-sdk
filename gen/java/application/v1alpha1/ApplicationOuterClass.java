@@ -9043,6 +9043,12 @@ public final class ApplicationOuterClass {
      */
     com.google.protobuf.ByteString
         getOrganizationIdBytes();
+
+    /**
+     * <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+     * @return The integrationStatus.
+     */
+    boolean getIntegrationStatus();
   }
   /**
    * Protobuf type {@code application.v1alpha1.ListApplication}
@@ -9128,6 +9134,11 @@ public final class ApplicationOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               organizationId_ = s;
+              break;
+            }
+            case 64: {
+
+              integrationStatus_ = input.readBool();
               break;
             }
             default: {
@@ -9340,6 +9351,17 @@ public final class ApplicationOuterClass {
       }
     }
 
+    public static final int INTEGRATION_STATUS_FIELD_NUMBER = 8;
+    private boolean integrationStatus_;
+    /**
+     * <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+     * @return The integrationStatus.
+     */
+    @java.lang.Override
+    public boolean getIntegrationStatus() {
+      return integrationStatus_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9369,6 +9391,9 @@ public final class ApplicationOuterClass {
       if (!getOrganizationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organizationId_);
       }
+      if (integrationStatus_ != false) {
+        output.writeBool(8, integrationStatus_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9393,6 +9418,10 @@ public final class ApplicationOuterClass {
       }
       if (!getOrganizationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organizationId_);
+      }
+      if (integrationStatus_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, integrationStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9422,6 +9451,8 @@ public final class ApplicationOuterClass {
           .equals(other.getProjectId())) return false;
       if (!getOrganizationId()
           .equals(other.getOrganizationId())) return false;
+      if (getIntegrationStatus()
+          != other.getIntegrationStatus()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9445,6 +9476,9 @@ public final class ApplicationOuterClass {
       hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + INTEGRATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIntegrationStatus());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9592,6 +9626,8 @@ public final class ApplicationOuterClass {
 
         organizationId_ = "";
 
+        integrationStatus_ = false;
+
         return this;
       }
 
@@ -9627,6 +9663,7 @@ public final class ApplicationOuterClass {
         }
         result.projectId_ = projectId_;
         result.organizationId_ = organizationId_;
+        result.integrationStatus_ = integrationStatus_;
         onBuilt();
         return result;
       }
@@ -9693,6 +9730,9 @@ public final class ApplicationOuterClass {
         if (!other.getOrganizationId().isEmpty()) {
           organizationId_ = other.organizationId_;
           onChanged();
+        }
+        if (other.getIntegrationStatus() != false) {
+          setIntegrationStatus(other.getIntegrationStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10145,6 +10185,37 @@ public final class ApplicationOuterClass {
         onChanged();
         return this;
       }
+
+      private boolean integrationStatus_ ;
+      /**
+       * <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+       * @return The integrationStatus.
+       */
+      @java.lang.Override
+      public boolean getIntegrationStatus() {
+        return integrationStatus_;
+      }
+      /**
+       * <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+       * @param value The integrationStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIntegrationStatus(boolean value) {
+        
+        integrationStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool integration_status = 8 [json_name = "integrationStatus"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIntegrationStatus() {
+        
+        integrationStatus_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10284,15 +10355,17 @@ public final class ApplicationOuterClass {
       "ng\022D\n\014traffic_type\030\014 \001(\0162!.application.v" +
       "1alpha1.TrafficTypeR\013trafficType\022-\n\022inte" +
       "gration_status\030\017 \001(\010R\021integrationStatus\"" +
-      "\277\001\n\017ListApplication\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n" +
+      "\356\001\n\017ListApplication\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n" +
       "ame\030\002 \001(\tR\004name\022@\n\nrepository\030\003 \001(\0132 .ap" +
       "plication.v1alpha1.RepositoryR\nrepositor" +
       "y\022\035\n\nproject_id\030\006 \001(\tR\tprojectId\022\'\n\017orga" +
-      "nization_id\030\007 \001(\tR\016organizationId*a\n\013Tra" +
-      "fficType\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031" +
-      "\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYP" +
-      "E_INTERNAL\020\002B7Z5github.com/cuemby/ccp-sd" +
-      "k/gen/go/application/v1alpha1b\006proto3"
+      "nization_id\030\007 \001(\tR\016organizationId\022-\n\022int" +
+      "egration_status\030\010 \001(\010R\021integrationStatus" +
+      "*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE_UNSPECIF" +
+      "IED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAF" +
+      "FIC_TYPE_INTERNAL\020\002B7Z5github.com/cuemby" +
+      "/ccp-sdk/gen/go/application/v1alpha1b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10345,7 +10418,7 @@ public final class ApplicationOuterClass {
     internal_static_application_v1alpha1_ListApplication_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplication_descriptor,
-        new java.lang.String[] { "Id", "Name", "Repository", "ProjectId", "OrganizationId", });
+        new java.lang.String[] { "Id", "Name", "Repository", "ProjectId", "OrganizationId", "IntegrationStatus", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
