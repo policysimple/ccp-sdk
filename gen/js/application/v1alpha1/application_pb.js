@@ -1659,7 +1659,8 @@ proto.application.v1alpha1.Application.toObject = function(includeInstance, msg)
     projectDescription: jspb.Message.getFieldWithDefault(msg, 9, ""),
     organizationId: jspb.Message.getFieldWithDefault(msg, 14, ""),
     scaling: (f = msg.getScaling()) && proto.application.v1alpha1.Scaling.toObject(includeInstance, f),
-    trafficType: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    trafficType: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    integrationStatus: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -1746,6 +1747,10 @@ proto.application.v1alpha1.Application.deserializeBinaryFromReader = function(ms
     case 12:
       var value = /** @type {!proto.application.v1alpha1.TrafficType} */ (reader.readEnum());
       msg.setTrafficType(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIntegrationStatus(value);
       break;
     default:
       reader.skipField();
@@ -1860,6 +1865,13 @@ proto.application.v1alpha1.Application.serializeBinaryToWriter = function(messag
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getIntegrationStatus();
+  if (f) {
+    writer.writeBool(
+      15,
       f
     );
   }
@@ -2136,6 +2148,24 @@ proto.application.v1alpha1.Application.prototype.getTrafficType = function() {
  */
 proto.application.v1alpha1.Application.prototype.setTrafficType = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional bool integration_status = 15;
+ * @return {boolean}
+ */
+proto.application.v1alpha1.Application.prototype.getIntegrationStatus = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.application.v1alpha1.Application} returns this
+ */
+proto.application.v1alpha1.Application.prototype.setIntegrationStatus = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 

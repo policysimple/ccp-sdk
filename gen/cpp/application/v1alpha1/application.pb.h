@@ -1410,6 +1410,7 @@ class Application final :
     kConfigurationFieldNumber = 5,
     kScalingFieldNumber = 11,
     kTrafficTypeFieldNumber = 12,
+    kIntegrationStatusFieldNumber = 15,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1586,6 +1587,15 @@ class Application final :
   void _internal_set_traffic_type(::application::v1alpha1::TrafficType value);
   public:
 
+  // bool integration_status = 15 [json_name = "integrationStatus"];
+  void clear_integration_status();
+  bool integration_status() const;
+  void set_integration_status(bool value);
+  private:
+  bool _internal_integration_status() const;
+  void _internal_set_integration_status(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:application.v1alpha1.Application)
  private:
   class _Internal;
@@ -1605,6 +1615,7 @@ class Application final :
   ::application::v1alpha1::Configuration* configuration_;
   ::application::v1alpha1::Scaling* scaling_;
   int traffic_type_;
+  bool integration_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
 };
@@ -3589,6 +3600,26 @@ inline void Application::_internal_set_traffic_type(::application::v1alpha1::Tra
 inline void Application::set_traffic_type(::application::v1alpha1::TrafficType value) {
   _internal_set_traffic_type(value);
   // @@protoc_insertion_point(field_set:application.v1alpha1.Application.traffic_type)
+}
+
+// bool integration_status = 15 [json_name = "integrationStatus"];
+inline void Application::clear_integration_status() {
+  integration_status_ = false;
+}
+inline bool Application::_internal_integration_status() const {
+  return integration_status_;
+}
+inline bool Application::integration_status() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.integration_status)
+  return _internal_integration_status();
+}
+inline void Application::_internal_set_integration_status(bool value) {
+  
+  integration_status_ = value;
+}
+inline void Application::set_integration_status(bool value) {
+  _internal_set_integration_status(value);
+  // @@protoc_insertion_point(field_set:application.v1alpha1.Application.integration_status)
 }
 
 // -------------------------------------------------------------------
