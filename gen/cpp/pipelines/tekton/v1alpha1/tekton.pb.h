@@ -2370,11 +2370,65 @@ class PipelineSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResourcesFieldNumber = 2,
     kParamsFieldNumber = 1,
     kTasksFieldNumber = 3,
     kWorkspaceFieldNumber = 4,
+    kResourcesFieldNumber = 2,
   };
+  // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+  int params_size() const;
+  private:
+  int _internal_params_size() const;
+  public:
+  void clear_params();
+  ::pipelines::tekton::v1alpha1::Params* mutable_params(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >*
+      mutable_params();
+  private:
+  const ::pipelines::tekton::v1alpha1::Params& _internal_params(int index) const;
+  ::pipelines::tekton::v1alpha1::Params* _internal_add_params();
+  public:
+  const ::pipelines::tekton::v1alpha1::Params& params(int index) const;
+  ::pipelines::tekton::v1alpha1::Params* add_params();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >&
+      params() const;
+
+  // repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
+  int tasks_size() const;
+  private:
+  int _internal_tasks_size() const;
+  public:
+  void clear_tasks();
+  ::pipelines::tekton::v1alpha1::Task* mutable_tasks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+      mutable_tasks();
+  private:
+  const ::pipelines::tekton::v1alpha1::Task& _internal_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* _internal_add_tasks();
+  public:
+  const ::pipelines::tekton::v1alpha1::Task& tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* add_tasks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+      tasks() const;
+
+  // repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
+  int workspace_size() const;
+  private:
+  int _internal_workspace_size() const;
+  public:
+  void clear_workspace();
+  ::pipelines::tekton::v1alpha1::Workspaces* mutable_workspace(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >*
+      mutable_workspace();
+  private:
+  const ::pipelines::tekton::v1alpha1::Workspaces& _internal_workspace(int index) const;
+  ::pipelines::tekton::v1alpha1::Workspaces* _internal_add_workspace();
+  public:
+  const ::pipelines::tekton::v1alpha1::Workspaces& workspace(int index) const;
+  ::pipelines::tekton::v1alpha1::Workspaces* add_workspace();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >&
+      workspace() const;
+
   // string resources = 2 [json_name = "resources"];
   void clear_resources();
   const std::string& resources() const;
@@ -2389,60 +2443,6 @@ class PipelineSpec final :
   std::string* _internal_mutable_resources();
   public:
 
-  // .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
-  bool has_params() const;
-  private:
-  bool _internal_has_params() const;
-  public:
-  void clear_params();
-  const ::pipelines::tekton::v1alpha1::Params& params() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::Params* release_params();
-  ::pipelines::tekton::v1alpha1::Params* mutable_params();
-  void set_allocated_params(::pipelines::tekton::v1alpha1::Params* params);
-  private:
-  const ::pipelines::tekton::v1alpha1::Params& _internal_params() const;
-  ::pipelines::tekton::v1alpha1::Params* _internal_mutable_params();
-  public:
-  void unsafe_arena_set_allocated_params(
-      ::pipelines::tekton::v1alpha1::Params* params);
-  ::pipelines::tekton::v1alpha1::Params* unsafe_arena_release_params();
-
-  // .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
-  bool has_tasks() const;
-  private:
-  bool _internal_has_tasks() const;
-  public:
-  void clear_tasks();
-  const ::pipelines::tekton::v1alpha1::Task& tasks() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::Task* release_tasks();
-  ::pipelines::tekton::v1alpha1::Task* mutable_tasks();
-  void set_allocated_tasks(::pipelines::tekton::v1alpha1::Task* tasks);
-  private:
-  const ::pipelines::tekton::v1alpha1::Task& _internal_tasks() const;
-  ::pipelines::tekton::v1alpha1::Task* _internal_mutable_tasks();
-  public:
-  void unsafe_arena_set_allocated_tasks(
-      ::pipelines::tekton::v1alpha1::Task* tasks);
-  ::pipelines::tekton::v1alpha1::Task* unsafe_arena_release_tasks();
-
-  // .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
-  bool has_workspace() const;
-  private:
-  bool _internal_has_workspace() const;
-  public:
-  void clear_workspace();
-  const ::pipelines::tekton::v1alpha1::Workspaces& workspace() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::Workspaces* release_workspace();
-  ::pipelines::tekton::v1alpha1::Workspaces* mutable_workspace();
-  void set_allocated_workspace(::pipelines::tekton::v1alpha1::Workspaces* workspace);
-  private:
-  const ::pipelines::tekton::v1alpha1::Workspaces& _internal_workspace() const;
-  ::pipelines::tekton::v1alpha1::Workspaces* _internal_mutable_workspace();
-  public:
-  void unsafe_arena_set_allocated_workspace(
-      ::pipelines::tekton::v1alpha1::Workspaces* workspace);
-  ::pipelines::tekton::v1alpha1::Workspaces* unsafe_arena_release_workspace();
-
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.PipelineSpec)
  private:
   class _Internal;
@@ -2450,10 +2450,10 @@ class PipelineSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params > params_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > tasks_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces > workspace_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resources_;
-  ::pipelines::tekton::v1alpha1::Params* params_;
-  ::pipelines::tekton::v1alpha1::Task* tasks_;
-  ::pipelines::tekton::v1alpha1::Workspaces* workspace_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -5064,94 +5064,44 @@ inline void CustomPipeline::set_allocated_spec(::pipelines::tekton::v1alpha1::Pi
 
 // PipelineSpec
 
-// .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
-inline bool PipelineSpec::_internal_has_params() const {
-  return this != internal_default_instance() && params_ != nullptr;
+// repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+inline int PipelineSpec::_internal_params_size() const {
+  return params_.size();
 }
-inline bool PipelineSpec::has_params() const {
-  return _internal_has_params();
+inline int PipelineSpec::params_size() const {
+  return _internal_params_size();
 }
 inline void PipelineSpec::clear_params() {
-  if (GetArenaForAllocation() == nullptr && params_ != nullptr) {
-    delete params_;
-  }
-  params_ = nullptr;
+  params_.Clear();
 }
-inline const ::pipelines::tekton::v1alpha1::Params& PipelineSpec::_internal_params() const {
-  const ::pipelines::tekton::v1alpha1::Params* p = params_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::Params&>(
-      ::pipelines::tekton::v1alpha1::_Params_default_instance_);
-}
-inline const ::pipelines::tekton::v1alpha1::Params& PipelineSpec::params() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.PipelineSpec.params)
-  return _internal_params();
-}
-inline void PipelineSpec::unsafe_arena_set_allocated_params(
-    ::pipelines::tekton::v1alpha1::Params* params) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(params_);
-  }
-  params_ = params;
-  if (params) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.params)
-}
-inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::release_params() {
-  
-  ::pipelines::tekton::v1alpha1::Params* temp = params_;
-  params_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::unsafe_arena_release_params() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.PipelineSpec.params)
-  
-  ::pipelines::tekton::v1alpha1::Params* temp = params_;
-  params_ = nullptr;
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::_internal_mutable_params() {
-  
-  if (params_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::Params>(GetArenaForAllocation());
-    params_ = p;
-  }
-  return params_;
-}
-inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::mutable_params() {
-  ::pipelines::tekton::v1alpha1::Params* _msg = _internal_mutable_params();
+inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::mutable_params(int index) {
   // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.PipelineSpec.params)
-  return _msg;
+  return params_.Mutable(index);
 }
-inline void PipelineSpec::set_allocated_params(::pipelines::tekton::v1alpha1::Params* params) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete params_;
-  }
-  if (params) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::tekton::v1alpha1::Params>::GetOwningArena(params);
-    if (message_arena != submessage_arena) {
-      params = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, params, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  params_ = params;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.params)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >*
+PipelineSpec::mutable_params() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.PipelineSpec.params)
+  return &params_;
+}
+inline const ::pipelines::tekton::v1alpha1::Params& PipelineSpec::_internal_params(int index) const {
+  return params_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Params& PipelineSpec::params(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.PipelineSpec.params)
+  return _internal_params(index);
+}
+inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::_internal_add_params() {
+  return params_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Params* PipelineSpec::add_params() {
+  ::pipelines::tekton::v1alpha1::Params* _add = _internal_add_params();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.PipelineSpec.params)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >&
+PipelineSpec::params() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.PipelineSpec.params)
+  return params_;
 }
 
 // string resources = 2 [json_name = "resources"];
@@ -5200,184 +5150,84 @@ inline void PipelineSpec::set_allocated_resources(std::string* resources) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.resources)
 }
 
-// .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
-inline bool PipelineSpec::_internal_has_tasks() const {
-  return this != internal_default_instance() && tasks_ != nullptr;
+// repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
+inline int PipelineSpec::_internal_tasks_size() const {
+  return tasks_.size();
 }
-inline bool PipelineSpec::has_tasks() const {
-  return _internal_has_tasks();
+inline int PipelineSpec::tasks_size() const {
+  return _internal_tasks_size();
 }
 inline void PipelineSpec::clear_tasks() {
-  if (GetArenaForAllocation() == nullptr && tasks_ != nullptr) {
-    delete tasks_;
-  }
-  tasks_ = nullptr;
+  tasks_.Clear();
 }
-inline const ::pipelines::tekton::v1alpha1::Task& PipelineSpec::_internal_tasks() const {
-  const ::pipelines::tekton::v1alpha1::Task* p = tasks_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::Task&>(
-      ::pipelines::tekton::v1alpha1::_Task_default_instance_);
+inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::mutable_tasks(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
+  return tasks_.Mutable(index);
 }
-inline const ::pipelines::tekton::v1alpha1::Task& PipelineSpec::tasks() const {
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+PipelineSpec::mutable_tasks() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
+  return &tasks_;
+}
+inline const ::pipelines::tekton::v1alpha1::Task& PipelineSpec::_internal_tasks(int index) const {
+  return tasks_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Task& PipelineSpec::tasks(int index) const {
   // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
-  return _internal_tasks();
+  return _internal_tasks(index);
 }
-inline void PipelineSpec::unsafe_arena_set_allocated_tasks(
-    ::pipelines::tekton::v1alpha1::Task* tasks) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tasks_);
-  }
-  tasks_ = tasks;
-  if (tasks) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
+inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::_internal_add_tasks() {
+  return tasks_.Add();
 }
-inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::release_tasks() {
-  
-  ::pipelines::tekton::v1alpha1::Task* temp = tasks_;
-  tasks_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::add_tasks() {
+  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_tasks();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
+  return _add;
 }
-inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::unsafe_arena_release_tasks() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
-  
-  ::pipelines::tekton::v1alpha1::Task* temp = tasks_;
-  tasks_ = nullptr;
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::_internal_mutable_tasks() {
-  
-  if (tasks_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::Task>(GetArenaForAllocation());
-    tasks_ = p;
-  }
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+PipelineSpec::tasks() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
   return tasks_;
 }
-inline ::pipelines::tekton::v1alpha1::Task* PipelineSpec::mutable_tasks() {
-  ::pipelines::tekton::v1alpha1::Task* _msg = _internal_mutable_tasks();
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
-  return _msg;
-}
-inline void PipelineSpec::set_allocated_tasks(::pipelines::tekton::v1alpha1::Task* tasks) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete tasks_;
-  }
-  if (tasks) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::tekton::v1alpha1::Task>::GetOwningArena(tasks);
-    if (message_arena != submessage_arena) {
-      tasks = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, tasks, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  tasks_ = tasks;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.tasks)
-}
 
-// .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
-inline bool PipelineSpec::_internal_has_workspace() const {
-  return this != internal_default_instance() && workspace_ != nullptr;
+// repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
+inline int PipelineSpec::_internal_workspace_size() const {
+  return workspace_.size();
 }
-inline bool PipelineSpec::has_workspace() const {
-  return _internal_has_workspace();
+inline int PipelineSpec::workspace_size() const {
+  return _internal_workspace_size();
 }
 inline void PipelineSpec::clear_workspace() {
-  if (GetArenaForAllocation() == nullptr && workspace_ != nullptr) {
-    delete workspace_;
-  }
-  workspace_ = nullptr;
+  workspace_.Clear();
 }
-inline const ::pipelines::tekton::v1alpha1::Workspaces& PipelineSpec::_internal_workspace() const {
-  const ::pipelines::tekton::v1alpha1::Workspaces* p = workspace_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::Workspaces&>(
-      ::pipelines::tekton::v1alpha1::_Workspaces_default_instance_);
-}
-inline const ::pipelines::tekton::v1alpha1::Workspaces& PipelineSpec::workspace() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
-  return _internal_workspace();
-}
-inline void PipelineSpec::unsafe_arena_set_allocated_workspace(
-    ::pipelines::tekton::v1alpha1::Workspaces* workspace) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(workspace_);
-  }
-  workspace_ = workspace;
-  if (workspace) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
-}
-inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::release_workspace() {
-  
-  ::pipelines::tekton::v1alpha1::Workspaces* temp = workspace_;
-  workspace_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::unsafe_arena_release_workspace() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
-  
-  ::pipelines::tekton::v1alpha1::Workspaces* temp = workspace_;
-  workspace_ = nullptr;
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::_internal_mutable_workspace() {
-  
-  if (workspace_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::Workspaces>(GetArenaForAllocation());
-    workspace_ = p;
-  }
-  return workspace_;
-}
-inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::mutable_workspace() {
-  ::pipelines::tekton::v1alpha1::Workspaces* _msg = _internal_mutable_workspace();
+inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::mutable_workspace(int index) {
   // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
-  return _msg;
+  return workspace_.Mutable(index);
 }
-inline void PipelineSpec::set_allocated_workspace(::pipelines::tekton::v1alpha1::Workspaces* workspace) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete workspace_;
-  }
-  if (workspace) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::tekton::v1alpha1::Workspaces>::GetOwningArena(workspace);
-    if (message_arena != submessage_arena) {
-      workspace = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, workspace, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  workspace_ = workspace;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >*
+PipelineSpec::mutable_workspace() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
+  return &workspace_;
+}
+inline const ::pipelines::tekton::v1alpha1::Workspaces& PipelineSpec::_internal_workspace(int index) const {
+  return workspace_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Workspaces& PipelineSpec::workspace(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
+  return _internal_workspace(index);
+}
+inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::_internal_add_workspace() {
+  return workspace_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Workspaces* PipelineSpec::add_workspace() {
+  ::pipelines::tekton::v1alpha1::Workspaces* _add = _internal_add_workspace();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >&
+PipelineSpec::workspace() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.PipelineSpec.workspace)
+  return workspace_;
 }
 
 // -------------------------------------------------------------------

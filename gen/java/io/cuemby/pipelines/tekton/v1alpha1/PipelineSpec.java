@@ -16,7 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PipelineSpec() {
+    params_ = java.util.Collections.emptyList();
     resources_ = "";
+    tasks_ = java.util.Collections.emptyList();
+    workspace_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -50,16 +54,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            io.cuemby.pipelines.tekton.v1alpha1.Params.Builder subBuilder = null;
-            if (params_ != null) {
-              subBuilder = params_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            params_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Params.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(params_);
-              params_ = subBuilder.buildPartial();
-            }
-
+            params_.add(
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Params.parser(), extensionRegistry));
             break;
           }
           case 18: {
@@ -69,29 +69,21 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            io.cuemby.pipelines.tekton.v1alpha1.Task.Builder subBuilder = null;
-            if (tasks_ != null) {
-              subBuilder = tasks_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              tasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
+              mutable_bitField0_ |= 0x00000002;
             }
-            tasks_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tasks_);
-              tasks_ = subBuilder.buildPartial();
-            }
-
+            tasks_.add(
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
             break;
           }
           case 34: {
-            io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder subBuilder = null;
-            if (workspace_ != null) {
-              subBuilder = workspace_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              workspace_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Workspaces>();
+              mutable_bitField0_ |= 0x00000004;
             }
-            workspace_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Workspaces.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(workspace_);
-              workspace_ = subBuilder.buildPartial();
-            }
-
+            workspace_.add(
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Workspaces.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -109,6 +101,15 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        params_ = java.util.Collections.unmodifiableList(params_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        tasks_ = java.util.Collections.unmodifiableList(tasks_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        workspace_ = java.util.Collections.unmodifiableList(workspace_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -127,29 +128,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PARAMS_FIELD_NUMBER = 1;
-  private io.cuemby.pipelines.tekton.v1alpha1.Params params_;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-   * @return Whether the params field is set.
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public boolean hasParams() {
-    return params_ != null;
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
+    return params_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-   * @return The params.
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Params getParams() {
-    return params_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance() : params_;
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+      getParamsOrBuilderList() {
+    return params_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder() {
-    return getParams();
+  public int getParamsCount() {
+    return params_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
+    return params_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+      int index) {
+    return params_.get(index);
   }
 
   public static final int RESOURCES_FIELD_NUMBER = 2;
@@ -191,55 +206,83 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TASKS_FIELD_NUMBER = 3;
-  private io.cuemby.pipelines.tekton.v1alpha1.Task tasks_;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> tasks_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-   * @return Whether the tasks field is set.
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
    */
   @java.lang.Override
-  public boolean hasTasks() {
-    return tasks_ != null;
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
+    return tasks_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-   * @return The tasks.
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks() {
-    return tasks_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance() : tasks_;
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getTasksOrBuilderList() {
+    return tasks_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder() {
-    return getTasks();
+  public int getTasksCount() {
+    return tasks_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
+    return tasks_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
+      int index) {
+    return tasks_.get(index);
   }
 
   public static final int WORKSPACE_FIELD_NUMBER = 4;
-  private io.cuemby.pipelines.tekton.v1alpha1.Workspaces workspace_;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> workspace_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-   * @return Whether the workspace field is set.
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
    */
   @java.lang.Override
-  public boolean hasWorkspace() {
-    return workspace_ != null;
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> getWorkspaceList() {
+    return workspace_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-   * @return The workspace.
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspace() {
-    return workspace_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance() : workspace_;
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
+      getWorkspaceOrBuilderList() {
+    return workspace_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspaceOrBuilder() {
-    return getWorkspace();
+  public int getWorkspaceCount() {
+    return workspace_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspace(int index) {
+    return workspace_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspaceOrBuilder(
+      int index) {
+    return workspace_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -256,17 +299,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (params_ != null) {
-      output.writeMessage(1, getParams());
+    for (int i = 0; i < params_.size(); i++) {
+      output.writeMessage(1, params_.get(i));
     }
     if (!getResourcesBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resources_);
     }
-    if (tasks_ != null) {
-      output.writeMessage(3, getTasks());
+    for (int i = 0; i < tasks_.size(); i++) {
+      output.writeMessage(3, tasks_.get(i));
     }
-    if (workspace_ != null) {
-      output.writeMessage(4, getWorkspace());
+    for (int i = 0; i < workspace_.size(); i++) {
+      output.writeMessage(4, workspace_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -277,20 +320,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (params_ != null) {
+    for (int i = 0; i < params_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getParams());
+        .computeMessageSize(1, params_.get(i));
     }
     if (!getResourcesBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resources_);
     }
-    if (tasks_ != null) {
+    for (int i = 0; i < tasks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getTasks());
+        .computeMessageSize(3, tasks_.get(i));
     }
-    if (workspace_ != null) {
+    for (int i = 0; i < workspace_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getWorkspace());
+        .computeMessageSize(4, workspace_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -307,23 +350,14 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec other = (io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec) obj;
 
-    if (hasParams() != other.hasParams()) return false;
-    if (hasParams()) {
-      if (!getParams()
-          .equals(other.getParams())) return false;
-    }
+    if (!getParamsList()
+        .equals(other.getParamsList())) return false;
     if (!getResources()
         .equals(other.getResources())) return false;
-    if (hasTasks() != other.hasTasks()) return false;
-    if (hasTasks()) {
-      if (!getTasks()
-          .equals(other.getTasks())) return false;
-    }
-    if (hasWorkspace() != other.hasWorkspace()) return false;
-    if (hasWorkspace()) {
-      if (!getWorkspace()
-          .equals(other.getWorkspace())) return false;
-    }
+    if (!getTasksList()
+        .equals(other.getTasksList())) return false;
+    if (!getWorkspaceList()
+        .equals(other.getWorkspaceList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -335,19 +369,19 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasParams()) {
+    if (getParamsCount() > 0) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
-      hash = (53 * hash) + getParams().hashCode();
+      hash = (53 * hash) + getParamsList().hashCode();
     }
     hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
     hash = (53 * hash) + getResources().hashCode();
-    if (hasTasks()) {
+    if (getTasksCount() > 0) {
       hash = (37 * hash) + TASKS_FIELD_NUMBER;
-      hash = (53 * hash) + getTasks().hashCode();
+      hash = (53 * hash) + getTasksList().hashCode();
     }
-    if (hasWorkspace()) {
+    if (getWorkspaceCount() > 0) {
       hash = (37 * hash) + WORKSPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getWorkspace().hashCode();
+      hash = (53 * hash) + getWorkspaceList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -477,30 +511,33 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getParamsFieldBuilder();
+        getTasksFieldBuilder();
+        getWorkspaceFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       if (paramsBuilder_ == null) {
-        params_ = null;
+        params_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        params_ = null;
-        paramsBuilder_ = null;
+        paramsBuilder_.clear();
       }
       resources_ = "";
 
       if (tasksBuilder_ == null) {
-        tasks_ = null;
+        tasks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
-        tasks_ = null;
-        tasksBuilder_ = null;
+        tasksBuilder_.clear();
       }
       if (workspaceBuilder_ == null) {
-        workspace_ = null;
+        workspace_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
-        workspace_ = null;
-        workspaceBuilder_ = null;
+        workspaceBuilder_.clear();
       }
       return this;
     }
@@ -528,18 +565,31 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec result = new io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec(this);
+      int from_bitField0_ = bitField0_;
       if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          params_ = java.util.Collections.unmodifiableList(params_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
         result.params_ = params_;
       } else {
         result.params_ = paramsBuilder_.build();
       }
       result.resources_ = resources_;
       if (tasksBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          tasks_ = java.util.Collections.unmodifiableList(tasks_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
         result.tasks_ = tasks_;
       } else {
         result.tasks_ = tasksBuilder_.build();
       }
       if (workspaceBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          workspace_ = java.util.Collections.unmodifiableList(workspace_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
         result.workspace_ = workspace_;
       } else {
         result.workspace_ = workspaceBuilder_.build();
@@ -592,18 +642,87 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec other) {
       if (other == io.cuemby.pipelines.tekton.v1alpha1.PipelineSpec.getDefaultInstance()) return this;
-      if (other.hasParams()) {
-        mergeParams(other.getParams());
+      if (paramsBuilder_ == null) {
+        if (!other.params_.isEmpty()) {
+          if (params_.isEmpty()) {
+            params_ = other.params_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureParamsIsMutable();
+            params_.addAll(other.params_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.params_.isEmpty()) {
+          if (paramsBuilder_.isEmpty()) {
+            paramsBuilder_.dispose();
+            paramsBuilder_ = null;
+            params_ = other.params_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            paramsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getParamsFieldBuilder() : null;
+          } else {
+            paramsBuilder_.addAllMessages(other.params_);
+          }
+        }
       }
       if (!other.getResources().isEmpty()) {
         resources_ = other.resources_;
         onChanged();
       }
-      if (other.hasTasks()) {
-        mergeTasks(other.getTasks());
+      if (tasksBuilder_ == null) {
+        if (!other.tasks_.isEmpty()) {
+          if (tasks_.isEmpty()) {
+            tasks_ = other.tasks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureTasksIsMutable();
+            tasks_.addAll(other.tasks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tasks_.isEmpty()) {
+          if (tasksBuilder_.isEmpty()) {
+            tasksBuilder_.dispose();
+            tasksBuilder_ = null;
+            tasks_ = other.tasks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            tasksBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTasksFieldBuilder() : null;
+          } else {
+            tasksBuilder_.addAllMessages(other.tasks_);
+          }
+        }
       }
-      if (other.hasWorkspace()) {
-        mergeWorkspace(other.getWorkspace());
+      if (workspaceBuilder_ == null) {
+        if (!other.workspace_.isEmpty()) {
+          if (workspace_.isEmpty()) {
+            workspace_ = other.workspace_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureWorkspaceIsMutable();
+            workspace_.addAll(other.workspace_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.workspace_.isEmpty()) {
+          if (workspaceBuilder_.isEmpty()) {
+            workspaceBuilder_.dispose();
+            workspaceBuilder_ = null;
+            workspace_ = other.workspace_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            workspaceBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getWorkspaceFieldBuilder() : null;
+          } else {
+            workspaceBuilder_.addAllMessages(other.workspace_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -633,119 +752,241 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
-    private io.cuemby.pipelines.tekton.v1alpha1.Params params_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> paramsBuilder_;
-    /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-     * @return Whether the params field is set.
-     */
-    public boolean hasParams() {
-      return paramsBuilder_ != null || params_ != null;
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_ =
+      java.util.Collections.emptyList();
+    private void ensureParamsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>(params_);
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> paramsBuilder_;
+
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-     * @return The params.
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Params getParams() {
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
       if (paramsBuilder_ == null) {
-        return params_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance() : params_;
+        return java.util.Collections.unmodifiableList(params_);
       } else {
-        return paramsBuilder_.getMessage();
+        return paramsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
-    public Builder setParams(io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+    public int getParamsCount() {
+      if (paramsBuilder_ == null) {
+        return params_.size();
+      } else {
+        return paramsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
+      if (paramsBuilder_ == null) {
+        return params_.get(index);
+      } else {
+        return paramsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public Builder setParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
       if (paramsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        params_ = value;
+        ensureParamsIsMutable();
+        params_.set(index, value);
         onChanged();
       } else {
-        paramsBuilder_.setMessage(value);
+        paramsBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
     public Builder setParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        params_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        paramsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public Builder addParams(io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsIsMutable();
+        params_.add(value);
+        onChanged();
+      } else {
+        paramsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public Builder addParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsIsMutable();
+        params_.add(index, value);
+        onChanged();
+      } else {
+        paramsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public Builder addParams(
         io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
       if (paramsBuilder_ == null) {
-        params_ = builderForValue.build();
+        ensureParamsIsMutable();
+        params_.add(builderForValue.build());
         onChanged();
       } else {
-        paramsBuilder_.setMessage(builderForValue.build());
+        paramsBuilder_.addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
-    public Builder mergeParams(io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+    public Builder addParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
       if (paramsBuilder_ == null) {
-        if (params_ != null) {
-          params_ =
-            io.cuemby.pipelines.tekton.v1alpha1.Params.newBuilder(params_).mergeFrom(value).buildPartial();
-        } else {
-          params_ = value;
-        }
+        ensureParamsIsMutable();
+        params_.add(index, builderForValue.build());
         onChanged();
       } else {
-        paramsBuilder_.mergeFrom(value);
+        paramsBuilder_.addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public Builder addAllParams(
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Params> values) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, params_);
+        onChanged();
+      } else {
+        paramsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
     public Builder clearParams() {
       if (paramsBuilder_ == null) {
-        params_ = null;
+        params_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        params_ = null;
-        paramsBuilder_ = null;
+        paramsBuilder_.clear();
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder getParamsBuilder() {
-      
-      onChanged();
-      return getParamsFieldBuilder().getBuilder();
+    public Builder removeParams(int index) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        params_.remove(index);
+        onChanged();
+      } else {
+        paramsBuilder_.remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder() {
-      if (paramsBuilder_ != null) {
-        return paramsBuilder_.getMessageOrBuilder();
-      } else {
-        return params_ == null ?
-            io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance() : params_;
+    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder getParamsBuilder(
+        int index) {
+      return getParamsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+        int index) {
+      if (paramsBuilder_ == null) {
+        return params_.get(index);  } else {
+        return paramsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+         getParamsOrBuilderList() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(params_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder() {
+      return getParamsFieldBuilder().addBuilder(
+          io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder(
+        int index) {
+      return getParamsFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params.Builder> 
+         getParamsBuilderList() {
+      return getParamsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
         getParamsFieldBuilder() {
       if (paramsBuilder_ == null) {
-        paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        paramsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder>(
-                getParams(),
+                params_,
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         params_ = null;
@@ -829,118 +1070,239 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.tekton.v1alpha1.Task tasks_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> tasksBuilder_;
-    /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-     * @return Whether the tasks field is set.
-     */
-    public boolean hasTasks() {
-      return tasksBuilder_ != null || tasks_ != null;
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> tasks_ =
+      java.util.Collections.emptyList();
+    private void ensureTasksIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        tasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>(tasks_);
+        bitField0_ |= 0x00000002;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> tasksBuilder_;
+
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-     * @return The tasks.
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks() {
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getTasksList() {
       if (tasksBuilder_ == null) {
-        return tasks_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance() : tasks_;
+        return java.util.Collections.unmodifiableList(tasks_);
       } else {
-        return tasksBuilder_.getMessage();
+        return tasksBuilder_.getMessageList();
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    public Builder setTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+    public int getTasksCount() {
+      if (tasksBuilder_ == null) {
+        return tasks_.size();
+      } else {
+        return tasksBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index) {
+      if (tasksBuilder_ == null) {
+        return tasks_.get(index);
+      } else {
+        return tasksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public Builder setTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
       if (tasksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        tasks_ = value;
+        ensureTasksIsMutable();
+        tasks_.set(index, value);
         onChanged();
       } else {
-        tasksBuilder_.setMessage(value);
+        tasksBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
     public Builder setTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (tasksBuilder_ == null) {
+        ensureTasksIsMutable();
+        tasks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tasksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public Builder addTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (tasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTasksIsMutable();
+        tasks_.add(value);
+        onChanged();
+      } else {
+        tasksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public Builder addTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (tasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTasksIsMutable();
+        tasks_.add(index, value);
+        onChanged();
+      } else {
+        tasksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public Builder addTasks(
         io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
       if (tasksBuilder_ == null) {
-        tasks_ = builderForValue.build();
+        ensureTasksIsMutable();
+        tasks_.add(builderForValue.build());
         onChanged();
       } else {
-        tasksBuilder_.setMessage(builderForValue.build());
+        tasksBuilder_.addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    public Builder mergeTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+    public Builder addTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
       if (tasksBuilder_ == null) {
-        if (tasks_ != null) {
-          tasks_ =
-            io.cuemby.pipelines.tekton.v1alpha1.Task.newBuilder(tasks_).mergeFrom(value).buildPartial();
-        } else {
-          tasks_ = value;
-        }
+        ensureTasksIsMutable();
+        tasks_.add(index, builderForValue.build());
         onChanged();
       } else {
-        tasksBuilder_.mergeFrom(value);
+        tasksBuilder_.addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public Builder addAllTasks(
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Task> values) {
+      if (tasksBuilder_ == null) {
+        ensureTasksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tasks_);
+        onChanged();
+      } else {
+        tasksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
     public Builder clearTasks() {
       if (tasksBuilder_ == null) {
-        tasks_ = null;
+        tasks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
-        tasks_ = null;
-        tasksBuilder_ = null;
+        tasksBuilder_.clear();
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getTasksBuilder() {
-      
-      onChanged();
-      return getTasksFieldBuilder().getBuilder();
+    public Builder removeTasks(int index) {
+      if (tasksBuilder_ == null) {
+        ensureTasksIsMutable();
+        tasks_.remove(index);
+        onChanged();
+      } else {
+        tasksBuilder_.remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder() {
-      if (tasksBuilder_ != null) {
-        return tasksBuilder_.getMessageOrBuilder();
-      } else {
-        return tasks_ == null ?
-            io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance() : tasks_;
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getTasksBuilder(
+        int index) {
+      return getTasksFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
+        int index) {
+      if (tasksBuilder_ == null) {
+        return tasks_.get(index);  } else {
+        return tasksBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+         getTasksOrBuilderList() {
+      if (tasksBuilder_ != null) {
+        return tasksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tasks_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addTasksBuilder() {
+      return getTasksFieldBuilder().addBuilder(
+          io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addTasksBuilder(
+        int index) {
+      return getTasksFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task.Builder> 
+         getTasksBuilderList() {
+      return getTasksFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
         getTasksFieldBuilder() {
       if (tasksBuilder_ == null) {
-        tasksBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        tasksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder>(
-                getTasks(),
+                tasks_,
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         tasks_ = null;
@@ -948,118 +1310,239 @@ private static final long serialVersionUID = 0L;
       return tasksBuilder_;
     }
 
-    private io.cuemby.pipelines.tekton.v1alpha1.Workspaces workspace_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> workspaceBuilder_;
-    /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-     * @return Whether the workspace field is set.
-     */
-    public boolean hasWorkspace() {
-      return workspaceBuilder_ != null || workspace_ != null;
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> workspace_ =
+      java.util.Collections.emptyList();
+    private void ensureWorkspaceIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        workspace_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Workspaces>(workspace_);
+        bitField0_ |= 0x00000004;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> workspaceBuilder_;
+
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-     * @return The workspace.
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspace() {
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> getWorkspaceList() {
       if (workspaceBuilder_ == null) {
-        return workspace_ == null ? io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance() : workspace_;
+        return java.util.Collections.unmodifiableList(workspace_);
       } else {
-        return workspaceBuilder_.getMessage();
+        return workspaceBuilder_.getMessageList();
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    public Builder setWorkspace(io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
+    public int getWorkspaceCount() {
+      if (workspaceBuilder_ == null) {
+        return workspace_.size();
+      } else {
+        return workspaceBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspace(int index) {
+      if (workspaceBuilder_ == null) {
+        return workspace_.get(index);
+      } else {
+        return workspaceBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public Builder setWorkspace(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
       if (workspaceBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        workspace_ = value;
+        ensureWorkspaceIsMutable();
+        workspace_.set(index, value);
         onChanged();
       } else {
-        workspaceBuilder_.setMessage(value);
+        workspaceBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
     public Builder setWorkspace(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder builderForValue) {
+      if (workspaceBuilder_ == null) {
+        ensureWorkspaceIsMutable();
+        workspace_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        workspaceBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public Builder addWorkspace(io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
+      if (workspaceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkspaceIsMutable();
+        workspace_.add(value);
+        onChanged();
+      } else {
+        workspaceBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public Builder addWorkspace(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
+      if (workspaceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkspaceIsMutable();
+        workspace_.add(index, value);
+        onChanged();
+      } else {
+        workspaceBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public Builder addWorkspace(
         io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder builderForValue) {
       if (workspaceBuilder_ == null) {
-        workspace_ = builderForValue.build();
+        ensureWorkspaceIsMutable();
+        workspace_.add(builderForValue.build());
         onChanged();
       } else {
-        workspaceBuilder_.setMessage(builderForValue.build());
+        workspaceBuilder_.addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    public Builder mergeWorkspace(io.cuemby.pipelines.tekton.v1alpha1.Workspaces value) {
+    public Builder addWorkspace(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder builderForValue) {
       if (workspaceBuilder_ == null) {
-        if (workspace_ != null) {
-          workspace_ =
-            io.cuemby.pipelines.tekton.v1alpha1.Workspaces.newBuilder(workspace_).mergeFrom(value).buildPartial();
-        } else {
-          workspace_ = value;
-        }
+        ensureWorkspaceIsMutable();
+        workspace_.add(index, builderForValue.build());
         onChanged();
       } else {
-        workspaceBuilder_.mergeFrom(value);
+        workspaceBuilder_.addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public Builder addAllWorkspace(
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Workspaces> values) {
+      if (workspaceBuilder_ == null) {
+        ensureWorkspaceIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, workspace_);
+        onChanged();
+      } else {
+        workspaceBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
     public Builder clearWorkspace() {
       if (workspaceBuilder_ == null) {
-        workspace_ = null;
+        workspace_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
-        workspace_ = null;
-        workspaceBuilder_ = null;
+        workspaceBuilder_.clear();
       }
-
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder getWorkspaceBuilder() {
-      
-      onChanged();
-      return getWorkspaceFieldBuilder().getBuilder();
+    public Builder removeWorkspace(int index) {
+      if (workspaceBuilder_ == null) {
+        ensureWorkspaceIsMutable();
+        workspace_.remove(index);
+        onChanged();
+      } else {
+        workspaceBuilder_.remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspaceOrBuilder() {
-      if (workspaceBuilder_ != null) {
-        return workspaceBuilder_.getMessageOrBuilder();
-      } else {
-        return workspace_ == null ?
-            io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance() : workspace_;
+    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder getWorkspaceBuilder(
+        int index) {
+      return getWorkspaceFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspaceOrBuilder(
+        int index) {
+      if (workspaceBuilder_ == null) {
+        return workspace_.get(index);  } else {
+        return workspaceBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
+         getWorkspaceOrBuilderList() {
+      if (workspaceBuilder_ != null) {
+        return workspaceBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(workspace_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder addWorkspaceBuilder() {
+      return getWorkspaceFieldBuilder().addBuilder(
+          io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder addWorkspaceBuilder(
+        int index) {
+      return getWorkspaceFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder> 
+         getWorkspaceBuilderList() {
+      return getWorkspaceFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
         getWorkspaceFieldBuilder() {
       if (workspaceBuilder_ == null) {
-        workspaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        workspaceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.cuemby.pipelines.tekton.v1alpha1.Workspaces, io.cuemby.pipelines.tekton.v1alpha1.Workspaces.Builder, io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder>(
-                getWorkspace(),
+                workspace_,
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         workspace_ = null;

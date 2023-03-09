@@ -228,10 +228,10 @@ struct CustomPipelineDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CustomPipelineDefaultTypeInternal _CustomPipeline_default_instance_;
 constexpr PipelineSpec::PipelineSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : resources_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , params_(nullptr)
-  , tasks_(nullptr)
-  , workspace_(nullptr){}
+  : params_()
+  , tasks_()
+  , workspace_()
+  , resources_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct PipelineSpecDefaultTypeInternal {
   constexpr PipelineSpecDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -554,11 +554,11 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "\013copied_from\030\010 \001(\tR\ncopiedFrom\022\035\n\nruntim"
   "e_id\030\t \001(\tR\truntimeId\022;\n\004spec\030\n \001(\0132\'.pi"
   "pelines.tekton.v1alpha1.PipelineSpecR\004sp"
-  "ec\"\343\001\n\014PipelineSpec\0229\n\006params\030\001 \001(\0132!.pi"
+  "ec\"\343\001\n\014PipelineSpec\0229\n\006params\030\001 \003(\0132!.pi"
   "pelines.tekton.v1alpha1.ParamsR\006params\022\034"
   "\n\tresources\030\002 \001(\tR\tresources\0225\n\005tasks\030\003 "
-  "\001(\0132\037.pipelines.tekton.v1alpha1.TaskR\005ta"
-  "sks\022C\n\tworkspace\030\004 \001(\0132%.pipelines.tekto"
+  "\003(\0132\037.pipelines.tekton.v1alpha1.TaskR\005ta"
+  "sks\022C\n\tworkspace\030\004 \003(\0132%.pipelines.tekto"
   "n.v1alpha1.WorkspacesR\tworkspace\"\201\001\n\026Cus"
   "tomPipelineResponse\022\016\n\002ok\030\001 \001(\010R\002ok\022\030\n\007m"
   "essage\030\002 \001(\tR\007message\022=\n\004data\030\003 \001(\0132).pi"
@@ -4172,26 +4172,14 @@ void CustomPipeline::InternalSwap(CustomPipeline* other) {
 
 class PipelineSpec::_Internal {
  public:
-  static const ::pipelines::tekton::v1alpha1::Params& params(const PipelineSpec* msg);
-  static const ::pipelines::tekton::v1alpha1::Task& tasks(const PipelineSpec* msg);
-  static const ::pipelines::tekton::v1alpha1::Workspaces& workspace(const PipelineSpec* msg);
 };
 
-const ::pipelines::tekton::v1alpha1::Params&
-PipelineSpec::_Internal::params(const PipelineSpec* msg) {
-  return *msg->params_;
-}
-const ::pipelines::tekton::v1alpha1::Task&
-PipelineSpec::_Internal::tasks(const PipelineSpec* msg) {
-  return *msg->tasks_;
-}
-const ::pipelines::tekton::v1alpha1::Workspaces&
-PipelineSpec::_Internal::workspace(const PipelineSpec* msg) {
-  return *msg->workspace_;
-}
 PipelineSpec::PipelineSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  params_(arena),
+  tasks_(arena),
+  workspace_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -4199,37 +4187,21 @@ PipelineSpec::PipelineSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:pipelines.tekton.v1alpha1.PipelineSpec)
 }
 PipelineSpec::PipelineSpec(const PipelineSpec& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      params_(from.params_),
+      tasks_(from.tasks_),
+      workspace_(from.workspace_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   resources_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_resources().empty()) {
     resources_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_resources(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_params()) {
-    params_ = new ::pipelines::tekton::v1alpha1::Params(*from.params_);
-  } else {
-    params_ = nullptr;
-  }
-  if (from._internal_has_tasks()) {
-    tasks_ = new ::pipelines::tekton::v1alpha1::Task(*from.tasks_);
-  } else {
-    tasks_ = nullptr;
-  }
-  if (from._internal_has_workspace()) {
-    workspace_ = new ::pipelines::tekton::v1alpha1::Workspaces(*from.workspace_);
-  } else {
-    workspace_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.PipelineSpec)
 }
 
 inline void PipelineSpec::SharedCtor() {
 resources_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&params_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&workspace_) -
-    reinterpret_cast<char*>(&params_)) + sizeof(workspace_));
 }
 
 PipelineSpec::~PipelineSpec() {
@@ -4242,9 +4214,6 @@ PipelineSpec::~PipelineSpec() {
 inline void PipelineSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   resources_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete params_;
-  if (this != internal_default_instance()) delete tasks_;
-  if (this != internal_default_instance()) delete workspace_;
 }
 
 void PipelineSpec::ArenaDtor(void* object) {
@@ -4263,19 +4232,10 @@ void PipelineSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  params_.Clear();
+  tasks_.Clear();
+  workspace_.Clear();
   resources_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && params_ != nullptr) {
-    delete params_;
-  }
-  params_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && tasks_ != nullptr) {
-    delete tasks_;
-  }
-  tasks_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && workspace_ != nullptr) {
-    delete workspace_;
-  }
-  workspace_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4285,11 +4245,16 @@ const char* PipelineSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+      // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_params(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_params(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       // string resources = 2 [json_name = "resources"];
@@ -4301,18 +4266,28 @@ const char* PipelineSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
+      // repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_tasks(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_tasks(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
-      // .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
+      // repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_workspace(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_workspace(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -4344,12 +4319,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
-  if (this->_internal_has_params()) {
+  // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_params_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::params(this), target, stream);
+      InternalWriteMessage(1, this->_internal_params(i), target, stream);
   }
 
   // string resources = 2 [json_name = "resources"];
@@ -4362,20 +4337,20 @@ failure:
         2, this->_internal_resources(), target);
   }
 
-  // .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
-  if (this->_internal_has_tasks()) {
+  // repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_tasks_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::tasks(this), target, stream);
+      InternalWriteMessage(3, this->_internal_tasks(i), target, stream);
   }
 
-  // .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
-  if (this->_internal_has_workspace()) {
+  // repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_workspace_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::workspace(this), target, stream);
+      InternalWriteMessage(4, this->_internal_workspace(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4394,32 +4369,32 @@ size_t PipelineSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+  total_size += 1UL * this->_internal_params_size();
+  for (const auto& msg : this->params_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
+  total_size += 1UL * this->_internal_tasks_size();
+  for (const auto& msg : this->tasks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
+  total_size += 1UL * this->_internal_workspace_size();
+  for (const auto& msg : this->workspace_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   // string resources = 2 [json_name = "resources"];
   if (!this->_internal_resources().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_resources());
-  }
-
-  // .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
-  if (this->_internal_has_params()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *params_);
-  }
-
-  // .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];
-  if (this->_internal_has_tasks()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *tasks_);
-  }
-
-  // .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];
-  if (this->_internal_has_workspace()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *workspace_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4450,17 +4425,11 @@ void PipelineSpec::MergeFrom(const PipelineSpec& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  params_.MergeFrom(from.params_);
+  tasks_.MergeFrom(from.tasks_);
+  workspace_.MergeFrom(from.workspace_);
   if (!from._internal_resources().empty()) {
     _internal_set_resources(from._internal_resources());
-  }
-  if (from._internal_has_params()) {
-    _internal_mutable_params()->::pipelines::tekton::v1alpha1::Params::MergeFrom(from._internal_params());
-  }
-  if (from._internal_has_tasks()) {
-    _internal_mutable_tasks()->::pipelines::tekton::v1alpha1::Task::MergeFrom(from._internal_tasks());
-  }
-  if (from._internal_has_workspace()) {
-    _internal_mutable_workspace()->::pipelines::tekton::v1alpha1::Workspaces::MergeFrom(from._internal_workspace());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4479,17 +4448,14 @@ bool PipelineSpec::IsInitialized() const {
 void PipelineSpec::InternalSwap(PipelineSpec* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  params_.InternalSwap(&other->params_);
+  tasks_.InternalSwap(&other->tasks_);
+  workspace_.InternalSwap(&other->workspace_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &resources_, GetArenaForAllocation(),
       &other->resources_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PipelineSpec, workspace_)
-      + sizeof(PipelineSpec::workspace_)
-      - PROTOBUF_FIELD_OFFSET(PipelineSpec, params_)>(
-          reinterpret_cast<char*>(&params_),
-          reinterpret_cast<char*>(&other->params_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PipelineSpec::GetMetadata() const {

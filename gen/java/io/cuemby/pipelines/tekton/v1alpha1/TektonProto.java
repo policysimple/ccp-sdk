@@ -176,11 +176,11 @@ public final class TektonProto {
       "\013copied_from\030\010 \001(\tR\ncopiedFrom\022\035\n\nruntim" +
       "e_id\030\t \001(\tR\truntimeId\022;\n\004spec\030\n \001(\0132\'.pi" +
       "pelines.tekton.v1alpha1.PipelineSpecR\004sp" +
-      "ec\"\343\001\n\014PipelineSpec\0229\n\006params\030\001 \001(\0132!.pi" +
+      "ec\"\343\001\n\014PipelineSpec\0229\n\006params\030\001 \003(\0132!.pi" +
       "pelines.tekton.v1alpha1.ParamsR\006params\022\034" +
       "\n\tresources\030\002 \001(\tR\tresources\0225\n\005tasks\030\003 " +
-      "\001(\0132\037.pipelines.tekton.v1alpha1.TaskR\005ta" +
-      "sks\022C\n\tworkspace\030\004 \001(\0132%.pipelines.tekto" +
+      "\003(\0132\037.pipelines.tekton.v1alpha1.TaskR\005ta" +
+      "sks\022C\n\tworkspace\030\004 \003(\0132%.pipelines.tekto" +
       "n.v1alpha1.WorkspacesR\tworkspace\"\201\001\n\026Cus" +
       "tomPipelineResponse\022\016\n\002ok\030\001 \001(\010R\002ok\022\030\n\007m" +
       "essage\030\002 \001(\tR\007message\022=\n\004data\030\003 \001(\0132).pi" +

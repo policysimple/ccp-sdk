@@ -90,10 +90,10 @@ message CustomPipeline {
 }
 
 message PipelineSpec {
-    Params params = 1;
+    repeated Params params = 1;
     string resources = 2;
-    Task tasks = 3;
-    Workspaces workspace = 4;
+    repeated Task tasks = 3;
+    repeated Workspaces workspace = 4;
 }
 
 message CustomPipelineResponse {
