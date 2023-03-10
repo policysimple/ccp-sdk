@@ -2934,7 +2934,7 @@ proto.pipelines.tekton.v1alpha1.PipelineSpec.prototype.toObject = function(opt_i
 proto.pipelines.tekton.v1alpha1.PipelineSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     paramsList: jspb.Message.toObjectList(msg.getParamsList(),
-    proto.pipelines.tekton.v1alpha1.Params.toObject, includeInstance),
+    proto.pipelines.tekton.v1alpha1.TaskParams.toObject, includeInstance),
     resources: jspb.Message.getFieldWithDefault(msg, 2, ""),
     tasksList: jspb.Message.toObjectList(msg.getTasksList(),
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
@@ -2977,8 +2977,8 @@ proto.pipelines.tekton.v1alpha1.PipelineSpec.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.pipelines.tekton.v1alpha1.Params;
-      reader.readMessage(value,proto.pipelines.tekton.v1alpha1.Params.deserializeBinaryFromReader);
+      var value = new proto.pipelines.tekton.v1alpha1.TaskParams;
+      reader.readMessage(value,proto.pipelines.tekton.v1alpha1.TaskParams.deserializeBinaryFromReader);
       msg.addParams(value);
       break;
     case 2:
@@ -3029,7 +3029,7 @@ proto.pipelines.tekton.v1alpha1.PipelineSpec.serializeBinaryToWriter = function(
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.pipelines.tekton.v1alpha1.Params.serializeBinaryToWriter
+      proto.pipelines.tekton.v1alpha1.TaskParams.serializeBinaryToWriter
     );
   }
   f = message.getResources();
@@ -3059,17 +3059,17 @@ proto.pipelines.tekton.v1alpha1.PipelineSpec.serializeBinaryToWriter = function(
 
 
 /**
- * repeated Params params = 1;
- * @return {!Array<!proto.pipelines.tekton.v1alpha1.Params>}
+ * repeated TaskParams params = 1;
+ * @return {!Array<!proto.pipelines.tekton.v1alpha1.TaskParams>}
  */
 proto.pipelines.tekton.v1alpha1.PipelineSpec.prototype.getParamsList = function() {
-  return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.Params>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.Params, 1));
+  return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.TaskParams>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.TaskParams, 1));
 };
 
 
 /**
- * @param {!Array<!proto.pipelines.tekton.v1alpha1.Params>} value
+ * @param {!Array<!proto.pipelines.tekton.v1alpha1.TaskParams>} value
  * @return {!proto.pipelines.tekton.v1alpha1.PipelineSpec} returns this
 */
 proto.pipelines.tekton.v1alpha1.PipelineSpec.prototype.setParamsList = function(value) {
@@ -3078,12 +3078,12 @@ proto.pipelines.tekton.v1alpha1.PipelineSpec.prototype.setParamsList = function(
 
 
 /**
- * @param {!proto.pipelines.tekton.v1alpha1.Params=} opt_value
+ * @param {!proto.pipelines.tekton.v1alpha1.TaskParams=} opt_value
  * @param {number=} opt_index
- * @return {!proto.pipelines.tekton.v1alpha1.Params}
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskParams}
  */
 proto.pipelines.tekton.v1alpha1.PipelineSpec.prototype.addParams = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.pipelines.tekton.v1alpha1.Params, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.pipelines.tekton.v1alpha1.TaskParams, opt_index);
 };
 
 

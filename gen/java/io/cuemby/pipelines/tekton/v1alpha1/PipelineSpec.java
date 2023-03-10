@@ -55,11 +55,11 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>();
+              params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskParams>();
               mutable_bitField0_ |= 0x00000001;
             }
             params_.add(
-                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Params.parser(), extensionRegistry));
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.TaskParams.parser(), extensionRegistry));
             break;
           }
           case 18: {
@@ -128,41 +128,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PARAMS_FIELD_NUMBER = 1;
-  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> params_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> getParamsList() {
     return params_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
       getParamsOrBuilderList() {
     return params_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
   public int getParamsCount() {
     return params_.size();
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskParams getParams(int index) {
     return params_.get(index);
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getParamsOrBuilder(
       int index) {
     return params_.get(index);
   }
@@ -754,22 +754,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_ =
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> params_ =
       java.util.Collections.emptyList();
     private void ensureParamsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>(params_);
+        params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskParams>(params_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> paramsBuilder_;
+        io.cuemby.pipelines.tekton.v1alpha1.TaskParams, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> paramsBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> getParamsList() {
       if (paramsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(params_);
       } else {
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public int getParamsCount() {
       if (paramsBuilder_ == null) {
@@ -787,9 +787,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskParams getParams(int index) {
       if (paramsBuilder_ == null) {
         return params_.get(index);
       } else {
@@ -797,10 +797,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder setParams(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams value) {
       if (paramsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -814,10 +814,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder setParams(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder builderForValue) {
       if (paramsBuilder_ == null) {
         ensureParamsIsMutable();
         params_.set(index, builderForValue.build());
@@ -828,9 +828,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public Builder addParams(io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+    public Builder addParams(io.cuemby.pipelines.tekton.v1alpha1.TaskParams value) {
       if (paramsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -844,10 +844,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder addParams(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams value) {
       if (paramsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -861,10 +861,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder addParams(
-        io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+        io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder builderForValue) {
       if (paramsBuilder_ == null) {
         ensureParamsIsMutable();
         params_.add(builderForValue.build());
@@ -875,10 +875,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder addParams(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder builderForValue) {
       if (paramsBuilder_ == null) {
         ensureParamsIsMutable();
         params_.add(index, builderForValue.build());
@@ -889,10 +889,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder addAllParams(
-        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Params> values) {
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParams> values) {
       if (paramsBuilder_ == null) {
         ensureParamsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder clearParams() {
       if (paramsBuilder_ == null) {
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
     public Builder removeParams(int index) {
       if (paramsBuilder_ == null) {
@@ -930,16 +930,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder getParamsBuilder(
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder getParamsBuilder(
         int index) {
       return getParamsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getParamsOrBuilder(
         int index) {
       if (paramsBuilder_ == null) {
         return params_.get(index);  } else {
@@ -947,9 +947,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
          getParamsOrBuilderList() {
       if (paramsBuilder_ != null) {
         return paramsBuilder_.getMessageOrBuilderList();
@@ -958,33 +958,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder addParamsBuilder() {
       return getParamsFieldBuilder().addBuilder(
-          io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
+          io.cuemby.pipelines.tekton.v1alpha1.TaskParams.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder(
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder addParamsBuilder(
         int index) {
       return getParamsFieldBuilder().addBuilder(
-          index, io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
+          index, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params.Builder> 
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder> 
          getParamsBuilderList() {
       return getParamsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+        io.cuemby.pipelines.tekton.v1alpha1.TaskParams, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
         getParamsFieldBuilder() {
       if (paramsBuilder_ == null) {
         paramsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder>(
+            io.cuemby.pipelines.tekton.v1alpha1.TaskParams, io.cuemby.pipelines.tekton.v1alpha1.TaskParams.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder>(
                 params_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),

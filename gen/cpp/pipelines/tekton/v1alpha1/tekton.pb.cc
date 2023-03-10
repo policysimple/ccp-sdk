@@ -554,29 +554,29 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "\013copied_from\030\010 \001(\tR\ncopiedFrom\022\035\n\nruntim"
   "e_id\030\t \001(\tR\truntimeId\022;\n\004spec\030\n \001(\0132\'.pi"
   "pelines.tekton.v1alpha1.PipelineSpecR\004sp"
-  "ec\"\343\001\n\014PipelineSpec\0229\n\006params\030\001 \003(\0132!.pi"
-  "pelines.tekton.v1alpha1.ParamsR\006params\022\034"
-  "\n\tresources\030\002 \001(\tR\tresources\0225\n\005tasks\030\003 "
-  "\003(\0132\037.pipelines.tekton.v1alpha1.TaskR\005ta"
-  "sks\022C\n\tworkspace\030\004 \003(\0132%.pipelines.tekto"
-  "n.v1alpha1.WorkspacesR\tworkspace\"\201\001\n\026Cus"
-  "tomPipelineResponse\022\016\n\002ok\030\001 \001(\010R\002ok\022\030\n\007m"
-  "essage\030\002 \001(\tR\007message\022=\n\004data\030\003 \001(\0132).pi"
-  "pelines.tekton.v1alpha1.CustomPipelineR\004"
-  "data\"U\n\022CustomPipelineList\022\?\n\005items\030\001 \003("
-  "\0132).pipelines.tekton.v1alpha1.CustomPipe"
-  "lineR\005items*j\n\tOwnerType\022\032\n\026OWNER_TYPE_U"
-  "NSPECIFIED\020\000\022\025\n\021OWNER_TYPE_CUEMBY\020\001\022\022\n\016O"
-  "WNER_TYPE_ORG\020\002\022\026\n\022OWNER_TYPE_PROJECT\020\003B"
-  "\256\001\n#io.cuemby.pipelines.tekton.v1alpha1B"
-  "\013TektonProtoP\001Z:github.com/cuemby/ccp-sd"
-  "k/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX"
-  "\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines"
-  "\\Tekton\\V1Alpha1b\006proto3"
+  "ec\"\347\001\n\014PipelineSpec\022=\n\006params\030\001 \003(\0132%.pi"
+  "pelines.tekton.v1alpha1.TaskParamsR\006para"
+  "ms\022\034\n\tresources\030\002 \001(\tR\tresources\0225\n\005task"
+  "s\030\003 \003(\0132\037.pipelines.tekton.v1alpha1.Task"
+  "R\005tasks\022C\n\tworkspace\030\004 \003(\0132%.pipelines.t"
+  "ekton.v1alpha1.WorkspacesR\tworkspace\"\201\001\n"
+  "\026CustomPipelineResponse\022\016\n\002ok\030\001 \001(\010R\002ok\022"
+  "\030\n\007message\030\002 \001(\tR\007message\022=\n\004data\030\003 \001(\0132"
+  ").pipelines.tekton.v1alpha1.CustomPipeli"
+  "neR\004data\"U\n\022CustomPipelineList\022\?\n\005items\030"
+  "\001 \003(\0132).pipelines.tekton.v1alpha1.Custom"
+  "PipelineR\005items*j\n\tOwnerType\022\032\n\026OWNER_TY"
+  "PE_UNSPECIFIED\020\000\022\025\n\021OWNER_TYPE_CUEMBY\020\001\022"
+  "\022\n\016OWNER_TYPE_ORG\020\002\022\026\n\022OWNER_TYPE_PROJEC"
+  "T\020\003B\256\001\n#io.cuemby.pipelines.tekton.v1alp"
+  "ha1B\013TektonProtoP\001Z:github.com/cuemby/cc"
+  "p-sdk/gen/go/pipelines/tekton/v1alpha1\242\002"
+  "\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipel"
+  "ines\\Tekton\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 3464, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  false, false, 3468, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 17,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
@@ -4245,7 +4245,7 @@ const char* PipelineSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+      // repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -4319,7 +4319,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+  // repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_params_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -4369,7 +4369,7 @@ size_t PipelineSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];
+  // repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];
   total_size += 1UL * this->_internal_params_size();
   for (const auto& msg : this->params_) {
     total_size +=

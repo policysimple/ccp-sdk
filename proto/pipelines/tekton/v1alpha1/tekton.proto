@@ -90,7 +90,7 @@ message CustomPipeline {
 }
 
 message PipelineSpec {
-    repeated Params params = 1;
+    repeated TaskParams params = 1;
     string resources = 2;
     repeated Task tasks = 3;
     repeated Workspaces workspace = 4;

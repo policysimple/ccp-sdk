@@ -8,27 +8,27 @@ public interface PipelineSpecOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> 
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> 
       getParamsList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index);
+  io.cuemby.pipelines.tekton.v1alpha1.TaskParams getParams(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
   int getParamsCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
       getParamsOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+  io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getParamsOrBuilder(
       int index);
 
   /**
