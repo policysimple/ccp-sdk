@@ -47,7 +47,7 @@ struct TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -80,6 +80,12 @@ extern GetSecretRequestDefaultTypeInternal _GetSecretRequest_default_instance_;
 class GetSecretResponse;
 struct GetSecretResponseDefaultTypeInternal;
 extern GetSecretResponseDefaultTypeInternal _GetSecretResponse_default_instance_;
+class GetSecretsServiceRequest;
+struct GetSecretsServiceRequestDefaultTypeInternal;
+extern GetSecretsServiceRequestDefaultTypeInternal _GetSecretsServiceRequest_default_instance_;
+class GetSecretsServiceResponse;
+struct GetSecretsServiceResponseDefaultTypeInternal;
+extern GetSecretsServiceResponseDefaultTypeInternal _GetSecretsServiceResponse_default_instance_;
 class GetTokenBlockChainRequest;
 struct GetTokenBlockChainRequestDefaultTypeInternal;
 extern GetTokenBlockChainRequestDefaultTypeInternal _GetTokenBlockChainRequest_default_instance_;
@@ -133,6 +139,8 @@ template<> ::vault::v1alpha1::DeleteSecretRequest* Arena::CreateMaybeMessage<::v
 template<> ::vault::v1alpha1::DeleteSecretResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::DeleteSecretResponse>(Arena*);
 template<> ::vault::v1alpha1::GetSecretRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretRequest>(Arena*);
 template<> ::vault::v1alpha1::GetSecretResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretResponse>(Arena*);
+template<> ::vault::v1alpha1::GetSecretsServiceRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretsServiceRequest>(Arena*);
+template<> ::vault::v1alpha1::GetSecretsServiceResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetSecretsServiceResponse>(Arena*);
 template<> ::vault::v1alpha1::GetTokenBlockChainRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenBlockChainRequest>(Arena*);
 template<> ::vault::v1alpha1::GetTokenBlockChainResponse* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenBlockChainResponse>(Arena*);
 template<> ::vault::v1alpha1::GetTokenFirebaseRequest* Arena::CreateMaybeMessage<::vault::v1alpha1::GetTokenFirebaseRequest>(Arena*);
@@ -3875,6 +3883,330 @@ class GetTokenBlockChainResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetSecretsServiceRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.GetSecretsServiceRequest) */ {
+ public:
+  inline GetSecretsServiceRequest() : GetSecretsServiceRequest(nullptr) {}
+  ~GetSecretsServiceRequest() override;
+  explicit constexpr GetSecretsServiceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetSecretsServiceRequest(const GetSecretsServiceRequest& from);
+  GetSecretsServiceRequest(GetSecretsServiceRequest&& from) noexcept
+    : GetSecretsServiceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetSecretsServiceRequest& operator=(const GetSecretsServiceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetSecretsServiceRequest& operator=(GetSecretsServiceRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetSecretsServiceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetSecretsServiceRequest* internal_default_instance() {
+    return reinterpret_cast<const GetSecretsServiceRequest*>(
+               &_GetSecretsServiceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(GetSecretsServiceRequest& a, GetSecretsServiceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetSecretsServiceRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetSecretsServiceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetSecretsServiceRequest* New() const final {
+    return new GetSecretsServiceRequest();
+  }
+
+  GetSecretsServiceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetSecretsServiceRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetSecretsServiceRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetSecretsServiceRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetSecretsServiceRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.GetSecretsServiceRequest";
+  }
+  protected:
+  explicit GetSecretsServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameServiceFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string name_service = 1 [json_name = "nameService"];
+  void clear_name_service();
+  const std::string& name_service() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name_service(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name_service();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name_service();
+  void set_allocated_name_service(std::string* name_service);
+  private:
+  const std::string& _internal_name_service() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_service(const std::string& value);
+  std::string* _internal_mutable_name_service();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetSecretsServiceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_service_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetSecretsServiceResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.GetSecretsServiceResponse) */ {
+ public:
+  inline GetSecretsServiceResponse() : GetSecretsServiceResponse(nullptr) {}
+  ~GetSecretsServiceResponse() override;
+  explicit constexpr GetSecretsServiceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetSecretsServiceResponse(const GetSecretsServiceResponse& from);
+  GetSecretsServiceResponse(GetSecretsServiceResponse&& from) noexcept
+    : GetSecretsServiceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetSecretsServiceResponse& operator=(const GetSecretsServiceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetSecretsServiceResponse& operator=(GetSecretsServiceResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetSecretsServiceResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetSecretsServiceResponse* internal_default_instance() {
+    return reinterpret_cast<const GetSecretsServiceResponse*>(
+               &_GetSecretsServiceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(GetSecretsServiceResponse& a, GetSecretsServiceResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetSecretsServiceResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetSecretsServiceResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetSecretsServiceResponse* New() const final {
+    return new GetSecretsServiceResponse();
+  }
+
+  GetSecretsServiceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetSecretsServiceResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetSecretsServiceResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetSecretsServiceResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetSecretsServiceResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vault.v1alpha1.GetSecretsServiceResponse";
+  }
+  protected:
+  explicit GetSecretsServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kErrorFieldNumber = 2,
+    kSecretsFieldNumber = 1,
+  };
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // .vault.v1alpha1.SecretData secrets = 1 [json_name = "secrets"];
+  bool has_secrets() const;
+  private:
+  bool _internal_has_secrets() const;
+  public:
+  void clear_secrets();
+  const ::vault::v1alpha1::SecretData& secrets() const;
+  PROTOBUF_MUST_USE_RESULT ::vault::v1alpha1::SecretData* release_secrets();
+  ::vault::v1alpha1::SecretData* mutable_secrets();
+  void set_allocated_secrets(::vault::v1alpha1::SecretData* secrets);
+  private:
+  const ::vault::v1alpha1::SecretData& _internal_secrets() const;
+  ::vault::v1alpha1::SecretData* _internal_mutable_secrets();
+  public:
+  void unsafe_arena_set_allocated_secrets(
+      ::vault::v1alpha1::SecretData* secrets);
+  ::vault::v1alpha1::SecretData* unsafe_arena_release_secrets();
+
+  // @@protoc_insertion_point(class_scope:vault.v1alpha1.GetSecretsServiceResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::vault::v1alpha1::SecretData* secrets_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -6780,9 +7112,245 @@ inline void GetTokenBlockChainResponse::set_allocated_error(std::string* error) 
   // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetTokenBlockChainResponse.error)
 }
 
+// -------------------------------------------------------------------
+
+// GetSecretsServiceRequest
+
+// string name_service = 1 [json_name = "nameService"];
+inline void GetSecretsServiceRequest::clear_name_service() {
+  name_service_.ClearToEmpty();
+}
+inline const std::string& GetSecretsServiceRequest::name_service() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetSecretsServiceRequest.name_service)
+  return _internal_name_service();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetSecretsServiceRequest::set_name_service(ArgT0&& arg0, ArgT... args) {
+ 
+ name_service_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetSecretsServiceRequest.name_service)
+}
+inline std::string* GetSecretsServiceRequest::mutable_name_service() {
+  std::string* _s = _internal_mutable_name_service();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetSecretsServiceRequest.name_service)
+  return _s;
+}
+inline const std::string& GetSecretsServiceRequest::_internal_name_service() const {
+  return name_service_.Get();
+}
+inline void GetSecretsServiceRequest::_internal_set_name_service(const std::string& value) {
+  
+  name_service_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetSecretsServiceRequest::_internal_mutable_name_service() {
+  
+  return name_service_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetSecretsServiceRequest::release_name_service() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetSecretsServiceRequest.name_service)
+  return name_service_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetSecretsServiceRequest::set_allocated_name_service(std::string* name_service) {
+  if (name_service != nullptr) {
+    
+  } else {
+    
+  }
+  name_service_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_service,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetSecretsServiceRequest.name_service)
+}
+
+// string error = 2 [json_name = "error"];
+inline void GetSecretsServiceRequest::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetSecretsServiceRequest::error() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetSecretsServiceRequest.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetSecretsServiceRequest::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetSecretsServiceRequest.error)
+}
+inline std::string* GetSecretsServiceRequest::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetSecretsServiceRequest.error)
+  return _s;
+}
+inline const std::string& GetSecretsServiceRequest::_internal_error() const {
+  return error_.Get();
+}
+inline void GetSecretsServiceRequest::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetSecretsServiceRequest::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetSecretsServiceRequest::release_error() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetSecretsServiceRequest.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetSecretsServiceRequest::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetSecretsServiceRequest.error)
+}
+
+// -------------------------------------------------------------------
+
+// GetSecretsServiceResponse
+
+// .vault.v1alpha1.SecretData secrets = 1 [json_name = "secrets"];
+inline bool GetSecretsServiceResponse::_internal_has_secrets() const {
+  return this != internal_default_instance() && secrets_ != nullptr;
+}
+inline bool GetSecretsServiceResponse::has_secrets() const {
+  return _internal_has_secrets();
+}
+inline const ::vault::v1alpha1::SecretData& GetSecretsServiceResponse::_internal_secrets() const {
+  const ::vault::v1alpha1::SecretData* p = secrets_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vault::v1alpha1::SecretData&>(
+      ::vault::v1alpha1::_SecretData_default_instance_);
+}
+inline const ::vault::v1alpha1::SecretData& GetSecretsServiceResponse::secrets() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetSecretsServiceResponse.secrets)
+  return _internal_secrets();
+}
+inline void GetSecretsServiceResponse::unsafe_arena_set_allocated_secrets(
+    ::vault::v1alpha1::SecretData* secrets) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secrets_);
+  }
+  secrets_ = secrets;
+  if (secrets) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vault.v1alpha1.GetSecretsServiceResponse.secrets)
+}
+inline ::vault::v1alpha1::SecretData* GetSecretsServiceResponse::release_secrets() {
+  
+  ::vault::v1alpha1::SecretData* temp = secrets_;
+  secrets_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::vault::v1alpha1::SecretData* GetSecretsServiceResponse::unsafe_arena_release_secrets() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetSecretsServiceResponse.secrets)
+  
+  ::vault::v1alpha1::SecretData* temp = secrets_;
+  secrets_ = nullptr;
+  return temp;
+}
+inline ::vault::v1alpha1::SecretData* GetSecretsServiceResponse::_internal_mutable_secrets() {
+  
+  if (secrets_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vault::v1alpha1::SecretData>(GetArenaForAllocation());
+    secrets_ = p;
+  }
+  return secrets_;
+}
+inline ::vault::v1alpha1::SecretData* GetSecretsServiceResponse::mutable_secrets() {
+  ::vault::v1alpha1::SecretData* _msg = _internal_mutable_secrets();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetSecretsServiceResponse.secrets)
+  return _msg;
+}
+inline void GetSecretsServiceResponse::set_allocated_secrets(::vault::v1alpha1::SecretData* secrets) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(secrets_);
+  }
+  if (secrets) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(secrets));
+    if (message_arena != submessage_arena) {
+      secrets = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, secrets, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  secrets_ = secrets;
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetSecretsServiceResponse.secrets)
+}
+
+// string error = 2 [json_name = "error"];
+inline void GetSecretsServiceResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& GetSecretsServiceResponse::error() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.GetSecretsServiceResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetSecretsServiceResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.GetSecretsServiceResponse.error)
+}
+inline std::string* GetSecretsServiceResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.GetSecretsServiceResponse.error)
+  return _s;
+}
+inline const std::string& GetSecretsServiceResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void GetSecretsServiceResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetSecretsServiceResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetSecretsServiceResponse::release_error() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.GetSecretsServiceResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetSecretsServiceResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.GetSecretsServiceResponse.error)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

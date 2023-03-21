@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\030io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\001Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1evault/v1alpha1/vault_api.proto\x12\x0evault.v1alpha1\x1a\x1avault/v1alpha1/vault.proto\"R\n\x18SaveTokenFirebaseRequest\x12\x36\n\x06secret\x18\x01 \x01(\x0b\x32\x1e.vault.v1alpha1.FirebaseSecretR\x06secret\"C\n\x19SaveTokenFirebaseResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x88\x01\n\x17GetTokenFirebaseRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\"h\n\x18GetTokenFirebaseResponse\x12\x36\n\x06secret\x18\x01 \x01(\x0b\x32\x1e.vault.v1alpha1.FirebaseSecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"E\n\x13\x43reateSecretRequest\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14\x43reateSecretResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\tR\x05\x65rror\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\"\xd2\x01\n\x13UpdateSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\tR\rapplicationId\x12.\n\x06secret\x18\x05 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14UpdateSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb6\x01\n\x13\x44\x65leteSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\">\n\x14\x44\x65leteSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb3\x01\n\x10GetSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\"Y\n\x11GetSecretResponse\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x84\x01\n\x1cSaveTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\"G\n\x1dSaveTokenIntegrationsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"m\n\x1bGetTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\"J\n\x1cGetTokenIntegrationsResponse\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xc1\x01\n\x1aSaveTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\x12\x38\n\x06secret\x18\x04 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\"E\n\x1bSaveTokenBlockChainResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x86\x01\n\x19GetTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\"l\n\x1aGetTokenBlockChainResponse\x12\x38\n\x06secret\x18\x01 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\x8e\t\n\x0fVaultAPIService\x12[\n\x0c\x43reateSecret\x12#.vault.v1alpha1.CreateSecretRequest\x1a$.vault.v1alpha1.CreateSecretResponse\"\x00\x12[\n\x0cUpdateSecret\x12#.vault.v1alpha1.UpdateSecretRequest\x1a$.vault.v1alpha1.UpdateSecretResponse\"\x00\x12[\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\"\x00\x12R\n\tGetSecret\x12 .vault.v1alpha1.GetSecretRequest\x1a!.vault.v1alpha1.GetSecretResponse\"\x00\x12m\n\x12\x44\x65leteOrganization\x12).vault.v1alpha1.DeleteOrganizationRequest\x1a*.vault.v1alpha1.DeleteOrganizationResponse\"\x00\x12v\n\x15SaveTokenIntegrations\x12,.vault.v1alpha1.SaveTokenIntegrationsRequest\x1a-.vault.v1alpha1.SaveTokenIntegrationsResponse\"\x00\x12s\n\x14GetTokenIntegrations\x12+.vault.v1alpha1.GetTokenIntegrationsRequest\x1a,.vault.v1alpha1.GetTokenIntegrationsResponse\"\x00\x12p\n\x13SaveTokenBlockChain\x12*.vault.v1alpha1.SaveTokenBlockChainRequest\x1a+.vault.v1alpha1.SaveTokenBlockChainResponse\"\x00\x12m\n\x12GetTokenBlockChain\x12).vault.v1alpha1.GetTokenBlockChainRequest\x1a*.vault.v1alpha1.GetTokenBlockChainResponse\"\x00\x12j\n\x11SaveTokenFirebase\x12(.vault.v1alpha1.SaveTokenFirebaseRequest\x1a).vault.v1alpha1.SaveTokenFirebaseResponse\"\x00\x12g\n\x10GetTokenFirebase\x12\'.vault.v1alpha1.GetTokenFirebaseRequest\x1a(.vault.v1alpha1.GetTokenFirebaseResponse\"\x00\x42\x86\x01\n\x18io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n\x1evault/v1alpha1/vault_api.proto\x12\x0evault.v1alpha1\x1a\x1avault/v1alpha1/vault.proto\"R\n\x18SaveTokenFirebaseRequest\x12\x36\n\x06secret\x18\x01 \x01(\x0b\x32\x1e.vault.v1alpha1.FirebaseSecretR\x06secret\"C\n\x19SaveTokenFirebaseResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x88\x01\n\x17GetTokenFirebaseRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\"h\n\x18GetTokenFirebaseResponse\x12\x36\n\x06secret\x18\x01 \x01(\x0b\x32\x1e.vault.v1alpha1.FirebaseSecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"E\n\x13\x43reateSecretRequest\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14\x43reateSecretResponse\x12\x14\n\x05\x65rror\x18\x01 \x01(\tR\x05\x65rror\x12\x10\n\x03msg\x18\x02 \x01(\tR\x03msg\"\xd2\x01\n\x13UpdateSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\tR\rapplicationId\x12.\n\x06secret\x18\x05 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\">\n\x14UpdateSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb6\x01\n\x13\x44\x65leteSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\">\n\x14\x44\x65leteSecretResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xb3\x01\n\x10GetSecretRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\"Y\n\x11GetSecretResponse\x12.\n\x06secret\x18\x01 \x01(\x0b\x32\x16.vault.v1alpha1.SecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"D\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x84\x01\n\x1cSaveTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\"G\n\x1dSaveTokenIntegrationsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"m\n\x1bGetTokenIntegrationsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\"J\n\x1cGetTokenIntegrationsResponse\x12\x14\n\x05token\x18\x01 \x01(\tR\x05token\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\xc1\x01\n\x1aSaveTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\x12\x38\n\x06secret\x18\x04 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\"E\n\x1bSaveTokenBlockChainResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"\x86\x01\n\x19GetTokenBlockChainRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\'\n\x0f\x62lockchain_name\x18\x02 \x01(\tR\x0e\x62lockchainName\x12\x1b\n\tnode_name\x18\x03 \x01(\tR\x08nodeName\"l\n\x1aGetTokenBlockChainResponse\x12\x38\n\x06secret\x18\x01 \x01(\x0b\x32 .vault.v1alpha1.BlockchainSecretR\x06secret\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"S\n\x18GetSecretsServiceRequest\x12!\n\x0cname_service\x18\x01 \x01(\tR\x0bnameService\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"g\n\x19GetSecretsServiceResponse\x12\x34\n\x07secrets\x18\x01 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x07secrets\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xfa\t\n\x0fVaultAPIService\x12[\n\x0c\x43reateSecret\x12#.vault.v1alpha1.CreateSecretRequest\x1a$.vault.v1alpha1.CreateSecretResponse\"\x00\x12[\n\x0cUpdateSecret\x12#.vault.v1alpha1.UpdateSecretRequest\x1a$.vault.v1alpha1.UpdateSecretResponse\"\x00\x12[\n\x0c\x44\x65leteSecret\x12#.vault.v1alpha1.DeleteSecretRequest\x1a$.vault.v1alpha1.DeleteSecretResponse\"\x00\x12R\n\tGetSecret\x12 .vault.v1alpha1.GetSecretRequest\x1a!.vault.v1alpha1.GetSecretResponse\"\x00\x12m\n\x12\x44\x65leteOrganization\x12).vault.v1alpha1.DeleteOrganizationRequest\x1a*.vault.v1alpha1.DeleteOrganizationResponse\"\x00\x12v\n\x15SaveTokenIntegrations\x12,.vault.v1alpha1.SaveTokenIntegrationsRequest\x1a-.vault.v1alpha1.SaveTokenIntegrationsResponse\"\x00\x12s\n\x14GetTokenIntegrations\x12+.vault.v1alpha1.GetTokenIntegrationsRequest\x1a,.vault.v1alpha1.GetTokenIntegrationsResponse\"\x00\x12p\n\x13SaveTokenBlockChain\x12*.vault.v1alpha1.SaveTokenBlockChainRequest\x1a+.vault.v1alpha1.SaveTokenBlockChainResponse\"\x00\x12m\n\x12GetTokenBlockChain\x12).vault.v1alpha1.GetTokenBlockChainRequest\x1a*.vault.v1alpha1.GetTokenBlockChainResponse\"\x00\x12j\n\x11SaveTokenFirebase\x12(.vault.v1alpha1.SaveTokenFirebaseRequest\x1a).vault.v1alpha1.SaveTokenFirebaseResponse\"\x00\x12g\n\x10GetTokenFirebase\x12\'.vault.v1alpha1.GetTokenFirebaseRequest\x1a(.vault.v1alpha1.GetTokenFirebaseResponse\"\x00\x12j\n\x11GetSecretsService\x12(.vault.v1alpha1.GetSecretsServiceRequest\x1a).vault.v1alpha1.GetSecretsServiceResponse\"\x00\x42\x86\x01\n\x18io.cuemby.vault.v1alpha1B\rVaultAPIProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
   ,
   dependencies=[vault_dot_v1alpha1_dot_vault__pb2.DESCRIPTOR,])
 
@@ -961,6 +961,84 @@ _GETTOKENBLOCKCHAINRESPONSE = _descriptor.Descriptor(
   serialized_end=2457,
 )
 
+
+_GETSECRETSSERVICEREQUEST = _descriptor.Descriptor(
+  name='GetSecretsServiceRequest',
+  full_name='vault.v1alpha1.GetSecretsServiceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name_service', full_name='vault.v1alpha1.GetSecretsServiceRequest.name_service', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nameService', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='vault.v1alpha1.GetSecretsServiceRequest.error', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2459,
+  serialized_end=2542,
+)
+
+
+_GETSECRETSSERVICERESPONSE = _descriptor.Descriptor(
+  name='GetSecretsServiceResponse',
+  full_name='vault.v1alpha1.GetSecretsServiceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='secrets', full_name='vault.v1alpha1.GetSecretsServiceResponse.secrets', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='secrets', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='vault.v1alpha1.GetSecretsServiceResponse.error', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='error', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2544,
+  serialized_end=2647,
+)
+
 _SAVETOKENFIREBASEREQUEST.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._FIREBASESECRET
 _GETTOKENFIREBASERESPONSE.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._FIREBASESECRET
 _CREATESECRETREQUEST.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRET
@@ -968,6 +1046,7 @@ _UPDATESECRETREQUEST.fields_by_name['secret'].message_type = vault_dot_v1alpha1_
 _GETSECRETRESPONSE.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRET
 _SAVETOKENBLOCKCHAINREQUEST.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._BLOCKCHAINSECRET
 _GETTOKENBLOCKCHAINRESPONSE.fields_by_name['secret'].message_type = vault_dot_v1alpha1_dot_vault__pb2._BLOCKCHAINSECRET
+_GETSECRETSSERVICERESPONSE.fields_by_name['secrets'].message_type = vault_dot_v1alpha1_dot_vault__pb2._SECRETDATA
 DESCRIPTOR.message_types_by_name['SaveTokenFirebaseRequest'] = _SAVETOKENFIREBASEREQUEST
 DESCRIPTOR.message_types_by_name['SaveTokenFirebaseResponse'] = _SAVETOKENFIREBASERESPONSE
 DESCRIPTOR.message_types_by_name['GetTokenFirebaseRequest'] = _GETTOKENFIREBASEREQUEST
@@ -990,6 +1069,8 @@ DESCRIPTOR.message_types_by_name['SaveTokenBlockChainRequest'] = _SAVETOKENBLOCK
 DESCRIPTOR.message_types_by_name['SaveTokenBlockChainResponse'] = _SAVETOKENBLOCKCHAINRESPONSE
 DESCRIPTOR.message_types_by_name['GetTokenBlockChainRequest'] = _GETTOKENBLOCKCHAINREQUEST
 DESCRIPTOR.message_types_by_name['GetTokenBlockChainResponse'] = _GETTOKENBLOCKCHAINRESPONSE
+DESCRIPTOR.message_types_by_name['GetSecretsServiceRequest'] = _GETSECRETSSERVICEREQUEST
+DESCRIPTOR.message_types_by_name['GetSecretsServiceResponse'] = _GETSECRETSSERVICERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SaveTokenFirebaseRequest = _reflection.GeneratedProtocolMessageType('SaveTokenFirebaseRequest', (_message.Message,), {
@@ -1146,6 +1227,20 @@ GetTokenBlockChainResponse = _reflection.GeneratedProtocolMessageType('GetTokenB
   })
 _sym_db.RegisterMessage(GetTokenBlockChainResponse)
 
+GetSecretsServiceRequest = _reflection.GeneratedProtocolMessageType('GetSecretsServiceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETSECRETSSERVICEREQUEST,
+  '__module__' : 'vault.v1alpha1.vault_api_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.GetSecretsServiceRequest)
+  })
+_sym_db.RegisterMessage(GetSecretsServiceRequest)
+
+GetSecretsServiceResponse = _reflection.GeneratedProtocolMessageType('GetSecretsServiceResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETSECRETSSERVICERESPONSE,
+  '__module__' : 'vault.v1alpha1.vault_api_pb2'
+  # @@protoc_insertion_point(class_scope:vault.v1alpha1.GetSecretsServiceResponse)
+  })
+_sym_db.RegisterMessage(GetSecretsServiceResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -1156,8 +1251,8 @@ _VAULTAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2460,
-  serialized_end=3626,
+  serialized_start=2650,
+  serialized_end=3924,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateSecret',
@@ -1266,6 +1361,16 @@ _VAULTAPISERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETTOKENFIREBASEREQUEST,
     output_type=_GETTOKENFIREBASERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetSecretsService',
+    full_name='vault.v1alpha1.VaultAPIService.GetSecretsService',
+    index=11,
+    containing_service=None,
+    input_type=_GETSECRETSSERVICEREQUEST,
+    output_type=_GETSECRETSSERVICERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -11,8 +11,8 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Vault\\V1Alpha1";
 
 
-import "vault/v1alpha1/vault.proto";
-//import "vault.proto";
+//import "vault/v1alpha1/vault.proto";
+import "vault.proto";
 
 
 service VaultAPIService{
@@ -31,6 +31,9 @@ service VaultAPIService{
     //Firebase
     rpc SaveTokenFirebase(SaveTokenFirebaseRequest) returns (SaveTokenFirebaseResponse) {};
     rpc GetTokenFirebase(GetTokenFirebaseRequest) returns (GetTokenFirebaseResponse) {};
+
+    //Getsecret to service
+    rpc GetSecretsService(GetSecretsServiceRequest) returns (GetSecretsServiceResponse) {};
 }
 
 message SaveTokenFirebaseRequest {
@@ -152,5 +155,15 @@ message GetTokenBlockChainRequest {
 
 message GetTokenBlockChainResponse {
     BlockchainSecret secret = 1;
+    string error = 2;
+}
+
+message GetSecretsServiceRequest {
+    string name_service = 1;
+    string error = 2;
+}
+
+message GetSecretsServiceResponse {
+    SecretData secrets = 1;
     string error = 2;
 }

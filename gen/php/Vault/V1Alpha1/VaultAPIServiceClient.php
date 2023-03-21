@@ -161,4 +161,18 @@ class VaultAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Getsecret to service
+     * @param \Vault\V1Alpha1\GetSecretsServiceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetSecretsService(\Vault\V1Alpha1\GetSecretsServiceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/vault.v1alpha1.VaultAPIService/GetSecretsService',
+        $argument,
+        ['\Vault\V1Alpha1\GetSecretsServiceResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
