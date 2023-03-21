@@ -115,6 +115,14 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenFirebaseResponse>> PrepareAsyncGetTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenFirebaseResponse>>(PrepareAsyncGetTokenFirebaseRaw(context, request, cq));
     }
+    // Getsecret to service
+    virtual ::grpc::Status GetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::vault::v1alpha1::GetSecretsServiceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretsServiceResponse>> AsyncGetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretsServiceResponse>>(AsyncGetSecretsServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretsServiceResponse>> PrepareAsyncGetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretsServiceResponse>>(PrepareAsyncGetSecretsServiceRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -131,6 +139,8 @@ class VaultAPIService final {
       // Firebase
       virtual void SaveTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest* request, ::vault::v1alpha1::SaveTokenFirebaseResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest* request, ::vault::v1alpha1::GetTokenFirebaseResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Getsecret to service
+      virtual void GetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -156,6 +166,8 @@ class VaultAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::SaveTokenFirebaseResponse>* PrepareAsyncSaveTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenFirebaseResponse>* AsyncGetTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetTokenFirebaseResponse>* PrepareAsyncGetTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretsServiceResponse>* AsyncGetSecretsServiceRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vault::v1alpha1::GetSecretsServiceResponse>* PrepareAsyncGetSecretsServiceRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -237,6 +249,13 @@ class VaultAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenFirebaseResponse>> PrepareAsyncGetTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenFirebaseResponse>>(PrepareAsyncGetTokenFirebaseRaw(context, request, cq));
     }
+    ::grpc::Status GetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::vault::v1alpha1::GetSecretsServiceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceResponse>> AsyncGetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceResponse>>(AsyncGetSecretsServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceResponse>> PrepareAsyncGetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceResponse>>(PrepareAsyncGetSecretsServiceRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -251,6 +270,7 @@ class VaultAPIService final {
       void GetTokenBlockChain(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenBlockChainRequest* request, ::vault::v1alpha1::GetTokenBlockChainResponse* response, std::function<void(::grpc::Status)>) override;
       void SaveTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest* request, ::vault::v1alpha1::SaveTokenFirebaseResponse* response, std::function<void(::grpc::Status)>) override;
       void GetTokenFirebase(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest* request, ::vault::v1alpha1::GetTokenFirebaseResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetSecretsService(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -284,6 +304,8 @@ class VaultAPIService final {
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::SaveTokenFirebaseResponse>* PrepareAsyncSaveTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenFirebaseResponse>* AsyncGetTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetTokenFirebaseResponse>* PrepareAsyncGetTokenFirebaseRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceResponse>* AsyncGetSecretsServiceRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceResponse>* PrepareAsyncGetSecretsServiceRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateSecret_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSecret_;
@@ -295,6 +317,7 @@ class VaultAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetTokenBlockChain_;
     const ::grpc::internal::RpcMethod rpcmethod_SaveTokenFirebase_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTokenFirebase_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetSecretsService_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -315,6 +338,8 @@ class VaultAPIService final {
     // Firebase
     virtual ::grpc::Status SaveTokenFirebase(::grpc::ServerContext* context, const ::vault::v1alpha1::SaveTokenFirebaseRequest* request, ::vault::v1alpha1::SaveTokenFirebaseResponse* response);
     virtual ::grpc::Status GetTokenFirebase(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest* request, ::vault::v1alpha1::GetTokenFirebaseResponse* response);
+    // Getsecret to service
+    virtual ::grpc::Status GetSecretsService(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateSecret : public BaseClass {
@@ -536,7 +561,27 @@ class VaultAPIService final {
       ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_SaveTokenIntegrations<WithAsyncMethod_GetTokenIntegrations<WithAsyncMethod_SaveTokenBlockChain<WithAsyncMethod_GetTokenBlockChain<WithAsyncMethod_SaveTokenFirebase<WithAsyncMethod_GetTokenFirebase<Service > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetSecretsService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetSecretsService() {
+      ::grpc::Service::MarkMethodAsync(11);
+    }
+    ~WithAsyncMethod_GetSecretsService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetSecretsService(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetSecretsService(::grpc::ServerContext* context, ::vault::v1alpha1::GetSecretsServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::vault::v1alpha1::GetSecretsServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateSecret<WithAsyncMethod_UpdateSecret<WithAsyncMethod_DeleteSecret<WithAsyncMethod_GetSecret<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_SaveTokenIntegrations<WithAsyncMethod_GetTokenIntegrations<WithAsyncMethod_SaveTokenBlockChain<WithAsyncMethod_GetTokenBlockChain<WithAsyncMethod_SaveTokenFirebase<WithAsyncMethod_GetTokenFirebase<WithAsyncMethod_GetSecretsService<Service > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateSecret : public BaseClass {
    private:
@@ -720,6 +765,23 @@ class VaultAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetTokenFirebase(::grpc::ServerContext* context, const ::vault::v1alpha1::GetTokenFirebaseRequest* request, ::vault::v1alpha1::GetTokenFirebaseResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetSecretsService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetSecretsService() {
+      ::grpc::Service::MarkMethodGeneric(11);
+    }
+    ~WithGenericMethod_GetSecretsService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetSecretsService(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -945,6 +1007,26 @@ class VaultAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetSecretsService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetSecretsService() {
+      ::grpc::Service::MarkMethodRaw(11);
+    }
+    ~WithRawMethod_GetSecretsService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetSecretsService(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetSecretsService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateSecret : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1164,9 +1246,29 @@ class VaultAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetTokenFirebase(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::GetTokenFirebaseRequest,::vault::v1alpha1::GetTokenFirebaseResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<WithStreamedUnaryMethod_SaveTokenBlockChain<WithStreamedUnaryMethod_GetTokenBlockChain<WithStreamedUnaryMethod_SaveTokenFirebase<WithStreamedUnaryMethod_GetTokenFirebase<Service > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetSecretsService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetSecretsService() {
+      ::grpc::Service::MarkMethodStreamed(11,
+        new ::grpc::internal::StreamedUnaryHandler< ::vault::v1alpha1::GetSecretsServiceRequest, ::vault::v1alpha1::GetSecretsServiceResponse>(std::bind(&WithStreamedUnaryMethod_GetSecretsService<BaseClass>::StreamedGetSecretsService, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetSecretsService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetSecretsService(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetSecretsService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vault::v1alpha1::GetSecretsServiceRequest,::vault::v1alpha1::GetSecretsServiceResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<WithStreamedUnaryMethod_SaveTokenBlockChain<WithStreamedUnaryMethod_GetTokenBlockChain<WithStreamedUnaryMethod_SaveTokenFirebase<WithStreamedUnaryMethod_GetTokenFirebase<WithStreamedUnaryMethod_GetSecretsService<Service > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<WithStreamedUnaryMethod_SaveTokenBlockChain<WithStreamedUnaryMethod_GetTokenBlockChain<WithStreamedUnaryMethod_SaveTokenFirebase<WithStreamedUnaryMethod_GetTokenFirebase<Service > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateSecret<WithStreamedUnaryMethod_UpdateSecret<WithStreamedUnaryMethod_DeleteSecret<WithStreamedUnaryMethod_GetSecret<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_SaveTokenIntegrations<WithStreamedUnaryMethod_GetTokenIntegrations<WithStreamedUnaryMethod_SaveTokenBlockChain<WithStreamedUnaryMethod_GetTokenBlockChain<WithStreamedUnaryMethod_SaveTokenFirebase<WithStreamedUnaryMethod_GetTokenFirebase<WithStreamedUnaryMethod_GetSecretsService<Service > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

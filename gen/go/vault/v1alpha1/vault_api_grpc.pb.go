@@ -31,6 +31,8 @@ type VaultAPIServiceClient interface {
 	//Firebase
 	SaveTokenFirebase(ctx context.Context, in *SaveTokenFirebaseRequest, opts ...grpc.CallOption) (*SaveTokenFirebaseResponse, error)
 	GetTokenFirebase(ctx context.Context, in *GetTokenFirebaseRequest, opts ...grpc.CallOption) (*GetTokenFirebaseResponse, error)
+	//Getsecret to service
+	GetSecretsService(ctx context.Context, in *GetSecretsServiceRequest, opts ...grpc.CallOption) (*GetSecretsServiceResponse, error)
 }
 
 type vaultAPIServiceClient struct {
@@ -140,6 +142,15 @@ func (c *vaultAPIServiceClient) GetTokenFirebase(ctx context.Context, in *GetTok
 	return out, nil
 }
 
+func (c *vaultAPIServiceClient) GetSecretsService(ctx context.Context, in *GetSecretsServiceRequest, opts ...grpc.CallOption) (*GetSecretsServiceResponse, error) {
+	out := new(GetSecretsServiceResponse)
+	err := c.cc.Invoke(ctx, "/vault.v1alpha1.VaultAPIService/GetSecretsService", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultAPIServiceServer is the server API for VaultAPIService service.
 // All implementations should embed UnimplementedVaultAPIServiceServer
 // for forward compatibility
@@ -157,6 +168,8 @@ type VaultAPIServiceServer interface {
 	//Firebase
 	SaveTokenFirebase(context.Context, *SaveTokenFirebaseRequest) (*SaveTokenFirebaseResponse, error)
 	GetTokenFirebase(context.Context, *GetTokenFirebaseRequest) (*GetTokenFirebaseResponse, error)
+	//Getsecret to service
+	GetSecretsService(context.Context, *GetSecretsServiceRequest) (*GetSecretsServiceResponse, error)
 }
 
 // UnimplementedVaultAPIServiceServer should be embedded to have forward compatible implementations.
@@ -195,6 +208,9 @@ func (UnimplementedVaultAPIServiceServer) SaveTokenFirebase(context.Context, *Sa
 }
 func (UnimplementedVaultAPIServiceServer) GetTokenFirebase(context.Context, *GetTokenFirebaseRequest) (*GetTokenFirebaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTokenFirebase not implemented")
+}
+func (UnimplementedVaultAPIServiceServer) GetSecretsService(context.Context, *GetSecretsServiceRequest) (*GetSecretsServiceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSecretsService not implemented")
 }
 
 // UnsafeVaultAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -406,6 +422,24 @@ func _VaultAPIService_GetTokenFirebase_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultAPIService_GetSecretsService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSecretsServiceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultAPIServiceServer).GetSecretsService(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vault.v1alpha1.VaultAPIService/GetSecretsService",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultAPIServiceServer).GetSecretsService(ctx, req.(*GetSecretsServiceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultAPIService_ServiceDesc is the grpc.ServiceDesc for VaultAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -456,6 +490,10 @@ var VaultAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTokenFirebase",
 			Handler:    _VaultAPIService_GetTokenFirebase_Handler,
+		},
+		{
+			MethodName: "GetSecretsService",
+			Handler:    _VaultAPIService_GetSecretsService_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
