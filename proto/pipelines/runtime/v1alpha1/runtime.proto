@@ -10,6 +10,8 @@ option java_package = "io.cuemby.pipelines.runtime.v1alpha1";
 option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
+import "application/v1alpha1/application.proto";
+
 enum TrafficType {
   TRAFFIC_TYPE_UNSPECIFIED = 0;
   TRAFFIC_TYPE_EXTERNAL = 1;
@@ -43,6 +45,7 @@ message Runtime {
   uint32 storage_used = 23;
 	uint32 storage_limit = 24;
   string integration_id = 25;
+  application.v1alpha1.Application application_data = 26;
 }
 
 message RuntimeList {

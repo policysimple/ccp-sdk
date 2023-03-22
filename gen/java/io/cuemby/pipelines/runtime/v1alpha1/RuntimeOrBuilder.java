@@ -415,4 +415,19 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIntegrationIdBytes();
+
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return Whether the applicationData field is set.
+   */
+  boolean hasApplicationData();
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return The applicationData.
+   */
+  application.v1alpha1.ApplicationOuterClass.Application getApplicationData();
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   */
+  application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder();
 }
