@@ -26,7 +26,7 @@ public final class InvitationsApi {
       "\n3accounts/v1alpha1/invitations/invitati" +
       "ons_api.proto\022 accounts.v1alpha1.invitat" +
       "ions.v1\032/accounts/v1alpha1/invitations/i" +
-      "nvitations.proto2\347\005\n\021InvitationService\022\217" +
+      "nvitations.proto2\377\006\n\021InvitationService\022\217" +
       "\001\n\022SendInvitationUser\022;.accounts.v1alpha" +
       "1.invitations.v1.SendInvitationUserReque" +
       "st\032<.accounts.v1alpha1.invitations.v1.Se" +
@@ -45,8 +45,12 @@ public final class InvitationsApi {
       "ion\0229.accounts.v1alpha1.invitations.v1.D" +
       "eleteInvitationRequest\032:.accounts.v1alph" +
       "a1.invitations.v1.DeleteInvitationRespon" +
-      "seB@Z>github.com/cuemby/ccp-sdk/gen/go/a" +
-      "ccounts/v1alpha1/invitationsb\006proto3"
+      "se\022\225\001\n\024ReactivateInvitation\022=.accounts.v" +
+      "1alpha1.invitations.v1.ReactivateInvitat" +
+      "ionRequest\032>.accounts.v1alpha1.invitatio" +
+      "ns.v1.ReactivateInvitationResponseB@Z>gi" +
+      "thub.com/cuemby/ccp-sdk/gen/go/accounts/" +
+      "v1alpha1/invitationsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

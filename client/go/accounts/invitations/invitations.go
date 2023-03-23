@@ -127,3 +127,21 @@ func DeleteInvitation(req *accountpkgv1.DeleteInvitationRequest) (*accountpkgv1.
 
 	return response, nil
 }
+
+func ReactivateInvitation(req *accountpkgv1.ReactivateInvitationRequest) (*accountpkgv1.ReactivateInvitationResponse, error) {
+	bylogs.LogInfo("ReactivateInvitation Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+	response, err := client.ReactivateInvitation(ctx, req)
+	if err != nil {
+		bylogs.LogErr("ReactivateInvitation Client Sdk", err)
+		return nil, fmt.Errorf("[ReactivateInvitation] %w", err)
+	}
+	bylogs.LogInfo("ReactivateInvitation Client Sdk", "Success")
+
+	return response, nil
+}

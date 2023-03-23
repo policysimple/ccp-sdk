@@ -41,6 +41,14 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool success = 8 [json_name = "success"];</code>
      */
     protected $success = false;
+    /**
+     * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     */
+    protected $expired_at = '';
+    /**
+     * Generated from protobuf field <code>bool expired_status = 11 [json_name = "expiredStatus"];</code>
+     */
+    protected $expired_status = false;
 
     /**
      * Constructor.
@@ -55,6 +63,8 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Invitations\V1\OrganizationInvitation $organization
      *     @type string $email
      *     @type bool $success
+     *     @type string $expired_at
+     *     @type bool $expired_status
      * }
      */
     public function __construct($data = NULL) {
@@ -222,6 +232,50 @@ class GetInvitationUserResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->success = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @return string
+     */
+    public function getExpiredAt()
+    {
+        return $this->expired_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExpiredAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->expired_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool expired_status = 11 [json_name = "expiredStatus"];</code>
+     * @return bool
+     */
+    public function getExpiredStatus()
+    {
+        return $this->expired_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool expired_status = 11 [json_name = "expiredStatus"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExpiredStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->expired_status = $var;
 
         return $this;
     }

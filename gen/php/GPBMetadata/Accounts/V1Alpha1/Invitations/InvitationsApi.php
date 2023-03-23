@@ -17,14 +17,15 @@ class InvitationsApi
         \GPBMetadata\Accounts\V1Alpha1\Invitations\Invitations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ã
-3accounts/v1alpha1/invitations/invitations_api.proto accounts.v1alpha1.invitations.v12Á
+£
+3accounts/v1alpha1/invitations/invitations_api.proto accounts.v1alpha1.invitations.v12ˇ
 InvitationServiceè
 SendInvitationUser;.accounts.v1alpha1.invitations.v1.SendInvitationUserRequest<.accounts.v1alpha1.invitations.v1.SendInvitationUserResponseå
 GetInvitationUser:.accounts.v1alpha1.invitations.v1.GetInvitationUserRequest;.accounts.v1alpha1.invitations.v1.GetInvitationUserResponseí
 AgreeInvitationUser<.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest=.accounts.v1alpha1.invitations.v1.AgreeInvitationUserResponseè
 ListInvitationSend;.accounts.v1alpha1.invitations.v1.ListInvitationSendRequest<.accounts.v1alpha1.invitations.v1.ListInvitationSendResponseâ
-DeleteInvitation9.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest:.accounts.v1alpha1.invitations.v1.DeleteInvitationResponseB@Z>github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitationsbproto3'
+DeleteInvitation9.accounts.v1alpha1.invitations.v1.DeleteInvitationRequest:.accounts.v1alpha1.invitations.v1.DeleteInvitationResponseï
+ReactivateInvitation=.accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest>.accounts.v1alpha1.invitations.v1.ReactivateInvitationResponseB@Z>github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitationsbproto3'
         , true);
 
         static::$is_initialized = true;
