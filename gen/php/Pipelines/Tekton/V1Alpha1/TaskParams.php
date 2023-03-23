@@ -29,6 +29,14 @@ class TaskParams extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string param_value_array = 4 [json_name = "paramValueArray"];</code>
      */
     private $param_value_array;
+    /**
+     * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
+     */
+    protected $description = '';
+    /**
+     * Generated from protobuf field <code>string default = 6 [json_name = "default"];</code>
+     */
+    protected $default = '';
 
     /**
      * Constructor.
@@ -40,6 +48,8 @@ class TaskParams extends \Google\Protobuf\Internal\Message
      *     @type string $param_value_type
      *     @type string $param_value
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $param_value_array
+     *     @type string $description
+     *     @type string $default
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +141,50 @@ class TaskParams extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->param_value_array = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string default = 6 [json_name = "default"];</code>
+     * @return string
+     */
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+    /**
+     * Generated from protobuf field <code>string default = 6 [json_name = "default"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDefault($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->default = $var;
 
         return $this;
     }

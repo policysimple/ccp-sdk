@@ -546,7 +546,9 @@ proto.pipelines.tekton.v1alpha1.TaskParams.toObject = function(includeInstance, 
     paramName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     paramValueType: jspb.Message.getFieldWithDefault(msg, 2, ""),
     paramValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    paramValueArrayList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    paramValueArrayList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    pb_default: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -598,6 +600,14 @@ proto.pipelines.tekton.v1alpha1.TaskParams.deserializeBinaryFromReader = functio
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.addParamValueArray(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefault(value);
       break;
     default:
       reader.skipField();
@@ -653,6 +663,20 @@ proto.pipelines.tekton.v1alpha1.TaskParams.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeRepeatedString(
       4,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getDefault();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -747,6 +771,42 @@ proto.pipelines.tekton.v1alpha1.TaskParams.prototype.addParamValueArray = functi
  */
 proto.pipelines.tekton.v1alpha1.TaskParams.prototype.clearParamValueArrayList = function() {
   return this.setParamValueArrayList([]);
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskParams} returns this
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string default = 6;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.getDefault = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskParams} returns this
+ */
+proto.pipelines.tekton.v1alpha1.TaskParams.prototype.setDefault = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -988,7 +1048,9 @@ proto.pipelines.tekton.v1alpha1.Task.toObject = function(includeInstance, msg) {
     proto.pipelines.tekton.v1alpha1.Workspaces.toObject, includeInstance),
     taskParamsList: jspb.Message.toObjectList(msg.getTaskParamsList(),
     proto.pipelines.tekton.v1alpha1.TaskParams.toObject, includeInstance),
-    description: jspb.Message.getFieldWithDefault(msg, 8, "")
+    description: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    beforeDeploy: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    afterDeploy: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -1058,6 +1120,14 @@ proto.pipelines.tekton.v1alpha1.Task.deserializeBinaryFromReader = function(msg,
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBeforeDeploy(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAfterDeploy(value);
       break;
     default:
       reader.skipField();
@@ -1143,6 +1213,20 @@ proto.pipelines.tekton.v1alpha1.Task.serializeBinaryToWriter = function(message,
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getBeforeDeploy();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
+    );
+  }
+  f = message.getAfterDeploy();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -1349,6 +1433,42 @@ proto.pipelines.tekton.v1alpha1.Task.prototype.getDescription = function() {
  */
 proto.pipelines.tekton.v1alpha1.Task.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional bool before_deploy = 9;
+ * @return {boolean}
+ */
+proto.pipelines.tekton.v1alpha1.Task.prototype.getBeforeDeploy = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Task} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Task.prototype.setBeforeDeploy = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional bool after_deploy = 10;
+ * @return {boolean}
+ */
+proto.pipelines.tekton.v1alpha1.Task.prototype.getAfterDeploy = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Task} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Task.prototype.setAfterDeploy = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 

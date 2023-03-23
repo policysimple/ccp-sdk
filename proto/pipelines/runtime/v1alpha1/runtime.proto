@@ -11,6 +11,7 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
 import "application/v1alpha1/application.proto";
+import "pipelines/tekton/v1alpha1/tekton.proto";
 
 enum TrafficType {
   TRAFFIC_TYPE_UNSPECIFIED = 0;
@@ -46,6 +47,10 @@ message Runtime {
 	uint32 storage_limit = 24;
   string integration_id = 25;
   application.v1alpha1.Application application_data = 26;
+  bool custom_pipeline = 27;
+  repeated pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28;
+  repeated pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29;
+
 }
 
 message RuntimeList {

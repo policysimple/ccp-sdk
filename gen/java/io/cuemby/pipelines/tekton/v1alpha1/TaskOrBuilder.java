@@ -139,4 +139,16 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+   * @return The beforeDeploy.
+   */
+  boolean getBeforeDeploy();
+
+  /**
+   * <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+   * @return The afterDeploy.
+   */
+  boolean getAfterDeploy();
 }

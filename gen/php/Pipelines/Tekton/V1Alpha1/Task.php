@@ -45,6 +45,14 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 8 [json_name = "description"];</code>
      */
     protected $description = '';
+    /**
+     * Generated from protobuf field <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+     */
+    protected $before_deploy = false;
+    /**
+     * Generated from protobuf field <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+     */
+    protected $after_deploy = false;
 
     /**
      * Constructor.
@@ -60,6 +68,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $workspaces
      *     @type \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $task_params
      *     @type string $description
+     *     @type bool $before_deploy
+     *     @type bool $after_deploy
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +249,50 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+     * @return bool
+     */
+    public function getBeforeDeploy()
+    {
+        return $this->before_deploy;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBeforeDeploy($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->before_deploy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+     * @return bool
+     */
+    public function getAfterDeploy()
+    {
+        return $this->after_deploy;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAfterDeploy($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->after_deploy = $var;
 
         return $this;
     }
