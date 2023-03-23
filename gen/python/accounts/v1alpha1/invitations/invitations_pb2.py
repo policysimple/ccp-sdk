@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z>github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitations',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/accounts/v1alpha1/invitations/invitations.proto\x12 accounts.v1alpha1.invitations.v1\x1a accounts/v1alpha1/accounts.proto\"\xd8\x01\n\x19SendInvitationUserRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\x12\"\n\ruser_id_admin\x18\x04 \x01(\tR\x0buserIdAdmin\x12\x1b\n\troles_ids\x18\x05 \x03(\tR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x06 \x03(\rR\x0epermissionsIds\x12\'\n\x0forganization_id\x18\x07 \x01(\tR\x0eorganizationId\"\xca\x02\n\x1aSendInvitationUserResponse\x12\x43\n\x0corganization\x18\x01 \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\x12\x36\n\x08projects\x18\x02 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\'\n\x0finvitation_code\x18\x03 \x01(\tR\x0einvitationCode\x12\x16\n\x06result\x18\x04 \x01(\tR\x06result\x12-\n\x05roles\x18\x05 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\x06 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\"Y\n\x18GetInvitationUserRequest\x12\'\n\x0finvitation_code\x18\x01 \x01(\tR\x0einvitationCode\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\"\xac\x01\n\x16OrganizationInvitation\x12\x0e\n\x02id\x18\x06 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x36\n\x08projects\x18\x05 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"\xd2\x02\n\x19GetInvitationUserResponse\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\'\n\x0finvitation_code\x18\x02 \x01(\tR\x0einvitationCode\x12-\n\x05roles\x18\x04 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\\\n\x0corganization\x18\x06 \x01(\x0b\x32\x38.accounts.v1alpha1.invitations.v1.OrganizationInvitationR\x0corganization\x12\x14\n\x05\x65mail\x18\x07 \x01(\tR\x05\x65mail\x12\x18\n\x07success\x18\x08 \x01(\x08R\x07success\"\x8b\x03\n\x1a\x41greeInvitationUserRequest\x12\'\n\x0finvitation_code\x18\x01 \x01(\tR\x0einvitationCode\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\x12\"\n\rguest_user_id\x18\x03 \x01(\tR\x0bguestUserId\x12\x65\n\x13invitation_response\x18\x04 \x01(\x0e\x32\x34.accounts.v1alpha1.invitations.v1.InvitationResponseR\x12invitationResponse\x12\x66\n\x08projects\x18\x05 \x03(\x0b\x32J.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest.ProjectsEntryR\x08projects\x1a;\n\rProjectsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"5\n\x1b\x41greeInvitationUserResponse\x12\x16\n\x06result\x18\x01 \x01(\tR\x06result\"\x94\x01\n\x19ListInvitationSendRequest\x12\x19\n\x08owner_id\x18\x01 \x01(\tR\x07ownerId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\'\n\x0forganization_id\x18\x03 \x01(\tR\x0eorganizationId\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\"\x82\x01\n\x1aListInvitationSendResponse\x12\x64\n\x0finvitation_user\x18\x01 \x03(\x0b\x32;.accounts.v1alpha1.invitations.v1.GetInvitationUserResponseR\x0einvitationUser\"\x80\x01\n\x17\x44\x65leteInvitationRequest\x12#\n\rinvitation_id\x18\x01 \x01(\tR\x0cinvitationId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\"B\n\x18\x44\x65leteInvitationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror*d\n\x12InvitationResponse\x12,\n(INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED\x10\x00\x12 \n\x1cINVITATION_RESPONSE_REJECTED\x10\x01\x42@Z>github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitationsb\x06proto3'
+  serialized_pb=b'\n/accounts/v1alpha1/invitations/invitations.proto\x12 accounts.v1alpha1.invitations.v1\x1a accounts/v1alpha1/accounts.proto\"\xf7\x01\n\x19SendInvitationUserRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\x12\"\n\ruser_id_admin\x18\x04 \x01(\tR\x0buserIdAdmin\x12\x1b\n\troles_ids\x18\x05 \x03(\tR\x08rolesIds\x12\'\n\x0fpermissions_ids\x18\x06 \x03(\rR\x0epermissionsIds\x12\'\n\x0forganization_id\x18\x07 \x01(\tR\x0eorganizationId\x12\x1d\n\nexpired_at\x18\x08 \x01(\tR\texpiredAt\"\xe9\x02\n\x1aSendInvitationUserResponse\x12\x43\n\x0corganization\x18\x01 \x01(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\x0corganization\x12\x36\n\x08projects\x18\x02 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\'\n\x0finvitation_code\x18\x03 \x01(\tR\x0einvitationCode\x12\x16\n\x06result\x18\x04 \x01(\tR\x06result\x12-\n\x05roles\x18\x05 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\x06 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\x1d\n\nexpired_at\x18\x07 \x01(\tR\texpiredAt\"Y\n\x18GetInvitationUserRequest\x12\'\n\x0finvitation_code\x18\x01 \x01(\tR\x0einvitationCode\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\"\xac\x01\n\x16OrganizationInvitation\x12\x0e\n\x02id\x18\x06 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x36\n\x08projects\x18\x05 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"\x98\x03\n\x19GetInvitationUserResponse\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\'\n\x0finvitation_code\x18\x02 \x01(\tR\x0einvitationCode\x12-\n\x05roles\x18\x04 \x03(\x0b\x32\x17.accounts.v1alpha1.RoleR\x05roles\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32\x1d.accounts.v1alpha1.PermissionR\x0bpermissions\x12\\\n\x0corganization\x18\x06 \x01(\x0b\x32\x38.accounts.v1alpha1.invitations.v1.OrganizationInvitationR\x0corganization\x12\x14\n\x05\x65mail\x18\x07 \x01(\tR\x05\x65mail\x12\x18\n\x07success\x18\x08 \x01(\x08R\x07success\x12\x1d\n\nexpired_at\x18\t \x01(\tR\texpiredAt\x12%\n\x0e\x65xpired_status\x18\x0b \x01(\x08R\rexpiredStatus\"\x8b\x03\n\x1a\x41greeInvitationUserRequest\x12\'\n\x0finvitation_code\x18\x01 \x01(\tR\x0einvitationCode\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\x12\"\n\rguest_user_id\x18\x03 \x01(\tR\x0bguestUserId\x12\x65\n\x13invitation_response\x18\x04 \x01(\x0e\x32\x34.accounts.v1alpha1.invitations.v1.InvitationResponseR\x12invitationResponse\x12\x66\n\x08projects\x18\x05 \x03(\x0b\x32J.accounts.v1alpha1.invitations.v1.AgreeInvitationUserRequest.ProjectsEntryR\x08projects\x1a;\n\rProjectsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"5\n\x1b\x41greeInvitationUserResponse\x12\x16\n\x06result\x18\x01 \x01(\tR\x06result\"\x94\x01\n\x19ListInvitationSendRequest\x12\x19\n\x08owner_id\x18\x01 \x01(\tR\x07ownerId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\'\n\x0forganization_id\x18\x03 \x01(\tR\x0eorganizationId\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\"\x82\x01\n\x1aListInvitationSendResponse\x12\x64\n\x0finvitation_user\x18\x01 \x03(\x0b\x32;.accounts.v1alpha1.invitations.v1.GetInvitationUserResponseR\x0einvitationUser\"\x80\x01\n\x17\x44\x65leteInvitationRequest\x12#\n\rinvitation_id\x18\x01 \x01(\tR\x0cinvitationId\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\"B\n\x18\x44\x65leteInvitationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror\"L\n\x1bReactivateInvitationRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\nexpired_at\x18\x02 \x01(\tR\texpiredAt\"0\n\x1cReactivateInvitationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg*d\n\x12InvitationResponse\x12,\n(INVITATION_RESPONSE_ACCEPTED_UNSPECIFIED\x10\x00\x12 \n\x1cINVITATION_RESPONSE_REJECTED\x10\x01\x42@Z>github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitationsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -45,8 +45,8 @@ _INVITATIONRESPONSE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2214,
-  serialized_end=2314,
+  serialized_start=2474,
+  serialized_end=2574,
 )
 _sym_db.RegisterEnumDescriptor(_INVITATIONRESPONSE)
 
@@ -106,6 +106,13 @@ _SENDINVITATIONUSERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expired_at', full_name='accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at', index=6,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiredAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -119,7 +126,7 @@ _SENDINVITATIONUSERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=120,
-  serialized_end=336,
+  serialized_end=367,
 )
 
 
@@ -173,6 +180,13 @@ _SENDINVITATIONUSERRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='permissions', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expired_at', full_name='accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiredAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -185,8 +199,8 @@ _SENDINVITATIONUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=339,
-  serialized_end=669,
+  serialized_start=370,
+  serialized_end=731,
 )
 
 
@@ -224,8 +238,8 @@ _GETINVITATIONUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=671,
-  serialized_end=760,
+  serialized_start=733,
+  serialized_end=822,
 )
 
 
@@ -284,8 +298,8 @@ _ORGANIZATIONINVITATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=763,
-  serialized_end=935,
+  serialized_start=825,
+  serialized_end=997,
 )
 
 
@@ -346,6 +360,20 @@ _GETINVITATIONUSERRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='success', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expired_at', full_name='accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at', index=7,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiredAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expired_status', full_name='accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_status', index=8,
+      number=11, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiredStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -358,8 +386,8 @@ _GETINVITATIONUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=938,
-  serialized_end=1276,
+  serialized_start=1000,
+  serialized_end=1408,
 )
 
 
@@ -397,8 +425,8 @@ _AGREEINVITATIONUSERREQUEST_PROJECTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1615,
-  serialized_end=1674,
+  serialized_start=1747,
+  serialized_end=1806,
 )
 
 _AGREEINVITATIONUSERREQUEST = _descriptor.Descriptor(
@@ -456,8 +484,8 @@ _AGREEINVITATIONUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1279,
-  serialized_end=1674,
+  serialized_start=1411,
+  serialized_end=1806,
 )
 
 
@@ -488,8 +516,8 @@ _AGREEINVITATIONUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1676,
-  serialized_end=1729,
+  serialized_start=1808,
+  serialized_end=1861,
 )
 
 
@@ -541,8 +569,8 @@ _LISTINVITATIONSENDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1732,
-  serialized_end=1880,
+  serialized_start=1864,
+  serialized_end=2012,
 )
 
 
@@ -573,8 +601,8 @@ _LISTINVITATIONSENDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1883,
-  serialized_end=2013,
+  serialized_start=2015,
+  serialized_end=2145,
 )
 
 
@@ -619,8 +647,8 @@ _DELETEINVITATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2016,
-  serialized_end=2144,
+  serialized_start=2148,
+  serialized_end=2276,
 )
 
 
@@ -658,8 +686,79 @@ _DELETEINVITATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2146,
-  serialized_end=2212,
+  serialized_start=2278,
+  serialized_end=2344,
+)
+
+
+_REACTIVATEINVITATIONREQUEST = _descriptor.Descriptor(
+  name='ReactivateInvitationRequest',
+  full_name='accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expired_at', full_name='accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expiredAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2346,
+  serialized_end=2422,
+)
+
+
+_REACTIVATEINVITATIONRESPONSE = _descriptor.Descriptor(
+  name='ReactivateInvitationResponse',
+  full_name='accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2424,
+  serialized_end=2472,
 )
 
 _SENDINVITATIONUSERRESPONSE.fields_by_name['organization'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._ORGANIZATION
@@ -685,6 +784,8 @@ DESCRIPTOR.message_types_by_name['ListInvitationSendRequest'] = _LISTINVITATIONS
 DESCRIPTOR.message_types_by_name['ListInvitationSendResponse'] = _LISTINVITATIONSENDRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteInvitationRequest'] = _DELETEINVITATIONREQUEST
 DESCRIPTOR.message_types_by_name['DeleteInvitationResponse'] = _DELETEINVITATIONRESPONSE
+DESCRIPTOR.message_types_by_name['ReactivateInvitationRequest'] = _REACTIVATEINVITATIONREQUEST
+DESCRIPTOR.message_types_by_name['ReactivateInvitationResponse'] = _REACTIVATEINVITATIONRESPONSE
 DESCRIPTOR.enum_types_by_name['InvitationResponse'] = _INVITATIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -772,6 +873,20 @@ DeleteInvitationResponse = _reflection.GeneratedProtocolMessageType('DeleteInvit
   # @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.DeleteInvitationResponse)
   })
 _sym_db.RegisterMessage(DeleteInvitationResponse)
+
+ReactivateInvitationRequest = _reflection.GeneratedProtocolMessageType('ReactivateInvitationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _REACTIVATEINVITATIONREQUEST,
+  '__module__' : 'accounts.v1alpha1.invitations.invitations_pb2'
+  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  })
+_sym_db.RegisterMessage(ReactivateInvitationRequest)
+
+ReactivateInvitationResponse = _reflection.GeneratedProtocolMessageType('ReactivateInvitationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _REACTIVATEINVITATIONRESPONSE,
+  '__module__' : 'accounts.v1alpha1.invitations.invitations_pb2'
+  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  })
+_sym_db.RegisterMessage(ReactivateInvitationResponse)
 
 
 DESCRIPTOR._options = None

@@ -39,6 +39,11 @@ class InvitationServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.DeleteInvitationRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.DeleteInvitationResponse.FromString,
         )
+    self.ReactivateInvitation = channel.unary_unary(
+        '/accounts.v1alpha1.invitations.v1.InvitationService/ReactivateInvitation',
+        request_serializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.ReactivateInvitationRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.ReactivateInvitationResponse.FromString,
+        )
 
 
 class InvitationServiceServicer(object):
@@ -80,6 +85,13 @@ class InvitationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ReactivateInvitation(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_InvitationServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -107,6 +119,11 @@ def add_InvitationServiceServicer_to_server(servicer, server):
           servicer.DeleteInvitation,
           request_deserializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.DeleteInvitationRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.DeleteInvitationResponse.SerializeToString,
+      ),
+      'ReactivateInvitation': grpc.unary_unary_rpc_method_handler(
+          servicer.ReactivateInvitation,
+          request_deserializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.ReactivateInvitationRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_invitations_dot_invitations__pb2.ReactivateInvitationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
