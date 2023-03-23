@@ -384,4 +384,58 @@ public interface PipelineOrBuilder extends
    * @return The active.
    */
   boolean getActive();
+
+  /**
+   * <code>bool custom_pipeline = 21 [json_name = "customPipeline"];</code>
+   * @return The customPipeline.
+   */
+  boolean getCustomPipeline();
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+      getBeforeDeployTasksList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Task getBeforeDeployTasks(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+   */
+  int getBeforeDeployTasksCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getBeforeDeployTasksOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getBeforeDeployTasksOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+      getAfterDeployTasksList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Task getAfterDeployTasks(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+   */
+  int getAfterDeployTasksCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getAfterDeployTasksOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getAfterDeployTasksOrBuilder(
+      int index);
 }

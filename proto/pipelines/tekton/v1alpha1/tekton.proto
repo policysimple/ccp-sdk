@@ -67,6 +67,9 @@ message Pipeline {
     map<string, string> instance_type = 18;
     bool is_default = 19;
     bool active = 20;
+    bool custom_pipeline = 21;
+    repeated Task before_deploy_tasks = 22;
+    repeated Task after_deploy_tasks = 23;
 }
 
 message TektonTask {

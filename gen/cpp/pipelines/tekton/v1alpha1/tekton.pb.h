@@ -1360,6 +1360,8 @@ class Pipeline final :
     kSecretsFieldNumber = 16,
     kExtraArgsFieldNumber = 17,
     kInstanceTypeFieldNumber = 18,
+    kBeforeDeployTasksFieldNumber = 22,
+    kAfterDeployTasksFieldNumber = 23,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kOrganizationIdFieldNumber = 4,
@@ -1372,6 +1374,7 @@ class Pipeline final :
     kTrafficTypeFieldNumber = 3,
     kIsDefaultFieldNumber = 19,
     kActiveFieldNumber = 20,
+    kCustomPipelineFieldNumber = 21,
   };
   // repeated .pipelines.tekton.v1alpha1.Params params = 10 [json_name = "params"];
   int params_size() const;
@@ -1510,6 +1513,42 @@ class Pipeline final :
       instance_type() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_instance_type();
+
+  // repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];
+  int before_deploy_tasks_size() const;
+  private:
+  int _internal_before_deploy_tasks_size() const;
+  public:
+  void clear_before_deploy_tasks();
+  ::pipelines::tekton::v1alpha1::Task* mutable_before_deploy_tasks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+      mutable_before_deploy_tasks();
+  private:
+  const ::pipelines::tekton::v1alpha1::Task& _internal_before_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* _internal_add_before_deploy_tasks();
+  public:
+  const ::pipelines::tekton::v1alpha1::Task& before_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* add_before_deploy_tasks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+      before_deploy_tasks() const;
+
+  // repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];
+  int after_deploy_tasks_size() const;
+  private:
+  int _internal_after_deploy_tasks_size() const;
+  public:
+  void clear_after_deploy_tasks();
+  ::pipelines::tekton::v1alpha1::Task* mutable_after_deploy_tasks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+      mutable_after_deploy_tasks();
+  private:
+  const ::pipelines::tekton::v1alpha1::Task& _internal_after_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* _internal_add_after_deploy_tasks();
+  public:
+  const ::pipelines::tekton::v1alpha1::Task& after_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* add_after_deploy_tasks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+      after_deploy_tasks() const;
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1664,6 +1703,15 @@ class Pipeline final :
   void _internal_set_active(bool value);
   public:
 
+  // bool custom_pipeline = 21 [json_name = "customPipeline"];
+  void clear_custom_pipeline();
+  bool custom_pipeline() const;
+  void set_custom_pipeline(bool value);
+  private:
+  bool _internal_custom_pipeline() const;
+  void _internal_set_custom_pipeline(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.Pipeline)
  private:
   class _Internal;
@@ -1703,6 +1751,8 @@ class Pipeline final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> instance_type_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > before_deploy_tasks_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > after_deploy_tasks_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
@@ -1715,6 +1765,7 @@ class Pipeline final :
   ::PROTOBUF_NAMESPACE_ID::int32 traffic_type_;
   bool is_default_;
   bool active_;
+  bool custom_pipeline_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -4680,6 +4731,106 @@ inline void Pipeline::_internal_set_active(bool value) {
 inline void Pipeline::set_active(bool value) {
   _internal_set_active(value);
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.active)
+}
+
+// bool custom_pipeline = 21 [json_name = "customPipeline"];
+inline void Pipeline::clear_custom_pipeline() {
+  custom_pipeline_ = false;
+}
+inline bool Pipeline::_internal_custom_pipeline() const {
+  return custom_pipeline_;
+}
+inline bool Pipeline::custom_pipeline() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.custom_pipeline)
+  return _internal_custom_pipeline();
+}
+inline void Pipeline::_internal_set_custom_pipeline(bool value) {
+  
+  custom_pipeline_ = value;
+}
+inline void Pipeline::set_custom_pipeline(bool value) {
+  _internal_set_custom_pipeline(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.custom_pipeline)
+}
+
+// repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];
+inline int Pipeline::_internal_before_deploy_tasks_size() const {
+  return before_deploy_tasks_.size();
+}
+inline int Pipeline::before_deploy_tasks_size() const {
+  return _internal_before_deploy_tasks_size();
+}
+inline void Pipeline::clear_before_deploy_tasks() {
+  before_deploy_tasks_.Clear();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Pipeline::mutable_before_deploy_tasks(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.before_deploy_tasks)
+  return before_deploy_tasks_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+Pipeline::mutable_before_deploy_tasks() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.Pipeline.before_deploy_tasks)
+  return &before_deploy_tasks_;
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Pipeline::_internal_before_deploy_tasks(int index) const {
+  return before_deploy_tasks_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Pipeline::before_deploy_tasks(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.before_deploy_tasks)
+  return _internal_before_deploy_tasks(index);
+}
+inline ::pipelines::tekton::v1alpha1::Task* Pipeline::_internal_add_before_deploy_tasks() {
+  return before_deploy_tasks_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Pipeline::add_before_deploy_tasks() {
+  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_before_deploy_tasks();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.Pipeline.before_deploy_tasks)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+Pipeline::before_deploy_tasks() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.Pipeline.before_deploy_tasks)
+  return before_deploy_tasks_;
+}
+
+// repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];
+inline int Pipeline::_internal_after_deploy_tasks_size() const {
+  return after_deploy_tasks_.size();
+}
+inline int Pipeline::after_deploy_tasks_size() const {
+  return _internal_after_deploy_tasks_size();
+}
+inline void Pipeline::clear_after_deploy_tasks() {
+  after_deploy_tasks_.Clear();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Pipeline::mutable_after_deploy_tasks(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.after_deploy_tasks)
+  return after_deploy_tasks_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+Pipeline::mutable_after_deploy_tasks() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.Pipeline.after_deploy_tasks)
+  return &after_deploy_tasks_;
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Pipeline::_internal_after_deploy_tasks(int index) const {
+  return after_deploy_tasks_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Pipeline::after_deploy_tasks(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.after_deploy_tasks)
+  return _internal_after_deploy_tasks(index);
+}
+inline ::pipelines::tekton::v1alpha1::Task* Pipeline::_internal_add_after_deploy_tasks() {
+  return after_deploy_tasks_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Pipeline::add_after_deploy_tasks() {
+  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_after_deploy_tasks();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.Pipeline.after_deploy_tasks)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+Pipeline::after_deploy_tasks() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.Pipeline.after_deploy_tasks)
+  return after_deploy_tasks_;
 }
 
 // -------------------------------------------------------------------

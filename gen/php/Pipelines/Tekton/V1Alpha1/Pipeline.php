@@ -95,6 +95,18 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool active = 20 [json_name = "active"];</code>
      */
     protected $active = false;
+    /**
+     * Generated from protobuf field <code>bool custom_pipeline = 21 [json_name = "customPipeline"];</code>
+     */
+    protected $custom_pipeline = false;
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+     */
+    private $before_deploy_tasks;
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+     */
+    private $after_deploy_tasks;
 
     /**
      * Constructor.
@@ -122,6 +134,9 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $instance_type
      *     @type bool $is_default
      *     @type bool $active
+     *     @type bool $custom_pipeline
+     *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
+     *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
      * }
      */
     public function __construct($data = NULL) {
@@ -565,6 +580,72 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool custom_pipeline = 21 [json_name = "customPipeline"];</code>
+     * @return bool
+     */
+    public function getCustomPipeline()
+    {
+        return $this->custom_pipeline;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool custom_pipeline = 21 [json_name = "customPipeline"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCustomPipeline($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->custom_pipeline = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getBeforeDeployTasks()
+    {
+        return $this->before_deploy_tasks;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 22 [json_name = "beforeDeployTasks"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setBeforeDeployTasks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
+        $this->before_deploy_tasks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAfterDeployTasks()
+    {
+        return $this->after_deploy_tasks;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAfterDeployTasks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
+        $this->after_deploy_tasks = $arr;
 
         return $this;
     }
