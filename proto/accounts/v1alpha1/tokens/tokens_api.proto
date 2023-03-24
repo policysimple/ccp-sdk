@@ -10,10 +10,12 @@ service TokenService {
     rpc CreateTokenCCP(CreateTokenCCPRequest) returns (CreateTokenCCPResponse);
     rpc GetOneTokenCCP(GetOneTokenCCPRequest) returns (GetOneTokenCCPResponse);
     //Get Users Email filter
-    //LOGS REDIS
+    //Logs by redis
     rpc Logs(LogsRequest) returns (LogsResponse);
     rpc SaveLogs(SaveLogsRequest) returns (SaveLogsResponse);
     //DOBLE AUTHETICATION
     rpc MFA(MFARequest) returns (MFAResponse);
     rpc EnableOrDisableMFA(EnableOrDisableMFARequest) returns (EnableOrDisableMFAResponse);
+    //Logout
+    rpc LogoutToken(LogoutTokenRequest) returns (LogoutTokenResponse);
 }

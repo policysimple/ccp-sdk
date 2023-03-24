@@ -70,6 +70,28 @@ function deserialize_accounts_v1alpha1_tokens_v1_GetOneTokenCCPResponse(buffer_a
   return accounts_v1alpha1_tokens_tokens_pb.GetOneTokenCCPResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_tokens_v1_LogoutTokenRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_tokens_tokens_pb.LogoutTokenRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.tokens.v1.LogoutTokenRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_tokens_v1_LogoutTokenRequest(buffer_arg) {
+  return accounts_v1alpha1_tokens_tokens_pb.LogoutTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_tokens_v1_LogoutTokenResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_tokens_tokens_pb.LogoutTokenResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.tokens.v1.LogoutTokenResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_tokens_v1_LogoutTokenResponse(buffer_arg) {
+  return accounts_v1alpha1_tokens_tokens_pb.LogoutTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_tokens_v1_LogsRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_tokens_tokens_pb.LogsRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.tokens.v1.LogsRequest');
@@ -162,7 +184,7 @@ var TokenServiceService = exports.TokenServiceService = {
     responseDeserialize: deserialize_accounts_v1alpha1_tokens_v1_GetOneTokenCCPResponse,
   },
   // Get Users Email filter
-  // LOGS REDIS
+  // Logs by redis
   logs: {
     path: '/accounts.v1alpha1.tokens.v1.TokenService/Logs',
     requestStream: false,
@@ -207,6 +229,18 @@ var TokenServiceService = exports.TokenServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_tokens_v1_EnableOrDisableMFARequest,
     responseSerialize: serialize_accounts_v1alpha1_tokens_v1_EnableOrDisableMFAResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_tokens_v1_EnableOrDisableMFAResponse,
+  },
+  // Logout
+  logoutToken: {
+    path: '/accounts.v1alpha1.tokens.v1.TokenService/LogoutToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_tokens_tokens_pb.LogoutTokenRequest,
+    responseType: accounts_v1alpha1_tokens_tokens_pb.LogoutTokenResponse,
+    requestSerialize: serialize_accounts_v1alpha1_tokens_v1_LogoutTokenRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_tokens_v1_LogoutTokenRequest,
+    responseSerialize: serialize_accounts_v1alpha1_tokens_v1_LogoutTokenResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_tokens_v1_LogoutTokenResponse,
   },
 };
 

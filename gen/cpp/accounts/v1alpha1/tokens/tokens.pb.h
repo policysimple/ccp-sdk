@@ -46,7 +46,7 @@ struct TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -78,6 +78,12 @@ extern GetOneTokenCCPResponseDefaultTypeInternal _GetOneTokenCCPResponse_default
 class Log;
 struct LogDefaultTypeInternal;
 extern LogDefaultTypeInternal _Log_default_instance_;
+class LogoutTokenRequest;
+struct LogoutTokenRequestDefaultTypeInternal;
+extern LogoutTokenRequestDefaultTypeInternal _LogoutTokenRequest_default_instance_;
+class LogoutTokenResponse;
+struct LogoutTokenResponseDefaultTypeInternal;
+extern LogoutTokenResponseDefaultTypeInternal _LogoutTokenResponse_default_instance_;
 class LogsRequest;
 struct LogsRequestDefaultTypeInternal;
 extern LogsRequestDefaultTypeInternal _LogsRequest_default_instance_;
@@ -108,6 +114,8 @@ template<> ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse* Arena::
 template<> ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest>(Arena*);
 template<> ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse>(Arena*);
 template<> ::accounts::v1alpha1::tokens::v1::Log* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::Log>(Arena*);
+template<> ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::LogoutTokenRequest>(Arena*);
+template<> ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>(Arena*);
 template<> ::accounts::v1alpha1::tokens::v1::LogsRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::LogsRequest>(Arena*);
 template<> ::accounts::v1alpha1::tokens::v1::LogsResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::LogsResponse>(Arena*);
 template<> ::accounts::v1alpha1::tokens::v1::MFARequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::MFARequest>(Arena*);
@@ -811,6 +819,294 @@ class CreateTokenCCPResponse final :
 };
 // -------------------------------------------------------------------
 
+class LogoutTokenRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.tokens.v1.LogoutTokenRequest) */ {
+ public:
+  inline LogoutTokenRequest() : LogoutTokenRequest(nullptr) {}
+  ~LogoutTokenRequest() override;
+  explicit constexpr LogoutTokenRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LogoutTokenRequest(const LogoutTokenRequest& from);
+  LogoutTokenRequest(LogoutTokenRequest&& from) noexcept
+    : LogoutTokenRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline LogoutTokenRequest& operator=(const LogoutTokenRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LogoutTokenRequest& operator=(LogoutTokenRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LogoutTokenRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LogoutTokenRequest* internal_default_instance() {
+    return reinterpret_cast<const LogoutTokenRequest*>(
+               &_LogoutTokenRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(LogoutTokenRequest& a, LogoutTokenRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LogoutTokenRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LogoutTokenRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LogoutTokenRequest* New() const final {
+    return new LogoutTokenRequest();
+  }
+
+  LogoutTokenRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LogoutTokenRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LogoutTokenRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const LogoutTokenRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LogoutTokenRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.tokens.v1.LogoutTokenRequest";
+  }
+  protected:
+  explicit LogoutTokenRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenCcpFieldNumber = 1,
+  };
+  // string token_ccp = 1 [json_name = "tokenCcp"];
+  void clear_token_ccp();
+  const std::string& token_ccp() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token_ccp(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token_ccp();
+  PROTOBUF_MUST_USE_RESULT std::string* release_token_ccp();
+  void set_allocated_token_ccp(std::string* token_ccp);
+  private:
+  const std::string& _internal_token_ccp() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token_ccp(const std::string& value);
+  std::string* _internal_mutable_token_ccp();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.LogoutTokenRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_ccp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LogoutTokenResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.tokens.v1.LogoutTokenResponse) */ {
+ public:
+  inline LogoutTokenResponse() : LogoutTokenResponse(nullptr) {}
+  ~LogoutTokenResponse() override;
+  explicit constexpr LogoutTokenResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LogoutTokenResponse(const LogoutTokenResponse& from);
+  LogoutTokenResponse(LogoutTokenResponse&& from) noexcept
+    : LogoutTokenResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline LogoutTokenResponse& operator=(const LogoutTokenResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LogoutTokenResponse& operator=(LogoutTokenResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LogoutTokenResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LogoutTokenResponse* internal_default_instance() {
+    return reinterpret_cast<const LogoutTokenResponse*>(
+               &_LogoutTokenResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(LogoutTokenResponse& a, LogoutTokenResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LogoutTokenResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LogoutTokenResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LogoutTokenResponse* New() const final {
+    return new LogoutTokenResponse();
+  }
+
+  LogoutTokenResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LogoutTokenResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LogoutTokenResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const LogoutTokenResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LogoutTokenResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.tokens.v1.LogoutTokenResponse";
+  }
+  protected:
+  explicit LogoutTokenResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.LogoutTokenResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Log final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.tokens.v1.Log) */ {
  public:
@@ -855,7 +1151,7 @@ class Log final :
                &_Log_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(Log& a, Log& b) {
     a.Swap(&b);
@@ -1063,7 +1359,7 @@ class SaveLogsRequest final :
                &_SaveLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(SaveLogsRequest& a, SaveLogsRequest& b) {
     a.Swap(&b);
@@ -1211,7 +1507,7 @@ class SaveLogsResponse final :
                &_SaveLogsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(SaveLogsResponse& a, SaveLogsResponse& b) {
     a.Swap(&b);
@@ -1355,7 +1651,7 @@ class LogsRequest final :
                &_LogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(LogsRequest& a, LogsRequest& b) {
     a.Swap(&b);
@@ -1499,7 +1795,7 @@ class LogsResponse final :
                &_LogsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(LogsResponse& a, LogsResponse& b) {
     a.Swap(&b);
@@ -1647,7 +1943,7 @@ class EnableOrDisableMFARequest final :
                &_EnableOrDisableMFARequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(EnableOrDisableMFARequest& a, EnableOrDisableMFARequest& b) {
     a.Swap(&b);
@@ -1791,7 +2087,7 @@ class EnableOrDisableMFAResponse final :
                &_EnableOrDisableMFAResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(EnableOrDisableMFAResponse& a, EnableOrDisableMFAResponse& b) {
     a.Swap(&b);
@@ -1951,7 +2247,7 @@ class MFARequest final :
                &_MFARequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(MFARequest& a, MFARequest& b) {
     a.Swap(&b);
@@ -2120,7 +2416,7 @@ class MFAResponse final :
                &_MFAResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(MFAResponse& a, MFAResponse& b) {
     a.Swap(&b);
@@ -2745,6 +3041,106 @@ inline void CreateTokenCCPResponse::set_allocated_user_id(std::string* user_id) 
   user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse.user_id)
+}
+
+// -------------------------------------------------------------------
+
+// LogoutTokenRequest
+
+// string token_ccp = 1 [json_name = "tokenCcp"];
+inline void LogoutTokenRequest::clear_token_ccp() {
+  token_ccp_.ClearToEmpty();
+}
+inline const std::string& LogoutTokenRequest::token_ccp() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.LogoutTokenRequest.token_ccp)
+  return _internal_token_ccp();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogoutTokenRequest::set_token_ccp(ArgT0&& arg0, ArgT... args) {
+ 
+ token_ccp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.LogoutTokenRequest.token_ccp)
+}
+inline std::string* LogoutTokenRequest::mutable_token_ccp() {
+  std::string* _s = _internal_mutable_token_ccp();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.LogoutTokenRequest.token_ccp)
+  return _s;
+}
+inline const std::string& LogoutTokenRequest::_internal_token_ccp() const {
+  return token_ccp_.Get();
+}
+inline void LogoutTokenRequest::_internal_set_token_ccp(const std::string& value) {
+  
+  token_ccp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogoutTokenRequest::_internal_mutable_token_ccp() {
+  
+  return token_ccp_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogoutTokenRequest::release_token_ccp() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.LogoutTokenRequest.token_ccp)
+  return token_ccp_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogoutTokenRequest::set_allocated_token_ccp(std::string* token_ccp) {
+  if (token_ccp != nullptr) {
+    
+  } else {
+    
+  }
+  token_ccp_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token_ccp,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.LogoutTokenRequest.token_ccp)
+}
+
+// -------------------------------------------------------------------
+
+// LogoutTokenResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void LogoutTokenResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& LogoutTokenResponse::msg() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.LogoutTokenResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LogoutTokenResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.LogoutTokenResponse.msg)
+}
+inline std::string* LogoutTokenResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.LogoutTokenResponse.msg)
+  return _s;
+}
+inline const std::string& LogoutTokenResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void LogoutTokenResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LogoutTokenResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LogoutTokenResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.LogoutTokenResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LogoutTokenResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.LogoutTokenResponse.msg)
 }
 
 // -------------------------------------------------------------------
@@ -3607,6 +4003,10 @@ inline void MFAResponse::set_allocated_error(std::string* error) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

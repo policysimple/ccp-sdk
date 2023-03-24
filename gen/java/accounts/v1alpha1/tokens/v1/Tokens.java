@@ -3268,6 +3268,1142 @@ public final class Tokens {
 
   }
 
+  public interface LogoutTokenRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.tokens.v1.LogoutTokenRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+     * @return The tokenCcp.
+     */
+    java.lang.String getTokenCcp();
+    /**
+     * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+     * @return The bytes for tokenCcp.
+     */
+    com.google.protobuf.ByteString
+        getTokenCcpBytes();
+  }
+  /**
+   * Protobuf type {@code accounts.v1alpha1.tokens.v1.LogoutTokenRequest}
+   */
+  public static final class LogoutTokenRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.tokens.v1.LogoutTokenRequest)
+      LogoutTokenRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogoutTokenRequest.newBuilder() to construct.
+    private LogoutTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogoutTokenRequest() {
+      tokenCcp_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LogoutTokenRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogoutTokenRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tokenCcp_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.class, accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.Builder.class);
+    }
+
+    public static final int TOKEN_CCP_FIELD_NUMBER = 1;
+    private volatile java.lang.Object tokenCcp_;
+    /**
+     * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+     * @return The tokenCcp.
+     */
+    @java.lang.Override
+    public java.lang.String getTokenCcp() {
+      java.lang.Object ref = tokenCcp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tokenCcp_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+     * @return The bytes for tokenCcp.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenCcpBytes() {
+      java.lang.Object ref = tokenCcp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tokenCcp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTokenCcpBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tokenCcp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTokenCcpBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tokenCcp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest)) {
+        return super.equals(obj);
+      }
+      accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest other = (accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest) obj;
+
+      if (!getTokenCcp()
+          .equals(other.getTokenCcp())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_CCP_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenCcp().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code accounts.v1alpha1.tokens.v1.LogoutTokenRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.tokens.v1.LogoutTokenRequest)
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.class, accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.Builder.class);
+      }
+
+      // Construct using accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        tokenCcp_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest build() {
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest buildPartial() {
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest result = new accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest(this);
+        result.tokenCcp_ = tokenCcp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest) {
+          return mergeFrom((accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest other) {
+        if (other == accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest.getDefaultInstance()) return this;
+        if (!other.getTokenCcp().isEmpty()) {
+          tokenCcp_ = other.tokenCcp_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object tokenCcp_ = "";
+      /**
+       * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+       * @return The tokenCcp.
+       */
+      public java.lang.String getTokenCcp() {
+        java.lang.Object ref = tokenCcp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tokenCcp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+       * @return The bytes for tokenCcp.
+       */
+      public com.google.protobuf.ByteString
+          getTokenCcpBytes() {
+        java.lang.Object ref = tokenCcp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tokenCcp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+       * @param value The tokenCcp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenCcp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tokenCcp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenCcp() {
+        
+        tokenCcp_ = getDefaultInstance().getTokenCcp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token_ccp = 1 [json_name = "tokenCcp"];</code>
+       * @param value The bytes for tokenCcp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenCcpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tokenCcp_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.tokens.v1.LogoutTokenRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.LogoutTokenRequest)
+    private static final accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest();
+    }
+
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogoutTokenRequest>
+        PARSER = new com.google.protobuf.AbstractParser<LogoutTokenRequest>() {
+      @java.lang.Override
+      public LogoutTokenRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogoutTokenRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogoutTokenRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogoutTokenRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LogoutTokenResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.tokens.v1.LogoutTokenResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+  }
+  /**
+   * Protobuf type {@code accounts.v1alpha1.tokens.v1.LogoutTokenResponse}
+   */
+  public static final class LogoutTokenResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.tokens.v1.LogoutTokenResponse)
+      LogoutTokenResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogoutTokenResponse.newBuilder() to construct.
+    private LogoutTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogoutTokenResponse() {
+      msg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LogoutTokenResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogoutTokenResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.class, accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse)) {
+        return super.equals(obj);
+      }
+      accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse other = (accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse) obj;
+
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code accounts.v1alpha1.tokens.v1.LogoutTokenResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.tokens.v1.LogoutTokenResponse)
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.class, accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.Builder.class);
+      }
+
+      // Construct using accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        msg_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return accounts.v1alpha1.tokens.v1.Tokens.internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse build() {
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse buildPartial() {
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse result = new accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse(this);
+        result.msg_ = msg_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse) {
+          return mergeFrom((accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse other) {
+        if (other == accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse.getDefaultInstance()) return this;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.tokens.v1.LogoutTokenResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.LogoutTokenResponse)
+    private static final accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse();
+    }
+
+    public static accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogoutTokenResponse>
+        PARSER = new com.google.protobuf.AbstractParser<LogoutTokenResponse>() {
+      @java.lang.Override
+      public LogoutTokenResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogoutTokenResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogoutTokenResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogoutTokenResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public accounts.v1alpha1.tokens.v1.Tokens.LogoutTokenResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface LogOrBuilder extends
       // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.tokens.v1.Log)
       com.google.protobuf.MessageOrBuilder {
@@ -9926,6 +11062,16 @@ public final class Tokens {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_tokens_v1_CreateTokenCCPResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9991,24 +11137,27 @@ public final class Tokens {
       "okenDex\"\220\001\n\026CreateTokenCCPResponse\022\033\n\tto" +
       "ken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003ms" +
       "g\022.\n\023time_expiration_mfa\030\005 \001(\003R\021timeExpi" +
-      "rationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"y\n\003Lo" +
-      "g\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006system\030\002 \001" +
-      "(\tR\006system\022\035\n\nclient_web\030\003 \001(\tR\tclientWe" +
-      "b\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 \001(\tR\004date\"E\n" +
-      "\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .accounts" +
-      ".v1alpha1.tokens.v1.LogR\003log\"$\n\020SaveLogs" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsReques" +
-      "t\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\014LogsRespon" +
-      "se\0224\n\004logs\030\001 \003(\0132 .accounts.v1alpha1.tok" +
-      "ens.v1.LogR\004logs\"4\n\031EnableOrDisableMFARe" +
-      "quest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\032Enable" +
-      "OrDisableMFAResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024" +
-      "\n\005error\030\002 \001(\tR\005error\"?\n\nMFARequest\022\027\n\007us" +
-      "er_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003 \003(\005R\007nu" +
-      "mbers\"R\n\013MFAResponse\022\033\n\ttoken_ccp\030\001 \001(\tR" +
-      "\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001" +
-      "(\tR\005errorB;Z9github.com/cuemby/ccp-sdk/g" +
-      "en/go/accounts/v1alpha1/tokensb\006proto3"
+      "rationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"1\n\022Lo" +
+      "goutTokenRequest\022\033\n\ttoken_ccp\030\001 \001(\tR\010tok" +
+      "enCcp\"\'\n\023LogoutTokenResponse\022\020\n\003msg\030\001 \001(" +
+      "\tR\003msg\"y\n\003Log\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026" +
+      "\n\006system\030\002 \001(\tR\006system\022\035\n\nclient_web\030\003 \001" +
+      "(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 " +
+      "\001(\tR\004date\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(" +
+      "\0132 .accounts.v1alpha1.tokens.v1.LogR\003log" +
+      "\"$\n\020SaveLogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&" +
+      "\n\013LogsRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D" +
+      "\n\014LogsResponse\0224\n\004logs\030\001 \003(\0132 .accounts." +
+      "v1alpha1.tokens.v1.LogR\004logs\"4\n\031EnableOr" +
+      "DisableMFARequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
+      "Id\"D\n\032EnableOrDisableMFAResponse\022\020\n\003msg\030" +
+      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\nMFAR" +
+      "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbe" +
+      "rs\030\003 \003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoke" +
+      "n_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022" +
+      "\024\n\005error\030\003 \001(\tR\005errorB;Z9github.com/cuem" +
+      "by/ccp-sdk/gen/go/accounts/v1alpha1/toke" +
+      "nsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10038,56 +11187,68 @@ public final class Tokens {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_CreateTokenCCPResponse_descriptor,
         new java.lang.String[] { "TokenCcp", "Msg", "TimeExpirationMfa", "UserId", });
-    internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor =
+    internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenRequest_descriptor,
+        new java.lang.String[] { "TokenCcp", });
+    internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_accounts_v1alpha1_tokens_v1_LogoutTokenResponse_descriptor,
+        new java.lang.String[] { "Msg", });
+    internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_accounts_v1alpha1_tokens_v1_Log_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor,
         new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", });
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_descriptor,
         new java.lang.String[] { "Log", });
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_SaveLogsResponse_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_LogsRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_accounts_v1alpha1_tokens_v1_LogsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_accounts_v1alpha1_tokens_v1_LogsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_LogsResponse_descriptor,
         new java.lang.String[] { "Logs", });
     internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFARequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFARequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFARequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFAResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFAResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_EnableOrDisableMFAResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     internal_static_accounts_v1alpha1_tokens_v1_MFARequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_accounts_v1alpha1_tokens_v1_MFARequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_MFARequest_descriptor,
         new java.lang.String[] { "UserId", "Numbers", });
     internal_static_accounts_v1alpha1_tokens_v1_MFAResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_accounts_v1alpha1_tokens_v1_MFAResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_MFAResponse_descriptor,

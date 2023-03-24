@@ -33,7 +33,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 const char descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)accounts/v1alpha1/tokens/tokens_api.pr"
   "oto\022\033accounts.v1alpha1.tokens.v1\032%accoun"
-  "ts/v1alpha1/tokens/tokens.proto2\254\005\n\014Toke"
+  "ts/v1alpha1/tokens/tokens.proto2\236\006\n\014Toke"
   "nService\022y\n\016CreateTokenCCP\0222.accounts.v1"
   "alpha1.tokens.v1.CreateTokenCCPRequest\0323"
   ".accounts.v1alpha1.tokens.v1.CreateToken"
@@ -50,16 +50,19 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi
   ".tokens.v1.MFAResponse\022\205\001\n\022EnableOrDisab"
   "leMFA\0226.accounts.v1alpha1.tokens.v1.Enab"
   "leOrDisableMFARequest\0327.accounts.v1alpha"
-  "1.tokens.v1.EnableOrDisableMFAResponseB;"
-  "Z9github.com/cuemby/ccp-sdk/gen/go/accou"
-  "nts/v1alpha1/tokensb\006proto3"
+  "1.tokens.v1.EnableOrDisableMFAResponse\022p"
+  "\n\013LogoutToken\022/.accounts.v1alpha1.tokens"
+  ".v1.LogoutTokenRequest\0320.accounts.v1alph"
+  "a1.tokens.v1.LogoutTokenResponseB;Z9gith"
+  "ub.com/cuemby/ccp-sdk/gen/go/accounts/v1"
+  "alpha1/tokensb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto = {
-  false, false, 867, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto, "accounts/v1alpha1/tokens/tokens_api.proto", 
+  false, false, 981, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto, "accounts/v1alpha1/tokens/tokens_api.proto", 
   &descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto_once, descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto::offsets,
   nullptr, file_level_enum_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_5fapi_2eproto,

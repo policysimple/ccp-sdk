@@ -273,6 +273,100 @@ func (x *CreateTokenCCPResponse) GetUserId() string {
 	return ""
 }
 
+type LogoutTokenRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TokenCcp string `protobuf:"bytes,1,opt,name=token_ccp,json=tokenCcp,proto3" json:"token_ccp,omitempty"`
+}
+
+func (x *LogoutTokenRequest) Reset() {
+	*x = LogoutTokenRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LogoutTokenRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogoutTokenRequest) ProtoMessage() {}
+
+func (x *LogoutTokenRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogoutTokenRequest.ProtoReflect.Descriptor instead.
+func (*LogoutTokenRequest) Descriptor() ([]byte, []int) {
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *LogoutTokenRequest) GetTokenCcp() string {
+	if x != nil {
+		return x.TokenCcp
+	}
+	return ""
+}
+
+type LogoutTokenResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Msg string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg,omitempty"`
+}
+
+func (x *LogoutTokenResponse) Reset() {
+	*x = LogoutTokenResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LogoutTokenResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogoutTokenResponse) ProtoMessage() {}
+
+func (x *LogoutTokenResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogoutTokenResponse.ProtoReflect.Descriptor instead.
+func (*LogoutTokenResponse) Descriptor() ([]byte, []int) {
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *LogoutTokenResponse) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
 type Log struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -288,7 +382,7 @@ type Log struct {
 func (x *Log) Reset() {
 	*x = Log{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[4]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -301,7 +395,7 @@ func (x *Log) String() string {
 func (*Log) ProtoMessage() {}
 
 func (x *Log) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[4]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -314,7 +408,7 @@ func (x *Log) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Log.ProtoReflect.Descriptor instead.
 func (*Log) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{4}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Log) GetUserId() string {
@@ -363,7 +457,7 @@ type SaveLogsRequest struct {
 func (x *SaveLogsRequest) Reset() {
 	*x = SaveLogsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[5]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -376,7 +470,7 @@ func (x *SaveLogsRequest) String() string {
 func (*SaveLogsRequest) ProtoMessage() {}
 
 func (x *SaveLogsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[5]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -389,7 +483,7 @@ func (x *SaveLogsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SaveLogsRequest.ProtoReflect.Descriptor instead.
 func (*SaveLogsRequest) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{5}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *SaveLogsRequest) GetLog() *Log {
@@ -410,7 +504,7 @@ type SaveLogsResponse struct {
 func (x *SaveLogsResponse) Reset() {
 	*x = SaveLogsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[6]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -423,7 +517,7 @@ func (x *SaveLogsResponse) String() string {
 func (*SaveLogsResponse) ProtoMessage() {}
 
 func (x *SaveLogsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[6]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -436,7 +530,7 @@ func (x *SaveLogsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SaveLogsResponse.ProtoReflect.Descriptor instead.
 func (*SaveLogsResponse) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{6}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *SaveLogsResponse) GetMsg() string {
@@ -457,7 +551,7 @@ type LogsRequest struct {
 func (x *LogsRequest) Reset() {
 	*x = LogsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[7]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -470,7 +564,7 @@ func (x *LogsRequest) String() string {
 func (*LogsRequest) ProtoMessage() {}
 
 func (x *LogsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[7]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -483,7 +577,7 @@ func (x *LogsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogsRequest.ProtoReflect.Descriptor instead.
 func (*LogsRequest) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{7}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *LogsRequest) GetUserId() string {
@@ -504,7 +598,7 @@ type LogsResponse struct {
 func (x *LogsResponse) Reset() {
 	*x = LogsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[8]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -517,7 +611,7 @@ func (x *LogsResponse) String() string {
 func (*LogsResponse) ProtoMessage() {}
 
 func (x *LogsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[8]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -530,7 +624,7 @@ func (x *LogsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogsResponse.ProtoReflect.Descriptor instead.
 func (*LogsResponse) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{8}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *LogsResponse) GetLogs() []*Log {
@@ -551,7 +645,7 @@ type EnableOrDisableMFARequest struct {
 func (x *EnableOrDisableMFARequest) Reset() {
 	*x = EnableOrDisableMFARequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[9]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -564,7 +658,7 @@ func (x *EnableOrDisableMFARequest) String() string {
 func (*EnableOrDisableMFARequest) ProtoMessage() {}
 
 func (x *EnableOrDisableMFARequest) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[9]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -577,7 +671,7 @@ func (x *EnableOrDisableMFARequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnableOrDisableMFARequest.ProtoReflect.Descriptor instead.
 func (*EnableOrDisableMFARequest) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{9}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *EnableOrDisableMFARequest) GetUserId() string {
@@ -599,7 +693,7 @@ type EnableOrDisableMFAResponse struct {
 func (x *EnableOrDisableMFAResponse) Reset() {
 	*x = EnableOrDisableMFAResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[10]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -612,7 +706,7 @@ func (x *EnableOrDisableMFAResponse) String() string {
 func (*EnableOrDisableMFAResponse) ProtoMessage() {}
 
 func (x *EnableOrDisableMFAResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[10]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -625,7 +719,7 @@ func (x *EnableOrDisableMFAResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnableOrDisableMFAResponse.ProtoReflect.Descriptor instead.
 func (*EnableOrDisableMFAResponse) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{10}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *EnableOrDisableMFAResponse) GetMsg() string {
@@ -654,7 +748,7 @@ type MFARequest struct {
 func (x *MFARequest) Reset() {
 	*x = MFARequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[11]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -667,7 +761,7 @@ func (x *MFARequest) String() string {
 func (*MFARequest) ProtoMessage() {}
 
 func (x *MFARequest) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[11]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -680,7 +774,7 @@ func (x *MFARequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MFARequest.ProtoReflect.Descriptor instead.
 func (*MFARequest) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{11}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *MFARequest) GetUserId() string {
@@ -710,7 +804,7 @@ type MFAResponse struct {
 func (x *MFAResponse) Reset() {
 	*x = MFAResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[12]
+		mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -723,7 +817,7 @@ func (x *MFAResponse) String() string {
 func (*MFAResponse) ProtoMessage() {}
 
 func (x *MFAResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[12]
+	mi := &file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -736,7 +830,7 @@ func (x *MFAResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MFAResponse.ProtoReflect.Descriptor instead.
 func (*MFAResponse) Descriptor() ([]byte, []int) {
-	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{12}
+	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *MFAResponse) GetTokenCcp() string {
@@ -795,49 +889,55 @@ var file_accounts_v1alpha1_tokens_tokens_proto_rawDesc = []byte{
 	0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x11, 0x74, 0x69, 0x6d, 0x65, 0x45, 0x78, 0x70, 0x69,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x66, 0x61, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65,
 	0x72, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72,
-	0x49, 0x64, 0x22, 0x79, 0x0a, 0x03, 0x4c, 0x6f, 0x67, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65,
-	0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72,
-	0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x06, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x63, 0x6c,
-	0x69, 0x65, 0x6e, 0x74, 0x5f, 0x77, 0x65, 0x62, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x57, 0x65, 0x62, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x70, 0x18,
-	0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74,
-	0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x22, 0x45, 0x0a,
-	0x0f, 0x53, 0x61, 0x76, 0x65, 0x4c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x32, 0x0a, 0x03, 0x6c, 0x6f, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
-	0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x2e, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x6f, 0x67, 0x52,
-	0x03, 0x6c, 0x6f, 0x67, 0x22, 0x24, 0x0a, 0x10, 0x53, 0x61, 0x76, 0x65, 0x4c, 0x6f, 0x67, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x26, 0x0a, 0x0b, 0x4c, 0x6f,
-	0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65,
-	0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72,
-	0x49, 0x64, 0x22, 0x44, 0x0a, 0x0c, 0x4c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x34, 0x0a, 0x04, 0x6c, 0x6f, 0x67, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x20, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2e, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4c,
-	0x6f, 0x67, 0x52, 0x04, 0x6c, 0x6f, 0x67, 0x73, 0x22, 0x34, 0x0a, 0x19, 0x45, 0x6e, 0x61, 0x62,
-	0x6c, 0x65, 0x4f, 0x72, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x4d, 0x46, 0x41, 0x52, 0x65,
+	0x49, 0x64, 0x22, 0x31, 0x0a, 0x12, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x54, 0x6f, 0x6b, 0x65,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x5f, 0x63, 0x63, 0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x6f, 0x6b,
+	0x65, 0x6e, 0x43, 0x63, 0x70, 0x22, 0x27, 0x0a, 0x13, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x54,
+	0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03,
+	0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x79,
+	0x0a, 0x03, 0x4c, 0x6f, 0x67, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x16,
+	0x0a, 0x06, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74,
+	0x5f, 0x77, 0x65, 0x62, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x6c, 0x69, 0x65,
+	0x6e, 0x74, 0x57, 0x65, 0x62, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x70, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x02, 0x69, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x22, 0x45, 0x0a, 0x0f, 0x53, 0x61, 0x76,
+	0x65, 0x4c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x32, 0x0a, 0x03,
+	0x6c, 0x6f, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x63, 0x63, 0x6f,
+	0x75, 0x6e, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x6f, 0x67, 0x52, 0x03, 0x6c, 0x6f, 0x67,
+	0x22, 0x24, 0x0a, 0x10, 0x53, 0x61, 0x76, 0x65, 0x4c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x26, 0x0a, 0x0b, 0x4c, 0x6f, 0x67, 0x73, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x22, 0x44,
-	0x0a, 0x1a, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4f, 0x72, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c,
-	0x65, 0x4d, 0x46, 0x41, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03,
-	0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x14,
-	0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65,
-	0x72, 0x72, 0x6f, 0x72, 0x22, 0x3f, 0x0a, 0x0a, 0x4d, 0x46, 0x41, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x6e,
-	0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x05, 0x52, 0x07, 0x6e, 0x75,
-	0x6d, 0x62, 0x65, 0x72, 0x73, 0x22, 0x52, 0x0a, 0x0b, 0x4d, 0x46, 0x41, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5f, 0x63, 0x63,
-	0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x43, 0x63,
-	0x70, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03,
-	0x6d, 0x73, 0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63,
-	0x63, 0x70, 0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x61, 0x63,
-	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f,
-	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x0a, 0x0c, 0x4c, 0x6f, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34,
+	0x0a, 0x04, 0x6c, 0x6f, 0x67, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61,
+	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
+	0x2e, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x6f, 0x67, 0x52, 0x04,
+	0x6c, 0x6f, 0x67, 0x73, 0x22, 0x34, 0x0a, 0x19, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4f, 0x72,
+	0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x4d, 0x46, 0x41, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x22, 0x44, 0x0a, 0x1a, 0x45, 0x6e,
+	0x61, 0x62, 0x6c, 0x65, 0x4f, 0x72, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x4d, 0x46, 0x41,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72,
+	0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72,
+	0x22, 0x3f, 0x0a, 0x0a, 0x4d, 0x46, 0x41, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17,
+	0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x6e, 0x75, 0x6d, 0x62, 0x65,
+	0x72, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x05, 0x52, 0x07, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72,
+	0x73, 0x22, 0x52, 0x0a, 0x0b, 0x4d, 0x46, 0x41, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x1b, 0x0a, 0x09, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5f, 0x63, 0x63, 0x70, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x43, 0x63, 0x70, 0x12, 0x10, 0x0a,
+	0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12,
+	0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x65, 0x72, 0x72, 0x6f, 0x72, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73,
+	0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x73, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -852,25 +952,27 @@ func file_accounts_v1alpha1_tokens_tokens_proto_rawDescGZIP() []byte {
 	return file_accounts_v1alpha1_tokens_tokens_proto_rawDescData
 }
 
-var file_accounts_v1alpha1_tokens_tokens_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_accounts_v1alpha1_tokens_tokens_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_accounts_v1alpha1_tokens_tokens_proto_goTypes = []interface{}{
 	(*GetOneTokenCCPRequest)(nil),      // 0: accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest
 	(*GetOneTokenCCPResponse)(nil),     // 1: accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse
 	(*CreateTokenCCPRequest)(nil),      // 2: accounts.v1alpha1.tokens.v1.CreateTokenCCPRequest
 	(*CreateTokenCCPResponse)(nil),     // 3: accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse
-	(*Log)(nil),                        // 4: accounts.v1alpha1.tokens.v1.Log
-	(*SaveLogsRequest)(nil),            // 5: accounts.v1alpha1.tokens.v1.SaveLogsRequest
-	(*SaveLogsResponse)(nil),           // 6: accounts.v1alpha1.tokens.v1.SaveLogsResponse
-	(*LogsRequest)(nil),                // 7: accounts.v1alpha1.tokens.v1.LogsRequest
-	(*LogsResponse)(nil),               // 8: accounts.v1alpha1.tokens.v1.LogsResponse
-	(*EnableOrDisableMFARequest)(nil),  // 9: accounts.v1alpha1.tokens.v1.EnableOrDisableMFARequest
-	(*EnableOrDisableMFAResponse)(nil), // 10: accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse
-	(*MFARequest)(nil),                 // 11: accounts.v1alpha1.tokens.v1.MFARequest
-	(*MFAResponse)(nil),                // 12: accounts.v1alpha1.tokens.v1.MFAResponse
+	(*LogoutTokenRequest)(nil),         // 4: accounts.v1alpha1.tokens.v1.LogoutTokenRequest
+	(*LogoutTokenResponse)(nil),        // 5: accounts.v1alpha1.tokens.v1.LogoutTokenResponse
+	(*Log)(nil),                        // 6: accounts.v1alpha1.tokens.v1.Log
+	(*SaveLogsRequest)(nil),            // 7: accounts.v1alpha1.tokens.v1.SaveLogsRequest
+	(*SaveLogsResponse)(nil),           // 8: accounts.v1alpha1.tokens.v1.SaveLogsResponse
+	(*LogsRequest)(nil),                // 9: accounts.v1alpha1.tokens.v1.LogsRequest
+	(*LogsResponse)(nil),               // 10: accounts.v1alpha1.tokens.v1.LogsResponse
+	(*EnableOrDisableMFARequest)(nil),  // 11: accounts.v1alpha1.tokens.v1.EnableOrDisableMFARequest
+	(*EnableOrDisableMFAResponse)(nil), // 12: accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse
+	(*MFARequest)(nil),                 // 13: accounts.v1alpha1.tokens.v1.MFARequest
+	(*MFAResponse)(nil),                // 14: accounts.v1alpha1.tokens.v1.MFAResponse
 }
 var file_accounts_v1alpha1_tokens_tokens_proto_depIdxs = []int32{
-	4, // 0: accounts.v1alpha1.tokens.v1.SaveLogsRequest.log:type_name -> accounts.v1alpha1.tokens.v1.Log
-	4, // 1: accounts.v1alpha1.tokens.v1.LogsResponse.logs:type_name -> accounts.v1alpha1.tokens.v1.Log
+	6, // 0: accounts.v1alpha1.tokens.v1.SaveLogsRequest.log:type_name -> accounts.v1alpha1.tokens.v1.Log
+	6, // 1: accounts.v1alpha1.tokens.v1.LogsResponse.logs:type_name -> accounts.v1alpha1.tokens.v1.Log
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -933,7 +1035,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Log); i {
+			switch v := v.(*LogoutTokenRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -945,7 +1047,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SaveLogsRequest); i {
+			switch v := v.(*LogoutTokenResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -957,7 +1059,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SaveLogsResponse); i {
+			switch v := v.(*Log); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -969,7 +1071,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LogsRequest); i {
+			switch v := v.(*SaveLogsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -981,7 +1083,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LogsResponse); i {
+			switch v := v.(*SaveLogsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -993,7 +1095,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnableOrDisableMFARequest); i {
+			switch v := v.(*LogsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1005,7 +1107,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnableOrDisableMFAResponse); i {
+			switch v := v.(*LogsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1017,7 +1119,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MFARequest); i {
+			switch v := v.(*EnableOrDisableMFARequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1029,6 +1131,30 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*EnableOrDisableMFAResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MFARequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_accounts_v1alpha1_tokens_tokens_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MFAResponse); i {
 			case 0:
 				return &v.state
@@ -1047,7 +1173,7 @@ func file_accounts_v1alpha1_tokens_tokens_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_accounts_v1alpha1_tokens_tokens_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

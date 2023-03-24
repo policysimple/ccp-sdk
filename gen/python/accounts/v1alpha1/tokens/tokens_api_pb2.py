@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokens',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)accounts/v1alpha1/tokens/tokens_api.proto\x12\x1b\x61\x63\x63ounts.v1alpha1.tokens.v1\x1a%accounts/v1alpha1/tokens/tokens.proto2\xac\x05\n\x0cTokenService\x12y\n\x0e\x43reateTokenCCP\x12\x32.accounts.v1alpha1.tokens.v1.CreateTokenCCPRequest\x1a\x33.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse\x12y\n\x0eGetOneTokenCCP\x12\x32.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest\x1a\x33.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse\x12[\n\x04Logs\x12(.accounts.v1alpha1.tokens.v1.LogsRequest\x1a).accounts.v1alpha1.tokens.v1.LogsResponse\x12g\n\x08SaveLogs\x12,.accounts.v1alpha1.tokens.v1.SaveLogsRequest\x1a-.accounts.v1alpha1.tokens.v1.SaveLogsResponse\x12X\n\x03MFA\x12\'.accounts.v1alpha1.tokens.v1.MFARequest\x1a(.accounts.v1alpha1.tokens.v1.MFAResponse\x12\x85\x01\n\x12\x45nableOrDisableMFA\x12\x36.accounts.v1alpha1.tokens.v1.EnableOrDisableMFARequest\x1a\x37.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponseB;Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokensb\x06proto3'
+  serialized_pb=b'\n)accounts/v1alpha1/tokens/tokens_api.proto\x12\x1b\x61\x63\x63ounts.v1alpha1.tokens.v1\x1a%accounts/v1alpha1/tokens/tokens.proto2\x9e\x06\n\x0cTokenService\x12y\n\x0e\x43reateTokenCCP\x12\x32.accounts.v1alpha1.tokens.v1.CreateTokenCCPRequest\x1a\x33.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponse\x12y\n\x0eGetOneTokenCCP\x12\x32.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest\x1a\x33.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse\x12[\n\x04Logs\x12(.accounts.v1alpha1.tokens.v1.LogsRequest\x1a).accounts.v1alpha1.tokens.v1.LogsResponse\x12g\n\x08SaveLogs\x12,.accounts.v1alpha1.tokens.v1.SaveLogsRequest\x1a-.accounts.v1alpha1.tokens.v1.SaveLogsResponse\x12X\n\x03MFA\x12\'.accounts.v1alpha1.tokens.v1.MFARequest\x1a(.accounts.v1alpha1.tokens.v1.MFAResponse\x12\x85\x01\n\x12\x45nableOrDisableMFA\x12\x36.accounts.v1alpha1.tokens.v1.EnableOrDisableMFARequest\x1a\x37.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponse\x12p\n\x0bLogoutToken\x12/.accounts.v1alpha1.tokens.v1.LogoutTokenRequest\x1a\x30.accounts.v1alpha1.tokens.v1.LogoutTokenResponseB;Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokensb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.DESCRIPTOR,])
 
@@ -39,7 +39,7 @@ _TOKENSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=114,
-  serialized_end=798,
+  serialized_end=912,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTokenCCP',
@@ -98,6 +98,16 @@ _TOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2._ENABLEORDISABLEMFAREQUEST,
     output_type=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2._ENABLEORDISABLEMFARESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='LogoutToken',
+    full_name='accounts.v1alpha1.tokens.v1.TokenService.LogoutToken',
+    index=6,
+    containing_service=None,
+    input_type=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2._LOGOUTTOKENREQUEST,
+    output_type=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2._LOGOUTTOKENRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
