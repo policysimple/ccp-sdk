@@ -50,7 +50,7 @@ struct TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -102,6 +102,12 @@ extern TaskDefaultTypeInternal _Task_default_instance_;
 class TaskParams;
 struct TaskParamsDefaultTypeInternal;
 extern TaskParamsDefaultTypeInternal _TaskParams_default_instance_;
+class TaskParamsToCustomize;
+struct TaskParamsToCustomizeDefaultTypeInternal;
+extern TaskParamsToCustomizeDefaultTypeInternal _TaskParamsToCustomize_default_instance_;
+class TaskToCustomize;
+struct TaskToCustomizeDefaultTypeInternal;
+extern TaskToCustomizeDefaultTypeInternal _TaskToCustomize_default_instance_;
 class TektonTask;
 struct TektonTaskDefaultTypeInternal;
 extern TektonTaskDefaultTypeInternal _TektonTask_default_instance_;
@@ -129,6 +135,8 @@ template<> ::pipelines::tekton::v1alpha1::Pipeline_IntegrationEntry_DoNotUse* Ar
 template<> ::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline_SecretsEntry_DoNotUse>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Task* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Task>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::TaskParams* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::TaskParams>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::TaskParamsToCustomize>(Arena*);
+template<> ::pipelines::tekton::v1alpha1::TaskToCustomize* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::TaskToCustomize>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::TektonTask* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::TektonTask>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::TektonTaskList* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::TektonTaskList>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Workspaces* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Workspaces>(Arena*);
@@ -2047,22 +2055,22 @@ class TektonTaskList final :
   enum : int {
     kItemsFieldNumber = 1,
   };
-  // repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];
+  // repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];
   int items_size() const;
   private:
   int _internal_items_size() const;
   public:
   void clear_items();
-  ::pipelines::tekton::v1alpha1::Task* mutable_items(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+  ::pipelines::tekton::v1alpha1::TaskToCustomize* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskToCustomize >*
       mutable_items();
   private:
-  const ::pipelines::tekton::v1alpha1::Task& _internal_items(int index) const;
-  ::pipelines::tekton::v1alpha1::Task* _internal_add_items();
+  const ::pipelines::tekton::v1alpha1::TaskToCustomize& _internal_items(int index) const;
+  ::pipelines::tekton::v1alpha1::TaskToCustomize* _internal_add_items();
   public:
-  const ::pipelines::tekton::v1alpha1::Task& items(int index) const;
-  ::pipelines::tekton::v1alpha1::Task* add_items();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+  const ::pipelines::tekton::v1alpha1::TaskToCustomize& items(int index) const;
+  ::pipelines::tekton::v1alpha1::TaskToCustomize* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskToCustomize >&
       items() const;
 
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TektonTaskList)
@@ -2072,7 +2080,7 @@ class TektonTaskList final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > items_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskToCustomize > items_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -2882,6 +2890,488 @@ class CustomPipelineList final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::CustomPipeline > items_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TaskToCustomize final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.TaskToCustomize) */ {
+ public:
+  inline TaskToCustomize() : TaskToCustomize(nullptr) {}
+  ~TaskToCustomize() override;
+  explicit constexpr TaskToCustomize(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TaskToCustomize(const TaskToCustomize& from);
+  TaskToCustomize(TaskToCustomize&& from) noexcept
+    : TaskToCustomize() {
+    *this = ::std::move(from);
+  }
+
+  inline TaskToCustomize& operator=(const TaskToCustomize& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TaskToCustomize& operator=(TaskToCustomize&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TaskToCustomize& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TaskToCustomize* internal_default_instance() {
+    return reinterpret_cast<const TaskToCustomize*>(
+               &_TaskToCustomize_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(TaskToCustomize& a, TaskToCustomize& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TaskToCustomize* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TaskToCustomize* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TaskToCustomize* New() const final {
+    return new TaskToCustomize();
+  }
+
+  TaskToCustomize* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TaskToCustomize>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TaskToCustomize& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TaskToCustomize& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TaskToCustomize* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.TaskToCustomize";
+  }
+  protected:
+  explicit TaskToCustomize(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTaskRunAfterFieldNumber = 4,
+    kWorkspacesFieldNumber = 5,
+    kTaskParamsFieldNumber = 6,
+    kTaskNameFieldNumber = 1,
+    kTaskRefNameFieldNumber = 2,
+    kTaskKindFieldNumber = 3,
+    kDescriptionFieldNumber = 7,
+    kBeforeDeployFieldNumber = 8,
+    kAfterDeployFieldNumber = 9,
+  };
+  // repeated string task_run_after = 4 [json_name = "taskRunAfter"];
+  int task_run_after_size() const;
+  private:
+  int _internal_task_run_after_size() const;
+  public:
+  void clear_task_run_after();
+  const std::string& task_run_after(int index) const;
+  std::string* mutable_task_run_after(int index);
+  void set_task_run_after(int index, const std::string& value);
+  void set_task_run_after(int index, std::string&& value);
+  void set_task_run_after(int index, const char* value);
+  void set_task_run_after(int index, const char* value, size_t size);
+  std::string* add_task_run_after();
+  void add_task_run_after(const std::string& value);
+  void add_task_run_after(std::string&& value);
+  void add_task_run_after(const char* value);
+  void add_task_run_after(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& task_run_after() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_task_run_after();
+  private:
+  const std::string& _internal_task_run_after(int index) const;
+  std::string* _internal_add_task_run_after();
+  public:
+
+  // repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 5 [json_name = "workspaces"];
+  int workspaces_size() const;
+  private:
+  int _internal_workspaces_size() const;
+  public:
+  void clear_workspaces();
+  ::pipelines::tekton::v1alpha1::Workspaces* mutable_workspaces(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >*
+      mutable_workspaces();
+  private:
+  const ::pipelines::tekton::v1alpha1::Workspaces& _internal_workspaces(int index) const;
+  ::pipelines::tekton::v1alpha1::Workspaces* _internal_add_workspaces();
+  public:
+  const ::pipelines::tekton::v1alpha1::Workspaces& workspaces(int index) const;
+  ::pipelines::tekton::v1alpha1::Workspaces* add_workspaces();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >&
+      workspaces() const;
+
+  // repeated .pipelines.tekton.v1alpha1.TaskParamsToCustomize task_params = 6 [json_name = "taskParams"];
+  int task_params_size() const;
+  private:
+  int _internal_task_params_size() const;
+  public:
+  void clear_task_params();
+  ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* mutable_task_params(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskParamsToCustomize >*
+      mutable_task_params();
+  private:
+  const ::pipelines::tekton::v1alpha1::TaskParamsToCustomize& _internal_task_params(int index) const;
+  ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* _internal_add_task_params();
+  public:
+  const ::pipelines::tekton::v1alpha1::TaskParamsToCustomize& task_params(int index) const;
+  ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* add_task_params();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskParamsToCustomize >&
+      task_params() const;
+
+  // string task_name = 1 [json_name = "taskName"];
+  void clear_task_name();
+  const std::string& task_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_task_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_task_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_task_name();
+  void set_allocated_task_name(std::string* task_name);
+  private:
+  const std::string& _internal_task_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_task_name(const std::string& value);
+  std::string* _internal_mutable_task_name();
+  public:
+
+  // string task_ref_name = 2 [json_name = "taskRefName"];
+  void clear_task_ref_name();
+  const std::string& task_ref_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_task_ref_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_task_ref_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_task_ref_name();
+  void set_allocated_task_ref_name(std::string* task_ref_name);
+  private:
+  const std::string& _internal_task_ref_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_task_ref_name(const std::string& value);
+  std::string* _internal_mutable_task_ref_name();
+  public:
+
+  // string task_kind = 3 [json_name = "taskKind"];
+  void clear_task_kind();
+  const std::string& task_kind() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_task_kind(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_task_kind();
+  PROTOBUF_MUST_USE_RESULT std::string* release_task_kind();
+  void set_allocated_task_kind(std::string* task_kind);
+  private:
+  const std::string& _internal_task_kind() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_task_kind(const std::string& value);
+  std::string* _internal_mutable_task_kind();
+  public:
+
+  // string description = 7 [json_name = "description"];
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_MUST_USE_RESULT std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // bool before_deploy = 8 [json_name = "beforeDeploy"];
+  void clear_before_deploy();
+  bool before_deploy() const;
+  void set_before_deploy(bool value);
+  private:
+  bool _internal_before_deploy() const;
+  void _internal_set_before_deploy(bool value);
+  public:
+
+  // bool after_deploy = 9 [json_name = "afterDeploy"];
+  void clear_after_deploy();
+  bool after_deploy() const;
+  void set_after_deploy(bool value);
+  private:
+  bool _internal_after_deploy() const;
+  void _internal_set_after_deploy(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TaskToCustomize)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> task_run_after_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces > workspaces_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskParamsToCustomize > task_params_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr task_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr task_ref_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr task_kind_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  bool before_deploy_;
+  bool after_deploy_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TaskParamsToCustomize final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.TaskParamsToCustomize) */ {
+ public:
+  inline TaskParamsToCustomize() : TaskParamsToCustomize(nullptr) {}
+  ~TaskParamsToCustomize() override;
+  explicit constexpr TaskParamsToCustomize(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TaskParamsToCustomize(const TaskParamsToCustomize& from);
+  TaskParamsToCustomize(TaskParamsToCustomize&& from) noexcept
+    : TaskParamsToCustomize() {
+    *this = ::std::move(from);
+  }
+
+  inline TaskParamsToCustomize& operator=(const TaskParamsToCustomize& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TaskParamsToCustomize& operator=(TaskParamsToCustomize&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TaskParamsToCustomize& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TaskParamsToCustomize* internal_default_instance() {
+    return reinterpret_cast<const TaskParamsToCustomize*>(
+               &_TaskParamsToCustomize_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(TaskParamsToCustomize& a, TaskParamsToCustomize& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TaskParamsToCustomize* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TaskParamsToCustomize* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TaskParamsToCustomize* New() const final {
+    return new TaskParamsToCustomize();
+  }
+
+  TaskParamsToCustomize* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TaskParamsToCustomize>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TaskParamsToCustomize& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TaskParamsToCustomize& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TaskParamsToCustomize* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.TaskParamsToCustomize";
+  }
+  protected:
+  explicit TaskParamsToCustomize(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTypeValueFieldNumber = 4,
+    kParamNameFieldNumber = 1,
+    kLabelFieldNumber = 2,
+    kValidationFieldNumber = 3,
+  };
+  // repeated string type_value = 4 [json_name = "typeValue"];
+  int type_value_size() const;
+  private:
+  int _internal_type_value_size() const;
+  public:
+  void clear_type_value();
+  const std::string& type_value(int index) const;
+  std::string* mutable_type_value(int index);
+  void set_type_value(int index, const std::string& value);
+  void set_type_value(int index, std::string&& value);
+  void set_type_value(int index, const char* value);
+  void set_type_value(int index, const char* value, size_t size);
+  std::string* add_type_value();
+  void add_type_value(const std::string& value);
+  void add_type_value(std::string&& value);
+  void add_type_value(const char* value);
+  void add_type_value(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& type_value() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_type_value();
+  private:
+  const std::string& _internal_type_value(int index) const;
+  std::string* _internal_add_type_value();
+  public:
+
+  // string param_name = 1 [json_name = "paramName"];
+  void clear_param_name();
+  const std::string& param_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_param_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_param_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_param_name();
+  void set_allocated_param_name(std::string* param_name);
+  private:
+  const std::string& _internal_param_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_param_name(const std::string& value);
+  std::string* _internal_mutable_param_name();
+  public:
+
+  // string label = 2 [json_name = "label"];
+  void clear_label();
+  const std::string& label() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_label(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_label();
+  PROTOBUF_MUST_USE_RESULT std::string* release_label();
+  void set_allocated_label(std::string* label);
+  private:
+  const std::string& _internal_label() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_label(const std::string& value);
+  std::string* _internal_mutable_label();
+  public:
+
+  // string validation = 3 [json_name = "validation"];
+  void clear_validation();
+  const std::string& validation() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_validation(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_validation();
+  PROTOBUF_MUST_USE_RESULT std::string* release_validation();
+  void set_allocated_validation(std::string* validation);
+  private:
+  const std::string& _internal_validation() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_validation(const std::string& value);
+  std::string* _internal_mutable_validation();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TaskParamsToCustomize)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> type_value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr param_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr validation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -4901,7 +5391,7 @@ inline void TektonTask::set_order(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 // TektonTaskList
 
-// repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];
+// repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];
 inline int TektonTaskList::_internal_items_size() const {
   return items_.size();
 }
@@ -4911,31 +5401,31 @@ inline int TektonTaskList::items_size() const {
 inline void TektonTaskList::clear_items() {
   items_.Clear();
 }
-inline ::pipelines::tekton::v1alpha1::Task* TektonTaskList::mutable_items(int index) {
+inline ::pipelines::tekton::v1alpha1::TaskToCustomize* TektonTaskList::mutable_items(int index) {
   // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TektonTaskList.items)
   return items_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskToCustomize >*
 TektonTaskList::mutable_items() {
   // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TektonTaskList.items)
   return &items_;
 }
-inline const ::pipelines::tekton::v1alpha1::Task& TektonTaskList::_internal_items(int index) const {
+inline const ::pipelines::tekton::v1alpha1::TaskToCustomize& TektonTaskList::_internal_items(int index) const {
   return items_.Get(index);
 }
-inline const ::pipelines::tekton::v1alpha1::Task& TektonTaskList::items(int index) const {
+inline const ::pipelines::tekton::v1alpha1::TaskToCustomize& TektonTaskList::items(int index) const {
   // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TektonTaskList.items)
   return _internal_items(index);
 }
-inline ::pipelines::tekton::v1alpha1::Task* TektonTaskList::_internal_add_items() {
+inline ::pipelines::tekton::v1alpha1::TaskToCustomize* TektonTaskList::_internal_add_items() {
   return items_.Add();
 }
-inline ::pipelines::tekton::v1alpha1::Task* TektonTaskList::add_items() {
-  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_items();
+inline ::pipelines::tekton::v1alpha1::TaskToCustomize* TektonTaskList::add_items() {
+  ::pipelines::tekton::v1alpha1::TaskToCustomize* _add = _internal_add_items();
   // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TektonTaskList.items)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskToCustomize >&
 TektonTaskList::items() const {
   // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TektonTaskList.items)
   return items_;
@@ -5771,9 +6261,613 @@ CustomPipelineList::items() const {
   return items_;
 }
 
+// -------------------------------------------------------------------
+
+// TaskToCustomize
+
+// string task_name = 1 [json_name = "taskName"];
+inline void TaskToCustomize::clear_task_name() {
+  task_name_.ClearToEmpty();
+}
+inline const std::string& TaskToCustomize::task_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.task_name)
+  return _internal_task_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskToCustomize::set_task_name(ArgT0&& arg0, ArgT... args) {
+ 
+ task_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.task_name)
+}
+inline std::string* TaskToCustomize::mutable_task_name() {
+  std::string* _s = _internal_mutable_task_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.task_name)
+  return _s;
+}
+inline const std::string& TaskToCustomize::_internal_task_name() const {
+  return task_name_.Get();
+}
+inline void TaskToCustomize::_internal_set_task_name(const std::string& value) {
+  
+  task_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::_internal_mutable_task_name() {
+  
+  return task_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::release_task_name() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskToCustomize.task_name)
+  return task_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskToCustomize::set_allocated_task_name(std::string* task_name) {
+  if (task_name != nullptr) {
+    
+  } else {
+    
+  }
+  task_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), task_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskToCustomize.task_name)
+}
+
+// string task_ref_name = 2 [json_name = "taskRefName"];
+inline void TaskToCustomize::clear_task_ref_name() {
+  task_ref_name_.ClearToEmpty();
+}
+inline const std::string& TaskToCustomize::task_ref_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.task_ref_name)
+  return _internal_task_ref_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskToCustomize::set_task_ref_name(ArgT0&& arg0, ArgT... args) {
+ 
+ task_ref_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.task_ref_name)
+}
+inline std::string* TaskToCustomize::mutable_task_ref_name() {
+  std::string* _s = _internal_mutable_task_ref_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.task_ref_name)
+  return _s;
+}
+inline const std::string& TaskToCustomize::_internal_task_ref_name() const {
+  return task_ref_name_.Get();
+}
+inline void TaskToCustomize::_internal_set_task_ref_name(const std::string& value) {
+  
+  task_ref_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::_internal_mutable_task_ref_name() {
+  
+  return task_ref_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::release_task_ref_name() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskToCustomize.task_ref_name)
+  return task_ref_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskToCustomize::set_allocated_task_ref_name(std::string* task_ref_name) {
+  if (task_ref_name != nullptr) {
+    
+  } else {
+    
+  }
+  task_ref_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), task_ref_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskToCustomize.task_ref_name)
+}
+
+// string task_kind = 3 [json_name = "taskKind"];
+inline void TaskToCustomize::clear_task_kind() {
+  task_kind_.ClearToEmpty();
+}
+inline const std::string& TaskToCustomize::task_kind() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.task_kind)
+  return _internal_task_kind();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskToCustomize::set_task_kind(ArgT0&& arg0, ArgT... args) {
+ 
+ task_kind_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.task_kind)
+}
+inline std::string* TaskToCustomize::mutable_task_kind() {
+  std::string* _s = _internal_mutable_task_kind();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.task_kind)
+  return _s;
+}
+inline const std::string& TaskToCustomize::_internal_task_kind() const {
+  return task_kind_.Get();
+}
+inline void TaskToCustomize::_internal_set_task_kind(const std::string& value) {
+  
+  task_kind_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::_internal_mutable_task_kind() {
+  
+  return task_kind_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::release_task_kind() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskToCustomize.task_kind)
+  return task_kind_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskToCustomize::set_allocated_task_kind(std::string* task_kind) {
+  if (task_kind != nullptr) {
+    
+  } else {
+    
+  }
+  task_kind_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), task_kind,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskToCustomize.task_kind)
+}
+
+// repeated string task_run_after = 4 [json_name = "taskRunAfter"];
+inline int TaskToCustomize::_internal_task_run_after_size() const {
+  return task_run_after_.size();
+}
+inline int TaskToCustomize::task_run_after_size() const {
+  return _internal_task_run_after_size();
+}
+inline void TaskToCustomize::clear_task_run_after() {
+  task_run_after_.Clear();
+}
+inline std::string* TaskToCustomize::add_task_run_after() {
+  std::string* _s = _internal_add_task_run_after();
+  // @@protoc_insertion_point(field_add_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+  return _s;
+}
+inline const std::string& TaskToCustomize::_internal_task_run_after(int index) const {
+  return task_run_after_.Get(index);
+}
+inline const std::string& TaskToCustomize::task_run_after(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+  return _internal_task_run_after(index);
+}
+inline std::string* TaskToCustomize::mutable_task_run_after(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+  return task_run_after_.Mutable(index);
+}
+inline void TaskToCustomize::set_task_run_after(int index, const std::string& value) {
+  task_run_after_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline void TaskToCustomize::set_task_run_after(int index, std::string&& value) {
+  task_run_after_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline void TaskToCustomize::set_task_run_after(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  task_run_after_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline void TaskToCustomize::set_task_run_after(int index, const char* value, size_t size) {
+  task_run_after_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline std::string* TaskToCustomize::_internal_add_task_run_after() {
+  return task_run_after_.Add();
+}
+inline void TaskToCustomize::add_task_run_after(const std::string& value) {
+  task_run_after_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline void TaskToCustomize::add_task_run_after(std::string&& value) {
+  task_run_after_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline void TaskToCustomize::add_task_run_after(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  task_run_after_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline void TaskToCustomize::add_task_run_after(const char* value, size_t size) {
+  task_run_after_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+TaskToCustomize::task_run_after() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+  return task_run_after_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+TaskToCustomize::mutable_task_run_after() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TaskToCustomize.task_run_after)
+  return &task_run_after_;
+}
+
+// repeated .pipelines.tekton.v1alpha1.Workspaces workspaces = 5 [json_name = "workspaces"];
+inline int TaskToCustomize::_internal_workspaces_size() const {
+  return workspaces_.size();
+}
+inline int TaskToCustomize::workspaces_size() const {
+  return _internal_workspaces_size();
+}
+inline void TaskToCustomize::clear_workspaces() {
+  workspaces_.Clear();
+}
+inline ::pipelines::tekton::v1alpha1::Workspaces* TaskToCustomize::mutable_workspaces(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.workspaces)
+  return workspaces_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >*
+TaskToCustomize::mutable_workspaces() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TaskToCustomize.workspaces)
+  return &workspaces_;
+}
+inline const ::pipelines::tekton::v1alpha1::Workspaces& TaskToCustomize::_internal_workspaces(int index) const {
+  return workspaces_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Workspaces& TaskToCustomize::workspaces(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.workspaces)
+  return _internal_workspaces(index);
+}
+inline ::pipelines::tekton::v1alpha1::Workspaces* TaskToCustomize::_internal_add_workspaces() {
+  return workspaces_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Workspaces* TaskToCustomize::add_workspaces() {
+  ::pipelines::tekton::v1alpha1::Workspaces* _add = _internal_add_workspaces();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskToCustomize.workspaces)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Workspaces >&
+TaskToCustomize::workspaces() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TaskToCustomize.workspaces)
+  return workspaces_;
+}
+
+// repeated .pipelines.tekton.v1alpha1.TaskParamsToCustomize task_params = 6 [json_name = "taskParams"];
+inline int TaskToCustomize::_internal_task_params_size() const {
+  return task_params_.size();
+}
+inline int TaskToCustomize::task_params_size() const {
+  return _internal_task_params_size();
+}
+inline void TaskToCustomize::clear_task_params() {
+  task_params_.Clear();
+}
+inline ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* TaskToCustomize::mutable_task_params(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.task_params)
+  return task_params_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskParamsToCustomize >*
+TaskToCustomize::mutable_task_params() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TaskToCustomize.task_params)
+  return &task_params_;
+}
+inline const ::pipelines::tekton::v1alpha1::TaskParamsToCustomize& TaskToCustomize::_internal_task_params(int index) const {
+  return task_params_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::TaskParamsToCustomize& TaskToCustomize::task_params(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.task_params)
+  return _internal_task_params(index);
+}
+inline ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* TaskToCustomize::_internal_add_task_params() {
+  return task_params_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* TaskToCustomize::add_task_params() {
+  ::pipelines::tekton::v1alpha1::TaskParamsToCustomize* _add = _internal_add_task_params();
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskToCustomize.task_params)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::TaskParamsToCustomize >&
+TaskToCustomize::task_params() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TaskToCustomize.task_params)
+  return task_params_;
+}
+
+// string description = 7 [json_name = "description"];
+inline void TaskToCustomize::clear_description() {
+  description_.ClearToEmpty();
+}
+inline const std::string& TaskToCustomize::description() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskToCustomize::set_description(ArgT0&& arg0, ArgT... args) {
+ 
+ description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.description)
+}
+inline std::string* TaskToCustomize::mutable_description() {
+  std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskToCustomize.description)
+  return _s;
+}
+inline const std::string& TaskToCustomize::_internal_description() const {
+  return description_.Get();
+}
+inline void TaskToCustomize::_internal_set_description(const std::string& value) {
+  
+  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::_internal_mutable_description() {
+  
+  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskToCustomize::release_description() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskToCustomize.description)
+  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskToCustomize::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskToCustomize.description)
+}
+
+// bool before_deploy = 8 [json_name = "beforeDeploy"];
+inline void TaskToCustomize::clear_before_deploy() {
+  before_deploy_ = false;
+}
+inline bool TaskToCustomize::_internal_before_deploy() const {
+  return before_deploy_;
+}
+inline bool TaskToCustomize::before_deploy() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.before_deploy)
+  return _internal_before_deploy();
+}
+inline void TaskToCustomize::_internal_set_before_deploy(bool value) {
+  
+  before_deploy_ = value;
+}
+inline void TaskToCustomize::set_before_deploy(bool value) {
+  _internal_set_before_deploy(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.before_deploy)
+}
+
+// bool after_deploy = 9 [json_name = "afterDeploy"];
+inline void TaskToCustomize::clear_after_deploy() {
+  after_deploy_ = false;
+}
+inline bool TaskToCustomize::_internal_after_deploy() const {
+  return after_deploy_;
+}
+inline bool TaskToCustomize::after_deploy() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskToCustomize.after_deploy)
+  return _internal_after_deploy();
+}
+inline void TaskToCustomize::_internal_set_after_deploy(bool value) {
+  
+  after_deploy_ = value;
+}
+inline void TaskToCustomize::set_after_deploy(bool value) {
+  _internal_set_after_deploy(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskToCustomize.after_deploy)
+}
+
+// -------------------------------------------------------------------
+
+// TaskParamsToCustomize
+
+// string param_name = 1 [json_name = "paramName"];
+inline void TaskParamsToCustomize::clear_param_name() {
+  param_name_.ClearToEmpty();
+}
+inline const std::string& TaskParamsToCustomize::param_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.param_name)
+  return _internal_param_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskParamsToCustomize::set_param_name(ArgT0&& arg0, ArgT... args) {
+ 
+ param_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.param_name)
+}
+inline std::string* TaskParamsToCustomize::mutable_param_name() {
+  std::string* _s = _internal_mutable_param_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.param_name)
+  return _s;
+}
+inline const std::string& TaskParamsToCustomize::_internal_param_name() const {
+  return param_name_.Get();
+}
+inline void TaskParamsToCustomize::_internal_set_param_name(const std::string& value) {
+  
+  param_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::_internal_mutable_param_name() {
+  
+  return param_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::release_param_name() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskParamsToCustomize.param_name)
+  return param_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskParamsToCustomize::set_allocated_param_name(std::string* param_name) {
+  if (param_name != nullptr) {
+    
+  } else {
+    
+  }
+  param_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), param_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.param_name)
+}
+
+// string label = 2 [json_name = "label"];
+inline void TaskParamsToCustomize::clear_label() {
+  label_.ClearToEmpty();
+}
+inline const std::string& TaskParamsToCustomize::label() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.label)
+  return _internal_label();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskParamsToCustomize::set_label(ArgT0&& arg0, ArgT... args) {
+ 
+ label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.label)
+}
+inline std::string* TaskParamsToCustomize::mutable_label() {
+  std::string* _s = _internal_mutable_label();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.label)
+  return _s;
+}
+inline const std::string& TaskParamsToCustomize::_internal_label() const {
+  return label_.Get();
+}
+inline void TaskParamsToCustomize::_internal_set_label(const std::string& value) {
+  
+  label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::_internal_mutable_label() {
+  
+  return label_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::release_label() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskParamsToCustomize.label)
+  return label_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskParamsToCustomize::set_allocated_label(std::string* label) {
+  if (label != nullptr) {
+    
+  } else {
+    
+  }
+  label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), label,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.label)
+}
+
+// string validation = 3 [json_name = "validation"];
+inline void TaskParamsToCustomize::clear_validation() {
+  validation_.ClearToEmpty();
+}
+inline const std::string& TaskParamsToCustomize::validation() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.validation)
+  return _internal_validation();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskParamsToCustomize::set_validation(ArgT0&& arg0, ArgT... args) {
+ 
+ validation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.validation)
+}
+inline std::string* TaskParamsToCustomize::mutable_validation() {
+  std::string* _s = _internal_mutable_validation();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.validation)
+  return _s;
+}
+inline const std::string& TaskParamsToCustomize::_internal_validation() const {
+  return validation_.Get();
+}
+inline void TaskParamsToCustomize::_internal_set_validation(const std::string& value) {
+  
+  validation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::_internal_mutable_validation() {
+  
+  return validation_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::release_validation() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskParamsToCustomize.validation)
+  return validation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskParamsToCustomize::set_allocated_validation(std::string* validation) {
+  if (validation != nullptr) {
+    
+  } else {
+    
+  }
+  validation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), validation,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.validation)
+}
+
+// repeated string type_value = 4 [json_name = "typeValue"];
+inline int TaskParamsToCustomize::_internal_type_value_size() const {
+  return type_value_.size();
+}
+inline int TaskParamsToCustomize::type_value_size() const {
+  return _internal_type_value_size();
+}
+inline void TaskParamsToCustomize::clear_type_value() {
+  type_value_.Clear();
+}
+inline std::string* TaskParamsToCustomize::add_type_value() {
+  std::string* _s = _internal_add_type_value();
+  // @@protoc_insertion_point(field_add_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return _s;
+}
+inline const std::string& TaskParamsToCustomize::_internal_type_value(int index) const {
+  return type_value_.Get(index);
+}
+inline const std::string& TaskParamsToCustomize::type_value(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return _internal_type_value(index);
+}
+inline std::string* TaskParamsToCustomize::mutable_type_value(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return type_value_.Mutable(index);
+}
+inline void TaskParamsToCustomize::set_type_value(int index, const std::string& value) {
+  type_value_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline void TaskParamsToCustomize::set_type_value(int index, std::string&& value) {
+  type_value_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline void TaskParamsToCustomize::set_type_value(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  type_value_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline void TaskParamsToCustomize::set_type_value(int index, const char* value, size_t size) {
+  type_value_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline std::string* TaskParamsToCustomize::_internal_add_type_value() {
+  return type_value_.Add();
+}
+inline void TaskParamsToCustomize::add_type_value(const std::string& value) {
+  type_value_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline void TaskParamsToCustomize::add_type_value(std::string&& value) {
+  type_value_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline void TaskParamsToCustomize::add_type_value(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  type_value_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline void TaskParamsToCustomize::add_type_value(const char* value, size_t size) {
+  type_value_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+TaskParamsToCustomize::type_value() const {
+  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return type_value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+TaskParamsToCustomize::mutable_type_value() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return &type_value_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TektonTaskList extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     private $items;
 
@@ -24,7 +24,7 @@ class TektonTaskList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Pipelines\Tekton\V1Alpha1\TaskToCustomize[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class TektonTaskList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -42,13 +42,13 @@ class TektonTaskList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\TaskToCustomize[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\TaskToCustomize::class);
         $this->items = $arr;
 
         return $this;

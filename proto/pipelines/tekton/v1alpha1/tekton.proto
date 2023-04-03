@@ -78,7 +78,7 @@ message TektonTask {
 }
 
 message TektonTaskList {
-    repeated Task items = 1;
+    repeated TaskToCustomize items = 1;
 }
 
 // Custom Pipeline ...
@@ -117,4 +117,23 @@ enum OwnerType {
     OWNER_TYPE_CUEMBY = 1;
     OWNER_TYPE_ORG = 2;
     OWNER_TYPE_PROJECT = 3;
+}
+
+message TaskToCustomize {
+    string task_name = 1;
+    string task_ref_name = 2;
+    string task_kind = 3;
+    repeated string task_run_after = 4;
+    repeated Workspaces workspaces = 5;
+    repeated TaskParamsToCustomize task_params = 6;
+    string description = 7;
+    bool before_deploy = 8;
+    bool after_deploy = 9;
+}
+
+message TaskParamsToCustomize {
+    string param_name = 1;
+    string label = 2;
+    string validation = 3;
+    repeated string type_value = 4;
 }
