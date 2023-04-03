@@ -135,5 +135,5 @@ message TaskParamsToCustomize {
     string param_name = 1;
     string label = 2;
     string validation = 3;
-    repeated string type_value = 4;
+    string type_value = 4;
 }
