@@ -296,10 +296,10 @@ struct TaskToCustomizeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TaskToCustomizeDefaultTypeInternal _TaskToCustomize_default_instance_;
 constexpr TaskParamsToCustomize::TaskParamsToCustomize(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : type_value_()
-  , param_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : param_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , validation_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , validation_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct TaskParamsToCustomizeDefaultTypeInternal {
   constexpr TaskParamsToCustomizeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -663,7 +663,7 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "afterDeploy\"\213\001\n\025TaskParamsToCustomize\022\035\n"
   "\nparam_name\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 "
   "\001(\tR\005label\022\036\n\nvalidation\030\003 \001(\tR\nvalidati"
-  "on\022\035\n\ntype_value\030\004 \003(\tR\ttypeValue*j\n\tOwn"
+  "on\022\035\n\ntype_value\030\004 \001(\tR\ttypeValue*j\n\tOwn"
   "erType\022\032\n\026OWNER_TYPE_UNSPECIFIED\020\000\022\025\n\021OW"
   "NER_TYPE_CUEMBY\020\001\022\022\n\016OWNER_TYPE_ORG\020\002\022\026\n"
   "\022OWNER_TYPE_PROJECT\020\003B\256\001\n#io.cuemby.pipe"
@@ -5746,8 +5746,7 @@ class TaskParamsToCustomize::_Internal {
 
 TaskParamsToCustomize::TaskParamsToCustomize(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  type_value_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -5755,8 +5754,7 @@ TaskParamsToCustomize::TaskParamsToCustomize(::PROTOBUF_NAMESPACE_ID::Arena* are
   // @@protoc_insertion_point(arena_constructor:pipelines.tekton.v1alpha1.TaskParamsToCustomize)
 }
 TaskParamsToCustomize::TaskParamsToCustomize(const TaskParamsToCustomize& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      type_value_(from.type_value_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   param_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_param_name().empty()) {
@@ -5773,6 +5771,11 @@ TaskParamsToCustomize::TaskParamsToCustomize(const TaskParamsToCustomize& from)
     validation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_validation(), 
       GetArenaForAllocation());
   }
+  type_value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_type_value().empty()) {
+    type_value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type_value(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.TaskParamsToCustomize)
 }
 
@@ -5780,6 +5783,7 @@ inline void TaskParamsToCustomize::SharedCtor() {
 param_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 validation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+type_value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TaskParamsToCustomize::~TaskParamsToCustomize() {
@@ -5794,6 +5798,7 @@ inline void TaskParamsToCustomize::SharedDtor() {
   param_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   validation_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TaskParamsToCustomize::ArenaDtor(void* object) {
@@ -5812,10 +5817,10 @@ void TaskParamsToCustomize::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  type_value_.Clear();
   param_name_.ClearToEmpty();
   label_.ClearToEmpty();
   validation_.ClearToEmpty();
+  type_value_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5852,18 +5857,13 @@ const char* TaskParamsToCustomize::_InternalParse(const char* ptr, ::PROTOBUF_NA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated string type_value = 4 [json_name = "typeValue"];
+      // string type_value = 4 [json_name = "typeValue"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_type_value();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value"));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          auto str = _internal_mutable_type_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -5925,14 +5925,14 @@ failure:
         3, this->_internal_validation(), target);
   }
 
-  // repeated string type_value = 4 [json_name = "typeValue"];
-  for (int i = 0, n = this->_internal_type_value_size(); i < n; i++) {
-    const auto& s = this->_internal_type_value(i);
+  // string type_value = 4 [json_name = "typeValue"];
+  if (!this->_internal_type_value().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
+      this->_internal_type_value().data(), static_cast<int>(this->_internal_type_value().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value");
-    target = stream->WriteString(4, s, target);
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_type_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5950,14 +5950,6 @@ size_t TaskParamsToCustomize::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // repeated string type_value = 4 [json_name = "typeValue"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(type_value_.size());
-  for (int i = 0, n = type_value_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      type_value_.Get(i));
-  }
 
   // string param_name = 1 [json_name = "paramName"];
   if (!this->_internal_param_name().empty()) {
@@ -5978,6 +5970,13 @@ size_t TaskParamsToCustomize::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_validation());
+  }
+
+  // string type_value = 4 [json_name = "typeValue"];
+  if (!this->_internal_type_value().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_type_value());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6008,7 +6007,6 @@ void TaskParamsToCustomize::MergeFrom(const TaskParamsToCustomize& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  type_value_.MergeFrom(from.type_value_);
   if (!from._internal_param_name().empty()) {
     _internal_set_param_name(from._internal_param_name());
   }
@@ -6017,6 +6015,9 @@ void TaskParamsToCustomize::MergeFrom(const TaskParamsToCustomize& from) {
   }
   if (!from._internal_validation().empty()) {
     _internal_set_validation(from._internal_validation());
+  }
+  if (!from._internal_type_value().empty()) {
+    _internal_set_type_value(from._internal_type_value());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6035,7 +6036,6 @@ bool TaskParamsToCustomize::IsInitialized() const {
 void TaskParamsToCustomize::InternalSwap(TaskParamsToCustomize* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  type_value_.InternalSwap(&other->type_value_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &param_name_, GetArenaForAllocation(),
@@ -6050,6 +6050,11 @@ void TaskParamsToCustomize::InternalSwap(TaskParamsToCustomize* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &validation_, GetArenaForAllocation(),
       &other->validation_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &type_value_, GetArenaForAllocation(),
+      &other->type_value_, other->GetArenaForAllocation()
   );
 }
 

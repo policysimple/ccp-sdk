@@ -219,7 +219,7 @@ public final class TektonProto {
       "afterDeploy\"\213\001\n\025TaskParamsToCustomize\022\035\n" +
       "\nparam_name\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 " +
       "\001(\tR\005label\022\036\n\nvalidation\030\003 \001(\tR\nvalidati" +
-      "on\022\035\n\ntype_value\030\004 \003(\tR\ttypeValue*j\n\tOwn" +
+      "on\022\035\n\ntype_value\030\004 \001(\tR\ttypeValue*j\n\tOwn" +
       "erType\022\032\n\026OWNER_TYPE_UNSPECIFIED\020\000\022\025\n\021OW" +
       "NER_TYPE_CUEMBY\020\001\022\022\n\016OWNER_TYPE_ORG\020\002\022\026\n" +
       "\022OWNER_TYPE_PROJECT\020\003B\256\001\n#io.cuemby.pipe" +

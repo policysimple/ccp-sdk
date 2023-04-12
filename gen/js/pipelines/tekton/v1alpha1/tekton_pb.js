@@ -292,7 +292,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4304,13 +4304,6 @@ proto.pipelines.tekton.v1alpha1.TaskToCustomize.prototype.setAfterDeploy = funct
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.repeatedFields_ = [4];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4345,7 +4338,7 @@ proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.toObject = function(includ
     paramName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     label: jspb.Message.getFieldWithDefault(msg, 2, ""),
     validation: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    typeValueList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    typeValue: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4396,7 +4389,7 @@ proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.deserializeBinaryFromReade
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.addTypeValue(value);
+      msg.setTypeValue(value);
       break;
     default:
       reader.skipField();
@@ -4448,9 +4441,9 @@ proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.serializeBinaryToWriter = 
       f
     );
   }
-  f = message.getTypeValueList();
+  f = message.getTypeValue();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       4,
       f
     );
@@ -4513,39 +4506,20 @@ proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.setValidation = 
 
 
 /**
- * repeated string type_value = 4;
- * @return {!Array<string>}
+ * optional string type_value = 4;
+ * @return {string}
  */
-proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.getTypeValueList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize} returns this
- */
-proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.setTypeValueList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.getTypeValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize} returns this
  */
-proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.addTypeValue = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize} returns this
- */
-proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.clearTypeValueList = function() {
-  return this.setTypeValueList([]);
+proto.pipelines.tekton.v1alpha1.TaskParamsToCustomize.prototype.setTypeValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

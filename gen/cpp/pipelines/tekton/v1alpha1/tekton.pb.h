@@ -3290,35 +3290,11 @@ class TaskParamsToCustomize final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTypeValueFieldNumber = 4,
     kParamNameFieldNumber = 1,
     kLabelFieldNumber = 2,
     kValidationFieldNumber = 3,
+    kTypeValueFieldNumber = 4,
   };
-  // repeated string type_value = 4 [json_name = "typeValue"];
-  int type_value_size() const;
-  private:
-  int _internal_type_value_size() const;
-  public:
-  void clear_type_value();
-  const std::string& type_value(int index) const;
-  std::string* mutable_type_value(int index);
-  void set_type_value(int index, const std::string& value);
-  void set_type_value(int index, std::string&& value);
-  void set_type_value(int index, const char* value);
-  void set_type_value(int index, const char* value, size_t size);
-  std::string* add_type_value();
-  void add_type_value(const std::string& value);
-  void add_type_value(std::string&& value);
-  void add_type_value(const char* value);
-  void add_type_value(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& type_value() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_type_value();
-  private:
-  const std::string& _internal_type_value(int index) const;
-  std::string* _internal_add_type_value();
-  public:
-
   // string param_name = 1 [json_name = "paramName"];
   void clear_param_name();
   const std::string& param_name() const;
@@ -3361,6 +3337,20 @@ class TaskParamsToCustomize final :
   std::string* _internal_mutable_validation();
   public:
 
+  // string type_value = 4 [json_name = "typeValue"];
+  void clear_type_value();
+  const std::string& type_value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_type_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_type_value();
+  PROTOBUF_MUST_USE_RESULT std::string* release_type_value();
+  void set_allocated_type_value(std::string* type_value);
+  private:
+  const std::string& _internal_type_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_type_value(const std::string& value);
+  std::string* _internal_mutable_type_value();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TaskParamsToCustomize)
  private:
   class _Internal;
@@ -3368,10 +3358,10 @@ class TaskParamsToCustomize final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> type_value_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr param_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr validation_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -6786,79 +6776,50 @@ inline void TaskParamsToCustomize::set_allocated_validation(std::string* validat
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.validation)
 }
 
-// repeated string type_value = 4 [json_name = "typeValue"];
-inline int TaskParamsToCustomize::_internal_type_value_size() const {
-  return type_value_.size();
-}
-inline int TaskParamsToCustomize::type_value_size() const {
-  return _internal_type_value_size();
-}
+// string type_value = 4 [json_name = "typeValue"];
 inline void TaskParamsToCustomize::clear_type_value() {
-  type_value_.Clear();
+  type_value_.ClearToEmpty();
 }
-inline std::string* TaskParamsToCustomize::add_type_value() {
-  std::string* _s = _internal_add_type_value();
-  // @@protoc_insertion_point(field_add_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+inline const std::string& TaskParamsToCustomize::type_value() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return _internal_type_value();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskParamsToCustomize::set_type_value(ArgT0&& arg0, ArgT... args) {
+ 
+ type_value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+inline std::string* TaskParamsToCustomize::mutable_type_value() {
+  std::string* _s = _internal_mutable_type_value();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
   return _s;
 }
-inline const std::string& TaskParamsToCustomize::_internal_type_value(int index) const {
-  return type_value_.Get(index);
+inline const std::string& TaskParamsToCustomize::_internal_type_value() const {
+  return type_value_.Get();
 }
-inline const std::string& TaskParamsToCustomize::type_value(int index) const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-  return _internal_type_value(index);
+inline void TaskParamsToCustomize::_internal_set_type_value(const std::string& value) {
+  
+  type_value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* TaskParamsToCustomize::mutable_type_value(int index) {
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-  return type_value_.Mutable(index);
+inline std::string* TaskParamsToCustomize::_internal_mutable_type_value() {
+  
+  return type_value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline void TaskParamsToCustomize::set_type_value(int index, const std::string& value) {
-  type_value_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+inline std::string* TaskParamsToCustomize::release_type_value() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+  return type_value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void TaskParamsToCustomize::set_type_value(int index, std::string&& value) {
-  type_value_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline void TaskParamsToCustomize::set_type_value(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  type_value_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline void TaskParamsToCustomize::set_type_value(int index, const char* value, size_t size) {
-  type_value_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline std::string* TaskParamsToCustomize::_internal_add_type_value() {
-  return type_value_.Add();
-}
-inline void TaskParamsToCustomize::add_type_value(const std::string& value) {
-  type_value_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline void TaskParamsToCustomize::add_type_value(std::string&& value) {
-  type_value_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline void TaskParamsToCustomize::add_type_value(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  type_value_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline void TaskParamsToCustomize::add_type_value(const char* value, size_t size) {
-  type_value_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-TaskParamsToCustomize::type_value() const {
-  // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-  return type_value_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-TaskParamsToCustomize::mutable_type_value() {
-  // @@protoc_insertion_point(field_mutable_list:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
-  return &type_value_;
+inline void TaskParamsToCustomize::set_allocated_type_value(std::string* type_value) {
+  if (type_value != nullptr) {
+    
+  } else {
+    
+  }
+  type_value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type_value,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
 }
 
 #ifdef __GNUC__
