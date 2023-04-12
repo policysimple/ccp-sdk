@@ -52,11 +52,11 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              items_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
+              items_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize>();
               mutable_bitField0_ |= 0x00000001;
             }
             items_.add(
-                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -95,41 +95,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ITEMS_FIELD_NUMBER = 1;
-  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> items_;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize> items_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
   @java.lang.Override
-  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getItemsList() {
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize> getItemsList() {
     return items_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder> 
       getItemsOrBuilderList() {
     return items_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
   @java.lang.Override
   public int getItemsCount() {
     return items_.size();
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.Task getItems(int index) {
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize getItems(int index) {
     return items_.get(index);
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getItemsOrBuilder(
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder getItemsOrBuilder(
       int index) {
     return items_.get(index);
   }
@@ -476,22 +476,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> items_ =
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize> items_ =
       java.util.Collections.emptyList();
     private void ensureItemsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        items_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>(items_);
+        items_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize>(items_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> itemsBuilder_;
+        io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder> itemsBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getItemsList() {
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize> getItemsList() {
       if (itemsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(items_);
       } else {
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public int getItemsCount() {
       if (itemsBuilder_ == null) {
@@ -509,9 +509,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task getItems(int index) {
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize getItems(int index) {
       if (itemsBuilder_ == null) {
         return items_.get(index);
       } else {
@@ -519,10 +519,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder setItems(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize value) {
       if (itemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -536,10 +536,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder setItems(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder builderForValue) {
       if (itemsBuilder_ == null) {
         ensureItemsIsMutable();
         items_.set(index, builderForValue.build());
@@ -550,9 +550,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public Builder addItems(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+    public Builder addItems(io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize value) {
       if (itemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -566,10 +566,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder addItems(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize value) {
       if (itemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -583,10 +583,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder addItems(
-        io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+        io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder builderForValue) {
       if (itemsBuilder_ == null) {
         ensureItemsIsMutable();
         items_.add(builderForValue.build());
@@ -597,10 +597,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder addItems(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder builderForValue) {
       if (itemsBuilder_ == null) {
         ensureItemsIsMutable();
         items_.add(index, builderForValue.build());
@@ -611,10 +611,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder addAllItems(
-        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Task> values) {
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize> values) {
       if (itemsBuilder_ == null) {
         ensureItemsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder clearItems() {
       if (itemsBuilder_ == null) {
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
     public Builder removeItems(int index) {
       if (itemsBuilder_ == null) {
@@ -652,16 +652,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getItemsBuilder(
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder getItemsBuilder(
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getItemsOrBuilder(
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder getItemsOrBuilder(
         int index) {
       if (itemsBuilder_ == null) {
         return items_.get(index);  } else {
@@ -669,9 +669,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder> 
          getItemsOrBuilderList() {
       if (itemsBuilder_ != null) {
         return itemsBuilder_.getMessageOrBuilderList();
@@ -680,33 +680,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addItemsBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder addItemsBuilder() {
       return getItemsFieldBuilder().addBuilder(
-          io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+          io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addItemsBuilder(
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder addItemsBuilder(
         int index) {
       return getItemsFieldBuilder().addBuilder(
-          index, io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+          index, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
      */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task.Builder> 
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder> 
          getItemsBuilderList() {
       return getItemsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+        io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder> 
         getItemsFieldBuilder() {
       if (itemsBuilder_ == null) {
         itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder>(
+            io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder>(
                 items_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),

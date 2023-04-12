@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitations";
+//import "../accounts.proto";
 import "accounts/v1alpha1/accounts.proto";
 
 package accounts.v1alpha1.invitations.v1;
@@ -20,6 +21,7 @@ message SendInvitationUserRequest {
     repeated string roles_ids = 5; //roles projects
     repeated uint32 permissions_ids = 6;
     string organization_id = 7;
+    string expired_at = 8;
 }
 
 message SendInvitationUserResponse {
@@ -29,6 +31,8 @@ message SendInvitationUserResponse {
     string result=4;
     repeated Role roles = 5;
     repeated Permission permissions = 6;
+    string expired_at = 7;
+
 }
 
 message GetInvitationUserRequest {
@@ -52,6 +56,9 @@ message GetInvitationUserResponse {
     OrganizationInvitation organization = 6;
     string email = 7;
     bool success = 8;   
+    string expired_at = 9;
+    bool expired_status = 11;
+
 }
 
 message AgreeInvitationUserRequest {
@@ -95,4 +102,15 @@ message DeleteInvitationRequest {
 message DeleteInvitationResponse {
     string msg = 1;
     string error = 2;
+}
+
+//update invitation
+
+message ReactivateInvitationRequest {
+    string id = 1; 
+    string expired_at = 2;
+}
+
+message ReactivateInvitationResponse {
+    string msg = 1;
 }

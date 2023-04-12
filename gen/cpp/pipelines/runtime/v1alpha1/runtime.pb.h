@@ -35,6 +35,8 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "application/v1alpha1/application.pb.h"
+#include "pipelines/tekton/v1alpha1/tekton.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto
@@ -398,6 +400,8 @@ class Runtime final :
     kCommandsFieldNumber = 15,
     kSecretsFieldNumber = 16,
     kExtraArgsFieldNumber = 17,
+    kBeforeDeployTasksFieldNumber = 28,
+    kAfterDeployTasksFieldNumber = 29,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kOrganizationIdFieldNumber = 4,
@@ -414,9 +418,11 @@ class Runtime final :
     kEnvironmentInternalNameFieldNumber = 21,
     kApplicationNameFieldNumber = 22,
     kIntegrationIdFieldNumber = 25,
+    kApplicationDataFieldNumber = 26,
     kTrafficTypeFieldNumber = 18,
     kStorageUsedFieldNumber = 23,
     kStorageLimitFieldNumber = 24,
+    kCustomPipelineFieldNumber = 27,
   };
   // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 3 [json_name = "instanceTypes"];
   int instance_types_size() const;
@@ -520,6 +526,42 @@ class Runtime final :
       extra_args() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_extra_args();
+
+  // repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];
+  int before_deploy_tasks_size() const;
+  private:
+  int _internal_before_deploy_tasks_size() const;
+  public:
+  void clear_before_deploy_tasks();
+  ::pipelines::tekton::v1alpha1::Task* mutable_before_deploy_tasks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+      mutable_before_deploy_tasks();
+  private:
+  const ::pipelines::tekton::v1alpha1::Task& _internal_before_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* _internal_add_before_deploy_tasks();
+  public:
+  const ::pipelines::tekton::v1alpha1::Task& before_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* add_before_deploy_tasks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+      before_deploy_tasks() const;
+
+  // repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];
+  int after_deploy_tasks_size() const;
+  private:
+  int _internal_after_deploy_tasks_size() const;
+  public:
+  void clear_after_deploy_tasks();
+  ::pipelines::tekton::v1alpha1::Task* mutable_after_deploy_tasks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+      mutable_after_deploy_tasks();
+  private:
+  const ::pipelines::tekton::v1alpha1::Task& _internal_after_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* _internal_add_after_deploy_tasks();
+  public:
+  const ::pipelines::tekton::v1alpha1::Task& after_deploy_tasks(int index) const;
+  ::pipelines::tekton::v1alpha1::Task* add_after_deploy_tasks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+      after_deploy_tasks() const;
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -745,6 +787,24 @@ class Runtime final :
   std::string* _internal_mutable_integration_id();
   public:
 
+  // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
+  bool has_application_data() const;
+  private:
+  bool _internal_has_application_data() const;
+  public:
+  void clear_application_data();
+  const ::application::v1alpha1::Application& application_data() const;
+  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Application* release_application_data();
+  ::application::v1alpha1::Application* mutable_application_data();
+  void set_allocated_application_data(::application::v1alpha1::Application* application_data);
+  private:
+  const ::application::v1alpha1::Application& _internal_application_data() const;
+  ::application::v1alpha1::Application* _internal_mutable_application_data();
+  public:
+  void unsafe_arena_set_allocated_application_data(
+      ::application::v1alpha1::Application* application_data);
+  ::application::v1alpha1::Application* unsafe_arena_release_application_data();
+
   // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
   void clear_traffic_type();
   ::pipelines::runtime::v1alpha1::TrafficType traffic_type() const;
@@ -770,6 +830,15 @@ class Runtime final :
   private:
   ::PROTOBUF_NAMESPACE_ID::uint32 _internal_storage_limit() const;
   void _internal_set_storage_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // bool custom_pipeline = 27 [json_name = "customPipeline"];
+  void clear_custom_pipeline();
+  bool custom_pipeline() const;
+  void set_custom_pipeline(bool value);
+  private:
+  bool _internal_custom_pipeline() const;
+  void _internal_set_custom_pipeline(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
@@ -805,6 +874,8 @@ class Runtime final :
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > before_deploy_tasks_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > after_deploy_tasks_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
@@ -821,9 +892,11 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_internal_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::application::v1alpha1::Application* application_data_;
   int traffic_type_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
+  bool custom_pipeline_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -2643,6 +2716,186 @@ inline void Runtime::set_allocated_integration_id(std::string* integration_id) {
   integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.integration_id)
+}
+
+// .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
+inline bool Runtime::_internal_has_application_data() const {
+  return this != internal_default_instance() && application_data_ != nullptr;
+}
+inline bool Runtime::has_application_data() const {
+  return _internal_has_application_data();
+}
+inline const ::application::v1alpha1::Application& Runtime::_internal_application_data() const {
+  const ::application::v1alpha1::Application* p = application_data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Application&>(
+      ::application::v1alpha1::_Application_default_instance_);
+}
+inline const ::application::v1alpha1::Application& Runtime::application_data() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.application_data)
+  return _internal_application_data();
+}
+inline void Runtime::unsafe_arena_set_allocated_application_data(
+    ::application::v1alpha1::Application* application_data) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_data_);
+  }
+  application_data_ = application_data;
+  if (application_data) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_data)
+}
+inline ::application::v1alpha1::Application* Runtime::release_application_data() {
+  
+  ::application::v1alpha1::Application* temp = application_data_;
+  application_data_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::application::v1alpha1::Application* Runtime::unsafe_arena_release_application_data() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.application_data)
+  
+  ::application::v1alpha1::Application* temp = application_data_;
+  application_data_ = nullptr;
+  return temp;
+}
+inline ::application::v1alpha1::Application* Runtime::_internal_mutable_application_data() {
+  
+  if (application_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::application::v1alpha1::Application>(GetArenaForAllocation());
+    application_data_ = p;
+  }
+  return application_data_;
+}
+inline ::application::v1alpha1::Application* Runtime::mutable_application_data() {
+  ::application::v1alpha1::Application* _msg = _internal_mutable_application_data();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.application_data)
+  return _msg;
+}
+inline void Runtime::set_allocated_application_data(::application::v1alpha1::Application* application_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_data_);
+  }
+  if (application_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_data));
+    if (message_arena != submessage_arena) {
+      application_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, application_data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  application_data_ = application_data;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_data)
+}
+
+// bool custom_pipeline = 27 [json_name = "customPipeline"];
+inline void Runtime::clear_custom_pipeline() {
+  custom_pipeline_ = false;
+}
+inline bool Runtime::_internal_custom_pipeline() const {
+  return custom_pipeline_;
+}
+inline bool Runtime::custom_pipeline() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.custom_pipeline)
+  return _internal_custom_pipeline();
+}
+inline void Runtime::_internal_set_custom_pipeline(bool value) {
+  
+  custom_pipeline_ = value;
+}
+inline void Runtime::set_custom_pipeline(bool value) {
+  _internal_set_custom_pipeline(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.custom_pipeline)
+}
+
+// repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];
+inline int Runtime::_internal_before_deploy_tasks_size() const {
+  return before_deploy_tasks_.size();
+}
+inline int Runtime::before_deploy_tasks_size() const {
+  return _internal_before_deploy_tasks_size();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Runtime::mutable_before_deploy_tasks(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks)
+  return before_deploy_tasks_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+Runtime::mutable_before_deploy_tasks() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks)
+  return &before_deploy_tasks_;
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Runtime::_internal_before_deploy_tasks(int index) const {
+  return before_deploy_tasks_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Runtime::before_deploy_tasks(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks)
+  return _internal_before_deploy_tasks(index);
+}
+inline ::pipelines::tekton::v1alpha1::Task* Runtime::_internal_add_before_deploy_tasks() {
+  return before_deploy_tasks_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Runtime::add_before_deploy_tasks() {
+  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_before_deploy_tasks();
+  // @@protoc_insertion_point(field_add:pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+Runtime::before_deploy_tasks() const {
+  // @@protoc_insertion_point(field_list:pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks)
+  return before_deploy_tasks_;
+}
+
+// repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];
+inline int Runtime::_internal_after_deploy_tasks_size() const {
+  return after_deploy_tasks_.size();
+}
+inline int Runtime::after_deploy_tasks_size() const {
+  return _internal_after_deploy_tasks_size();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Runtime::mutable_after_deploy_tasks(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks)
+  return after_deploy_tasks_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >*
+Runtime::mutable_after_deploy_tasks() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks)
+  return &after_deploy_tasks_;
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Runtime::_internal_after_deploy_tasks(int index) const {
+  return after_deploy_tasks_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Task& Runtime::after_deploy_tasks(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks)
+  return _internal_after_deploy_tasks(index);
+}
+inline ::pipelines::tekton::v1alpha1::Task* Runtime::_internal_add_after_deploy_tasks() {
+  return after_deploy_tasks_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Task* Runtime::add_after_deploy_tasks() {
+  ::pipelines::tekton::v1alpha1::Task* _add = _internal_add_after_deploy_tasks();
+  // @@protoc_insertion_point(field_add:pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
+Runtime::after_deploy_tasks() const {
+  // @@protoc_insertion_point(field_list:pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks)
+  return after_deploy_tasks_;
 }
 
 // -------------------------------------------------------------------

@@ -22,6 +22,8 @@ message TaskParams {
     string param_value_type = 2;
     string param_value = 3;
     repeated string param_value_array = 4;
+    string description = 5;
+    string default = 6;
 }
 
 message Workspaces {
@@ -39,6 +41,8 @@ message Task {
     repeated Workspaces workspaces = 6;
     repeated TaskParams task_params = 7;
     string description = 8;
+    bool before_deploy = 9;
+    bool after_deploy = 10;
 }
 
 // Pipeline ...
@@ -63,6 +67,9 @@ message Pipeline {
     map<string, string> instance_type = 18;
     bool is_default = 19;
     bool active = 20;
+    bool custom_pipeline = 21;
+    repeated Task before_deploy_tasks = 22;
+    repeated Task after_deploy_tasks = 23;
 }
 
 message TektonTask {
@@ -71,7 +78,7 @@ message TektonTask {
 }
 
 message TektonTaskList {
-    repeated Task items = 1;
+    repeated TaskToCustomize items = 1;
 }
 
 // Custom Pipeline ...
@@ -90,10 +97,10 @@ message CustomPipeline {
 }
 
 message PipelineSpec {
-    Params params = 1;
+    repeated TaskParams params = 1;
     string resources = 2;
-    Task tasks = 3;
-    Workspaces workspace = 4;
+    repeated Task tasks = 3;
+    repeated Workspaces workspace = 4;
 }
 
 message CustomPipelineResponse {
@@ -110,4 +117,23 @@ enum OwnerType {
     OWNER_TYPE_CUEMBY = 1;
     OWNER_TYPE_ORG = 2;
     OWNER_TYPE_PROJECT = 3;
+}
+
+message TaskToCustomize {
+    string task_name = 1;
+    string task_ref_name = 2;
+    string task_kind = 3;
+    repeated string task_run_after = 4;
+    repeated Workspaces workspaces = 5;
+    repeated TaskParamsToCustomize task_params = 6;
+    string description = 7;
+    bool before_deploy = 8;
+    bool after_deploy = 9;
+}
+
+message TaskParamsToCustomize {
+    string param_name = 1;
+    string label = 2;
+    string validation = 3;
+    string type_value = 4;
 }

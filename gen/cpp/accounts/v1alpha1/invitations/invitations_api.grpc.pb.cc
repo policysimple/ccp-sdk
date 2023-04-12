@@ -26,6 +26,7 @@ static const char* InvitationService_method_names[] = {
   "/accounts.v1alpha1.invitations.v1.InvitationService/AgreeInvitationUser",
   "/accounts.v1alpha1.invitations.v1.InvitationService/ListInvitationSend",
   "/accounts.v1alpha1.invitations.v1.InvitationService/DeleteInvitation",
+  "/accounts.v1alpha1.invitations.v1.InvitationService/ReactivateInvitation",
 };
 
 std::unique_ptr< InvitationService::Stub> InvitationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -40,6 +41,7 @@ InvitationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_AgreeInvitationUser_(InvitationService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListInvitationSend_(InvitationService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteInvitation_(InvitationService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ReactivateInvitation_(InvitationService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status InvitationService::Stub::SendInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest& request, ::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse* response) {
@@ -122,6 +124,22 @@ void InvitationService::Stub::experimental_async::DeleteInvitation(::grpc::Clien
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteInvitation_, context, request, false);
 }
 
+::grpc::Status InvitationService::Stub::ReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ReactivateInvitation_, context, request, response);
+}
+
+void InvitationService::Stub::experimental_async::ReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ReactivateInvitation_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* InvitationService::Stub::AsyncReactivateInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>::Create(channel_.get(), cq, rpcmethod_ReactivateInvitation_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* InvitationService::Stub::PrepareAsyncReactivateInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>::Create(channel_.get(), cq, rpcmethod_ReactivateInvitation_, context, request, false);
+}
+
 InvitationService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       InvitationService_method_names[0],
@@ -148,6 +166,11 @@ InvitationService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< InvitationService::Service, ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest, ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>(
           std::mem_fn(&InvitationService::Service::DeleteInvitation), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      InvitationService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< InvitationService::Service, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>(
+          std::mem_fn(&InvitationService::Service::ReactivateInvitation), this)));
 }
 
 InvitationService::Service::~Service() {
@@ -182,6 +205,13 @@ InvitationService::Service::~Service() {
 }
 
 ::grpc::Status InvitationService::Service::DeleteInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status InvitationService::Service::ReactivateInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

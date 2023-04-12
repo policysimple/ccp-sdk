@@ -24,7 +24,7 @@ func init() {
 	doOnce.Do(func() {
 		applicationServiceTimeout = os.Getenv("APPLICATION_SERVICE_TIMEOUT")
 		if applicationServiceTimeout == "" {
-			applicationServiceTimeout = "30s"
+			applicationServiceTimeout = "60s"
 		}
 		applicationServiceUri = os.Getenv("APPLICATION_SERVICE_URI")
 		con, err := grpc.Dial(applicationServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -34,7 +34,6 @@ func init() {
 		client = applicationpkgv1.NewApplicationServiceClient(con)
 	})
 }
-
 func CreateApplication(req *applicationpkgv1.CreateApplicationRequest) (*applicationpkgv1.CreateApplicationResponse, error) {
 	bylogs.LogInfo("CreateApplicationRequest")
 	d, err := time.ParseDuration(applicationServiceTimeout)

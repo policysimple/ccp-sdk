@@ -68,6 +68,8 @@ message Application {
     string organization_id = 14;
     Scaling scaling = 11;
     TrafficType traffic_type = 12;
+    bool integration_status = 15;
+
 }
 
 message ListApplication {
@@ -76,4 +78,6 @@ message ListApplication {
     Repository repository = 3;
     string project_id = 6;
     string organization_id = 7;
+    bool integration_status = 8;
+
 }

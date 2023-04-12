@@ -28,7 +28,8 @@ constexpr SendInvitationUserRequest::SendInvitationUserRequest(
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_admin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expired_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct SendInvitationUserRequestDefaultTypeInternal {
   constexpr SendInvitationUserRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -45,6 +46,7 @@ constexpr SendInvitationUserResponse::SendInvitationUserResponse(
   , permissions_()
   , invitation_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , result_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expired_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_(nullptr){}
 struct SendInvitationUserResponseDefaultTypeInternal {
   constexpr SendInvitationUserResponseDefaultTypeInternal()
@@ -90,9 +92,11 @@ constexpr GetInvitationUserResponse::GetInvitationUserResponse(
   , permissions_()
   , invitation_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expired_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_(nullptr)
-  , success_(false){}
+  , success_(false)
+  , expired_status_(false){}
 struct GetInvitationUserResponseDefaultTypeInternal {
   constexpr GetInvitationUserResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -196,11 +200,36 @@ struct DeleteInvitationResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteInvitationResponseDefaultTypeInternal _DeleteInvitationResponse_default_instance_;
+constexpr ReactivateInvitationRequest::ReactivateInvitationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expired_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ReactivateInvitationRequestDefaultTypeInternal {
+  constexpr ReactivateInvitationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ReactivateInvitationRequestDefaultTypeInternal() {}
+  union {
+    ReactivateInvitationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReactivateInvitationRequestDefaultTypeInternal _ReactivateInvitationRequest_default_instance_;
+constexpr ReactivateInvitationResponse::ReactivateInvitationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ReactivateInvitationResponseDefaultTypeInternal {
+  constexpr ReactivateInvitationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ReactivateInvitationResponseDefaultTypeInternal() {}
+  union {
+    ReactivateInvitationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReactivateInvitationResponseDefaultTypeInternal _ReactivateInvitationResponse_default_instance_;
 }  // namespace v1
 }  // namespace invitations
 }  // namespace v1alpha1
 }  // namespace accounts
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[12];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[14];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto = nullptr;
 
@@ -216,6 +245,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2finvitati
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest, roles_ids_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest, permissions_ids_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest, expired_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -227,6 +257,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2finvitati
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse, result_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse, roles_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse, permissions_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse, expired_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::GetInvitationUserRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -256,6 +287,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2finvitati
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse, organization_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse, email_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse, expired_at_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse, expired_status_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest_ProjectsEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest_ProjectsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -311,20 +344,35 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2finvitati
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse, msg_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse, error_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest, expired_at_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse, msg_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest)},
-  { 11, -1, sizeof(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse)},
-  { 22, -1, sizeof(::accounts::v1alpha1::invitations::v1::GetInvitationUserRequest)},
-  { 29, -1, sizeof(::accounts::v1alpha1::invitations::v1::OrganizationInvitation)},
-  { 39, -1, sizeof(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse)},
-  { 51, 58, sizeof(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest_ProjectsEntry_DoNotUse)},
-  { 60, -1, sizeof(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest)},
-  { 70, -1, sizeof(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserResponse)},
-  { 76, -1, sizeof(::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest)},
-  { 85, -1, sizeof(::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse)},
-  { 91, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest)},
-  { 99, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse)},
+  { 12, -1, sizeof(::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse)},
+  { 24, -1, sizeof(::accounts::v1alpha1::invitations::v1::GetInvitationUserRequest)},
+  { 31, -1, sizeof(::accounts::v1alpha1::invitations::v1::OrganizationInvitation)},
+  { 41, -1, sizeof(::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse)},
+  { 55, 62, sizeof(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest_ProjectsEntry_DoNotUse)},
+  { 64, -1, sizeof(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest)},
+  { 74, -1, sizeof(::accounts::v1alpha1::invitations::v1::AgreeInvitationUserResponse)},
+  { 80, -1, sizeof(::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest)},
+  { 89, -1, sizeof(::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse)},
+  { 95, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest)},
+  { 103, -1, sizeof(::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse)},
+  { 110, -1, sizeof(::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest)},
+  { 117, -1, sizeof(::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -340,77 +388,86 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::invitations::v1::_ListInvitationSendResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::invitations::v1::_DeleteInvitationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::invitations::v1::_DeleteInvitationResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::invitations::v1::_ReactivateInvitationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::invitations::v1::_ReactivateInvitationResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n/accounts/v1alpha1/invitations/invitati"
   "ons.proto\022 accounts.v1alpha1.invitations"
-  ".v1\032 accounts/v1alpha1/accounts.proto\"\330\001"
+  ".v1\032 accounts/v1alpha1/accounts.proto\"\367\001"
   "\n\031SendInvitationUserRequest\022\022\n\004name\030\001 \001("
   "\tR\004name\022\024\n\005email\030\002 \001(\tR\005email\022\"\n\ruser_id"
   "_admin\030\004 \001(\tR\013userIdAdmin\022\033\n\troles_ids\030\005"
   " \003(\tR\010rolesIds\022\'\n\017permissions_ids\030\006 \003(\rR"
   "\016permissionsIds\022\'\n\017organization_id\030\007 \001(\t"
-  "R\016organizationId\"\312\002\n\032SendInvitationUserR"
-  "esponse\022C\n\014organization\030\001 \001(\0132\037.accounts"
-  ".v1alpha1.OrganizationR\014organization\0226\n\010"
-  "projects\030\002 \003(\0132\032.accounts.v1alpha1.Proje"
-  "ctR\010projects\022\'\n\017invitation_code\030\003 \001(\tR\016i"
-  "nvitationCode\022\026\n\006result\030\004 \001(\tR\006result\022-\n"
-  "\005roles\030\005 \003(\0132\027.accounts.v1alpha1.RoleR\005r"
-  "oles\022\?\n\013permissions\030\006 \003(\0132\035.accounts.v1a"
-  "lpha1.PermissionR\013permissions\"Y\n\030GetInvi"
-  "tationUserRequest\022\'\n\017invitation_code\030\001 \001"
-  "(\tR\016invitationCode\022\024\n\005email\030\002 \001(\tR\005email"
-  "\"\254\001\n\026OrganizationInvitation\022\016\n\002id\030\006 \001(\tR"
-  "\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005"
-  "image\022 \n\013description\030\004 \001(\tR\013description\022"
-  "6\n\010projects\030\005 \003(\0132\032.accounts.v1alpha1.Pr"
-  "ojectR\010projects\"\322\002\n\031GetInvitationUserRes"
-  "ponse\022\016\n\002id\030\n \001(\tR\002id\022\'\n\017invitation_code"
-  "\030\002 \001(\tR\016invitationCode\022-\n\005roles\030\004 \003(\0132\027."
-  "accounts.v1alpha1.RoleR\005roles\022\?\n\013permiss"
-  "ions\030\005 \003(\0132\035.accounts.v1alpha1.Permissio"
-  "nR\013permissions\022\\\n\014organization\030\006 \001(\01328.a"
-  "ccounts.v1alpha1.invitations.v1.Organiza"
-  "tionInvitationR\014organization\022\024\n\005email\030\007 "
-  "\001(\tR\005email\022\030\n\007success\030\010 \001(\010R\007success\"\213\003\n"
-  "\032AgreeInvitationUserRequest\022\'\n\017invitatio"
-  "n_code\030\001 \001(\tR\016invitationCode\022\024\n\005email\030\002 "
-  "\001(\tR\005email\022\"\n\rguest_user_id\030\003 \001(\tR\013guest"
-  "UserId\022e\n\023invitation_response\030\004 \001(\01624.ac"
-  "counts.v1alpha1.invitations.v1.Invitatio"
-  "nResponseR\022invitationResponse\022f\n\010project"
-  "s\030\005 \003(\0132J.accounts.v1alpha1.invitations."
-  "v1.AgreeInvitationUserRequest.ProjectsEn"
-  "tryR\010projects\032;\n\rProjectsEntry\022\020\n\003key\030\001 "
-  "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"5\n\033Ag"
-  "reeInvitationUserResponse\022\026\n\006result\030\001 \001("
-  "\tR\006result\"\224\001\n\031ListInvitationSendRequest\022"
-  "\031\n\010owner_id\030\001 \001(\tR\007ownerId\022\035\n\nproject_id"
-  "\030\002 \001(\tR\tprojectId\022\'\n\017organization_id\030\003 \001"
-  "(\tR\016organizationId\022\024\n\005email\030\004 \001(\tR\005email"
-  "\"\202\001\n\032ListInvitationSendResponse\022d\n\017invit"
-  "ation_user\030\001 \003(\0132;.accounts.v1alpha1.inv"
-  "itations.v1.GetInvitationUserResponseR\016i"
-  "nvitationUser\"\200\001\n\027DeleteInvitationReques"
-  "t\022#\n\rinvitation_id\030\001 \001(\tR\014invitationId\022\'"
-  "\n\017organization_id\030\002 \001(\tR\016organizationId\022"
-  "\027\n\007user_id\030\003 \001(\tR\006userId\"B\n\030DeleteInvita"
-  "tionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030"
-  "\002 \001(\tR\005error*d\n\022InvitationResponse\022,\n(IN"
-  "VITATION_RESPONSE_ACCEPTED_UNSPECIFIED\020\000"
-  "\022 \n\034INVITATION_RESPONSE_REJECTED\020\001B@Z>gi"
-  "thub.com/cuemby/ccp-sdk/gen/go/accounts/"
-  "v1alpha1/invitationsb\006proto3"
+  "R\016organizationId\022\035\n\nexpired_at\030\010 \001(\tR\tex"
+  "piredAt\"\351\002\n\032SendInvitationUserResponse\022C"
+  "\n\014organization\030\001 \001(\0132\037.accounts.v1alpha1"
+  ".OrganizationR\014organization\0226\n\010projects\030"
+  "\002 \003(\0132\032.accounts.v1alpha1.ProjectR\010proje"
+  "cts\022\'\n\017invitation_code\030\003 \001(\tR\016invitation"
+  "Code\022\026\n\006result\030\004 \001(\tR\006result\022-\n\005roles\030\005 "
+  "\003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\?\n\013p"
+  "ermissions\030\006 \003(\0132\035.accounts.v1alpha1.Per"
+  "missionR\013permissions\022\035\n\nexpired_at\030\007 \001(\t"
+  "R\texpiredAt\"Y\n\030GetInvitationUserRequest\022"
+  "\'\n\017invitation_code\030\001 \001(\tR\016invitationCode"
+  "\022\024\n\005email\030\002 \001(\tR\005email\"\254\001\n\026OrganizationI"
+  "nvitation\022\016\n\002id\030\006 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR"
+  "\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013descripti"
+  "on\030\004 \001(\tR\013description\0226\n\010projects\030\005 \003(\0132"
+  "\032.accounts.v1alpha1.ProjectR\010projects\"\230\003"
+  "\n\031GetInvitationUserResponse\022\016\n\002id\030\n \001(\tR"
+  "\002id\022\'\n\017invitation_code\030\002 \001(\tR\016invitation"
+  "Code\022-\n\005roles\030\004 \003(\0132\027.accounts.v1alpha1."
+  "RoleR\005roles\022\?\n\013permissions\030\005 \003(\0132\035.accou"
+  "nts.v1alpha1.PermissionR\013permissions\022\\\n\014"
+  "organization\030\006 \001(\01328.accounts.v1alpha1.i"
+  "nvitations.v1.OrganizationInvitationR\014or"
+  "ganization\022\024\n\005email\030\007 \001(\tR\005email\022\030\n\007succ"
+  "ess\030\010 \001(\010R\007success\022\035\n\nexpired_at\030\t \001(\tR\t"
+  "expiredAt\022%\n\016expired_status\030\013 \001(\010R\rexpir"
+  "edStatus\"\213\003\n\032AgreeInvitationUserRequest\022"
+  "\'\n\017invitation_code\030\001 \001(\tR\016invitationCode"
+  "\022\024\n\005email\030\002 \001(\tR\005email\022\"\n\rguest_user_id\030"
+  "\003 \001(\tR\013guestUserId\022e\n\023invitation_respons"
+  "e\030\004 \001(\01624.accounts.v1alpha1.invitations."
+  "v1.InvitationResponseR\022invitationRespons"
+  "e\022f\n\010projects\030\005 \003(\0132J.accounts.v1alpha1."
+  "invitations.v1.AgreeInvitationUserReques"
+  "t.ProjectsEntryR\010projects\032;\n\rProjectsEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001\"5\n\033AgreeInvitationUserResponse\022\026\n"
+  "\006result\030\001 \001(\tR\006result\"\224\001\n\031ListInvitation"
+  "SendRequest\022\031\n\010owner_id\030\001 \001(\tR\007ownerId\022\035"
+  "\n\nproject_id\030\002 \001(\tR\tprojectId\022\'\n\017organiz"
+  "ation_id\030\003 \001(\tR\016organizationId\022\024\n\005email\030"
+  "\004 \001(\tR\005email\"\202\001\n\032ListInvitationSendRespo"
+  "nse\022d\n\017invitation_user\030\001 \003(\0132;.accounts."
+  "v1alpha1.invitations.v1.GetInvitationUse"
+  "rResponseR\016invitationUser\"\200\001\n\027DeleteInvi"
+  "tationRequest\022#\n\rinvitation_id\030\001 \001(\tR\014in"
+  "vitationId\022\'\n\017organization_id\030\002 \001(\tR\016org"
+  "anizationId\022\027\n\007user_id\030\003 \001(\tR\006userId\"B\n\030"
+  "DeleteInvitationResponse\022\020\n\003msg\030\001 \001(\tR\003m"
+  "sg\022\024\n\005error\030\002 \001(\tR\005error\"L\n\033ReactivateIn"
+  "vitationRequest\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nexpir"
+  "ed_at\030\002 \001(\tR\texpiredAt\"0\n\034ReactivateInvi"
+  "tationResponse\022\020\n\003msg\030\001 \001(\tR\003msg*d\n\022Invi"
+  "tationResponse\022,\n(INVITATION_RESPONSE_AC"
+  "CEPTED_UNSPECIFIED\020\000\022 \n\034INVITATION_RESPO"
+  "NSE_REJECTED\020\001B@Z>github.com/cuemby/ccp-"
+  "sdk/gen/go/accounts/v1alpha1/invitations"
+  "b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto = {
-  false, false, 2388, descriptor_table_protodef_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, "accounts/v1alpha1/invitations/invitations.proto", 
-  &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once, descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_deps, 1, 12,
+  false, false, 2648, descriptor_table_protodef_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, "accounts/v1alpha1/invitations/invitations.proto", 
+  &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once, descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto,
 };
@@ -481,6 +538,11 @@ SendInvitationUserRequest::SendInvitationUserRequest(const SendInvitationUserReq
     organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
       GetArenaForAllocation());
   }
+  expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_expired_at().empty()) {
+    expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_expired_at(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest)
 }
 
@@ -489,6 +551,7 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 user_id_admin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 SendInvitationUserRequest::~SendInvitationUserRequest() {
@@ -504,6 +567,7 @@ inline void SendInvitationUserRequest::SharedDtor() {
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_id_admin_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  expired_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void SendInvitationUserRequest::ArenaDtor(void* object) {
@@ -528,6 +592,7 @@ void SendInvitationUserRequest::Clear() {
   email_.ClearToEmpty();
   user_id_admin_.ClearToEmpty();
   organization_id_.ClearToEmpty();
+  expired_at_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -594,6 +659,15 @@ const char* SendInvitationUserRequest::_InternalParse(const char* ptr, ::PROTOBU
           auto str = _internal_mutable_organization_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string expired_at = 8 [json_name = "expiredAt"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_expired_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -685,6 +759,16 @@ failure:
         7, this->_internal_organization_id(), target);
   }
 
+  // string expired_at = 8 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_expired_at().data(), static_cast<int>(this->_internal_expired_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_expired_at(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -752,6 +836,13 @@ size_t SendInvitationUserRequest::ByteSizeLong() const {
         this->_internal_organization_id());
   }
 
+  // string expired_at = 8 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_expired_at());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -794,6 +885,9 @@ void SendInvitationUserRequest::MergeFrom(const SendInvitationUserRequest& from)
   if (!from._internal_organization_id().empty()) {
     _internal_set_organization_id(from._internal_organization_id());
   }
+  if (!from._internal_expired_at().empty()) {
+    _internal_set_expired_at(from._internal_expired_at());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -832,6 +926,11 @@ void SendInvitationUserRequest::InternalSwap(SendInvitationUserRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &organization_id_, GetArenaForAllocation(),
       &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &expired_at_, GetArenaForAllocation(),
+      &other->expired_at_, other->GetArenaForAllocation()
   );
 }
 
@@ -895,6 +994,11 @@ SendInvitationUserResponse::SendInvitationUserResponse(const SendInvitationUserR
     result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_result(), 
       GetArenaForAllocation());
   }
+  expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_expired_at().empty()) {
+    expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_expired_at(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_organization()) {
     organization_ = new ::accounts::v1alpha1::Organization(*from.organization_);
   } else {
@@ -906,6 +1010,7 @@ SendInvitationUserResponse::SendInvitationUserResponse(const SendInvitationUserR
 inline void SendInvitationUserResponse::SharedCtor() {
 invitation_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 result_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 organization_ = nullptr;
 }
 
@@ -920,6 +1025,7 @@ inline void SendInvitationUserResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   invitation_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   result_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  expired_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete organization_;
 }
 
@@ -944,6 +1050,7 @@ void SendInvitationUserResponse::Clear() {
   permissions_.Clear();
   invitation_code_.ClearToEmpty();
   result_.ClearToEmpty();
+  expired_at_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && organization_ != nullptr) {
     delete organization_;
   }
@@ -1016,6 +1123,15 @@ const char* SendInvitationUserResponse::_InternalParse(const char* ptr, ::PROTOB
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string expired_at = 7 [json_name = "expiredAt"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_expired_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -1099,6 +1215,16 @@ failure:
       InternalWriteMessage(6, this->_internal_permissions(i), target, stream);
   }
 
+  // string expired_at = 7 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_expired_at().data(), static_cast<int>(this->_internal_expired_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_expired_at(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1150,6 +1276,13 @@ size_t SendInvitationUserResponse::ByteSizeLong() const {
         this->_internal_result());
   }
 
+  // string expired_at = 7 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_expired_at());
+  }
+
   // .accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];
   if (this->_internal_has_organization()) {
     total_size += 1 +
@@ -1194,6 +1327,9 @@ void SendInvitationUserResponse::MergeFrom(const SendInvitationUserResponse& fro
   if (!from._internal_result().empty()) {
     _internal_set_result(from._internal_result());
   }
+  if (!from._internal_expired_at().empty()) {
+    _internal_set_expired_at(from._internal_expired_at());
+  }
   if (from._internal_has_organization()) {
     _internal_mutable_organization()->::accounts::v1alpha1::Organization::MergeFrom(from._internal_organization());
   }
@@ -1226,6 +1362,11 @@ void SendInvitationUserResponse::InternalSwap(SendInvitationUserResponse* other)
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &result_, GetArenaForAllocation(),
       &other->result_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &expired_at_, GetArenaForAllocation(),
+      &other->expired_at_, other->GetArenaForAllocation()
   );
   swap(organization_, other->organization_);
 }
@@ -1882,6 +2023,11 @@ GetInvitationUserResponse::GetInvitationUserResponse(const GetInvitationUserResp
     email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
       GetArenaForAllocation());
   }
+  expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_expired_at().empty()) {
+    expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_expired_at(), 
+      GetArenaForAllocation());
+  }
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
@@ -1892,18 +2038,21 @@ GetInvitationUserResponse::GetInvitationUserResponse(const GetInvitationUserResp
   } else {
     organization_ = nullptr;
   }
-  success_ = from.success_;
+  ::memcpy(&success_, &from.success_,
+    static_cast<size_t>(reinterpret_cast<char*>(&expired_status_) -
+    reinterpret_cast<char*>(&success_)) + sizeof(expired_status_));
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse)
 }
 
 inline void GetInvitationUserResponse::SharedCtor() {
 invitation_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&organization_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&success_) -
-    reinterpret_cast<char*>(&organization_)) + sizeof(success_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&expired_status_) -
+    reinterpret_cast<char*>(&organization_)) + sizeof(expired_status_));
 }
 
 GetInvitationUserResponse::~GetInvitationUserResponse() {
@@ -1917,6 +2066,7 @@ inline void GetInvitationUserResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   invitation_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  expired_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete organization_;
 }
@@ -1941,12 +2091,15 @@ void GetInvitationUserResponse::Clear() {
   permissions_.Clear();
   invitation_code_.ClearToEmpty();
   email_.ClearToEmpty();
+  expired_at_.ClearToEmpty();
   id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && organization_ != nullptr) {
     delete organization_;
   }
   organization_ = nullptr;
-  success_ = false;
+  ::memset(&success_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&expired_status_) -
+      reinterpret_cast<char*>(&success_)) + sizeof(expired_status_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2012,12 +2165,28 @@ const char* GetInvitationUserResponse::_InternalParse(const char* ptr, ::PROTOBU
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // string expired_at = 9 [json_name = "expiredAt"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_expired_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string id = 10 [json_name = "id"];
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           auto str = _internal_mutable_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool expired_status = 11 [json_name = "expiredStatus"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
+          expired_status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2100,6 +2269,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_success(), target);
   }
 
+  // string expired_at = 9 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_expired_at().data(), static_cast<int>(this->_internal_expired_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_expired_at(), target);
+  }
+
   // string id = 10 [json_name = "id"];
   if (!this->_internal_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
@@ -2108,6 +2287,12 @@ failure:
       "accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.id");
     target = stream->WriteStringMaybeAliased(
         10, this->_internal_id(), target);
+  }
+
+  // bool expired_status = 11 [json_name = "expiredStatus"];
+  if (this->_internal_expired_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_expired_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2154,6 +2339,13 @@ size_t GetInvitationUserResponse::ByteSizeLong() const {
         this->_internal_email());
   }
 
+  // string expired_at = 9 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_expired_at());
+  }
+
   // string id = 10 [json_name = "id"];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
@@ -2170,6 +2362,11 @@ size_t GetInvitationUserResponse::ByteSizeLong() const {
 
   // bool success = 8 [json_name = "success"];
   if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool expired_status = 11 [json_name = "expiredStatus"];
+  if (this->_internal_expired_status() != 0) {
     total_size += 1 + 1;
   }
 
@@ -2209,6 +2406,9 @@ void GetInvitationUserResponse::MergeFrom(const GetInvitationUserResponse& from)
   if (!from._internal_email().empty()) {
     _internal_set_email(from._internal_email());
   }
+  if (!from._internal_expired_at().empty()) {
+    _internal_set_expired_at(from._internal_expired_at());
+  }
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -2217,6 +2417,9 @@ void GetInvitationUserResponse::MergeFrom(const GetInvitationUserResponse& from)
   }
   if (from._internal_success() != 0) {
     _internal_set_success(from._internal_success());
+  }
+  if (from._internal_expired_status() != 0) {
+    _internal_set_expired_status(from._internal_expired_status());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2249,12 +2452,17 @@ void GetInvitationUserResponse::InternalSwap(GetInvitationUserResponse* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &expired_at_, GetArenaForAllocation(),
+      &other->expired_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetInvitationUserResponse, success_)
-      + sizeof(GetInvitationUserResponse::success_)
+      PROTOBUF_FIELD_OFFSET(GetInvitationUserResponse, expired_status_)
+      + sizeof(GetInvitationUserResponse::expired_status_)
       - PROTOBUF_FIELD_OFFSET(GetInvitationUserResponse, organization_)>(
           reinterpret_cast<char*>(&organization_),
           reinterpret_cast<char*>(&other->organization_));
@@ -3910,6 +4118,448 @@ void DeleteInvitationResponse::InternalSwap(DeleteInvitationResponse* other) {
       file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[11]);
 }
 
+// ===================================================================
+
+class ReactivateInvitationRequest::_Internal {
+ public:
+};
+
+ReactivateInvitationRequest::ReactivateInvitationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+}
+ReactivateInvitationRequest::ReactivateInvitationRequest(const ReactivateInvitationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
+  expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_expired_at().empty()) {
+    expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_expired_at(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+}
+
+inline void ReactivateInvitationRequest::SharedCtor() {
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ReactivateInvitationRequest::~ReactivateInvitationRequest() {
+  // @@protoc_insertion_point(destructor:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ReactivateInvitationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  expired_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ReactivateInvitationRequest::ArenaDtor(void* object) {
+  ReactivateInvitationRequest* _this = reinterpret_cast< ReactivateInvitationRequest* >(object);
+  (void)_this;
+}
+void ReactivateInvitationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ReactivateInvitationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ReactivateInvitationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_.ClearToEmpty();
+  expired_at_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ReactivateInvitationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string expired_at = 2 [json_name = "expiredAt"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_expired_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ReactivateInvitationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_id(), target);
+  }
+
+  // string expired_at = 2 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_expired_at().data(), static_cast<int>(this->_internal_expired_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_expired_at(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  return target;
+}
+
+size_t ReactivateInvitationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string id = 1 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  // string expired_at = 2 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_expired_at());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ReactivateInvitationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ReactivateInvitationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReactivateInvitationRequest::GetClassData() const { return &_class_data_; }
+
+void ReactivateInvitationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ReactivateInvitationRequest *>(to)->MergeFrom(
+      static_cast<const ReactivateInvitationRequest &>(from));
+}
+
+
+void ReactivateInvitationRequest::MergeFrom(const ReactivateInvitationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_id().empty()) {
+    _internal_set_id(from._internal_id());
+  }
+  if (!from._internal_expired_at().empty()) {
+    _internal_set_expired_at(from._internal_expired_at());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ReactivateInvitationRequest::CopyFrom(const ReactivateInvitationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReactivateInvitationRequest::IsInitialized() const {
+  return true;
+}
+
+void ReactivateInvitationRequest::InternalSwap(ReactivateInvitationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &expired_at_, GetArenaForAllocation(),
+      &other->expired_at_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ReactivateInvitationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_getter, &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once,
+      file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[12]);
+}
+
+// ===================================================================
+
+class ReactivateInvitationResponse::_Internal {
+ public:
+};
+
+ReactivateInvitationResponse::ReactivateInvitationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+}
+ReactivateInvitationResponse::ReactivateInvitationResponse(const ReactivateInvitationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+}
+
+inline void ReactivateInvitationResponse::SharedCtor() {
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ReactivateInvitationResponse::~ReactivateInvitationResponse() {
+  // @@protoc_insertion_point(destructor:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ReactivateInvitationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ReactivateInvitationResponse::ArenaDtor(void* object) {
+  ReactivateInvitationResponse* _this = reinterpret_cast< ReactivateInvitationResponse* >(object);
+  (void)_this;
+}
+void ReactivateInvitationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ReactivateInvitationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ReactivateInvitationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  msg_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ReactivateInvitationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string msg = 1 [json_name = "msg"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_msg();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ReactivateInvitationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_msg(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  return target;
+}
+
+size_t ReactivateInvitationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ReactivateInvitationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ReactivateInvitationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReactivateInvitationResponse::GetClassData() const { return &_class_data_; }
+
+void ReactivateInvitationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ReactivateInvitationResponse *>(to)->MergeFrom(
+      static_cast<const ReactivateInvitationResponse &>(from));
+}
+
+
+void ReactivateInvitationResponse::MergeFrom(const ReactivateInvitationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ReactivateInvitationResponse::CopyFrom(const ReactivateInvitationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReactivateInvitationResponse::IsInitialized() const {
+  return true;
+}
+
+void ReactivateInvitationResponse::InternalSwap(ReactivateInvitationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ReactivateInvitationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_getter, &descriptor_table_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto_once,
+      file_level_metadata_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto[13]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace invitations
@@ -3951,6 +4601,12 @@ template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::invitations::v1::DeleteInvita
 }
 template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse* Arena::CreateMaybeMessage< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* Arena::CreateMaybeMessage< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* Arena::CreateMaybeMessage< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

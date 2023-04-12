@@ -124,6 +124,16 @@ public final class VaultAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vault_v1alpha1_GetTokenBlockChainResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_GetSecretsServiceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_GetSecretsServiceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vault_v1alpha1_GetSecretsServiceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vault_v1alpha1_GetSecretsServiceResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -194,40 +204,47 @@ public final class VaultAPIProto {
       "\n\tnode_name\030\003 \001(\tR\010nodeName\"l\n\032GetTokenB" +
       "lockChainResponse\0228\n\006secret\030\001 \001(\0132 .vaul" +
       "t.v1alpha1.BlockchainSecretR\006secret\022\024\n\005e" +
-      "rror\030\002 \001(\tR\005error2\216\t\n\017VaultAPIService\022[\n" +
-      "\014CreateSecret\022#.vault.v1alpha1.CreateSec" +
-      "retRequest\032$.vault.v1alpha1.CreateSecret" +
-      "Response\"\000\022[\n\014UpdateSecret\022#.vault.v1alp" +
-      "ha1.UpdateSecretRequest\032$.vault.v1alpha1" +
-      ".UpdateSecretResponse\"\000\022[\n\014DeleteSecret\022" +
-      "#.vault.v1alpha1.DeleteSecretRequest\032$.v" +
-      "ault.v1alpha1.DeleteSecretResponse\"\000\022R\n\t" +
-      "GetSecret\022 .vault.v1alpha1.GetSecretRequ" +
-      "est\032!.vault.v1alpha1.GetSecretResponse\"\000" +
-      "\022m\n\022DeleteOrganization\022).vault.v1alpha1." +
-      "DeleteOrganizationRequest\032*.vault.v1alph" +
-      "a1.DeleteOrganizationResponse\"\000\022v\n\025SaveT" +
-      "okenIntegrations\022,.vault.v1alpha1.SaveTo" +
-      "kenIntegrationsRequest\032-.vault.v1alpha1." +
-      "SaveTokenIntegrationsResponse\"\000\022s\n\024GetTo" +
-      "kenIntegrations\022+.vault.v1alpha1.GetToke" +
-      "nIntegrationsRequest\032,.vault.v1alpha1.Ge" +
-      "tTokenIntegrationsResponse\"\000\022p\n\023SaveToke" +
-      "nBlockChain\022*.vault.v1alpha1.SaveTokenBl" +
-      "ockChainRequest\032+.vault.v1alpha1.SaveTok" +
-      "enBlockChainResponse\"\000\022m\n\022GetTokenBlockC" +
-      "hain\022).vault.v1alpha1.GetTokenBlockChain" +
-      "Request\032*.vault.v1alpha1.GetTokenBlockCh" +
-      "ainResponse\"\000\022j\n\021SaveTokenFirebase\022(.vau" +
-      "lt.v1alpha1.SaveTokenFirebaseRequest\032).v" +
-      "ault.v1alpha1.SaveTokenFirebaseResponse\"" +
-      "\000\022g\n\020GetTokenFirebase\022\'.vault.v1alpha1.G" +
-      "etTokenFirebaseRequest\032(.vault.v1alpha1." +
-      "GetTokenFirebaseResponse\"\000B\206\001\n\030io.cuemby" +
-      ".vault.v1alpha1B\rVaultAPIProtoP\001Z1github" +
-      ".com/cuemby/ccp-vault-service/vaultv1alp" +
-      "ha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alp" +
-      "ha1b\006proto3"
+      "rror\030\002 \001(\tR\005error\"S\n\030GetSecretsServiceRe" +
+      "quest\022!\n\014name_service\030\001 \001(\tR\013nameService" +
+      "\022\024\n\005error\030\002 \001(\tR\005error\"g\n\031GetSecretsServ" +
+      "iceResponse\0224\n\007secrets\030\001 \001(\0132\032.vault.v1a" +
+      "lpha1.SecretDataR\007secrets\022\024\n\005error\030\002 \001(\t" +
+      "R\005error2\372\t\n\017VaultAPIService\022[\n\014CreateSec" +
+      "ret\022#.vault.v1alpha1.CreateSecretRequest" +
+      "\032$.vault.v1alpha1.CreateSecretResponse\"\000" +
+      "\022[\n\014UpdateSecret\022#.vault.v1alpha1.Update" +
+      "SecretRequest\032$.vault.v1alpha1.UpdateSec" +
+      "retResponse\"\000\022[\n\014DeleteSecret\022#.vault.v1" +
+      "alpha1.DeleteSecretRequest\032$.vault.v1alp" +
+      "ha1.DeleteSecretResponse\"\000\022R\n\tGetSecret\022" +
+      " .vault.v1alpha1.GetSecretRequest\032!.vaul" +
+      "t.v1alpha1.GetSecretResponse\"\000\022m\n\022Delete" +
+      "Organization\022).vault.v1alpha1.DeleteOrga" +
+      "nizationRequest\032*.vault.v1alpha1.DeleteO" +
+      "rganizationResponse\"\000\022v\n\025SaveTokenIntegr" +
+      "ations\022,.vault.v1alpha1.SaveTokenIntegra" +
+      "tionsRequest\032-.vault.v1alpha1.SaveTokenI" +
+      "ntegrationsResponse\"\000\022s\n\024GetTokenIntegra" +
+      "tions\022+.vault.v1alpha1.GetTokenIntegrati" +
+      "onsRequest\032,.vault.v1alpha1.GetTokenInte" +
+      "grationsResponse\"\000\022p\n\023SaveTokenBlockChai" +
+      "n\022*.vault.v1alpha1.SaveTokenBlockChainRe" +
+      "quest\032+.vault.v1alpha1.SaveTokenBlockCha" +
+      "inResponse\"\000\022m\n\022GetTokenBlockChain\022).vau" +
+      "lt.v1alpha1.GetTokenBlockChainRequest\032*." +
+      "vault.v1alpha1.GetTokenBlockChainRespons" +
+      "e\"\000\022j\n\021SaveTokenFirebase\022(.vault.v1alpha" +
+      "1.SaveTokenFirebaseRequest\032).vault.v1alp" +
+      "ha1.SaveTokenFirebaseResponse\"\000\022g\n\020GetTo" +
+      "kenFirebase\022\'.vault.v1alpha1.GetTokenFir" +
+      "ebaseRequest\032(.vault.v1alpha1.GetTokenFi" +
+      "rebaseResponse\"\000\022j\n\021GetSecretsService\022(." +
+      "vault.v1alpha1.GetSecretsServiceRequest\032" +
+      ").vault.v1alpha1.GetSecretsServiceRespon" +
+      "se\"\000B\206\001\n\030io.cuemby.vault.v1alpha1B\rVault" +
+      "APIProtoP\001Z1github.com/cuemby/ccp-vault-" +
+      "service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Al" +
+      "pha1\312\002\016Vault\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -366,6 +383,18 @@ public final class VaultAPIProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_GetTokenBlockChainResponse_descriptor,
         new java.lang.String[] { "Secret", "Error", });
+    internal_static_vault_v1alpha1_GetSecretsServiceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_vault_v1alpha1_GetSecretsServiceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_GetSecretsServiceRequest_descriptor,
+        new java.lang.String[] { "NameService", "Error", });
+    internal_static_vault_v1alpha1_GetSecretsServiceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_vault_v1alpha1_GetSecretsServiceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vault_v1alpha1_GetSecretsServiceResponse_descriptor,
+        new java.lang.String[] { "Secrets", "Error", });
     io.cuemby.vault.v1alpha1.VaultProto.getDescriptor();
   }
 

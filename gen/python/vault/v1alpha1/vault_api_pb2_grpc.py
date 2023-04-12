@@ -69,6 +69,11 @@ class VaultAPIServiceStub(object):
         request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseRequest.SerializeToString,
         response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseResponse.FromString,
         )
+    self.GetSecretsService = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/GetSecretsService',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceResponse.FromString,
+        )
 
 
 class VaultAPIServiceServicer(object):
@@ -152,6 +157,13 @@ class VaultAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetSecretsService(self, request, context):
+    """Getsecret to service
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_VaultAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -209,6 +221,11 @@ def add_VaultAPIServiceServicer_to_server(servicer, server):
           servicer.GetTokenFirebase,
           request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseRequest.FromString,
           response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetTokenFirebaseResponse.SerializeToString,
+      ),
+      'GetSecretsService': grpc.unary_unary_rpc_method_handler(
+          servicer.GetSecretsService,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

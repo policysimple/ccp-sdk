@@ -61,6 +61,10 @@ class Application extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];</code>
      */
     protected $traffic_type = 0;
+    /**
+     * Generated from protobuf field <code>bool integration_status = 15 [json_name = "integrationStatus"];</code>
+     */
+    protected $integration_status = false;
 
     /**
      * Constructor.
@@ -80,6 +84,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type string $organization_id
      *     @type \Application\V1alpha1\Scaling $scaling
      *     @type int $traffic_type
+     *     @type bool $integration_status
      * }
      */
     public function __construct($data = NULL) {
@@ -377,6 +382,28 @@ class Application extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Application\V1alpha1\TrafficType::class);
         $this->traffic_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool integration_status = 15 [json_name = "integrationStatus"];</code>
+     * @return bool
+     */
+    public function getIntegrationStatus()
+    {
+        return $this->integration_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool integration_status = 15 [json_name = "integrationStatus"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIntegrationStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->integration_status = $var;
 
         return $this;
     }

@@ -26,7 +26,6 @@ message CreateTokenCCPRequest {
     string token_dex = 1;
 }
 
-
 message CreateTokenCCPResponse {
     string token_ccp = 1;
     string msg = 2;
@@ -35,7 +34,14 @@ message CreateTokenCCPResponse {
     string user_id = 6;
 }
 
+message LogoutTokenRequest {
+    string token_ccp = 1;
 
+}
+
+message LogoutTokenResponse {
+    string msg = 1;
+}
 
 /*
     LOGS 

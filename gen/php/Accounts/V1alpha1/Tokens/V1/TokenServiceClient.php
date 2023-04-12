@@ -45,7 +45,7 @@ class TokenServiceClient extends \Grpc\BaseStub {
 
     /**
      * Get Users Email filter
-     * LOGS REDIS
+     * Logs by redis
      * @param \Accounts\V1alpha1\Tokens\V1\LogsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -95,6 +95,20 @@ class TokenServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/accounts.v1alpha1.tokens.v1.TokenService/EnableOrDisableMFA',
         $argument,
         ['\Accounts\V1alpha1\Tokens\V1\EnableOrDisableMFAResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Logout
+     * @param \Accounts\V1alpha1\Tokens\V1\LogoutTokenRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function LogoutToken(\Accounts\V1alpha1\Tokens\V1\LogoutTokenRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.tokens.v1.TokenService/LogoutToken',
+        $argument,
+        ['\Accounts\V1alpha1\Tokens\V1\LogoutTokenResponse', 'decode'],
         $metadata, $options);
     }
 

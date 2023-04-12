@@ -14,21 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class PipelineSpec extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
      */
-    protected $params = null;
+    private $params;
     /**
      * Generated from protobuf field <code>string resources = 2 [json_name = "resources"];</code>
      */
     protected $resources = '';
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
      */
-    protected $tasks = null;
+    private $tasks;
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
      */
-    protected $workspace = null;
+    private $workspace;
 
     /**
      * Constructor.
@@ -36,10 +36,10 @@ class PipelineSpec extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\Params $params
+     *     @type \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $params
      *     @type string $resources
-     *     @type \Pipelines\Tekton\V1Alpha1\Task $tasks
-     *     @type \Pipelines\Tekton\V1Alpha1\Workspaces $workspace
+     *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
+     *     @type \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $workspace
      * }
      */
     public function __construct($data = NULL) {
@@ -48,33 +48,23 @@ class PipelineSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\Params|null
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getParams()
     {
         return $this->params;
     }
 
-    public function hasParams()
-    {
-        return isset($this->params);
-    }
-
-    public function clearParams()
-    {
-        unset($this->params);
-    }
-
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Params $var
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\TaskParams[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setParams($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\Params::class);
-        $this->params = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\TaskParams::class);
+        $this->params = $arr;
 
         return $this;
     }
@@ -102,65 +92,45 @@ class PipelineSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\Task|null
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTasks()
     {
         return $this->tasks;
     }
 
-    public function hasTasks()
-    {
-        return isset($this->tasks);
-    }
-
-    public function clearTasks()
-    {
-        unset($this->tasks);
-    }
-
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Task $var
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTasks($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\Task::class);
-        $this->tasks = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
+        $this->tasks = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\Workspaces|null
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getWorkspace()
     {
         return $this->workspace;
     }
 
-    public function hasWorkspace()
-    {
-        return isset($this->workspace);
-    }
-
-    public function clearWorkspace()
-    {
-        unset($this->workspace);
-    }
-
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\Workspaces $var
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Workspaces[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWorkspace($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\Workspaces::class);
-        $this->workspace = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Workspaces::class);
+        $this->workspace = $arr;
 
         return $this;
     }

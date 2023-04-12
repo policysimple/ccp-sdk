@@ -92,6 +92,28 @@ function deserialize_accounts_v1alpha1_invitations_v1_ListInvitationSendResponse
   return accounts_v1alpha1_invitations_invitations_pb.ListInvitationSendResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_invitations_invitations_pb.ReactivateInvitationRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationRequest(buffer_arg) {
+  return accounts_v1alpha1_invitations_invitations_pb.ReactivateInvitationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_invitations_invitations_pb.ReactivateInvitationResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationResponse(buffer_arg) {
+  return accounts_v1alpha1_invitations_invitations_pb.ReactivateInvitationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_invitations_v1_SendInvitationUserRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_invitations_invitations_pb.SendInvitationUserRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.invitations.v1.SendInvitationUserRequest');
@@ -171,6 +193,17 @@ var InvitationServiceService = exports.InvitationServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_invitations_v1_DeleteInvitationRequest,
     responseSerialize: serialize_accounts_v1alpha1_invitations_v1_DeleteInvitationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_invitations_v1_DeleteInvitationResponse,
+  },
+  reactivateInvitation: {
+    path: '/accounts.v1alpha1.invitations.v1.InvitationService/ReactivateInvitation',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_invitations_invitations_pb.ReactivateInvitationRequest,
+    responseType: accounts_v1alpha1_invitations_invitations_pb.ReactivateInvitationResponse,
+    requestSerialize: serialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationRequest,
+    responseSerialize: serialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_invitations_v1_ReactivateInvitationResponse,
   },
 };
 

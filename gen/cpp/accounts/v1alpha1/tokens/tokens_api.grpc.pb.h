@@ -54,7 +54,7 @@ class TokenService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse>>(PrepareAsyncGetOneTokenCCPRaw(context, request, cq));
     }
     // Get Users Email filter
-    // LOGS REDIS
+    // Logs by redis
     virtual ::grpc::Status Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogsRequest& request, ::accounts::v1alpha1::tokens::v1::LogsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogsResponse>> AsyncLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogsResponse>>(AsyncLogsRaw(context, request, cq));
@@ -84,6 +84,14 @@ class TokenService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>> PrepareAsyncEnableOrDisableMFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>>(PrepareAsyncEnableOrDisableMFARaw(context, request, cq));
     }
+    // Logout
+    virtual ::grpc::Status LogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>> AsyncLogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>>(AsyncLogoutTokenRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>> PrepareAsyncLogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>>(PrepareAsyncLogoutTokenRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -91,12 +99,14 @@ class TokenService final {
       virtual void CreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOneTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Get Users Email filter
-      // LOGS REDIS
+      // Logs by redis
       virtual void Logs(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogsRequest* request, ::accounts::v1alpha1::tokens::v1::LogsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SaveLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::SaveLogsRequest* request, ::accounts::v1alpha1::tokens::v1::SaveLogsResponse* response, std::function<void(::grpc::Status)>) = 0;
       // DOBLE AUTHETICATION
       virtual void MFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::MFARequest* request, ::accounts::v1alpha1::tokens::v1::MFAResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void EnableOrDisableMFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest* request, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Logout
+      virtual void LogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -112,6 +122,8 @@ class TokenService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::MFAResponse>* PrepareAsyncMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::MFARequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>* AsyncEnableOrDisableMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>* PrepareAsyncEnableOrDisableMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* AsyncLogoutTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* PrepareAsyncLogoutTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -158,6 +170,13 @@ class TokenService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>> PrepareAsyncEnableOrDisableMFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>>(PrepareAsyncEnableOrDisableMFARaw(context, request, cq));
     }
+    ::grpc::Status LogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>> AsyncLogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>>(AsyncLogoutTokenRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>> PrepareAsyncLogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>>(PrepareAsyncLogoutTokenRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -167,6 +186,7 @@ class TokenService final {
       void SaveLogs(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::SaveLogsRequest* request, ::accounts::v1alpha1::tokens::v1::SaveLogsResponse* response, std::function<void(::grpc::Status)>) override;
       void MFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::MFARequest* request, ::accounts::v1alpha1::tokens::v1::MFAResponse* response, std::function<void(::grpc::Status)>) override;
       void EnableOrDisableMFA(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest* request, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse* response, std::function<void(::grpc::Status)>) override;
+      void LogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -190,12 +210,15 @@ class TokenService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::MFAResponse>* PrepareAsyncMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::MFARequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>* AsyncEnableOrDisableMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>* PrepareAsyncEnableOrDisableMFARaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* AsyncLogoutTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* PrepareAsyncLogoutTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTokenCCP_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneTokenCCP_;
     const ::grpc::internal::RpcMethod rpcmethod_Logs_;
     const ::grpc::internal::RpcMethod rpcmethod_SaveLogs_;
     const ::grpc::internal::RpcMethod rpcmethod_MFA_;
     const ::grpc::internal::RpcMethod rpcmethod_EnableOrDisableMFA_;
+    const ::grpc::internal::RpcMethod rpcmethod_LogoutToken_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -207,12 +230,14 @@ class TokenService final {
     virtual ::grpc::Status CreateTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::CreateTokenCCPRequest* request, ::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse* response);
     virtual ::grpc::Status GetOneTokenCCP(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest* request, ::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse* response);
     // Get Users Email filter
-    // LOGS REDIS
+    // Logs by redis
     virtual ::grpc::Status Logs(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogsRequest* request, ::accounts::v1alpha1::tokens::v1::LogsResponse* response);
     virtual ::grpc::Status SaveLogs(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::SaveLogsRequest* request, ::accounts::v1alpha1::tokens::v1::SaveLogsResponse* response);
     // DOBLE AUTHETICATION
     virtual ::grpc::Status MFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::MFARequest* request, ::accounts::v1alpha1::tokens::v1::MFAResponse* response);
     virtual ::grpc::Status EnableOrDisableMFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest* request, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse* response);
+    // Logout
+    virtual ::grpc::Status LogoutToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateTokenCCP : public BaseClass {
@@ -334,7 +359,27 @@ class TokenService final {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateTokenCCP<WithAsyncMethod_GetOneTokenCCP<WithAsyncMethod_Logs<WithAsyncMethod_SaveLogs<WithAsyncMethod_MFA<WithAsyncMethod_EnableOrDisableMFA<Service > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_LogoutToken : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_LogoutToken() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_LogoutToken() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LogoutToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLogoutToken(::grpc::ServerContext* context, ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateTokenCCP<WithAsyncMethod_GetOneTokenCCP<WithAsyncMethod_Logs<WithAsyncMethod_SaveLogs<WithAsyncMethod_MFA<WithAsyncMethod_EnableOrDisableMFA<WithAsyncMethod_LogoutToken<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateTokenCCP : public BaseClass {
    private:
@@ -433,6 +478,23 @@ class TokenService final {
     }
     // disable synchronous version of this method
     ::grpc::Status EnableOrDisableMFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest* request, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_LogoutToken : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_LogoutToken() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_LogoutToken() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LogoutToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -558,6 +620,26 @@ class TokenService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_LogoutToken : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_LogoutToken() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_LogoutToken() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LogoutToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLogoutToken(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateTokenCCP : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -677,9 +759,29 @@ class TokenService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedEnableOrDisableMFA(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest,::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<WithStreamedUnaryMethod_EnableOrDisableMFA<Service > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_LogoutToken : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_LogoutToken() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>(std::bind(&WithStreamedUnaryMethod_LogoutToken<BaseClass>::StreamedLogoutToken, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_LogoutToken() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status LogoutToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedLogoutToken(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest,::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<WithStreamedUnaryMethod_EnableOrDisableMFA<WithStreamedUnaryMethod_LogoutToken<Service > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<WithStreamedUnaryMethod_EnableOrDisableMFA<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateTokenCCP<WithStreamedUnaryMethod_GetOneTokenCCP<WithStreamedUnaryMethod_Logs<WithStreamedUnaryMethod_SaveLogs<WithStreamedUnaryMethod_MFA<WithStreamedUnaryMethod_EnableOrDisableMFA<WithStreamedUnaryMethod_LogoutToken<Service > > > > > > > StreamedService;
 };
 
 }  // namespace v1

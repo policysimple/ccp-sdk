@@ -51,7 +51,7 @@ struct TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -92,6 +92,12 @@ extern ListInvitationSendResponseDefaultTypeInternal _ListInvitationSendResponse
 class OrganizationInvitation;
 struct OrganizationInvitationDefaultTypeInternal;
 extern OrganizationInvitationDefaultTypeInternal _OrganizationInvitation_default_instance_;
+class ReactivateInvitationRequest;
+struct ReactivateInvitationRequestDefaultTypeInternal;
+extern ReactivateInvitationRequestDefaultTypeInternal _ReactivateInvitationRequest_default_instance_;
+class ReactivateInvitationResponse;
+struct ReactivateInvitationResponseDefaultTypeInternal;
+extern ReactivateInvitationResponseDefaultTypeInternal _ReactivateInvitationResponse_default_instance_;
 class SendInvitationUserRequest;
 struct SendInvitationUserRequestDefaultTypeInternal;
 extern SendInvitationUserRequestDefaultTypeInternal _SendInvitationUserRequest_default_instance_;
@@ -113,6 +119,8 @@ template<> ::accounts::v1alpha1::invitations::v1::GetInvitationUserResponse* Are
 template<> ::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest>(Arena*);
 template<> ::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse>(Arena*);
 template<> ::accounts::v1alpha1::invitations::v1::OrganizationInvitation* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::OrganizationInvitation>(Arena*);
+template<> ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest>(Arena*);
+template<> ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>(Arena*);
 template<> ::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::SendInvitationUserRequest>(Arena*);
 template<> ::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::invitations::v1::SendInvitationUserResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -269,6 +277,7 @@ class SendInvitationUserRequest final :
     kEmailFieldNumber = 2,
     kUserIdAdminFieldNumber = 4,
     kOrganizationIdFieldNumber = 7,
+    kExpiredAtFieldNumber = 8,
   };
   // repeated string roles_ids = 5 [json_name = "rolesIds"];
   int roles_ids_size() const;
@@ -372,6 +381,20 @@ class SendInvitationUserRequest final :
   std::string* _internal_mutable_organization_id();
   public:
 
+  // string expired_at = 8 [json_name = "expiredAt"];
+  void clear_expired_at();
+  const std::string& expired_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_expired_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_expired_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_expired_at();
+  void set_allocated_expired_at(std::string* expired_at);
+  private:
+  const std::string& _internal_expired_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_expired_at(const std::string& value);
+  std::string* _internal_mutable_expired_at();
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest)
  private:
   class _Internal;
@@ -386,6 +409,7 @@ class SendInvitationUserRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_admin_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto;
 };
@@ -511,6 +535,7 @@ class SendInvitationUserResponse final :
     kPermissionsFieldNumber = 6,
     kInvitationCodeFieldNumber = 3,
     kResultFieldNumber = 4,
+    kExpiredAtFieldNumber = 7,
     kOrganizationFieldNumber = 1,
   };
   // repeated .accounts.v1alpha1.Project projects = 2 [json_name = "projects"];
@@ -595,6 +620,20 @@ class SendInvitationUserResponse final :
   std::string* _internal_mutable_result();
   public:
 
+  // string expired_at = 7 [json_name = "expiredAt"];
+  void clear_expired_at();
+  const std::string& expired_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_expired_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_expired_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_expired_at();
+  void set_allocated_expired_at(std::string* expired_at);
+  private:
+  const std::string& _internal_expired_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_expired_at(const std::string& value);
+  std::string* _internal_mutable_expired_at();
+  public:
+
   // .accounts.v1alpha1.Organization organization = 1 [json_name = "organization"];
   bool has_organization() const;
   private:
@@ -625,6 +664,7 @@ class SendInvitationUserResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
   ::accounts::v1alpha1::Organization* organization_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto;
@@ -1122,9 +1162,11 @@ class GetInvitationUserResponse final :
     kPermissionsFieldNumber = 5,
     kInvitationCodeFieldNumber = 2,
     kEmailFieldNumber = 7,
+    kExpiredAtFieldNumber = 9,
     kIdFieldNumber = 10,
     kOrganizationFieldNumber = 6,
     kSuccessFieldNumber = 8,
+    kExpiredStatusFieldNumber = 11,
   };
   // repeated .accounts.v1alpha1.Role roles = 4 [json_name = "roles"];
   int roles_size() const;
@@ -1190,6 +1232,20 @@ class GetInvitationUserResponse final :
   std::string* _internal_mutable_email();
   public:
 
+  // string expired_at = 9 [json_name = "expiredAt"];
+  void clear_expired_at();
+  const std::string& expired_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_expired_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_expired_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_expired_at();
+  void set_allocated_expired_at(std::string* expired_at);
+  private:
+  const std::string& _internal_expired_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_expired_at(const std::string& value);
+  std::string* _internal_mutable_expired_at();
+  public:
+
   // string id = 10 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
@@ -1231,6 +1287,15 @@ class GetInvitationUserResponse final :
   void _internal_set_success(bool value);
   public:
 
+  // bool expired_status = 11 [json_name = "expiredStatus"];
+  void clear_expired_status();
+  bool expired_status() const;
+  void set_expired_status(bool value);
+  private:
+  bool _internal_expired_status() const;
+  void _internal_set_expired_status(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse)
  private:
   class _Internal;
@@ -1242,9 +1307,11 @@ class GetInvitationUserResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::accounts::v1alpha1::invitations::v1::OrganizationInvitation* organization_;
   bool success_;
+  bool expired_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto;
 };
@@ -2306,6 +2373,310 @@ class DeleteInvitationResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ReactivateInvitationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest) */ {
+ public:
+  inline ReactivateInvitationRequest() : ReactivateInvitationRequest(nullptr) {}
+  ~ReactivateInvitationRequest() override;
+  explicit constexpr ReactivateInvitationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ReactivateInvitationRequest(const ReactivateInvitationRequest& from);
+  ReactivateInvitationRequest(ReactivateInvitationRequest&& from) noexcept
+    : ReactivateInvitationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ReactivateInvitationRequest& operator=(const ReactivateInvitationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReactivateInvitationRequest& operator=(ReactivateInvitationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ReactivateInvitationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ReactivateInvitationRequest* internal_default_instance() {
+    return reinterpret_cast<const ReactivateInvitationRequest*>(
+               &_ReactivateInvitationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(ReactivateInvitationRequest& a, ReactivateInvitationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReactivateInvitationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ReactivateInvitationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReactivateInvitationRequest* New() const final {
+    return new ReactivateInvitationRequest();
+  }
+
+  ReactivateInvitationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReactivateInvitationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ReactivateInvitationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ReactivateInvitationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReactivateInvitationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest";
+  }
+  protected:
+  explicit ReactivateInvitationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kExpiredAtFieldNumber = 2,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string expired_at = 2 [json_name = "expiredAt"];
+  void clear_expired_at();
+  const std::string& expired_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_expired_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_expired_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_expired_at();
+  void set_allocated_expired_at(std::string* expired_at);
+  private:
+  const std::string& _internal_expired_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_expired_at(const std::string& value);
+  std::string* _internal_mutable_expired_at();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReactivateInvitationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse) */ {
+ public:
+  inline ReactivateInvitationResponse() : ReactivateInvitationResponse(nullptr) {}
+  ~ReactivateInvitationResponse() override;
+  explicit constexpr ReactivateInvitationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ReactivateInvitationResponse(const ReactivateInvitationResponse& from);
+  ReactivateInvitationResponse(ReactivateInvitationResponse&& from) noexcept
+    : ReactivateInvitationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ReactivateInvitationResponse& operator=(const ReactivateInvitationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReactivateInvitationResponse& operator=(ReactivateInvitationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ReactivateInvitationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ReactivateInvitationResponse* internal_default_instance() {
+    return reinterpret_cast<const ReactivateInvitationResponse*>(
+               &_ReactivateInvitationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(ReactivateInvitationResponse& a, ReactivateInvitationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReactivateInvitationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ReactivateInvitationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReactivateInvitationResponse* New() const final {
+    return new ReactivateInvitationResponse();
+  }
+
+  ReactivateInvitationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReactivateInvitationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ReactivateInvitationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ReactivateInvitationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReactivateInvitationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse";
+  }
+  protected:
+  explicit ReactivateInvitationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2finvitations_2finvitations_2eproto;
+};
 // ===================================================================
 
 
@@ -2623,6 +2994,52 @@ inline void SendInvitationUserRequest::set_allocated_organization_id(std::string
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.organization_id)
 }
 
+// string expired_at = 8 [json_name = "expiredAt"];
+inline void SendInvitationUserRequest::clear_expired_at() {
+  expired_at_.ClearToEmpty();
+}
+inline const std::string& SendInvitationUserRequest::expired_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at)
+  return _internal_expired_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SendInvitationUserRequest::set_expired_at(ArgT0&& arg0, ArgT... args) {
+ 
+ expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at)
+}
+inline std::string* SendInvitationUserRequest::mutable_expired_at() {
+  std::string* _s = _internal_mutable_expired_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at)
+  return _s;
+}
+inline const std::string& SendInvitationUserRequest::_internal_expired_at() const {
+  return expired_at_.Get();
+}
+inline void SendInvitationUserRequest::_internal_set_expired_at(const std::string& value) {
+  
+  expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserRequest::_internal_mutable_expired_at() {
+  
+  return expired_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserRequest::release_expired_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at)
+  return expired_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SendInvitationUserRequest::set_allocated_expired_at(std::string* expired_at) {
+  if (expired_at != nullptr) {
+    
+  } else {
+    
+  }
+  expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.SendInvitationUserRequest.expired_at)
+}
+
 // -------------------------------------------------------------------
 
 // SendInvitationUserResponse
@@ -2914,6 +3331,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Pe
 SendInvitationUserResponse::permissions() const {
   // @@protoc_insertion_point(field_list:accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.permissions)
   return permissions_;
+}
+
+// string expired_at = 7 [json_name = "expiredAt"];
+inline void SendInvitationUserResponse::clear_expired_at() {
+  expired_at_.ClearToEmpty();
+}
+inline const std::string& SendInvitationUserResponse::expired_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at)
+  return _internal_expired_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SendInvitationUserResponse::set_expired_at(ArgT0&& arg0, ArgT... args) {
+ 
+ expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at)
+}
+inline std::string* SendInvitationUserResponse::mutable_expired_at() {
+  std::string* _s = _internal_mutable_expired_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at)
+  return _s;
+}
+inline const std::string& SendInvitationUserResponse::_internal_expired_at() const {
+  return expired_at_.Get();
+}
+inline void SendInvitationUserResponse::_internal_set_expired_at(const std::string& value) {
+  
+  expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::_internal_mutable_expired_at() {
+  
+  return expired_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SendInvitationUserResponse::release_expired_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at)
+  return expired_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SendInvitationUserResponse::set_allocated_expired_at(std::string* expired_at) {
+  if (expired_at != nullptr) {
+    
+  } else {
+    
+  }
+  expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.SendInvitationUserResponse.expired_at)
 }
 
 // -------------------------------------------------------------------
@@ -3561,6 +4024,72 @@ inline void GetInvitationUserResponse::_internal_set_success(bool value) {
 inline void GetInvitationUserResponse::set_success(bool value) {
   _internal_set_success(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.success)
+}
+
+// string expired_at = 9 [json_name = "expiredAt"];
+inline void GetInvitationUserResponse::clear_expired_at() {
+  expired_at_.ClearToEmpty();
+}
+inline const std::string& GetInvitationUserResponse::expired_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at)
+  return _internal_expired_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetInvitationUserResponse::set_expired_at(ArgT0&& arg0, ArgT... args) {
+ 
+ expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at)
+}
+inline std::string* GetInvitationUserResponse::mutable_expired_at() {
+  std::string* _s = _internal_mutable_expired_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at)
+  return _s;
+}
+inline const std::string& GetInvitationUserResponse::_internal_expired_at() const {
+  return expired_at_.Get();
+}
+inline void GetInvitationUserResponse::_internal_set_expired_at(const std::string& value) {
+  
+  expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetInvitationUserResponse::_internal_mutable_expired_at() {
+  
+  return expired_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetInvitationUserResponse::release_expired_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at)
+  return expired_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetInvitationUserResponse::set_allocated_expired_at(std::string* expired_at) {
+  if (expired_at != nullptr) {
+    
+  } else {
+    
+  }
+  expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_at)
+}
+
+// bool expired_status = 11 [json_name = "expiredStatus"];
+inline void GetInvitationUserResponse::clear_expired_status() {
+  expired_status_ = false;
+}
+inline bool GetInvitationUserResponse::_internal_expired_status() const {
+  return expired_status_;
+}
+inline bool GetInvitationUserResponse::expired_status() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_status)
+  return _internal_expired_status();
+}
+inline void GetInvitationUserResponse::_internal_set_expired_status(bool value) {
+  
+  expired_status_ = value;
+}
+inline void GetInvitationUserResponse::set_expired_status(bool value) {
+  _internal_set_expired_status(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.GetInvitationUserResponse.expired_status)
 }
 
 // -------------------------------------------------------------------
@@ -4276,9 +4805,159 @@ inline void DeleteInvitationResponse::set_allocated_error(std::string* error) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.DeleteInvitationResponse.error)
 }
 
+// -------------------------------------------------------------------
+
+// ReactivateInvitationRequest
+
+// string id = 1 [json_name = "id"];
+inline void ReactivateInvitationRequest::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& ReactivateInvitationRequest::id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReactivateInvitationRequest::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id)
+}
+inline std::string* ReactivateInvitationRequest::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id)
+  return _s;
+}
+inline const std::string& ReactivateInvitationRequest::_internal_id() const {
+  return id_.Get();
+}
+inline void ReactivateInvitationRequest::_internal_set_id(const std::string& value) {
+  
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReactivateInvitationRequest::_internal_mutable_id() {
+  
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReactivateInvitationRequest::release_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReactivateInvitationRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.id)
+}
+
+// string expired_at = 2 [json_name = "expiredAt"];
+inline void ReactivateInvitationRequest::clear_expired_at() {
+  expired_at_.ClearToEmpty();
+}
+inline const std::string& ReactivateInvitationRequest::expired_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at)
+  return _internal_expired_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReactivateInvitationRequest::set_expired_at(ArgT0&& arg0, ArgT... args) {
+ 
+ expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at)
+}
+inline std::string* ReactivateInvitationRequest::mutable_expired_at() {
+  std::string* _s = _internal_mutable_expired_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at)
+  return _s;
+}
+inline const std::string& ReactivateInvitationRequest::_internal_expired_at() const {
+  return expired_at_.Get();
+}
+inline void ReactivateInvitationRequest::_internal_set_expired_at(const std::string& value) {
+  
+  expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReactivateInvitationRequest::_internal_mutable_expired_at() {
+  
+  return expired_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReactivateInvitationRequest::release_expired_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at)
+  return expired_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReactivateInvitationRequest::set_allocated_expired_at(std::string* expired_at) {
+  if (expired_at != nullptr) {
+    
+  } else {
+    
+  }
+  expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.ReactivateInvitationRequest.expired_at)
+}
+
+// -------------------------------------------------------------------
+
+// ReactivateInvitationResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void ReactivateInvitationResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& ReactivateInvitationResponse::msg() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ReactivateInvitationResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg)
+}
+inline std::string* ReactivateInvitationResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg)
+  return _s;
+}
+inline const std::string& ReactivateInvitationResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void ReactivateInvitationResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ReactivateInvitationResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ReactivateInvitationResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ReactivateInvitationResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.invitations.v1.ReactivateInvitationResponse.msg)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

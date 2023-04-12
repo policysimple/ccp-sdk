@@ -22,12 +22,14 @@ type TokenServiceClient interface {
 	CreateTokenCCP(ctx context.Context, in *CreateTokenCCPRequest, opts ...grpc.CallOption) (*CreateTokenCCPResponse, error)
 	GetOneTokenCCP(ctx context.Context, in *GetOneTokenCCPRequest, opts ...grpc.CallOption) (*GetOneTokenCCPResponse, error)
 	//Get Users Email filter
-	//LOGS REDIS
+	//Logs by redis
 	Logs(ctx context.Context, in *LogsRequest, opts ...grpc.CallOption) (*LogsResponse, error)
 	SaveLogs(ctx context.Context, in *SaveLogsRequest, opts ...grpc.CallOption) (*SaveLogsResponse, error)
 	//DOBLE AUTHETICATION
 	MFA(ctx context.Context, in *MFARequest, opts ...grpc.CallOption) (*MFAResponse, error)
 	EnableOrDisableMFA(ctx context.Context, in *EnableOrDisableMFARequest, opts ...grpc.CallOption) (*EnableOrDisableMFAResponse, error)
+	//Logout
+	LogoutToken(ctx context.Context, in *LogoutTokenRequest, opts ...grpc.CallOption) (*LogoutTokenResponse, error)
 }
 
 type tokenServiceClient struct {
@@ -92,6 +94,15 @@ func (c *tokenServiceClient) EnableOrDisableMFA(ctx context.Context, in *EnableO
 	return out, nil
 }
 
+func (c *tokenServiceClient) LogoutToken(ctx context.Context, in *LogoutTokenRequest, opts ...grpc.CallOption) (*LogoutTokenResponse, error) {
+	out := new(LogoutTokenResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.tokens.v1.TokenService/LogoutToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TokenServiceServer is the server API for TokenService service.
 // All implementations should embed UnimplementedTokenServiceServer
 // for forward compatibility
@@ -100,12 +111,14 @@ type TokenServiceServer interface {
 	CreateTokenCCP(context.Context, *CreateTokenCCPRequest) (*CreateTokenCCPResponse, error)
 	GetOneTokenCCP(context.Context, *GetOneTokenCCPRequest) (*GetOneTokenCCPResponse, error)
 	//Get Users Email filter
-	//LOGS REDIS
+	//Logs by redis
 	Logs(context.Context, *LogsRequest) (*LogsResponse, error)
 	SaveLogs(context.Context, *SaveLogsRequest) (*SaveLogsResponse, error)
 	//DOBLE AUTHETICATION
 	MFA(context.Context, *MFARequest) (*MFAResponse, error)
 	EnableOrDisableMFA(context.Context, *EnableOrDisableMFARequest) (*EnableOrDisableMFAResponse, error)
+	//Logout
+	LogoutToken(context.Context, *LogoutTokenRequest) (*LogoutTokenResponse, error)
 }
 
 // UnimplementedTokenServiceServer should be embedded to have forward compatible implementations.
@@ -129,6 +142,9 @@ func (UnimplementedTokenServiceServer) MFA(context.Context, *MFARequest) (*MFARe
 }
 func (UnimplementedTokenServiceServer) EnableOrDisableMFA(context.Context, *EnableOrDisableMFARequest) (*EnableOrDisableMFAResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnableOrDisableMFA not implemented")
+}
+func (UnimplementedTokenServiceServer) LogoutToken(context.Context, *LogoutTokenRequest) (*LogoutTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LogoutToken not implemented")
 }
 
 // UnsafeTokenServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -250,6 +266,24 @@ func _TokenService_EnableOrDisableMFA_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TokenService_LogoutToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogoutTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TokenServiceServer).LogoutToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.tokens.v1.TokenService/LogoutToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TokenServiceServer).LogoutToken(ctx, req.(*LogoutTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TokenService_ServiceDesc is the grpc.ServiceDesc for TokenService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -280,6 +314,10 @@ var TokenService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EnableOrDisableMFA",
 			Handler:    _TokenService_EnableOrDisableMFA_Handler,
+		},
+		{
+			MethodName: "LogoutToken",
+			Handler:    _TokenService_LogoutToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

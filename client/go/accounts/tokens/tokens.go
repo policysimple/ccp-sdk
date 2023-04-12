@@ -169,3 +169,23 @@ func SaveLogs(log *accountpkgv1.Log) (*accountpkgv1.SaveLogsResponse, error) {
 	bylogs.LogInfo("SaveLogs Client Sdk", "Success")
 	return response, nil
 }
+
+func LogoutToken(token string) (*accountpkgv1.LogoutTokenResponse, error) {
+	bylogs.LogInfo("LogoutToken Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.LogoutToken(ctx, &accountpkgv1.LogoutTokenRequest{TokenCcp: token})
+
+	if err != nil {
+		bylogs.LogErr("LogoutToken Client Sdk", err)
+		return nil, fmt.Errorf("[LogoutToken] %w", err)
+
+	}
+	bylogs.LogInfo("LogoutToken Client Sdk", "Success")
+	return response, nil
+}

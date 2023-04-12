@@ -17,7 +17,7 @@ class TektonApi
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\Tekton::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¥ 
+º 
 *pipelines/tekton/v1alpha1/tekton_api.protopipelines.tekton.v1alpha1"„
 CreateTektonPipelineRequestL
 tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline
@@ -62,9 +62,9 @@ tektonTask":
 ListCustomPipelineRequest"•
 ListCustomPipelineResponse_
 custom_pipeline_list (2-.pipelines.tekton.v1alpha1.CustomPipelineListRcustomPipelineList
-status (	Rstatus"3
-GetCustomPipelineRequest
-task_id (	RtaskId"ˆ
+status (	Rstatus"H
+GetCustomPipelineRequest,
+custom_pipeline_id (	RcustomPipelineId"ˆ
 GetCustomPipelineResponsek
 custom_pipeline_response (21.pipelines.tekton.v1alpha1.CustomPipelineResponseRcustomPipelineResponse"Ÿ
 UpdateCustomPipelineRequestR

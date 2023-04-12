@@ -124,7 +124,7 @@ func ListTektonTaskPipeline(in *tektonPipelinepkgv1.ListTektonTaskPipelineReques
 	return response, nil
 }
 
-//CUSTOM PIPELINES
+// CUSTOM PIPELINES
 func CreateCustomPipeline(in *tektonPipelinepkgv1.CreateCustomPipelineRequest) (response *tektonPipelinepkgv1.CreateCustomPipelineResponse, err error) {
 	bylogs.LogInfo("client: create tekton task pipeline")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)

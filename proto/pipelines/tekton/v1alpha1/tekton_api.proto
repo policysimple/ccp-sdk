@@ -109,7 +109,7 @@ message ListCustomPipelineResponse {
 }
 
 message GetCustomPipelineRequest {
-    string task_id = 1;
+    string custom_pipeline_id = 1;
 }
 
 message GetCustomPipelineResponse {

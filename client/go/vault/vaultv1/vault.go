@@ -238,9 +238,9 @@ func SaveTokenBlockChain(in *vaultpkgv1.SaveTokenBlockChainRequest) (*vaultpkgv1
 	defer cancel()
 
 	response, err := client.SaveTokenBlockChain(ctx, &vaultpkgv1.SaveTokenBlockChainRequest{
-		BlockchainId:  in.BlockchainId,
+		BlockchainId:   in.BlockchainId,
 		BlockchainName: in.BlockchainName,
-		Secret: 	  in.Secret,
+		Secret:         in.Secret,
 	})
 
 	if err != nil {
@@ -261,7 +261,7 @@ func GetTokenBlockChain(in *vaultpkgv1.GetTokenBlockChainRequest) (*vaultpkgv1.G
 	defer cancel()
 
 	response, err := client.GetTokenBlockChain(ctx, &vaultpkgv1.GetTokenBlockChainRequest{
-		BlockchainId: in.BlockchainId,
+		BlockchainId:   in.BlockchainId,
 		BlockchainName: in.BlockchainName,
 	})
 
@@ -270,5 +270,26 @@ func GetTokenBlockChain(in *vaultpkgv1.GetTokenBlockChainRequest) (*vaultpkgv1.G
 		return nil, fmt.Errorf("[GetTokenBlockChain] %w", err)
 	}
 	bylogs.LogInfo("GetTokenBlockChainRequest Client Sdk", "Success")
+	return response, nil
+}
+
+func GetSecretsService(in *vaultpkgv1.GetSecretsServiceRequest) (*vaultpkgv1.GetSecretsServiceResponse, error) {
+	bylogs.LogInfo("GetSecretsService Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetSecretsService(ctx, &vaultpkgv1.GetSecretsServiceRequest{
+		NameService: in.NameService,
+	})
+
+	if err != nil {
+		bylogs.LogErr("GetSecretsService Client Sdk", err)
+		return nil, fmt.Errorf("[GetSecretsService] %w", err)
+	}
+	bylogs.LogInfo("GetSecretsService Client Sdk", "Success")
 	return response, nil
 }

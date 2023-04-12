@@ -3265,7 +3265,7 @@ proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.toObject = fu
  */
 proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    customPipelineId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3304,7 +3304,7 @@ proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.deserializeBinaryFromRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTaskId(value);
+      msg.setCustomPipelineId(value);
       break;
     default:
       reader.skipField();
@@ -3335,7 +3335,7 @@ proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.serializeBina
  */
 proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTaskId();
+  f = message.getCustomPipelineId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -3346,10 +3346,10 @@ proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.serializeBinaryToWriter
 
 
 /**
- * optional string task_id = 1;
+ * optional string custom_pipeline_id = 1;
  * @return {string}
  */
-proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.getTaskId = function() {
+proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.getCustomPipelineId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3358,7 +3358,7 @@ proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.getTaskId = f
  * @param {string} value
  * @return {!proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest} returns this
  */
-proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.setTaskId = function(value) {
+proto.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.prototype.setCustomPipelineId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

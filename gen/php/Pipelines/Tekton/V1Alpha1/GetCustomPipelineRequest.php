@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetCustomPipelineRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string task_id = 1 [json_name = "taskId"];</code>
+     * Generated from protobuf field <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
      */
-    protected $task_id = '';
+    protected $custom_pipeline_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class GetCustomPipelineRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $task_id
+     *     @type string $custom_pipeline_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class GetCustomPipelineRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string task_id = 1 [json_name = "taskId"];</code>
+     * Generated from protobuf field <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
      * @return string
      */
-    public function getTaskId()
+    public function getCustomPipelineId()
     {
-        return $this->task_id;
+        return $this->custom_pipeline_id;
     }
 
     /**
-     * Generated from protobuf field <code>string task_id = 1 [json_name = "taskId"];</code>
+     * Generated from protobuf field <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setTaskId($var)
+    public function setCustomPipelineId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->task_id = $var;
+        $this->custom_pipeline_id = $var;
 
         return $this;
     }

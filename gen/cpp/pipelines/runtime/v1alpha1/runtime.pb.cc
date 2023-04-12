@@ -82,6 +82,8 @@ constexpr Runtime::Runtime(
   , commands_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , secrets_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , extra_args_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , before_deploy_tasks_()
+  , after_deploy_tasks_()
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -98,10 +100,12 @@ constexpr Runtime::Runtime(
   , environment_internal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , application_data_(nullptr)
   , traffic_type_(0)
 
   , storage_used_(0u)
-  , storage_limit_(0u){}
+  , storage_limit_(0u)
+  , custom_pipeline_(false){}
 struct RuntimeDefaultTypeInternal {
   constexpr RuntimeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -259,6 +263,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, storage_used_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, storage_limit_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, integration_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, application_data_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, custom_pipeline_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, before_deploy_tasks_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, after_deploy_tasks_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::RuntimeList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -302,11 +310,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 27, 34, sizeof(::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse)},
   { 36, 43, sizeof(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse)},
   { 45, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
-  { 75, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
-  { 81, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
-  { 89, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
-  { 96, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
-  { 103, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
+  { 79, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
+  { 85, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
+  { 93, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
+  { 100, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
+  { 107, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -325,7 +333,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n(pipelines/runtime/v1alpha1/runtime.pro"
-  "to\022\032pipelines.runtime.v1alpha1\"\250\014\n\007Runti"
+  "to\022\032pipelines.runtime.v1alpha1\032&applicat"
+  "ion/v1alpha1/application.proto\032&pipeline"
+  "s/tekton/v1alpha1/tekton.proto\"\277\016\n\007Runti"
   "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N"
   "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti"
   "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'"
@@ -357,38 +367,49 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "\tR\017applicationName\022!\n\014storage_used\030\027 \001(\r"
   "R\013storageUsed\022#\n\rstorage_limit\030\030 \001(\rR\014st"
   "orageLimit\022%\n\016integration_id\030\031 \001(\tR\rinte"
-  "grationId\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031Env"
-  "ironmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003key"
-  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEn"
-  "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va"
-  "lue:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003ke"
-  "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgs"
-  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
-  "value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(\0132"
-  "#.pipelines.runtime.v1alpha1.RuntimeR\005it"
-  "ems\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n"
-  "ame\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003(\013"
-  "2*.pipelines.runtime.v1alpha1.ResourcesR"
-  "ulesR\016resourcesRules\"\210\001\n\016ResourcesRules\022"
-  "7\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1alp"
-  "ha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pipe"
-  "lines.runtime.v1alpha1.RequestR\007request\""
-  "+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR"
-  "\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram"
-  "\030\002 \001(\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFFIC_TY"
-  "PE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNA"
-  "L\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cu"
-  "emby.pipelines.runtime.v1alpha1B\014Runtime"
-  "ProtoP\001Z5github.com/cuemby/ccp-runtime-s"
-  "ervice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines"
-  ".Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1"
-  "Alpha1b\006proto3"
+  "grationId\022L\n\020application_data\030\032 \001(\0132!.ap"
+  "plication.v1alpha1.ApplicationR\017applicat"
+  "ionData\022\'\n\017custom_pipeline\030\033 \001(\010R\016custom"
+  "Pipeline\022O\n\023before_deploy_tasks\030\034 \003(\0132\037."
+  "pipelines.tekton.v1alpha1.TaskR\021beforeDe"
+  "ployTasks\022M\n\022after_deploy_tasks\030\035 \003(\0132\037."
+  "pipelines.tekton.v1alpha1.TaskR\020afterDep"
+  "loyTasks\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001("
+  "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031Envi"
+  "ronmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
+  "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003key"
+  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgsE"
+  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
+  "alue:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(\0132#"
+  ".pipelines.runtime.v1alpha1.RuntimeR\005ite"
+  "ms\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004na"
+  "me\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003(\0132"
+  "*.pipelines.runtime.v1alpha1.ResourcesRu"
+  "lesR\016resourcesRules\"\210\001\n\016ResourcesRules\0227"
+  "\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1alph"
+  "a1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pipel"
+  "ines.runtime.v1alpha1.RequestR\007request\"+"
+  "\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003"
+  "ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030"
+  "\002 \001(\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFFIC_TYP"
+  "E_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL"
+  "\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cue"
+  "mby.pipelines.runtime.v1alpha1B\014RuntimeP"
+  "rotoP\001Z5github.com/cuemby/ccp-runtime-se"
+  "rvice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines."
+  "Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1A"
+  "lpha1b\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps[2] = {
+  &::descriptor_table_application_2fv1alpha1_2fapplication_2eproto,
+  &::descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 2374, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
-  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, nullptr, 0, 11,
+  false, false, 2733, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps, 2, 11,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
@@ -491,8 +512,25 @@ void Runtime_ExtraArgsEntry_DoNotUse::MergeFrom(const Runtime_ExtraArgsEntry_DoN
 
 class Runtime::_Internal {
  public:
+  static const ::application::v1alpha1::Application& application_data(const Runtime* msg);
 };
 
+const ::application::v1alpha1::Application&
+Runtime::_Internal::application_data(const Runtime* msg) {
+  return *msg->application_data_;
+}
+void Runtime::clear_application_data() {
+  if (GetArenaForAllocation() == nullptr && application_data_ != nullptr) {
+    delete application_data_;
+  }
+  application_data_ = nullptr;
+}
+void Runtime::clear_before_deploy_tasks() {
+  before_deploy_tasks_.Clear();
+}
+void Runtime::clear_after_deploy_tasks() {
+  after_deploy_tasks_.Clear();
+}
 Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
@@ -501,7 +539,9 @@ Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   environment_variables_(arena),
   commands_(arena),
   secrets_(arena),
-  extra_args_(arena) {
+  extra_args_(arena),
+  before_deploy_tasks_(arena),
+  after_deploy_tasks_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -510,7 +550,9 @@ Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 Runtime::Runtime(const Runtime& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      instance_types_(from.instance_types_) {
+      instance_types_(from.instance_types_),
+      before_deploy_tasks_(from.before_deploy_tasks_),
+      after_deploy_tasks_(from.after_deploy_tasks_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   integration_.MergeFrom(from.integration_);
   environment_variables_.MergeFrom(from.environment_variables_);
@@ -597,9 +639,14 @@ Runtime::Runtime(const Runtime& from)
     integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_application_data()) {
+    application_data_ = new ::application::v1alpha1::Application(*from.application_data_);
+  } else {
+    application_data_ = nullptr;
+  }
   ::memcpy(&traffic_type_, &from.traffic_type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&storage_limit_) -
-    reinterpret_cast<char*>(&traffic_type_)) + sizeof(storage_limit_));
+    static_cast<size_t>(reinterpret_cast<char*>(&custom_pipeline_) -
+    reinterpret_cast<char*>(&traffic_type_)) + sizeof(custom_pipeline_));
   // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.Runtime)
 }
 
@@ -621,9 +668,9 @@ environment_internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::
 application_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&traffic_type_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_limit_) -
-    reinterpret_cast<char*>(&traffic_type_)) + sizeof(storage_limit_));
+    reinterpret_cast<char*>(&application_data_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&custom_pipeline_) -
+    reinterpret_cast<char*>(&application_data_)) + sizeof(custom_pipeline_));
 }
 
 Runtime::~Runtime() {
@@ -651,6 +698,7 @@ inline void Runtime::SharedDtor() {
   environment_internal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete application_data_;
 }
 
 void Runtime::ArenaDtor(void* object) {
@@ -683,6 +731,8 @@ void Runtime::Clear() {
   commands_.Clear();
   secrets_.Clear();
   extra_args_.Clear();
+  before_deploy_tasks_.Clear();
+  after_deploy_tasks_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   organization_id_.ClearToEmpty();
@@ -699,9 +749,13 @@ void Runtime::Clear() {
   environment_internal_name_.ClearToEmpty();
   application_name_.ClearToEmpty();
   integration_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && application_data_ != nullptr) {
+    delete application_data_;
+  }
+  application_data_ = nullptr;
   ::memset(&traffic_type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&storage_limit_) -
-      reinterpret_cast<char*>(&traffic_type_)) + sizeof(storage_limit_));
+      reinterpret_cast<char*>(&custom_pipeline_) -
+      reinterpret_cast<char*>(&traffic_type_)) + sizeof(custom_pipeline_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -947,6 +1001,44 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Runtime.integration_id"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 210)) {
+          ptr = ctx->ParseMessage(_internal_mutable_application_data(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool custom_pipeline = 27 [json_name = "customPipeline"];
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
+          custom_pipeline_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 226)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_before_deploy_tasks(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<226>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 234)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_after_deploy_tasks(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1395,6 +1487,36 @@ failure:
         25, this->_internal_integration_id(), target);
   }
 
+  // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
+  if (this->_internal_has_application_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        26, _Internal::application_data(this), target, stream);
+  }
+
+  // bool custom_pipeline = 27 [json_name = "customPipeline"];
+  if (this->_internal_custom_pipeline() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(27, this->_internal_custom_pipeline(), target);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_before_deploy_tasks_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(28, this->_internal_before_deploy_tasks(i), target, stream);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_after_deploy_tasks_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(29, this->_internal_after_deploy_tasks(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1461,6 +1583,20 @@ size_t Runtime::ByteSizeLong() const {
       it = this->_internal_extra_args().begin();
       it != this->_internal_extra_args().end(); ++it) {
     total_size += Runtime_ExtraArgsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];
+  total_size += 2UL * this->_internal_before_deploy_tasks_size();
+  for (const auto& msg : this->before_deploy_tasks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];
+  total_size += 2UL * this->_internal_after_deploy_tasks_size();
+  for (const auto& msg : this->after_deploy_tasks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // string id = 1 [json_name = "id"];
@@ -1575,6 +1711,13 @@ size_t Runtime::ByteSizeLong() const {
         this->_internal_integration_id());
   }
 
+  // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
+  if (this->_internal_has_application_data()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *application_data_);
+  }
+
   // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
   if (this->_internal_traffic_type() != 0) {
     total_size += 2 +
@@ -1593,6 +1736,11 @@ size_t Runtime::ByteSizeLong() const {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_storage_limit());
+  }
+
+  // bool custom_pipeline = 27 [json_name = "customPipeline"];
+  if (this->_internal_custom_pipeline() != 0) {
+    total_size += 2 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1629,6 +1777,8 @@ void Runtime::MergeFrom(const Runtime& from) {
   commands_.MergeFrom(from.commands_);
   secrets_.MergeFrom(from.secrets_);
   extra_args_.MergeFrom(from.extra_args_);
+  before_deploy_tasks_.MergeFrom(from.before_deploy_tasks_);
+  after_deploy_tasks_.MergeFrom(from.after_deploy_tasks_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -1677,6 +1827,9 @@ void Runtime::MergeFrom(const Runtime& from) {
   if (!from._internal_integration_id().empty()) {
     _internal_set_integration_id(from._internal_integration_id());
   }
+  if (from._internal_has_application_data()) {
+    _internal_mutable_application_data()->::application::v1alpha1::Application::MergeFrom(from._internal_application_data());
+  }
   if (from._internal_traffic_type() != 0) {
     _internal_set_traffic_type(from._internal_traffic_type());
   }
@@ -1685,6 +1838,9 @@ void Runtime::MergeFrom(const Runtime& from) {
   }
   if (from._internal_storage_limit() != 0) {
     _internal_set_storage_limit(from._internal_storage_limit());
+  }
+  if (from._internal_custom_pipeline() != 0) {
+    _internal_set_custom_pipeline(from._internal_custom_pipeline());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1709,6 +1865,8 @@ void Runtime::InternalSwap(Runtime* other) {
   commands_.InternalSwap(&other->commands_);
   secrets_.InternalSwap(&other->secrets_);
   extra_args_.InternalSwap(&other->extra_args_);
+  before_deploy_tasks_.InternalSwap(&other->before_deploy_tasks_);
+  after_deploy_tasks_.InternalSwap(&other->after_deploy_tasks_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -1790,11 +1948,11 @@ void Runtime::InternalSwap(Runtime* other) {
       &other->integration_id_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Runtime, storage_limit_)
-      + sizeof(Runtime::storage_limit_)
-      - PROTOBUF_FIELD_OFFSET(Runtime, traffic_type_)>(
-          reinterpret_cast<char*>(&traffic_type_),
-          reinterpret_cast<char*>(&other->traffic_type_));
+      PROTOBUF_FIELD_OFFSET(Runtime, custom_pipeline_)
+      + sizeof(Runtime::custom_pipeline_)
+      - PROTOBUF_FIELD_OFFSET(Runtime, application_data_)>(
+          reinterpret_cast<char*>(&application_data_),
+          reinterpret_cast<char*>(&other->application_data_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Runtime::GetMetadata() const {

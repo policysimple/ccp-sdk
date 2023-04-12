@@ -8,26 +8,26 @@ public interface TektonTaskListOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
-  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize> 
       getItemsList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Task getItems(int index);
+  io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomize getItems(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
   int getItemsCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
-  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder> 
       getItemsOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.Task items = 1 [json_name = "items"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskToCustomize items = 1 [json_name = "items"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getItemsOrBuilder(
+  io.cuemby.pipelines.tekton.v1alpha1.TaskToCustomizeOrBuilder getItemsOrBuilder(
       int index);
 }

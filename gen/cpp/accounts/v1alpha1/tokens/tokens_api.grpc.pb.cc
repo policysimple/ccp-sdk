@@ -27,6 +27,7 @@ static const char* TokenService_method_names[] = {
   "/accounts.v1alpha1.tokens.v1.TokenService/SaveLogs",
   "/accounts.v1alpha1.tokens.v1.TokenService/MFA",
   "/accounts.v1alpha1.tokens.v1.TokenService/EnableOrDisableMFA",
+  "/accounts.v1alpha1.tokens.v1.TokenService/LogoutToken",
 };
 
 std::unique_ptr< TokenService::Stub> TokenService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +43,7 @@ TokenService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_SaveLogs_(TokenService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_MFA_(TokenService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_EnableOrDisableMFA_(TokenService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LogoutToken_(TokenService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TokenService::Stub::CreateTokenCCP(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::CreateTokenCCPRequest& request, ::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse* response) {
@@ -140,6 +142,22 @@ void TokenService::Stub::experimental_async::EnableOrDisableMFA(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>::Create(channel_.get(), cq, rpcmethod_EnableOrDisableMFA_, context, request, false);
 }
 
+::grpc::Status TokenService::Stub::LogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_LogoutToken_, context, request, response);
+}
+
+void TokenService::Stub::experimental_async::LogoutToken(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_LogoutToken_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* TokenService::Stub::AsyncLogoutTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>::Create(channel_.get(), cq, rpcmethod_LogoutToken_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>* TokenService::Stub::PrepareAsyncLogoutTokenRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>::Create(channel_.get(), cq, rpcmethod_LogoutToken_, context, request, false);
+}
+
 TokenService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TokenService_method_names[0],
@@ -171,6 +189,11 @@ TokenService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TokenService::Service, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse>(
           std::mem_fn(&TokenService::Service::EnableOrDisableMFA), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TokenService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TokenService::Service, ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse>(
+          std::mem_fn(&TokenService::Service::LogoutToken), this)));
 }
 
 TokenService::Service::~Service() {
@@ -212,6 +235,13 @@ TokenService::Service::~Service() {
 }
 
 ::grpc::Status TokenService::Service::EnableOrDisableMFA(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest* request, ::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TokenService::Service::LogoutToken(::grpc::ServerContext* context, const ::accounts::v1alpha1::tokens::v1::LogoutTokenRequest* request, ::accounts::v1alpha1::tokens::v1::LogoutTokenResponse* response) {
   (void) context;
   (void) request;
   (void) response;

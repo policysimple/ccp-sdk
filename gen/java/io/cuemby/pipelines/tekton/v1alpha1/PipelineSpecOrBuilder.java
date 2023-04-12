@@ -8,19 +8,28 @@ public interface PipelineSpecOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-   * @return Whether the params field is set.
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  boolean hasParams();
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskParams> 
+      getParamsList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
-   * @return The params.
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Params getParams();
+  io.cuemby.pipelines.tekton.v1alpha1.TaskParams getParams(int index);
   /**
-   * <code>.pipelines.tekton.v1alpha1.Params params = 1 [json_name = "params"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder();
+  int getParamsCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder> 
+      getParamsOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskParams params = 1 [json_name = "params"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskParamsOrBuilder getParamsOrBuilder(
+      int index);
 
   /**
    * <code>string resources = 2 [json_name = "resources"];</code>
@@ -35,32 +44,50 @@ public interface PipelineSpecOrBuilder extends
       getResourcesBytes();
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-   * @return Whether the tasks field is set.
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
    */
-  boolean hasTasks();
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+      getTasksList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
-   * @return The tasks.
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Task getTasks();
+  io.cuemby.pipelines.tekton.v1alpha1.Task getTasks(int index);
   /**
-   * <code>.pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder();
+  int getTasksCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getTasksOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task tasks = 3 [json_name = "tasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getTasksOrBuilder(
+      int index);
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-   * @return Whether the workspace field is set.
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
    */
-  boolean hasWorkspace();
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Workspaces> 
+      getWorkspaceList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
-   * @return The workspace.
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspace();
+  io.cuemby.pipelines.tekton.v1alpha1.Workspaces getWorkspace(int index);
   /**
-   * <code>.pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspaceOrBuilder();
+  int getWorkspaceCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder> 
+      getWorkspaceOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Workspaces workspace = 4 [json_name = "workspace"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.WorkspacesOrBuilder getWorkspaceOrBuilder(
+      int index);
 }

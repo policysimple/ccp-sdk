@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetCustomPipelineRequest() {
-    taskId_ = "";
+    customPipelineId_ = "";
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskId_ = s;
+            customPipelineId_ = s;
             break;
           }
           default: {
@@ -87,38 +87,38 @@ private static final long serialVersionUID = 0L;
             io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.class, io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.Builder.class);
   }
 
-  public static final int TASK_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object taskId_;
+  public static final int CUSTOM_PIPELINE_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object customPipelineId_;
   /**
-   * <code>string task_id = 1 [json_name = "taskId"];</code>
-   * @return The taskId.
+   * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+   * @return The customPipelineId.
    */
   @java.lang.Override
-  public java.lang.String getTaskId() {
-    java.lang.Object ref = taskId_;
+  public java.lang.String getCustomPipelineId() {
+    java.lang.Object ref = customPipelineId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskId_ = s;
+      customPipelineId_ = s;
       return s;
     }
   }
   /**
-   * <code>string task_id = 1 [json_name = "taskId"];</code>
-   * @return The bytes for taskId.
+   * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+   * @return The bytes for customPipelineId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskIdBytes() {
-    java.lang.Object ref = taskId_;
+      getCustomPipelineIdBytes() {
+    java.lang.Object ref = customPipelineId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskId_ = b;
+      customPipelineId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTaskIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskId_);
+    if (!getCustomPipelineIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, customPipelineId_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTaskIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskId_);
+    if (!getCustomPipelineIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, customPipelineId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest other = (io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest) obj;
 
-    if (!getTaskId()
-        .equals(other.getTaskId())) return false;
+    if (!getCustomPipelineId()
+        .equals(other.getCustomPipelineId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskId().hashCode();
+    hash = (37 * hash) + CUSTOM_PIPELINE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCustomPipelineId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      taskId_ = "";
+      customPipelineId_ = "";
 
       return this;
     }
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest result = new io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest(this);
-      result.taskId_ = taskId_;
+      result.customPipelineId_ = customPipelineId_;
       onBuilt();
       return result;
     }
@@ -394,8 +394,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest other) {
       if (other == io.cuemby.pipelines.tekton.v1alpha1.GetCustomPipelineRequest.getDefaultInstance()) return this;
-      if (!other.getTaskId().isEmpty()) {
-        taskId_ = other.taskId_;
+      if (!other.getCustomPipelineId().isEmpty()) {
+        customPipelineId_ = other.customPipelineId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -427,78 +427,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object taskId_ = "";
+    private java.lang.Object customPipelineId_ = "";
     /**
-     * <code>string task_id = 1 [json_name = "taskId"];</code>
-     * @return The taskId.
+     * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+     * @return The customPipelineId.
      */
-    public java.lang.String getTaskId() {
-      java.lang.Object ref = taskId_;
+    public java.lang.String getCustomPipelineId() {
+      java.lang.Object ref = customPipelineId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskId_ = s;
+        customPipelineId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string task_id = 1 [json_name = "taskId"];</code>
-     * @return The bytes for taskId.
+     * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+     * @return The bytes for customPipelineId.
      */
     public com.google.protobuf.ByteString
-        getTaskIdBytes() {
-      java.lang.Object ref = taskId_;
+        getCustomPipelineIdBytes() {
+      java.lang.Object ref = customPipelineId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskId_ = b;
+        customPipelineId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string task_id = 1 [json_name = "taskId"];</code>
-     * @param value The taskId to set.
+     * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+     * @param value The customPipelineId to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskId(
+    public Builder setCustomPipelineId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskId_ = value;
+      customPipelineId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string task_id = 1 [json_name = "taskId"];</code>
+     * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskId() {
+    public Builder clearCustomPipelineId() {
       
-      taskId_ = getDefaultInstance().getTaskId();
+      customPipelineId_ = getDefaultInstance().getCustomPipelineId();
       onChanged();
       return this;
     }
     /**
-     * <code>string task_id = 1 [json_name = "taskId"];</code>
-     * @param value The bytes for taskId to set.
+     * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+     * @param value The bytes for customPipelineId to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskIdBytes(
+    public Builder setCustomPipelineIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskId_ = value;
+      customPipelineId_ = value;
       onChanged();
       return this;
     }

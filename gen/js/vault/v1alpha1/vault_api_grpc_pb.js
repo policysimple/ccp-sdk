@@ -93,6 +93,28 @@ function deserialize_vault_v1alpha1_GetSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_GetSecretsServiceRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetSecretsServiceRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetSecretsServiceRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetSecretsServiceRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetSecretsServiceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_GetSecretsServiceResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetSecretsServiceResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetSecretsServiceResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetSecretsServiceResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetSecretsServiceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_GetTokenBlockChainRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetTokenBlockChainRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.GetTokenBlockChainRequest');
@@ -371,6 +393,18 @@ var VaultAPIServiceService = exports.VaultAPIServiceService = {
     requestDeserialize: deserialize_vault_v1alpha1_GetTokenFirebaseRequest,
     responseSerialize: serialize_vault_v1alpha1_GetTokenFirebaseResponse,
     responseDeserialize: deserialize_vault_v1alpha1_GetTokenFirebaseResponse,
+  },
+  // Getsecret to service
+  getSecretsService: {
+    path: '/vault.v1alpha1.VaultAPIService/GetSecretsService',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.GetSecretsServiceRequest,
+    responseType: vault_v1alpha1_vault_api_pb.GetSecretsServiceResponse,
+    requestSerialize: serialize_vault_v1alpha1_GetSecretsServiceRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_GetSecretsServiceRequest,
+    responseSerialize: serialize_vault_v1alpha1_GetSecretsServiceResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_GetSecretsServiceResponse,
   },
 };
 

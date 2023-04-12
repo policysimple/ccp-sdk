@@ -8,14 +8,14 @@ public interface GetCustomPipelineRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string task_id = 1 [json_name = "taskId"];</code>
-   * @return The taskId.
+   * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+   * @return The customPipelineId.
    */
-  java.lang.String getTaskId();
+  java.lang.String getCustomPipelineId();
   /**
-   * <code>string task_id = 1 [json_name = "taskId"];</code>
-   * @return The bytes for taskId.
+   * <code>string custom_pipeline_id = 1 [json_name = "customPipelineId"];</code>
+   * @return The bytes for customPipelineId.
    */
   com.google.protobuf.ByteString
-      getTaskIdBytes();
+      getCustomPipelineIdBytes();
 }

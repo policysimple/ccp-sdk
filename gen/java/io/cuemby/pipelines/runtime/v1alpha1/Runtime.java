@@ -38,6 +38,8 @@ private static final long serialVersionUID = 0L;
     environmentInternalName_ = "";
     applicationName_ = "";
     integrationId_ = "";
+    beforeDeployTasks_ = java.util.Collections.emptyList();
+    afterDeployTasks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -257,6 +259,42 @@ private static final long serialVersionUID = 0L;
             integrationId_ = s;
             break;
           }
+          case 210: {
+            application.v1alpha1.ApplicationOuterClass.Application.Builder subBuilder = null;
+            if (applicationData_ != null) {
+              subBuilder = applicationData_.toBuilder();
+            }
+            applicationData_ = input.readMessage(application.v1alpha1.ApplicationOuterClass.Application.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(applicationData_);
+              applicationData_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 216: {
+
+            customPipeline_ = input.readBool();
+            break;
+          }
+          case 226: {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              beforeDeployTasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            beforeDeployTasks_.add(
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
+            break;
+          }
+          case 234: {
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              afterDeployTasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            afterDeployTasks_.add(
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -274,6 +312,12 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instanceTypes_ = java.util.Collections.unmodifiableList(instanceTypes_);
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        beforeDeployTasks_ = java.util.Collections.unmodifiableList(beforeDeployTasks_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        afterDeployTasks_ = java.util.Collections.unmodifiableList(afterDeployTasks_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1406,6 +1450,123 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPLICATION_DATA_FIELD_NUMBER = 26;
+  private application.v1alpha1.ApplicationOuterClass.Application applicationData_;
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return Whether the applicationData field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationData() {
+    return applicationData_ != null;
+  }
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return The applicationData.
+   */
+  @java.lang.Override
+  public application.v1alpha1.ApplicationOuterClass.Application getApplicationData() {
+    return applicationData_ == null ? application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance() : applicationData_;
+  }
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   */
+  @java.lang.Override
+  public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder() {
+    return getApplicationData();
+  }
+
+  public static final int CUSTOM_PIPELINE_FIELD_NUMBER = 27;
+  private boolean customPipeline_;
+  /**
+   * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
+   * @return The customPipeline.
+   */
+  @java.lang.Override
+  public boolean getCustomPipeline() {
+    return customPipeline_;
+  }
+
+  public static final int BEFORE_DEPLOY_TASKS_FIELD_NUMBER = 28;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> beforeDeployTasks_;
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getBeforeDeployTasksList() {
+    return beforeDeployTasks_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getBeforeDeployTasksOrBuilderList() {
+    return beforeDeployTasks_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public int getBeforeDeployTasksCount() {
+    return beforeDeployTasks_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Task getBeforeDeployTasks(int index) {
+    return beforeDeployTasks_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getBeforeDeployTasksOrBuilder(
+      int index) {
+    return beforeDeployTasks_.get(index);
+  }
+
+  public static final int AFTER_DEPLOY_TASKS_FIELD_NUMBER = 29;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> afterDeployTasks_;
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getAfterDeployTasksList() {
+    return afterDeployTasks_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getAfterDeployTasksOrBuilderList() {
+    return afterDeployTasks_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public int getAfterDeployTasksCount() {
+    return afterDeployTasks_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Task getAfterDeployTasks(int index) {
+    return afterDeployTasks_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getAfterDeployTasksOrBuilder(
+      int index) {
+    return afterDeployTasks_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1509,6 +1670,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIntegrationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, integrationId_);
+    }
+    if (applicationData_ != null) {
+      output.writeMessage(26, getApplicationData());
+    }
+    if (customPipeline_ != false) {
+      output.writeBool(27, customPipeline_);
+    }
+    for (int i = 0; i < beforeDeployTasks_.size(); i++) {
+      output.writeMessage(28, beforeDeployTasks_.get(i));
+    }
+    for (int i = 0; i < afterDeployTasks_.size(); i++) {
+      output.writeMessage(29, afterDeployTasks_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1633,6 +1806,22 @@ private static final long serialVersionUID = 0L;
     if (!getIntegrationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, integrationId_);
     }
+    if (applicationData_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(26, getApplicationData());
+    }
+    if (customPipeline_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(27, customPipeline_);
+    }
+    for (int i = 0; i < beforeDeployTasks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(28, beforeDeployTasks_.get(i));
+    }
+    for (int i = 0; i < afterDeployTasks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(29, afterDeployTasks_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1697,6 +1886,17 @@ private static final long serialVersionUID = 0L;
         != other.getStorageLimit()) return false;
     if (!getIntegrationId()
         .equals(other.getIntegrationId())) return false;
+    if (hasApplicationData() != other.hasApplicationData()) return false;
+    if (hasApplicationData()) {
+      if (!getApplicationData()
+          .equals(other.getApplicationData())) return false;
+    }
+    if (getCustomPipeline()
+        != other.getCustomPipeline()) return false;
+    if (!getBeforeDeployTasksList()
+        .equals(other.getBeforeDeployTasksList())) return false;
+    if (!getAfterDeployTasksList()
+        .equals(other.getAfterDeployTasksList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1770,6 +1970,21 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getStorageLimit();
     hash = (37 * hash) + INTEGRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getIntegrationId().hashCode();
+    if (hasApplicationData()) {
+      hash = (37 * hash) + APPLICATION_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationData().hashCode();
+    }
+    hash = (37 * hash) + CUSTOM_PIPELINE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCustomPipeline());
+    if (getBeforeDeployTasksCount() > 0) {
+      hash = (37 * hash) + BEFORE_DEPLOY_TASKS_FIELD_NUMBER;
+      hash = (53 * hash) + getBeforeDeployTasksList().hashCode();
+    }
+    if (getAfterDeployTasksCount() > 0) {
+      hash = (37 * hash) + AFTER_DEPLOY_TASKS_FIELD_NUMBER;
+      hash = (53 * hash) + getAfterDeployTasksList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1941,6 +2156,8 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getInstanceTypesFieldBuilder();
+        getBeforeDeployTasksFieldBuilder();
+        getAfterDeployTasksFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1995,6 +2212,26 @@ private static final long serialVersionUID = 0L;
 
       integrationId_ = "";
 
+      if (applicationDataBuilder_ == null) {
+        applicationData_ = null;
+      } else {
+        applicationData_ = null;
+        applicationDataBuilder_ = null;
+      }
+      customPipeline_ = false;
+
+      if (beforeDeployTasksBuilder_ == null) {
+        beforeDeployTasks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        beforeDeployTasksBuilder_.clear();
+      }
+      if (afterDeployTasksBuilder_ == null) {
+        afterDeployTasks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        afterDeployTasksBuilder_.clear();
+      }
       return this;
     }
 
@@ -2060,6 +2297,30 @@ private static final long serialVersionUID = 0L;
       result.storageUsed_ = storageUsed_;
       result.storageLimit_ = storageLimit_;
       result.integrationId_ = integrationId_;
+      if (applicationDataBuilder_ == null) {
+        result.applicationData_ = applicationData_;
+      } else {
+        result.applicationData_ = applicationDataBuilder_.build();
+      }
+      result.customPipeline_ = customPipeline_;
+      if (beforeDeployTasksBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          beforeDeployTasks_ = java.util.Collections.unmodifiableList(beforeDeployTasks_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.beforeDeployTasks_ = beforeDeployTasks_;
+      } else {
+        result.beforeDeployTasks_ = beforeDeployTasksBuilder_.build();
+      }
+      if (afterDeployTasksBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          afterDeployTasks_ = java.util.Collections.unmodifiableList(afterDeployTasks_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.afterDeployTasks_ = afterDeployTasks_;
+      } else {
+        result.afterDeployTasks_ = afterDeployTasksBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2216,6 +2477,64 @@ private static final long serialVersionUID = 0L;
       if (!other.getIntegrationId().isEmpty()) {
         integrationId_ = other.integrationId_;
         onChanged();
+      }
+      if (other.hasApplicationData()) {
+        mergeApplicationData(other.getApplicationData());
+      }
+      if (other.getCustomPipeline() != false) {
+        setCustomPipeline(other.getCustomPipeline());
+      }
+      if (beforeDeployTasksBuilder_ == null) {
+        if (!other.beforeDeployTasks_.isEmpty()) {
+          if (beforeDeployTasks_.isEmpty()) {
+            beforeDeployTasks_ = other.beforeDeployTasks_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureBeforeDeployTasksIsMutable();
+            beforeDeployTasks_.addAll(other.beforeDeployTasks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.beforeDeployTasks_.isEmpty()) {
+          if (beforeDeployTasksBuilder_.isEmpty()) {
+            beforeDeployTasksBuilder_.dispose();
+            beforeDeployTasksBuilder_ = null;
+            beforeDeployTasks_ = other.beforeDeployTasks_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            beforeDeployTasksBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getBeforeDeployTasksFieldBuilder() : null;
+          } else {
+            beforeDeployTasksBuilder_.addAllMessages(other.beforeDeployTasks_);
+          }
+        }
+      }
+      if (afterDeployTasksBuilder_ == null) {
+        if (!other.afterDeployTasks_.isEmpty()) {
+          if (afterDeployTasks_.isEmpty()) {
+            afterDeployTasks_ = other.afterDeployTasks_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureAfterDeployTasksIsMutable();
+            afterDeployTasks_.addAll(other.afterDeployTasks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.afterDeployTasks_.isEmpty()) {
+          if (afterDeployTasksBuilder_.isEmpty()) {
+            afterDeployTasksBuilder_.dispose();
+            afterDeployTasksBuilder_ = null;
+            afterDeployTasks_ = other.afterDeployTasks_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            afterDeployTasksBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAfterDeployTasksFieldBuilder() : null;
+          } else {
+            afterDeployTasksBuilder_.addAllMessages(other.afterDeployTasks_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4457,6 +4776,636 @@ private static final long serialVersionUID = 0L;
       integrationId_ = value;
       onChanged();
       return this;
+    }
+
+    private application.v1alpha1.ApplicationOuterClass.Application applicationData_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> applicationDataBuilder_;
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     * @return Whether the applicationData field is set.
+     */
+    public boolean hasApplicationData() {
+      return applicationDataBuilder_ != null || applicationData_ != null;
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     * @return The applicationData.
+     */
+    public application.v1alpha1.ApplicationOuterClass.Application getApplicationData() {
+      if (applicationDataBuilder_ == null) {
+        return applicationData_ == null ? application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance() : applicationData_;
+      } else {
+        return applicationDataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    public Builder setApplicationData(application.v1alpha1.ApplicationOuterClass.Application value) {
+      if (applicationDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        applicationData_ = value;
+        onChanged();
+      } else {
+        applicationDataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    public Builder setApplicationData(
+        application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
+      if (applicationDataBuilder_ == null) {
+        applicationData_ = builderForValue.build();
+        onChanged();
+      } else {
+        applicationDataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    public Builder mergeApplicationData(application.v1alpha1.ApplicationOuterClass.Application value) {
+      if (applicationDataBuilder_ == null) {
+        if (applicationData_ != null) {
+          applicationData_ =
+            application.v1alpha1.ApplicationOuterClass.Application.newBuilder(applicationData_).mergeFrom(value).buildPartial();
+        } else {
+          applicationData_ = value;
+        }
+        onChanged();
+      } else {
+        applicationDataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    public Builder clearApplicationData() {
+      if (applicationDataBuilder_ == null) {
+        applicationData_ = null;
+        onChanged();
+      } else {
+        applicationData_ = null;
+        applicationDataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    public application.v1alpha1.ApplicationOuterClass.Application.Builder getApplicationDataBuilder() {
+      
+      onChanged();
+      return getApplicationDataFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder() {
+      if (applicationDataBuilder_ != null) {
+        return applicationDataBuilder_.getMessageOrBuilder();
+      } else {
+        return applicationData_ == null ?
+            application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance() : applicationData_;
+      }
+    }
+    /**
+     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
+        getApplicationDataFieldBuilder() {
+      if (applicationDataBuilder_ == null) {
+        applicationDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder>(
+                getApplicationData(),
+                getParentForChildren(),
+                isClean());
+        applicationData_ = null;
+      }
+      return applicationDataBuilder_;
+    }
+
+    private boolean customPipeline_ ;
+    /**
+     * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
+     * @return The customPipeline.
+     */
+    @java.lang.Override
+    public boolean getCustomPipeline() {
+      return customPipeline_;
+    }
+    /**
+     * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
+     * @param value The customPipeline to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomPipeline(boolean value) {
+      
+      customPipeline_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomPipeline() {
+      
+      customPipeline_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> beforeDeployTasks_ =
+      java.util.Collections.emptyList();
+    private void ensureBeforeDeployTasksIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        beforeDeployTasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>(beforeDeployTasks_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> beforeDeployTasksBuilder_;
+
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getBeforeDeployTasksList() {
+      if (beforeDeployTasksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(beforeDeployTasks_);
+      } else {
+        return beforeDeployTasksBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public int getBeforeDeployTasksCount() {
+      if (beforeDeployTasksBuilder_ == null) {
+        return beforeDeployTasks_.size();
+      } else {
+        return beforeDeployTasksBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task getBeforeDeployTasks(int index) {
+      if (beforeDeployTasksBuilder_ == null) {
+        return beforeDeployTasks_.get(index);
+      } else {
+        return beforeDeployTasksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder setBeforeDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (beforeDeployTasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.set(index, value);
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder setBeforeDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (beforeDeployTasksBuilder_ == null) {
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder addBeforeDeployTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (beforeDeployTasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.add(value);
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder addBeforeDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (beforeDeployTasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.add(index, value);
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder addBeforeDeployTasks(
+        io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (beforeDeployTasksBuilder_ == null) {
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder addBeforeDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (beforeDeployTasksBuilder_ == null) {
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder addAllBeforeDeployTasks(
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Task> values) {
+      if (beforeDeployTasksBuilder_ == null) {
+        ensureBeforeDeployTasksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, beforeDeployTasks_);
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder clearBeforeDeployTasks() {
+      if (beforeDeployTasksBuilder_ == null) {
+        beforeDeployTasks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public Builder removeBeforeDeployTasks(int index) {
+      if (beforeDeployTasksBuilder_ == null) {
+        ensureBeforeDeployTasksIsMutable();
+        beforeDeployTasks_.remove(index);
+        onChanged();
+      } else {
+        beforeDeployTasksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getBeforeDeployTasksBuilder(
+        int index) {
+      return getBeforeDeployTasksFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getBeforeDeployTasksOrBuilder(
+        int index) {
+      if (beforeDeployTasksBuilder_ == null) {
+        return beforeDeployTasks_.get(index);  } else {
+        return beforeDeployTasksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+         getBeforeDeployTasksOrBuilderList() {
+      if (beforeDeployTasksBuilder_ != null) {
+        return beforeDeployTasksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(beforeDeployTasks_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addBeforeDeployTasksBuilder() {
+      return getBeforeDeployTasksFieldBuilder().addBuilder(
+          io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addBeforeDeployTasksBuilder(
+        int index) {
+      return getBeforeDeployTasksFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task.Builder> 
+         getBeforeDeployTasksBuilderList() {
+      return getBeforeDeployTasksFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+        getBeforeDeployTasksFieldBuilder() {
+      if (beforeDeployTasksBuilder_ == null) {
+        beforeDeployTasksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder>(
+                beforeDeployTasks_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        beforeDeployTasks_ = null;
+      }
+      return beforeDeployTasksBuilder_;
+    }
+
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> afterDeployTasks_ =
+      java.util.Collections.emptyList();
+    private void ensureAfterDeployTasksIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        afterDeployTasks_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Task>(afterDeployTasks_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> afterDeployTasksBuilder_;
+
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> getAfterDeployTasksList() {
+      if (afterDeployTasksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(afterDeployTasks_);
+      } else {
+        return afterDeployTasksBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public int getAfterDeployTasksCount() {
+      if (afterDeployTasksBuilder_ == null) {
+        return afterDeployTasks_.size();
+      } else {
+        return afterDeployTasksBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task getAfterDeployTasks(int index) {
+      if (afterDeployTasksBuilder_ == null) {
+        return afterDeployTasks_.get(index);
+      } else {
+        return afterDeployTasksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder setAfterDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (afterDeployTasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.set(index, value);
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder setAfterDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (afterDeployTasksBuilder_ == null) {
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder addAfterDeployTasks(io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (afterDeployTasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.add(value);
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder addAfterDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task value) {
+      if (afterDeployTasksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.add(index, value);
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder addAfterDeployTasks(
+        io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (afterDeployTasksBuilder_ == null) {
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder addAfterDeployTasks(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder builderForValue) {
+      if (afterDeployTasksBuilder_ == null) {
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder addAllAfterDeployTasks(
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Task> values) {
+      if (afterDeployTasksBuilder_ == null) {
+        ensureAfterDeployTasksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, afterDeployTasks_);
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder clearAfterDeployTasks() {
+      if (afterDeployTasksBuilder_ == null) {
+        afterDeployTasks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public Builder removeAfterDeployTasks(int index) {
+      if (afterDeployTasksBuilder_ == null) {
+        ensureAfterDeployTasksIsMutable();
+        afterDeployTasks_.remove(index);
+        onChanged();
+      } else {
+        afterDeployTasksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder getAfterDeployTasksBuilder(
+        int index) {
+      return getAfterDeployTasksFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getAfterDeployTasksOrBuilder(
+        int index) {
+      if (afterDeployTasksBuilder_ == null) {
+        return afterDeployTasks_.get(index);  } else {
+        return afterDeployTasksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+         getAfterDeployTasksOrBuilderList() {
+      if (afterDeployTasksBuilder_ != null) {
+        return afterDeployTasksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(afterDeployTasks_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addAfterDeployTasksBuilder() {
+      return getAfterDeployTasksFieldBuilder().addBuilder(
+          io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Task.Builder addAfterDeployTasksBuilder(
+        int index) {
+      return getAfterDeployTasksFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.tekton.v1alpha1.Task.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task.Builder> 
+         getAfterDeployTasksBuilderList() {
+      return getAfterDeployTasksFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+        getAfterDeployTasksFieldBuilder() {
+      if (afterDeployTasksBuilder_ == null) {
+        afterDeployTasksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.cuemby.pipelines.tekton.v1alpha1.Task, io.cuemby.pipelines.tekton.v1alpha1.Task.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder>(
+                afterDeployTasks_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        afterDeployTasks_ = null;
+      }
+      return afterDeployTasksBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

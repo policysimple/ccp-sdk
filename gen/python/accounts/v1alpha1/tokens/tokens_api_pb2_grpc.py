@@ -44,6 +44,11 @@ class TokenServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.EnableOrDisableMFARequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.EnableOrDisableMFAResponse.FromString,
         )
+    self.LogoutToken = channel.unary_unary(
+        '/accounts.v1alpha1.tokens.v1.TokenService/LogoutToken',
+        request_serializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.LogoutTokenRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.LogoutTokenResponse.FromString,
+        )
 
 
 class TokenServiceServicer(object):
@@ -66,7 +71,7 @@ class TokenServiceServicer(object):
 
   def Logs(self, request, context):
     """Get Users Email filter
-    LOGS REDIS
+    Logs by redis
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -89,6 +94,13 @@ class TokenServiceServicer(object):
   def EnableOrDisableMFA(self, request, context):
     # missing associated documentation comment in .proto file
     pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def LogoutToken(self, request, context):
+    """Logout
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -125,6 +137,11 @@ def add_TokenServiceServicer_to_server(servicer, server):
           servicer.EnableOrDisableMFA,
           request_deserializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.EnableOrDisableMFARequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.EnableOrDisableMFAResponse.SerializeToString,
+      ),
+      'LogoutToken': grpc.unary_unary_rpc_method_handler(
+          servicer.LogoutToken,
+          request_deserializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.LogoutTokenRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_tokens_dot_tokens__pb2.LogoutTokenResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

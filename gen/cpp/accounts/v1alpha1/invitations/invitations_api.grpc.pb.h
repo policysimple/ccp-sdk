@@ -74,6 +74,13 @@ class InvitationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>> PrepareAsyncDeleteInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>>(PrepareAsyncDeleteInvitationRaw(context, request, cq));
     }
+    virtual ::grpc::Status ReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>> AsyncReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>>(AsyncReactivateInvitationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>> PrepareAsyncReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>>(PrepareAsyncReactivateInvitationRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -83,6 +90,7 @@ class InvitationService final {
       virtual void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::invitations::v1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListInvitationSend(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest* request, ::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -96,6 +104,8 @@ class InvitationService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse>* PrepareAsyncListInvitationSendRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>* AsyncDeleteInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>* PrepareAsyncDeleteInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* AsyncReactivateInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* PrepareAsyncReactivateInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -135,6 +145,13 @@ class InvitationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>> PrepareAsyncDeleteInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>>(PrepareAsyncDeleteInvitationRaw(context, request, cq));
     }
+    ::grpc::Status ReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>> AsyncReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>>(AsyncReactivateInvitationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>> PrepareAsyncReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>>(PrepareAsyncReactivateInvitationRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -143,6 +160,7 @@ class InvitationService final {
       void AgreeInvitationUser(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::invitations::v1::AgreeInvitationUserResponse* response, std::function<void(::grpc::Status)>) override;
       void ListInvitationSend(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest* request, ::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse* response, std::function<void(::grpc::Status)>) override;
+      void ReactivateInvitation(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -164,11 +182,14 @@ class InvitationService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse>* PrepareAsyncListInvitationSendRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>* AsyncDeleteInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>* PrepareAsyncDeleteInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* AsyncReactivateInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* PrepareAsyncReactivateInvitationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_SendInvitationUser_;
     const ::grpc::internal::RpcMethod rpcmethod_GetInvitationUser_;
     const ::grpc::internal::RpcMethod rpcmethod_AgreeInvitationUser_;
     const ::grpc::internal::RpcMethod rpcmethod_ListInvitationSend_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteInvitation_;
+    const ::grpc::internal::RpcMethod rpcmethod_ReactivateInvitation_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -182,6 +203,7 @@ class InvitationService final {
     virtual ::grpc::Status AgreeInvitationUser(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::AgreeInvitationUserRequest* request, ::accounts::v1alpha1::invitations::v1::AgreeInvitationUserResponse* response);
     virtual ::grpc::Status ListInvitationSend(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ListInvitationSendRequest* request, ::accounts::v1alpha1::invitations::v1::ListInvitationSendResponse* response);
     virtual ::grpc::Status DeleteInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse* response);
+    virtual ::grpc::Status ReactivateInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_SendInvitationUser : public BaseClass {
@@ -283,7 +305,27 @@ class InvitationService final {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationSend<WithAsyncMethod_DeleteInvitation<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ReactivateInvitation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ReactivateInvitation() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_ReactivateInvitation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReactivateInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestReactivateInvitation(::grpc::ServerContext* context, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_SendInvitationUser<WithAsyncMethod_GetInvitationUser<WithAsyncMethod_AgreeInvitationUser<WithAsyncMethod_ListInvitationSend<WithAsyncMethod_DeleteInvitation<WithAsyncMethod_ReactivateInvitation<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_SendInvitationUser : public BaseClass {
    private:
@@ -365,6 +407,23 @@ class InvitationService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ReactivateInvitation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ReactivateInvitation() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_ReactivateInvitation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReactivateInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -470,6 +529,26 @@ class InvitationService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ReactivateInvitation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ReactivateInvitation() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_ReactivateInvitation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReactivateInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestReactivateInvitation(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_SendInvitationUser : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -569,9 +648,29 @@ class InvitationService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteInvitation(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::invitations::v1::DeleteInvitationRequest,::accounts::v1alpha1::invitations::v1::DeleteInvitationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationSend<WithStreamedUnaryMethod_DeleteInvitation<Service > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ReactivateInvitation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ReactivateInvitation() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>(std::bind(&WithStreamedUnaryMethod_ReactivateInvitation<BaseClass>::StreamedReactivateInvitation, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ReactivateInvitation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ReactivateInvitation(::grpc::ServerContext* context, const ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest* request, ::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedReactivateInvitation(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::invitations::v1::ReactivateInvitationRequest,::accounts::v1alpha1::invitations::v1::ReactivateInvitationResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationSend<WithStreamedUnaryMethod_DeleteInvitation<WithStreamedUnaryMethod_ReactivateInvitation<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationSend<WithStreamedUnaryMethod_DeleteInvitation<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_SendInvitationUser<WithStreamedUnaryMethod_GetInvitationUser<WithStreamedUnaryMethod_AgreeInvitationUser<WithStreamedUnaryMethod_ListInvitationSend<WithStreamedUnaryMethod_DeleteInvitation<WithStreamedUnaryMethod_ReactivateInvitation<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1

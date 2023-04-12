@@ -15,6 +15,10 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var application_v1alpha1_application_pb = require('../../../application/v1alpha1/application_pb.js');
+goog.object.extend(proto, application_v1alpha1_application_pb);
+var pipelines_tekton_v1alpha1_tekton_pb = require('../../../pipelines/tekton/v1alpha1/tekton_pb.js');
+goog.object.extend(proto, pipelines_tekton_v1alpha1_tekton_pb);
 goog.exportSymbol('proto.pipelines.runtime.v1alpha1.IntanceType', null, global);
 goog.exportSymbol('proto.pipelines.runtime.v1alpha1.Limit', null, global);
 goog.exportSymbol('proto.pipelines.runtime.v1alpha1.Request', null, global);
@@ -154,7 +158,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.pipelines.runtime.v1alpha1.Runtime.repeatedFields_ = [3];
+proto.pipelines.runtime.v1alpha1.Runtime.repeatedFields_ = [3,28,29];
 
 
 
@@ -212,7 +216,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     applicationName: jspb.Message.getFieldWithDefault(msg, 22, ""),
     storageUsed: jspb.Message.getFieldWithDefault(msg, 23, 0),
     storageLimit: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    integrationId: jspb.Message.getFieldWithDefault(msg, 25, "")
+    integrationId: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    applicationData: (f = msg.getApplicationData()) && application_v1alpha1_application_pb.Application.toObject(includeInstance, f),
+    customPipeline: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
+    beforeDeployTasksList: jspb.Message.toObjectList(msg.getBeforeDeployTasksList(),
+    pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
+    afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
+    pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -359,6 +369,25 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 25:
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationId(value);
+      break;
+    case 26:
+      var value = new application_v1alpha1_application_pb.Application;
+      reader.readMessage(value,application_v1alpha1_application_pb.Application.deserializeBinaryFromReader);
+      msg.setApplicationData(value);
+      break;
+    case 27:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCustomPipeline(value);
+      break;
+    case 28:
+      var value = new pipelines_tekton_v1alpha1_tekton_pb.Task;
+      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.Task.deserializeBinaryFromReader);
+      msg.addBeforeDeployTasks(value);
+      break;
+    case 29:
+      var value = new pipelines_tekton_v1alpha1_tekton_pb.Task;
+      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.Task.deserializeBinaryFromReader);
+      msg.addAfterDeployTasks(value);
       break;
     default:
       reader.skipField();
@@ -548,6 +577,37 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
     writer.writeString(
       25,
       f
+    );
+  }
+  f = message.getApplicationData();
+  if (f != null) {
+    writer.writeMessage(
+      26,
+      f,
+      application_v1alpha1_application_pb.Application.serializeBinaryToWriter
+    );
+  }
+  f = message.getCustomPipeline();
+  if (f) {
+    writer.writeBool(
+      27,
+      f
+    );
+  }
+  f = message.getBeforeDeployTasksList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      28,
+      f,
+      pipelines_tekton_v1alpha1_tekton_pb.Task.serializeBinaryToWriter
+    );
+  }
+  f = message.getAfterDeployTasksList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      29,
+      f,
+      pipelines_tekton_v1alpha1_tekton_pb.Task.serializeBinaryToWriter
     );
   }
 };
@@ -1040,6 +1100,137 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIntegrationId = function()
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIntegrationId = function(value) {
   return jspb.Message.setProto3StringField(this, 25, value);
+};
+
+
+/**
+ * optional application.v1alpha1.Application application_data = 26;
+ * @return {?proto.application.v1alpha1.Application}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getApplicationData = function() {
+  return /** @type{?proto.application.v1alpha1.Application} */ (
+    jspb.Message.getWrapperField(this, application_v1alpha1_application_pb.Application, 26));
+};
+
+
+/**
+ * @param {?proto.application.v1alpha1.Application|undefined} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+*/
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationData = function(value) {
+  return jspb.Message.setWrapperField(this, 26, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearApplicationData = function() {
+  return this.setApplicationData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasApplicationData = function() {
+  return jspb.Message.getField(this, 26) != null;
+};
+
+
+/**
+ * optional bool custom_pipeline = 27;
+ * @return {boolean}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getCustomPipeline = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setCustomPipeline = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 27, value);
+};
+
+
+/**
+ * repeated pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28;
+ * @return {!Array<!proto.pipelines.tekton.v1alpha1.Task>}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getBeforeDeployTasksList = function() {
+  return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.Task>} */ (
+    jspb.Message.getRepeatedWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.Task, 28));
+};
+
+
+/**
+ * @param {!Array<!proto.pipelines.tekton.v1alpha1.Task>} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+*/
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setBeforeDeployTasksList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 28, value);
+};
+
+
+/**
+ * @param {!proto.pipelines.tekton.v1alpha1.Task=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.pipelines.tekton.v1alpha1.Task}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.addBeforeDeployTasks = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 28, opt_value, proto.pipelines.tekton.v1alpha1.Task, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearBeforeDeployTasksList = function() {
+  return this.setBeforeDeployTasksList([]);
+};
+
+
+/**
+ * repeated pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29;
+ * @return {!Array<!proto.pipelines.tekton.v1alpha1.Task>}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getAfterDeployTasksList = function() {
+  return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.Task>} */ (
+    jspb.Message.getRepeatedWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.Task, 29));
+};
+
+
+/**
+ * @param {!Array<!proto.pipelines.tekton.v1alpha1.Task>} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+*/
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setAfterDeployTasksList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 29, value);
+};
+
+
+/**
+ * @param {!proto.pipelines.tekton.v1alpha1.Task=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.pipelines.tekton.v1alpha1.Task}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.addAfterDeployTasks = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 29, opt_value, proto.pipelines.tekton.v1alpha1.Task, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearAfterDeployTasksList = function() {
+  return this.setAfterDeployTasksList([]);
 };
 
 

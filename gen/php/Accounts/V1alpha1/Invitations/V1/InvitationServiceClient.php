@@ -82,4 +82,17 @@ class InvitationServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\Invitations\V1\ReactivateInvitationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ReactivateInvitation(\Accounts\V1alpha1\Invitations\V1\ReactivateInvitationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.invitations.v1.InvitationService/ReactivateInvitation',
+        $argument,
+        ['\Accounts\V1alpha1\Invitations\V1\ReactivateInvitationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

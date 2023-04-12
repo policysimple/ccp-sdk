@@ -17,15 +17,16 @@ class TokensApi
         \GPBMetadata\Accounts\V1Alpha1\Tokens\Tokens::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¼
-)accounts/v1alpha1/tokens/tokens_api.protoaccounts.v1alpha1.tokens.v12¬
+®
+)accounts/v1alpha1/tokens/tokens_api.protoaccounts.v1alpha1.tokens.v12ž
 TokenServicey
 CreateTokenCCP2.accounts.v1alpha1.tokens.v1.CreateTokenCCPRequest3.accounts.v1alpha1.tokens.v1.CreateTokenCCPResponsey
 GetOneTokenCCP2.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest3.accounts.v1alpha1.tokens.v1.GetOneTokenCCPResponse[
 Logs(.accounts.v1alpha1.tokens.v1.LogsRequest).accounts.v1alpha1.tokens.v1.LogsResponseg
 SaveLogs,.accounts.v1alpha1.tokens.v1.SaveLogsRequest-.accounts.v1alpha1.tokens.v1.SaveLogsResponseX
 MFA\'.accounts.v1alpha1.tokens.v1.MFARequest(.accounts.v1alpha1.tokens.v1.MFAResponse…
-EnableOrDisableMFA6.accounts.v1alpha1.tokens.v1.EnableOrDisableMFARequest7.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponseB;Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokensbproto3'
+EnableOrDisableMFA6.accounts.v1alpha1.tokens.v1.EnableOrDisableMFARequest7.accounts.v1alpha1.tokens.v1.EnableOrDisableMFAResponsep
+LogoutToken/.accounts.v1alpha1.tokens.v1.LogoutTokenRequest0.accounts.v1alpha1.tokens.v1.LogoutTokenResponseB;Z9github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/tokensbproto3'
         , true);
 
         static::$is_initialized = true;

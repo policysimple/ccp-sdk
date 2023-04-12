@@ -2990,20 +2990,20 @@ class GetCustomPipelineRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTaskIdFieldNumber = 1,
+    kCustomPipelineIdFieldNumber = 1,
   };
-  // string task_id = 1 [json_name = "taskId"];
-  void clear_task_id();
-  const std::string& task_id() const;
+  // string custom_pipeline_id = 1 [json_name = "customPipelineId"];
+  void clear_custom_pipeline_id();
+  const std::string& custom_pipeline_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_task_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_task_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_task_id();
-  void set_allocated_task_id(std::string* task_id);
+  void set_custom_pipeline_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_custom_pipeline_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_custom_pipeline_id();
+  void set_allocated_custom_pipeline_id(std::string* custom_pipeline_id);
   private:
-  const std::string& _internal_task_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_task_id(const std::string& value);
-  std::string* _internal_mutable_task_id();
+  const std::string& _internal_custom_pipeline_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_custom_pipeline_id(const std::string& value);
+  std::string* _internal_mutable_custom_pipeline_id();
   public:
 
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.GetCustomPipelineRequest)
@@ -3013,7 +3013,7 @@ class GetCustomPipelineRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr task_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr custom_pipeline_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
 };
@@ -5038,50 +5038,50 @@ inline void ListCustomPipelineResponse::set_allocated_status(std::string* status
 
 // GetCustomPipelineRequest
 
-// string task_id = 1 [json_name = "taskId"];
-inline void GetCustomPipelineRequest::clear_task_id() {
-  task_id_.ClearToEmpty();
+// string custom_pipeline_id = 1 [json_name = "customPipelineId"];
+inline void GetCustomPipelineRequest::clear_custom_pipeline_id() {
+  custom_pipeline_id_.ClearToEmpty();
 }
-inline const std::string& GetCustomPipelineRequest::task_id() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.task_id)
-  return _internal_task_id();
+inline const std::string& GetCustomPipelineRequest::custom_pipeline_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.custom_pipeline_id)
+  return _internal_custom_pipeline_id();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetCustomPipelineRequest::set_task_id(ArgT0&& arg0, ArgT... args) {
+void GetCustomPipelineRequest::set_custom_pipeline_id(ArgT0&& arg0, ArgT... args) {
  
- task_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.task_id)
+ custom_pipeline_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.custom_pipeline_id)
 }
-inline std::string* GetCustomPipelineRequest::mutable_task_id() {
-  std::string* _s = _internal_mutable_task_id();
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.task_id)
+inline std::string* GetCustomPipelineRequest::mutable_custom_pipeline_id() {
+  std::string* _s = _internal_mutable_custom_pipeline_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.custom_pipeline_id)
   return _s;
 }
-inline const std::string& GetCustomPipelineRequest::_internal_task_id() const {
-  return task_id_.Get();
+inline const std::string& GetCustomPipelineRequest::_internal_custom_pipeline_id() const {
+  return custom_pipeline_id_.Get();
 }
-inline void GetCustomPipelineRequest::_internal_set_task_id(const std::string& value) {
+inline void GetCustomPipelineRequest::_internal_set_custom_pipeline_id(const std::string& value) {
   
-  task_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  custom_pipeline_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* GetCustomPipelineRequest::_internal_mutable_task_id() {
+inline std::string* GetCustomPipelineRequest::_internal_mutable_custom_pipeline_id() {
   
-  return task_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return custom_pipeline_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* GetCustomPipelineRequest::release_task_id() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.task_id)
-  return task_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* GetCustomPipelineRequest::release_custom_pipeline_id() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.custom_pipeline_id)
+  return custom_pipeline_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void GetCustomPipelineRequest::set_allocated_task_id(std::string* task_id) {
-  if (task_id != nullptr) {
+inline void GetCustomPipelineRequest::set_allocated_custom_pipeline_id(std::string* custom_pipeline_id) {
+  if (custom_pipeline_id != nullptr) {
     
   } else {
     
   }
-  task_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), task_id,
+  custom_pipeline_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), custom_pipeline_id,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.task_id)
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.GetCustomPipelineRequest.custom_pipeline_id)
 }
 
 // -------------------------------------------------------------------

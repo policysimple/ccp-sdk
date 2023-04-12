@@ -16,7 +16,8 @@ class Tokens
         }
         $pool->internalAddGeneratedFile(
             '
-®	
+Š
+
 %accounts/v1alpha1/tokens/tokens.protoaccounts.v1alpha1.tokens.v1"-
 GetOneTokenCCPRequest
 token (	Rtoken"Ã
@@ -34,7 +35,11 @@ first_name (	R	firstName%
 	token_ccp (	RtokenCcp
 msg (	Rmsg.
 time_expiration_mfa (RtimeExpirationMfa
-user_id (	RuserId"y
+user_id (	RuserId"1
+LogoutTokenRequest
+	token_ccp (	RtokenCcp"\'
+LogoutTokenResponse
+msg (	Rmsg"y
 Log
 user_id (	RuserId
 system (	Rsystem

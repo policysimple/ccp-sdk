@@ -24,6 +24,7 @@ type InvitationServiceClient interface {
 	AgreeInvitationUser(ctx context.Context, in *AgreeInvitationUserRequest, opts ...grpc.CallOption) (*AgreeInvitationUserResponse, error)
 	ListInvitationSend(ctx context.Context, in *ListInvitationSendRequest, opts ...grpc.CallOption) (*ListInvitationSendResponse, error)
 	DeleteInvitation(ctx context.Context, in *DeleteInvitationRequest, opts ...grpc.CallOption) (*DeleteInvitationResponse, error)
+	ReactivateInvitation(ctx context.Context, in *ReactivateInvitationRequest, opts ...grpc.CallOption) (*ReactivateInvitationResponse, error)
 }
 
 type invitationServiceClient struct {
@@ -79,6 +80,15 @@ func (c *invitationServiceClient) DeleteInvitation(ctx context.Context, in *Dele
 	return out, nil
 }
 
+func (c *invitationServiceClient) ReactivateInvitation(ctx context.Context, in *ReactivateInvitationRequest, opts ...grpc.CallOption) (*ReactivateInvitationResponse, error) {
+	out := new(ReactivateInvitationResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.invitations.v1.InvitationService/ReactivateInvitation", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // InvitationServiceServer is the server API for InvitationService service.
 // All implementations should embed UnimplementedInvitationServiceServer
 // for forward compatibility
@@ -89,6 +99,7 @@ type InvitationServiceServer interface {
 	AgreeInvitationUser(context.Context, *AgreeInvitationUserRequest) (*AgreeInvitationUserResponse, error)
 	ListInvitationSend(context.Context, *ListInvitationSendRequest) (*ListInvitationSendResponse, error)
 	DeleteInvitation(context.Context, *DeleteInvitationRequest) (*DeleteInvitationResponse, error)
+	ReactivateInvitation(context.Context, *ReactivateInvitationRequest) (*ReactivateInvitationResponse, error)
 }
 
 // UnimplementedInvitationServiceServer should be embedded to have forward compatible implementations.
@@ -109,6 +120,9 @@ func (UnimplementedInvitationServiceServer) ListInvitationSend(context.Context, 
 }
 func (UnimplementedInvitationServiceServer) DeleteInvitation(context.Context, *DeleteInvitationRequest) (*DeleteInvitationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteInvitation not implemented")
+}
+func (UnimplementedInvitationServiceServer) ReactivateInvitation(context.Context, *ReactivateInvitationRequest) (*ReactivateInvitationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReactivateInvitation not implemented")
 }
 
 // UnsafeInvitationServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -212,6 +226,24 @@ func _InvitationService_DeleteInvitation_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _InvitationService_ReactivateInvitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReactivateInvitationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(InvitationServiceServer).ReactivateInvitation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.invitations.v1.InvitationService/ReactivateInvitation",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(InvitationServiceServer).ReactivateInvitation(ctx, req.(*ReactivateInvitationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // InvitationService_ServiceDesc is the grpc.ServiceDesc for InvitationService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -238,6 +270,10 @@ var InvitationService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteInvitation",
 			Handler:    _InvitationService_DeleteInvitation_Handler,
+		},
+		{
+			MethodName: "ReactivateInvitation",
+			Handler:    _InvitationService_ReactivateInvitation_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

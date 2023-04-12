@@ -415,4 +415,73 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIntegrationIdBytes();
+
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return Whether the applicationData field is set.
+   */
+  boolean hasApplicationData();
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return The applicationData.
+   */
+  application.v1alpha1.ApplicationOuterClass.Application getApplicationData();
+  /**
+   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   */
+  application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder();
+
+  /**
+   * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
+   * @return The customPipeline.
+   */
+  boolean getCustomPipeline();
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+      getBeforeDeployTasksList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Task getBeforeDeployTasks(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  int getBeforeDeployTasksCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getBeforeDeployTasksOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28 [json_name = "beforeDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getBeforeDeployTasksOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Task> 
+      getAfterDeployTasksList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Task getAfterDeployTasks(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  int getAfterDeployTasksCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder> 
+      getAfterDeployTasksOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getAfterDeployTasksOrBuilder(
+      int index);
 }

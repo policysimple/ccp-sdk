@@ -114,6 +114,16 @@ private static final long serialVersionUID = 0L;
             description_ = s;
             break;
           }
+          case 72: {
+
+            beforeDeploy_ = input.readBool();
+            break;
+          }
+          case 80: {
+
+            afterDeploy_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -460,6 +470,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BEFORE_DEPLOY_FIELD_NUMBER = 9;
+  private boolean beforeDeploy_;
+  /**
+   * <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+   * @return The beforeDeploy.
+   */
+  @java.lang.Override
+  public boolean getBeforeDeploy() {
+    return beforeDeploy_;
+  }
+
+  public static final int AFTER_DEPLOY_FIELD_NUMBER = 10;
+  private boolean afterDeploy_;
+  /**
+   * <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+   * @return The afterDeploy.
+   */
+  @java.lang.Override
+  public boolean getAfterDeploy() {
+    return afterDeploy_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -497,6 +529,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
+    }
+    if (beforeDeploy_ != false) {
+      output.writeBool(9, beforeDeploy_);
+    }
+    if (afterDeploy_ != false) {
+      output.writeBool(10, afterDeploy_);
     }
     unknownFields.writeTo(output);
   }
@@ -538,6 +576,14 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
     }
+    if (beforeDeploy_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, beforeDeploy_);
+    }
+    if (afterDeploy_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, afterDeploy_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -569,6 +615,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskParamsList())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (getBeforeDeploy()
+        != other.getBeforeDeploy()) return false;
+    if (getAfterDeploy()
+        != other.getAfterDeploy()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -602,6 +652,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + BEFORE_DEPLOY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBeforeDeploy());
+    hash = (37 * hash) + AFTER_DEPLOY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAfterDeploy());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -761,6 +817,10 @@ private static final long serialVersionUID = 0L;
       }
       description_ = "";
 
+      beforeDeploy_ = false;
+
+      afterDeploy_ = false;
+
       return this;
     }
 
@@ -816,6 +876,8 @@ private static final long serialVersionUID = 0L;
         result.taskParams_ = taskParamsBuilder_.build();
       }
       result.description_ = description_;
+      result.beforeDeploy_ = beforeDeploy_;
+      result.afterDeploy_ = afterDeploy_;
       onBuilt();
       return result;
     }
@@ -945,6 +1007,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
+      }
+      if (other.getBeforeDeploy() != false) {
+        setBeforeDeploy(other.getBeforeDeploy());
+      }
+      if (other.getAfterDeploy() != false) {
+        setAfterDeploy(other.getAfterDeploy());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1942,6 +2010,68 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean beforeDeploy_ ;
+    /**
+     * <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+     * @return The beforeDeploy.
+     */
+    @java.lang.Override
+    public boolean getBeforeDeploy() {
+      return beforeDeploy_;
+    }
+    /**
+     * <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+     * @param value The beforeDeploy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBeforeDeploy(boolean value) {
+      
+      beforeDeploy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool before_deploy = 9 [json_name = "beforeDeploy"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBeforeDeploy() {
+      
+      beforeDeploy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean afterDeploy_ ;
+    /**
+     * <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+     * @return The afterDeploy.
+     */
+    @java.lang.Override
+    public boolean getAfterDeploy() {
+      return afterDeploy_;
+    }
+    /**
+     * <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+     * @param value The afterDeploy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAfterDeploy(boolean value) {
+      
+      afterDeploy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool after_deploy = 10 [json_name = "afterDeploy"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAfterDeploy() {
+      
+      afterDeploy_ = false;
       onChanged();
       return this;
     }
