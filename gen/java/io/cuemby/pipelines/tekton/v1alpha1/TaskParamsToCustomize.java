@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     paramName_ = "";
     label_ = "";
     validation_ = "";
-    typeValue_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    typeValue_ = "";
   }
 
   @java.lang.Override
@@ -42,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,11 +72,8 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              typeValue_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            typeValue_.add(s);
+
+            typeValue_ = s;
             break;
           }
           default: {
@@ -95,9 +91,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        typeValue_ = typeValue_.getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -230,38 +223,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_VALUE_FIELD_NUMBER = 4;
-  private com.google.protobuf.LazyStringList typeValue_;
+  private volatile java.lang.Object typeValue_;
   /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @return A list containing the typeValue.
+   * <code>string type_value = 4 [json_name = "typeValue"];</code>
+   * @return The typeValue.
    */
-  public com.google.protobuf.ProtocolStringList
-      getTypeValueList() {
-    return typeValue_;
+  @java.lang.Override
+  public java.lang.String getTypeValue() {
+    java.lang.Object ref = typeValue_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      typeValue_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @return The count of typeValue.
+   * <code>string type_value = 4 [json_name = "typeValue"];</code>
+   * @return The bytes for typeValue.
    */
-  public int getTypeValueCount() {
-    return typeValue_.size();
-  }
-  /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @param index The index of the element to return.
-   * @return The typeValue at the given index.
-   */
-  public java.lang.String getTypeValue(int index) {
-    return typeValue_.get(index);
-  }
-  /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the typeValue at the given index.
-   */
+  @java.lang.Override
   public com.google.protobuf.ByteString
-      getTypeValueBytes(int index) {
-    return typeValue_.getByteString(index);
+      getTypeValueBytes() {
+    java.lang.Object ref = typeValue_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      typeValue_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -287,8 +283,8 @@ private static final long serialVersionUID = 0L;
     if (!getValidationBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, validation_);
     }
-    for (int i = 0; i < typeValue_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, typeValue_.getRaw(i));
+    if (!getTypeValueBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, typeValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -308,13 +304,8 @@ private static final long serialVersionUID = 0L;
     if (!getValidationBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, validation_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < typeValue_.size(); i++) {
-        dataSize += computeStringSizeNoTag(typeValue_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getTypeValueList().size();
+    if (!getTypeValueBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, typeValue_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -337,8 +328,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLabel())) return false;
     if (!getValidation()
         .equals(other.getValidation())) return false;
-    if (!getTypeValueList()
-        .equals(other.getTypeValueList())) return false;
+    if (!getTypeValue()
+        .equals(other.getTypeValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -356,10 +347,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLabel().hashCode();
     hash = (37 * hash) + VALIDATION_FIELD_NUMBER;
     hash = (53 * hash) + getValidation().hashCode();
-    if (getTypeValueCount() > 0) {
-      hash = (37 * hash) + TYPE_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getTypeValueList().hashCode();
-    }
+    hash = (37 * hash) + TYPE_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getTypeValue().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -499,8 +488,8 @@ private static final long serialVersionUID = 0L;
 
       validation_ = "";
 
-      typeValue_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      typeValue_ = "";
+
       return this;
     }
 
@@ -527,14 +516,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.pipelines.tekton.v1alpha1.TaskParamsToCustomize buildPartial() {
       io.cuemby.pipelines.tekton.v1alpha1.TaskParamsToCustomize result = new io.cuemby.pipelines.tekton.v1alpha1.TaskParamsToCustomize(this);
-      int from_bitField0_ = bitField0_;
       result.paramName_ = paramName_;
       result.label_ = label_;
       result.validation_ = validation_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        typeValue_ = typeValue_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
       result.typeValue_ = typeValue_;
       onBuilt();
       return result;
@@ -596,14 +580,8 @@ private static final long serialVersionUID = 0L;
         validation_ = other.validation_;
         onChanged();
       }
-      if (!other.typeValue_.isEmpty()) {
-        if (typeValue_.isEmpty()) {
-          typeValue_ = other.typeValue_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureTypeValueIsMutable();
-          typeValue_.addAll(other.typeValue_);
-        }
+      if (!other.getTypeValue().isEmpty()) {
+        typeValue_ = other.typeValue_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -634,7 +612,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object paramName_ = "";
     /**
@@ -864,112 +841,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList typeValue_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureTypeValueIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        typeValue_ = new com.google.protobuf.LazyStringArrayList(typeValue_);
-        bitField0_ |= 0x00000001;
-       }
-    }
+    private java.lang.Object typeValue_ = "";
     /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @return A list containing the typeValue.
+     * <code>string type_value = 4 [json_name = "typeValue"];</code>
+     * @return The typeValue.
      */
-    public com.google.protobuf.ProtocolStringList
-        getTypeValueList() {
-      return typeValue_.getUnmodifiableView();
+    public java.lang.String getTypeValue() {
+      java.lang.Object ref = typeValue_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        typeValue_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @return The count of typeValue.
-     */
-    public int getTypeValueCount() {
-      return typeValue_.size();
-    }
-    /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param index The index of the element to return.
-     * @return The typeValue at the given index.
-     */
-    public java.lang.String getTypeValue(int index) {
-      return typeValue_.get(index);
-    }
-    /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the typeValue at the given index.
+     * <code>string type_value = 4 [json_name = "typeValue"];</code>
+     * @return The bytes for typeValue.
      */
     public com.google.protobuf.ByteString
-        getTypeValueBytes(int index) {
-      return typeValue_.getByteString(index);
+        getTypeValueBytes() {
+      java.lang.Object ref = typeValue_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        typeValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param index The index to set the value at.
+     * <code>string type_value = 4 [json_name = "typeValue"];</code>
      * @param value The typeValue to set.
      * @return This builder for chaining.
      */
     public Builder setTypeValue(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTypeValueIsMutable();
-      typeValue_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param value The typeValue to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTypeValue(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureTypeValueIsMutable();
-      typeValue_.add(value);
+  
+      typeValue_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param values The typeValue to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllTypeValue(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureTypeValueIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, typeValue_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
+     * <code>string type_value = 4 [json_name = "typeValue"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTypeValue() {
-      typeValue_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
+      typeValue_ = getDefaultInstance().getTypeValue();
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param value The bytes of the typeValue to add.
+     * <code>string type_value = 4 [json_name = "typeValue"];</code>
+     * @param value The bytes for typeValue to set.
      * @return This builder for chaining.
      */
-    public Builder addTypeValueBytes(
+    public Builder setTypeValueBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureTypeValueIsMutable();
-      typeValue_.add(value);
+      
+      typeValue_ = value;
       onChanged();
       return this;
     }

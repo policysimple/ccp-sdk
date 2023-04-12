@@ -26,9 +26,9 @@ class TaskParamsToCustomize extends \Google\Protobuf\Internal\Message
      */
     protected $validation = '';
     /**
-     * Generated from protobuf field <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
+     * Generated from protobuf field <code>string type_value = 4 [json_name = "typeValue"];</code>
      */
-    private $type_value;
+    protected $type_value = '';
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class TaskParamsToCustomize extends \Google\Protobuf\Internal\Message
      *     @type string $param_name
      *     @type string $label
      *     @type string $validation
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $type_value
+     *     @type string $type_value
      * }
      */
     public function __construct($data = NULL) {
@@ -114,8 +114,8 @@ class TaskParamsToCustomize extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string type_value = 4 [json_name = "typeValue"];</code>
+     * @return string
      */
     public function getTypeValue()
     {
@@ -123,14 +123,14 @@ class TaskParamsToCustomize extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string type_value = 4 [json_name = "typeValue"];</code>
+     * @param string $var
      * @return $this
      */
     public function setTypeValue($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->type_value = $arr;
+        GPBUtil::checkString($var, True);
+        $this->type_value = $var;
 
         return $this;
     }

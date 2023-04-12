@@ -44,27 +44,14 @@ public interface TaskParamsToCustomizeOrBuilder extends
       getValidationBytes();
 
   /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @return A list containing the typeValue.
+   * <code>string type_value = 4 [json_name = "typeValue"];</code>
+   * @return The typeValue.
    */
-  java.util.List<java.lang.String>
-      getTypeValueList();
+  java.lang.String getTypeValue();
   /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @return The count of typeValue.
-   */
-  int getTypeValueCount();
-  /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @param index The index of the element to return.
-   * @return The typeValue at the given index.
-   */
-  java.lang.String getTypeValue(int index);
-  /**
-   * <code>repeated string type_value = 4 [json_name = "typeValue"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the typeValue at the given index.
+   * <code>string type_value = 4 [json_name = "typeValue"];</code>
+   * @return The bytes for typeValue.
    */
   com.google.protobuf.ByteString
-      getTypeValueBytes(int index);
+      getTypeValueBytes();
 }
