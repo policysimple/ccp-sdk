@@ -100,6 +100,7 @@ constexpr Runtime::Runtime(
   , environment_internal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , integration_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pod_ingress_cert_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_data_(nullptr)
   , traffic_type_(0)
 
@@ -267,6 +268,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, custom_pipeline_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, before_deploy_tasks_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, after_deploy_tasks_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, pod_ingress_cert_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::RuntimeList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -310,11 +312,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 27, 34, sizeof(::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse)},
   { 36, 43, sizeof(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse)},
   { 45, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
-  { 79, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
-  { 85, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
-  { 93, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
-  { 100, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
-  { 107, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
+  { 80, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
+  { 86, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
+  { 94, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
+  { 101, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
+  { 108, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -335,7 +337,7 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "\n(pipelines/runtime/v1alpha1/runtime.pro"
   "to\022\032pipelines.runtime.v1alpha1\032&applicat"
   "ion/v1alpha1/application.proto\032&pipeline"
-  "s/tekton/v1alpha1/tekton.proto\"\277\016\n\007Runti"
+  "s/tekton/v1alpha1/tekton.proto\"\351\016\n\007Runti"
   "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N"
   "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti"
   "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'"
@@ -374,33 +376,34 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "pipelines.tekton.v1alpha1.TaskR\021beforeDe"
   "ployTasks\022M\n\022after_deploy_tasks\030\035 \003(\0132\037."
   "pipelines.tekton.v1alpha1.TaskR\020afterDep"
-  "loyTasks\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001("
-  "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031Envi"
-  "ronmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEnt"
-  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
-  "ue:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003key"
-  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgsE"
+  "loyTasks\022(\n\020pod_ingress_cert\030\036 \001(\tR\016podI"
+  "ngressCert\032>\n\020IntegrationEntry\022\020\n\003key\030\001 "
+  "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031En"
+  "vironmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003ke"
+  "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsE"
   "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
-  "alue:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(\0132#"
-  ".pipelines.runtime.v1alpha1.RuntimeR\005ite"
-  "ms\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004na"
-  "me\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003(\0132"
-  "*.pipelines.runtime.v1alpha1.ResourcesRu"
-  "lesR\016resourcesRules\"\210\001\n\016ResourcesRules\0227"
-  "\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1alph"
-  "a1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pipel"
-  "ines.runtime.v1alpha1.RequestR\007request\"+"
-  "\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003"
-  "ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030"
-  "\002 \001(\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFFIC_TYP"
-  "E_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL"
-  "\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cue"
-  "mby.pipelines.runtime.v1alpha1B\014RuntimeP"
-  "rotoP\001Z5github.com/cuemby/ccp-runtime-se"
-  "rvice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines."
-  "Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1A"
-  "lpha1b\006proto3"
+  "alue:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003k"
+  "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArg"
+  "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR"
+  "\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(\013"
+  "2#.pipelines.runtime.v1alpha1.RuntimeR\005i"
+  "tems\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004"
+  "name\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003("
+  "\0132*.pipelines.runtime.v1alpha1.Resources"
+  "RulesR\016resourcesRules\"\210\001\n\016ResourcesRules"
+  "\0227\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1al"
+  "pha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pip"
+  "elines.runtime.v1alpha1.RequestR\007request"
+  "\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\t"
+  "R\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ra"
+  "m\030\002 \001(\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFFIC_T"
+  "YPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERN"
+  "AL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.c"
+  "uemby.pipelines.runtime.v1alpha1B\014Runtim"
+  "eProtoP\001Z5github.com/cuemby/ccp-runtime-"
+  "service/runtimev1alpha1\242\002\003PPX\252\002\032Pipeline"
+  "s.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V"
+  "1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps[2] = {
   &::descriptor_table_application_2fv1alpha1_2fapplication_2eproto,
@@ -408,7 +411,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 2733, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  false, false, 2775, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps, 2, 11,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
@@ -639,6 +642,11 @@ Runtime::Runtime(const Runtime& from)
     integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_integration_id(), 
       GetArenaForAllocation());
   }
+  pod_ingress_cert_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pod_ingress_cert().empty()) {
+    pod_ingress_cert_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pod_ingress_cert(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_application_data()) {
     application_data_ = new ::application::v1alpha1::Application(*from.application_data_);
   } else {
@@ -667,6 +675,7 @@ environment_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyS
 environment_internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 application_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 integration_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pod_ingress_cert_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&application_data_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&custom_pipeline_) -
@@ -698,6 +707,7 @@ inline void Runtime::SharedDtor() {
   environment_internal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   integration_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pod_ingress_cert_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete application_data_;
 }
 
@@ -749,6 +759,7 @@ void Runtime::Clear() {
   environment_internal_name_.ClearToEmpty();
   application_name_.ClearToEmpty();
   integration_id_.ClearToEmpty();
+  pod_ingress_cert_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && application_data_ != nullptr) {
     delete application_data_;
   }
@@ -1039,6 +1050,15 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string pod_ingress_cert = 30 [json_name = "podIngressCert"];
+      case 30:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 242)) {
+          auto str = _internal_mutable_pod_ingress_cert();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -1517,6 +1537,16 @@ failure:
       InternalWriteMessage(29, this->_internal_after_deploy_tasks(i), target, stream);
   }
 
+  // string pod_ingress_cert = 30 [json_name = "podIngressCert"];
+  if (!this->_internal_pod_ingress_cert().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_pod_ingress_cert().data(), static_cast<int>(this->_internal_pod_ingress_cert().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert");
+    target = stream->WriteStringMaybeAliased(
+        30, this->_internal_pod_ingress_cert(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1711,6 +1741,13 @@ size_t Runtime::ByteSizeLong() const {
         this->_internal_integration_id());
   }
 
+  // string pod_ingress_cert = 30 [json_name = "podIngressCert"];
+  if (!this->_internal_pod_ingress_cert().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_pod_ingress_cert());
+  }
+
   // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   if (this->_internal_has_application_data()) {
     total_size += 2 +
@@ -1826,6 +1863,9 @@ void Runtime::MergeFrom(const Runtime& from) {
   }
   if (!from._internal_integration_id().empty()) {
     _internal_set_integration_id(from._internal_integration_id());
+  }
+  if (!from._internal_pod_ingress_cert().empty()) {
+    _internal_set_pod_ingress_cert(from._internal_pod_ingress_cert());
   }
   if (from._internal_has_application_data()) {
     _internal_mutable_application_data()->::application::v1alpha1::Application::MergeFrom(from._internal_application_data());
@@ -1946,6 +1986,11 @@ void Runtime::InternalSwap(Runtime* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &integration_id_, GetArenaForAllocation(),
       &other->integration_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &pod_ingress_cert_, GetArenaForAllocation(),
+      &other->pod_ingress_cert_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Runtime, custom_pipeline_)
