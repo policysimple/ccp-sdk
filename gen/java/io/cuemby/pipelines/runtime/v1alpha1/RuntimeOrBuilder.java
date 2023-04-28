@@ -484,4 +484,16 @@ public interface RuntimeOrBuilder extends
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getAfterDeployTasksOrBuilder(
       int index);
+
+  /**
+   * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+   * @return The podIngressCert.
+   */
+  java.lang.String getPodIngressCert();
+  /**
+   * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+   * @return The bytes for podIngressCert.
+   */
+  com.google.protobuf.ByteString
+      getPodIngressCertBytes();
 }

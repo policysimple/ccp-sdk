@@ -418,6 +418,7 @@ class Runtime final :
     kEnvironmentInternalNameFieldNumber = 21,
     kApplicationNameFieldNumber = 22,
     kIntegrationIdFieldNumber = 25,
+    kPodIngressCertFieldNumber = 30,
     kApplicationDataFieldNumber = 26,
     kTrafficTypeFieldNumber = 18,
     kStorageUsedFieldNumber = 23,
@@ -787,6 +788,20 @@ class Runtime final :
   std::string* _internal_mutable_integration_id();
   public:
 
+  // string pod_ingress_cert = 30 [json_name = "podIngressCert"];
+  void clear_pod_ingress_cert();
+  const std::string& pod_ingress_cert() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_pod_ingress_cert(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_pod_ingress_cert();
+  PROTOBUF_MUST_USE_RESULT std::string* release_pod_ingress_cert();
+  void set_allocated_pod_ingress_cert(std::string* pod_ingress_cert);
+  private:
+  const std::string& _internal_pod_ingress_cert() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pod_ingress_cert(const std::string& value);
+  std::string* _internal_mutable_pod_ingress_cert();
+  public:
+
   // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   bool has_application_data() const;
   private:
@@ -892,6 +907,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_internal_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_ingress_cert_;
   ::application::v1alpha1::Application* application_data_;
   int traffic_type_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
@@ -2896,6 +2912,52 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1a
 Runtime::after_deploy_tasks() const {
   // @@protoc_insertion_point(field_list:pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks)
   return after_deploy_tasks_;
+}
+
+// string pod_ingress_cert = 30 [json_name = "podIngressCert"];
+inline void Runtime::clear_pod_ingress_cert() {
+  pod_ingress_cert_.ClearToEmpty();
+}
+inline const std::string& Runtime::pod_ingress_cert() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert)
+  return _internal_pod_ingress_cert();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_pod_ingress_cert(ArgT0&& arg0, ArgT... args) {
+ 
+ pod_ingress_cert_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert)
+}
+inline std::string* Runtime::mutable_pod_ingress_cert() {
+  std::string* _s = _internal_mutable_pod_ingress_cert();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert)
+  return _s;
+}
+inline const std::string& Runtime::_internal_pod_ingress_cert() const {
+  return pod_ingress_cert_.Get();
+}
+inline void Runtime::_internal_set_pod_ingress_cert(const std::string& value) {
+  
+  pod_ingress_cert_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_pod_ingress_cert() {
+  
+  return pod_ingress_cert_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_pod_ingress_cert() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert)
+  return pod_ingress_cert_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_pod_ingress_cert(std::string* pod_ingress_cert) {
+  if (pod_ingress_cert != nullptr) {
+    
+  } else {
+    
+  }
+  pod_ingress_cert_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pod_ingress_cert,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert)
 }
 
 // -------------------------------------------------------------------

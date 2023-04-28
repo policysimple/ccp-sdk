@@ -131,6 +131,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];</code>
      */
     private $after_deploy_tasks;
+    /**
+     * Generated from protobuf field <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     */
+    protected $pod_ingress_cert = '';
 
     /**
      * Constructor.
@@ -167,6 +171,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type bool $custom_pipeline
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
+     *     @type string $pod_ingress_cert
      * }
      */
     public function __construct($data = NULL) {
@@ -818,6 +823,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
         $this->after_deploy_tasks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @return string
+     */
+    public function getPodIngressCert()
+    {
+        return $this->pod_ingress_cert;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPodIngressCert($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pod_ingress_cert = $var;
 
         return $this;
     }

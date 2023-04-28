@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     integrationId_ = "";
     beforeDeployTasks_ = java.util.Collections.emptyList();
     afterDeployTasks_ = java.util.Collections.emptyList();
+    podIngressCert_ = "";
   }
 
   @java.lang.Override
@@ -293,6 +294,12 @@ private static final long serialVersionUID = 0L;
             }
             afterDeployTasks_.add(
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Task.parser(), extensionRegistry));
+            break;
+          }
+          case 242: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            podIngressCert_ = s;
             break;
           }
           default: {
@@ -1567,6 +1574,44 @@ private static final long serialVersionUID = 0L;
     return afterDeployTasks_.get(index);
   }
 
+  public static final int POD_INGRESS_CERT_FIELD_NUMBER = 30;
+  private volatile java.lang.Object podIngressCert_;
+  /**
+   * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+   * @return The podIngressCert.
+   */
+  @java.lang.Override
+  public java.lang.String getPodIngressCert() {
+    java.lang.Object ref = podIngressCert_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      podIngressCert_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+   * @return The bytes for podIngressCert.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPodIngressCertBytes() {
+    java.lang.Object ref = podIngressCert_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      podIngressCert_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1682,6 +1727,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < afterDeployTasks_.size(); i++) {
       output.writeMessage(29, afterDeployTasks_.get(i));
+    }
+    if (!getPodIngressCertBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, podIngressCert_);
     }
     unknownFields.writeTo(output);
   }
@@ -1822,6 +1870,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(29, afterDeployTasks_.get(i));
     }
+    if (!getPodIngressCertBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, podIngressCert_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1897,6 +1948,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBeforeDeployTasksList())) return false;
     if (!getAfterDeployTasksList()
         .equals(other.getAfterDeployTasksList())) return false;
+    if (!getPodIngressCert()
+        .equals(other.getPodIngressCert())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1985,6 +2038,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + AFTER_DEPLOY_TASKS_FIELD_NUMBER;
       hash = (53 * hash) + getAfterDeployTasksList().hashCode();
     }
+    hash = (37 * hash) + POD_INGRESS_CERT_FIELD_NUMBER;
+    hash = (53 * hash) + getPodIngressCert().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2232,6 +2287,8 @@ private static final long serialVersionUID = 0L;
       } else {
         afterDeployTasksBuilder_.clear();
       }
+      podIngressCert_ = "";
+
       return this;
     }
 
@@ -2321,6 +2378,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.afterDeployTasks_ = afterDeployTasksBuilder_.build();
       }
+      result.podIngressCert_ = podIngressCert_;
       onBuilt();
       return result;
     }
@@ -2535,6 +2593,10 @@ private static final long serialVersionUID = 0L;
             afterDeployTasksBuilder_.addAllMessages(other.afterDeployTasks_);
           }
         }
+      }
+      if (!other.getPodIngressCert().isEmpty()) {
+        podIngressCert_ = other.podIngressCert_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5406,6 +5468,82 @@ private static final long serialVersionUID = 0L;
         afterDeployTasks_ = null;
       }
       return afterDeployTasksBuilder_;
+    }
+
+    private java.lang.Object podIngressCert_ = "";
+    /**
+     * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @return The podIngressCert.
+     */
+    public java.lang.String getPodIngressCert() {
+      java.lang.Object ref = podIngressCert_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        podIngressCert_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @return The bytes for podIngressCert.
+     */
+    public com.google.protobuf.ByteString
+        getPodIngressCertBytes() {
+      java.lang.Object ref = podIngressCert_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        podIngressCert_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @param value The podIngressCert to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodIngressCert(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      podIngressCert_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPodIngressCert() {
+      
+      podIngressCert_ = getDefaultInstance().getPodIngressCert();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
+     * @param value The bytes for podIngressCert to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodIngressCertBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      podIngressCert_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

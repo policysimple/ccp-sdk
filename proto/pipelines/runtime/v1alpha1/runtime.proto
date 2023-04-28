@@ -50,6 +50,7 @@ message Runtime {
   bool custom_pipeline = 27;
   repeated pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28;
   repeated pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29;
+  string pod_ingress_cert = 30;
 
 }
 

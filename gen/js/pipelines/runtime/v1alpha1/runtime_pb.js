@@ -222,7 +222,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     beforeDeployTasksList: jspb.Message.toObjectList(msg.getBeforeDeployTasksList(),
     pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
     afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
-    pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance)
+    pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
+    podIngressCert: jspb.Message.getFieldWithDefault(msg, 30, "")
   };
 
   if (includeInstance) {
@@ -388,6 +389,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       var value = new pipelines_tekton_v1alpha1_tekton_pb.Task;
       reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.Task.deserializeBinaryFromReader);
       msg.addAfterDeployTasks(value);
+      break;
+    case 30:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPodIngressCert(value);
       break;
     default:
       reader.skipField();
@@ -608,6 +613,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
       29,
       f,
       pipelines_tekton_v1alpha1_tekton_pb.Task.serializeBinaryToWriter
+    );
+  }
+  f = message.getPodIngressCert();
+  if (f.length > 0) {
+    writer.writeString(
+      30,
+      f
     );
   }
 };
@@ -1231,6 +1243,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.addAfterDeployTasks = functio
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearAfterDeployTasksList = function() {
   return this.setAfterDeployTasksList([]);
+};
+
+
+/**
+ * optional string pod_ingress_cert = 30;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getPodIngressCert = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setPodIngressCert = function(value) {
+  return jspb.Message.setProto3StringField(this, 30, value);
 };
 
 
